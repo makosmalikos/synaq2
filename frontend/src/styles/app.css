@@ -189,3 +189,56 @@ h1.title{font:600 27px/1.22 'Lora',serif;letter-spacing:-.02em;margin:0 auto 12p
   .stat-strip{flex-wrap:wrap}.stat{min-width:50%}
   .palette{grid-template-columns:repeat(6,1fr)}
 }
+
+/* ===== Красивый стартовый экран ===== */
+.auth-hero{text-align:center}
+.hero-badge{display:inline-block;font-size:10.5px;letter-spacing:.16em;color:var(--accent);
+  border:1px solid var(--line);padding:5px 12px;margin-bottom:18px}
+.auth-hero .title{margin-bottom:14px}
+.hero-stats{display:flex;justify-content:center;gap:0;border:1px solid var(--line);margin:0 0 24px}
+.hero-stats > div{flex:1;padding:12px 6px;border-right:1px solid var(--line-soft);display:flex;flex-direction:column;gap:3px}
+.hero-stats > div:last-child{border-right:none}
+.hero-stats b{font-size:22px;line-height:1}
+.hero-stats span{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)}
+.hero-row{display:flex;gap:10px}
+.hero-row .btn{margin:0}
+
+/* ===== Геймификация: ХП, поинты, стрик ===== */
+.gami-strip{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+.gami{flex:1;min-width:120px;border:1px solid var(--line);background:var(--white);padding:14px 16px;display:flex;align-items:center;gap:12px}
+.gami .ico{width:36px;height:36px;flex:none;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.gami .v{font:700 20px 'Lora',serif;line-height:1}
+.gami .l{font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.05em;text-transform:uppercase;color:var(--muted2);margin-top:2px}
+.hp-track{height:7px;background:#EDE9E0;border-radius:4px;overflow:hidden;margin-top:6px;width:100%}
+.hp-track > span{display:block;height:100%;background:linear-gradient(90deg,var(--green),#6ea070)}
+
+/* кольцо прогресса */
+.ring-card{display:flex;align-items:center;gap:22px;border:1px solid var(--line);background:var(--white);padding:22px;margin-bottom:24px}
+.ring{--val:63;position:relative;width:104px;height:104px;flex:none;border-radius:50%;
+  background:conic-gradient(var(--accent) calc(var(--val)*1%),#EDE9E0 0);
+  display:flex;align-items:center;justify-content:center}
+.ring::before{content:'';position:absolute;width:78px;height:78px;border-radius:50%;background:var(--white)}
+.ring .pct{position:relative;font:700 26px 'Lora',serif}
+.ring-card .rt{font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.ring-card .rh{font:600 19px 'Lora',serif;margin-bottom:4px}
+.ring-card .rd{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* дуэль / лига карточки */
+.duel-card{border:1px solid var(--line);background:var(--white);padding:20px;margin-bottom:14px}
+.duel-vs{display:flex;align-items:center;justify-content:space-between;margin:14px 0}
+.duel-p{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1}
+.duel-p .av{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font:700 20px 'Lora',serif}
+.duel-p .nm{font:600 13px 'Golos Text'}
+.duel-p .sc{font:700 22px 'Lora',serif}
+.vs-badge{font:700 13px 'IBM Plex Mono',monospace;color:var(--muted2);padding:0 14px}
+
+.league-row{display:flex;align-items:center;gap:14px;padding:13px 16px;border-bottom:1px solid var(--line-soft)}
+.league-row:last-child{border-bottom:none}
+.league-row.me{background:var(--accent-tint)}
+.league-rank{font:700 15px 'Lora',serif;width:26px;color:var(--muted)}
+.league-row.me .league-rank{color:var(--accent)}
+.league-av{width:34px;height:34px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font:700 14px 'Lora',serif}
+.league-nm{flex:1;font:600 14px 'Golos Text'}
+.league-pts{font:600 13px 'IBM Plex Mono',monospace;color:var(--muted)}
+
+.soon-tag{font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:2px 7px;border-radius:2px}
