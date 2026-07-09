@@ -4,7 +4,8 @@ import { fmtTime, lvlColor, lvlOf, lvlTag } from '../lib/ui.js';
 import { saveAttempt, saveMockResult, childMocks } from '../lib/auth.js';
 
 const NAV = [
-  ['home', 'Басты бет'], ['training', 'Дайындық'], ['mock', 'Апталық сынақ'], ['progress', 'Прогресс'],
+  ['home', 'Басты бет'], ['training', 'Дайындық'], ['mock', 'Апталық сынақ'],
+  ['duel', 'Дуэль'], ['league', 'Лига'], ['progress', 'Прогресс'],
 ];
 
 function Sidebar({ nav, setNav, who, onSignOut }) {
@@ -73,9 +74,9 @@ function Training({ childUid, demo }) {
         <h1 className="page-title">Тақырып таңда</h1>
         <p className="page-sub">Әр тақырып — РФМШ-2025 нұсқаларынан алынған нақты есептер. Ашық жауап.</p>
         <div className="card">
-          {topics.map((t, i) => (
+          {topics.filter((t) => t.count > 0).map((t, i) => (
             <div key={t.id} className="trow" style={{ cursor: 'pointer' }} onClick={() => start(t.id)}>
-              <span className="num">0{i + 1}</span>
+              <span className="num">{String(i + 1).padStart(2, '0')}</span>
               <span className="nm">{t.name}</span>
               <span className="cnt">{t.count} есеп</span>
               <span className="mono" style={{ color: 'var(--accent)' }}>→</span>
@@ -171,9 +172,25 @@ function Mock({ childUid, demo }) {
   if (stage === 'list') {
     return (
       <div className="rise">
-        <p className="page-eyebrow">Апталық сынақ</p>
-        <h1 className="page-title">Толық нұсқалар</h1>
-        <p className="page-sub">РФМШ-2025, 7 сынып. 30 есеп, ашық жауап, қатаң таймер — нағыз емтихандай.</p>
+        <p className="page-eyebrow">Апталық сынақ · РФМШ</p>
+        <h1 className="page-title">Нақты емтихан форматы</h1>
+        <p className="page-sub">Бұл — жаттығу емес. Форматы, тәртібі мен қатаң таймері нағыз емтихандай. Мұнда «Тексеру» жоқ — нәтиже тек соңында.</p>
+
+        <div className="card" style={{ marginBottom: 22 }}>
+          {[
+            '30 тапсырма · ашық жауап (математика + логика)',
+            'Қатаң таймер — уақыт бітсе, автоматты түрде тапсырылады',
+            'Барлық оқушыда бірдей нұсқа — балл әділ',
+            'Тексеру жоқ: дұрыс жауаптар тек соңында ашылады',
+          ].map((t, i) => (
+            <div key={i} className="trow">
+              <span className="num">0{i + 1}</span>
+              <span className="nm" style={{ fontWeight: 500, fontSize: 14 }}>{t}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="serif" style={{ fontSize: 17, marginBottom: 12 }}>Осы аптаның нұсқалары</h2>
         <div className="card">
           {list.map((v, i) => (
             <div key={v.id} className="trow" style={{ cursor: 'pointer' }} onClick={() => begin(v.id)}>
@@ -282,18 +299,111 @@ function Home({ who, setNav }) {
     <div className="rise">
       <p className="page-eyebrow">Басты бет · {who.klass || 6} сынып</p>
       <h1 className="page-title">Сәлем, {who.name}!</h1>
-      <p className="page-sub">Бүгін бір қадам жақынырақ. Тренажёр немесе апталық сынақтан баста.</p>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18, marginBottom: 18 }}>
+      <p className="page-sub">Бүгін бір қадам жақынырақ. Күнделікті жаттығу — ең үлкен күш.</p>
+
+      <div className="gami-strip">
+        <div className="gami">
+          <div className="ico" style={{ background: 'var(--accent-tint)' }}>🔥</div>
+          <div><div className="v">7</div><div className="l">Streak (күн)</div></div>
+        </div>
+        <div className="gami">
+          <div className="ico" style={{ background: 'var(--gold-tint)' }}>⭐</div>
+          <div><div className="v">1 240</div><div className="l">Ұпай (XP)</div></div>
+        </div>
+        <div className="gami" style={{ flexDirection: 'column', alignItems: 'stretch', gap: 4 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <span className="l" style={{ margin: 0 }}>ХП</span><span className="l" style={{ margin: 0 }}>80/100</span>
+          </div>
+          <div className="hp-track"><span style={{ width: '80%' }} /></div>
+        </div>
+      </div>
+
+      <div className="ring-card">
+        <div className="ring" style={{ '--val': 63 }}><span className="pct">63%</span></div>
+        <div>
+          <div className="rt">Жалпы дайындық</div>
+          <div className="rh">РФМШ емтиханына дейін</div>
+          <div className="rd">Дайындық деңгейің өсіп келеді. Апталық сынақтан кейін бұл сан нақтыланады.</div>
+        </div>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
         <div className="reco">
           <div className="rt">Дайындық</div>
-          <div className="rd">12 тақырып бойынша РФМШ есептері. Әр қатеге толық талдау.</div>
+          <div className="rd">Тақырыптар бойынша РФМШ есептері. Әр қатеге толық талдау.</div>
           <button onClick={() => setNav('training')}>Бастау →</button>
         </div>
         <div className="reco" style={{ background: 'var(--accent)' }}>
           <div className="rt">Апталық сынақ</div>
-          <div className="rd" style={{ color: '#F7D9D5' }}>8 толық нұсқа. Нағыз емтихан жағдайында өзіңді сына.</div>
+          <div className="rd" style={{ color: '#F7D9D5' }}>Нағыз емтихан форматы. Өзіңді сына.</div>
           <button style={{ background: 'var(--ink)' }} onClick={() => setNav('mock')}>Сынаққа кірісу →</button>
         </div>
+      </div>
+    </div>
+  );
+}
+
+// ---------- Дуэль (пока визуально) ----------
+function Duel() {
+  return (
+    <div className="rise" style={{ maxWidth: 620 }}>
+      <p className="page-eyebrow">Дуэль <span className="soon-tag">жақында</span></p>
+      <h1 className="page-title">Досыңмен жарыс</h1>
+      <p className="page-sub">Бір уақытта бірдей есептер. Кім жылдам әрі дұрыс шешеді — сол жеңеді.</p>
+
+      <div className="duel-card">
+        <div className="card-h" style={{ padding: 0, border: 'none', marginBottom: 6 }}>
+          <span className="t">Бүгінгі дуэль</span><span className="m">5 есеп · матем</span>
+        </div>
+        <div className="duel-vs">
+          <div className="duel-p">
+            <div className="av" style={{ background: 'var(--ink)' }}>С</div>
+            <div className="nm">Сен</div><div className="sc">3</div>
+          </div>
+          <div className="vs-badge">VS</div>
+          <div className="duel-p">
+            <div className="av" style={{ background: 'var(--accent)' }}>А</div>
+            <div className="nm">Аружан</div><div className="sc">2</div>
+          </div>
+        </div>
+        <button className="btn btn-dark" disabled style={{ opacity: .6 }}>Жақында қосылады</button>
+      </div>
+
+      <div className="card">
+        <div className="card-h"><span className="t">Соңғы дуэльдер</span></div>
+        {[['Дамир', 'Жеңіс', 'var(--green)'], ['Аружан', 'Жеңіліс', 'var(--accent)'], ['Санжар', 'Жеңіс', 'var(--green)']].map(([n, r, c], i) => (
+          <div key={i} className="trow">
+            <span className="num">0{i + 1}</span>
+            <span className="nm">{n}</span>
+            <span className="tag" style={{ color: c, borderColor: c }}>{r}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ---------- Лига (пока визуально) ----------
+function League({ who }) {
+  const rows = [
+    ['Аружан', 1840], ['Дамир', 1520], [who.name || 'Сен', 1240, true],
+    ['Санжар', 1100], ['Мадина', 980], ['Ерасыл', 860],
+  ].sort((a, b) => b[1] - a[1]);
+  return (
+    <div className="rise" style={{ maxWidth: 620 }}>
+      <p className="page-eyebrow">Лига <span className="soon-tag">жақында</span></p>
+      <h1 className="page-title">Апталық лига</h1>
+      <p className="page-sub">Ұпай жина, жоғары көтеріл. Әр аптада үздіктер жаңа лигаға өтеді.</p>
+      <div className="card">
+        <div className="card-h"><span className="t">🏆 Күміс лига</span><span className="m">6 қатысушы</span></div>
+        {rows.map(([n, p, me], i) => (
+          <div key={n} className={'league-row' + (me ? ' me' : '')}>
+            <span className="league-rank">{i + 1}</span>
+            <span className="league-av" style={{ background: me ? 'var(--accent)' : 'var(--muted2)' }}>{String(n).charAt(0)}</span>
+            <span className="league-nm">{n}{me ? ' (сен)' : ''}</span>
+            <span className="league-pts">{p} XP</span>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -336,6 +446,8 @@ export default function ChildApp({ session, onSignOut, demo }) {
         {nav === 'home' && <Home who={who} setNav={setNav} />}
         {nav === 'training' && <Training childUid={childUid} demo={demo} />}
         {nav === 'mock' && <Mock childUid={childUid} demo={demo} />}
+        {nav === 'duel' && <Duel />}
+        {nav === 'league' && <League who={who} />}
         {nav === 'progress' && <Progress childUid={childUid} demo={demo} />}
       </main>
     </div>
