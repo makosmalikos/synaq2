@@ -64,24 +64,26 @@ export default function Auth({ lang, setLang, onSignedIn, demo }) {
       </div>
 
       <div className="auth-card">
-        {demo && (
-          <div className="note" style={{ marginBottom: 18, padding: '10px 12px', border: '1px solid var(--line)', background: 'var(--card)' }}>
-            Демо-режим: Firebase кілттері қосылмаған. UI-ды осылай да көруге болады. Нақты авторизация үшін <span className="mono">frontend/.env</span> толтырыңыз.
-          </div>
-        )}
-
         {stage === 'start' && (
-          <div className="rise" style={{ textAlign: 'center' }}>
+          <div className="rise auth-hero">
             <div className="brand"><span className="name">Synaq</span><span className="sub">сынақ</span></div>
-            <h1 className="title">Мектеп сынағына нақты дайындық</h1>
-            <p className="lead" style={{ marginBottom: 32 }}>Бір отбасы аккаунты — бала дайындалады, ата-ана бақылайды.</p>
+            <div className="hero-badge mono">РФМШ · НИШ · БИЛ</div>
+            <h1 className="title">Мектеп сынағына<br/>нақты дайындық</h1>
+            <p className="lead" style={{ marginBottom: 26 }}>Бір отбасы аккаунты — бала дайындалады, ата-ана бақылайды.</p>
+            <div className="hero-stats">
+              <div><b className="serif">240</b><span className="mono">есеп</span></div>
+              <div><b className="serif">12</b><span className="mono">тақырып</span></div>
+              <div><b className="serif">4</b><span className="mono">апталық сынақ</span></div>
+            </div>
             <button className="btn-google" onClick={doGoogle} disabled={busy} style={{ marginBottom: 12 }}>
               <GoogleIcon /> Google арқылы кіру
             </button>
             <div className="divider">немесе</div>
             <button className="btn btn-dark" onClick={() => setStage('school')} style={{ marginBottom: 10 }}>Аккаунт құру</button>
-            <button className="btn btn-ghost" onClick={() => setStage('login')} style={{ marginBottom: 10 }}>Аккаунтым бар</button>
-            <button className="btn btn-ghost" onClick={() => setStage('childLogin')}>Мен — оқушымын (код + PIN)</button>
+            <div className="hero-row">
+              <button className="btn btn-ghost" onClick={() => setStage('login')}>Аккаунтым бар</button>
+              <button className="btn btn-ghost" onClick={() => setStage('childLogin')}>Мен — оқушымын</button>
+            </div>
             {err && <p className="err" style={{ marginTop: 12 }}>{err}</p>}
           </div>
         )}
