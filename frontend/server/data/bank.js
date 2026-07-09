@@ -7,10 +7,19 @@ const data = require('./variants.json');
 
 export const topicsKk = data.topics;
 
+// Делим 8 вариантов пополам:
+//  — половина идёт в «Апталық сынақ» (мок-тесты, формат экзамена);
+//  — половина разбирается по тақырыптар в «Дайындық» (тренажёр).
+const MOCK_IDS = ['var1', 'var2', 'var3', 'var4'];   // апталық сынақ
+const TRAIN_IDS = ['var5', 'var7', 'var8', 'var9'];  // дайындық по темам
+
+const mockSource = data.variants.filter((v) => MOCK_IDS.includes(v.id));
+const trainSource = data.variants.filter((v) => TRAIN_IDS.includes(v.id));
+
 // Полные мок-варианты (как на экзамене): 30 задач, открытый ответ.
-export const mockVariants = data.variants.map((v) => ({
+export const mockVariants = mockSource.map((v, i) => ({
   id: v.id,
-  title: v.title,
+  title: `Апталық сынақ · ${i + 1}-нұсқа`,
   timeLimitMin: v.timeLimitMin,
   questions: v.questions.map((q) => ({
     id: q.id,
@@ -24,8 +33,8 @@ export const mockVariants = data.variants.map((v) => ({
   })),
 }));
 
-// Единый банк для тренировки (все задачи из всех вариантов).
-export const questions = data.variants.flatMap((v) =>
+// Банк для тренировки — только «тренировочные» варианты, разбитые по темам.
+export const questions = trainSource.flatMap((v) =>
   v.questions.map((q) => ({
     ...q,
     variant: v.id,
