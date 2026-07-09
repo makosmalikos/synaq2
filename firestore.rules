@@ -1,0 +1,37 @@
+rules_version = '2';
+// Правила доступа Synaq. Модель: family(parentUid) → children, childIndex, results.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function uid() { return request.auth.uid; }
+
+    // Семья родителя: читает/пишет только сам родитель.
+    match /families/{parentUid} {
+      allow read, write: if signedIn() && uid() == parentUid;
+
+      // Дети внутри семьи — только родитель.
+      match /children/{childUid} {
+        allow read, write: if signedIn() && uid() == parentUid;
+      }
+    }
+
+    // Индекс "ребёнок → родитель". Ребёнок читает свою запись; родитель управляет.
+    match /childIndex/{childUid} {
+      allow read: if signedIn() && (uid() == childUid || uid() == resource.data.parentUid);
+      allow create, update, delete: if signedIn()
+        && request.resource.data.parentUid == uid();
+    }
+
+    // Результаты. Ребёнок пишет и читает свои; родитель читает результаты своих детей.
+    match /results/{childUid}/{sub}/{docId} {
+      allow read: if signedIn() && (
+        uid() == childUid ||
+        (exists(/databases/$(database)/documents/childIndex/$(childUid)) &&
+         get(/databases/$(database)/documents/childIndex/$(childUid)).data.parentUid == uid())
+      );
+      allow create: if signedIn() && uid() == childUid;
+      allow update, delete: if false;
+    }
+  }
+}
