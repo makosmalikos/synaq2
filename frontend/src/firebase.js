@@ -99,6 +99,15 @@ export const logout = () => signOut(auth);
 export const watchAuth = (cb) => onAuthStateChanged(auth, cb);
 
 // ── Сохранение результатов ребёнка ──
+// Отметить/снять задачу «на повтор» (mark for review)
+export const setFlag = (uid, qid, on) => on
+  ? setDoc(doc(db, 'results', uid, 'flags', qid), { qid, at: serverTimestamp() })
+  : import('firebase/firestore').then(({ deleteDoc }) => deleteDoc(doc(db, 'results', uid, 'flags', qid)));
+export async function getFlags(uid) {
+  try { const snap = await getDocs(collection(db, 'results', uid, 'flags')); return snap.docs.map(d => d.id); }
+  catch { return []; }
+}
+
 export const saveAttempt = (uid, a) =>
   addDoc(collection(db, 'results', uid, 'attempts'), { ...a, at: serverTimestamp() });
 export const saveMock = (uid, r) =>
