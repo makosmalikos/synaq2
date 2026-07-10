@@ -157,5 +157,5 @@ function tr(e) {
   if (c.includes('popup-blocked')) return 'Браузер терезені бөгеді — рұқсат етіңіз';
   if (c.includes('popup-closed')) return 'Терезе жабылды, қайта көріңіз';
   if (c.includes('network')) return 'Интернет байланысын тексеріңіз';
-  return 'Қате шықты. Қайта көріңіз';
+  return 'Қате: ' + (c || (e && e.message) || 'белгісіз');
 }
