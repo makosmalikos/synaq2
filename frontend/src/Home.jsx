@@ -16,13 +16,13 @@ export default function Home({ go, name }) {
       <div className="grid2" style={{ marginTop: 14 }}>
         <div className="card click" onClick={() => go('mock')}>
           <p className="kicker" style={{ margin: 0 }}>Апталық сынақ</p>
-          <div style={{ font: "600 16px 'Golos Text'", margin: '8px 0 4px' }}>Осы аптаның нұсқасы</div>
-          <div className="muted" style={{ fontSize: 13 }}>Нақты емтихан форматы →</div>
+          <div style={{ font: "600 16px 'Golos Text'", margin: '10px 0 6px' }}>Осы аптаның нұсқасы</div>
+          <div className="muted" style={{ fontSize: 13, marginTop: 'auto' }}>Нақты емтихан форматы →</div>
         </div>
         <div className="card click" onClick={() => go('progress')}>
           <p className="kicker" style={{ margin: 0 }}>Прогресс</p>
-          <div style={{ font: "600 16px 'Golos Text'", margin: '8px 0 4px' }}>Нәтижелерің</div>
-          <div className="muted" style={{ fontSize: 13 }}>Шешілген есеп, % және тарих →</div>
+          <div style={{ font: "600 16px 'Golos Text'", margin: '10px 0 6px' }}>Нәтижелерің</div>
+          <div className="muted" style={{ fontSize: 13, marginTop: 'auto' }}>Шешілген есеп, % және тарих →</div>
         </div>
       </div>
     </main>
