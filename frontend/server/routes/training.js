@@ -1,40 +1,32 @@
-import { Router } from 'express';
-import { topics } from '../data/topics.js';
-import { byTopic, questions } from '../data/bank.js';
-import { isCorrect } from '../lib/check.js';
+const express = require('express');
+const router = express.Router();
+const topics = require('../data/topics');
+const questions = require('../data/questions');
+const bil = require('../data/bilQuestions');
+const { generate } = require('../data/generators');
 
-const r = Router();
-const shuffle = (a) => a.map((v) => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map((x) => x[1]);
-const strip = ({ answer, solution, verify, ...q }) => q; // без ответа/разбора
+const shuffle = (a) => a.map(x => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map(x => x[1]);
+const rfmsh = questions.filter(q => q.variant && /^v\d/.test(q.variant)).map(q => ({ ...q, school: 'РФМШ' }));
+const bilQ = bil.map(q => ({ ...q, school: 'БИЛ' }));
+const poolFor = (school) => (school === 'БИЛ' ? bilQ : rfmsh);
 
-// Список тем + количество задач по каждой
-r.get('/topics', (_req, res) => {
-  const counts = questions.reduce((m, q) => ((m[q.topic] = (m[q.topic] || 0) + 1), m), {});
-  res.json(topics.map((t) => ({ ...t, count: counts[t.id] || 0 })));
+// Темы с числом задач — с учётом школы
+router.get('/topics', (req, res) => {
+  const pool = poolFor(req.query.school);
+  const withCounts = topics.map(t => ({ ...t, count: pool.filter(q => q.topic === t.id).length }));
+  res.json(withCounts.filter(t => t.count > 0));
 });
 
-// Задачи по теме (mix — перемешать, limit — сколько)
-r.get('/topics/:id/questions', (req, res) => {
-  let pool = byTopic(req.params.id);
-  if (!pool.length) return res.status(404).json({ error: 'topic not found' });
-  if (req.query.mix === '1') pool = shuffle(pool);
-  const limit = Math.min(parseInt(req.query.limit || '10', 10), pool.length);
-  res.json(pool.slice(0, limit).map(strip));
+// Задачи по теме (с учётом школы)
+router.get('/topics/:id/questions', (req, res) => {
+  let items = poolFor(req.query.school).filter(q => q.topic === req.params.id);
+  if (!items.length) return res.status(404).json({ error: 'Тема пуста' });
+  if (req.query.mix) items = shuffle(items);
+  const limit = Number(req.query.limit) || items.length;
+  res.json(items.slice(0, limit));
 });
 
-// Смешанная тренировка по всем темам
-r.get('/mixed', (req, res) => {
-  const limit = Math.min(parseInt(req.query.limit || '10', 10), questions.length);
-  res.json(shuffle(questions).slice(0, limit).map(strip));
-});
+router.get('/mixed', (req, res) => res.json(shuffle(poolFor(req.query.school)).slice(0, Number(req.query.limit) || 15)));
+router.get('/generate', (req, res) => res.json(generate(Number(req.query.n) || 5, req.query.topic || null)));
 
-// Проверка одной задачи в тренировке -> верно/неверно + разбор
-r.post('/check', (req, res) => {
-  const { id, answer } = req.body || {};
-  const q = questions.find((x) => x.id === id);
-  if (!q) return res.status(404).json({ error: 'question not found' });
-  const correct = isCorrect(answer, q.answer);
-  res.json({ id, correct, answer: q.answer, solution: q.solution, gradable: q.answer !== null });
-});
-
-export default r;
+module.exports = router;
