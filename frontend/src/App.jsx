@@ -1,44 +1,38 @@
-import { useEffect, useState } from 'react';
-import { firebaseReady } from './lib/firebase.js';
-import { watchAuth, roleOf, getFamily, signOut } from './lib/auth.js';
-import Auth from './screens/Auth.jsx';
-import ChildApp from './screens/ChildApp.jsx';
-import ParentApp from './screens/ParentApp.jsx';
+import React, { useEffect, useState } from 'react';
+import { watchAuth, isKid, logout, getMySchool } from './firebase.js';
+import Auth from './Auth.jsx';
+import Parent from './Parent.jsx';
+import Home from './Home.jsx';
+import Training from './components/Training.jsx';
+import Mock from './components/Mock.jsx';
 
-// Демо-режим: если Firebase не сконфигурирован (.env пуст), приложение всё равно
-// открывается — авторизация симулируется локально, чтобы можно было посмотреть UI.
+const Logo = () => <div className="logo"><b>Synaq</b><span>сынақ</span></div>;
+
 export default function App() {
-  const [lang, setLang] = useState('kk');
-  const [ready, setReady] = useState(!firebaseReady);
-  const [session, setSession] = useState(null); // { user, role, school }
+  const [user, setUser] = useState(undefined);
+  const [tab, setTab] = useState('home');
+  const [school, setSchool] = useState('РФМШ');
+  useEffect(() => watchAuth(setUser), []);
+  useEffect(() => { if (user && isKid(user)) getMySchool().then(setSchool); }, [user]);
 
-  useEffect(() => {
-    if (!firebaseReady) return;
-    const unsub = watchAuth(async (user) => {
-      if (!user) { setSession(null); setReady(true); return; }
-      const role = roleOf(user);
-      let school = 'rfmsh';
-      if (role === 'parent') {
-        const fam = await getFamily(user.uid);
-        school = (fam && fam.school) || 'rfmsh';
-      }
-      setSession({ user, role, school });
-      setReady(true);
-    });
-    return unsub;
-  }, []);
+  if (user === undefined) return <div className="app"><p className="muted" style={{ padding: 40 }}>Жүктелуде…</p></div>;
+  if (!user) return <Auth />;
+  if (!isKid(user)) return <Parent />;
 
-  const onSignedIn = (s) => setSession(s);
-  const onSignOut = async () => {
-    if (firebaseReady) await signOut();
-    setSession(null);
-  };
-
-  if (!ready) return <div className="auth-wrap"><span className="mono" style={{ color: 'var(--muted)' }}>Жүктелуде…</span></div>;
-
-  if (!session) return <Auth lang={lang} setLang={setLang} onSignedIn={onSignedIn} demo={!firebaseReady} />;
-
-  return session.role === 'parent'
-    ? <ParentApp session={session} onSignOut={onSignOut} demo={!firebaseReady} />
-    : <ChildApp session={session} onSignOut={onSignOut} demo={!firebaseReady} />;
+  return (
+    <div className="app">
+      <header>
+        <Logo />
+        <nav>
+          <button className={tab === 'home' ? 'on' : ''} onClick={() => setTab('home')}>Басты</button>
+          <button className={tab === 'training' ? 'on' : ''} onClick={() => setTab('training')}>Дайындық</button>
+          <button className={tab === 'mock' ? 'on' : ''} onClick={() => setTab('mock')}>Мок-тест</button>
+          <button className="logout" onClick={logout}>Шығу</button>
+        </nav>
+      </header>
+      {tab === 'home' && <Home go={setTab} />}
+      {tab === 'training' && <Training school={school} />}
+      {tab === 'mock' && <Mock school={school} />}
+    </div>
+  );
 }
