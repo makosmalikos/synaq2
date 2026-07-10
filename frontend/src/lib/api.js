@@ -1,22 +1,17 @@
-// Клиент к бэкенду Synaq (Express). В деве проксируется Vite на localhost:4000.
-const base = '/api';
-async function j(url, opts) {
-  const r = await fetch(base + url, {
-    headers: { 'content-type': 'application/json' },
-    ...opts,
-  });
-  if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || r.statusText);
-  return r.json();
-}
+// Клиент к API. Один домен: фронт и бэкенд вместе, поэтому базовый путь пустой (/api/...).
+const j = (r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); };
 
 export const api = {
-  topics: () => j('/training/topics'),
-  topicQuestions: (id, limit = 8) => j(`/training/topics/${id}/questions?mix=1&limit=${limit}`),
-  mixed: (limit = 8) => j(`/training/mixed?limit=${limit}`),
-  checkTraining: (id, answer) =>
-    j('/training/check', { method: 'POST', body: JSON.stringify({ id, answer }) }),
-  mockList: () => j('/mock'),
-  mock: (id) => j(`/mock/${id}`),
-  submitMock: (id, answers) =>
-    j(`/mock/${id}/submit`, { method: 'POST', body: JSON.stringify({ answers }) }),
+  topics:        (school)         => fetch(`/api/training/topics?school=${school||''}`).then(j),
+  topicQuestions:(id, mix = true, school) => fetch(`/api/training/topics/${id}/questions?mix=${mix ? 1 : ''}&school=${school||''}`).then(j),
+  mixed:         (limit = 15)     => fetch(`/api/training/mixed?limit=${limit}`).then(j),
+  generate:      (n = 5, topic)   => fetch(`/api/training/generate?n=${n}${topic ? '&topic=' + topic : ''}`).then(j),
+  mockList:      ()               => fetch('/api/mock').then(j),
+  mockWeekly:    (school)         => fetch(`/api/mock/weekly?school=${school||''}`).then(j),
+  mockGet:       (id)             => fetch(`/api/mock/${id}`).then(j),
+  mockSubmit:    (id, answers)    => fetch(`/api/mock/${id}/submit`, {
+                                       method: 'POST',
+                                       headers: { 'Content-Type': 'application/json' },
+                                       body: JSON.stringify({ answers }),
+                                     }).then(j),
 };
