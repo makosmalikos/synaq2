@@ -38,10 +38,15 @@ export const loginParent = (email, password) => signInWithEmailAndPassword(auth,
 
 // Вход через Google (родитель). Создаёт семью при первом входе.
 export async function loginGoogle() {
-  const cred = await signInWithPopup(auth, new GoogleAuthProvider());
-  const ref = doc(db, 'families', cred.user.uid);
-  const snap = await getDoc(ref);
-  if (!snap.exists()) await setDoc(ref, { parentEmail: cred.user.email, school: 'РФМШ', createdAt: serverTimestamp() });
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: 'select_account' });
+  const cred = await signInWithPopup(auth, provider);
+  // семью создаём отдельно — даже если Firestore не настроен, вход не должен падать
+  try {
+    const ref = doc(db, 'families', cred.user.uid);
+    const snap = await getDoc(ref);
+    if (!snap.exists()) await setDoc(ref, { parentEmail: cred.user.email, school: 'РФМШ', createdAt: serverTimestamp() });
+  } catch (e) { /* Firestore міндетті емес — авторизация өтті */ }
   return cred.user;
 }
 
