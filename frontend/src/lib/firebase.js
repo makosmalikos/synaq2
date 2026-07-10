@@ -1,50 +1,101 @@
-// Инициализация Firebase. Значения берутся из .env (VITE_FIREBASE_*).
-// Если ключей нет ИЛИ они неверные — приложение НЕ падает, а работает в демо-режиме.
-import { initializeApp, getApps } from 'firebase/app';
-import { getAuth, GoogleAuthProvider } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+// Firebase: авторизация (родитель по почте, ребёнок по коду+PIN) и сохранение результатов.
+import { initializeApp, deleteApp } from 'firebase/app';
+import {
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
+  signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup,
+} from 'firebase/auth';
+import {
+  getFirestore, doc, setDoc, getDoc, getDocs, addDoc, collection, serverTimestamp,
+} from 'firebase/firestore';
 
-const cfg = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+// Конфиг проекта synaq-88779 (тот же, что у waitlist-лендинга).
+const firebaseConfig = {
+  apiKey: 'AIzaSyATdVvMsNkN0F66XipkShtFe0wKizu2r6o',
+  authDomain: 'synaq-88779.firebaseapp.com',
+  projectId: 'synaq-88779',
+  storageBucket: 'synaq-88779.firebasestorage.app',
+  messagingSenderId: '592299512879',
+  appId: '1:592299512879:web:b87d2fe2d2e67f6f99e2da',
 };
 
-export const CHILD_DOMAIN = 'synaq.kids';
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
 
-let _app = null, _auth = null, _db = null, _provider = null, _ready = false;
+const KID_DOMAIN = '@synaq.kids';          // технический домен для детских «почт»
+const kidEmail = (code) => code.trim().toLowerCase() + KID_DOMAIN;
+export const isKid = (user) => !!user && (user.email || '').endsWith(KID_DOMAIN);
 
-// Пытаемся инициализировать только если ключи выглядят реальными.
-if (cfg.apiKey && cfg.projectId) {
+// ── Родитель: регистрация и вход ──
+export async function registerParent(email, password, { school }) {
+  const cred = await createUserWithEmailAndPassword(auth, email, password);
+  await setDoc(doc(db, 'families', cred.user.uid), {
+    parentEmail: email, school: school || null, createdAt: serverTimestamp(),
+  });
+  return cred.user;
+}
+export const loginParent = (email, password) => signInWithEmailAndPassword(auth, email, password);
+
+// Вход через Google (родитель). Создаёт семью при первом входе.
+export async function loginGoogle() {
+  const cred = await signInWithPopup(auth, new GoogleAuthProvider());
+  const ref = doc(db, 'families', cred.user.uid);
+  const snap = await getDoc(ref);
+  if (!snap.exists()) await setDoc(ref, { parentEmail: cred.user.email, school: 'РФМШ', createdAt: serverTimestamp() });
+  return cred.user;
+}
+
+// ── Родитель создаёт ребёнка (код + PIN), не выходя из своего аккаунта ──
+export async function createChild(parentUid, { name, klass, code, pin }) {
+  const fam = await getDoc(doc(db, 'families', parentUid));
+  const school = fam.exists() ? (fam.data().school || 'РФМШ') : 'РФМШ';
+  // вторичный экземпляр Firebase, чтобы не менять текущую сессию родителя
+  const secondary = initializeApp(firebaseConfig, 'sec-' + Date.now());
+  const secAuth = getAuth(secondary);
   try {
-    _app = getApps().length ? getApps()[0] : initializeApp(cfg);
-    _auth = getAuth(_app);
-    _db = getFirestore(_app);
-    _provider = new GoogleAuthProvider();
-    _ready = true;
-  } catch (e) {
-    // Неверные ключи и т.п. — не роняем сайт, уходим в демо-режим.
-    console.warn('[Synaq] Firebase не инициализирован, работаем в демо-режиме:', e && e.message);
-    _app = _auth = _db = _provider = null;
-    _ready = false;
+    const cred = await createUserWithEmailAndPassword(secAuth, kidEmail(code), pin);
+    const childUid = cred.user.uid;
+    await setDoc(doc(db, 'families', parentUid, 'children', childUid), {
+      name, klass, code: code.trim().toLowerCase(), createdAt: serverTimestamp(),
+    });
+    await setDoc(doc(db, 'childIndex', childUid), { parentUid, name, klass, school });
+    return { childUid, code };
+  } finally {
+    await signOut(secAuth).catch(() => {});
+    await deleteApp(secondary).catch(() => {});
   }
 }
 
-export const app = _app;
-export const auth = _auth;
-export const db = _db;
-export const googleProvider = _provider;
-export const firebaseReady = _ready;
+// ── Ребёнок: вход по коду + PIN ──
+export const loginChild = (code, pin) => signInWithEmailAndPassword(auth, kidEmail(code), pin);
 
-export function secondaryAuth() {
-  if (!_ready) return null;
-  try {
-    const name = 'synaq-secondary';
-    const existing = getApps().find((a) => a.name === name);
-    const secApp = existing || initializeApp(cfg, name);
-    return getAuth(secApp);
-  } catch { return null; }
+// Школа текущего ребёнка (для показа задач нужной школы)
+export async function getMySchool() {
+  const u = auth.currentUser;
+  if (!u) return 'РФМШ';
+  try { const s = await getDoc(doc(db, 'childIndex', u.uid)); return (s.exists() && s.data().school) || 'РФМШ'; }
+  catch { return 'РФМШ'; }
+}
+
+export const logout = () => signOut(auth);
+export const watchAuth = (cb) => onAuthStateChanged(auth, cb);
+
+// ── Сохранение результатов ребёнка ──
+export const saveAttempt = (uid, a) =>
+  addDoc(collection(db, 'results', uid, 'attempts'), { ...a, at: serverTimestamp() });
+export const saveMock = (uid, r) =>
+  addDoc(collection(db, 'results', uid, 'mocks'), { ...r, at: serverTimestamp() });
+
+// ── Чтение (для прогресса / дашборда родителя) ──
+export async function getChildren(parentUid) {
+  const snap = await getDocs(collection(db, 'families', parentUid, 'children'));
+  return snap.docs.map((d) => ({ uid: d.id, ...d.data() }));
+}
+export async function getMocks(childUid) {
+  const snap = await getDocs(collection(db, 'results', childUid, 'mocks'));
+  return snap.docs.map((d) => d.data());
+}
+export async function getAttempts(childUid) {
+  const snap = await getDocs(collection(db, 'results', childUid, 'attempts'));
+  return snap.docs.map((d) => d.data());
 }
