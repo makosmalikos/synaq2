@@ -1,124 +1,161 @@
-/* ===== Дизайн-система Synaq (как в дизайн-бандле) ===== */
-:root{
-  --bg:#FBFAF6; --ink:#17140F; --accent:#B0342B; --muted:#6B655B;
-  --line:rgba(23,20,15,.16); --line-soft:rgba(23,20,15,.10); --surface:#fff;
-  --green:#4C7A4E; --sand:#9A9384;
+import React, { useState } from 'react';
+import { registerParent, loginParent, loginChild, loginGoogle } from './firebase.js';
+
+const SCHOOLS = [
+  { code: 'РФМШ', name: 'РФМШ', full: 'Республикалық физика-математика мектебі', grades: '5–7 сын.', ratio: '10+/орын', ready: true },
+  { code: 'НИШ', name: 'НИШ', full: 'Назарбаев Зияткерлік мектептері', grades: '7 сын.', ratio: '8/орын', ready: false },
+  { code: 'БИЛ', name: 'БИЛ', full: 'Білім-Инновация лицейлері', grades: '6–7 сын.', ratio: '6/орын', ready: false },
+];
+
+// Экраны входа, оформленные как в дизайне: по центру, выбор школы карточками.
+export default function Auth() {
+  const [stage, setStage] = useState('start'); // start | register | school | loginRole | loginParent | loginChild
+  const [err, setErr] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('');
+  const [school, setSchool] = useState('РФМШ');
+  const [code, setCode] = useState('');
+  const [pin, setPin] = useState('');
+
+  const run = (fn) => async () => { setErr(''); setBusy(true); try { await fn(); } catch (e) { setErr(tr(e)); } setBusy(false); };
+
+  return (
+    <div style={S.page}>
+      <div style={S.wrap}>
+
+        {stage === 'start' && (
+          <div style={{ textAlign: 'center', animation: 'rise .4s ease both' }}>
+            <Logo />
+            <h1 style={S.h1big}>Мектеп сынағына нақты дайындық</h1>
+            <p style={S.sub}>Бір отбасы аккаунты — бала дайындалады, ата-ана бақылайды.</p>
+            <button style={S.dark} onClick={() => setStage('register')}>Аккаунт құру</button>
+            <button style={S.outline} onClick={() => setStage('loginRole')}>Аккаунтым бар</button>
+            <div style={{ display:'flex', alignItems:'center', gap:10, margin:'16px 0 12px' }}>
+              <div style={{ flex:1, height:1, background:'rgba(23,20,15,.14)' }}></div>
+              <span style={{ font:"500 11px 'IBM Plex Mono',monospace", color:'#9A9384' }}>немесе</span>
+              <div style={{ flex:1, height:1, background:'rgba(23,20,15,.14)' }}></div>
+            </div>
+            <button style={S.google} disabled={busy} onClick={run(loginGoogle)}>
+              <span style={{ font:"700 15px 'Golos Text'", color:'#4285F4' }}>G</span> Google арқылы кіру
+            </button>
+            <Err v={err} />
+          </div>
+        )}
+
+        {stage === 'register' && (
+          <div>
+            <div style={{ textAlign: 'center', marginBottom: 22 }}>
+              <p style={S.kicker}>Ата-ана аккаунты · 1 / 2</p>
+              <h1 style={S.h1}>Аккаунт құру</h1>
+            </div>
+            <input style={S.input} placeholder="Электрондық пошта" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input style={S.input} type="password" placeholder="Құпиясөз (кемінде 6 таңба)" value={pass} onChange={(e) => setPass(e.target.value)} />
+            <Err v={err} />
+            <button style={{ ...S.dark, marginTop: 6 }} disabled={!email || pass.length < 6} onClick={() => { setErr(''); setStage('school'); }}>Жалғастыру →</button>
+            <button style={S.back} onClick={() => setStage('start')}>← Артқа</button>
+          </div>
+        )}
+
+        {stage === 'school' && (
+          <div style={{ animation: 'rise .4s ease both' }}>
+            <div style={{ textAlign: 'center', marginBottom: 22 }}>
+              <p style={S.kicker}>Мектеп таңдау · 2 / 2</p>
+              <h1 style={S.h1}>Балаңызды қай мектепке дайындаймыз?</h1>
+              <p style={{ ...S.sub, marginBottom: 0, fontSize: 13.5 }}>Әр мектептің емтихан форматы бөлек.</p>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 1, background: 'rgba(23,20,15,.16)', border: '1px solid rgba(23,20,15,.16)' }}>
+              {SCHOOLS.map((s) => (
+                <div key={s.code} onClick={() => setSchool(s.code)}
+                  style={{ background: '#fff', padding: '16px 18px', cursor: 'pointer', borderLeft: school === s.code ? '3px solid #B0342B' : '3px solid transparent' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+                    <span style={{ font: "700 18px 'Lora',serif", letterSpacing: '-.01em' }}>{s.name}</span>
+                    <span style={s.ready ? S.badgeOn : S.badgeOff}>{s.ready ? 'Дайын' : 'Жақында'}</span>
+                  </div>
+                  <div style={{ fontSize: 12.5, lineHeight: 1.4, color: '#6B655B', marginBottom: 12 }}>{s.full}</div>
+                  <div style={{ borderTop: '1px solid rgba(23,20,15,.1)', paddingTop: 10, display: 'flex', justifyContent: 'space-between', font: "500 12px 'IBM Plex Mono',monospace", color: '#6B655B' }}>
+                    <span>{s.grades}</span><span>{s.ratio}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <Err v={err} />
+            <button style={{ ...S.dark, marginTop: 16 }} disabled={busy} onClick={run(() => registerParent(email, pass, { school }))}>Аккаунт құру →</button>
+            <button style={S.back} onClick={() => setStage('register')}>← Артқа</button>
+          </div>
+        )}
+
+        {stage === 'loginRole' && (
+          <div style={{ textAlign: 'center', animation: 'rise .4s ease both' }}>
+            <Logo />
+            <h1 style={S.h1}>Кім кіреді?</h1>
+            <button style={{ ...S.dark, marginTop: 20 }} onClick={() => setStage('loginChild')}>Бала</button>
+            <button style={S.outline} onClick={() => setStage('loginParent')}>Ата-ана</button>
+            <button style={S.back} onClick={() => setStage('start')}>← Артқа</button>
+          </div>
+        )}
+
+        {stage === 'loginParent' && (
+          <div>
+            <div style={{ textAlign: 'center', marginBottom: 22 }}><h1 style={S.h1}>Ата-ана кірісі</h1></div>
+            <input style={S.input} placeholder="Электрондық пошта" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input style={S.input} type="password" placeholder="Құпиясөз" value={pass} onChange={(e) => setPass(e.target.value)} />
+            <Err v={err} />
+            <button style={{ ...S.dark, marginTop: 6 }} disabled={busy} onClick={run(() => loginParent(email, pass))}>Кіру</button>
+            <button style={S.back} onClick={() => setStage('loginRole')}>← Артқа</button>
+          </div>
+        )}
+
+        {stage === 'loginChild' && (
+          <div>
+            <div style={{ textAlign: 'center', marginBottom: 22 }}><h1 style={S.h1}>Бала кірісі</h1></div>
+            <input style={S.input} placeholder="Код" value={code} onChange={(e) => setCode(e.target.value)} />
+            <input style={S.input} type="password" placeholder="PIN" value={pin} onChange={(e) => setPin(e.target.value)} />
+            <Err v={err} />
+            <button style={{ ...S.dark, marginTop: 6 }} disabled={busy} onClick={run(() => loginChild(code, pin))}>Кіру</button>
+            <button style={S.back} onClick={() => setStage('loginRole')}>← Артқа</button>
+          </div>
+        )}
+
+      </div>
+    </div>
+  );
 }
-*{box-sizing:border-box}
-::selection{background:var(--accent);color:var(--bg)}
-@keyframes rise{0%{transform:translateY(7px);opacity:0}100%{transform:translateY(0);opacity:1}}
-body{
-  margin:0;background:var(--bg);color:var(--ink);
-  font-family:'Golos Text',system-ui,sans-serif;-webkit-font-smoothing:antialiased;
-  background-image:linear-gradient(rgba(23,20,15,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(23,20,15,.045) 1px,transparent 1px);
-  background-size:28px 28px;
-}
-.app{max-width:760px;margin:0 auto;min-height:100vh;padding:0 22px 60px}
 
-/* Шапка */
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 0 16px;border-bottom:1px solid var(--line)}
-.logo{display:inline-flex;align-items:baseline;gap:9px}
-.logo b{font:700 24px 'Lora',serif;letter-spacing:-.01em}
-.logo span{font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);border-left:1px solid var(--line);padding-left:9px}
-nav{display:flex;align-items:center;gap:6px}
-nav button{background:none;border:none;color:var(--muted);font:600 13.5px 'Golos Text';cursor:pointer;padding:7px 10px}
-nav button.on{color:var(--ink);border-bottom:2px solid var(--accent)}
-.logout{background:none;border:none;color:var(--sand);font:500 12px 'IBM Plex Mono',monospace;cursor:pointer;margin-left:6px}
-main{padding-top:22px;animation:rise .35s ease both}
+const Logo = () => (
+  <div style={{ display: 'inline-flex', alignItems: 'baseline', gap: 10, marginBottom: 40 }}>
+    <span style={{ font: "700 30px 'Lora',serif", letterSpacing: '-.01em' }}>Synaq</span>
+    <span style={{ font: "500 11px 'IBM Plex Mono',monospace", letterSpacing: '.16em', textTransform: 'uppercase', color: '#B0342B', borderLeft: '1px solid rgba(23,20,15,.2)', paddingLeft: 11 }}>сынақ</span>
+  </div>
+);
+const Err = ({ v }) => (v ? <p style={{ color: '#B0342B', fontSize: 13, margin: '10px 0 0', textAlign: 'center' }}>{v}</p> : null);
 
-/* Заголовки, метки */
-h1{font:600 26px 'Lora',serif;letter-spacing:-.02em;margin:0 0 4px}
-h2{font:600 20px 'Lora',serif;letter-spacing:-.01em;margin:0 0 14px}
-.kicker{font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);margin:0 0 12px}
-.muted{color:var(--muted);font-size:14px}
+const S = {
+  page: { minHeight: '100vh', background: '#FBFAF6', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', fontFamily: "'Golos Text',system-ui,sans-serif", color: '#17140F' },
+  wrap: { width: '100%', maxWidth: 392, padding: '9vh 24px 0' },
+  h1big: { font: "600 28px/1.22 'Lora',serif", letterSpacing: '-.02em', margin: '0 auto 12px', maxWidth: 300 },
+  h1: { font: "600 25px/1.2 'Lora',serif", letterSpacing: '-.02em', margin: '0 auto 8px', maxWidth: 300 },
+  sub: { fontSize: 14.5, lineHeight: 1.55, color: '#6B655B', margin: '0 0 40px' },
+  kicker: { font: "500 11px 'IBM Plex Mono',monospace", letterSpacing: '.16em', textTransform: 'uppercase', color: '#B0342B', margin: '0 0 14px' },
+  dark: { width: '100%', padding: 15, background: '#17140F', color: '#FBFAF6', border: 'none', borderRadius: 3, font: "600 15px 'Golos Text'", cursor: 'pointer', marginBottom: 10 },
+  outline: { width: '100%', padding: 15, background: 'transparent', color: '#17140F', border: '1px solid rgba(23,20,15,.24)', borderRadius: 3, font: "600 15px 'Golos Text'", cursor: 'pointer' },
+  input: { width: '100%', padding: '13px 14px', border: '1px solid rgba(23,20,15,.22)', borderRadius: 3, font: "500 15px 'Golos Text'", color: '#17140F', outline: 'none', background: '#fff', marginBottom: 10 },
+  back: { width: '100%', marginTop: 6, padding: 9, background: 'transparent', color: '#6B655B', border: 'none', font: "500 13.5px 'Golos Text'", cursor: 'pointer' },
+  google: { width:'100%', padding:13, background:'#fff', color:'#17140F', border:'1px solid rgba(23,20,15,.24)', borderRadius:3, font:"600 15px 'Golos Text'", cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', gap:9 },
+  badgeOn: { font: "600 10px 'IBM Plex Mono',monospace", letterSpacing: '.08em', textTransform: 'uppercase', color: '#4C7A4E', border: '1px solid #4C7A4E', padding: '2px 7px' },
+  badgeOff: { font: "600 10px 'IBM Plex Mono',monospace", letterSpacing: '.08em', textTransform: 'uppercase', color: '#9A9384', border: '1px solid rgba(23,20,15,.2)', padding: '2px 7px' },
+};
 
-/* Карточки */
-.card{background:var(--surface);border:1px solid var(--line);padding:22px}
-.card + .card{margin-top:14px}
-.hero-card{background:var(--surface);border:1px solid var(--ink);padding:28px}
-.hero-card h2{font-size:23px;margin:0 0 8px}
-.hero-card p{font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 20px;max-width:360px}
-
-/* Кнопки */
-.btn{padding:13px 24px;border:none;border-radius:3px;background:var(--ink);color:var(--bg);font:600 15px 'Golos Text';cursor:pointer}
-.btn.accent{background:var(--accent);color:#fff}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
-.btn:disabled{opacity:.4;cursor:default}
-.btn.full{width:100%}
-.link{background:none;border:none;color:var(--muted);font:500 13px 'Golos Text';cursor:pointer;padding:8px 0}
-
-/* Списки тем/вариантов */
-.list{border:1px solid var(--line);background:var(--surface)}
-.list .row-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 18px;border-bottom:1px solid var(--line-soft);cursor:pointer}
-.list .row-item:last-child{border-bottom:none}
-.list .row-item:hover{background:#faf7f0}
-.list .row-item b{font:600 15px 'Golos Text'}
-.list .row-item .rt{font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);text-align:right}
-
-/* Строка-статус */
-.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 16px}
-.tag{font:500 12px 'IBM Plex Mono',monospace;color:var(--muted)}
-.timer{font:600 13px 'IBM Plex Mono',monospace;color:var(--ink)}
-.pill{font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border:1px solid var(--line);color:var(--muted)}
-
-/* Задача */
-.stmt{font-size:17px;line-height:1.5;margin:6px 0 16px}
-.fig{display:block;max-width:340px;width:100%;border:1px solid var(--line);background:#fff;padding:8px;margin:0 0 16px}
-input{width:100%;padding:13px 14px;border:1px solid var(--line);background:#fff;font:500 15px 'Golos Text';color:var(--ink);outline:none;margin-bottom:12px}
-input:focus{border-color:var(--accent)}
-
-/* Обратная связь + разбор */
-.fb{padding:11px 15px;margin:4px 0 12px;font-size:14.5px;font-weight:600}
-.fb.ok{background:#EEF5EC;color:var(--green)}
-.fb.no{background:#FBEDEC;color:var(--accent)}
-.sol{background:#F3EFE7;padding:14px 16px;font-size:14px;line-height:1.6}
-.sol .lead{font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--sand);margin:0 0 4px}
-.tip{margin-top:13px;padding-top:12px;border-top:1px solid var(--line-soft);display:flex;gap:11px;align-items:flex-start}
-.tip .mark{flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font:700 12px 'Lora';display:flex;align-items:center;justify-content:center}
-
-/* Прогресс-полоса */
-.bar{height:6px;background:#EDE9E0;overflow:hidden;margin-top:8px}
-.bar>i{display:block;height:100%;background:var(--accent)}
-
-/* Результаты */
-.review{list-style:none;padding:0;margin:0}
-.review li{padding:11px 0;border-bottom:1px solid var(--line-soft);font-size:14px}
-.review li.ok{color:var(--green)} .review li.no{color:var(--accent)}
-.review em{color:var(--muted);font-style:normal;font-size:12.5px}
-
-/* ===== Раскладка с левым меню (как в дизайне) ===== */
-.shell { display:flex; min-height:100vh; align-items:stretch; }
-.sidebar { width:246px; flex:none; border-right:1px solid var(--line); padding:24px 20px; display:flex; flex-direction:column; background:rgba(255,255,255,.55); position:sticky; top:0; height:100vh; align-self:flex-start; }
-.sidebar .logo { margin-bottom:34px; }
-.nav-v { display:flex; flex-direction:column; gap:2px; flex:1; }
-.nav-v button { display:flex; align-items:center; gap:12px; background:none; border:none; padding:11px 10px; cursor:pointer; text-align:left; color:var(--muted); font:600 15px 'Golos Text'; border-left:2px solid transparent; width:100%; }
-.nav-v button > span:nth-child(2) { flex:1; }
-.nav-v button:hover { color:var(--ink); }
-.nav-v button .num { font:500 11px 'IBM Plex Mono',monospace; color:#B7B0A2; width:20px; flex:none; text-align:left; }
-.nav-v button.on { color:var(--ink); border-left-color:var(--accent); }
-.nav-v button.on .num { color:var(--accent); }
-.nav-v .badge { margin-left:auto; background:var(--accent); color:#fff; font:600 10px 'IBM Plex Mono',monospace; padding:2px 7px; }
-.userbox { border-top:1px solid var(--line); padding-top:16px; margin-top:12px; }
-.userbox .who { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
-.userbox .ava { width:42px; height:42px; flex:none; background:var(--ink); color:var(--bg); display:flex; align-items:center; justify-content:center; font:700 18px 'Lora',serif; }
-.content { flex:1; padding:36px 44px; max-width:840px; min-width:0; }
-.content main { padding-top:0; }
-.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:stretch; }
-.grid2 .card { border:1px solid var(--ink); display:flex; flex-direction:column; justify-content:flex-start; min-height:120px; }
-.card.click { cursor:pointer; transition:border-color .15s; }
-.card.click:hover { border-color:var(--accent); }
-
-@media (max-width:760px){
-  .shell { flex-direction:column; }
-  .sidebar { width:auto; border-right:none; border-bottom:1px solid var(--line); padding:16px; }
-  .sidebar .logo { margin-bottom:14px; }
-  .nav-v { flex-direction:row; overflow-x:auto; gap:2px; }
-  .nav-v button { white-space:nowrap; border-left:none; border-bottom:2px solid transparent; padding:8px 10px; }
-  .nav-v button .num { display:none; }
-  .nav-v button.on { border-left:none; border-bottom-color:var(--accent); }
-  .userbox { display:flex; align-items:center; justify-content:space-between; border-top:none; padding-top:12px; margin-top:10px; }
-  .userbox .who { margin-bottom:0; }
-  .userbox .btn { width:auto; padding:9px 16px; }
-  .content { padding:22px 18px; }
-  .grid2 { grid-template-columns:1fr; }
+function tr(e) {
+  const c = (e && e.code) || '';
+  if (c.includes('email-already-in-use')) return 'Бұл пошта тіркелген';
+  if (c.includes('invalid-credential') || c.includes('wrong-password') || c.includes('user-not-found')) return 'Қате код/пошта немесе құпиясөз';
+  if (c.includes('weak-password')) return 'Құпиясөз тым қысқа';
+  if (c.includes('invalid-email')) return 'Пошта қате';
+  if (c.includes('operation-not-allowed')) return 'Google-вход Firebase-те қосылмаған (консольде қосыңыз)';
+  if (c.includes('unauthorized-domain')) return 'Домен рұқсат етілмеген (Firebase → Authorized domains)';
+  if (c.includes('popup-blocked')) return 'Браузер терезені бөгеді — рұқсат етіңіз';
+  if (c.includes('popup-closed')) return 'Терезе жабылды, қайта көріңіз';
+  if (c.includes('network')) return 'Интернет байланысын тексеріңіз';
+  return 'Қате шықты. Қайта көріңіз';
 }
