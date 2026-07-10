@@ -1,9 +1,12 @@
 // Данные вшиты в приложение (data.js) — бэкенд не требуется.
-import { topics, questions, variants } from './data.js';
+import { topics, questions, variants, nishMath } from './data.js';
 
 const rfmsh = questions.filter(q => q.school === 'РФМШ');
 const bilQ = questions.filter(q => q.school === 'БИЛ');
 const poolFor = (school) => (school === 'БИЛ' ? bilQ : rfmsh);
+const logicIds = new Set(topics.filter(t => t.block === 'logic').map(t => t.id));
+const bilMath = bilQ.filter(q => !logicIds.has(q.topic));
+const bilLogic = bilQ.filter(q => logicIds.has(q.topic));
 const shuffle = (a) => a.map(x => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map(x => x[1]);
 
 const norm = (v) => (v ?? '').toString().trim().toLowerCase()
@@ -48,5 +51,30 @@ export const api = {
       return { num: q.num, topic: q.topic, your: answers[q.num] ?? null, answer: q.answer, correct: ok, note: q.note || null };
     });
     return P({ score: correct, gradable, total: v.questions.length, review });
+  },
+
+  // Предметы для НИШ/БИЛ (вместо тем). null → школа на темах (РФМШ).
+  subjects: (school) => {
+    if (school === 'НИШ') return P([
+      { id: 'math',   name: 'Математика',   count: nishMath.filter(q=>q.subject==='math').length },
+      { id: 'kolzar', name: 'Колзар',        count: nishMath.filter(q=>q.subject==='kolzar').length },
+      { id: 'eng',    name: 'Ағылшын тілі',  count: nishMath.filter(q=>q.subject==='eng').length },
+      { id: 'rus',    name: 'Орыс тілі',     count: nishMath.filter(q=>q.subject==='rus').length },
+      { id: 'kaz',    name: 'Қазақ тілі',    count: 0 },
+    ]);
+    if (school === 'БИЛ') return P([
+      { id: 'math',  name: 'Математика',  count: nishMath.filter(q=>q.subject==='math').length + bilMath.length },
+      { id: 'logic', name: 'Логика',      count: bilLogic.length },
+      { id: 'kaz',   name: 'Қазақ тілі',  count: 0 },
+    ]);
+    return P(null);
+  },
+  subjectQuestions: (subject, school) => {
+    const math = nishMath.filter(q => q.subject === 'math');
+    if (subject === 'math')   return P(shuffle(school === 'БИЛ' ? [...math, ...bilMath] : math));
+    if (subject === 'logic')  return P(shuffle(bilLogic));
+    if (subject === 'kolzar') return P(shuffle(nishMath.filter(q => q.subject === 'kolzar')));
+    if (subject === 'rus' || subject === 'eng') return P(shuffle(nishMath.filter(q => q.subject === subject)));
+    return P([]); // қазақ тілі — толтырылуда
   },
 };
