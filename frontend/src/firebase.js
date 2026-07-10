@@ -40,7 +40,9 @@ export const loginParent = (email, password) => signInWithEmailAndPassword(auth,
 export async function loginGoogle() {
   const provider = new GoogleAuthProvider();
   provider.setCustomParameters({ prompt: 'select_account' });
-  const cred = await signInWithPopup(auth, provider);
+  let cred;
+  try { cred = await signInWithPopup(auth, provider); }
+  catch (e) { console.error('Google login error:', e.code, e.message); throw e; }
   // семью создаём отдельно — даже если Firestore не настроен, вход не должен падать
   try {
     const ref = doc(db, 'families', cred.user.uid);
