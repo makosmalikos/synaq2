@@ -1,33 +1,32 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { api } from '../api.js';
-import { auth, saveAttempt, getAttempts } from '../firebase.js';
+import { auth, saveAttempt, getAttempts, setFlag, getFlags } from '../firebase.js';
 
+const LT = ['A', 'B', 'C', 'D', 'E'];
 const norm = (v) => (v ?? '').toString().trim().toLowerCase()
   .replace(/\s+/g, '').replace(',', '.').replace(/%$/, '')
   .replace(/(км|мм|см|м|мин|кг|г|л|тг|га|°)$/u, '');
 
 export default function Training({ school }) {
   const [topics, setTopics] = useState([]);
-  const [stat, setStat] = useState({}); // topicId -> {solved, count}
+  const [stat, setStat] = useState({});
   const [topic, setTopic] = useState(null);
   const [items, setItems] = useState([]);
   const [i, setI] = useState(0);
   const [answer, setAnswer] = useState('');
   const [checked, setChecked] = useState(false);
+  const [flagged, setFlagged] = useState(false);
   const [secs, setSecs] = useState(0);
   const timer = useRef(null);
 
   useEffect(() => {
     api.topics(school).then(setTopics).catch(() => {});
     if (auth.currentUser) getAttempts(auth.currentUser.uid).then((att) => {
-      const byTopic = {};
-      const seen = new Set();
-      att.forEach((a) => {
-        if (a.correct && !seen.has(a.qid)) { seen.add(a.qid); byTopic[a.topic] = (byTopic[a.topic] || 0) + 1; }
-      });
+      const byTopic = {}, seen = new Set();
+      att.forEach((a) => { if (a.correct && !seen.has(a.qid)) { seen.add(a.qid); byTopic[a.topic] = (byTopic[a.topic] || 0) + 1; } });
       setStat(byTopic);
     }).catch(() => {});
-  }, []);
+  }, [school]);
 
   useEffect(() => {
     if (!items.length || checked) return;
@@ -37,18 +36,27 @@ export default function Training({ school }) {
 
   async function openTopic(t) {
     const qs = await api.topicQuestions(t.id, true, school);
-    setTopic(t); setItems(qs); setI(0); reset();
+    const flags = auth.currentUser ? await getFlags(auth.currentUser.uid).catch(() => []) : [];
+    qs._flags = new Set(flags);
+    setTopic(t); setItems(qs); setI(0); reset(qs, 0);
   }
-  const reset = () => { setAnswer(''); setChecked(false); setSecs(0); };
-  const next = () => { if (i + 1 < items.length) { setI(i + 1); reset(); } else { setTopic(null); setItems([]); } };
+  const reset = (list = items, idx = i) => {
+    setAnswer(''); setChecked(false); setSecs(0);
+    setFlagged(list._flags ? list._flags.has(list[idx]?.id) : false);
+  };
+  const next = () => { if (i + 1 < items.length) { const n = i + 1; setI(n); reset(items, n); } else { setTopic(null); setItems([]); } };
   const fmt = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
-  function check() {
+
+  function check(good) {
     setChecked(true);
-    const good = norm(answer) === norm(q.answer);
     if (auth.currentUser) saveAttempt(auth.currentUser.uid, { qid: q.id, topic: q.topic, correct: good, secs }).catch(() => {});
   }
+  function toggleFlag() {
+    const on = !flagged; setFlagged(on);
+    if (auth.currentUser) setFlag(auth.currentUser.uid, q.id, on).catch(() => {});
+  }
 
-  // ── список тем, сгруппированный по блокам ──
+  // ── список тем ──
   if (!topic) {
     const math = topics.filter((t) => t.block === 'math');
     const logic = topics.filter((t) => t.block === 'logic');
@@ -62,8 +70,7 @@ export default function Training({ school }) {
         </div>
         <div className="list">
           {arr.map((t, k) => {
-            const solved = stat[t.id] || 0;
-            const pct = Math.round(solved / t.count * 100);
+            const solved = stat[t.id] || 0, pct = Math.round(solved / t.count * 100);
             return (
               <div className="row-item" key={t.id} onClick={() => openTopic(t)}>
                 <span style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#B7B0A2', width: 26 }}>{String(k + 1).padStart(2, '0')}</span>
@@ -71,9 +78,7 @@ export default function Training({ school }) {
                   <b>{t.name}</b>
                   <div style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 3 }}>{t.count} сұрақ</div>
                 </div>
-                <div style={{ width: 120 }}>
-                  <div className="bar"><i style={{ width: pct + '%' }} /></div>
-                </div>
+                <div style={{ width: 120 }}><div className="bar"><i style={{ width: pct + '%' }} /></div></div>
                 <span style={{ font: "600 13px 'IBM Plex Mono',monospace", width: 46, textAlign: 'right', color: pct >= 60 ? '#4C7A4E' : '#6B655B' }}>{pct}%</span>
               </div>
             );
@@ -92,27 +97,58 @@ export default function Training({ school }) {
     );
   }
 
+  // ── задача (экзаменационный вид) ──
   const q = items[i];
-  const ok = checked && norm(answer) === norm(q.answer);
+  const ok = checked && (q.options ? answer === q.answer : norm(answer) === norm(q.answer));
   return (
     <main>
-      <div className="row">
-        <button className="link" onClick={() => { setTopic(null); setItems([]); }}>← Артқа</button>
-        <span className="tag">{topic.name} · {i + 1}/{items.length}</span>
-        <span className="timer">⏱ {fmt(secs)}</span>
+      <div className="exam-top">
+        <span className="ttl">{topic.name}</span>
+        <span className="clock">{fmt(secs)}</span>
       </div>
+      <div className="qhead">
+        <span className="qnum-chip">{i + 1}/{items.length}</span>
+        <button className={'flagbtn' + (flagged ? ' on' : '')} onClick={toggleFlag}><span className="fl">⚑</span> Кейін қайталау</button>
+      </div>
+
       <p className="stmt">{q.statement}</p>
       {q.image && <img className="fig" src={q.image} alt="сурет" />}
-      <input value={answer} disabled={checked} onChange={(e) => setAnswer(e.target.value)} placeholder="Жауабың" />
-      {!checked
-        ? <button className="btn full" disabled={!answer.trim()} onClick={check}>Тексеру</button>
-        : (
-          <>
-            <div className={ok ? 'fb ok' : 'fb no'}>{ok ? 'Дұрыс!' : `Қате. Дұрыс жауап: ${q.answer}`}</div>
-            <div className="sol"><div className="lead">Толық талдау</div>{q.solution}</div>
-            <button className="btn full accent" style={{ marginTop: 14 }} onClick={next}>Келесі →</button>
-          </>
-        )}
+
+      {/* Варианты A–E или поле; после проверки — вместо ответа выходит разбор */}
+      {!checked ? (
+        q.options ? (
+          <div className="opts">
+            {q.options.map((o, k) => (
+              <button key={k} className={'opt' + (answer === o ? ' sel' : '')} onClick={() => setAnswer(o)}>
+                <span className="lt">{LT[k]}</span><span>{o}</span>
+              </button>
+            ))}
+          </div>
+        ) : (
+          <input value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="Жауабың" />
+        )
+      ) : (
+        <>
+          {q.options && (
+            <div className="opts" style={{ marginBottom: 14 }}>
+              {q.options.map((o, k) => (
+                <div key={k} className={'opt' + (o === q.answer ? ' ok' : (o === answer ? ' bad' : ''))}>
+                  <span className="lt">{LT[k]}</span><span>{o}</span>
+                </div>
+              ))}
+            </div>
+          )}
+          <div className={ok ? 'fb ok' : 'fb no'}>{ok ? 'Дұрыс!' : `Қате. Дұрыс жауап: ${q.answer}`}</div>
+          <div className="sol"><div className="lead">Толық талдау</div>{q.solution}</div>
+        </>
+      )}
+
+      <div className="navbar">
+        <button className="btn ghost" onClick={() => { setTopic(null); setItems([]); }}>← Тақырыптар</button>
+        {!checked
+          ? <button className="btn" disabled={!(answer && answer.toString().trim())} onClick={() => check(q.options ? answer === q.answer : norm(answer) === norm(q.answer))}>Тексеру</button>
+          : <button className="btn accent" onClick={next}>Келесі →</button>}
+      </div>
     </main>
   );
 }
