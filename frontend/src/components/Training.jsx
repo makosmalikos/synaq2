@@ -9,6 +9,8 @@ const norm = (v) => (v ?? '').toString().trim().toLowerCase()
 
 export default function Training({ school }) {
   const [topics, setTopics] = useState([]);
+  const [subjects, setSubjects] = useState(null);
+  const [empty, setEmpty] = useState(false);
   const [stat, setStat] = useState({});
   const [topic, setTopic] = useState(null);
   const [items, setItems] = useState([]);
@@ -20,7 +22,9 @@ export default function Training({ school }) {
   const timer = useRef(null);
 
   useEffect(() => {
-    api.topics(school).then(setTopics).catch(() => {});
+    api.subjects(school).then((subs) => {
+      if (subs) setSubjects(subs); else api.topics(school).then(setTopics).catch(() => {});
+    }).catch(() => api.topics(school).then(setTopics).catch(() => {}));
     if (auth.currentUser) getAttempts(auth.currentUser.uid).then((att) => {
       const byTopic = {}, seen = new Set();
       att.forEach((a) => { if (a.correct && !seen.has(a.qid)) { seen.add(a.qid); byTopic[a.topic] = (byTopic[a.topic] || 0) + 1; } });
@@ -34,6 +38,13 @@ export default function Training({ school }) {
     return () => clearInterval(timer.current);
   }, [items, i, checked]);
 
+  async function openSubject(sub) {
+    if (!sub.count) { setEmpty(true); setTopic(sub); return; }
+    const qs = await api.subjectQuestions(sub.id, school);
+    const flags = auth.currentUser ? await getFlags(auth.currentUser.uid).catch(() => []) : [];
+    qs._flags = new Set(flags);
+    setEmpty(false); setTopic(sub); setItems(qs); setI(0); reset(qs, 0);
+  }
   async function openTopic(t) {
     const qs = await api.topicQuestions(t.id, true, school);
     const flags = auth.currentUser ? await getFlags(auth.currentUser.uid).catch(() => []) : [];
@@ -56,7 +67,34 @@ export default function Training({ school }) {
     if (auth.currentUser) setFlag(auth.currentUser.uid, q.id, on).catch(() => {});
   }
 
-  // ── список тем ──
+  // ── пустой предмет (толтырылуда) ──
+  if (topic && empty) return (
+    <main>
+      <button className="link" onClick={() => { setTopic(null); setEmpty(false); }}>← Пәндер</button>
+      <h1 style={{ marginTop: 10 }}>{topic.name}</h1>
+      <div className="card" style={{ marginTop: 16, textAlign:'center', padding: 36 }}>
+        <p className="muted">Бұл пән бойынша есептер толтырылып жатыр. Жақында қосылады.</p>
+      </div>
+    </main>
+  );
+
+  // ── список предметов (НИШ/БИЛ) ──
+  if (!topic && subjects) return (
+    <main>
+      <p className="kicker">Пәндер</p>
+      <div className="list" style={{ marginTop: 8 }}>
+        {subjects.map((sub, k) => (
+          <div className="row-item" key={sub.id} onClick={() => openSubject(sub)}>
+            <span style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#B7B0A2', width: 26 }}>{String(k + 1).padStart(2, '0')}</span>
+            <b style={{ flex: 1 }}>{sub.name}</b>
+            <span className="rt">{sub.count ? sub.count + ' сұрақ' : 'жақында'}</span>
+          </div>
+        ))}
+      </div>
+    </main>
+  );
+
+  // ── список тем (РФМШ) ──
   if (!topic) {
     const math = topics.filter((t) => t.block === 'math');
     const logic = topics.filter((t) => t.block === 'logic');
