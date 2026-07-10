@@ -122,3 +122,33 @@ input:focus{border-color:var(--accent)}
   .content { padding:22px 18px; }
   .grid2 { grid-template-columns:1fr; }
 }
+
+/* ===== Экзаменационный вид (мок/тренировка) ===== */
+.exam-top { display:flex; align-items:center; justify-content:space-between; padding-bottom:14px; border-bottom:2px solid var(--ink); margin-bottom:0; }
+.exam-top .ttl { font:600 15px 'Lora',serif; }
+.exam-top .clock { font:700 20px 'IBM Plex Mono',monospace; letter-spacing:.02em; }
+.qhead { display:flex; align-items:center; gap:14px; padding:16px 0 12px; border-bottom:1px dashed var(--line); margin-bottom:18px; }
+.qnum-chip { background:var(--ink); color:var(--bg); font:700 14px 'IBM Plex Mono',monospace; padding:4px 11px; }
+.flagbtn { display:inline-flex; align-items:center; gap:7px; background:none; border:none; cursor:pointer; font:600 13px 'Golos Text'; color:var(--muted); }
+.flagbtn.on { color:var(--accent); }
+.flagbtn .fl { font-size:15px; }
+
+/* Варианты A–E */
+.opts { display:flex; flex-direction:column; gap:10px; }
+.opt { display:flex; align-items:center; gap:14px; width:100%; text-align:left; background:#fff; border:1.5px solid var(--line); padding:14px 16px; cursor:pointer; font:500 15px 'Golos Text'; color:var(--ink); }
+.opt:hover { border-color:var(--sand); }
+.opt.sel { border-color:var(--accent); }
+.opt.ok { border-color:var(--green); background:#F0F5EF; }
+.opt.bad { border-color:var(--accent); background:#F9EAE8; }
+.opt .lt { width:28px; height:28px; flex:none; border-radius:50%; border:1.5px solid var(--line); display:flex; align-items:center; justify-content:center; font:600 13px 'Golos Text'; }
+.opt.sel .lt { background:var(--accent); color:#fff; border-color:var(--accent); }
+.opt.ok .lt { background:var(--green); color:#fff; border-color:var(--green); }
+
+/* Нижний навигатор */
+.navbar { position:sticky; bottom:0; background:var(--bg); border-top:1px solid var(--line); padding:14px 0; margin-top:26px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.navpill { background:var(--ink); color:var(--bg); border:none; padding:11px 20px; font:600 14px 'Golos Text'; cursor:pointer; display:flex; align-items:center; gap:8px; }
+.qgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(42px,1fr)); gap:8px; padding:16px; border:1px solid var(--line); background:#fff; margin-bottom:12px; }
+.qcell { aspect-ratio:1; border:1px solid var(--line); background:#fff; cursor:pointer; font:600 13px 'IBM Plex Mono',monospace; display:flex; align-items:center; justify-content:center; position:relative; }
+.qcell.done { background:var(--ink); color:var(--bg); border-color:var(--ink); }
+.qcell.cur { border:2px solid var(--accent); }
+.qcell.flag::after { content:'⚑'; position:absolute; top:-6px; right:-4px; color:var(--accent); font-size:12px; }
