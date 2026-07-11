@@ -1,12 +1,7 @@
 // Данные вшиты в приложение (data.js) — бэкенд не требуется.
-import { topics, questions, variants, nishMath } from './data.js';
+import { topics, questions, variants, nishMath, bilQ } from './data.js';
 
 const rfmsh = questions.filter(q => q.school === 'РФМШ');
-const bilQ = questions.filter(q => q.school === 'БИЛ');
-const poolFor = (school) => (school === 'БИЛ' ? bilQ : rfmsh);
-const logicIds = new Set(topics.filter(t => t.block === 'logic').map(t => t.id));
-const bilMath = bilQ.filter(q => !logicIds.has(q.topic));
-const bilLogic = bilQ.filter(q => logicIds.has(q.topic));
 const shuffle = (a) => a.map(x => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map(x => x[1]);
 
 const norm = (v) => (v ?? '').toString().trim().toLowerCase()
@@ -16,22 +11,46 @@ const norm = (v) => (v ?? '').toString().trim().toLowerCase()
 const P = (x) => Promise.resolve(x);
 
 export const api = {
-  topics: (school) => P(
-    topics.map(t => ({ ...t, count: poolFor(school).filter(q => q.topic === t.id).length })).filter(t => t.count > 0)
+  // РФМШ — по темам
+  topics: () => P(
+    topics.map(t => ({ ...t, count: rfmsh.filter(q => q.topic === t.id).length })).filter(t => t.count > 0)
   ),
-  topicQuestions: (id, mix = true, school) => {
-    let items = poolFor(school).filter(q => q.topic === id);
+  topicQuestions: (id, mix = true) => {
+    let items = rfmsh.filter(q => q.topic === id);
     if (mix) items = shuffle(items);
     return P(items);
   },
-  mixed: (limit = 15, school) => P(shuffle(poolFor(school)).slice(0, limit)),
+  mixed: (limit = 15) => P(shuffle(rfmsh).slice(0, limit)),
 
-  mockWeekly: (school) => {
-    const list = variants.filter(v => (school === 'БИЛ' ? v.id.startsWith('bil') : v.id.startsWith('rfmsh')));
-    if (!list.length) return P(null);
+  // НИШ — по предметам
+  subjects: (school) => {
+    if (school === 'БИЛ') return P([
+      { id: 'math',   name: 'Математика',        count: bilQ.filter(q => q.subject === 'math').length },
+      { id: 'kolzar', name: 'Сандық сипаттама',  count: bilQ.filter(q => q.subject === 'kolzar').length },
+    ]);
+    if (school === 'НИШ') {
+      const n = (s) => nishMath.filter(q => q.subject === s).length;
+      return P([
+        { id: 'math',   name: 'Математика',   count: n('math') },
+        { id: 'kolzar', name: 'Колзар',        count: n('kolzar') },
+        { id: 'eng',    name: 'Ағылшын тілі',  count: n('eng') },
+        { id: 'rus',    name: 'Орыс тілі',     count: n('rus') },
+        { id: 'kaz',    name: 'Қазақ тілі',    count: n('kaz') },
+      ]);
+    }
+    return P(null); // РФМШ → темы
+  },
+  subjectQuestions: (subject, school) => {
+    if (school === 'БИЛ') return P(shuffle(bilQ.filter(q => q.subject === subject)));
+    if (school !== 'НИШ') return P([]);
+    return P(shuffle(nishMath.filter(q => q.subject === subject)));
+  },
+
+  mockWeekly: () => {
+    if (!variants.length) return P(null);
     const week = Math.floor(Date.now() / (7 * 24 * 3600 * 1000));
-    const idx = ((week % list.length) + list.length) % list.length;
-    const v = list[idx];
+    const idx = ((week % variants.length) + variants.length) % variants.length;
+    const v = variants[idx];
     return P({ id: v.id, week: idx + 1, title: `Осы аптаның сынағы · ${idx + 1}-нұсқа`, timeLimitMin: v.timeLimitMin, count: v.questions.length });
   },
   mockGet: (id) => {
@@ -51,30 +70,5 @@ export const api = {
       return { num: q.num, topic: q.topic, your: answers[q.num] ?? null, answer: q.answer, correct: ok, note: q.note || null };
     });
     return P({ score: correct, gradable, total: v.questions.length, review });
-  },
-
-  // Предметы для НИШ/БИЛ (вместо тем). null → школа на темах (РФМШ).
-  subjects: (school) => {
-    if (school === 'НИШ') return P([
-      { id: 'math',   name: 'Математика',   count: nishMath.filter(q=>q.subject==='math').length },
-      { id: 'kolzar', name: 'Колзар',        count: nishMath.filter(q=>q.subject==='kolzar').length },
-      { id: 'eng',    name: 'Ағылшын тілі',  count: nishMath.filter(q=>q.subject==='eng').length },
-      { id: 'rus',    name: 'Орыс тілі',     count: nishMath.filter(q=>q.subject==='rus').length },
-      { id: 'kaz',    name: 'Қазақ тілі',    count: 0 },
-    ]);
-    if (school === 'БИЛ') return P([
-      { id: 'math',  name: 'Математика',  count: nishMath.filter(q=>q.subject==='math').length + bilMath.length },
-      { id: 'logic', name: 'Логика',      count: bilLogic.length },
-      { id: 'kaz',   name: 'Қазақ тілі',  count: 0 },
-    ]);
-    return P(null);
-  },
-  subjectQuestions: (subject, school) => {
-    const math = nishMath.filter(q => q.subject === 'math');
-    if (subject === 'math')   return P(shuffle(school === 'БИЛ' ? [...math, ...bilMath] : math));
-    if (subject === 'logic')  return P(shuffle(bilLogic));
-    if (subject === 'kolzar') return P(shuffle(nishMath.filter(q => q.subject === 'kolzar')));
-    if (subject === 'rus' || subject === 'eng') return P(shuffle(nishMath.filter(q => q.subject === subject)));
-    return P([]); // қазақ тілі — толтырылуда
   },
 };
