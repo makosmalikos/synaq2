@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function Home({ go, name, schools = [] }) {
+export default function Home({ go, name }) {
   return (
     <main>
       <p className="kicker">Басты бет</p>
       <h1 style={{ fontSize: 30 }}>Сәлем, {name}!</h1>
       <p className="muted" style={{ marginTop: 6, marginBottom: 22 }}>
-        Дайындық: <b>{schools.join(' · ')}</b>. Бүгін де бір қадам алға.
+        Бүгін де бір қадам алға. Тақырып таңдап баста немесе мок-сынақ өт.
       </p>
 
       <div className="hero-card">
