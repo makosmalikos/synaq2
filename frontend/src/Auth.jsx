@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import { registerParent, loginParent, loginChild, loginGoogle, errText } from './firebase.js';
-import { POOL } from './bank.js';
 
-const COUNT = (c) => POOL.filter((q) => q.school === c).length;
-const SCHOOLS = [
-  { code: 'РФМШ', name: 'РФМШ', full: 'Республикалық физика-математика мектебі', grades: '5–7 сын.' },
-  { code: 'НИШ', name: 'НИШ', full: 'Назарбаев Зияткерлік мектептері', grades: '7 сын.' },
-  { code: 'БИЛ', name: 'БИЛ', full: 'Білім-Инновация лицейлері', grades: '6–7 сын.' },
-];
 
 // Экраны входа, оформленные как в дизайне: по центру, выбор школы карточками.
 export default function Auth() {
@@ -16,8 +9,6 @@ export default function Auth() {
   const [busy, setBusy] = useState(false);
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
-  const [schools, setSchools] = useState(['РФМШ']);
-  const toggle = (c) => setSchools((v) => (v.includes(c) ? v.filter((x) => x !== c) : [...v, c]));
   const [code, setCode] = useState('');
   const [pin, setPin] = useState('');
 
@@ -55,48 +46,8 @@ export default function Auth() {
             <input style={S.input} placeholder="Электрондық пошта" value={email} onChange={(e) => setEmail(e.target.value)} />
             <input style={S.input} type="password" placeholder="Құпиясөз (кемінде 6 таңба)" value={pass} onChange={(e) => setPass(e.target.value)} />
             <Err v={err} />
-            <button style={{ ...S.dark, marginTop: 6 }} disabled={!email || pass.length < 6} onClick={() => { setErr(''); setStage('school'); }}>Жалғастыру →</button>
+            <button style={{ ...S.dark, marginTop: 6 }} disabled={busy || !email || pass.length < 6} onClick={run(() => registerParent(email, pass))}>Аккаунт құру →</button>
             <button style={S.back} onClick={() => setStage('start')}>← Артқа</button>
-          </div>
-        )}
-
-        {stage === 'school' && (
-          <div style={{ animation: 'rise .4s ease both' }}>
-            <div style={{ textAlign: 'center', marginBottom: 22 }}>
-              <p style={S.kicker}>Мектеп таңдау · 2 / 2</p>
-              <h1 style={S.h1}>Балаңызды қай мектепке дайындаймыз?</h1>
-              <p style={{ ...S.sub, marginBottom: 0, fontSize: 13.5 }}>
-                Бірнеше мектепті таңдауға болады — дайындық кезінде барлығының есептері араласып беріледі.
-              </p>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 1, background: 'rgba(23,20,15,.16)', border: '1px solid rgba(23,20,15,.16)' }}>
-              {SCHOOLS.map((s2) => {
-                const on = schools.includes(s2.code);
-                return (
-                  <div key={s2.code} onClick={() => toggle(s2.code)}
-                    style={{ background: on ? '#FFF9F8' : '#fff', padding: '16px 18px', cursor: 'pointer', borderLeft: on ? '3px solid #B0342B' : '3px solid transparent' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 11, marginBottom: 10 }}>
-                      <span style={{
-                        width: 18, height: 18, flex: '0 0 18px', border: on ? '1px solid #B0342B' : '1px solid rgba(23,20,15,.28)',
-                        background: on ? '#B0342B' : '#fff', color: '#fff', display: 'flex', alignItems: 'center',
-                        justifyContent: 'center', font: "700 11px 'Golos Text'", borderRadius: 2,
-                      }}>{on ? '✓' : ''}</span>
-                      <span style={{ font: "700 18px 'Lora',serif", letterSpacing: '-.01em', flex: 1 }}>{s2.name}</span>
-                      <span style={S.badgeOn}>{COUNT(s2.code)} есеп</span>
-                    </div>
-                    <div style={{ fontSize: 12.5, lineHeight: 1.4, color: '#6B655B', marginBottom: 12, paddingLeft: 29 }}>{s2.full}</div>
-                    <div style={{ borderTop: '1px solid rgba(23,20,15,.1)', paddingTop: 10, display: 'flex', justifyContent: 'space-between', font: "500 12px 'IBM Plex Mono',monospace", color: '#6B655B' }}>
-                      <span>{s2.grades}</span><span>{on ? 'таңдалды' : 'таңдау'}</span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            <Err v={err} />
-            {!schools.length && <p style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#9A9384', textAlign: 'center', marginTop: 12 }}>Кемінде бір мектеп таңдаңыз</p>}
-            <button style={{ ...S.dark, marginTop: 16, opacity: schools.length ? 1 : .45 }} disabled={busy || !schools.length}
-              onClick={run(() => registerParent(email, pass, { schools }))}>Аккаунт құру →</button>
-            <button style={S.back} onClick={() => setStage('register')}>← Артқа</button>
           </div>
         )}
 
