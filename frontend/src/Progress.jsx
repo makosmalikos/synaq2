@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { auth, getAttempts, getMocks } from './firebase.js';
+import { auth, getAttempts, getMocks, getSolved } from './firebase.js';
 
 export default function Progress() {
   const [stat, setStat] = useState(null);
@@ -9,8 +9,13 @@ export default function Progress() {
   useEffect(() => {
     (async () => {
       try {
-        const [att, mk] = await Promise.all([getAttempts(auth.currentUser.uid), getMocks(auth.currentUser.uid)]);
-        const solved = new Set(att.filter(a => a.correct).map(a => a.qid)).size;
+        const [att, mk, sv] = await Promise.all([
+          getAttempts(auth.currentUser.uid),
+          getMocks(auth.currentUser.uid),
+          getSolved(auth.currentUser.uid),
+        ]);
+        // решённые берём из solved/ — они не зависят от числа попыток
+        const solved = sv.length || new Set(att.filter(a => a.correct).map(a => a.qid)).size;
         const attempted = att.length, correct = att.filter(a => a.correct).length;
         setStat({ solved, acc: attempted ? Math.round(correct / attempted * 100) : 0 });
         setMocks(mk.sort((a, b) => (b.at?.seconds || 0) - (a.at?.seconds || 0)));
@@ -26,7 +31,9 @@ export default function Progress() {
       {open.review ? (
         <ol className="review">
           {open.review.map((r) => (
-            <li key={r.num} className={r.correct ? 'ok' : 'no'}>№{r.num}: сенің «{r.your ?? '—'}» · дұрыс «{r.answer ?? '?'}»</li>
+            <li key={r.num} className={r.correct ? 'ok' : 'no'}>
+              №{r.num}: сенің «{r.your ?? '—'}» · дұрыс «{r.answer ?? '?'}»
+            </li>
           ))}
         </ol>
       ) : <p className="muted">Бұл сынақтың талдауы сақталмаған.</p>}
