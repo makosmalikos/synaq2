@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { registerParent, loginParent, loginChild, loginGoogle } from './firebase.js';
+import { registerParent, loginParent, loginChild, loginGoogle, errText } from './firebase.js';
+import { POOL } from './bank.js';
 
+const COUNT = (c) => POOL.filter((q) => q.school === c).length;
 const SCHOOLS = [
-  { code: 'РФМШ', name: 'РФМШ', full: 'Республикалық физика-математика мектебі', grades: '5–7 сын.', ratio: '10+/орын', ready: true },
-  { code: 'НИШ', name: 'НИШ', full: 'Назарбаев Зияткерлік мектептері', grades: '7 сын.', ratio: '8/орын', ready: false },
-  { code: 'БИЛ', name: 'БИЛ', full: 'Білім-Инновация лицейлері', grades: '6–7 сын.', ratio: '6/орын', ready: false },
+  { code: 'РФМШ', name: 'РФМШ', full: 'Республикалық физика-математика мектебі', grades: '5–7 сын.' },
+  { code: 'НИШ', name: 'НИШ', full: 'Назарбаев Зияткерлік мектептері', grades: '7 сын.' },
+  { code: 'БИЛ', name: 'БИЛ', full: 'Білім-Инновация лицейлері', grades: '6–7 сын.' },
 ];
 
 // Экраны входа, оформленные как в дизайне: по центру, выбор школы карточками.
@@ -14,11 +16,12 @@ export default function Auth() {
   const [busy, setBusy] = useState(false);
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
-  const [school, setSchool] = useState('РФМШ');
+  const [schools, setSchools] = useState(['РФМШ']);
+  const toggle = (c) => setSchools((v) => (v.includes(c) ? v.filter((x) => x !== c) : [...v, c]));
   const [code, setCode] = useState('');
   const [pin, setPin] = useState('');
 
-  const run = (fn) => async () => { setErr(''); setBusy(true); try { await fn(); } catch (e) { setErr(tr(e)); } setBusy(false); };
+  const run = (fn) => async () => { setErr(''); setBusy(true); try { await fn(); } catch (e) { setErr(errText(e)); } setBusy(false); };
 
   return (
     <div style={S.page}>
@@ -62,25 +65,37 @@ export default function Auth() {
             <div style={{ textAlign: 'center', marginBottom: 22 }}>
               <p style={S.kicker}>Мектеп таңдау · 2 / 2</p>
               <h1 style={S.h1}>Балаңызды қай мектепке дайындаймыз?</h1>
-              <p style={{ ...S.sub, marginBottom: 0, fontSize: 13.5 }}>Әр мектептің емтихан форматы бөлек.</p>
+              <p style={{ ...S.sub, marginBottom: 0, fontSize: 13.5 }}>
+                Бірнеше мектепті таңдауға болады — дайындық кезінде барлығының есептері араласып беріледі.
+              </p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 1, background: 'rgba(23,20,15,.16)', border: '1px solid rgba(23,20,15,.16)' }}>
-              {SCHOOLS.map((s) => (
-                <div key={s.code} onClick={() => setSchool(s.code)}
-                  style={{ background: '#fff', padding: '16px 18px', cursor: 'pointer', borderLeft: school === s.code ? '3px solid #B0342B' : '3px solid transparent' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
-                    <span style={{ font: "700 18px 'Lora',serif", letterSpacing: '-.01em' }}>{s.name}</span>
-                    <span style={s.ready ? S.badgeOn : S.badgeOff}>{s.ready ? 'Дайын' : 'Жақында'}</span>
+              {SCHOOLS.map((s2) => {
+                const on = schools.includes(s2.code);
+                return (
+                  <div key={s2.code} onClick={() => toggle(s2.code)}
+                    style={{ background: on ? '#FFF9F8' : '#fff', padding: '16px 18px', cursor: 'pointer', borderLeft: on ? '3px solid #B0342B' : '3px solid transparent' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 11, marginBottom: 10 }}>
+                      <span style={{
+                        width: 18, height: 18, flex: '0 0 18px', border: on ? '1px solid #B0342B' : '1px solid rgba(23,20,15,.28)',
+                        background: on ? '#B0342B' : '#fff', color: '#fff', display: 'flex', alignItems: 'center',
+                        justifyContent: 'center', font: "700 11px 'Golos Text'", borderRadius: 2,
+                      }}>{on ? '✓' : ''}</span>
+                      <span style={{ font: "700 18px 'Lora',serif", letterSpacing: '-.01em', flex: 1 }}>{s2.name}</span>
+                      <span style={S.badgeOn}>{COUNT(s2.code)} есеп</span>
+                    </div>
+                    <div style={{ fontSize: 12.5, lineHeight: 1.4, color: '#6B655B', marginBottom: 12, paddingLeft: 29 }}>{s2.full}</div>
+                    <div style={{ borderTop: '1px solid rgba(23,20,15,.1)', paddingTop: 10, display: 'flex', justifyContent: 'space-between', font: "500 12px 'IBM Plex Mono',monospace", color: '#6B655B' }}>
+                      <span>{s2.grades}</span><span>{on ? 'таңдалды' : 'таңдау'}</span>
+                    </div>
                   </div>
-                  <div style={{ fontSize: 12.5, lineHeight: 1.4, color: '#6B655B', marginBottom: 12 }}>{s.full}</div>
-                  <div style={{ borderTop: '1px solid rgba(23,20,15,.1)', paddingTop: 10, display: 'flex', justifyContent: 'space-between', font: "500 12px 'IBM Plex Mono',monospace", color: '#6B655B' }}>
-                    <span>{s.grades}</span><span>{s.ratio}</span>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
             <Err v={err} />
-            <button style={{ ...S.dark, marginTop: 16 }} disabled={busy} onClick={run(() => registerParent(email, pass, { school }))}>Аккаунт құру →</button>
+            {!schools.length && <p style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#9A9384', textAlign: 'center', marginTop: 12 }}>Кемінде бір мектеп таңдаңыз</p>}
+            <button style={{ ...S.dark, marginTop: 16, opacity: schools.length ? 1 : .45 }} disabled={busy || !schools.length}
+              onClick={run(() => registerParent(email, pass, { schools }))}>Аккаунт құру →</button>
             <button style={S.back} onClick={() => setStage('register')}>← Артқа</button>
           </div>
         )}
@@ -145,17 +160,3 @@ const S = {
   badgeOn: { font: "600 10px 'IBM Plex Mono',monospace", letterSpacing: '.08em', textTransform: 'uppercase', color: '#4C7A4E', border: '1px solid #4C7A4E', padding: '2px 7px' },
   badgeOff: { font: "600 10px 'IBM Plex Mono',monospace", letterSpacing: '.08em', textTransform: 'uppercase', color: '#9A9384', border: '1px solid rgba(23,20,15,.2)', padding: '2px 7px' },
 };
-
-function tr(e) {
-  const c = (e && e.code) || '';
-  if (c.includes('email-already-in-use')) return 'Бұл пошта тіркелген';
-  if (c.includes('invalid-credential') || c.includes('wrong-password') || c.includes('user-not-found')) return 'Қате код/пошта немесе құпиясөз';
-  if (c.includes('weak-password')) return 'Құпиясөз тым қысқа';
-  if (c.includes('invalid-email')) return 'Пошта қате';
-  if (c.includes('operation-not-allowed')) return 'Google-вход Firebase-те қосылмаған (консольде қосыңыз)';
-  if (c.includes('unauthorized-domain')) return 'Домен рұқсат етілмеген (Firebase → Authorized domains)';
-  if (c.includes('popup-blocked')) return 'Браузер терезені бөгеді — рұқсат етіңіз';
-  if (c.includes('popup-closed')) return 'Терезе жабылды, қайта көріңіз';
-  if (c.includes('network')) return 'Интернет байланысын тексеріңіз';
-  return 'Қате: ' + (c || (e && e.message) || 'белгісіз');
-}
