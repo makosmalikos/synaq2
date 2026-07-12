@@ -6,6 +6,7 @@
 // к одной схеме, чтобы работал выбор нескольких школ и перемешивание.
 import { topics as baseTopics, questions, nishMath, bilQ, variants as rfmshVariants } from './data.js';
 import { KK } from './kk.js';
+import { generate, canGenerate } from './generators.js';
 
 // ── Темы ───────────────────────────────────────────────────────────────
 // К 12 базовым добавляем «сандық салыстыру» (колзар) и языковые предметы НИШ.
@@ -70,37 +71,60 @@ function norm(q, school) {
   };
 }
 
-export const POOL = [
-  ...questions.map(q => norm(q, 'РФМШ')),
-  ...nishMath.map(q => norm(q, 'НИШ')),
-  ...bilQ.map(q => norm(q, 'БИЛ')),
+// Задачи из реальных вариантов.
+const REAL = [
+  ...questions.map((q) => norm(q, 'РФМШ')),
+  ...nishMath.map((q) => norm(q, 'НИШ')),
+  ...bilQ.map((q) => norm(q, 'БИЛ')),
 ];
 
-// ── Выбор школ ─────────────────────────────────────────────────────────
-// Школы приходят массивом. Старые аккаунты хранят одну строку — терпим оба.
-export function parseSchools(v) {
-  const arr = Array.isArray(v) ? v : (v ? [v] : []);
-  const out = arr.map(s => String(s).trim()).filter(s => SCHOOLS.includes(s));
-  return out.length ? out : ['РФМШ'];
-}
-const bySchools = (schools) => POOL.filter(q => schools.includes(q.school));
+// Сгенерированные задачи — прямо в банк, наравне с настоящими.
+// Тип задачи взят из реальных вариантов, числа и слова новые.
+// Сразу по-казахски и с полным разбором.
+// Языковые генераторы шаблонные: из 20 шаблонов больше 20 разных задач не выжать.
+// Поэтому просим с запасом и выкидываем повторы по тексту — иначе в одной теме
+// окажется одна и та же задача под разными номерами.
+const PER_TOPIC = 40;
+const seen = new Set();
+const GENERATED = TOPICS
+  .filter((t) => canGenerate(t.id))
+  .flatMap((t) => generate(PER_TOPIC * 2, t.id))
+  .filter((q) => {
+    const k = q.topic + '|' + q.statement;
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  })
+  .reduce((acc, q) => {
+    const n = acc.filter((x) => x.topic === q.topic).length;
+    if (n < PER_TOPIC) acc.push(q);
+    return acc;
+  }, []);
 
-// ── Перемешивание по кругу ─────────────────────────────────────────────
-// Если просто shuffle всего пула, НИШ (445 задач) забьёт выдачу и РФМШ почти
-// не появится. Поэтому берём по одной задаче из каждой школы по очереди.
-const shuffle = (a) => a.map(x => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map(x => x[1]);
+export const POOL = [...REAL, ...GENERATED];
 
-export function mixAcrossSchools(items, schools) {
-  const buckets = schools.map(s => shuffle(items.filter(q => q.school === s))).filter(b => b.length);
+// Мок-варианты собираем ТОЛЬКО из настоящих экзаменационных задач.
+// Мок должен быть репетицией реального экзамена, а не тренажёром.
+export const REAL_POOL = REAL;
+
+// ── Перемешивание ──────────────────────────────────────────────────────
+// Дайындык берёт весь банк. Но просто shuffle не годится: НИШ с его 445
+// задачами забил бы ленту, а РФМШ почти не появлялся бы. Поэтому берём
+// по одной задаче из каждой школы по кругу.
+const shuffle = (a) => a.map((x) => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map((x) => x[1]);
+
+export function mixAcrossSchools(items) {
+  const groups = [...SCHOOLS, 'Synaq'];
+  const buckets = groups.map((s) => shuffle(items.filter((q) => q.school === s))).filter((b) => b.length);
   const out = [];
-  for (let i = 0; buckets.some(b => i < b.length); i++) {
+  for (let i = 0; buckets.some((b) => i < b.length); i++) {
     for (const b of buckets) if (i < b.length) out.push(b[i]);
   }
   return out;
 }
 
 // ── Казахская локализация ──────────────────────────────────────────────
-// Если перевода ещё нет — отдаём русский текст, но помечаем needsTranslation,
+// Перевода ещё нет — отдаём русский текст, но помечаем needsTranslation,
 // чтобы на карточке был честный бейдж «рус», а не молчаливая подмена языка.
 export function localize(q, lang = 'kk') {
   if (lang !== 'kk') return q;
@@ -110,66 +134,76 @@ export function localize(q, lang = 'kk') {
   if (t) return { ...q, statement: t.s, solution: t.sol || q.solution };
   return { ...q, needsTranslation: true };
 }
-const loc = (list, lang) => list.map(q => localize(q, lang));
+const loc = (list, lang) => list.map((q) => localize(q, lang));
 
-// ── Публичный доступ ───────────────────────────────────────────────────
-export function topicsFor(schools) {
-  const items = bySchools(schools);
+// ── Дайындык: весь банк, школы не спрашиваем ───────────────────────────
+export function topicsAll() {
   return TOPICS
-    .map(t => {
-      const qs = items.filter(q => q.topic === t.id);
-      return { ...t, count: qs.length, schools: [...new Set(qs.map(q => q.school))] };
+    .map((t) => {
+      const qs = POOL.filter((q) => q.topic === t.id);
+      return { ...t, count: qs.length, schools: [...new Set(qs.map((q) => q.school))] };
     })
-    .filter(t => t.count > 0);
+    .filter((t) => t.count > 0);
 }
 
-export function topicQuestions(topicId, schools, lang = 'kk') {
-  const items = bySchools(schools).filter(q => q.topic === topicId);
-  return loc(mixAcrossSchools(items, schools), lang);
+export function topicQuestionsAll(topicId, lang = 'kk') {
+  return loc(mixAcrossSchools(POOL.filter((q) => q.topic === topicId)), lang);
 }
 
-export function mixedQuestions(schools, lang = 'kk', limit = 15, block = null) {
-  let items = bySchools(schools);
-  if (block) items = items.filter(q => q.block === block);
-  return loc(mixAcrossSchools(items, schools).slice(0, limit), lang);
+export function mixedAll(lang = 'kk', limit = 20, block = null) {
+  const items = block ? POOL.filter((q) => q.block === block) : POOL;
+  return loc(mixAcrossSchools(items).slice(0, limit), lang);
 }
 
 // ── Мок-варианты ───────────────────────────────────────────────────────
 // РФМШ уже собраны в data.js. Для НИШ собираем сами (в data.js их нет вообще),
 // БИЛ — один вариант. Языковые предметы в мок не берём: это отдельный экзамен.
-function chunk(arr, n) {
-  const out = [];
-  for (let i = 0; i + n <= arr.length; i += n) out.push(arr.slice(i, i + n));
-  return out;
-}
+// НИШ: 40 математика + 20 сандық салыстыру + по 20 на каждый язык
+// (қазақ, орыс, ағылшын) = 120 вопросов. Задачи тянутся СЛУЧАЙНО из всего банка.
+//
+// ВНИМАНИЕ: қазақ тілі в банке всего 13 задач, а формату нужно 20.
+// Дублировать внутри одного варианта нельзя, поэтому блок казахского выходит
+// НЕПОЛНЫМ — 13 вместо 20. Довести до формата = долить ≥7 задач (лучше 60+,
+// иначе все шесть вариантов будут с одинаковым казахским).
+const NISH_MATH = 40;
+const NISH_CMP  = 20;
+const NISH_LANG = { lang_kaz: 20, lang_rus: 20, lang_eng: 20 };
+// Пока делаем только ПЕРВЫЙ вариант — остальные соберём, когда пополнится банк.
+const NISH_COUNT = 1;
 
-const nishPool = POOL.filter(q => q.school === 'НИШ' && q.block !== 'lang');
-const nishVariants = chunk(nishPool, 30).slice(0, 10).map((qs, i) => ({
-  id: `nish_v${i + 1}`,
-  school: 'НИШ',
-  title: `НИШ · Байқау сынағы · ${i + 1}-нұсқа`,
-  timeLimitMin: 90,
-  questions: qs.map((q, k) => ({ ...q, num: k + 1 })),
-}));
+// Дублей внутри одного варианта быть не должно — ребёнок не должен встретить
+// ту же задачу дважды. Поэтому если задач меньше, чем просят, берём сколько
+// есть, а не зацикливаем список.
+const rndPick = (arr, n) => shuffle(arr).slice(0, n);
 
-// В БИЛ математика и «сандық салыстыру» нумеруются каждая с 1 — в одном
-// варианте это давало два разных вопроса под номером 1 и ответы конфликтовали.
-const bilPool = POOL.filter(q => q.school === 'БИЛ');
-const bilVariants = [{
-  id: 'bil_v1',
-  school: 'БИЛ',
-  title: 'БИЛ · Байқау сынағы',
-  timeLimitMin: 60,
-  questions: [
-    ...bilPool.filter(q => q.subject === 'math'),
-    ...bilPool.filter(q => q.subject !== 'math'),
-  ].map((q, k) => ({ ...q, num: k + 1 })),
-}];
+const nishVariants = Array.from({ length: NISH_COUNT }, (_, i) => {
+  const qs = [
+    ...rndPick(REAL_POOL.filter((q) => q.block === 'math'), NISH_MATH),
+    ...rndPick(REAL_POOL.filter((q) => q.topic === 'cmp'), NISH_CMP),
+    ...Object.entries(NISH_LANG).flatMap(([t, n]) => rndPick(REAL_POOL.filter((q) => q.topic === t), n)),
+  ];
+  return {
+    id: `nish_v${i + 1}`,
+    school: 'НИШ',
+    title: `НИШ · Байқау сынағы · ${i + 1}-нұсқа`,
+    timeLimitMin: 240,
+    questions: qs.map((q, k) => ({ ...q, num: k + 1 })),
+  };
+});
+
+// БИЛ: мок-тест пока не собираем — в интерфейсе «Жақында ашылады».
+//
+// Формат, когда будем делать: 60 вопросов = 40 математика + 10 қазақ тілі
+// + 10 логика, 100 минут. Баллы: каждые 4 неверных ответа съедают 1 верный,
+// остаток × 1,5. Формула уже написана в api.js — вариант помечается
+// scoring: 'bil', и подсчёт включается сам.
+const bilVariants = [];
 
 export const VARIANTS = [
   // Вопросы РФМШ-вариантов в data.js без id. Привязываем их к id банка
   // (rfmsh2025_v1 + №1 → «v1_1»), иначе переводы в моке не подхватятся.
-  ...rfmshVariants.map(v => {
+  // Пока показываем только первый вариант.
+  ...rfmshVariants.slice(0, 1).map(v => {
     const vkey = v.id.replace('rfmsh2025_', '');
     return {
       ...v,
@@ -186,10 +220,6 @@ export const VARIANTS = [
   ...nishVariants,
   ...bilVariants,
 ];
-
-export function variantsFor(schools) {
-  return VARIANTS.filter(v => schools.includes(v.school));
-}
 
 export function localizeVariant(v, lang = 'kk') {
   return { ...v, questions: v.questions.map(q => localize(q, lang)) };
