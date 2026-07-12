@@ -1,36 +1,38 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { api } from '../api.js';
-import { auth, saveAttempt, getAttempts, setFlag, getFlags } from '../firebase.js';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
+import { api, isCorrect } from '../api.js';
+import { POOL } from '../bank.js';
+import { auth, saveAttempt, getSolved, setFlag, getFlags } from '../firebase.js';
+import Explain from './Explain.jsx';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
-const norm = (v) => (v ?? '').toString().trim().toLowerCase()
-  .replace(/\s+/g, '').replace(',', '.').replace(/%$/, '')
-  .replace(/(км|мм|см|м|мин|кг|г|л|тг|га|°)$/u, '');
+const BLOCKS = [
+  { id: 'math',  title: 'Математика' },
+  { id: 'logic', title: 'Логика' },
+  { id: 'lang',  title: 'Тілдер' },
+];
+// id → тема, чтобы не фильтровать весь пул на каждый рендер
+const TOPIC_OF = Object.fromEntries(POOL.map((q) => [q.id, q.topic]));
 
-export default function Training({ school }) {
+export default function Training({ schools = ['РФМШ'] }) {
   const [topics, setTopics] = useState([]);
-  const [subjects, setSubjects] = useState(null);
-  const [empty, setEmpty] = useState(false);
-  const [stat, setStat] = useState({});
+  const [solved, setSolved] = useState(new Set());
+  const [flags, setFlags] = useState(new Set());
   const [topic, setTopic] = useState(null);
   const [items, setItems] = useState([]);
   const [i, setI] = useState(0);
   const [answer, setAnswer] = useState('');
   const [checked, setChecked] = useState(false);
-  const [flagged, setFlagged] = useState(false);
   const [secs, setSecs] = useState(0);
   const timer = useRef(null);
 
+  const key = schools.join(',');
+
   useEffect(() => {
-    api.subjects(school).then((subs) => {
-      if (subs) setSubjects(subs); else api.topics(school).then(setTopics).catch(() => {});
-    }).catch(() => api.topics(school).then(setTopics).catch(() => {}));
-    if (auth.currentUser) getAttempts(auth.currentUser.uid).then((att) => {
-      const byTopic = {}, seen = new Set();
-      att.forEach((a) => { if (a.correct && !seen.has(a.qid)) { seen.add(a.qid); byTopic[a.topic] = (byTopic[a.topic] || 0) + 1; } });
-      setStat(byTopic);
-    }).catch(() => {});
-  }, [school]);
+    api.topics(schools).then(setTopics).catch(() => {});
+    if (!auth.currentUser) return;
+    getSolved(auth.currentUser.uid).then((r) => setSolved(new Set(r.map((x) => x.qid)))).catch(() => {});
+    getFlags(auth.currentUser.uid).then((f) => setFlags(new Set(f))).catch(() => {});
+  }, [key]);
 
   useEffect(() => {
     if (!items.length || checked) return;
@@ -38,85 +40,60 @@ export default function Training({ school }) {
     return () => clearInterval(timer.current);
   }, [items, i, checked]);
 
-  async function openSubject(sub) {
-    if (!sub.count) { setEmpty(true); setTopic(sub); return; }
-    const qs = await api.subjectQuestions(sub.id, school);
-    const flags = auth.currentUser ? await getFlags(auth.currentUser.uid).catch(() => []) : [];
-    qs._flags = new Set(flags);
-    setEmpty(false); setTopic(sub); setItems(qs); setI(0); reset(qs, 0);
-  }
-  async function openTopic(t) {
-    const qs = await api.topicQuestions(t.id, true, school);
-    const flags = auth.currentUser ? await getFlags(auth.currentUser.uid).catch(() => []) : [];
-    qs._flags = new Set(flags);
-    setTopic(t); setItems(qs); setI(0); reset(qs, 0);
-  }
-  const reset = (list = items, idx = i) => {
-    setAnswer(''); setChecked(false); setSecs(0);
-    setFlagged(list._flags ? list._flags.has(list[idx]?.id) : false);
+  // сколько задач темы уже решено
+  const solvedIn = useMemo(() => {
+    const m = {};
+    solved.forEach((id) => { const t = TOPIC_OF[id]; if (t) m[t] = (m[t] || 0) + 1; });
+    return m;
+  }, [solved]);
+
+  const start = (t, list) => { setTopic(t); setItems(list); setI(0); setAnswer(''); setChecked(false); setSecs(0); };
+  const openTopic = async (t) => start(t, await api.topicQuestions(t.id, schools, 'kk'));
+  const openMixed = async () => start({ id: '_mix', name: 'Аралас дайындық' }, await api.mixed(schools, 'kk', 20));
+  const next = () => {
+    if (i + 1 < items.length) { setI(i + 1); setAnswer(''); setChecked(false); setSecs(0); }
+    else { setTopic(null); setItems([]); }
   };
-  const next = () => { if (i + 1 < items.length) { const n = i + 1; setI(n); reset(items, n); } else { setTopic(null); setItems([]); } };
   const fmt = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
 
-  function check(good) {
+  function check() {
+    const q = items[i];
+    const ok = isCorrect(answer, q);
     setChecked(true);
-    if (auth.currentUser) saveAttempt(auth.currentUser.uid, { qid: q.id, topic: q.topic, correct: good, secs }).catch(() => {});
+    if (ok) setSolved((s) => new Set(s).add(q.id));
+    if (auth.currentUser) {
+      saveAttempt(auth.currentUser.uid, { qid: q.id, topic: q.topic, school: q.school, correct: ok, secs }).catch(() => {});
+    }
   }
   function toggleFlag() {
-    const on = !flagged; setFlagged(on);
+    const q = items[i];
+    const on = !flags.has(q.id);
+    setFlags((s) => { const n = new Set(s); if (on) n.add(q.id); else n.delete(q.id); return n; });
     if (auth.currentUser) setFlag(auth.currentUser.uid, q.id, on).catch(() => {});
   }
 
-  // ── пустой предмет (толтырылуда) ──
-  if (topic && empty) return (
-    <main>
-      <button className="link" onClick={() => { setTopic(null); setEmpty(false); }}>← Пәндер</button>
-      <h1 style={{ marginTop: 10 }}>{topic.name}</h1>
-      <div className="card" style={{ marginTop: 16, textAlign:'center', padding: 36 }}>
-        <p className="muted">Бұл пән бойынша есептер толтырылып жатыр. Жақында қосылады.</p>
-      </div>
-    </main>
-  );
-
-  // ── список предметов (НИШ/БИЛ) ──
-  if (!topic && subjects) return (
-    <main>
-      <p className="kicker">Пәндер</p>
-      <div className="list" style={{ marginTop: 8 }}>
-        {subjects.map((sub, k) => (
-          <div className="row-item" key={sub.id} onClick={() => openSubject(sub)}>
-            <span style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#B7B0A2', width: 26 }}>{String(k + 1).padStart(2, '0')}</span>
-            <b style={{ flex: 1 }}>{sub.name}</b>
-            <span className="rt">{sub.count ? sub.count + ' сұрақ' : 'жақында'}</span>
-          </div>
-        ))}
-      </div>
-    </main>
-  );
-
-  // ── список тем (РФМШ) ──
+  // ── список тем ──
   if (!topic) {
-    const math = topics.filter((t) => t.block === 'math');
-    const logic = topics.filter((t) => t.block === 'logic');
-    const total = topics.reduce((s, t) => s + t.count, 0) || 1;
-    const share = (arr) => Math.round(arr.reduce((s, t) => s + t.count, 0) / total * 100);
-    const Group = ({ title, arr }) => (
+    const Group = ({ title, arr }) => !arr.length ? null : (
       <>
         <div className="row" style={{ margin: '26px 0 12px' }}>
           <span className="kicker" style={{ margin: 0 }}>{title}</span>
-          <span className="tag">{share(arr)}% емтихан</span>
+          <span className="tag">{arr.reduce((s, t) => s + t.count, 0)} есеп</span>
         </div>
         <div className="list">
           {arr.map((t, k) => {
-            const solved = stat[t.id] || 0, pct = Math.round(solved / t.count * 100);
+            const done = Math.min(solvedIn[t.id] || 0, t.count);
+            const pct = Math.round(done / t.count * 100);
             return (
               <div className="row-item" key={t.id} onClick={() => openTopic(t)}>
                 <span style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#B7B0A2', width: 26 }}>{String(k + 1).padStart(2, '0')}</span>
                 <div style={{ flex: 1 }}>
                   <b>{t.name}</b>
-                  <div style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 3 }}>{t.count} сұрақ</div>
+                  <div style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 3 }}>
+                    {t.count} сұрақ · {t.schools.join(' · ')}
+                  </div>
                 </div>
-                <div style={{ width: 120 }}><div className="bar"><i style={{ width: pct + '%' }} /></div></div>
+                <div style={{ width: 110 }}><div className="bar"><i style={{ width: pct + '%' }} /></div></div>
                 <span style={{ font: "600 13px 'IBM Plex Mono',monospace", width: 46, textAlign: 'right', color: pct >= 60 ? '#4C7A4E' : '#6B655B' }}>{pct}%</span>
               </div>
             );
@@ -124,20 +101,38 @@ export default function Training({ school }) {
         </div>
       </>
     );
+
     return (
       <main>
         <p className="kicker">Тақырыптар</p>
         <h1>Тақырыпты таңда</h1>
-        <p className="muted" style={{ marginTop: 6 }}>Әр тақырып бойынша нақты есептер. Ашық жауап.</p>
-        {math.length > 0 && <Group title="Математика" arr={math} />}
-        {logic.length > 0 && <Group title="Логика" arr={logic} />}
+        <p className="muted" style={{ marginTop: 6 }}>
+          Дайындық: <b>{schools.join(' · ')}</b>.{schools.length > 1 && ' Есептер таңдалған мектептердің бәрінен араласып беріледі.'}
+        </p>
+
+        {schools.length > 1 && (
+          <div className="hero-card" style={{ marginTop: 16 }}>
+            <h2>Аралас дайындық</h2>
+            <p>{schools.join(' + ')} есептері кезектесіп келеді.</p>
+            <button className="btn accent" onClick={openMixed}>Бастау →</button>
+          </div>
+        )}
+
+        {BLOCKS.map((b) => <Group key={b.id} title={b.title} arr={topics.filter((t) => t.block === b.id)} />)}
       </main>
     );
   }
 
-  // ── задача (экзаменационный вид) ──
+  // ── задача ──
   const q = items[i];
-  const ok = checked && (q.options ? answer === q.answer : norm(answer) === norm(q.answer));
+  if (!q) return (
+    <main>
+      <button className="link" onClick={() => { setTopic(null); setItems([]); }}>← Тақырыптар</button>
+      <p className="muted" style={{ marginTop: 14 }}>Бұл тақырыпта есеп жоқ.</p>
+    </main>
+  );
+  const ok = checked && isCorrect(answer, q);
+
   return (
     <main>
       <div className="exam-top">
@@ -146,13 +141,16 @@ export default function Training({ school }) {
       </div>
       <div className="qhead">
         <span className="qnum-chip">{i + 1}/{items.length}</span>
-        <button className={'flagbtn' + (flagged ? ' on' : '')} onClick={toggleFlag}><span className="fl">⚑</span> Кейін қайталау</button>
+        <span style={chip}>{q.school}</span>
+        {q.needsTranslation && <span style={{ ...chip, color: '#9A9384' }} title="Қазақша аудармасы әзірге жоқ">рус</span>}
+        <button className={'flagbtn' + (flags.has(q.id) ? ' on' : '')} onClick={toggleFlag}>
+          <span className="fl">⚑</span> Кейін қайталау
+        </button>
       </div>
 
       <p className="stmt">{q.statement}</p>
       {q.image && <img className="fig" src={q.image} alt="сурет" />}
 
-      {/* Варианты A–E или поле; после проверки — вместо ответа выходит разбор */}
       {!checked ? (
         q.options ? (
           <div className="opts">
@@ -163,7 +161,8 @@ export default function Training({ school }) {
             ))}
           </div>
         ) : (
-          <input value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="Жауабың" />
+          <input value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="Жауабың"
+            onKeyDown={(e) => { if (e.key === 'Enter' && answer.trim()) check(); }} />
         )
       ) : (
         <>
@@ -176,17 +175,22 @@ export default function Training({ school }) {
               ))}
             </div>
           )}
-          <div className={ok ? 'fb ok' : 'fb no'}>{ok ? 'Дұрыс!' : `Қате. Дұрыс жауап: ${q.answer}`}</div>
-          <div className="sol"><div className="lead">Толық талдау</div>{q.solution}</div>
+          <div className={ok ? 'fb ok' : 'fb no'}>{ok ? 'Дұрыс!' : `Қате. Дұрыс жауап: ${q.answer ?? '—'}`}</div>
+          <Explain q={q} given={ok ? null : answer} />
         </>
       )}
 
       <div className="navbar">
         <button className="btn ghost" onClick={() => { setTopic(null); setItems([]); }}>← Тақырыптар</button>
         {!checked
-          ? <button className="btn" disabled={!(answer && answer.toString().trim())} onClick={() => check(q.options ? answer === q.answer : norm(answer) === norm(q.answer))}>Тексеру</button>
+          ? <button className="btn" disabled={!(answer && answer.toString().trim())} onClick={check}>Тексеру</button>
           : <button className="btn accent" onClick={next}>Келесі →</button>}
       </div>
     </main>
   );
 }
+
+const chip = {
+  font: "600 10px 'IBM Plex Mono',monospace", letterSpacing: '.08em', textTransform: 'uppercase',
+  color: '#6B655B', border: '1px solid rgba(23,20,15,.18)', padding: '3px 7px',
+};
