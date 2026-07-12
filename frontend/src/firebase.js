@@ -25,16 +25,6 @@ const KID_DOMAIN = '@synaq.kids';
 const kidEmail = (code) => code.trim().toLowerCase() + KID_DOMAIN;
 export const isKid = (user) => !!user && (user.email || '').endsWith(KID_DOMAIN);
 
-const SCHOOLS = ['РФМШ', 'НИШ', 'БИЛ'];
-// Школы теперь массив. Старые аккаунты хранят одну строку в поле school —
-// читаем оба варианта, чтобы уже созданные семьи не сломались.
-export function readSchools(data) {
-  if (!data) return ['РФМШ'];
-  const raw = Array.isArray(data.schools) ? data.schools : (data.school ? [data.school] : []);
-  const out = raw.filter((s) => SCHOOLS.includes(s));
-  return out.length ? out : ['РФМШ'];
-}
-
 // Пароль: без похожих символов (0/O, 1/l) — детям диктовать голосом.
 const ALPHABET = 'abcdefghijkmnpqrstuvwxyz23456789';
 export function genPassword(len = 8) {
@@ -58,11 +48,12 @@ export const suggestUsername = (name) => {
 };
 
 // ── Родитель ──
-export async function registerParent(email, password, { schools }) {
+// Школа больше не спрашивается вообще: дайындык идёт по всему банку,
+// а школа выбирается только в момент мок-теста.
+export async function registerParent(email, password) {
   const cred = await createUserWithEmailAndPassword(auth, email, password);
   await setDoc(doc(db, 'families', cred.user.uid), {
     parentEmail: email,
-    schools: readSchools({ schools }),
     createdAt: serverTimestamp(),
   });
   return cred.user;
@@ -76,28 +67,16 @@ export async function loginGoogle() {
   try {
     const ref = doc(db, 'families', cred.user.uid);
     const snap = await getDoc(ref);
-    // schools: [] — Parent-экран сам попросит выбрать школы
-    if (!snap.exists()) await setDoc(ref, { parentEmail: cred.user.email, schools: [], createdAt: serverTimestamp() });
+    if (!snap.exists()) await setDoc(ref, { parentEmail: cred.user.email, createdAt: serverTimestamp() });
   } catch { /* Firestore міндетті емес — авторизация өтті */ }
   return cred.user;
 }
-
-export async function getFamily(parentUid) {
-  const snap = await getDoc(doc(db, 'families', parentUid));
-  const data = snap.exists() ? snap.data() : {};
-  return { ...data, schools: Array.isArray(data.schools) ? data.schools : readSchools(data) };
-}
-export const setFamilySchools = (parentUid, schools) =>
-  setDoc(doc(db, 'families', parentUid), { schools }, { merge: true });
 
 // ── Родитель создаёт ребёнка ──
 // createUserWithEmailAndPassword МОЛЧА логинит нового юзера в тот же app —
 // родитель бы вылетел из сессии и следующая запись упала бы с permission-denied.
 // Поэтому аккаунт ребёнка создаём во ВТОРИЧНОМ экземпляре Firebase.
 export async function createChild(parentUid, { name, klass = '', code, pin }) {
-  const fam = await getFamily(parentUid).catch(() => ({ schools: ['РФМШ'] }));
-  const schools = readSchools(fam);
-
   const secondary = initializeApp(firebaseConfig, 'sec-' + Date.now());
   const secAuth = getAuth(secondary);
   try {
@@ -107,9 +86,9 @@ export async function createChild(parentUid, { name, klass = '', code, pin }) {
     // childIndex почему-то не прочитается.
     await updateProfile(cred.user, { displayName: name }).catch(() => {});
     await setDoc(doc(db, 'families', parentUid, 'children', childUid), {
-      name, klass, code: code.trim().toLowerCase(), schools, createdAt: serverTimestamp(),
+      name, klass, code: code.trim().toLowerCase(), createdAt: serverTimestamp(),
     });
-    await setDoc(doc(db, 'childIndex', childUid), { parentUid, name, klass, schools });
+    await setDoc(doc(db, 'childIndex', childUid), { parentUid, name, klass });
     return { childUid, code };
   } finally {
     await signOut(secAuth).catch(() => {});
@@ -119,16 +98,16 @@ export async function createChild(parentUid, { name, klass = '', code, pin }) {
 
 export const loginChild = (code, pin) => signInWithEmailAndPassword(auth, kidEmail(code), pin);
 
-// Профиль ребёнка: настоящее имя + список школ
+// Профиль ребёнка: настоящее имя вместо заглушки «Бала»
 export async function getMyProfile() {
   const u = auth.currentUser;
-  if (!u) return { name: '', klass: '', schools: ['РФМШ'] };
-  const fallback = { name: u.displayName || '', klass: '', schools: ['РФМШ'] };
+  if (!u) return { name: '', klass: '' };
+  const fallback = { name: u.displayName || '', klass: '' };
   try {
     const s = await getDoc(doc(db, 'childIndex', u.uid));
     if (!s.exists()) return fallback;
     const d = s.data();
-    return { name: d.name || fallback.name, klass: d.klass || '', schools: readSchools(d) };
+    return { name: d.name || fallback.name, klass: d.klass || '' };
   } catch { return fallback; }
 }
 
@@ -144,15 +123,17 @@ export async function getFlags(uid) {
   catch { return []; }
 }
 
-// Попытка пишется в attempts, а «решено/не решено» дублируется в solved/{qid} —
-// так прогресс не зависит от того, сколько раз задачу переоткрывали.
+// attempts — вся история попыток (для процента правильных).
+// solved/{qid} — по одной записи на ЗАДАЧУ, пишется при любом ответе, верном
+// или нет. Ребёнок решал — значит, задача засчитана как пройденная; счётчик
+// «шешілген есеп» не должен стоять на нуле только потому, что он ошибся.
+// Ключ = qid, поэтому повторное открытие той же задачи счётчик не надувает.
 export async function saveAttempt(uid, a) {
   await addDoc(collection(db, 'results', uid, 'attempts'), { ...a, at: serverTimestamp() });
-  if (a.correct) {
-    await setDoc(doc(db, 'results', uid, 'solved', a.qid), {
-      qid: a.qid, topic: a.topic || null, school: a.school || null, at: serverTimestamp(),
-    }, { merge: true }).catch(() => {});
-  }
+  await setDoc(doc(db, 'results', uid, 'solved', a.qid), {
+    qid: a.qid, topic: a.topic || null, school: a.school || null,
+    correct: !!a.correct, at: serverTimestamp(),
+  }, { merge: true }).catch(() => {});
 }
 export const saveMock = (uid, r) =>
   addDoc(collection(db, 'results', uid, 'mocks'), { ...r, at: serverTimestamp() });
