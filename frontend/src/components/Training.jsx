@@ -5,15 +5,18 @@ import { auth, saveAttempt, getSolved, setFlag, getFlags } from '../firebase.js'
 import Explain from './Explain.jsx';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
+// Блоки раздельно: язык и математика в одной ленте — бессмыслица.
 const BLOCKS = [
-  { id: 'math',  title: 'Математика' },
-  { id: 'logic', title: 'Логика' },
-  { id: 'lang',  title: 'Тілдер' },
+  { id: 'math',     title: 'Математика',   only: null },
+  { id: 'logic',    title: 'Логика',       only: null },
+  { id: 'lang_kaz', title: 'Қазақ тілі',   only: 'lang_kaz' },
+  { id: 'lang_rus', title: 'Орыс тілі',    only: 'lang_rus' },
+  { id: 'lang_eng', title: 'Ағылшын тілі', only: 'lang_eng' },
 ];
 // id → тема, чтобы не фильтровать весь пул на каждый рендер
 const TOPIC_OF = Object.fromEntries(POOL.map((q) => [q.id, q.topic]));
 
-export default function Training({ schools = ['РФМШ'] }) {
+export default function Training() {
   const [topics, setTopics] = useState([]);
   const [solved, setSolved] = useState(new Set());
   const [flags, setFlags] = useState(new Set());
@@ -25,14 +28,12 @@ export default function Training({ schools = ['РФМШ'] }) {
   const [secs, setSecs] = useState(0);
   const timer = useRef(null);
 
-  const key = schools.join(',');
-
   useEffect(() => {
-    api.topics(schools).then(setTopics).catch(() => {});
+    api.topics().then(setTopics).catch(() => {});
     if (!auth.currentUser) return;
     getSolved(auth.currentUser.uid).then((r) => setSolved(new Set(r.map((x) => x.qid)))).catch(() => {});
     getFlags(auth.currentUser.uid).then((f) => setFlags(new Set(f))).catch(() => {});
-  }, [key]);
+  }, []);
 
   useEffect(() => {
     if (!items.length || checked) return;
@@ -48,8 +49,8 @@ export default function Training({ schools = ['РФМШ'] }) {
   }, [solved]);
 
   const start = (t, list) => { setTopic(t); setItems(list); setI(0); setAnswer(''); setChecked(false); setSecs(0); };
-  const openTopic = async (t) => start(t, await api.topicQuestions(t.id, schools, 'kk'));
-  const openMixed = async () => start({ id: '_mix', name: 'Аралас дайындық' }, await api.mixed(schools, 'kk', 20));
+  const openTopic = async (t) => start(t, await api.topicQuestions(t.id, 'kk'));
+  const openMixed = async () => start({ id: '_mix', name: 'Аралас дайындық' }, await api.mixed('kk', 20, 'math'));
   const next = () => {
     if (i + 1 < items.length) { setI(i + 1); setAnswer(''); setChecked(false); setSecs(0); }
     else { setTopic(null); setItems([]); }
@@ -107,18 +108,19 @@ export default function Training({ schools = ['РФМШ'] }) {
         <p className="kicker">Тақырыптар</p>
         <h1>Тақырыпты таңда</h1>
         <p className="muted" style={{ marginTop: 6 }}>
-          Дайындық: <b>{schools.join(' · ')}</b>.{schools.length > 1 && ' Есептер таңдалған мектептердің бәрінен араласып беріледі.'}
+          Есептер үш мектептің бәрінен араласып беріледі.
         </p>
 
-        {schools.length > 1 && (
-          <div className="hero-card" style={{ marginTop: 16 }}>
-            <h2>Аралас дайындық</h2>
-            <p>{schools.join(' + ')} есептері кезектесіп келеді.</p>
-            <button className="btn accent" onClick={openMixed}>Бастау →</button>
-          </div>
-        )}
+        <div className="hero-card" style={{ marginTop: 16 }}>
+          <h2>Аралас дайындық</h2>
+          <p>РФМШ + НИШ + БИЛ математикасы кезектесіп келеді.</p>
+          <button className="btn accent" onClick={openMixed}>Бастау →</button>
+        </div>
 
-        {BLOCKS.map((b) => <Group key={b.id} title={b.title} arr={topics.filter((t) => t.block === b.id)} />)}
+        {BLOCKS.map((b) => (
+          <Group key={b.id} title={b.title}
+            arr={topics.filter((t) => (b.only ? t.id === b.only : t.block === b.id))} />
+        ))}
       </main>
     );
   }
