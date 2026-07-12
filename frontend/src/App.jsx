@@ -21,7 +21,7 @@ const NAV = [
 export default function App() {
   const [user, setUser] = useState(undefined);
   const [tab, setTab] = useState('home');
-  const [profile, setProfile] = useState({ name: '', klass: '', schools: ['РФМШ'] });
+  const [profile, setProfile] = useState({ name: '', klass: '' });
 
   useEffect(() => watchAuth(setUser), []);
   useEffect(() => { if (user && isKid(user)) getMyProfile().then(setProfile); }, [user]);
@@ -30,9 +30,9 @@ export default function App() {
   if (!user) return <Auth />;
   if (!isKid(user)) return <Parent />;
 
-  const schools = profile.schools || ['РФМШ'];
   // Имя приходит из childIndex, а если Firestore недоступен — из displayName аккаунта.
   const name = profile.name || auth.currentUser?.displayName || '';
+
   return (
     <div className="shell">
       <aside className="sidebar">
@@ -51,7 +51,7 @@ export default function App() {
             <div className="ava">{(name || 'С')[0].toUpperCase()}</div>
             <div>
               <div style={{ font: "600 15px 'Golos Text'" }}>{name}</div>
-              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' }}>{schools.join(' · ')}</div>
+              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' }}>{profile.klass ? profile.klass + ' сынып' : 'оқушы'}</div>
             </div>
           </div>
           <button className="btn ghost full" onClick={logout}>Шығу</button>
@@ -59,9 +59,9 @@ export default function App() {
       </aside>
 
       <div className="content">
-        {tab === 'home' && <Home go={setTab} name={name} schools={schools} />}
-        {tab === 'training' && <Training schools={schools} />}
-        {tab === 'mock' && <Mock schools={schools} />}
+        {tab === 'home' && <Home go={setTab} name={name} />}
+        {tab === 'training' && <Training />}
+        {tab === 'mock' && <Mock />}
         {tab === 'duel' && <Duel />}
         {tab === 'league' && <League />}
         {tab === 'progress' && <Progress />}
