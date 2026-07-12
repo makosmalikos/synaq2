@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { watchAuth, isKid, logout, getMyProfile } from './firebase.js';
+import { auth, watchAuth, isKid, logout, getMyProfile } from './firebase.js';
 import Auth from './Auth.jsx';
 import Parent from './Parent.jsx';
 import Home from './Home.jsx';
@@ -21,7 +21,7 @@ const NAV = [
 export default function App() {
   const [user, setUser] = useState(undefined);
   const [tab, setTab] = useState('home');
-  const [profile, setProfile] = useState({ name: 'Бала', klass: '', school: 'РФМШ' });
+  const [profile, setProfile] = useState({ name: '', klass: '', schools: ['РФМШ'] });
 
   useEffect(() => watchAuth(setUser), []);
   useEffect(() => { if (user && isKid(user)) getMyProfile().then(setProfile); }, [user]);
@@ -30,7 +30,9 @@ export default function App() {
   if (!user) return <Auth />;
   if (!isKid(user)) return <Parent />;
 
-  const school = profile.school;
+  const schools = profile.schools || ['РФМШ'];
+  // Имя приходит из childIndex, а если Firestore недоступен — из displayName аккаунта.
+  const name = profile.name || auth.currentUser?.displayName || '';
   return (
     <div className="shell">
       <aside className="sidebar">
@@ -46,10 +48,10 @@ export default function App() {
         </nav>
         <div className="userbox">
           <div className="who">
-            <div className="ava">{(profile.name || 'Б')[0].toUpperCase()}</div>
+            <div className="ava">{(name || 'С')[0].toUpperCase()}</div>
             <div>
-              <div style={{ font: "600 15px 'Golos Text'" }}>{profile.name}</div>
-              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' }}>{profile.klass} сынып</div>
+              <div style={{ font: "600 15px 'Golos Text'" }}>{name}</div>
+              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' }}>{schools.join(' · ')}</div>
             </div>
           </div>
           <button className="btn ghost full" onClick={logout}>Шығу</button>
@@ -57,9 +59,9 @@ export default function App() {
       </aside>
 
       <div className="content">
-        {tab === 'home' && <Home go={setTab} name={profile.name} />}
-        {tab === 'training' && <Training school={school} />}
-        {tab === 'mock' && <Mock school={school} />}
+        {tab === 'home' && <Home go={setTab} name={name} schools={schools} />}
+        {tab === 'training' && <Training schools={schools} />}
+        {tab === 'mock' && <Mock schools={schools} />}
         {tab === 'duel' && <Duel />}
         {tab === 'league' && <League />}
         {tab === 'progress' && <Progress />}
