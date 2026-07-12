@@ -14,12 +14,19 @@ export default function Progress() {
           getMocks(auth.currentUser.uid),
           getSolved(auth.currentUser.uid),
         ]);
-        // решённые берём из solved/ — они не зависят от числа попыток
-        const solved = sv.length || new Set(att.filter(a => a.correct).map(a => a.qid)).size;
+        // «Шешілген есеп» — сколько РАЗНЫХ задач ребёнок прошёл, верно или нет.
+        // Ошибся — задача всё равно решалась, счётчик не должен стоять на нуле.
+        // Точность считается отдельно, по всем попыткам.
+        const solved = sv.length || new Set(att.map(a => a.qid)).size;
+        const right = sv.filter(x => x.correct).length;
         const attempted = att.length, correct = att.filter(a => a.correct).length;
-        setStat({ solved, acc: attempted ? Math.round(correct / attempted * 100) : 0 });
+        setStat({
+          solved,
+          right,
+          acc: attempted ? Math.round(correct / attempted * 100) : 0,
+        });
         setMocks(mk.sort((a, b) => (b.at?.seconds || 0) - (a.at?.seconds || 0)));
-      } catch { setStat({ solved: 0, acc: 0 }); }
+      } catch { setStat({ solved: 0, right: 0, acc: 0 }); }
     })();
   }, []);
 
@@ -46,8 +53,9 @@ export default function Progress() {
       <h1>Нәтижелерің</h1>
       <div className="card" style={{ marginTop: 16 }}>
         {!stat ? <span className="muted">Жүктелуде…</span> : (
-          <div style={{ display: 'flex', gap: 34 }}>
+          <div style={{ display: 'flex', gap: 30, flexWrap: 'wrap' }}>
             <Stat n={stat.solved} label="шешілген есеп" />
+            <Stat n={stat.right} label="дұрыс шығарған" />
             <Stat n={stat.acc + '%'} label="дұрыс жауап" />
             <Stat n={mocks.length} label="мок-тест" />
           </div>
