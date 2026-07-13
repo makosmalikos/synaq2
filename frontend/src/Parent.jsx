@@ -6,7 +6,8 @@ import {
 
 const Logo = () => <div className="logo"><b>Synaq</b><span>ата-ана</span></div>;
 
-export default function Parent() {
+export default function Parent({ onExit }) {
+  const exit = onExit || logout;
   const [children, setChildren] = useState([]);
   const [adding, setAdding] = useState(false);
   const [name, setName] = useState('');
@@ -41,7 +42,7 @@ export default function Parent() {
     <div className="app">
       <header>
         <Logo />
-        <button className="logout" onClick={logout}>Шығу</button>
+        <button className="logout" onClick={exit}>Шығу</button>
       </header>
 
       {created && (
