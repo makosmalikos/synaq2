@@ -31,8 +31,9 @@ export default function App() {
   useEffect(() => watchAuth(setUser), []);
   useEffect(() => { if (user && isKid(user)) getMyProfile().then(setProfile); }, [user]);
 
+  // Главная страница = лендинг (даже если пользователь уже вошёл)
+  if (!entered) return <Landing onStart={() => { window.history.pushState({}, '', '/app'); setEntered(true); }} />;
   if (user === undefined) return <div style={{ padding: 40, color: '#6B655B' }}>Жүктелуде…</div>;
-  if (!user && !entered) return <Landing onStart={() => { window.history.pushState({}, '', '/app'); setEntered(true); }} />;
   if (!user) return <Auth />;
   if (!isKid(user)) return <Parent />;
 
