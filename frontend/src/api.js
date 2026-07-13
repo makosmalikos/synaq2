@@ -1,92 +1,74 @@
-// Данные вшиты в приложение (data.js → bank.js) — бэкенд не нужен.
-//
-// Дайындык: школа не спрашивается, берём ВЕСЬ банк вперемешку.
-// Но блоки разделены: математика / логика / қазақ / орыс / ағылшын —
-// смешивать язык с математикой в одной ленте бессмысленно.
-//
-// Мок-тест: наоборот, строго по школам. Экзамен у каждой школы свой,
-// и вариант должен быть цельным, а не солянкой.
-import {
-  TOPICS, topicsAll, topicQuestionsAll, mixedAll,
-  VARIANTS, localizeVariant, SCHOOLS, POOL, localize,
-} from './bank.js';
+// Данные вшиты в приложение (data.js) — бэкенд не требуется.
+import { topics, questions, variants, nishMath, bilQ } from './data.js';
 
-// Сверка ответа. \b в JS работает только по латинице, поэтому на «5лет»
-// он не срабатывал и верный ответ не засчитывался.
-// Порядок важен: длинные варианты раньше коротких (км до м, тг до г).
-const UNITS = /(км\/сағ|км\/ч|м\/с|см²|м²|см³|м³|см2|м3|градус|тенге|теңге|сағат|минут|литр|штук|дана|адам|мин|сек|лет|года|годов|год|жыл|жас|раза|раз|есе|км|см|мм|дм|кг|тг|га|шт|°|м|г|л|ч)/gi;
+const rfmsh = questions.filter(q => q.school === 'РФМШ');
+const shuffle = (a) => a.map(x => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map(x => x[1]);
 
-export const normAnswer = (v) => (v ?? '').toString().trim().toLowerCase()
-  .replace(/\s+/g, '').replace(/,/g, '.').replace(/%/g, '').replace(UNITS, '');
-
-export const isCorrect = (given, q) => {
-  if (q.answer == null) return false;
-  if (q.options) return given === q.answer;
-  const a = normAnswer(given);
-  return a !== '' && a === normAnswer(q.answer);
-};
+const norm = (v) => (v ?? '').toString().trim().toLowerCase()
+  .replace(/\s+/g, '').replace(',', '.').replace(/%$/, '')
+  .replace(/(км|мм|см|м|мин|кг|г|л|тг|га|°)$/u, '');
 
 const P = (x) => Promise.resolve(x);
 
 export const api = {
-  // ── Дайындык: весь банк, без школ ──
-  topics: () => P(topicsAll()),
-  topicQuestions: (topicId, lang = 'kk') => P(topicQuestionsAll(topicId, lang)),
-  mixed: (lang = 'kk', limit = 20, block = null) => P(mixedAll(lang, limit, block)),
-
-  // ── Мок-тест: по школам ──
-  // Школы без вариантов не прячем — показываем «Жақында ашылады».
-  schools: () => P(SCHOOLS.map((s) => ({
-    code: s,
-    variants: VARIANTS.filter((v) => v.school === s).length,
-    questions: POOL.filter((q) => q.school === s).length,
-  }))),
-
-  mockList: (school) => P(
-    VARIANTS.filter((v) => !school || v.school === school)
-      .map((v) => ({ id: v.id, school: v.school, title: v.title, timeLimitMin: v.timeLimitMin, count: v.questions.length })),
+  // РФМШ — по темам
+  topics: () => P(
+    topics.map(t => ({ ...t, count: rfmsh.filter(q => q.topic === t.id).length })).filter(t => t.count > 0)
   ),
+  topicQuestions: (id, mix = true) => {
+    let items = rfmsh.filter(q => q.topic === id);
+    if (mix) items = shuffle(items);
+    return P(items);
+  },
+  mixed: (limit = 15) => P(shuffle(rfmsh).slice(0, limit)),
 
-  // Режим экзамена: ответы и разборы не отдаём
-  mockGet: (id, lang = 'kk') => {
-    const v = VARIANTS.find((x) => x.id === id);
-    if (!v) return P(null);
-    const lv = localizeVariant(v, lang);
-    return P({ ...lv, questions: lv.questions.map(({ answer, solution, ...rest }) => rest) });
+  // НИШ — по предметам
+  subjects: (school) => {
+    if (school === 'БИЛ') return P([
+      { id: 'math',   name: 'Математика',        count: bilQ.filter(q => q.subject === 'math').length },
+      { id: 'kolzar', name: 'Сандық сипаттама',  count: bilQ.filter(q => q.subject === 'kolzar').length },
+    ]);
+    if (school === 'НИШ') {
+      const n = (s) => nishMath.filter(q => q.subject === s).length;
+      return P([
+        { id: 'math',   name: 'Математика',   count: n('math') },
+        { id: 'kolzar', name: 'Колзар',        count: n('kolzar') },
+        { id: 'eng',    name: 'Ағылшын тілі',  count: n('eng') },
+        { id: 'rus',    name: 'Орыс тілі',     count: n('rus') },
+        { id: 'kaz',    name: 'Қазақ тілі',    count: n('kaz') },
+      ]);
+    }
+    return P(null); // РФМШ → темы
+  },
+  subjectQuestions: (subject, school) => {
+    if (school === 'БИЛ') return P(shuffle(bilQ.filter(q => q.subject === subject)));
+    if (school !== 'НИШ') return P([]);
+    return P(shuffle(nishMath.filter(q => q.subject === subject)));
   },
 
-  mockSubmit: (id, answers, lang = 'kk') => {
-    const v = VARIANTS.find((x) => x.id === id);
+  mockWeekly: () => {
+    if (!variants.length) return P(null);
+    const week = Math.floor(Date.now() / (7 * 24 * 3600 * 1000));
+    const idx = ((week % variants.length) + variants.length) % variants.length;
+    const v = variants[idx];
+    return P({ id: v.id, week: idx + 1, title: `Осы аптаның сынағы · ${idx + 1}-нұсқа`, timeLimitMin: v.timeLimitMin, count: v.questions.length });
+  },
+  mockGet: (id) => {
+    const v = variants.find(x => x.id === id);
     if (!v) return P(null);
-    const lv = localizeVariant(v, lang);
-    let score = 0, gradable = 0, wrong = 0;
-    const review = lv.questions.map((q) => {
-      const has = q.answer != null;
-      if (has) gradable++;
-      const ok = has && isCorrect(answers[q.num], q);
-      if (ok) score++;
-      else if (has) wrong++;
-      return {
-        id: q.id, num: q.num, topic: q.topic, school: q.school,
-        your: answers[q.num] ?? null, answer: q.answer, correct: ok,
-        statement: q.statement, solution: q.solution || '', image: q.image || null,
-      };
+    return P({ ...v, questions: v.questions.map(({ answer, solution, note, ...rest }) => rest) });
+  },
+  mockSubmit: (id, answers) => {
+    const v = variants.find(x => x.id === id);
+    if (!v) return P(null);
+    let correct = 0, gradable = 0;
+    const review = v.questions.map(q => {
+      const has = q.answer != null; if (has) gradable++;
+      const ua = norm(answers[q.num]);
+      const ok = has && ua !== '' && ua === norm(q.answer);
+      if (ok) correct++;
+      return { num: q.num, topic: q.topic, your: answers[q.num] ?? null, answer: q.answer, correct: ok, note: q.note || null };
     });
-    // Правило БИЛ: каждые 4 неверных ответа съедают 1 верный,
-    // остаток умножается на 1,5. Пустой ответ — тоже неверный.
-    // Включается сам, если у варианта стоит scoring: 'bil'.
-    if (v.scoring === 'bil') {
-      const kept = Math.max(0, score - Math.floor(wrong / 4));
-      return P({
-        score, wrong, gradable, total: lv.questions.length, review,
-        scoring: 'bil',
-        cancelled: score - kept,
-        points: Math.round(kept * 1.5 * 10) / 10,
-        maxPoints: Math.round(gradable * 1.5 * 10) / 10,
-      });
-    }
-    return P({ score, wrong, gradable, total: lv.questions.length, review });
+    return P({ score: correct, gradable, total: v.questions.length, review });
   },
 };
-
-export { TOPICS, POOL, localize, SCHOOLS };
