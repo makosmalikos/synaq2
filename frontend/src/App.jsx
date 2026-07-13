@@ -19,29 +19,50 @@ const NAV = [
   { id: 'progress', n: '06', label: 'Прогресс' },
 ];
 
+// Роут: '/' = лендинг, '/app' = авторизация → дашборд.
+const readRoute = () =>
+  (typeof window !== 'undefined' && window.location.pathname.startsWith('/app')) ? 'app' : 'landing';
+
 export default function App() {
   const [user, setUser] = useState(undefined);
-  const [entered, setEntered] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    return window.location.pathname.startsWith('/app') || window.location.hash === '#app';
-  });
+  const [route, setRoute] = useState(readRoute);
   const [tab, setTab] = useState('home');
   const [profile, setProfile] = useState({ name: 'Бала', klass: '', school: 'РФМШ' });
 
   useEffect(() => watchAuth(setUser), []);
   useEffect(() => { if (user && isKid(user)) getMyProfile().then(setProfile); }, [user]);
 
-  // Главная страница = лендинг (даже если пользователь уже вошёл)
-  if (!entered) return <Landing onStart={() => { window.history.pushState({}, '', '/app'); setEntered(true); }} />;
+  // кнопки «назад/вперёд» в браузере
+  useEffect(() => {
+    const onPop = () => setRoute(readRoute());
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
+
+  const go = (to) => {
+    window.history.pushState({}, '', to === 'app' ? '/app' : '/');
+    setRoute(to);
+    window.scrollTo(0, 0);
+  };
+
+  // 1. Лендинг — всегда первый экран на '/'
+  if (route === 'landing') return <Landing onStart={() => go('app')} />;
+
+  // 2. Авторизация — пока не вошли, дашборда нет
   if (user === undefined) return <div style={{ padding: 40, color: '#6B655B' }}>Жүктелуде…</div>;
   if (!user) return <Auth />;
-  if (!isKid(user)) return <Parent />;
+
+  // 3. Дашборд (родитель / ребёнок)
+  const exit = async () => { await logout(); go('landing'); };
+  if (!isKid(user)) return <Parent onExit={exit} />;
 
   const school = profile.school;
   return (
     <div className="shell">
       <aside className="sidebar">
-        <div className="logo"><b>Synaq</b><span>сынақ</span></div>
+        <div className="logo" onClick={() => go('landing')} style={{ cursor: 'pointer' }}>
+          <b>Synaq</b><span>сынақ</span>
+        </div>
         <nav className="nav-v">
           {NAV.map((it) => (
             <button key={it.id} className={tab === it.id ? 'on' : ''} onClick={() => setTab(it.id)}>
@@ -59,7 +80,7 @@ export default function App() {
               <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' }}>{profile.klass} сынып</div>
             </div>
           </div>
-          <button className="btn ghost full" onClick={logout}>Шығу</button>
+          <button className="btn ghost full" onClick={exit}>Шығу</button>
         </div>
       </aside>
 
