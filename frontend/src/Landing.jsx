@@ -2,9 +2,10 @@ import React from 'react';
 
 // ── ВИДЕО ДЕМО ──
 // Сюда вставь ссылку. Понимает три варианта:
-//   1) YouTube:  'https://www.youtube.com/watch?v=XXXX'  или  'https://youtu.be/XXXX'
-//   2) файл:     '/demo.mp4'  — сам файл положи в frontend/public/demo.mp4
-//   3) пусто:    '' — на месте видео будет аккуратная заглушка
+//   1) файл:     '/figures/demo.mp4'  — сам файл положи в frontend/public/figures/demo.mp4
+//                 (имя файла должно совпадать со строкой ниже)
+//   2) YouTube:  'https://youtu.be/XXXX'
+//   3) пусто:    '' — на месте видео будет заглушка
 const DEMO_VIDEO = '/figures/demo.mp4';
 
 // YouTube-ссылку любого вида превращаем в embed.
@@ -14,15 +15,18 @@ function ytEmbed(url) {
 }
 
 function Demo() {
+  const [failed, setFailed] = React.useState(false);
   // 56.25% = 16:9. Через padding, а не aspect-ratio: работает везде и не схлопывается в 0.
   const box = { position: 'relative', width: '100%', height: 0, paddingTop: '56.25%', borderRadius: '18px', overflow: 'hidden', background: '#15332B' };
   const fill = { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0, display: 'block' };
 
-  if (!DEMO_VIDEO) return (
+  if (!DEMO_VIDEO || failed) return (
     <div style={box}>
-      <div style={{ ...fill, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '10px' }}>
+      <div style={{ ...fill, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '10px', textAlign: 'center', padding: '0 20px' }}>
         <span style={{ font: "600 12px 'IBM Plex Mono',monospace", letterSpacing: '.16em', textTransform: 'uppercase', color: '#E9B84C' }}>Демо</span>
-        <span style={{ font: "500 15px 'Golos Text',sans-serif", color: '#BFCBC4' }}>Видео жақында қосылады</span>
+        <span style={{ font: "500 15px 'Golos Text',sans-serif", color: '#BFCBC4' }}>
+          {failed ? `Видео жүктелмеді: ${DEMO_VIDEO} табылмады` : 'Видео жақында қосылады'}
+        </span>
       </div>
     </div>
   );
@@ -33,7 +37,8 @@ function Demo() {
       {yt
         ? <iframe src={yt} title="Synaq demo" loading="lazy" style={fill}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen />
-        : <video src={DEMO_VIDEO} controls playsInline preload="metadata" style={{ ...fill, objectFit: 'cover' }} />}
+        : <video src={DEMO_VIDEO} controls playsInline muted autoPlay loop preload="metadata"
+            onError={() => setFailed(true)} style={{ ...fill, objectFit: 'contain', background: '#0E1B17' }} />}
     </div>
   );
 }
