@@ -1,5 +1,40 @@
 import React from 'react';
 
+// ── ВИДЕО ДЕМО ──
+// Сюда вставь ссылку. Понимает три варианта:
+//   1) YouTube:  'https://www.youtube.com/watch?v=XXXX'  или  'https://youtu.be/XXXX'
+//   2) файл:     '/demo.mp4'  — сам файл положи в frontend/public/demo.mp4
+//   3) пусто:    '' — на месте видео будет аккуратная заглушка
+const DEMO_VIDEO = '';
+
+// YouTube-ссылку любого вида превращаем в embed.
+function ytEmbed(url) {
+  const m = url.match(/(?:youtu\.be\/|v=|\/embed\/|\/shorts\/)([\w-]{6,})/);
+  return m ? `https://www.youtube.com/embed/${m[1]}` : null;
+}
+
+function Demo() {
+  const box = { position: 'relative', width: '100%', aspectRatio: '16/9', borderRadius: '18px', overflow: 'hidden', background: '#15332B' };
+  const fill = { position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0, display: 'block' };
+
+  if (!DEMO_VIDEO) return (
+    <div style={{ ...box, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '10px' }}>
+      <span style={{ font: "600 12px 'IBM Plex Mono',monospace", letterSpacing: '.16em', textTransform: 'uppercase', color: '#E9B84C' }}>Демо</span>
+      <span style={{ font: "500 15px 'Golos Text',sans-serif", color: '#BFCBC4' }}>Видео жақында қосылады</span>
+    </div>
+  );
+
+  const yt = ytEmbed(DEMO_VIDEO);
+  return (
+    <div style={box}>
+      {yt
+        ? <iframe src={yt} title="Synaq demo" loading="lazy" style={fill}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen />
+        : <video src={DEMO_VIDEO} controls playsInline preload="metadata" style={{ ...fill, objectFit: 'cover' }} />}
+    </div>
+  );
+}
+
 export default function Landing({ onStart }) {
   const handleStart = (e) => { e.preventDefault(); onStart(); };
   return (
@@ -93,9 +128,7 @@ export default function Landing({ onStart }) {
 
       
       <div className="lp-demo" style={{maxWidth:'1000px',margin:'0 auto 54px'}}>
-        <div style={{position:'relative',width:'100%',aspectRatio:'16/9',borderRadius:'18px',overflow:'hidden'}}>
-          <iframe src="" loading="lazy" title="Synaq demo" style={{position:'absolute',inset:'0',width:'100%',height:'100%',border:'0',display:'block'}}></iframe>
-        </div>
+        <Demo />
       </div>
 
       <div className="lp-steps" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'20px'}}>
