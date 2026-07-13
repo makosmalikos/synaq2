@@ -33,6 +33,7 @@ const SUBJ_TOPIC = { kolzar: 'kolzar', kaz: 'lang_kaz', rus: 'lang_rus', eng: 'l
 const one = (q, school) => ({
   id: q.id,
   school: q.school || school,
+  subject: q.subject || null,   // math | kolzar | kaz | rus | eng (у РФМШ нет)
   topic: q.topic || SUBJ_TOPIC[q.subject] || guessTopic(`${q.statement} ${q.answer ?? ''}`),
   num: q.num,
   statement: q.statement,
