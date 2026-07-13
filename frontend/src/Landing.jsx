@@ -5,7 +5,7 @@ import React from 'react';
 //   1) YouTube:  'https://www.youtube.com/watch?v=XXXX'  или  'https://youtu.be/XXXX'
 //   2) файл:     '/demo.mp4'  — сам файл положи в frontend/public/demo.mp4
 //   3) пусто:    '' — на месте видео будет аккуратная заглушка
-const DEMO_VIDEO = '/demo.mp4';
+const DEMO_VIDEO = '/figures/demo.mp4';
 
 // YouTube-ссылку любого вида превращаем в embed.
 function ytEmbed(url) {
