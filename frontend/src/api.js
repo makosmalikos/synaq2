@@ -1,106 +1,57 @@
-// Данные вшиты в приложение (data.js + bank.js) — бэкенд не требуется.
-import { topics as BASE_TOPICS, variants } from './data.js';
-import { POOL, EXTRA_TOPICS } from './bank.js';
+// Единый банк задач: РФМШ + НИШ + БИЛ, все разложены по темам РФМШ (data.js → topics).
+// У задач НИШ/БИЛ поля topic нет, поэтому тема определяется по тексту задачи.
+import { questions, nishMath, bilQ } from './data.js';
 
-const P = (x) => Promise.resolve(x);
-const shuffle = (a) => a.map((x) => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map((x) => x[1]);
+// Тема → ключевые слова (рус + каз). Проверяются сверху вниз, побеждает
+// та тема, у которой больше совпадений (при равенстве — которая выше).
+const RULES = [
+  ['pct',   /процент|%|пайыз|скидк|наценк|подорожа|подешев|годовых|депозит|выручк|прибыл|раствор|сплав|концентрац|құрам|пайда/i],
+  ['geo',   /площад|периметр|объ[её]м|көлем|аудан|треугольник|прямоугольник|квадрат|окружност|радиус|диаметр|шеңбер|шаршы|тіктөртбұрыш|үшбұрыш|параллелепипед|куб|градус|бұрыш|\bугол|стрелк|координат|отрезок|кесінді|масштаб|см2|м2|см3|қабырға/i],
+  ['work',  /за сколько (дней|часов|минут)|производительн|рабочи|каменщик|труб[аы]|бассейн|наполн|вместе (выполн|за)|бірге|жұмысшы|среднее арифметическ|орташа арифметик|в среднем|среднее значение|орташа/i],
+  ['ratio', /скорост|км\/ч|км\/сағ|жылдамдық|навстречу|догон|течени[еюя]|против течения|отношени[еяю]|относятся|қатынас|пропорци|бөліп|санының/i],
+  ['seq',   /последовательн(?!ых (нечётных|чётных))|продолжите ряд|жалғастыр|закономерн|ряд чисел|тізбек|следующ[еи][йе] числ|кажд(ая|ой) части? длиннее|әр бөлік/i],
+  ['comb',  /сколькими способами|неше тәсіл|комбинац|перестанов|вероятн|лжец|өтірікші|турнир|шахмат|рукопожат|амандасу|способов|букет/i],
+  ['sys',   /неравенств|теңсіздік|систем[ауы] ур|жүйе|множеств|жиын|пересечени|объединени|қиылыс|интервал|аралығ|диаграмм|и то, и другое|екеуін де|ни то ни другое|оба предмета/i],
+  ['num',   /НОД|НОК|ЕҮОБ|ЕКОЕ|дели(тся|мо[ес]|тел)|бөлін|бөлгіш|еселік|прост[оы]е числ|жай сан|составн[оы]е числ|құрама сан|разряд|цифр|остат[ко]|қалдық|кратн|на простые|жай көбейткіш|факториал|нол[ья]ми|оканчива|аяқтал|последовательных (нечётных|чётных|чисел)|тақ сан|жұп сан|чётн/i],
+  ['frac',  /дроб|бөлшек|десятичн|ондық|обратн[оы]е число|кері сан|противоположн|қарама-қарсы|найдите (сумму|разность|произведение|частное)|сандардың (қосындысын|айырмасын|көбейтіндісін|бөліндісін)|вычислите|есепте|выполните действи|амалды орында|значение выражения|өрнектің мәнін|раскройте скобк|жақшаны аш|целую часть|бүтін бөлі|модул|обратите|айналдыр/i],
+  ['eq',    /уравнени|теңдеу|корень|түбір|упрост|ықшамда|подобные слагаемые|ұқсас қосылғыш|неизвестн|белгісіз|задуманное число|ойланған сан|возраст|\bлет\b|жаста|старше|младше|үлкен|кіші|уменьшаемо|вычитаемо|азайғыш|азайтқыш|операци|⊕|в \d+ раза? (больше|меньше)|есе (артық|кем)/i],
+  ['spat',  /куб(ик)?ов|развёртк|фигур|клетчат|сетк|рисунк|сурет|кеңістік|треугольников можно найти|квадратов можно/i],
+];
 
-// Нормализация ответа: пробелы, запятая/точка, %, единицы измерения.
-const norm = (v) => (v ?? '').toString().trim().toLowerCase()
-  .replace(/\s+/g, '').replace(',', '.').replace(/%$/, '')
-  .replace(/(км|мм|см|м|мин|кг|г|л|тг|га|°)$/u, '');
-
-// Проверка ответа. Для теста с вариантами — точное совпадение опции.
-export function isCorrect(given, q) {
-  if (!q || q.answer == null) return false;
-  if (q.options) return String(given).trim() === String(q.answer).trim();
-  const a = norm(given);
-  return a !== '' && a === norm(q.answer);
+function guessTopic(text) {
+  let best = 'num', score = 0;
+  for (const [topic, re] of RULES) {
+    const n = (text.match(new RegExp(re.source, 'gi')) || []).length;
+    if (n > score) { score = n; best = topic; }
+  }
+  return best;
 }
 
-const ALL_TOPICS = [...BASE_TOPICS, ...EXTRA_TOPICS];
+// Предметы НИШ/БИЛ, которые темой РФМШ не описываются.
+const SUBJ_TOPIC = { kolzar: 'kolzar', kaz: 'lang_kaz', rus: 'lang_rus', eng: 'lang_eng' };
 
-export const api = {
-  // ── Тренировка ──
-  topics: () => P(
-    ALL_TOPICS
-      .map((t) => {
-        const qs = POOL.filter((q) => q.topic === t.id);
-        return {
-          ...t,
-          count: qs.length,
-          schools: [...new Set(qs.map((q) => q.school))],
-        };
-      })
-      .filter((t) => t.count > 0)
-  ),
+const one = (q, school) => ({
+  id: q.id,
+  school: q.school || school,
+  topic: q.topic || SUBJ_TOPIC[q.subject] || guessTopic(`${q.statement} ${q.answer ?? ''}`),
+  num: q.num,
+  statement: q.statement,
+  answer: q.answer,
+  solution: q.solution || '',
+  image: q.image || null,
+  options: q.options || null,
+});
 
-  topicQuestions: (id) => P(shuffle(POOL.filter((q) => q.topic === id))),
+export const POOL = [
+  ...questions.map((q) => one(q, 'РФМШ')),
+  ...nishMath.map((q) => one(q, 'НИШ')),
+  ...bilQ.map((q) => one(q, 'БИЛ')),
+];
 
-  // Аралас дайындык: только математические блоки, вперемешку по школам.
-  mixed: (_lang, limit = 20, block = 'math') => {
-    const ids = ALL_TOPICS.filter((t) => t.block === block).map((t) => t.id);
-    return P(shuffle(POOL.filter((q) => ids.includes(q.topic))).slice(0, limit));
-  },
-
-  // ── Мок-тест ──
-  schools: () => P(['РФМШ', 'НИШ', 'БИЛ'].map((code) => {
-    const vs = variants.filter((v) => v.school === code);
-    return {
-      code,
-      variants: vs.length,
-      questions: vs.reduce((s, v) => s + v.questions.length, 0),
-    };
-  })),
-
-  mockList: (school) => P(
-    variants.filter((v) => v.school === school).map((v) => ({
-      id: v.id,
-      school: v.school,
-      title: v.title,
-      timeLimitMin: v.timeLimitMin,
-      count: v.questions.length,
-    }))
-  ),
-
-  // Вариант без ответов и разборов — как на настоящем экзамене.
-  mockGet: (id) => {
-    const v = variants.find((x) => x.id === id);
-    if (!v) return P(null);
-    return P({
-      ...v,
-      questions: v.questions.map(({ answer, solution, note, ...rest }) => rest),
-    });
-  },
-
-  mockSubmit: (id, answers) => {
-    const v = variants.find((x) => x.id === id);
-    if (!v) return P(null);
-    let correct = 0, gradable = 0, wrong = 0;
-    const review = v.questions.map((q) => {
-      const has = q.answer != null;
-      if (has) gradable++;
-      const ok = has && isCorrect(answers[q.num], q);
-      if (ok) correct++;
-      else if (has && norm(answers[q.num]) !== '') wrong++;
-      return {
-        num: q.num, topic: q.topic, school: v.school,
-        statement: q.statement, solution: q.solution || '',
-        your: answers[q.num] ?? null, answer: q.answer,
-        correct: ok, note: q.note || null,
-      };
-    });
-
-    // БИЛ считает иначе: каждые 4 ошибки съедают 1 верный ответ, остаток ×1,5.
-    if (v.school === 'БИЛ') {
-      const cancelled = Math.floor(wrong / 4);
-      const net = Math.max(0, correct - cancelled);
-      return P({
-        scoring: 'bil', score: correct, wrong, cancelled,
-        points: +(net * 1.5).toFixed(1), maxPoints: +(gradable * 1.5).toFixed(1),
-        gradable, total: v.questions.length, review,
-      });
-    }
-    return P({ score: correct, gradable, total: v.questions.length, review });
-  },
-};
+// Темы вне data.topics: колзар и языки.
+export const EXTRA_TOPICS = [
+  { id: 'kolzar',   block: 'math',     name: 'Сандық салыстыру (колзар)' },
+  { id: 'lang_kaz', block: 'lang_kaz', name: 'Қазақ тілі' },
+  { id: 'lang_rus', block: 'lang_rus', name: 'Орыс тілі' },
+  { id: 'lang_eng', block: 'lang_eng', name: 'Ағылшын тілі' },
+];
