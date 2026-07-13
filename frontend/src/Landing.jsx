@@ -37,7 +37,7 @@ export default function Landing({ onStart }) {
 `}</style>
 <nav className="lp-nav lp-pad" style={{position:'sticky',top:'0',zIndex:'50',display:'flex',alignItems:'center',justifyContent:'space-between',padding:'14px 56px',background:'rgba(251,250,246,.88)',backdropFilter:'blur(12px)',borderBottom:'1px solid rgba(23,20,15,.09)'}}>
     <div style={{display:'flex',alignItems:'center',gap:'12px'}}>
-      <div style={{width:'42px',height:'42px',borderRadius:'12px',overflow:'hidden',boxShadow:'0 4px 14px -6px rgba(21,51,43,.6)'}}><img src="/lp/6ee8b3d2.jpg" alt="Synaq" style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}} /></div>
+      <div style={{width:'42px',height:'42px',borderRadius:'12px',overflow:'hidden',boxShadow:'0 4px 14px -6px rgba(21,51,43,.6)'}}><img src="/figures/6ee8b3d2.jpg" alt="Synaq" style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}} /></div>
       <span style={{font:'700 24px \'Golos Text\',sans-serif',letterSpacing:'-.01em'}}>Synaq</span>
     </div>
     <div className="lp-navlinks" style={{display:'flex',alignItems:'center',gap:'32px',font:'500 15px \'Golos Text\',sans-serif',color:'#4A463E'}}>
@@ -59,7 +59,7 @@ export default function Landing({ onStart }) {
       <h1 className="lp-h1" style={{font:'600 74px/1.02 \'Golos Text\',sans-serif',letterSpacing:'-.025em',margin:'0 0 24px'}}>Поступи в <span style={{fontStyle:'italic',color:'#B0342B'}}>ту самую</span> школу</h1>
       <p style={{fontSize:'19px',lineHeight:'1.6',color:'#5A554B',margin:'0 0 34px',maxWidth:'480px'}}>Онлайн-платформа готовит детей 5–6 классов под формат вступительного экзамена РФМШ, НИШ и БИЛ — на реальных задачах, а не «математика вообще».</p>
       <div style={{display:'flex',gap:'13px',flexWrap:'wrap'}}>
-        <a href="#" className="lp-cta" style={{background:'#15584A',color:'#FBFAF6',padding:'15px 32px',borderRadius:'12px',font:'600 16px \'Golos Text\',sans-serif'}}>Начать бесплатно</a>
+        <a href="#" onClick={handleStart} className="lp-cta" style={{background:'#15584A',color:'#FBFAF6',padding:'15px 32px',borderRadius:'12px',font:'600 16px \'Golos Text\',sans-serif'}}>Начать бесплатно</a>
         <a href="#how" className="lp-ghost" style={{padding:'15px 28px',borderRadius:'12px',border:'1px solid rgba(23,20,15,.16)',font:'600 16px \'Golos Text\',sans-serif',color:'#17140F'}}>Как это работает</a>
       </div>
     </div>
@@ -67,9 +67,9 @@ export default function Landing({ onStart }) {
     
     <div style={{position:'relative',display:'flex',flexDirection:'column',alignItems:'center'}}>
       <div style={{position:'relative',width:'320px',height:'270px',display:'flex',alignItems:'center',justifyContent:'center',borderBottom:'1px solid rgba(23,20,15,.14)'}}>
-        <div className="lp-rot lp-rot1" style={{position:'absolute',width:'220px',height:'220px',display:'flex',alignItems:'center',justifyContent:'center',padding:'14px'}}><img src="/lp/20fb0c30.png" alt="РФМШ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
-        <div className="lp-rot lp-rot2" style={{position:'absolute',width:'220px',height:'220px',display:'flex',alignItems:'center',justifyContent:'center',padding:'14px'}}><img src="/lp/5ac51878.png" alt="НИШ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
-        <div className="lp-rot lp-rot3" style={{position:'absolute',width:'220px',height:'220px',display:'flex',alignItems:'center',justifyContent:'center',padding:'14px'}}><img src="/lp/191a2c27.png" alt="БИЛ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
+        <div className="lp-rot lp-rot1" style={{position:'absolute',width:'220px',height:'220px',display:'flex',alignItems:'center',justifyContent:'center',padding:'14px'}}><img src="/figures/20fb0c30.png" alt="РФМШ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
+        <div className="lp-rot lp-rot2" style={{position:'absolute',width:'220px',height:'220px',display:'flex',alignItems:'center',justifyContent:'center',padding:'14px'}}><img src="/figures/5ac51878.png" alt="НИШ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
+        <div className="lp-rot lp-rot3" style={{position:'absolute',width:'220px',height:'220px',display:'flex',alignItems:'center',justifyContent:'center',padding:'14px'}}><img src="/figures/191a2c27.png" alt="БИЛ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
       </div>
       <div style={{display:'flex',alignItems:'center',gap:'12px',marginTop:'26px'}}>
         <span style={{font:'600 11px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#8A8474'}}>Готовим к</span>
@@ -133,7 +133,7 @@ export default function Landing({ onStart }) {
     <div className="lp-schools" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'22px'}}>
       <div className="lp-card" style={{background:'#fff',border:'1px solid rgba(23,20,15,.09)',borderRadius:'20px',padding:'30px 28px'}}>
         <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:'22px'}}>
-          <div style={{width:'76px',height:'76px',background:'#FBFAF6',border:'1px solid rgba(23,20,15,.08)',borderRadius:'16px',display:'flex',alignItems:'center',justifyContent:'center',padding:'11px'}}><img src="/lp/20fb0c30.png" alt="РФМШ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
+          <div style={{width:'76px',height:'76px',background:'#FBFAF6',border:'1px solid rgba(23,20,15,.08)',borderRadius:'16px',display:'flex',alignItems:'center',justifyContent:'center',padding:'11px'}}><img src="/figures/20fb0c30.png" alt="РФМШ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
           <span style={{font:'600 11px \'IBM Plex Mono\',monospace',letterSpacing:'.06em',textTransform:'uppercase',color:'#1F7A4D',background:'rgba(31,122,77,.1)',padding:'6px 11px',borderRadius:'8px'}}>Открыт</span>
         </div>
         <div style={{font:'600 24px \'Golos Text\',sans-serif',marginBottom:'4px'}}>РФМШ</div>
@@ -142,7 +142,7 @@ export default function Landing({ onStart }) {
       </div>
       <div className="lp-card" style={{background:'#fff',border:'1px solid rgba(23,20,15,.09)',borderRadius:'20px',padding:'30px 28px'}}>
         <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:'22px'}}>
-          <div style={{width:'76px',height:'76px',background:'#FBFAF6',border:'1px solid rgba(23,20,15,.08)',borderRadius:'16px',display:'flex',alignItems:'center',justifyContent:'center',padding:'11px'}}><img src="/lp/5ac51878.png" alt="НИШ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
+          <div style={{width:'76px',height:'76px',background:'#FBFAF6',border:'1px solid rgba(23,20,15,.08)',borderRadius:'16px',display:'flex',alignItems:'center',justifyContent:'center',padding:'11px'}}><img src="/figures/5ac51878.png" alt="НИШ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
           <span style={{font:'600 11px \'IBM Plex Mono\',monospace',letterSpacing:'.06em',textTransform:'uppercase',color:'#8A8474',background:'rgba(23,20,15,.05)',padding:'6px 11px',borderRadius:'8px'}}>Скоро</span>
         </div>
         <div style={{font:'600 24px \'Golos Text\',sans-serif',marginBottom:'4px'}}>НИШ</div>
@@ -151,7 +151,7 @@ export default function Landing({ onStart }) {
       </div>
       <div className="lp-card" style={{background:'#fff',border:'1px solid rgba(23,20,15,.09)',borderRadius:'20px',padding:'30px 28px'}}>
         <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:'22px'}}>
-          <div style={{width:'76px',height:'76px',background:'#FBFAF6',border:'1px solid rgba(23,20,15,.08)',borderRadius:'16px',display:'flex',alignItems:'center',justifyContent:'center',padding:'11px'}}><img src="/lp/191a2c27.png" alt="КТЛ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
+          <div style={{width:'76px',height:'76px',background:'#FBFAF6',border:'1px solid rgba(23,20,15,.08)',borderRadius:'16px',display:'flex',alignItems:'center',justifyContent:'center',padding:'11px'}}><img src="/figures/191a2c27.png" alt="КТЛ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
           <span style={{font:'600 11px \'IBM Plex Mono\',monospace',letterSpacing:'.06em',textTransform:'uppercase',color:'#8A8474',background:'rgba(23,20,15,.05)',padding:'6px 11px',borderRadius:'8px'}}>Скоро</span>
         </div>
         <div style={{font:'600 24px \'Golos Text\',sans-serif',marginBottom:'4px'}}>БИЛ</div>
@@ -201,7 +201,7 @@ export default function Landing({ onStart }) {
           <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#E9B84C',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Golos Text\'',marginBottom:'3px',color:'#FBFAF6'}}>Карта сильных и слабых тем</div><div style={{fontSize:'15px',color:'#BFCBC4',lineHeight:'1.5'}}>По цветам видно, где всё хорошо, а на что налечь.</div></div></div>
           <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#E9B84C',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Golos Text\'',marginBottom:'3px',color:'#FBFAF6'}}>Время занятий и рост баллов</div><div style={{fontSize:'15px',color:'#BFCBC4',lineHeight:'1.5'}}>Сколько ребёнок занимался и как растёт балл за мок-тест от недели к неделе.</div></div></div>
         </div>
-        <a href="#" className="lp-cta" style={{display:'inline-block',marginTop:'32px',background:'#E9B84C',color:'#231a06',padding:'14px 30px',borderRadius:'12px',font:'600 16px \'Golos Text\',sans-serif'}}>Открыть кабинет</a>
+        <a href="#" onClick={handleStart} className="lp-cta" style={{display:'inline-block',marginTop:'32px',background:'#E9B84C',color:'#231a06',padding:'14px 30px',borderRadius:'12px',font:'600 16px \'Golos Text\',sans-serif'}}>Открыть кабинет</a>
       </div>
     </div>
   </section>
@@ -240,7 +240,7 @@ export default function Landing({ onStart }) {
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#EAF0ED'}}><span style={{color:'#E9B84C'}}>✓</span>ИИ-разбор ошибок</div>
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#EAF0ED'}}><span style={{color:'#E9B84C'}}>✓</span>Кабинет родителя и лига</div>
         </div>
-        <a href="#" className="lp-cta" style={{display:'block',textAlign:'center',marginTop:'26px',padding:'14px',borderRadius:'12px',background:'#E9B84C',color:'#231a06',font:'600 15px \'Golos Text\''}}>Выбрать Про</a>
+        <a href="#" onClick={handleStart} className="lp-cta" style={{display:'block',textAlign:'center',marginTop:'26px',padding:'14px',borderRadius:'12px',background:'#E9B84C',color:'#231a06',font:'600 15px \'Golos Text\''}}>Выбрать Про</a>
       </div>
 
       
@@ -253,7 +253,7 @@ export default function Landing({ onStart }) {
       <h2 style={{font:'600 58px/1.02 \'Golos Text\',sans-serif',letterSpacing:'-.025em',margin:'0 0 18px'}}>Synaq <span style={{fontStyle:'italic',color:'#E9B84C'}}>уже открыт</span></h2>
       <p style={{fontSize:'18px',color:'#BFCBC4',margin:'0 auto 34px',maxWidth:'480px'}}>Готовьте ребёнка к поступлению осознанно — прогресс виден с первого дня.</p>
       <div style={{display:'flex',gap:'13px',justifyContent:'center',flexWrap:'wrap'}}>
-        <a href="#" className="lp-cta" style={{display:'inline-block',background:'#E9B84C',color:'#231a06',padding:'17px 40px',borderRadius:'14px',font:'600 17px \'Golos Text\',sans-serif'}}>Начать бесплатно</a>
+        <a href="#" onClick={handleStart} className="lp-cta" style={{display:'inline-block',background:'#E9B84C',color:'#231a06',padding:'17px 40px',borderRadius:'14px',font:'600 17px \'Golos Text\',sans-serif'}}>Начать бесплатно</a>
         <a href="#pricing" className="lp-ghost" style={{display:'inline-block',padding:'17px 34px',borderRadius:'14px',border:'1px solid rgba(255,255,255,.24)',font:'600 17px \'Golos Text\',sans-serif',color:'#FBFAF6'}}>Смотреть тарифы</a>
       </div>
       
@@ -263,7 +263,7 @@ export default function Landing({ onStart }) {
   
   <footer className="lp-pad" style={{borderTop:'1px solid rgba(23,20,15,.1)',padding:'30px 56px',maxWidth:'1280px',margin:'0 auto',display:'flex',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',gap:'16px'}}>
     <div style={{display:'flex',alignItems:'center',gap:'11px'}}>
-      <div style={{width:'34px',height:'34px',borderRadius:'9px',overflow:'hidden'}}><img src="/lp/6ee8b3d2.jpg" alt="Synaq" style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}} /></div>
+      <div style={{width:'34px',height:'34px',borderRadius:'9px',overflow:'hidden'}}><img src="/figures/6ee8b3d2.jpg" alt="Synaq" style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}} /></div>
       <span style={{font:'700 18px \'Golos Text\',sans-serif'}}>Synaq</span>
     </div>
     <div style={{font:'500 13px \'IBM Plex Mono\',monospace',color:'#8A8474'}}>РФМШ · НИШ · КТЛ · с 2026</div>
