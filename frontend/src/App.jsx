@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { auth, watchAuth, isKid, logout, getMyProfile } from './firebase.js';
+import { watchAuth, isKid, logout, getMyProfile } from './firebase.js';
 import Auth from './Auth.jsx';
+import Landing from './Landing.jsx';
 import Parent from './Parent.jsx';
 import Home from './Home.jsx';
 import Progress from './Progress.jsx';
@@ -20,19 +21,22 @@ const NAV = [
 
 export default function App() {
   const [user, setUser] = useState(undefined);
+  const [entered, setEntered] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.location.pathname.startsWith('/app') || window.location.hash === '#app';
+  });
   const [tab, setTab] = useState('home');
-  const [profile, setProfile] = useState({ name: '', klass: '' });
+  const [profile, setProfile] = useState({ name: 'Бала', klass: '', school: 'РФМШ' });
 
   useEffect(() => watchAuth(setUser), []);
   useEffect(() => { if (user && isKid(user)) getMyProfile().then(setProfile); }, [user]);
 
   if (user === undefined) return <div style={{ padding: 40, color: '#6B655B' }}>Жүктелуде…</div>;
+  if (!user && !entered) return <Landing onStart={() => { window.history.pushState({}, '', '/app'); setEntered(true); }} />;
   if (!user) return <Auth />;
   if (!isKid(user)) return <Parent />;
 
-  // Имя приходит из childIndex, а если Firestore недоступен — из displayName аккаунта.
-  const name = profile.name || auth.currentUser?.displayName || '';
-
+  const school = profile.school;
   return (
     <div className="shell">
       <aside className="sidebar">
@@ -48,10 +52,10 @@ export default function App() {
         </nav>
         <div className="userbox">
           <div className="who">
-            <div className="ava">{(name || 'С')[0].toUpperCase()}</div>
+            <div className="ava">{(profile.name || 'Б')[0].toUpperCase()}</div>
             <div>
-              <div style={{ font: "600 15px 'Golos Text'" }}>{name}</div>
-              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' }}>{profile.klass ? profile.klass + ' сынып' : 'оқушы'}</div>
+              <div style={{ font: "600 15px 'Golos Text'" }}>{profile.name}</div>
+              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' }}>{profile.klass} сынып</div>
             </div>
           </div>
           <button className="btn ghost full" onClick={logout}>Шығу</button>
@@ -59,9 +63,9 @@ export default function App() {
       </aside>
 
       <div className="content">
-        {tab === 'home' && <Home go={setTab} name={name} />}
-        {tab === 'training' && <Training />}
-        {tab === 'mock' && <Mock />}
+        {tab === 'home' && <Home go={setTab} name={profile.name} />}
+        {tab === 'training' && <Training school={school} />}
+        {tab === 'mock' && <Mock school={school} />}
         {tab === 'duel' && <Duel />}
         {tab === 'league' && <League />}
         {tab === 'progress' && <Progress />}
