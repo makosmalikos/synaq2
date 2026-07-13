@@ -79,7 +79,6 @@ export default function Training() {
       <>
         <div className="row" style={{ margin: '26px 0 12px' }}>
           <span className="kicker" style={{ margin: 0 }}>{title}</span>
-          <span className="tag">{arr.reduce((s, t) => s + t.count, 0)} есеп</span>
         </div>
         <div className="list">
           {arr.map((t, k) => {
@@ -91,7 +90,7 @@ export default function Training() {
                 <div style={{ flex: 1 }}>
                   <b>{t.name}</b>
                   <div style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 3 }}>
-                    {t.count} сұрақ · {t.schools.join(' · ')}
+                    {t.schools.join(' · ')}
                   </div>
                 </div>
                 <div style={{ width: 110 }}><div className="bar"><i style={{ width: pct + '%' }} /></div></div>
