@@ -6,7 +6,7 @@ import React from 'react';
 //                 (имя файла должно совпадать со строкой ниже)
 //   2) YouTube:  'https://youtu.be/XXXX'
 //   3) пусто:    '' — на месте видео будет заглушка
-const DEMO_VIDEO = 'https://youtu.be/Nh1_SDeFX5Y?si=cAmsL1VlEgzCUMMX';
+const DEMO_VIDEO = '/figures/demo.mp4';
 
 // YouTube-ссылку любого вида превращаем в embed.
 function ytEmbed(url) {
@@ -81,7 +81,7 @@ export default function Landing({ onStart }) {
 <nav className="lp-nav lp-pad" style={{position:'sticky',top:'0',zIndex:'50',display:'flex',alignItems:'center',justifyContent:'space-between',padding:'14px 56px',background:'rgba(251,250,246,.88)',backdropFilter:'blur(12px)',borderBottom:'1px solid rgba(23,20,15,.09)'}}>
     <div style={{display:'flex',alignItems:'center',gap:'12px'}}>
       <div style={{width:'42px',height:'42px',borderRadius:'12px',overflow:'hidden',boxShadow:'0 4px 14px -6px rgba(21,51,43,.6)'}}><img src="/figures/6ee8b3d2.jpg" alt="Synaq" style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}} /></div>
-      <span style={{font:'700 24px \'Golos Text\',sans-serif',letterSpacing:'-.01em'}}>Synaq</span>
+      <span style={{font:'700 24px \'Lora\',serif',letterSpacing:'-.01em'}}>Synaq</span>
     </div>
     <div className="lp-navlinks" style={{display:'flex',alignItems:'center',gap:'32px',font:'500 15px \'Golos Text\',sans-serif',color:'#4A463E'}}>
       <a href="#how">Как работает</a>
@@ -99,7 +99,7 @@ export default function Landing({ onStart }) {
         <span style={{width:'7px',height:'7px',borderRadius:'50%',background:'#1F7A4D',boxShadow:'0 0 0 4px rgba(31,122,77,.16)'}}></span>
         <span style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.1em',textTransform:'uppercase',color:'#1F7A4D'}}>Платформа уже открыта</span>
       </div>
-      <h1 className="lp-h1" style={{font:'600 74px/1.02 \'Golos Text\',sans-serif',letterSpacing:'-.025em',margin:'0 0 24px'}}>Поступи в <span style={{fontStyle:'italic',color:'#B0342B'}}>ту самую</span> школу</h1>
+      <h1 className="lp-h1" style={{font:'600 74px/1.02 \'Lora\',serif',letterSpacing:'-.025em',margin:'0 0 24px'}}>Поступи в <span style={{fontStyle:'italic',color:'#B0342B'}}>ту самую</span> школу</h1>
       <p style={{fontSize:'19px',lineHeight:'1.6',color:'#5A554B',margin:'0 0 34px',maxWidth:'480px'}}>Онлайн-платформа готовит детей 5–6 классов под формат вступительного экзамена РФМШ, НИШ и БИЛ — на реальных задачах, а не «математика вообще».</p>
       <div style={{display:'flex',gap:'13px',flexWrap:'wrap'}}>
         <a href="#" onClick={handleStart} className="lp-cta" style={{background:'#15584A',color:'#FBFAF6',padding:'15px 32px',borderRadius:'12px',font:'600 16px \'Golos Text\',sans-serif'}}>Начать бесплатно</a>
@@ -130,7 +130,7 @@ export default function Landing({ onStart }) {
     <div className="lp-pad" style={{maxWidth:'1280px',margin:'0 auto',padding:'0 56px'}}>
       <div style={{textAlign:'center',marginBottom:'40px',maxWidth:'640px',marginLeft:'auto',marginRight:'auto'}}>
         <div style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#B0342B',marginBottom:'14px'}}>Как это работает</div>
-        <h2 style={{font:'600 46px/1.05 \'Golos Text\',sans-serif',letterSpacing:'-.02em',margin:'0 0 12px'}}>Посмотрите платформу в действии</h2>
+        <h2 style={{font:'600 46px/1.05 \'Lora\',serif',letterSpacing:'-.02em',margin:'0 0 12px'}}>Посмотрите платформу в действии</h2>
         <p style={{fontSize:'17px',color:'#5A554B',margin:'0'}}>Тренировка с разбором, мок-тест, лига и кабинет родителя — за одну минуту.</p>
       </div>
 
@@ -141,22 +141,22 @@ export default function Landing({ onStart }) {
 
       <div className="lp-steps" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'20px'}}>
         <div className="lp-card" style={{background:'#fff',border:'1px solid rgba(23,20,15,.09)',borderRadius:'18px',padding:'26px 24px'}}>
-          <div style={{font:'600 32px \'Golos Text\',sans-serif',color:'#D8CFBE',marginBottom:'12px'}}>01</div>
+          <div style={{font:'600 32px \'Lora\',serif',color:'#D8CFBE',marginBottom:'12px'}}>01</div>
           <div style={{font:'600 18px \'Golos Text\',sans-serif',marginBottom:'8px'}}>Выбор школы</div>
           <div style={{fontSize:'14px',lineHeight:'1.55',color:'#5A554B'}}>РФМШ, НИШ или КТЛ. Платформа подгружает темы именно этого экзамена.</div>
         </div>
         <div className="lp-card" style={{background:'#fff',border:'1px solid rgba(23,20,15,.09)',borderRadius:'18px',padding:'26px 24px'}}>
-          <div style={{font:'600 32px \'Golos Text\',sans-serif',color:'#D8CFBE',marginBottom:'12px'}}>02</div>
+          <div style={{font:'600 32px \'Lora\',serif',color:'#D8CFBE',marginBottom:'12px'}}>02</div>
           <div style={{font:'600 18px \'Golos Text\',sans-serif',marginBottom:'8px'}}>Ежедневная тренировка</div>
           <div style={{fontSize:'14px',lineHeight:'1.55',color:'#5A554B'}}>Задачи с подсказками при ошибке. Сложность подстраивается под ребёнка.</div>
         </div>
         <div className="lp-card" style={{background:'#fff',border:'1px solid rgba(23,20,15,.09)',borderRadius:'18px',padding:'26px 24px'}}>
-          <div style={{font:'600 32px \'Golos Text\',sans-serif',color:'#D8CFBE',marginBottom:'12px'}}>03</div>
+          <div style={{font:'600 32px \'Lora\',serif',color:'#D8CFBE',marginBottom:'12px'}}>03</div>
           <div style={{font:'600 18px \'Golos Text\',sans-serif',marginBottom:'8px'}}>Мок-тест раз в неделю</div>
           <div style={{fontSize:'14px',lineHeight:'1.55',color:'#5A554B'}}>В формате настоящего экзамена: фиксированный набор и жёсткий таймер.</div>
         </div>
         <div className="lp-card" style={{background:'#fff',border:'1px solid rgba(23,20,15,.09)',borderRadius:'18px',padding:'26px 24px'}}>
-          <div style={{font:'600 32px \'Golos Text\',sans-serif',color:'#D8CFBE',marginBottom:'12px'}}>04</div>
+          <div style={{font:'600 32px \'Lora\',serif',color:'#D8CFBE',marginBottom:'12px'}}>04</div>
           <div style={{font:'600 18px \'Golos Text\',sans-serif',marginBottom:'8px'}}>Прогресс для родителя</div>
           <div style={{fontSize:'14px',lineHeight:'1.55',color:'#5A554B'}}>Карта тем по цветам, время занятий и рост баллов по неделям.</div>
         </div>
@@ -168,7 +168,7 @@ export default function Landing({ onStart }) {
   <section id="schools" className="lp-pad" style={{maxWidth:'1280px',margin:'0 auto',padding:'80px 56px'}}>
     <div style={{marginBottom:'46px',maxWidth:'640px'}}>
       <div style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#B0342B',marginBottom:'14px'}}>Целевые школы</div>
-      <h2 style={{font:'600 44px/1.05 \'Golos Text\',sans-serif',letterSpacing:'-.02em',margin:'0 0 12px'}}>Готовим под каждую</h2>
+      <h2 style={{font:'600 44px/1.05 \'Lora\',serif',letterSpacing:'-.02em',margin:'0 0 12px'}}>Готовим под каждую</h2>
       <p style={{fontSize:'17px',color:'#5A554B',margin:'0'}}>У каждой школы свой формат экзамена. Подготовка выстроена именно под её экзамен.</p>
     </div>
     <div className="lp-schools" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'22px'}}>
@@ -236,7 +236,7 @@ export default function Landing({ onStart }) {
       
       <div>
         <div style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#E9B84C',marginBottom:'16px'}}>Для родителей</div>
-        <h2 style={{font:'600 42px/1.06 \'Golos Text\',sans-serif',letterSpacing:'-.02em',margin:'0 0 26px',color:'#FBFAF6'}}>Прогресс ребёнка — <span style={{fontStyle:'italic',color:'#E9B84C'}}>как на ладони</span></h2>
+        <h2 style={{font:'600 42px/1.06 \'Lora\',serif',letterSpacing:'-.02em',margin:'0 0 26px',color:'#FBFAF6'}}>Прогресс ребёнка — <span style={{fontStyle:'italic',color:'#E9B84C'}}>как на ладони</span></h2>
         <div style={{display:'flex',flexDirection:'column',gap:'18px'}}>
           <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#E9B84C',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Golos Text\'',marginBottom:'3px',color:'#FBFAF6'}}>Готовность в процентах</div><div style={{fontSize:'15px',color:'#BFCBC4',lineHeight:'1.5'}}>Одно число, которое показывает, насколько ребёнок готов к экзамену.</div></div></div>
           <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#E9B84C',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Golos Text\'',marginBottom:'3px',color:'#FBFAF6'}}>Карта сильных и слабых тем</div><div style={{fontSize:'15px',color:'#BFCBC4',lineHeight:'1.5'}}>По цветам видно, где всё хорошо, а на что налечь.</div></div></div>
@@ -251,7 +251,7 @@ export default function Landing({ onStart }) {
   <section id="pricing" className="lp-pad" style={{maxWidth:'1280px',margin:'0 auto',padding:'84px 56px'}}>
     <div style={{textAlign:'center',marginBottom:'48px',maxWidth:'600px',marginLeft:'auto',marginRight:'auto'}}>
       <div style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#B0342B',marginBottom:'14px'}}>Тарифы</div>
-      <h2 style={{font:'600 46px/1.04 \'Golos Text\',sans-serif',letterSpacing:'-.02em',margin:'0 0 12px'}}>Дешевле репетитора в разы</h2>
+      <h2 style={{font:'600 46px/1.04 \'Lora\',serif',letterSpacing:'-.02em',margin:'0 0 12px'}}>Дешевле репетитора в разы</h2>
       <p style={{fontSize:'17px',color:'#5A554B',margin:'0'}}>Начните бесплатно.</p>
     </div>
     <div className="lp-prices" style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gap:'22px',maxWidth:'760px',margin:'0 auto',alignItems:'stretch'}}>
@@ -259,7 +259,7 @@ export default function Landing({ onStart }) {
       
       <div className="lp-price lp-card" style={{background:'#fff',border:'1px solid rgba(23,20,15,.1)',borderRadius:'22px',padding:'34px 30px',display:'flex',flexDirection:'column'}}>
         <div style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.1em',textTransform:'uppercase',color:'#8A8474'}}>Стандарт</div>
-        <div style={{display:'flex',alignItems:'baseline',gap:'6px',margin:'16px 0 6px'}}><span style={{font:'600 46px \'Golos Text\',sans-serif',color:'#17140F'}}>0 ₸</span></div>
+        <div style={{display:'flex',alignItems:'baseline',gap:'6px',margin:'16px 0 6px'}}><span style={{font:'600 46px \'Lora\',serif',color:'#17140F'}}>0 ₸</span></div>
         <div style={{fontSize:'14px',color:'#8A8474',marginBottom:'24px'}}>Попробовать без обязательств</div>
         <div style={{display:'flex',flexDirection:'column',gap:'12px',flex:'1'}}>
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#3A362E'}}><span style={{color:'#1F7A4D'}}>✓</span>Одна тема на выбор</div>
@@ -272,7 +272,7 @@ export default function Landing({ onStart }) {
       <div className="lp-price" style={{background:'#15332B',border:'1px solid #15332B',borderRadius:'22px',padding:'34px 30px',display:'flex',flexDirection:'column',position:'relative',boxShadow:'0 30px 70px -40px rgba(21,51,43,.8)',transition:'transform .2s'}}>
         <div style={{position:'absolute',top:'-13px',left:'50%',transform:'translateX(-50%)',background:'#E9B84C',color:'#231a06',font:'600 11px \'IBM Plex Mono\',monospace',letterSpacing:'.08em',textTransform:'uppercase',padding:'6px 14px',borderRadius:'100px'}}>Популярный</div>
         <div style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.1em',textTransform:'uppercase',color:'#E9B84C'}}>Про</div>
-        <div style={{display:'flex',alignItems:'baseline',gap:'6px',margin:'16px 0 6px'}}><span style={{font:'600 46px \'Golos Text\',sans-serif',color:'#FBFAF6'}}>5 999 ₸</span><span style={{fontSize:'15px',color:'#BFCBC4'}}>/ мес</span></div>
+        <div style={{display:'flex',alignItems:'baseline',gap:'6px',margin:'16px 0 6px'}}><span style={{font:'600 46px \'Lora\',serif',color:'#FBFAF6'}}>5 999 ₸</span><span style={{fontSize:'15px',color:'#BFCBC4'}}>/ мес</span></div>
         <div style={{fontSize:'14px',color:'#9FB3AA',marginBottom:'24px'}}>Полная подготовка под школу</div>
         <div style={{display:'flex',flexDirection:'column',gap:'12px',flex:'1'}}>
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#EAF0ED'}}><span style={{color:'#E9B84C'}}>✓</span>Все темы выбранной школы</div>
@@ -291,7 +291,7 @@ export default function Landing({ onStart }) {
   
   <section id="cta" className="lp-pad" style={{maxWidth:'1280px',margin:'0 auto',padding:'20px 56px 84px'}}>
     <div style={{borderRadius:'28px',padding:'64px 56px',textAlign:'center',background:'radial-gradient(120% 140% at 50% 0%, #1E463C 0%, #14110D 78%)',color:'#FBFAF6',position:'relative',overflow:'hidden'}}>
-      <h2 style={{font:'600 58px/1.02 \'Golos Text\',sans-serif',letterSpacing:'-.025em',margin:'0 0 18px'}}>Synaq <span style={{fontStyle:'italic',color:'#E9B84C'}}>уже открыт</span></h2>
+      <h2 style={{font:'600 58px/1.02 \'Lora\',serif',letterSpacing:'-.025em',margin:'0 0 18px'}}>Synaq <span style={{fontStyle:'italic',color:'#E9B84C'}}>уже открыт</span></h2>
       <p style={{fontSize:'18px',color:'#BFCBC4',margin:'0 auto 34px',maxWidth:'480px'}}>Готовьте ребёнка к поступлению осознанно — прогресс виден с первого дня.</p>
       <div style={{display:'flex',gap:'13px',justifyContent:'center',flexWrap:'wrap'}}>
         <a href="#" onClick={handleStart} className="lp-cta" style={{display:'inline-block',background:'#E9B84C',color:'#231a06',padding:'17px 40px',borderRadius:'14px',font:'600 17px \'Golos Text\',sans-serif'}}>Начать бесплатно</a>
