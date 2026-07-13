@@ -5,7 +5,7 @@ import React from 'react';
 //   1) YouTube:  'https://www.youtube.com/watch?v=XXXX'  или  'https://youtu.be/XXXX'
 //   2) файл:     '/demo.mp4'  — сам файл положи в frontend/public/demo.mp4
 //   3) пусто:    '' — на месте видео будет аккуратная заглушка
-const DEMO_VIDEO = '';
+const DEMO_VIDEO = '/demo.mp4';
 
 // YouTube-ссылку любого вида превращаем в embed.
 function ytEmbed(url) {
@@ -14,13 +14,16 @@ function ytEmbed(url) {
 }
 
 function Demo() {
-  const box = { position: 'relative', width: '100%', aspectRatio: '16/9', borderRadius: '18px', overflow: 'hidden', background: '#15332B' };
-  const fill = { position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0, display: 'block' };
+  // 56.25% = 16:9. Через padding, а не aspect-ratio: работает везде и не схлопывается в 0.
+  const box = { position: 'relative', width: '100%', height: 0, paddingTop: '56.25%', borderRadius: '18px', overflow: 'hidden', background: '#15332B' };
+  const fill = { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0, display: 'block' };
 
   if (!DEMO_VIDEO) return (
-    <div style={{ ...box, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '10px' }}>
-      <span style={{ font: "600 12px 'IBM Plex Mono',monospace", letterSpacing: '.16em', textTransform: 'uppercase', color: '#E9B84C' }}>Демо</span>
-      <span style={{ font: "500 15px 'Golos Text',sans-serif", color: '#BFCBC4' }}>Видео жақында қосылады</span>
+    <div style={box}>
+      <div style={{ ...fill, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '10px' }}>
+        <span style={{ font: "600 12px 'IBM Plex Mono',monospace", letterSpacing: '.16em', textTransform: 'uppercase', color: '#E9B84C' }}>Демо</span>
+        <span style={{ font: "500 15px 'Golos Text',sans-serif", color: '#BFCBC4' }}>Видео жақында қосылады</span>
+      </div>
     </div>
   );
 
