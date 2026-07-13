@@ -27,6 +27,7 @@ export const api = {
     if (school === 'БИЛ') return P([
       { id: 'math',   name: 'Математика',        count: bilQ.filter(q => q.subject === 'math').length },
       { id: 'kolzar', name: 'Сандық сипаттама',  count: bilQ.filter(q => q.subject === 'kolzar').length },
+      { id: 'kaz',    name: 'Қазақ тілі',        count: bilQ.filter(q => q.subject === 'kaz').length },
     ]);
     if (school === 'НИШ') {
       const n = (s) => nishMath.filter(q => q.subject === s).length;
