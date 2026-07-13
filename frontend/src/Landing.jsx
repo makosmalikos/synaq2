@@ -9,9 +9,26 @@ import React from 'react';
 const DEMO_VIDEO = 'https://youtu.be/Nh1_SDeFX5Y?si=cAmsL1VlEgzCUMMX';
 
 // YouTube-ссылку любого вида превращаем в embed.
+// Параметры максимально убирают обвязку: без заголовка и аватара сверху,
+// без похожих роликов в конце, без подсказок. Логотип YouTube в углу убрать нельзя —
+// если он мешает, хостите видео файлом (/figures/demo.mp4).
 function ytEmbed(url) {
   const m = url.match(/(?:youtu\.be\/|v=|\/embed\/|\/shorts\/)([\w-]{6,})/);
-  return m ? `https://www.youtube.com/embed/${m[1]}` : null;
+  if (!m) return null;
+  const id = m[1];
+  const p = new URLSearchParams({
+    autoplay: '1',        // сам запускается
+    mute: '1',            // без звука — иначе браузер запретит автозапуск
+    loop: '1',
+    playlist: id,         // нужен, чтобы loop работал для одного ролика
+    controls: '0',        // без панели управления → без верхней плашки с названием
+    modestbranding: '1',
+    rel: '0',             // в конце не показывать чужие ролики
+    iv_load_policy: '3',  // без аннотаций
+    playsinline: '1',
+    disablekb: '1',
+  });
+  return `https://www.youtube-nocookie.com/embed/${id}?${p}`;
 }
 
 function Demo() {
@@ -35,8 +52,11 @@ function Demo() {
   return (
     <div style={box}>
       {yt
-        ? <iframe src={yt} title="Synaq demo" loading="lazy" style={fill}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen />
+        ? <>
+            <iframe src={yt} title="Synaq demo" loading="lazy" style={{ ...fill, pointerEvents: 'none' }}
+              allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />
+            <div style={fill} />
+          </>
         : <video src={DEMO_VIDEO} controls playsInline muted autoPlay loop preload="metadata"
             onError={() => setFailed(true)} style={{ ...fill, objectFit: 'contain', background: '#0E1B17' }} />}
     </div>
