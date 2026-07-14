@@ -15,6 +15,7 @@ export default function Parent({ onExit }) {
   const [paying, setPaying] = useState(false);
   const [children, setChildren] = useState([]);
   const [adding, setAdding] = useState(false);
+  const [firstLoad, setFirstLoad] = useState(true);
 
   // Жазылым күйін оқимыз: төлем өткенде вебхук families/{uid}.pro-ны true қылады
   useEffect(() => {
@@ -82,6 +83,11 @@ export default function Parent({ onExit }) {
   const [stats, setStats] = useState([]);
 
   // Баланы ашқанда: мок-тестер + тақырып бойынша статистика
+  // Кірген соң бала жоқ болса — «Бала қосу» формасын бірден ашамыз
+  useEffect(() => {
+    if (firstLoad && !children.length && !created) { setAdding(true); setFirstLoad(false); }
+  }, [children, firstLoad, created]);
+
   const openResults = async (c) => {
     setOpenChild(c);
     const [ms, att, topics] = await Promise.all([
@@ -102,10 +108,16 @@ export default function Parent({ onExit }) {
 
       {created && (
         <div className="card" style={{ marginTop: 16, borderColor: 'var(--green)', background: '#EEF5EC' }}>
-          <p className="kicker" style={{ color: 'var(--green)', margin: '0 0 8px' }}>{created.name} аккаунты жасалды</p>
-          Балаға осыны беріңіз:<br />
-          Юзернейм: <b>{created.code}</b><br />
-          Пароль: <b>{created.pass}</b>
+          <p className="kicker" style={{ color: 'var(--green)', margin: '0 0 10px' }}>{created.name} аккаунты жасалды</p>
+          <p style={{ margin: '0 0 14px', fontSize: 14 }}>Балаға осыны беріңіз — ол осымен кіреді:</p>
+
+          <CopyRow label="Юзернейм" value={created.code} />
+          <CopyRow label="Пароль" value={created.pass} />
+
+          <button className="btn ghost" style={{ marginTop: 12 }}
+            onClick={() => copy(`Synaq\nЮзернейм: ${created.code}\nПароль: ${created.pass}`)}>
+            Екеуін де көшіру
+          </button>
         </div>
       )}
 
@@ -180,6 +192,31 @@ export default function Parent({ onExit }) {
       ) : (
         <ChildReport child={openChild} mocks={mocks} stats={stats} onBack={() => setOpenChild(null)} t={t} />
       )}
+    </div>
+  );
+}
+
+// Мәтінді буферге көшіру
+async function copy(text) {
+  try { await navigator.clipboard.writeText(text); return true; }
+  catch { return false; }
+}
+
+function CopyRow({ label, value }) {
+  const [ok, setOk] = useState(false);
+  return (
+    <div style={{
+      display: 'flex', alignItems: 'center', gap: 12, background: '#fff',
+      border: '1px solid var(--line)', padding: '11px 14px', marginBottom: 8,
+    }}>
+      <span style={{ font: "500 11px 'IBM Plex Mono',monospace", letterSpacing: '.08em', textTransform: 'uppercase', color: '#9A9384', width: 78 }}>
+        {label}
+      </span>
+      <b style={{ flex: 1, font: "600 16px 'IBM Plex Mono',monospace", letterSpacing: '.02em' }}>{value}</b>
+      <button className="link" style={{ padding: '4px 8px', color: ok ? 'var(--green)' : 'var(--muted)' }}
+        onClick={async () => { if (await copy(value)) { setOk(true); setTimeout(() => setOk(false), 1500); } }}>
+        {ok ? '✓ көшірілді' : 'көшіру'}
+      </button>
     </div>
   );
 }
