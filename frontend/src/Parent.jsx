@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useLang } from './i18n.jsx';
 import {
   auth, createChild, getChildren, getMocks, logout,
   genPassword, suggestUsername, cleanUsername, errText,
 } from './firebase.js';
 
-const Logo = () => <div className="logo"><b>Synaq</b><span>ата-ана</span></div>;
+const Logo = () => <div className="logo"><b>Synaq</b><span>{t('ui.25')}</span></div>;
 
 export default function Parent({ onExit }) {
+  const { t } = useLang();
   const exit = onExit || logout;
   const [children, setChildren] = useState([]);
   const [adding, setAdding] = useState(false);
@@ -42,7 +44,7 @@ export default function Parent({ onExit }) {
     <div className="app">
       <header>
         <Logo />
-        <button className="logout" onClick={exit}>Шығу</button>
+        <button className="logout" onClick={exit}>{t('ui.26')}</button>
       </header>
 
       {created && (
@@ -57,32 +59,32 @@ export default function Parent({ onExit }) {
       {!openChild ? (
         <main>
           <div className="row">
-            <h1 style={{ margin: 0 }}>Балалар</h1>
-            <button className="btn" onClick={() => { setAdding(!adding); setErr(''); }}>+ Бала</button>
+            <h1 style={{ margin: 0 }}>{t('ui.27')}</h1>
+            <button className="btn" onClick={() => { setAdding(!adding); setErr(''); }}>{t('ui.28')}</button>
           </div>
 
           {adding && (
             <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 14 }}>
               <div>
-                <label style={lab}>Баланың аты</label>
-                <input placeholder="Мысалы: Айгерім" value={name} style={inp}
+                <label style={lab}>{t('ui.29')}</label>
+                <input placeholder={t('ui.37')} value={name} style={inp}
                   onChange={(e) => {
                     setName(e.target.value);
                     if (!username) setUsername(cleanUsername(e.target.value));
                   }} />
               </div>
               <div>
-                <label style={lab}>Юзернейм (кіру логині)</label>
-                <input placeholder="мысалы: aigerim" value={username} style={inp}
+                <label style={lab}>{t('ui.30')}</label>
+                <input placeholder={t('ui.38')} value={username} style={inp}
                   onChange={(e) => setUsername(cleanUsername(e.target.value))} />
                 <p style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384', margin: '6px 0 0' }}>
                   тек латын әрпі мен цифр
                 </p>
               </div>
               <div>
-                <label style={lab}>Пароль</label>
+                <label style={lab}>{t('ui.31')}</label>
                 <div style={{ display: 'flex', gap: 8 }}>
-                  <input placeholder="пароль" value={pass} onChange={(e) => setPass(e.target.value)} style={{ ...inp, flex: 1 }} />
+                  <input placeholder={t('ui.39')} value={pass} onChange={(e) => setPass(e.target.value)} style={{ ...inp, flex: 1 }} />
                   <button className="btn ghost" type="button" onClick={() => setPass(genPassword())} style={{ whiteSpace: 'nowrap' }}>
                     Генерациялау
                   </button>
@@ -103,18 +105,18 @@ export default function Parent({ onExit }) {
               </div>
             ))}
           </div>
-          {!children.length && !adding && <p className="muted" style={{ marginTop: 14 }}>Әзірге бала жоқ. «+ Бала» басыңыз.</p>}
+          {!children.length && !adding && <p className="muted" style={{ marginTop: 14 }}>{t('ui.32')}</p>}
         </main>
       ) : (
         <main>
-          <button className="link" onClick={() => setOpenChild(null)}>← Балалар</button>
+          <button className="link" onClick={() => setOpenChild(null)}>{t('ui.33')}</button>
           <h1>{openChild.name}</h1>
-          <p className="kicker">Мок-тест нәтижелері</p>
+          <p className="kicker">{t('ui.34')}</p>
           {mocks.length ? (
             <ol className="review">
               {mocks.map((m, i) => <li key={i}>{m.title || 'Мок-тест'}: <b>{m.score}/{m.gradable}</b> балл</li>)}
             </ol>
-          ) : <p className="muted">Әзірге мок-тест тапсырылмаған.</p>}
+          ) : <p className="muted">{t('ui.36')}</p>}
         </main>
       )}
     </div>
