@@ -1,154 +1,235 @@
-/* ===== Дизайн-система Synaq (как в дизайн-бандле) ===== */
-:root{
-  --bg:#FBFAF6; --ink:#17140F; --accent:#B0342B; --muted:#6B655B;
-  --line:rgba(23,20,15,.16); --line-soft:rgba(23,20,15,.10); --surface:#fff;
-  --green:#4C7A4E; --sand:#9A9384;
+import React, { useEffect, useState, useRef } from 'react';
+import { useLang } from '../i18n.jsx';
+import { api, isCorrect, translateQuestions } from '../api.js';
+
+import { auth, saveMock } from '../firebase.js';
+import Explain from './Explain.jsx';
+import { Kolhar } from './Training.jsx';
+
+const LT = ['A', 'B', 'C', 'D', 'E'];
+const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.max(0, s) % 60).padStart(2, '0')}`;
+
+// Мок-тест строго по школам: экзамен у каждой свой, вариант должен быть
+// цельным. Это не то же самое, что дайындык, где банк общий.
+export default function Mock() {
+  const { t, lang } = useLang();
+  const [schools, setSchools] = useState([]);
+  const [school, setSchool] = useState(null);
+  const [pause, setPause] = useState(false);   // экран перерыва между секциями
+  const [startedAt, setStartedAt] = useState(null);
+  const [test, setTest] = useState(null);
+  const [meta, setMeta] = useState(null);
+  const [answers, setAnswers] = useState({});
+  const [flags, setFlags] = useState({});
+  const [i, setI] = useState(0);
+  const [left, setLeft] = useState(0);
+  const [hideTimer, setHideTimer] = useState(false);
+  const [navOpen, setNavOpen] = useState(false);
+  const [result, setResult] = useState(null);
+  const [open_, setOpen] = useState(null);   // раскрытая задача в разборе
+  const tick = useRef(null);
+
+  useEffect(() => { api.schools().then(setSchools).catch(() => {}); }, []);
+
+
+  useEffect(() => {
+    if (!test || result || pause) return;
+    tick.current = setInterval(() => setLeft((s) => {
+      if (s <= 1) { clearInterval(tick.current); submit(); return 0; }
+      return s - 1;
+    }), 1000);
+    return () => clearInterval(tick.current);
+  }, [test, result, pause]);
+
+  // Школа → сразу случайный вариант. Никакого выбора «нұсқа».
+  async function startExam(code) {
+    const v = await api.mockRandom(code);
+    if (!v) return;
+    const qs = await translateQuestions(v.questions, lang);   // языковые задачи не трогаются
+    setSchool(code);
+    setMeta({ school: code, sections: v.sections });
+    setTest({ ...v, questions: qs });
+    setAnswers({}); setFlags({}); setI(0); setPause(false); setStartedAt(Date.now());
+    setLeft((v.timeLimitMin || 60) * 60); setResult(null);
+  }
+
+  // Аяқтау: нәтижені санап, прогреске сақтаймыз (уақыты мен мектебімен бірге).
+  async function submit() {
+    if (!test) return;
+    clearInterval(tick.current);
+    const r = await api.mockSubmit(test.id, answers);
+    if (!r) return;
+    const spentSec = startedAt ? Math.round((Date.now() - startedAt) / 1000) : null;
+    setResult(r);
+    try {
+      await saveMock(auth.currentUser.uid, {
+        ...r,
+        school: meta?.school || school,
+        spentSec,                       // қанша уақытта тапсырды
+        limitMin: test.timeLimitMin || null,
+      });
+    } catch {}
+  }
+
+  const back = () => { setTest(null); setResult(null); setMeta(null); setSchool(null); setPause(false); };
+
+  // ── выбор школы ──
+  if (!school) return (
+    <main>
+      <p className="kicker">{t('ui.11')}</p>
+      <h1>{t('ui.12')}</h1>
+      <p className="muted" style={{ marginTop: 6 }}>{t('ui.13')}</p>
+      <div className="list" style={{ marginTop: 16 }}>
+        {schools.map((s) => (
+          <div className="row-item" key={s.code}
+            onClick={() => s.ready && startExam(s.code)}
+            style={{ opacity: s.ready ? 1 : 0.5, cursor: s.ready ? 'pointer' : 'default' }}>
+            <b style={{ font: "700 18px 'Lora',serif", flex: 1 }}>{s.code}</b>
+            <span className="rt">{s.ready ? '→' : t('ui.60')}</span>
+          </div>
+        ))}
+      </div>
+    </main>
+  );
+
+  // ── перерыв между секциями (НИШ: математика+колзар → языки) ──
+  if (test && pause) return (
+    <main style={{ textAlign: 'center', paddingTop: 60 }}>
+      <p className="kicker">{t('ui.61')}</p>
+      <h1 style={{ marginBottom: 8 }}>{t('ui.62')}</h1>
+      <p className="muted" style={{ maxWidth: 380, margin: '0 auto 24px' }}>{t('ui.63')}</p>
+      <button className="btn" onClick={() => setPause(false)}>{t('ui.64')}</button>
+      <p className="muted" style={{ fontSize: 13, marginTop: 14 }}>{t('ui.65')}</p>
+    </main>
+  );
+
+  // ── результат ──
+  if (result) return (
+    <main>
+      <p className="kicker">Нәтиже · {meta.school}</p>
+      <div className="hero-card" style={{ marginBottom: 18 }}>
+        {result.scoring === 'bil' ? (
+          <>
+            <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
+              {result.points}<span style={{ fontSize: 20, color: '#9A9384' }}> / {result.maxPoints}</span>
+            </div>
+            <p style={{ margin: '10px 0 0', fontSize: 14 }}>
+              ұпай · {result.score} дұрыс, {result.wrong} қате
+              {result.cancelled > 0 && <> · 4 қате үшін <b>{result.cancelled}</b> дұрыс жауап жойылды</>}
+            </p>
+            <p className="muted" style={{ margin: '6px 0 0', fontSize: 12.5 }}>
+              Әр 4 қате 1 дұрыс жауапты жояды, қалғаны 1,5-ке көбейтіледі.
+            </p>
+          </>
+        ) : (
+          <>
+            <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
+              {result.score}<span style={{ fontSize: 20, color: '#9A9384' }}> / {result.gradable}</span>
+            </div>
+            <p style={{ margin: '10px 0 0' }}>{t('ui.18')}</p>
+          </>
+        )}
+      </div>
+      <p className="kicker">{t('ui.19')}</p>
+      <p className="muted" style={{ fontSize: 13, marginTop: 4 }}>{t('ui.20')}</p>
+      <div className="list">
+        {result.review.map((r) => {
+          const on = open_ === r.num;
+          return (
+            <div key={r.num} style={{ borderBottom: '1px solid var(--line)' }}>
+              <div onClick={() => setOpen(on ? null : r.num)}
+                style={{ display: 'flex', gap: 10, alignItems: 'baseline', padding: '14px 0', cursor: 'pointer' }}>
+                <span style={{ font: "600 13px 'IBM Plex Mono',monospace", color: r.correct ? '#4C7A4E' : '#B0342B' }}>
+                  {r.correct ? '✓' : '✗'} №{r.num}
+                </span>
+                <span className="muted" style={{ fontSize: 13, flex: 1 }}>
+                  сенің «{r.your ?? '—'}» · дұрыс «{r.answer ?? '?'}»
+                </span>
+                <span className="muted" style={{ fontSize: 13 }}>{on ? '▲' : '▼'}</span>
+              </div>
+              {on && (
+                <div style={{ padding: '0 0 16px' }}>
+                  <p style={{ margin: 0, fontSize: 14, lineHeight: 1.5 }}>{r.statement}</p>
+                  {r.image && <img className="fig" src={r.image} alt="сурет" />}
+                  {r.solution && (
+                    <p className="muted" style={{ margin: '10px 0 0', fontSize: 13.5, lineHeight: 1.55 }}>{r.solution}</p>
+                  )}
+                  <Explain q={r} given={r.correct ? null : r.your} />
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+      <button className="btn ghost" style={{ marginTop: 16 }} onClick={back}>{t('ui.21')}</button>
+    </main>
+  );
+
+  // ── прохождение ──
+  const q = test.questions[i];
+  const toggleFlag = () => setFlags({ ...flags, [q.num]: !flags[q.num] });
+  const pick = (val) => setAnswers({ ...answers, [q.num]: val });
+  const answered = (n) => answers[n] != null && answers[n] !== '';
+
+  return (
+    <main>
+      <div className="exam-top">
+        <span className="ttl">{meta.title}</span>
+        <span className="clock" onClick={() => setHideTimer(!hideTimer)} style={{ cursor: 'pointer' }}>
+          {hideTimer ? '⏱ көрсету' : fmt(left)}
+        </span>
+      </div>
+
+      <div className="qhead">
+        <span className="qnum-chip">{q.num}</span>
+        <button className={'flagbtn' + (flags[q.num] ? ' on' : '')} onClick={toggleFlag}>
+          <span className="fl">⚑</span> Белгілеу
+        </button>
+      </div>
+
+      {q.subject === 'kolzar' ? (
+        <Kolhar q={q} answer={answers[q.num]} onPick={pick} disabled={false} correct={null} />
+      ) : (
+        <>
+          <p className="stmt">{q.statement}</p>
+          {q.image && <img className="fig" src={q.image} alt="сурет" />}
+
+          {q.options ? (
+            <div className="opts">
+              {q.options.map((o, k) => (
+                <button key={k} className={'opt' + (answers[q.num] === o ? ' sel' : '')} onClick={() => pick(o)}>
+                  <span className="lt">{LT[k]}</span><span>{o}</span>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <input value={answers[q.num] || ''} onChange={(e) => pick(e.target.value)} placeholder={t('ui.24')} />
+          )}
+        </>
+      )}
+
+      {navOpen && (
+        <div className="qgrid" style={{ marginTop: 18 }}>
+          {test.questions.map((qq, k) => (
+            <div key={qq.num}
+              className={'qcell' + (answered(qq.num) ? ' done' : '') + (k === i ? ' cur' : '') + (flags[qq.num] ? ' flag' : '')}
+              onClick={() => { setI(k); setNavOpen(false); }}>{qq.num}</div>
+          ))}
+        </div>
+      )}
+
+      <div className="navbar">
+        <button className="btn ghost" disabled={i === 0} onClick={() => setI(i - 1)}>{t('ui.22')}</button>
+        <button className="navpill" onClick={() => setNavOpen(!navOpen)}>Сұрақ {i + 1} / {test.questions.length} ▲</button>
+        {i + 1 < test.questions.length
+          ? <button className="btn" onClick={() => {
+              const cur = test.questions[i]?.section;
+              const nxt = test.questions[i + 1]?.section;
+              setI(i + 1);
+              if (nxt && cur && nxt !== cur) setPause(true);   // секция кончилась → перерыв
+            }}>{t('ui.9')}</button>
+          : <button className="btn accent" onClick={submit}>{t('ui.23')}</button>}
+      </div>
+    </main>
+  );
 }
-*{box-sizing:border-box}
-::selection{background:var(--accent);color:var(--bg)}
-@keyframes rise{0%{transform:translateY(7px);opacity:0}100%{transform:translateY(0);opacity:1}}
-body{
-  margin:0;background:var(--bg);color:var(--ink);
-  font-family:'Golos Text',system-ui,sans-serif;-webkit-font-smoothing:antialiased;
-  background-image:linear-gradient(rgba(23,20,15,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(23,20,15,.045) 1px,transparent 1px);
-  background-size:28px 28px;
-}
-.app{max-width:760px;margin:0 auto;min-height:100vh;padding:0 22px 60px}
-
-/* Шапка */
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 0 16px;border-bottom:1px solid var(--line)}
-.logo{display:inline-flex;align-items:baseline;gap:9px}
-.logo b{font:700 24px 'Lora',serif;letter-spacing:-.01em}
-.logo span{font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);border-left:1px solid var(--line);padding-left:9px}
-nav{display:flex;align-items:center;gap:6px}
-nav button{background:none;border:none;color:var(--muted);font:600 13.5px 'Golos Text';cursor:pointer;padding:7px 10px}
-nav button.on{color:var(--ink);border-bottom:2px solid var(--accent)}
-.logout{background:none;border:none;color:var(--sand);font:500 12px 'IBM Plex Mono',monospace;cursor:pointer;margin-left:6px}
-main{padding-top:22px;animation:rise .35s ease both}
-
-/* Заголовки, метки */
-h1{font:600 26px 'Lora',serif;letter-spacing:-.02em;margin:0 0 4px}
-h2{font:600 20px 'Lora',serif;letter-spacing:-.01em;margin:0 0 14px}
-.kicker{font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);margin:0 0 12px}
-.muted{color:var(--muted);font-size:14px}
-
-/* Карточки */
-.card{background:var(--surface);border:1px solid var(--line);padding:22px}
-.card + .card{margin-top:14px}
-.hero-card{background:var(--surface);border:1px solid var(--ink);padding:28px}
-.hero-card h2{font-size:23px;margin:0 0 8px}
-.hero-card p{font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 20px;max-width:360px}
-
-/* Кнопки */
-.btn{padding:13px 24px;border:none;border-radius:3px;background:var(--ink);color:var(--bg);font:600 15px 'Golos Text';cursor:pointer}
-.btn.accent{background:var(--accent);color:#fff}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
-.btn:disabled{opacity:.4;cursor:default}
-.btn.full{width:100%}
-.link{background:none;border:none;color:var(--muted);font:500 13px 'Golos Text';cursor:pointer;padding:8px 0}
-
-/* Списки тем/вариантов */
-.list{border:1px solid var(--line);background:var(--surface)}
-.list .row-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 18px;border-bottom:1px solid var(--line-soft);cursor:pointer}
-.list .row-item:last-child{border-bottom:none}
-.list .row-item:hover{background:#faf7f0}
-.list .row-item b{font:600 15px 'Golos Text'}
-.list .row-item .rt{font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);text-align:right}
-
-/* Строка-статус */
-.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 16px}
-.tag{font:500 12px 'IBM Plex Mono',monospace;color:var(--muted)}
-.timer{font:600 13px 'IBM Plex Mono',monospace;color:var(--ink)}
-.pill{font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border:1px solid var(--line);color:var(--muted)}
-
-/* Задача */
-.stmt{font-size:17px;line-height:1.5;margin:6px 0 16px}
-.fig{display:block;max-width:340px;width:100%;border:1px solid var(--line);background:#fff;padding:8px;margin:0 0 16px}
-input{width:100%;padding:13px 14px;border:1px solid var(--line);background:#fff;font:500 15px 'Golos Text';color:var(--ink);outline:none;margin-bottom:12px}
-input:focus{border-color:var(--accent)}
-
-/* Обратная связь + разбор */
-.fb{padding:11px 15px;margin:4px 0 12px;font-size:14.5px;font-weight:600}
-.fb.ok{background:#EEF5EC;color:var(--green)}
-.fb.no{background:#FBEDEC;color:var(--accent)}
-.sol{background:#F3EFE7;padding:14px 16px;font-size:14px;line-height:1.6}
-.sol .lead{font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--sand);margin:0 0 4px}
-.tip{margin-top:13px;padding-top:12px;border-top:1px solid var(--line-soft);display:flex;gap:11px;align-items:flex-start}
-.tip .mark{flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font:700 12px 'Lora';display:flex;align-items:center;justify-content:center}
-
-/* Прогресс-полоса */
-.bar{height:6px;background:#EDE9E0;overflow:hidden;margin-top:8px}
-.bar>i{display:block;height:100%;background:var(--accent)}
-
-/* Результаты */
-.review{list-style:none;padding:0;margin:0}
-.review li{padding:11px 0;border-bottom:1px solid var(--line-soft);font-size:14px}
-.review li.ok{color:var(--green)} .review li.no{color:var(--accent)}
-.review em{color:var(--muted);font-style:normal;font-size:12.5px}
-
-/* ===== Раскладка с левым меню (как в дизайне) ===== */
-.shell { display:flex; min-height:100vh; align-items:stretch; }
-.sidebar { width:246px; flex:none; border-right:1px solid var(--line); padding:24px 20px; display:flex; flex-direction:column; background:rgba(255,255,255,.55); position:sticky; top:0; height:100vh; align-self:flex-start; }
-.sidebar .logo { margin-bottom:34px; }
-.nav-v { display:flex; flex-direction:column; gap:2px; flex:1; }
-.nav-v button { display:flex; align-items:center; gap:12px; background:none; border:none; padding:11px 10px; cursor:pointer; text-align:left; color:var(--muted); font:600 15px 'Golos Text'; border-left:2px solid transparent; width:100%; }
-.nav-v button > span:nth-child(2) { flex:1; }
-.nav-v button:hover { color:var(--ink); }
-.nav-v button .num { font:500 11px 'IBM Plex Mono',monospace; color:#B7B0A2; width:20px; flex:none; text-align:left; }
-.nav-v button.on { color:var(--ink); border-left-color:var(--accent); }
-.nav-v button.on .num { color:var(--accent); }
-.nav-v .badge { margin-left:auto; background:var(--accent); color:#fff; font:600 10px 'IBM Plex Mono',monospace; padding:2px 7px; }
-.userbox { border-top:1px solid var(--line); padding-top:16px; margin-top:12px; }
-.userbox .who { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
-.userbox .ava { width:42px; height:42px; flex:none; background:var(--ink); color:var(--bg); display:flex; align-items:center; justify-content:center; font:700 18px 'Lora',serif; }
-.content { flex:1; padding:36px 44px; max-width:840px; min-width:0; }
-.content main { padding-top:0; }
-.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:stretch; }
-.grid2 .card { border:1px solid var(--ink); display:flex; flex-direction:column; justify-content:flex-start; min-height:120px; }
-.card.click { cursor:pointer; transition:border-color .15s; }
-.card.click:hover { border-color:var(--accent); }
-
-@media (max-width:760px){
-  .shell { flex-direction:column; }
-  .sidebar { width:auto; border-right:none; border-bottom:1px solid var(--line); padding:16px; }
-  .sidebar .logo { margin-bottom:14px; }
-  .nav-v { flex-direction:row; overflow-x:auto; gap:2px; }
-  .nav-v button { white-space:nowrap; border-left:none; border-bottom:2px solid transparent; padding:8px 10px; }
-  .nav-v button .num { display:none; }
-  .nav-v button.on { border-left:none; border-bottom-color:var(--accent); }
-  .userbox { display:flex; align-items:center; justify-content:space-between; border-top:none; padding-top:12px; margin-top:10px; }
-  .userbox .who { margin-bottom:0; }
-  .userbox .btn { width:auto; padding:9px 16px; }
-  .content { padding:22px 18px; }
-  .grid2 { grid-template-columns:1fr; }
-}
-
-/* ===== Экзаменационный вид (мок/тренировка) ===== */
-.exam-top { display:flex; align-items:center; justify-content:space-between; padding-bottom:14px; border-bottom:2px solid var(--ink); margin-bottom:0; }
-.exam-top .ttl { font:600 15px 'Lora',serif; }
-.exam-top .clock { font:700 20px 'IBM Plex Mono',monospace; letter-spacing:.02em; }
-.qhead { display:flex; align-items:center; gap:14px; padding:16px 0 12px; border-bottom:1px dashed var(--line); margin-bottom:18px; }
-.qnum-chip { background:var(--ink); color:var(--bg); font:700 14px 'IBM Plex Mono',monospace; padding:4px 11px; }
-.flagbtn { display:inline-flex; align-items:center; gap:7px; background:none; border:none; cursor:pointer; font:600 13px 'Golos Text'; color:var(--muted); }
-.flagbtn.on { color:var(--accent); }
-.flagbtn .fl { font-size:15px; }
-
-/* Варианты A–E */
-.opts { display:flex; flex-direction:column; gap:10px; }
-.opt { display:flex; align-items:center; gap:14px; width:100%; text-align:left; background:#fff; border:1.5px solid var(--line); padding:14px 16px; cursor:pointer; font:500 15px 'Golos Text'; color:var(--ink); }
-.opt:hover { border-color:var(--sand); }
-.opt.sel { border-color:var(--accent); }
-.opt.ok { border-color:var(--green); background:#F0F5EF; }
-.opt.bad { border-color:var(--accent); background:#F9EAE8; }
-.opt .lt { width:28px; height:28px; flex:none; border-radius:50%; border:1.5px solid var(--line); display:flex; align-items:center; justify-content:center; font:600 13px 'Golos Text'; }
-.opt.sel .lt { background:var(--accent); color:#fff; border-color:var(--accent); }
-.opt.ok .lt { background:var(--green); color:#fff; border-color:var(--green); }
-
-/* Нижний навигатор */
-.navbar { position:sticky; bottom:0; background:var(--bg); border-top:1px solid var(--line); padding:14px 0; margin-top:26px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
-.navpill { background:var(--ink); color:var(--bg); border:none; padding:11px 20px; font:600 14px 'Golos Text'; cursor:pointer; display:flex; align-items:center; gap:8px; }
-.qgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(42px,1fr)); gap:8px; padding:16px; border:1px solid var(--line); background:#fff; margin-bottom:12px; }
-.qcell { aspect-ratio:1; border:1px solid var(--line); background:#fff; cursor:pointer; font:600 13px 'IBM Plex Mono',monospace; display:flex; align-items:center; justify-content:center; position:relative; }
-.qcell.done { background:var(--ink); color:var(--bg); border-color:var(--ink); }
-.qcell.cur { border:2px solid var(--accent); }
-.qcell.flag::after { content:'⚑'; position:absolute; top:-6px; right:-4px; color:var(--accent); font-size:12px; }
