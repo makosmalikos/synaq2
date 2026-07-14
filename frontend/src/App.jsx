@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { watchAuth, isKid, logout, getMyProfile } from './firebase.js';
+import { useLang } from './i18n.jsx';
 import Auth from './Auth.jsx';
 import Landing from './Landing.jsx';
 import Parent from './Parent.jsx';
@@ -11,12 +12,8 @@ import Training from './components/Training.jsx';
 import Mock from './components/Mock.jsx';
 
 const NAV = [
-  { id: 'home',     n: '01', label: 'Басты бет' },
-  { id: 'training', n: '02', label: 'Дайындық' },
-  { id: 'duel',     n: '03', label: 'Дуэль' },
-  { id: 'league',   n: '04', label: 'Лига' },
-  { id: 'mock',     n: '05', label: 'Апталық сынақ' },
-  { id: 'progress', n: '06', label: 'Прогресс' },
+  { id: 'home', n: '01' }, { id: 'training', n: '02' }, { id: 'duel', n: '03' },
+  { id: 'league', n: '04' }, { id: 'mock', n: '05' }, { id: 'progress', n: '06' },
 ];
 
 // Роут: '/' = лендинг, '/app' = авторизация → дашборд.
@@ -24,6 +21,7 @@ const readRoute = () =>
   (typeof window !== 'undefined' && window.location.pathname.startsWith('/app')) ? 'app' : 'landing';
 
 export default function App() {
+  const { t } = useLang();
   const [user, setUser] = useState(undefined);
   const [route, setRoute] = useState(readRoute);
   const [tab, setTab] = useState('home');
@@ -49,7 +47,7 @@ export default function App() {
   if (route === 'landing') return <Landing onStart={() => go('app')} />;
 
   // 2. Авторизация — пока не вошли, дашборда нет
-  if (user === undefined) return <div style={{ padding: 40, color: '#6B655B' }}>Жүктелуде…</div>;
+  if (user === undefined) return <div style={{ padding: 40, color: '#6B655B' }}>{t('common.loading')}</div>;
   if (!user) return <Auth />;
 
   // 3. Дашборд (родитель / ребёнок)
@@ -67,7 +65,7 @@ export default function App() {
           {NAV.map((it) => (
             <button key={it.id} className={tab === it.id ? 'on' : ''} onClick={() => setTab(it.id)}>
               <span className="num">{it.n}</span>
-              <span>{it.label}</span>
+              <span>{t(`nav.${it.id}`)}</span>
               {it.id === 'mock' && <span className="badge">1</span>}
             </button>
           ))}
@@ -77,10 +75,10 @@ export default function App() {
             <div className="ava">{(profile.name || 'Б')[0].toUpperCase()}</div>
             <div>
               <div style={{ font: "600 15px 'Golos Text'" }}>{profile.name}</div>
-              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' }}>{profile.klass} сынып</div>
+              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' }}>{profile.klass} {t('common.grade')}</div>
             </div>
           </div>
-          <button className="btn ghost full" onClick={exit}>Шығу</button>
+          <button className="btn ghost full" onClick={exit}>{t('common.exit')}</button>
         </div>
       </aside>
 
