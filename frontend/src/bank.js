@@ -1,6 +1,6 @@
 // Единый банк задач: РФМШ + НИШ + БИЛ, все разложены по темам РФМШ (data.js → topics).
 // У задач НИШ/БИЛ поля topic нет, поэтому тема определяется по тексту задачи.
-import { questions, nishMath, bilQ } from './data.js';
+import { questions, nishMath, bilQ, kolzar2, kolzar3, logic1 } from './data.js';
 
 // Тема → ключевые слова (рус + каз). Проверяются сверху вниз, побеждает
 // та тема, у которой больше совпадений (при равенстве — которая выше).
@@ -47,11 +47,14 @@ export const POOL = [
   ...questions.map((q) => one(q, 'РФМШ')),
   ...nishMath.map((q) => one(q, 'НИШ')),
   ...bilQ.map((q) => one(q, 'БИЛ')),
+  ...kolzar2.map((q) => one(q, 'НИШ')),   // колхар, 2-топтама
+  ...kolzar3.map((q) => one(q, 'НИШ')),   // колхар, 3-топтама
+  ...logic1.map((q) => one(q, 'НИШ')),    // логика
 ];
 
 // Темы вне data.topics: колзар и языки.
 export const EXTRA_TOPICS = [
-  { id: 'kolzar',   block: 'math',     name: 'Сандық салыстыру (колзар)' },
+  { id: 'kolzar',   block: 'math',     name: 'Сандық салыстыру (колхар)' },
   { id: 'lang_kaz', block: 'lang_kaz', name: 'Қазақ тілі' },
   { id: 'lang_rus', block: 'lang_rus', name: 'Орыс тілі' },
   { id: 'lang_eng', block: 'lang_eng', name: 'Ағылшын тілі' },
