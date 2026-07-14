@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react';
-import { api, isCorrect } from '../api.js';
+import { useLang } from '../i18n.jsx';
+import { api, isCorrect, translateQuestions } from '../api.js';
+
 import { POOL } from '../bank.js';
 import { auth, saveAttempt, getSolved, setFlag, getFlags } from '../firebase.js';
 import Explain from './Explain.jsx';
@@ -17,6 +19,7 @@ const BLOCKS = [
 const TOPIC_OF = Object.fromEntries(POOL.map((q) => [q.id, q.topic]));
 
 export default function Training() {
+  const { t, lang } = useLang();
   const [topics, setTopics] = useState([]);
   const [solved, setSolved] = useState(new Set());
   const [flags, setFlags] = useState(new Set());
@@ -49,8 +52,8 @@ export default function Training() {
   }, [solved]);
 
   const start = (t, list) => { setTopic(t); setItems(list); setI(0); setAnswer(''); setChecked(false); setSecs(0); };
-  const openTopic = async (t) => start(t, await api.topicQuestions(t.id, 'kk'));
-  const openMixed = async () => start({ id: '_mix', name: 'Аралас дайындық' }, await api.mixed('kk', 20, 'math'));
+  const openTopic = async (tp) => start(tp, await translateQuestions(await api.topicQuestions(tp.id), lang));
+  const openMixed = async () => start({ id: '_mix', name: t('ui.3') }, await translateQuestions(await api.mixed(lang, 20, 'math'), lang));
   const next = () => {
     if (i + 1 < items.length) { setI(i + 1); setAnswer(''); setChecked(false); setSecs(0); }
     else { setTopic(null); setItems([]); }
@@ -104,16 +107,16 @@ export default function Training() {
 
     return (
       <main>
-        <p className="kicker">Тақырыптар</p>
-        <h1>Тақырыпты таңда</h1>
+        <p className="kicker">{t('ui.1')}</p>
+        <h1>{t('ui.2')}</h1>
         <p className="muted" style={{ marginTop: 6 }}>
           Есептер үш мектептің бәрінен араласып беріледі.
         </p>
 
         <div className="hero-card" style={{ marginTop: 16 }}>
-          <h2>Аралас дайындық</h2>
-          <p>РФМШ + НИШ + БИЛ математикасы кезектесіп келеді.</p>
-          <button className="btn accent" onClick={openMixed}>Бастау →</button>
+          <h2>{t('ui.3')}</h2>
+          <p>{t('ui.4')}</p>
+          <button className="btn accent" onClick={openMixed}>{t('ui.5')}</button>
         </div>
 
         {BLOCKS.map((b) => (
@@ -128,8 +131,8 @@ export default function Training() {
   const q = items[i];
   if (!q) return (
     <main>
-      <button className="link" onClick={() => { setTopic(null); setItems([]); }}>← Тақырыптар</button>
-      <p className="muted" style={{ marginTop: 14 }}>Бұл тақырыпта есеп жоқ.</p>
+      <button className="link" onClick={() => { setTopic(null); setItems([]); }}>{t('ui.6')}</button>
+      <p className="muted" style={{ marginTop: 14 }}>{t('ui.7')}</p>
     </main>
   );
   const ok = checked && isCorrect(answer, q);
@@ -162,7 +165,7 @@ export default function Training() {
             ))}
           </div>
         ) : (
-          <input value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="Жауабың"
+          <input value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder={t('ui.10')}
             onKeyDown={(e) => { if (e.key === 'Enter' && answer.trim()) check(); }} />
         )
       ) : (
@@ -182,10 +185,10 @@ export default function Training() {
       )}
 
       <div className="navbar">
-        <button className="btn ghost" onClick={() => { setTopic(null); setItems([]); }}>← Тақырыптар</button>
+        <button className="btn ghost" onClick={() => { setTopic(null); setItems([]); }}>{t('ui.6')}</button>
         {!checked
-          ? <button className="btn" disabled={!(answer && answer.toString().trim())} onClick={check}>Тексеру</button>
-          : <button className="btn accent" onClick={next}>Келесі →</button>}
+          ? <button className="btn" disabled={!(answer && answer.toString().trim())} onClick={check}>{t('ui.8')}</button>
+          : <button className="btn accent" onClick={next}>{t('ui.9')}</button>}
       </div>
     </main>
   );
