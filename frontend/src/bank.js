@@ -1,6 +1,16 @@
 // Единый банк задач: РФМШ + НИШ + БИЛ, все разложены по темам РФМШ (data.js → topics).
 // У задач НИШ/БИЛ поля topic нет, поэтому тема определяется по тексту задачи.
-import { questions, nishMath, bilQ, kolzar2, kolzar3, logic1, variantA2 } from './data.js';
+// Импортируем всё разом: если какого-то блока задач в data.js нет,
+// сборка не падает — просто этих задач не будет в банке.
+import * as DATA from './data.js';
+
+const questions = DATA.questions || [];
+const nishMath  = DATA.nishMath  || [];
+const bilQ      = DATA.bilQ      || [];
+const kolzar2   = DATA.kolzar2   || [];   // колхар, 2-топтама
+const kolzar3   = DATA.kolzar3   || [];   // колхар, 3-топтама
+const logic1    = DATA.logic1    || [];   // логика (суретті есептер)
+const variantA2 = DATA.variantA2 || [];   // A2 нұсқасы
 
 // Тема → ключевые слова (рус + каз). Проверяются сверху вниз, побеждает
 // та тема, у которой больше совпадений (при равенстве — которая выше).
