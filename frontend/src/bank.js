@@ -1,6 +1,6 @@
 // Единый банк задач: РФМШ + НИШ + БИЛ, все разложены по темам РФМШ (data.js → topics).
 // У задач НИШ/БИЛ поля topic нет, поэтому тема определяется по тексту задачи.
-import { questions, nishMath, bilQ, kolzar2, kolzar3, logic1 } from './data.js';
+import { questions, nishMath, bilQ, kolzar2, kolzar3, logic1, variantA2 } from './data.js';
 
 // Тема → ключевые слова (рус + каз). Проверяются сверху вниз, побеждает
 // та тема, у которой больше совпадений (при равенстве — которая выше).
@@ -30,13 +30,27 @@ function guessTopic(text) {
 // Предметы НИШ/БИЛ, которые темой РФМШ не описываются.
 const SUBJ_TOPIC = { kolzar: 'kolzar', kaz: 'lang_kaz', rus: 'lang_rus', eng: 'lang_eng' };
 
+// Тілдік есептердің шарты «Текст: …Вопрос: …» түрінде жазылған.
+// «Текст»/«Вопрос» деген сөздерді алып тастап, сұрақты бөлек абзацқа шығарамыз.
+function cleanLang(text) {
+  if (!text) return text;
+  let s = String(text);
+  // 1. «Текст:», «Мәтін:», «Text:», «Passage:» в начале — убираем
+  s = s.replace(/^\s*(Текст|Мәтін|Text|Passage)\s*[:.\-–]\s*/i, '');
+  // 2. «Вопрос:», «Сұрақ:», «Question:» — вместо них пустая строка (абзац)
+  s = s.replace(/\s*\n?\s*(Вопрос|Сұрақ|Question)\s*[:.\-–]\s*/gi, '\n\n');
+  return s.replace(/\n{3,}/g, '\n\n').trim();
+}
+
+const LANGS = ['rus', 'eng', 'kaz'];
+
 const one = (q, school) => ({
   id: q.id,
   school: q.school || school,
   subject: q.subject || null,   // math | kolzar | kaz | rus | eng (у РФМШ нет)
   topic: q.topic || SUBJ_TOPIC[q.subject] || guessTopic(`${q.statement} ${q.answer ?? ''}`),
   num: q.num,
-  statement: q.statement,
+  statement: LANGS.includes(q.subject) ? cleanLang(q.statement) : q.statement,
   answer: q.answer,
   solution: q.solution || '',
   image: q.image || null,
@@ -50,6 +64,7 @@ export const POOL = [
   ...kolzar2.map((q) => one(q, 'НИШ')),   // колхар, 2-топтама
   ...kolzar3.map((q) => one(q, 'НИШ')),   // колхар, 3-топтама
   ...logic1.map((q) => one(q, 'НИШ')),    // логика
+  ...variantA2.map((q) => one(q, 'НИШ')), // A2 нұсқасы
 ];
 
 // Темы вне data.topics: колзар и языки.
