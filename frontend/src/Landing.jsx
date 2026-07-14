@@ -68,6 +68,14 @@ function Demo() {
 export default function Landing({ onStart }) {
   const { t } = useLang();
   const handleStart = (e) => { e.preventDefault(); onStart(); };
+
+  // «Про таңдау»: логин қажет (төлем ата-ана аккаунтына байланады),
+  // сондықтан белгі қоямыз — кірген соң кабинет бірден төлемді ашады.
+  const handleBuyPro = (e) => {
+    e.preventDefault();
+    try { localStorage.setItem('synaq_want_pro', '1'); } catch {}
+    onStart();
+  };
   return (
     <div className="lp-root">
       <style>{`
@@ -307,7 +315,7 @@ export default function Landing({ onStart }) {
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#EAF0ED'}}><span style={{color:'#E9B84C'}}>✓</span>{t('lp.72')}</div>
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#EAF0ED'}}><span style={{color:'#E9B84C'}}>✓</span>{t('lp.73')}</div>
         </div>
-        <a href="#" onClick={handleStart} className="lp-cta" style={{display:'block',textAlign:'center',marginTop:'26px',padding:'14px',borderRadius:'12px',background:'#E9B84C',color:'#231a06',font:'600 15px \'Golos Text\''}}>{t('lp.74')}</a>
+        <a href="#" onClick={handleBuyPro} className="lp-cta" style={{display:'block',textAlign:'center',marginTop:'26px',padding:'14px',borderRadius:'12px',background:'#E9B84C',color:'#231a06',font:'600 15px \'Golos Text\''}}>{t('lp.74')}</a>
       </div>
 
       
