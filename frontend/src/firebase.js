@@ -1,265 +1,208 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { useLang } from '../i18n.jsx';
-import { api, isCorrect, translateQuestions } from '../api.js';
+// Firebase: авторизация (родитель по почте, ребёнок по логину+паролю) и прогресс.
+import { initializeApp, deleteApp } from 'firebase/app';
+import {
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
+  signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup,
+} from 'firebase/auth';
+import {
+  getFirestore, doc, setDoc, getDoc, getDocs, addDoc, collection, serverTimestamp,
+} from 'firebase/firestore';
 
-import { auth, saveMock, isPro } from '../firebase.js';
-import Explain from './Explain.jsx';
-import { Kolhar } from './Training.jsx';
+const firebaseConfig = {
+  apiKey: 'AIzaSyATdVvMsNkN0F66XipkShtFe0wKizu2r6o',
+  authDomain: 'synaq-88779.firebaseapp.com',
+  projectId: 'synaq-88779',
+  storageBucket: 'synaq-88779.firebasestorage.app',
+  messagingSenderId: '592299512879',
+  appId: '1:592299512879:web:b87d2fe2d2e67f6f99e2da',
+};
 
-const LT = ['A', 'B', 'C', 'D', 'E'];
-const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.max(0, s) % 60).padStart(2, '0')}`;
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
 
-// Мок-тест строго по школам: экзамен у каждой свой, вариант должен быть
-// цельным. Это не то же самое, что дайындык, где банк общий.
-// Шартты абзацтарға бөліп шығарамыз (тілдік есептерде мәтін мен сұрақ бөлек тұрады).
-const Stmt = ({ text }) => (
-  <>
-    {String(text || '').split(/\n{2,}/).map((p, i) => (
-      <p className="stmt" key={i} style={i ? { marginTop: 14 } : undefined}>{p}</p>
-    ))}
-  </>
-);
+const KID_DOMAIN = '@synaq.kids';
+const kidEmail = (code) => code.trim().toLowerCase() + KID_DOMAIN;
+export const isKid = (user) => !!user && (user.email || '').endsWith(KID_DOMAIN);
 
-export default function Mock() {
-  const { t, lang } = useLang();
-  const [schools, setSchools] = useState([]);
-  const [school, setSchool] = useState(null);
-  const [pause, setPause] = useState(false);   // экран перерыва между секциями
-  const [startedAt, setStartedAt] = useState(null);
-  const [pro, setPro] = useState(null);        // null — тексерілуде
-  const [test, setTest] = useState(null);
-  const [meta, setMeta] = useState(null);
-  const [answers, setAnswers] = useState({});
-  const [flags, setFlags] = useState({});
-  const [i, setI] = useState(0);
-  const [left, setLeft] = useState(0);
-  const [hideTimer, setHideTimer] = useState(false);
-  const [navOpen, setNavOpen] = useState(false);
-  const [result, setResult] = useState(null);
-  const [open_, setOpen] = useState(null);   // раскрытая задача в разборе
-  const tick = useRef(null);
+// Пароль: без похожих символов (0/O, 1/l) — детям диктовать голосом.
+const ALPHABET = 'abcdefghijkmnpqrstuvwxyz23456789';
+export function genPassword(len = 8) {
+  const buf = new Uint32Array(len);
+  crypto.getRandomValues(buf);
+  return Array.from(buf, (n) => ALPHABET[n % ALPHABET.length]).join('');
+}
 
-  useEffect(() => {
-    api.schools().then(setSchools).catch(() => {});
-    const u = auth.currentUser;
-    if (u) isPro(u.uid).then(setPro).catch(() => setPro(false));
-  }, []);
+// Логин ребёнка становится почтой «логин@synaq.kids», поэтому кириллица в нём
+// даёт auth/invalid-email. Транслитерируем имя.
+const TR = {
+  а:'a',ә:'a',б:'b',в:'v',г:'g',ғ:'g',д:'d',е:'e',ё:'e',ж:'zh',з:'z',и:'i',й:'i',к:'k',қ:'q',
+  л:'l',м:'m',н:'n',ң:'n',о:'o',ө:'o',п:'p',р:'r',с:'s',т:'t',у:'u',ұ:'u',ү:'u',ф:'f',х:'h',
+  һ:'h',ц:'c',ч:'ch',ш:'sh',щ:'sh',ъ:'',ы:'y',і:'i',ь:'',э:'e',ю:'yu',я:'ya',
+};
+export const cleanUsername = (s = '') =>
+  s.toLowerCase().split('').map((c) => (TR[c] ?? c)).join('').replace(/[^a-z0-9]/g, '');
+export const suggestUsername = (name) => {
+  const base = cleanUsername(name);
+  return base ? base + Math.floor(10 + Math.random() * 90) : '';
+};
 
+// ── Родитель ──
+// Школа больше не спрашивается вообще: дайындык идёт по всему банку,
+// а школа выбирается только в момент мок-теста.
+export async function registerParent(email, password, name = '') {
+  const cred = await createUserWithEmailAndPassword(auth, email, password);
+  const parentName = name.trim();
+  if (parentName) await updateProfile(cred.user, { displayName: parentName }).catch(() => {});
+  await setDoc(doc(db, 'families', cred.user.uid), {
+    parentEmail: email,
+    parentName: parentName || null,
+    createdAt: serverTimestamp(),
+  });
+  return cred.user;
+}
+export const loginParent = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
-  useEffect(() => {
-    if (!test || result || pause) return;
-    tick.current = setInterval(() => setLeft((s) => {
-      if (s <= 1) { clearInterval(tick.current); submit(); return 0; }
-      return s - 1;
-    }), 1000);
-    return () => clearInterval(tick.current);
-  }, [test, result, pause]);
+export async function loginGoogle() {
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: 'select_account' });
+  const cred = await signInWithPopup(auth, provider);
+  try {
+    const ref = doc(db, 'families', cred.user.uid);
+    const snap = await getDoc(ref);
+    if (!snap.exists()) await setDoc(ref, { parentEmail: cred.user.email, createdAt: serverTimestamp() });
+  } catch { /* Firestore міндетті емес — авторизация өтті */ }
+  return cred.user;
+}
 
-  // Школа → сразу случайный вариант. Никакого выбора «нұсқа».
-  async function startExam(code) {
-    const v = await api.mockRandom(code);
-    if (!v) return;
-    const qs = await translateQuestions(v.questions, lang);   // языковые задачи не трогаются
-    setSchool(code);
-    setMeta({ school: code, sections: v.sections });
-    setTest({ ...v, questions: qs });
-    setAnswers({}); setFlags({}); setI(0); setPause(false); setStartedAt(Date.now());
-    setLeft((v.timeLimitMin || 60) * 60); setResult(null);
+// ── Родитель создаёт ребёнка ──
+// createUserWithEmailAndPassword МОЛЧА логинит нового юзера в тот же app —
+// родитель бы вылетел из сессии и следующая запись упала бы с permission-denied.
+// Поэтому аккаунт ребёнка создаём во ВТОРИЧНОМ экземпляре Firebase.
+export async function createChild(parentUid, { name, klass = '', code, pin }) {
+  const secondary = initializeApp(firebaseConfig, 'sec-' + Date.now());
+  const secAuth = getAuth(secondary);
+  try {
+    const cred = await createUserWithEmailAndPassword(secAuth, kidEmail(code), pin);
+    const childUid = cred.user.uid;
+    // Имя в профиль аккаунта — тогда оно показывается сразу, даже если
+    // childIndex почему-то не прочитается.
+    await updateProfile(cred.user, { displayName: name }).catch(() => {});
+    await setDoc(doc(db, 'families', parentUid, 'children', childUid), {
+      name, klass, code: code.trim().toLowerCase(), createdAt: serverTimestamp(),
+    });
+    await setDoc(doc(db, 'childIndex', childUid), { parentUid, name, klass });
+    return { childUid, code };
+  } finally {
+    await signOut(secAuth).catch(() => {});
+    await deleteApp(secondary).catch(() => {});
   }
+}
 
-  // Аяқтау: нәтижені санап, прогреске сақтаймыз (уақыты мен мектебімен бірге).
-  async function submit() {
-    if (!test) return;
-    clearInterval(tick.current);
-    const r = await api.mockSubmit(test.id, answers);
-    if (!r) return;
-    const spentSec = startedAt ? Math.round((Date.now() - startedAt) / 1000) : null;
-    setResult(r);
-    try {
-      await saveMock(auth.currentUser.uid, {
-        ...r,
-        school: meta?.school || school,
-        spentSec,                       // қанша уақытта тапсырды
-        limitMin: test.timeLimitMin || null,
-      });
-    } catch {}
-  }
+export const loginChild = (code, pin) => signInWithEmailAndPassword(auth, kidEmail(code), pin);
 
-  const back = () => { setTest(null); setResult(null); setMeta(null); setSchool(null); setPause(false); };
+// Профиль ребёнка: настоящее имя вместо заглушки «Бала»
+export async function getMyProfile() {
+  const u = auth.currentUser;
+  if (!u) return { name: '', klass: '' };
+  const fallback = { name: u.displayName || '', klass: '' };
+  try {
+    const s = await getDoc(doc(db, 'childIndex', u.uid));
+    if (!s.exists()) return fallback;
+    const d = s.data();
+    return { name: d.name || fallback.name, klass: d.klass || '' };
+  } catch { return fallback; }
+}
 
-  // ── тегін тарифте сынақ жабық ──
-  if (!school && pro === false) return (
-    <main>
-      <p className="kicker">{t('ui.11')}</p>
-      <h1>{t('ui.12')}</h1>
-      <div className="card" style={{ marginTop: 18, borderColor: 'var(--accent)' }}>
-        <p className="kicker" style={{ color: 'var(--accent)', margin: '0 0 8px' }}>Про қажет</p>
-        <p style={{ margin: '0 0 14px', fontSize: 15, lineHeight: 1.6 }}>
-          Толық сынақ (нақты емтихан форматы, таймермен және талдауымен) Про тарифінде ашылады.
-          Тегін тарифте бір тақырып пен күніне 5 есеп қолжетімді.
-        </p>
-        <p className="muted" style={{ margin: 0, fontSize: 13.5 }}>Про-ны ата-анаңыз өз кабинетінен қоса алады.</p>
-      </div>
-    </main>
-  );
+export const logout = () => signOut(auth);
+export const watchAuth = (cb) => onAuthStateChanged(auth, cb);
 
-  // ── выбор школы ──
-  if (!school) return (
-    <main>
-      <p className="kicker">{t('ui.11')}</p>
-      <h1>{t('ui.12')}</h1>
-      <p className="muted" style={{ marginTop: 6 }}>{t('ui.13')}</p>
-      <div className="list" style={{ marginTop: 16 }}>
-        {schools.map((s) => (
-          <div className="row-item" key={s.code}
-            onClick={() => s.ready && startExam(s.code)}
-            style={{ opacity: s.ready ? 1 : 0.5, cursor: s.ready ? 'pointer' : 'default' }}>
-            <b style={{ font: "700 18px 'Lora',serif", flex: 1 }}>{s.code}</b>
-            <span className="rt">{s.ready ? '→' : t('ui.60')}</span>
-          </div>
-        ))}
-      </div>
-    </main>
-  );
+// ── Прогресс ──
+export const setFlag = (uid, qid, on) => on
+  ? setDoc(doc(db, 'results', uid, 'flags', qid), { qid, at: serverTimestamp() })
+  : import('firebase/firestore').then(({ deleteDoc }) => deleteDoc(doc(db, 'results', uid, 'flags', qid)));
+export async function getFlags(uid) {
+  try { const snap = await getDocs(collection(db, 'results', uid, 'flags')); return snap.docs.map((d) => d.id); }
+  catch { return []; }
+}
 
-  // ── перерыв между секциями (НИШ: математика+колзар → языки) ──
-  if (test && pause) return (
-    <main style={{ textAlign: 'center', paddingTop: 60 }}>
-      <p className="kicker">{t('ui.61')}</p>
-      <h1 style={{ marginBottom: 8 }}>{t('ui.62')}</h1>
-      <p className="muted" style={{ maxWidth: 380, margin: '0 auto 24px' }}>{t('ui.63')}</p>
-      <button className="btn" onClick={() => setPause(false)}>{t('ui.64')}</button>
-      <p className="muted" style={{ fontSize: 13, marginTop: 14 }}>{t('ui.65')}</p>
-    </main>
-  );
+// attempts — вся история попыток (для процента правильных).
+// solved/{qid} — по одной записи на ЗАДАЧУ, пишется при любом ответе, верном
+// или нет. Ребёнок решал — значит, задача засчитана как пройденная; счётчик
+// «шешілген есеп» не должен стоять на нуле только потому, что он ошибся.
+// Ключ = qid, поэтому повторное открытие той же задачи счётчик не надувает.
+export async function saveAttempt(uid, a) {
+  await addDoc(collection(db, 'results', uid, 'attempts'), { ...a, at: serverTimestamp() });
+  await setDoc(doc(db, 'results', uid, 'solved', a.qid), {
+    qid: a.qid, topic: a.topic || null, school: a.school || null,
+    correct: !!a.correct, at: serverTimestamp(),
+  }, { merge: true }).catch(() => {});
+}
+export const saveMock = (uid, r) =>
+  addDoc(collection(db, 'results', uid, 'mocks'), { ...r, at: serverTimestamp() });
 
-  // ── результат ──
-  if (result) return (
-    <main>
-      <p className="kicker">Нәтиже · {meta.school}</p>
-      <div className="hero-card" style={{ marginBottom: 18 }}>
-        {result.scoring === 'bil' ? (
-          <>
-            <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
-              {result.points}<span style={{ fontSize: 20, color: '#9A9384' }}> / {result.maxPoints}</span>
-            </div>
-            <p style={{ margin: '10px 0 0', fontSize: 14 }}>
-              ұпай · {result.score} дұрыс, {result.wrong} қате
-              {result.cancelled > 0 && <> · 4 қате үшін <b>{result.cancelled}</b> дұрыс жауап жойылды</>}
-            </p>
-            <p className="muted" style={{ margin: '6px 0 0', fontSize: 12.5 }}>
-              Әр 4 қате 1 дұрыс жауапты жояды, қалғаны 1,5-ке көбейтіледі.
-            </p>
-          </>
-        ) : (
-          <>
-            <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
-              {result.score}<span style={{ fontSize: 20, color: '#9A9384' }}> / {result.gradable}</span>
-            </div>
-            <p style={{ margin: '10px 0 0' }}>{t('ui.18')}</p>
-          </>
-        )}
-      </div>
-      <p className="kicker">{t('ui.19')}</p>
-      <p className="muted" style={{ fontSize: 13, marginTop: 4 }}>{t('ui.20')}</p>
-      <div className="list">
-        {result.review.map((r) => {
-          const on = open_ === r.num;
-          return (
-            <div key={r.num} style={{ borderBottom: '1px solid var(--line)' }}>
-              <div onClick={() => setOpen(on ? null : r.num)}
-                style={{ display: 'flex', gap: 10, alignItems: 'baseline', padding: '14px 0', cursor: 'pointer' }}>
-                <span style={{ font: "600 13px 'IBM Plex Mono',monospace", color: r.correct ? '#4C7A4E' : '#B0342B' }}>
-                  {r.correct ? '✓' : '✗'} №{r.num}
-                </span>
-                <span className="muted" style={{ fontSize: 13, flex: 1 }}>
-                  сенің «{r.your ?? '—'}» · дұрыс «{r.answer ?? '?'}»
-                </span>
-                <span className="muted" style={{ fontSize: 13 }}>{on ? '▲' : '▼'}</span>
-              </div>
-              {on && (
-                <div style={{ padding: '0 0 16px' }}>
-                  <p style={{ margin: 0, fontSize: 14, lineHeight: 1.5 }}>{r.statement}</p>
-                  {r.image && <img className="fig" src={r.image} alt="сурет" />}
-                  {r.solution && (
-                    <p className="muted" style={{ margin: '10px 0 0', fontSize: 13.5, lineHeight: 1.55 }}>{r.solution}</p>
-                  )}
-                  <Explain q={r} given={r.correct ? null : r.your} />
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-      <button className="btn ghost" style={{ marginTop: 16 }} onClick={back}>{t('ui.21')}</button>
-    </main>
-  );
+// ── Чтение ──
+export async function getChildren(parentUid) {
+  const snap = await getDocs(collection(db, 'families', parentUid, 'children'));
+  return snap.docs.map((d) => ({ uid: d.id, ...d.data() }));
+}
+export async function getMocks(childUid) {
+  const snap = await getDocs(collection(db, 'results', childUid, 'mocks'));
+  return snap.docs.map((d) => d.data());
+}
+export async function getAttempts(childUid) {
+  const snap = await getDocs(collection(db, 'results', childUid, 'attempts'));
+  return snap.docs.map((d) => d.data());
+}
+export async function getSolved(childUid) {
+  try {
+    const snap = await getDocs(collection(db, 'results', childUid, 'solved'));
+    return snap.docs.map((d) => d.data());
+  } catch { return []; }
+}
 
-  // ── прохождение ──
-  const q = test.questions[i];
-  const toggleFlag = () => setFlags({ ...flags, [q.num]: !flags[q.num] });
-  const pick = (val) => setAnswers({ ...answers, [q.num]: val });
-  const answered = (n) => answers[n] != null && answers[n] !== '';
+// Человеческие сообщения об ошибках
+export function errText(e) {
+  const c = (e && e.code) || '';
+  if (c.includes('email-already-in-use')) return 'Бұл юзернейм бос емес — басқасын таңдаңыз';
+  if (c.includes('weak-password')) return 'Пароль тым қысқа (кемінде 6 таңба)';
+  if (c.includes('invalid-email')) return 'Юзернейм тек латын әрпі мен цифрдан тұруы керек';
+  if (c.includes('invalid-credential') || c.includes('wrong-password') || c.includes('user-not-found')) return 'Қате логин немесе пароль';
+  if (c.includes('permission-denied')) return 'Firestore ережелері жарияланбаған. Firebase Console → Firestore → Rules → Publish';
+  if (c.includes('operation-not-allowed')) return 'Firebase-те Email/Password қосылмаған (Authentication → Sign-in method)';
+  if (c.includes('unauthorized-domain')) return 'Домен рұқсат етілмеген (Firebase → Authorized domains)';
+  if (c.includes('popup-blocked')) return 'Браузер терезені бөгеді — рұқсат етіңіз';
+  if (c.includes('popup-closed')) return 'Терезе жабылды, қайта көріңіз';
+  if (c.includes('network')) return 'Интернет байланысын тексеріңіз';
+  return 'Қате: ' + (c || (e && e.message) || 'белгісіз');
+}
 
-  return (
-    <main>
-      <div className="exam-top">
-        <span className="ttl">{meta.title}</span>
-        <span className="clock" onClick={() => setHideTimer(!hideTimer)} style={{ cursor: 'pointer' }}>
-          {hideTimer ? '⏱ көрсету' : fmt(left)}
-        </span>
-      </div>
+// Ата-ана аккаунтының деректері (соның ішінде pro — төленген жазылым).
+export async function getFamily(parentUid) {
+  const snap = await getDoc(doc(db, 'families', parentUid));
+  return snap.exists() ? snap.data() : null;
+}
 
-      <div className="qhead">
-        <span className="qnum-chip">{q.num}</span>
-        <button className={'flagbtn' + (flags[q.num] ? ' on' : '')} onClick={toggleFlag}>
-          <span className="fl">⚑</span> Белгілеу
-        </button>
-      </div>
+// ── Тегін тариф шектеуі ──
+// Баланың ата-анасында pro бар ма? (баланың құжатында parentUid сақталады)
+export async function isPro(childUid) {
+  try {
+    const idx = await getDoc(doc(db, 'childIndex', childUid));
+    const parentUid = idx.exists() ? idx.data().parentUid : null;
+    if (!parentUid) return false;
+    const fam = await getDoc(doc(db, 'families', parentUid));
+    return !!fam.data()?.pro;
+  } catch { return false; }
+}
 
-      {q.subject === 'kolzar' ? (
-        <Kolhar q={q} answer={answers[q.num]} onPick={pick} disabled={false} correct={null} />
-      ) : (
-        <>
-          <Stmt text={q.statement} />
-          {q.image && <img className="fig" src={q.image} alt="сурет" />}
-
-          {q.options ? (
-            <div className="opts">
-              {q.options.map((o, k) => (
-                <button key={k} className={'opt' + (answers[q.num] === o ? ' sel' : '')} onClick={() => pick(o)}>
-                  <span className="lt">{LT[k]}</span><span>{o}</span>
-                </button>
-              ))}
-            </div>
-          ) : (
-            <input value={answers[q.num] || ''} onChange={(e) => pick(e.target.value)} placeholder={t('ui.24')} />
-          )}
-        </>
-      )}
-
-      {navOpen && (
-        <div className="qgrid" style={{ marginTop: 18 }}>
-          {test.questions.map((qq, k) => (
-            <div key={qq.num}
-              className={'qcell' + (answered(qq.num) ? ' done' : '') + (k === i ? ' cur' : '') + (flags[qq.num] ? ' flag' : '')}
-              onClick={() => { setI(k); setNavOpen(false); }}>{qq.num}</div>
-          ))}
-        </div>
-      )}
-
-      <div className="navbar">
-        <button className="btn ghost" disabled={i === 0} onClick={() => setI(i - 1)}>{t('ui.22')}</button>
-        <button className="navpill" onClick={() => setNavOpen(!navOpen)}>Сұрақ {i + 1} / {test.questions.length} ▲</button>
-        {i + 1 < test.questions.length
-          ? <button className="btn" onClick={() => {
-              const cur = test.questions[i]?.section;
-              const nxt = test.questions[i + 1]?.section;
-              setI(i + 1);
-              if (nxt && cur && nxt !== cur) setPause(true);   // секция кончилась → перерыв
-            }}>{t('ui.9')}</button>
-          : <button className="btn accent" onClick={submit}>{t('ui.23')}</button>}
-      </div>
-    </main>
-  );
+// Бүгін неше есеп шығарды (тегін тарифте күніне 5)
+export async function todayCount(childUid) {
+  try {
+    const snap = await getDocs(collection(db, 'results', childUid, 'attempts'));
+    const t0 = new Date(); t0.setHours(0, 0, 0, 0);
+    return snap.docs.filter((d) => {
+      const s = d.data().at?.seconds;
+      return s && s * 1000 >= t0.getTime();
+    }).length;
+  } catch { return 0; }
 }
