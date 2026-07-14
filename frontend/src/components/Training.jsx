@@ -102,9 +102,18 @@ export default function Training() {
   const [answer, setAnswer] = useState('');
   const [checked, setChecked] = useState(false);
   const [secs, setSecs] = useState(0);
+  const [pro, setPro] = useState(true);        // тексерілгенше бөгемейміз
+  const [done, setDone] = useState(0);         // бүгін шығарған есеп саны
+  const FREE_DAY = 5;                          // тегін тарифте күніне 5 есеп
+  const locked = !pro && done >= FREE_DAY;
   const timer = useRef(null);
 
   useEffect(() => {
+    const u = auth.currentUser;
+    if (u) {
+      isPro(u.uid).then(setPro).catch(() => setPro(false));
+      todayCount(u.uid).then(setDone).catch(() => {});
+    }
     api.topics().then(setTopics).catch(() => {});
     if (!auth.currentUser) return;
     getSolved(auth.currentUser.uid).then((r) => setSolved(new Set(r.map((x) => x.qid)))).catch(() => {});
@@ -118,6 +127,9 @@ export default function Training() {
   }, [items, i, checked]);
 
   // сколько задач темы уже решено
+  // тегін тарифте ашық болатын жалғыз тақырып — тізімдегі біріншісі
+  const b0 = topics.length ? topics[0].id : null;
+
   const solvedIn = useMemo(() => {
     const m = {};
     solved.forEach((id) => { const t = TOPIC_OF[id]; if (t) m[t] = (m[t] || 0) + 1; });
@@ -140,6 +152,7 @@ export default function Training() {
     if (ok) setSolved((s) => new Set(s).add(q.id));
     if (auth.currentUser) {
       saveAttempt(auth.currentUser.uid, { qid: q.id, topic: q.topic, school: q.school, correct: ok, secs }).catch(() => {});
+      if (!pro) setDone((n) => n + 1);
     }
   }
   function toggleFlag() {
@@ -160,8 +173,11 @@ export default function Training() {
           {arr.map((t, k) => {
             const done = Math.min(solvedIn[t.id] || 0, t.count);
             const pct = Math.round(done / t.count * 100);
+            const shut = !pro && !(b0 && t.id === b0);      // тегін тарифте — бір ғана тақырып
             return (
-              <div className="row-item" key={t.id} onClick={() => openTopic(t)}>
+              <div className="row-item" key={t.id}
+                onClick={() => (shut ? null : openTopic(t))}
+                style={{ opacity: shut ? 0.45 : 1, cursor: shut ? 'default' : 'pointer' }}>
                 <span style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#B7B0A2', width: 26 }}>{String(k + 1).padStart(2, '0')}</span>
                 <div style={{ flex: 1 }}>
                   <b>{t.name}</b>
@@ -170,7 +186,9 @@ export default function Training() {
                   </div>
                 </div>
                 <div style={{ width: 110 }}><div className="bar"><i style={{ width: pct + '%' }} /></div></div>
-                <span style={{ font: "600 13px 'IBM Plex Mono',monospace", width: 46, textAlign: 'right', color: pct >= 60 ? '#4C7A4E' : '#6B655B' }}>{pct}%</span>
+                <span style={{ font: "600 13px 'IBM Plex Mono',monospace", width: 46, textAlign: 'right', color: pct >= 60 ? '#4C7A4E' : '#6B655B' }}>
+                  {shut ? '🔒' : pct + '%'}
+                </span>
               </div>
             );
           })}
@@ -199,6 +217,19 @@ export default function Training() {
       </main>
     );
   }
+
+  // ── тегін тариф лимиті ──
+  if (topic && locked) return (
+    <main>
+      <button className="link" onClick={() => { setTopic(null); setItems([]); }}>{t('ui.6')}</button>
+      <div className="card" style={{ marginTop: 16 }}>
+        <h2 style={{ margin: '0 0 8px' }}>Бүгінгі лимит бітті</h2>
+        <p className="muted" style={{ margin: 0, fontSize: 14.5 }}>
+          Ертең тағы {FREE_DAY} есеп ашылады.
+        </p>
+      </div>
+    </main>
+  );
 
   // ── задача ──
   const q = items[i];
