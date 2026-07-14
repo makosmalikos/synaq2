@@ -3,7 +3,7 @@ import { useLang } from '../i18n.jsx';
 import { api, isCorrect, translateQuestions } from '../api.js';
 
 import { POOL } from '../bank.js';
-import { auth, saveAttempt, getSolved, setFlag, getFlags } from '../firebase.js';
+import { auth, saveAttempt, getSolved, setFlag, getFlags, isPro, todayCount } from '../firebase.js';
 import Explain from './Explain.jsx';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
