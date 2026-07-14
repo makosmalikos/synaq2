@@ -20,7 +20,17 @@ export default function Parent({ onExit }) {
   useEffect(() => {
     const u = auth.currentUser;
     if (!u) return;
-    getFamily(u.uid).then((f) => setPro(!!f?.pro)).catch(() => setPro(false));
+    getFamily(u.uid).then((f) => {
+      const has = !!f?.pro;
+      setPro(has);
+      // лендингте «Про таңдау» басып, содан кейін кірген болса — төлемді бірден ашамыз
+      let wanted = false;
+      try {
+        wanted = localStorage.getItem('synaq_want_pro') === '1';
+        if (wanted) localStorage.removeItem('synaq_want_pro');
+      } catch {}
+      if (wanted && !has) buyPro();
+    }).catch(() => setPro(false));
   }, []);
 
   // «Про таңдау» → Dodo төлем бетіне жібереміз
