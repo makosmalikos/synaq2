@@ -12,6 +12,7 @@ export default function Parent({ onExit }) {
   const { t } = useLang();
   const exit = onExit || logout;
   const [pro, setPro] = useState(null);      // null — әлі жүктелуде
+  const [me, setMe] = useState('');          // ата-ананың аты
   const [paying, setPaying] = useState(false);
   const [children, setChildren] = useState([]);
   const [adding, setAdding] = useState(false);
@@ -21,9 +22,11 @@ export default function Parent({ onExit }) {
   useEffect(() => {
     const u = auth.currentUser;
     if (!u) return;
+    setMe(u.displayName || '');
     getFamily(u.uid).then((f) => {
       const has = !!f?.pro;
       setPro(has);
+      if (!u.displayName) setMe(f?.parentName || (u.email || '').split('@')[0]);
       // лендингте «Про таңдау» басып, содан кейін кірген болса — төлемді бірден ашамыз
       let wanted = false;
       try {
@@ -123,6 +126,18 @@ export default function Parent({ onExit }) {
 
       {!openChild ? (
         <main>
+          {/* Сәлемдесу */}
+          {me && (
+            <>
+              <h1 style={{ margin: '0 0 4px' }}>Сәлем, {me}!</h1>
+              <p className="muted" style={{ margin: '0 0 20px' }}>
+                {children.length
+                  ? `${children.length} бала тіркелген. Прогресті көру үшін балаңызды таңдаңыз.`
+                  : 'Балаңызды қосыңыз — сол арқылы ол дайындықты бастайды.'}
+              </p>
+            </>
+          )}
+
           {/* Жазылым күйі */}
           {pro !== null && (
             <div className="card" style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 18 }}>
