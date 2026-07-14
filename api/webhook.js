@@ -7,9 +7,6 @@
 
 const crypto = require('crypto');
 
-// Қолтаңба шикі байттар бойынша есептеледі — Vercel-дің парсерін өшіреміз.
-module.exports.config = { api: { bodyParser: false } };
-
 const rawBody = (req) => new Promise((resolve, reject) => {
   const chunks = [];
   req.on('data', (c) => chunks.push(c));
@@ -65,7 +62,7 @@ const MAP = {
   // 'subscription.on_hold' — қолжетімділікті алмаймыз, тек белгілеп қоямыз
 };
 
-module.exports = async function handler(req, res) {
+async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('POST only');
 
   const raw = await rawBody(req);
@@ -102,3 +99,8 @@ module.exports = async function handler(req, res) {
 
   return res.status(200).send('ok');
 };
+
+module.exports = handler;
+// Қолтаңба шикі байттар бойынша есептеледі — Vercel парсерін өшіреміз.
+// (module.exports-тан КЕЙІН тұруы керек, әйтпесе қайта жазылып кетеді.)
+module.exports.config = { api: { bodyParser: false } };
