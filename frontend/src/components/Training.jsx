@@ -18,6 +18,70 @@ const BLOCKS = [
 // id → тема, чтобы не фильтровать весь пул на каждый рендер
 const TOPIC_OF = Object.fromEntries(POOL.map((q) => [q.id, q.topic]));
 
+
+// ── КОЛХАР: екі баған + салыстыру батырмалары ──
+// statement форматы: "Салыстыр...:\n[ортақ шарт]\nА) ...\nВ) ..."
+export function Kolhar({ q, answer, onPick, disabled, correct }) {
+  const lines = (q.statement || '').split('\n');
+  const a = (lines.find((l) => l.startsWith('А)')) || '').slice(2).trim();
+  const b = (lines.find((l) => l.startsWith('В)')) || '').slice(2).trim();
+  const note = lines.slice(1).filter((l) => !l.startsWith('А)') && !l.startsWith('В)')).join(' ').trim();
+
+  // «А» = А үлкен, «В» = В үлкен, «Тең» = тең
+  const BTN = [
+    { v: 'А',   sign: '>', label: 'А үлкен' },
+    { v: 'Тең', sign: '=', label: 'Тең' },
+    { v: 'В',   sign: '<', label: 'В үлкен' },
+  ];
+  if (q.options?.includes('Анықтау мүмкін емес')) {
+    BTN.push({ v: 'Анықтау мүмкін емес', sign: '?', label: 'Анықтау мүмкін емес' });
+  }
+
+  const col = {
+    flex: 1, minWidth: 0, background: '#fff', border: '1px solid var(--line)',
+    borderRadius: 12, padding: '18px 18px 20px',
+  };
+  const tag = {
+    font: "700 12px 'IBM Plex Mono',monospace", letterSpacing: '.14em',
+    color: '#B0342B', display: 'block', marginBottom: 10,
+  };
+
+  return (
+    <div>
+      {note && <p className="muted" style={{ margin: '0 0 12px', fontSize: 14 }}>{note}</p>}
+
+      <div style={{ display: 'flex', gap: 14, alignItems: 'stretch' }}>
+        <div style={col}><span style={tag}>А</span>
+          <span style={{ fontSize: 16, lineHeight: 1.5 }}>{a}</span></div>
+        <div style={col}><span style={tag}>В</span>
+          <span style={{ fontSize: 16, lineHeight: 1.5 }}>{b}</span></div>
+      </div>
+
+      <div style={{ display: 'flex', gap: 10, marginTop: 16, flexWrap: 'wrap' }}>
+        {BTN.map((o) => {
+          const sel = answer === o.v;
+          const good = disabled && o.v === q.answer;
+          const bad = disabled && sel && correct === false;
+          return (
+            <button key={o.v} disabled={disabled} onClick={() => onPick(o.v)}
+              style={{
+                flex: o.sign === '?' ? '1 1 100%' : 1, minWidth: 90, padding: '14px 10px',
+                borderRadius: 10, cursor: disabled ? 'default' : 'pointer',
+                border: '1px solid ' + (good ? '#4C7A4E' : bad ? '#B0342B' : sel ? 'var(--ink)' : 'var(--line)'),
+                background: good ? 'rgba(76,122,78,.12)' : bad ? 'rgba(176,52,43,.1)' : sel ? 'var(--ink)' : '#fff',
+                color: good ? '#2F5A31' : bad ? '#B0342B' : sel ? 'var(--bg)' : 'var(--ink)',
+                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
+              }}>
+              <span style={{ font: "700 22px 'Lora',serif", lineHeight: 1 }}>{o.sign}</span>
+              <span style={{ font: "600 12.5px 'Golos Text'" }}>{o.label}</span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function Training() {
   const { t, lang } = useLang();
   const [topics, setTopics] = useState([]);
@@ -152,33 +216,43 @@ export default function Training() {
         </button>
       </div>
 
-      <p className="stmt">{q.statement}</p>
-      {q.image && <img className="fig" src={q.image} alt="сурет" />}
-
-      {!checked ? (
-        q.options ? (
-          <div className="opts">
-            {q.options.map((o, k) => (
-              <button key={k} className={'opt' + (answer === o ? ' sel' : '')} onClick={() => setAnswer(o)}>
-                <span className="lt">{LT[k]}</span><span>{o}</span>
-              </button>
-            ))}
-          </div>
-        ) : (
-          <input value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder={t('ui.10')}
-            onKeyDown={(e) => { if (e.key === 'Enter' && answer.trim()) check(); }} />
-        )
+      {/* КОЛХАР: екі баған + салыстыру батырмалары. Қалғаны — әдеттегі көрініс. */}
+      {q.subject === 'kolzar' ? (
+        <Kolhar q={q} answer={answer} onPick={setAnswer} disabled={checked} correct={checked ? ok : null} />
       ) : (
         <>
-          {q.options && (
-            <div className="opts" style={{ marginBottom: 14 }}>
-              {q.options.map((o, k) => (
-                <div key={k} className={'opt' + (o === q.answer ? ' ok' : (o === answer ? ' bad' : ''))}>
-                  <span className="lt">{LT[k]}</span><span>{o}</span>
-                </div>
-              ))}
-            </div>
+          <p className="stmt">{q.statement}</p>
+          {q.image && <img className="fig" src={q.image} alt="сурет" />}
+
+          {!checked ? (
+            q.options ? (
+              <div className="opts">
+                {q.options.map((o, k) => (
+                  <button key={k} className={'opt' + (answer === o ? ' sel' : '')} onClick={() => setAnswer(o)}>
+                    <span className="lt">{LT[k]}</span><span>{o}</span>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <input value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder={t('ui.10')}
+                onKeyDown={(e) => { if (e.key === 'Enter' && answer.trim()) check(); }} />
+            )
+          ) : (
+            q.options && (
+              <div className="opts" style={{ marginBottom: 14 }}>
+                {q.options.map((o, k) => (
+                  <div key={k} className={'opt' + (o === q.answer ? ' ok' : (o === answer ? ' bad' : ''))}>
+                    <span className="lt">{LT[k]}</span><span>{o}</span>
+                  </div>
+                ))}
+              </div>
+            )
           )}
+        </>
+      )}
+
+      {checked && (
+        <>
           <div className={ok ? 'fb ok' : 'fb no'}>{ok ? 'Дұрыс!' : `Қате. Дұрыс жауап: ${q.answer ?? '—'}`}</div>
           <Explain q={q} given={ok ? null : answer} />
         </>
