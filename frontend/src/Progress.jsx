@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useLang } from './i18n.jsx';
 import { auth, getAttempts, getMocks, getSolved } from './firebase.js';
 
 export default function Progress() {
+  const { t } = useLang();
   const [stat, setStat] = useState(null);
   const [mocks, setMocks] = useState([]);
   const [open, setOpen] = useState(null);
@@ -32,7 +34,7 @@ export default function Progress() {
 
   if (open) return (
     <main>
-      <button className="link" onClick={() => setOpen(null)}>← Прогресс</button>
+      <button className="link" onClick={() => setOpen(null)}>{t('ui.40')}</button>
       <h1 style={{ marginBottom: 4 }}>{open.title || 'Мок-тест'}</h1>
       <p className="kicker">Талдау · {open.score}/{open.gradable} балл</p>
       {open.review ? (
@@ -43,16 +45,16 @@ export default function Progress() {
             </li>
           ))}
         </ol>
-      ) : <p className="muted">Бұл сынақтың талдауы сақталмаған.</p>}
+      ) : <p className="muted">{t('ui.41')}</p>}
     </main>
   );
 
   return (
     <main>
-      <p className="kicker">Прогресс</p>
-      <h1>Нәтижелерің</h1>
+      <p className="kicker">{t('ui.42')}</p>
+      <h1>{t('ui.43')}</h1>
       <div className="card" style={{ marginTop: 16 }}>
-        {!stat ? <span className="muted">Жүктелуде…</span> : (
+        {!stat ? <span className="muted">{t('ui.44')}</span> : (
           <div style={{ display: 'flex', gap: 30, flexWrap: 'wrap' }}>
             <Stat n={stat.solved} label="шешілген есеп" />
             <Stat n={stat.right} label="дұрыс шығарған" />
@@ -63,7 +65,7 @@ export default function Progress() {
       </div>
       {mocks.length > 0 && (
         <>
-          <p className="kicker" style={{ marginTop: 26 }}>Мок-тест тарихы</p>
+          <p className="kicker" style={{ marginTop: 26 }}>{t('ui.45')}</p>
           <div className="list">
             {mocks.map((m, k) => (
               <div className="row-item" key={k} onClick={() => setOpen(m)}>
