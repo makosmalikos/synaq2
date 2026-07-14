@@ -63,6 +63,52 @@ function buildPrompt({ statement, answer, hint, hasImage, given, lang }) {
   return { system: rules.join('\n'), user: task };
 }
 
+// Перевод условий задач. Тот же ключ Claude, отдельный режим: { mode: 'translate' }.
+// Языковые задачи (орыс/ағылшын/қазақ тілі) сюда не приходят — фильтр стоит на фронте.
+const TRANSLATE_SYSTEM = (lang) => [
+  lang === 'kk'
+    ? 'Переведи школьные задачи по математике и логике на КАЗАХСКИЙ язык.'
+    : 'Переведи школьные задачи по математике и логике на РУССКИЙ язык.',
+  '',
+  'Жёсткие правила:',
+  '— Числа, единицы измерения, имена собственные и формулы НЕ меняй.',
+  '— Не решай задачу и не добавляй пояснений. Только перевод.',
+  '— Смысл сохраняй дословно: это экзаменационные задачи, вольность меняет ответ.',
+  '— Школьная терминология (теңдеу, бөлшек, пайыз, аудан, жылдамдық...).',
+  '',
+  'Ответь ТОЛЬКО валидным JSON {"id": {"statement": "...", "solution": "..."}}, без markdown.',
+].join('\n');
+
+async function handleTranslate(res, key, body) {
+  const { items = [], lang = 'kk' } = body;
+  if (!items.length) return res.status(200).json({});
+
+  try {
+    const payload = {};
+    for (const it of items.slice(0, 30)) payload[it.id] = { statement: it.statement, solution: it.solution || '' };
+
+    const r = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
+      body: JSON.stringify({
+        model: MODEL,
+        max_tokens: 4000,
+        system: TRANSLATE_SYSTEM(lang),
+        messages: [{ role: 'user', content: JSON.stringify(payload) }],
+      }),
+    });
+    if (!r.ok) return res.status(502).json({ error: 'upstream' });
+
+    const data = await r.json();
+    const text = (data.content || []).filter((b) => b.type === 'text').map((b) => b.text).join('')
+      .replace(/```json|```/g, '').trim();
+    return res.status(200).json(JSON.parse(text));
+  } catch (e) {
+    console.error('translate failed', e);
+    return res.status(500).json({ error: 'failed' });   // фронт покажет оригинал
+  }
+}
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'method_not_allowed' });
 
@@ -74,6 +120,10 @@ module.exports = async function handler(req, res) {
   if (!ok) return res.status(401).json({ error: 'unauthorized' });
 
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+
+  // Режим перевода условий — тот же эндпоинт, чтобы не плодить функции.
+  if (body.mode === 'translate') return handleTranslate(res, key, body);
+
   const { statement, answer, hint = '', hasImage = false, given = null, lang = 'kk' } = body;
   if (!statement || String(statement).length > 4000) return res.status(400).json({ error: 'bad_statement' });
 
