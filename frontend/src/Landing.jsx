@@ -124,7 +124,7 @@ export default function Landing({ onStart }) {
         <span style={{width:'7px',height:'7px',borderRadius:'50%',background:'#1F7A4D',boxShadow:'0 0 0 4px rgba(31,122,77,.16)'}}></span>
         <span style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.1em',textTransform:'uppercase',color:'#1F7A4D'}}>{t('lp.7')}</span>
       </div>
-      <h1 className="lp-h1" style={{font:'600 74px/1.02 \'Lora\',serif',letterSpacing:'-.025em',margin:'0 0 24px'}}>Поступи в <span style={{fontStyle:'italic',color:'#B0342B'}}>{t('lp.9')}</span> школу</h1>
+      <h1 className="lp-h1" style={{font:'600 74px/1.02 \'Lora\',serif',letterSpacing:'-.025em',margin:'0 0 24px'}}>{t('lp.hero1')}<span style={{fontStyle:'italic',color:'#B0342B'}}>{t('lp.hero2')}</span>{t('lp.hero3')}</h1>
       <p style={{fontSize:'19px',lineHeight:'1.6',color:'#5A554B',margin:'0 0 34px',maxWidth:'480px'}}>{t('lp.11')}</p>
       <div style={{display:'flex',gap:'13px',flexWrap:'wrap'}}>
         <a href="#" onClick={handleStart} className="lp-cta" style={{background:'#15584A',color:'#FBFAF6',padding:'15px 32px',borderRadius:'12px',font:'600 16px \'Golos Text\',sans-serif'}}>{t('lp.12')}</a>
@@ -255,13 +255,13 @@ export default function Landing({ onStart }) {
         </div>
         <div style={{display:'flex',alignItems:'center',gap:'12px',background:'#FBEBE8',border:'1px solid #EDC6BE',borderRadius:'12px',padding:'12px 16px'}}>
           <span style={{width:'30px',height:'30px',borderRadius:'8px',background:'#B0342B',color:'#fff',display:'flex',alignItems:'center',justifyContent:'center',font:'700 15px \'Golos Text\''}}>!</span>
-          <div style={{font:'500 13.5px \'Golos Text\'',color:'#7A241C'}}>Слабая тема: <b>Проценты</b> — на этой неделе больше практики</div>
+          <div style={{font:'500 13.5px \'Golos Text\'',color:'#7A241C'}}>{t('lp.47')} <b>{t('lp.46')}</b> {t('lp.48')}</div>
         </div>
       </div>
       
       <div>
         <div style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#E9B84C',marginBottom:'16px'}}>{t('lp.49')}</div>
-        <h2 style={{font:'600 42px/1.06 \'Lora\',serif',letterSpacing:'-.02em',margin:'0 0 26px',color:'#FBFAF6'}}>Прогресс ребёнка — <span style={{fontStyle:'italic',color:'#E9B84C'}}>{t('lp.51')}</span></h2>
+        <h2 style={{font:'600 42px/1.06 \'Lora\',serif',letterSpacing:'-.02em',margin:'0 0 26px',color:'#FBFAF6'}}>{t('lp.50')} <span style={{fontStyle:'italic',color:'#E9B84C'}}>{t('lp.51')}</span></h2>
         <div style={{display:'flex',flexDirection:'column',gap:'18px'}}>
           <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#E9B84C',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Golos Text\'',marginBottom:'3px',color:'#FBFAF6'}}>{t('lp.52')}</div><div style={{fontSize:'15px',color:'#BFCBC4',lineHeight:'1.5'}}>{t('lp.53')}</div></div></div>
           <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#E9B84C',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Golos Text\'',marginBottom:'3px',color:'#FBFAF6'}}>{t('lp.54')}</div><div style={{fontSize:'15px',color:'#BFCBC4',lineHeight:'1.5'}}>{t('lp.55')}</div></div></div>
@@ -319,7 +319,7 @@ export default function Landing({ onStart }) {
       <h2 style={{font:'600 58px/1.02 \'Lora\',serif',letterSpacing:'-.025em',margin:'0 0 18px'}}>Synaq <span style={{fontStyle:'italic',color:'#E9B84C'}}>{t('lp.75')}</span></h2>
       <p style={{fontSize:'18px',color:'#BFCBC4',margin:'0 auto 34px',maxWidth:'480px'}}>{t('lp.76')}</p>
       <div style={{display:'flex',gap:'13px',justifyContent:'center',flexWrap:'wrap'}}>
-        <a href="#" onClick={handleStart} className="lp-cta" style={{display:'inline-block',background:'#E9B84C',color:'#231a06',padding:'17px 40px',borderRadius:'14px',font:'600 17px \'Golos Text\',sans-serif'}}>Начать бесплатно</a>
+        <a href="#" onClick={handleStart} className="lp-cta" style={{display:'inline-block',background:'#E9B84C',color:'#231a06',padding:'17px 40px',borderRadius:'14px',font:'600 17px \'Golos Text\',sans-serif'}}>{t('lp.12')}</a>
         <a href="#pricing" className="lp-ghost" style={{display:'inline-block',padding:'17px 34px',borderRadius:'14px',border:'1px solid rgba(255,255,255,.24)',font:'600 17px \'Golos Text\',sans-serif',color:'#FBFAF6'}}>{t('lp.77')}</a>
       </div>
       
