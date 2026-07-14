@@ -21,6 +21,15 @@ const TOPIC_OF = Object.fromEntries(POOL.map((q) => [q.id, q.topic]));
 
 // ── КОЛХАР: екі баған + салыстыру батырмалары ──
 // statement форматы: "Салыстыр...:\n[ортақ шарт]\nА) ...\nВ) ..."
+// Шартты абзацтарға бөліп шығарамыз (тілдік есептерде мәтін мен сұрақ бөлек тұрады).
+const Stmt = ({ text }) => (
+  <>
+    {String(text || '').split(/\n{2,}/).map((p, i) => (
+      <p className="stmt" key={i} style={i ? { marginTop: 14 } : undefined}>{p}</p>
+    ))}
+  </>
+);
+
 export function Kolhar({ q, answer, onPick, disabled, correct }) {
   const lines = (q.statement || '').split('\n');
   const a = (lines.find((l) => l.startsWith('А)')) || '').slice(2).trim();
@@ -221,7 +230,7 @@ export default function Training() {
         <Kolhar q={q} answer={answer} onPick={setAnswer} disabled={checked} correct={checked ? ok : null} />
       ) : (
         <>
-          <p className="stmt">{q.statement}</p>
+          <Stmt text={q.statement} />
           {q.image && <img className="fig" src={q.image} alt="сурет" />}
 
           {!checked ? (
