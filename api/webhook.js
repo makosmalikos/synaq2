@@ -1,15 +1,14 @@
-// POST /api/webhook — сюда стучится Polar при любом изменении подписки.
-// 1) проверяем подпись (иначе кто угодно сможет выдать себе Pro),
-// 2) достаём parentUid из metadata,
-// 3) ставим/снимаем pro в families/{parentUid}.
+// POST /api/webhook — Dodo Payments жазылым өзгергенде осында хабарлайды.
+// 1) қолтаңбаны тексереміз (әйтпесе кез келген адам өзіне pro қосып алар еді),
+// 2) metadata-дан parentUid аламыз,
+// 3) families/{parentUid}.pro-ны қоямыз/алып тастаймыз.
+//
+// CommonJS — explain.js сияқты (package.json-да "type": "module" жоқ).
 
-import { validateEvent, WebhookVerificationError } from '@polar-sh/sdk/webhooks';
-import { initializeApp, cert, getApps } from 'firebase-admin/app';
-import { getFirestore, FieldValue } from 'firebase-admin/firestore';
+const crypto = require('crypto');
 
-// Vercel по умолчанию сам парсит тело запроса. Подпись считается по СЫРЫМ байтам,
-// поэтому парсинг отключаем и читаем поток руками.
-export const config = { api: { bodyParser: false } };
+// Қолтаңба шикі байттар бойынша есептеледі — Vercel-дің парсерін өшіреміз.
+module.exports.config = { api: { bodyParser: false } };
 
 const rawBody = (req) => new Promise((resolve, reject) => {
   const chunks = [];
@@ -18,13 +17,35 @@ const rawBody = (req) => new Promise((resolve, reject) => {
   req.on('error', reject);
 });
 
-function db() {
+// Standard Webhooks: HMAC-SHA256("{id}.{timestamp}.{body}"), кілт — whsec_ кейінгі бөлігі.
+function verify(raw, headers, secret) {
+  const id = headers['webhook-id'];
+  const ts = headers['webhook-timestamp'];
+  const sigHeader = headers['webhook-signature'];
+  if (!id || !ts || !sigHeader || !secret) return false;
+  if (Math.abs(Date.now() / 1000 - Number(ts)) > 300) return false;   // ескі сұранысты қабылдамаймыз
+
+  const key = Buffer.from(String(secret).replace(/^whsec_/, ''), 'base64');
+  const expected = crypto.createHmac('sha256', key)
+    .update(`${id}.${ts}.${raw.toString('utf8')}`)
+    .digest('base64');
+
+  return String(sigHeader).split(' ').some((part) => {
+    const sig = part.split(',')[1];
+    if (!sig || sig.length !== expected.length) return false;
+    return crypto.timingSafeEqual(Buffer.from(sig), Buffer.from(expected));
+  });
+}
+
+// firebase-admin тек осы жерде керек — жоғарыда жүктесек, функция мүлде іске қосылмай қалуы мүмкін.
+async function store() {
+  const { initializeApp, cert, getApps } = require('firebase-admin/app');
+  const { getFirestore } = require('firebase-admin/firestore');
   if (!getApps().length) {
     initializeApp({
       credential: cert({
         projectId: process.env.FIREBASE_PROJECT_ID,
         clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        // в переменной окружения переносы строк экранированы
         privateKey: (process.env.FIREBASE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
       }),
     });
@@ -32,54 +53,52 @@ function db() {
   return getFirestore();
 }
 
-export default async function handler(req, res) {
+const ON = { pro: true };
+const OFF = { pro: false };
+const MAP = {
+  'subscription.active': ON,        // төледі / жаңартты
+  'subscription.renewed': ON,
+  'subscription.cancelled': OFF,
+  'subscription.expired': OFF,
+  'subscription.failed': OFF,
+  'payment.refunded': OFF,          // ақшасын қайтарды
+  // 'subscription.on_hold' — қолжетімділікті алмаймыз, тек белгілеп қоямыз
+};
+
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('POST only');
 
+  const raw = await rawBody(req);
+  if (!verify(raw, req.headers, process.env.DODO_WEBHOOK_SECRET)) {
+    return res.status(403).send('bad signature');
+  }
+
   let event;
-  try {
-    const body = await rawBody(req);
-    event = validateEvent(body, req.headers, process.env.POLAR_WEBHOOK_SECRET);
-  } catch (e) {
-    if (e instanceof WebhookVerificationError) return res.status(403).send('bad signature');
-    console.error(e);
-    return res.status(400).send('bad request');
-  }
+  try { event = JSON.parse(raw.toString('utf8')); }
+  catch { return res.status(400).send('bad json'); }
 
-  const sub = event.data || {};
-  const uid = sub.metadata?.parentUid || sub.subscription?.metadata?.parentUid;
-  if (!uid) {
-    // Платёж не привязан к пользователю — отвечаем 200, иначе Polar будет ретраить вечно.
-    console.warn('нет parentUid в событии', event.type);
-    return res.status(200).send('ok');
-  }
+  const type = event.type || event.event_type;
+  const data = event.data || {};
+  const uid = data.metadata?.parentUid || data.subscription?.metadata?.parentUid;
 
-  // Что делаем с каждым событием.
-  const ON  = { pro: true };
-  const OFF = { pro: false };
-  const MAP = {
-    'subscription.active':      ON,   // оплатил или продлил
-    'subscription.uncanceled':  ON,   // передумал отменять
-    'subscription.resumed':     ON,
-    'subscription.revoked':     OFF,  // период кончился, доступа больше нет
-    'order.refunded':           OFF,  // вернули деньги
-    // 'subscription.canceled' — доступ НЕ снимаем: он оплачен до конца периода.
-    //  Polar сам пришлёт revoked, когда период истечёт.
-  };
+  // Пайдаланушыға байланбаған төлем — 200 қайтарамыз, әйтпесе Dodo шексіз қайталайды.
+  if (!uid) { console.warn('parentUid жоқ:', type); return res.status(200).send('ok'); }
 
-  const patch = MAP[event.type];
-  if (!patch) return res.status(200).send('ignored');
+  const patch = MAP[type];
+  if (!patch && type !== 'subscription.on_hold') return res.status(200).send('ignored');
 
   try {
-    await db().collection('families').doc(uid).set({
-      ...patch,
-      polarSubId: sub.id || null,
-      polarStatus: event.type,
-      proUpdatedAt: FieldValue.serverTimestamp(),
+    const db = await store();
+    await db.collection('families').doc(uid).set({
+      ...(patch || {}),
+      dodoSubId: data.subscription_id || data.id || null,
+      dodoStatus: type,
+      proUpdatedAt: new Date(),
     }, { merge: true });
   } catch (e) {
-    console.error('firestore жаңарту қатесі', e);
-    return res.status(500).send('db error');   // Polar повторит попытку
+    console.error('firestore қатесі', e);
+    return res.status(500).send('db error');    // Dodo қайта жібереді
   }
 
   return res.status(200).send('ok');
-}
+};
