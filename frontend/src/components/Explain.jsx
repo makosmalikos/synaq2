@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLang } from '../i18n.jsx';
 import { explain, explainError } from '../explain.js';
 
 // Блок разбора под задачей.
@@ -6,6 +7,7 @@ import { explain, explainError } from '../explain.js';
 // Ниже — полный разбор по шагам. Если ребёнок ошибся, он ещё и покажет,
 // откуда взялся именно его ответ.
 export default function Explain({ q, given = null }) {
+  const { lang } = useLang();
   const [text, setText] = useState('');
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
@@ -15,7 +17,7 @@ export default function Explain({ q, given = null }) {
   async function run() {
     setBusy(true); setErr(''); setText('');
     try {
-      setText(await explain(q, { given: wrong ? given : null, lang: 'kk' }));
+      setText(await explain(q, { given: wrong ? given : null, lang }));
     } catch (e) {
       setErr(explainError(e.message));
     }
