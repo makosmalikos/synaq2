@@ -4,6 +4,7 @@ import { api, isCorrect, translateQuestions } from '../api.js';
 
 import { auth, saveMock } from '../firebase.js';
 import Explain from './Explain.jsx';
+import { Kolhar } from './Training.jsx';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
 const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.max(0, s) % 60).padStart(2, '0')}`;
@@ -167,19 +168,25 @@ export default function Mock() {
         </button>
       </div>
 
-      <p className="stmt">{q.statement}</p>
-      {q.image && <img className="fig" src={q.image} alt="сурет" />}
-
-      {q.options ? (
-        <div className="opts">
-          {q.options.map((o, k) => (
-            <button key={k} className={'opt' + (answers[q.num] === o ? ' sel' : '')} onClick={() => pick(o)}>
-              <span className="lt">{LT[k]}</span><span>{o}</span>
-            </button>
-          ))}
-        </div>
+      {q.subject === 'kolzar' ? (
+        <Kolhar q={q} answer={answers[q.num]} onPick={pick} disabled={false} correct={null} />
       ) : (
-        <input value={answers[q.num] || ''} onChange={(e) => pick(e.target.value)} placeholder={t('ui.24')} />
+        <>
+          <p className="stmt">{q.statement}</p>
+          {q.image && <img className="fig" src={q.image} alt="сурет" />}
+
+          {q.options ? (
+            <div className="opts">
+              {q.options.map((o, k) => (
+                <button key={k} className={'opt' + (answers[q.num] === o ? ' sel' : '')} onClick={() => pick(o)}>
+                  <span className="lt">{LT[k]}</span><span>{o}</span>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <input value={answers[q.num] || ''} onChange={(e) => pick(e.target.value)} placeholder={t('ui.24')} />
+          )}
+        </>
       )}
 
       {navOpen && (
