@@ -33,6 +33,7 @@ function ytEmbed(url) {
 }
 
 function Demo() {
+  const { t } = useLang();
   const [failed, setFailed] = React.useState(false);
   // 56.25% = 16:9. Через padding, а не aspect-ratio: работает везде и не схлопывается в 0.
   const box = { position: 'relative', width: '100%', height: 0, paddingTop: '56.25%', borderRadius: '18px', overflow: 'hidden', background: '#15332B' };
