@@ -5,7 +5,7 @@ import {
   genPassword, suggestUsername, cleanUsername, errText,
 } from './firebase.js';
 
-const Logo = () => <div className="logo"><b>Synaq</b><span>{t('ui.25')}</span></div>;
+const Logo = () => { const { t } = useLang(); return <div className="logo"><b>Synaq</b><span>{t('ui.25')}</span></div>; };
 
 export default function Parent({ onExit }) {
   const { t } = useLang();
