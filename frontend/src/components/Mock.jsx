@@ -11,11 +11,21 @@ const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.max(0, s) % 60).padStart
 
 // Мок-тест строго по школам: экзамен у каждой свой, вариант должен быть
 // цельным. Это не то же самое, что дайындык, где банк общий.
+// Шартты абзацтарға бөліп шығарамыз (тілдік есептерде мәтін мен сұрақ бөлек тұрады).
+const Stmt = ({ text }) => (
+  <>
+    {String(text || '').split(/\n{2,}/).map((p, i) => (
+      <p className="stmt" key={i} style={i ? { marginTop: 14 } : undefined}>{p}</p>
+    ))}
+  </>
+);
+
 export default function Mock() {
   const { t, lang } = useLang();
   const [schools, setSchools] = useState([]);
   const [school, setSchool] = useState(null);
   const [pause, setPause] = useState(false);   // экран перерыва между секциями
+  const [startedAt, setStartedAt] = useState(null);
   const [test, setTest] = useState(null);
   const [meta, setMeta] = useState(null);
   const [answers, setAnswers] = useState({});
@@ -48,8 +58,26 @@ export default function Mock() {
     setSchool(code);
     setMeta({ school: code, sections: v.sections });
     setTest({ ...v, questions: qs });
-    setAnswers({}); setFlags({}); setI(0); setPause(false);
+    setAnswers({}); setFlags({}); setI(0); setPause(false); setStartedAt(Date.now());
     setLeft((v.timeLimitMin || 60) * 60); setResult(null);
+  }
+
+  // Аяқтау: нәтижені санап, прогреске сақтаймыз (уақыты мен мектебімен бірге).
+  async function submit() {
+    if (!test) return;
+    clearInterval(tick.current);
+    const r = await api.mockSubmit(test.id, answers);
+    if (!r) return;
+    const spentSec = startedAt ? Math.round((Date.now() - startedAt) / 1000) : null;
+    setResult(r);
+    try {
+      await saveMock(auth.currentUser.uid, {
+        ...r,
+        school: meta?.school || school,
+        spentSec,                       // қанша уақытта тапсырды
+        limitMin: test.timeLimitMin || null,
+      });
+    } catch {}
   }
 
   const back = () => { setTest(null); setResult(null); setMeta(null); setSchool(null); setPause(false); };
@@ -172,7 +200,7 @@ export default function Mock() {
         <Kolhar q={q} answer={answers[q.num]} onPick={pick} disabled={false} correct={null} />
       ) : (
         <>
-          <p className="stmt">{q.statement}</p>
+          <Stmt text={q.statement} />
           {q.image && <img className="fig" src={q.image} alt="сурет" />}
 
           {q.options ? (
