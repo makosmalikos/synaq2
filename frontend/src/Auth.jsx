@@ -6,6 +6,7 @@ import { useLang, LangSwitch } from './i18n.jsx';
 // На первом экране сразу объясняем, как устроен семейный аккаунт.
 export default function Auth({ onClose }) {
   const { t } = useLang();
+  const [pname, setPname] = useState('');
   const [stage, setStage] = useState('start'); // start | register | loginRole | loginParent | loginChild
   const [err, setErr] = useState('');
   const [busy, setBusy] = useState(false);
@@ -65,11 +66,12 @@ export default function Auth({ onClose }) {
             <p style={S.kicker}>{t('auth.parentAccount')}</p>
             <h1 style={S.h1}>{t('auth.create')}</h1>
             <p style={S.hint}>{t('auth.step2')}</p>
+            <input style={S.input} placeholder={t('auth.yourName')} value={pname} onChange={(e) => setPname(e.target.value)} />
             <input style={S.input} placeholder={t('auth.email')} value={email} onChange={(e) => setEmail(e.target.value)} />
             <input style={S.input} type="password" placeholder={t('auth.password')} value={pass} onChange={(e) => setPass(e.target.value)} />
             <Err v={err} />
             <button style={{ ...S.dark, marginTop: 6 }} disabled={busy || !email || pass.length < 6}
-              onClick={run(() => registerParent(email, pass))}>{t('auth.create')} →</button>
+              onClick={run(() => registerParent(email, pass, pname))}>{t('auth.create')} →</button>
             <button style={S.back} onClick={() => setStage('start')}>{t('common.back')}</button>
           </div>
         )}
