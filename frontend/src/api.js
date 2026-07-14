@@ -1,6 +1,7 @@
 // Данные вшиты в приложение (data.js + bank.js) — бэкенд не требуется.
 import { topics as BASE_TOPICS, variants } from './data.js';
 import { POOL, EXTRA_TOPICS } from './bank.js';
+import { auth } from './firebase.js';
 
 const P = (x) => Promise.resolve(x);
 const shuffle = (a) => a.map((x) => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map((x) => x[1]);
@@ -23,43 +24,35 @@ const ALL_TOPICS = [...BASE_TOPICS, ...EXTRA_TOPICS];
 // ── Мок-тест НИШ ──
 // Готовых вариантов НИШ в банке нет, поэтому собираем их сами по формату экзамена:
 // математика 40 · колзар 20 · ағылшын 20 · орыс 20 · қазақ 20.
+// Секция 1 — математика и колзар. Секция 2 — языки. Между ними перерыв.
 const NISH_SPEC = [
-  ['math', 40], ['kolzar', 20], ['eng', 20], ['rus', 20], ['kaz', 20],
+  ['math', 40, 1], ['kolzar', 20, 1],
+  ['eng', 20, 2], ['rus', 20, 2], ['kaz', 20, 2],
 ];
-const NISH_VARIANTS_N = 3;      // сколько вариантов собрать
 const NISH_TIME_MIN = 150;
 
 function buildNish() {
-  // Пул НИШ; казахских задач у НИШ мало, поэтому добираем из БИЛ.
-  const bySubj = {};
-  for (const [subj] of NISH_SPEC) {
-    const own = POOL.filter((q) => q.school === 'НИШ' && q.subject === subj);
-    const extra = POOL.filter((q) => q.school === 'БИЛ' && q.subject === subj);
-    bySubj[subj] = shuffle([...own, ...extra]);
-  }
-  const out = [];
-  for (let v = 0; v < NISH_VARIANTS_N; v++) {
-    const qs = [];
-    for (const [subj, want] of NISH_SPEC) {
-      const pool = bySubj[subj];
-      if (!pool.length) continue;
-      for (let k = 0; k < want; k++) {
-        const q = pool[(v * want + k) % pool.length];   // варианты не повторяют друг друга
-        qs.push({ ...q, num: qs.length + 1, subject: subj });
-      }
+  const qs = [];
+  for (const [subj, want, section] of NISH_SPEC) {
+    // казахских задач у НИШ мало — добираем из БИЛ
+    const pool = shuffle(POOL.filter((q) => (q.school === 'НИШ' || q.school === 'БИЛ') && q.subject === subj));
+    for (let k = 0; k < Math.min(want, pool.length); k++) {
+      qs.push({ ...pool[k], num: qs.length + 1, subject: subj, section });
     }
-    out.push({
-      id: `nish_v${v + 1}`,
-      school: 'НИШ',
-      title: `НИШ · ${v + 1}-нұсқа`,
-      timeLimitMin: NISH_TIME_MIN,
-      questions: qs,
-    });
   }
-  return out;
+  return {
+    id: `nish_${Date.now()}`,
+    school: 'НИШ',
+    timeLimitMin: NISH_TIME_MIN,
+    sections: 2,
+    questions: qs,
+  };
 }
 
-const ALL_VARIANTS = [...variants, ...buildNish()];
+// Собранные на лету варианты держим в памяти, чтобы mockGet/mockSubmit их нашли.
+const GENERATED = new Map();
+
+
 
 export const api = {
   // ── Тренировка ──
@@ -85,28 +78,32 @@ export const api = {
   },
 
   // ── Мок-тест ──
-  schools: () => P(['РФМШ', 'НИШ', 'БИЛ'].map((code) => {
-    const vs = ALL_VARIANTS.filter((v) => v.school === code);
-    return {
-      code,
-      variants: vs.length,
-      questions: vs.reduce((s, v) => s + v.questions.length, 0),
-    };
-  })),
+  schools: () => P([
+    { code: 'РФМШ', ready: variants.some((v) => v.school === 'РФМШ') },
+    { code: 'НИШ',  ready: POOL.some((q) => q.school === 'НИШ') },
+    { code: 'БИЛ',  ready: false },   // задач на цельный вариант пока не хватает
+  ]),
 
-  mockList: (school) => P(
-    ALL_VARIANTS.filter((v) => v.school === school).map((v) => ({
-      id: v.id,
-      school: v.school,
-      title: v.title,
-      timeLimitMin: v.timeLimitMin,
-      count: v.questions.length,
-    }))
-  ),
+  // Случайный вариант по школе. Никакого выбора «нұсқа» — жмёшь школу и решаешь.
+  mockRandom: (school) => {
+    let v;
+    if (school === 'НИШ') {
+      v = buildNish();
+    } else {
+      const pool = variants.filter((x) => x.school === school);
+      if (!pool.length) return P(null);
+      const src = pool[Math.floor(Math.random() * pool.length)];
+      v = { ...src, id: `${src.id}_${Date.now()}`, sections: 1,
+            questions: src.questions.map((q) => ({ ...q, section: 1 })) };
+    }
+    GENERATED.set(v.id, v);
+    // отдаём без ответов и разборов — как на экзамене
+    return P({ ...v, questions: v.questions.map(({ answer, solution, note, ...rest }) => rest) });
+  },
 
   // Вариант без ответов и разборов — как на настоящем экзамене.
   mockGet: (id) => {
-    const v = ALL_VARIANTS.find((x) => x.id === id);
+    const v = GENERATED.get(id);
     if (!v) return P(null);
     return P({
       ...v,
@@ -115,7 +112,7 @@ export const api = {
   },
 
   mockSubmit: (id, answers) => {
-    const v = ALL_VARIANTS.find((x) => x.id === id);
+    const v = GENERATED.get(id);
     if (!v) return P(null);
     let correct = 0, gradable = 0, wrong = 0;
     const review = v.questions.map((q) => {
@@ -146,3 +143,43 @@ export const api = {
     return P({ score: correct, gradable, total: v.questions.length, review });
   },
 };
+
+
+// ── Перевод условий задач ──
+// Оригиналы в data.js — на русском. Если выбран казахский, условия математики,
+// логики и колзара переводим через /api/explain (режим translate) и кешируем.
+// Задачи по языкам (орыс/ағылшын/қазақ тілі) НЕ переводим: перевод убивает задание.
+const LANG_SUBJECTS = ['rus', 'eng', 'kaz'];
+const trCache = new Map();
+
+export const translatable = (q) => !LANG_SUBJECTS.includes(q.subject);
+
+export async function translateQuestions(list, lang) {
+  if (lang === 'ru' || !list?.length) return list;
+
+  const need = list.filter((q) => translatable(q) && !trCache.has(`${q.id}_${lang}`));
+
+  if (need.length) {
+    try {
+      const token = await auth.currentUser?.getIdToken?.();
+      const r = await fetch('/api/explain', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+        body: JSON.stringify({
+          mode: 'translate',
+          lang,
+          items: need.map((q) => ({ id: q.id, statement: q.statement, solution: q.solution || '' })),
+        }),
+      });
+      const data = await r.json();
+      for (const [id, v] of Object.entries(data || {})) trCache.set(`${id}_${lang}`, v);
+    } catch (e) {
+      console.warn('перевод не удался — показываем оригинал', e);
+    }
+  }
+
+  return list.map((q) => {
+    const tr = trCache.get(`${q.id}_${lang}`);
+    return tr ? { ...q, statement: tr.statement || q.statement, solution: tr.solution || q.solution } : q;
+  });
+}
