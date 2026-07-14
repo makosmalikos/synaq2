@@ -1,40 +1,48 @@
 // POST /api/checkout  { uid, email }  →  { url }
-// Создаёт оплату в Polar и возвращает ссылку, куда отправить родителя.
-// uid кладём в metadata — именно по нему вебхук потом найдёт, кому включить Pro.
+// Dodo Payments-те төлем сессиясын ашып, сілтемесін қайтарады.
+// uid-ті metadata-ға саламыз — вебхук сол арқылы кімге pro қосу керегін біледі.
+//
+// CommonJS (module.exports) — explain.js сияқты. ESM-ге көшірмеңіз:
+// түбірдегі package.json-да "type": "module" жоқ, Vercel функцияны іске қоса алмайды.
 
-const POLAR_API = process.env.POLAR_SANDBOX === '1'
-  ? 'https://sandbox-api.polar.sh'
-  : 'https://api.polar.sh';
+const API = process.env.DODO_ENV === 'test_mode'
+  ? 'https://test.dodopayments.com'
+  : 'https://live.dodopayments.com';
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
 
-  const { uid, email } = req.body || {};
+  const { uid, email, name } = req.body || {};
   if (!uid) return res.status(400).json({ error: 'uid керек' });
 
+  if (!process.env.DODO_PAYMENTS_API_KEY || !process.env.DODO_PRODUCT_ID) {
+    console.error('DODO_PAYMENTS_API_KEY немесе DODO_PRODUCT_ID жоқ');
+    return res.status(500).json({ error: 'Төлем баптаулары толық емес' });
+  }
+
   try {
-    const r = await fetch(`${POLAR_API}/v1/checkouts/`, {
+    const r = await fetch(`${API}/checkouts`, {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${process.env.POLAR_ACCESS_TOKEN}`,
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.DODO_PAYMENTS_API_KEY}`,
       },
       body: JSON.stringify({
-        products: [process.env.POLAR_PRODUCT_ID],   // ID тарифа Pro из дашборда Polar
-        customer_email: email || undefined,
-        success_url: `${process.env.APP_URL}/app?paid=1`,
-        metadata: { parentUid: uid },               // ← вернётся в вебхуке
+        product_cart: [{ product_id: process.env.DODO_PRODUCT_ID, quantity: 1 }],
+        customer: email ? { email, name: name || undefined } : undefined,
+        return_url: `${process.env.APP_URL || 'https://synaq.app'}/app?paid=1`,
+        metadata: { parentUid: uid },
       }),
     });
 
-    const data = await r.json();
-    if (!r.ok) {
-      console.error('polar checkout failed', data);
-      return res.status(502).json({ error: 'Polar қатесі' });
+    const data = await r.json().catch(() => null);
+    if (!r.ok || !data?.checkout_url) {
+      console.error('dodo checkout failed', r.status, data);
+      return res.status(502).json({ error: `Dodo ${r.status}` });
     }
-    return res.status(200).json({ url: data.url });
+    return res.status(200).json({ url: data.checkout_url });
   } catch (e) {
     console.error(e);
     return res.status(500).json({ error: 'Сервер қатесі' });
   }
-}
+};
