@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useLang } from '../i18n.jsx';
 import { api, isCorrect, translateQuestions } from '../api.js';
 
-import { auth, saveMock } from '../firebase.js';
+import { auth, saveMock, isPro } from '../firebase.js';
 import Explain from './Explain.jsx';
 import { Kolhar } from './Training.jsx';
 
@@ -26,6 +26,7 @@ export default function Mock() {
   const [school, setSchool] = useState(null);
   const [pause, setPause] = useState(false);   // экран перерыва между секциями
   const [startedAt, setStartedAt] = useState(null);
+  const [pro, setPro] = useState(null);        // null — тексерілуде
   const [test, setTest] = useState(null);
   const [meta, setMeta] = useState(null);
   const [answers, setAnswers] = useState({});
@@ -38,7 +39,11 @@ export default function Mock() {
   const [open_, setOpen] = useState(null);   // раскрытая задача в разборе
   const tick = useRef(null);
 
-  useEffect(() => { api.schools().then(setSchools).catch(() => {}); }, []);
+  useEffect(() => {
+    api.schools().then(setSchools).catch(() => {});
+    const u = auth.currentUser;
+    if (u) isPro(u.uid).then(setPro).catch(() => setPro(false));
+  }, []);
 
 
   useEffect(() => {
@@ -81,6 +86,22 @@ export default function Mock() {
   }
 
   const back = () => { setTest(null); setResult(null); setMeta(null); setSchool(null); setPause(false); };
+
+  // ── тегін тарифте сынақ жабық ──
+  if (!school && pro === false) return (
+    <main>
+      <p className="kicker">{t('ui.11')}</p>
+      <h1>{t('ui.12')}</h1>
+      <div className="card" style={{ marginTop: 18, borderColor: 'var(--accent)' }}>
+        <p className="kicker" style={{ color: 'var(--accent)', margin: '0 0 8px' }}>Про қажет</p>
+        <p style={{ margin: '0 0 14px', fontSize: 15, lineHeight: 1.6 }}>
+          Толық сынақ (нақты емтихан форматы, таймермен және талдауымен) Про тарифінде ашылады.
+          Тегін тарифте бір тақырып пен күніне 5 есеп қолжетімді.
+        </p>
+        <p className="muted" style={{ margin: 0, fontSize: 13.5 }}>Про-ны ата-анаңыз өз кабинетінен қоса алады.</p>
+      </div>
+    </main>
+  );
 
   // ── выбор школы ──
   if (!school) return (
