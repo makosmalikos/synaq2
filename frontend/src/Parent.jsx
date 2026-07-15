@@ -157,15 +157,15 @@ export default function Parent({ onExit }) {
                 borderWidth: pro ? 1 : 2, opacity: pro ? 0.6 : 1,
               }}>
                 <div className="row" style={{ marginBottom: 10 }}>
-                  <p className="kicker" style={{ margin: 0 }}>Тегін</p>
-                  {!pro && <span className="tag" style={{ borderColor: 'var(--ink)' }}>қазіргі</span>}
+                  <p className="kicker" style={{ margin: 0 }}>{t('plan.free')}</p>
+                  {!pro && <span className="tag" style={{ borderColor: 'var(--ink)' }}>{t('plan.current')}</span>}
                 </div>
-                <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>0 ₸</div>
+                <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>{t('plan.freePrice')}</div>
                 <ul style={{ margin: 0, padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text'", lineHeight: 2 }}>
-                  <li>✓ Бір тақырып</li>
-                  <li>✓ Күніне 5 есеп</li>
-                  <li style={{ color: '#B0B0A6' }}>✗ Толық сынақтар</li>
-                  <li style={{ color: '#B0B0A6' }}>✗ Барлық тақырып</li>
+                  <li>✓ {t('plan.f1')}</li>
+                  <li>✓ {t('plan.f2')}</li>
+                  <li style={{ color: '#B0B0A6' }}>✗ {t('plan.f3')}</li>
+                  <li style={{ color: '#B0B0A6' }}>✗ {t('plan.f4')}</li>
                 </ul>
               </div>
 
@@ -175,23 +175,23 @@ export default function Parent({ onExit }) {
                 borderWidth: 2, background: pro ? '#EEF5EC' : '#FBF3E3',
               }}>
                 <div className="row" style={{ marginBottom: 10 }}>
-                  <p className="kicker" style={{ margin: 0, color: pro ? 'var(--green)' : 'var(--accent)' }}>Про</p>
-                  {pro && <span className="tag" style={{ borderColor: 'var(--green)', color: 'var(--green)' }}>белсенді</span>}
+                  <p className="kicker" style={{ margin: 0, color: pro ? 'var(--green)' : 'var(--accent)' }}>{t('plan.pro')}</p>
+                  {pro && <span className="tag" style={{ borderColor: 'var(--green)', color: 'var(--green)' }}>{t('plan.active')}</span>}
                 </div>
                 <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>
-                  5 999 ₸<span style={{ font: "500 13px 'Golos Text'", color: '#9A9384' }}> / ай</span>
+                  {t('plan.proPrice')}<span style={{ font: "500 13px 'Golos Text'", color: '#9A9384' }}>{t('plan.month')}</span>
                 </div>
                 <ul style={{ margin: '0 0 14px', padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text'", lineHeight: 2 }}>
-                  <li>✓ Барлық тақырып</li>
-                  <li>✓ Шектеусіз есеп</li>
-                  <li>✓ Толық сынақтар</li>
-                  <li>✓ Әр қатеге талдау</li>
+                  <li>✓ {t('plan.p1')}</li>
+                  <li>✓ {t('plan.p2')}</li>
+                  <li>✓ {t('plan.p3')}</li>
+                  <li>✓ {t('plan.p4')}</li>
                 </ul>
                 {pro ? (
-                  <div style={{ font: "600 13px 'Golos Text'", color: 'var(--green)' }}>Жазылым белсенді ✓</div>
+                  <div style={{ font: "600 13px 'Golos Text'", color: 'var(--green)' }}>{t('plan.activeNote')}</div>
                 ) : (
                   <button className="btn accent" disabled={paying} onClick={buyPro} style={{ width: '100%' }}>
-                    {paying ? '…' : 'Про таңдау'}
+                    {paying ? '…' : t('pro.buy')}
                   </button>
                 )}
               </div>
