@@ -155,7 +155,9 @@ const trCache = new Map();
 export const translatable = (q) => !LANG_SUBJECTS.includes(q.subject);
 
 export async function translateQuestions(list, lang) {
-  if (lang === 'ru' || !list?.length) return list;
+  // Банктегі есептер қазақша жазылған. Сондықтан 'kk' кезінде аудармаймыз,
+  // басқа тілде (мыс. 'ru') — /api/explain арқылы аударамыз.
+  if (lang === 'kk' || !list?.length) return list;
 
   const need = list.filter((q) => translatable(q) && !trCache.has(`${q.id}_${lang}`));
 
