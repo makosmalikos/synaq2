@@ -9,23 +9,6 @@ import { api, topicStats, readiness, mockSeries } from './api.js';
 const Logo = () => { const { t } = useLang(); return <div className="logo"><b>Synaq</b><span>{t('ui.25')}</span></div>; };
 
 
-// ── Футер поддержки: почта + Telegram ──
-function SupportFooter() {
-  const EMAIL = 'support@synaq.app';
-  const TELEGRAM = 'makosmalikos';
-  return (
-    <footer style={{
-      marginTop: 40, paddingTop: 20, borderTop: '1px solid var(--line)',
-      display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 16,
-      font: "500 13.5px 'Golos Text',sans-serif", color: '#9A9384',
-    }}>
-      <span style={{ fontWeight: 600, color: '#6B655B' }}>Қолдау / Поддержка:</span>
-      <a href={`mailto:${EMAIL}`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>✉ {EMAIL}</a>
-      <a href={`https://t.me/${TELEGRAM}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'none' }}>✈ @{TELEGRAM}</a>
-    </footer>
-  );
-}
-
 export default function Parent({ onExit }) {
   const { t } = useLang();
   const exit = async () => {
@@ -268,7 +251,6 @@ export default function Parent({ onExit }) {
       ) : (
         <ChildReport child={openChild} mocks={mocks} stats={stats} onBack={() => setOpenChild(null)} t={t} />
       )}
-      <SupportFooter />
     </div>
   );
 }
