@@ -137,7 +137,7 @@ export default function App() {
         {tab === 'duel' && <Duel />}
         {tab === 'league' && <League />}
         {tab === 'progress' && <Progress />}
-        <SupportFooter />
+        {tab === 'home' && <SupportFooter />}
       </div>
     </div>
   );
