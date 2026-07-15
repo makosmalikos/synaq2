@@ -152,3 +152,105 @@ input:focus{border-color:var(--accent)}
 .qcell.done { background:var(--ink); color:var(--bg); border-color:var(--ink); }
 .qcell.cur { border:2px solid var(--accent); }
 .qcell.flag::after { content:'⚑'; position:absolute; top:-6px; right:-4px; color:var(--accent); font-size:12px; }
+/* ============================================================
+   МОБИЛЬНАЯ АДАПТАЦИЯ  (телефоны, ≤ 640px)
+   Дописывается В КОНЕЦ styles.css. Ничего не удаляет.
+   Срабатывает только на узких экранах — десктоп не меняется.
+   ============================================================ */
+@media (max-width: 640px) {
+
+  /* — Дашборд: сайдбар сверху, контент снизу (а не в два столбца) — */
+  .shell {
+    display: block;               /* было: flex/grid в ряд */
+  }
+
+  .sidebar {
+    position: static;
+    width: auto;
+    height: auto;
+    min-height: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 14px 16px;
+    display: block;
+  }
+
+  /* Логотип по центру сверху */
+  .sidebar .logo {
+    justify-content: flex-start;
+    margin-bottom: 12px;
+  }
+
+  /* Навигация — в строку, с горизонтальной прокруткой */
+  .nav-v {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    margin: 0 -16px 6px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .nav-v::-webkit-scrollbar { display: none; }
+
+  .nav-v button {
+    flex: 0 0 auto;               /* не сжимать пункты */
+    white-space: nowrap;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  .nav-v button .num { display: none; }   /* убрать номера 01,02… — экономим место */
+
+  /* Блок пользователя и кнопка «Выйти» — своим рядом, не поверх контента */
+  .userbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 10px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+  .userbox .btn.full,
+  .userbox .btn.ghost.full {
+    width: auto;                 /* не на всю ширину */
+    flex: 0 0 auto;
+    padding: 9px 16px;
+  }
+
+  /* Контент — на всю ширину, отступы поменьше */
+  .content {
+    width: auto;
+    margin: 0;
+    padding: 18px 16px 40px;
+  }
+
+  /* — Общее: сетки в один столбец — */
+  .grid2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Заголовки чуть меньше, чтобы не переносились уродливо */
+  main h1 { font-size: 26px; }
+
+  /* Карточки — меньше внутренние отступы */
+  .card { padding: 16px; }
+
+  /* Кнопки в ряд, которые не влезают — переносим */
+  .row { flex-wrap: wrap; gap: 10px; }
+
+  /* Разбор задачи / длинные строки — не вылезают за экран */
+  .stmt, .fig { max-width: 100%; }
+  .fig { height: auto; }
+
+  /* Опции ответов — на всю ширину */
+  .opts .opt { width: 100%; }
+}
+
+/* Совсем узкие экраны (маленькие телефоны) */
+@media (max-width: 380px) {
+  .nav-v button { font-size: 13px; padding: 7px 10px; }
+  main h1 { font-size: 23px; }
+}
