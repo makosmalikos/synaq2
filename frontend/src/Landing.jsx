@@ -127,7 +127,7 @@ export default function Landing({ onStart }) {
   </nav>
 
   
-  <section className="lp-hero lp-pad" style={{display:'grid',gridTemplateColumns:'1.05fr .95fr',gap:'64px',alignItems:'center',maxWidth:'1280px',margin:'0 auto',padding:'120px 56px 60px'}}>
+  <section className="lp-hero lp-pad" style={{display:'grid',gridTemplateColumns:'1.05fr .95fr',gap:'64px',alignItems:'center',maxWidth:'1280px',margin:'0 auto',padding:'56px 56px',minHeight:'calc(100vh - 71px)'}}>
     <div>
       <div style={{display:'inline-flex',alignItems:'center',gap:'9px',background:'rgba(31,122,77,.1)',border:'1px solid rgba(31,122,77,.22)',padding:'7px 15px',borderRadius:'100px',marginBottom:'26px'}}>
         <span style={{width:'7px',height:'7px',borderRadius:'50%',background:'#1F7A4D',boxShadow:'0 0 0 4px rgba(31,122,77,.16)'}}></span>
@@ -340,6 +340,11 @@ export default function Landing({ onStart }) {
     <div style={{display:'flex',alignItems:'center',gap:'11px'}}>
       <div style={{width:'34px',height:'34px',borderRadius:'9px',overflow:'hidden'}}><img src="/figures/6ee8b3d2.jpg" alt="Synaq" style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}} /></div>
       <span style={{font:'700 18px \'Golos Text\',sans-serif'}}>Synaq</span>
+    </div>
+    <div style={{display:'flex',alignItems:'center',flexWrap:'wrap',gap:'16px',font:"500 13.5px 'Golos Text',sans-serif",color:'#9A9384'}}>
+      <span style={{fontWeight:600,color:'#6B655B'}}>Қолдау / Поддержка:</span>
+      <a href="mailto:support@synaq.app" style={{color:'#B0342B',textDecoration:'none'}}>✉ support@synaq.app</a>
+      <a href="https://t.me/makosmalikos" target="_blank" rel="noopener noreferrer" style={{color:'#B0342B',textDecoration:'none'}}>✈ @makosmalikos</a>
     </div>
     <div style={{font:'500 13px \'IBM Plex Mono\',monospace',color:'#8A8474'}}>{t('lp.78')}</div>
   </footer>
