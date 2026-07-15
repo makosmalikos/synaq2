@@ -24,21 +24,16 @@ export default function Auth({ onClose }) {
   return (
     <div style={S.overlay}>
       <div style={S.card}>
-        {/* Шығу — попаптың ең жоғарғы жолында, логотиптің үстінде */}
-        <button
-          onClick={() => (onClose ? onClose() : (window.location.href = '/'))}
-          style={{
-            display: 'block', marginBottom: 14, marginLeft: 'auto',
-            background: 'none', border: '1px solid var(--line)', borderRadius: 8,
-            padding: '7px 14px', cursor: 'pointer',
-            font: "600 13px 'Golos Text',sans-serif", color: '#6B655B',
-          }}>
-          ← Шығу
-        </button>
+
+        
+
 
         <div style={S.top}>
           <Logo />
-          <LangSwitch />
+         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+  <LangSwitch />
+  <button onClick={() => (window.location.href = '/')} style={{ background: 'none', border: 'none', cursor: 'pointer', font: "600 13px 'Golos Text',sans-serif", color: '#6B655B' }}>Шығу</button>
+</div>
         </div>
 
         {stage === 'start' && (
