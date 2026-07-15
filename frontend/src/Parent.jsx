@@ -83,6 +83,13 @@ export default function Parent({ onExit }) {
   async function add() {
     setErr(''); setBusy(true);
     try {
+      // один родитель — только один ребёнок
+      if (children.length >= 1) {
+        setErr('Можно добавить только одного ребёнка.');
+        setBusy(false);
+        setAdding(false);
+        return;
+      }
       const code = cleanUsername(username) || suggestUsername(name) || ('bala' + Math.floor(1000 + Math.random() * 9000));
       const password = pass || genPassword();
       await createChild(auth.currentUser.uid, { name, code, pin: password });
@@ -201,7 +208,9 @@ export default function Parent({ onExit }) {
 
           <div className="row">
             <h1 style={{ margin: 0 }}>{t('ui.27')}</h1>
-            <button className="btn" onClick={() => { setAdding(!adding); setErr(''); }}>{t('ui.28')}</button>
+            {children.length === 0 && (
+              <button className="btn" onClick={() => { setAdding(!adding); setErr(''); }}>{t('ui.28')}</button>
+            )}
           </div>
 
           {adding && (
