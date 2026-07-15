@@ -47,6 +47,11 @@ export default function Auth({ onClose }) {
 
             <button style={S.dark} onClick={() => setStage('register')}>{t('auth.create')}</button>
             <button style={S.outline} onClick={() => setStage('loginRole')}>{t('auth.have')}</button>
+            <button
+  onClick={() => (onClose ? onClose() : window.history.back())}
+  style={{ background: 'none', border: 'none', color: '#6B655B', cursor: 'pointer', font: "500 14px 'Golos Text'" }}>
+  ← Шығу
+</button>
 
             <div style={S.divider}>
               <div style={S.line} />
