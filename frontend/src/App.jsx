@@ -51,7 +51,11 @@ export default function App() {
   if (!user) return <Auth />;
 
   // 3. Дашборд (родитель / ребёнок)
-  const exit = async () => { await logout(); go('landing'); };
+ const exit = async () => {
+  if (!window.confirm('Шығуды растайсыз ба?')) return;
+  await logout();
+  go('landing');
+};
   if (!isKid(user)) return <Parent onExit={exit} />;
 
   const school = profile.school;
