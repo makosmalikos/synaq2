@@ -1,14 +1,13 @@
-// Разбор задачи через Claude. Vercel-функция, а не фронт — принципиально.
+// Разбор задачи через Google Gemini (Flash). Vercel-функция, не фронт.
 //
-// Ключ НЕЛЬЗЯ класть в frontend/: Vite вшивает всё в бандл, и ключ уезжает
-// в браузер каждого посетителя. Здесь он живёт в переменной окружения Vercel
-// и наружу не выходит.
+// Ключ НЕЛЬЗЯ класть в frontend/: Vite вшивает всё в бандл, и ключ уедет
+// в браузер каждого посетителя. Здесь он живёт в переменной окружения Vercel.
 //
-// Настроить один раз: Vercel → Project → Settings → Environment Variables →
-//   ANTHROPIC_API_KEY = sk-ant-...
-// (по желанию) ANTHROPIC_MODEL = claude-sonnet-5
+// Настроить один раз: Vercel → Settings → Environment Variables →
+//   GEMINI_API_KEY = ... (aistudio.google.com → Get API key)
+// (по желанию) GEMINI_MODEL = gemini-2.0-flash
 
-const MODEL = process.env.ANTHROPIC_MODEL || 'claude-sonnet-5';
+const MODEL = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
 const FIREBASE_WEB_KEY = process.env.FIREBASE_WEB_KEY || 'AIzaSyATdVvMsNkN0F66XipkShtFe0wKizu2r6o';
 
 // Проверяем, что зовёт наш залогиненный пользователь, а не случайный бот:
@@ -26,6 +25,32 @@ async function verifyUser(idToken) {
     );
     return r.ok;
   } catch { return false; }
+}
+
+// Единый вызов Gemini. Возвращает текст ответа модели.
+async function callGemini(key, { system, user, maxTokens }) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${key}`;
+  const r = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      system_instruction: { parts: [{ text: system }] },
+      contents: [{ role: 'user', parts: [{ text: user }] }],
+      generationConfig: { maxOutputTokens: maxTokens, temperature: 0.3 },
+    }),
+  });
+  if (!r.ok) {
+    const detail = await r.text().catch(() => '');
+    const err = new Error('gemini_upstream');
+    err.status = r.status; err.detail = detail.slice(0, 300);
+    throw err;
+  }
+  const data = await r.json();
+  const text = (data.candidates?.[0]?.content?.parts || [])
+    .map((p) => p.text || '')
+    .join('')
+    .trim();
+  return text;
 }
 
 function buildPrompt({ statement, answer, hint, hasImage, given, lang }) {
@@ -63,7 +88,7 @@ function buildPrompt({ statement, answer, hint, hasImage, given, lang }) {
   return { system: rules.join('\n'), user: task };
 }
 
-// Перевод условий задач. Тот же ключ Claude, отдельный режим: { mode: 'translate' }.
+// Перевод условий задач. Тот же ключ Gemini, отдельный режим: { mode: 'translate' }.
 // Языковые задачи (орыс/ағылшын/қазақ тілі) сюда не приходят — фильтр стоит на фронте.
 const TRANSLATE_SYSTEM = (lang) => [
   lang === 'kk'
@@ -87,24 +112,16 @@ async function handleTranslate(res, key, body) {
     const payload = {};
     for (const it of items.slice(0, 30)) payload[it.id] = { statement: it.statement, solution: it.solution || '' };
 
-    const r = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 4000,
-        system: TRANSLATE_SYSTEM(lang),
-        messages: [{ role: 'user', content: JSON.stringify(payload) }],
-      }),
+    const text = await callGemini(key, {
+      system: TRANSLATE_SYSTEM(lang),
+      user: JSON.stringify(payload),
+      maxTokens: 4000,
     });
-    if (!r.ok) return res.status(502).json({ error: 'upstream' });
 
-    const data = await r.json();
-    const text = (data.content || []).filter((b) => b.type === 'text').map((b) => b.text).join('')
-      .replace(/```json|```/g, '').trim();
-    return res.status(200).json(JSON.parse(text));
+    const clean = text.replace(/```json|```/g, '').trim();
+    return res.status(200).json(JSON.parse(clean));
   } catch (e) {
-    console.error('translate failed', e);
+    console.error('translate failed', e.status || '', e.detail || e.message);
     return res.status(500).json({ error: 'failed' });   // фронт покажет оригинал
   }
 }
@@ -112,7 +129,7 @@ async function handleTranslate(res, key, body) {
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'method_not_allowed' });
 
-  const key = process.env.ANTHROPIC_API_KEY;
+  const key = process.env.GEMINI_API_KEY;
   if (!key) return res.status(500).json({ error: 'no_api_key' });
 
   const auth = req.headers.authorization || '';
@@ -130,38 +147,11 @@ module.exports = async function handler(req, res) {
   const { system, user } = buildPrompt({ statement, answer, hint, hasImage, given, lang });
 
   try {
-    const r = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': key,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 900,
-        system,
-        messages: [{ role: 'user', content: user }],
-      }),
-    });
-
-    if (!r.ok) {
-      const detail = await r.text().catch(() => '');
-      console.error('anthropic error', r.status, detail.slice(0, 300));
-      return res.status(502).json({ error: 'upstream', status: r.status });
-    }
-
-    const data = await r.json();
-    const text = (data.content || [])
-      .filter((b) => b.type === 'text')
-      .map((b) => b.text)
-      .join('\n')
-      .trim();
-
+    const text = await callGemini(key, { system, user, maxTokens: 900 });
     if (!text) return res.status(502).json({ error: 'empty' });
     return res.status(200).json({ text, model: MODEL });
   } catch (e) {
-    console.error('explain failed', e);
-    return res.status(500).json({ error: 'failed' });
+    console.error('explain failed', e.status || '', e.detail || e.message);
+    return res.status(502).json({ error: 'upstream', status: e.status || 500 });
   }
 };
