@@ -24,6 +24,18 @@ export default function Auth({ onClose }) {
   return (
     <div style={S.overlay}>
       <div style={S.card}>
+        {/* Шығу — попаптың ең жоғарғы жолында, логотиптің үстінде */}
+        <button
+          onClick={() => (onClose ? onClose() : (window.location.href = '/'))}
+          style={{
+            display: 'block', marginBottom: 14, marginLeft: 'auto',
+            background: 'none', border: '1px solid var(--line)', borderRadius: 8,
+            padding: '7px 14px', cursor: 'pointer',
+            font: "600 13px 'Golos Text',sans-serif", color: '#6B655B',
+          }}>
+          ← Шығу
+        </button>
+
         <div style={S.top}>
           <Logo />
           <LangSwitch />
@@ -47,11 +59,6 @@ export default function Auth({ onClose }) {
 
             <button style={S.dark} onClick={() => setStage('register')}>{t('auth.create')}</button>
             <button style={S.outline} onClick={() => setStage('loginRole')}>{t('auth.have')}</button>
-            <button
-  onClick={() => (onClose ? onClose() : window.history.back())}
-  style={{ background: 'none', border: 'none', color: '#6B655B', cursor: 'pointer', font: "500 14px 'Golos Text'" }}>
-  ← Шығу
-</button>
 
             <div style={S.divider}>
               <div style={S.line} />
