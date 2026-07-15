@@ -21,23 +21,6 @@ const readRoute = () =>
   (typeof window !== 'undefined' && window.location.pathname.startsWith('/app')) ? 'app' : 'landing';
 
 
-// ── Футер поддержки: почта + Telegram ──
-function SupportFooter() {
-  const EMAIL = 'support@synaq.app';
-  const TELEGRAM = 'makosmalikos';
-  return (
-    <footer style={{
-      marginTop: 40, paddingTop: 20, borderTop: '1px solid var(--line)',
-      display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 16,
-      font: "500 13.5px 'Golos Text',sans-serif", color: '#9A9384',
-    }}>
-      <span style={{ fontWeight: 600, color: '#6B655B' }}>Қолдау / Поддержка:</span>
-      <a href={`mailto:${EMAIL}`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>✉ {EMAIL}</a>
-      <a href={`https://t.me/${TELEGRAM}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'none' }}>✈ @{TELEGRAM}</a>
-    </footer>
-  );
-}
-
 export default function App() {
   const { t } = useLang();
   const [user, setUser] = useState(undefined);
@@ -137,7 +120,6 @@ export default function App() {
         {tab === 'duel' && <Duel />}
         {tab === 'league' && <League />}
         {tab === 'progress' && <Progress />}
-        {tab === 'home' && <SupportFooter />}
       </div>
     </div>
   );
