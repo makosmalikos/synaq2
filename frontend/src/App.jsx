@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { watchAuth, isKid, logout, getMyProfile } from './firebase.js';
-import { useLang } from './i18n.jsx';
+import { useLang, LangSwitch } from './i18n.jsx';
 import Auth from './Auth.jsx';
 import Landing from './Landing.jsx';
 import Parent from './Parent.jsx';
@@ -25,6 +25,7 @@ export default function App() {
   const [user, setUser] = useState(undefined);
   const [route, setRoute] = useState(readRoute);
   const [tab, setTab] = useState('home');
+  const [menuOpen, setMenuOpen] = useState(false);   // бургер-меню на телефоне
   const [profile, setProfile] = useState({ name: 'Бала', klass: '', school: 'РФМШ' });
 
   useEffect(() => watchAuth(setUser), []);
@@ -51,29 +52,53 @@ export default function App() {
   if (!user) return <Auth />;
 
   // 3. Дашборд (родитель / ребёнок)
- const exit = async () => {
-  if (!window.confirm('Шығуды растайсыз ба?')) return;
-  await logout();
-  go('landing');
-};
+  const exit = async () => {
+    if (!window.confirm('Шығуды растайсыз ба?')) return;
+    await logout();
+    go('landing');
+  };
   if (!isKid(user)) return <Parent onExit={exit} />;
 
   const school = profile.school;
+  const pick = (id) => { setTab(id); setMenuOpen(false); };   // выбрал пункт → меню закрылось
+
   return (
     <div className="shell">
       <aside className="sidebar">
-        <div className="logo" onClick={() => go('landing')} style={{ cursor: 'pointer' }}>
-          <b>Synaq</b><span>сынақ</span>
+        {/* Верхняя строка сайдбара: логотип + язык + (на телефоне) аватар и бургер */}
+        <div className="sbar-top">
+          <div className="logo" onClick={() => go('landing')} style={{ cursor: 'pointer' }}>
+            <b>Synaq</b><span>сынақ</span>
+          </div>
+
+          <div className="sbar-right">
+            {/* Тіл ауыстырғыш — дашбордта да көрінеді (десктоп + телефон) */}
+            <LangSwitch />
+
+            {/* Аватар + бургер — только на телефоне (через CSS) */}
+            <div className="sbar-mobile">
+              <div className="ava sm">{(profile.name || 'Б')[0].toUpperCase()}</div>
+              <button className="burger" onClick={() => setMenuOpen((v) => !v)} aria-label="Меню">
+                {menuOpen ? '✕' : '☰'}
+              </button>
+            </div>
+          </div>
         </div>
-        <nav className="nav-v">
+
+        {/* Навигация. На телефоне показывается только когда menuOpen. */}
+        <nav className={'nav-v' + (menuOpen ? ' open' : '')}>
           {NAV.map((it) => (
-            <button key={it.id} className={tab === it.id ? 'on' : ''} onClick={() => setTab(it.id)}>
+            <button key={it.id} className={tab === it.id ? 'on' : ''} onClick={() => pick(it.id)}>
               <span className="num">{it.n}</span>
               <span>{t(`nav.${it.id}`)}</span>
               {it.id === 'mock' && <span className="badge">1</span>}
             </button>
           ))}
+          {/* Выход внутри раскрытого меню — удобно на телефоне */}
+          <button className="nav-exit" onClick={exit}>{t('common.exit')}</button>
         </nav>
+
+        {/* Блок пользователя — только десктоп (на телефоне спрятан через CSS) */}
         <div className="userbox">
           <div className="who">
             <div className="ava">{(profile.name || 'Б')[0].toUpperCase()}</div>
