@@ -10,7 +10,10 @@ const Logo = () => { const { t } = useLang(); return <div className="logo"><b>Sy
 
 export default function Parent({ onExit }) {
   const { t } = useLang();
-  const exit = onExit || logout;
+  const exit = async () => {
+    if (!window.confirm('Шығуды растайсыз ба?')) return;
+    await (onExit || logout)();
+  };
   const [pro, setPro] = useState(null);      // null — әлі жүктелуде
   const [me, setMe] = useState('');          // ата-ананың аты
   const [paying, setPaying] = useState(false);
@@ -48,11 +51,16 @@ export default function Parent({ onExit }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ uid: u.uid, email: u.email }),
       });
-      const data = await r.json();
-      if (data.url) { window.location.href = data.url; return; }
-      alert('Төлем бетін ашу мүмкін болмады.');
-    } catch {
-      alert('Байланыс қатесі.');
+      const raw = await r.text();
+      let data = null;
+      try { data = JSON.parse(raw); } catch {}
+      if (r.ok && data?.url) { window.location.href = data.url; return; }
+      const why = !r.ok ? `Сервер ${r.status}${data?.error ? ': ' + data.error : ''}` : 'сілтеме келмеді';
+      console.error('checkout failed', r.status, raw.slice(0, 200));
+      alert(`Төлем бетін ашу мүмкін болмады (${why}).`);
+    } catch (e) {
+      console.error(e);
+      alert('Байланыс қатесі: ' + (e?.message || 'белгісіз'));
     }
     setPaying(false);
   }
@@ -85,12 +93,12 @@ export default function Parent({ onExit }) {
   }
   const [stats, setStats] = useState([]);
 
-  // Баланы ашқанда: мок-тестер + тақырып бойынша статистика
   // Кірген соң бала жоқ болса — «Бала қосу» формасын бірден ашамыз
   useEffect(() => {
     if (firstLoad && !children.length && !created) { setAdding(true); setFirstLoad(false); }
   }, [children, firstLoad, created]);
 
+  // Баланы ашқанда: мок-тестер + тақырып бойынша статистика
   const openResults = async (c) => {
     setOpenChild(c);
     const [ms, att, topics] = await Promise.all([
@@ -140,15 +148,21 @@ export default function Parent({ onExit }) {
 
           {/* Жазылым күйі */}
           {pro !== null && (
-            <div className="card" style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 18 }}>
+            <div className="card" style={{
+              display: 'flex', alignItems: 'center', gap: 16, marginBottom: 18,
+              borderColor: pro ? 'var(--green)' : 'var(--accent)',
+              background: pro ? '#EEF5EC' : '#FBF3E3',
+            }}>
               <div style={{ flex: 1 }}>
-                <p className="kicker" style={{ margin: '0 0 6px' }}>{pro ? t('pro.on') : t('pro.off')}</p>
+                <p className="kicker" style={{ margin: '0 0 6px', color: pro ? 'var(--green)' : 'var(--accent)' }}>
+                  {pro ? t('pro.on') : t('pro.off')}
+                </p>
                 <div style={{ font: "600 15px 'Golos Text'" }}>
                   {pro ? t('pro.onDesc') : t('pro.offDesc')}
                 </div>
               </div>
               {!pro && (
-                <button className="btn accent" disabled={paying} onClick={buyPro}>
+                <button className="btn accent" disabled={paying} onClick={buyPro} style={{ whiteSpace: 'nowrap' }}>
                   {paying ? '…' : t('pro.buy')}
                 </button>
               )}
@@ -242,7 +256,10 @@ const LVL_BG = { strong: '#EEF5EC', mid: '#FBF3E3', weak: '#FBEDEC' };
 const LVL_TXT = { strong: 'МЫҚТЫ', mid: 'ОРТАША', weak: 'ӘЛСІЗ' };
 
 function ChildReport({ child, mocks, stats, onBack, t }) {
-  const used = stats.filter((s) => s.tried);
+  // Толық дашборд әрқашан көрінеді. Есеп шығарылмаған тақырыптар да тұрады — тек 0%.
+  const all = stats.length ? stats : [];
+  const used = all.filter((s) => s.tried);
+  const started = used.length > 0;
   const ready = readiness(stats);
   const series = mockSeries(mocks);
   const maxScore = Math.max(1, ...series.map((s) => s.max || 60));
@@ -257,112 +274,118 @@ function ChildReport({ child, mocks, stats, onBack, t }) {
       <h1 style={{ marginBottom: 6 }}>{child.name}</h1>
       <div style={{ borderTop: '2px solid var(--ink)', margin: '10px 0 20px' }} />
 
-      {!used.length ? (
-        <p className="muted">Бала әлі есеп шығармаған — деректер жиналған соң есеп осында пайда болады.</p>
-      ) : (
+      {!started && (
+        <div className="card" style={{ marginBottom: 16, background: '#FBF3E3', borderColor: 'var(--mid,#B8892B)' }}>
+          <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.6 }}>
+            {child.name} әлі есеп шығара бастаған жоқ. Ол кіріп жаттыға бастаған соң,
+            мұндағы сандар нақты деректермен толады.
+          </p>
+        </div>
+      )}
+
+      <div className="grid2" style={{ marginBottom: 16 }}>
+        {/* Жалпы дайындық */}
+        <div className="card">
+          <p className="kicker" style={{ margin: '0 0 14px' }}>Жалпы дайындық</p>
+          <div className="bar" style={{ marginBottom: 16 }}><i style={{ width: ready + '%' }} /></div>
+          <div style={{ display: 'flex', alignItems: 'flex-end', gap: 18 }}>
+            <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
+              {ready}<span style={{ fontSize: 22, color: 'var(--accent)' }}>%</span>
+            </div>
+            <div style={{ flex: 1, fontSize: 13.5 }}>
+              {['strong', 'mid', 'weak'].map((k) => (
+                <div key={k} style={{ display: 'flex', justifyContent: 'space-between', color: LVL_COL[k] }}>
+                  <span>■ {LVL_TXT[k].toLowerCase()}</span><b>{counts[k]}</b>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Сынақ баллдары */}
+        <div className="card">
+          <div className="row" style={{ marginBottom: 12 }}>
+            <span className="kicker" style={{ margin: 0 }}>Сынақ балы / апта</span>
+            <span className="tag">{maxScore}-тан</span>
+          </div>
+          {series.length ? (
+            <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, height: 110 }}>
+              {series.map((s, i) => (
+                <div key={i} style={{ flex: 1, textAlign: 'center' }}>
+                  <div style={{ font: "700 12px 'IBM Plex Mono',monospace", color: i === series.length - 1 ? 'var(--accent)' : '#6B655B' }}>{s.score}</div>
+                  <div style={{
+                    height: `${(s.score / maxScore) * 74}px`, minHeight: 3, marginTop: 4,
+                    background: i === series.length - 1 ? 'var(--accent)' : '#D8D3C8',
+                  }} />
+                  <div style={{ font: "500 10px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 5 }}>{s.label}</div>
+                </div>
+              ))}
+            </div>
+          ) : <p className="muted" style={{ margin: 0 }}>Сынақ әлі тапсырылмаған.</p>}
+        </div>
+      </div>
+
+      {/* Ұсыныс */}
+      {!!weak.length && (
+        <div className="card" style={{ borderLeft: '4px solid var(--accent)', marginBottom: 16 }}>
+          <p className="kicker" style={{ color: 'var(--accent)', margin: '0 0 8px' }}>Ұсыныс</p>
+          <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.6 }}>
+            {weak.map((w) => `${w.name} (${w.pct}%)`).join(' мен ')} тақырыптарына көбірек көңіл бөліңіз — қазір ең әлсіз тұсы.
+          </p>
+        </div>
+      )}
+
+      {/* Тақырыптық жылу картасы — барлық тақырып (шығарылмағаны 0%) */}
+      <p className="kicker">Тақырыптық жылу картасы</p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(150px,1fr))', gap: 10, marginBottom: 22 }}>
+        {all.map((s) => (
+          <div key={s.id} style={{
+            border: `1px solid ${s.tried ? LVL_COL[s.level] : 'var(--line)'}`,
+            background: s.tried ? LVL_BG[s.level] : '#fff', padding: '12px 13px',
+            opacity: s.tried ? 1 : 0.6,
+          }}>
+            <div style={{ fontSize: 12.5, lineHeight: 1.35, marginBottom: 8, minHeight: 34 }}>{s.name}</div>
+            <b style={{ font: "700 17px 'Golos Text'", color: s.tried ? LVL_COL[s.level] : '#9A9384' }}>{s.pct}%</b>
+          </div>
+        ))}
+      </div>
+
+      {/* Тақырыптар тізімі — деңгеймен (барлығы) */}
+      <p className="kicker">Прогресс картасы</p>
+      <div className="list">
+        {all.map((s) => (
+          <div key={s.id} className="row-item" style={{ cursor: 'default', opacity: s.tried ? 1 : 0.6 }}>
+            <div style={{ flex: 1 }}>
+              <b>{s.name}</b>
+              <div style={{ font: "500 11.5px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 3 }}>
+                {s.tried} сұрақ{s.days ? ` · ${s.days} күн` : ''}
+              </div>
+            </div>
+            <div style={{ width: 130 }}>
+              <div className="bar"><i style={{ width: s.pct + '%', background: s.tried ? LVL_COL[s.level] : '#D8D3C8' }} /></div>
+            </div>
+            <span style={{ font: "600 13px 'IBM Plex Mono',monospace", width: 40, textAlign: 'right', color: s.tried ? LVL_COL[s.level] : '#9A9384' }}>{s.pct}</span>
+            <span style={{
+              font: "600 10px 'IBM Plex Mono',monospace", letterSpacing: '.08em',
+              color: s.tried ? LVL_COL[s.level] : '#C4BEB2',
+              border: `1px solid ${s.tried ? LVL_COL[s.level] : 'var(--line)'}`, padding: '3px 8px', width: 76, textAlign: 'center',
+            }}>{s.tried ? LVL_TXT[s.level] : '—'}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Сынақ тарихы */}
+      {!!mocks.length && (
         <>
-          <div className="grid2" style={{ marginBottom: 16 }}>
-            {/* Жалпы дайындық */}
-            <div className="card">
-              <p className="kicker" style={{ margin: '0 0 14px' }}>Жалпы дайындық</p>
-              <div className="bar" style={{ marginBottom: 16 }}><i style={{ width: ready + '%' }} /></div>
-              <div style={{ display: 'flex', alignItems: 'flex-end', gap: 18 }}>
-                <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
-                  {ready}<span style={{ fontSize: 22, color: 'var(--accent)' }}>%</span>
-                </div>
-                <div style={{ flex: 1, fontSize: 13.5 }}>
-                  {['strong', 'mid', 'weak'].map((k) => (
-                    <div key={k} style={{ display: 'flex', justifyContent: 'space-between', color: LVL_COL[k] }}>
-                      <span>■ {LVL_TXT[k].toLowerCase()}</span><b>{counts[k]}</b>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Сынақ баллдары */}
-            <div className="card">
-              <div className="row" style={{ marginBottom: 12 }}>
-                <span className="kicker" style={{ margin: 0 }}>Сынақ балы / апта</span>
-                <span className="tag">{maxScore}-тан</span>
-              </div>
-              {series.length ? (
-                <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, height: 110 }}>
-                  {series.map((s, i) => (
-                    <div key={i} style={{ flex: 1, textAlign: 'center' }}>
-                      <div style={{ font: "700 12px 'IBM Plex Mono',monospace", color: i === series.length - 1 ? 'var(--accent)' : '#6B655B' }}>{s.score}</div>
-                      <div style={{
-                        height: `${(s.score / maxScore) * 74}px`, minHeight: 3, marginTop: 4,
-                        background: i === series.length - 1 ? 'var(--accent)' : '#D8D3C8',
-                      }} />
-                      <div style={{ font: "500 10px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 5 }}>{s.label}</div>
-                    </div>
-                  ))}
-                </div>
-              ) : <p className="muted" style={{ margin: 0 }}>Сынақ әлі тапсырылмаған.</p>}
-            </div>
-          </div>
-
-          {/* Ұсыныс */}
-          {!!weak.length && (
-            <div className="card" style={{ borderLeft: '4px solid var(--accent)', marginBottom: 16 }}>
-              <p className="kicker" style={{ color: 'var(--accent)', margin: '0 0 8px' }}>Ұсыныс</p>
-              <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.6 }}>
-                {weak.map((w) => `${w.name} (${w.pct}%)`).join(' мен ')} тақырыптарына көбірек көңіл бөліңіз — қазір ең әлсіз тұсы.
-              </p>
-            </div>
-          )}
-
-          {/* Тақырыптық жылу картасы */}
-          <p className="kicker">Тақырыптық жылу картасы</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(150px,1fr))', gap: 10, marginBottom: 22 }}>
-            {used.map((s) => (
-              <div key={s.id} style={{
-                border: `1px solid ${LVL_COL[s.level]}`, background: LVL_BG[s.level], padding: '12px 13px',
-              }}>
-                <div style={{ fontSize: 12.5, lineHeight: 1.35, marginBottom: 8, minHeight: 34 }}>{s.name}</div>
-                <b style={{ font: "700 17px 'Golos Text'", color: LVL_COL[s.level] }}>{s.pct}%</b>
-              </div>
-            ))}
-          </div>
-
-          {/* Тақырыптар тізімі — деңгеймен */}
-          <p className="kicker">Прогресс картасы</p>
+          <p className="kicker" style={{ marginTop: 24 }}>{t('ui.34')}</p>
           <div className="list">
-            {used.map((s) => (
-              <div key={s.id} className="row-item" style={{ cursor: 'default' }}>
-                <div style={{ flex: 1 }}>
-                  <b>{s.name}</b>
-                  <div style={{ font: "500 11.5px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 3 }}>
-                    {s.tried} сұрақ · {s.days} күн
-                  </div>
-                </div>
-                <div style={{ width: 130 }}>
-                  <div className="bar"><i style={{ width: s.pct + '%', background: LVL_COL[s.level] }} /></div>
-                </div>
-                <span style={{ font: "600 13px 'IBM Plex Mono',monospace", width: 40, textAlign: 'right', color: LVL_COL[s.level] }}>{s.pct}</span>
-                <span style={{
-                  font: "600 10px 'IBM Plex Mono',monospace", letterSpacing: '.08em',
-                  color: LVL_COL[s.level], border: `1px solid ${LVL_COL[s.level]}`, padding: '3px 8px', width: 76, textAlign: 'center',
-                }}>{LVL_TXT[s.level]}</span>
+            {mocks.map((m, i) => (
+              <div className="row-item" key={i} style={{ cursor: 'default' }}>
+                <b style={{ flex: 1 }}>{m.school || 'Мок-тест'}</b>
+                <span className="rt">{m.score}/{m.gradable} балл</span>
               </div>
             ))}
           </div>
-
-          {/* Сынақ тарихы */}
-          {!!mocks.length && (
-            <>
-              <p className="kicker" style={{ marginTop: 24 }}>{t('ui.34')}</p>
-              <div className="list">
-                {mocks.map((m, i) => (
-                  <div className="row-item" key={i} style={{ cursor: 'default' }}>
-                    <b style={{ flex: 1 }}>{m.school || 'Мок-тест'}</b>
-                    <span className="rt">{m.score}/{m.gradable} балл</span>
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
         </>
       )}
     </main>
