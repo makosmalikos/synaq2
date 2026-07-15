@@ -47,7 +47,7 @@ export function Kolhar({ q, answer, onPick, disabled, correct }) {
   }
 
   const col = {
-    flex: 1, minWidth: 0, background: '#fff', border: '1px solid var(--line)',
+    flex: '1 1 200px', minWidth: 200, background: '#fff', border: '1px solid var(--line)',
     borderRadius: 12, padding: '18px 18px 20px',
   };
   const tag = {
@@ -59,7 +59,7 @@ export function Kolhar({ q, answer, onPick, disabled, correct }) {
     <div>
       {note && <p className="muted" style={{ margin: '0 0 12px', fontSize: 14 }}>{note}</p>}
 
-      <div style={{ display: 'flex', gap: 14, alignItems: 'stretch' }}>
+      <div style={{ display: 'flex', gap: 14, alignItems: 'stretch', flexWrap: 'wrap' }}>
         <div style={col}><span style={tag}>А</span>
           <span style={{ fontSize: 16, lineHeight: 1.5 }}>{a}</span></div>
         <div style={col}><span style={tag}>В</span>
