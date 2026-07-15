@@ -149,7 +149,7 @@ export default function Parent({ onExit }) {
           {/* Тарифтер: Тегін мен Про қатар тұрады, ата-ана таңдайды */}
           {pro !== null && (
             <div style={{
-              display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20,
+              display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12, marginBottom: 20,
             }}>
               {/* ── Тегін ── */}
               <div className="card" style={{
