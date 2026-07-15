@@ -65,16 +65,13 @@ export default function App() {
   return (
     <div className="shell">
       <aside className="sidebar">
-        {/* Верхняя строка сайдбара: логотип + язык + (на телефоне) аватар и бургер */}
+        {/* Верхняя строка сайдбара: логотип + (на телефоне) аватар и бургер */}
         <div className="sbar-top">
           <div className="logo" onClick={() => go('landing')} style={{ cursor: 'pointer' }}>
             <b>Synaq</b><span>сынақ</span>
           </div>
 
           <div className="sbar-right">
-            {/* Тіл ауыстырғыш — дашбордта да көрінеді (десктоп + телефон) */}
-            <LangSwitch />
-
             {/* Аватар + бургер — только на телефоне (через CSS) */}
             <div className="sbar-mobile">
               <div className="ava sm">{(profile.name || 'Б')[0].toUpperCase()}</div>
@@ -112,6 +109,10 @@ export default function App() {
       </aside>
 
       <div className="content">
+        {/* Жоғарғы жол: тіл ауыстырғыш (сайдбарда емес, контенттің үстінде) */}
+        <div className="topbar">
+          <LangSwitch />
+        </div>
         {tab === 'home' && <Home go={setTab} name={profile.name} />}
         {tab === 'training' && <Training school={school} />}
         {tab === 'mock' && <Mock school={school} />}
