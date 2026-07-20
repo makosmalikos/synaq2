@@ -72,7 +72,8 @@ export async function createDuel(name) {
 export async function joinDuel(code, name) {
   const uid = auth.currentUser?.uid;
   if (!uid) throw new Error('auth');
-  const ref = doc(db, 'duels', code.toUpperCase());
+  const id = code.toUpperCase();
+  const ref = doc(db, 'duels', id);
   await runTransaction(db, async (tx) => {
     const snap = await tx.get(ref);
     if (!snap.exists()) throw new Error('not_found');
@@ -81,10 +82,18 @@ export async function joinDuel(code, name) {
     if (data.host.uid === uid) return;
     if (data.guest?.uid && data.guest.uid !== uid) throw new Error('full');
     if (!data.guest) {
-      tx.update(ref, { guest: { uid, name: name || 'Қонақ' } });
+      // Гость зашёл — сразу стартуем, хосту жать «Бастау» не нужно.
+      tx.update(ref, {
+        guest: { uid, name: name || 'Қонақ' },
+        status: 'playing',
+        qIndex: 0,
+        round: { host: null, guest: null },
+        roundStartedAt: serverTimestamp(),
+        startedAt: serverTimestamp(),
+      });
     }
   });
-  return code.toUpperCase();
+  return id;
 }
 
 export async function startDuel(code) {

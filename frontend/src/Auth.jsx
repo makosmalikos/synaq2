@@ -4,7 +4,7 @@ import { useLang, LangSwitch } from './i18n.jsx';
 
 // Вход оформлен как карточка поверх затемнённого фона (попап), а не пустая страница.
 // На первом экране сразу объясняем, как устроен семейный аккаунт.
-export default function Auth({ onClose }) {
+export default function Auth({ onClose, duelCode = '' }) {
   const { t } = useLang();
   const [pname, setPname] = useState('');
   const [stage, setStage] = useState('start'); // start | register | loginRole | loginParent | loginChild
@@ -35,6 +35,17 @@ export default function Auth({ onClose }) {
   <button onClick={() => (window.location.href = '/')} style={{ background: 'none', border: 'none', cursor: 'pointer', font: "600 13px 'Golos Text',sans-serif", color: '#6B655B' }}>Шығу</button>
 </div>
         </div>
+
+        {duelCode && (
+          <div style={{ background: '#FBEDEC', border: '1px solid rgba(176,52,43,.25)', borderRadius: 8, padding: '12px 14px', marginBottom: 16 }}>
+            <p style={{ margin: 0, font: "600 13px 'IBM Plex Mono',monospace", letterSpacing: '.06em', color: '#B0342B', textTransform: 'uppercase' }}>
+              ⚔ {t('auth.duelInvite')}
+            </p>
+            <p style={{ margin: '6px 0 0', fontSize: 14, color: '#6B655B' }}>
+              {t('auth.duelInviteSub')} <b>{duelCode}</b>
+            </p>
+          </div>
+        )}
 
         {stage === 'start' && (
           <div style={{ animation: 'rise .35s ease both' }}>

@@ -31,7 +31,12 @@ export default function App() {
 
   const [duelCode] = useState(() => {
     if (typeof window === 'undefined') return '';
-    return new URLSearchParams(window.location.search).get('duel')?.toUpperCase() || '';
+    const fromUrl = new URLSearchParams(window.location.search).get('duel')?.toUpperCase() || '';
+    if (fromUrl) {
+      try { sessionStorage.setItem('synaq_duel', fromUrl); } catch {}
+      return fromUrl;
+    }
+    try { return sessionStorage.getItem('synaq_duel')?.toUpperCase() || ''; } catch { return ''; }
   });
 
   useEffect(() => watchAuth(setUser), []);
@@ -56,7 +61,7 @@ export default function App() {
 
   // 2. Авторизация — пока не вошли, дашборда нет
   if (user === undefined) return <div style={{ padding: 40, color: '#6B655B' }}>{t('common.loading')}</div>;
-  if (!user) return <Auth />;
+  if (!user) return <Auth duelCode={duelCode} />;
 
   // 3. Дашборд (родитель / ребёнок)
   const exit = async () => {
@@ -123,7 +128,7 @@ export default function App() {
         {tab === 'home' && <Home go={setTab} name={profile.name} />}
         {tab === 'training' && <Training school={school} />}
         {tab === 'mock' && <Mock school={school} />}
-        {tab === 'duel' && <Duel initialCode={duelCode} playerName={profile.name} />}
+        {tab === 'duel' && <Duel initialCode={duelCode} fromLink={!!duelCode} playerName={profile.name} />}
         {tab === 'league' && <League />}
         {tab === 'progress' && <Progress />}
       </div>

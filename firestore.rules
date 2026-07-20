@@ -47,9 +47,11 @@ service cloud.firestore {
       allow update: if request.auth != null && (
         resource.data.host.uid == request.auth.uid ||
         (resource.data.guest != null && resource.data.guest.uid == request.auth.uid) ||
+        // Первый вход гостя: можно сразу перевести комнату в playing
         (resource.data.guest == null
           && request.resource.data.guest.uid == request.auth.uid
-          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['guest']))
+          && resource.data.status == 'waiting'
+          && request.resource.data.status == 'playing')
       );
       allow delete: if false;
     }

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useLang } from './i18n.jsx';
 import Explain from './components/Explain.jsx';
 import {
-  createDuel, joinDuel, startDuel, submitDuelAnswer, skipRoundIfExpired,
+  createDuel, joinDuel, submitDuelAnswer, skipRoundIfExpired,
   watchDuel, myRole, duelLink, DUEL_SIZE, ROUND_SEC,
 } from './duel.js';
 
@@ -15,7 +15,7 @@ const copy = async (text) => {
   }
 };
 
-export default function Duel({ initialCode = '', playerName = 'Ойыншы' }) {
+export default function Duel({ initialCode = '', playerName = 'Ойыншы', fromLink = false }) {
   const { t } = useLang();
   const [code, setCode] = useState(initialCode.toUpperCase());
   const [duel, setDuel] = useState(null);
@@ -26,36 +26,68 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы' }) 
   const [joinInput, setJoinInput] = useState(initialCode.toUpperCase());
   const [leftSec, setLeftSec] = useState(ROUND_SEC);
   const [showRoundResult, setShowRoundResult] = useState(false);
+  const [joining, setJoining] = useState(!!initialCode);
+  const [countdown, setCountdown] = useState(null);
+  const [gameReady, setGameReady] = useState(!fromLink);
   const lastRoundKey = useRef('');
+  const countdownDone = useRef(false);
 
   useEffect(() => {
     if (!code) return undefined;
     return watchDuel(code, setDuel);
   }, [code]);
 
+  // Гость по ссылке: войти в комнату и сразу начать игру
   useEffect(() => {
-    if (initialCode && !code) setCode(initialCode.toUpperCase());
-  }, [initialCode, code]);
-
-  // Авто-join по ссылке (гость; хост просто откроет ту же комнату)
-  useEffect(() => {
-    if (!initialCode) return;
+    if (!initialCode) return undefined;
     let cancelled = false;
     (async () => {
+      setJoining(true);
+      setErr('');
       try {
-        await joinDuel(initialCode, playerName);
+        const id = await joinDuel(initialCode, playerName);
+        if (!cancelled) setCode(id);
       } catch (e) {
         if (!cancelled && e.message !== 'auth') {
           setErr(t(`duel.err.${e.message}`) || t('duel.err.failed'));
         }
+      } finally {
+        if (!cancelled) setJoining(false);
       }
     })();
     return () => { cancelled = true; };
   }, [initialCode, playerName, t]);
 
+  // Обратный отсчёт 3-2-1 при старте (оба игрока видят)
+  useEffect(() => {
+    if (!duel || duel.status !== 'playing' || duel.qIndex !== 0) {
+      if (duel?.status === 'playing') setGameReady(true);
+      return;
+    }
+    if (countdownDone.current) {
+      setGameReady(true);
+      return;
+    }
+    setGameReady(false);
+    let n = 3;
+    setCountdown(n);
+    const id = setInterval(() => {
+      n -= 1;
+      if (n <= 0) {
+        clearInterval(id);
+        setCountdown(null);
+        countdownDone.current = true;
+        setGameReady(true);
+      } else {
+        setCountdown(n);
+      }
+    }, 1000);
+    return () => clearInterval(id);
+  }, [duel?.status, duel?.qIndex]);
+
   // Таймер раунда
   useEffect(() => {
-    if (!duel || duel.status !== 'playing') return undefined;
+    if (!duel || duel.status !== 'playing' || !gameReady) return undefined;
     const started = duel.roundStartedAt?.toMillis?.()
       ?? (duel.roundStartedAt?.seconds ? duel.roundStartedAt.seconds * 1000 : Date.now());
     const tick = () => {
@@ -66,7 +98,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы' }) 
     tick();
     const id = setInterval(tick, 500);
     return () => clearInterval(id);
-  }, [duel?.status, duel?.qIndex, duel?.roundStartedAt, code]);
+  }, [duel?.status, duel?.qIndex, duel?.roundStartedAt, code, gameReady]);
 
   // Показать результат раунда на 2 сек
   useEffect(() => {
@@ -84,15 +116,14 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы' }) 
     return () => clearTimeout(id);
   }, [duel]);
 
-  const role = myRole(duel);
-  const link = code ? duelLink(code) : '';
-
   async function onCreate() {
     setBusy(true); setErr('');
     try {
       const c = await createDuel(playerName);
       setCode(c);
       setJoinInput(c);
+      countdownDone.current = false;
+      setGameReady(false);
     } catch (e) {
       setErr(t('duel.err.auth'));
     }
@@ -106,16 +137,6 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы' }) 
     try {
       await joinDuel(c, playerName);
       setCode(c);
-    } catch (e) {
-      setErr(t(`duel.err.${e.message}`) || t('duel.err.failed'));
-    }
-    setBusy(false);
-  }
-
-  async function onStart() {
-    setBusy(true); setErr('');
-    try {
-      await startDuel(code);
     } catch (e) {
       setErr(t(`duel.err.${e.message}`) || t('duel.err.failed'));
     }
@@ -141,6 +162,8 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы' }) 
     }
   }
 
+  const role = myRole(duel);
+  const link = code ? duelLink(code) : '';
   const q = duel?.questions?.[duel.qIndex];
   const answered = !!duel?.round?.[role];
   const opp = role === 'host' ? 'guest' : 'host';
@@ -148,8 +171,29 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы' }) 
   const myScore = role ? (duel?.scores?.[role] ?? 0) : 0;
   const oppScore = role ? (duel?.scores?.[opp] ?? 0) : 0;
 
-  // ── Лобби ──
+  // ── Гость по ссылке: подключение ──
+  if (fromLink && (joining || (!duel && !err))) {
+    return (
+      <main style={{ textAlign: 'center', paddingTop: 48 }}>
+        <p className="kicker">{t('nav.duel')}</p>
+        <h1>{t('duel.linkJoin')}</h1>
+        <p className="muted">{t('duel.linkJoinSub')}</p>
+        <div className="duel-code" style={{ marginTop: 20 }}>{initialCode}</div>
+      </main>
+    );
+  }
+
+  // ── Лобби (без ссылки) ──
   if (!duel) {
+    if (fromLink && err) {
+      return (
+        <main>
+          <p className="kicker">{t('nav.duel')}</p>
+          <h1>{t('duel.linkFail')}</h1>
+          <p style={{ color: 'var(--accent)' }}>{err}</p>
+        </main>
+      );
+    }
     return (
       <main>
         <p className="kicker">{t('nav.duel')}</p>
@@ -182,28 +226,22 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы' }) 
     );
   }
 
-  // ── Ожидание соперника ──
+  // ── Хост ждёт друга ──
   if (duel.status === 'waiting') {
     return (
       <main>
         <p className="kicker">{t('nav.duel')}</p>
         <h1>{t('duel.lobby')}</h1>
+        <p className="muted">{t('duel.waitFriend')}</p>
 
         <div className="duel-code">{duel.code}</div>
 
         <div className="card" style={{ marginTop: 16 }}>
           <p className="muted" style={{ fontSize: 14 }}>{t('duel.shareHint')}</p>
           <input readOnly value={link} onFocus={(e) => e.target.select()} />
-          <div style={{ display: 'flex', gap: 10, marginTop: 4 }}>
-            <button className="btn accent" style={{ flex: 1 }} onClick={onCopy}>
-              {copied ? t('duel.copied') : t('duel.copy')}
-            </button>
-            {role === 'host' && (
-              <button className="btn" style={{ flex: 1 }} disabled={busy || !duel.guest} onClick={onStart}>
-                {t('duel.start')}
-              </button>
-            )}
-          </div>
+          <button className="btn accent full" style={{ marginTop: 10 }} onClick={onCopy}>
+            {copied ? t('duel.copied') : t('duel.copy')}
+          </button>
         </div>
 
         <div className="duel-players">
@@ -215,16 +253,14 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы' }) 
             </div>
           </div>
           <div className="duel-vs">⚔</div>
-          <div className={'duel-player' + (duel.guest ? ' on' : '')}>
-            <div className="ava sm">{(duel.guest?.name || '?')[0]}</div>
+          <div className="duel-player">
+            <div className="ava sm">?</div>
             <div>
-              <b>{duel.guest?.name || t('duel.waiting')}</b>
+              <b>{t('duel.waiting')}</b>
               <span className="muted">{t('duel.guest')}</span>
             </div>
           </div>
         </div>
-
-        {role === 'guest' && <p className="muted" style={{ marginTop: 16, textAlign: 'center' }}>{t('duel.waitHost')}</p>}
         {err && <p style={{ color: 'var(--accent)', marginTop: 12 }}>{err}</p>}
       </main>
     );
@@ -251,9 +287,28 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы' }) 
           </div>
         </div>
 
-        <button className="btn accent full" style={{ marginTop: 20 }} onClick={() => { setCode(''); setDuel(null); setJoinInput(''); }}>
+        <button className="btn accent full" style={{ marginTop: 20 }} onClick={() => {
+          setCode('');
+          setDuel(null);
+          setJoinInput('');
+          countdownDone.current = false;
+          sessionStorage.removeItem('synaq_duel');
+          window.history.replaceState({}, '', '/app');
+        }}>
           {t('duel.again')}
         </button>
+      </main>
+    );
+  }
+
+  // ── Старт: 3-2-1 ──
+  if (!gameReady && countdown != null) {
+    return (
+      <main style={{ textAlign: 'center', paddingTop: 60 }}>
+        <p className="kicker">{t('nav.duel')}</p>
+        <h1 style={{ fontSize: 22, marginBottom: 8 }}>{t('duel.vs')} {duel.host?.name} ⚔ {duel.guest?.name}</h1>
+        <div style={{ font: "700 72px 'Lora',serif", color: 'var(--accent)', lineHeight: 1 }}>{countdown}</div>
+        <p className="muted">{t('duel.getReady')}</p>
       </main>
     );
   }
@@ -276,7 +331,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы' }) 
         </div>
         <div className="duel-vs">⚔</div>
         <div className={role === 'guest' ? 'me' : ''}>
-          <span>{oppName}{role === 'guest' ? '' : ''}</span>
+          <span>{oppName}</span>
           <b>{oppScore}</b>
         </div>
       </div>
