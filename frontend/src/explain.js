@@ -56,7 +56,7 @@ export async function explain(q, { given = null, lang = 'kk' } = {}) {
 }
 
 export function explainError(msg) {
-  if (msg === 'no_api_key')     return 'ANTHROPIC_API_KEY Vercel-де қосылмаған.';
+  if (msg === 'no_api_key')     return 'GEMINI_API_KEY Vercel-де қосылмаған (Settings → Environment Variables).';
   if (msg === 'unauthorized')   return 'Қайта кіріп көріңіз.';
   if (msg === 'upstream')       return 'Түсіндірме сервисі жауап бермеді. Сәл кейін қайталаңыз.';
   return 'Түсіндірмені алу мүмкін болмады. Қайталап көріңіз.';

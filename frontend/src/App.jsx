@@ -29,8 +29,14 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);   // бургер-меню на телефоне
   const [profile, setProfile] = useState({ name: 'Бала', klass: '', school: 'РФМШ' });
 
+  const [duelCode] = useState(() => {
+    if (typeof window === 'undefined') return '';
+    return new URLSearchParams(window.location.search).get('duel')?.toUpperCase() || '';
+  });
+
   useEffect(() => watchAuth(setUser), []);
   useEffect(() => { if (user && isKid(user)) getMyProfile().then(setProfile); }, [user]);
+  useEffect(() => { if (duelCode) setTab('duel'); }, [duelCode]);
 
   // кнопки «назад/вперёд» в браузере
   useEffect(() => {
@@ -117,7 +123,7 @@ export default function App() {
         {tab === 'home' && <Home go={setTab} name={profile.name} />}
         {tab === 'training' && <Training school={school} />}
         {tab === 'mock' && <Mock school={school} />}
-        {tab === 'duel' && <Duel />}
+        {tab === 'duel' && <Duel initialCode={duelCode} playerName={profile.name} />}
         {tab === 'league' && <League />}
         {tab === 'progress' && <Progress />}
       </div>

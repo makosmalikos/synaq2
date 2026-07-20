@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 app.get('/', (_req, res) => res.json({ service: 'synaq-backend', ok: true }));
 app.use('/api/training', require('./routes/training'));

@@ -1,112 +1,86 @@
-# Synaq — подготовка к РФМШ (7 класс)
+# Synaq — подготовка к РФМШ · НИШ · БИЛ
 
-Две независимые части:
-- **backend/** — Node.js + Express. Банк задач + JSON API. Без HTML.
-- **frontend/** — React + Vite. Отдельное приложение, ходит в backend по /api.
+Онлайн-платформа для детей 10–12 лет: тренировка по темам, мок-тесты, дуэли с другом, AI-разбор ошибок (Gemini).
 
-## Локальный запуск
+**Репозиторий:** [github.com/makosmalikos/synaq2](https://github.com/makosmalikos/synaq2)
+
+## Быстрый старт
+
+```bash
+# Терминал 1 — бэкенд (опционально, фронт работает и без него)
+cd backend && npm install && npm start    # http://localhost:4000
+
+# Терминал 2 — приложение
+cd frontend && npm install && npm run dev  # http://localhost:5173
 ```
-# терминал 1
-cd backend && npm install && npm start        # http://localhost:4000
 
-# терминал 2
-cd frontend && npm install && npm run dev      # http://localhost:5173
+Фронт хранит банк задач локально (`frontend/src/data.js`, `bank.js`). Бэкенд нужен для legacy API и локальной разработки.
+
+## Что внутри
+
+| Модуль | Описание |
+|--------|----------|
+| **frontend/** | React + Vite — тренировка, мок-тесты, дуэль, прогресс, кабинет родителя |
+| **backend/** | Express API — банк задач, генераторы похожих задач |
+| **api/** | Vercel serverless — Gemini (`/api/explain`), оплата, Express-прокси |
+| **landing/** | Waitlist-лендинг (отдельный деплой) |
+| **firestore.rules** | Правила Firebase (семьи, результаты, дуэли, кэш разборов) |
+
+## Дуэль (real-time)
+
+1. Ребёнок открывает **Дуэль** → «Дуэль құру»
+2. Копирует ссылку вида `https://ваш-домен/app?duel=ABC123`
+3. Друг входит по ссылке → попадает в комнату
+4. Хост нажимает **Бастау** → 10 задач (половина из банка, половина — сгенерированные «похожие»)
+5. 45 секунд на раунд, счёт в реальном времени через Firestore
+
+После деплоя опубликуйте обновлённые `firestore.rules` в Firebase Console.
+
+## Gemini (AI-разбор)
+
+Разбор ошибок идёт через `/api/explain` (модель `gemini-2.0-flash`).
+
+**Vercel → Settings → Environment Variables:**
+
+| Переменная | Значение |
+|------------|----------|
+| `GEMINI_API_KEY` | Ключ с [aistudio.google.com](https://aistudio.google.com) |
+| `FIREBASE_WEB_KEY` | (опционально) Web API key Firebase для проверки токена |
+
+Готовые разборы кэшируются в Firestore (`explanations/{qid_lang}`).
+
+## Деплой на Vercel (один проект)
+
+1. Импортируй репозиторий на [vercel.com](https://vercel.com)
+2. **Root Directory** — корень (там `vercel.json`)
+3. Добавь `GEMINI_API_KEY` в Environment Variables
+4. Deploy
+
+Firebase (один раз):
+
+1. Authentication → Email/Password + Google
+2. Firestore → production, регион eur3
+3. Rules → вставь `firestore.rules` → Publish
+4. Authorized domains → добавь `*.vercel.app` и свой домен
+
+Подробнее: `FIREBASE_SETUP.md`, `Synaq_BRD_PRD_TRD.md`.
+
+## Локальная разработка API
+
+```bash
+cd backend && npm start          # :4000
+cd frontend && npm run dev       # прокси /api → :4000
 ```
-В деве фронт проксирует /api на :4000 (см. vite.config.js).
 
-## Содержимое банка (backend/data/)
-- topics.js — 12 тем РФМШ (8 математика + 4 логика).
-- questions.js — тренировочный банк: **все 8 вариантов РФМШ-2025 целиком** (1,2,3,4,5,7,8,9),
-  250 задач с ответами, разборами и чертежами. Поля: id, topic, difficulty, variant, num,
-  statement, answer, solution, image.
-- mockVariants.js — мок-тесты: все 8 вариантов собираются из банка по тегу variant.
-- generators.js — генераторы похожих задач (куры/овцы, две наценки, части, трубы).
-- Чертежи задач лежат в frontend/public/figures (v1_q1, v1_q10, v1_q22) и подключаются
-  через поле image.
+На Vercel фронт ходит на `/api/explain` и `/api/training/*` на том же домене.
 
-## API
-Тренировка:
-- GET /api/training/topics
-- GET /api/training/topics/:id/questions?mix=1&limit=10
-- GET /api/training/mixed?limit=15
-- GET /api/training/generate?n=5&topic=pct
-Мок-тест:
-- GET /api/mock                 — список вариантов
-- GET /api/mock/:id             — вариант БЕЗ ответов и разборов (как на экзамене)
-- POST /api/mock/:id/submit     — проверка { "answers": { "1":"4", ... } } → балл + разбор
+## Структура банка (backend/data/)
 
-## Деплой на Vercel — ОДИН проект, один домен
+- `topics.js` — 12 тем (математика + логика)
+- `questions.js` — 8 вариантов РФМШ-2025 (~250 задач)
+- `generators.js` — генераторы похожих задач (куры/овцы, проценты, отношения, трубы)
+- `bilQuestions.js`, `nishQuestions.js` — БИЛ и НИШ
 
-Фронт и бэк лежат в разных папках (`frontend/`, `backend/`), но деплоятся вместе,
-одним проектом. В корне есть `vercel.json`, который всё связывает:
-фронтенд отдаётся как статика, а всё, что идёт на `/api/*`, — на бэкенд-функцию.
-Второй проект, `VITE_API_URL` и CORS НЕ нужны.
+## Автор
 
-Шаги:
-1. Залей папку `synaq` на GitHub (или используй `npx vercel` из корня `synaq`).
-2. На vercel.com → Add New → Project → импортируй репозиторий.
-3. **Root Directory оставь пустым (корень репозитория)** — там лежит `vercel.json`.
-   Framework Preset можно оставить как есть (конфиг задаёт всё сам).
-4. Deploy.
-
-Всё. Один домен: сайт открывается на `/`, задачи и мок-тесты フронт берёт с `/api/...`
-на том же домене. Никаких переменных окружения настраивать не надо.
-
-Если деплоишь через терминал: `cd synaq && npx vercel --prod` (из корня, не из подпапки).
-
-## Как добавить следующий вариант (2,3,4,5,7,9)
-1. Добавь 30 задач в questions.js с variant:'vN', num, topic, answer, solution (image — если есть чертёж).
-2. В mockVariants.js: const variantN = buildFromBank('vN', 'РФМШ … Вариант N', 120); и добавь в массив variants.
-Всё — вариант появится и в тренировке (по темам), и в списке мок-тестов.
-
-## Про ответы
-Ответы к Варианту 1 и тренировочному банку посчитаны вручную и перепроверены.
-Перед продакшеном сверьте с официальным ключом РФМШ. Неоднозначные задачи (В8 №6, №23;
-В1 №21) помечены в note/solution.
-
-## Waitlist-лендинг (landing/)
-Отдельная статическая страница сбора почт до запуска (Firebase, проект synaq-88779).
-Это НЕ часть приложения — деплоится отдельно, ссылку ставишь в инстаграм/посты.
-
-Настройка Firebase (один раз):
-1. Firestore Database → создать (регион eur3, production mode).
-2. Rules → разрешить create, запретить read (правила в переписке) → Publish.
-
-Деплой на Vercel: Root Directory = landing (это просто index.html, статика).
-Почты падают в Firestore → коллекция waitlist (видишь только ты в консоли Firebase).
-
-## Вход и сохранение результатов (Firebase)
-Реализованы в frontend (firebase.js, auth.js, db.js, AuthScreen, ParentDashboard).
-Родитель регистрируется по почте и создаёт ребёнку логин+код; результаты сохраняются
-в Firestore, родитель видит прогресс. Настройка — см. FIREBASE_SETUP.md, правила — firestore.rules.
-
-## Авторизация и сохранение результатов (Firebase)
-Реализовано на Firebase Auth + Firestore (проект synaq-88779), код во frontend.
-
-Как работает вход:
-- Родитель регистрируется по почте + паролю.
-- Родитель в своём кабинете создаёт ребёнка: имя, класс, PIN. Система выдаёт **код**.
-  Ребёнок заходит по **коду + PIN** (без почты).
-- Технически детский аккаунт — это Firebase-пользователь с «почтой» код@synaq.kids
-  и паролем-PIN. Ребёнок вводит код и PIN, приложение подставляет эту почту само.
-- Результаты (попытки в тренировке, баллы мок-тестов) сохраняются в Firestore под ребёнком;
-  родитель видит их в своём кабинете.
-
-Настройка Firebase (один раз, в консоли):
-1. Build → Authentication → Sign-in method → включить **Email/Password**.
-2. Build → Firestore Database → создать (регион eur3, production mode).
-3. Firestore → Rules → вставить содержимое файла **firestore.rules** → Publish.
-
-Запуск фронтенда: `cd frontend && npm install && npm run dev`
-(firebase уже в зависимостях; конфиг вписан в src/firebase.js).
-
-Важно про безопасность: детский вход по коду+PIN — упрощённый (подходит для учебного
-приложения). PIN задаёт родитель; коды делайте не слишком короткими. Пароли родителей
-Firebase хранит безопасно сам.
-
-## Обновление: вход через Google + темы + еженедельный мок
-- Вход через Google (Firebase). В консоли Firebase → Authentication → Sign-in method → включить **Google**,
-  и в Settings → Authorized domains добавить домен сайта (например *.vercel.app).
-- Тренировка разбита по темам (Математика/Логика) с числом задач и % решённого.
-- Мок-тест недели: один вариант, автоматически сменяется каждую неделю (/api/mock/weekly).
-  Результат и разбор сохраняются в Firestore и видны в разделе «Прогресс» (история + талдау).
+Подготовка к вступительным экзаменам в элитные школы Казахстана.

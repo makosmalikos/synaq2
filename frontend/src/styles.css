@@ -387,6 +387,22 @@ export default function App() {
 .burger { display: none; }
 .nav-exit { display: none; }
 
+/* Дуэль */
+.duel-code{font:700 36px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-align:center;color:var(--accent);margin-top:8px}
+.duel-players{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px;flex-wrap:wrap}
+.duel-player{display:flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--line);background:#fff;min-width:140px;opacity:.55}
+.duel-player.on{opacity:1;border-color:var(--ink)}
+.duel-player b{display:block;font-size:15px}
+.duel-player .muted{font-size:11px}
+.duel-vs{font:700 22px 'Lora',serif;color:var(--accent)}
+.duel-scoreboard{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1px solid var(--line);background:#fff;margin:12px 0}
+.duel-scoreboard > div{flex:1;text-align:center}
+.duel-scoreboard > div.me{background:rgba(176,52,43,.06);border-radius:6px;padding:6px 4px}
+.duel-scoreboard span{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+.duel-scoreboard b{font:700 28px 'Lora',serif}
+.duel-scoreboard.big b{font-size:36px}
+.timer.warn{color:var(--accent)}
+
 /* верхняя полоса с переключателем языка над контентом */
 .topbar { display: flex; justify-content: flex-end; align-items: center; padding-bottom: 14px; margin-bottom: 4px; }
 

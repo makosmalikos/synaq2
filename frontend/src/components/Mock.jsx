@@ -7,7 +7,20 @@ import Explain from './Explain.jsx';
 import { Kolhar } from './Training.jsx';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
-const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.max(0, s) % 60).padStart(2, '0')}`;
+
+// Таймер мок-теста: 2:00:00 → 1:59:59… На ровном часе — «2 сағат».
+function formatExamTimer(totalSec, lang) {
+  const s = Math.max(0, totalSec);
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = s % 60;
+  if (h > 0 && m === 0 && sec === 0) {
+    if (lang === 'ru') return `${h} ${h === 1 ? 'час' : h < 5 ? 'часа' : 'часов'}`;
+    return `${h} сағат`;
+  }
+  if (h > 0) return `${h}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+  return `${m}:${String(sec).padStart(2, '0')}`;
+}
 
 // Мок-тест строго по школам: экзамен у каждой свой, вариант должен быть
 // цельным. Это не то же самое, что дайындык, где банк общий.

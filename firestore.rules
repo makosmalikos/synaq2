@@ -31,5 +31,27 @@ service cloud.firestore {
         exists(/databases/$(database)/documents/families/$(request.auth.uid)/children/$(childUid))
       );
     }
+
+    // Кэш AI-разборов (Gemini): читать всем залогиненным, писать один раз
+    match /explanations/{id} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update, delete: if false;
+    }
+
+    // Дуэли в реальном времени
+    match /duels/{duelId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+                    && request.resource.data.host.uid == request.auth.uid;
+      allow update: if request.auth != null && (
+        resource.data.host.uid == request.auth.uid ||
+        (resource.data.guest != null && resource.data.guest.uid == request.auth.uid) ||
+        (resource.data.guest == null
+          && request.resource.data.guest.uid == request.auth.uid
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['guest']))
+      );
+      allow delete: if false;
+    }
   }
 }

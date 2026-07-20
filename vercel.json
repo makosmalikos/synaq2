@@ -3,5 +3,10 @@
   "outputDirectory": "frontend/dist",
   "rewrites": [
     { "source": "/((?!api/|assets/|figures/).*)", "destination": "/index.html" }
-  ]
+  ],
+  "functions": {
+    "api/explain.js": { "maxDuration": 30 },
+    "api/checkout.js": { "maxDuration": 15 },
+    "api/webhook.js": { "maxDuration": 15 }
+  }
 }
