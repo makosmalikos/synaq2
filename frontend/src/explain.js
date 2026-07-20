@@ -22,7 +22,8 @@ export async function explain(q, { given = null, lang = 'kk' } = {}) {
     } catch { /* правила не опубликованы — просто идём в модель */ }
   }
 
-  const token = await auth.currentUser?.getIdToken().catch(() => null);
+  const token = await auth.currentUser?.getIdToken(true).catch(() => null);
+  if (!token) throw new Error('unauthorized');
   const res = await fetch('/api/explain', {
     method: 'POST',
     headers: {
@@ -57,7 +58,10 @@ export async function explain(q, { given = null, lang = 'kk' } = {}) {
 
 export function explainError(msg) {
   if (msg === 'no_api_key')     return 'GEMINI_API_KEY Vercel-де қосылмаған (Settings → Environment Variables).';
-  if (msg === 'unauthorized')   return 'Қайта кіріп көріңіз.';
-  if (msg === 'upstream')       return 'Түсіндірме сервисі жауап бермеді. Сәл кейін қайталаңыз.';
+  if (msg === 'unauthorized')   return 'Қайта кіріп көріңіз (сессия аяқталған болуы мүмкін).';
+  if (msg === 'upstream')       return 'Gemini жауап бермеді. API кілтін тексеріңіз немесе кейін қайталаңыз.';
+  if (msg === 'empty')          return 'Gemini бос жауап қайтарды. Қайта көріңіз.';
+  if (msg === 'failed')         return 'Сервер қатесі. Бір минуттан кейін қайталаңыз.';
+  if (msg === 'bad_statement')  return 'Бұл есеп үшін түсіндірме қолжетімсіз.';
   return 'Түсіндірмені алу мүмкін болмады. Қайталап көріңіз.';
 }
