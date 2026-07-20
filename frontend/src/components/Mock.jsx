@@ -219,7 +219,7 @@ export default function Mock() {
       <div className="exam-top">
         <span className="ttl">{meta.title}</span>
         <span className="clock" onClick={() => setHideTimer(!hideTimer)} style={{ cursor: 'pointer' }}>
-          {hideTimer ? '⏱ көрсету' : fmt(left)}
+          {hideTimer ? '⏱ көрсету' : formatExamTimer(left, lang)}
         </span>
       </div>
 
