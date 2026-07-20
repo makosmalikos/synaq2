@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLang } from './i18n.jsx';
 import Explain from './components/Explain.jsx';
+import { auth, addXp } from './firebase.js';
+import { duelXpGain, XP } from './xp.js';
 import {
   createDuel, joinDuel, submitDuelAnswer, skipRoundIfExpired,
   watchDuel, myRole, duelLink, DUEL_SIZE, ROUND_SEC,
@@ -15,7 +17,7 @@ const copy = async (text) => {
   }
 };
 
-export default function Duel({ initialCode = '', playerName = 'Ойыншы', fromLink = false }) {
+export default function Duel({ initialCode = '', playerName = 'Ойыншы', fromLink = false, onXp }) {
   const { t } = useLang();
   const [code, setCode] = useState(initialCode.toUpperCase());
   const [duel, setDuel] = useState(null);
@@ -31,6 +33,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
   const [gameReady, setGameReady] = useState(!fromLink);
   const lastRoundKey = useRef('');
   const countdownDone = useRef(false);
+  const xpDone = useRef(false);
 
   useEffect(() => {
     if (!code) return undefined;
@@ -115,6 +118,25 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
     const id = setTimeout(() => setShowRoundResult(false), 2200);
     return () => clearTimeout(id);
   }, [duel]);
+
+  // XP — бір рет ғана есептеледі
+  useEffect(() => {
+    if (!duel || duel.status !== 'finished') return;
+    const roleNow = myRole(duel);
+    if (!roleNow || xpDone.current) return;
+    xpDone.current = true;
+    const uid = auth.currentUser?.uid;
+    if (!uid) return;
+    const gain = duelXpGain({
+      scores: duel.scores,
+      speedWins: duel.speedWins,
+      role: roleNow,
+      winner: duel.winner,
+    });
+    if (gain > 0) {
+      addXp(uid, gain, 'duel').then(() => onXp?.(gain)).catch(() => {});
+    }
+  }, [duel, onXp]);
 
   async function onCreate() {
     setBusy(true); setErr('');
@@ -270,6 +292,11 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
   if (duel.status === 'finished') {
     const won = duel.winner === role;
     const draw = duel.winner === 'draw';
+    const myCorrect = role ? (duel.scores?.[role] ?? 0) : 0;
+    const mySpeed = role ? (duel.speedWins?.[role] ?? 0) : 0;
+    const xpGain = role ? duelXpGain({
+      scores: duel.scores, speedWins: duel.speedWins, role, winner: duel.winner,
+    }) : 0;
     return (
       <main>
         <p className="kicker">{t('nav.duel')}</p>
@@ -279,19 +306,34 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
           <div className={role === 'host' ? 'me' : ''}>
             <span>{duel.host?.name}</span>
             <b>{duel.scores?.host ?? 0}</b>
+            <small className="muted">⚡ {duel.speedWins?.host ?? 0}</small>
           </div>
           <div className="duel-vs">:</div>
           <div className={role === 'guest' ? 'me' : ''}>
             <span>{duel.guest?.name}</span>
             <b>{duel.scores?.guest ?? 0}</b>
+            <small className="muted">⚡ {duel.speedWins?.guest ?? 0}</small>
           </div>
         </div>
+
+        {role && xpGain > 0 && (
+          <div className="card" style={{ marginTop: 16 }}>
+            <p className="kicker" style={{ margin: 0 }}>{t('duel.xpEarned')}</p>
+            <div style={{ font: "700 32px 'Lora',serif", color: 'var(--accent)' }}>+{xpGain} XP</div>
+            <ul className="muted" style={{ fontSize: 13, margin: '10px 0 0', paddingLeft: 18, lineHeight: 1.7 }}>
+              <li>{myCorrect} × {XP.DUEL_CORRECT} = {myCorrect * XP.DUEL_CORRECT} XP ({t('duel.xpCorrect')})</li>
+              {mySpeed > 0 && <li>{mySpeed} × {XP.DUEL_SPEED} = {mySpeed * XP.DUEL_SPEED} XP ({t('duel.xpSpeed')})</li>}
+              {won && <li>+{XP.DUEL_WIN} XP ({t('duel.xpWin')})</li>}
+            </ul>
+          </div>
+        )}
 
         <button className="btn accent full" style={{ marginTop: 20 }} onClick={() => {
           setCode('');
           setDuel(null);
           setJoinInput('');
           countdownDone.current = false;
+          xpDone.current = false;
           sessionStorage.removeItem('synaq_duel');
           window.history.replaceState({}, '', '/app');
         }}>
@@ -328,11 +370,13 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
         <div className={role === 'host' ? 'me' : ''}>
           <span>{duel.host?.name}{role === 'host' ? ' · ' + t('duel.you') : ''}</span>
           <b>{myScore}</b>
+          <small className="muted">⚡ {duel.speedWins?.host ?? 0}</small>
         </div>
         <div className="duel-vs">⚔</div>
         <div className={role === 'guest' ? 'me' : ''}>
           <span>{oppName}</span>
           <b>{oppScore}</b>
+          <small className="muted">⚡ {duel.speedWins?.guest ?? 0}</small>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { registerParent, loginParent, loginChild, loginGoogle, errText } from './firebase.js';
+import { registerParent, loginParent, loginChild, loginGoogle, resetParentPassword, errText } from './firebase.js';
 import { useLang, LangSwitch } from './i18n.jsx';
 
 // Вход оформлен как карточка поверх затемнённого фона (попап), а не пустая страница.
@@ -14,9 +14,10 @@ export default function Auth({ onClose, duelCode = '' }) {
   const [pass, setPass] = useState('');
   const [code, setCode] = useState('');
   const [pin, setPin] = useState('');
+  const [info, setInfo] = useState('');
 
   const run = (fn) => async () => {
-    setErr(''); setBusy(true);
+    setErr(''); setInfo(''); setBusy(true);
     try { await fn(); } catch (e) { setErr(errText(e)); }
     setBusy(false);
   };
@@ -106,10 +107,32 @@ export default function Auth({ onClose, duelCode = '' }) {
         {stage === 'loginParent' && (
           <div style={{ animation: 'rise .3s ease both' }}>
             <h1 style={S.h1}>{t('auth.parent')}</h1>
-            <input style={S.input} placeholder={t('auth.email')} value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input style={S.input} type="password" placeholder={t('auth.password')} value={pass} onChange={(e) => setPass(e.target.value)} />
+            <p style={S.hint}>{t('auth.parentHint')}</p>
+            <input style={S.input} type="email" autoComplete="email" placeholder={t('auth.email')} value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input style={S.input} type="password" autoComplete="current-password" placeholder={t('auth.passwordLogin')} value={pass} onChange={(e) => setPass(e.target.value)} />
             <Err v={err} />
-            <button style={{ ...S.dark, marginTop: 6 }} disabled={busy} onClick={run(() => loginParent(email, pass))}>{t('auth.login')}</button>
+            {info && <p style={{ color: '#4C7A4E', fontSize: 13, margin: '10px 0 0', textAlign: 'center' }}>{info}</p>}
+            <button style={{ ...S.dark, marginTop: 6 }} disabled={busy || !email.trim()} onClick={run(() => loginParent(email, pass))}>{t('auth.login')}</button>
+            <button
+              style={S.linkBtn}
+              disabled={busy || !email.trim()}
+              onClick={run(async () => {
+                await resetParentPassword(email);
+                setInfo(t('auth.resetSent'));
+              })}
+            >
+              {t('auth.forgot')}
+            </button>
+
+            <div style={S.divider}>
+              <div style={S.line} />
+              <span style={S.or}>{t('auth.or')}</span>
+              <div style={S.line} />
+            </div>
+
+            <button style={S.google} disabled={busy} onClick={run(loginGoogle)}>
+              <span style={{ font: "700 15px 'Golos Text'", color: '#4285F4' }}>G</span> {t('auth.google')}
+            </button>
             <button style={S.back} onClick={() => setStage('loginRole')}>{t('common.back')}</button>
           </div>
         )}
@@ -175,5 +198,6 @@ const S = {
   outline: { width: '100%', padding: 15, background: 'transparent', color: '#17140F', border: '1px solid rgba(23,20,15,.24)', borderRadius: 8, font: "600 15px 'Golos Text'", cursor: 'pointer' },
   input: { width: '100%', padding: '13px 14px', border: '1px solid rgba(23,20,15,.22)', borderRadius: 8, font: "500 15px 'Golos Text'", color: '#17140F', outline: 'none', background: '#fff', marginBottom: 10 },
   back: { width: '100%', marginTop: 6, padding: 9, background: 'transparent', color: '#6B655B', border: 'none', font: "500 13.5px 'Golos Text'", cursor: 'pointer' },
+  linkBtn: { width: '100%', marginTop: 4, padding: 8, background: 'transparent', color: '#6B655B', border: 'none', font: "500 13px 'Golos Text'", cursor: 'pointer', textDecoration: 'underline' },
   google: { width: '100%', padding: 13, background: '#fff', color: '#17140F', border: '1px solid rgba(23,20,15,.24)', borderRadius: 8, font: "600 15px 'Golos Text'", cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9 },
 };

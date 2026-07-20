@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useLang } from './i18n.jsx';
-import { auth, getAttempts, getMocks } from './firebase.js';
+import { auth, getAttempts, getMocks, getXpSummary } from './firebase.js';
 import { api, topicStats, weekHours, mockSeries } from './api.js';
+import { xpLevel } from './xp.js';
 
 const LEVEL_TXT = { strong: 'МЫҚТЫ', mid: 'ОРТАША', weak: 'ӘЛСІЗ' };
 const LEVEL_COL = { strong: '#4C7A4E', mid: '#B8892B', weak: '#B0342B' };
 
-export default function Progress() {
+export default function Progress({ onXpLoad }) {
   const { t } = useLang();
   const [stats, setStats] = useState(null);
   const [week, setWeek] = useState([]);
   const [mocks, setMocks] = useState([]);
+  const [xpInfo, setXpInfo] = useState({ xp: 0, studySecs: 0 });
   const [open, setOpen] = useState(null);   // раскрытый мок
   const [q, setQ] = useState(null);         // раскрытая задача в разборе
 
@@ -18,14 +20,17 @@ export default function Progress() {
     const u = auth.currentUser;
     if (!u) return;
     (async () => {
-      const [att, mk, topics] = await Promise.all([
+      const [att, mk, topics, xp] = await Promise.all([
         getAttempts(u.uid).catch(() => []),
         getMocks(u.uid).catch(() => []),
         api.topics(),
+        getXpSummary(u.uid).catch(() => ({ xp: 0, studySecs: 0 })),
       ]);
       setStats(topicStats(att, topics));
       setWeek(weekHours(att));
       setMocks(mk);
+      setXpInfo(xp);
+      onXpLoad?.(xp.xp || 0);
     })();
   }, []);
 
@@ -78,6 +83,16 @@ export default function Progress() {
   return (
     <main>
       <h1>{t('prog.title')}</h1>
+
+      <div className="hero-card" style={{ marginBottom: 16 }}>
+        <p className="kicker" style={{ margin: 0 }}>{t('xp.title')}</p>
+        <div style={{ font: "700 40px 'Lora',serif", color: 'var(--accent)', lineHeight: 1.1 }}>{xpInfo.xp || 0} XP</div>
+        <p className="muted" style={{ margin: '8px 0 0', fontSize: 13 }}>
+          {t('xp.level')} {xpLevel(xpInfo.xp)} · {Math.floor((xpInfo.studySecs || 0) / 3600)} {t('xp.hoursDone')}
+        </p>
+        <p className="muted" style={{ margin: '6px 0 0', fontSize: 12.5 }}>{t('xp.rules')}</p>
+      </div>
+
       <div style={{ borderTop: '2px solid var(--ink)', margin: '14px 0 22px' }} />
 
       {/* Сағаттар — апта бойынша */}

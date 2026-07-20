@@ -2,10 +2,12 @@
 import { initializeApp, deleteApp } from 'firebase/app';
 import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
-  signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup,
+  signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail,
+  EmailAuthProvider, linkWithCredential, reauthenticateWithCredential, updatePassword,
 } from 'firebase/auth';
 import {
   getFirestore, doc, setDoc, getDoc, getDocs, addDoc, collection, serverTimestamp,
+  runTransaction, increment,
 } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -47,21 +49,53 @@ export const suggestUsername = (name) => {
   return base ? base + Math.floor(10 + Math.random() * 90) : '';
 };
 
+const normEmail = (email = '') => email.trim().toLowerCase();
+
 // ── Родитель ──
 // Школа больше не спрашивается вообще: дайындык идёт по всему банку,
 // а школа выбирается только в момент мок-теста.
 export async function registerParent(email, password, name = '') {
-  const cred = await createUserWithEmailAndPassword(auth, email, password);
+  const cred = await createUserWithEmailAndPassword(auth, normEmail(email), password);
   const parentName = name.trim();
   if (parentName) await updateProfile(cred.user, { displayName: parentName }).catch(() => {});
   await setDoc(doc(db, 'families', cred.user.uid), {
-    parentEmail: email,
+    parentEmail: normEmail(email),
     parentName: parentName || null,
     createdAt: serverTimestamp(),
   });
   return cred.user;
 }
-export const loginParent = (email, password) => signInWithEmailAndPassword(auth, email, password);
+export const loginParent = (email, password) =>
+  signInWithEmailAndPassword(auth, normEmail(email), password);
+
+export async function resetParentPassword(email) {
+  await sendPasswordResetEmail(auth, normEmail(email));
+}
+
+export const hasPasswordLogin = (user) =>
+  !!user?.providerData?.some((p) => p.providerId === 'password');
+
+export const isGoogleLogin = (user) =>
+  !!user?.providerData?.some((p) => p.providerId === 'google.com');
+
+// Google-аккаунтқа email+пароль қосу — содан кейін екеуімен де кіруге болады.
+export async function linkParentPassword(password) {
+  const user = auth.currentUser;
+  if (!user?.email) throw Object.assign(new Error('no-email'), { code: 'auth/no-email' });
+  if ((password || '').length < 6) throw Object.assign(new Error('weak'), { code: 'auth/weak-password' });
+  const credential = EmailAuthProvider.credential(normEmail(user.email), password);
+  await linkWithCredential(user, credential);
+  await user.reload();
+}
+
+export async function changeParentPassword(currentPassword, newPassword) {
+  const user = auth.currentUser;
+  if (!user?.email) throw Object.assign(new Error('no-email'), { code: 'auth/no-email' });
+  if ((newPassword || '').length < 6) throw Object.assign(new Error('weak'), { code: 'auth/weak-password' });
+  const credential = EmailAuthProvider.credential(normEmail(user.email), currentPassword);
+  await reauthenticateWithCredential(user, credential);
+  await updatePassword(user, newPassword);
+}
 
 export async function loginGoogle() {
   const provider = new GoogleAuthProvider();
@@ -137,6 +171,44 @@ export async function saveAttempt(uid, a) {
     qid: a.qid, topic: a.topic || null, school: a.school || null,
     correct: !!a.correct, at: serverTimestamp(),
   }, { merge: true }).catch(() => {});
+  await creditXpFromAttempt(uid, { correct: !!a.correct, secs: a.secs || 0 }).catch(() => {});
+}
+
+const statsRef = (uid) => doc(db, 'results', uid, 'stats', 'summary');
+
+export async function getXpSummary(uid) {
+  try {
+    const snap = await getDoc(statsRef(uid));
+    return snap.exists() ? snap.data() : { xp: 0, studySecs: 0 };
+  } catch { return { xp: 0, studySecs: 0 }; }
+}
+
+export async function addXp(uid, amount, reason = '') {
+  if (!uid || !amount || amount <= 0) return;
+  await setDoc(statsRef(uid), {
+    xp: increment(amount),
+    lastGain: amount,
+    lastReason: reason,
+    updatedAt: serverTimestamp(),
+  }, { merge: true });
+}
+
+async function creditXpFromAttempt(uid, { correct, secs }) {
+  await runTransaction(db, async (tx) => {
+    const ref = statsRef(uid);
+    const snap = await tx.get(ref);
+    const data = snap.exists() ? snap.data() : { xp: 0, studySecs: 0 };
+    let xp = data.xp || 0;
+    let studySecs = data.studySecs || 0;
+    if (correct) xp += 5;
+    if (secs > 0) {
+      const prevH = Math.floor(studySecs / 3600);
+      studySecs += secs;
+      const newH = Math.floor(studySecs / 3600);
+      xp += (newH - prevH) * 100;
+    }
+    tx.set(ref, { xp, studySecs, updatedAt: serverTimestamp() }, { merge: true });
+  });
 }
 export const saveMock = (uid, r) =>
   addDoc(collection(db, 'results', uid, 'mocks'), { ...r, at: serverTimestamp() });
@@ -167,7 +239,14 @@ export function errText(e) {
   if (c.includes('email-already-in-use')) return 'Бұл юзернейм бос емес — басқасын таңдаңыз';
   if (c.includes('weak-password')) return 'Пароль тым қысқа (кемінде 6 таңба)';
   if (c.includes('invalid-email')) return 'Юзернейм тек латын әрпі мен цифрдан тұруы керек';
-  if (c.includes('invalid-credential') || c.includes('wrong-password') || c.includes('user-not-found')) return 'Қате логин немесе пароль';
+  if (c.includes('invalid-credential') || c.includes('wrong-password') || c.includes('user-not-found')) {
+    return 'Қате логин немесе пароль. Google арқылы кіріп, кабинетте пароль қойыңыз.';
+  }
+  if (c.includes('provider-already-linked')) return 'Email+пароль қазірдің өзінде қосылған.';
+  if (c.includes('credential-already-in-use')) return 'Бұл пошта басқа аккаунтқа байланған.';
+  if (c.includes('requires-recent-login')) return 'Қауіпсіздік үшін қайта Google арқылы кіріңіз, содан кейін парольді өзгертіңіз.';
+  if (c.includes('no-email')) return 'Пошта табылмады — Google аккаунтыңызда email болуы керек.';
+  if (c.includes('too-many-requests')) return 'Тым көп әрекет. Біраз күтіңіз немесе парольді қалпына келтіріңіз.';
   if (c.includes('permission-denied')) return 'Firestore ережелері жарияланбаған. Firebase Console → Firestore → Rules → Publish';
   if (c.includes('operation-not-allowed')) return 'Firebase-те Email/Password қосылмаған (Authentication → Sign-in method)';
   if (c.includes('unauthorized-domain')) return 'Домен рұқсат етілмеген (Firebase → Authorized domains)';

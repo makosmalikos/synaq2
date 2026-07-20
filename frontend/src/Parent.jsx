@@ -3,6 +3,7 @@ import { useLang } from './i18n.jsx';
 import {
   auth, createChild, getChildren, getMocks, getAttempts, logout, getFamily,
   genPassword, suggestUsername, cleanUsername, errText,
+  hasPasswordLogin, linkParentPassword, changeParentPassword,
 } from './firebase.js';
 import { api, topicStats, readiness, mockSeries } from './api.js';
 
@@ -205,6 +206,8 @@ export default function Parent({ onExit }) {
               </div>
             </div>
           )}
+
+          <LoginPasswordCard t={t} />
 
           <div className="row">
             <h1 style={{ margin: 0 }}>{t('ui.27')}</h1>
@@ -433,3 +436,90 @@ function ChildReport({ child, mocks, stats, onBack, t }) {
 
 const lab = { display: 'block', font: "500 11px 'IBM Plex Mono',monospace", letterSpacing: '.08em', textTransform: 'uppercase', color: '#9A9384', marginBottom: 6 };
 const inp = { width: '100%', padding: '12px 14px', border: '1px solid var(--line)', background: '#fff', font: "500 15px 'Golos Text'", color: 'var(--ink)', outline: 'none' };
+
+function LoginPasswordCard({ t }) {
+  const email = auth.currentUser?.email || '';
+  const [linked, setLinked] = useState(() => hasPasswordLogin(auth.currentUser));
+  const [editing, setEditing] = useState(false);
+  const [current, setCurrent] = useState('');
+  const [pass1, setPass1] = useState('');
+  const [pass2, setPass2] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState('');
+  const [err, setErr] = useState('');
+
+  useEffect(() => {
+    auth.currentUser?.reload().then(() => {
+      setLinked(hasPasswordLogin(auth.currentUser));
+    }).catch(() => {});
+  }, []);
+
+  async function save() {
+    setErr(''); setMsg(''); setBusy(true);
+    try {
+      if (pass1.length < 6) throw Object.assign(new Error('weak'), { code: 'auth/weak-password' });
+      if (pass1 !== pass2) throw new Error('mismatch');
+      if (linked && editing) {
+        await changeParentPassword(current, pass1);
+      } else {
+        await linkParentPassword(pass1);
+        setLinked(true);
+      }
+      setMsg(t('parent.passSaved'));
+      setCurrent(''); setPass1(''); setPass2(''); setEditing(false);
+    } catch (e) {
+      setErr(e.message === 'mismatch' ? t('parent.passMismatch') : errText(e));
+    }
+    setBusy(false);
+  }
+
+  if (linked && !editing) {
+    return (
+      <div className="card" style={{ marginBottom: 20, background: '#EEF5EC', borderColor: 'var(--green)' }}>
+        <p className="kicker" style={{ margin: '0 0 8px', color: 'var(--green)' }}>{t('parent.loginTitle')}</p>
+        <p style={{ margin: 0, fontSize: 14, lineHeight: 1.55 }}>
+          {t('parent.loginDone').replace('{email}', email)}
+        </p>
+        <button className="btn ghost" style={{ marginTop: 12 }} onClick={() => { setEditing(true); setMsg(''); setErr(''); }}>
+          {t('parent.changePass')}
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="card" style={{ marginBottom: 20 }}>
+      <p className="kicker" style={{ margin: '0 0 8px' }}>{t('parent.loginTitle')}</p>
+      <p className="muted" style={{ margin: '0 0 14px', fontSize: 14, lineHeight: 1.55 }}>{t('parent.loginHint')}</p>
+      {email && (
+        <p style={{ margin: '0 0 12px', font: "600 14px 'IBM Plex Mono',monospace", color: '#6B655B' }}>{email}</p>
+      )}
+      {linked && editing && (
+        <div style={{ marginBottom: 10 }}>
+          <label style={lab}>{t('parent.currentPass')}</label>
+          <input type="password" style={inp} value={current} onChange={(e) => setCurrent(e.target.value)} />
+        </div>
+      )}
+      <div style={{ marginBottom: 10 }}>
+        <label style={lab}>{t('parent.newPass')}</label>
+        <input type="password" style={inp} value={pass1} onChange={(e) => setPass1(e.target.value)} />
+      </div>
+      <div style={{ marginBottom: 10 }}>
+        <label style={lab}>{t('parent.newPass2')}</label>
+        <input type="password" style={inp} value={pass2} onChange={(e) => setPass2(e.target.value)} />
+      </div>
+      {err && <p style={{ color: 'var(--accent)', fontSize: 13, margin: '0 0 10px' }}>{err}</p>}
+      {msg && <p style={{ color: 'var(--green)', fontSize: 13, margin: '0 0 10px' }}>{msg}</p>}
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+        <button className="btn accent" disabled={busy || !pass1 || !pass2 || (linked && editing && !current)} onClick={save}>
+          {busy ? '…' : linked ? t('parent.changePass') : t('parent.setPass')}
+        </button>
+        {linked && editing && (
+          <button className="btn ghost" disabled={busy} onClick={() => { setEditing(false); setCurrent(''); setPass1(''); setPass2(''); setErr(''); }}>
+            {t('common.back')}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}

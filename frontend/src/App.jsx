@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { watchAuth, isKid, logout, getMyProfile } from './firebase.js';
+import { watchAuth, isKid, logout, getMyProfile, getXpSummary } from './firebase.js';
 import { useLang, LangSwitch } from './i18n.jsx';
 import Auth from './Auth.jsx';
 import Landing from './Landing.jsx';
@@ -28,6 +28,7 @@ export default function App() {
   const [tab, setTab] = useState('home');
   const [menuOpen, setMenuOpen] = useState(false);   // бургер-меню на телефоне
   const [profile, setProfile] = useState({ name: 'Бала', klass: '', school: 'РФМШ' });
+  const [xp, setXp] = useState(0);
 
   const [duelCode] = useState(() => {
     if (typeof window === 'undefined') return '';
@@ -40,7 +41,12 @@ export default function App() {
   });
 
   useEffect(() => watchAuth(setUser), []);
-  useEffect(() => { if (user && isKid(user)) getMyProfile().then(setProfile); }, [user]);
+  useEffect(() => {
+    if (user && isKid(user)) {
+      getMyProfile().then(setProfile);
+      getXpSummary(user.uid).then((s) => setXp(s.xp || 0)).catch(() => {});
+    }
+  }, [user]);
   useEffect(() => { if (duelCode) setTab('duel'); }, [duelCode]);
 
   // кнопки «назад/вперёд» в браузере
@@ -113,7 +119,7 @@ export default function App() {
             <div className="ava">{(profile.name || 'Б')[0].toUpperCase()}</div>
             <div>
               <div style={{ font: "600 15px 'Golos Text'" }}>{profile.name}</div>
-              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' }}>{profile.klass} {t('common.grade')}</div>
+              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' }}>{profile.klass} {t('common.grade')} · {xp} XP</div>
             </div>
           </div>
           <button className="btn ghost full" onClick={exit}>{t('common.exit')}</button>
@@ -125,12 +131,12 @@ export default function App() {
         <div className="topbar">
           <LangSwitch />
         </div>
-        {tab === 'home' && <Home go={setTab} name={profile.name} />}
-        {tab === 'training' && <Training school={school} />}
+        {tab === 'home' && <Home go={setTab} name={profile.name} xp={xp} />}
+        {tab === 'training' && <Training school={school} onXp={(n) => setXp((x) => x + n)} />}
         {tab === 'mock' && <Mock school={school} />}
-        {tab === 'duel' && <Duel initialCode={duelCode} fromLink={!!duelCode} playerName={profile.name} />}
+        {tab === 'duel' && <Duel initialCode={duelCode} fromLink={!!duelCode} playerName={profile.name} onXp={(n) => setXp((x) => x + n)} />}
         {tab === 'league' && <League />}
-        {tab === 'progress' && <Progress />}
+        {tab === 'progress' && <Progress onXpLoad={setXp} />}
       </div>
     </div>
   );

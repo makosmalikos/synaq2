@@ -91,7 +91,7 @@ export function Kolhar({ q, answer, onPick, disabled, correct }) {
   );
 }
 
-export default function Training() {
+export default function Training({ onXp }) {
   const { t, lang } = useLang();
   const [topics, setTopics] = useState([]);
   const [solved, setSolved] = useState(new Set());
@@ -103,7 +103,8 @@ export default function Training() {
   const [checked, setChecked] = useState(false);
   const [secs, setSecs] = useState(0);
   const [pro, setPro] = useState(true);        // тексерілгенше бөгемейміз
-  const [done, setDone] = useState(0);         // бүгін шығарған есеп саны
+  const [done, setDone] = useState(0);
+  const [xpPop, setXpPop] = useState(null);         // бүгін шығарған есеп саны
   const FREE_DAY = 5;                          // тегін тарифте күніне 5 есеп
   const locked = !pro && done >= FREE_DAY;
   const timer = useRef(null);
@@ -152,6 +153,11 @@ export default function Training() {
     if (ok) setSolved((s) => new Set(s).add(q.id));
     if (auth.currentUser) {
       saveAttempt(auth.currentUser.uid, { qid: q.id, topic: q.topic, school: q.school, correct: ok, secs }).catch(() => {});
+      if (ok) {
+        setXpPop(5);
+        onXp?.(5);
+        setTimeout(() => setXpPop(null), 1800);
+      }
       if (!pro) setDone((n) => n + 1);
     }
   }
@@ -294,6 +300,7 @@ export default function Training() {
       {checked && (
         <>
           <div className={ok ? 'fb ok' : 'fb no'}>{ok ? 'Дұрыс!' : `Қате. Дұрыс жауап: ${q.answer ?? '—'}`}</div>
+          {xpPop && <div className="xp-pop">+{xpPop} XP</div>}
           <Explain q={q} given={ok ? null : answer} />
         </>
       )}
