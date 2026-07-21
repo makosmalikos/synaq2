@@ -3,6 +3,7 @@
 // Импортируем всё разом: если какого-то блока задач в data.js нет,
 // сборка не падает — просто этих задач не будет в банке.
 import * as DATA from './data.js';
+import { bilPrep021120 } from './bilPrep021120.js';
 
 const questions = DATA.questions || [];
 const nishMath  = DATA.nishMath  || [];
@@ -71,6 +72,7 @@ export const POOL = [
   ...questions.map((q) => one(q, 'РФМШ')),
   ...nishMath.map((q) => one(q, 'НИШ')),
   ...bilQ.map((q) => one(q, 'БИЛ')),
+  ...bilPrep021120.map((q) => one(q, 'БИЛ')),
   ...kolzar2.map((q) => one(q, 'НИШ')),   // колхар, 2-топтама
   ...kolzar3.map((q) => one(q, 'НИШ')),   // колхар, 3-топтама
   ...logic1.map((q) => one(q, 'НИШ')),    // логика
