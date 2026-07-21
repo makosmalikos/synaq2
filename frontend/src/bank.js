@@ -5,6 +5,11 @@
 import * as DATA from './data.js';
 import { bilPrep021120 } from './bilPrep021120.js';
 import { bilLogic } from './bilLogic.js';
+import { ktlKolzar } from './ktlKolzar.js';
+import { ktlMath } from './ktlMath.js';
+import { ktlKaz } from './ktlKaz.js';
+import { ktlRus } from './ktlRus.js';
+import { ktlEng } from './ktlEng.js';
 
 const questions = DATA.questions || [];
 const nishMath  = DATA.nishMath  || [];
@@ -75,6 +80,11 @@ export const POOL = [
   ...bilQ.map((q) => one(q, 'БИЛ')),
   ...bilPrep021120.map((q) => one(q, 'БИЛ')),
   ...bilLogic.map((q) => one(q, 'БИЛ')),
+  ...ktlKolzar.map((q) => one(q, 'НИШ')), // колхар из KTL/БИЛ → НИШ
+  ...ktlMath.map((q) => one(q, 'КТЛ')),
+  ...ktlKaz.map((q) => one(q, 'КТЛ')),
+  ...ktlRus.map((q) => one(q, 'КТЛ')),
+  ...ktlEng.map((q) => one(q, 'КТЛ')),
   ...kolzar2.map((q) => one(q, 'НИШ')),   // колхар, 2-топтама
   ...kolzar3.map((q) => one(q, 'НИШ')),   // колхар, 3-топтама
   ...logic1.map((q) => one(q, 'НИШ')),    // логика
