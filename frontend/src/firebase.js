@@ -114,6 +114,8 @@ export async function loginGoogle() {
 // родитель бы вылетел из сессии и следующая запись упала бы с permission-denied.
 // Поэтому аккаунт ребёнка создаём во ВТОРИЧНОМ экземпляре Firebase.
 export async function createChild(parentUid, { name, klass = '', code, pin }) {
+  const family = await getDoc(doc(db, 'families', parentUid));
+  const pro = !!family.data()?.pro;
   const secondary = initializeApp(firebaseConfig, 'sec-' + Date.now());
   const secAuth = getAuth(secondary);
   try {
@@ -125,7 +127,7 @@ export async function createChild(parentUid, { name, klass = '', code, pin }) {
     await setDoc(doc(db, 'families', parentUid, 'children', childUid), {
       name, klass, code: code.trim().toLowerCase(), createdAt: serverTimestamp(),
     });
-    await setDoc(doc(db, 'childIndex', childUid), { parentUid, name, klass });
+    await setDoc(doc(db, 'childIndex', childUid), { parentUid, name, klass, pro });
     return { childUid, code };
   } finally {
     await signOut(secAuth).catch(() => {});
@@ -262,15 +264,23 @@ export async function getFamily(parentUid) {
   return snap.exists() ? snap.data() : null;
 }
 
+// Pro күйін баланың өзі оқи алатын индекске көшіреміз.
+// Бұл ескі аккаунттарды ата-ана кірген кезде автоматты түзетеді.
+export async function syncChildrenPro(parentUid, pro) {
+  const children = await getDocs(collection(db, 'families', parentUid, 'children'));
+  await Promise.all(children.docs.map((child) => setDoc(
+    doc(db, 'childIndex', child.id),
+    { parentUid, pro: !!pro },
+    { merge: true },
+  )));
+}
+
 // ── Тегін тариф шектеуі ──
 // Баланың ата-анасында pro бар ма? (баланың құжатында parentUid сақталады)
 export async function isPro(childUid) {
   try {
     const idx = await getDoc(doc(db, 'childIndex', childUid));
-    const parentUid = idx.exists() ? idx.data().parentUid : null;
-    if (!parentUid) return false;
-    const fam = await getDoc(doc(db, 'families', parentUid));
-    return !!fam.data()?.pro;
+    return !!idx.data()?.pro;
   } catch { return false; }
 }
 

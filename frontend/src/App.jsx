@@ -1,21 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { watchAuth, isKid, logout, getMyProfile, getXpSummary } from './firebase.js';
 import { useLang, LangSwitch } from './i18n.jsx';
 import Auth from './Auth.jsx';
 import Landing from './Landing.jsx';
-import Parent from './Parent.jsx';
 import Home from './Home.jsx';
-import Progress from './Progress.jsx';
-import Duel from './Duel.jsx';
 import League from './League.jsx';
-import Training from './components/Training.jsx';
-import Mock from './components/Mock.jsx';
 import Brand from './Brand.jsx';
+
+// Банк задач большой: загружаем его только вместе с экраном, которому он нужен.
+const Parent = lazy(() => import('./Parent.jsx'));
+const Progress = lazy(() => import('./Progress.jsx'));
+const Duel = lazy(() => import('./Duel.jsx'));
+const Training = lazy(() => import('./components/Training.jsx'));
+const Mock = lazy(() => import('./components/Mock.jsx'));
 
 const NAV = [
   { id: 'home', n: '01' }, { id: 'training', n: '02' }, { id: 'duel', n: '03' },
   { id: 'league', n: '04' }, { id: 'mock', n: '05' }, { id: 'progress', n: '06' },
 ];
+
+const ScreenFallback = () => <div style={{ padding: 40, color: '#6B655B' }}>...</div>;
 
 // Роут: '/' = лендинг, '/app' = авторизация → дашборд.
 const readRoute = () =>
@@ -76,7 +80,11 @@ export default function App() {
     await logout();
     go('landing');
   };
-  if (!isKid(user)) return <Parent onExit={exit} />;
+  if (!isKid(user)) return (
+    <Suspense fallback={<ScreenFallback />}>
+      <Parent onExit={exit} />
+    </Suspense>
+  );
 
   const school = profile.school;
   const pick = (id) => { setTab(id); setMenuOpen(false); };   // выбрал пункт → меню закрылось
@@ -132,12 +140,14 @@ export default function App() {
         <div className="topbar">
           <LangSwitch />
         </div>
-        {tab === 'home' && <Home go={setTab} name={profile.name} xp={xp} />}
-        {tab === 'training' && <Training school={school} onXp={(n) => setXp((x) => x + n)} />}
-        {tab === 'mock' && <Mock school={school} />}
-        {tab === 'duel' && <Duel initialCode={duelCode} fromLink={!!duelCode} playerName={profile.name} onXp={(n) => setXp((x) => x + n)} />}
-        {tab === 'league' && <League />}
-        {tab === 'progress' && <Progress onXpLoad={setXp} />}
+        <Suspense fallback={<ScreenFallback />}>
+          {tab === 'home' && <Home go={setTab} name={profile.name} xp={xp} />}
+          {tab === 'training' && <Training school={school} onXp={(n) => setXp((x) => x + n)} />}
+          {tab === 'mock' && <Mock school={school} />}
+          {tab === 'duel' && <Duel initialCode={duelCode} fromLink={!!duelCode} playerName={profile.name} onXp={(n) => setXp((x) => x + n)} />}
+          {tab === 'league' && <League />}
+          {tab === 'progress' && <Progress onXpLoad={setXp} />}
+        </Suspense>
       </div>
     </div>
   );

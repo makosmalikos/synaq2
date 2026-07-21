@@ -58,7 +58,9 @@ const BIL_SPEC = [
 const BIL_TIME_MIN = 120;
 
 function bilPool(subj) {
-  const all = POOL.filter((q) => q.school === 'БИЛ' && q.subject === subj);
+  // КТЛ — прежнее название/источник банка БИЛ. Используем оба массива:
+  // иначе после очистки импортированных данных не хватает языкового раздела.
+  const all = POOL.filter((q) => (q.school === 'БИЛ' || q.school === 'КТЛ') && q.subject === subj);
   const ok = (q) => q.answer != null && String(q.answer).trim() !== '';
   return [...shuffle(all.filter(ok)), ...shuffle(all.filter((q) => !ok(q)))];
 }
@@ -112,7 +114,7 @@ export const api = {
   schools: () => P([
     { code: 'РФМШ', ready: variants.some((v) => v.school === 'РФМШ') },
     { code: 'НИШ',  ready: POOL.some((q) => q.school === 'НИШ') },
-    { code: 'БИЛ',  ready: POOL.some((q) => q.school === 'БИЛ' && q.subject === 'math') },
+    { code: 'БИЛ',  ready: POOL.some((q) => (q.school === 'БИЛ' || q.school === 'КТЛ') && q.subject === 'math') },
   ]),
 
   // Случайный вариант по школе. Никакого выбора «нұсқа» — жмёшь школу и решаешь.

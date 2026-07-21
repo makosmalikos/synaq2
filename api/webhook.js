@@ -1,7 +1,7 @@
 // POST /api/webhook — Dodo Payments жазылым өзгергенде осында хабарлайды.
 // 1) қолтаңбаны тексереміз (әйтпесе кез келген адам өзіне pro қосып алар еді),
 // 2) metadata-дан parentUid аламыз,
-// 3) families/{parentUid}.pro-ны қоямыз/алып тастаймыз.
+// 3) families/{parentUid}.pro-ны қоямыз/алып тастаймыз және балаларға көшіреміз.
 //
 // CommonJS — explain.js сияқты (package.json-да "type": "module" жоқ).
 
@@ -50,6 +50,20 @@ async function store() {
   return getFirestore();
 }
 
+async function syncChildrenPro(db, parentUid, pro) {
+  const children = await db.collection('families').doc(parentUid).collection('children').get();
+  const refs = children.docs.map((child) => db.collection('childIndex').doc(child.id));
+
+  // Firestore batch-те 500 жазба шегі бар. Қазір бір бала ғана, бірақ функция өсуге дайын.
+  for (let start = 0; start < refs.length; start += 450) {
+    const batch = db.batch();
+    refs.slice(start, start + 450).forEach((ref) => {
+      batch.set(ref, { parentUid, pro: !!pro }, { merge: true });
+    });
+    await batch.commit();
+  }
+}
+
 const ON = { pro: true };
 const OFF = { pro: false };
 const MAP = {
@@ -92,6 +106,9 @@ async function handler(req, res) {
       dodoStatus: type,
       proUpdatedAt: new Date(),
     }, { merge: true });
+    if (typeof patch?.pro === 'boolean') {
+      await syncChildrenPro(db, uid, patch.pro);
+    }
   } catch (e) {
     console.error('firestore қатесі', e);
     return res.status(500).send('db error');    // Dodo қайта жібереді

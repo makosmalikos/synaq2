@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLang } from './i18n.jsx';
 import {
-  auth, createChild, getChildren, getMocks, getAttempts, logout, getFamily,
+  auth, createChild, getChildren, getMocks, getAttempts, logout, getFamily, syncChildrenPro,
   genPassword, suggestUsername, cleanUsername, errText,
   hasPasswordLogin, linkParentPassword, changeParentPassword,
 } from './firebase.js';
@@ -32,6 +32,7 @@ export default function Parent({ onExit }) {
     getFamily(u.uid).then((f) => {
       const has = !!f?.pro;
       setPro(has);
+      syncChildrenPro(u.uid, has).catch((e) => console.error('pro sync failed', e));
       if (!u.displayName) setMe(f?.parentName || (u.email || '').split('@')[0]);
       // лендингте «Про таңдау» басып, содан кейін кірген болса — төлемді бірден ашамыз
       let wanted = false;
@@ -49,10 +50,14 @@ export default function Parent({ onExit }) {
     if (!u || paying) return;
     setPaying(true);
     try {
+      const idToken = await u.getIdToken();
       const r = await fetch('/api/checkout', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ uid: u.uid, email: u.email }),
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${idToken}`,
+        },
+        body: JSON.stringify({ email: u.email }),
       });
       const raw = await r.text();
       let data = null;

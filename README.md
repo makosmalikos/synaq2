@@ -14,6 +14,15 @@ cd backend && npm install && npm start    # http://localhost:4000
 cd frontend && npm install && npm run dev  # http://localhost:5173
 ```
 
+Проверка банка задач перед коммитом:
+
+```bash
+npm run validate:bank
+```
+
+Повреждённые задания (пустой ответ, несовместимый ключ, отсутствующее изображение)
+автоматически исключаются из активного банка и отображаются в отчёте валидатора.
+
 Фронт хранит банк задач локально (`frontend/src/data.js`, `bank.js`). Бэкенд нужен для legacy API и локальной разработки.
 
 ## Что внутри
@@ -46,6 +55,14 @@ cd frontend && npm install && npm run dev  # http://localhost:5173
 |------------|----------|
 | `GEMINI_API_KEY` | Ключ с [aistudio.google.com](https://aistudio.google.com) |
 | `FIREBASE_WEB_KEY` | (опционально) Web API key Firebase для проверки токена |
+| `FIREBASE_PROJECT_ID` | Project ID Firebase |
+| `FIREBASE_CLIENT_EMAIL` | Email service account Firebase Admin |
+| `FIREBASE_PRIVATE_KEY` | Private key service account Firebase Admin |
+| `DODO_PAYMENTS_API_KEY` | API-ключ Dodo Payments |
+| `DODO_PRODUCT_ID` | ID Pro-продукта в Dodo Payments |
+| `DODO_WEBHOOK_SECRET` | Секрет подписи webhook Dodo |
+| `DODO_ENV` | `test_mode` для теста; без значения — live |
+| `APP_URL` | Публичный URL приложения для возврата после оплаты |
 
 Готовые разборы кэшируются в Firestore (`explanations/{qid_lang}`).
 
@@ -53,7 +70,7 @@ cd frontend && npm install && npm run dev  # http://localhost:5173
 
 1. Импортируй репозиторий на [vercel.com](https://vercel.com)
 2. **Root Directory** — корень (там `vercel.json`)
-3. Добавь `GEMINI_API_KEY` в Environment Variables
+3. Добавь переменные из таблицы выше в Environment Variables
 4. Deploy
 
 Firebase (один раз):
