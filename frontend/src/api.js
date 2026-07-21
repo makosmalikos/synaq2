@@ -1,4 +1,5 @@
 // Данные вшиты в приложение (data.js + bank.js) — бэкенд не требуется.
+// Задачи без проверяемого ответа не участвуют в автопроверке.
 import { topics as BASE_TOPICS, variants } from './data.js';
 import { POOL, EXTRA_TOPICS } from './bank.js';
 import { auth } from './firebase.js';
@@ -14,7 +15,9 @@ const norm = (v) => (v ?? '').toString().trim().toLowerCase()
 // Проверка ответа. Для теста с вариантами — точное совпадение опции.
 export function isCorrect(given, q) {
   if (!q || q.answer == null) return false;
-  if (q.options) return String(given).trim() === String(q.answer).trim();
+  const ans = String(q.answer).trim();
+  if (!ans || ans === '—' || ans === '-') return false;
+  if (q.options) return String(given).trim() === ans;
   const a = norm(given);
   return a !== '' && a === norm(q.answer);
 }
@@ -102,7 +105,7 @@ export const api = {
       .filter((t) => t.count > 0)
   ),
 
-  topicQuestions: (id) => P(shuffle(POOL.filter((q) => q.topic === id))),
+  topicQuestions: (id) => P(shuffle(POOL.filter((q) => q.topic === id && q.answer != null && String(q.answer).trim() && String(q.answer).trim() !== '—'))),
 
   // Аралас дайындык: только математические блоки, вперемешку по школам.
   mixed: (_lang, limit = 20, block = 'math') => {
@@ -151,7 +154,7 @@ export const api = {
     if (!v) return P(null);
     let correct = 0, gradable = 0, wrong = 0;
     const review = v.questions.map((q) => {
-      const has = q.answer != null;
+      const has = q.answer != null && String(q.answer).trim() !== '' && String(q.answer).trim() !== '—';
       if (has) gradable++;
       const ok = has && isCorrect(answers[q.num], q);
       if (ok) correct++;

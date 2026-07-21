@@ -1,215 +1,98 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { api, isCorrect } from '../api.js';
-import { auth, saveMock } from '../firebase.js';
-import Explain from './Explain.jsx';
+const express = require('express');
+const router = express.Router();
+const { variants, byId } = require('../data/mockVariants');
 
-const LT = ['A', 'B', 'C', 'D', 'E'];
-const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.max(0, s) % 60).padStart(2, '0')}`;
+const stripAnswers = (v) => ({
+  ...v,
+  questions: v.questions.map(({ answer, solution, note, ...q }) => q),
+});
 
-// Мок-тест строго по школам: экзамен у каждой свой, вариант должен быть
-// цельным. Это не то же самое, что дайындык, где банк общий.
-export default function Mock() {
-  const [schools, setSchools] = useState([]);
-  const [school, setSchool] = useState(null);
-  const [list, setList] = useState([]);
-  const [test, setTest] = useState(null);
-  const [meta, setMeta] = useState(null);
-  const [answers, setAnswers] = useState({});
-  const [flags, setFlags] = useState({});
-  const [i, setI] = useState(0);
-  const [left, setLeft] = useState(0);
-  const [hideTimer, setHideTimer] = useState(false);
-  const [navOpen, setNavOpen] = useState(false);
-  const [result, setResult] = useState(null);
-  const [open_, setOpen] = useState(null);   // раскрытая задача в разборе
-  const tick = useRef(null);
+const norm = (v) => String(v ?? '').trim().toLowerCase()
+  .replace(/\s+/g, '').replace(',', '.').replace(/%$/, '');
 
-  useEffect(() => { api.schools().then(setSchools).catch(() => {}); }, []);
-  useEffect(() => { if (school) api.mockList(school).then(setList).catch(() => {}); }, [school]);
-
-  useEffect(() => {
-    if (!test || result) return;
-    tick.current = setInterval(() => setLeft((s) => {
-      if (s <= 1) { clearInterval(tick.current); submit(); return 0; }
-      return s - 1;
-    }), 1000);
-    return () => clearInterval(tick.current);
-  }, [test, result]);
-
-  async function open(v) {
-    const t = await api.mockGet(v.id, 'kk');
-    if (!t) return;
-    setMeta(v); setTest(t); setAnswers({}); setFlags({}); setI(0);
-    setLeft((v.timeLimitMin || 60) * 60); setResult(null);
-  }
-
-  async function submit() {
-    const r = await api.mockSubmit(test.id, answers, 'kk');
-    setResult(r);
-    if (auth.currentUser) {
-      saveMock(auth.currentUser.uid, {
-        testId: test.id, school: meta.school, title: meta.title,
-        score: r.score, gradable: r.gradable, total: r.total, review: r.review,
-        points: r.points ?? null, scoring: r.scoring ?? null,
-      }).catch(() => {});
-    }
-  }
-  const back = () => { setTest(null); setResult(null); setMeta(null); };
-
-  // ── выбор школы ──
-  if (!school) return (
-    <main>
-      <p className="kicker">Мок-тест</p>
-      <h1>Қай мектептің сынағы?</h1>
-      <p className="muted" style={{ marginTop: 6 }}>Әр мектептің емтихан форматы бөлек.</p>
-      <div className="list" style={{ marginTop: 16 }}>
-        {schools.map((s) => (
-          <div className="row-item" key={s.code}
-            onClick={() => s.variants && setSchool(s.code)}
-            style={{ opacity: s.variants ? 1 : 0.5, cursor: s.variants ? 'pointer' : 'default' }}>
-            <b style={{ font: "700 18px 'Lora',serif", flex: 1 }}>{s.code}</b>
-            <span className="rt">
-              {s.variants ? `${s.variants} нұсқа · ${s.questions} есеп →` : 'Жақында ашылады'}
-            </span>
-          </div>
-        ))}
-      </div>
-    </main>
-  );
-
-  // ── выбор варианта ──
-  if (!test) return (
-    <main>
-      <button className="link" onClick={() => setSchool(null)}>← Мектептер</button>
-      <h1>{school}</h1>
-      <p className="kicker">Нұсқаны таңда</p>
-      <div className="list">
-        {list.map((v) => (
-          <div className="row-item" key={v.id} onClick={() => open(v)}>
-            <b style={{ flex: 1 }}>{v.title}</b>
-            <span className="rt">{v.count} есеп · {v.timeLimitMin} мин →</span>
-          </div>
-        ))}
-      </div>
-    </main>
-  );
-
-  // ── результат ──
-  if (result) return (
-    <main>
-      <p className="kicker">Нәтиже · {meta.school}</p>
-      <div className="hero-card" style={{ marginBottom: 18 }}>
-        {result.scoring === 'bil' ? (
-          <>
-            <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
-              {result.points}<span style={{ fontSize: 20, color: '#9A9384' }}> / {result.maxPoints}</span>
-            </div>
-            <p style={{ margin: '10px 0 0', fontSize: 14 }}>
-              ұпай · {result.score} дұрыс, {result.wrong} қате
-              {result.cancelled > 0 && <> · 4 қате үшін <b>{result.cancelled}</b> дұрыс жауап жойылды</>}
-            </p>
-            <p className="muted" style={{ margin: '6px 0 0', fontSize: 12.5 }}>
-              Әр 4 қате 1 дұрыс жауапты жояды, қалғаны 1,5-ке көбейтіледі.
-            </p>
-          </>
-        ) : (
-          <>
-            <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
-              {result.score}<span style={{ fontSize: 20, color: '#9A9384' }}> / {result.gradable}</span>
-            </div>
-            <p style={{ margin: '10px 0 0' }}>балл · прогреске сақталды</p>
-          </>
-        )}
-      </div>
-      <p className="kicker">Талдау</p>
-      <p className="muted" style={{ fontSize: 13, marginTop: 4 }}>Есепті ашу үшін оның үстінен бас.</p>
-      <div className="list">
-        {result.review.map((r) => {
-          const on = open_ === r.num;
-          return (
-            <div key={r.num} style={{ borderBottom: '1px solid var(--line)' }}>
-              <div onClick={() => setOpen(on ? null : r.num)}
-                style={{ display: 'flex', gap: 10, alignItems: 'baseline', padding: '14px 0', cursor: 'pointer' }}>
-                <span style={{ font: "600 13px 'IBM Plex Mono',monospace", color: r.correct ? '#4C7A4E' : '#B0342B' }}>
-                  {r.correct ? '✓' : '✗'} №{r.num}
-                </span>
-                <span className="muted" style={{ fontSize: 13, flex: 1 }}>
-                  сенің «{r.your ?? '—'}» · дұрыс «{r.answer ?? '?'}»
-                </span>
-                <span className="muted" style={{ fontSize: 13 }}>{on ? '▲' : '▼'}</span>
-              </div>
-              {on && (
-                <div style={{ padding: '0 0 16px' }}>
-                  <p style={{ margin: 0, fontSize: 14, lineHeight: 1.5 }}>{r.statement}</p>
-                  {r.image && <img className="fig" src={r.image} alt="сурет" />}
-                  {r.solution && (
-                    <p className="muted" style={{ margin: '10px 0 0', fontSize: 13.5, lineHeight: 1.55 }}>{r.solution}</p>
-                  )}
-                  <Explain q={r} given={r.correct ? null : r.your} />
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-      <button className="btn ghost" style={{ marginTop: 16 }} onClick={back}>← Нұсқалар</button>
-    </main>
-  );
-
-  // ── прохождение ──
-  const q = test.questions[i];
-  const toggleFlag = () => setFlags({ ...flags, [q.num]: !flags[q.num] });
-  const pick = (val) => setAnswers({ ...answers, [q.num]: val });
-  const answered = (n) => answers[n] != null && answers[n] !== '';
-
-  return (
-    <main>
-      <div className="exam-top">
-        <span className="ttl">{meta.title}</span>
-        <span className="clock" onClick={() => setHideTimer(!hideTimer)} style={{ cursor: 'pointer' }}>
-          {hideTimer ? '⏱ көрсету' : fmt(left)}
-        </span>
-      </div>
-
-      <div className="qhead">
-        <span className="qnum-chip">{q.num}</span>
-        <button className={'flagbtn' + (flags[q.num] ? ' on' : '')} onClick={toggleFlag}>
-          <span className="fl">⚑</span> Белгілеу
-        </button>
-      </div>
-
-      <p className="stmt">{q.statement}</p>
-      {q.image && <img className="fig" src={q.image} alt="сурет" />}
-
-      {q.options ? (
-        <div className="opts">
-          {q.options.map((o, k) => (
-            <button key={k} className={'opt' + (answers[q.num] === o ? ' sel' : '')} onClick={() => pick(o)}>
-              <span className="lt">{LT[k]}</span><span>{o}</span>
-            </button>
-          ))}
-        </div>
-      ) : (
-        <input value={answers[q.num] || ''} onChange={(e) => pick(e.target.value)} placeholder="Жауабыңды жаз" />
-      )}
-
-      {navOpen && (
-        <div className="qgrid" style={{ marginTop: 18 }}>
-          {test.questions.map((qq, k) => (
-            <div key={qq.num}
-              className={'qcell' + (answered(qq.num) ? ' done' : '') + (k === i ? ' cur' : '') + (flags[qq.num] ? ' flag' : '')}
-              onClick={() => { setI(k); setNavOpen(false); }}>{qq.num}</div>
-          ))}
-        </div>
-      )}
-
-      <div className="navbar">
-        <button className="btn ghost" disabled={i === 0} onClick={() => setI(i - 1)}>← Артқа</button>
-        <button className="navpill" onClick={() => setNavOpen(!navOpen)}>Сұрақ {i + 1} / {test.questions.length} ▲</button>
-        {i + 1 < test.questions.length
-          ? <button className="btn" onClick={() => setI(i + 1)}>Келесі →</button>
-          : <button className="btn accent" onClick={submit}>Аяқтау</button>}
-      </div>
-    </main>
-  );
+function isCorrect(given, q) {
+  if (!q || q.answer == null) return false;
+  const ans = String(q.answer).trim();
+  if (!ans || ans === '—' || ans === '-') return false;
+  if (q.options) return String(given).trim() === ans;
+  const a = norm(given);
+  return a !== '' && a === norm(q.answer);
 }
+
+router.get('/schools', (_req, res) => {
+  res.json([
+    {
+      code: 'РФМШ',
+      ready: variants.some((v) => !v.school || v.school === 'РФМШ'),
+      variants: variants.filter((v) => !v.school || v.school === 'РФМШ').length,
+    },
+    {
+      code: 'БИЛ',
+      ready: variants.some((v) => v.school === 'БИЛ'),
+      variants: variants.filter((v) => v.school === 'БИЛ').length,
+    },
+  ]);
+});
+
+router.get('/variants', (req, res) => {
+  const school = req.query.school;
+  let list = variants;
+  if (school) list = list.filter((v) => (v.school || 'РФМШ') === school);
+  res.json(list.map((v) => ({
+    id: v.id,
+    title: v.title,
+    school: v.school || 'РФМШ',
+    count: v.questions.length,
+    timeLimitMin: v.timeLimitMin || 120,
+  })));
+});
+
+router.get('/variants/:id', (req, res) => {
+  const v = byId(req.params.id);
+  if (!v) return res.status(404).json({ error: 'not found' });
+  res.json(stripAnswers(v));
+});
+
+router.post('/variants/:id/submit', (req, res) => {
+  const v = byId(req.params.id);
+  if (!v) return res.status(404).json({ error: 'not found' });
+  const answers = req.body?.answers || {};
+  let correct = 0;
+  let gradable = 0;
+  let wrong = 0;
+  const review = v.questions.map((q) => {
+    const has = q.answer != null && String(q.answer).trim() !== '' && String(q.answer).trim() !== '—';
+    if (has) gradable++;
+    const ok = has && isCorrect(answers[q.num], q);
+    if (ok) correct++;
+    else if (has && norm(answers[q.num]) !== '') wrong++;
+    return {
+      num: q.num,
+      topic: q.topic || null,
+      statement: q.statement,
+      your: answers[q.num] ?? null,
+      answer: q.answer,
+      correct: ok,
+    };
+  });
+
+  if (v.school === 'БИЛ') {
+    const cancelled = Math.floor(wrong / 4);
+    const net = Math.max(0, correct - cancelled);
+    return res.json({
+      scoring: 'bil',
+      score: correct,
+      wrong,
+      cancelled,
+      points: +(net * 1.5).toFixed(1),
+      maxPoints: +(gradable * 1.5).toFixed(1),
+      gradable,
+      total: v.questions.length,
+      review,
+    });
+  }
+
+  res.json({ score: correct, gradable, total: v.questions.length, review });
+});
+
+module.exports = router;

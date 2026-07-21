@@ -2,18 +2,43 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Waitlist (лендинг): любой может записаться, читать нельзя
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isParentOf(childUid) {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/childIndex/$(childUid))
+        && get(/databases/$(database)/documents/childIndex/$(childUid)).data.parentUid == request.auth.uid;
+    }
+
+    function isChildLinkedToParent(parentUid) {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/childIndex/$(request.auth.uid))
+        && get(/databases/$(database)/documents/childIndex/$(request.auth.uid)).data.parentUid == parentUid;
+    }
+
+    function isDuelPlayer(data) {
+      return isSignedIn() && (
+        data.host.uid == request.auth.uid
+        || (data.guest != null && data.guest.uid == request.auth.uid)
+      );
+    }
+
     match /waitlist/{doc} {
       allow create: if request.resource.data.email is string
                     && request.resource.data.email.size() < 200;
       allow read, update, delete: if false;
     }
 
-    // Семья: доступ только у самого родителя (владельца)
+    // Семья: родитель — полный доступ; ребёнок — только чтение pro-флага
     match /families/{uid} {
-      allow read, write: if request.auth != null && request.auth.uid == uid;
+      allow read: if isSignedIn() && (
+        request.auth.uid == uid || isChildLinkedToParent(uid)
+      );
+      allow write: if isSignedIn() && request.auth.uid == uid;
       match /children/{childUid} {
-        allow read, write: if request.auth != null && request.auth.uid == uid;
+        allow read, write: if isSignedIn() && request.auth.uid == uid;
       }
     }
 
@@ -29,30 +54,70 @@ service cloud.firestore {
 
     // Результаты: ребёнок пишет/читает свои; родитель читает результаты своих детей
     match /results/{childUid}/{document=**} {
-      allow write: if request.auth != null && request.auth.uid == childUid;
-      allow read: if request.auth != null && (
-        request.auth.uid == childUid ||
-        exists(/databases/$(database)/documents/families/$(request.auth.uid)/children/$(childUid))
+      allow read: if isSignedIn() && (
+        request.auth.uid == childUid || isParentOf(childUid)
       );
     }
 
-    // Кэш AI-разборов (Gemini): читать всем залогиненным, писать один раз
-    match /explanations/{id} {
-      allow read: if request.auth != null;
-      allow create: if request.auth != null;
+    match /results/{childUid}/attempts/{attemptId} {
+      allow create: if isSignedIn()
+        && request.auth.uid == childUid
+        && request.resource.data.qid is string;
       allow update, delete: if false;
     }
 
-    // Дуэли в реальном времени
+    match /results/{childUid}/solved/{qid} {
+      allow create, update: if isSignedIn()
+        && request.auth.uid == childUid
+        && request.resource.data.qid is string;
+      allow delete: if false;
+    }
+
+    match /results/{childUid}/flags/{qid} {
+      allow create, delete: if isSignedIn() && request.auth.uid == childUid;
+      allow update: if false;
+    }
+
+    match /results/{childUid}/mocks/{mockId} {
+      allow create: if isSignedIn() && request.auth.uid == childUid;
+      allow update, delete: if false;
+    }
+
+    match /results/{childUid}/stats/{docId} {
+      allow read: if isSignedIn() && (
+        request.auth.uid == childUid || isParentOf(childUid)
+      );
+      allow create, update: if isSignedIn()
+        && request.auth.uid == childUid
+        && request.resource.data.xp is number
+        && request.resource.data.studySecs is number
+        && (!resource.exists()
+          || (request.resource.data.xp >= resource.data.xp
+            && request.resource.data.xp <= resource.data.xp + 120
+            && request.resource.data.studySecs >= resource.data.studySecs
+            && request.resource.data.studySecs <= resource.data.studySecs + 7200));
+      allow delete: if false;
+    }
+
+    match /explanations/{id} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update, delete: if false;
+    }
+
+    // Лимит AI-запросов на пользователя (счётчик пишет только сервер через Admin SDK — клиент не может)
+    match /rateLimits/{uid} {
+      allow read, write: if false;
+    }
+
     match /duels/{duelId} {
-      allow read: if request.auth != null;
-      allow create: if request.auth != null
-                    && request.resource.data.host.uid == request.auth.uid;
-      allow update: if request.auth != null && (
-        resource.data.host.uid == request.auth.uid ||
-        (resource.data.guest != null && resource.data.guest.uid == request.auth.uid) ||
-        // Первый вход гостя: можно сразу перевести комнату в playing
-        (resource.data.guest == null
+      allow read: if isSignedIn() && isDuelPlayer(resource.data);
+      allow create: if isSignedIn()
+        && request.resource.data.host.uid == request.auth.uid;
+      allow update: if isSignedIn() && (
+        resource.data.host.uid == request.auth.uid
+        || (resource.data.guest != null && resource.data.guest.uid == request.auth.uid)
+        || (resource.data.guest == null
           && request.resource.data.guest.uid == request.auth.uid
           && resource.data.status == 'waiting'
           && request.resource.data.status == 'playing')
