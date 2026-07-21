@@ -1,4 +1,4 @@
-// БИЛ логика — 02_Логика.docx + BIL_вопросы_ответы.txt (answers auto)
+// БИЛ логика — answers solved (computed + logic)
 export const bilLogic = [
   {
     "id": "bilog1",
@@ -211,7 +211,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 13,
     "statement": "Бершген тецазджтеп n-нщ ец ужен натур ал мэнш табыцыз: Найдите наибольшее натуральное значение п в данном неравенстве: п 41 5 < 20",
-    "answer": "C",
+    "answer": "D",
     "solution": "",
     "image": null,
     "options": [
@@ -228,7 +228,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 14,
     "statement": "Есептешз: Выполните действие: 0, ( 9 ) - 0 , (36) А) — / 1;L В) — ’ 36 С) — / 1г",
-    "answer": "B",
+    "answer": "A",
     "solution": "",
     "image": null,
     "options": [
@@ -647,7 +647,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 39,
     "statement": "бзгеше фигураны табыцыз. Какая фигура отличается от других? А) Е) LN зо. 3 А 1 =9 8 Д 2= 16 12 А 6 = 4 10 А2 = ?",
-    "answer": "A",
+    "answer": "E",
     "solution": "",
     "image": "/figures/bil_logic/bil_v2_p02.jpg",
     "options": [
@@ -711,7 +711,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 43,
     "statement": "SALAM = ?",
-    "answer": "A",
+    "answer": "C",
     "solution": "",
     "image": null,
     "options": [
@@ -830,7 +830,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 50,
     "statement": "Теменде бершген фигураны жогарыдан Караганда калай болып кершед1? Как будет выглядить данная фигура с высоты? А А А А А)",
-    "answer": "B",
+    "answer": "A",
     "solution": "",
     "image": "/figures/bil_logic/bil_v2_p03.jpg",
     "options": [
@@ -1002,7 +1002,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 61,
     "statement": "Суретте иеше шаршы бар? Сколько квадратов на рисунке?",
-    "answer": "D",
+    "answer": "C",
     "solution": "",
     "image": "/figures/bil_logic/bil_v3_p01.jpg",
     "options": [
@@ -1142,7 +1142,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 71,
     "statement": "Тецдеуд! шеш1ц1з:",
-    "answer": "E",
+    "answer": "A",
     "solution": "",
     "image": null,
     "options": [
@@ -1171,7 +1171,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 73,
     "statement": "Сурак белплершщ орнына жауаптардыц кайсысы сэйкес келед1? Какое из следующих сочетаний знаков должно продолжить этот ряд: XYYYYXXYYYXXX????...",
-    "answer": "A",
+    "answer": "B",
     "solution": "",
     "image": null,
     "options": [
@@ -1186,7 +1186,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 74,
     "statement": "Тецдеущ шеийщз: Решите уравнение: 10 = 6 1 + 1 + -х А) 6 равна длина самой ллинной стороны? В) 8 А) 7 см С) 10 В) 4 см",
-    "answer": "B",
+    "answer": "A",
     "solution": "",
     "image": null,
     "options": [
@@ -1316,7 +1316,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 82,
     "statement": "Куиде туею уакытта Атлантика мухиты аркылы Лиссабоннан Нью-Йоркка кеме шыгады жэне дзл сол уакытта Ныо-Иорктаи Лиссабонга сол мекеменщ баска кемес1 шыгады. Ею багыттагы кемелерд1ц саяхаттары тура алты кунге созылады. Лиссабоннан Нью-Йоркка баратыи кеме жол бойы карсы багытта жузген сол мекемен1ц неше кемес1н керед1? Каждый день в полдень из Лиссабона в Нью-Йорк отправляется пароход через Атлантический океан, и в то ж…",
-    "answer": "B",
+    "answer": "C",
     "solution": "",
     "image": null,
     "options": [
@@ -1453,7 +1453,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 91,
     "statement": "Диаметрлершщ узындыгы 6см жэне 8см болган шецберлерд1ц ^зынДЬ1КтаРьгныч косындысы неге тен? (к = 3) Найдите сумму длин окружностей с диаметрами 6см и 8см. (л = 3) А) 48 см В) 51 см С) 54 см",
-    "answer": "C",
+    "answer": "D",
     "solution": "",
     "image": null,
     "options": [
@@ -1470,7 +1470,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 92,
     "statement": "Саяхатшы 1 минутта 100 м жол журедь Ол 1 сагатта неше километр жол журед!? За 1 минуту турист проходит 100 м. Сколько километров он проходит за 1 час?",
-    "answer": "C",
+    "answer": "A",
     "solution": "",
     "image": null,
     "options": [
@@ -1487,7 +1487,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 93,
     "statement": "«А» apioimn орнына кандай сан келед!? Догадайтесь, какая цифра в выражении заменена буквой «А»: 1А • А = 7А (7А жэне 1А ею тацбалы сандар) (7А и 1А двузначные числа)",
-    "answer": "B",
+    "answer": "D",
     "solution": "",
     "image": null,
     "options": [
@@ -1572,7 +1572,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 98,
     "statement": "Тецсыздйсп шенищз: Решите неравенство: 2(х-1) + 3 ( 2 - х ) > 4 ( 2 х + 1)",
-    "answer": "B",
+    "answer": "C",
     "solution": "",
     "image": null,
     "options": [
@@ -1672,7 +1672,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 104,
     "statement": "Есептещз: Вычислите: 1 1 1 1 1 -----1-------1-------1-------ь... н------- 1-2 2-3 3-4 4-5 9-10",
-    "answer": "A",
+    "answer": "B",
     "solution": "",
     "image": null,
     "options": [
@@ -1721,7 +1721,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 107,
     "statement": "Саудагер плащты, шляпаны жэне калошты 14000 тецгеге сатып алды. Плащтыц багасы шляпаныц багасынан 9000 тецгеге артьщ, ал шляпа мен плащтыц багасы калоштыц багасынан 12000 тецгеге артьщ. Эр заттыц багасы кандай? Купец купил плащ, шляпу и калоши и заплатил за все 14000 тг. Плащ стоит на 9000 тг больше, чем шляпа, а шляпа и плащ вместе на 12000 тг больше, чем калоши. Сколько стоит каждая вещь в отдельности?",
-    "answer": "C",
+    "answer": "D",
     "solution": "",
     "image": null,
     "options": [
@@ -1738,7 +1738,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 108,
     "statement": "Тас дэу1рше жататын термин: Термин, относящийся к каменному веку:",
-    "answer": "D",
+    "answer": "A",
     "solution": "",
     "image": null,
     "options": [
@@ -1789,7 +1789,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 111,
     "statement": "Гундар билеушшершщ ес1мдерг. Имена правителей гуннов:",
-    "answer": "C",
+    "answer": "D",
     "solution": "",
     "image": null,
     "options": [
@@ -1840,7 +1840,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 114,
     "statement": "Тас flsyipi кезецдер1тпц дурыс хронологиялык peri: Правильная хронологическая последовательность периодов каменного века: А) Мезолит, неолит, палеолит В) Неолит, мезолит, палеолит С) Мезолит, палеолит, неолит",
-    "answer": "B",
+    "answer": "E",
     "solution": "",
     "image": null,
     "options": [
@@ -1857,7 +1857,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 115,
     "statement": "Сактардыц археологиялык ескерткштерше жатпайды: Не является археологическим памятником саков: А) IIIiniKTi / Шиликти В) Берел / Берель С) Актас / Актас",
-    "answer": "C",
+    "answer": "E",
     "solution": "",
     "image": null,
     "options": [
@@ -1891,7 +1891,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 117,
     "statement": "Орта тас гасырдыц (мезолит) ец улкен жетютжтердщ 6ipi: Одно из больших открытий среднего каменного века (мезолит):",
-    "answer": "D",
+    "answer": "B",
     "solution": "",
     "image": null,
     "options": [
@@ -1924,7 +1924,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 119,
     "statement": "Жактыд кен ашылуы аркылы жасалатын дауысты дыбыстыц TypiH табыцыз.",
-    "answer": "A",
+    "answer": "B",
     "solution": "",
     "image": null,
     "options": [
@@ -1941,7 +1941,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 120,
     "statement": "Кай катардыц ережес1 кезбен керш, колмен устауга келмейтш атауларды бшд1ред1?",
-    "answer": "C",
+    "answer": "A",
     "solution": "",
     "image": null,
     "options": [
@@ -1958,7 +1958,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 121,
     "statement": "Бос орынга сэйкес келетш жауапты табыныз. А: Алматы—Астана пойызы цашан келедг? В: Телйржол вокзалына алтыга он бес минут калганда келедг. А: БЬдт уйден вокзалга каншауакытта барамыз? В: Жиырма минутта жетелпз. А: Онда жарты сагаттан кейгн шызуымыз керек. Себебг вокзалга пойыздан бес минут ерте баруымыз керек. В: С онда цазгр сагат канша. болды? А : ___________________________ .",
-    "answer": "B",
+    "answer": "D",
     "solution": "",
     "image": null,
     "options": [
@@ -2009,7 +2009,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 124,
     "statement": "Салыстырмалы шырайды табыцыз.",
-    "answer": "C",
+    "answer": "B",
     "solution": "",
     "image": null,
     "options": [
@@ -2026,7 +2026,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 125,
     "statement": "Жалпылау eciM fliri кдтысып турган сейлемд1 табыцыз.",
-    "answer": "B",
+    "answer": "A",
     "solution": "",
     "image": null,
     "options": [
@@ -2043,7 +2043,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 126,
     "statement": "Бос орынга сэйкес келетш жауапты табыцыз. А: Алматы—Астана пойызы кршан келедг? В: Тглйржол вокзалына алтыга он бес минут цалганда келедi. А: Б1здщ уйден вокзалга цаншауак,ытта барамыз? В: Жиырма минутта жетем\\з. А: Онда жарты сагаттан кешн шыгуымыз керек. Ce6e6i вокзалга пойыздан бес минут ерте баруымыз керек. В: Сонда крз1р сагат цанша болды? А :____________________________ .",
-    "answer": "A",
+    "answer": "D",
     "solution": "",
     "image": null,
     "options": [
@@ -2060,7 +2060,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 127,
     "statement": "0ткен шакта болган ic-кимылды табыцыз.",
-    "answer": "D",
+    "answer": "A",
     "solution": "",
     "image": null,
     "options": [
@@ -2094,7 +2094,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 129,
     "statement": "¥лы Отан Согысы 1945 жылы 9 мамырда Кецес елшщ жецЫмен аякталды. Бул нагыз улы жещс болды. Сондыктан да осы кущи халыктар жыл сайын атап келед1. Бул кун - Кдзакстан Республикасында да белгш мерекелердщ oipi. Узшд1ге карап, темендеплердщ irniH eH магынасы кате сейлемд1 табыцыз.",
-    "answer": "B",
+    "answer": "D",
     "solution": "",
     "image": null,
     "options": [
@@ -2127,7 +2127,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 131,
     "statement": "Септ1к жалгауларыныц Ty6ipre cinicin, кенелену! аркылы жасалган туынды устеулерд! табыныз.",
-    "answer": "D",
+    "answer": "A",
     "solution": "",
     "image": null,
     "options": [
@@ -2144,7 +2144,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 132,
     "statement": "Дауысты мен дауыссыз дыбыстыц барльщ тур! кездесетш сезд1 табыцыз.",
-    "answer": "B",
+    "answer": "D",
     "solution": "",
     "image": null,
     "options": [
@@ -2161,7 +2161,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 133,
     "statement": "К,ай сейлемде еЫмшенщ журнагы жок?",
-    "answer": "C",
+    "answer": "A",
     "solution": "",
     "image": null,
     "options": [
@@ -2178,7 +2178,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 134,
     "statement": "Салыстырмалы шырайды табыцыз.",
-    "answer": "A",
+    "answer": "B",
     "solution": "",
     "image": null,
     "options": [
@@ -2195,7 +2195,7 @@ export const bilLogic = [
     "topic": "mtx",
     "num": 135,
     "statement": "К,ай е т ю т к т щ Typi ic -эр ек еттщ о р ы н д ал м аган ы н б ш д !р ед 1? A ) бо л ы м сы з е т 1ст1к B ) н е п з п е т 1с п к C ) ту ы н д ы е т1с т 1к",
-    "answer": "D",
+    "answer": "B",
     "solution": "",
     "image": null,
     "options": [
