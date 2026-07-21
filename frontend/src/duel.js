@@ -4,7 +4,6 @@ import {
 } from 'firebase/firestore';
 import { db, auth } from './firebase.js';
 import { POOL } from './bank.js';
-import { generate } from './generators.js';
 import { isCorrect } from './api.js';
 import { DUEL_SIZE, DUEL_ROUND_SEC } from './xp.js';
 
@@ -20,20 +19,28 @@ export function genDuelCode() {
 }
 
 export function buildDuelQuestions(n = DUEL_SIZE) {
-  const genCount = Math.ceil(n / 2);
-  const poolCount = n - genCount;
-  const bank = shuffle(
-    POOL.filter((q) => q.school === 'РФМШ' && !q.options && q.answer != null && !q.image),
-  ).slice(0, poolCount).map((q) => ({
+  return shuffle(
+    POOL.filter((q) => q.answer != null && String(q.answer).trim() !== '' && !q.image),
+  ).slice(0, n).map((q, i) => ({
     id: q.id,
     statement: q.statement,
-    answer: q.answer,
-    solution: q.solution || '',
     topic: q.topic,
+    options: q.options || null,
     source: 'bank',
+    num: i + 1,
   }));
-  const gen = generate(genCount).map((q) => ({ ...q, source: 'generated' }));
-  return shuffle([...bank, ...gen]).slice(0, n).map((q, i) => ({ ...q, num: i + 1 }));
+}
+
+export function resolveDuelQuestion(q) {
+  if (!q) return q;
+  const bank = POOL.find((p) => p.id === q.id);
+  if (!bank) return q;
+  return {
+    ...q,
+    answer: bank.answer,
+    solution: bank.solution || '',
+    options: q.options || bank.options || null,
+  };
 }
 
 export function duelLink(code) {
@@ -127,7 +134,7 @@ export async function submitDuelAnswer(code, answer) {
     const role = playerRole(data, uid);
     if (!role || data.status !== 'playing') throw new Error('bad_state');
 
-    const q = data.questions[data.qIndex];
+    const q = resolveDuelQuestion(data.questions[data.qIndex]);
     if (!q) throw new Error('no_q');
 
     const round = { ...(data.round || { host: null, guest: null }) };

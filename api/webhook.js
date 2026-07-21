@@ -92,6 +92,15 @@ async function handler(req, res) {
       dodoStatus: type,
       proUpdatedAt: new Date(),
     }, { merge: true });
+
+    if (patch && typeof patch.pro === 'boolean') {
+      const kids = await db.collection('families').doc(uid).collection('children').get();
+      const batch = db.batch();
+      kids.forEach((doc) => {
+        batch.set(db.collection('childIndex').doc(doc.id), { pro: patch.pro }, { merge: true });
+      });
+      if (!kids.empty) await batch.commit();
+    }
   } catch (e) {
     console.error('firestore қатесі', e);
     return res.status(500).send('db error');    // Dodo қайта жібереді

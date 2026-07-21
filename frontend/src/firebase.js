@@ -267,7 +267,10 @@ export async function getFamily(parentUid) {
 export async function isPro(childUid) {
   try {
     const idx = await getDoc(doc(db, 'childIndex', childUid));
-    const parentUid = idx.exists() ? idx.data().parentUid : null;
+    if (!idx.exists()) return false;
+    const d = idx.data();
+    if (d.pro === true) return true;
+    const parentUid = d.parentUid;
     if (!parentUid) return false;
     const fam = await getDoc(doc(db, 'families', parentUid));
     return !!fam.data()?.pro;

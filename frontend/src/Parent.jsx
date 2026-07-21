@@ -49,10 +49,14 @@ export default function Parent({ onExit }) {
     if (!u || paying) return;
     setPaying(true);
     try {
+      const token = await auth.currentUser?.getIdToken?.();
       const r = await fetch('/api/checkout', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ uid: u.uid, email: u.email }),
+        headers: {
+          'Content-Type': 'application/json',
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+        body: JSON.stringify({ email: u.email }),
       });
       const raw = await r.text();
       let data = null;

@@ -31,12 +31,12 @@ function getAdminAuth() {
 }
 
 async function verifyUser(idToken) {
-  if (!idToken) return false;
+  if (!idToken) return null;
   try {
     const auth = getAdminAuth();
     if (auth) {
-      await auth.verifyIdToken(idToken);
-      return true;
+      const decoded = await auth.verifyIdToken(idToken);
+      return decoded.uid;
     }
   } catch (e) {
     console.error('admin verify', e.code || e.message);
@@ -54,11 +54,49 @@ async function verifyUser(idToken) {
       const detail = await r.text().catch(() => '');
       console.error('lookup failed', r.status, detail.slice(0, 200));
     }
-    return r.ok;
+    if (!r.ok) return null;
+    const data = await r.json();
+    return data.users?.[0]?.localId || null;
   } catch (e) {
     console.error('lookup error', e.message);
-    return false;
+    return null;
   }
+}
+
+function getAdminDb() {
+  if (!process.env.FIREBASE_PRIVATE_KEY || !process.env.FIREBASE_CLIENT_EMAIL) return null;
+  const { initializeApp, cert, getApps } = require('firebase-admin/app');
+  const { getFirestore } = require('firebase-admin/firestore');
+  if (!getApps().length) {
+    initializeApp({
+      credential: cert({
+        projectId: process.env.FIREBASE_PROJECT_ID || 'synaq-88779',
+        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+        privateKey: String(process.env.FIREBASE_PRIVATE_KEY).replace(/\\n/g, '\n'),
+      }),
+    });
+  }
+  return getFirestore();
+}
+
+const EXPLAIN_DAILY_LIMIT = Number(process.env.EXPLAIN_DAILY_LIMIT || 40);
+
+async function checkExplainRate(uid) {
+  const db = getAdminDb();
+  if (!db) return;
+  const day = new Date().toISOString().slice(0, 10);
+  const ref = db.collection('rateLimits').doc(uid);
+  await db.runTransaction(async (tx) => {
+    const snap = await tx.get(ref);
+    const cur = snap.exists ? snap.data() : { day, explain: 0 };
+    const count = cur.day === day ? (cur.explain || 0) : 0;
+    if (count >= EXPLAIN_DAILY_LIMIT) {
+      const err = new Error('rate_limit');
+      err.limit = EXPLAIN_DAILY_LIMIT;
+      throw err;
+    }
+    tx.set(ref, { day, explain: count + 1, updatedAt: new Date() }, { merge: true });
+  });
 }
 
 async function callGeminiOnce(key, model, { system, user, maxTokens }) {
@@ -182,8 +220,17 @@ module.exports = async function handler(req, res) {
   try {
     const authHeader = req.headers.authorization || '';
     const idToken = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
-    const ok = await verifyUser(idToken);
-    if (!ok) return res.status(401).json({ error: 'unauthorized' });
+    const uid = await verifyUser(idToken);
+    if (!uid) return res.status(401).json({ error: 'unauthorized' });
+
+    try {
+      await checkExplainRate(uid);
+    } catch (e) {
+      if (e.message === 'rate_limit') {
+        return res.status(429).json({ error: 'rate_limit', limit: e.limit || EXPLAIN_DAILY_LIMIT });
+      }
+      throw e;
+    }
 
     let body = req.body;
     if (typeof body === 'string') body = JSON.parse(body || '{}');
