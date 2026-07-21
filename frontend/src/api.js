@@ -61,8 +61,7 @@ const BIL_SPEC = [
 const BIL_TIME_MIN = 120;
 
 function bilPool(subj) {
-  // КТЛ — прежнее название/источник банка БИЛ. Используем оба массива:
-  // иначе после очистки импортированных данных не хватает языкового раздела.
+  // КТЛ и БИЛ — один формат; оба банка пусты до нового импорта.
   const all = POOL.filter((q) => (q.school === 'БИЛ' || q.school === 'КТЛ') && q.subject === subj);
   const ok = (q) => q.answer != null && String(q.answer).trim() !== '';
   return [...shuffle(all.filter(ok)), ...shuffle(all.filter((q) => !ok(q)))];

@@ -6,7 +6,6 @@
 // Вариант 8 задан инлайн (его задачи не входят в тренировочный банк).
 
 const questions = require('./questions');
-const bil = require('./bilQuestions');
 
 function buildFromBank(variantTag, title, timeLimitMin) {
   const qs = questions
@@ -23,12 +22,6 @@ const variant4 = buildFromBank('v4', 'РФМШ 2025 · Вариант 4 · 7 к�
 const variant5 = buildFromBank('v5', 'РФМШ 2025 · Вариант 5 · 7 класс', 120);
 const variant7 = buildFromBank('v7', 'РФМШ 2025 · Вариант 7 · 7 класс', 120);
 const variant9 = buildFromBank('v9', 'РФМШ 2025 · Вариант 9 · 7 класс', 120);
-
-// БИЛ — формат с вариантами A–E (multiple choice)
-const variantBil13 = {
-  id: 'bil_v13', title: 'БИЛ · Байқау сынағы · нұсқа 13', timeLimitMin: 60, school: 'БИЛ',
-  questions: bil.map(q => ({ num: q.num, topic: q.topic, statement: q.statement, options: q.options, answer: q.answer, solution: q.solution })),
-};
 
 const variant8 = {
   id: 'rfmsh2025_v8',
@@ -68,7 +61,7 @@ const variant8 = {
   ],
 };
 
-const variants = [variant1, variant2, variant3, variant4, variant5, variant7, variant8, variant9, variantBil13];
+const variants = [variant1, variant2, variant3, variant4, variant5, variant7, variant8, variant9];
 
 module.exports = {
   variants,
