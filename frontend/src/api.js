@@ -49,6 +49,37 @@ function buildNish() {
   };
 }
 
+// ── Мок-тест БИЛ ──
+// 40 математика · 20 логика · 20 қазақ тілі. Случайно из банка БИЛ. 2 часа.
+const BIL_SPEC = [
+  ['math', 40, 1], ['logic', 20, 1],
+  ['kaz', 20, 2],
+];
+const BIL_TIME_MIN = 120;
+
+function bilPool(subj) {
+  const all = POOL.filter((q) => q.school === 'БИЛ' && q.subject === subj);
+  const ok = (q) => q.answer != null && String(q.answer).trim() !== '';
+  return [...shuffle(all.filter(ok)), ...shuffle(all.filter((q) => !ok(q)))];
+}
+
+function buildBil() {
+  const qs = [];
+  for (const [subj, want, section] of BIL_SPEC) {
+    const pool = bilPool(subj);
+    for (let k = 0; k < Math.min(want, pool.length); k++) {
+      qs.push({ ...pool[k], num: qs.length + 1, subject: subj, section });
+    }
+  }
+  return {
+    id: `bil_${Date.now()}`,
+    school: 'БИЛ',
+    timeLimitMin: BIL_TIME_MIN,
+    sections: 2,
+    questions: qs,
+  };
+}
+
 // Собранные на лету варианты держим в памяти, чтобы mockGet/mockSubmit их нашли.
 const GENERATED = new Map();
 
@@ -81,7 +112,7 @@ export const api = {
   schools: () => P([
     { code: 'РФМШ', ready: variants.some((v) => v.school === 'РФМШ') },
     { code: 'НИШ',  ready: POOL.some((q) => q.school === 'НИШ') },
-    { code: 'БИЛ',  ready: false },   // задач на цельный вариант пока не хватает
+    { code: 'БИЛ',  ready: POOL.some((q) => q.school === 'БИЛ' && q.subject === 'math') },
   ]),
 
   // Случайный вариант по школе. Никакого выбора «нұсқа» — жмёшь школу и решаешь.
@@ -89,6 +120,8 @@ export const api = {
     let v;
     if (school === 'НИШ') {
       v = buildNish();
+    } else if (school === 'БИЛ') {
+      v = buildBil();
     } else {
       const pool = variants.filter((x) => x.school === school);
       if (!pool.length) return P(null);
