@@ -10,6 +10,7 @@ import Duel from './Duel.jsx';
 import League from './League.jsx';
 import Training from './components/Training.jsx';
 import Mock from './components/Mock.jsx';
+import Brand from './Brand.jsx';
 
 const NAV = [
   { id: 'home', n: '01' }, { id: 'training', n: '02' }, { id: 'duel', n: '03' },
@@ -86,7 +87,7 @@ export default function App() {
         {/* Верхняя строка сайдбара: логотип + (на телефоне) аватар и бургер */}
         <div className="sbar-top">
           <div className="logo" onClick={() => go('landing')} style={{ cursor: 'pointer' }}>
-            <b>Synaq</b><span>сынақ</span>
+            <Brand compact />
           </div>
 
           <div className="sbar-right">

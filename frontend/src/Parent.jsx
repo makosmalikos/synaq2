@@ -6,8 +6,9 @@ import {
   hasPasswordLogin, linkParentPassword, changeParentPassword,
 } from './firebase.js';
 import { api, topicStats, readiness, mockSeries } from './api.js';
+import Brand from './Brand.jsx';
 
-const Logo = () => { const { t } = useLang(); return <div className="logo"><b>Synaq</b><span>{t('ui.25')}</span></div>; };
+const Logo = () => <div className="logo"><Brand compact /></div>;
 
 
 export default function Parent({ onExit }) {

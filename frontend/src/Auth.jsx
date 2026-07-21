@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { registerParent, loginParent, loginChild, loginGoogle, resetParentPassword, errText } from './firebase.js';
 import { useLang, LangSwitch } from './i18n.jsx';
+import Brand from './Brand.jsx';
 
 // Вход оформлен как карточка поверх затемнённого фона (попап), а не пустая страница.
 // На первом экране сразу объясняем, как устроен семейный аккаунт.
@@ -156,10 +157,7 @@ export default function Auth({ onClose, duelCode = '' }) {
 }
 
 const Logo = () => (
-  <div style={{ display: 'inline-flex', alignItems: 'baseline', gap: 10 }}>
-    <span style={{ font: "700 26px 'Lora',serif", letterSpacing: '-.01em' }}>Synaq</span>
-    <span style={{ font: "500 10px 'IBM Plex Mono',monospace", letterSpacing: '.16em', textTransform: 'uppercase', color: '#B0342B', borderLeft: '1px solid rgba(23,20,15,.2)', paddingLeft: 10 }}>сынақ</span>
-  </div>
+  <Brand compact />
 );
 
 const Err = ({ v }) => (v ? <p style={{ color: '#B0342B', fontSize: 13, margin: '10px 0 0', textAlign: 'center' }}>{v}</p> : null);
@@ -167,13 +165,13 @@ const Err = ({ v }) => (v ? <p style={{ color: '#B0342B', fontSize: 13, margin: 
 const S = {
   overlay: {
     position: 'fixed', inset: 0, zIndex: 50, overflowY: 'auto',
-    background: 'rgba(20,17,12,.55)', backdropFilter: 'blur(3px)',
+    background: 'linear-gradient(145deg,rgba(58,157,245,.34),rgba(16,93,158,.58))', backdropFilter: 'blur(5px)',
     display: 'flex', alignItems: 'flex-start', justifyContent: 'center',
-    padding: '6vh 20px 40px', fontFamily: "'Golos Text',system-ui,sans-serif", color: '#17140F',
+    padding: '6vh 20px 40px', fontFamily: "'Golos Text',system-ui,sans-serif", color: '#13283C',
   },
   card: {
-    position: 'relative', width: '100%', maxWidth: 420, background: '#FBFAF6',
-    borderRadius: 16, padding: '26px 28px 30px', boxShadow: '0 24px 70px rgba(0,0,0,.28)',
+    position: 'relative', width: '100%', maxWidth: 420, background: '#FFFFFF',
+    border: '1px solid rgba(39,132,211,.18)', borderRadius: 20, padding: '26px 28px 30px', boxShadow: '0 26px 80px rgba(15,86,145,.24)',
   },
   top: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 },
   close: {
@@ -181,23 +179,23 @@ const S = {
     font: '400 26px/1 system-ui', color: '#9A9384', cursor: 'pointer',
   },
   h1: { font: "600 25px/1.22 'Lora',serif", letterSpacing: '-.02em', margin: '0 0 8px' },
-  sub: { fontSize: 14.5, lineHeight: 1.55, color: '#6B655B', margin: '0 0 20px' },
-  hint: { fontSize: 13.5, lineHeight: 1.5, color: '#6B655B', margin: '0 0 16px' },
-  steps: { background: '#fff', border: '1px solid rgba(23,20,15,.1)', borderRadius: 12, padding: '16px 16px 8px', marginBottom: 22 },
-  kicker: { font: "500 11px 'IBM Plex Mono',monospace", letterSpacing: '.16em', textTransform: 'uppercase', color: '#B0342B', margin: '0 0 12px' },
+  sub: { fontSize: 14.5, lineHeight: 1.55, color: '#60758A', margin: '0 0 20px' },
+  hint: { fontSize: 13.5, lineHeight: 1.5, color: '#60758A', margin: '0 0 16px' },
+  steps: { background: '#F5FAFF', border: '1px solid rgba(39,132,211,.14)', borderRadius: 14, padding: '16px 16px 8px', marginBottom: 22 },
+  kicker: { font: "600 11px 'IBM Plex Mono',monospace", letterSpacing: '.16em', textTransform: 'uppercase', color: '#2B91EA', margin: '0 0 12px' },
   step: { display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 },
   num: {
-    flex: 'none', width: 20, height: 20, borderRadius: '50%', background: '#17140F', color: '#FBFAF6',
+    flex: 'none', width: 20, height: 20, borderRadius: '50%', background: '#3A9DF5', color: '#FFFFFF',
     font: "700 11px 'IBM Plex Mono',monospace", display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 1,
   },
   stepTxt: { fontSize: 13.5, lineHeight: 1.45, color: '#3A352C' },
   divider: { display: 'flex', alignItems: 'center', gap: 10, margin: '16px 0 12px' },
   line: { flex: 1, height: 1, background: 'rgba(23,20,15,.14)' },
   or: { font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' },
-  dark: { width: '100%', padding: 15, background: '#17140F', color: '#FBFAF6', border: 'none', borderRadius: 8, font: "600 15px 'Golos Text'", cursor: 'pointer', marginBottom: 10 },
-  outline: { width: '100%', padding: 15, background: 'transparent', color: '#17140F', border: '1px solid rgba(23,20,15,.24)', borderRadius: 8, font: "600 15px 'Golos Text'", cursor: 'pointer' },
-  input: { width: '100%', padding: '13px 14px', border: '1px solid rgba(23,20,15,.22)', borderRadius: 8, font: "500 15px 'Golos Text'", color: '#17140F', outline: 'none', background: '#fff', marginBottom: 10 },
+  dark: { width: '100%', padding: 15, background: '#3A9DF5', color: '#FFFFFF', border: 'none', borderRadius: 10, font: "600 15px 'Golos Text'", cursor: 'pointer', marginBottom: 10 },
+  outline: { width: '100%', padding: 15, background: '#FFFFFF', color: '#167AD1', border: '1px solid rgba(39,132,211,.28)', borderRadius: 10, font: "600 15px 'Golos Text'", cursor: 'pointer' },
+  input: { width: '100%', padding: '13px 14px', border: '1px solid rgba(39,132,211,.24)', borderRadius: 10, font: "500 15px 'Golos Text'", color: '#13283C', outline: 'none', background: '#fff', marginBottom: 10 },
   back: { width: '100%', marginTop: 6, padding: 9, background: 'transparent', color: '#6B655B', border: 'none', font: "500 13.5px 'Golos Text'", cursor: 'pointer' },
   linkBtn: { width: '100%', marginTop: 4, padding: 8, background: 'transparent', color: '#6B655B', border: 'none', font: "500 13px 'Golos Text'", cursor: 'pointer', textDecoration: 'underline' },
-  google: { width: '100%', padding: 13, background: '#fff', color: '#17140F', border: '1px solid rgba(23,20,15,.24)', borderRadius: 8, font: "600 15px 'Golos Text'", cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9 },
+  google: { width: '100%', padding: 13, background: '#fff', color: '#13283C', border: '1px solid rgba(39,132,211,.24)', borderRadius: 10, font: "600 15px 'Golos Text'", cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9 },
 };

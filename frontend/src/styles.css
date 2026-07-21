@@ -1,8 +1,8 @@
-/* ===== Дизайн-система Synaq (как в дизайн-бандле) ===== */
+/* ===== Дизайн-система Synaq: белый + фирменный синий ===== */
 :root{
-  --bg:#FBFAF6; --ink:#17140F; --accent:#B0342B; --muted:#6B655B;
-  --line:rgba(23,20,15,.16); --line-soft:rgba(23,20,15,.10); --surface:#fff;
-  --green:#4C7A4E; --sand:#9A9384;
+  --bg:#F7FBFF; --ink:#13283C; --accent:#3A9DF5; --accent-dark:#167AD1; --muted:#60758A;
+  --line:rgba(39,132,211,.20); --line-soft:rgba(39,132,211,.11); --surface:#fff;
+  --green:#2F9A68; --sand:#8094A7; --blue-soft:#EAF5FF;
 }
 *{box-sizing:border-box}
 ::selection{background:var(--accent);color:var(--bg)}
@@ -10,16 +10,15 @@
 body{
   margin:0;background:var(--bg);color:var(--ink);
   font-family:'Golos Text',system-ui,sans-serif;-webkit-font-smoothing:antialiased;
-  background-image:linear-gradient(rgba(23,20,15,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(23,20,15,.045) 1px,transparent 1px);
-  background-size:28px 28px;
+  background-image:radial-gradient(circle at 85% -10%,rgba(58,157,245,.13),transparent 32%);
 }
 .app{max-width:760px;margin:0 auto;min-height:100vh;padding:0 22px 60px}
 
 /* Шапка */
 header{display:flex;justify-content:space-between;align-items:center;padding:20px 0 16px;border-bottom:1px solid var(--line)}
-.logo{display:inline-flex;align-items:baseline;gap:9px}
-.logo b{font:700 24px 'Lora',serif;letter-spacing:-.01em}
-.logo span{font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);border-left:1px solid var(--line);padding-left:9px}
+.logo{display:inline-flex;align-items:center}
+.brand-mark{display:inline-flex;align-items:center;justify-content:center;min-width:154px;padding:13px 24px;border-radius:13px;background:linear-gradient(135deg,#48ACFF,#2B91EA);color:#fff;font:800 25px/1 'Golos Text',system-ui,sans-serif;letter-spacing:.055em;box-shadow:0 12px 28px -18px rgba(18,112,194,.9)}
+.brand-mark.compact{min-width:112px;padding:10px 16px;border-radius:10px;font-size:18px}
 nav{display:flex;align-items:center;gap:6px}
 nav button{background:none;border:none;color:var(--muted);font:600 13.5px 'Golos Text';cursor:pointer;padding:7px 10px}
 nav button.on{color:var(--ink);border-bottom:2px solid var(--accent)}
@@ -33,25 +32,26 @@ h2{font:600 20px 'Lora',serif;letter-spacing:-.01em;margin:0 0 14px}
 .muted{color:var(--muted);font-size:14px}
 
 /* Карточки */
-.card{background:var(--surface);border:1px solid var(--line);padding:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 12px 35px -30px rgba(31,107,172,.65)}
 .card + .card{margin-top:14px}
-.hero-card{background:var(--surface);border:1px solid var(--ink);padding:28px}
+.hero-card{background:linear-gradient(135deg,#fff 0%,#EDF7FF 100%);border:1px solid rgba(58,157,245,.34);border-radius:20px;padding:30px;box-shadow:0 22px 50px -38px rgba(27,123,203,.75)}
 .hero-card h2{font-size:23px;margin:0 0 8px}
 .hero-card p{font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 20px;max-width:360px}
 
 /* Кнопки */
-.btn{padding:13px 24px;border:none;border-radius:3px;background:var(--ink);color:var(--bg);font:600 15px 'Golos Text';cursor:pointer}
+.btn{padding:13px 24px;border:none;border-radius:11px;background:var(--accent);color:#fff;font:600 15px 'Golos Text';cursor:pointer;box-shadow:0 9px 22px -15px rgba(22,122,209,.9);transition:transform .18s,background .18s}
+.btn:hover:not(:disabled){transform:translateY(-1px);background:var(--accent-dark)}
 .btn.accent{background:var(--accent);color:#fff}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost{background:#fff;color:var(--accent-dark);border:1px solid var(--line);box-shadow:none}
 .btn:disabled{opacity:.4;cursor:default}
 .btn.full{width:100%}
 .link{background:none;border:none;color:var(--muted);font:500 13px 'Golos Text';cursor:pointer;padding:8px 0}
 
 /* Списки тем/вариантов */
-.list{border:1px solid var(--line);background:var(--surface)}
+.list{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface)}
 .list .row-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 18px;border-bottom:1px solid var(--line-soft);cursor:pointer}
 .list .row-item:last-child{border-bottom:none}
-.list .row-item:hover{background:#faf7f0}
+.list .row-item:hover{background:var(--blue-soft)}
 .list .row-item b{font:600 15px 'Golos Text'}
 .list .row-item .rt{font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);text-align:right}
 
@@ -64,8 +64,8 @@ h2{font:600 20px 'Lora',serif;letter-spacing:-.01em;margin:0 0 14px}
 /* Задача */
 .stmt{font-size:17px;line-height:1.5;margin:6px 0 16px}
 .fig{display:block;max-width:340px;width:100%;border:1px solid var(--line);background:#fff;padding:8px;margin:0 0 16px}
-input{width:100%;padding:13px 14px;border:1px solid var(--line);background:#fff;font:500 15px 'Golos Text';color:var(--ink);outline:none;margin-bottom:12px}
-input:focus{border-color:var(--accent)}
+input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font:500 15px 'Golos Text';color:var(--ink);outline:none;margin-bottom:12px}
+input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(58,157,245,.12)}
 
 /* Обратная связь + разбор */
 .fb{padding:11px 15px;margin:4px 0 12px;font-size:14.5px;font-weight:600}
@@ -73,13 +73,13 @@ input:focus{border-color:var(--accent)}
 .fb.no{background:#FBEDEC;color:var(--accent)}
 .xp-pop{display:inline-block;margin:0 0 12px;padding:6px 12px;background:#FFF8E6;color:#B8892B;font:700 14px 'IBM Plex Mono',monospace;border:1px solid rgba(184,137,43,.25);animation:xpPop .4s ease}
 @keyframes xpPop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.sol{background:#F3EFE7;padding:14px 16px;font-size:14px;line-height:1.6}
+.sol{background:var(--blue-soft);border-radius:12px;padding:14px 16px;font-size:14px;line-height:1.6}
 .sol .lead{font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--sand);margin:0 0 4px}
 .tip{margin-top:13px;padding-top:12px;border-top:1px solid var(--line-soft);display:flex;gap:11px;align-items:flex-start}
 .tip .mark{flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font:700 12px 'Lora';display:flex;align-items:center;justify-content:center}
 
 /* Прогресс-полоса */
-.bar{height:6px;background:#EDE9E0;overflow:hidden;margin-top:8px}
+.bar{height:7px;border-radius:100px;background:#E2EFFA;overflow:hidden;margin-top:8px}
 .bar>i{display:block;height:100%;background:var(--accent)}
 
 /* Результаты */
@@ -90,23 +90,23 @@ input:focus{border-color:var(--accent)}
 
 /* ===== Раскладка с левым меню (как в дизайне) ===== */
 .shell { display:flex; min-height:100vh; align-items:stretch; }
-.sidebar { width:246px; flex:none; border-right:1px solid var(--line); padding:24px 20px; display:flex; flex-direction:column; background:rgba(255,255,255,.55); position:sticky; top:0; height:100vh; align-self:flex-start; }
+.sidebar { width:246px; flex:none; border-right:1px solid var(--line); padding:24px 20px; display:flex; flex-direction:column; background:rgba(255,255,255,.90); backdrop-filter:blur(18px); position:sticky; top:0; height:100vh; align-self:flex-start; }
 .sidebar .logo { margin-bottom:34px; }
 .nav-v { display:flex; flex-direction:column; gap:2px; flex:1; }
-.nav-v button { display:flex; align-items:center; gap:12px; background:none; border:none; padding:11px 10px; cursor:pointer; text-align:left; color:var(--muted); font:600 15px 'Golos Text'; border-left:2px solid transparent; width:100%; }
+.nav-v button { display:flex; align-items:center; gap:12px; background:none; border:none; border-radius:10px; padding:11px 10px; cursor:pointer; text-align:left; color:var(--muted); font:600 15px 'Golos Text'; border-left:2px solid transparent; width:100%; }
 .nav-v button > span:nth-child(2) { flex:1; }
 .nav-v button:hover { color:var(--ink); }
 .nav-v button .num { font:500 11px 'IBM Plex Mono',monospace; color:#B7B0A2; width:20px; flex:none; text-align:left; }
-.nav-v button.on { color:var(--ink); border-left-color:var(--accent); }
+.nav-v button.on { color:var(--accent-dark); border-left-color:var(--accent); background:var(--blue-soft); }
 .nav-v button.on .num { color:var(--accent); }
 .nav-v .badge { margin-left:auto; background:var(--accent); color:#fff; font:600 10px 'IBM Plex Mono',monospace; padding:2px 7px; }
 .userbox { border-top:1px solid var(--line); padding-top:16px; margin-top:12px; }
 .userbox .who { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
-.userbox .ava { width:42px; height:42px; flex:none; background:var(--ink); color:var(--bg); display:flex; align-items:center; justify-content:center; font:700 18px 'Lora',serif; }
+.userbox .ava { width:42px; height:42px; flex:none; border-radius:12px; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font:700 18px 'Golos Text',sans-serif; }
 .content { flex:1; padding:36px 44px; max-width:840px; min-width:0; }
 .content main { padding-top:0; }
 .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:stretch; }
-.grid2 .card { border:1px solid var(--ink); display:flex; flex-direction:column; justify-content:flex-start; min-height:120px; }
+.grid2 .card { border:1px solid var(--line); display:flex; flex-direction:column; justify-content:flex-start; min-height:120px; }
 .card.click { cursor:pointer; transition:border-color .15s; }
 .card.click:hover { border-color:var(--accent); }
 
@@ -130,14 +130,14 @@ input:focus{border-color:var(--accent)}
 .exam-top .ttl { font:600 15px 'Lora',serif; }
 .exam-top .clock { font:700 20px 'IBM Plex Mono',monospace; letter-spacing:.02em; }
 .qhead { display:flex; align-items:center; gap:14px; padding:16px 0 12px; border-bottom:1px dashed var(--line); margin-bottom:18px; }
-.qnum-chip { background:var(--ink); color:var(--bg); font:700 14px 'IBM Plex Mono',monospace; padding:4px 11px; }
+.qnum-chip { background:var(--accent); color:#fff; border-radius:8px; font:700 14px 'IBM Plex Mono',monospace; padding:5px 11px; }
 .flagbtn { display:inline-flex; align-items:center; gap:7px; background:none; border:none; cursor:pointer; font:600 13px 'Golos Text'; color:var(--muted); }
 .flagbtn.on { color:var(--accent); }
 .flagbtn .fl { font-size:15px; }
 
 /* Варианты A–E */
 .opts { display:flex; flex-direction:column; gap:10px; }
-.opt { display:flex; align-items:center; gap:14px; width:100%; text-align:left; background:#fff; border:1.5px solid var(--line); padding:14px 16px; cursor:pointer; font:500 15px 'Golos Text'; color:var(--ink); }
+.opt { display:flex; align-items:center; gap:14px; width:100%; text-align:left; background:#fff; border:1.5px solid var(--line); border-radius:12px; padding:14px 16px; cursor:pointer; font:500 15px 'Golos Text'; color:var(--ink); }
 .opt:hover { border-color:var(--sand); }
 .opt.sel { border-color:var(--accent); }
 .opt.ok { border-color:var(--green); background:#F0F5EF; }
@@ -148,10 +148,10 @@ input:focus{border-color:var(--accent)}
 
 /* Нижний навигатор */
 .navbar { position:sticky; bottom:0; background:var(--bg); border-top:1px solid var(--line); padding:14px 0; margin-top:26px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
-.navpill { background:var(--ink); color:var(--bg); border:none; padding:11px 20px; font:600 14px 'Golos Text'; cursor:pointer; display:flex; align-items:center; gap:8px; }
+.navpill { background:var(--accent); color:#fff; border:none; border-radius:10px; padding:11px 20px; font:600 14px 'Golos Text'; cursor:pointer; display:flex; align-items:center; gap:8px; }
 .qgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(42px,1fr)); gap:8px; padding:16px; border:1px solid var(--line); background:#fff; margin-bottom:12px; }
-.qcell { aspect-ratio:1; border:1px solid var(--line); background:#fff; cursor:pointer; font:600 13px 'IBM Plex Mono',monospace; display:flex; align-items:center; justify-content:center; position:relative; }
-.qcell.done { background:var(--ink); color:var(--bg); border-color:var(--ink); }
+.qcell { aspect-ratio:1; border:1px solid var(--line); border-radius:9px; background:#fff; cursor:pointer; font:600 13px 'IBM Plex Mono',monospace; display:flex; align-items:center; justify-content:center; position:relative; }
+.qcell.done { background:var(--accent); color:#fff; border-color:var(--accent); }
 .qcell.cur { border:2px solid var(--accent); }
 .qcell.flag::after { content:'⚑'; position:absolute; top:-6px; right:-4px; color:var(--accent); font-size:12px; }
 /* ============================================================
@@ -256,132 +256,6 @@ input:focus{border-color:var(--accent)}
   .nav-v button { font-size: 13px; padding: 7px 10px; }
   main h1 { font-size: 23px; }
 }
-import React, { useEffect, useState } from 'react';
-import { watchAuth, isKid, logout, getMyProfile } from './firebase.js';
-import { useLang, LangSwitch } from './i18n.jsx';
-import Auth from './Auth.jsx';
-import Landing from './Landing.jsx';
-import Parent from './Parent.jsx';
-import Home from './Home.jsx';
-import Progress from './Progress.jsx';
-import Duel from './Duel.jsx';
-import League from './League.jsx';
-import Training from './components/Training.jsx';
-import Mock from './components/Mock.jsx';
-
-const NAV = [
-  { id: 'home', n: '01' }, { id: 'training', n: '02' }, { id: 'duel', n: '03' },
-  { id: 'league', n: '04' }, { id: 'mock', n: '05' }, { id: 'progress', n: '06' },
-];
-
-// Роут: '/' = лендинг, '/app' = авторизация → дашборд.
-const readRoute = () =>
-  (typeof window !== 'undefined' && window.location.pathname.startsWith('/app')) ? 'app' : 'landing';
-
-export default function App() {
-  const { t } = useLang();
-  const [user, setUser] = useState(undefined);
-  const [route, setRoute] = useState(readRoute);
-  const [tab, setTab] = useState('home');
-  const [menuOpen, setMenuOpen] = useState(false);   // бургер-меню на телефоне
-  const [profile, setProfile] = useState({ name: 'Бала', klass: '', school: 'РФМШ' });
-
-  useEffect(() => watchAuth(setUser), []);
-  useEffect(() => { if (user && isKid(user)) getMyProfile().then(setProfile); }, [user]);
-
-  // кнопки «назад/вперёд» в браузере
-  useEffect(() => {
-    const onPop = () => setRoute(readRoute());
-    window.addEventListener('popstate', onPop);
-    return () => window.removeEventListener('popstate', onPop);
-  }, []);
-
-  const go = (to) => {
-    window.history.pushState({}, '', to === 'app' ? '/app' : '/');
-    setRoute(to);
-    window.scrollTo(0, 0);
-  };
-
-  // 1. Лендинг — всегда первый экран на '/'
-  if (route === 'landing') return <Landing onStart={() => go('app')} />;
-
-  // 2. Авторизация — пока не вошли, дашборда нет
-  if (user === undefined) return <div style={{ padding: 40, color: '#6B655B' }}>{t('common.loading')}</div>;
-  if (!user) return <Auth />;
-
-  // 3. Дашборд (родитель / ребёнок)
-  const exit = async () => {
-    if (!window.confirm('Шығуды растайсыз ба?')) return;
-    await logout();
-    go('landing');
-  };
-  if (!isKid(user)) return <Parent onExit={exit} />;
-
-  const school = profile.school;
-  const pick = (id) => { setTab(id); setMenuOpen(false); };   // выбрал пункт → меню закрылось
-
-  return (
-    <div className="shell">
-      <aside className="sidebar">
-        {/* Верхняя строка сайдбара: логотип + (на телефоне) аватар и бургер */}
-        <div className="sbar-top">
-          <div className="logo" onClick={() => go('landing')} style={{ cursor: 'pointer' }}>
-            <b>Synaq</b><span>сынақ</span>
-          </div>
-
-          <div className="sbar-right">
-            {/* Аватар + бургер — только на телефоне (через CSS) */}
-            <div className="sbar-mobile">
-              <div className="ava sm">{(profile.name || 'Б')[0].toUpperCase()}</div>
-              <button className="burger" onClick={() => setMenuOpen((v) => !v)} aria-label="Меню">
-                {menuOpen ? '✕' : '☰'}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Навигация. На телефоне показывается только когда menuOpen. */}
-        <nav className={'nav-v' + (menuOpen ? ' open' : '')}>
-          {NAV.map((it) => (
-            <button key={it.id} className={tab === it.id ? 'on' : ''} onClick={() => pick(it.id)}>
-              <span className="num">{it.n}</span>
-              <span>{t(`nav.${it.id}`)}</span>
-              {it.id === 'mock' && <span className="badge">1</span>}
-            </button>
-          ))}
-          {/* Выход внутри раскрытого меню — удобно на телефоне */}
-          <button className="nav-exit" onClick={exit}>{t('common.exit')}</button>
-        </nav>
-
-        {/* Блок пользователя — только десктоп (на телефоне спрятан через CSS) */}
-        <div className="userbox">
-          <div className="who">
-            <div className="ava">{(profile.name || 'Б')[0].toUpperCase()}</div>
-            <div>
-              <div style={{ font: "600 15px 'Golos Text'" }}>{profile.name}</div>
-              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' }}>{profile.klass} {t('common.grade')}</div>
-            </div>
-          </div>
-          <button className="btn ghost full" onClick={exit}>{t('common.exit')}</button>
-        </div>
-      </aside>
-
-      <div className="content">
-        {/* Жоғарғы жол: тіл ауыстырғыш (сайдбарда емес, контенттің үстінде) */}
-        <div className="topbar">
-          <LangSwitch />
-        </div>
-        {tab === 'home' && <Home go={setTab} name={profile.name} />}
-        {tab === 'training' && <Training school={school} />}
-        {tab === 'mock' && <Mock school={school} />}
-        {tab === 'duel' && <Duel />}
-        {tab === 'league' && <League />}
-        {tab === 'progress' && <Progress />}
-      </div>
-    </div>
-  );
-}
-}
            /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ + ФИКСЫ ДЕСКТОПА ===== */
 
 /* по умолчанию (десктоп) мобильные штуки СКРЫТЫ */
@@ -392,14 +266,14 @@ export default function App() {
 /* Дуэль */
 .duel-code{font:700 36px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-align:center;color:var(--accent);margin-top:8px}
 .duel-players{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px;flex-wrap:wrap}
-.duel-player{display:flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--line);background:#fff;min-width:140px;opacity:.55}
-.duel-player.on{opacity:1;border-color:var(--ink)}
+.duel-player{display:flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:#fff;min-width:140px;opacity:.55}
+.duel-player.on{opacity:1;border-color:var(--accent)}
 .duel-player b{display:block;font-size:15px}
 .duel-player .muted{font-size:11px}
 .duel-vs{font:700 22px 'Lora',serif;color:var(--accent)}
-.duel-scoreboard{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1px solid var(--line);background:#fff;margin:12px 0}
+.duel-scoreboard{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:#fff;margin:12px 0}
 .duel-scoreboard > div{flex:1;text-align:center}
-.duel-scoreboard > div.me{background:rgba(176,52,43,.06);border-radius:6px;padding:6px 4px}
+.duel-scoreboard > div.me{background:var(--blue-soft);border-radius:8px;padding:6px 4px}
 .duel-scoreboard span{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
 .duel-scoreboard b{font:700 28px 'Lora',serif}
 .duel-scoreboard.big b{font-size:36px}
@@ -418,7 +292,9 @@ export default function App() {
   .sbar-top { display: flex; align-items: center; justify-content: space-between; }
   .sbar-mobile { display: flex; align-items: center; gap: 10px; }
   .ava.sm { width: 34px; height: 34px; font-size: 14px; display: flex; align-items: center; justify-content: center; }
-  .burger { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 10px; background: #fff; font-size: 20px; line-height: 1; cursor: pointer; color: var(--ink); }
+  .brand-mark{min-width:118px;padding:10px 15px;font-size:18px}
+  .brand-mark.compact{min-width:98px;padding:9px 13px;font-size:16px}
+  .burger { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 10px; background: #fff; font-size: 20px; line-height: 1; cursor: pointer; color: var(--accent-dark); }
   .nav-v { display: none; }
   .nav-v.open { display: flex; flex-direction: column; gap: 2px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
   .nav-v.open button { width: 100%; justify-content: flex-start; padding: 13px 12px; font-size: 16px; border-radius: 8px; }

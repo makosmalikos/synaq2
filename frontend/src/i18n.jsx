@@ -595,8 +595,8 @@ export function LangSwitch({ dark = false }) {
     border: 0, background: 'none', cursor: 'pointer', padding: '4px 8px',
     borderRadius: 8, font: "600 12px 'IBM Plex Mono',monospace", letterSpacing: '.08em',
   };
-  const on = { ...base, background: dark ? 'rgba(255,255,255,.16)' : 'rgba(23,20,15,.08)', color: dark ? '#fff' : '#17140F' };
-  const off = { ...base, color: dark ? 'rgba(255,255,255,.55)' : '#9A9384' };
+  const on = { ...base, background: dark ? 'rgba(255,255,255,.18)' : '#EAF5FF', color: dark ? '#fff' : '#167AD1' };
+  const off = { ...base, color: dark ? 'rgba(255,255,255,.62)' : '#8094A7' };
   return (
     <div style={{ display: 'inline-flex', gap: 2, alignItems: 'center' }}>
       <button style={lang === 'kk' ? on : off} onClick={() => setLang('kk')}>ҚАЗ</button>
