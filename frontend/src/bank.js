@@ -4,6 +4,7 @@
 // сборка не падает — просто этих задач не будет в банке.
 import * as DATA from './data.js';
 import { bilPrep021120 } from './bilPrep021120.js';
+import { bilLogic } from './bilLogic.js';
 
 const questions = DATA.questions || [];
 const nishMath  = DATA.nishMath  || [];
@@ -39,7 +40,7 @@ function guessTopic(text) {
 }
 
 // Предметы НИШ/БИЛ, которые темой РФМШ не описываются.
-const SUBJ_TOPIC = { kolzar: 'kolzar', kaz: 'lang_kaz', rus: 'lang_rus', eng: 'lang_eng' };
+const SUBJ_TOPIC = { kolzar: 'kolzar', kaz: 'lang_kaz', rus: 'lang_rus', eng: 'lang_eng', logic: 'mtx' };
 
 // Тілдік есептердің шарты «Текст: …Вопрос: …» түрінде жазылған.
 // «Текст»/«Вопрос» деген сөздерді алып тастап, сұрақты бөлек абзацқа шығарамыз.
@@ -73,6 +74,7 @@ export const POOL = [
   ...nishMath.map((q) => one(q, 'НИШ')),
   ...bilQ.map((q) => one(q, 'БИЛ')),
   ...bilPrep021120.map((q) => one(q, 'БИЛ')),
+  ...bilLogic.map((q) => one(q, 'БИЛ')),
   ...kolzar2.map((q) => one(q, 'НИШ')),   // колхар, 2-топтама
   ...kolzar3.map((q) => one(q, 'НИШ')),   // колхар, 3-топтама
   ...logic1.map((q) => one(q, 'НИШ')),    // логика
