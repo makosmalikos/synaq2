@@ -165,7 +165,10 @@ const Err = ({ v }) => (v ? <p style={{ color: '#B0342B', fontSize: 13, margin: 
 const S = {
   overlay: {
     position: 'fixed', inset: 0, zIndex: 50, overflowY: 'auto',
-    background: 'linear-gradient(145deg,rgba(58,157,245,.34),rgba(16,93,158,.58))', backdropFilter: 'blur(5px)',
+    backgroundColor: '#8FC7F2',
+    backgroundImage: 'radial-gradient(circle,rgba(255,255,255,.28) 1px,transparent 1.5px),radial-gradient(circle at 12% 16%,rgba(255,255,255,.46) 0,rgba(255,255,255,0) 34%),radial-gradient(circle at 88% 82%,rgba(43,116,193,.20) 0,rgba(43,116,193,0) 40%),linear-gradient(135deg,#A7D6FA 0%,#78C9F0 48%,#91B8E2 100%)',
+    backgroundSize: '34px 34px,100% 100%,100% 100%,100% 100%',
+    backgroundPosition: '0 0,center,center,center',
     display: 'flex', alignItems: 'flex-start', justifyContent: 'center',
     padding: '6vh 20px 40px', fontFamily: "'Golos Text',system-ui,sans-serif", color: '#13283C',
   },
