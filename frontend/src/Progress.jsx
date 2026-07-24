@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useLang } from './i18n.jsx';
-import { auth, getAttempts, getMocks, getXpSummary } from './firebase.js';
+import { auth, getAttempts, getMocks, getXpSummary, isPro } from './firebase.js';
 import { api, topicStats, weekHours, mockSeries } from './api.js';
 import { xpLevel } from './xp.js';
+import { buildDiagnosis, pickDiagnosticMock } from './diagnosis.js';
+import DiagnosisReport from './components/DiagnosisReport.jsx';
 
 const LEVEL_TXT = { strong: 'МЫҚТЫ', mid: 'ОРТАША', weak: 'ӘЛСІЗ' };
 const LEVEL_COL = { strong: '#4C7A4E', mid: '#B8892B', weak: '#B0342B' };
 
-export default function Progress({ onXpLoad }) {
-  const { t } = useLang();
+export default function Progress({ onXpLoad, onTrainTopic }) {
+  const { t, lang } = useLang();
   const [stats, setStats] = useState(null);
   const [week, setWeek] = useState([]);
   const [mocks, setMocks] = useState([]);
+  const [topics, setTopics] = useState([]);
+  const [pro, setPro] = useState(false);
   const [xpInfo, setXpInfo] = useState({ xp: 0, studySecs: 0 });
   const [open, setOpen] = useState(null);   // раскрытый мок
   const [q, setQ] = useState(null);         // раскрытая задача в разборе
@@ -20,16 +24,19 @@ export default function Progress({ onXpLoad }) {
     const u = auth.currentUser;
     if (!u) return;
     (async () => {
-      const [att, mk, topics, xp] = await Promise.all([
+      const [att, mk, topicList, xp, hasPro] = await Promise.all([
         getAttempts(u.uid).catch(() => []),
         getMocks(u.uid).catch(() => []),
         api.topics(),
         getXpSummary(u.uid).catch(() => ({ xp: 0, studySecs: 0 })),
+        isPro(u.uid).catch(() => false),
       ]);
-      setStats(topicStats(att, topics));
+      setTopics(topicList);
+      setStats(topicStats(att, topicList));
       setWeek(weekHours(att));
       setMocks(mk);
       setXpInfo(xp);
+      setPro(!!hasPro);
       onXpLoad?.(xp.xp || 0);
     })();
   }, []);
@@ -79,10 +86,33 @@ export default function Progress({ onXpLoad }) {
   const total = week.reduce((s, d) => s + d.hours, 0);
   const maxH = Math.max(1, ...week.map((d) => d.hours));
   const series = mockSeries(mocks);
+  const diagMock = pickDiagnosticMock(mocks);
+  const diagnosis = diagMock?.review?.length
+    ? buildDiagnosis(diagMock.review, topics, lang)
+    : null;
+
+  const proUnlockHint = () => alert(t('diag.parentPro'));
 
   return (
     <main>
       <h1>{t('prog.title')}</h1>
+
+      {diagnosis ? (
+        <DiagnosisReport
+          diagnosis={diagnosis}
+          pro={pro}
+          onUnlock={proUnlockHint}
+          onTrainTopic={pro ? onTrainTopic : undefined}
+          compact
+        />
+      ) : (
+        <div className="card" style={{ marginBottom: 16, borderColor: 'var(--accent)', background: '#FBF3E3' }}>
+          <p className="kicker" style={{ color: 'var(--accent)', margin: '0 0 8px' }}>{t('diag.noData')}</p>
+          <p className="muted" style={{ margin: 0, fontSize: 14, lineHeight: 1.55 }}>{t('diag.noDataSub')}</p>
+        </div>
+      )}
+
+      <div style={{ borderTop: '2px solid var(--ink)', margin: '22px 0' }} />
 
       <div className="hero-card" style={{ marginBottom: 16 }}>
         <p className="kicker" style={{ margin: 0 }}>{t('xp.title')}</p>

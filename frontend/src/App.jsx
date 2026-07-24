@@ -34,6 +34,7 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);   // бургер-меню на телефоне
   const [profile, setProfile] = useState({ name: 'Бала', klass: '', school: 'РФМШ' });
   const [xp, setXp] = useState(0);
+  const [trainTopic, setTrainTopic] = useState(null);
 
   const [duelCode] = useState(() => {
     if (typeof window === 'undefined') return '';
@@ -87,7 +88,8 @@ export default function App() {
   );
 
   const school = profile.school;
-  const pick = (id) => { setTab(id); setMenuOpen(false); };   // выбрал пункт → меню закрылось
+  const pick = (id) => { setTab(id); setMenuOpen(false); };
+  const goTrainTopic = (topicId) => { setTrainTopic(topicId); setTab('training'); setMenuOpen(false); };
 
   return (
     <div className="shell">
@@ -142,11 +144,23 @@ export default function App() {
         </div>
         <Suspense fallback={<ScreenFallback />}>
           {tab === 'home' && <Home go={setTab} name={profile.name} xp={xp} />}
-          {tab === 'training' && <Training school={school} onXp={(n) => setXp((x) => x + n)} />}
-          {tab === 'mock' && <Mock school={school} />}
+          {tab === 'training' && (
+            <Training
+              school={school}
+              onXp={(n) => setXp((x) => x + n)}
+              startTopicId={trainTopic}
+              onTopicOpened={() => setTrainTopic(null)}
+            />
+          )}
+          {tab === 'mock' && (
+            <Mock
+              onTrainTopic={goTrainTopic}
+              onGoProgress={() => setTab('progress')}
+            />
+          )}
           {tab === 'duel' && <Duel initialCode={duelCode} fromLink={!!duelCode} playerName={profile.name} onXp={(n) => setXp((x) => x + n)} />}
           {tab === 'league' && <League />}
-          {tab === 'progress' && <Progress onXpLoad={setXp} />}
+          {tab === 'progress' && <Progress onXpLoad={setXp} onTrainTopic={goTrainTopic} />}
         </Suspense>
       </div>
     </div>

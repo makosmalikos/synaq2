@@ -91,7 +91,7 @@ export function Kolhar({ q, answer, onPick, disabled, correct }) {
   );
 }
 
-export default function Training({ onXp }) {
+export default function Training({ onXp, startTopicId, onTopicOpened }) {
   const { t, lang } = useLang();
   const [topics, setTopics] = useState([]);
   const [solved, setSolved] = useState(new Set());
@@ -120,6 +120,22 @@ export default function Training({ onXp }) {
     getSolved(auth.currentUser.uid).then((r) => setSolved(new Set(r.map((x) => x.qid)))).catch(() => {});
     getFlags(auth.currentUser.uid).then((f) => setFlags(new Set(f))).catch(() => {});
   }, []);
+
+  useEffect(() => {
+    if (!startTopicId || !topics.length) return;
+    const tp = topics.find((x) => x.id === startTopicId);
+    if (!tp) return;
+    (async () => {
+      const list = await translateQuestions(await api.topicQuestions(tp.id), lang);
+      setTopic(tp);
+      setItems(list);
+      setI(0);
+      setAnswer('');
+      setChecked(false);
+      setSecs(0);
+      onTopicOpened?.();
+    })();
+  }, [startTopicId, topics, lang, onTopicOpened]);
 
   useEffect(() => {
     if (!items.length || checked) return;

@@ -185,6 +185,22 @@ export async function getXpSummary(uid) {
   } catch { return { xp: 0, studySecs: 0 }; }
 }
 
+export async function getDiagnosticStatus(uid) {
+  try {
+    const snap = await getDoc(statsRef(uid));
+    const data = snap.exists() ? snap.data() : {};
+    return { used: !!data.diagnosticMockUsed, at: data.diagnosticMockAt || null };
+  } catch { return { used: false, at: null }; }
+}
+
+export async function markDiagnosticComplete(uid) {
+  await setDoc(statsRef(uid), {
+    diagnosticMockUsed: true,
+    diagnosticMockAt: serverTimestamp(),
+    updatedAt: serverTimestamp(),
+  }, { merge: true });
+}
+
 export async function addXp(uid, amount, reason = '') {
   if (!uid || !amount || amount <= 0) return;
   await setDoc(statsRef(uid), {
