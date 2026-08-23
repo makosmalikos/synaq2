@@ -27,8 +27,17 @@ function getAdminAuth() {
 
 const norm = (s) => String(s || '').trim().toLowerCase();
 
+// Реальные адреса — как временный дефолт, чтобы всё работало без настройки
+// Vercel env vars прямо сейчас (тот же приём, что и FIREBASE_WEB_KEY в
+// api/explain.js). ADMIN_EMAIL_1/2 в Vercel, если заданы, имеют приоритет —
+// так адреса можно сменить без деплоя нового кода.
+const DEFAULT_ADMIN_EMAILS = ['makosmalikos@gmail.com', 'nurss.aldb@gmail.com'];
+
 function isAllowedEmail(email) {
-  const allow = [process.env.ADMIN_EMAIL_1, process.env.ADMIN_EMAIL_2].filter(Boolean).map(norm);
+  const allow = [
+    process.env.ADMIN_EMAIL_1 || DEFAULT_ADMIN_EMAILS[0],
+    process.env.ADMIN_EMAIL_2 || DEFAULT_ADMIN_EMAILS[1],
+  ].filter(Boolean).map(norm);
   return allow.length > 0 && allow.includes(norm(email));
 }
 

@@ -39,8 +39,15 @@ function getAdminDb() {
 
 const norm = (s) => String(s || '').trim().toLowerCase();
 
+// Тот же allowlist, что и в api/admin-login.js — держим отдельной копией
+// по той же причине, что и TOPIC_SCHOOLS (раздельная сборка api/ и frontend/).
+const DEFAULT_ADMIN_EMAILS = ['makosmalikos@gmail.com', 'nurss.aldb@gmail.com'];
+
 function isAllowedEmail(email) {
-  const allow = [process.env.ADMIN_EMAIL_1, process.env.ADMIN_EMAIL_2].filter(Boolean).map(norm);
+  const allow = [
+    process.env.ADMIN_EMAIL_1 || DEFAULT_ADMIN_EMAILS[0],
+    process.env.ADMIN_EMAIL_2 || DEFAULT_ADMIN_EMAILS[1],
+  ].filter(Boolean).map(norm);
   return allow.length > 0 && allow.includes(norm(email));
 }
 
