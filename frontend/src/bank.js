@@ -1,5 +1,7 @@
 // Единый банк задач: РФМШ + НИШ (+ КТЛ/БИЛ — один формат, сейчас банк пуст).
 import * as DATA from './data.js';
+import { db } from './firebase.js';
+import { collection, getDocs } from 'firebase/firestore';
 
 const questions  = DATA.questions  || [];
 const nishMath   = DATA.nishMath   || [];
@@ -138,3 +140,41 @@ export const EXTRA_TOPICS = [
   { id: 'lang_rus', block: 'lang_rus', name: 'Орыс тілі' },
   { id: 'lang_eng', block: 'lang_eng', name: 'Ағылшын тілі' },
 ];
+
+// ── Живой пул: задачи, добавленные через Admin Panel (Firestore → bankTasks) ──
+// data.js остаётся статическим файлом — ничего в нём не переписывается. Задачи,
+// которые сохраняет администратор (api/admin-task.js), читаются отсюда один раз
+// при загрузке приложения и подмешиваются в уже существующие POOL/BANK_QUARANTINE
+// через .push() — т.к. это те же самые массивы (const фиксирует ссылку, не
+// содержимое), все, кто уже сделал `import { POOL } from './bank.js'`, увидят
+// новые задачи без пересборки и передеплоя, как только придёт ответ от Firestore.
+function normalizeAdminTask(raw) {
+  return {
+    id: raw.id,
+    school: raw.school || null,
+    topic: raw.topic || null,
+    difficulty: raw.difficulty ?? null,
+    statement: raw.statement || '',
+    answer: raw.answer ?? null,
+    solution: raw.solution || '',
+    image: raw.image || null,
+    options: Array.isArray(raw.options) ? raw.options : null,
+  };
+}
+
+(async function loadAdminTasks() {
+  try {
+    const snap = await getDocs(collection(db, 'bankTasks'));
+    const seenIds = new Set(POOL.map((q) => q.id));
+    for (const docSnap of snap.docs) {
+      const q = normalizeAdminTask({ id: docSnap.id, ...docSnap.data() });
+      const reason = seenIds.has(q.id) ? 'duplicate_id' : quarantineReason(q);
+      if (reason) { BANK_QUARANTINE.push({ ...q, quarantineReason: reason }); continue; }
+      seenIds.add(q.id);
+      POOL.push(q);
+    }
+  } catch (e) {
+    // Тренировка на статическом банке продолжает работать и без admin-задач.
+    console.warn('bankTasks (задачи администратора) не загрузились:', e?.message || e);
+  }
+})();

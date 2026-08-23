@@ -99,6 +99,14 @@ service cloud.firestore {
       allow delete: if false;
     }
 
+    // Банк задач от администратора (Admin Panel). Читают все вошедшие — нужно
+    // для Тренировки. Пишет только сервер через Firebase Admin SDK
+    // (api/admin-task.js), который обходит эти правила, — поэтому write: false.
+    match /bankTasks/{taskId} {
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+
     match /explanations/{id} {
       allow read: if isSignedIn();
       allow create: if isSignedIn();

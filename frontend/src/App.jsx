@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react';
-import { watchAuth, isKid, logout, getMyProfile, getXpSummary } from './firebase.js';
+import { watchAuth, isKid, isAdmin, logout, getMyProfile, getXpSummary } from './firebase.js';
 import { useLang, LangSwitch } from './i18n.jsx';
 import Auth from './Auth.jsx';
 import Landing from './Landing.jsx';
@@ -9,6 +9,7 @@ import Brand from './Brand.jsx';
 
 // Банк задач большой: загружаем его только вместе с экраном, которому он нужен.
 const Parent = lazy(() => import('./Parent.jsx'));
+const Admin = lazy(() => import('./Admin.jsx'));
 const Progress = lazy(() => import('./Progress.jsx'));
 const Duel = lazy(() => import('./Duel.jsx'));
 const Training = lazy(() => import('./components/Training.jsx'));
@@ -29,6 +30,8 @@ const readRoute = () =>
 export default function App() {
   const { t } = useLang();
   const [user, setUser] = useState(undefined);
+  // undefined — ещё не проверено, true/false — результат проверки admin custom-claim.
+  const [adminUser, setAdminUser] = useState(undefined);
   const [route, setRoute] = useState(readRoute);
   const [tab, setTab] = useState('home');
   const [menuOpen, setMenuOpen] = useState(false);   // бургер-меню на телефоне
@@ -52,6 +55,14 @@ export default function App() {
       getMyProfile().then(setProfile);
       getXpSummary(user.uid).then((s) => setXp(s.xp || 0)).catch(() => {});
     }
+  }, [user]);
+  // Роль "администратор" подтверждается custom-claim в ID-токене — читается
+  // асинхронно, поэтому пока проверка идёт, ничего лишнего не показываем.
+  useEffect(() => {
+    if (!user || isKid(user)) { setAdminUser(false); return; }
+    let alive = true;
+    isAdmin(user).then((v) => { if (alive) setAdminUser(v); });
+    return () => { alive = false; };
   }, [user]);
   useEffect(() => { if (duelCode) setTab('duel'); }, [duelCode]);
 
@@ -81,11 +92,19 @@ export default function App() {
     await logout();
     go('landing');
   };
-  if (!isKid(user)) return (
-    <Suspense fallback={<ScreenFallback />}>
-      <Parent onExit={exit} />
-    </Suspense>
-  );
+  if (!isKid(user)) {
+    if (adminUser === undefined) return <div style={{ padding: 40, color: '#6B655B' }}>{t('common.loading')}</div>;
+    if (adminUser) return (
+      <Suspense fallback={<ScreenFallback />}>
+        <Admin onExit={exit} />
+      </Suspense>
+    );
+    return (
+      <Suspense fallback={<ScreenFallback />}>
+        <Parent onExit={exit} />
+      </Suspense>
+    );
+  }
 
   const school = profile.school;
   const pick = (id) => { setTab(id); setMenuOpen(false); };

@@ -4,6 +4,7 @@ import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
   signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail,
   EmailAuthProvider, linkWithCredential, reauthenticateWithCredential, updatePassword,
+  signInWithCustomToken,
 } from 'firebase/auth';
 import {
   getFirestore, doc, setDoc, getDoc, getDocs, addDoc, collection, serverTimestamp,
@@ -137,6 +138,37 @@ export async function createChild(parentUid, { name, klass = '', code, pin }) {
 
 export const loginChild = (code, pin) => signInWithEmailAndPassword(auth, kidEmail(code), pin);
 
+// ── Администратор ──
+// Пароля нет: email проверяется на сервере против allowlist ADMIN_EMAIL_1/2
+// (api/admin-login.js). Сервер выдаёт Firebase custom token через firebase-admin,
+// фронт им логинится — обычной email+password аутентификации здесь нет.
+export async function loginAdmin(email) {
+  const r = await fetch('/api/admin-login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: normEmail(email) }),
+  });
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok || !data.token) {
+    throw Object.assign(new Error(data.error || 'admin_denied'), {
+      code: data.error === 'not_allowed' ? 'admin/not-allowed' : 'admin/failed',
+    });
+  }
+  const cred = await signInWithCustomToken(auth, data.token);
+  return cred.user;
+}
+
+// Клеймы читаются из ID-токена асинхронно, поэтому isAdmin — Promise<boolean>.
+// Это только для UI-роутинга: реальная проверка — на сервере при каждой записи
+// в api/admin-task.js, кнопка/роут сами по себе доступ не дают.
+export async function isAdmin(user) {
+  if (!user) return false;
+  try {
+    const res = await user.getIdTokenResult();
+    return res.claims?.admin === true;
+  } catch { return false; }
+}
+
 // Профиль ребёнка: настоящее имя вместо заглушки «Бала»
 export async function getMyProfile() {
   const u = auth.currentUser;
@@ -263,6 +295,8 @@ export function errText(e) {
   if (c.includes('provider-already-linked')) return 'Email+пароль қазірдің өзінде қосылған.';
   if (c.includes('credential-already-in-use')) return 'Бұл пошта басқа аккаунтқа байланған.';
   if (c.includes('requires-recent-login')) return 'Қауіпсіздік үшін қайта Google арқылы кіріңіз, содан кейін парольді өзгертіңіз.';
+  if (c.includes('admin/not-allowed')) return 'У вас нет доступа к панели администратора.';
+  if (c.includes('admin/failed')) return 'Не удалось войти. Попробуйте ещё раз.';
   if (c.includes('no-email')) return 'Пошта табылмады — Google аккаунтыңызда email болуы керек.';
   if (c.includes('too-many-requests')) return 'Тым көп әрекет. Біраз күтіңіз немесе парольді қалпына келтіріңіз.';
   if (c.includes('permission-denied')) return 'Firestore ережелері жарияланбаған. Firebase Console → Firestore → Rules → Publish';

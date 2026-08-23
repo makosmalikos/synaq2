@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { registerParent, loginParent, loginChild, loginGoogle, resetParentPassword, errText } from './firebase.js';
+import { registerParent, loginParent, loginChild, loginAdmin, loginGoogle, resetParentPassword, errText } from './firebase.js';
 import { useLang, LangSwitch } from './i18n.jsx';
 import Brand from './Brand.jsx';
 
@@ -8,7 +8,7 @@ import Brand from './Brand.jsx';
 export default function Auth({ onClose, duelCode = '' }) {
   const { t } = useLang();
   const [pname, setPname] = useState('');
-  const [stage, setStage] = useState('start'); // start | register | loginRole | loginParent | loginChild
+  const [stage, setStage] = useState('start'); // start | register | loginRole | loginParent | loginChild | loginAdmin
   const [err, setErr] = useState('');
   const [busy, setBusy] = useState(false);
   const [email, setEmail] = useState('');
@@ -101,7 +101,18 @@ export default function Auth({ onClose, duelCode = '' }) {
             <h1 style={S.h1}>{t('auth.whoEnters')}</h1>
             <button style={{ ...S.dark, marginTop: 18 }} onClick={() => setStage('loginChild')}>{t('auth.child')}</button>
             <button style={S.outline} onClick={() => setStage('loginParent')}>{t('auth.parent')}</button>
+            <button style={S.outline} onClick={() => setStage('loginAdmin')}>{t('auth.admin')}</button>
             <button style={S.back} onClick={() => setStage('start')}>{t('common.back')}</button>
+          </div>
+        )}
+
+        {stage === 'loginAdmin' && (
+          <div style={{ animation: 'rise .3s ease both' }}>
+            <h1 style={S.h1}>{t('admin.loginTitle')}</h1>
+            <input style={S.input} type="email" autoComplete="email" placeholder={t('auth.email')} value={email} onChange={(e) => setEmail(e.target.value)} />
+            <Err v={err} />
+            <button style={{ ...S.dark, marginTop: 6 }} disabled={busy || !email.trim()} onClick={run(() => loginAdmin(email))}>{t('auth.login')}</button>
+            <button style={S.back} onClick={() => setStage('loginRole')}>{t('common.back')}</button>
           </div>
         )}
 
