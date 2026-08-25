@@ -330,7 +330,14 @@ export async function syncChildrenPro(parentUid, pro) {
 export async function isPro(childUid) {
   try {
     const idx = await getDoc(doc(db, 'childIndex', childUid));
-    return !!idx.data()?.pro;
+    const data = idx.data();
+    // childIndex — быстрый денормализованный кэш. Семья остаётся источником
+    // истины: если webhook уже обновил родителя, ребёнок не должен оставаться
+    // на бесплатном тарифе из-за запоздавшей синхронизации индекса.
+    if (data?.pro === true) return true;
+    if (!data?.parentUid) return false;
+    const family = await getDoc(doc(db, 'families', data.parentUid));
+    return !!family.data()?.pro;
   } catch { return false; }
 }
 

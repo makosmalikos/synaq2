@@ -35,11 +35,23 @@ const NISH_SPEC = [
 ];
 const NISH_TIME_MIN = 150;
 
-function buildNish() {
+const idSet = (values = []) => values instanceof Set ? values : new Set(values || []);
+const unseenFirst = (items, excluded = []) => {
+  const used = idSet(excluded);
+  return [
+    ...shuffle(items.filter((q) => !used.has(q.id))),
+    ...shuffle(items.filter((q) => used.has(q.id))),
+  ];
+};
+
+function buildNish(excludedQuestionIds = []) {
   const qs = [];
   for (const [subj, want, section] of NISH_SPEC) {
     // казахских задач у НИШ мало — добираем из БИЛ
-    const pool = shuffle(POOL.filter((q) => (q.school === 'НИШ' || q.school === 'БИЛ') && q.subject === subj));
+    const pool = unseenFirst(
+      POOL.filter((q) => (q.school === 'НИШ' || q.school === 'БИЛ') && q.subject === subj),
+      excludedQuestionIds,
+    );
     for (let k = 0; k < Math.min(want, pool.length); k++) {
       qs.push({ ...pool[k], num: qs.length + 1, subject: subj, section });
     }
@@ -61,17 +73,20 @@ const BIL_SPEC = [
 ];
 const BIL_TIME_MIN = 120;
 
-function bilPool(subj) {
+function bilPool(subj, excludedQuestionIds = []) {
   // КТЛ и БИЛ — один формат; оба банка пусты до нового импорта.
   const all = POOL.filter((q) => (q.school === 'БИЛ' || q.school === 'КТЛ') && q.subject === subj);
   const ok = (q) => q.answer != null && String(q.answer).trim() !== '';
-  return [...shuffle(all.filter(ok)), ...shuffle(all.filter((q) => !ok(q)))];
+  return [
+    ...unseenFirst(all.filter(ok), excludedQuestionIds),
+    ...unseenFirst(all.filter((q) => !ok(q)), excludedQuestionIds),
+  ];
 }
 
-function buildBil() {
+function buildBil(excludedQuestionIds = []) {
   const qs = [];
   for (const [subj, want, section] of BIL_SPEC) {
-    const pool = bilPool(subj);
+    const pool = bilPool(subj, excludedQuestionIds);
     for (let k = 0; k < Math.min(want, pool.length); k++) {
       qs.push({ ...pool[k], num: qs.length + 1, subject: subj, section });
     }
@@ -91,6 +106,26 @@ const GENERATED = new Map();
 
 
 export const api = {
+  // Старые результаты не содержат qid/sourceId. Восстанавливаем их по условию,
+  // чтобы защита от повторов работала сразу после обновления, а не только для
+  // новых попыток.
+  reviewQuestionIds: (review = []) => {
+    const byStatement = new Map(POOL.map((q) => [String(q.statement || '').trim(), q.id]));
+    return review.map((q) => q.qid || byStatement.get(String(q.statement || '').trim())).filter(Boolean);
+  },
+
+  reviewVariantId: (school, review = []) => {
+    const statements = new Set(review.map((q) => String(q.statement || '').trim()).filter(Boolean));
+    if (!statements.size) return null;
+    let best = null;
+    let score = 0;
+    for (const variant of variants.filter((v) => v.school === school)) {
+      const matched = variant.questions.filter((q) => statements.has(String(q.statement || '').trim())).length;
+      if (matched > score) { best = variant.id; score = matched; }
+    }
+    return score >= Math.min(5, statements.size) ? best : null;
+  },
+
   // ── Тренировка ──
   topics: () => P(
     ALL_TOPICS
@@ -105,12 +140,23 @@ export const api = {
       .filter((t) => t.count > 0)
   ),
 
-  topicQuestions: (id) => P(shuffle(POOL.filter((q) => q.topic === id && q.answer != null && String(q.answer).trim() && String(q.answer).trim() !== '—'))),
+  topicQuestions: (id, { lang, excludeIds = [] } = {}) => {
+    const all = POOL.filter((q) => q.topic === id && q.answer != null && String(q.answer).trim() && String(q.answer).trim() !== '—');
+    const native = lang ? all.filter((q) => q.lang === lang) : all;
+    const foreign = lang ? all.filter((q) => q.lang !== lang) : [];
+    return P([...unseenFirst(native, excludeIds), ...unseenFirst(foreign, excludeIds)]);
+  },
 
   // Аралас дайындык: только математические блоки, вперемешку по школам.
-  mixed: (_lang, limit = 20, block = 'math') => {
+  mixed: (lang, limit = 20, block = 'math', excludeIds = []) => {
     const ids = ALL_TOPICS.filter((t) => t.block === block).map((t) => t.id);
-    return P(shuffle(POOL.filter((q) => ids.includes(q.topic))).slice(0, limit));
+    const all = POOL.filter((q) => ids.includes(q.topic));
+    const native = lang ? all.filter((q) => q.lang === lang) : all;
+    const foreign = lang ? all.filter((q) => q.lang !== lang) : [];
+    return P([
+      ...unseenFirst(native, excludeIds),
+      ...unseenFirst(foreign, excludeIds),
+    ].slice(0, limit));
   },
 
   // ── Мок-тест ──
@@ -121,18 +167,21 @@ export const api = {
   ]),
 
   // Случайный вариант по школе. Никакого выбора «нұсқа» — жмёшь школу и решаешь.
-  mockRandom: (school) => {
+  mockRandom: (school, { excludeQuestionIds = [], excludeVariantIds = [] } = {}) => {
     let v;
     if (school === 'НИШ') {
-      v = buildNish();
+      v = buildNish(excludeQuestionIds);
     } else if (school === 'БИЛ') {
-      v = buildBil();
+      v = buildBil(excludeQuestionIds);
     } else {
       const pool = variants.filter((x) => x.school === school);
       if (!pool.length) return P(null);
-      const src = pool[Math.floor(Math.random() * pool.length)];
+      const excluded = idSet(excludeVariantIds);
+      const fresh = pool.filter((x) => !excluded.has(x.id));
+      const candidates = fresh.length ? fresh : pool;
+      const src = candidates[Math.floor(Math.random() * candidates.length)];
       // variants — из data.js напрямую, минуя bank.js: язык условия ещё не определён.
-      v = { ...src, id: `${src.id}_${Date.now()}`, sections: 1,
+      v = { ...src, id: `${src.id}_${Date.now()}`, sourceId: src.id, sections: 1,
             questions: src.questions.map((q) => ({ ...q, section: 1, lang: q.lang || detectLang(q) })) };
     }
     GENERATED.set(v.id, v);
@@ -161,7 +210,7 @@ export const api = {
       if (ok) correct++;
       else if (has && norm(answers[q.num]) !== '') wrong++;
       return {
-        num: q.num, topic: q.topic || null, subject: q.subject || null, school: v.school,
+        qid: q.id, num: q.num, topic: q.topic || null, subject: q.subject || null, school: v.school,
         statement: q.statement, solution: q.solution || '', image: q.image || null,
         options: q.options || null,
         your: answers[q.num] ?? null, answer: q.answer,
@@ -174,12 +223,13 @@ export const api = {
       const cancelled = Math.floor(wrong / 4);
       const net = Math.max(0, correct - cancelled);
       return P({
+        sourceId: v.sourceId || null,
         scoring: 'bil', score: correct, wrong, cancelled,
         points: +(net * 1.5).toFixed(1), maxPoints: +(gradable * 1.5).toFixed(1),
         gradable, total: v.questions.length, review,
       });
     }
-    return P({ score: correct, gradable, total: v.questions.length, review });
+    return P({ sourceId: v.sourceId || null, score: correct, gradable, total: v.questions.length, review });
   },
 };
 

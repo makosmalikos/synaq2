@@ -1,13 +1,25 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useLang } from '../i18n.jsx';
 import { api, isCorrect, translateQuestions } from '../api.js';
-import { auth, saveMock, isPro, getDiagnosticStatus, markDiagnosticComplete } from '../firebase.js';
+import { auth, saveMock, isPro, getDiagnosticStatus, markDiagnosticComplete, getMocks } from '../firebase.js';
 import { buildDiagnosis } from '../diagnosis.js';
 import Explain from './Explain.jsx';
 import DiagnosisReport from './DiagnosisReport.jsx';
 import { Kolhar } from './Training.jsx';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
+
+const recentKey = (school, type) => `synaq_recent_${type}_${school}`;
+const readRecent = (school, type) => {
+  try { return JSON.parse(localStorage.getItem(recentKey(school, type)) || '[]'); }
+  catch { return []; }
+};
+const rememberRecent = (school, type, values, limit) => {
+  try {
+    const merged = [...new Set([...values, ...readRecent(school, type)])].slice(0, limit);
+    localStorage.setItem(recentKey(school, type), JSON.stringify(merged));
+  } catch {}
+};
 
 function formatExamTimer(totalSec, lang) {
   const s = Math.max(0, totalSec);
@@ -78,8 +90,20 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   }, [result, topics, lang]);
 
   async function startExam(code, diagnostic = false) {
-    const v = await api.mockRandom(code);
+    const uid = auth.currentUser?.uid;
+    const history = uid ? await getMocks(uid).catch(() => []) : [];
+    const excludeQuestionIds = [
+      ...readRecent(code, 'questions'),
+      ...history.flatMap((m) => api.reviewQuestionIds(m.review || [])),
+    ];
+    const excludeVariantIds = [
+      ...readRecent(code, 'variants'),
+      ...history.map((m) => m.sourceId || api.reviewVariantId(code, m.review || [])).filter(Boolean),
+    ];
+    const v = await api.mockRandom(code, { excludeQuestionIds, excludeVariantIds });
     if (!v) return;
+    rememberRecent(code, 'questions', v.questions.map((q) => q.id).filter(Boolean), 600);
+    if (v.sourceId) rememberRecent(code, 'variants', [v.sourceId], 7);
     const qs = await translateQuestions(v.questions, lang);
     setSchool(code);
     setIsDiagnosticRun(diagnostic);

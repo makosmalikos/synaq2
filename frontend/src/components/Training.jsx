@@ -127,7 +127,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
     const tp = topics.find((x) => x.id === startTopicId);
     if (!tp) return;
     (async () => {
-      const list = await translateQuestions(await api.topicQuestions(tp.id), lang);
+      const list = await translateQuestions(await api.topicQuestions(tp.id, { lang, excludeIds: solved }), lang);
       setTopic(tp);
       setItems(list);
       setI(0);
@@ -155,8 +155,12 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
   }, [solved]);
 
   const start = (t, list) => { setTopic(t); setItems(list); setI(0); setAnswer(''); setChecked(false); setSecs(0); };
-  const openTopic = async (tp) => start(tp, await translateQuestions(await api.topicQuestions(tp.id), lang));
-  const openMixed = async () => start({ id: '_mix', name: t('ui.3') }, await translateQuestions(await api.mixed(lang, 20, 'math'), lang));
+  const openTopic = async (tp) => start(tp, await translateQuestions(
+    await api.topicQuestions(tp.id, { lang, excludeIds: solved }), lang,
+  ));
+  const openMixed = async () => start({ id: '_mix', name: t('ui.3') }, await translateQuestions(
+    await api.mixed(lang, 20, 'math', solved), lang,
+  ));
   const next = () => {
     if (i + 1 < items.length) { setI(i + 1); setAnswer(''); setChecked(false); setSecs(0); }
     else { setTopic(null); setItems([]); }
