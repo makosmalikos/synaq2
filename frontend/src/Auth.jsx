@@ -8,16 +8,15 @@ import Brand from './Brand.jsx';
 export default function Auth({ onClose, duelCode = '' }) {
   const { t } = useLang();
   const [pname, setPname] = useState('');
-  // ?admin=1 в адресе — единственный вход в форму администратора: обычный
-  // посетитель её не видит, кнопки на экране «Кто входит?» для неё нет.
-  const [stage, setStage] = useState(() => {
+  // ?admin=1 в адресе — единственный путь к входу администратора: обычный
+  // посетитель его не видит и кнопки на экране «Кто входит?» для него нет.
+  // По этой ссылке экран «Кто входит?» показывает ТОЛЬКО кнопку «Администратор».
+  const [isAdminLink] = useState(() => {
     try {
-      if (typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('admin') === '1') {
-        return 'loginAdmin';
-      }
-    } catch {}
-    return 'start';
-  }); // start | register | loginRole | loginParent | loginChild | loginAdmin
+      return typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('admin') === '1';
+    } catch { return false; }
+  });
+  const [stage, setStage] = useState(() => (isAdminLink ? 'loginRole' : 'start')); // start | register | loginRole | loginParent | loginChild | loginAdmin
   const [err, setErr] = useState('');
   const [busy, setBusy] = useState(false);
   const [email, setEmail] = useState('');
@@ -108,8 +107,14 @@ export default function Auth({ onClose, duelCode = '' }) {
         {stage === 'loginRole' && (
           <div style={{ animation: 'rise .3s ease both' }}>
             <h1 style={S.h1}>{t('auth.whoEnters')}</h1>
-            <button style={{ ...S.dark, marginTop: 18 }} onClick={() => setStage('loginChild')}>{t('auth.child')}</button>
-            <button style={S.outline} onClick={() => setStage('loginParent')}>{t('auth.parent')}</button>
+            {isAdminLink ? (
+              <button style={{ ...S.dark, marginTop: 18 }} onClick={() => setStage('loginAdmin')}>{t('auth.admin')}</button>
+            ) : (
+              <>
+                <button style={{ ...S.dark, marginTop: 18 }} onClick={() => setStage('loginChild')}>{t('auth.child')}</button>
+                <button style={S.outline} onClick={() => setStage('loginParent')}>{t('auth.parent')}</button>
+              </>
+            )}
             <button style={S.back} onClick={() => setStage('start')}>{t('common.back')}</button>
           </div>
         )}
