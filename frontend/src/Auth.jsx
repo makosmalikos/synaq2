@@ -27,7 +27,7 @@ export default function Auth({ onClose, duelCode = '' }) {
     <div style={S.overlay}>
       <div style={S.card}>
 
-        
+
 
 
         <div style={S.top}>

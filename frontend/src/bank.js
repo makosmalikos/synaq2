@@ -38,6 +38,19 @@ function guessTopic(text) {
 
 const SUBJ_TOPIC = { kolzar: 'kolzar', kaz: 'lang_kaz', rus: 'lang_rus', eng: 'lang_eng', logic: 'mtx' };
 
+// ── На каком языке реально написано условие ──
+// В data.js есть задачи вперемешку: часть РФМШ/НИШ написана по-русски, часть —
+// по-казахски, без единой пометки языка. Определяем по казахским буквам
+// (ә/і/ң/ғ/ү/ұ/қ/ө/һ, которых в русском алфавите нет) — это надёжнее, чем
+// доверять источнику. Для предметов-языков (kaz/rus/eng) язык известен заранее
+// и не зависит от текста (урок английского не «становится казахским»).
+const KK_LETTERS = /[әіңғүұқөһӘІҢҒҮҰҚӨҺ]/;
+const SUBJ_LANG = { kaz: 'kk', rus: 'ru', eng: 'en' };
+const TOPIC_LANG = { lang_kaz: 'kk', lang_rus: 'ru', lang_eng: 'en' };
+export function detectLang(q) {
+  return SUBJ_LANG[q.subject] || TOPIC_LANG[q.topic] || (KK_LETTERS.test(q.statement || '') ? 'kk' : 'ru');
+}
+
 function cleanLang(text) {
   if (!text) return text;
   let s = String(text);
@@ -59,6 +72,7 @@ const one = (q, school) => ({
   solution: q.solution || '',
   image: q.image || null,
   options: q.options || null,
+  lang: detectLang(q),
 });
 
 const RAW_POOL = [
@@ -159,6 +173,7 @@ function normalizeAdminTask(raw) {
     solution: raw.solution || '',
     image: raw.image || null,
     options: Array.isArray(raw.options) ? raw.options : null,
+    lang: detectLang({ topic: raw.topic, statement: raw.statement }),
   };
 }
 

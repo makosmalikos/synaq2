@@ -1,8 +1,9 @@
 // Данные вшиты в приложение (data.js + bank.js) — бэкенд не требуется.
 // Задачи без проверяемого ответа не участвуют в автопроверке.
 import { topics as BASE_TOPICS, variants } from './data.js';
-import { POOL, EXTRA_TOPICS } from './bank.js';
-import { auth } from './firebase.js';
+import { POOL, EXTRA_TOPICS, detectLang } from './bank.js';
+import { auth, db } from './firebase.js';
+import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 
 const P = (x) => Promise.resolve(x);
 const shuffle = (a) => a.map((x) => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map((x) => x[1]);
@@ -130,8 +131,9 @@ export const api = {
       const pool = variants.filter((x) => x.school === school);
       if (!pool.length) return P(null);
       const src = pool[Math.floor(Math.random() * pool.length)];
+      // variants — из data.js напрямую, минуя bank.js: язык условия ещё не определён.
       v = { ...src, id: `${src.id}_${Date.now()}`, sections: 1,
-            questions: src.questions.map((q) => ({ ...q, section: 1 })) };
+            questions: src.questions.map((q) => ({ ...q, section: 1, lang: q.lang || detectLang(q) })) };
     }
     GENERATED.set(v.id, v);
     // отдаём без ответов и разборов — как на экзамене
@@ -183,41 +185,69 @@ export const api = {
 
 
 // ── Перевод условий задач ──
-// Оригиналы в data.js — на русском. Если выбран казахский, условия математики,
-// логики и колзара переводим через /api/explain (режим translate) и кешируем.
+// Банк собран из разных источников: часть задач (РФМШ целиком, часть НИШ)
+// написана по-русски, часть — по-казахски, вперемешку и без общей логики —
+// раньше это и давало «смешение языков» внутри одной темы. Теперь у каждой
+// задачи есть q.lang (bank.js: detectLang) — реальный язык условия. Переводим
+// только то, что не совпадает с выбранным языком интерфейса, через /api/explain
+// (режим translate), и кешируем результат НАВСЕГДА в Firestore — как explain.js
+// кэширует разборы: один раз переведено — дальше отдаётся всем детям бесплатно
+// и мгновенно, без повторных обращений к модели.
 // Задачи по языкам (орыс/ағылшын/қазақ тілі) НЕ переводим: перевод убивает задание.
 const LANG_SUBJECTS = ['rus', 'eng', 'kaz'];
-const trCache = new Map();
+const trCache = new Map();   // в пределах сессии — вообще без похода в сеть/Firestore
 
 export const translatable = (q) => !LANG_SUBJECTS.includes(q.subject);
 
 export async function translateQuestions(list, lang) {
-  // Банктегі есептер қазақша жазылған. Сондықтан 'kk' кезінде аудармаймыз,
-  // басқа тілде (мыс. 'ru') — /api/explain арқылы аударамыз.
-  if (lang === 'kk' || !list?.length) return list;
+  if (!list?.length) return list;
 
-  const need = list.filter((q) => translatable(q) && !trCache.has(`${q.id}_${lang}`));
+  // нужен перевод только тому, чей реальный язык не совпадает с выбранным
+  const need = list.filter((q) => translatable(q) && q.lang && q.lang !== lang && !trCache.has(`${q.id}_${lang}`));
 
   if (need.length) {
-    try {
-      const token = await auth.currentUser?.getIdToken?.();
-      const r = await fetch('/api/explain', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
-        body: JSON.stringify({
-          mode: 'translate',
-          lang,
-          items: need.map((q) => ({ id: q.id, statement: q.statement, solution: q.solution || '' })),
-        }),
-      });
-      const data = await r.json();
-      for (const [id, v] of Object.entries(data || {})) trCache.set(`${id}_${lang}`, v);
-    } catch (e) {
-      console.warn('перевод не удался — показываем оригинал', e);
+    // 1) сначала общий кэш в Firestore — вдруг эту же задачу уже перевели для другого ребёнка
+    const stillMissing = [];
+    await Promise.all(need.map(async (q) => {
+      const key = `${q.id}_${lang}`;
+      try {
+        const snap = await getDoc(doc(db, 'translations', key));
+        if (snap.exists()) { trCache.set(key, snap.data()); return; }
+      } catch { /* правила ещё не опубликованы — просто переводим заново */ }
+      stillMissing.push(q);
+    }));
+
+    // 2) чего нигде нет — переводим через Gemini батчами (api/explain ограничивает 30 за раз)
+    if (stillMissing.length) {
+      try {
+        const token = await auth.currentUser?.getIdToken?.();
+        for (let i = 0; i < stillMissing.length; i += 30) {
+          const batch = stillMissing.slice(i, i + 30);
+          const r = await fetch('/api/explain', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+            body: JSON.stringify({
+              mode: 'translate',
+              lang,
+              items: batch.map((q) => ({ id: q.id, statement: q.statement, solution: q.solution || '' })),
+            }),
+          });
+          const data = await r.json();
+          for (const [id, v] of Object.entries(data || {})) {
+            const key = `${id}_${lang}`;
+            trCache.set(key, v);
+            // create-only: готовый перевод больше не перезаписывается
+            setDoc(doc(db, 'translations', key), { ...v, lang, qid: id, at: serverTimestamp() }).catch(() => {});
+          }
+        }
+      } catch (e) {
+        console.warn('перевод не удался — показываем оригинал', e);
+      }
     }
   }
 
   return list.map((q) => {
+    if (!translatable(q) || !q.lang || q.lang === lang) return q;
     const tr = trCache.get(`${q.id}_${lang}`);
     return tr ? { ...q, statement: tr.statement || q.statement, solution: tr.solution || q.solution } : q;
   });

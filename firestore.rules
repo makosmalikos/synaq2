@@ -113,6 +113,14 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
+    // Общий кэш переводов условий задач (api.js: translateQuestions) — тот же
+    // паттерн, что и explanations: перевели один раз, дальше отдаём всем бесплатно.
+    match /translations/{id} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update, delete: if false;
+    }
+
     // Лимит AI-запросов на пользователя (счётчик пишет только сервер через Admin SDK — клиент не может)
     match /rateLimits/{uid} {
       allow read, write: if false;

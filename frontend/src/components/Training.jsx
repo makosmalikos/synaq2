@@ -8,12 +8,13 @@ import Explain from './Explain.jsx';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
 // Блоки раздельно: язык и математика в одной ленте — бессмыслица.
+// Заголовок — через t(), чтобы шёл за выбранным языком интерфейса (не только сами задачи).
 const BLOCKS = [
-  { id: 'math',     title: 'Математика',   only: null },
-  { id: 'logic',    title: 'Логика',       only: null },
-  { id: 'lang_kaz', title: 'Қазақ тілі',   only: 'lang_kaz' },
-  { id: 'lang_rus', title: 'Орыс тілі',    only: 'lang_rus' },
-  { id: 'lang_eng', title: 'Ағылшын тілі', only: 'lang_eng' },
+  { id: 'math',     titleKey: 'ui.68', only: null },
+  { id: 'logic',    titleKey: 'ui.69', only: null },
+  { id: 'lang_kaz', titleKey: 'ui.70', only: 'lang_kaz' },
+  { id: 'lang_rus', titleKey: 'ui.71', only: 'lang_rus' },
+  { id: 'lang_eng', titleKey: 'ui.72', only: 'lang_eng' },
 ];
 // id → тема, чтобы не фильтровать весь пул на каждый рендер
 const TOPIC_OF = Object.fromEntries(POOL.map((q) => [q.id, q.topic]));
@@ -233,8 +234,8 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
         </div>
 
         {BLOCKS.map((b) => (
-          <Group key={b.id} title={b.title}
-            arr={topics.filter((t) => (b.only ? t.id === b.only : t.block === b.id))} />
+          <Group key={b.id} title={t(b.titleKey)}
+            arr={topics.filter((tp) => (b.only ? tp.id === b.only : tp.block === b.id))} />
         ))}
       </main>
     );
@@ -315,7 +316,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
 
       {checked && (
         <>
-          <div className={ok ? 'fb ok' : 'fb no'}>{ok ? 'Дұрыс!' : `Қате. Дұрыс жауап: ${q.answer ?? '—'}`}</div>
+          <div className={ok ? 'fb ok' : 'fb no'}>{ok ? t('ui.66') : `${t('ui.67')} ${q.answer ?? '—'}`}</div>
           {xpPop && <div className="xp-pop">+{xpPop} XP</div>}
           <Explain q={q} given={ok ? null : answer} />
         </>
