@@ -8,7 +8,16 @@ import Brand from './Brand.jsx';
 export default function Auth({ onClose, duelCode = '' }) {
   const { t } = useLang();
   const [pname, setPname] = useState('');
-  const [stage, setStage] = useState('start'); // start | register | loginRole | loginParent | loginChild | loginAdmin
+  // ?admin=1 в адресе — единственный вход в форму администратора: обычный
+  // посетитель её не видит, кнопки на экране «Кто входит?» для неё нет.
+  const [stage, setStage] = useState(() => {
+    try {
+      if (typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('admin') === '1') {
+        return 'loginAdmin';
+      }
+    } catch {}
+    return 'start';
+  }); // start | register | loginRole | loginParent | loginChild | loginAdmin
   const [err, setErr] = useState('');
   const [busy, setBusy] = useState(false);
   const [email, setEmail] = useState('');
@@ -101,7 +110,6 @@ export default function Auth({ onClose, duelCode = '' }) {
             <h1 style={S.h1}>{t('auth.whoEnters')}</h1>
             <button style={{ ...S.dark, marginTop: 18 }} onClick={() => setStage('loginChild')}>{t('auth.child')}</button>
             <button style={S.outline} onClick={() => setStage('loginParent')}>{t('auth.parent')}</button>
-            <button style={S.outline} onClick={() => setStage('loginAdmin')}>{t('auth.admin')}</button>
             <button style={S.back} onClick={() => setStage('start')}>{t('common.back')}</button>
           </div>
         )}
