@@ -219,7 +219,7 @@ export default function Landing({ onStart }) {
       <div className="lp-card" style={{background:'#fff',border:'1px solid rgba(19,40,60,.09)',borderRadius:'20px',padding:'30px 28px'}}>
         <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:'22px'}}>
           <div style={{width:'76px',height:'76px',background:'#FFFFFF',border:'1px solid rgba(19,40,60,.08)',borderRadius:'16px',display:'flex',alignItems:'center',justifyContent:'center',padding:'11px'}}><img src="/figures/5ac51878.png" alt="НИШ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
-          <span style={{font:'600 11px \'IBM Plex Mono\',monospace',letterSpacing:'.06em',textTransform:'uppercase',color:'#8094A7',background:'rgba(19,40,60,.05)',padding:'6px 11px',borderRadius:'8px'}}>{t('lp.34')}</span>
+          <span style={{font:'600 11px \'IBM Plex Mono\',monospace',letterSpacing:'.06em',textTransform:'uppercase',color:'#3A9DF5',background:'rgba(58,157,245,.1)',padding:'6px 11px',borderRadius:'8px'}}>{t('lp.31')}</span>
         </div>
         <div style={{font:'600 24px \'Golos Text\',sans-serif',marginBottom:'4px'}}>НИШ</div>
         <div style={{font:'500 12.5px \'IBM Plex Mono\',monospace',color:'#8094A7',marginBottom:'14px'}}>Nazarbayev Intellectual Schools</div>
@@ -228,7 +228,7 @@ export default function Landing({ onStart }) {
       <div className="lp-card" style={{background:'#fff',border:'1px solid rgba(19,40,60,.09)',borderRadius:'20px',padding:'30px 28px'}}>
         <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:'22px'}}>
           <div style={{width:'76px',height:'76px',background:'#FFFFFF',border:'1px solid rgba(19,40,60,.08)',borderRadius:'16px',display:'flex',alignItems:'center',justifyContent:'center',padding:'11px'}}><img src="/figures/191a2c27.png" alt="КТЛ" style={{maxWidth:'100%',maxHeight:'100%',objectFit:'contain'}} /></div>
-          <span style={{font:'600 11px \'IBM Plex Mono\',monospace',letterSpacing:'.06em',textTransform:'uppercase',color:'#8094A7',background:'rgba(19,40,60,.05)',padding:'6px 11px',borderRadius:'8px'}}>Скоро</span>
+          <span style={{font:'600 11px \'IBM Plex Mono\',monospace',letterSpacing:'.06em',textTransform:'uppercase',color:'#3A9DF5',background:'rgba(58,157,245,.1)',padding:'6px 11px',borderRadius:'8px'}}>{t('lp.31')}</span>
         </div>
         <div style={{font:'600 24px \'Golos Text\',sans-serif',marginBottom:'4px'}}>БИЛ</div>
         <div style={{font:'500 12.5px \'IBM Plex Mono\',monospace',color:'#8094A7',marginBottom:'14px'}}>{t('lp.36')}</div>
