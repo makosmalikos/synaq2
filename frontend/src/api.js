@@ -1,6 +1,6 @@
 // Данные вшиты в приложение (data.js + bank.js) — бэкенд не требуется.
 // Задачи без проверяемого ответа не участвуют в автопроверке.
-import { topics as BASE_TOPICS, variants } from './data.js';
+import { topics as BASE_TOPICS } from './data.js';
 import { POOL, EXTRA_TOPICS, detectLang } from './bank.js';
 import { auth, db } from './firebase.js';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
@@ -25,6 +25,28 @@ export function isCorrect(given, q) {
 
 const ALL_TOPICS = [...BASE_TOPICS, ...EXTRA_TOPICS];
 
+// ── Мок-тест РФМШ ──
+// Раньше выдавали один из 8 захардкоженных вариантов (rfmsh2025_v1..v9) —
+// с ограниченным пулом дети быстро натыкались на повтор одного и того же
+// теста. Теперь, как и для НИШ/БИЛ, собираем 30 вопросов на лету из общего
+// пула РФМШ (он больше исходных 8×30 = 240 вопросов и пополняется), поэтому
+// набор реально меняется от попытки к попытке, а не зацикливается на 8 штуках.
+const RFMSH_COUNT = 30;
+const RFMSH_TIME_MIN = 120;
+
+function buildRfmsh() {
+  const pool = shuffle(POOL.filter((q) => q.school === 'РФМШ' && q.answer != null && String(q.answer).trim() !== ''));
+  const qs = pool.slice(0, RFMSH_COUNT).map((q, k) => ({ ...q, num: k + 1, section: 1 }));
+  return {
+    id: `rfmsh_${Date.now()}`,
+    school: 'РФМШ',
+    title: 'РФМШ · Пробный тест',
+    timeLimitMin: RFMSH_TIME_MIN,
+    sections: 1,
+    questions: qs,
+  };
+}
+
 // ── Мок-тест НИШ ──
 // Готовых вариантов НИШ в банке нет, поэтому собираем их сами по формату экзамена:
 // математика 40 · колзар 20 · ағылшын 20 · орыс 20 · қазақ 20.
@@ -35,23 +57,11 @@ const NISH_SPEC = [
 ];
 const NISH_TIME_MIN = 150;
 
-const idSet = (values = []) => values instanceof Set ? values : new Set(values || []);
-const unseenFirst = (items, excluded = []) => {
-  const used = idSet(excluded);
-  return [
-    ...shuffle(items.filter((q) => !used.has(q.id))),
-    ...shuffle(items.filter((q) => used.has(q.id))),
-  ];
-};
-
-function buildNish(excludedQuestionIds = []) {
+function buildNish() {
   const qs = [];
   for (const [subj, want, section] of NISH_SPEC) {
     // казахских задач у НИШ мало — добираем из БИЛ
-    const pool = unseenFirst(
-      POOL.filter((q) => (q.school === 'НИШ' || q.school === 'БИЛ') && q.subject === subj),
-      excludedQuestionIds,
-    );
+    const pool = shuffle(POOL.filter((q) => (q.school === 'НИШ' || q.school === 'БИЛ') && q.subject === subj));
     for (let k = 0; k < Math.min(want, pool.length); k++) {
       qs.push({ ...pool[k], num: qs.length + 1, subject: subj, section });
     }
@@ -73,20 +83,17 @@ const BIL_SPEC = [
 ];
 const BIL_TIME_MIN = 120;
 
-function bilPool(subj, excludedQuestionIds = []) {
+function bilPool(subj) {
   // КТЛ и БИЛ — один формат; оба банка пусты до нового импорта.
   const all = POOL.filter((q) => (q.school === 'БИЛ' || q.school === 'КТЛ') && q.subject === subj);
   const ok = (q) => q.answer != null && String(q.answer).trim() !== '';
-  return [
-    ...unseenFirst(all.filter(ok), excludedQuestionIds),
-    ...unseenFirst(all.filter((q) => !ok(q)), excludedQuestionIds),
-  ];
+  return [...shuffle(all.filter(ok)), ...shuffle(all.filter((q) => !ok(q)))];
 }
 
-function buildBil(excludedQuestionIds = []) {
+function buildBil() {
   const qs = [];
   for (const [subj, want, section] of BIL_SPEC) {
-    const pool = bilPool(subj, excludedQuestionIds);
+    const pool = bilPool(subj);
     for (let k = 0; k < Math.min(want, pool.length); k++) {
       qs.push({ ...pool[k], num: qs.length + 1, subject: subj, section });
     }
@@ -106,26 +113,6 @@ const GENERATED = new Map();
 
 
 export const api = {
-  // Старые результаты не содержат qid/sourceId. Восстанавливаем их по условию,
-  // чтобы защита от повторов работала сразу после обновления, а не только для
-  // новых попыток.
-  reviewQuestionIds: (review = []) => {
-    const byStatement = new Map(POOL.map((q) => [String(q.statement || '').trim(), q.id]));
-    return review.map((q) => q.qid || byStatement.get(String(q.statement || '').trim())).filter(Boolean);
-  },
-
-  reviewVariantId: (school, review = []) => {
-    const statements = new Set(review.map((q) => String(q.statement || '').trim()).filter(Boolean));
-    if (!statements.size) return null;
-    let best = null;
-    let score = 0;
-    for (const variant of variants.filter((v) => v.school === school)) {
-      const matched = variant.questions.filter((q) => statements.has(String(q.statement || '').trim())).length;
-      if (matched > score) { best = variant.id; score = matched; }
-    }
-    return score >= Math.min(5, statements.size) ? best : null;
-  },
-
   // ── Тренировка ──
   topics: () => P(
     ALL_TOPICS
@@ -140,49 +127,35 @@ export const api = {
       .filter((t) => t.count > 0)
   ),
 
-  topicQuestions: (id, { lang, excludeIds = [] } = {}) => {
-    const all = POOL.filter((q) => q.topic === id && q.answer != null && String(q.answer).trim() && String(q.answer).trim() !== '—');
-    const native = lang ? all.filter((q) => q.lang === lang) : all;
-    const foreign = lang ? all.filter((q) => q.lang !== lang) : [];
-    return P([...unseenFirst(native, excludeIds), ...unseenFirst(foreign, excludeIds)]);
-  },
+  topicQuestions: (id) => P(shuffle(POOL.filter((q) => q.topic === id && q.answer != null && String(q.answer).trim() && String(q.answer).trim() !== '—'))),
 
   // Аралас дайындык: только математические блоки, вперемешку по школам.
-  mixed: (lang, limit = 20, block = 'math', excludeIds = []) => {
+  mixed: (_lang, limit = 20, block = 'math') => {
     const ids = ALL_TOPICS.filter((t) => t.block === block).map((t) => t.id);
-    const all = POOL.filter((q) => ids.includes(q.topic));
-    const native = lang ? all.filter((q) => q.lang === lang) : all;
-    const foreign = lang ? all.filter((q) => q.lang !== lang) : [];
-    return P([
-      ...unseenFirst(native, excludeIds),
-      ...unseenFirst(foreign, excludeIds),
-    ].slice(0, limit));
+    return P(shuffle(POOL.filter((q) => ids.includes(q.topic))).slice(0, limit));
   },
 
   // ── Мок-тест ──
   schools: () => P([
-    { code: 'РФМШ', ready: variants.some((v) => v.school === 'РФМШ') },
+    { code: 'РФМШ', ready: POOL.some((q) => q.school === 'РФМШ') },
     { code: 'НИШ',  ready: POOL.some((q) => q.school === 'НИШ') },
     { code: 'БИЛ',  ready: POOL.some((q) => (q.school === 'БИЛ' || q.school === 'КТЛ') && q.subject === 'math') },
   ]),
 
   // Случайный вариант по школе. Никакого выбора «нұсқа» — жмёшь школу и решаешь.
-  mockRandom: (school, { excludeQuestionIds = [], excludeVariantIds = [] } = {}) => {
+  // Для всех трёх школ вариант собирается заново из общего пула (см. buildRfmsh/
+  // buildNish/buildBil) — это гарантирует, что тест меняется от попытки к
+  // попытке, а не зацикливается на маленьком наборе захардкоженных вариантов.
+  mockRandom: (school) => {
     let v;
-    if (school === 'НИШ') {
-      v = buildNish(excludeQuestionIds);
+    if (school === 'РФМШ') {
+      v = buildRfmsh();
+    } else if (school === 'НИШ') {
+      v = buildNish();
     } else if (school === 'БИЛ') {
-      v = buildBil(excludeQuestionIds);
+      v = buildBil();
     } else {
-      const pool = variants.filter((x) => x.school === school);
-      if (!pool.length) return P(null);
-      const excluded = idSet(excludeVariantIds);
-      const fresh = pool.filter((x) => !excluded.has(x.id));
-      const candidates = fresh.length ? fresh : pool;
-      const src = candidates[Math.floor(Math.random() * candidates.length)];
-      // variants — из data.js напрямую, минуя bank.js: язык условия ещё не определён.
-      v = { ...src, id: `${src.id}_${Date.now()}`, sourceId: src.id, sections: 1,
-            questions: src.questions.map((q) => ({ ...q, section: 1, lang: q.lang || detectLang(q) })) };
+      return P(null);
     }
     GENERATED.set(v.id, v);
     // отдаём без ответов и разборов — как на экзамене
@@ -210,7 +183,7 @@ export const api = {
       if (ok) correct++;
       else if (has && norm(answers[q.num]) !== '') wrong++;
       return {
-        qid: q.id, num: q.num, topic: q.topic || null, subject: q.subject || null, school: v.school,
+        num: q.num, topic: q.topic || null, subject: q.subject || null, school: v.school,
         statement: q.statement, solution: q.solution || '', image: q.image || null,
         options: q.options || null,
         your: answers[q.num] ?? null, answer: q.answer,
@@ -223,13 +196,12 @@ export const api = {
       const cancelled = Math.floor(wrong / 4);
       const net = Math.max(0, correct - cancelled);
       return P({
-        sourceId: v.sourceId || null,
         scoring: 'bil', score: correct, wrong, cancelled,
         points: +(net * 1.5).toFixed(1), maxPoints: +(gradable * 1.5).toFixed(1),
         gradable, total: v.questions.length, review,
       });
     }
-    return P({ sourceId: v.sourceId || null, score: correct, gradable, total: v.questions.length, review });
+    return P({ score: correct, gradable, total: v.questions.length, review });
   },
 };
 
