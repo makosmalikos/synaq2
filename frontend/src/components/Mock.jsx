@@ -100,7 +100,10 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
       ...readRecent(code, 'variants'),
       ...history.map((m) => m.sourceId || api.reviewVariantId(code, m.review || [])).filter(Boolean),
     ];
-    const v = await api.mockRandom(code, { excludeQuestionIds, excludeVariantIds });
+    // lang передаём, чтобы свежесгенерированные (не из банка) задачи сразу
+    // приходили на языке интерфейса — без этого их пришлось бы прогонять
+    // через платный/медленный перевод (translateQuestions) на каждый мок.
+    const v = await api.mockRandom(code, { excludeQuestionIds, excludeVariantIds }, lang);
     if (!v) return;
     rememberRecent(code, 'questions', v.questions.map((q) => q.id).filter(Boolean), 600);
     if (v.sourceId) rememberRecent(code, 'variants', [v.sourceId], 7);

@@ -1,12 +1,14 @@
 // Данные вшиты в приложение (data.js + bank.js) — бэкенд не требуется.
 // Задачи без проверяемого ответа не участвуют в автопроверке.
-import { topics as BASE_TOPICS } from './data.js';
+import { topics as BASE_TOPICS, variants } from './data.js';
 import { POOL, EXTRA_TOPICS, detectLang } from './bank.js';
 import { auth, db } from './firebase.js';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { generateFor, GENERATABLE_TOPICS } from './generators.js';
 
 const P = (x) => Promise.resolve(x);
 const shuffle = (a) => a.map((x) => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map((x) => x[1]);
+const rnd = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
 
 // Нормализация ответа: пробелы, запятая/точка, %, единицы измерения.
 const norm = (v) => (v ?? '').toString().trim().toLowerCase()
@@ -25,17 +27,65 @@ export function isCorrect(given, q) {
 
 const ALL_TOPICS = [...BASE_TOPICS, ...EXTRA_TOPICS];
 
+// Показать сначала непройденные задачи, потом (если непройденных не хватает)
+// добрать уже виденные — топик/мок никогда не «упрётся» в пустоту.
+const idSet = (values = []) => (values instanceof Set ? values : new Set(values || []));
+const unseenFirst = (items, excluded = []) => {
+  const used = idSet(excluded);
+  return [
+    ...shuffle(items.filter((q) => !used.has(q.id))),
+    ...shuffle(items.filter((q) => used.has(q.id))),
+  ];
+};
+
+// ── Регенерация «похожих» задач ──
+// Реальный банк конечен: сколько бы задач в нём ни было, при активной
+// тренировке они рано или поздно кончаются/повторяются. Для тем, где есть
+// шаблон-генератор (generators.js — проценты, отношения, геометрия и т.п.),
+// подмешиваем свежесгенерированные задачи с новыми числами к реальным из
+// POOL — в дополнение к unseenFirst (который просто прячет уже виденные
+// реальные задачи назад в конец очереди, но не создаёт новых). Темы без
+// шаблона (картинки, языковые предметы) отдают только реальные задачи.
+const genForTopic = (topicId, lang, count, schoolLabel) =>
+  GENERATABLE_TOPICS.includes(topicId) ? generateFor(topicId, lang, count, schoolLabel) : [];
+
+// Сколько сгенерированных задач подмешать к N реальным — примерно треть,
+// но не меньше 4 (чтобы тема с маленьким реальным банком тоже не заканчивалась).
+const genQuota = (n) => Math.max(4, Math.ceil(n * 0.4));
+
+// Какие темы-генераторы относятся к какому предмету мок-теста (math/logic/kolzar).
+const MATH_GEN_TOPICS = ['eq', 'num', 'work', 'ratio', 'geo', 'frac', 'pct', 'sys'];
+const LOGIC_GEN_TOPICS = ['seq', 'comb'];
+const GEN_TOPICS_BY_SUBJECT = { math: MATH_GEN_TOPICS, logic: LOGIC_GEN_TOPICS, kolzar: ['kolzar'] };
+
+function genForSubject(subj, lang, count, schoolLabel) {
+  const tps = GEN_TOPICS_BY_SUBJECT[subj];
+  if (!tps || !count) return [];
+  const out = [];
+  for (let k = 0; k < count; k++) {
+    out.push(...genForTopic(tps[rnd(0, tps.length - 1)], lang, 1, schoolLabel));
+  }
+  return out;
+}
+
 // ── Мок-тест РФМШ ──
 // Раньше выдавали один из 8 захардкоженных вариантов (rfmsh2025_v1..v9) —
 // с ограниченным пулом дети быстро натыкались на повтор одного и того же
 // теста. Теперь, как и для НИШ/БИЛ, собираем 30 вопросов на лету из общего
-// пула РФМШ (он больше исходных 8×30 = 240 вопросов и пополняется), поэтому
-// набор реально меняется от попытки к попытке, а не зацикливается на 8 штуках.
+// пула РФМШ (он больше исходных 8×30 = 240 вопросов и пополняется) плюс
+// подмешиваем свежесгенерированные — набор реально меняется от попытки к
+// попытке, а не зацикливается на 8 штуках.
 const RFMSH_COUNT = 30;
 const RFMSH_TIME_MIN = 120;
 
-function buildRfmsh() {
-  const pool = shuffle(POOL.filter((q) => q.school === 'РФМШ' && q.answer != null && String(q.answer).trim() !== ''));
+function buildRfmsh(lang = 'kk', excludeQuestionIds = []) {
+  const real = POOL.filter((q) => q.school === 'РФМШ' && q.answer != null && String(q.answer).trim() !== '');
+  // РФМШ вперемешку даёт математику и логику одним потоком (без деления по
+  // темам, как у НИШ/БИЛ) — подмешиваем сгенерированные по всем темам сразу.
+  const generated = GENERATABLE_TOPICS
+    .filter((t) => t !== 'kolzar')
+    .flatMap((t) => genForTopic(t, lang, 2, 'РФМШ'));
+  const pool = unseenFirst([...real, ...generated], excludeQuestionIds);
   const qs = pool.slice(0, RFMSH_COUNT).map((q, k) => ({ ...q, num: k + 1, section: 1 }));
   return {
     id: `rfmsh_${Date.now()}`,
@@ -57,11 +107,14 @@ const NISH_SPEC = [
 ];
 const NISH_TIME_MIN = 150;
 
-function buildNish() {
+function buildNish(lang = 'kk', excludeQuestionIds = []) {
   const qs = [];
   for (const [subj, want, section] of NISH_SPEC) {
     // казахских задач у НИШ мало — добираем из БИЛ
-    const pool = shuffle(POOL.filter((q) => (q.school === 'НИШ' || q.school === 'БИЛ') && q.subject === subj));
+    const real = POOL.filter((q) => (q.school === 'НИШ' || q.school === 'БИЛ') && q.subject === subj);
+    // языковые предметы (eng/rus/kaz) шаблонами не покрыты — там только реальные задачи
+    const generated = genForSubject(subj, lang, genQuota(want), 'НИШ');
+    const pool = unseenFirst([...real, ...generated], excludeQuestionIds);
     for (let k = 0; k < Math.min(want, pool.length); k++) {
       qs.push({ ...pool[k], num: qs.length + 1, subject: subj, section });
     }
@@ -83,17 +136,22 @@ const BIL_SPEC = [
 ];
 const BIL_TIME_MIN = 120;
 
-function bilPool(subj) {
+function bilPool(subj, lang, excludeQuestionIds = []) {
   // КТЛ и БИЛ — один формат; оба банка пусты до нового импорта.
   const all = POOL.filter((q) => (q.school === 'БИЛ' || q.school === 'КТЛ') && q.subject === subj);
   const ok = (q) => q.answer != null && String(q.answer).trim() !== '';
-  return [...shuffle(all.filter(ok)), ...shuffle(all.filter((q) => !ok(q)))];
+  const real = all.filter(ok);
+  const generated = genForSubject(subj, lang, genQuota(real.length || 20), 'БИЛ');
+  return [
+    ...unseenFirst([...real, ...generated], excludeQuestionIds),
+    ...unseenFirst(all.filter((q) => !ok(q)), excludeQuestionIds),
+  ];
 }
 
-function buildBil() {
+function buildBil(lang = 'kk', excludeQuestionIds = []) {
   const qs = [];
   for (const [subj, want, section] of BIL_SPEC) {
-    const pool = bilPool(subj);
+    const pool = bilPool(subj, lang, excludeQuestionIds);
     for (let k = 0; k < Math.min(want, pool.length); k++) {
       qs.push({ ...pool[k], num: qs.length + 1, subject: subj, section });
     }
@@ -113,6 +171,26 @@ const GENERATED = new Map();
 
 
 export const api = {
+  // Старые результаты не содержат qid/sourceId. Восстанавливаем их по условию,
+  // чтобы защита от повторов работала сразу после обновления, а не только для
+  // новых попыток.
+  reviewQuestionIds: (review = []) => {
+    const byStatement = new Map(POOL.map((q) => [String(q.statement || '').trim(), q.id]));
+    return review.map((q) => q.qid || byStatement.get(String(q.statement || '').trim())).filter(Boolean);
+  },
+
+  reviewVariantId: (school, review = []) => {
+    const statements = new Set(review.map((q) => String(q.statement || '').trim()).filter(Boolean));
+    if (!statements.size) return null;
+    let best = null;
+    let score = 0;
+    for (const variant of variants.filter((v) => v.school === school)) {
+      const matched = variant.questions.filter((q) => statements.has(String(q.statement || '').trim())).length;
+      if (matched > score) { best = variant.id; score = matched; }
+    }
+    return score >= Math.min(5, statements.size) ? best : null;
+  },
+
   // ── Тренировка ──
   topics: () => P(
     ALL_TOPICS
@@ -127,12 +205,31 @@ export const api = {
       .filter((t) => t.count > 0)
   ),
 
-  topicQuestions: (id) => P(shuffle(POOL.filter((q) => q.topic === id && q.answer != null && String(q.answer).trim() && String(q.answer).trim() !== '—'))),
+  // opts.lang — язык интерфейса; для тем с шаблоном (generators.js) на его
+  // основе подмешиваются свежесгенерированные задачи, чтобы тренировка не
+  // упиралась в конечный размер реального банка темы. opts.excludeIds —
+  // уже решённые задачи ребёнком: прячем их в конец очереди (unseenFirst),
+  // а не убираем совсем — если реальных задач меньше решённых, лучше
+  // повторить старую, чем остаться без задач вовсе.
+  topicQuestions: (id, { lang, excludeIds = [] } = {}) => {
+    const all = POOL.filter((q) => q.topic === id && q.answer != null && String(q.answer).trim() && String(q.answer).trim() !== '—');
+    const native = lang ? all.filter((q) => q.lang === lang) : all;
+    const foreign = lang ? all.filter((q) => q.lang !== lang) : [];
+    const generated = genForTopic(id, lang || 'kk', genQuota(native.length || 10));
+    return P([...unseenFirst([...native, ...generated], excludeIds), ...unseenFirst(foreign, excludeIds)]);
+  },
 
-  // Аралас дайындык: только математические блоки, вперемешку по школам.
-  mixed: (_lang, limit = 20, block = 'math') => {
+  // Аралас дайындык: только математические блоки, вперемешку по школам + генерация.
+  mixed: (lang, limit = 20, block = 'math', excludeIds = []) => {
     const ids = ALL_TOPICS.filter((t) => t.block === block).map((t) => t.id);
-    return P(shuffle(POOL.filter((q) => ids.includes(q.topic))).slice(0, limit));
+    const all = POOL.filter((q) => ids.includes(q.topic));
+    const native = lang ? all.filter((q) => q.lang === lang) : all;
+    const foreign = lang ? all.filter((q) => q.lang !== lang) : [];
+    const generated = ids.filter((t) => GENERATABLE_TOPICS.includes(t)).flatMap((t) => genForTopic(t, lang || 'kk', 2));
+    return P([
+      ...unseenFirst([...native, ...generated], excludeIds),
+      ...unseenFirst(foreign, excludeIds),
+    ].slice(0, limit));
   },
 
   // ── Мок-тест ──
@@ -144,16 +241,19 @@ export const api = {
 
   // Случайный вариант по школе. Никакого выбора «нұсқа» — жмёшь школу и решаешь.
   // Для всех трёх школ вариант собирается заново из общего пула (см. buildRfmsh/
-  // buildNish/buildBil) — это гарантирует, что тест меняется от попытки к
-  // попытке, а не зацикливается на маленьком наборе захардкоженных вариантов.
-  mockRandom: (school) => {
+  // buildNish/buildBil) с приоритетом на ещё не виденные задачи (excludeQuestionIds,
+  // которые собирает Mock.jsx из localStorage + истории мок-тестов) — это и
+  // гарантирует, что тест меняется от попытки к попытке, а не зацикливается на
+  // маленьком наборе. lang — язык интерфейса, на нём же генерируются свежие
+  // задачи, чтобы не гонять их через платный перевод.
+  mockRandom: (school, { excludeQuestionIds = [], excludeVariantIds = [] } = {}, lang = 'kk') => {
     let v;
     if (school === 'РФМШ') {
-      v = buildRfmsh();
+      v = buildRfmsh(lang, excludeQuestionIds);
     } else if (school === 'НИШ') {
-      v = buildNish();
+      v = buildNish(lang, excludeQuestionIds);
     } else if (school === 'БИЛ') {
-      v = buildBil();
+      v = buildBil(lang, excludeQuestionIds);
     } else {
       return P(null);
     }
@@ -183,7 +283,7 @@ export const api = {
       if (ok) correct++;
       else if (has && norm(answers[q.num]) !== '') wrong++;
       return {
-        num: q.num, topic: q.topic || null, subject: q.subject || null, school: v.school,
+        qid: q.id, num: q.num, topic: q.topic || null, subject: q.subject || null, school: v.school,
         statement: q.statement, solution: q.solution || '', image: q.image || null,
         options: q.options || null,
         your: answers[q.num] ?? null, answer: q.answer,
@@ -196,12 +296,13 @@ export const api = {
       const cancelled = Math.floor(wrong / 4);
       const net = Math.max(0, correct - cancelled);
       return P({
+        sourceId: v.sourceId || null,
         scoring: 'bil', score: correct, wrong, cancelled,
         points: +(net * 1.5).toFixed(1), maxPoints: +(gradable * 1.5).toFixed(1),
         gradable, total: v.questions.length, review,
       });
     }
-    return P({ score: correct, gradable, total: v.questions.length, review });
+    return P({ sourceId: v.sourceId || null, score: correct, gradable, total: v.questions.length, review });
   },
 };
 
