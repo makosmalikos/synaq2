@@ -78,6 +78,10 @@ function HeroVisual() {
       <div className="lp-orbit lp-orbit-a" />
       <div className="lp-orbit lp-orbit-b" />
 
+      <div className="lp-students-visual">
+        <img src="/hero/kazakh-students-v1.png" alt="SYNAQ платформасында дайындалып жүрген оқушылар" />
+      </div>
+
       <div className="lp-school-carousel" aria-label="БИЛ, РФМШ, НИШ">
         <div className="lp-school-glow" />
         <div className="lp-school-frame">
@@ -130,31 +134,34 @@ export default function Landing({ onStart }) {
   .lp-hero:before{content:'';position:absolute;z-index:-1;right:-120px;top:-90px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(58,157,245,.14),rgba(58,157,245,0) 68%)}
   .lp-hero-copy{width:100%;max-width:940px;margin:0 auto;text-align:center;position:relative;z-index:2}
   .lp-h1{color:#091126;text-shadow:0 1px 0 rgba(255,255,255,.85)}
-  .lp-hero-accent{position:relative;display:inline-block;color:#2563EB!important;background:linear-gradient(105deg,#1D4ED8 0%,#3689F7 52%,#155EEF 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 7px 16px rgba(37,99,235,.2))}
-  .lp-hero-accent:after{content:'';position:absolute;left:1%;right:0;bottom:-5px;height:4px;border-radius:99px;background:linear-gradient(90deg,#2563EB,#60A5FA 70%,#2563EB);box-shadow:0 5px 14px rgba(37,99,235,.28)}
-  .lp-hero-stage{position:relative;width:100%;max-width:980px;min-height:390px;margin:20px auto 0;isolation:isolate;perspective:1100px}
-  .lp-hero-stage:before{content:'';position:absolute;inset:-3% 13% -2%;border-radius:48%;background:radial-gradient(circle at 50% 48%,rgba(29,78,216,.16),rgba(96,165,250,.055) 43%,transparent 70%);filter:blur(3px);z-index:-2}
+  .lp-hero-accent{position:relative;display:inline-block;color:#3478F6!important;text-shadow:0 5px 18px rgba(52,120,246,.16)}
+  .lp-hero-accent:after{content:'';position:absolute;left:3%;right:1%;bottom:-5px;height:3px;border-radius:99px;background:#3478F6;opacity:.9}
+  .lp-hero-stage{position:relative;width:100%;max-width:1040px;min-height:430px;margin:24px auto 0;isolation:isolate;perspective:1100px}
+  .lp-hero-stage:before{content:'';position:absolute;inset:2% 5% -5%;border-radius:42%;background:radial-gradient(circle at 50% 48%,rgba(29,78,216,.17),rgba(96,165,250,.06) 52%,transparent 74%);filter:blur(5px);z-index:-2}
   .lp-orbit{position:absolute;border:1px solid rgba(29,78,216,.11);border-radius:50%;z-index:-1;pointer-events:none}
-  .lp-orbit-a{width:390px;height:390px;left:calc(50% - 195px);top:0}
-  .lp-orbit-b{width:300px;height:300px;left:calc(50% - 150px);top:45px;border-style:dashed;animation:lpOrbit 24s linear infinite}
-  .lp-school-carousel{position:absolute;left:50%;top:50%;width:310px;height:310px;transform:translate(-50%,-50%);display:grid;place-items:center;perspective:1000px}
-  .lp-school-glow{position:absolute;inset:24px;border-radius:50%;background:rgba(29,78,216,.2);filter:blur(40px);animation:lpSchoolGlow 3s ease-in-out infinite alternate}
-  .lp-school-frame{position:relative;width:280px;height:280px;border-radius:50%;overflow:hidden;background:rgba(255,255,255,.94);border:1px solid rgba(29,78,216,.16);box-shadow:0 28px 60px -28px rgba(30,64,175,.52),inset 0 1px 0 #fff;backdrop-filter:blur(18px);transform-style:preserve-3d}
+  .lp-orbit-a{width:430px;height:430px;left:calc(50% - 215px);top:0}
+  .lp-orbit-b{width:330px;height:330px;left:calc(50% - 165px);top:50px;border-style:dashed;animation:lpOrbit 24s linear infinite}
+  .lp-students-visual{position:absolute;left:50%;top:0;width:min(100%,920px);height:410px;transform:translateX(-50%);overflow:hidden;border-radius:32px;background:#F8FBFF;border:1px solid rgba(29,78,216,.1);box-shadow:0 32px 70px -42px rgba(15,47,126,.48)}
+  .lp-students-visual:after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 1px 0 rgba(255,255,255,.95),inset 0 -34px 50px -42px rgba(29,78,216,.28);pointer-events:none}
+  .lp-students-visual img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 39%}
+  .lp-school-carousel{position:absolute;right:7%;bottom:2px;width:122px;height:122px;display:grid;place-items:center;perspective:1000px;z-index:4}
+  .lp-school-glow{position:absolute;inset:12px;border-radius:50%;background:rgba(29,78,216,.24);filter:blur(24px);animation:lpSchoolGlow 3s ease-in-out infinite alternate}
+  .lp-school-frame{position:relative;width:108px;height:108px;border-radius:50%;overflow:hidden;background:rgba(255,255,255,.96);border:1px solid rgba(29,78,216,.18);box-shadow:0 22px 46px -22px rgba(30,64,175,.58),inset 0 1px 0 #fff;backdrop-filter:blur(18px);transform-style:preserve-3d}
   .lp-school-frame:after{content:'';position:absolute;inset:7px;border:1px solid rgba(29,78,216,.1);border-radius:50%;pointer-events:none;z-index:4}
-  .lp-school-slide{position:absolute;inset:0;display:grid;place-items:center;padding:34px;opacity:0;transform:rotateY(-70deg) scale(.82);animation:lpSchoolCycle 9s cubic-bezier(.4,0,.2,1) infinite;backface-visibility:hidden}
+  .lp-school-slide{position:absolute;inset:0;display:grid;place-items:center;padding:15px;opacity:0;transform:rotateY(-70deg) scale(.82);animation:lpSchoolCycle 9s cubic-bezier(.4,0,.2,1) infinite;backface-visibility:hidden}
   .lp-school-slide img{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
   .lp-school-slide-2{animation-delay:3s}
   .lp-school-slide-3{animation-delay:6s}
-  .lp-school-dots{position:absolute;bottom:-2px;display:flex;gap:7px;z-index:5}
-  .lp-school-dots i{width:6px;height:6px;border-radius:50%;background:#BFDBFE;box-shadow:0 0 0 4px rgba(255,255,255,.82)}
+  .lp-school-dots{position:absolute;bottom:-1px;display:flex;gap:5px;z-index:5}
+  .lp-school-dots i{width:5px;height:5px;border-radius:50%;background:#93C5FD;box-shadow:0 0 0 3px rgba(255,255,255,.9)}
   .lp-signal{position:absolute;width:258px;display:flex;align-items:center;gap:12px;padding:13px 15px;background:rgba(255,255,255,.82);border:1px solid rgba(29,78,216,.16);border-radius:14px;box-shadow:0 20px 50px -28px rgba(30,64,175,.38),inset 0 1px 0 rgba(255,255,255,.9);backdrop-filter:blur(16px);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;z-index:3}
   .lp-signal:before{content:'';position:absolute;right:100%;top:50%;width:34px;height:1px;background:linear-gradient(90deg,transparent,rgba(29,78,216,.3))}
   .lp-signal:hover{transform:translateY(-4px);border-color:rgba(29,78,216,.3);box-shadow:0 24px 58px -26px rgba(29,78,216,.48),inset 0 1px 0 #fff}
   .lp-signal em{width:36px;height:36px;flex:none;display:grid;place-items:center;border-radius:10px;background:linear-gradient(145deg,#EFF6FF,#DBEAFE);box-shadow:inset 0 0 0 1px rgba(29,78,216,.08);font-style:normal;font-size:17px}
   .lp-signal span{font:650 13.5px/1.3 'Golos Text',sans-serif;color:#173252}
-  .lp-signal-ai{left:5%;top:54px}
-  .lp-signal-format{right:4%;top:120px}
-  .lp-signal-progress{left:9%;bottom:48px}
+  .lp-signal-ai{left:0;top:64px}
+  .lp-signal-format{right:0;top:118px}
+  .lp-signal-progress{left:4%;bottom:20px}
   .lp-signal-ai:before,.lp-signal-progress:before{right:auto;left:100%;background:linear-gradient(90deg,rgba(29,78,216,.3),transparent)}
   @keyframes lpOrbit{to{transform:rotate(360deg)}}
   @keyframes lpSchoolCycle{0%{opacity:0;transform:rotateY(-70deg) scale(.82)}7%,27%{opacity:1;transform:rotateY(0) scale(1)}33%,100%{opacity:0;transform:rotateY(70deg) scale(.82)}}
@@ -163,6 +170,7 @@ export default function Landing({ onStart }) {
     .lp-hero{gap:0!important}
     .lp-h1{font-size:52px!important}
     .lp-hero-stage{max-width:760px}
+    .lp-students-visual{width:100%;height:390px}
     .lp-signal-ai{left:0}
     .lp-signal-format{right:0}
     .lp-signal-progress{left:2%}
@@ -179,10 +187,13 @@ export default function Landing({ onStart }) {
     .lp-hero-copy{text-align:left}
     .lp-hero-stage{min-height:0;display:flex;flex-direction:column;align-items:center;margin-top:28px}
     .lp-hero-stage:before{inset:0 2% 38%;}
-    .lp-orbit-a{width:300px;height:300px;left:50%;top:28px;transform:translateX(-50%)}
-    .lp-orbit-b{width:236px;height:236px;left:50%;top:60px;animation:none;transform:translateX(-50%)}
-    .lp-school-carousel{position:relative;left:auto;top:auto;width:290px;height:290px;transform:none;margin:16px auto 28px}
-    .lp-school-frame{width:260px;height:260px}
+    .lp-orbit-a,.lp-orbit-b{display:none}
+    .lp-students-visual{position:relative;left:auto;top:auto;width:100%;height:auto;aspect-ratio:1.38;transform:none;border-radius:22px;margin-bottom:8px}
+    .lp-students-visual img{object-position:center 40%}
+    .lp-school-carousel{right:8px;top:min(48vw,178px);bottom:auto;width:82px;height:82px}
+    .lp-school-frame{width:72px;height:72px}
+    .lp-school-slide{padding:10px}
+    .lp-school-dots{display:none}
     .lp-signal{position:relative;right:auto;top:auto;bottom:auto;width:min(100%,330px);margin-top:10px;background:rgba(255,255,255,.9)}
     .lp-signal:before{display:none}
     .lp-signal:hover{transform:translateY(-2px)}
