@@ -2,12 +2,12 @@
 import { initializeApp, deleteApp } from 'firebase/app';
 import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
-  signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail,
+  signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signInWithRedirect, sendPasswordResetEmail,
   EmailAuthProvider, linkWithCredential, reauthenticateWithCredential, updatePassword,
-  signInWithCustomToken,
+  signInWithCustomToken, deleteUser,
 } from 'firebase/auth';
 import {
-  getFirestore, doc, setDoc, getDoc, getDocs, addDoc, collection, serverTimestamp,
+  getFirestore, doc, setDoc, getDoc, getDocs, addDoc, deleteDoc, collection, serverTimestamp,
   runTransaction, increment,
 } from 'firebase/firestore';
 
@@ -25,7 +25,15 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 
 const KID_DOMAIN = '@synaq.kids';
-const kidEmail = (code) => code.trim().toLowerCase() + KID_DOMAIN;
+// Backward-compatible: the UI accepts both the short code (`binara`) and the
+// technical Firebase address (`binara@synaq.kids`). Existing accounts keep the
+// exact same email; we only normalise what the user types before sign-in.
+export const normalizeKidCode = (value = '') => {
+  let code = String(value).trim().toLowerCase().replace(/\s+/g, '');
+  while (code.endsWith(KID_DOMAIN)) code = code.slice(0, -KID_DOMAIN.length);
+  return code;
+};
+const kidEmail = (code) => normalizeKidCode(code) + KID_DOMAIN;
 export const isKid = (user) => !!user && (user.email || '').endsWith(KID_DOMAIN);
 
 // Пароль: без похожих символов (0/O, 1/l) — детям диктовать голосом.
@@ -79,6 +87,19 @@ export const hasPasswordLogin = (user) =>
 export const isGoogleLogin = (user) =>
   !!user?.providerData?.some((p) => p.providerId === 'google.com');
 
+async function ensureGoogleFamily(user) {
+  if (!user || isKid(user) || !isGoogleLogin(user)) return;
+  const ref = doc(db, 'families', user.uid);
+  const snap = await getDoc(ref);
+  if (!snap.exists()) {
+    await setDoc(ref, {
+      parentEmail: user.email || null,
+      parentName: user.displayName || null,
+      createdAt: serverTimestamp(),
+    });
+  }
+}
+
 // Google-аккаунтқа email+пароль қосу — содан кейін екеуімен де кіруге болады.
 export async function linkParentPassword(password) {
   const user = auth.currentUser;
@@ -101,12 +122,20 @@ export async function changeParentPassword(currentPassword, newPassword) {
 export async function loginGoogle() {
   const provider = new GoogleAuthProvider();
   provider.setCustomParameters({ prompt: 'select_account' });
-  const cred = await signInWithPopup(auth, provider);
+  let cred;
   try {
-    const ref = doc(db, 'families', cred.user.uid);
-    const snap = await getDoc(ref);
-    if (!snap.exists()) await setDoc(ref, { parentEmail: cred.user.email, createdAt: serverTimestamp() });
-  } catch { /* Firestore міндетті емес — авторизация өтті */ }
+    cred = await signInWithPopup(auth, provider);
+  } catch (e) {
+    // Mobile and embedded browsers frequently block popups. Redirect keeps the
+    // same account flow and does not affect users for whom popup works.
+    if (e?.code === 'auth/popup-blocked' || e?.code === 'auth/operation-not-supported-in-this-environment') {
+      await signInWithRedirect(auth, provider);
+      return null;
+    }
+    throw e;
+  }
+  try { await ensureGoogleFamily(cred.user); }
+  catch { /* Firestore міндетті емес — авторизация өтті */ }
   return cred.user;
 }
 
@@ -119,9 +148,12 @@ export async function createChild(parentUid, { name, klass = '', code, pin }) {
   const pro = !!family.data()?.pro;
   const secondary = initializeApp(firebaseConfig, 'sec-' + Date.now());
   const secAuth = getAuth(secondary);
+  let childUser = null;
+  let childUid = null;
   try {
     const cred = await createUserWithEmailAndPassword(secAuth, kidEmail(code), pin);
-    const childUid = cred.user.uid;
+    childUser = cred.user;
+    childUid = cred.user.uid;
     // Имя в профиль аккаунта — тогда оно показывается сразу, даже если
     // childIndex почему-то не прочитается.
     await updateProfile(cred.user, { displayName: name }).catch(() => {});
@@ -130,13 +162,77 @@ export async function createChild(parentUid, { name, klass = '', code, pin }) {
     });
     await setDoc(doc(db, 'childIndex', childUid), { parentUid, name, klass, pro });
     return { childUid, code };
+  } catch (e) {
+    // Avoid orphan Auth accounts and half-created Firestore records. A retry
+    // with the same code must remain possible if one of the writes failed.
+    if (childUid) {
+      await deleteDoc(doc(db, 'childIndex', childUid)).catch(() => {});
+      await deleteDoc(doc(db, 'families', parentUid, 'children', childUid)).catch(() => {});
+    }
+    if (childUser) await deleteUser(childUser).catch(() => {});
+    throw e;
   } finally {
     await signOut(secAuth).catch(() => {});
     await deleteApp(secondary).catch(() => {});
   }
 }
 
-export const loginChild = (code, pin) => signInWithEmailAndPassword(auth, kidEmail(code), pin);
+export const loginChild = (code, pin) => {
+  const normalized = normalizeKidCode(code);
+  if (!normalized || !/^[a-z0-9]+$/.test(normalized)) {
+    throw Object.assign(new Error('invalid-child-code'), { code: 'auth/invalid-child-code' });
+  }
+  if (!pin || pin.length < 6) {
+    throw Object.assign(new Error('invalid-child-pin'), { code: 'auth/invalid-child-pin' });
+  }
+  return signInWithEmailAndPassword(auth, kidEmail(normalized), pin);
+};
+
+// Parent-only reset. The API verifies the parent's ID token and the Firestore
+// family link before changing the Auth password, so the child's UID, progress,
+// subscription and existing Firestore documents remain untouched.
+export async function resetChildPassword(childUid, password) {
+  const user = auth.currentUser;
+  if (!user) throw Object.assign(new Error('not-authenticated'), { code: 'auth/requires-login' });
+  const idToken = await user.getIdToken();
+  const response = await fetch('/api/child-password', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${idToken}` },
+    body: JSON.stringify({ childUid, password }),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    const code = data.error === 'weak_password' ? 'auth/weak-password'
+      : data.error === 'not_child_owner' ? 'auth/not-child-owner'
+        : data.error === 'child_not_found' ? 'auth/user-not-found'
+          : 'auth/child-reset-failed';
+    throw Object.assign(new Error(data.error || 'child-reset-failed'), { code });
+  }
+  return true;
+}
+
+export function childErrText(e, lang = 'kk') {
+  const code = e?.code || '';
+  const ru = lang === 'ru';
+  if (code.includes('invalid-child-code') || code.includes('invalid-email')) {
+    return ru ? 'Введите логин ребёнка латинскими буквами и цифрами.' : 'Баланың логинін латын әріптерімен және цифрлармен енгізіңіз.';
+  }
+  if (code.includes('invalid-child-pin')) {
+    return ru ? 'PIN должен содержать минимум 6 символов.' : 'PIN кемінде 6 таңбадан тұруы керек.';
+  }
+  if (code.includes('invalid-credential') || code.includes('wrong-password') || code.includes('user-not-found')) {
+    return ru
+      ? 'Неверный логин или PIN. Можно вводить binara или binara@synaq.kids. Если PIN потерян, попросите родителя изменить его в кабинете.'
+      : 'Логин немесе PIN қате. binara немесе binara@synaq.kids түрінде енгізуге болады. PIN жоғалса, ата-ана кабинетінен жаңартыңыз.';
+  }
+  if (code.includes('too-many-requests')) {
+    return ru ? 'Слишком много попыток. Подождите несколько минут и попробуйте снова.' : 'Әрекет тым көп. Бірнеше минуттан кейін қайталап көріңіз.';
+  }
+  if (code.includes('network')) {
+    return ru ? 'Проверьте интернет-соединение и попробуйте снова.' : 'Интернет байланысын тексеріп, қайта көріңіз.';
+  }
+  return errText(e, lang);
+}
 
 // ── Администратор ──
 // Пароля нет: email проверяется на сервере против allowlist ADMIN_EMAIL_1/2
@@ -183,7 +279,12 @@ export async function getMyProfile() {
 }
 
 export const logout = () => signOut(auth);
-export const watchAuth = (cb) => onAuthStateChanged(auth, cb);
+export const watchAuth = (cb) => onAuthStateChanged(auth, async (user) => {
+  // After the mobile redirect flow loginGoogle() cannot finish its local code,
+  // so create the parent document before the app renders the parent cabinet.
+  if (user && isGoogleLogin(user)) await ensureGoogleFamily(user).catch(() => {});
+  cb(user);
+});
 
 // ── Прогресс ──
 export const setFlag = (uid, qid, on) => on
@@ -284,28 +385,31 @@ export async function getSolved(childUid) {
 }
 
 // Человеческие сообщения об ошибках
-export function errText(e) {
+export function errText(e, lang = 'kk') {
   const c = (e && e.code) || '';
-  if (c.includes('email-already-in-use')) return 'Бұл юзернейм бос емес — басқасын таңдаңыз';
-  if (c.includes('weak-password')) return 'Пароль тым қысқа (кемінде 6 таңба)';
-  if (c.includes('invalid-email')) return 'Юзернейм тек латын әрпі мен цифрдан тұруы керек';
+  const ru = lang === 'ru';
+  if (c.includes('email-already-in-use')) return ru ? 'Этот логин уже занят — выберите другой.' : 'Бұл юзернейм бос емес — басқасын таңдаңыз';
+  if (c.includes('weak-password')) return ru ? 'Пароль слишком короткий — минимум 6 символов.' : 'Пароль тым қысқа (кемінде 6 таңба)';
+  if (c.includes('invalid-email')) return ru ? 'Введите корректный email или логин латинскими буквами и цифрами.' : 'Юзернейм тек латын әрпі мен цифрдан тұруы керек';
   if (c.includes('invalid-credential') || c.includes('wrong-password') || c.includes('user-not-found')) {
-    return 'Қате логин немесе пароль. Google арқылы кіріп, кабинетте пароль қойыңыз.';
+    return ru ? 'Неверный email или пароль. Если регистрировались через Google, войдите через Google.' : 'Қате логин немесе пароль. Google арқылы кіріп, кабинетте пароль қойыңыз.';
   }
-  if (c.includes('provider-already-linked')) return 'Email+пароль қазірдің өзінде қосылған.';
-  if (c.includes('credential-already-in-use')) return 'Бұл пошта басқа аккаунтқа байланған.';
-  if (c.includes('requires-recent-login')) return 'Қауіпсіздік үшін қайта Google арқылы кіріңіз, содан кейін парольді өзгертіңіз.';
+  if (c.includes('provider-already-linked')) return ru ? 'Вход по email и паролю уже подключён.' : 'Email+пароль қазірдің өзінде қосылған.';
+  if (c.includes('credential-already-in-use')) return ru ? 'Эта почта уже привязана к другому аккаунту.' : 'Бұл пошта басқа аккаунтқа байланған.';
+  if (c.includes('requires-recent-login')) return ru ? 'Для безопасности войдите заново и повторите действие.' : 'Қауіпсіздік үшін қайта Google арқылы кіріңіз, содан кейін парольді өзгертіңіз.';
+  if (c.includes('not-child-owner')) return ru ? 'Этот детский аккаунт не привязан к вашему кабинету.' : 'Бұл бала аккаунты сіздің кабинетіңізге тіркелмеген.';
+  if (c.includes('child-reset-failed')) return ru ? 'Не удалось изменить PIN. Попробуйте ещё раз.' : 'PIN өзгерту мүмкін болмады. Қайта көріңіз.';
   if (c.includes('admin/not-allowed')) return 'У вас нет доступа к панели администратора.';
   if (c.includes('admin/failed')) return 'Не удалось войти. Попробуйте ещё раз.';
-  if (c.includes('no-email')) return 'Пошта табылмады — Google аккаунтыңызда email болуы керек.';
-  if (c.includes('too-many-requests')) return 'Тым көп әрекет. Біраз күтіңіз немесе парольді қалпына келтіріңіз.';
-  if (c.includes('permission-denied')) return 'Firestore ережелері жарияланбаған. Firebase Console → Firestore → Rules → Publish';
-  if (c.includes('operation-not-allowed')) return 'Firebase-те Email/Password қосылмаған (Authentication → Sign-in method)';
-  if (c.includes('unauthorized-domain')) return 'Домен рұқсат етілмеген (Firebase → Authorized domains)';
-  if (c.includes('popup-blocked')) return 'Браузер терезені бөгеді — рұқсат етіңіз';
-  if (c.includes('popup-closed')) return 'Терезе жабылды, қайта көріңіз';
-  if (c.includes('network')) return 'Интернет байланысын тексеріңіз';
-  return 'Қате: ' + (c || (e && e.message) || 'белгісіз');
+  if (c.includes('no-email')) return ru ? 'В Google-аккаунте не найден email.' : 'Пошта табылмады — Google аккаунтыңызда email болуы керек.';
+  if (c.includes('too-many-requests')) return ru ? 'Слишком много попыток. Подождите и попробуйте снова.' : 'Тым көп әрекет. Біраз күтіңіз немесе парольді қалпына келтіріңіз.';
+  if (c.includes('permission-denied')) return ru ? 'Нет доступа к данным. Обратитесь в поддержку.' : 'Деректерге қолжетімділік жоқ. Қолдау қызметіне жазыңыз.';
+  if (c.includes('operation-not-allowed')) return ru ? 'Этот способ входа временно недоступен.' : 'Бұл кіру тәсілі уақытша қолжетімсіз.';
+  if (c.includes('unauthorized-domain')) return ru ? 'Вход с этого домена не разрешён.' : 'Бұл доменнен кіруге рұқсат жоқ.';
+  if (c.includes('popup-blocked')) return ru ? 'Браузер заблокировал окно входа. Разрешите всплывающие окна.' : 'Браузер кіру терезесін бұғаттады.';
+  if (c.includes('popup-closed')) return ru ? 'Окно входа закрыто. Попробуйте ещё раз.' : 'Кіру терезесі жабылды. Қайта көріңіз.';
+  if (c.includes('network')) return ru ? 'Проверьте подключение к интернету.' : 'Интернет байланысын тексеріңіз';
+  return (ru ? 'Ошибка: ' : 'Қате: ') + (c || (e && e.message) || (ru ? 'неизвестно' : 'белгісіз'));
 }
 
 // Ата-ана аккаунтының деректері (соның ішінде pro — төленген жазылым).

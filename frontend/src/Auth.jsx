@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { registerParent, loginParent, loginChild, loginAdmin, loginGoogle, resetParentPassword, errText } from './firebase.js';
+import { registerParent, loginParent, loginChild, loginAdmin, loginGoogle, resetParentPassword, errText, childErrText } from './firebase.js';
 import { useLang, LangSwitch } from './i18n.jsx';
 import Brand from './Brand.jsx';
 
 // Вход оформлен как карточка поверх затемнённого фона (попап), а не пустая страница.
 // На первом экране сразу объясняем, как устроен семейный аккаунт.
 export default function Auth({ onClose, duelCode = '' }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [pname, setPname] = useState('');
   // ?admin=1 в адресе — единственный путь к входу администратора: обычный
   // посетитель его не видит и кнопки на экране «Кто входит?» для него нет.
@@ -23,12 +23,19 @@ export default function Auth({ onClose, duelCode = '' }) {
   const [pass, setPass] = useState('');
   const [code, setCode] = useState('');
   const [pin, setPin] = useState('');
+  const [showPin, setShowPin] = useState(false);
   const [info, setInfo] = useState('');
 
-  const run = (fn) => async () => {
+  const run = (fn, formatError = (e) => errText(e, lang)) => async () => {
     setErr(''); setInfo(''); setBusy(true);
-    try { await fn(); } catch (e) { setErr(errText(e)); }
+    try { await fn(); } catch (e) { setErr(formatError(e)); }
     setBusy(false);
+  };
+
+  const submitChild = (e) => {
+    e.preventDefault();
+    if (busy || !code.trim() || pin.length < 6) return;
+    run(() => loginChild(code, pin), (error) => childErrText(error, lang))();
   };
 
   return (
@@ -42,7 +49,7 @@ export default function Auth({ onClose, duelCode = '' }) {
           <Logo />
          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
   <LangSwitch />
-  <button onClick={() => (window.location.href = '/')} style={{ background: 'none', border: 'none', cursor: 'pointer', font: "600 13px 'Golos Text',sans-serif", color: '#6B655B' }}>Шығу</button>
+  <button onClick={() => (window.location.href = '/')} style={{ background: 'none', border: 'none', cursor: 'pointer', font: "600 13px 'Golos Text',sans-serif", color: '#6B655B' }}>{t('common.exit')}</button>
 </div>
         </div>
 
@@ -163,15 +170,27 @@ export default function Auth({ onClose, duelCode = '' }) {
         )}
 
         {stage === 'loginChild' && (
-          <div style={{ animation: 'rise .3s ease both' }}>
+          <form style={{ animation: 'rise .3s ease both' }} onSubmit={submitChild}>
             <h1 style={S.h1}>{t('auth.child')}</h1>
             <p style={S.hint}>{t('auth.childHint')}</p>
-            <input style={S.input} placeholder={t('auth.code')} value={code} onChange={(e) => setCode(e.target.value)} />
-            <input style={S.input} type="password" placeholder={t('auth.pin')} value={pin} onChange={(e) => setPin(e.target.value)} />
+            <label style={S.fieldLabel} htmlFor="child-code">{t('auth.code')}</label>
+            <input id="child-code" style={S.input} placeholder={t('auth.codeExample')} value={code}
+              autoCapitalize="none" autoCorrect="off" spellCheck={false} autoComplete="username"
+              onChange={(e) => setCode(e.target.value)} />
+            <p style={S.fieldHelp}>{t('auth.codeHelp')}</p>
+            <label style={S.fieldLabel} htmlFor="child-pin">{t('auth.pin')}</label>
+            <div style={S.pinWrap}>
+              <input id="child-pin" style={{ ...S.input, marginBottom: 0, paddingRight: 76 }}
+                type={showPin ? 'text' : 'password'} placeholder={t('auth.pin')}
+                value={pin} autoComplete="current-password" onChange={(e) => setPin(e.target.value)} />
+              <button type="button" style={S.pinToggle} onClick={() => setShowPin((value) => !value)}>
+                {showPin ? t('auth.hidePin') : t('auth.showPin')}
+              </button>
+            </div>
             <Err v={err} />
-            <button style={{ ...S.dark, marginTop: 6 }} disabled={busy} onClick={run(() => loginChild(code, pin))}>{t('auth.login')}</button>
-            <button style={S.back} onClick={() => setStage('loginRole')}>{t('common.back')}</button>
-          </div>
+            <button type="submit" style={{ ...S.dark, marginTop: 14 }} disabled={busy || !code.trim() || pin.length < 6}>{t('auth.login')}</button>
+            <button type="button" style={S.back} onClick={() => setStage('loginRole')}>{t('common.back')}</button>
+          </form>
         )}
 
         {onClose && <button style={S.close} onClick={onClose} aria-label="close">×</button>}
@@ -222,6 +241,10 @@ const S = {
   dark: { width: '100%', padding: 15, background: '#3A9DF5', color: '#FFFFFF', border: 'none', borderRadius: 10, font: "600 15px 'Golos Text'", cursor: 'pointer', marginBottom: 10 },
   outline: { width: '100%', padding: 15, background: '#FFFFFF', color: '#167AD1', border: '1px solid rgba(39,132,211,.28)', borderRadius: 10, font: "600 15px 'Golos Text'", cursor: 'pointer' },
   input: { width: '100%', padding: '13px 14px', border: '1px solid rgba(39,132,211,.24)', borderRadius: 10, font: "500 15px 'Golos Text'", color: '#13283C', outline: 'none', background: '#fff', marginBottom: 10 },
+  fieldLabel: { display: 'block', margin: '0 0 6px', font: "600 12px 'Golos Text'", color: '#36536B' },
+  fieldHelp: { margin: '-3px 0 11px', font: "500 11.5px/1.4 'Golos Text'", color: '#8094A7' },
+  pinWrap: { position: 'relative', marginBottom: 10 },
+  pinToggle: { position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', border: 0, background: '#EAF5FF', color: '#167AD1', borderRadius: 7, padding: '6px 8px', cursor: 'pointer', font: "600 11px 'Golos Text'" },
   back: { width: '100%', marginTop: 6, padding: 9, background: 'transparent', color: '#6B655B', border: 'none', font: "500 13.5px 'Golos Text'", cursor: 'pointer' },
   linkBtn: { width: '100%', marginTop: 4, padding: 8, background: 'transparent', color: '#6B655B', border: 'none', font: "500 13px 'Golos Text'", cursor: 'pointer', textDecoration: 'underline' },
   google: { width: '100%', padding: 13, background: '#fff', color: '#13283C', border: '1px solid rgba(39,132,211,.24)', borderRadius: 10, font: "600 15px 'Golos Text'", cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9 },

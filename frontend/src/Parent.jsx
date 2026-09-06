@@ -3,7 +3,7 @@ import { useLang } from './i18n.jsx';
 import {
   auth, createChild, getChildren, getMocks, getAttempts, logout, getFamily, syncChildrenPro,
   genPassword, suggestUsername, cleanUsername, errText,
-  hasPasswordLogin, linkParentPassword, changeParentPassword,
+  hasPasswordLogin, linkParentPassword, changeParentPassword, resetChildPassword,
 } from './firebase.js';
 import { api, topicStats, readiness, mockSeries } from './api.js';
 import Brand from './Brand.jsx';
@@ -12,7 +12,7 @@ const Logo = () => <div className="logo"><Brand compact /></div>;
 
 
 export default function Parent({ onExit }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const exit = async () => {
     if (!window.confirm('Шығуды растайсыз ба?')) return;
     await (onExit || logout)();
@@ -81,6 +81,31 @@ export default function Parent({ onExit }) {
   const [mocks, setMocks] = useState([]);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
+  const [resetChild, setResetChild] = useState(null);
+  const [resetPin, setResetPin] = useState('');
+  const [resetBusy, setResetBusy] = useState(false);
+  const [resetMessage, setResetMessage] = useState('');
+
+  const openPinReset = (child) => {
+    setResetChild(child);
+    setResetPin(genPassword());
+    setResetMessage('');
+    setErr('');
+  };
+
+  const saveChildPin = async () => {
+    if (!resetChild || resetPin.length < 6 || resetBusy) return;
+    setResetBusy(true);
+    setErr('');
+    setResetMessage('');
+    try {
+      await resetChildPassword(resetChild.uid, resetPin);
+      setResetMessage(t('parent.childPinChanged'));
+    } catch (e) {
+      setErr(errText(e, lang));
+    }
+    setResetBusy(false);
+  };
 
   const load = () => getChildren(auth.currentUser.uid).then(setChildren).catch(() => {});
   useEffect(() => {
@@ -103,7 +128,7 @@ export default function Parent({ onExit }) {
       setCreated({ code, pass: password, name });
       setName(''); setUsername(''); setPass(''); setAdding(false);
       await load();
-    } catch (e) { setErr(errText(e)); }
+    } catch (e) { setErr(errText(e, lang)); }
     setBusy(false);
   }
   const [stats, setStats] = useState([]);
@@ -213,7 +238,7 @@ export default function Parent({ onExit }) {
             </div>
           )}
 
-          <LoginPasswordCard t={t} />
+          <LoginPasswordCard t={t} lang={lang} />
 
           <div className="row">
             <h1 style={{ margin: 0 }}>{t('ui.27')}</h1>
@@ -258,12 +283,55 @@ export default function Parent({ onExit }) {
 
           <div className="list">
             {children.map((c) => (
-              <div className="row-item" key={c.uid} onClick={() => openResults(c)}>
-                <b>{c.name}</b>
-                <span className="rt">логин: {c.code} · нәтижелер →</span>
+              <div className="row-item" key={c.uid} style={{ gap: 12 }}>
+                <div style={{ flex: 1, minWidth: 170, cursor: 'pointer' }} onClick={() => openResults(c)}>
+                  <b>{c.name}</b>
+                  <span className="rt" style={{ display: 'block', marginTop: 3 }}>{t('parent.childLogin')}: {c.code}</span>
+                </div>
+                <div style={{ display: 'flex', gap: 7, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                  <button className="btn ghost" type="button" style={{ padding: '8px 10px' }}
+                    onClick={() => copy(c.code)}>{t('parent.copyLogin')}</button>
+                  <button className="btn ghost" type="button" style={{ padding: '8px 10px' }}
+                    onClick={() => openPinReset(c)}>{t('parent.resetChildPin')}</button>
+                  <button className="btn" type="button" style={{ padding: '8px 10px' }}
+                    onClick={() => openResults(c)}>{t('parent.results')}</button>
+                </div>
               </div>
             ))}
           </div>
+          {resetChild && (
+            <div className="card" style={{ marginTop: 14, borderColor: resetMessage ? 'var(--green)' : 'var(--line)' }}>
+              <div className="row" style={{ alignItems: 'flex-start', marginBottom: 12 }}>
+                <div>
+                  <p className="kicker" style={{ margin: '0 0 5px' }}>{t('parent.resetChildPin')}</p>
+                  <b>{resetChild.name}</b>
+                  <p className="muted" style={{ margin: '5px 0 0', fontSize: 12 }}>{t('parent.resetPinSafe')}</p>
+                </div>
+                <button className="link" type="button" onClick={() => { setResetChild(null); setResetMessage(''); setErr(''); }}>×</button>
+              </div>
+              <label style={lab}>{t('parent.newChildPin')}</label>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                <input value={resetPin} onChange={(e) => setResetPin(e.target.value)}
+                  autoComplete="new-password" style={{ ...inp, flex: '1 1 190px', marginBottom: 0 }} />
+                <button className="btn ghost" type="button" onClick={() => { setResetPin(genPassword()); setResetMessage(''); }}>
+                  {t('parent.generatePin')}
+                </button>
+              </div>
+              {err && <p style={{ color: 'var(--accent)', fontSize: 13, margin: '10px 0 0' }}>{err}</p>}
+              {resetMessage && <p style={{ color: 'var(--green)', fontSize: 13, margin: '10px 0 0' }}>{resetMessage}</p>}
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 12 }}>
+                <button className="btn accent" type="button" disabled={resetBusy || resetPin.length < 6} onClick={saveChildPin}>
+                  {resetBusy ? '…' : t('parent.saveChildPin')}
+                </button>
+                {resetMessage && (
+                  <button className="btn ghost" type="button"
+                    onClick={() => copy(`Synaq\n${t('parent.childLogin')}: ${resetChild.code}\nPIN: ${resetPin}`)}>
+                    {t('parent.copyCredentials')}
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
           {!children.length && !adding && <p className="muted" style={{ marginTop: 14 }}>{t('ui.32')}</p>}
         </main>
       ) : (
@@ -443,7 +511,7 @@ function ChildReport({ child, mocks, stats, onBack, t }) {
 const lab = { display: 'block', font: "500 11px 'IBM Plex Mono',monospace", letterSpacing: '.08em', textTransform: 'uppercase', color: '#9A9384', marginBottom: 6 };
 const inp = { width: '100%', padding: '12px 14px', border: '1px solid var(--line)', background: '#fff', font: "500 15px 'Golos Text'", color: 'var(--ink)', outline: 'none' };
 
-function LoginPasswordCard({ t }) {
+function LoginPasswordCard({ t, lang }) {
   const email = auth.currentUser?.email || '';
   const [linked, setLinked] = useState(() => hasPasswordLogin(auth.currentUser));
   const [editing, setEditing] = useState(false);
@@ -474,7 +542,7 @@ function LoginPasswordCard({ t }) {
       setMsg(t('parent.passSaved'));
       setCurrent(''); setPass1(''); setPass2(''); setEditing(false);
     } catch (e) {
-      setErr(e.message === 'mismatch' ? t('parent.passMismatch') : errText(e));
+      setErr(e.message === 'mismatch' ? t('parent.passMismatch') : errText(e, lang));
     }
     setBusy(false);
   }
