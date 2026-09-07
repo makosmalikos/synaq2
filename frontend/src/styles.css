@@ -95,25 +95,69 @@ input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(58,157,245,.12)
 
 /* ===== Раскладка с левым меню (как в дизайне) ===== */
 .shell { display:flex; min-height:100vh; align-items:stretch; }
-.sidebar { width:246px; flex:none; border-right:1px solid var(--line); padding:24px 20px; display:flex; flex-direction:column; background:rgba(255,255,255,.90); backdrop-filter:blur(18px); position:sticky; top:0; height:100vh; align-self:flex-start; }
+.sidebar { width:226px; flex:none; border-right:1px solid var(--line); padding:24px 18px; display:flex; flex-direction:column; background:rgba(255,255,255,.94); backdrop-filter:blur(18px); position:sticky; top:0; height:100vh; align-self:flex-start; }
 .sidebar .logo { margin-bottom:34px; }
 .nav-v { display:flex; flex-direction:column; gap:2px; flex:1; }
-.nav-v button { display:flex; align-items:center; gap:12px; background:none; border:none; border-radius:10px; padding:11px 10px; cursor:pointer; text-align:left; color:var(--muted); font:600 15px 'Golos Text'; border-left:2px solid transparent; width:100%; }
+.nav-v button { display:flex; align-items:center; gap:11px; background:none; border:none; border-radius:12px; padding:10px 11px; cursor:pointer; text-align:left; color:var(--muted); font:650 14px 'Golos Text'; border:1px solid transparent; width:100%; transition:background .18s,color .18s,transform .18s,box-shadow .18s; }
 .nav-v button > span:nth-child(2) { flex:1; }
-.nav-v button:hover { color:var(--ink); }
-.nav-v button .num { font:500 11px 'IBM Plex Mono',monospace; color:#B7B0A2; width:20px; flex:none; text-align:left; }
-.nav-v button.on { color:var(--accent-dark); border-left-color:var(--accent); background:var(--blue-soft); }
-.nav-v button.on .num { color:var(--accent); }
-.nav-v .badge { margin-left:auto; background:var(--accent); color:#fff; font:600 10px 'IBM Plex Mono',monospace; padding:2px 7px; }
+.nav-v button:hover { color:var(--accent-dark);background:#F1F7FF;transform:translateX(2px) }
+.nav-v button .num { width:29px;height:29px;flex:none;display:grid;place-items:center;border-radius:9px;background:#F0F6FC;color:#64819A;font:700 14px/1 'Golos Text',sans-serif;text-align:center; }
+.nav-v button.on { color:#fff;background:linear-gradient(135deg,#3A9DF5,#2F80ED);box-shadow:0 12px 24px -15px rgba(47,128,237,.8) }
+.nav-v button.on .num { color:#fff;background:rgba(255,255,255,.17); }
+.nav-v .badge { margin-left:auto; background:#fff; color:var(--accent-dark); font:700 10px 'IBM Plex Mono',monospace; padding:2px 7px;border-radius:999px }
 .userbox { border-top:1px solid var(--line); padding-top:16px; margin-top:12px; }
 .userbox .who { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
 .userbox .ava { width:42px; height:42px; flex:none; border-radius:12px; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font:700 18px 'Golos Text',sans-serif; }
 .content { flex:1; padding:36px 44px; max-width:840px; min-width:0; }
+.content-home{max-width:1240px;width:100%;padding-top:28px;background:radial-gradient(circle at 76% 7%,rgba(58,157,245,.11),transparent 26%)}
 .content main { padding-top:0; }
 .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:stretch; }
 .grid2 .card { border:1px solid var(--line); display:flex; flex-direction:column; justify-content:flex-start; min-height:120px; }
 .card.click { cursor:pointer; transition:border-color .15s; }
 .card.click:hover { border-color:var(--accent); }
+
+/* ===== Яркий главный экран ученика ===== */
+.home-dashboard{width:100%;font-family:'Geologica','Golos Text',system-ui,sans-serif}
+.home-heading{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:18px}
+.home-heading h1{margin:0;color:#10243A;font:800 32px/1.12 'Geologica','Golos Text',sans-serif;letter-spacing:-.035em}
+.home-heading>div>p:last-child{margin:7px 0 0;color:#6A8197;font:500 14px/1.5 'Golos Text',sans-serif}
+.home-kicker{margin:0 0 8px;color:#2F80ED;font:750 10px 'Geologica',sans-serif;letter-spacing:.15em;text-transform:uppercase}
+.home-hero{position:relative;min-height:285px;display:grid;grid-template-columns:minmax(0,1.28fr) minmax(280px,.72fr);overflow:hidden;border-radius:28px;background:linear-gradient(125deg,#245DE8 0%,#2F80ED 50%,#17ADD4 100%);box-shadow:0 28px 54px -32px rgba(37,99,235,.72);color:#fff}
+.home-hero:before{content:'';position:absolute;width:440px;height:440px;right:-105px;top:-215px;border:74px solid rgba(255,255,255,.07);border-radius:50%}
+.home-hero-copy{position:relative;z-index:2;padding:38px 40px}
+.home-hero-label{display:inline-flex;margin-bottom:14px;padding:7px 11px;border:1px solid rgba(255,255,255,.26);border-radius:999px;background:rgba(255,255,255,.12);font:700 10px 'Geologica',sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.home-hero h2{max-width:560px;margin:0 0 10px;color:#fff;font:800 31px/1.12 'Geologica','Golos Text',sans-serif;letter-spacing:-.035em}
+.home-hero-copy>p{max-width:520px;margin:0 0 24px;color:rgba(255,255,255,.82);font:500 14.5px/1.55 'Golos Text',sans-serif}
+.home-primary{display:inline-flex;align-items:center;gap:9px;min-width:158px;justify-content:center;padding:13px 20px;border:0;border-radius:999px;background:#fff;color:#2169D8;font:750 14px 'Geologica','Golos Text',sans-serif;cursor:pointer;box-shadow:0 15px 30px -18px rgba(6,37,100,.75);transition:transform .2s,box-shadow .2s}
+.home-primary:hover{transform:translateY(-2px);box-shadow:0 18px 34px -17px rgba(6,37,100,.85)}
+.home-play{font-size:10px}
+.home-hero-visual{position:relative;min-height:285px}
+.home-hero-visual img{position:absolute;z-index:2;right:8%;bottom:-92px;width:260px;height:390px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 22px 20px rgba(6,45,113,.25));transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.home-hero:hover .home-hero-visual img{transform:translateY(-5px) scale(1.025)}
+.home-hero-ring{position:absolute;width:300px;height:300px;right:-3px;bottom:-125px;border-radius:50%;background:rgba(255,255,255,.1);box-shadow:0 0 0 36px rgba(255,255,255,.04),0 0 0 72px rgba(255,255,255,.025)}
+.home-float{position:absolute;z-index:3;padding:9px 12px;border:1px solid rgba(255,255,255,.42);border-radius:13px;background:rgba(255,255,255,.9);box-shadow:0 14px 30px -18px rgba(8,49,116,.75);color:#236DD9;font:800 11px 'Geologica',sans-serif;animation:homeFloat 4.8s ease-in-out infinite}
+.home-float-a{left:4px;top:54px}.home-float-b{right:14px;top:32px;animation-delay:1.1s}
+@keyframes homeFloat{50%{transform:translateY(-7px)}}
+.home-stats{display:grid;grid-template-columns:1fr .8fr 1.65fr;gap:14px;margin:16px 0 28px}
+.home-stat{min-height:96px;display:flex;align-items:center;gap:14px;padding:18px 20px;border:1px solid rgba(47,128,237,.13);border-radius:19px;background:#fff;box-shadow:0 16px 34px -28px rgba(26,87,147,.55)}
+.home-stat-icon{width:46px;height:46px;flex:none;display:grid;place-items:center;border-radius:14px;font-size:18px}
+.home-stat span,.home-stat small{display:block;color:#71869A;font:600 10.5px/1.4 'Golos Text',sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.home-stat strong{display:block;margin-top:3px;color:#173252;font:800 21px 'Geologica','Golos Text',sans-serif}
+.home-stat-xp .home-stat-icon{background:#FFF4D8;color:#F2A51A}.home-stat-level .home-stat-icon{background:#EEE9FF;color:#7857DB}
+.home-stat-progress{display:block;padding-top:17px}
+.home-stat-top{display:flex;justify-content:space-between;align-items:center}.home-stat-top strong{font-size:14px;margin:0;color:#2F80ED}
+.home-stat-bar{height:8px;margin:12px 0 8px;overflow:hidden;border-radius:999px;background:#E4F0FB}.home-stat-bar i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#37C7A0,#2F80ED)}
+.home-section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:13px}
+.home-section-head span{color:#2F80ED;font:750 10px 'Geologica',sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.home-section-head h2{margin:6px 0 0;color:#13283C;font:800 23px 'Geologica','Golos Text',sans-serif;letter-spacing:-.025em}
+.home-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.home-action{position:relative;min-width:0;min-height:168px;display:flex;flex-direction:column;align-items:flex-start;padding:21px;border:1px solid rgba(47,128,237,.13);border-radius:21px;background:#fff;text-align:left;cursor:pointer;box-shadow:0 15px 34px -28px rgba(25,84,142,.5);transition:transform .22s,box-shadow .22s,border-color .22s;overflow:hidden}
+.home-action:before{content:'';position:absolute;width:120px;height:120px;right:-58px;top:-62px;border-radius:50%;background:var(--action-soft)}
+.home-action:hover{transform:translateY(-5px);border-color:var(--action);box-shadow:0 24px 44px -28px var(--action)}
+.home-action-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:14px;background:var(--action-soft);color:var(--action);font:800 20px 'Golos Text',sans-serif}
+.home-action-copy{display:flex;flex-direction:column;margin-top:15px}.home-action-copy small{color:var(--action);font:750 9.5px 'Geologica',sans-serif;letter-spacing:.12em;text-transform:uppercase}.home-action-copy strong{margin-top:5px;color:#172D43;font:750 16px 'Geologica','Golos Text',sans-serif}.home-action-copy em{margin-top:7px;color:#71869A;font:500 12.5px/1.45 'Golos Text',sans-serif;font-style:normal}
+.home-action-arrow{position:absolute;right:18px;bottom:18px;color:var(--action);font-size:20px}
+.home-action-duel{--action:#7C5CE5;--action-soft:#F0ECFF}.home-action-mock{--action:#F39B34;--action-soft:#FFF2DF}.home-action-progress{--action:#25A879;--action-soft:#E4F8F0}
 
 @media (max-width:760px){
   .shell { flex-direction:column; }
@@ -128,6 +172,11 @@ input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(58,157,245,.12)
   .userbox .btn { width:auto; padding:9px 16px; }
   .content { padding:22px 18px; }
   .grid2 { grid-template-columns:1fr; }
+  .content-home{padding-top:18px}
+  .home-hero{grid-template-columns:1fr}
+  .home-hero-visual{display:none}
+  .home-stats{grid-template-columns:1fr 1fr}.home-stat-progress{grid-column:1/-1}
+  .home-actions{grid-template-columns:1fr}
 }
 
 /* ===== Экзаменационный вид (мок/тренировка) ===== */
@@ -320,3 +369,265 @@ input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(58,157,245,.12)
   main h1 { font-size: 23px; }
   .nav-v.open button { font-size: 15px; }
 }
+
+/* ===== Кабинет 2.0: лёгкая верхняя навигация ===== */
+@media (min-width: 641px) {
+  .shell{display:block;background:linear-gradient(180deg,#F7FBFF 0,#F2F8FE 100%)}
+  .sidebar{--nav-active:#2F80ED;position:sticky;z-index:30;top:0;width:100%;height:78px;min-height:78px;padding:11px max(24px,calc((100vw - 1180px)/2));display:flex;flex-direction:row;align-items:center;gap:24px;border:0;border-bottom:1px solid rgba(39,132,211,.12);background:rgba(255,255,255,.96);box-shadow:0 10px 30px -28px rgba(20,75,128,.65)}
+  .sidebar:after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:3px;background:linear-gradient(90deg,transparent 0,var(--nav-active) 35%,var(--nav-active) 65%,transparent 100%);opacity:.72;transition:background .25s}
+  .sidebar-home{--nav-active:#2F80ED}.sidebar-training{--nav-active:#FF922B}.sidebar-league{--nav-active:#22B96A}.sidebar-progress{--nav-active:#A34EE5}.sidebar-mock{--nav-active:#13B8B0}.sidebar-duel{--nav-active:#7257E8}.sidebar-rewards{--nav-active:#EF3E8F}
+  .sbar-top{display:contents}
+  .sidebar .logo{order:1;margin:0}
+  .sidebar .brand-mark.compact{min-width:118px;padding:11px 17px;border-radius:12px;font-size:18px}
+  .nav-v{order:2;flex:1;display:flex;flex-direction:row;justify-content:center;gap:3px}
+  .nav-v button{width:auto;padding:9px 10px;border-radius:11px;gap:7px;font-size:12.5px;white-space:nowrap}
+  .nav-v button:hover{transform:translateY(-1px)}
+  .nav-v button .num{width:24px;height:24px;border-radius:7px;font-size:12px}
+  .nav-v button.on{color:#fff;background:linear-gradient(135deg,var(--item-a),var(--item-b));box-shadow:0 10px 22px -14px var(--item-a)}
+  .nav-v button.on .num{color:#fff;background:rgba(255,255,255,.18)}
+  .nav-v .nav-home{--item-a:#3A9DF5;--item-b:#2F80ED}.nav-v .nav-training{--item-a:#FF9F32;--item-b:#FF7A18}.nav-v .nav-league{--item-a:#31C978;--item-b:#15A85C}.nav-v .nav-progress{--item-a:#B459EC;--item-b:#8B42D3}.nav-v .nav-mock{--item-a:#24C9C0;--item-b:#0FA7A6}.nav-v .nav-duel{--item-a:#8870F0;--item-b:#654BDD}.nav-v .nav-rewards{--item-a:#FA4C9D;--item-b:#E92E7F}
+  .nav-v .badge{display:none}
+  .sbar-right{order:3;display:flex;align-items:center;gap:8px}
+  .header-xp{height:36px;display:flex;align-items:center;gap:6px;padding:0 11px;border:1px solid #FFE39B;border-radius:11px;background:linear-gradient(135deg,#FFF9DD,#FFF1B8);color:#B56E00;font:700 12px 'Geologica','Golos Text',sans-serif;box-shadow:0 8px 18px -15px #D79500}
+  .header-xp span{color:#F6B817;font-size:14px}
+  .sbar-language{display:block}
+  .userbox{position:relative;order:4;display:flex;align-items:center;gap:9px;margin:0;padding:0;border:0}
+  .userbox .ava{width:38px;height:38px;border-radius:50%;font-size:15px;background:linear-gradient(135deg,#46B6F6,#18BBD0);box-shadow:0 8px 18px -11px #118BBE}
+  .content,.content-home{width:100%;max-width:1180px;margin:0 auto;padding:30px 28px 64px;background:none}
+}
+
+/* Профиль ученика в шапке */
+.profile-trigger{display:block;padding:0;border:0;border-radius:50%;background:none;cursor:pointer;transition:transform .18s,box-shadow .18s}
+.profile-trigger:hover{transform:translateY(-1px);box-shadow:0 10px 22px -15px rgba(16,121,183,.9)}
+.profile-trigger:focus-visible{outline:3px solid rgba(47,128,237,.25);outline-offset:3px}
+.profile-dropdown{position:absolute;z-index:80;top:calc(100% + 15px);right:0;width:310px;padding:10px;border:1px solid rgba(39,132,211,.14);border-radius:22px;background:rgba(255,255,255,.98);box-shadow:0 28px 65px -27px rgba(21,60,101,.48);backdrop-filter:blur(18px);animation:profileMenuIn .2s cubic-bezier(.2,.8,.2,1) both;transform-origin:top right}
+.profile-dropdown:before{content:'';position:absolute;right:15px;top:-7px;width:14px;height:14px;transform:rotate(45deg);border-left:1px solid rgba(39,132,211,.14);border-top:1px solid rgba(39,132,211,.14);background:#fff}
+@keyframes profileMenuIn{from{opacity:0;transform:translateY(-7px) scale(.97)}to{opacity:1;transform:none}}
+.profile-head{position:relative;padding:13px 14px 16px;margin-bottom:7px;border-bottom:1px solid #EAF0F5}
+.profile-head strong,.profile-head span,.profile-head small{display:block}
+.profile-head strong{overflow:hidden;color:#14283D;font:800 21px/1.2 'Geologica','Golos Text',sans-serif;text-overflow:ellipsis;white-space:nowrap}
+.profile-head span{overflow:hidden;margin-top:5px;color:#6B7D8F;font:500 13px/1.4 'Golos Text',sans-serif;text-overflow:ellipsis;white-space:nowrap}
+.profile-head small{margin-top:8px;color:#2F80ED;font:700 10px 'Geologica','Golos Text',sans-serif;letter-spacing:.07em;text-transform:uppercase}
+.profile-action{position:relative;width:100%;min-height:48px;display:flex;align-items:center;gap:13px;padding:10px 13px;border:0;border-radius:13px;background:transparent;text-decoration:none;font:650 14px 'Golos Text',sans-serif;text-align:left;transition:background .18s,transform .18s}
+.profile-action{cursor:pointer}
+.profile-action:hover{transform:translateX(2px);background:#F4F8FC}
+.profile-action svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.profile-plan{color:#EF7F1A}.profile-support{color:#20AD68}.profile-exit{color:#E94747}
+
+/* Одна кнопка языка в кабинете: надпись показывает язык следующего клика. */
+.lang-toggle{height:36px;min-width:52px;padding:0 11px;border:0;border-radius:11px;background:#F1F4F8;color:#526276;font:750 12px 'Geologica','Golos Text',sans-serif;letter-spacing:.06em;cursor:pointer;transition:transform .18s,background .18s,color .18s}
+.lang-toggle:hover{transform:translateY(-1px);background:#E7F2FF;color:#216FD7}
+.lang-toggle:focus-visible{outline:3px solid rgba(47,128,237,.22);outline-offset:2px}
+.lang-toggle.dark{border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.14);color:#fff}
+
+/* ===== Отдельный экран подключения Pro ===== */
+.subscription-page{position:relative;isolation:isolate;min-height:100vh;overflow:hidden;margin:0;padding:30px max(22px,calc((100vw - 1240px)/2)) 38px;background:linear-gradient(135deg,#F4F8FF 0%,#EEF6FF 46%,#F8FBFF 100%);font-family:'Geologica','Golos Text',system-ui,sans-serif}
+.subscription-page:before{content:'';position:absolute;z-index:-2;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(47,128,237,.085) 1px,transparent 0);background-size:26px 26px;mask-image:linear-gradient(to bottom,black,transparent 82%)}
+.subscription-orb{position:absolute;z-index:-1;border-radius:50%;filter:blur(3px);pointer-events:none}
+.subscription-orb-one{width:560px;height:560px;right:-150px;top:-210px;background:radial-gradient(circle,rgba(31,186,226,.22),rgba(31,186,226,0) 70%)}
+.subscription-orb-two{width:520px;height:520px;left:-210px;bottom:-280px;background:radial-gradient(circle,rgba(62,104,237,.16),rgba(62,104,237,0) 70%)}
+.subscription-wrap{width:100%;max-width:1180px;margin:0 auto}
+.subscription-topbar{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:10px 18px 10px 22px;border:1px solid rgba(39,132,211,.13);border-radius:22px;background:rgba(255,255,255,.94);box-shadow:0 22px 55px -40px rgba(23,76,131,.55);backdrop-filter:blur(18px)}
+.subscription-brand{display:flex;align-items:center;gap:14px;white-space:nowrap}
+.subscription-brand .brand-mark.compact{min-width:118px;padding:11px 17px;border-radius:12px;background:linear-gradient(135deg,#48ACFF 0%,#2F80ED 58%,#1577DA 100%);color:#fff;font-size:18px;text-shadow:0 1px 1px rgba(12,67,128,.18);box-shadow:0 13px 24px -16px rgba(24,112,203,.9)}
+.subscription-brand i{display:block;width:1px;height:28px;background:#DCE6F0}
+.subscription-brand .subscription-label{color:#5C6C7E;font:700 13px 'Golos Text',sans-serif}
+.subscription-trust{display:flex;align-items:center;justify-content:center;gap:8px;flex:1}
+.subscription-trust span{display:flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid #DDE8F2;border-radius:999px;background:#fff;color:#637487;font:650 11px 'Golos Text',sans-serif;white-space:nowrap}
+.subscription-trust b{color:#20AE70;font-size:12px}
+.subscription-top-actions{display:flex;align-items:center;gap:8px}
+.subscription-back{height:42px;padding:0 16px;border:1px solid #DCE6F0;border-radius:13px;background:#fff;color:#586A7D;font:700 12px 'Golos Text',sans-serif;cursor:pointer;transition:transform .18s,border-color .18s,color .18s}
+.subscription-back:hover{transform:translateX(-2px);border-color:#A9CCEF;color:#2473D6}
+.subscription-hero{padding:40px 20px 32px;text-align:center}
+.subscription-kicker{display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border:1px solid #F7D984;border-radius:999px;background:#FFF6D9;color:#9F7117;font:750 11px 'Golos Text',sans-serif}
+.subscription-hero h1{max-width:900px;margin:19px auto 9px;color:#0F2035;font:850 50px/1.06 'Geologica','Golos Text',sans-serif;letter-spacing:-.045em}
+.subscription-hero h1 em{background:linear-gradient(90deg,#2F80ED,#14B8D4);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
+.subscription-hero p{max-width:670px;margin:0 auto;color:#6A7E92;font:500 15px/1.55 'Golos Text',sans-serif}
+.subscription-choice,.subscription-payment{max-width:900px;margin:0 auto}
+.subscription-section-label{display:block;margin:0 0 10px;color:#627589;font:750 10px 'Geologica','Golos Text',sans-serif;letter-spacing:.15em;text-transform:uppercase}
+.subscription-plan{position:relative;display:grid;grid-template-columns:minmax(260px,.8fr) minmax(320px,1.2fr);gap:28px;align-items:center;padding:28px 32px;border:2px solid #3186EB;border-radius:24px;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(230,245,255,.96));box-shadow:0 25px 55px -34px rgba(38,118,210,.65)}
+.subscription-plan.active{border-color:#21B975;background:linear-gradient(135deg,#fff,#EAFBF3)}
+.subscription-plan-check{position:absolute;top:20px;right:20px;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#3186EB;color:#fff;font:800 15px 'Golos Text',sans-serif;box-shadow:0 10px 22px -12px #2479DE}
+.subscription-plan.active .subscription-plan-check{background:#21B975}
+.subscription-plan-name{display:flex;align-items:center;gap:9px}
+.subscription-plan-name h2{margin:0;color:#13283D;font:850 25px 'Geologica','Golos Text',sans-serif}
+.subscription-plan-name span{padding:5px 8px;border-radius:999px;background:#DDF7E9;color:#169A5C;font:750 9px 'Geologica',sans-serif;text-transform:uppercase}
+.subscription-plan-copy>p{margin:8px 0 24px;color:#75879A;font-size:13px}
+.subscription-plan-copy>strong{display:block;color:#2380E6;font:850 38px 'Geologica','Golos Text',sans-serif;letter-spacing:-.035em}
+.subscription-plan-copy>strong small{margin-left:5px;color:#6C8195;font:600 13px 'Golos Text',sans-serif;letter-spacing:0}
+.subscription-plan ul{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0;padding:0 48px 0 0;list-style:none;color:#334B62;font:600 13px/1.35 'Golos Text',sans-serif}
+.subscription-plan li{padding:11px 12px;border-radius:12px;background:rgba(255,255,255,.72)}
+.subscription-plan li::first-letter{color:#20AD68}
+.subscription-payment{margin-top:22px}
+.subscription-payment-card{display:flex;align-items:center;gap:14px;padding:16px 20px;border:1px solid rgba(39,132,211,.15);border-radius:19px;background:rgba(255,255,255,.94);box-shadow:0 18px 45px -38px rgba(27,82,137,.6)}
+.subscription-payment-mark{width:46px;height:46px;display:grid;place-items:center;flex:none;border-radius:14px;background:linear-gradient(135deg,#3A9DF5,#16B6D0);color:#fff;font:850 20px 'Geologica',sans-serif}
+.subscription-payment-card>div:nth-child(2){min-width:0;flex:1}
+.subscription-payment-card strong{display:block;color:#193047;font:750 14px 'Golos Text',sans-serif}
+.subscription-payment-card p{margin:4px 0 0;color:#718498;font:500 12px/1.45 'Golos Text',sans-serif}
+.subscription-secure{padding:7px 10px;border-radius:999px;background:#E8F9F0;color:#1C9B61;font:700 10px 'Golos Text',sans-serif;white-space:nowrap}
+.subscription-checkout{position:sticky;z-index:3;bottom:18px;max-width:980px;min-height:78px;display:flex;align-items:center;gap:22px;margin:24px auto 0;padding:13px 15px 13px 22px;border:1px solid rgba(39,132,211,.14);border-radius:22px;background:rgba(255,255,255,.96);box-shadow:0 24px 55px -26px rgba(32,89,145,.45);backdrop-filter:blur(18px)}
+.subscription-checkout>div{min-width:170px;flex:1}
+.subscription-checkout>div span,.subscription-checkout>div strong{display:block}
+.subscription-checkout>div span{margin-bottom:4px;color:#8090A0;font:650 10px 'Golos Text',sans-serif}
+.subscription-checkout>div strong{color:#172C42;font:800 15px 'Geologica','Golos Text',sans-serif}
+.subscription-checkout>b{color:#2882E4;font:850 25px 'Geologica','Golos Text',sans-serif;white-space:nowrap}
+.subscription-checkout>a,.subscription-done{min-width:230px;min-height:50px;display:flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border:0;border-radius:15px;background:#20C86A;color:#fff;text-decoration:none;font:750 13px 'Geologica','Golos Text',sans-serif;box-shadow:0 14px 25px -15px rgba(32,200,106,.78);cursor:pointer;transition:transform .18s,box-shadow .18s}
+.subscription-checkout>a:hover,.subscription-done:hover{transform:translateY(-2px);box-shadow:0 18px 29px -14px rgba(32,200,106,.85)}
+.subscription-done{background:linear-gradient(135deg,#3A9DF5,#2F80ED);box-shadow:0 14px 25px -15px rgba(47,128,237,.78)}
+
+@media (max-width:900px){
+  .subscription-page{padding:18px 16px 28px}
+  .subscription-topbar{height:auto;min-height:66px;padding:10px 12px}
+  .subscription-trust{display:none}
+  .subscription-hero{padding:34px 12px 27px}
+  .subscription-hero h1{font-size:40px}
+}
+@media (max-width:640px){
+  .subscription-brand i,.subscription-brand .subscription-label{display:none}
+  .subscription-brand .brand-mark.compact{min-width:98px;padding:9px 13px;font-size:16px}
+  .subscription-back{width:42px;padding:0;font-size:0}
+  .subscription-back::first-letter{font-size:17px}
+  .subscription-hero h1{font-size:33px}
+  .subscription-hero p{font-size:13.5px}
+  .subscription-plan{grid-template-columns:1fr;gap:20px;padding:24px 20px}
+  .subscription-plan-copy>p{margin-bottom:15px}
+  .subscription-plan ul{grid-template-columns:1fr;padding:0;gap:8px}
+  .subscription-plan-check{top:16px;right:16px}
+  .subscription-payment-card{align-items:flex-start}
+  .subscription-secure{display:none}
+  .subscription-checkout{position:static;flex-wrap:wrap;gap:10px;padding:16px}
+  .subscription-checkout>div{min-width:55%;flex:1}
+  .subscription-checkout>a,.subscription-done{width:100%;min-width:0}
+}
+
+/* ===== Лига и награды ===== */
+.section-title{margin-bottom:22px}
+.section-title .section-eyebrow,.section-eyebrow{display:block;margin-bottom:8px;color:#2F80ED;font:750 10px 'Geologica','Golos Text',sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.section-title h1{margin:0;color:#10243A;font:800 34px/1.12 'Geologica','Golos Text',sans-serif;letter-spacing:-.035em}
+.section-title p{margin:9px 0 0;color:#6B8196;font:500 14px/1.55 'Golos Text',sans-serif}
+.league-stage{position:relative;min-height:390px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:48px 28px;border-radius:28px;background:linear-gradient(125deg,#245DE8 0%,#376EEC 48%,#18B5CF 100%);color:#fff;text-align:center;box-shadow:0 30px 58px -38px rgba(29,78,216,.8)}
+.league-stage:before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.17) 1px,transparent 0);background-size:25px 25px;mask-image:linear-gradient(to bottom,black,transparent 84%)}
+.league-orbit{position:absolute;border:1px solid rgba(255,255,255,.18);border-radius:50%}
+.league-orbit-one{width:430px;height:430px}.league-orbit-two{width:295px;height:295px}
+.league-cup{position:relative;z-index:1;width:72px;height:72px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.35);border-radius:22px;background:rgba(255,255,255,.14);font-size:32px;box-shadow:inset 0 1px rgba(255,255,255,.4),0 18px 30px -18px rgba(8,34,91,.7)}
+.league-stage h2{position:relative;z-index:1;margin:18px 0 8px;color:#fff;font:800 27px 'Geologica','Golos Text',sans-serif}
+.league-stage>p{position:relative;z-index:1;max-width:560px;margin:0;color:rgba(255,255,255,.78);font:500 14px/1.55 'Golos Text',sans-serif}
+.league-rules{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:min(650px,100%);margin-top:28px}
+.league-rules span{padding:14px 12px;border:1px solid rgba(255,255,255,.22);border-radius:16px;background:rgba(255,255,255,.11);font-size:11px;color:rgba(255,255,255,.72)}
+.league-rules b{display:block;margin-bottom:4px;color:#fff;font:800 16px 'Geologica','Golos Text',sans-serif}
+.rewards-balance{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:34px;border-radius:26px;background:linear-gradient(110deg,#2879F3,#7B5BEA 54%,#EC3E91);color:#fff;box-shadow:0 28px 50px -36px rgba(87,65,217,.85)}
+.rewards-balance:after{content:'';position:absolute;width:360px;height:360px;right:-120px;top:-210px;border:52px solid rgba(255,255,255,.08);border-radius:50%}
+.rewards-balance>span{font:650 13px 'Golos Text',sans-serif;color:rgba(255,255,255,.76)}
+.rewards-balance strong{display:flex;align-items:center;gap:10px;margin:8px 0;font:850 52px 'Geologica','Golos Text',sans-serif}
+.rewards-balance strong i{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:#FFD43B;color:#E79500;font-size:24px;font-style:normal;box-shadow:inset 0 0 0 4px rgba(255,255,255,.32)}
+.rewards-balance small{color:rgba(255,255,255,.72);font-size:12px}
+.rewards-panel,.rewards-store{margin-top:18px;padding:24px;border:1px solid rgba(39,132,211,.12);border-radius:23px;background:#fff;box-shadow:0 18px 38px -32px rgba(24,85,143,.55)}
+.rewards-panel h2,.rewards-store h2{margin:0 0 18px;color:#152D46;font:800 21px 'Geologica','Golos Text',sans-serif}
+.rewards-earn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.reward-earn{display:flex;flex-direction:column;align-items:center;min-height:150px;padding:19px 12px;border-radius:18px;background:#F7FAFD;text-align:center}
+.reward-icon{width:48px;height:48px;display:grid;place-items:center;margin-bottom:12px;border-radius:14px;background:var(--reward-soft);color:var(--reward);font-size:20px}
+.reward-earn b{color:#243A50;font:700 13px/1.35 'Golos Text',sans-serif}.reward-earn strong{margin-top:auto;padding-top:9px;color:#24A360;font:800 16px 'Geologica','Golos Text',sans-serif}
+.reward-blue{--reward:#2F80ED;--reward-soft:#E7F2FF}.reward-orange{--reward:#F59A23;--reward-soft:#FFF1DB}.reward-violet{--reward:#805DE6;--reward-soft:#EEE9FF}.reward-green{--reward:#20AF72;--reward-soft:#E2F8EE}
+.rewards-store{display:flex;align-items:center;justify-content:space-between;gap:24px;background:linear-gradient(135deg,#fff,#F0F8FF)}
+.rewards-store h2{margin:0 0 7px}.rewards-store p{max-width:650px;margin:0;color:#6E8397;font-size:13px;line-height:1.55}
+.rewards-store button{flex:none;padding:12px 18px;border:0;border-radius:999px;background:#2F80ED;color:#fff;font:750 13px 'Geologica','Golos Text',sans-serif;cursor:pointer}
+
+@media (max-width: 640px){
+  .sbar-language{display:block}
+  .sbar-right{display:flex;align-items:center;gap:7px}
+  .header-xp{height:34px;padding:0 9px}
+  .nav-v.open .nav-home{--item-a:#3A9DF5;--item-b:#2F80ED}.nav-v.open .nav-training{--item-a:#FF9F32;--item-b:#FF7A18}.nav-v.open .nav-league{--item-a:#31C978;--item-b:#15A85C}.nav-v.open .nav-progress{--item-a:#B459EC;--item-b:#8B42D3}.nav-v.open .nav-mock{--item-a:#24C9C0;--item-b:#0FA7A6}.nav-v.open .nav-duel{--item-a:#8870F0;--item-b:#654BDD}.nav-v.open .nav-rewards{--item-a:#FA4C9D;--item-b:#E92E7F}
+  .nav-v.open button.on{color:#fff;background:linear-gradient(135deg,var(--item-a),var(--item-b));box-shadow:0 10px 22px -16px var(--item-a)}
+  .section-title h1{font-size:28px}
+  .league-stage{min-height:430px;padding:38px 18px}
+  .league-rules{grid-template-columns:1fr}
+  .rewards-earn-grid{grid-template-columns:1fr 1fr}
+  .rewards-store{align-items:flex-start;flex-direction:column}
+}
+
+@media (max-width: 400px){.rewards-earn-grid{grid-template-columns:1fr}}
+
+/* ===== Яркий маршрут тренировки ===== */
+.training-page{font-family:'Geologica','Golos Text',system-ui,sans-serif}
+.training-title{margin-bottom:20px}
+.training-title h1{margin:0;color:#10243A;font:800 34px/1.12 'Geologica','Golos Text',sans-serif;letter-spacing:-.035em}
+.training-title p{margin:8px 0 0;color:#6B8196;font:500 14px/1.5 'Golos Text',sans-serif}
+.training-mix-card{position:relative;min-height:300px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(230px,.7fr);overflow:hidden;border-radius:28px;background:linear-gradient(125deg,#FF7A18 0%,#FF9A2D 53%,#FFC44F 100%);color:#fff;box-shadow:0 28px 54px -35px rgba(232,107,15,.82)}
+.training-mix-card:before{content:'';position:absolute;width:410px;height:410px;right:-92px;top:-230px;border:65px solid rgba(255,255,255,.1);border-radius:50%}
+.training-mix-card:after{content:'';position:absolute;width:250px;height:250px;right:14%;bottom:-170px;border:1px solid rgba(255,255,255,.23);border-radius:50%;box-shadow:0 0 0 35px rgba(255,255,255,.04),0 0 0 70px rgba(255,255,255,.025)}
+.training-mix-copy{position:relative;z-index:2;padding:35px 38px}
+.training-mix-tag{display:inline-flex;padding:6px 10px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(255,255,255,.13);font:750 9px 'Geologica','Golos Text',sans-serif;letter-spacing:.13em}
+.training-mix-copy h2{margin:15px 0 8px;color:#fff;font:850 30px/1.12 'Geologica','Golos Text',sans-serif;letter-spacing:-.035em}
+.training-mix-copy>p{max-width:500px;margin:0;color:rgba(255,255,255,.86);font:500 14px/1.55 'Golos Text',sans-serif}
+.training-school-pills{display:flex;gap:7px;margin:16px 0 20px}.training-school-pills span{padding:5px 10px;border-radius:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);font:700 10px 'Golos Text',sans-serif}
+.training-start{display:inline-flex;align-items:center;gap:9px;min-width:160px;justify-content:center;padding:13px 20px;border:0;border-radius:999px;background:#fff;color:#EF6F10;font:800 14px 'Geologica','Golos Text',sans-serif;cursor:pointer;box-shadow:0 16px 28px -18px rgba(100,37,0,.65);transition:transform .2s,box-shadow .2s}.training-start:hover{transform:translateY(-2px);box-shadow:0 20px 34px -18px rgba(100,37,0,.7)}.training-start i{font-size:9px;font-style:normal}
+.training-daily{position:relative;z-index:2;align-self:center;margin:26px 30px;padding:22px;border:1px solid rgba(255,255,255,.34);border-radius:22px;background:rgba(255,255,255,.16);box-shadow:inset 0 1px rgba(255,255,255,.24);backdrop-filter:blur(10px)}
+.training-daily>span,.training-daily>small{display:block;color:rgba(255,255,255,.77);font:650 11px 'Golos Text',sans-serif}.training-daily strong{display:block;margin:7px 0 12px;color:#fff;font:850 36px 'Geologica','Golos Text',sans-serif}.training-daily>div{height:8px;overflow:hidden;border-radius:99px;background:rgba(255,255,255,.22)}.training-daily>div i{display:block;height:100%;border-radius:inherit;background:#fff}.training-daily>small{margin-top:9px;font-size:10px}
+.training-group{--group:#2F80ED;--group-soft:#E8F3FF;margin-top:25px}
+.training-group-math{--group:#2F80ED;--group-soft:#E8F3FF}.training-group-logic{--group:#805DE6;--group-soft:#EEE9FF}.training-group-lang_kaz{--group:#20AD70;--group-soft:#E2F8EE}.training-group-lang_rus{--group:#EB4D83;--group-soft:#FFE8F0}.training-group-lang_eng{--group:#E99A20;--group-soft:#FFF2DC}
+.training-group-head{display:flex;align-items:center;gap:12px;margin-bottom:11px}.training-group-symbol{width:40px;height:40px;display:grid;place-items:center;border-radius:13px;background:var(--group-soft);color:var(--group);font:800 14px 'Geologica','Golos Text',sans-serif}.training-group-head h2{margin:0;color:#172F47;font:800 19px 'Geologica','Golos Text',sans-serif}.training-group-head p{margin:2px 0 0;color:#8295A8;font:600 10px 'Golos Text',sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.training-topic-list{border-color:rgba(39,132,211,.12);border-radius:20px;box-shadow:0 18px 42px -36px rgba(21,85,145,.58)}
+.training-topic-list .training-topic{position:relative;min-height:78px;padding:14px 18px;border-bottom-color:rgba(39,132,211,.09);transition:background .18s,transform .18s}
+.training-topic-list .training-topic:hover:not(.is-locked){z-index:1;background:linear-gradient(90deg,var(--group-soft),#fff 65%);transform:translateX(3px)}
+.training-topic-num{width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:11px;background:var(--group-soft);color:var(--group);font:750 11px 'IBM Plex Mono',monospace}
+.training-topic-copy{flex:1;min-width:0}.training-topic-copy b{display:block;overflow:hidden;color:#20384F;font:700 14px 'Geologica','Golos Text',sans-serif;text-overflow:ellipsis;white-space:nowrap}.training-schools{margin-top:5px;color:#8395A6;font:600 10px 'Golos Text',sans-serif;letter-spacing:.04em}
+.training-topic-progress{width:145px;display:flex;align-items:center;gap:10px}.training-topic-progress .bar{flex:1;margin:0}.training-topic-progress .bar i{border-radius:inherit;background:linear-gradient(90deg,var(--group),color-mix(in srgb,var(--group) 55%,#fff))}.training-topic-progress small{width:32px;color:var(--group);font:750 10px 'IBM Plex Mono',monospace;text-align:right}
+.training-topic-state{min-width:39px;padding:6px 8px;border-radius:9px;background:var(--group-soft);color:var(--group);font:750 11px 'Golos Text',sans-serif;text-align:center}
+.training-topic.is-locked{background:#FBFCFE}.training-topic.is-locked .training-topic-copy,.training-topic.is-locked .training-topic-progress{opacity:.48}.training-topic.is-locked .training-topic-state{background:#FFF5DD;color:#B87B15}
+
+@media (max-width:700px){
+  .training-title h1{font-size:28px}
+  .training-mix-card{grid-template-columns:1fr}
+  .training-mix-copy{padding:28px 23px 18px}
+  .training-daily{margin:0 23px 25px}
+  .training-topic-list .training-topic{padding:13px}
+  .training-topic-progress{width:84px}.training-topic-progress small{display:none}
+}
+@media (max-width:440px){.training-topic-progress{display:none}.training-topic-copy b{white-space:normal}.training-topic-list .training-topic{min-height:72px}.training-topic-state{min-width:35px}}
+
+/* ===== Прогресс: фиолетовая аналитика ===== */
+.content-progress{background:radial-gradient(circle at 84% 4%,rgba(171,82,232,.09),transparent 28%)}
+.progress-page{font-family:'Geologica','Golos Text',system-ui,sans-serif}
+.progress-title{margin-bottom:20px}.progress-title h1{margin:0;color:#152942;font:850 34px/1.12 'Geologica','Golos Text',sans-serif;letter-spacing:-.035em}.progress-title p{margin:8px 0 0;color:#6E8296;font:500 14px 'Golos Text',sans-serif}
+.progress-page .section-eyebrow{color:#9646DB}
+.progress-overview{display:grid;grid-template-columns:1.35fr repeat(3,.72fr);gap:12px;margin-bottom:20px}
+.progress-overview article{border-radius:20px;box-shadow:0 18px 38px -31px rgba(70,44,128,.5)}
+.progress-overview-main{padding:22px 24px;background:linear-gradient(125deg,#783FE3,#9B4CE2 52%,#D14DAF);color:#fff}.progress-overview-main>span{color:rgba(255,255,255,.74);font:650 11px 'Golos Text',sans-serif;text-transform:uppercase;letter-spacing:.06em}.progress-overview-main strong{display:block;margin:5px 0 11px;font:850 37px 'Geologica','Golos Text',sans-serif}.progress-overview-main>div{height:8px;overflow:hidden;border-radius:99px;background:rgba(255,255,255,.2)}.progress-overview-main>div i{display:block;height:100%;border-radius:inherit;background:#fff}.progress-overview-main small{display:block;margin-top:9px;color:rgba(255,255,255,.7);font:500 10.5px 'Golos Text',sans-serif}
+.progress-overview-card{display:flex;flex-direction:column;justify-content:center;padding:18px;background:#fff;border:1px solid rgba(140,74,206,.12)}.progress-overview-card>span{width:39px;height:39px;display:grid;place-items:center;margin-bottom:11px;border-radius:12px;font-size:17px}.progress-overview-card small{color:#7A8DA0;font:650 9.5px 'Golos Text',sans-serif;text-transform:uppercase;letter-spacing:.06em}.progress-overview-card strong{margin-top:4px;color:#213850;font:800 17px 'Geologica','Golos Text',sans-serif}.progress-overview-xp>span{background:#FFF1CA;color:#EAA21A}.progress-overview-time>span{background:#E8F4FF;color:#2F80ED}.progress-overview-mock>span{background:#E6F8F1;color:#20A874}
+.progress-page>.card,.progress-page>.list{border-radius:20px;border-color:rgba(147,72,215,.13);box-shadow:0 18px 38px -32px rgba(75,42,130,.48)}
+.progress-page .diag-wrap{margin-bottom:18px;padding:22px;border:1px solid rgba(151,73,219,.14);border-radius:23px;background:#fff;box-shadow:0 20px 44px -35px rgba(83,43,143,.55)}
+.progress-page .diag-wrap .kicker{color:#8E45D2;font:750 10px 'Geologica','Golos Text',sans-serif;letter-spacing:.13em}
+.diagnosis-readiness{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:26px;margin-bottom:18px;padding:19px 21px;border:1px solid #DDBEFA;border-radius:18px;background:linear-gradient(125deg,#F4EAFF 0%,#FBF8FF 56%,#FFF 100%)}
+.diagnosis-readiness-copy{min-width:142px}.diagnosis-readiness-copy span{display:block;margin-bottom:5px;color:#718398;font:650 11px 'Golos Text',sans-serif}.diagnosis-readiness-copy strong{display:block;color:#8D43D2;font:850 35px/1 'Geologica','Golos Text',sans-serif;letter-spacing:-.035em}
+.diagnosis-readiness-track{height:9px;overflow:hidden;border-radius:999px;background:#E9DDF5}.diagnosis-readiness-track i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#A44BE2,#7357E8);box-shadow:0 4px 12px rgba(139,66,211,.25)}
+.diagnosis-topic-card{--diag:#B0342B;--diag-soft:#FFF2F1;position:relative;margin-bottom:10px;padding:17px 19px 15px;border:1px solid color-mix(in srgb,var(--diag) 28%,transparent);border-left:4px solid var(--diag);border-radius:17px;background:linear-gradient(110deg,#fff 0%,#fff 72%,var(--diag-soft) 100%);box-shadow:0 13px 30px -28px color-mix(in srgb,var(--diag) 75%,transparent)}
+.diagnosis-topic-strong{--diag:#2D9E67;--diag-soft:#EEF9F3}.diagnosis-topic-mid{--diag:#C28A26;--diag-soft:#FFF8E9}.diagnosis-topic-weak{--diag:#D74747;--diag-soft:#FFF1F1}
+.diagnosis-topic-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:7px}.diagnosis-topic-head b{min-width:0;color:#172E45;font:780 16px/1.3 'Geologica','Golos Text',sans-serif;letter-spacing:-.015em}.diagnosis-topic-head span{flex:none;padding:6px 9px;border-radius:10px;background:var(--diag-soft);color:var(--diag);font:850 17px 'Geologica','Golos Text',sans-serif}
+.diagnosis-topic-explanation{margin:0 0 10px;color:#657A90;font:500 13px/1.55 'Golos Text',sans-serif}
+.diagnosis-topic-meta{display:inline-flex;margin:0;padding:5px 8px;border-radius:8px;background:#F5F8FB;color:#8192A3;font:650 10px 'Golos Text',sans-serif;letter-spacing:.02em}
+.diagnosis-level{font:750 11px 'Geologica','Golos Text',sans-serif;letter-spacing:.04em}.diagnosis-error-title{color:#C33E3E;font:750 12px 'Geologica','Golos Text',sans-serif}
+.progress-page .bar>i{border-radius:inherit;background:linear-gradient(90deg,#A44BE2,#7357E8)}
+
+/* ===== Пробный тест: бирюзовый экзаменационный экран ===== */
+.content-mock{background:radial-gradient(circle at 82% 3%,rgba(19,184,176,.09),transparent 29%)}
+.mock-page{font-family:'Geologica','Golos Text',system-ui,sans-serif}.mock-title{margin-bottom:20px}.mock-title .section-eyebrow{color:#0BA79F}.mock-title h1{margin:0;color:#132A40;font:850 34px/1.12 'Geologica','Golos Text',sans-serif;letter-spacing:-.035em}.mock-title p{margin:8px 0 0;color:#6C8296;font:500 14px/1.5 'Golos Text',sans-serif}
+.mock-intro-card{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;overflow:hidden;margin-bottom:16px;padding:29px 31px;border-radius:25px;background:linear-gradient(120deg,#08A6A2,#16BDB5 53%,#3ACAD4);color:#fff;box-shadow:0 26px 48px -34px rgba(6,136,134,.75)}.mock-intro-card:after{content:'';position:absolute;width:270px;height:270px;right:-95px;top:-154px;border:44px solid rgba(255,255,255,.1);border-radius:50%}.mock-intro-card>div:first-child{position:relative;z-index:1}.mock-intro-card>div>span{font:750 9px 'Geologica','Golos Text',sans-serif;letter-spacing:.14em;color:rgba(255,255,255,.75)}.mock-intro-card h2{margin:9px 0 7px;color:#fff;font:850 24px/1.18 'Geologica','Golos Text',sans-serif}.mock-intro-card p{max-width:620px;margin:0;color:rgba(255,255,255,.8);font:500 13px/1.5 'Golos Text',sans-serif}.mock-intro-score{position:relative;z-index:1;width:94px;height:94px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.32);border-radius:25px;background:rgba(255,255,255,.14)}.mock-intro-score b{font:850 31px 'Geologica','Golos Text',sans-serif}.mock-intro-score span{font-size:10px!important;letter-spacing:.04em!important}
+.mock-school-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.mock-school-card{--school:#15AAA5;--school-soft:#E5F8F6;position:relative;min-height:155px;display:flex;flex-direction:column;align-items:flex-start;padding:20px;border:1px solid color-mix(in srgb,var(--school) 22%,transparent);border-radius:21px;background:#fff;box-shadow:0 17px 38px -32px var(--school);transition:transform .2s,box-shadow .2s,border-color .2s}.mock-school-card:nth-child(1){--school:#E04A52;--school-soft:#FDECEE}.mock-school-card:nth-child(2){--school:#56A832;--school-soft:#EDF7E8}.mock-school-card:nth-child(3){--school:#2486DD;--school-soft:#E8F3FF}.mock-school-card:hover{transform:translateY(-4px);border-color:var(--school);box-shadow:0 24px 42px -31px var(--school)}.mock-school-mark{width:45px;height:45px;display:grid;place-items:center;margin-bottom:14px;border-radius:14px;background:var(--school-soft);color:var(--school);font:850 13px 'Geologica','Golos Text',sans-serif}.mock-school-card b{display:block;color:#19334C;font:850 20px 'Geologica','Golos Text',sans-serif}.mock-school-card small{display:block;margin-top:4px;color:#7D91A3;font:600 10px 'Golos Text',sans-serif}.mock-school-go{position:absolute;right:17px;bottom:17px;min-width:32px;height:32px;display:grid;place-items:center;padding:0 8px;border-radius:10px;background:var(--school-soft);color:var(--school);font:800 14px 'Golos Text',sans-serif}
+.mock-school-logo{width:64px;height:64px;padding:5px;border:1px solid color-mix(in srgb,var(--school) 16%,transparent);border-radius:17px;background:#fff;box-shadow:0 11px 24px -20px var(--school)}
+.mock-school-logo img{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.mock-benefits{margin-top:26px;padding:25px;border:1px solid rgba(20,171,165,.13);border-radius:24px;background:#fff;box-shadow:0 20px 44px -36px rgba(16,119,127,.5)}
+.mock-benefits-head{display:flex;align-items:center;gap:13px;margin-bottom:16px}.mock-benefits-head>span{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#E4F8F6;color:#0BA79F;font:800 12px 'IBM Plex Mono',monospace}.mock-benefits-head h2{margin:0;color:#173149;font:850 20px 'Geologica','Golos Text',sans-serif}.mock-benefits-head p{margin:3px 0 0;color:#7A8EA1;font:500 11px 'Golos Text',sans-serif}
+.mock-benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mock-benefits-grid article{position:relative;min-height:165px;padding:19px;border-radius:18px;background:#F5FAFD;border:1px solid rgba(39,132,211,.08)}.mock-benefits-grid article>span{width:40px;height:40px;display:grid;place-items:center;margin-bottom:20px;border-radius:12px;background:#E4F8F6;color:#0BA79F;font:800 12px 'Geologica','Golos Text',sans-serif}.mock-benefits-grid article:nth-child(2)>span{background:#EEE9FF;color:#7958DF}.mock-benefits-grid article:nth-child(3)>span{background:#FFF0DA;color:#E78D18}.mock-benefits-grid article>small{position:absolute;right:17px;top:18px;color:#C2CDD6;font:750 10px 'IBM Plex Mono',monospace}.mock-benefits-grid h3{margin:0 0 6px;color:#203A51;font:800 14px 'Geologica','Golos Text',sans-serif}.mock-benefits-grid p{margin:0;color:#758A9D;font:500 11.5px/1.5 'Golos Text',sans-serif}
+.mock-flow{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;padding:14px 16px;border-radius:15px;background:linear-gradient(90deg,#E8F8F7,#F1FAFF);color:#547084;font:650 11px 'Golos Text',sans-serif}.mock-flow b{margin-right:auto;color:#0B918C}.mock-flow i{color:#14ADA7;font-style:normal}
+.content-mock .qnum-chip,.content-mock .navpill,.content-mock .btn:not(.ghost){background:linear-gradient(135deg,#19BEB6,#0AA39F)}.content-mock .opt.sel{border-color:#0DAAA5}.content-mock .opt.sel .lt{background:#0DAAA5;border-color:#0DAAA5}
+
+/* ===== Дуэль: индиго-арена ===== */
+.content-duel{background:radial-gradient(circle at 82% 2%,rgba(114,87,232,.11),transparent 28%)}
+.duel-page{font-family:'Geologica','Golos Text',system-ui,sans-serif}.duel-title{margin-bottom:20px}.duel-title .section-eyebrow{color:#7054DF}.duel-title h1{margin:0;color:#142A42;font:850 34px/1.12 'Geologica','Golos Text',sans-serif;letter-spacing:-.035em}.duel-title p{margin:8px 0 0;color:#6C8195;font:500 14px 'Golos Text',sans-serif}
+.duel-arena{position:relative;min-height:310px;display:grid;grid-template-columns:1.25fr .75fr;overflow:hidden;border-radius:28px;background:linear-gradient(125deg,#513BE0,#7256EA 54%,#9661ED);color:#fff;box-shadow:0 28px 54px -35px rgba(75,55,200,.85)}.duel-arena:after{content:'';position:absolute;width:430px;height:430px;right:-130px;bottom:-250px;border:62px solid rgba(255,255,255,.075);border-radius:50%}.duel-arena-copy{position:relative;z-index:2;padding:38px}.duel-arena-tag{display:inline-flex;padding:6px 10px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:rgba(255,255,255,.12);font:750 9px 'Geologica','Golos Text',sans-serif;letter-spacing:.12em;text-transform:uppercase}.duel-arena h2{max-width:560px;margin:15px 0 9px;color:#fff;font:850 29px/1.15 'Geologica','Golos Text',sans-serif}.duel-arena-copy>p{max-width:510px;margin:0 0 23px;color:rgba(255,255,255,.78);font:500 13.5px/1.5 'Golos Text',sans-serif}.duel-create-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-width:190px;padding:13px 20px;border:0;border-radius:999px;background:#fff;color:#6548DC;font:800 13px 'Geologica','Golos Text',sans-serif;cursor:pointer;box-shadow:0 16px 30px -19px rgba(33,18,103,.8);transition:transform .2s}.duel-create-btn:hover{transform:translateY(-2px)}
+.duel-versus{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:12px}.duel-versus b{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:#fff;color:#6549DC;font:850 15px 'Geologica',sans-serif;box-shadow:0 16px 30px -20px rgba(22,12,83,.9)}.duel-avatar{width:78px;height:78px;display:grid;place-items:center;border:2px solid rgba(255,255,255,.7);border-radius:25px;color:#fff;font:850 27px 'Geologica','Golos Text',sans-serif;box-shadow:0 20px 35px -24px #1D126A}.duel-avatar-a{background:linear-gradient(135deg,#27BBD2,#2E8DEB);transform:rotate(-5deg)}.duel-avatar-b{background:linear-gradient(135deg,#FA8B53,#F04F86);transform:rotate(5deg)}
+.duel-join-card{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:24px;margin-top:16px;padding:23px 25px;border:1px solid rgba(111,82,222,.14);border-radius:22px;background:#fff;box-shadow:0 18px 40px -34px rgba(68,48,160,.56)}.duel-join-card h2{margin:0 0 5px;color:#1B344C;font:800 19px 'Geologica','Golos Text',sans-serif}.duel-join-card p{margin:0;color:#758A9D;font:500 12px 'Golos Text',sans-serif}.duel-join-form{display:flex;gap:9px}.duel-join-form input{height:48px;margin:0;border-color:#D9D1F7;background:#FAF9FF;font:750 16px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase}.duel-join-form input:focus{border-color:#7458E6;box-shadow:0 0 0 3px rgba(116,88,230,.12)}.duel-join-form button{flex:none;padding:0 19px;border:0;border-radius:12px;background:linear-gradient(135deg,#8064EC,#6549DA);color:#fff;font:750 12px 'Geologica','Golos Text',sans-serif;cursor:pointer}.duel-join-form button:disabled{opacity:.4}
+.content-duel .btn:not(.ghost),.content-duel .qnum-chip{background:linear-gradient(135deg,#8063EC,#6246D6)}.content-duel .duel-scoreboard{border-color:#D9D1F7}.content-duel .duel-player.on{border-color:#7458E5;background:#F3F0FF}
+
+@media (max-width:800px){.progress-overview{grid-template-columns:1fr 1fr}.progress-overview-main{grid-column:1/-1}.mock-school-grid,.mock-benefits-grid{grid-template-columns:1fr}.mock-flow{align-items:flex-start;flex-direction:column}.mock-flow b{margin:0 0 3px}.mock-flow i{display:none}.duel-arena{grid-template-columns:1fr}.duel-versus{padding:0 20px 30px}.duel-join-card{grid-template-columns:1fr}}
+@media (max-width:520px){.progress-overview{grid-template-columns:1fr}.progress-overview-main{grid-column:auto}.mock-intro-card{align-items:flex-start;flex-direction:column}.mock-intro-score{width:78px;height:78px}.duel-arena-copy{padding:28px 23px}.duel-arena h2{font-size:25px}.duel-avatar{width:64px;height:64px}.duel-join-form{flex-direction:column}.duel-join-form button{height:46px}.progress-page .diag-wrap{padding:16px}}

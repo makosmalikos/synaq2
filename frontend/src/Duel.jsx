@@ -18,7 +18,7 @@ const copy = async (text) => {
 };
 
 export default function Duel({ initialCode = '', playerName = 'Ойыншы', fromLink = false, onXp }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [code, setCode] = useState(initialCode.toUpperCase());
   const [duel, setDuel] = useState(null);
   const [answer, setAnswer] = useState('');
@@ -217,31 +217,30 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
       );
     }
     return (
-      <main>
-        <p className="kicker">{t('nav.duel')}</p>
-        <h1>{t('duel.title')}</h1>
-        <p className="muted" style={{ marginBottom: 18 }}>{t('duel.sub')}</p>
+      <main className="duel-page duel-start-page">
+        <header className="duel-title">
+          <span className="section-eyebrow">SYNAQ DUEL</span>
+          <h1>{t('duel.title')}</h1>
+          <p>{t('duel.sub')}</p>
+        </header>
 
-        <div className="card">
-          <h2 style={{ fontSize: 18 }}>{t('duel.create')}</h2>
-          <p className="muted" style={{ fontSize: 14 }}>{t('duel.createHint')}</p>
-          <button className="btn accent full" style={{ marginTop: 14 }} disabled={busy} onClick={onCreate}>
-            {t('duel.createBtn')}
-          </button>
-        </div>
+        <section className="duel-arena">
+          <div className="duel-arena-copy">
+            <span className="duel-arena-tag">15 {lang === 'ru' ? 'раундов' : 'раунд'}</span>
+            <h2>{lang === 'ru' ? 'Кто решает точнее и быстрее?' : 'Кім дәл әрі жылдам шешеді?'}</h2>
+            <p>{lang === 'ru' ? 'Создай комнату и отправь другу одну ссылку.' : 'Бөлме құрып, досыңа бір сілтеме жібер.'}</p>
+            <button className="duel-create-btn" disabled={busy} onClick={onCreate}><span>⚔</span>{t('duel.createBtn')}</button>
+          </div>
+          <div className="duel-versus" aria-hidden="true"><span className="duel-avatar duel-avatar-a">{(playerName || '?')[0]}</span><b>VS</b><span className="duel-avatar duel-avatar-b">?</span></div>
+        </section>
 
-        <div className="card" style={{ marginTop: 14 }}>
-          <h2 style={{ fontSize: 18 }}>{t('duel.join')}</h2>
-          <input
-            value={joinInput}
-            onChange={(e) => setJoinInput(e.target.value.toUpperCase())}
-            placeholder={t('duel.codePlaceholder')}
-            maxLength={6}
-          />
-          <button className="btn full" disabled={busy || !joinInput.trim()} onClick={onJoin}>
-            {t('duel.joinBtn')}
-          </button>
-        </div>
+        <section className="duel-join-card">
+          <div><span className="section-eyebrow">{lang === 'ru' ? 'ЕСТЬ КОД?' : 'КОДЫҢ БАР МА?'}</span><h2>{t('duel.join')}</h2><p>{lang === 'ru' ? 'Введи 6 символов из приглашения.' : 'Шақырудағы 6 таңбаны енгіз.'}</p></div>
+          <div className="duel-join-form">
+            <input value={joinInput} onChange={(e) => setJoinInput(e.target.value.toUpperCase())} placeholder={t('duel.codePlaceholder')} maxLength={6} />
+            <button disabled={busy || !joinInput.trim()} onClick={onJoin}>{t('duel.joinBtn')} →</button>
+          </div>
+        </section>
 
         {err && <p style={{ color: 'var(--accent)', marginTop: 12 }}>{err}</p>}
       </main>

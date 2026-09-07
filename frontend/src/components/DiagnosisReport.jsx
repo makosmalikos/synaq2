@@ -6,20 +6,18 @@ const LEVEL_TXT = { strong: 'МЫҚТЫ', mid: 'ОРТАША', weak: 'ӘЛСІЗ
 
 function TopicCard({ topic, t }) {
   return (
-    <div className="card" style={{ borderColor: LEVEL_COL[topic.level], marginBottom: 10 }}>
-      <div className="row" style={{ marginBottom: 8 }}>
-        <b style={{ flex: 1 }}>{topic.name}</b>
-        <span style={{
-          font: "700 20px 'Lora',serif", color: LEVEL_COL[topic.level],
-        }}>{topic.pct}%</span>
+    <article className={`diagnosis-topic-card diagnosis-topic-${topic.level}`}>
+      <div className="diagnosis-topic-head">
+        <b>{topic.name}</b>
+        <span>{topic.pct}%</span>
       </div>
-      <p className="muted" style={{ margin: '0 0 8px', fontSize: 13.5, lineHeight: 1.55 }}>
+      <p className="diagnosis-topic-explanation">
         {topic.explanation}
       </p>
-      <p style={{ margin: 0, font: "500 12px 'IBM Plex Mono',monospace", color: '#9A9384' }}>
+      <p className="diagnosis-topic-meta">
         {topic.correct}/{topic.graded} {t('diag.correct')} · {topic.wrong} {t('diag.wrong')}
       </p>
-    </div>
+    </article>
   );
 }
 
@@ -39,9 +37,12 @@ export default function DiagnosisReport({ diagnosis, pro, onUnlock, onTrainTopic
         </p>
       )}
 
-      <div className="hero-card" style={{ marginBottom: 14, padding: '16px 20px' }}>
-        <div style={{ font: "700 32px 'Lora',serif", color: 'var(--accent)' }}>{readiness}%</div>
-        <p className="muted" style={{ margin: '6px 0 0', fontSize: 13 }}>{t('diag.readiness')}</p>
+      <div className="diagnosis-readiness">
+        <div className="diagnosis-readiness-copy">
+          <span>{t('diag.readiness')}</span>
+          <strong>{readiness}%</strong>
+        </div>
+        <div className="diagnosis-readiness-track"><i style={{ width: `${readiness}%` }} /></div>
       </div>
 
       <p className="kicker" style={{ marginTop: 16 }}>{t('diag.weakest')}</p>
@@ -78,7 +79,7 @@ export default function DiagnosisReport({ diagnosis, pro, onUnlock, onTrainTopic
                 {topics.map((tp) => (
                   <div key={tp.id} className="row-item" style={{ cursor: 'default' }}>
                     <b style={{ flex: 1 }}>{tp.name}</b>
-                    <span style={{ color: LEVEL_COL[tp.level], font: "600 13px 'IBM Plex Mono',monospace" }}>
+                    <span className="diagnosis-level" style={{ color: LEVEL_COL[tp.level] }}>
                       {tp.pct}% · {LEVEL_TXT[tp.level]}
                     </span>
                   </div>
@@ -93,7 +94,7 @@ export default function DiagnosisReport({ diagnosis, pro, onUnlock, onTrainTopic
               <div className="list">
                 {errors.slice(0, 12).map((e) => (
                   <div key={`${e.topicId}-${e.num}`} className="row-item" style={{ cursor: 'default', flexDirection: 'column', alignItems: 'stretch', gap: 4 }}>
-                    <span style={{ font: "600 12px 'IBM Plex Mono',monospace", color: '#B0342B' }}>
+                    <span className="diagnosis-error-title">
                       №{e.num} · {e.topicName}
                     </span>
                     <span className="muted" style={{ fontSize: 13 }}>

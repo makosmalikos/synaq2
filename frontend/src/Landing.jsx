@@ -290,6 +290,17 @@ export default function Landing({ onStart }) {
   .lp-lead-note span{display:block;margin-bottom:3px;color:#718096;font-size:11px;font-weight:600}
   .lp-lead-note-one{right:-2px;top:72px}
   .lp-lead-note-two{left:2px;bottom:74px;animation-delay:1.1s}
+  .lp-footer{background:#0D172B;color:#fff}
+  .lp-footer-inner{max-width:1280px;margin:0 auto;padding:62px 56px 28px}
+  .lp-footer-grid{display:grid;grid-template-columns:minmax(280px,1.35fr) repeat(3,minmax(150px,.72fr));gap:56px;padding-bottom:42px}
+  .lp-footer-brand{display:inline-flex;margin-bottom:18px;min-width:150px!important;padding:13px 24px!important;font-size:22px!important;background:linear-gradient(135deg,#139FEB,#2F80ED)!important}
+  .lp-footer-about p{max-width:350px;margin:0;color:rgba(226,232,240,.68);font:500 14px/1.7 'Manrope',sans-serif}
+  .lp-footer-title{margin:5px 0 20px;color:#fff;font:750 12px 'Manrope',sans-serif;letter-spacing:.11em;text-transform:uppercase}
+  .lp-footer-links{display:flex;flex-direction:column;align-items:flex-start;gap:13px}
+  .lp-footer-links a{position:relative;color:rgba(226,232,240,.7);font:500 14px/1.45 'Manrope',sans-serif;transition:color .18s ease,transform .18s ease}
+  .lp-footer-links a:hover{color:#67C8FF;transform:translateX(3px)}
+  .lp-footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);color:rgba(203,213,225,.6);font:500 12.5px 'Manrope',sans-serif}
+  .lp-footer-schools{letter-spacing:.06em}
   .lp-hero{position:relative}
   .lp-hero:before{content:'';position:absolute;z-index:-1;right:-120px;top:-90px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(58,157,245,.14),rgba(58,157,245,0) 68%)}
   .lp-hero-copy{width:100%;max-width:940px;margin:0 auto;text-align:center;position:relative;z-index:2}
@@ -342,7 +353,7 @@ export default function Landing({ onStart }) {
   .lp-signal span{font:650 13.5px/1.3 'Golos Text',sans-serif;color:#173252}
   .lp-signal-ai{left:-1%;top:250px}
   .lp-signal-format{right:-1%;top:244px}
-  .lp-signal-progress{left:5%;bottom:-4px}
+  .lp-signal-progress{left:50%;bottom:-4px;transform:translateX(-50%)}
   .lp-signal-ai .lp-signal-card{animation:lpSignalFloatA 5.4s ease-in-out infinite}
   .lp-signal-format .lp-signal-card{animation:lpSignalFloatB 6s ease-in-out .7s infinite}
   .lp-signal-progress .lp-signal-card{animation:lpSignalFloatC 5.7s ease-in-out 1.4s infinite}
@@ -366,7 +377,7 @@ export default function Landing({ onStart }) {
     .lp-students-visual{width:100%;height:390px}
     .lp-signal-ai{left:0}
     .lp-signal-format{right:0}
-    .lp-signal-progress{left:2%}
+    .lp-signal-progress{left:50%}
     .lp-steps{grid-template-columns:1fr 1fr!important}
     .lp-schools{grid-template-columns:1fr!important}
     .lp-inside{grid-template-columns:1fr!important}
@@ -380,6 +391,9 @@ export default function Landing({ onStart }) {
     .lp-lead-copy{max-width:none}
     .lp-lead-visual{min-height:480px}
     .lp-lead-student{height:520px;bottom:-48px}
+    .lp-footer-inner{padding:52px 32px 26px}
+    .lp-footer-grid{grid-template-columns:1fr 1fr;gap:38px 32px}
+    .lp-footer-about{grid-column:1/-1}
   }
   @media(max-width:620px){
     .lp-site-header{border-top-width:3px!important}
@@ -403,7 +417,8 @@ export default function Landing({ onStart }) {
     .lp-school-frame{width:72px;height:72px}
     .lp-school-slide{padding:10px}
     .lp-school-dots{display:none}
-    .lp-signal{position:relative;right:auto;top:auto;bottom:auto;width:min(100%,330px);margin-top:10px}
+    .lp-signal{position:relative;right:auto;top:auto;bottom:auto;width:min(100%,330px);margin:10px auto 0}
+    .lp-signal-progress{left:auto;transform:none}
     .lp-signal-card{background:rgba(255,255,255,.92)}
     .lp-signal:before{display:none}
     .lp-signal-ai .lp-signal-card{animation-name:lpSignalFloatMobile}
@@ -428,6 +443,10 @@ export default function Landing({ onStart }) {
     .lp-lead-note{max-width:168px;padding:11px 13px;border-radius:14px;font-size:11.5px}
     .lp-lead-note-one{right:-9px;top:150px}
     .lp-lead-note-two{left:-8px;bottom:42px}
+    .lp-footer-inner{padding:44px 22px 24px}
+    .lp-footer-grid{grid-template-columns:1fr 1fr;gap:34px 24px;padding-bottom:34px}
+    .lp-footer-about{grid-column:1/-1}
+    .lp-footer-bottom{align-items:flex-start;flex-direction:column;gap:8px}
   }
   @keyframes lpSignalFloatMobile{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
   @keyframes lpLeadFloat{0%,100%{transform:translateY(0) rotate(-.4deg)}50%{transform:translateY(-8px) rotate(.4deg)}}
@@ -677,14 +696,43 @@ export default function Landing({ onStart }) {
   </section>
 
   
-  <footer className="lp-pad" style={{borderTop:'1px solid rgba(19,40,60,.1)',padding:'30px 56px',maxWidth:'1280px',margin:'0 auto',display:'flex',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',gap:'16px'}}>
-    <Brand compact />
-    <div style={{display:'flex',alignItems:'center',flexWrap:'wrap',gap:'16px',font:"500 13.5px 'Golos Text',sans-serif",color:'#8094A7'}}>
-      <span style={{fontWeight:600,color:'#60758A'}}>Қолдау / Поддержка:</span>
-      <a href="mailto:support@synaq.app" style={{color:'#2B91EA',textDecoration:'none'}}>✉ support@synaq.app</a>
-      <a href="https://t.me/makosmalikos" target="_blank" rel="noopener noreferrer" style={{color:'#2B91EA',textDecoration:'none'}}>✈ @makosmalikos</a>
+  <footer className="lp-footer">
+    <div className="lp-footer-inner">
+      <div className="lp-footer-grid">
+        <div className="lp-footer-about">
+          <a href="#" aria-label="SYNAQ — басты бет"><Brand className="lp-footer-brand" /></a>
+          <p>{t('lp.footerAbout')}</p>
+        </div>
+        <div>
+          <h3 className="lp-footer-title">{t('lp.footerPlatform')}</h3>
+          <div className="lp-footer-links">
+            <a href="#how">{t('lp.2')}</a>
+            <a href="#schools">{t('lp.3')}</a>
+            <a href="#pricing">{t('lp.5')}</a>
+          </div>
+        </div>
+        <div>
+          <h3 className="lp-footer-title">{t('lp.footerAccount')}</h3>
+          <div className="lp-footer-links">
+            <a href="#" onClick={handleStart}>{t('lp.footerRegister')}</a>
+            <a href="#" onClick={handleStart}>{t('lp.footerLogin')}</a>
+            <a href="#cta">{t('lp.footerContactUs')}</a>
+          </div>
+        </div>
+        <div>
+          <h3 className="lp-footer-title">{t('lp.footerContacts')}</h3>
+          <div className="lp-footer-links">
+            <a href="https://wa.me/message/HAJDNIM2MPOCM1" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="mailto:support@synaq.app">support@synaq.app</a>
+            <a href="https://t.me/synaqsupport" target="_blank" rel="noopener noreferrer">Telegram · @synaqsupport</a>
+          </div>
+        </div>
+      </div>
+      <div className="lp-footer-bottom">
+        <span>{t('lp.footerCopyright')}</span>
+        <span className="lp-footer-schools">{t('lp.78')}</span>
+      </div>
     </div>
-    <div style={{font:'500 13px \'IBM Plex Mono\',monospace',color:'#8094A7'}}>{t('lp.78')}</div>
   </footer>
     </div>
   );

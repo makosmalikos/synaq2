@@ -13,12 +13,35 @@ const DICT = {
     'nav.league': 'Лига',
     'nav.mock': 'Апталық сынақ',
     'nav.progress': 'Прогресс',
+    'nav.rewards': 'Сыйлықтар',
     'common.exit': 'Шығу',
     'common.back': '← Артқа',
     'common.next': 'Келесі',
     'common.check': 'Тексеру',
     'common.loading': 'Жүктелуде…',
     'common.grade': 'сынып',
+    'profile.open': 'Профиль мәзірін ашу',
+    'profile.account': 'Оқушы аккаунты',
+    'profile.plan': 'Pro тарифін көру',
+    'profile.support': 'Қолдау',
+    'subscription.label': 'Жазылым',
+    'subscription.family': 'Бүкіл отбасыға Pro',
+    'subscription.activation': 'Отбасы аккаунтына қосылады',
+    'subscription.back': 'Артқа',
+    'subscription.kicker': 'Жылдам рәсімдеу',
+    'subscription.titleStart': 'Толық дайындықты',
+    'subscription.subtitle': 'Бір жазылым ата-анаға да, барлық балаларға да Pro мүмкіндіктерін ашады.',
+    'subscription.tariff': 'Тариф',
+    'subscription.period': '1 ай',
+    'subscription.payment': 'Рәсімдеу тәсілі',
+    'subscription.paymentTitle': 'WhatsApp арқылы рәсімдеу',
+    'subscription.paymentSub': 'Менеджер төлемді түсіндіріп, Pro-ны отбасы аккаунтына қосуға көмектеседі.',
+    'subscription.secure': 'Қауіпсіз қолдау',
+    'subscription.order': 'Қосылатын тариф',
+    'subscription.cta': 'WhatsApp-та рәсімдеу',
+    'subscription.activeTitle': 'Сізде Pro белсенді',
+    'subscription.status': 'Жазылым мәртебесі',
+    'subscription.continue': 'Дайындықты жалғастыру',
 
     // ── вход ──
     'auth.title': 'Мектеп сынағына нақты дайындық',
@@ -116,6 +139,37 @@ const DICT = {
     // ── дашборд ──
     'home.hi': 'Сәлем',
     'home.today': 'Бүгінгі жоспарыңды жалғастырайық.',
+    'home.plan': 'Бүгінгі жеке жоспар',
+    'home.stats': 'Оқушының көрсеткіштері',
+    'home.toNext': 'Келесі деңгейге',
+    'home.xpProgress': 'деңгей прогресі',
+    'home.quick': 'Жылдам бастау',
+    'home.choose': 'Бүгін немен айналысамыз?',
+    'home.duelText': 'Досыңмен 15 раундта жарыс',
+    'home.mockText': 'Нақты емтихан форматындағы нұсқа',
+    'home.progressTitle': 'Нәтижелеріңді қара',
+    'home.progressText': 'Дәлдік, тарих және әлсіз тақырыптар',
+
+    'league.title': 'Апталық лига',
+    'league.sub': 'Есеп шығарып, XP жина және сыныптастарыңмен жарыс.',
+    'league.week': 'Жаңа рейтинг дайындалуда',
+    'league.honest': 'Рейтинг нақты оқушылардың нәтижесімен толғанда ашылады.',
+    'league.correct': 'дұрыс жауапқа',
+    'league.duel': 'дуэльдегі жеңіске',
+    'league.top': 'апта жеңімпаздары',
+    'rewards.title': 'Сыйлықтар мен XP',
+    'rewards.sub': 'Дайындықтағы белсенділігің үшін ұпай жина.',
+    'rewards.balance': 'Сенің балансың',
+    'rewards.balanceHint': 'Жиналған XP деңгейің мен лигадағы орныңа әсер етеді.',
+    'rewards.earn': 'XP қалай жиналады',
+    'rewards.answer': 'Дұрыс жауап',
+    'rewards.hour': 'Бір сағат дайындық',
+    'rewards.duel': 'Дуэльде жеңу',
+    'rewards.mock': 'Сынақ тапсыру',
+    'rewards.storeKicker': 'КЕЛЕСІ КЕЗЕҢ',
+    'rewards.store': 'SYNAQ сыйлықтары',
+    'rewards.storeHint': 'Сыйлықтар каталогы нақты мүмкіндіктермен қосылады. Әзірге XP жинай бер.',
+    'rewards.train': 'Дайындықты бастау',
 
     'ui.1': "Тақырыптар",
     'ui.2': "Тақырыпты таңда",
@@ -404,6 +458,14 @@ const DICT = {
     'lp.leadNoteOne': "Жылдам",
     'lp.leadNoteTwoTop': "Тарифті таңдаймыз",
     'lp.leadNoteTwo': "Тегін",
+    'lp.footerAbout': "РФМШ, НИШ және БИЛ мектептеріне нақты емтихан форматында дайындалуға арналған онлайн-платформа.",
+    'lp.footerPlatform': "Платформа",
+    'lp.footerAccount': "Аккаунт",
+    'lp.footerRegister': "Тіркелу",
+    'lp.footerLogin': "Кіру",
+    'lp.footerContactUs': "Бізбен байланысу",
+    'lp.footerContacts': "Байланыстар",
+    'lp.footerCopyright': "© 2026 SYNAQ. Барлық құқықтар қорғалған.",
   },
 
   ru: {
@@ -413,12 +475,35 @@ const DICT = {
     'nav.league': 'Лига',
     'nav.mock': 'Пробный тест',
     'nav.progress': 'Прогресс',
+    'nav.rewards': 'Награды',
     'common.exit': 'Выйти',
     'common.back': '← Назад',
     'common.next': 'Дальше',
     'common.check': 'Проверить',
     'common.loading': 'Загрузка…',
     'common.grade': 'класс',
+    'profile.open': 'Открыть меню профиля',
+    'profile.account': 'Аккаунт ученика',
+    'profile.plan': 'Посмотреть тариф Pro',
+    'profile.support': 'Поддержка',
+    'subscription.label': 'Подписка',
+    'subscription.family': 'Pro для всей семьи',
+    'subscription.activation': 'Подключение к семейному аккаунту',
+    'subscription.back': 'Назад',
+    'subscription.kicker': 'Быстрое оформление',
+    'subscription.titleStart': 'Открой полную подготовку с',
+    'subscription.subtitle': 'Одна подписка открывает возможности Pro родителю и всем детским аккаунтам семьи.',
+    'subscription.tariff': 'Тариф',
+    'subscription.period': '1 месяц',
+    'subscription.payment': 'Способ оформления',
+    'subscription.paymentTitle': 'Оформление через WhatsApp',
+    'subscription.paymentSub': 'Менеджер объяснит оплату и поможет подключить Pro к семейному аккаунту.',
+    'subscription.secure': 'Безопасная поддержка',
+    'subscription.order': 'К подключению',
+    'subscription.cta': 'Оформить в WhatsApp',
+    'subscription.activeTitle': 'У вас активен Pro',
+    'subscription.status': 'Статус подписки',
+    'subscription.continue': 'Продолжить подготовку',
 
     'auth.title': 'Реальная подготовка к школьному экзамену',
     'auth.sub': 'Один семейный аккаунт — ребёнок готовится, родитель следит.',
@@ -513,6 +598,37 @@ const DICT = {
 
     'home.hi': 'Привет',
     'home.today': 'Продолжим сегодняшний план.',
+    'home.plan': 'Персональный план на сегодня',
+    'home.stats': 'Показатели ученика',
+    'home.toNext': 'До следующего уровня',
+    'home.xpProgress': 'прогресс уровня',
+    'home.quick': 'Быстрый старт',
+    'home.choose': 'Чем займёмся сегодня?',
+    'home.duelText': 'Соревнуйся с другом в 15 раундах',
+    'home.mockText': 'Вариант в формате настоящего экзамена',
+    'home.progressTitle': 'Посмотри результаты',
+    'home.progressText': 'Точность, история и слабые темы',
+
+    'league.title': 'Еженедельная лига',
+    'league.sub': 'Решай задачи, зарабатывай XP и соревнуйся с учениками своего класса.',
+    'league.week': 'Новый рейтинг готовится',
+    'league.honest': 'Таблица откроется, когда в ней будут реальные результаты учеников.',
+    'league.correct': 'за верный ответ',
+    'league.duel': 'за победу в дуэли',
+    'league.top': 'победители недели',
+    'rewards.title': 'Награды и XP',
+    'rewards.sub': 'Зарабатывай баллы за регулярную подготовку.',
+    'rewards.balance': 'Твой баланс',
+    'rewards.balanceHint': 'Накопленный XP влияет на твой уровень и место в лиге.',
+    'rewards.earn': 'Как заработать XP',
+    'rewards.answer': 'Верный ответ',
+    'rewards.hour': 'Час подготовки',
+    'rewards.duel': 'Победа в дуэли',
+    'rewards.mock': 'Пробный тест',
+    'rewards.storeKicker': 'СЛЕДУЮЩИЙ ЭТАП',
+    'rewards.store': 'Награды SYNAQ',
+    'rewards.storeHint': 'Каталог появится вместе с реальными наградами. А пока можно копить XP.',
+    'rewards.train': 'Начать тренировку',
 
     'ui.1': "Темы",
     'ui.2': "Выбери тему",
@@ -778,7 +894,7 @@ const DICT = {
     'lp.75': "уже открыт",
     'lp.76': "Готовьте ребёнка к поступлению осознанно — прогресс виден с первого дня.",
     'lp.77': "Смотреть тарифы",
-    'lp.78': "РФМШ · НИШ · КТЛ · с 2026",
+    'lp.78': "РФМШ · НИШ · БИЛ · с 2026",
     'lp.heroVisualLabel': "Возможности подготовки к элитным школам",
     'lp.heroElite': "Элитные школы",
     'lp.heroPrep': "Система подготовки",
@@ -801,6 +917,14 @@ const DICT = {
     'lp.leadNoteOne': "Быстро",
     'lp.leadNoteTwoTop': "Подскажем тариф",
     'lp.leadNoteTwo': "Бесплатно",
+    'lp.footerAbout': "Онлайн-платформа для подготовки к РФМШ, НИШ и БИЛ в формате реальных вступительных экзаменов.",
+    'lp.footerPlatform': "Платформа",
+    'lp.footerAccount': "Аккаунт",
+    'lp.footerRegister': "Регистрация",
+    'lp.footerLogin': "Вход",
+    'lp.footerContactUs': "Связаться с нами",
+    'lp.footerContacts': "Контакты",
+    'lp.footerCopyright': "© 2026 SYNAQ. Все права защищены.",
   },
 };
 
@@ -840,5 +964,21 @@ export function LangSwitch({ dark = false }) {
       <button style={lang === 'kk' ? on : off} onClick={() => setLang('kk')}>ҚАЗ</button>
       <button style={lang === 'ru' ? on : off} onClick={() => setLang('ru')}>РУС</button>
     </div>
+  );
+}
+
+// Компактная кнопка для кабинета: показывает язык, на который переключит один клик.
+export function LangToggle({ dark = false }) {
+  const { lang, setLang } = useLang();
+  const next = lang === 'kk' ? 'ru' : 'kk';
+  return (
+    <button
+      type="button"
+      className={`lang-toggle${dark ? ' dark' : ''}`}
+      onClick={() => setLang(next)}
+      aria-label={next === 'kk' ? 'Қазақ тіліне ауысу' : 'Переключить на русский'}
+    >
+      {next === 'kk' ? 'ҚАЗ' : 'РУС'}
+    </button>
   );
 }

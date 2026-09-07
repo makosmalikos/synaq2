@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useLang } from './i18n.jsx';
 import { auth, getAttempts, getMocks, getXpSummary, isPro } from './firebase.js';
 import { api, topicStats, weekHours, mockSeries } from './api.js';
-import { xpLevel } from './xp.js';
 import { buildDiagnosis, pickDiagnosticMock } from './diagnosis.js';
 import DiagnosisReport from './components/DiagnosisReport.jsx';
 
@@ -86,6 +85,9 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
   const total = week.reduce((s, d) => s + d.hours, 0);
   const maxH = Math.max(1, ...week.map((d) => d.hours));
   const series = mockSeries(mocks);
+  const accuracy = stats.length
+    ? Math.round(stats.reduce((sum, item) => sum + item.pct, 0) / stats.length)
+    : 0;
   const diagMock = pickDiagnosticMock(mocks);
   const diagnosis = diagMock?.review?.length
     ? buildDiagnosis(diagMock.review, topics, lang)
@@ -94,8 +96,24 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
   const proUnlockHint = () => alert(t('diag.parentPro'));
 
   return (
-    <main>
-      <h1>{t('prog.title')}</h1>
+    <main className="progress-page">
+      <header className="progress-title">
+        <span className="section-eyebrow">SYNAQ ANALYTICS</span>
+        <h1>{t('prog.title')}</h1>
+        <p>{t('home.progressText')}</p>
+      </header>
+
+      <section className="progress-overview">
+        <article className="progress-overview-main">
+          <span>{t('diag.readiness')}</span>
+          <strong>{accuracy}%</strong>
+          <div><i style={{ width: `${accuracy}%` }} /></div>
+          <small>{stats.length} {lang === 'ru' ? 'тем с результатами' : 'нәтижесі бар тақырып'}</small>
+        </article>
+        <article className="progress-overview-card progress-overview-xp"><span>★</span><small>{t('xp.title')}</small><strong>{xpInfo.xp || 0} XP</strong></article>
+        <article className="progress-overview-card progress-overview-time"><span>◷</span><small>{t('prog.hours')}</small><strong>{total.toFixed(1)} {lang === 'ru' ? 'ч' : 'сағ'}</strong></article>
+        <article className="progress-overview-card progress-overview-mock"><span>✓</span><small>{lang === 'ru' ? 'Пробные тесты' : 'Сынақтар'}</small><strong>{mocks.length}</strong></article>
+      </section>
 
       {diagnosis ? (
         <DiagnosisReport
@@ -111,19 +129,6 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
           <p className="muted" style={{ margin: 0, fontSize: 14, lineHeight: 1.55 }}>{t('diag.noDataSub')}</p>
         </div>
       )}
-
-      <div style={{ borderTop: '2px solid var(--ink)', margin: '22px 0' }} />
-
-      <div className="hero-card" style={{ marginBottom: 16 }}>
-        <p className="kicker" style={{ margin: 0 }}>{t('xp.title')}</p>
-        <div style={{ font: "700 40px 'Lora',serif", color: 'var(--accent)', lineHeight: 1.1 }}>{xpInfo.xp || 0} XP</div>
-        <p className="muted" style={{ margin: '8px 0 0', fontSize: 13 }}>
-          {t('xp.level')} {xpLevel(xpInfo.xp)} · {Math.floor((xpInfo.studySecs || 0) / 3600)} {t('xp.hoursDone')}
-        </p>
-        <p className="muted" style={{ margin: '6px 0 0', fontSize: 12.5 }}>{t('xp.rules')}</p>
-      </div>
-
-      <div style={{ borderTop: '2px solid var(--ink)', margin: '14px 0 22px' }} />
 
       {/* Сағаттар — апта бойынша */}
       <div className="card">

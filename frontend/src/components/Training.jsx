@@ -10,11 +10,11 @@ const LT = ['A', 'B', 'C', 'D', 'E'];
 // Блоки раздельно: язык и математика в одной ленте — бессмыслица.
 // Заголовок — через t(), чтобы шёл за выбранным языком интерфейса (не только сами задачи).
 const BLOCKS = [
-  { id: 'math',     titleKey: 'ui.68', only: null },
-  { id: 'logic',    titleKey: 'ui.69', only: null },
-  { id: 'lang_kaz', titleKey: 'ui.70', only: 'lang_kaz' },
-  { id: 'lang_rus', titleKey: 'ui.71', only: 'lang_rus' },
-  { id: 'lang_eng', titleKey: 'ui.72', only: 'lang_eng' },
+  { id: 'math',     titleKey: 'ui.68', only: null, symbol: 'π' },
+  { id: 'logic',    titleKey: 'ui.69', only: null, symbol: '◇' },
+  { id: 'lang_kaz', titleKey: 'ui.70', only: 'lang_kaz', symbol: 'KZ' },
+  { id: 'lang_rus', titleKey: 'ui.71', only: 'lang_rus', symbol: 'RU' },
+  { id: 'lang_eng', titleKey: 'ui.72', only: 'lang_eng', symbol: 'EN' },
 ];
 // id → тема, чтобы не фильтровать весь пул на каждый рендер
 const TOPIC_OF = Object.fromEntries(POOL.map((q) => [q.id, q.topic]));
@@ -191,54 +191,65 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
 
   // ── список тем ──
   if (!topic) {
-    const Group = ({ title, arr }) => !arr.length ? null : (
-      <>
-        <div className="row" style={{ margin: '26px 0 12px' }}>
-          <span className="kicker" style={{ margin: 0 }}>{title}</span>
+    const Group = ({ title, arr, tone, symbol }) => !arr.length ? null : (
+      <section className={`training-group training-group-${tone}`}>
+        <div className="training-group-head">
+          <span className="training-group-symbol">{symbol}</span>
+          <div><h2>{title}</h2><p>{arr.length} {lang === 'ru' ? 'тем' : 'тақырып'}</p></div>
         </div>
-        <div className="list">
+        <div className="list training-topic-list">
           {arr.map((t, k) => {
             const done = Math.min(solvedIn[t.id] || 0, t.count);
             const pct = Math.round(done / t.count * 100);
             const shut = !pro && !(b0 && t.id === b0);      // тегін тарифте — бір ғана тақырып
             return (
-              <div className="row-item" key={t.id}
+              <div className={`row-item training-topic${shut ? ' is-locked' : ''}`} key={t.id}
                 onClick={() => (shut ? null : openTopic(t))}
-                style={{ opacity: shut ? 0.45 : 1, cursor: shut ? 'default' : 'pointer' }}>
-                <span style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#B7B0A2', width: 26 }}>{String(k + 1).padStart(2, '0')}</span>
-                <div style={{ flex: 1 }}>
+                style={{ cursor: shut ? 'default' : 'pointer' }}>
+                <span className="training-topic-num">{String(k + 1).padStart(2, '0')}</span>
+                <div className="training-topic-copy">
                   <b>{t.name}</b>
-                  <div style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 3 }}>
+                  <div className="training-schools">
                     {t.schools.join(' · ')}
                   </div>
                 </div>
-                <div style={{ width: 110 }}><div className="bar"><i style={{ width: pct + '%' }} /></div></div>
-                <span style={{ font: "600 13px 'IBM Plex Mono',monospace", width: 46, textAlign: 'right', color: pct >= 60 ? '#4C7A4E' : '#6B655B' }}>
-                  {shut ? '🔒' : pct + '%'}
-                </span>
+                <div className="training-topic-progress"><div className="bar"><i style={{ width: pct + '%' }} /></div><small>{pct}%</small></div>
+                <span className="training-topic-state">{shut ? 'Про' : '→'}</span>
               </div>
             );
           })}
         </div>
-      </>
+      </section>
     );
 
     return (
-      <main>
-        <p className="kicker">{t('ui.1')}</p>
-        <h1>{t('ui.2')}</h1>
-        <p className="muted" style={{ marginTop: 6 }}>
-          Есептер үш мектептің бәрінен араласып беріледі.
-        </p>
+      <main className="training-page">
+        <header className="training-title">
+          <span className="section-eyebrow">SYNAQ TRAINER</span>
+          <h1>{t('ui.2')}</h1>
+          <p>{lang === 'ru'
+            ? 'Задачи из трёх школ собраны в одном маршруте.'
+            : 'Есептер үш мектептің бәрінен араласып беріледі.'}</p>
+        </header>
 
-        <div className="hero-card" style={{ marginTop: 16 }}>
-          <h2>{t('ui.3')}</h2>
-          <p>{t('ui.4')}</p>
-          <button className="btn accent" onClick={openMixed}>{t('ui.5')}</button>
-        </div>
+        <section className="training-mix-card">
+          <div className="training-mix-copy">
+            <span className="training-mix-tag">{lang === 'ru' ? 'ПЕРСОНАЛЬНАЯ ПРАКТИКА' : 'ЖЕКЕ ЖОСПАР'}</span>
+            <h2>{t('ui.3')}</h2>
+            <p>{t('ui.4')}</p>
+            <div className="training-school-pills"><span>РФМШ</span><span>НИШ</span><span>БИЛ</span></div>
+            <button className="training-start" onClick={openMixed}><i>▶</i>{t('ui.5')}</button>
+          </div>
+          <div className="training-daily">
+            <span>{lang === 'ru' ? 'Цель на сегодня' : 'Бүгінгі мақсат'}</span>
+            <strong>{pro ? 'PRO' : `${Math.min(done, FREE_DAY)}/${FREE_DAY}`}</strong>
+            <div><i style={{ width: pro ? '100%' : `${Math.min(100, (done / FREE_DAY) * 100)}%` }} /></div>
+            <small>{lang === 'ru' ? 'Решай каждый день' : 'Күн сайын есеп шығар'}</small>
+          </div>
+        </section>
 
         {BLOCKS.map((b) => (
-          <Group key={b.id} title={t(b.titleKey)}
+          <Group key={b.id} title={t(b.titleKey)} tone={b.id} symbol={b.symbol}
             arr={topics.filter((tp) => (b.only ? tp.id === b.only : tp.block === b.id))} />
         ))}
       </main>

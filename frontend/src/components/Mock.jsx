@@ -8,6 +8,17 @@ import DiagnosisReport from './DiagnosisReport.jsx';
 import { Kolhar } from './Training.jsx';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
+const SCHOOL_LOGOS = {
+  'РФМШ': '/brands/rfmsh.png',
+  'БИЛ': '/brands/bil.png',
+  'НИШ': '/brands/nis.png',
+};
+
+const SchoolLogo = ({ code }) => (
+  <span className={`mock-school-mark mock-school-logo mock-school-logo-${code}`}>
+    <img src={SCHOOL_LOGOS[code]} alt={`${code} логотипі`} />
+  </span>
+);
 
 const recentKey = (school, type) => `synaq_recent_${type}_${school}`;
 const readRecent = (school, type) => {
@@ -41,6 +52,24 @@ const Stmt = ({ text }) => (
     ))}
   </>
 );
+
+function MockBenefits({ lang }) {
+  const ru = lang === 'ru';
+  const items = [
+    { icon: '◷', title: ru ? 'Реальный режим' : 'Нақты режим', text: ru ? 'Таймер, структура и подсчёт баллов как на отборе.' : 'Таймер, құрылым және балл нақты іріктеудегідей.' },
+    { icon: 'AI', title: ru ? 'Анализ ошибок' : 'Қателерді талдау', text: ru ? 'Сразу покажем, где ты ошибаешься и что нужно повторить.' : 'Қай жерде қателескеніңді және нені қайталау керегін көрсетеміз.' },
+    { icon: '↗', title: ru ? 'Личный маршрут' : 'Жеке маршрут', text: ru ? 'Получишь две слабые темы и понятный следующий шаг.' : 'Екі әлсіз тақырыбың мен келесі нақты қадамды аласың.' },
+  ];
+  return (
+    <section className="mock-benefits">
+      <div className="mock-benefits-head"><span>03</span><div><h2>{ru ? 'Что ты получишь' : 'Сынақтан кейін'}</h2><p>{ru ? 'Результат — это начало подготовки' : 'Нәтиже — дайындықтың басы'}</p></div></div>
+      <div className="mock-benefits-grid">
+        {items.map((item, index) => <article key={item.title}><span>{item.icon}</span><small>0{index + 1}</small><h3>{item.title}</h3><p>{item.text}</p></article>)}
+      </div>
+      <div className="mock-flow"><b>{ru ? 'Как это работает' : 'Қалай өтеді'}</b><span>{ru ? 'Выбери школу' : 'Мектепті таңда'}</span><i>→</i><span>{ru ? 'Пройди тест' : 'Сынақтан өт'}</span><i>→</i><span>{ru ? 'Получи разбор' : 'Талдауды ал'}</span></div>
+    </section>
+  );
+}
 
 export default function Mock({ onTrainTopic, onGoProgress }) {
   const { t, lang } = useLang();
@@ -154,20 +183,24 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   if (!school && pro === false && diagUsed !== null) {
     if (!diagUsed) {
       return (
-        <main>
-          <p className="kicker">{t('diag.freeMock')}</p>
-          <h1>{t('diag.freeMockTitle')}</h1>
-          <p className="muted" style={{ marginTop: 8, lineHeight: 1.6 }}>{t('diag.freeMockSub')}</p>
-          <div className="list" style={{ marginTop: 16 }}>
+        <main className="mock-page mock-select-page">
+          <header className="mock-title">
+            <span className="section-eyebrow">SYNAQ MOCK</span>
+            <h1>{t('diag.freeMockTitle')}</h1>
+            <p>{t('diag.freeMockSub')}</p>
+          </header>
+          <div className="mock-school-grid">
             {schools.map((s) => (
-              <div className="row-item" key={s.code}
+              <div className={`mock-school-card mock-school-${s.code}`} key={s.code}
                 onClick={() => s.ready && startExam(s.code, true)}
                 style={{ opacity: s.ready ? 1 : 0.5, cursor: s.ready ? 'pointer' : 'default' }}>
-                <b style={{ font: "700 18px 'Lora',serif", flex: 1 }}>{s.code}</b>
-                <span className="rt">{s.ready ? t('diag.startFree') : t('ui.60')}</span>
+                <SchoolLogo code={s.code} />
+                <div><b>{s.code}</b><small>{lang === 'ru' ? 'Реальный формат' : 'Нақты формат'}</small></div>
+                <span className="mock-school-go">{s.ready ? '→' : t('ui.60')}</span>
               </div>
             ))}
           </div>
+          <MockBenefits lang={lang} />
         </main>
       );
     }
@@ -194,20 +227,28 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   }
 
   if (!school) return (
-    <main>
-      <p className="kicker">{t('ui.11')}</p>
-      <h1>{t('ui.12')}</h1>
-      <p className="muted" style={{ marginTop: 6 }}>{t('ui.13')}</p>
-      <div className="list" style={{ marginTop: 16 }}>
+    <main className="mock-page mock-select-page">
+      <header className="mock-title">
+        <span className="section-eyebrow">SYNAQ MOCK</span>
+        <h1>{t('ui.12')}</h1>
+        <p>{t('ui.13')}</p>
+      </header>
+      <section className="mock-intro-card">
+        <div><span>{lang === 'ru' ? 'ПРОБНЫЙ ТЕСТ' : 'АПТАЛЫҚ СЫНАҚ'}</span><h2>{lang === 'ru' ? 'Проверь готовность к экзамену' : 'Емтиханға дайындығыңды тексер'}</h2><p>{lang === 'ru' ? 'Таймер, баллы и разбор ошибок — как на настоящем отборе.' : 'Таймер, балл және қателерді талдау — нақты іріктеудегідей.'}</p></div>
+        <div className="mock-intro-score"><b>30</b><span>{lang === 'ru' ? 'задач' : 'есеп'}</span></div>
+      </section>
+      <div className="mock-school-grid">
         {schools.map((s) => (
-          <div className="row-item" key={s.code}
+          <div className={`mock-school-card mock-school-${s.code}`} key={s.code}
             onClick={() => s.ready && startExam(s.code, false)}
             style={{ opacity: s.ready ? 1 : 0.5, cursor: s.ready ? 'pointer' : 'default' }}>
-            <b style={{ font: "700 18px 'Lora',serif", flex: 1 }}>{s.code}</b>
-            <span className="rt">{s.ready ? '→' : t('ui.60')}</span>
+            <SchoolLogo code={s.code} />
+            <div><b>{s.code}</b><small>{lang === 'ru' ? 'Реальный формат' : 'Нақты формат'}</small></div>
+            <span className="mock-school-go">{s.ready ? '→' : t('ui.60')}</span>
           </div>
         ))}
       </div>
+      <MockBenefits lang={lang} />
     </main>
   );
 

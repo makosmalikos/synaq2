@@ -1,13 +1,27 @@
 import React from 'react';
+import { useLang } from './i18n.jsx';
+
 export default function League() {
+  const { t } = useLang();
   return (
-    <main>
-      <p className="kicker">Лига</p>
-      <h1>Апталық рейтинг</h1>
-      <div className="card" style={{ marginTop: 16, textAlign: 'center', padding: 40 }}>
-        <div style={{ font: "700 40px 'Lora',serif", color: '#B0342B' }}>🏆</div>
-        <p className="muted" style={{ marginTop: 10 }}>Лига мен рейтинг жақында қосылады.</p>
-      </div>
+    <main className="league-page">
+      <header className="section-title">
+        <span className="section-eyebrow">SYNAQ LEAGUE</span>
+        <h1>{t('league.title')}</h1>
+        <p>{t('league.sub')}</p>
+      </header>
+      <section className="league-stage">
+        <div className="league-orbit league-orbit-one" />
+        <div className="league-orbit league-orbit-two" />
+        <span className="league-cup">♛</span>
+        <h2>{t('league.week')}</h2>
+        <p>{t('league.honest')}</p>
+        <div className="league-rules">
+          <span><b>+5 XP</b>{t('league.correct')}</span>
+          <span><b>+50 XP</b>{t('league.duel')}</span>
+          <span><b>TOP 3</b>{t('league.top')}</span>
+        </div>
+      </section>
     </main>
   );
 }
