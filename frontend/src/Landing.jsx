@@ -9,6 +9,7 @@ import Brand from './Brand.jsx';
 //   2) YouTube:  'https://youtu.be/XXXX'
 //   3) пусто:    '' — на месте видео будет заглушка
 const DEMO_VIDEO = '/figures/demo.mp4';
+const DEMO_VIDEO_MOBILE = '/figures/demo-mobile.mp4';
 
 // YouTube-ссылку любого вида превращаем в embed.
 // Параметры максимально убирают обвязку: без заголовка и аватара сверху,
@@ -36,12 +37,11 @@ function ytEmbed(url) {
 function Demo() {
   const { t } = useLang();
   const [failed, setFailed] = React.useState(false);
-  // 56.25% = 16:9. Через padding, а не aspect-ratio: работает везде и не схлопывается в 0.
-  const box = { position: 'relative', width: '100%', height: 0, paddingTop: '56.25%', borderRadius: '18px', overflow: 'hidden', background: '#167ACB' };
+  const box = { position: 'relative', width: '100%', borderRadius: '18px', overflow: 'hidden', background: '#167ACB' };
   const fill = { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0, display: 'block' };
 
   if (!DEMO_VIDEO || failed) return (
-    <div style={box}>
+    <div className="lp-demo-frame" style={box}>
       <div style={{ ...fill, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '10px', textAlign: 'center', padding: '0 20px' }}>
         <span style={{ font: "600 12px 'IBM Plex Mono',monospace", letterSpacing: '.16em', textTransform: 'uppercase', color: '#FFFFFF' }}>{t('lp.1')}</span>
         <span style={{ font: "500 15px 'Golos Text',sans-serif", color: '#DCEEFF' }}>
@@ -53,15 +53,18 @@ function Demo() {
 
   const yt = ytEmbed(DEMO_VIDEO);
   return (
-    <div style={box}>
+    <div className="lp-demo-frame" style={box}>
       {yt
         ? <>
             <iframe src={yt} title="Synaq demo" loading="lazy" style={{ ...fill, pointerEvents: 'none' }}
               allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />
             <div style={fill} />
           </>
-        : <video src={DEMO_VIDEO} controls playsInline muted autoPlay loop preload="metadata"
-            onError={() => setFailed(true)} style={{ ...fill, objectFit: 'contain', background: '#0D5FA4' }} />}
+        : <video controls playsInline muted autoPlay loop preload="metadata"
+            onError={() => setFailed(true)} style={{ ...fill, objectFit: 'cover', background: '#0D5FA4' }}>
+            <source src={DEMO_VIDEO_MOBILE} media="(max-width: 640px)" type="video/mp4" />
+            <source src={DEMO_VIDEO} type="video/mp4" />
+          </video>}
     </div>
   );
 }

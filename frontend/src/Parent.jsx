@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLang } from './i18n.jsx';
 import {
-  auth, createChild, getChildren, getMocks, getAttempts, logout, getFamily, syncChildrenPro,
+  auth, createChild, getChildren, getMocks, getAttempts, logout, getFamily,
   genPassword, suggestUsername, cleanUsername, errText,
   hasPasswordLogin, linkParentPassword, changeParentPassword, resetChildPassword,
 } from './firebase.js';
@@ -32,7 +32,6 @@ export default function Parent({ onExit }) {
     getFamily(u.uid).then((f) => {
       const has = !!f?.pro;
       setPro(has);
-      syncChildrenPro(u.uid, has).catch((e) => console.error('pro sync failed', e));
       if (!u.displayName) setMe(f?.parentName || (u.email || '').split('@')[0]);
       // лендингте «Про таңдау» басып, содан кейін кірген болса — төлемді бірден ашамыз
       let wanted = false;

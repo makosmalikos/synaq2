@@ -3,13 +3,16 @@ import AVFoundation
 import CoreVideo
 import Foundation
 
-guard CommandLine.arguments.count == 3 else {
-    fputs("Usage: swift make_demo_video.swift <frames-dir> <output.mp4>\n", stderr)
+guard CommandLine.arguments.count >= 3 else {
+    fputs("Usage: swift make_demo_video.swift <frames-dir> <output.mp4> [width height [crop-width]]\n", stderr)
     exit(2)
 }
 
 let framesDirectory = URL(fileURLWithPath: CommandLine.arguments[1], isDirectory: true)
 let outputURL = URL(fileURLWithPath: CommandLine.arguments[2])
+let requestedWidth = CommandLine.arguments.count >= 5 ? Int(CommandLine.arguments[3]) : nil
+let requestedHeight = CommandLine.arguments.count >= 5 ? Int(CommandLine.arguments[4]) : nil
+let cropWidth = CommandLine.arguments.count >= 6 ? Int(CommandLine.arguments[5]) : nil
 let imageURLs = try FileManager.default.contentsOfDirectory(
     at: framesDirectory,
     includingPropertiesForKeys: nil
@@ -25,13 +28,17 @@ let images: [CGImage] = try imageURLs.map { url in
           let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else {
         throw NSError(domain: "SynaqDemo", code: 1, userInfo: [NSLocalizedDescriptionKey: "Cannot read \(url.path)"])
     }
+    if let cropWidth, cropWidth < cgImage.width,
+       let cropped = cgImage.cropping(to: CGRect(x: 0, y: 0, width: cropWidth, height: cgImage.height)) {
+        return cropped
+    }
     return cgImage
 }
 
 try? FileManager.default.removeItem(at: outputURL)
 
-let width = 1280
-let height = 720
+let width = requestedWidth ?? images[0].width
+let height = requestedHeight ?? images[0].height
 let fps: Int32 = 30
 let holdFrames = 68
 let transitionFrames = 16

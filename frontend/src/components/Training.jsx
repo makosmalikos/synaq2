@@ -103,11 +103,11 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
   const [answer, setAnswer] = useState('');
   const [checked, setChecked] = useState(false);
   const [secs, setSecs] = useState(0);
-  const [pro, setPro] = useState(true);        // тексерілгенше бөгемейміз
+  const [pro, setPro] = useState(null);        // null — сервер әлі тексеріп жатыр
   const [done, setDone] = useState(0);
   const [xpPop, setXpPop] = useState(null);         // бүгін шығарған есеп саны
   const FREE_DAY = 5;                          // тегін тарифте күніне 5 есеп
-  const locked = !pro && done >= FREE_DAY;
+  const locked = pro === false && done >= FREE_DAY;
   const timer = useRef(null);
 
   useEffect(() => {
@@ -123,9 +123,11 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
   }, []);
 
   useEffect(() => {
-    if (!startTopicId || !topics.length) return;
+    if (!startTopicId || !topics.length || pro === null) return;
     const tp = topics.find((x) => x.id === startTopicId);
     if (!tp) return;
+    const firstTopicId = topics[0]?.id;
+    if (pro === false && tp.id !== firstTopicId) return;
     (async () => {
       const list = await translateQuestions(await api.topicQuestions(tp.id, { lang, excludeIds: solved }), lang);
       setTopic(tp);
@@ -136,7 +138,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
       setSecs(0);
       onTopicOpened?.();
     })();
-  }, [startTopicId, topics, lang, onTopicOpened]);
+  }, [startTopicId, topics, lang, onTopicOpened, pro]);
 
   useEffect(() => {
     if (!items.length || checked) return;
@@ -158,9 +160,13 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
   const openTopic = async (tp) => start(tp, await translateQuestions(
     await api.topicQuestions(tp.id, { lang, excludeIds: solved }), lang,
   ));
-  const openMixed = async () => start({ id: '_mix', name: t('ui.3') }, await translateQuestions(
-    await api.mixed(lang, 20, 'math', solved), lang,
-  ));
+  const openMixed = async () => {
+    if (pro === null) return;
+    const source = pro === true
+      ? await api.mixed(lang, 20, 'math', solved)
+      : b0 ? await api.topicQuestions(b0, { lang, excludeIds: solved }) : [];
+    start({ id: '_mix', name: t('ui.3') }, await translateQuestions(source, lang));
+  };
   const next = () => {
     if (i + 1 < items.length) { setI(i + 1); setAnswer(''); setChecked(false); setSecs(0); }
     else { setTopic(null); setItems([]); }
@@ -201,7 +207,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
           {arr.map((t, k) => {
             const done = Math.min(solvedIn[t.id] || 0, t.count);
             const pct = Math.round(done / t.count * 100);
-            const shut = !pro && !(b0 && t.id === b0);      // тегін тарифте — бір ғана тақырып
+            const shut = pro === null || (pro === false && !(b0 && t.id === b0));
             return (
               <div className={`row-item training-topic${shut ? ' is-locked' : ''}`} key={t.id}
                 onClick={() => (shut ? null : openTopic(t))}
@@ -238,11 +244,11 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
             <h2>{t('ui.3')}</h2>
             <p>{t('ui.4')}</p>
             <div className="training-school-pills"><span>РФМШ</span><span>НИШ</span><span>БИЛ</span></div>
-            <button className="training-start" onClick={openMixed}><i>▶</i>{t('ui.5')}</button>
+            <button className="training-start" disabled={pro === null} onClick={openMixed}><i>▶</i>{t('ui.5')}</button>
           </div>
           <div className="training-daily">
             <span>{lang === 'ru' ? 'Цель на сегодня' : 'Бүгінгі мақсат'}</span>
-            <strong>{pro ? 'PRO' : `${Math.min(done, FREE_DAY)}/${FREE_DAY}`}</strong>
+            <strong>{pro === null ? '…' : pro ? 'PRO' : `${Math.min(done, FREE_DAY)}/${FREE_DAY}`}</strong>
             <div><i style={{ width: pro ? '100%' : `${Math.min(100, (done / FREE_DAY) * 100)}%` }} /></div>
             <small>{lang === 'ru' ? 'Решай каждый день' : 'Күн сайын есеп шығар'}</small>
           </div>

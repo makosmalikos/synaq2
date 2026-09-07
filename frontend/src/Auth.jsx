@@ -182,9 +182,11 @@ export default function Auth({ onClose, duelCode = '' }) {
         {stage === 'loginAdmin' && (
           <div style={{ animation: 'rise .3s ease both' }}>
             <h1 style={S.h1}>{t('admin.loginTitle')}</h1>
-            <input style={S.input} type="email" autoComplete="email" placeholder={t('auth.email')} value={email} onChange={(e) => setEmail(e.target.value)} />
+            <p style={S.hint}>{t('admin.googleHint')}</p>
             <Err v={err} />
-            <button style={{ ...S.dark, marginTop: 6 }} disabled={busy || !email.trim()} onClick={run(() => loginAdmin(email))}>{t('auth.login')}</button>
+            <button style={{ ...S.google, marginTop: 18 }} disabled={busy} onClick={run(loginAdmin)}>
+              <span style={{ font: "800 15px 'Manrope'", color: '#4285F4' }}>G</span> {t('admin.googleLogin')}
+            </button>
             <button style={S.back} onClick={() => setStage('loginRole')}>{t('common.back')}</button>
           </div>
         )}

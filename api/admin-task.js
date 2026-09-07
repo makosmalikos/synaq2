@@ -2,7 +2,7 @@
 // и не какой-либо другой AI-парсинг: тему, школу, сложность, тип, условие,
 // варианты, ответ и разбор администратор вводит вручную на фронте
 // (frontend/src/Admin.jsx). Эта функция только:
-//   1. проверяет Firebase ID token и что email — из allowlist ADMIN_EMAIL_1/2;
+//   1. проверяет Firebase ID token, admin claim актуальной версии и allowlist;
 //   2. заново валидирует присланные данные на сервере (не доверяя клиенту);
 //   3. пишет документ в bankTasks через Firebase Admin SDK.
 //
@@ -55,8 +55,12 @@ async function verifyAdmin(idToken) {
   if (!idToken) return null;
   const adminAuth = getAdminAuth();
   if (!adminAuth) return null;
-  const decoded = await adminAuth.verifyIdToken(idToken);
-  if (!isAllowedEmail(decoded.email || '')) return null;
+  const decoded = await adminAuth.verifyIdToken(idToken, true);
+  if (
+    decoded.admin !== true
+    || decoded.adminAuthVersion !== 2
+    || !isAllowedEmail(decoded.email || '')
+  ) return null;
   return { uid: decoded.uid, email: decoded.email };
 }
 

@@ -99,6 +99,8 @@ const DICT = {
 
     // ── админ ──
     'admin.loginTitle': 'Әкімші кірісі',
+    'admin.googleHint': 'Әкімші ретінде кіру үшін рұқсат берілген Google аккаунтын таңдаңыз.',
+    'admin.googleLogin': 'Google арқылы әкімші болып кіру',
     'admin.noAccess': 'Сізде әкімші панеліне қолжетімділік жоқ.',
     'admin.loginFailed': 'Кіру мүмкін болмады. Қайта көріңіз.',
     'admin.kicker': 'Әкімші панелі',
@@ -559,6 +561,8 @@ const DICT = {
 
     // ── админ ──
     'admin.loginTitle': 'Вход администратора',
+    'admin.googleHint': 'Для входа выберите разрешённый Google-аккаунт администратора.',
+    'admin.googleLogin': 'Войти как администратор через Google',
     'admin.noAccess': 'У вас нет доступа к панели администратора.',
     'admin.loginFailed': 'Не удалось войти. Попробуйте ещё раз.',
     'admin.kicker': 'Админ-панель',

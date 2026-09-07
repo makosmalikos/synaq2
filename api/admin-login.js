@@ -1,7 +1,6 @@
-// Вход администратора — без пароля. Email проверяется server-side против allowlist
-// ADMIN_EMAIL_1 / ADMIN_EMAIL_2 (Vercel → Environment Variables). Если email
-// разрешён, через firebase-admin выдаётся Firebase custom token; фронт логинится
-// им через signInWithCustomToken() (frontend/src/firebase.js: loginAdmin()).
+// Вход администратора. Клиент сначала входит через Google и присылает Firebase
+// ID token. Сервер проверяет подпись токена, подтверждённый email и allowlist,
+// затем выдаёт Firebase custom token с claim admin:true.
 //
 // Никакого Gemini/AI здесь нет — это чистая проверка allowlist + выпуск токена.
 //
@@ -45,35 +44,34 @@ module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'method_not_allowed' });
 
   try {
-    let body = req.body;
-    if (typeof body === 'string') body = JSON.parse(body || '{}');
-    if (!body || typeof body !== 'object') body = {};
+    const adminAuth = getAdminAuth();
+    if (!adminAuth) return res.status(500).json({ error: 'no_admin_credentials' });
 
-    const email = norm(body.email);
-    if (!email || !email.includes('@')) return res.status(400).json({ error: 'bad_email' });
+    const match = String(req.headers.authorization || '').match(/^Bearer\s+(.+)$/i);
+    if (!match) return res.status(401).json({ error: 'google_required' });
 
+    let decoded;
+    try {
+      decoded = await adminAuth.verifyIdToken(match[1], true);
+    } catch (e) {
+      return res.status(401).json({ error: 'google_required' });
+    }
+
+    const email = norm(decoded.email);
+    const provider = decoded.firebase?.sign_in_provider;
+    if (provider !== 'google.com' || decoded.email_verified !== true) {
+      return res.status(401).json({ error: 'google_required' });
+    }
     if (!isAllowedEmail(email)) {
       return res.status(403).json({ error: 'not_allowed' });
     }
 
-    const adminAuth = getAdminAuth();
-    if (!adminAuth) return res.status(500).json({ error: 'no_admin_credentials' });
-
-    let user;
-    try {
-      user = await adminAuth.getUserByEmail(email);
-    } catch (e) {
-      if (e.code === 'auth/user-not-found') {
-        user = await adminAuth.createUser({ email, emailVerified: true });
-      } else {
-        throw e;
-      }
-    }
-
-    // Клейм admin:true — единственное, на что опирается isAdmin() на фронте
-    // и verifyAdmin() в api/admin-task.js. Сам custom token живёт недолго,
-    // но клейм переживает в ID-токене, который клиент обновляет автоматически.
-    const token = await adminAuth.createCustomToken(user.uid, { admin: true });
+    // Версия сессии не позволяет использовать admin-токены, выданные старым
+    // небезопасным endpoint, где владение email ещё не подтверждалось.
+    const token = await adminAuth.createCustomToken(decoded.uid, {
+      admin: true,
+      adminAuthVersion: 2,
+    });
     return res.status(200).json({ token });
   } catch (e) {
     console.error('admin-login', e.code || e.message);

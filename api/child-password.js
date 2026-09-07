@@ -38,7 +38,7 @@ module.exports = async function handler(req, res) {
     if (!match) return res.status(401).json({ error: 'login_required' });
 
     const { auth, db } = getAdmin();
-    const parent = await auth.verifyIdToken(match[1]);
+    const parent = await auth.verifyIdToken(match[1], true);
     if (!parent?.uid || String(parent.email || '').endsWith('@synaq.kids')) {
       return res.status(403).json({ error: 'not_child_owner' });
     }

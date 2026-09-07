@@ -12,12 +12,6 @@ service cloud.firestore {
         && get(/databases/$(database)/documents/childIndex/$(childUid)).data.parentUid == request.auth.uid;
     }
 
-    function isChildLinkedToParent(parentUid) {
-      return isSignedIn()
-        && exists(/databases/$(database)/documents/childIndex/$(request.auth.uid))
-        && get(/databases/$(database)/documents/childIndex/$(request.auth.uid)).data.parentUid == parentUid;
-    }
-
     function isDuelPlayer(data) {
       return isSignedIn() && (
         data.host.uid == request.auth.uid
@@ -31,12 +25,19 @@ service cloud.firestore {
       allow read, update, delete: if false;
     }
 
-    // Семья: родитель — полный доступ; ребёнок — только чтение pro-флага
+    // Семья: родитель управляет профилем; поля подписки меняет только webhook.
     match /families/{uid} {
-      allow read: if isSignedIn() && (
-        request.auth.uid == uid || isChildLinkedToParent(uid)
-      );
-      allow write: if isSignedIn() && request.auth.uid == uid;
+      // Ребёнок получает только boolean pro через /api/entitlement и не видит
+      // email родителя или платёжные metadata из семейного документа.
+      allow read: if isSignedIn() && request.auth.uid == uid;
+      allow create: if isSignedIn()
+        && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['parentEmail', 'parentName', 'createdAt']);
+      allow update: if isSignedIn()
+        && request.auth.uid == uid
+        && request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['parentEmail', 'parentName']);
+      allow delete: if false;
       match /children/{childUid} {
         allow read, write: if isSignedIn() && request.auth.uid == uid;
       }
@@ -45,9 +46,15 @@ service cloud.firestore {
     // Индекс ребёнка: ребёнок читает свой; родитель меняет только индекс своего ребёнка
     match /childIndex/{childUid} {
       allow read: if request.auth != null && request.auth.uid == childUid;
-      allow create, update: if request.auth != null
-                            && request.resource.data.parentUid == request.auth.uid
-                            && exists(/databases/$(database)/documents/families/$(request.auth.uid)/children/$(childUid));
+      allow create: if request.auth != null
+                    && request.resource.data.parentUid == request.auth.uid
+                    && request.resource.data.keys().hasOnly(['parentUid', 'name', 'klass'])
+                    && exists(/databases/$(database)/documents/families/$(request.auth.uid)/children/$(childUid));
+      allow update: if request.auth != null
+                    && resource.data.parentUid == request.auth.uid
+                    && request.resource.data.parentUid == resource.data.parentUid
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'klass'])
+                    && exists(/databases/$(database)/documents/families/$(request.auth.uid)/children/$(childUid));
       allow delete: if request.auth != null
                     && resource.data.parentUid == request.auth.uid;
     }

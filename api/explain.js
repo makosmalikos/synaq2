@@ -32,15 +32,19 @@ function getAdminAuth() {
 
 async function verifyUser(idToken) {
   if (!idToken) return null;
-  try {
-    const auth = getAdminAuth();
-    if (auth) {
-      const decoded = await auth.verifyIdToken(idToken);
+  const auth = getAdminAuth();
+  if (auth) {
+    try {
+      const decoded = await auth.verifyIdToken(idToken, true);
       return decoded.uid;
+    } catch (e) {
+      console.error('admin verify', e.code || e.message);
+      return null;
     }
-  } catch (e) {
-    console.error('admin verify', e.code || e.message);
   }
+  // REST fallback нужен только в окружении без Admin SDK credentials. Нельзя
+  // использовать его после отказа Admin SDK — иначе отозванный токен снова
+  // становился бы действительным через менее строгую повторную проверку.
   try {
     const r = await fetch(
       `https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${FIREBASE_WEB_KEY}`,

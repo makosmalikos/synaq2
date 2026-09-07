@@ -33,7 +33,7 @@ async function authenticatedUser(req) {
   const header = req.headers.authorization || '';
   const match = header.match(/^Bearer\s+(.+)$/i);
   if (!match) return null;
-  return getAdminAuth().verifyIdToken(match[1]);
+  return getAdminAuth().verifyIdToken(match[1], true);
 }
 
 module.exports = async function handler(req, res) {

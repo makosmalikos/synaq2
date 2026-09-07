@@ -64,11 +64,15 @@ const normEmail = (email = '') => email.trim().toLowerCase();
 // Школа больше не спрашивается вообще: дайындык идёт по всему банку,
 // а школа выбирается только в момент мок-теста.
 export async function registerParent(email, password, name = '') {
-  const cred = await createUserWithEmailAndPassword(auth, normEmail(email), password);
+  const normalizedEmail = normEmail(email);
+  if (normalizedEmail.endsWith(KID_DOMAIN)) {
+    throw Object.assign(new Error('reserved-email-domain'), { code: 'auth/invalid-email' });
+  }
+  const cred = await createUserWithEmailAndPassword(auth, normalizedEmail, password);
   const parentName = name.trim();
   if (parentName) await updateProfile(cred.user, { displayName: parentName }).catch(() => {});
   await setDoc(doc(db, 'families', cred.user.uid), {
-    parentEmail: normEmail(email),
+    parentEmail: normalizedEmail,
     parentName: parentName || null,
     createdAt: serverTimestamp(),
   });
@@ -87,8 +91,8 @@ export const hasPasswordLogin = (user) =>
 export const isGoogleLogin = (user) =>
   !!user?.providerData?.some((p) => p.providerId === 'google.com');
 
-async function ensureGoogleFamily(user) {
-  if (!user || isKid(user) || !isGoogleLogin(user)) return;
+async function ensureParentFamily(user) {
+  if (!user || isKid(user)) return;
   const ref = doc(db, 'families', user.uid);
   const snap = await getDoc(ref);
   if (!snap.exists()) {
@@ -134,7 +138,7 @@ export async function loginGoogle() {
     }
     throw e;
   }
-  try { await ensureGoogleFamily(cred.user); }
+  try { await ensureParentFamily(cred.user); }
   catch { /* Firestore міндетті емес — авторизация өтті */ }
   return cred.user;
 }
@@ -144,8 +148,6 @@ export async function loginGoogle() {
 // родитель бы вылетел из сессии и следующая запись упала бы с permission-denied.
 // Поэтому аккаунт ребёнка создаём во ВТОРИЧНОМ экземпляре Firebase.
 export async function createChild(parentUid, { name, klass = '', code, pin }) {
-  const family = await getDoc(doc(db, 'families', parentUid));
-  const pro = !!family.data()?.pro;
   const secondary = initializeApp(firebaseConfig, 'sec-' + Date.now());
   const secAuth = getAuth(secondary);
   let childUser = null;
@@ -160,7 +162,7 @@ export async function createChild(parentUid, { name, klass = '', code, pin }) {
     await setDoc(doc(db, 'families', parentUid, 'children', childUid), {
       name, klass, code: code.trim().toLowerCase(), createdAt: serverTimestamp(),
     });
-    await setDoc(doc(db, 'childIndex', childUid), { parentUid, name, klass, pro });
+    await setDoc(doc(db, 'childIndex', childUid), { parentUid, name, klass });
     return { childUid, code };
   } catch (e) {
     // Avoid orphan Auth accounts and half-created Firestore records. A retry
@@ -235,19 +237,36 @@ export function childErrText(e, lang = 'kk') {
 }
 
 // ── Администратор ──
-// Пароля нет: email проверяется на сервере против allowlist ADMIN_EMAIL_1/2
-// (api/admin-login.js). Сервер выдаёт Firebase custom token через firebase-admin,
-// фронт им логинится — обычной email+password аутентификации здесь нет.
-export async function loginAdmin(email) {
+// Владение email подтверждается входом через Google. Сервер проверяет Firebase
+// ID token и allowlist ADMIN_EMAIL_1/2, затем выдаёт отдельный admin custom token.
+export async function loginAdmin() {
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: 'select_account' });
+
+  // The server must receive proof that the caller actually owns the allowlisted
+  // Google account. An email typed into a form is not authentication.
+  let googleCred;
+  try {
+    googleCred = await signInWithPopup(auth, provider);
+  } catch (e) {
+    throw e;
+  }
+
+  const idToken = await googleCred.user.getIdToken(true);
   const r = await fetch('/api/admin-login', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: normEmail(email) }),
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${idToken}`,
+    },
   });
   const data = await r.json().catch(() => ({}));
   if (!r.ok || !data.token) {
+    await signOut(auth).catch(() => {});
     throw Object.assign(new Error(data.error || 'admin_denied'), {
-      code: data.error === 'not_allowed' ? 'admin/not-allowed' : 'admin/failed',
+      code: data.error === 'not_allowed' ? 'admin/not-allowed'
+        : data.error === 'google_required' ? 'admin/google-required'
+          : 'admin/failed',
     });
   }
   const cred = await signInWithCustomToken(auth, data.token);
@@ -261,7 +280,7 @@ export async function isAdmin(user) {
   if (!user) return false;
   try {
     const res = await user.getIdTokenResult();
-    return res.claims?.admin === true;
+    return res.claims?.admin === true && res.claims?.adminAuthVersion === 2;
   } catch { return false; }
 }
 
@@ -280,9 +299,12 @@ export async function getMyProfile() {
 
 export const logout = () => signOut(auth);
 export const watchAuth = (cb) => onAuthStateChanged(auth, async (user) => {
-  // After the mobile redirect flow loginGoogle() cannot finish its local code,
-  // so create the parent document before the app renders the parent cabinet.
-  if (user && isGoogleLogin(user)) await ensureGoogleFamily(user).catch(() => {});
+  // Восстанавливаем отсутствующий family-профиль после оборванной регистрации
+  // или мобильного Google redirect до открытия родительского кабинета.
+  if (user && !isKid(user)) await ensureParentFamily(user).catch(() => {});
+  // Асинхронное восстановление могло завершиться уже после выхода или смены
+  // аккаунта. Не возвращаем в UI устаревшего пользователя.
+  if (user && auth.currentUser?.uid !== user.uid) return;
   cb(user);
 });
 
@@ -400,6 +422,9 @@ export function errText(e, lang = 'kk') {
   if (c.includes('not-child-owner')) return ru ? 'Этот детский аккаунт не привязан к вашему кабинету.' : 'Бұл бала аккаунты сіздің кабинетіңізге тіркелмеген.';
   if (c.includes('child-reset-failed')) return ru ? 'Не удалось изменить PIN. Попробуйте ещё раз.' : 'PIN өзгерту мүмкін болмады. Қайта көріңіз.';
   if (c.includes('admin/not-allowed')) return 'У вас нет доступа к панели администратора.';
+  if (c.includes('admin/google-required')) return ru
+    ? 'Войдите через разрешённый Google-аккаунт администратора.'
+    : 'Рұқсат берілген әкімші Google аккаунты арқылы кіріңіз.';
   if (c.includes('admin/failed')) return 'Не удалось войти. Попробуйте ещё раз.';
   if (c.includes('no-email')) return ru ? 'В Google-аккаунте не найден email.' : 'Пошта табылмады — Google аккаунтыңызда email болуы керек.';
   if (c.includes('too-many-requests')) return ru ? 'Слишком много попыток. Подождите и попробуйте снова.' : 'Тым көп әрекет. Біраз күтіңіз немесе парольді қалпына келтіріңіз.';
@@ -418,30 +443,20 @@ export async function getFamily(parentUid) {
   return snap.exists() ? snap.data() : null;
 }
 
-// Pro күйін баланың өзі оқи алатын индекске көшіреміз.
-// Бұл ескі аккаунттарды ата-ана кірген кезде автоматты түзетеді.
-export async function syncChildrenPro(parentUid, pro) {
-  const children = await getDocs(collection(db, 'families', parentUid, 'children'));
-  await Promise.all(children.docs.map((child) => setDoc(
-    doc(db, 'childIndex', child.id),
-    { parentUid, pro: !!pro },
-    { merge: true },
-  )));
-}
-
 // ── Тегін тариф шектеуі ──
-// Баланың ата-анасында pro бар ма? (баланың құжатында parentUid сақталады)
+// Сервер проверяет связь ребёнка с семьёй и возвращает только boolean. Так
+// ребёнок не получает email родителя и платёжные metadata документа families.
 export async function isPro(childUid) {
   try {
-    const idx = await getDoc(doc(db, 'childIndex', childUid));
-    const data = idx.data();
-    // childIndex — быстрый денормализованный кэш. Семья остаётся источником
-    // истины: если webhook уже обновил родителя, ребёнок не должен оставаться
-    // на бесплатном тарифе из-за запоздавшей синхронизации индекса.
-    if (data?.pro === true) return true;
-    if (!data?.parentUid) return false;
-    const family = await getDoc(doc(db, 'families', data.parentUid));
-    return !!family.data()?.pro;
+    const user = auth.currentUser;
+    if (!user || user.uid !== childUid) return false;
+    const idToken = await user.getIdToken();
+    const response = await fetch('/api/entitlement', {
+      headers: { Authorization: `Bearer ${idToken}` },
+    });
+    if (!response.ok) return false;
+    const data = await response.json().catch(() => ({}));
+    return data.pro === true;
   } catch { return false; }
 }
 
