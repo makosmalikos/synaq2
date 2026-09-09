@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLang } from './i18n.jsx';
 import Explain from './components/Explain.jsx';
-import { auth, addXp } from './firebase.js';
+import { claimDuelXp } from './firebase.js';
 import { duelXpGain, XP } from './xp.js';
 import {
   createDuel, joinDuel, submitDuelAnswer, skipRoundIfExpired,
@@ -31,13 +31,21 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
   const [joining, setJoining] = useState(!!initialCode);
   const [countdown, setCountdown] = useState(null);
   const [gameReady, setGameReady] = useState(!fromLink);
+  const [awardRetry, setAwardRetry] = useState(0);
   const lastRoundKey = useRef('');
   const countdownDone = useRef(false);
   const xpDone = useRef(false);
+  const xpClaiming = useRef(false);
 
   useEffect(() => {
     if (!code) return undefined;
     return watchDuel(code, setDuel);
+  }, [code]);
+
+  useEffect(() => {
+    xpDone.current = false;
+    xpClaiming.current = false;
+    setAwardRetry(0);
   }, [code]);
 
   // Гость по ссылке: войти в комнату и сразу начать игру
@@ -123,20 +131,17 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
   useEffect(() => {
     if (!duel || duel.status !== 'finished') return;
     const roleNow = myRole(duel);
-    if (!roleNow || xpDone.current) return;
-    xpDone.current = true;
-    const uid = auth.currentUser?.uid;
-    if (!uid) return;
-    const gain = duelXpGain({
-      scores: duel.scores,
-      speedWins: duel.speedWins,
-      role: roleNow,
-      winner: duel.winner,
-    });
-    if (gain > 0) {
-      addXp(uid, gain, 'duel').then(() => onXp?.(gain)).catch(() => {});
-    }
-  }, [duel, onXp]);
+    if (!roleNow || xpDone.current || xpClaiming.current) return undefined;
+    xpClaiming.current = true;
+    let retryTimer;
+    claimDuelXp(code).then(({ gain, credited }) => {
+      xpDone.current = true;
+      if (credited && gain > 0) onXp?.(gain);
+    }).catch(() => {
+      if (awardRetry < 2) retryTimer = setTimeout(() => setAwardRetry((n) => n + 1), 1500);
+    }).finally(() => { xpClaiming.current = false; });
+    return () => clearTimeout(retryTimer);
+  }, [duel, onXp, code, awardRetry]);
 
   async function onCreate() {
     setBusy(true); setErr('');

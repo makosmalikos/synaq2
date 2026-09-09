@@ -19,6 +19,38 @@ service cloud.firestore {
       );
     }
 
+    function validDuelNumbers(data) {
+      return data.qIndex is int
+        && data.qIndex >= 0
+        && data.qIndex < data.questions.size()
+        && data.scores.host is int
+        && data.scores.guest is int
+        && data.scores.host >= 0
+        && data.scores.guest >= 0
+        && data.scores.host <= data.questions.size()
+        && data.scores.guest <= data.questions.size()
+        && data.speedWins.host is int
+        && data.speedWins.guest is int
+        && data.speedWins.host >= 0
+        && data.speedWins.guest >= 0
+        && data.speedWins.host <= data.questions.size()
+        && data.speedWins.guest <= data.questions.size();
+    }
+
+    function validPlayerScoreChange(before, after) {
+      return after.scores.host >= before.scores.host
+        && after.scores.guest >= before.scores.guest
+        && after.scores.host <= before.scores.host + 1
+        && after.scores.guest <= before.scores.guest + 1
+        && (before.host.uid == request.auth.uid
+          ? after.scores.guest == before.scores.guest
+          : after.scores.host == before.scores.host)
+        && after.speedWins.host >= before.speedWins.host
+        && after.speedWins.guest >= before.speedWins.guest
+        && after.speedWins.host <= before.speedWins.host + 1
+        && after.speedWins.guest <= before.speedWins.guest + 1;
+    }
+
     match /waitlist/{doc} {
       allow create: if request.resource.data.email is string
                     && request.resource.data.email.size() < 200;
@@ -134,16 +166,54 @@ service cloud.firestore {
     }
 
     match /duels/{duelId} {
-      allow read: if isSignedIn() && isDuelPlayer(resource.data);
+      // Ожидающую комнату должен прочитать приглашённый ученик перед join.
+      // После старта данные видят только два участника.
+      allow read: if isSignedIn()
+        && (resource.data.status == 'waiting' || isDuelPlayer(resource.data));
       allow create: if isSignedIn()
-        && request.resource.data.host.uid == request.auth.uid;
+        && request.resource.data.keys().hasOnly([
+          'code', 'host', 'guest', 'status', 'questions', 'qIndex', 'scores',
+          'speedWins', 'round', 'roundStartedAt', 'winner', 'createdAt'
+        ])
+        && request.resource.data.code == duelId
+        && request.resource.data.host.uid == request.auth.uid
+        && request.resource.data.guest == null
+        && request.resource.data.status == 'waiting'
+        && request.resource.data.questions is list
+        && request.resource.data.questions.size() == 15
+        && validDuelNumbers(request.resource.data);
       allow update: if isSignedIn() && (
-        resource.data.host.uid == request.auth.uid
-        || (resource.data.guest != null && resource.data.guest.uid == request.auth.uid)
-        || (resource.data.guest == null
+        // Единственное изменение участников — свободное место занимает
+        // авторизованный гость, после чего UID обоих игроков неизменяемы.
+        (resource.data.guest == null
           && request.resource.data.guest.uid == request.auth.uid
           && resource.data.status == 'waiting'
-          && request.resource.data.status == 'playing')
+          && request.resource.data.status == 'playing'
+          && request.resource.data.code == resource.data.code
+          && request.resource.data.host == resource.data.host
+          && request.resource.data.questions == resource.data.questions
+          && request.resource.data.createdAt == resource.data.createdAt
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+            'guest', 'status', 'roundStartedAt', 'startedAt'
+          ])
+          && validDuelNumbers(request.resource.data))
+        ||
+        (isDuelPlayer(resource.data)
+          && resource.data.status == 'playing'
+          && (request.resource.data.status == 'playing' || request.resource.data.status == 'finished')
+          && request.resource.data.code == resource.data.code
+          && request.resource.data.host == resource.data.host
+          && request.resource.data.guest == resource.data.guest
+          && request.resource.data.questions == resource.data.questions
+          && request.resource.data.createdAt == resource.data.createdAt
+          && request.resource.data.qIndex >= resource.data.qIndex
+          && request.resource.data.qIndex <= resource.data.qIndex + 1
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+            'qIndex', 'scores', 'speedWins', 'round', 'roundStartedAt',
+            'status', 'winner', 'finishedAt'
+          ])
+          && validDuelNumbers(request.resource.data)
+          && validPlayerScoreChange(resource.data, request.resource.data))
       );
       allow delete: if false;
     }

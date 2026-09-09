@@ -8,7 +8,7 @@ import {
 } from 'firebase/auth';
 import {
   getFirestore, doc, setDoc, getDoc, getDocs, addDoc, deleteDoc, collection, serverTimestamp,
-  runTransaction, increment,
+  runTransaction,
 } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -356,14 +356,18 @@ export async function markDiagnosticComplete(uid) {
   }, { merge: true });
 }
 
-export async function addXp(uid, amount, reason = '') {
-  if (!uid || !amount || amount <= 0) return;
-  await setDoc(statsRef(uid), {
-    xp: increment(amount),
-    lastGain: amount,
-    lastReason: reason,
-    updatedAt: serverTimestamp(),
-  }, { merge: true });
+export async function claimDuelXp(code) {
+  const user = auth.currentUser;
+  if (!user) throw Object.assign(new Error('not-authenticated'), { code: 'auth/requires-login' });
+  const idToken = await user.getIdToken();
+  const response = await fetch('/api/duel-award', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${idToken}` },
+    body: JSON.stringify({ code }),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw Object.assign(new Error(data.error || 'duel-award-failed'), { code: 'duel/award-failed' });
+  return { gain: Number(data.gain) || 0, credited: data.credited === true };
 }
 
 async function creditXpFromAttempt(uid, { correct, secs }) {
