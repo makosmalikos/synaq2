@@ -16,9 +16,10 @@ const Training = lazy(() => import('./components/Training.jsx'));
 const Mock = lazy(() => import('./components/Mock.jsx'));
 const Rewards = lazy(() => import('./Rewards.jsx'));
 const Subscription = lazy(() => import('./Subscription.jsx'));
+const Curriculum = lazy(() => import('./Curriculum.jsx'));
 
 const NAV = [
-  { id: 'home', icon: '⌂' }, { id: 'training', icon: '▶' }, { id: 'league', icon: '↗' },
+  { id: 'home', icon: '⌂' }, { id: 'curriculum', icon: '▦', disabled: true }, { id: 'training', icon: '▶' }, { id: 'league', icon: '↗' },
   { id: 'progress', icon: '▤' }, { id: 'mock', icon: '✓' }, { id: 'duel', icon: '⚔' },
   { id: 'rewards', icon: '◇' },
 ];
@@ -178,9 +179,10 @@ export default function App() {
         {/* Навигация. На телефоне показывается только когда menuOpen. */}
         <nav className={'nav-v' + (menuOpen ? ' open' : '')}>
           {NAV.map((it) => (
-            <button key={it.id} className={`nav-${it.id}${tab === it.id ? ' on' : ''}`} onClick={() => pick(it.id)}>
+            <button key={it.id} disabled={it.disabled} aria-disabled={it.disabled || undefined} title={it.disabled ? t('nav.inDevelopment') : undefined} className={`nav-${it.id}${tab === it.id ? ' on' : ''}${it.disabled ? ' is-disabled' : ''}`} onClick={() => !it.disabled && pick(it.id)}>
               <span className="num" aria-hidden="true">{it.icon}</span>
               <span>{t(`nav.${it.id}`)}</span>
+              {it.disabled && <span className="nav-dev">{t('nav.inDevelopment')}</span>}
               {it.id === 'mock' && <span className="badge">1</span>}
             </button>
           ))}
@@ -238,6 +240,7 @@ export default function App() {
       <div className={`content content-${tab}`}>
         <Suspense fallback={<ScreenFallback />}>
           {tab === 'home' && <Home go={setTab} name={profile.name} xp={xp} />}
+          {tab === 'curriculum' && <Curriculum initialGrade={profile.klass} onTrainTopic={goTrainTopic} />}
           {tab === 'training' && (
             <Training
               school={school}

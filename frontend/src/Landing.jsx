@@ -203,11 +203,11 @@ export default function Landing({ onStart }) {
   body{margin:0;background:#FFFFFF}
   ::selection{background:#3A9DF5;color:#FFFFFF}
   a{color:inherit;text-decoration:none}
-  .lp-root{--lp-blue:#2F80ED;--lp-green:#22C55E;--lp-ink:#111827;--lp-muted:#5B6472;--lp-soft:#EAF5FF;min-height:100vh;background:#fff;color:var(--lp-ink);overflow-x:hidden;font-family:'Geologica','Golos Text',system-ui,sans-serif}
+  .lp-root{--lp-blue:#1D4ED8;--lp-green:#22C55E;--lp-ink:#111827;--lp-muted:#5B6472;--lp-soft:#EAF5FF;min-height:100vh;background:#fff;color:var(--lp-ink);overflow-x:hidden;font-family:'Geologica','Golos Text',system-ui,sans-serif}
   .lp-site-header{position:sticky!important;top:0;z-index:50;display:block!important;padding:0!important;border:0!important;border-top:4px solid #102E35!important;background:rgba(255,255,255,.94);box-shadow:0 3px 18px rgba(17,24,39,.055);backdrop-filter:blur(18px)}
   .lp-nav{width:100%;max-width:1440px;min-height:92px;margin:0 auto;padding:16px 50px!important}
   .lp-header-home{display:inline-flex;flex:none}
-  .lp-header-brand{min-width:182px!important;padding:17px 29px!important;border-radius:14px!important;background:linear-gradient(135deg,#139FEB,#2F80ED)!important;font-size:26px!important;box-shadow:0 12px 26px -13px rgba(47,128,237,.72)!important}
+  .lp-header-brand{min-width:0!important;width:auto!important;height:auto!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
   .lp-navlinks{gap:40px!important;font:650 15px 'Geologica',sans-serif!important;color:#29465F!important}
   .lp-navlinks a{position:relative;padding:11px 0;transition:color .18s ease}
   .lp-navlinks a:after{content:'';position:absolute;left:50%;right:50%;bottom:3px;height:2px;border-radius:99px;background:#2F80ED;transition:left .18s ease,right .18s ease}
@@ -215,7 +215,7 @@ export default function Landing({ onStart }) {
   .lp-navlinks a:hover:after{left:0;right:0}
   .lp-header-actions{display:flex;align-items:center;gap:13px}
   .lp-header-lang{padding:4px;border-radius:999px;background:#F2F7FC;border:1px solid rgba(47,128,237,.08)}
-  .lp-header-start{min-width:126px;text-align:center;padding:13px 25px!important;background:#1599E8!important;font:700 15px 'Geologica',sans-serif!important}
+  .lp-header-start{min-width:126px;text-align:center;padding:13px 25px!important;background:var(--lp-blue)!important;font:700 15px 'Geologica',sans-serif!important}
   .lp-menu-toggle{display:none;width:46px;height:46px;padding:0;border:1px solid rgba(17,24,39,.09);border-radius:13px;background:#F2F7FC;color:#13283C;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
   .lp-menu-toggle i{display:block;width:21px;height:2px;border-radius:99px;background:currentColor;transition:transform .22s ease,opacity .22s ease}
   .lp-menu-toggle.is-open i:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -233,7 +233,7 @@ export default function Landing({ onStart }) {
   .lp-steps .lp-card.lp-reveal:nth-child(2),.lp-schools .lp-card.lp-reveal:nth-child(2){--lp-reveal-delay:90ms!important}
   .lp-steps .lp-card.lp-reveal:nth-child(3),.lp-schools .lp-card.lp-reveal:nth-child(3){--lp-reveal-delay:180ms!important}
   .lp-steps .lp-card.lp-reveal:nth-child(4){--lp-reveal-delay:270ms!important}
-  .lp-cta{border-radius:999px!important;box-shadow:0 8px 22px -9px rgba(47,128,237,.58);transition:filter .18s,transform .18s,box-shadow .18s}
+  .lp-cta{border-radius:999px!important;box-shadow:0 8px 22px -9px rgba(29,78,216,.58);transition:filter .18s,transform .18s,box-shadow .18s}
   .lp-cta:hover{filter:brightness(1.05);transform:translateY(-2px);box-shadow:0 12px 28px -9px rgba(47,128,237,.68)}
   .lp-ghost{border-radius:999px!important;transition:background .18s,transform .18s,border-color .18s}
   .lp-ghost:hover{background:rgba(47,128,237,.06);border-color:rgba(47,128,237,.3)!important;transform:translateY(-2px)}
@@ -296,7 +296,7 @@ export default function Landing({ onStart }) {
   .lp-footer{background:#0D172B;color:#fff}
   .lp-footer-inner{max-width:1280px;margin:0 auto;padding:62px 56px 28px}
   .lp-footer-grid{display:grid;grid-template-columns:minmax(280px,1.35fr) repeat(3,minmax(150px,.72fr));gap:56px;padding-bottom:42px}
-  .lp-footer-brand{display:inline-flex;margin-bottom:18px;min-width:150px!important;padding:13px 24px!important;font-size:22px!important;background:linear-gradient(135deg,#139FEB,#2F80ED)!important}
+  .lp-footer-brand{display:inline-flex;margin-bottom:18px;min-width:0!important;width:auto!important;height:auto!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
   .lp-footer-about p{max-width:350px;margin:0;color:rgba(226,232,240,.68);font:500 14px/1.7 'Manrope',sans-serif}
   .lp-footer-title{margin:5px 0 20px;color:#fff;font:750 12px 'Manrope',sans-serif;letter-spacing:.11em;text-transform:uppercase}
   .lp-footer-links{display:flex;flex-direction:column;align-items:flex-start;gap:13px}
@@ -373,7 +373,7 @@ export default function Landing({ onStart }) {
   @keyframes lpIconPulse{0%,100%{transform:scale(1);box-shadow:inset 0 0 0 1px rgba(29,78,216,.08),0 0 0 0 rgba(59,130,246,0)}50%{transform:scale(1.08);box-shadow:inset 0 0 0 1px rgba(29,78,216,.12),0 0 0 7px rgba(59,130,246,.1)}}
   @media(max-width:1000px){
     .lp-nav{min-height:78px;padding:11px 22px!important}
-    .lp-header-brand{min-width:148px!important;padding:14px 22px!important;font-size:22px!important}
+    .lp-header-brand{min-width:0!important;padding:0!important}
     .lp-hero{gap:0!important}
     .lp-h1{font-size:52px!important}
     .lp-hero-stage{max-width:760px}
@@ -401,7 +401,7 @@ export default function Landing({ onStart }) {
   @media(max-width:620px){
     .lp-site-header{border-top-width:3px!important}
     .lp-nav{min-height:65px;padding:9px 20px!important}
-    .lp-header-brand{min-width:118px!important;padding:12px 16px!important;border-radius:12px!important;font-size:18px!important}
+    .lp-header-brand{min-width:0!important;padding:0!important;border-radius:0!important}
     .lp-header-lang{display:none}
     .lp-header-actions{gap:8px}
     .lp-header-start{min-width:auto;padding:11px 17px!important;font-size:14px!important}
@@ -488,7 +488,7 @@ export default function Landing({ onStart }) {
       <h1 className="lp-h1" style={{font:'900 64px/1.02 \'Geologica\',sans-serif',letterSpacing:'-.052em',margin:'0 auto 18px',maxWidth:'900px'}}>{t('lp.hero1')}<span className="lp-hero-accent">{t('lp.hero2')}</span>{t('lp.hero3')}</h1>
       <p style={{fontSize:'18px',lineHeight:'1.55',color:'#60758A',margin:'0 auto 26px',maxWidth:'720px'}}>{t('lp.11')}</p>
       <div className="lp-hero-actions" style={{display:'flex',justifyContent:'center',gap:'13px',flexWrap:'wrap'}}>
-        <a href="#" onClick={handleStart} className="lp-cta" style={{background:'#3A9DF5',color:'#FFFFFF',padding:'15px 32px',borderRadius:'12px',font:'600 16px \'Golos Text\',sans-serif'}}>{t('lp.12')}</a>
+        <a href="#" onClick={handleStart} className="lp-cta" style={{background:'#1D4ED8',color:'#FFFFFF',padding:'15px 32px',borderRadius:'12px',font:'600 16px \'Golos Text\',sans-serif'}}>{t('lp.12')}</a>
         <a href="#how" className="lp-ghost" style={{padding:'15px 28px',borderRadius:'12px',border:'1px solid rgba(19,40,60,.16)',font:'600 16px \'Golos Text\',sans-serif',color:'#13283C'}}>{t('lp.13')}</a>
       </div>
     </div>

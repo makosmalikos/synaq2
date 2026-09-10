@@ -8,6 +8,8 @@ const DICT = {
   kk: {
     // ── общее ──
     'nav.home': 'Басты бет',
+    'nav.curriculum': 'Бағдарлама',
+    'nav.inDevelopment': 'Әзірленуде',
     'nav.training': 'Дайындық',
     'nav.duel': 'Дуэль',
     'nav.league': 'Лига',
@@ -472,6 +474,8 @@ const DICT = {
 
   ru: {
     'nav.home': 'Главная',
+    'nav.curriculum': 'Программа',
+    'nav.inDevelopment': 'В разработке',
     'nav.training': 'Тренировка',
     'nav.duel': 'Дуэль',
     'nav.league': 'Лига',

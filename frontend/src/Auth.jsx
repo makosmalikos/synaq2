@@ -294,7 +294,7 @@ const S = {
   divider: { display: 'flex', alignItems: 'center', gap: 10, margin: '16px 0 12px' },
   line: { flex: 1, height: 1, background: 'rgba(23,20,15,.14)' },
   or: { font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' },
-  dark: { width: '100%', padding: 15, background: 'linear-gradient(135deg,#3A9DF5,#2F80ED)', color: '#FFFFFF', border: 'none', borderRadius: 13, font: "750 14.5px 'Manrope',sans-serif", cursor: 'pointer', marginBottom: 10, boxShadow: '0 12px 24px -14px rgba(47,128,237,.75)' },
+  dark: { width: '100%', padding: 15, background: '#1D4ED8', color: '#FFFFFF', border: 'none', borderRadius: 13, font: "750 14.5px 'Manrope',sans-serif", cursor: 'pointer', marginBottom: 10, boxShadow: '0 12px 24px -14px rgba(29,78,216,.75)' },
   outline: { width: '100%', padding: 15, background: '#FFFFFF', color: '#167AD1', border: '1px solid rgba(39,132,211,.24)', borderRadius: 13, font: "750 14.5px 'Manrope',sans-serif", cursor: 'pointer' },
   input: { width: '100%', padding: '13px 14px', border: '1px solid rgba(39,132,211,.24)', borderRadius: 10, font: "500 15px 'Golos Text'", color: '#13283C', outline: 'none', background: '#fff', marginBottom: 10 },
   fieldLabel: { display: 'block', margin: '0 0 6px', font: "600 12px 'Golos Text'", color: '#36536B' },
