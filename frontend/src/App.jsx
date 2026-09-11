@@ -17,9 +17,10 @@ const Mock = lazy(() => import('./components/Mock.jsx'));
 const Rewards = lazy(() => import('./Rewards.jsx'));
 const Subscription = lazy(() => import('./Subscription.jsx'));
 const Curriculum = lazy(() => import('./Curriculum.jsx'));
+const PublicDiagnostic = lazy(() => import('./PublicDiagnostic.jsx'));
 
 const NAV = [
-  { id: 'home', icon: '⌂' }, { id: 'curriculum', icon: '▦', disabled: true }, { id: 'training', icon: '▶' }, { id: 'league', icon: '↗' },
+  { id: 'home', icon: '⌂' }, { id: 'curriculum', icon: '▦' }, { id: 'training', icon: '▶' }, { id: 'league', icon: '↗' },
   { id: 'progress', icon: '▤' }, { id: 'mock', icon: '✓' }, { id: 'duel', icon: '⚔' },
   { id: 'rewards', icon: '◇' },
 ];
@@ -36,8 +37,11 @@ const ProfileIcon = ({ name }) => {
 };
 
 // Роут: '/' = лендинг, '/app' = авторизация → дашборд.
-const readRoute = () =>
-  (typeof window !== 'undefined' && window.location.pathname.startsWith('/app')) ? 'app' : 'landing';
+const readRoute = () => {
+  if (typeof window === 'undefined') return 'landing';
+  if (window.location.pathname.startsWith('/diagnostic')) return 'diagnostic';
+  return window.location.pathname.startsWith('/app') ? 'app' : 'landing';
+};
 
 
 export default function App() {
@@ -104,13 +108,19 @@ export default function App() {
   }, [profileOpen]);
 
   const go = (to) => {
-    window.history.pushState({}, '', to === 'app' ? '/app' : '/');
+    const path = to === 'app' ? '/app' : to === 'diagnostic' ? '/diagnostic' : '/';
+    window.history.pushState({}, '', path);
     setRoute(to);
     window.scrollTo(0, 0);
   };
 
   // 1. Лендинг — всегда первый экран на '/'
-  if (route === 'landing') return <Landing onStart={() => go('app')} />;
+  if (route === 'landing') return <Landing onStart={() => go('app')} onDiagnostic={() => go('diagnostic')} />;
+  if (route === 'diagnostic') return (
+    <Suspense fallback={<ScreenFallback />}>
+      <PublicDiagnostic onBack={() => go('landing')} onRegister={() => go('app')} />
+    </Suspense>
+  );
 
   // 2. Авторизация — пока не вошли, дашборда нет
   if (user === undefined) return <div style={{ padding: 40, color: '#6B655B' }}>{t('common.loading')}</div>;
@@ -240,7 +250,7 @@ export default function App() {
       <div className={`content content-${tab}`}>
         <Suspense fallback={<ScreenFallback />}>
           {tab === 'home' && <Home go={setTab} name={profile.name} xp={xp} />}
-          {tab === 'curriculum' && <Curriculum initialGrade={profile.klass} onTrainTopic={goTrainTopic} />}
+          {tab === 'curriculum' && <Curriculum initialGrade={profile.klass} isPro={!!profile.pro} onUpgrade={openSubscription} />}
           {tab === 'training' && (
             <Training
               school={school}
