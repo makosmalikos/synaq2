@@ -204,19 +204,19 @@ export default function Landing({ onStart, onDiagnostic }) {
   body{margin:0;background:#FFFFFF}
   ::selection{background:#3A9DF5;color:#FFFFFF}
   a{color:inherit;text-decoration:none}
-  .lp-root{--lp-blue:#1D4ED8;--lp-green:#22C55E;--lp-ink:#111827;--lp-muted:#5B6472;--lp-soft:#EAF5FF;min-height:100vh;background:#fff;color:var(--lp-ink);overflow-x:hidden;font-family:'Geologica','Golos Text',system-ui,sans-serif}
+  .lp-root{--lp-blue:#1D4ED8;--lp-green:#22C55E;--lp-ink:#111827;--lp-muted:#5B6472;--lp-soft:#EAF5FF;min-height:100vh;background:#fff;color:var(--lp-ink);overflow-x:hidden;font-family:'Manrope','Golos Text',system-ui,sans-serif}
   .lp-site-header{position:sticky!important;top:0;z-index:50;display:block!important;padding:0!important;border:0!important;border-top:4px solid #102E35!important;background:rgba(255,255,255,.94);box-shadow:0 3px 18px rgba(17,24,39,.055);backdrop-filter:blur(18px)}
   .lp-nav{width:100%;max-width:1440px;min-height:92px;margin:0 auto;padding:16px 50px!important}
   .lp-header-home{display:inline-flex;flex:none}
   .lp-header-brand{min-width:0!important;width:auto!important;height:auto!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
-  .lp-navlinks{gap:40px!important;font:650 15px 'Geologica',sans-serif!important;color:#29465F!important}
+  .lp-navlinks{gap:40px!important;font:650 15px 'Manrope',sans-serif!important;color:#29465F!important}
   .lp-navlinks a{position:relative;padding:11px 0;transition:color .18s ease}
   .lp-navlinks a:after{content:'';position:absolute;left:50%;right:50%;bottom:3px;height:2px;border-radius:99px;background:#2F80ED;transition:left .18s ease,right .18s ease}
   .lp-navlinks a:hover{color:#2F80ED}
   .lp-navlinks a:hover:after{left:0;right:0}
   .lp-header-actions{display:flex;align-items:center;gap:13px}
   .lp-header-lang{padding:4px;border-radius:999px;background:#F2F7FC;border:1px solid rgba(47,128,237,.08)}
-  .lp-header-start{min-width:126px;text-align:center;padding:13px 25px!important;background:var(--lp-blue)!important;font:700 15px 'Geologica',sans-serif!important}
+  .lp-header-start{min-width:126px;text-align:center;padding:13px 25px!important;background:var(--lp-blue)!important;font:700 15px 'Manrope',sans-serif!important}
   .lp-menu-toggle{display:none;width:46px;height:46px;padding:0;border:1px solid rgba(17,24,39,.09);border-radius:13px;background:#F2F7FC;color:#13283C;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
   .lp-menu-toggle i{display:block;width:21px;height:2px;border-radius:99px;background:currentColor;transition:transform .22s ease,opacity .22s ease}
   .lp-menu-toggle.is-open i:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -224,7 +224,7 @@ export default function Landing({ onStart, onDiagnostic }) {
   .lp-menu-toggle.is-open i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   .lp-mobile-menu{display:none;overflow:hidden;max-height:0;opacity:0;background:rgba(255,255,255,.98);border-top:1px solid rgba(47,128,237,.1);transition:max-height .28s ease,opacity .2s ease}
   .lp-mobile-menu-inner{display:flex;flex-direction:column;gap:5px;padding:12px 22px 20px}
-  .lp-mobile-menu a{padding:13px 12px;border-radius:12px;color:#29465F;font:650 15px 'Geologica',sans-serif}
+  .lp-mobile-menu a{padding:13px 12px;border-radius:12px;color:#29465F;font:650 15px 'Manrope',sans-serif}
   .lp-mobile-menu a:hover{background:#EAF5FF;color:#2F80ED}
   .lp-mobile-language{display:flex;align-items:center;justify-content:space-between;margin-top:5px;padding:12px;border-top:1px solid rgba(47,128,237,.1);color:#8094A7;font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
   .lp-reveal{opacity:0;filter:blur(7px);transform:translate3d(0,34px,0) scale(.985);transition:opacity .72s cubic-bezier(.2,.7,.2,1),transform .78s cubic-bezier(.16,1,.3,1),filter .62s ease;transition-delay:var(--lp-reveal-delay,0ms);will-change:opacity,transform,filter}
@@ -241,10 +241,10 @@ export default function Landing({ onStart, onDiagnostic }) {
   .lp-card{border-color:rgba(47,128,237,.12)!important;border-radius:20px!important;box-shadow:0 8px 24px rgba(17,24,39,.055);transition:transform .22s,box-shadow .22s,border-color .22s}
   .lp-card:hover{transform:translateY(-5px);border-color:rgba(47,128,237,.25)!important;box-shadow:0 18px 42px -18px rgba(47,128,237,.28)}
   .lp-price:hover{transform:translateY(-5px)}
-  .lp-root h1,.lp-root h2,.lp-root h3{font-family:'Geologica','Golos Text',sans-serif!important;font-style:normal!important}
+  .lp-root h1,.lp-root h2,.lp-root h3{font-family:'Manrope','Golos Text',sans-serif!important;font-style:normal!important}
   .lp-root h2{font-weight:800!important;color:var(--lp-ink);letter-spacing:-.035em!important}
   .lp-hero-actions a{min-width:194px;text-align:center}
-  .lp-steps .lp-card>div:first-child{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:#EAF5FF;color:#2F80ED!important;font:800 14px 'Geologica',sans-serif!important;margin-bottom:17px!important;box-shadow:inset 0 0 0 1px rgba(47,128,237,.1)}
+  .lp-steps .lp-card>div:first-child{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:#EAF5FF;color:#2F80ED!important;font:800 14px 'Manrope',sans-serif!important;margin-bottom:17px!important;box-shadow:inset 0 0 0 1px rgba(47,128,237,.1)}
   .lp-steps .lp-card:nth-child(2)>div:first-child{background:#ECFDF5;color:#22A85A!important}
   .lp-steps .lp-card:nth-child(3)>div:first-child{background:#FFF7ED;color:#F97316!important}
   .lp-steps .lp-card:nth-child(4)>div:first-child{background:#F3E8FF;color:#8B5CF6!important}
@@ -488,7 +488,7 @@ export default function Landing({ onStart, onDiagnostic }) {
   
   <section className="lp-hero lp-pad" style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',maxWidth:'1280px',margin:'0 auto',padding:'28px 56px 32px',minHeight:'calc(100vh - 96px)'}}>
     <div className="lp-hero-copy">
-      <h1 className="lp-h1" style={{font:'900 64px/1.02 \'Geologica\',sans-serif',letterSpacing:'-.052em',margin:'0 auto 18px',maxWidth:'900px'}}>{t('lp.hero1')}<span className="lp-hero-accent">{t('lp.hero2')}</span>{t('lp.hero3')}</h1>
+      <h1 className="lp-h1" style={{font:'800 64px/1.04 \'Manrope\',sans-serif',letterSpacing:'-.04em',margin:'0 auto 18px',maxWidth:'960px'}}>{t('lp.hero1')}<span className="lp-hero-accent">{t('lp.hero2')}</span>{t('lp.hero3')}</h1>
       <p style={{fontSize:'18px',lineHeight:'1.55',color:'#60758A',margin:'0 auto 26px',maxWidth:'720px'}}>{t('lp.11')}</p>
       <div className="lp-hero-actions" style={{display:'flex',justifyContent:'center',gap:'13px',flexWrap:'wrap'}}>
         <a href="#" onClick={handleStart} className="lp-cta" style={{background:'#1D4ED8',color:'#FFFFFF',padding:'15px 32px',borderRadius:'12px',font:'600 16px \'Golos Text\',sans-serif'}}>{t('lp.12')}</a>
@@ -525,7 +525,7 @@ export default function Landing({ onStart, onDiagnostic }) {
     <div className="lp-pad" style={{maxWidth:'1280px',margin:'0 auto',padding:'0 56px'}}>
       <div style={{textAlign:'center',marginBottom:'40px',maxWidth:'640px',marginLeft:'auto',marginRight:'auto'}}>
         <div style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#2B91EA',marginBottom:'14px'}}>Как это работает</div>
-        <h2 style={{font:'800 46px/1.05 \'Geologica\',sans-serif',letterSpacing:'-.035em',margin:'0 0 12px'}}>{t('lp.18')}</h2>
+        <h2 style={{font:'800 46px/1.08 \'Manrope\',sans-serif',letterSpacing:'-.025em',margin:'0 0 12px'}}>{t('lp.18')}</h2>
         <p style={{fontSize:'17px',color:'#60758A',margin:'0'}}>{t('lp.19')}</p>
       </div>
 
@@ -563,7 +563,7 @@ export default function Landing({ onStart, onDiagnostic }) {
   <section id="schools" className="lp-pad" style={{maxWidth:'1280px',margin:'0 auto',padding:'80px 56px'}}>
     <div style={{marginBottom:'46px',maxWidth:'640px'}}>
       <div style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#2B91EA',marginBottom:'14px'}}>{t('lp.28')}</div>
-      <h2 style={{font:'800 44px/1.05 \'Geologica\',sans-serif',letterSpacing:'-.035em',margin:'0 0 12px'}}>{t('lp.29')}</h2>
+      <h2 style={{font:'800 44px/1.08 \'Manrope\',sans-serif',letterSpacing:'-.025em',margin:'0 0 12px'}}>{t('lp.29')}</h2>
       <p style={{fontSize:'17px',color:'#60758A',margin:'0'}}>{t('lp.30')}</p>
     </div>
     <div className="lp-schools" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'22px'}}>
@@ -631,7 +631,7 @@ export default function Landing({ onStart, onDiagnostic }) {
       
       <div>
         <div style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#FFFFFF',marginBottom:'16px'}}>{t('lp.49')}</div>
-        <h2 style={{font:'800 42px/1.06 \'Geologica\',sans-serif',letterSpacing:'-.035em',margin:'0 0 26px',color:'#FFFFFF'}}>{t('lp.50')} <span style={{color:'#FFFFFF'}}>{t('lp.51')}</span></h2>
+        <h2 style={{font:'800 42px/1.08 \'Manrope\',sans-serif',letterSpacing:'-.025em',margin:'0 0 26px',color:'#FFFFFF'}}>{t('lp.50')} <span style={{color:'#FFFFFF'}}>{t('lp.51')}</span></h2>
         <div style={{display:'flex',flexDirection:'column',gap:'18px'}}>
           <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#FFFFFF',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Golos Text\'',marginBottom:'3px',color:'#FFFFFF'}}>{t('lp.52')}</div><div style={{fontSize:'15px',color:'#DCEEFF',lineHeight:'1.5'}}>{t('lp.53')}</div></div></div>
           <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#FFFFFF',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Golos Text\'',marginBottom:'3px',color:'#FFFFFF'}}>{t('lp.54')}</div><div style={{fontSize:'15px',color:'#DCEEFF',lineHeight:'1.5'}}>{t('lp.55')}</div></div></div>
@@ -646,7 +646,7 @@ export default function Landing({ onStart, onDiagnostic }) {
   <section id="pricing" className="lp-pad" style={{maxWidth:'1280px',margin:'0 auto',padding:'84px 56px'}}>
     <div className="lp-pricing-head" style={{textAlign:'center',marginBottom:'48px',maxWidth:'600px',marginLeft:'auto',marginRight:'auto'}}>
       <div className="lp-pricing-kicker" style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#2B91EA',marginBottom:'14px'}}>Тарифы</div>
-      <h2 className="lp-pricing-title" style={{font:'800 46px/1.04 \'Geologica\',sans-serif',letterSpacing:'-.035em',margin:'0 0 12px'}}>{t('lp.59')}</h2>
+      <h2 className="lp-pricing-title" style={{font:'800 46px/1.08 \'Manrope\',sans-serif',letterSpacing:'-.025em',margin:'0 0 12px'}}>{t('lp.59')}</h2>
       <p className="lp-pricing-sub" style={{fontSize:'17px',color:'#60758A',margin:'0'}}>{t('lp.60')}</p>
     </div>
     <div className="lp-prices" style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gap:'22px',maxWidth:'760px',margin:'0 auto',alignItems:'stretch'}}>
