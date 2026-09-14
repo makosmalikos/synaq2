@@ -390,6 +390,16 @@ async function creditXpFromAttempt(uid, { correct, secs }) {
 export const saveMock = (uid, r) =>
   addDoc(collection(db, 'results', uid, 'mocks'), { ...r, at: serverTimestamp() });
 
+export const savePlatformDiagnostic = (uid, result) =>
+  addDoc(collection(db, 'results', uid, 'diagnostics'), { ...result, at: serverTimestamp() });
+
+export async function getPlatformDiagnostics(childUid) {
+  const snap = await getDocs(collection(db, 'results', childUid, 'diagnostics'));
+  return snap.docs
+    .map((item) => ({ id: item.id, ...item.data() }))
+    .sort((a, b) => String(b.completedAt || '').localeCompare(String(a.completedAt || '')));
+}
+
 // ── Чтение ──
 export async function getChildren(parentUid) {
   const snap = await getDocs(collection(db, 'families', parentUid, 'children'));

@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import Brand from './Brand.jsx';
 import { LangSwitch, useLang } from './i18n.jsx';
-import { DIAGNOSTIC_QUESTIONS, topicName } from './diagnosticData.js';
+import { DIAGNOSTIC_QUESTIONS, diagnosticExplanation, topicName } from './diagnosticData.js';
+import { createPublicDiagnosticResult, savePublicDiagnosticResult } from './diagnosticPlan.js';
 
 const copy = {
   ru: {
@@ -14,6 +15,8 @@ const copy = {
     retry: 'Пройти ещё раз', account: 'Создать бесплатный аккаунт', noStrong: 'Пока рано выделять сильную тему — это нормально.',
     noWeak: 'Критичных пробелов не найдено. Продолжайте усложнять задачи.',
     plan: 'Начните со слабой темы, разберите правило и решите 5–10 задач. Затем повторите диагностику через неделю.',
+    review: 'Разбор ошибок', your: 'Ваш ответ', right: 'Правильный ответ', why: 'Как решить',
+    allCorrect: 'Ошибок нет — отличная работа!',
     excellent: 'Отличная база', good: 'Хорошая база', medium: 'Есть пробелы', low: 'Нужна системная подготовка',
   },
   kk: {
@@ -26,6 +29,8 @@ const copy = {
     retry: 'Қайта өту', account: 'Тегін аккаунт ашу', noStrong: 'Мықты тақырыпты бөлуге әлі ерте — бұл қалыпты.',
     noWeak: 'Маңызды олқылық табылмады. Енді күрделі есептерге көш.',
     plan: 'Алдымен әлсіз тақырыптың ережесін қайталап, 5–10 есеп шығар. Бір аптадан кейін диагностиканы қайта өт.',
+    review: 'Қателерді талдау', your: 'Сенің жауабың', right: 'Дұрыс жауап', why: 'Шешу жолы',
+    allCorrect: 'Қате жоқ — өте жақсы нәтиже!',
     excellent: 'Өте жақсы база', good: 'Жақсы база', medium: 'Олқылықтар бар', low: 'Жүйелі дайындық қажет',
   },
 };
@@ -53,17 +58,23 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
     const topics = Object.values(grouped).map((item) => ({ ...item, pct: Math.round(item.correct / item.total * 100) }));
     const correct = topics.reduce((sum, item) => sum + item.correct, 0);
     const pct = Math.round(correct / questions.length * 100);
-    return { topics, correct, pct, weak: topics.filter((item) => item.pct < 60), strong: topics.filter((item) => item.pct >= 75) };
+    const mistakes = questions.filter((item) => answers[item.id] !== item.answer);
+    return { topics, correct, pct, weak: topics.filter((item) => item.pct < 60), strong: topics.filter((item) => item.pct >= 75), mistakes };
   }, [answers, questions]);
 
   const begin = () => { setAnswers({}); setIndex(0); setScreen('test'); window.scrollTo(0, 0); };
+  const persistResult = () => savePublicDiagnosticResult(createPublicDiagnosticResult({ grade, target, report }));
   const next = () => {
     if (answers[current.id] == null) return;
     if (index < questions.length - 1) setIndex((value) => value + 1);
-    else { setScreen('result'); window.scrollTo(0, 0); }
+    else { persistResult(); setScreen('result'); window.scrollTo(0, 0); }
   };
+  const registerWithResult = () => onRegister(persistResult());
   const label = report.pct >= 85 ? c.excellent : report.pct >= 70 ? c.good : report.pct >= 50 ? c.medium : c.low;
   const targetLabel = target === 'general' ? c.general : target;
+  const mistakeCountLabel = lang === 'ru'
+    ? `${report.mistakes.length} ${report.mistakes.length === 1 ? 'ошибка' : report.mistakes.length < 5 ? 'ошибки' : 'ошибок'} из ${questions.length}`
+    : `${report.mistakes.length} қате / ${questions.length}`;
 
   return (
     <div className="public-diag">
@@ -112,10 +123,17 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
           <div className="public-diag-insights">
             <article className="weak"><span>↗</span><div><h3>{c.weak}</h3><p>{report.weak.length ? report.weak.map((item) => topicName(item.id, lang)).join(' · ') : c.noWeak}</p></div></article>
             <article className="strong"><span>✓</span><div><h3>{c.strong}</h3><p>{report.strong.length ? report.strong.map((item) => topicName(item.id, lang)).join(' · ') : c.noStrong}</p></div></article>
-            <article className="plan"><span>01</span><div><h3>{c.recommendation}</h3><p>{c.plan}</p></div></article>
+            <article className="plan"><span>7</span><div><h3>{c.recommendation}</h3><p>{c.plan}</p><ol className="public-diag-mini-plan">{(report.weak.length ? report.weak : report.topics).slice(0, 3).map((item, itemIndex) => <li key={item.id}><b>{lang === 'ru' ? 'День' : 'Күн'} {itemIndex * 2 + 1}</b><span>{topicName(item.id, lang)} · {5 + itemIndex * 2} {lang === 'ru' ? 'задач' : 'есеп'}</span></li>)}</ol></div></article>
           </div>
         </section>
-        <div className="public-diag-actions"><button type="button" className="public-diag-secondary" onClick={begin}>{c.retry}</button><button type="button" className="public-diag-primary" onClick={onRegister}>{c.account} →</button></div>
+        <section className="public-diag-review">
+          <div className="public-diag-review-head"><div><span>{c.review}</span><h2>{report.mistakes.length ? mistakeCountLabel : c.allCorrect}</h2></div><strong>{report.correct}/{questions.length}</strong></div>
+          {!!report.mistakes.length && <div className="public-diag-review-list">{report.mistakes.map((item, mistakeIndex) => <article key={item.id}>
+            <div className="public-diag-review-num">{String(mistakeIndex + 1).padStart(2, '0')}</div>
+            <div className="public-diag-review-copy"><span>{topicName(item.topic, lang)}</span><h3>{item[lang]}</h3><div className="public-diag-answer-pair"><p><small>{c.your}</small><b>{answers[item.id]}</b></p><i>→</i><p className="is-right"><small>{c.right}</small><b>{item.answer}</b></p></div><div className="public-diag-solution"><strong>✓ {c.why}</strong><p>{diagnosticExplanation(item.id, lang)}</p></div></div>
+          </article>)}</div>}
+        </section>
+        <div className="public-diag-actions"><button type="button" className="public-diag-secondary" onClick={begin}>{c.retry}</button><button type="button" className="public-diag-primary" onClick={registerWithResult}>{c.account} →</button></div>
       </main>}
     </div>
   );

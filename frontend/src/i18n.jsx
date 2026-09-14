@@ -9,6 +9,7 @@ const DICT = {
     // ── общее ──
     'nav.home': 'Басты бет',
     'nav.curriculum': 'Бағдарлама',
+    'nav.diagnosis': 'Диагностика',
     'nav.inDevelopment': 'Әзірленуде',
     'nav.training': 'Дайындық',
     'nav.duel': 'Дуэль',
@@ -475,6 +476,7 @@ const DICT = {
   ru: {
     'nav.home': 'Главная',
     'nav.curriculum': 'Программа',
+    'nav.diagnosis': 'Диагностика',
     'nav.inDevelopment': 'В разработке',
     'nav.training': 'Тренировка',
     'nav.duel': 'Дуэль',

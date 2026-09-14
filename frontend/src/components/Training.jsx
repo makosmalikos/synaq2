@@ -126,8 +126,8 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
     if (!startTopicId || !topics.length || pro === null) return;
     const tp = topics.find((x) => x.id === startTopicId);
     if (!tp) return;
-    const firstTopicId = topics[0]?.id;
-    if (pro === false && tp.id !== firstTopicId) return;
+    // Из персонального плана разрешаем открыть рекомендованную тему и на
+    // бесплатном тарифе; общий дневной лимит всё равно контролируется ниже.
     (async () => {
       const list = await translateQuestions(await api.topicQuestions(tp.id, { lang, excludeIds: solved }), lang);
       setTopic(tp);

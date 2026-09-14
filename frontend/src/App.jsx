@@ -6,6 +6,7 @@ import Landing from './Landing.jsx';
 import Home from './Home.jsx';
 import League from './League.jsx';
 import Brand from './Brand.jsx';
+import { readPublicDiagnosticResult } from './diagnosticPlan.js';
 
 // Банк задач большой: загружаем его только вместе с экраном, которому он нужен.
 const Parent = lazy(() => import('./Parent.jsx'));
@@ -18,9 +19,10 @@ const Rewards = lazy(() => import('./Rewards.jsx'));
 const Subscription = lazy(() => import('./Subscription.jsx'));
 const Curriculum = lazy(() => import('./Curriculum.jsx'));
 const PublicDiagnostic = lazy(() => import('./PublicDiagnostic.jsx'));
+const PlatformDiagnostic = lazy(() => import('./components/PlatformDiagnostic.jsx'));
 
 const NAV = [
-  { id: 'home', icon: '⌂' }, { id: 'curriculum', icon: '▦' }, { id: 'training', icon: '▶' }, { id: 'league', icon: '↗' },
+  { id: 'home', icon: '⌂' }, { id: 'curriculum', icon: '▦' }, { id: 'diagnosis', icon: '◎' }, { id: 'training', icon: '▶' }, { id: 'league', icon: '↗' },
   { id: 'progress', icon: '▤' }, { id: 'mock', icon: '✓' }, { id: 'duel', icon: '⚔' },
   { id: 'rewards', icon: '◇' },
 ];
@@ -57,6 +59,7 @@ export default function App() {
   const [profile, setProfile] = useState({ name: 'Бала', klass: '', school: 'РФМШ' });
   const [xp, setXp] = useState(0);
   const [trainTopic, setTrainTopic] = useState(null);
+  const [diagnosticPlan, setDiagnosticPlan] = useState(readPublicDiagnosticResult);
   const profileMenuRef = useRef(null);
 
   const [duelCode] = useState(() => {
@@ -118,7 +121,7 @@ export default function App() {
   if (route === 'landing') return <Landing onStart={() => go('app')} onDiagnostic={() => go('diagnostic')} />;
   if (route === 'diagnostic') return (
     <Suspense fallback={<ScreenFallback />}>
-      <PublicDiagnostic onBack={() => go('landing')} onRegister={() => go('app')} />
+      <PublicDiagnostic onBack={() => go('landing')} onRegister={(result) => { setDiagnosticPlan(result); go('app'); }} />
     </Suspense>
   );
 
@@ -249,8 +252,9 @@ export default function App() {
 
       <div className={`content content-${tab}`}>
         <Suspense fallback={<ScreenFallback />}>
-          {tab === 'home' && <Home go={setTab} name={profile.name} xp={xp} />}
+          {tab === 'home' && <Home go={setTab} name={profile.name} xp={xp} diagnosticPlan={diagnosticPlan} onTrainTopic={goTrainTopic} />}
           {tab === 'curriculum' && <Curriculum initialGrade={profile.klass} isPro={!!profile.pro} onUpgrade={openSubscription} />}
+          {tab === 'diagnosis' && <PlatformDiagnostic initialGrade={profile.klass} onGoPractice={goTrainTopic} />}
           {tab === 'training' && (
             <Training
               school={school}
