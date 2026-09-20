@@ -61,14 +61,19 @@ function genPipes() {
 const generators = { genHeadsLegs, genTwoPercents, genRatioParts, genPipes };
 
 // Вернуть n сгенерированных задач (случайные типы или по теме).
+// guard ограничивает число попыток: если topic не встречается ни в одном
+// генераторе (например пришёл произвольный ?topic= из запроса), старое
+// "i--, пробуем снова" крутилось бесконечно и вешало процесс — это было
+// доступно неавторизованным клиентам через GET /api/training/generate.
+// Та же защита, что уже стоит в frontend/src/generators.js.
 function generate(n = 5, topic = null) {
   const pool = Object.values(generators);
   const out = [];
-  for (let i = 0; i < n; i++) {
+  let guard = 0;
+  while (out.length < n && guard++ < n * 20) {
     const g = pool[rnd(0, pool.length - 1)]();
-    if (!topic || g.topic === topic) out.push({ id: `gen_${Date.now()}_${i}`, ...g });
-    else i--; // если нужна конкретная тема — пробуем снова
-    if (out.length >= n) break;
+    if (topic && g.topic !== topic) continue;
+    out.push({ id: `gen_${Date.now()}_${out.length}`, ...g });
   }
   return out;
 }
