@@ -8,17 +8,6 @@ import DiagnosisReport from './DiagnosisReport.jsx';
 import { Kolhar } from './Training.jsx';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
-const SCHOOL_LOGOS = {
-  'РФМШ': '/brands/rfmsh.png',
-  'БИЛ': '/brands/bil.png',
-  'НИШ': '/brands/nis.png',
-};
-
-const SchoolLogo = ({ code }) => (
-  <span className={`mock-school-mark mock-school-logo mock-school-logo-${code}`}>
-    <img src={SCHOOL_LOGOS[code]} alt={`${code} логотипі`} />
-  </span>
-);
 
 const recentKey = (school, type) => `synaq_recent_${type}_${school}`;
 const readRecent = (school, type) => {
@@ -53,24 +42,6 @@ const Stmt = ({ text }) => (
   </>
 );
 
-function MockBenefits({ lang }) {
-  const ru = lang === 'ru';
-  const items = [
-    { icon: '◷', title: ru ? 'Реальный режим' : 'Нақты режим', text: ru ? 'Таймер, структура и подсчёт баллов как на отборе.' : 'Таймер, құрылым және балл нақты іріктеудегідей.' },
-    { icon: 'AI', title: ru ? 'Анализ ошибок' : 'Қателерді талдау', text: ru ? 'Сразу покажем, где ты ошибаешься и что нужно повторить.' : 'Қай жерде қателескеніңді және нені қайталау керегін көрсетеміз.' },
-    { icon: '↗', title: ru ? 'Личный маршрут' : 'Жеке маршрут', text: ru ? 'Получишь две слабые темы и понятный следующий шаг.' : 'Екі әлсіз тақырыбың мен келесі нақты қадамды аласың.' },
-  ];
-  return (
-    <section className="mock-benefits">
-      <div className="mock-benefits-head"><span>03</span><div><h2>{ru ? 'Что ты получишь' : 'Сынақтан кейін'}</h2><p>{ru ? 'Результат — это начало подготовки' : 'Нәтиже — дайындықтың басы'}</p></div></div>
-      <div className="mock-benefits-grid">
-        {items.map((item, index) => <article key={item.title}><span>{item.icon}</span><small>0{index + 1}</small><h3>{item.title}</h3><p>{item.text}</p></article>)}
-      </div>
-      <div className="mock-flow"><b>{ru ? 'Как это работает' : 'Қалай өтеді'}</b><span>{ru ? 'Выбери школу' : 'Мектепті таңда'}</span><i>→</i><span>{ru ? 'Пройди тест' : 'Сынақтан өт'}</span><i>→</i><span>{ru ? 'Получи разбор' : 'Талдауды ал'}</span></div>
-    </section>
-  );
-}
-
 export default function Mock({ onTrainTopic, onGoProgress }) {
   const { t, lang } = useLang();
   const [schools, setSchools] = useState([]);
@@ -92,6 +63,17 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   const [open_, setOpen] = useState(null);
   const [isDiagnosticRun, setIsDiagnosticRun] = useState(false);
   const tick = useRef(null);
+  // Дедлайн мока в мс от эпохи, не «тиках» — не плывёт при фоновой вкладке
+  // (setInterval троттлится, но Date.now() — нет). Сдвигается вперёд на длительность
+  // каждой паузы между секциями, чтобы пауза не отъедала время экзамена.
+  const deadlineRef = useRef(null);
+  const pausedAtRef = useRef(null);
+  // submit() пересоздаётся на каждый рендер и замыкает свежие answers/meta/…
+  // Таймер же живёт между рендерами — чтобы он не звал устаревшую версию
+  // (и не отправлял пустые/старые ответы по истечении времени), он всегда
+  // дёргает submitRef.current(), а не submit напрямую.
+  const submitRef = useRef(() => {});
+  const submittingRef = useRef(false);
 
   useEffect(() => {
     api.schools().then(setSchools).catch(() => {});
@@ -104,12 +86,34 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     ]);
   }, []);
 
+  // Держим submitRef синхронным со «свежим» submit на каждый рендер.
   useEffect(() => {
-    if (!test || result || pause) return;
-    tick.current = setInterval(() => setLeft((s) => {
-      if (s <= 1) { clearInterval(tick.current); submit(); return 0; }
-      return s - 1;
-    }), 1000);
+    submitRef.current = submit;
+  });
+
+  // Пауза между секциями: не идёт отсчёт, а по возобновлении сдвигаем дедлайн
+  // на то, сколько реально длилась пауза.
+  useEffect(() => {
+    if (pause) {
+      pausedAtRef.current = Date.now();
+    } else if (pausedAtRef.current != null) {
+      if (deadlineRef.current != null) deadlineRef.current += Date.now() - pausedAtRef.current;
+      pausedAtRef.current = null;
+    }
+  }, [pause]);
+
+  useEffect(() => {
+    if (!test || result || pause || deadlineRef.current == null) return;
+    const tickFn = () => {
+      const remain = Math.max(0, Math.round((deadlineRef.current - Date.now()) / 1000));
+      setLeft(remain);
+      if (remain <= 0) {
+        clearInterval(tick.current);
+        submitRef.current();
+      }
+    };
+    tickFn();
+    tick.current = setInterval(tickFn, 1000);
     return () => clearInterval(tick.current);
   }, [test, result, pause]);
 
@@ -129,10 +133,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
       ...readRecent(code, 'variants'),
       ...history.map((m) => m.sourceId || api.reviewVariantId(code, m.review || [])).filter(Boolean),
     ];
-    // lang передаём, чтобы свежесгенерированные (не из банка) задачи сразу
-    // приходили на языке интерфейса — без этого их пришлось бы прогонять
-    // через платный/медленный перевод (translateQuestions) на каждый мок.
-    const v = await api.mockRandom(code, { excludeQuestionIds, excludeVariantIds }, lang);
+    const v = await api.mockRandom(code, { excludeQuestionIds, excludeVariantIds });
     if (!v) return;
     rememberRecent(code, 'questions', v.questions.map((q) => q.id).filter(Boolean), 600);
     if (v.sourceId) rememberRecent(code, 'variants', [v.sourceId], 7);
@@ -141,15 +142,29 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     setIsDiagnosticRun(diagnostic);
     setMeta({ school: code, sections: v.sections, diagnostic });
     setTest({ ...v, questions: qs });
-    setAnswers({}); setFlags({}); setI(0); setPause(false); setStartedAt(Date.now());
-    setLeft((v.timeLimitMin || 60) * 60); setResult(null);
+    const startedNow = Date.now();
+    const limitMin = v.timeLimitMin || 60;
+    pausedAtRef.current = null;
+    deadlineRef.current = startedNow + limitMin * 60 * 1000;
+    submittingRef.current = false;
+    setAnswers({}); setFlags({}); setI(0); setPause(false); setStartedAt(startedNow);
+    setLeft(limitMin * 60); setResult(null);
   }
 
   async function submit() {
-    if (!test) return;
+    // Может позвать и кнопка «Завершить», и таймер по истечении времени —
+    // защита от двойной отправки (и задвоенной записи в истории результатов).
+    if (!test || submittingRef.current) return;
+    submittingRef.current = true;
     clearInterval(tick.current);
-    const r = await api.mockSubmit(test.id, answers);
-    if (!r) return;
+    let r;
+    try {
+      r = await api.mockSubmit(test.id, answers);
+    } catch {
+      submittingRef.current = false;
+      return;
+    }
+    if (!r) { submittingRef.current = false; return; }
     const spentSec = startedAt ? Math.round((Date.now() - startedAt) / 1000) : null;
     setResult(r);
     const uid = auth.currentUser?.uid;
@@ -183,24 +198,20 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   if (!school && pro === false && diagUsed !== null) {
     if (!diagUsed) {
       return (
-        <main className="mock-page mock-select-page">
-          <header className="mock-title">
-            <span className="section-eyebrow">SYNAQ MOCK</span>
-            <h1>{t('diag.freeMockTitle')}</h1>
-            <p>{t('diag.freeMockSub')}</p>
-          </header>
-          <div className="mock-school-grid">
+        <main>
+          <p className="kicker">{t('diag.freeMock')}</p>
+          <h1>{t('diag.freeMockTitle')}</h1>
+          <p className="muted" style={{ marginTop: 8, lineHeight: 1.6 }}>{t('diag.freeMockSub')}</p>
+          <div className="list" style={{ marginTop: 16 }}>
             {schools.map((s) => (
-              <div className={`mock-school-card mock-school-${s.code}`} key={s.code}
+              <div className="row-item" key={s.code}
                 onClick={() => s.ready && startExam(s.code, true)}
                 style={{ opacity: s.ready ? 1 : 0.5, cursor: s.ready ? 'pointer' : 'default' }}>
-                <SchoolLogo code={s.code} />
-                <div><b>{s.code}</b><small>{lang === 'ru' ? 'Реальный формат' : 'Нақты формат'}</small></div>
-                <span className="mock-school-go">{s.ready ? '→' : t('ui.60')}</span>
+                <b style={{ font: "700 18px 'Lora',serif", flex: 1 }}>{s.code}</b>
+                <span className="rt">{s.ready ? t('diag.startFree') : t('ui.60')}</span>
               </div>
             ))}
           </div>
-          <MockBenefits lang={lang} />
         </main>
       );
     }
@@ -227,28 +238,20 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   }
 
   if (!school) return (
-    <main className="mock-page mock-select-page">
-      <header className="mock-title">
-        <span className="section-eyebrow">SYNAQ MOCK</span>
-        <h1>{t('ui.12')}</h1>
-        <p>{t('ui.13')}</p>
-      </header>
-      <section className="mock-intro-card">
-        <div><span>{lang === 'ru' ? 'ПРОБНЫЙ ТЕСТ' : 'АПТАЛЫҚ СЫНАҚ'}</span><h2>{lang === 'ru' ? 'Проверь готовность к экзамену' : 'Емтиханға дайындығыңды тексер'}</h2><p>{lang === 'ru' ? 'Таймер, баллы и разбор ошибок — как на настоящем отборе.' : 'Таймер, балл және қателерді талдау — нақты іріктеудегідей.'}</p></div>
-        <div className="mock-intro-score"><b>30</b><span>{lang === 'ru' ? 'задач' : 'есеп'}</span></div>
-      </section>
-      <div className="mock-school-grid">
+    <main>
+      <p className="kicker">{t('ui.11')}</p>
+      <h1>{t('ui.12')}</h1>
+      <p className="muted" style={{ marginTop: 6 }}>{t('ui.13')}</p>
+      <div className="list" style={{ marginTop: 16 }}>
         {schools.map((s) => (
-          <div className={`mock-school-card mock-school-${s.code}`} key={s.code}
+          <div className="row-item" key={s.code}
             onClick={() => s.ready && startExam(s.code, false)}
             style={{ opacity: s.ready ? 1 : 0.5, cursor: s.ready ? 'pointer' : 'default' }}>
-            <SchoolLogo code={s.code} />
-            <div><b>{s.code}</b><small>{lang === 'ru' ? 'Реальный формат' : 'Нақты формат'}</small></div>
-            <span className="mock-school-go">{s.ready ? '→' : t('ui.60')}</span>
+            <b style={{ font: "700 18px 'Lora',serif", flex: 1 }}>{s.code}</b>
+            <span className="rt">{s.ready ? '→' : t('ui.60')}</span>
           </div>
         ))}
       </div>
-      <MockBenefits lang={lang} />
     </main>
   );
 
