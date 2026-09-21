@@ -3,10 +3,11 @@ import { useLang } from './i18n.jsx';
 import {
   auth, createChild, getChildren, getMocks, getAttempts, logout, getFamily, syncChildrenPro,
   genPassword, suggestUsername, cleanUsername, errText,
-  hasPasswordLogin, linkParentPassword, changeParentPassword,
+  hasPasswordLogin, linkParentPassword, changeParentPassword, resetChildPassword, getPlatformDiagnostics,
 } from './firebase.js';
 import { api, topicStats, readiness, mockSeries } from './api.js';
 import Brand from './Brand.jsx';
+import { buildDiagnosticShareText, daysUntilDiagnostic } from './platformDiagnostic.js';
 
 const Logo = () => <div className="logo"><Brand compact /></div>;
 
@@ -127,6 +128,7 @@ export default function Parent({ onExit }) {
     setBusy(false);
   }
   const [stats, setStats] = useState([]);
+  const [diagnostics, setDiagnostics] = useState([]);
 
   // Кірген соң бала жоқ болса — «Бала қосу» формасын бірден ашамыз
   useEffect(() => {
@@ -136,13 +138,15 @@ export default function Parent({ onExit }) {
   // Баланы ашқанда: мок-тестер + тақырып бойынша статистика
   const openResults = async (c) => {
     setOpenChild(c);
-    const [ms, att, topics] = await Promise.all([
+    const [ms, att, topics, diagnosticItems] = await Promise.all([
       getMocks(c.uid).catch(() => []),
       getAttempts(c.uid).catch(() => []),
       api.topics(),
+      getPlatformDiagnostics(c.uid).catch(() => []),
     ]);
     setMocks(ms);
     setStats(topicStats(att, topics));
+    setDiagnostics(diagnosticItems);
   };
 
   return (
@@ -292,7 +296,7 @@ export default function Parent({ onExit }) {
           {!children.length && !adding && <p className="muted" style={{ marginTop: 14 }}>{t('ui.32')}</p>}
         </main>
       ) : (
-        <ChildReport child={openChild} mocks={mocks} stats={stats} onBack={() => setOpenChild(null)} t={t} />
+        <ChildReport child={openChild} mocks={mocks} stats={stats} diagnostics={diagnostics} lang={lang} onBack={() => setOpenChild(null)} t={t} />
       )}
     </div>
   );
@@ -328,7 +332,7 @@ const LVL_COL = { strong: '#4C7A4E', mid: '#B8892B', weak: '#B0342B' };
 const LVL_BG = { strong: '#EEF5EC', mid: '#FBF3E3', weak: '#FBEDEC' };
 const LVL_TXT = { strong: 'МЫҚТЫ', mid: 'ОРТАША', weak: 'ӘЛСІЗ' };
 
-function ChildReport({ child, mocks, stats, onBack, t }) {
+function ChildReport({ child, mocks, stats, diagnostics, lang, onBack, t }) {
   // Толық дашборд әрқашан көрінеді. Есеп шығарылмаған тақырыптар да тұрады — тек 0%.
   const all = stats.length ? stats : [];
   const used = all.filter((s) => s.tried);
@@ -339,6 +343,9 @@ function ChildReport({ child, mocks, stats, onBack, t }) {
   const counts = { strong: 0, mid: 0, weak: 0 };
   used.forEach((s) => counts[s.level]++);
   const weak = [...used].sort((a, b) => a.pct - b.pct).slice(0, 2);
+  const diagnostic = diagnostics?.[0];
+  const diagnosticWeak = diagnostic?.topics?.filter((item) => item.level !== 'strong').slice(0, 3) || [];
+  const shareText = buildDiagnosticShareText(diagnostic, child.name, lang);
 
   return (
     <main>
@@ -397,6 +404,27 @@ function ChildReport({ child, mocks, stats, onBack, t }) {
           ) : <p className="muted" style={{ margin: 0 }}>Сынақ әлі тапсырылмаған.</p>}
         </div>
       </div>
+
+      {diagnostic && (
+        <section className="parent-diagnostic-card">
+          <div className="parent-diagnostic-head">
+            <div><p className="kicker">SYNAQ DIAGNOSTIC</p><h2>{lang === 'ru' ? 'Диагностика знаний' : 'Білім диагностикасы'}</h2></div>
+            <a href={`https://wa.me/?text=${encodeURIComponent(shareText)}`} target="_blank" rel="noreferrer">WhatsApp ↗</a>
+          </div>
+          <div className="parent-diagnostic-summary">
+            <strong>{diagnostic.readiness}%</strong>
+            <span>{diagnostic.correct}/{diagnostic.total} {lang === 'ru' ? 'правильно' : 'дұрыс'}</span>
+            <small>{new Date(diagnostic.completedAt).toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'kk-KZ')}</small>
+          </div>
+          <div className="parent-diagnostic-weak">
+            {diagnosticWeak.map((item) => <div key={item.moduleId}><span>{item.title?.[lang === 'ru' ? 'ru' : 'kk']}</span><b>{item.pct}%</b></div>)}
+          </div>
+          <div className="parent-diagnostic-history">
+            {diagnostics.slice(0, 6).reverse().map((item, i) => <i key={item.id || i} title={`${item.readiness}%`} style={{ height: `${Math.max(8, item.readiness)}%` }} />)}
+          </div>
+          <p className="parent-diagnostic-next">{daysUntilDiagnostic(diagnostic.completedAt) ? (lang === 'ru' ? `Повторная проверка через ${daysUntilDiagnostic(diagnostic.completedAt)} дн.` : `Қайта тексеруге ${daysUntilDiagnostic(diagnostic.completedAt)} күн қалды`) : (lang === 'ru' ? 'Пора пройти повторную диагностику' : 'Қайта диагностикадан өтетін уақыт келді')}</p>
+        </section>
+      )}
 
       {/* Ұсыныс */}
       {!!weak.length && (

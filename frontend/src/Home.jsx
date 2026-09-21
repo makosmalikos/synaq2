@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLang } from './i18n.jsx';
 import { xpLevel } from './xp.js';
+import { topicName } from './diagnosticData.js';
 
 const DashboardIcon = ({ type }) => {
   if (type === 'duel') return <span aria-hidden="true">⚔</span>;
@@ -8,12 +9,29 @@ const DashboardIcon = ({ type }) => {
   return <span aria-hidden="true">↗</span>;
 };
 
-export default function Home({ go, name, xp = 0 }) {
-  const { t } = useLang();
+export default function Home({ go, name, xp = 0, diagnosticPlan, onTrainTopic }) {
+  const { t, lang } = useLang();
   const lvl = xpLevel(xp);
   const levelXp = xp % 500;
   const levelProgress = Math.min(100, Math.round((levelXp / 500) * 100));
   const xpLeft = levelXp === 0 && xp > 0 ? 500 : 500 - levelXp;
+  const rankedTopics = diagnosticPlan?.topics
+    ? [...diagnosticPlan.topics].sort((a, b) => a.pct - b.pct)
+    : [];
+  const belowTarget = rankedTopics.filter((item) => item.pct < 70);
+  const weakTopics = (belowTarget.length ? belowTarget : rankedTopics).slice(0, 3);
+  const planCopy = lang === 'ru' ? {
+    kicker: 'ПО РЕЗУЛЬТАТАМ ДИАГНОСТИКИ', title: 'Ваш план на 7 дней',
+    score: 'готовность', intro: 'Начните со слабых тем — маршрут уже собран.',
+    tasks: 'задач', start: 'Начать практику', repeat: 'Повторить диагностику на 7-й день',
+  } : {
+    kicker: 'ДИАГНОСТИКА НӘТИЖЕСІ БОЙЫНША', title: '7 күндік жеке жоспарың',
+    score: 'дайындық', intro: 'Әлсіз тақырыптардан баста — бағытың дайын.',
+    tasks: 'есеп', start: 'Жаттығуды бастау', repeat: '7-күні диагностиканы қайталау',
+  };
+  const diagnosticTarget = diagnosticPlan?.target === 'general'
+    ? (lang === 'ru' ? 'Общая математика' : 'Жалпы математика')
+    : diagnosticPlan?.target;
 
   return (
     <main className="home-dashboard">
@@ -57,6 +75,35 @@ export default function Home({ go, name, xp = 0 }) {
           <small>{levelProgress}% · {t('home.xpProgress')}</small>
         </div>
       </section>
+
+      {!!diagnosticPlan && (
+        <section className="home-diagnostic-plan">
+          <div className="home-plan-head">
+            <div>
+              <span>{planCopy.kicker}</span>
+              <h2>{planCopy.title}</h2>
+              <p>{planCopy.intro}</p>
+            </div>
+            <div className="home-plan-score"><strong>{diagnosticPlan.readiness}%</strong><span>{planCopy.score}</span></div>
+          </div>
+          <div className="home-plan-days">
+            {weakTopics.map((item, index) => (
+              <button key={item.id} type="button" onClick={() => onTrainTopic?.(item.trainingTopicId)}>
+                <span className="home-plan-day">{lang === 'ru' ? 'День' : 'Күн'} {index * 2 + 1}</span>
+                <strong>{topicName(item.id, lang)}</strong>
+                <small>{item.pct}% · {5 + index * 2} {planCopy.tasks}</small>
+                <em>{planCopy.start} →</em>
+              </button>
+            ))}
+            <button type="button" className="home-plan-repeat" onClick={() => { window.history.pushState({}, '', '/diagnostic'); window.location.reload(); }}>
+              <span className="home-plan-day">{lang === 'ru' ? 'День 7' : '7-күн'}</span>
+              <strong>{planCopy.repeat}</strong>
+              <small>{diagnosticPlan.grade} {lang === 'ru' ? 'класс' : 'сынып'} · {diagnosticTarget}</small>
+              <em>↻</em>
+            </button>
+          </div>
+        </section>
+      )}
 
       <div className="home-section-head">
         <div>

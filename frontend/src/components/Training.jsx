@@ -138,6 +138,8 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
     if (!startTopicId || !topics.length) return;
     const tp = topics.find((x) => x.id === startTopicId);
     if (!tp) return;
+    // Из персонального плана разрешаем открыть рекомендованную тему и на
+    // бесплатном тарифе; общий дневной лимит всё равно контролируется ниже.
     (async () => {
       // solvedRef.current, не solved: getSolved() әлі жүктеліп үлгермеген
       // болса (сырттан "осы тақырыпты жаттық" сілтемесі бойынша бірден

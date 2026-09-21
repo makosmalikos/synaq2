@@ -98,6 +98,35 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
+    // Полная диагностика внутри платформы. Результат принадлежит ребёнку,
+    // создаётся один раз и после сохранения не редактируется.
+    match /results/{childUid}/diagnostics/{diagnosticId} {
+      allow create: if isSignedIn()
+        && request.auth.uid == childUid
+        && request.resource.data.keys().hasOnly([
+          'version', 'grade', 'completedAt', 'readiness', 'correct', 'total',
+          'spentSec', 'topics', 'mistakes', 'at'
+        ])
+        && request.resource.data.version == 1
+        && request.resource.data.grade is int
+        && request.resource.data.grade >= 3
+        && request.resource.data.grade <= 6
+        && request.resource.data.readiness is int
+        && request.resource.data.readiness >= 0
+        && request.resource.data.readiness <= 100
+        && request.resource.data.correct is int
+        && request.resource.data.correct >= 0
+        && request.resource.data.total == 20
+        && request.resource.data.correct <= request.resource.data.total
+        && request.resource.data.spentSec is int
+        && request.resource.data.spentSec > 0
+        && request.resource.data.topics is list
+        && request.resource.data.topics.size() <= 8
+        && request.resource.data.mistakes is list
+        && request.resource.data.mistakes.size() <= 20;
+      allow update, delete: if false;
+    }
+
     match /results/{childUid}/stats/{docId} {
       allow read: if isSignedIn() && (
         request.auth.uid == childUid || isParentOf(childUid)
