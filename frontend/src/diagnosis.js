@@ -1,5 +1,6 @@
 // Диагностика слабых сторон из реального review мок-теста.
 import { POOL } from './bank.js';
+import { isGradable } from './api.js';
 
 const LEVEL = (pct) => (pct >= 70 ? 'strong' : pct >= 50 ? 'mid' : 'weak');
 
@@ -7,8 +8,11 @@ function topicName(id, topicList) {
   return topicList.find((t) => t.id === id)?.name || id;
 }
 
+// isGradable, не просто "answer непустой": иначе задачи-заглушки ('—'/'-',
+// которые никогда не засчитываются верными — см. api.js) завышали бы
+// рекомендованное число задач в плане подготовки.
 function tasksInTopic(id) {
-  return POOL.filter((q) => q.topic === id && q.answer != null && String(q.answer).trim()).length;
+  return POOL.filter((q) => q.topic === id && isGradable(q)).length;
 }
 
 function explainTopic({ name, pct, correct, total, wrong, lang }) {

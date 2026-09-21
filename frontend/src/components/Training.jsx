@@ -10,11 +10,11 @@ const LT = ['A', 'B', 'C', 'D', 'E'];
 // Блоки раздельно: язык и математика в одной ленте — бессмыслица.
 // Заголовок — через t(), чтобы шёл за выбранным языком интерфейса (не только сами задачи).
 const BLOCKS = [
-  { id: 'math',     titleKey: 'ui.68', only: null, symbol: 'π' },
-  { id: 'logic',    titleKey: 'ui.69', only: null, symbol: '◇' },
-  { id: 'lang_kaz', titleKey: 'ui.70', only: 'lang_kaz', symbol: 'KZ' },
-  { id: 'lang_rus', titleKey: 'ui.71', only: 'lang_rus', symbol: 'RU' },
-  { id: 'lang_eng', titleKey: 'ui.72', only: 'lang_eng', symbol: 'EN' },
+  { id: 'math',     titleKey: 'ui.68', only: null },
+  { id: 'logic',    titleKey: 'ui.69', only: null },
+  { id: 'lang_kaz', titleKey: 'ui.70', only: 'lang_kaz' },
+  { id: 'lang_rus', titleKey: 'ui.71', only: 'lang_rus' },
+  { id: 'lang_eng', titleKey: 'ui.72', only: 'lang_eng' },
 ];
 // id → тема, чтобы не фильтровать весь пул на каждый рендер
 const TOPIC_OF = Object.fromEntries(POOL.map((q) => [q.id, q.topic]));
@@ -103,12 +103,24 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
   const [answer, setAnswer] = useState('');
   const [checked, setChecked] = useState(false);
   const [secs, setSecs] = useState(0);
-  const [pro, setPro] = useState(null);        // null — сервер әлі тексеріп жатыр
+  const [pro, setPro] = useState(true);        // тексерілгенше бөгемейміз
   const [done, setDone] = useState(0);
   const [xpPop, setXpPop] = useState(null);         // бүгін шығарған есеп саны
   const FREE_DAY = 5;                          // тегін тарифте күніне 5 есеп
-  const locked = pro === false && done >= FREE_DAY;
+  const locked = !pro && done >= FREE_DAY;
   const timer = useRef(null);
+  // "Тексеру" батырмасы disabled={!answer} шартымен ғана бөгеледі, checked-ке
+  // қарамастан — тез қос басу/тап (әсіресе телефонда touchend+click) екі
+  // check()-ті бір сұраққа қатар шақырып, XP мен күнделікті лимитті қосарлап
+  // санауы мүмкін еді. checkingRef синхронды қорған: setChecked(true)
+  // рендерге дейін де екінші шақыруды бірден тоқтатады.
+  const checkingRef = useRef(false);
+  // startTopicId эффектісі ниже solvedRef арқылы «соңғы» solved-ты оқиды —
+  // тікелей solved-ты тәуелділікке қоссақ, әр дұрыс жауаптан кейін бүкіл
+  // тәжірибе қайта іске қосылып, ағымдағы сессия үзіліп кетер еді.
+  const solvedRef = useRef(solved);
+  useEffect(() => { solvedRef.current = solved; });
+  useEffect(() => { checkingRef.current = false; }, [i, items]);
 
   useEffect(() => {
     const u = auth.currentUser;
@@ -123,13 +135,15 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
   }, []);
 
   useEffect(() => {
-    if (!startTopicId || !topics.length || pro === null) return;
+    if (!startTopicId || !topics.length) return;
     const tp = topics.find((x) => x.id === startTopicId);
     if (!tp) return;
-    const firstTopicId = topics[0]?.id;
-    if (pro === false && tp.id !== firstTopicId) return;
     (async () => {
-      const list = await translateQuestions(await api.topicQuestions(tp.id, { lang, excludeIds: solved }), lang);
+      // solvedRef.current, не solved: getSolved() әлі жүктеліп үлгермеген
+      // болса (сырттан "осы тақырыпты жаттық" сілтемесі бойынша бірден
+      // кіргенде), тұйықталған solved әрқашан бос жиын болып қалатын еді —
+      // сол кезде бұрын шығарылған есептер қайта көрсетілер еді.
+      const list = await translateQuestions(await api.topicQuestions(tp.id, { lang, excludeIds: solvedRef.current }), lang);
       setTopic(tp);
       setItems(list);
       setI(0);
@@ -138,7 +152,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
       setSecs(0);
       onTopicOpened?.();
     })();
-  }, [startTopicId, topics, lang, onTopicOpened, pro]);
+  }, [startTopicId, topics, lang, onTopicOpened]);
 
   useEffect(() => {
     if (!items.length || checked) return;
@@ -160,13 +174,9 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
   const openTopic = async (tp) => start(tp, await translateQuestions(
     await api.topicQuestions(tp.id, { lang, excludeIds: solved }), lang,
   ));
-  const openMixed = async () => {
-    if (pro === null) return;
-    const source = pro === true
-      ? await api.mixed(lang, 20, 'math', solved)
-      : b0 ? await api.topicQuestions(b0, { lang, excludeIds: solved }) : [];
-    start({ id: '_mix', name: t('ui.3') }, await translateQuestions(source, lang));
-  };
+  const openMixed = async () => start({ id: '_mix', name: t('ui.3') }, await translateQuestions(
+    await api.mixed(lang, 20, 'math', solved), lang,
+  ));
   const next = () => {
     if (i + 1 < items.length) { setI(i + 1); setAnswer(''); setChecked(false); setSecs(0); }
     else { setTopic(null); setItems([]); }
@@ -197,65 +207,54 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
 
   // ── список тем ──
   if (!topic) {
-    const Group = ({ title, arr, tone, symbol }) => !arr.length ? null : (
-      <section className={`training-group training-group-${tone}`}>
-        <div className="training-group-head">
-          <span className="training-group-symbol">{symbol}</span>
-          <div><h2>{title}</h2><p>{arr.length} {lang === 'ru' ? 'тем' : 'тақырып'}</p></div>
+    const Group = ({ title, arr }) => !arr.length ? null : (
+      <>
+        <div className="row" style={{ margin: '26px 0 12px' }}>
+          <span className="kicker" style={{ margin: 0 }}>{title}</span>
         </div>
-        <div className="list training-topic-list">
+        <div className="list">
           {arr.map((t, k) => {
             const done = Math.min(solvedIn[t.id] || 0, t.count);
             const pct = Math.round(done / t.count * 100);
-            const shut = pro === null || (pro === false && !(b0 && t.id === b0));
+            const shut = !pro && !(b0 && t.id === b0);      // тегін тарифте — бір ғана тақырып
             return (
-              <div className={`row-item training-topic${shut ? ' is-locked' : ''}`} key={t.id}
+              <div className="row-item" key={t.id}
                 onClick={() => (shut ? null : openTopic(t))}
-                style={{ cursor: shut ? 'default' : 'pointer' }}>
-                <span className="training-topic-num">{String(k + 1).padStart(2, '0')}</span>
-                <div className="training-topic-copy">
+                style={{ opacity: shut ? 0.45 : 1, cursor: shut ? 'default' : 'pointer' }}>
+                <span style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#B7B0A2', width: 26 }}>{String(k + 1).padStart(2, '0')}</span>
+                <div style={{ flex: 1 }}>
                   <b>{t.name}</b>
-                  <div className="training-schools">
+                  <div style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 3 }}>
                     {t.schools.join(' · ')}
                   </div>
                 </div>
-                <div className="training-topic-progress"><div className="bar"><i style={{ width: pct + '%' }} /></div><small>{pct}%</small></div>
-                <span className="training-topic-state">{shut ? 'Про' : '→'}</span>
+                <div style={{ width: 110 }}><div className="bar"><i style={{ width: pct + '%' }} /></div></div>
+                <span style={{ font: "600 13px 'IBM Plex Mono',monospace", width: 46, textAlign: 'right', color: pct >= 60 ? '#4C7A4E' : '#6B655B' }}>
+                  {shut ? '🔒' : pct + '%'}
+                </span>
               </div>
             );
           })}
         </div>
-      </section>
+      </>
     );
 
     return (
-      <main className="training-page">
-        <header className="training-title">
-          <span className="section-eyebrow">SYNAQ TRAINER</span>
-          <h1>{t('ui.2')}</h1>
-          <p>{lang === 'ru'
-            ? 'Задачи из трёх школ собраны в одном маршруте.'
-            : 'Есептер үш мектептің бәрінен араласып беріледі.'}</p>
-        </header>
+      <main>
+        <p className="kicker">{t('ui.1')}</p>
+        <h1>{t('ui.2')}</h1>
+        <p className="muted" style={{ marginTop: 6 }}>
+          Есептер үш мектептің бәрінен араласып беріледі.
+        </p>
 
-        <section className="training-mix-card">
-          <div className="training-mix-copy">
-            <span className="training-mix-tag">{lang === 'ru' ? 'ПЕРСОНАЛЬНАЯ ПРАКТИКА' : 'ЖЕКЕ ЖОСПАР'}</span>
-            <h2>{t('ui.3')}</h2>
-            <p>{t('ui.4')}</p>
-            <div className="training-school-pills"><span>РФМШ</span><span>НИШ</span><span>БИЛ</span></div>
-            <button className="training-start" disabled={pro === null} onClick={openMixed}><i>▶</i>{t('ui.5')}</button>
-          </div>
-          <div className="training-daily">
-            <span>{lang === 'ru' ? 'Цель на сегодня' : 'Бүгінгі мақсат'}</span>
-            <strong>{pro === null ? '…' : pro ? 'PRO' : `${Math.min(done, FREE_DAY)}/${FREE_DAY}`}</strong>
-            <div><i style={{ width: pro ? '100%' : `${Math.min(100, (done / FREE_DAY) * 100)}%` }} /></div>
-            <small>{lang === 'ru' ? 'Решай каждый день' : 'Күн сайын есеп шығар'}</small>
-          </div>
-        </section>
+        <div className="hero-card" style={{ marginTop: 16 }}>
+          <h2>{t('ui.3')}</h2>
+          <p>{t('ui.4')}</p>
+          <button className="btn accent" onClick={openMixed}>{t('ui.5')}</button>
+        </div>
 
         {BLOCKS.map((b) => (
-          <Group key={b.id} title={t(b.titleKey)} tone={b.id} symbol={b.symbol}
+          <Group key={b.id} title={t(b.titleKey)}
             arr={topics.filter((tp) => (b.only ? tp.id === b.only : tp.block === b.id))} />
         ))}
       </main>

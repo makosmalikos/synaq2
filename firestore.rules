@@ -12,43 +12,17 @@ service cloud.firestore {
         && get(/databases/$(database)/documents/childIndex/$(childUid)).data.parentUid == request.auth.uid;
     }
 
+    function isChildLinkedToParent(parentUid) {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/childIndex/$(request.auth.uid))
+        && get(/databases/$(database)/documents/childIndex/$(request.auth.uid)).data.parentUid == parentUid;
+    }
+
     function isDuelPlayer(data) {
       return isSignedIn() && (
         data.host.uid == request.auth.uid
         || (data.guest != null && data.guest.uid == request.auth.uid)
       );
-    }
-
-    function validDuelNumbers(data) {
-      return data.qIndex is int
-        && data.qIndex >= 0
-        && data.qIndex < data.questions.size()
-        && data.scores.host is int
-        && data.scores.guest is int
-        && data.scores.host >= 0
-        && data.scores.guest >= 0
-        && data.scores.host <= data.questions.size()
-        && data.scores.guest <= data.questions.size()
-        && data.speedWins.host is int
-        && data.speedWins.guest is int
-        && data.speedWins.host >= 0
-        && data.speedWins.guest >= 0
-        && data.speedWins.host <= data.questions.size()
-        && data.speedWins.guest <= data.questions.size();
-    }
-
-    function validPlayerScoreChange(before, after) {
-      return after.scores.host >= before.scores.host
-        && after.scores.guest >= before.scores.guest
-        && after.scores.host <= before.scores.host + 1
-        && after.scores.guest <= before.scores.guest + 1
-        && (before.host.uid == request.auth.uid
-          ? after.scores.guest == before.scores.guest
-          : after.scores.host == before.scores.host)
-        && after.speedWins.host >= before.speedWins.host
-        && after.speedWins.guest >= before.speedWins.guest
-        && after.speedWins.host <= before.speedWins.host + 1
-        && after.speedWins.guest <= before.speedWins.guest + 1;
     }
 
     match /waitlist/{doc} {
@@ -57,36 +31,38 @@ service cloud.firestore {
       allow read, update, delete: if false;
     }
 
-    // Семья: родитель управляет профилем; поля подписки меняет только webhook.
+    // Семья: родитель читает/пишет свой профиль, но НЕ поля подписки — их
+    // выставляет только сервер (Admin SDK, api/webhook.js) при подтверждённой
+    // оплате Dodo. Без этого ограничения родитель мог бы сам записать себе
+    // pro:true прямо из консоли браузера, в обход оплаты.
     match /families/{uid} {
-      // Ребёнок получает только boolean pro через /api/entitlement и не видит
-      // email родителя или платёжные metadata из семейного документа.
-      allow read: if isSignedIn() && request.auth.uid == uid;
-      allow create: if isSignedIn()
-        && request.auth.uid == uid
-        && request.resource.data.keys().hasOnly(['parentEmail', 'parentName', 'createdAt']);
-      allow update: if isSignedIn()
-        && request.auth.uid == uid
-        && request.resource.data.diff(resource.data).affectedKeys()
-          .hasOnly(['parentEmail', 'parentName']);
+      allow read: if isSignedIn() && (
+        request.auth.uid == uid || isChildLinkedToParent(uid)
+      );
+      allow create: if isSignedIn() && request.auth.uid == uid
+        && !request.resource.data.keys().hasAny(['pro', 'dodoSubId', 'dodoStatus', 'proUpdatedAt']);
+      allow update: if isSignedIn() && request.auth.uid == uid
+        && !request.resource.data.diff(resource.data).affectedKeys()
+              .hasAny(['pro', 'dodoSubId', 'dodoStatus', 'proUpdatedAt']);
       allow delete: if false;
       match /children/{childUid} {
         allow read, write: if isSignedIn() && request.auth.uid == uid;
       }
     }
 
-    // Индекс ребёнка: ребёнок читает свой; родитель меняет только индекс своего ребёнка
+    // Индекс ребёнка: ребёнок читает свой; родитель меняет только индекс своего
+    // ребёнка. Поле pro родитель может писать ТОЛЬКО тем же значением, что уже
+    // стоит в его families/{uid}.pro (так работает легитимная синхронизация —
+    // createChild и Parent.jsx при входе), а не произвольным true — иначе это
+    // была бы та же дыра, что и выше, только через другой документ.
     match /childIndex/{childUid} {
       allow read: if request.auth != null && request.auth.uid == childUid;
-      allow create: if request.auth != null
-                    && request.resource.data.parentUid == request.auth.uid
-                    && request.resource.data.keys().hasOnly(['parentUid', 'name', 'klass'])
-                    && exists(/databases/$(database)/documents/families/$(request.auth.uid)/children/$(childUid));
-      allow update: if request.auth != null
-                    && resource.data.parentUid == request.auth.uid
-                    && request.resource.data.parentUid == resource.data.parentUid
-                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'klass'])
-                    && exists(/databases/$(database)/documents/families/$(request.auth.uid)/children/$(childUid));
+      allow create, update: if request.auth != null
+                            && request.resource.data.parentUid == request.auth.uid
+                            && exists(/databases/$(database)/documents/families/$(request.auth.uid)/children/$(childUid))
+                            && exists(/databases/$(database)/documents/families/$(request.auth.uid))
+                            && request.resource.data.pro ==
+                                get(/databases/$(database)/documents/families/$(request.auth.uid)).data.get('pro', false);
       allow delete: if request.auth != null
                     && resource.data.parentUid == request.auth.uid;
     }
@@ -166,54 +142,16 @@ service cloud.firestore {
     }
 
     match /duels/{duelId} {
-      // Ожидающую комнату должен прочитать приглашённый ученик перед join.
-      // После старта данные видят только два участника.
-      allow read: if isSignedIn()
-        && (resource.data.status == 'waiting' || isDuelPlayer(resource.data));
+      allow read: if isSignedIn() && isDuelPlayer(resource.data);
       allow create: if isSignedIn()
-        && request.resource.data.keys().hasOnly([
-          'code', 'host', 'guest', 'status', 'questions', 'qIndex', 'scores',
-          'speedWins', 'round', 'roundStartedAt', 'winner', 'createdAt'
-        ])
-        && request.resource.data.code == duelId
-        && request.resource.data.host.uid == request.auth.uid
-        && request.resource.data.guest == null
-        && request.resource.data.status == 'waiting'
-        && request.resource.data.questions is list
-        && request.resource.data.questions.size() == 15
-        && validDuelNumbers(request.resource.data);
+        && request.resource.data.host.uid == request.auth.uid;
       allow update: if isSignedIn() && (
-        // Единственное изменение участников — свободное место занимает
-        // авторизованный гость, после чего UID обоих игроков неизменяемы.
-        (resource.data.guest == null
+        resource.data.host.uid == request.auth.uid
+        || (resource.data.guest != null && resource.data.guest.uid == request.auth.uid)
+        || (resource.data.guest == null
           && request.resource.data.guest.uid == request.auth.uid
           && resource.data.status == 'waiting'
-          && request.resource.data.status == 'playing'
-          && request.resource.data.code == resource.data.code
-          && request.resource.data.host == resource.data.host
-          && request.resource.data.questions == resource.data.questions
-          && request.resource.data.createdAt == resource.data.createdAt
-          && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
-            'guest', 'status', 'roundStartedAt', 'startedAt'
-          ])
-          && validDuelNumbers(request.resource.data))
-        ||
-        (isDuelPlayer(resource.data)
-          && resource.data.status == 'playing'
-          && (request.resource.data.status == 'playing' || request.resource.data.status == 'finished')
-          && request.resource.data.code == resource.data.code
-          && request.resource.data.host == resource.data.host
-          && request.resource.data.guest == resource.data.guest
-          && request.resource.data.questions == resource.data.questions
-          && request.resource.data.createdAt == resource.data.createdAt
-          && request.resource.data.qIndex >= resource.data.qIndex
-          && request.resource.data.qIndex <= resource.data.qIndex + 1
-          && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
-            'qIndex', 'scores', 'speedWins', 'round', 'roundStartedAt',
-            'status', 'winner', 'finishedAt'
-          ])
-          && validDuelNumbers(request.resource.data)
-          && validPlayerScoreChange(resource.data, request.resource.data))
+          && request.resource.data.status == 'playing')
       );
       allow delete: if false;
     }
