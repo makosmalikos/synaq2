@@ -149,37 +149,109 @@ export async function createChild(parentUid, { name, klass = '', code, pin }) {
   }
 }
 
+// Только родитель. API сверяет ID-токен родителя и связь family/child в
+// Firestore перед сменой Auth-пароля — UID ребёнка, прогресс, подписка и
+// остальные документы остаются нетронутыми.
+export async function resetChildPassword(childUid, password) {
+  const user = auth.currentUser;
+  if (!user) throw Object.assign(new Error('not-authenticated'), { code: 'auth/requires-login' });
+  const idToken = await user.getIdToken();
+  const response = await fetch('/api/child-password', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${idToken}` },
+    body: JSON.stringify({ childUid, password }),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    const code = data.error === 'weak_password' ? 'auth/weak-password'
+      : data.error === 'not_child_owner' ? 'auth/not-child-owner'
+        : data.error === 'child_not_found' ? 'auth/user-not-found'
+          : 'auth/child-reset-failed';
+    throw Object.assign(new Error(data.error || 'child-reset-failed'), { code });
+  }
+  return true;
+}
+
 export const loginChild = (code, pin) => signInWithEmailAndPassword(auth, kidEmail(code), pin);
+
+export function childErrText(e, lang = 'kk') {
+  const code = e?.code || '';
+  const ru = lang === 'ru';
+  if (code.includes('invalid-child-code') || code.includes('invalid-email')) {
+    return ru ? 'Введите логин ребёнка латинскими буквами и цифрами.' : 'Баланың логинін латын әріптерімен және цифрлармен енгізіңіз.';
+  }
+  if (code.includes('invalid-child-pin')) {
+    return ru ? 'PIN должен содержать минимум 6 символов.' : 'PIN кемінде 6 таңбадан тұруы керек.';
+  }
+  if (code.includes('invalid-credential') || code.includes('wrong-password') || code.includes('user-not-found')) {
+    return ru
+      ? 'Неверный логин или PIN. Можно вводить binara или binara@synaq.kids. Если PIN потерян, попросите родителя изменить его в кабинете.'
+      : 'Логин немесе PIN қате. binara немесе binara@synaq.kids түрінде енгізуге болады. PIN жоғалса, ата-ана кабинетінен жаңартыңыз.';
+  }
+  if (code.includes('too-many-requests')) {
+    return ru ? 'Слишком много попыток. Подождите несколько минут и попробуйте снова.' : 'Әрекет тым көп. Бірнеше минуттан кейін қайталап көріңіз.';
+  }
+  if (code.includes('network')) {
+    return ru ? 'Проверьте интернет-соединение и попробуйте снова.' : 'Интернет байланысын тексеріп, қайта көріңіз.';
+  }
+  return errText(e);
+}
+
+// Дуэль: XP начисляет только сервер (транзакция + идемпотентность по коду
+// дуэли) — клиент больше не пишет произвольную награду себе в статистику напрямую.
+export async function claimDuelXp(code) {
+  const user = auth.currentUser;
+  if (!user) throw Object.assign(new Error('not-authenticated'), { code: 'auth/requires-login' });
+  const idToken = await user.getIdToken();
+  const response = await fetch('/api/duel-award', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${idToken}` },
+    body: JSON.stringify({ code }),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw Object.assign(new Error(data.error || 'duel-award-failed'), { code: 'duel/award-failed' });
+  return { gain: Number(data.gain) || 0, credited: data.credited === true };
+}
 
 // ── Администратор (Admin Panel) ──
 // Пароля у админа нет: email сверяется server-side с allowlist ADMIN_EMAIL_1/2
 // в api/admin-login.js, который в ответ выдаёт Firebase custom token с клеймом
 // admin:true. Здесь мы только логинимся этим токеном — сам допуск целиком
 // решает сервер, фронт ничего не проверяет и не может подделать.
-export async function loginAdmin(email) {
-  const res = await fetch('/api/admin-login', {
+// Владение email подтверждается входом через Google — сервер (api/admin-login.js)
+// проверяет подпись ID-токена и allowlist ADMIN_EMAIL_1/2, и только затем
+// выдаёт отдельный admin custom token. Прежний вариант слал один email без
+// токена — сервер требует Bearer и сейчас отклонял бы любой такой запрос.
+export async function loginAdmin() {
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: 'select_account' });
+  const googleCred = await signInWithPopup(auth, provider);
+  const idToken = await googleCred.user.getIdToken(true);
+  const r = await fetch('/api/admin-login', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: String(email || '').trim() }),
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${idToken}` },
   });
-  let data = {};
-  try { data = await res.json(); } catch {}
-  if (!res.ok || !data.token) {
-    throw Object.assign(new Error(data.error || 'failed'), {
-      code: res.status === 403 ? 'auth/admin-denied' : 'auth/admin-login-failed',
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok || !data.token) {
+    await signOut(auth).catch(() => {});
+    throw Object.assign(new Error(data.error || 'admin_denied'), {
+      code: data.error === 'not_allowed' ? 'admin/not-allowed'
+        : data.error === 'google_required' ? 'admin/google-required'
+          : 'admin/failed',
     });
   }
-  await signInWithCustomToken(auth, data.token);
+  const cred = await signInWithCustomToken(auth, data.token);
+  return cred.user;
 }
 
-// Клейм admin:true живёт в ID-токене, а не в самом объекте user — форсируем
-// обновление (true), иначе после первого логина можно ещё какое-то время
-// читать кэшированный токен без клейма и ошибочно считать пользователя не-админом.
+// Клеймы читаются из ID-токена асинхронно, поэтому isAdmin — Promise<boolean>.
+// adminAuthVersion === 2 отсекает токены старого небезопасного endpoint'а,
+// где владение email ещё не подтверждалось входом через Google.
 export async function isAdmin(user) {
   if (!user) return false;
   try {
     const result = await user.getIdTokenResult(true);
-    return result.claims?.admin === true;
+    return result.claims?.admin === true && result.claims?.adminAuthVersion === 2;
   } catch { return false; }
 }
 
@@ -297,6 +369,26 @@ export async function getSolved(childUid) {
   } catch { return []; }
 }
 
+// ── Полная диагностика платформы (PlatformDiagnostic.jsx) ──
+// Результат создаётся один раз за попытку и больше не редактируется — см.
+// правило results/{childUid}/diagnostics/{id} в firestore.rules (там жёстко
+// проверяется набор полей). completedAt шлёт сам клиент (ISO-строка момента
+// завершения на устройстве ребёнка), at — серверная метка записи.
+export async function savePlatformDiagnostic(childUid, result) {
+  const { version, grade, completedAt, readiness, correct, total, spentSec, topics, mistakes } = result || {};
+  await addDoc(collection(db, 'results', childUid, 'diagnostics'), {
+    version, grade, completedAt, readiness, correct, total, spentSec, topics, mistakes,
+    at: serverTimestamp(),
+  });
+}
+
+export async function getPlatformDiagnostics(childUid) {
+  try {
+    const snap = await getDocs(collection(db, 'results', childUid, 'diagnostics'));
+    return snap.docs.map((d) => d.data()).sort((a, b) => String(b.completedAt || '').localeCompare(String(a.completedAt || '')));
+  } catch { return []; }
+}
+
 // Человеческие сообщения об ошибках
 export function errText(e) {
   const c = (e && e.code) || '';
@@ -313,6 +405,11 @@ export function errText(e) {
   if (c.includes('too-many-requests')) return 'Тым көп әрекет. Біраз күтіңіз немесе парольді қалпына келтіріңіз.';
   if (c.includes('admin-denied')) return 'Бұл email әкімшілер тізімінде жоқ.';
   if (c.includes('admin-login-failed')) return 'Кіру мүмкін болмады. Кейінірек қайталап көріңіз.';
+  if (c.includes('admin/not-allowed')) return 'Бұл аккаунтта әкімші панеліне қолжетімділік жоқ.';
+  if (c.includes('admin/google-required')) return 'Рұқсат берілген әкімші Google аккаунты арқылы кіріңіз.';
+  if (c.includes('admin/failed')) return 'Кіру мүмкін болмады. Қайта көріңіз.';
+  if (c.includes('not-child-owner')) return 'Бұл бала аккаунты сіздің кабинетіңізге тіркелмеген.';
+  if (c.includes('child-reset-failed')) return 'PIN өзгерту мүмкін болмады. Қайта көріңіз.';
   if (c.includes('permission-denied')) return 'Firestore ережелері жарияланбаған. Firebase Console → Firestore → Rules → Publish';
   if (c.includes('operation-not-allowed')) return 'Firebase-те Email/Password қосылмаған (Authentication → Sign-in method)';
   if (c.includes('unauthorized-domain')) return 'Домен рұқсат етілмеген (Firebase → Authorized domains)';
