@@ -1,12 +1,32 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLang } from './i18n.jsx';
-import Explain from './components/Explain.jsx';
-import { claimDuelXp } from './firebase.js';
+import { auth, claimDuelXp } from './firebase.js';
 import { duelXpGain, XP } from './xp.js';
 import {
   createDuel, joinDuel, submitDuelAnswer, skipRoundIfExpired,
   watchDuel, myRole, duelLink, DUEL_SIZE, ROUND_SEC,
 } from './duel.js';
+
+// Keep a dismissed invitation consumed even when the user switches tabs and
+// this component mounts again; App may still hold the original URL code.
+const consumedInvites = new Set();
+function shouldJoinInvite(initialCode, consumedInvite) {
+  return !!initialCode && initialCode !== consumedInvite && !consumedInvites.has(initialCode);
+}
+function duelRoundKey(code, duel) {
+  return code && duel?.status === 'playing' ? `${code}:${duel.qIndex}` : null;
+}
+function duelFeedbackKey(code, duel) {
+  const round = duel?.lastRound;
+  return code && duel?.status === 'playing' && round?.host && round?.guest
+    ? `${code}:${round.qIndex}:${round.host.at}:${round.guest.at}` : null;
+}
+function duelAwardKey(code, duel, uid) {
+  // A new room code can render before its first Firestore snapshot arrives.
+  // Never claim against a finished snapshot that belongs to the old room.
+  if (!code || !uid || duel?.status !== 'finished' || (duel.id || duel.code) !== code) return null;
+  return duel.host?.uid === uid || duel.guest?.uid === uid ? `${code}:${uid}` : null;
+}
 
 const copy = async (text) => {
   try {
@@ -19,7 +39,7 @@ const copy = async (text) => {
 
 export default function Duel({ initialCode = '', playerName = 'Ойыншы', fromLink = false, onXp }) {
   const { t, lang } = useLang();
-  const [code, setCode] = useState(initialCode.toUpperCase());
+  const [code, setCode] = useState('');
   const [duel, setDuel] = useState(null);
   const [answer, setAnswer] = useState('');
   const [busy, setBusy] = useState(false);
@@ -32,25 +52,49 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
   const [countdown, setCountdown] = useState(null);
   const [gameReady, setGameReady] = useState(!fromLink);
   const [awardRetry, setAwardRetry] = useState(0);
-  const lastRoundKey = useRef('');
+  const [consumedInvite, setConsumedInvite] = useState('');
   const countdownDone = useRef(false);
-  const xpDone = useRef(false);
-  const xpClaiming = useRef(false);
+  const award = useRef(null);
+  const currentAward = useRef(null);
+  const onXpRef = useRef(onXp);
+  const expiring = useRef(false);
+  const submitting = useRef(null);
+  const currentRound = useRef(null);
+  const mounted = useRef(true);
+  const [verdict, setVerdict] = useState(null);
+  const [awardError, setAwardError] = useState(false);
+  const invitePending = shouldJoinInvite(initialCode, consumedInvite);
+  const roundKey = duelRoundKey(code, duel);
+  const feedbackKey = duelFeedbackKey(code, duel);
+  const awardUid = auth.currentUser?.uid;
+  const awardKey = duelAwardKey(code, duel, awardUid);
+  currentRound.current = roundKey;
+  currentAward.current = awardKey;
+  onXpRef.current = onXp;
+  const errorText = (e) => {
+    const value = t(`duel.err.${e.message}`);
+    return value === `duel.err.${e.message}` ? t('duel.err.failed') : value;
+  };
+
+  useEffect(() => {
+    mounted.current = true;
+    return () => { mounted.current = false; };
+  }, []);
 
   useEffect(() => {
     if (!code) return undefined;
-    return watchDuel(code, setDuel);
+    return watchDuel(code, setDuel, () => setErr(t('duel.err.failed')));
   }, [code]);
 
   useEffect(() => {
-    xpDone.current = false;
-    xpClaiming.current = false;
-    setAwardRetry(0);
-  }, [code]);
+    submitting.current = null;
+    setBusy(false);
+    setAnswer(''); setVerdict(null); setErr('');
+  }, [roundKey, code]);
 
   // Гость по ссылке: войти в комнату и сразу начать игру
   useEffect(() => {
-    if (!initialCode) return undefined;
+    if (!invitePending) return undefined;
     let cancelled = false;
     (async () => {
       setJoining(true);
@@ -60,14 +104,14 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
         if (!cancelled) setCode(id);
       } catch (e) {
         if (!cancelled && e.message !== 'auth') {
-          setErr(t(`duel.err.${e.message}`) || t('duel.err.failed'));
+          setErr(errorText(e));
         }
       } finally {
         if (!cancelled) setJoining(false);
       }
     })();
     return () => { cancelled = true; };
-  }, [initialCode, playerName, t]);
+  }, [initialCode, invitePending, playerName, t]);
 
   // Обратный отсчёт 3-2-1 при старте (оба игрока видят)
   useEffect(() => {
@@ -102,46 +146,68 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
     const started = duel.roundStartedAt?.toMillis?.()
       ?? (duel.roundStartedAt?.seconds ? duel.roundStartedAt.seconds * 1000 : Date.now());
     const tick = () => {
-      const left = Math.max(0, ROUND_SEC - Math.floor((Date.now() - started) / 1000));
+      const left = Math.min(ROUND_SEC, Math.max(0, ROUND_SEC - Math.floor((Date.now() - started) / 1000)));
       setLeftSec(left);
-      if (left === 0) skipRoundIfExpired(code).catch(() => {});
+      if (left === 0 && !expiring.current) {
+        expiring.current = true;
+        skipRoundIfExpired(code, duel.qIndex).catch((e) => {
+          if (mounted.current && currentRound.current === roundKey) setErr(errorText(e));
+        })
+          .finally(() => { expiring.current = false; });
+      }
     };
     tick();
     const id = setInterval(tick, 500);
     return () => clearInterval(id);
-  }, [duel?.status, duel?.qIndex, duel?.roundStartedAt, code, gameReady]);
+  }, [duel?.status, duel?.qIndex, duel?.roundStartedAt, code, gameReady, roundKey]);
 
-  // Показать результат раунда на 2 сек
+  // The server already advances the round atomically. Show the previous result
+  // without hiding the next question or spending its running timer on a pause.
   useEffect(() => {
-    if (!duel || duel.status !== 'playing') return;
-    const r = duel.round || {};
-    if (!r.host || !r.guest) {
+    if (!feedbackKey) {
       setShowRoundResult(false);
-      return;
+      return undefined;
     }
-    const key = `${duel.qIndex}_${r.host.at}_${r.guest.at}`;
-    if (key === lastRoundKey.current) return;
-    lastRoundKey.current = key;
     setShowRoundResult(true);
     const id = setTimeout(() => setShowRoundResult(false), 2200);
     return () => clearTimeout(id);
-  }, [duel]);
+  }, [feedbackKey]);
 
   // XP — бір рет ғана есептеледі
   useEffect(() => {
-    if (!duel || duel.status !== 'finished') return;
-    const roleNow = myRole(duel);
-    if (!roleNow || xpDone.current || xpClaiming.current) return undefined;
-    xpClaiming.current = true;
+    if (!awardKey) return undefined;
+    if (award.current?.key !== awardKey) {
+      award.current = { key: awardKey, done: false, attempts: 0, request: null };
+      setAwardError(false);
+    }
+    const scope = award.current;
+    if (scope.done) return undefined;
+    // Reuse the in-flight promise when React cleans up and replays an effect.
+    // Otherwise a second request could observe "already credited" while the
+    // first (now ignored) response was the only one carrying the new XP gain.
+    if (!scope.request) {
+      scope.attempts += 1;
+      scope.request = claimDuelXp(code);
+    }
+    let active = true;
     let retryTimer;
-    claimDuelXp(code).then(({ gain, credited }) => {
-      xpDone.current = true;
-      if (credited && gain > 0) onXp?.(gain);
+    const isCurrent = () => active && mounted.current && currentAward.current === scope.key
+      && award.current === scope && auth.currentUser?.uid === awardUid;
+    scope.request.then(({ gain, credited }) => {
+      if (!isCurrent()) return;
+      scope.done = true;
+      setAwardError(false);
+      if (credited && gain > 0) onXpRef.current?.(gain);
     }).catch(() => {
-      if (awardRetry < 2) retryTimer = setTimeout(() => setAwardRetry((n) => n + 1), 1500);
-    }).finally(() => { xpClaiming.current = false; });
-    return () => clearTimeout(retryTimer);
-  }, [duel, onXp, code, awardRetry]);
+      if (!isCurrent()) return;
+      scope.request = null;
+      setAwardError(true);
+      if (scope.attempts < 3) retryTimer = setTimeout(() => {
+        if (isCurrent()) setAwardRetry((n) => n + 1);
+      }, 1500);
+    });
+    return () => { active = false; clearTimeout(retryTimer); };
+  }, [awardKey, awardUid, code, awardRetry]);
 
   async function onCreate() {
     setBusy(true); setErr('');
@@ -152,7 +218,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
       countdownDone.current = false;
       setGameReady(false);
     } catch (e) {
-      setErr(t('duel.err.auth'));
+      setErr(errorText(e));
     }
     setBusy(false);
   }
@@ -165,21 +231,43 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
       await joinDuel(c, playerName);
       setCode(c);
     } catch (e) {
-      setErr(t(`duel.err.${e.message}`) || t('duel.err.failed'));
+      setErr(errorText(e));
     }
     setBusy(false);
   }
 
   async function onSubmit() {
-    if (!answer.trim() || duel?.round?.[role]) return;
+    if (!answer.trim() || duel?.round?.[role] || busy || submitting.current || !roundKey) return;
+    const request = { key: roundKey };
+    submitting.current = request;
+    const isCurrent = () => mounted.current && currentRound.current === request.key && submitting.current === request;
     setBusy(true);
     try {
-      await submitDuelAnswer(code, answer);
+      const result = await submitDuelAnswer(code, answer, duel.qIndex);
+      if (!isCurrent()) return;
+      if (!result.advanced) setVerdict(result.correct);
       setAnswer('');
     } catch (e) {
-      setErr(t('duel.err.failed'));
+      if (isCurrent()) setErr(errorText(e));
+    } finally {
+      if (isCurrent()) setBusy(false);
+      if (submitting.current === request) submitting.current = null;
     }
-    setBusy(false);
+  }
+
+  function onPlayAgain() {
+    if (initialCode) consumedInvites.add(initialCode);
+    setConsumedInvite(initialCode);
+    currentRound.current = null;
+    currentAward.current = null;
+    submitting.current = null;
+    setCode(''); setDuel(null); setJoinInput('');
+    setJoining(false); setBusy(false); setErr('');
+    setShowRoundResult(false); setCountdown(null); setGameReady(true);
+    countdownDone.current = false;
+    setAwardError(false);
+    try { sessionStorage.removeItem('synaq_duel'); } catch {}
+    window.history.replaceState({}, '', '/app');
   }
 
   async function onCopy() {
@@ -195,11 +283,9 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
   const answered = !!duel?.round?.[role];
   const opp = role === 'host' ? 'guest' : 'host';
   const oppName = duel?.[opp]?.name || t('duel.opponent');
-  const myScore = role ? (duel?.scores?.[role] ?? 0) : 0;
-  const oppScore = role ? (duel?.scores?.[opp] ?? 0) : 0;
 
   // ── Гость по ссылке: подключение ──
-  if (fromLink && (joining || (!duel && !err))) {
+  if (fromLink && invitePending && (joining || (!duel && !err))) {
     return (
       <main style={{ textAlign: 'center', paddingTop: 48 }}>
         <p className="kicker">{t('nav.duel')}</p>
@@ -212,7 +298,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
 
   // ── Лобби (без ссылки) ──
   if (!duel) {
-    if (fromLink && err) {
+    if (fromLink && invitePending && err) {
       return (
         <main>
           <p className="kicker">{t('nav.duel')}</p>
@@ -332,15 +418,9 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
           </div>
         )}
 
-        <button className="btn accent full" style={{ marginTop: 20 }} onClick={() => {
-          setCode('');
-          setDuel(null);
-          setJoinInput('');
-          countdownDone.current = false;
-          xpDone.current = false;
-          sessionStorage.removeItem('synaq_duel');
-          window.history.replaceState({}, '', '/app');
-        }}>
+        {awardError && <p role="alert">{lang === 'ru' ? 'XP пока не сохранены.' : 'XP әзірге сақталмады.'} <button className="link" onClick={() => setAwardRetry((n) => n + 1)}>{lang === 'ru' ? 'Повторить' : 'Қайталау'}</button></p>}
+
+        <button className="btn accent full" style={{ marginTop: 20 }} onClick={onPlayAgain}>
           {t('duel.again')}
         </button>
       </main>
@@ -361,7 +441,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
 
   // ── Игра ──
   const round = duel.round || {};
-  const bothDone = round.host && round.guest;
+  const lastRound = duel.lastRound;
 
   return (
     <main>
@@ -373,53 +453,51 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
       <div className="duel-scoreboard">
         <div className={role === 'host' ? 'me' : ''}>
           <span>{duel.host?.name}{role === 'host' ? ' · ' + t('duel.you') : ''}</span>
-          <b>{myScore}</b>
+          <b>{duel.scores?.host ?? 0}</b>
           <small className="muted">⚡ {duel.speedWins?.host ?? 0}</small>
         </div>
         <div className="duel-vs">⚔</div>
         <div className={role === 'guest' ? 'me' : ''}>
-          <span>{oppName}</span>
-          <b>{oppScore}</b>
+          <span>{duel.guest?.name}{role === 'guest' ? ' · ' + t('duel.you') : ''}</span>
+          <b>{duel.scores?.guest ?? 0}</b>
           <small className="muted">⚡ {duel.speedWins?.guest ?? 0}</small>
         </div>
       </div>
 
-      {showRoundResult && bothDone && (
-        <div className={'fb ' + (round[role]?.correct ? 'ok' : 'no')} style={{ marginTop: 12 }}>
-          {round[role]?.correct ? t('duel.correct') : t('duel.wrong')}
+      {showRoundResult && lastRound && (
+        <div role="status" className={'fb ' + (lastRound[role]?.correct ? 'ok' : 'no')} style={{ marginTop: 12 }}>
+          {t('duel.round')} {lastRound.qIndex + 1}: {' '}
+          {lastRound[role]?.correct ? t('duel.correct') : t('duel.wrong')}
           {' · '}
-          {round[opp]?.correct ? `${oppName}: ${t('duel.oppCorrect')}` : `${oppName}: ${t('duel.oppWrong')}`}
+          {lastRound[opp]?.correct ? `${oppName}: ${t('duel.oppCorrect')}` : `${oppName}: ${t('duel.oppWrong')}`}
         </div>
       )}
 
-      {q && !showRoundResult && (
+      {q && (
         <>
           <p className="stmt">{q.statement}</p>
           {q.source === 'generated' && <span className="pill">{t('duel.generated')}</span>}
 
           {!answered ? (
             <>
-              <input
+              {q.options ? <div className="opts">{q.options.map((option, index) => <button key={index} className={'opt' + (answer === String(option) ? ' sel' : '')} disabled={busy} onClick={() => setAnswer(String(option))}>{option}</button>)}</div> : <input
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
                 placeholder={t('ui.24')}
                 onKeyDown={(e) => e.key === 'Enter' && onSubmit()}
                 autoFocus
-              />
+              />}
               <button className="btn accent full" disabled={busy || !answer.trim()} onClick={onSubmit}>
                 {t('common.check')}
               </button>
             </>
           ) : (
-            <div className={'fb ' + (round[role]?.correct ? 'ok' : 'no')}>
-              {round[role]?.correct ? t('duel.correct') : t('duel.wrong')}
+            <div className={'fb ' + (verdict === true ? 'ok' : verdict === false ? 'no' : '')}>
+              {verdict === null ? t('duel.waitOpp') : verdict ? t('duel.correct') : t('duel.wrong')}
               {!round[opp] && <span className="muted"> · {t('duel.waitOpp')}</span>}
             </div>
           )}
 
-          {answered && round[role] && !round[role].correct && (
-            <Explain q={q} given={round[role].value} />
-          )}
         </>
       )}
 

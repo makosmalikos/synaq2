@@ -2,28 +2,13 @@
 // Returns only the current child's entitlement. Family and payment metadata
 // remain server-side and are never exposed to the child client.
 
-function getAdmin() {
-  const { initializeApp, cert, getApps } = require('firebase-admin/app');
-  const { getAuth } = require('firebase-admin/auth');
-  const { getFirestore } = require('firebase-admin/firestore');
-
-  if (!getApps().length) {
-    initializeApp({
-      credential: cert({
-        projectId: process.env.FIREBASE_PROJECT_ID || 'synaq-88779',
-        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        privateKey: String(process.env.FIREBASE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
-      }),
-    });
-  }
-  return { auth: getAuth(), db: getFirestore() };
-}
+const { getAdmin } = require('../backend/lib/firebase-admin');
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'GET') return res.status(405).json({ error: 'method_not_allowed' });
   res.setHeader('Cache-Control', 'private, no-store');
 
-  if (!process.env.FIREBASE_CLIENT_EMAIL || !process.env.FIREBASE_PRIVATE_KEY) {
+  if (process.env.SYNAQ_USE_EMULATORS !== '1' && (!process.env.FIREBASE_CLIENT_EMAIL || !process.env.FIREBASE_PRIVATE_KEY)) {
     return res.status(500).json({ error: 'server_not_configured' });
   }
 
@@ -42,8 +27,13 @@ module.exports = async function handler(req, res) {
     if (!parentUid) return res.status(200).json({ pro: false });
 
     const family = await db.collection('families').doc(parentUid).get();
-    return res.status(200).json({ pro: family.exists && family.data()?.pro === true });
+    const expiresAt = family.data()?.proExpiresAt;
+    const expiresMs = expiresAt?.toMillis?.() ?? (expiresAt == null ? 0 : new Date(expiresAt).getTime());
+    const pro = family.exists && family.data()?.pro === true
+      && (expiresAt == null || Number.isFinite(expiresMs) && expiresMs > Date.now());
+    return res.status(200).json({ pro, expiresAt: pro && expiresMs ? new Date(expiresMs).toISOString() : null });
   } catch (e) {
+    if (e?.code === 'synaq/admin-config') return res.status(503).json({ error: 'server_not_configured' });
     if (e?.code?.startsWith('auth/')) return res.status(401).json({ error: 'login_required' });
     console.error('entitlement', e?.code || e?.message || e);
     return res.status(500).json({ error: 'failed' });

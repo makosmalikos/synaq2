@@ -5,7 +5,6 @@ const EARN = [
   { icon: '✓', key: 'answer', xp: '+5 XP', tone: 'blue' },
   { icon: '⚡', key: 'hour', xp: '+100 XP', tone: 'orange' },
   { icon: '⚔', key: 'duel', xp: '+50 XP', tone: 'violet' },
-  { icon: '◎', key: 'mock', xp: '+XP', tone: 'green' },
 ];
 
 export default function Rewards({ xp = 0, onGoTraining }) {

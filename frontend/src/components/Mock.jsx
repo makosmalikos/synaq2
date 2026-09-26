@@ -1,17 +1,18 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useLang } from '../i18n.jsx';
-import { api, isCorrect, translateQuestions } from '../api.js';
-import { auth, saveMock, isPro, getDiagnosticStatus, markDiagnosticComplete, getMocks } from '../firebase.js';
+import { api, translateQuestions } from '../api.js';
+import { auth, saveMock, watchPro, getDiagnosticStatus, markDiagnosticComplete, getMocks } from '../firebase.js';
 import { buildDiagnosis } from '../diagnosis.js';
 import Explain from './Explain.jsx';
 import DiagnosisReport from './DiagnosisReport.jsx';
 import { Kolhar } from './Training.jsx';
+import { readMockSession, writeMockSession, clearMockSession, discardMockSession, mockRemaining, mockSpent } from '../mockPersistence.js';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
 
 const recentKey = (school, type) => `synaq_recent_${type}_${school}`;
 const readRecent = (school, type) => {
-  try { return JSON.parse(localStorage.getItem(recentKey(school, type)) || '[]'); }
+  try { const value = JSON.parse(localStorage.getItem(recentKey(school, type)) || '[]'); return Array.isArray(value) ? value : []; }
   catch { return []; }
 };
 const rememberRecent = (school, type, values, limit) => {
@@ -44,10 +45,11 @@ const Stmt = ({ text }) => (
 
 export default function Mock({ onTrainTopic, onGoProgress }) {
   const { t, lang } = useLang();
+  const ru = lang === 'ru';
+  const uid = auth.currentUser?.uid || null;
   const [schools, setSchools] = useState([]);
   const [school, setSchool] = useState(null);
   const [pause, setPause] = useState(false);
-  const [startedAt, setStartedAt] = useState(null);
   const [pro, setPro] = useState(null);
   const [diagUsed, setDiagUsed] = useState(null);
   const [topics, setTopics] = useState([]);
@@ -62,6 +64,23 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   const [result, setResult] = useState(null);
   const [open_, setOpen] = useState(null);
   const [isDiagnosticRun, setIsDiagnosticRun] = useState(false);
+  const [startError, setStartError] = useState('');
+  const [starting, setStarting] = useState(false);
+  const [saveState, setSaveState] = useState('idle');
+  const [loadError, setLoadError] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [loadRetry, setLoadRetry] = useState(0);
+  const [sessionReady, setSessionReady] = useState(false);
+  const [recoveryAvailable, setRecoveryAvailable] = useState(true);
+  const [recoveryError, setRecoveryError] = useState('');
+  const [recoveryRetry, setRecoveryRetry] = useState(0);
+  const mounted = useRef(false);
+  const runRef = useRef(null);
+  const generationRef = useRef(0);
+  const startingRef = useRef(false);
+  const pendingSave = useRef(null);
+  const savingRef = useRef(false);
+  const attemptId = useRef(null);
   const tick = useRef(null);
   // Дедлайн мока в мс от эпохи, не «тиках» — не плывёт при фоновой вкладке
   // (setInterval троттлится, но Date.now() — нет). Сдвигается вперёд на длительность
@@ -75,37 +94,94 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   const submitRef = useRef(() => {});
   const submittingRef = useRef(false);
 
+  const isCurrent = () => mounted.current && auth.currentUser?.uid === uid;
+
   useEffect(() => {
-    api.schools().then(setSchools).catch(() => {});
-    api.topics().then(setTopics).catch(() => {});
-    const u = auth.currentUser;
-    if (!u) return;
-    Promise.all([
-      isPro(u.uid).then(setPro).catch(() => setPro(false)),
-      getDiagnosticStatus(u.uid).then((s) => setDiagUsed(s.used)).catch(() => setDiagUsed(false)),
-    ]);
+    mounted.current = true;
+    return () => { mounted.current = false; };
   }, []);
+
+  function applyRun(record) {
+    runRef.current = record;
+    attemptId.current = record.id;
+    pendingSave.current = record.pending;
+    deadlineRef.current = record.deadline;
+    pausedAtRef.current = record.pausedAt;
+    submittingRef.current = !!record.result;
+    setSchool(record.school); setTest(record.test); setMeta(record.meta);
+    setAnswers(record.answers); setFlags(record.flags); setI(record.index);
+    setPause(record.pausedAt !== null); setLeft(mockRemaining(record));
+    setHideTimer(!!record.hideTimer); setNavOpen(!!record.navOpen);
+    setIsDiagnosticRun(record.isDiagnosticRun); setResult(record.result);
+  }
+
+  function changeRun(patch) {
+    if (!isCurrent() || !runRef.current || runRef.current.uid !== uid) return null;
+    if (submittingRef.current && !patch.result) return null;
+    const record = { ...runRef.current, ...patch };
+    setRecoveryAvailable(writeMockSession(record));
+    applyRun(record);
+    return record;
+  }
+
+  useEffect(() => {
+    let alive = true;
+    generationRef.current += 1;
+    runRef.current = null; pendingSave.current = null;
+    startingRef.current = false; savingRef.current = false; submittingRef.current = false;
+    deadlineRef.current = null; pausedAtRef.current = null;
+    setSessionReady(false); setRecoveryError(''); setRecoveryAvailable(true);
+    setTest(null); setResult(null); setMeta(null); setSchool(null); setPause(false);
+    setSaveState('idle'); setStartError(''); setStarting(false);
+    if (!uid) { setSessionReady(true); return; }
+    const { record, error } = readMockSession(uid);
+    if (error === 'unavailable') setRecoveryAvailable(false);
+    if (error === 'invalid') setRecoveryError('invalid');
+    if (!record) { setSessionReady(true); return; }
+    (async () => {
+      try {
+        // Finished results do not need the current bank to retry a network save.
+        if (!record.result) await api.mockRestore(record.test);
+        if (!alive || !isCurrent()) return;
+        applyRun(record);
+        setSaveState(record.pending ? 'error' : record.result ? 'saved' : 'idle');
+        if (record.pending) void persistResult();
+      } catch {
+        if (alive && isCurrent()) setRecoveryError('restore');
+      } finally {
+        if (alive && isCurrent()) setSessionReady(true);
+      }
+    })();
+    return () => { alive = false; };
+  }, [uid, recoveryRetry]);
+
+  useEffect(() => {
+    let alive = true;
+    setLoading(true); setLoadError(false); setPro(null); setDiagUsed(null);
+    if (!uid) { setLoadError(true); setLoading(false); return; }
+    const stop = watchPro(uid, (value) => { if (alive && isCurrent()) setPro(value); }, () => {
+      if (alive && isCurrent()) { setLoadError(true); setPro(null); }
+    });
+    Promise.all([api.schools(), api.topics(), getDiagnosticStatus(uid)]).then(([list, topics, diagnostic]) => {
+      if (alive && isCurrent()) {
+        setSchools(list); setTopics(topics);
+        setDiagUsed((used) => used === true || diagnostic.used);
+      }
+    }).catch(() => { if (alive && isCurrent()) setLoadError(true); })
+      .finally(() => { if (alive && isCurrent()) setLoading(false); });
+    return () => { alive = false; stop(); };
+  }, [uid, loadRetry]);
 
   // Держим submitRef синхронным со «свежим» submit на каждый рендер.
   useEffect(() => {
     submitRef.current = submit;
   });
 
-  // Пауза между секциями: не идёт отсчёт, а по возобновлении сдвигаем дедлайн
-  // на то, сколько реально длилась пауза.
   useEffect(() => {
-    if (pause) {
-      pausedAtRef.current = Date.now();
-    } else if (pausedAtRef.current != null) {
-      if (deadlineRef.current != null) deadlineRef.current += Date.now() - pausedAtRef.current;
-      pausedAtRef.current = null;
-    }
-  }, [pause]);
-
-  useEffect(() => {
-    if (!test || result || pause || deadlineRef.current == null) return;
+    if (!sessionReady || !test || result || pause || deadlineRef.current == null) return;
     const tickFn = () => {
-      const remain = Math.max(0, Math.round((deadlineRef.current - Date.now()) / 1000));
+      if (!isCurrent()) return;
+      const remain = mockRemaining(runRef.current);
       setLeft(remain);
       if (remain <= 0) {
         clearInterval(tick.current);
@@ -115,7 +191,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     tickFn();
     tick.current = setInterval(tickFn, 1000);
     return () => clearInterval(tick.current);
-  }, [test, result, pause]);
+  }, [sessionReady, test, result, pause, uid]);
 
   const diagnosis = useMemo(() => {
     if (!result?.review?.length || !topics.length) return null;
@@ -123,8 +199,14 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   }, [result, topics, lang]);
 
   async function startExam(code, diagnostic = false) {
-    const uid = auth.currentUser?.uid;
-    const history = uid ? await getMocks(uid).catch(() => []) : [];
+    if (!isCurrent() || startingRef.current || !sessionReady || recoveryError || runRef.current
+      || pro === null || diagUsed === null || (!pro && diagUsed)) return;
+    startingRef.current = true; setStarting(true); setStartError('');
+    const generation = generationRef.current;
+    const active = () => isCurrent() && generationRef.current === generation;
+    try {
+    const history = uid ? (await getMocks(uid)).filter((item) => item.school === code) : [];
+    if (!active()) return;
     const excludeQuestionIds = [
       ...readRecent(code, 'questions'),
       ...history.flatMap((m) => api.reviewQuestionIds(m.review || [])),
@@ -134,58 +216,99 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
       ...history.map((m) => m.sourceId || api.reviewVariantId(code, m.review || [])).filter(Boolean),
     ];
     const v = await api.mockRandom(code, { excludeQuestionIds, excludeVariantIds });
-    if (!v) return;
+    if (!v) throw new Error('empty_exam');
+    const qs = await translateQuestions(v.questions, lang);
+    if (!active()) return;
     rememberRecent(code, 'questions', v.questions.map((q) => q.id).filter(Boolean), 600);
     if (v.sourceId) rememberRecent(code, 'variants', [v.sourceId], 7);
-    const qs = await translateQuestions(v.questions, lang);
-    setSchool(code);
-    setIsDiagnosticRun(diagnostic);
-    setMeta({ school: code, sections: v.sections, diagnostic });
-    setTest({ ...v, questions: qs });
     const startedNow = Date.now();
     const limitMin = v.timeLimitMin || 60;
-    pausedAtRef.current = null;
-    deadlineRef.current = startedNow + limitMin * 60 * 1000;
-    submittingRef.current = false;
-    setAnswers({}); setFlags({}); setI(0); setPause(false); setStartedAt(startedNow);
-    setLeft(limitMin * 60); setResult(null);
+    const freeRun = diagnostic || !pro;
+    const record = {
+      uid, id: crypto.randomUUID(), school: code, test: { ...v, questions: qs },
+      meta: { school: code, sections: v.sections, diagnostic: freeRun }, isDiagnosticRun: freeRun,
+      answers: {}, flags: {}, index: 0, startedAt: startedNow,
+      deadline: startedNow + limitMin * 60 * 1000, pausedAt: null, pausedMs: 0,
+      hideTimer: false, navOpen: false, result: null, pending: null,
+    };
+    setRecoveryAvailable(writeMockSession(record));
+    applyRun(record); setSaveState('idle');
+    } catch { if (active()) setStartError(ru ? 'Не удалось запустить тест. Попробуй ещё раз.' : 'Сынақ басталмады. Қайта көр.'); }
+    finally { if (active()) { startingRef.current = false; setStarting(false); } }
+  }
+
+  async function persistResult() {
+    if (!isCurrent() || !pendingSave.current || savingRef.current || pendingSave.current.uid !== uid) return;
+    savingRef.current = true; setSaveState('saving');
+    const pending = pendingSave.current;
+    const { uid: owner, payload, id } = pending;
+    try {
+      await saveMock(owner, payload, id);
+      if (payload.diagnostic) {
+        if (auth.currentUser?.uid !== owner) return;
+        await markDiagnosticComplete(owner);
+      }
+      const cleared = clearMockSession(owner, id);
+      if (!isCurrent() || pendingSave.current !== pending) return;
+      if (!cleared) setRecoveryAvailable(false);
+      pendingSave.current = null;
+      runRef.current = { ...runRef.current, pending: null };
+      if (payload.diagnostic) setDiagUsed(true);
+      setSaveState('saved');
+    } catch { if (isCurrent() && pendingSave.current === pending) setSaveState('error'); }
+    finally { if (!pendingSave.current || pendingSave.current === pending) savingRef.current = false; }
   }
 
   async function submit() {
     // Может позвать и кнопка «Завершить», и таймер по истечении времени —
     // защита от двойной отправки (и задвоенной записи в истории результатов).
-    if (!test || submittingRef.current) return;
+    const run = runRef.current;
+    if (!isCurrent() || !run || run.uid !== uid || run.result || submittingRef.current) return;
     submittingRef.current = true;
     clearInterval(tick.current);
     let r;
     try {
-      r = await api.mockSubmit(test.id, answers);
+      r = await api.mockSubmit(run.test.id, run.answers);
+      if (!r) throw new Error('missing_exam');
     } catch {
       submittingRef.current = false;
+      if (isCurrent()) setStartError(ru ? 'Не удалось проверить тест. Повтори завершение.' : 'Сынақ тексерілмеді. Аяқтауды қайтала.');
       return;
     }
-    if (!r) { submittingRef.current = false; return; }
-    const spentSec = startedAt ? Math.round((Date.now() - startedAt) / 1000) : null;
-    setResult(r);
-    const uid = auth.currentUser?.uid;
-    if (!uid) return;
+    if (!isCurrent() || runRef.current?.id !== run.id) return;
     const payload = {
       ...r,
-      school: meta?.school || school,
-      spentSec,
-      limitMin: test.timeLimitMin || null,
-      diagnostic: isDiagnosticRun || (!pro && !diagUsed),
+      school: run.school, spentSec: mockSpent(run), limitMin: run.test.timeLimitMin || null,
+      diagnostic: run.isDiagnosticRun || (!pro && !diagUsed),
+      shortened: !!run.test.shortened, targetCount: run.test.targetCount,
     };
-    try {
-      await saveMock(uid, payload);
-      if (payload.diagnostic && !pro) {
-        await markDiagnosticComplete(uid);
-        setDiagUsed(true);
-      }
-    } catch {}
+    changeRun({ result: r, pending: { uid, payload, id: run.id }, pausedAt: null });
+    void persistResult();
   }
 
+  function resumeExam() {
+    const run = runRef.current;
+    if (!run || run.pausedAt == null) return;
+    const duration = Math.max(0, Date.now() - run.pausedAt);
+    changeRun({ pausedAt: null, pausedMs: run.pausedMs + duration, deadline: run.deadline + duration });
+  }
+
+  function goToQuestion(index) {
+    const run = runRef.current;
+    if (!run || run.result || mockRemaining(run) <= 0 || index < 0 || index >= run.test.questions.length) return;
+    const cur = run.test.questions[run.index]?.section;
+    const nxt = run.test.questions[index]?.section;
+    changeRun({ index, navOpen: false, pausedAt: index > run.index && nxt && cur && nxt !== cur ? Date.now() : null });
+  }
+
+  const formatLabel = (value) => `${value.count} ${ru ? 'заданий' : 'тапсырма'} · ${value.timeLimitMin} ${ru ? 'мин' : 'мин'}`;
+  const shortenedLabel = ru ? 'Сокращённый вариант: не все разделы банка заполнены' : 'Қысқартылған нұсқа: банктің кейбір бөлімдері әлі толық емес';
+  const recoveryNotice = !recoveryAvailable && <p role="alert">{ru ? 'Автосохранение в этой вкладке недоступно. Не обновляй страницу и не переходи в другой раздел до сохранения результата.' : 'Бұл қойындыда автоматты сақтау қолжетімсіз. Нәтиже сақталғанша бетті жаңартпа және басқа бөлімге өтпе.'}</p>;
+  const startNotice = <>{recoveryNotice}{startError && <p role="alert">{startError}</p>}{starting && <p role="status">{ru ? 'Подготавливаем тест…' : 'Сынақ дайындалуда…'}</p>}</>;
+
   const back = () => {
+    if (!isCurrent() || pendingSave.current || saveState !== 'saved') return;
+    runRef.current = null;
     setTest(null); setResult(null); setMeta(null); setSchool(null);
     setPause(false); setIsDiagnosticRun(false);
   };
@@ -194,20 +317,33 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     alert(t('diag.parentPro'));
   };
 
+  if (!sessionReady || (runRef.current && runRef.current.uid !== uid)) return <main><p role="status">{t('common.loading')}</p></main>;
+  if (recoveryError) return <main><p role="alert">{ru ? 'Не удалось восстановить сохранённый пробник. Он не удалён. Попробуй ещё раз или явно начни заново.' : 'Сақталған сынақты қалпына келтіру мүмкін болмады. Ол жойылған жоқ. Қайта көр немесе жаңадан баста.'}</p>
+    <button type="button" className="btn" onClick={() => setRecoveryRetry((value) => value + 1)}>{ru ? 'Повторить' : 'Қайталау'}</button>
+    <button type="button" className="btn ghost" onClick={() => {
+      if (discardMockSession(uid)) setRecoveryRetry((value) => value + 1);
+      else setRecoveryAvailable(false);
+    }}>{ru ? 'Удалить сохранённый пробник' : 'Сақталған сынақты жою'}</button>{recoveryNotice}</main>;
+
+  if (!school && loadError) return <main><p role="alert">{ru ? 'Не удалось загрузить тесты, подписку или прогресс. Проверь соединение.' : 'Сынақтар, жазылым немесе прогресс жүктелмеді. Байланысты тексер.'}</p>
+    <button className="btn" onClick={() => setLoadRetry((value) => value + 1)}>{ru ? 'Повторить' : 'Қайталау'}</button></main>;
+  if (!school && (loading || pro === null || diagUsed === null)) return <main><p role="status">{t('common.loading')}</p></main>;
+
   // ── тегін: диагностикалық сынақ немесе Pro upsell ──
   if (!school && pro === false && diagUsed !== null) {
     if (!diagUsed) {
       return (
         <main>
+          {startNotice}
           <p className="kicker">{t('diag.freeMock')}</p>
           <h1>{t('diag.freeMockTitle')}</h1>
           <p className="muted" style={{ marginTop: 8, lineHeight: 1.6 }}>{t('diag.freeMockSub')}</p>
           <div className="list" style={{ marginTop: 16 }}>
             {schools.map((s) => (
               <div className="row-item" key={s.code}
-                onClick={() => s.ready && startExam(s.code, true)}
+                onClick={() => s.ready && !starting && startExam(s.code, true)}
                 style={{ opacity: s.ready ? 1 : 0.5, cursor: s.ready ? 'pointer' : 'default' }}>
-                <b style={{ font: "700 18px 'Lora',serif", flex: 1 }}>{s.code}</b>
+                <div style={{ flex: 1 }}><b>{s.code}</b><p className="muted">{formatLabel(s)}</p>{s.shortened && <small>{shortenedLabel} ({s.count}/{s.targetCount})</small>}</div>
                 <span className="rt">{s.ready ? t('diag.startFree') : t('ui.60')}</span>
               </div>
             ))}
@@ -239,15 +375,16 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
 
   if (!school) return (
     <main>
+      {startNotice}
       <p className="kicker">{t('ui.11')}</p>
       <h1>{t('ui.12')}</h1>
       <p className="muted" style={{ marginTop: 6 }}>{t('ui.13')}</p>
       <div className="list" style={{ marginTop: 16 }}>
         {schools.map((s) => (
           <div className="row-item" key={s.code}
-            onClick={() => s.ready && startExam(s.code, false)}
+            onClick={() => s.ready && !starting && startExam(s.code, false)}
             style={{ opacity: s.ready ? 1 : 0.5, cursor: s.ready ? 'pointer' : 'default' }}>
-            <b style={{ font: "700 18px 'Lora',serif", flex: 1 }}>{s.code}</b>
+            <div style={{ flex: 1 }}><b>{s.code}</b><p className="muted">{formatLabel(s)}</p>{s.shortened && <small>{shortenedLabel} ({s.count}/{s.targetCount})</small>}</div>
             <span className="rt">{s.ready ? '→' : t('ui.60')}</span>
           </div>
         ))}
@@ -257,16 +394,21 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
 
   if (test && pause) return (
     <main style={{ textAlign: 'center', paddingTop: 60 }}>
+      {recoveryNotice}
       <p className="kicker">{t('ui.61')}</p>
       <h1 style={{ marginBottom: 8 }}>{t('ui.62')}</h1>
       <p className="muted" style={{ maxWidth: 380, margin: '0 auto 24px' }}>{t('ui.63')}</p>
-      <button type="button" className="btn" onClick={() => setPause(false)}>{t('ui.64')}</button>
+      <button type="button" className="btn" onClick={resumeExam}>{t('ui.64')}</button>
       <p className="muted" style={{ fontSize: 13, marginTop: 14 }}>{t('ui.65')}</p>
     </main>
   );
 
   if (result) return (
     <main>
+      {recoveryNotice}
+      {saveState === 'saving' && <p role="status">{ru ? 'Сохраняем результат…' : 'Нәтиже сақталуда…'}</p>}
+      {saveState === 'error' && <p role="alert">{ru ? (recoveryAvailable ? 'Результат пока не отправлен. Он сохранён в этой вкладке для повторной попытки.' : 'Результат пока не сохранён. Не закрывай страницу.') : (recoveryAvailable ? 'Нәтиже әлі жіберілмеді. Ол қайта жіберу үшін осы қойындыда сақталған.' : 'Нәтиже әлі сақталмады. Бетті жаппа.')} <button type="button" className="link" onClick={persistResult}>{ru ? 'Повторить сохранение' : 'Қайта сақтау'}</button></p>}
+      {test.shortened && <p className="muted">{shortenedLabel} ({test.questions.length}/{test.targetCount})</p>}
       <p className="kicker">{t('diag.result')} · {meta.school}</p>
       <div className="hero-card" style={{ marginBottom: 18 }}>
         {result.scoring === 'bil' ? (
@@ -330,20 +472,23 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
         </>
       )}
 
-      <button type="button" className="btn ghost" style={{ marginTop: 16 }} onClick={back}>{t('ui.21')}</button>
+      <button type="button" className="btn ghost" disabled={saveState === 'saving' || saveState === 'error'} style={{ marginTop: 16 }} onClick={back}>{t('ui.21')}</button>
     </main>
   );
 
   const q = test.questions[i];
-  const toggleFlag = () => setFlags({ ...flags, [q.num]: !flags[q.num] });
-  const pick = (val) => setAnswers({ ...answers, [q.num]: val });
+  const toggleFlag = () => changeRun({ flags: { ...runRef.current.flags, [q.num]: !runRef.current.flags[q.num] } });
+  const pick = (val) => { if (mockRemaining(runRef.current) > 0) changeRun({ answers: { ...runRef.current.answers, [q.num]: val } }); };
   const answered = (n) => answers[n] != null && answers[n] !== '';
 
   return (
     <main>
+      {startNotice}
+      {left <= 0 && <button type="button" className="btn accent" onClick={submit}>{ru ? 'Завершить и сохранить результат' : 'Аяқтау және нәтижені сақтау'}</button>}
+      {test.shortened && <p className="muted">{shortenedLabel} · {formatLabel(test)}</p>}
       <div className="exam-top">
         <span className="ttl">{meta.title || meta.school}</span>
-        <span className="clock" onClick={() => setHideTimer(!hideTimer)} style={{ cursor: 'pointer' }}>
+        <span className="clock" onClick={() => changeRun({ hideTimer: !hideTimer })} style={{ cursor: 'pointer' }}>
           {hideTimer ? '⏱' : formatExamTimer(left, lang)}
         </span>
       </div>
@@ -360,7 +505,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
       </div>
 
       {q.subject === 'kolzar' ? (
-        <Kolhar q={q} answer={answers[q.num]} onPick={pick} disabled={false} correct={null} />
+        <Kolhar q={q} answer={answers[q.num]} onPick={pick} disabled={left <= 0} correct={null} />
       ) : (
         <>
           <Stmt text={q.statement} />
@@ -368,13 +513,13 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
           {q.options ? (
             <div className="opts">
               {q.options.map((o, k) => (
-                <button type="button" key={k} className={'opt' + (answers[q.num] === o ? ' sel' : '')} onClick={() => pick(o)}>
+                <button type="button" key={k} disabled={left <= 0} className={'opt' + (answers[q.num] === o ? ' sel' : '')} onClick={() => pick(o)}>
                   <span className="lt">{LT[k]}</span><span>{o}</span>
                 </button>
               ))}
             </div>
           ) : (
-            <input value={answers[q.num] || ''} onChange={(e) => pick(e.target.value)} placeholder={t('ui.24')} />
+            <input disabled={left <= 0} value={answers[q.num] || ''} onChange={(e) => pick(e.target.value)} placeholder={t('ui.24')} />
           )}
         </>
       )}
@@ -384,21 +529,16 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
           {test.questions.map((qq, k) => (
             <div key={qq.num}
               className={'qcell' + (answered(qq.num) ? ' done' : '') + (k === i ? ' cur' : '') + (flags[qq.num] ? ' flag' : '')}
-              onClick={() => { setI(k); setNavOpen(false); }}>{qq.num}</div>
+              onClick={() => goToQuestion(k)}>{qq.num}</div>
           ))}
         </div>
       )}
 
       <div className="navbar">
-        <button type="button" className="btn ghost" disabled={i === 0} onClick={() => setI(i - 1)}>{t('ui.22')}</button>
-        <button type="button" className="navpill" onClick={() => setNavOpen(!navOpen)}>{i + 1} / {test.questions.length} ▲</button>
+        <button type="button" className="btn ghost" disabled={i === 0 || left <= 0} onClick={() => goToQuestion(i - 1)}>{t('ui.22')}</button>
+        <button type="button" className="navpill" onClick={() => changeRun({ navOpen: !navOpen })}>{i + 1} / {test.questions.length} ▲</button>
         {i + 1 < test.questions.length
-          ? <button type="button" className="btn" onClick={() => {
-              const cur = test.questions[i]?.section;
-              const nxt = test.questions[i + 1]?.section;
-              setI(i + 1);
-              if (nxt && cur && nxt !== cur) setPause(true);
-            }}>{t('ui.9')}</button>
+          ? <button type="button" className="btn" disabled={left <= 0} onClick={() => goToQuestion(i + 1)}>{t('ui.9')}</button>
           : <button type="button" className="btn accent" onClick={submit}>{t('ui.23')}</button>}
       </div>
     </main>

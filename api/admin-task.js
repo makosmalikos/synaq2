@@ -10,31 +10,14 @@
 // через этот серверный путь. frontend/src/bank.js подмешивает bankTasks в POOL
 // при загрузке приложения, так что задача появляется в Тренировке без передеплоя.
 
-function getAdminApp() {
-  if (!process.env.FIREBASE_PRIVATE_KEY || !process.env.FIREBASE_CLIENT_EMAIL) return null;
-  const { initializeApp, cert, getApps } = require('firebase-admin/app');
-  if (!getApps().length) {
-    initializeApp({
-      credential: cert({
-        projectId: process.env.FIREBASE_PROJECT_ID || 'synaq-88779',
-        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        privateKey: String(process.env.FIREBASE_PRIVATE_KEY).replace(/\\n/g, '\n'),
-      }),
-    });
-  }
-  return true;
-}
+const { getAdmin } = require('../backend/lib/firebase-admin');
 
 function getAdminAuth() {
-  if (!getAdminApp()) return null;
-  const { getAuth } = require('firebase-admin/auth');
-  return getAuth();
+  return getAdmin().auth;
 }
 
 function getAdminDb() {
-  if (!getAdminApp()) return null;
-  const { getFirestore } = require('firebase-admin/firestore');
-  return getFirestore();
+  return getAdmin().db;
 }
 
 const norm = (s) => String(s || '').trim().toLowerCase();
@@ -131,6 +114,7 @@ module.exports = async function handler(req, res) {
     try {
       admin = await verifyAdmin(idToken);
     } catch (e) {
+      if (e?.code === 'synaq/admin-config') throw e;
       console.error('admin-task verify', e.code || e.message);
       admin = null;
     }
@@ -176,6 +160,7 @@ module.exports = async function handler(req, res) {
     await db.collection('bankTasks').doc(id).set(task);
     return res.status(200).json({ id });
   } catch (e) {
+    if (e?.code === 'synaq/admin-config') return res.status(503).json({ error: 'server_not_configured' });
     console.error('admin-task', e.code || e.message);
     return res.status(500).json({ error: 'failed' });
   }

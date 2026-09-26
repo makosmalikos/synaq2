@@ -3,22 +3,7 @@
 // The child's Firebase UID stays unchanged, so progress and subscription links
 // remain intact for all existing accounts.
 
-function getAdmin() {
-  const { initializeApp, cert, getApps } = require('firebase-admin/app');
-  const { getAuth } = require('firebase-admin/auth');
-  const { getFirestore } = require('firebase-admin/firestore');
-
-  if (!getApps().length) {
-    initializeApp({
-      credential: cert({
-        projectId: process.env.FIREBASE_PROJECT_ID || 'synaq-88779',
-        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        privateKey: String(process.env.FIREBASE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
-      }),
-    });
-  }
-  return { auth: getAuth(), db: getFirestore() };
-}
+const { getAdmin } = require('../backend/lib/firebase-admin');
 
 function bodyOf(req) {
   if (typeof req.body === 'string') {
@@ -28,11 +13,8 @@ function bodyOf(req) {
 }
 
 module.exports = async function handler(req, res) {
+  res.setHeader('Cache-Control', 'private, no-store');
   if (req.method !== 'POST') return res.status(405).json({ error: 'method_not_allowed' });
-  if (!process.env.FIREBASE_CLIENT_EMAIL || !process.env.FIREBASE_PRIVATE_KEY) {
-    return res.status(500).json({ error: 'server_not_configured' });
-  }
-
   try {
     const match = String(req.headers.authorization || '').match(/^Bearer\s+(.+)$/i);
     if (!match) return res.status(401).json({ error: 'login_required' });
@@ -72,9 +54,16 @@ module.exports = async function handler(req, res) {
     }
 
     await auth.updateUser(childUid, { password });
+    try {
+      await auth.revokeRefreshTokens(childUid);
+    } catch (error) {
+      console.error('child-password: token revocation failed', error?.code);
+      return res.status(503).json({ error: 'token_revocation_failed', passwordChanged: true });
+    }
     return res.status(200).json({ ok: true });
   } catch (e) {
-    if (e?.code?.startsWith('auth/')) return res.status(401).json({ error: 'login_required' });
+    if (e?.code === 'synaq/admin-config') return res.status(503).json({ error: 'server_not_configured' });
+    if (e?.code?.startsWith('auth/id-token') || ['auth/argument-error', 'auth/user-disabled'].includes(e?.code)) return res.status(401).json({ error: 'login_required' });
     console.error('child-password', e?.code || e?.message || e);
     return res.status(500).json({ error: 'failed' });
   }

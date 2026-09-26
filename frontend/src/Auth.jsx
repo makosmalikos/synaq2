@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { registerParent, loginParent, loginChild, loginAdmin, loginGoogle, resetParentPassword, errText, childErrText } from './firebase.js';
 import { useLang, LangSwitch } from './i18n.jsx';
 import Brand from './Brand.jsx';
@@ -26,10 +26,26 @@ export default function Auth({ onClose, duelCode = '' }) {
   const [showPin, setShowPin] = useState(false);
   const [info, setInfo] = useState('');
 
+  const requestPending = useRef(false);
+  const mountedRef = useRef(true);
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => { mountedRef.current = false; };
+  }, []);
+
   const run = (fn, formatError = (e) => errText(e, lang)) => async () => {
+    // React state updates are asynchronous; lock before starting the request.
+    if (requestPending.current || !mountedRef.current) return;
+    requestPending.current = true;
     setErr(''); setInfo(''); setBusy(true);
-    try { await fn(); } catch (e) { setErr(formatError(e)); }
-    setBusy(false);
+    try {
+      await fn();
+    } catch (e) {
+      if (mountedRef.current) setErr(formatError(e));
+    } finally {
+      requestPending.current = false;
+      if (mountedRef.current) setBusy(false);
+    }
   };
 
   const submitChild = (e) => {
@@ -154,9 +170,12 @@ export default function Auth({ onClose, duelCode = '' }) {
             <p style={S.kicker}>{t('auth.parentAccount')}</p>
             <h1 style={S.h1}>{t('auth.create')}</h1>
             <p style={S.hint}>{t('auth.step2')}</p>
-            <input style={S.input} placeholder={t('auth.yourName')} value={pname} onChange={(e) => setPname(e.target.value)} />
-            <input style={S.input} placeholder={t('auth.email')} value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input style={S.input} type="password" placeholder={t('auth.password')} value={pass} onChange={(e) => setPass(e.target.value)} />
+            <input style={S.input} aria-label={t('auth.yourName')} autoComplete="name"
+              placeholder={t('auth.yourName')} value={pname} onChange={(e) => setPname(e.target.value)} />
+            <input style={S.input} type="email" aria-label={t('auth.email')} autoComplete="email"
+              placeholder={t('auth.email')} value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input style={S.input} type="password" aria-label={t('auth.password')} autoComplete="new-password"
+              placeholder={t('auth.password')} value={pass} onChange={(e) => setPass(e.target.value)} />
             <Err v={err} />
             <button style={{ ...S.dark, marginTop: 6 }} disabled={busy || !email || pass.length < 6}
               onClick={run(() => registerParent(email, pass, pname))}>{t('auth.create')} →</button>
@@ -195,8 +214,10 @@ export default function Auth({ onClose, duelCode = '' }) {
           <div style={{ animation: 'rise .3s ease both' }}>
             <h1 style={S.h1}>{t('auth.parent')}</h1>
             <p style={S.hint}>{t('auth.parentHint')}</p>
-            <input style={S.input} type="email" autoComplete="email" placeholder={t('auth.email')} value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input style={S.input} type="password" autoComplete="current-password" placeholder={t('auth.passwordLogin')} value={pass} onChange={(e) => setPass(e.target.value)} />
+            <input style={S.input} type="email" aria-label={t('auth.email')} autoComplete="email"
+              placeholder={t('auth.email')} value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input style={S.input} type="password" aria-label={t('auth.passwordLogin')} autoComplete="current-password"
+              placeholder={t('auth.passwordLogin')} value={pass} onChange={(e) => setPass(e.target.value)} />
             <Err v={err} />
             {info && <p style={{ color: '#4C7A4E', fontSize: 13, margin: '10px 0 0', textAlign: 'center' }}>{info}</p>}
             <button style={{ ...S.dark, marginTop: 6 }} disabled={busy || !email.trim()} onClick={run(() => loginParent(email, pass))}>{t('auth.login')}</button>
@@ -205,7 +226,7 @@ export default function Auth({ onClose, duelCode = '' }) {
               disabled={busy || !email.trim()}
               onClick={run(async () => {
                 await resetParentPassword(email);
-                setInfo(t('auth.resetSent'));
+                if (mountedRef.current) setInfo(t('auth.resetSent'));
               })}
             >
               {t('auth.forgot')}
@@ -258,7 +279,7 @@ const Logo = () => (
   <Brand compact />
 );
 
-const Err = ({ v }) => (v ? <p style={{ color: '#B0342B', fontSize: 13, margin: '10px 0 0', textAlign: 'center' }}>{v}</p> : null);
+const Err = ({ v }) => (v ? <p role="alert" style={{ color: '#B0342B', fontSize: 13, margin: '10px 0 0', textAlign: 'center' }}>{v}</p> : null);
 
 const S = {
   overlay: {

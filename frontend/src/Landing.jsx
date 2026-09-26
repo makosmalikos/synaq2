@@ -35,8 +35,9 @@ function ytEmbed(url) {
 }
 
 function Demo() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [failed, setFailed] = React.useState(false);
+  const [play, setPlay] = React.useState(false);
   const box = { position: 'relative', width: '100%', borderRadius: '18px', overflow: 'hidden', background: '#167ACB' };
   const fill = { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0, display: 'block' };
 
@@ -54,13 +55,13 @@ function Demo() {
   const yt = ytEmbed(DEMO_VIDEO);
   return (
     <div className="lp-demo-frame" style={box}>
-      {yt
+      {!play ? <button type="button" onClick={() => setPlay(true)} style={{ ...fill, cursor: 'pointer', color: '#fff', background: '#167ACB', font: '700 18px Manrope,sans-serif' }} aria-label={lang === 'ru' ? 'Посмотреть демонстрацию' : 'Демонстрацияны көру'}>▶ {lang === 'ru' ? 'Посмотреть, как работает SYNAQ' : 'SYNAQ қалай жұмыс істейтінін көру'}</button> : yt
         ? <>
             <iframe src={yt} title="Synaq demo" loading="lazy" style={{ ...fill, pointerEvents: 'none' }}
               allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />
             <div style={fill} />
           </>
-        : <video controls playsInline muted autoPlay loop preload="metadata"
+        : <video controls playsInline autoPlay preload="none"
             onError={() => setFailed(true)} style={{ ...fill, objectFit: 'cover', background: '#0D5FA4' }}>
             <source src={DEMO_VIDEO_MOBILE} media="(max-width: 640px)" type="video/mp4" />
             <source src={DEMO_VIDEO} type="video/mp4" />
@@ -95,7 +96,7 @@ function HeroVisual() {
               {students.map((student, index) => (
                 <div className={`lp-student-cutout lp-student-cutout-${index + 1}`} key={student.src}>
                   <div className="lp-student-pattern" aria-hidden="true"><i /><i /><i /></div>
-                  <img src={student.src} alt={set === 0 ? student.alt : ''} />
+                  <img src={student.src} alt={set === 0 ? student.alt : ''} decoding="async" />
                 </div>
               ))}
             </div>
@@ -526,7 +527,7 @@ export default function Landing({ onStart, onDiagnostic }) {
   <section id="how" style={{background:'#F2F8FE',padding:'78px 0',borderTop:'1px solid rgba(19,40,60,.06)'}}>
     <div className="lp-pad" style={{maxWidth:'1280px',margin:'0 auto',padding:'0 56px'}}>
       <div style={{textAlign:'center',marginBottom:'40px',maxWidth:'640px',marginLeft:'auto',marginRight:'auto'}}>
-        <div style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#2B91EA',marginBottom:'14px'}}>Как это работает</div>
+        <div style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#2B91EA',marginBottom:'14px'}}>{lang === 'ru' ? 'Как это работает' : 'Қалай жұмыс істейді'}</div>
         <h2 style={{font:'800 46px/1.08 \'Manrope\',sans-serif',letterSpacing:'-.025em',margin:'0 0 12px'}}>{t('lp.18')}</h2>
         <p style={{fontSize:'17px',color:'#60758A',margin:'0'}}>{t('lp.19')}</p>
       </div>

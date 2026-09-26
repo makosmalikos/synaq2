@@ -8,20 +8,10 @@
 //   ADMIN_EMAIL_1, ADMIN_EMAIL_2 = реальные email двух администраторов
 //   FIREBASE_PRIVATE_KEY + FIREBASE_CLIENT_EMAIL + FIREBASE_PROJECT_ID (как в webhook/explain)
 
+const { getAdmin } = require('../backend/lib/firebase-admin');
+
 function getAdminAuth() {
-  if (!process.env.FIREBASE_PRIVATE_KEY || !process.env.FIREBASE_CLIENT_EMAIL) return null;
-  const { initializeApp, cert, getApps } = require('firebase-admin/app');
-  const { getAuth } = require('firebase-admin/auth');
-  if (!getApps().length) {
-    initializeApp({
-      credential: cert({
-        projectId: process.env.FIREBASE_PROJECT_ID || 'synaq-88779',
-        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        privateKey: String(process.env.FIREBASE_PRIVATE_KEY).replace(/\\n/g, '\n'),
-      }),
-    });
-  }
-  return getAuth();
+  return getAdmin().auth;
 }
 
 const norm = (s) => String(s || '').trim().toLowerCase();
@@ -74,6 +64,7 @@ module.exports = async function handler(req, res) {
     });
     return res.status(200).json({ token });
   } catch (e) {
+    if (e?.code === 'synaq/admin-config') return res.status(503).json({ error: 'server_not_configured' });
     console.error('admin-login', e.code || e.message);
     return res.status(500).json({ error: 'failed' });
   }

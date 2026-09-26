@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLang } from '../i18n.jsx';
 import { explain, explainError } from '../explain.js';
 
@@ -11,44 +11,54 @@ export default function Explain({ q, given = null }) {
   const [text, setText] = useState('');
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
+  const requestRef = useRef(0);
+  const ru = lang === 'ru';
+  useEffect(() => {
+    requestRef.current += 1;
+    setText(''); setErr(''); setBusy(false);
+    return () => { requestRef.current += 1; };
+  }, [q.id, q.qid, q.statement, given, lang]);
 
   const wrong = given != null && String(given).trim() !== '';
 
   async function run() {
+    if (busy) return;
+    const request = ++requestRef.current;
     setBusy(true); setErr(''); setText('');
     try {
-      setText(await explain(q, { given: wrong ? given : null, lang }));
+      const value = await explain(q, { given: wrong ? given : null, lang });
+      if (request === requestRef.current) setText(value);
     } catch (e) {
-      setErr(explainError(e.message));
+      if (request === requestRef.current) setErr(ru ? 'Не удалось получить объяснение. Попробуй ещё раз.' : explainError(e.message));
     }
-    setBusy(false);
+    if (request === requestRef.current) setBusy(false);
   }
 
   return (
     <div style={{ marginTop: 14 }}>
       {q.solution ? (
         <div className="sol">
-          <div className="lead">Қысқа шешім</div>
+          <div className="lead">{ru ? 'Краткое решение' : 'Қысқа шешім'}</div>
           {q.solution}
         </div>
       ) : null}
 
       {!text && !busy && (
         <button className="btn ghost full" onClick={run} style={{ marginTop: q.solution ? 10 : 0 }}>
-          {wrong ? 'Неге қате болды? Толық түсіндір' : 'Қадам-қадам түсіндір'}
+          {wrong ? (ru ? 'Почему ошибка? Объяснить подробно' : 'Неге қате болды? Толық түсіндір') : (ru ? 'Объяснить по шагам' : 'Қадам-қадам түсіндір')}
         </button>
       )}
 
       {busy && (
         <div className="sol" style={{ marginTop: 10 }}>
-          <div className="lead">Түсіндірме</div>
-          <span className="muted">Дайындалуда…</span>
+          <div className="lead">{ru ? 'Объяснение' : 'Түсіндірме'}</div>
+          <span className="muted">{ru ? 'Подготавливаем…' : 'Дайындалуда…'}</span>
         </div>
       )}
 
       {text && (
         <div className="sol" style={{ marginTop: 10, whiteSpace: 'pre-wrap' }}>
-          <div className="lead">Толық түсіндірме</div>
+          <div className="lead">{ru ? 'Подробное объяснение' : 'Толық түсіндірме'}</div>
           {text}
         </div>
       )}

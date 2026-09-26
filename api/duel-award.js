@@ -4,22 +4,7 @@
 
 const XP = { CORRECT: 5, SPEED: 3, WIN: 50 };
 const DUEL_SIZE = 15;
-
-function getAdmin() {
-  const { initializeApp, cert, getApps } = require('firebase-admin/app');
-  const { getAuth } = require('firebase-admin/auth');
-  const { getFirestore } = require('firebase-admin/firestore');
-  if (!getApps().length) {
-    initializeApp({
-      credential: cert({
-        projectId: process.env.FIREBASE_PROJECT_ID || 'synaq-88779',
-        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        privateKey: String(process.env.FIREBASE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
-      }),
-    });
-  }
-  return { auth: getAuth(), db: getFirestore() };
-}
+const { getAdmin } = require('../backend/lib/firebase-admin');
 
 function bodyOf(req) {
   if (typeof req.body === 'string') {
@@ -41,7 +26,7 @@ function winnerOf(scores, speedWins) {
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'method_not_allowed' });
   res.setHeader('Cache-Control', 'private, no-store');
-  if (!process.env.FIREBASE_CLIENT_EMAIL || !process.env.FIREBASE_PRIVATE_KEY) {
+  if (process.env.SYNAQ_USE_EMULATORS !== '1' && (!process.env.FIREBASE_CLIENT_EMAIL || !process.env.FIREBASE_PRIVATE_KEY)) {
     return res.status(500).json({ error: 'server_not_configured' });
   }
 
@@ -54,7 +39,9 @@ module.exports = async function handler(req, res) {
     const code = String(bodyOf(req).code || '').trim().toUpperCase();
     if (!/^[A-HJ-NP-Z2-9]{6}$/.test(code)) return res.status(400).json({ error: 'bad_code' });
 
-    const duelRef = db.collection('duels').doc(code);
+    // Only this server-only record can attest a completed game. Legacy/client
+    // room documents are deliberately not accepted as evidence for XP.
+    const duelRef = db.collection('duelPrivate').doc(code);
     const statsRef = db.collection('results').doc(user.uid).collection('stats').doc('summary');
     const awardRef = db.collection('results').doc(user.uid).collection('awards').doc(`duel_${code}`);
 
@@ -63,14 +50,17 @@ module.exports = async function handler(req, res) {
         tx.get(duelRef), tx.get(awardRef), tx.get(statsRef),
       ]);
       if (awardSnap.exists) return { gain: Number(awardSnap.data()?.gain) || 0, credited: false };
-      if (!duelSnap.exists || duelSnap.data()?.status !== 'finished') {
+      if (!duelSnap.exists || duelSnap.data()?.version !== 2 || duelSnap.data()?.status !== 'finished' || !duelSnap.data()?.result) {
         const error = new Error('duel_not_finished');
         error.status = 409;
         throw error;
       }
 
-      const duel = duelSnap.data();
-      const role = duel.host?.uid === user.uid ? 'host' : duel.guest?.uid === user.uid ? 'guest' : null;
+      const duel = duelSnap.data().result;
+      const role = duel.hostUid === user.uid ? 'host' : duel.guestUid === user.uid ? 'guest' : null;
+      if (!duel.hostUid || !duel.guestUid || duel.hostUid === duel.guestUid) {
+        const error = new Error('bad_duel_result'); error.status = 409; throw error;
+      }
       if (!role) {
         const error = new Error('not_player');
         error.status = 403;
@@ -94,6 +84,7 @@ module.exports = async function handler(req, res) {
       tx.create(awardRef, { type: 'duel', code, role, gain, createdAt: now });
       tx.set(statsRef, {
         xp: currentXp + gain,
+        studySecs: Math.max(0, Number(statsSnap.data()?.studySecs) || 0),
         lastGain: gain,
         lastReason: 'duel',
         updatedAt: now,

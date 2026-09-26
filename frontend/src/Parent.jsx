@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { doc, onSnapshot } from 'firebase/firestore';
 import { useLang } from './i18n.jsx';
 import {
-  auth, createChild, getChildren, getMocks, getAttempts, logout, getFamily, syncChildrenPro,
+  auth, db, familyHasPro, createChild, getChildren, getMocks, getAttempts, logout,
   genPassword, suggestUsername, cleanUsername, errText,
   hasPasswordLogin, linkParentPassword, changeParentPassword, resetChildPassword, getPlatformDiagnostics,
 } from './firebase.js';
-import { api, topicStats, readiness, mockSeries } from './api.js';
+import { topicStats, readiness, mockSeries } from './analytics.js';
+import { loadTopicCatalog } from './topicCatalog.js';
 import Brand from './Brand.jsx';
 import { buildDiagnosticShareText, daysUntilDiagnostic } from './platformDiagnostic.js';
+import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination } from './checkoutMessages.js';
+import PetAvatar, { DEFAULT_PET_AVATAR, PET_AVATARS } from './PetAvatar.jsx';
 
 const Logo = () => <div className="logo"><Brand compact /></div>;
 
@@ -16,42 +20,84 @@ const Logo = () => <div className="logo"><Brand compact /></div>;
 const WANT_PRO_TTL_MS = 30 * 60 * 1000;
 
 export default function Parent({ onExit }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const text = (ru, kk) => lang === 'ru' ? ru : kk;
   const exit = async () => {
-    if (!window.confirm('Шығуды растайсыз ба?')) return;
     await (onExit || logout)();
   };
   const [pro, setPro] = useState(null);      // null — әлі жүктелуде
   const [me, setMe] = useState('');          // ата-ананың аты
   const [paying, setPaying] = useState(false);
+  const payingRef = useRef(false);
+  const wantedHandled = useRef(false);
+  const [familyError, setFamilyError] = useState('');
+  const [familyRetry, setFamilyRetry] = useState(0);
+  const [paymentIssue, setPaymentIssue] = useState(null);
+  const paymentError = paymentIssue ? checkoutErrorMessage(paymentIssue.code, lang, paymentIssue.status) : '';
+  const checkoutHold = checkoutNeedsVerification(paymentIssue?.code);
+  const [paymentPending, setPaymentPending] = useState(() => new URLSearchParams(window.location.search).get('paid') === '1');
   const [children, setChildren] = useState([]);
+  const [childrenLoaded, setChildrenLoaded] = useState(false);
   const [adding, setAdding] = useState(false);
   const [firstLoad, setFirstLoad] = useState(true);
 
-  // Жазылым күйін оқимыз: төлем өткенде вебхук families/{uid}.pro-ны true қылады
+  // Observe webhook updates after checkout, including delayed confirmation.
   useEffect(() => {
     const u = auth.currentUser;
     if (!u) return;
     setMe(u.displayName || '');
-    getFamily(u.uid).then((f) => {
-      const has = !!f?.pro;
+    let expiryTimer;
+    setFamilyError('');
+    const unsubscribe = onSnapshot(doc(db, 'families', u.uid), (snapshot) => {
+      const f = snapshot.data();
+      if (!snapshot.exists()) {
+        setPro(null);
+        setFamilyError(text('Не удалось найти профиль семьи. Обратитесь в поддержку.', 'Отбасы профилі табылмады. Қолдау қызметіне жазыңыз.'));
+        return;
+      }
+      clearTimeout(expiryTimer);
+      const has = familyHasPro(f);
       setPro(has);
-      syncChildrenPro(u.uid, has).catch((e) => console.error('pro sync failed', e));
+      setFamilyError('');
+      const expiresMs = f.proExpiresAt?.toMillis?.() || 0;
+      if (has && expiresMs) {
+        const updateExpiry = () => {
+          setPro(familyHasPro(f));
+          if (expiresMs > Date.now()) expiryTimer = setTimeout(updateExpiry, Math.min(expiresMs - Date.now() + 25, 2147483647));
+        };
+        expiryTimer = setTimeout(updateExpiry, Math.min(expiresMs - Date.now() + 25, 2147483647));
+      }
       if (!u.displayName) setMe(f?.parentName || (u.email || '').split('@')[0]);
+      if (has) {
+        setPaymentPending(false);
+        setPaymentIssue(null);
+        const url = new URL(window.location.href);
+        if (url.searchParams.has('paid')) {
+          url.searchParams.delete('paid');
+          window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+        }
+      }
       // лендингте «Про таңдау» басып, содан кейін кірген болса — төлемді бірден ашамыз.
       // Белгі уақыт бойынша тексеріледі (WANT_PRO_TTL_MS): ортақ компьютерде ескі
       // белгі басқа ата-ана үшін төлем бетін ашып жібермеуі керек — қараңыз
       // Landing.jsx-тегі handleBuyPro комментарийі.
+      if (wantedHandled.current) return;
+      wantedHandled.current = true;
       let wanted = false;
       try {
         const raw = localStorage.getItem('synaq_want_pro');
         localStorage.removeItem('synaq_want_pro');
         const ts = Number(raw);
-        wanted = raw != null && Number.isFinite(ts) && Date.now() - ts < WANT_PRO_TTL_MS;
+        wanted = raw != null && Number.isFinite(ts) && Date.now() >= ts && Date.now() - ts < WANT_PRO_TTL_MS;
       } catch {}
-      if (wanted && !has) buyPro();
-    }).catch(() => setPro(false));
-  }, []);
+      if (wanted && !has && !paymentPending) buyPro();
+    }, (error) => {
+      console.error('family subscription failed', error);
+      setPro(null);
+      setFamilyError(text('Не удалось обновить подписку. Проверьте соединение и повторите.', 'Жазылымды жаңарту мүмкін болмады. Байланысты тексеріп, қайталаңыз.'));
+    });
+    return () => { unsubscribe(); clearTimeout(expiryTimer); };
+  }, [lang, familyRetry]);
 
   // Dodo төлем бетіне window.location.href арқылы кеткенде компонент
   // әдетте қайта жүктеледі, бірақ кейбір браузерлер (әсіресе мобильді
@@ -60,7 +106,7 @@ export default function Parent({ onExit }) {
   // «қалып» кетеді, батырма мәңгі «…» күйінде тұрады. pageshow.persisted
   // осындай қайтаруды көрсетеді.
   useEffect(() => {
-    const onShow = (e) => { if (e.persisted) setPaying(false); };
+    const onShow = (e) => { if (e.persisted) { setPaying(false); payingRef.current = false; } };
     window.addEventListener('pageshow', onShow);
     return () => window.removeEventListener('pageshow', onShow);
   }, []);
@@ -68,10 +114,16 @@ export default function Parent({ onExit }) {
   // «Про таңдау» → Dodo төлем бетіне жібереміз
   async function buyPro() {
     const u = auth.currentUser;
-    if (!u || paying) return;
+    if (!u || payingRef.current || checkoutHold || paymentPending) return;
+    const current = () => mounted.current && auth.currentUser?.uid === u.uid;
+    payingRef.current = true;
     setPaying(true);
+    setPaymentIssue(null);
+    let requestSent = false, redirected = false;
     try {
       const idToken = await u.getIdToken();
+      if (!current()) return;
+      requestSent = true;
       const r = await fetch('/api/checkout', {
         method: 'POST',
         headers: {
@@ -83,70 +135,142 @@ export default function Parent({ onExit }) {
       const raw = await r.text();
       let data = null;
       try { data = JSON.parse(raw); } catch {}
-      if (r.ok && data?.url) { window.location.href = data.url; return; }
-      const why = !r.ok ? `Сервер ${r.status}${data?.error ? ': ' + data.error : ''}` : 'сілтеме келмеді';
-      console.error('checkout failed', r.status, raw.slice(0, 200));
-      alert(`Төлем бетін ашу мүмкін болмады (${why}).`);
+      if (!current()) return;
+      if (r.ok && isCheckoutDestination(data?.url)) {
+        redirected = true;
+        window.location.href = data.url;
+        return;
+      }
+      const code = r.ok ? 'checkout_verification_required' : data?.error || 'checkout_unavailable';
+      setPaymentIssue({ code, status: r.status });
+      if (r.status === 409 && data?.error === 'already_pro') {
+        setFamilyRetry((n) => n + 1);
+      }
+      console.error('checkout failed', r.status, code);
     } catch (e) {
-      console.error(e);
-      alert('Байланыс қатесі: ' + (e?.message || 'белгісіз'));
+      console.error('checkout failed', e?.code || 'network');
+      if (current()) setPaymentIssue({ code: requestSent ? 'checkout_network_error'
+        : e?.code?.startsWith('auth/') ? 'login_required' : 'checkout_unavailable' });
+    } finally {
+      if (!redirected) {
+        payingRef.current = false;
+        if (current()) setPaying(false);
+      }
     }
-    setPaying(false);
   }
 
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [pass, setPass] = useState('');
+  const [avatar, setAvatar] = useState(DEFAULT_PET_AVATAR);
   const [created, setCreated] = useState(null);
   const [openChild, setOpenChild] = useState(null);
   const [mocks, setMocks] = useState([]);
+  const [reportLoading, setReportLoading] = useState(false);
+  const [reportError, setReportError] = useState(false);
+  const reportRequest = useRef(0);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
+  const [childrenError, setChildrenError] = useState(false);
+  const [resetChild, setResetChild] = useState(null);
+  const mounted = useRef(true);
+  const childrenRequest = useRef(0);
+  const creating = useRef(false);
+  const pendingCreation = useRef(null);
+  const usernameEdited = useRef(false);
 
-  const load = () => getChildren(auth.currentUser.uid).then(setChildren).catch(() => {});
+  const load = async () => {
+    const uid = auth.currentUser?.uid;
+    const request = ++childrenRequest.current;
+    const current = () => mounted.current && request === childrenRequest.current && auth.currentUser?.uid === uid;
+    setChildrenError(false);
+    try {
+      if (!uid) throw new Error('login_required');
+      const items = await getChildren(uid);
+      if (!current()) return;
+      setChildren(items);
+      setChildrenLoaded(true);
+      return items;
+    } catch (error) {
+      console.error('children load failed', error);
+      if (current()) setChildrenError(true);
+    }
+  };
   useEffect(() => {
+    mounted.current = true;
     load();
+    return () => { mounted.current = false; childrenRequest.current++; reportRequest.current++; };
   }, []);
 
   async function add() {
+    if (creating.current || !childrenLoaded || !auth.currentUser) return;
+    creating.current = true;
+    const uid = auth.currentUser.uid;
+    const current = () => mounted.current && auth.currentUser?.uid === uid;
     setErr(''); setBusy(true);
     try {
       // один родитель — только один ребёнок
-      if (children.length >= 1) {
-        setErr('Можно добавить только одного ребёнка.');
-        setBusy(false);
+      if (children.length >= 1 && !pendingCreation.current) {
+        setErr(text('Можно добавить только одного ребёнка.', 'Бір бала ғана қосуға болады.'));
         setAdding(false);
         return;
       }
-      const code = cleanUsername(username) || suggestUsername(name) || ('bala' + Math.floor(1000 + Math.random() * 9000));
-      const password = pass || genPassword();
-      await createChild(auth.currentUser.uid, { name, code, pin: password });
-      setCreated({ code, pass: password, name });
-      setName(''); setUsername(''); setPass(''); setAdding(false);
+      if (!pendingCreation.current || pendingCreation.current.parentUid !== uid) {
+        pendingCreation.current = { parentUid: uid, requestId: crypto.randomUUID(), name: name.trim(), avatar,
+          code: cleanUsername(username) || suggestUsername(name) || ('bala' + Math.floor(1000 + Math.random() * 9000)),
+          pin: pass || genPassword() };
+      }
+      const request = pendingCreation.current;
+      // Keep the exact credentials visible even if the HTTP response is lost.
+      setUsername(request.code); setPass(request.pin);
+      await createChild(uid, request);
+      if (!current()) return;
+      setCreated({ code: request.code, pass: request.pin, name: request.name });
+      pendingCreation.current = null; usernameEdited.current = false;
+      setName(''); setUsername(''); setPass(''); setAvatar(DEFAULT_PET_AVATAR); setAdding(false);
       await load();
-    } catch (e) { setErr(errText(e)); }
-    setBusy(false);
+    } catch (e) {
+      if (current()) {
+        setErr(errText(e, lang));
+        // The server may already have committed. Refresh, but only a verified
+        // idempotent response may turn this request into a success message.
+        await load();
+      }
+    } finally {
+      creating.current = false;
+      if (current()) setBusy(false);
+    }
+  }
+  function changeName(value) {
+    pendingCreation.current = null;
+    setName(value);
+    if (!usernameEdited.current) setUsername(cleanUsername(value));
   }
   const [stats, setStats] = useState([]);
   const [diagnostics, setDiagnostics] = useState([]);
 
   // Кірген соң бала жоқ болса — «Бала қосу» формасын бірден ашамыз
   useEffect(() => {
-    if (firstLoad && !children.length && !created) { setAdding(true); setFirstLoad(false); }
-  }, [children, firstLoad, created]);
+    if (childrenLoaded && firstLoad && !children.length && !created) { setAdding(true); setFirstLoad(false); }
+  }, [children, childrenLoaded, firstLoad, created]);
 
   // Баланы ашқанда: мок-тестер + тақырып бойынша статистика
   const openResults = async (c) => {
     setOpenChild(c);
-    const [ms, att, topics, diagnosticItems] = await Promise.all([
-      getMocks(c.uid).catch(() => []),
-      getAttempts(c.uid).catch(() => []),
-      api.topics(),
-      getPlatformDiagnostics(c.uid).catch(() => []),
-    ]);
-    setMocks(ms);
-    setStats(topicStats(att, topics));
-    setDiagnostics(diagnosticItems);
+    setReportLoading(true); setReportError(false);
+    const request = ++reportRequest.current;
+    try {
+      const [ms, att, topics, diagnosticItems] = await Promise.all([
+        getMocks(c.uid), getAttempts(c.uid), loadTopicCatalog(), getPlatformDiagnostics(c.uid),
+      ]);
+      if (request !== reportRequest.current) return;
+      setMocks(ms); setStats(topicStats(att, topics)); setDiagnostics(diagnosticItems);
+    } catch (error) {
+      console.error('child report failed', error);
+      if (request === reportRequest.current) setReportError(true);
+    } finally {
+      if (request === reportRequest.current) setReportLoading(false);
+    }
   };
 
   return (
@@ -156,22 +280,41 @@ export default function Parent({ onExit }) {
         <button className="logout" onClick={exit}>{t('ui.26')}</button>
       </header>
 
+      {familyError && <div className="card" role="alert" style={{ marginTop: 16 }}>
+        <p>{familyError}</p><button className="btn" onClick={() => setFamilyRetry((n) => n + 1)}>{text('Повторить', 'Қайталау')}</button>
+      </div>}
+      {paymentPending && !pro && <div className="card" role="status" style={{ marginTop: 16 }}>
+        {text('Ожидаем подтверждение оплаты. Доступ обновится автоматически — повторно оплачивать не нужно.', 'Төлем расталуын күтіп жатырмыз. Қолжетімділік автоматты жаңарады — қайта төлеудің қажеті жоқ.')}
+        <p><button className="link" onClick={() => {
+          setPaymentPending(false);
+          const url = new URL(window.location.href); url.searchParams.delete('paid');
+          window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+        }}>{text('Оплата не завершена? Вернуться к выбору', 'Төлем аяқталмады ма? Таңдауға оралу')}</button></p>
+      </div>}
+      {paymentError && <div role="alert" style={{ color: 'var(--accent)', marginTop: 16 }}>
+        <p>{paymentError}</p>
+        {checkoutHold && <button className="link" onClick={() => setFamilyRetry((n) => n + 1)}>
+          {text('Обновить статус подписки', 'Жазылым күйін жаңарту')}
+        </button>}
+      </div>}
+      {err && !adding && <p role="alert" style={{ color: 'var(--accent)', marginTop: 16 }}>{err}</p>}
+
       {created && (
         <div className="card" style={{ marginTop: 16, borderColor: 'var(--green)', background: '#EEF5EC' }}>
           <div className="row" style={{ marginBottom: 10 }}>
-            <p className="kicker" style={{ color: 'var(--green)', margin: 0 }}>{created.name} аккаунты жасалды</p>
+            <p className="kicker" style={{ color: 'var(--green)', margin: 0 }}>{text(`Аккаунт ${created.name} создан`, `${created.name} аккаунты жасалды`)}</p>
             {/* Пароль ашық мәтінмен көрінеді — ортақ/қоғамдық компьютерде
                 экранда мәңгі қалып қоймауы үшін жабу батырмасы керек. */}
-            <button className="link" onClick={() => setCreated(null)} aria-label="жабу">✕</button>
+            <button className="link" onClick={() => setCreated(null)} aria-label={text('Закрыть', 'Жабу')}>✕</button>
           </div>
-          <p style={{ margin: '0 0 14px', fontSize: 14 }}>Балаға осыны беріңіз — ол осымен кіреді:</p>
+          <p style={{ margin: '0 0 14px', fontSize: 14 }}>{text('Передайте ребёнку эти данные для входа:', 'Балаға осыны беріңіз — ол осымен кіреді:')}</p>
 
           <CopyRow label="Юзернейм" value={created.code} />
           <CopyRow label="Пароль" value={created.pass} />
 
           <button className="btn ghost" style={{ marginTop: 12 }}
             onClick={() => copy(`Synaq\nЮзернейм: ${created.code}\nПароль: ${created.pass}`)}>
-            Екеуін де көшіру
+            {text('Скопировать логин и пароль', 'Екеуін де көшіру')}
           </button>
         </div>
       )}
@@ -181,11 +324,11 @@ export default function Parent({ onExit }) {
           {/* Сәлемдесу */}
           {me && (
             <>
-              <h1 style={{ margin: '0 0 4px' }}>Сәлем, {me}!</h1>
+              <h1 style={{ margin: '0 0 4px' }}>{text('Привет', 'Сәлем')}, {me}!</h1>
               <p className="muted" style={{ margin: '0 0 20px' }}>
                 {children.length
-                  ? `${children.length} бала тіркелген. Прогресті көру үшін балаңызды таңдаңыз.`
-                  : 'Балаңызды қосыңыз — сол арқылы ол дайындықты бастайды.'}
+                  ? text(`Детей в аккаунте: ${children.length}. Выберите ребёнка, чтобы увидеть прогресс.`, `${children.length} бала тіркелген. Прогресті көру үшін балаңызды таңдаңыз.`)
+                  : text('Добавьте ребёнка, чтобы он мог начать подготовку.', 'Балаңызды қосыңыз — сол арқылы ол дайындықты бастайды.')}
               </p>
             </>
           )}
@@ -234,8 +377,8 @@ export default function Parent({ onExit }) {
                 {pro ? (
                   <div style={{ font: "600 13px 'Golos Text'", color: 'var(--green)' }}>{t('plan.activeNote')}</div>
                 ) : (
-                  <button className="btn accent" disabled={paying} onClick={buyPro} style={{ width: '100%' }}>
-                    {paying ? '…' : t('pro.buy')}
+                  <button className="btn accent" disabled={paying || paymentPending || checkoutHold} onClick={buyPro} style={{ width: '100%' }}>
+                    {checkoutHold ? text('Нужна проверка оплаты', 'Төлемді тексеру қажет') : paymentPending ? text('Проверяем оплату…', 'Төлем тексерілуде…') : paying ? '…' : t('pro.buy')}
                   </button>
                 )}
               </div>
@@ -246,8 +389,8 @@ export default function Parent({ onExit }) {
 
           <div className="row">
             <h1 style={{ margin: 0 }}>{t('ui.27')}</h1>
-            {children.length === 0 && (
-              <button className="btn" onClick={() => { setAdding(!adding); setErr(''); }}>{t('ui.28')}</button>
+            {childrenLoaded && children.length === 0 && (
+              <button className="btn" disabled={busy} onClick={() => { setAdding(!adding); setErr(''); }}>{t('ui.28')}</button>
             )}
           </div>
 
@@ -255,32 +398,42 @@ export default function Parent({ onExit }) {
             <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 14 }}>
               <div>
                 <label style={lab}>{t('ui.29')}</label>
-                <input placeholder={t('ui.37')} value={name} style={inp}
-                  onChange={(e) => {
-                    setName(e.target.value);
-                    if (!username) setUsername(cleanUsername(e.target.value));
-                  }} />
+                <input placeholder={t('ui.37')} value={name} style={inp} disabled={busy}
+                  onChange={(e) => changeName(e.target.value)} />
               </div>
+              <fieldset className="pet-picker" disabled={busy}>
+                <legend>{text('Выберите питомца', 'Кейіпкерді таңдаңыз')}</legend>
+                <p>{text('Он будет аватаром ребёнка в платформе.', 'Ол платформадағы баланың аватары болады.')}</p>
+                <div className="pet-picker-grid">
+                  {PET_AVATARS.map((pet) => (
+                    <button key={pet.id} type="button" className={avatar === pet.id ? 'is-selected' : ''}
+                      aria-pressed={avatar === pet.id} aria-label={lang === 'ru' ? pet.ru : pet.kk}
+                      onClick={() => { pendingCreation.current = null; setAvatar(pet.id); }}>
+                      <PetAvatar id={pet.id} /><small>{lang === 'ru' ? pet.ru : pet.kk}</small>
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
               <div>
                 <label style={lab}>{t('ui.30')}</label>
-                <input placeholder={t('ui.38')} value={username} style={inp}
-                  onChange={(e) => setUsername(cleanUsername(e.target.value))} />
+                <input placeholder={t('ui.38')} value={username} style={inp} disabled={busy}
+                  onChange={(e) => { pendingCreation.current = null; usernameEdited.current = !!e.target.value; setUsername(cleanUsername(e.target.value)); }} />
                 <p style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384', margin: '6px 0 0' }}>
-                  тек латын әрпі мен цифр
+                  {text('3–32 латинские буквы или цифры', '3–32 латын әрпі немесе цифр')}
                 </p>
               </div>
               <div>
                 <label style={lab}>{t('ui.31')}</label>
                 <div style={{ display: 'flex', gap: 8 }}>
-                  <input placeholder={t('ui.39')} value={pass} onChange={(e) => setPass(e.target.value)} style={{ ...inp, flex: 1 }} />
-                  <button className="btn ghost" type="button" onClick={() => setPass(genPassword())} style={{ whiteSpace: 'nowrap' }}>
-                    Генерациялау
+                  <input placeholder={t('ui.39')} value={pass} disabled={busy} onChange={(e) => { pendingCreation.current = null; setPass(e.target.value); }} style={{ ...inp, flex: 1 }} />
+                  <button className="btn ghost" type="button" disabled={busy} onClick={() => { pendingCreation.current = null; setPass(genPassword()); }} style={{ whiteSpace: 'nowrap' }}>
+                    {text('Сгенерировать', 'Генерациялау')}
                   </button>
                 </div>
               </div>
               {err && <p style={{ color: 'var(--accent)', fontSize: 13, margin: 0 }}>{err}</p>}
-              <button className="btn accent" disabled={busy || !name} onClick={add}>
-                {busy ? 'Жасалуда…' : 'Жасау'}
+              <button className="btn accent" disabled={busy || !name.trim() || !childrenLoaded} onClick={add}>
+                {busy ? text('Создаём…', 'Жасалуда…') : text('Создать', 'Жасау')}
               </button>
             </div>
           )}
@@ -288,15 +441,27 @@ export default function Parent({ onExit }) {
           <div className="list">
             {children.map((c) => (
               <div className="row-item" key={c.uid} onClick={() => openResults(c)}>
+                <PetAvatar id={c.avatar} size="small" />
                 <b>{c.name}</b>
-                <span className="rt">логин: {c.code} · нәтижелер →</span>
+                <span className="rt">логин: {c.code} · {text('результаты', 'нәтижелер')} →</span>
+                <button className="link" onClick={(event) => { event.stopPropagation(); setResetChild(c); }}>{text('Изменить PIN', 'PIN өзгерту')}</button>
               </div>
             ))}
           </div>
-          {!children.length && !adding && <p className="muted" style={{ marginTop: 14 }}>{t('ui.32')}</p>}
+          {resetChild && <ChildPasswordCard key={resetChild.uid} child={resetChild} onClose={() => setResetChild(null)} />}
+          {childrenError && <div role="alert"><p>{text('Не удалось загрузить список детей. Проверьте соединение и повторите.', 'Балалар тізімі жүктелмеді. Байланысты тексеріп, қайталаңыз.')}</p>
+            <button className="btn" onClick={load}>{text('Повторить', 'Қайталау')}</button></div>}
+          {!childrenLoaded && !childrenError && <p role="status">{t('common.loading')}</p>}
+          {childrenLoaded && !children.length && !adding && <p className="muted" style={{ marginTop: 14 }}>{t('ui.32')}</p>}
         </main>
       ) : (
-        <ChildReport child={openChild} mocks={mocks} stats={stats} diagnostics={diagnostics} lang={lang} onBack={() => setOpenChild(null)} t={t} />
+        reportLoading || reportError ? <main>
+          <button className="link" onClick={() => { reportRequest.current++; setOpenChild(null); }}>{t('ui.33')}</button>
+          {reportLoading ? <p role="status">{t('common.loading')}</p> : <div role="alert">
+            <p>{text('Не удалось загрузить отчёт. Прогресс сохранён; попробуйте ещё раз.', 'Есепті жүктеу мүмкін болмады. Прогресс сақталған; қайта көріңіз.')}</p>
+            <button className="btn" onClick={() => openResults(openChild)}>{text('Повторить', 'Қайталау')}</button>
+          </div>}
+        </main> : <ChildReport child={openChild} mocks={mocks} stats={stats} diagnostics={diagnostics} lang={lang} onBack={() => { reportRequest.current++; setOpenChild(null); }} t={t} />
       )}
     </div>
   );
@@ -309,6 +474,7 @@ async function copy(text) {
 }
 
 function CopyRow({ label, value }) {
+  const { lang } = useLang();
   const [ok, setOk] = useState(false);
   return (
     <div style={{
@@ -321,10 +487,50 @@ function CopyRow({ label, value }) {
       <b style={{ flex: 1, font: "600 16px 'IBM Plex Mono',monospace", letterSpacing: '.02em' }}>{value}</b>
       <button className="link" style={{ padding: '4px 8px', color: ok ? 'var(--green)' : 'var(--muted)' }}
         onClick={async () => { if (await copy(value)) { setOk(true); setTimeout(() => setOk(false), 1500); } }}>
-        {ok ? '✓ көшірілді' : 'көшіру'}
+        {ok ? (lang === 'ru' ? '✓ скопировано' : '✓ көшірілді') : (lang === 'ru' ? 'копировать' : 'көшіру')}
       </button>
     </div>
   );
+}
+
+function ChildPasswordCard({ child, onClose }) {
+  const { lang } = useLang();
+  const text = (ru, kk) => lang === 'ru' ? ru : kk;
+  const [password, setPassword] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
+  const [saved, setSaved] = useState(false);
+  const submitting = useRef(false);
+  const mounted = useRef(true);
+  useEffect(() => { mounted.current = true; return () => { mounted.current = false; }; }, []);
+  async function save() {
+    if (submitting.current || password.length < 6) return;
+    submitting.current = true; setBusy(true); setError(''); setSaved(false);
+    try {
+      await resetChildPassword(child.uid, password);
+      if (mounted.current) setSaved(true);
+    } catch (e) {
+      if (mounted.current) setError(e.passwordChanged === true
+        ? text('PIN изменён, но старые сессии пока не закрыты. Повторите с этим же PIN.', 'PIN өзгерді, бірақ ескі сеанстар жабылмады. Осы PIN-мен қайталаңыз.')
+        : errText(e, lang));
+    } finally {
+      submitting.current = false;
+      if (mounted.current) setBusy(false);
+    }
+  }
+  return <div className="card" style={{ marginTop: 16 }}>
+    <h2>{text('Новый PIN для', 'Жаңа PIN:')} {child.name}</h2>
+    <p className="muted">{text('Логин и прогресс ребёнка останутся прежними.', 'Баланың логині мен прогресі сақталады.')}</p>
+    <label style={lab} htmlFor="child-new-pin">{text('PIN — минимум 6 символов', 'PIN — кемінде 6 таңба')}</label>
+    <input id="child-new-pin" style={inp} value={password} disabled={busy} autoComplete="new-password" maxLength={128}
+      onChange={(e) => { setPassword(e.target.value); setSaved(false); }} />
+    {error && <p role="alert">{error}</p>}
+    {saved && <div role="status"><p>{text('PIN сохранён. Передайте его ребёнку.', 'PIN сақталды. Балаға беріңіз.')}</p><CopyRow label="PIN" value={password} /></div>}
+    <div style={{ display: 'flex', gap: 12, marginTop: 12 }}>
+      <button className="btn accent" disabled={busy || password.length < 6 || saved} onClick={save}>{busy ? '…' : text('Сохранить PIN', 'PIN сақтау')}</button>
+      <button className="btn ghost" disabled={busy} onClick={onClose}>{text('Закрыть', 'Жабу')}</button>
+    </div>
+  </div>;
 }
 
 // ── Ата-анаға арналған есеп: дайындық, апталық баллдар, тақырыптық жылу картасы ──
@@ -333,6 +539,8 @@ const LVL_BG = { strong: '#EEF5EC', mid: '#FBF3E3', weak: '#FBEDEC' };
 const LVL_TXT = { strong: 'МЫҚТЫ', mid: 'ОРТАША', weak: 'ӘЛСІЗ' };
 
 function ChildReport({ child, mocks, stats, diagnostics, lang, onBack, t }) {
+  const text = (ru, kk) => lang === 'ru' ? ru : kk;
+  const levels = lang === 'ru' ? { strong: 'СИЛЬНО', mid: 'СРЕДНЕ', weak: 'СЛАБО' } : LVL_TXT;
   // Толық дашборд әрқашан көрінеді. Есеп шығарылмаған тақырыптар да тұрады — тек 0%.
   const all = stats.length ? stats : [];
   const used = all.filter((s) => s.tried);
@@ -350,15 +558,14 @@ function ChildReport({ child, mocks, stats, diagnostics, lang, onBack, t }) {
   return (
     <main>
       <button className="link" onClick={onBack}>{t('ui.33')}</button>
-      <p className="kicker">Есеп · соңғы апталар</p>
+      <p className="kicker">{text('Отчёт · последние недели', 'Есеп · соңғы апталар')}</p>
       <h1 style={{ marginBottom: 6 }}>{child.name}</h1>
       <div style={{ borderTop: '2px solid var(--ink)', margin: '10px 0 20px' }} />
 
       {!started && (
         <div className="card" style={{ marginBottom: 16, background: '#FBF3E3', borderColor: 'var(--mid,#B8892B)' }}>
           <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.6 }}>
-            {child.name} әлі есеп шығара бастаған жоқ. Ол кіріп жаттыға бастаған соң,
-            мұндағы сандар нақты деректермен толады.
+            {text(`${child.name} ещё не решал задачи. После начала тренировок здесь появятся результаты.`, `${child.name} әлі есеп шығара бастаған жоқ. Ол кіріп жаттыға бастаған соң, мұндағы сандар нақты деректермен толады.`)}
           </p>
         </div>
       )}
@@ -366,7 +573,7 @@ function ChildReport({ child, mocks, stats, diagnostics, lang, onBack, t }) {
       <div className="grid2" style={{ marginBottom: 16 }}>
         {/* Жалпы дайындық */}
         <div className="card">
-          <p className="kicker" style={{ margin: '0 0 14px' }}>Жалпы дайындық</p>
+          <p className="kicker" style={{ margin: '0 0 14px' }}>{text('Общая подготовка', 'Жалпы дайындық')}</p>
           <div className="bar" style={{ marginBottom: 16 }}><i style={{ width: ready + '%' }} /></div>
           <div style={{ display: 'flex', alignItems: 'flex-end', gap: 18 }}>
             <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
@@ -375,7 +582,7 @@ function ChildReport({ child, mocks, stats, diagnostics, lang, onBack, t }) {
             <div style={{ flex: 1, fontSize: 13.5 }}>
               {['strong', 'mid', 'weak'].map((k) => (
                 <div key={k} style={{ display: 'flex', justifyContent: 'space-between', color: LVL_COL[k] }}>
-                  <span>■ {LVL_TXT[k].toLowerCase()}</span><b>{counts[k]}</b>
+                  <span>■ {levels[k].toLowerCase()}</span><b>{counts[k]}</b>
                 </div>
               ))}
             </div>
@@ -385,8 +592,8 @@ function ChildReport({ child, mocks, stats, diagnostics, lang, onBack, t }) {
         {/* Сынақ баллдары */}
         <div className="card">
           <div className="row" style={{ marginBottom: 12 }}>
-            <span className="kicker" style={{ margin: 0 }}>Сынақ балы / апта</span>
-            <span className="tag">{maxScore}-тан</span>
+            <span className="kicker" style={{ margin: 0 }}>{text('Баллы за тест / неделя', 'Сынақ балы / апта')}</span>
+            <span className="tag">{text(`из ${maxScore}`, `${maxScore}-тан`)}</span>
           </div>
           {series.length ? (
             <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, height: 110 }}>
@@ -401,7 +608,7 @@ function ChildReport({ child, mocks, stats, diagnostics, lang, onBack, t }) {
                 </div>
               ))}
             </div>
-          ) : <p className="muted" style={{ margin: 0 }}>Сынақ әлі тапсырылмаған.</p>}
+          ) : <p className="muted" style={{ margin: 0 }}>{text('Тесты ещё не пройдены.', 'Сынақ әлі тапсырылмаған.')}</p>}
         </div>
       </div>
 
@@ -429,15 +636,15 @@ function ChildReport({ child, mocks, stats, diagnostics, lang, onBack, t }) {
       {/* Ұсыныс */}
       {!!weak.length && (
         <div className="card" style={{ borderLeft: '4px solid var(--accent)', marginBottom: 16 }}>
-          <p className="kicker" style={{ color: 'var(--accent)', margin: '0 0 8px' }}>Ұсыныс</p>
+          <p className="kicker" style={{ color: 'var(--accent)', margin: '0 0 8px' }}>{text('Рекомендация', 'Ұсыныс')}</p>
           <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.6 }}>
-            {weak.map((w) => `${w.name} (${w.pct}%)`).join(' мен ')} тақырыптарына көбірек көңіл бөліңіз — қазір ең әлсіз тұсы.
+            {text(`Уделите больше внимания темам: ${weak.map((w) => `${w.name} (${w.pct}%)`).join(', ')}.`, `${weak.map((w) => `${w.name} (${w.pct}%)`).join(' мен ')} тақырыптарына көбірек көңіл бөліңіз — қазір ең әлсіз тұсы.`)}
           </p>
         </div>
       )}
 
       {/* Тақырыптық жылу картасы — барлық тақырып (шығарылмағаны 0%) */}
-      <p className="kicker">Тақырыптық жылу картасы</p>
+      <p className="kicker">{text('Подготовка по темам', 'Тақырыптық жылу картасы')}</p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(150px,1fr))', gap: 10, marginBottom: 22 }}>
         {all.map((s) => (
           <div key={s.id} style={{
@@ -452,14 +659,14 @@ function ChildReport({ child, mocks, stats, diagnostics, lang, onBack, t }) {
       </div>
 
       {/* Тақырыптар тізімі — деңгеймен (барлығы) */}
-      <p className="kicker">Прогресс картасы</p>
+      <p className="kicker">{text('Карта прогресса', 'Прогресс картасы')}</p>
       <div className="list">
         {all.map((s) => (
           <div key={s.id} className="row-item" style={{ cursor: 'default', opacity: s.tried ? 1 : 0.6 }}>
             <div style={{ flex: 1 }}>
               <b>{s.name}</b>
               <div style={{ font: "500 11.5px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 3 }}>
-                {s.tried} сұрақ{s.days ? ` · ${s.days} күн` : ''}
+                {s.tried} {text('вопросов', 'сұрақ')}{s.days ? ` · ${s.days} ${text('дн.', 'күн')}` : ''}
               </div>
             </div>
             <div style={{ width: 130 }}>
@@ -470,7 +677,7 @@ function ChildReport({ child, mocks, stats, diagnostics, lang, onBack, t }) {
               font: "600 10px 'IBM Plex Mono',monospace", letterSpacing: '.08em',
               color: s.tried ? LVL_COL[s.level] : '#C4BEB2',
               border: `1px solid ${s.tried ? LVL_COL[s.level] : 'var(--line)'}`, padding: '3px 8px', width: 76, textAlign: 'center',
-            }}>{s.tried ? LVL_TXT[s.level] : '—'}</span>
+            }}>{s.tried ? levels[s.level] : '—'}</span>
           </div>
         ))}
       </div>
@@ -497,6 +704,7 @@ const lab = { display: 'block', font: "500 11px 'IBM Plex Mono',monospace", lett
 const inp = { width: '100%', padding: '12px 14px', border: '1px solid var(--line)', background: '#fff', font: "500 15px 'Golos Text'", color: 'var(--ink)', outline: 'none' };
 
 function LoginPasswordCard({ t }) {
+  const { lang } = useLang();
   const email = auth.currentUser?.email || '';
   const [linked, setLinked] = useState(() => hasPasswordLogin(auth.currentUser));
   const [editing, setEditing] = useState(false);
@@ -527,7 +735,7 @@ function LoginPasswordCard({ t }) {
       setMsg(t('parent.passSaved'));
       setCurrent(''); setPass1(''); setPass2(''); setEditing(false);
     } catch (e) {
-      setErr(e.message === 'mismatch' ? t('parent.passMismatch') : errText(e));
+      setErr(e.message === 'mismatch' ? t('parent.passMismatch') : errText(e, lang));
     }
     setBusy(false);
   }

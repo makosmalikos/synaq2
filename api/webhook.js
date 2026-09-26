@@ -1,185 +1,256 @@
-// POST /api/webhook — Dodo Payments жазылым өзгергенде осында хабарлайды.
-// 1) қолтаңбаны тексереміз (әйтпесе кез келген адам өзіне pro қосып алар еді),
-// 2) metadata-дан parentUid аламыз,
-// 3) families/{parentUid}.pro-ны қоямыз/алып тастаймыз және балаларға көшіреміз.
-//
-// CommonJS — explain.js сияқты (package.json-да "type": "module" жоқ).
-
+// Dodo: verify, reconcile the current subscription, record once, sync.
+// https://docs.dodopayments.com/developer-resources/subscription-integration-guide
+// A scheduled cancellation keeps access until next_billing_date. A payment or
+// refund alone does not describe the current subscription entitlement.
 const crypto = require('crypto');
+const { getAdmin } = require('../backend/lib/firebase-admin');
 
-const rawBody = (req) => new Promise((resolve, reject) => {
+const EVENTS = new Set([
+  'payment.succeeded', 'refund.succeeded', 'subscription.active',
+  'subscription.renewed', 'subscription.updated', 'subscription.plan_changed',
+  'subscription.on_hold', 'subscription.paused', 'subscription.unpaused',
+  'subscription.cancelled', 'subscription.expired', 'subscription.failed',
+]);
+const idOf = (value) => typeof value === 'string' && /^[a-zA-Z0-9_-]{1,128}$/.test(value) ? value : '';
+const timestamp = (value) => {
+  if (value?.toMillis) return value.toMillis();
+  if (value instanceof Date) return value.getTime();
+  const parsed = typeof value === 'string' ? Date.parse(value) : Number(value);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : 0;
+};
+const failure = (message, status = 503) => Object.assign(new Error(message), { status });
+
+async function rawBody(req) {
   const chunks = [];
-  req.on('data', (c) => chunks.push(c));
-  req.on('end', () => resolve(Buffer.concat(chunks)));
-  req.on('error', reject);
-});
+  let size = 0;
+  for await (const chunk of req) {
+    size += chunk.length;
+    if (size > 1024 * 1024) throw failure('payload_too_large', 413);
+    chunks.push(chunk);
+  }
+  return Buffer.concat(chunks);
+}
 
-// Standard Webhooks: HMAC-SHA256("{id}.{timestamp}.{body}"), кілт — whsec_ кейінгі бөлігі.
 function verify(raw, headers, secret) {
   const id = headers['webhook-id'];
   const ts = headers['webhook-timestamp'];
   const sigHeader = headers['webhook-signature'];
-  if (!id || !ts || !sigHeader || !secret) return false;
-  if (Math.abs(Date.now() / 1000 - Number(ts)) > 300) return false;   // ескі сұранысты қабылдамаймыз
-
+  const time = Number(ts);
+  if (!id || !ts || !sigHeader || !secret || !Number.isFinite(time)
+      || Math.abs(Date.now() / 1000 - time) > 300) return false;
   const key = Buffer.from(String(secret).replace(/^whsec_/, ''), 'base64');
   const expected = crypto.createHmac('sha256', key)
-    .update(`${id}.${ts}.${raw.toString('utf8')}`)
-    .digest('base64');
-
-  return String(sigHeader).split(' ').some((part) => {
-    const sig = part.split(',')[1];
-    if (!sig || sig.length !== expected.length) return false;
-    return crypto.timingSafeEqual(Buffer.from(sig), Buffer.from(expected));
+    .update(`${id}.${ts}.${raw.toString('utf8')}`).digest();
+  return String(sigHeader).split(/\s+/).some((part) => {
+    const [version, value] = part.split(',');
+    if (version !== 'v1' || !value) return false;
+    const actual = Buffer.from(value, 'base64');
+    return actual.length === expected.length && crypto.timingSafeEqual(actual, expected);
   });
 }
 
-// firebase-admin тек осы жерде керек — жоғарыда жүктесек, функция мүлде іске қосылмай қалуы мүмкін.
-async function store() {
-  const { initializeApp, cert, getApps } = require('firebase-admin/app');
-  const { getFirestore } = require('firebase-admin/firestore');
-  if (!getApps().length) {
-    initializeApp({
-      credential: cert({
-        projectId: process.env.FIREBASE_PROJECT_ID,
-        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        privateKey: (process.env.FIREBASE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
-      }),
-    });
-  }
-  return getFirestore();
+function store() {
+  return getAdmin().db;
 }
 
-async function syncChildrenPro(db, parentUid, pro) {
-  const children = await db.collection('families').doc(parentUid).collection('children').get();
-  const refs = children.docs.map((child) => db.collection('childIndex').doc(child.id));
-
-  // Firestore batch-те 500 жазба шегі бар. Қазір бір бала ғана, бірақ функция өсуге дайын.
-  for (let start = 0; start < refs.length; start += 450) {
-    const batch = db.batch();
-    refs.slice(start, start + 450).forEach((ref) => {
-      batch.set(ref, { parentUid, pro: !!pro }, { merge: true });
+async function providerObject(kind, id) {
+  if (!idOf(id)) throw failure('missing_provider_id');
+  const api = process.env.DODO_ENV === 'test_mode'
+    ? 'https://test.dodopayments.com' : 'https://live.dodopayments.com';
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 4000);
+  try {
+    const response = await fetch(`${api}/${kind}/${encodeURIComponent(id)}`, {
+      headers: { Authorization: `Bearer ${process.env.DODO_PAYMENTS_API_KEY}` },
+      signal: controller.signal,
     });
-    await batch.commit();
-  }
+    // A temporary 404 can precede visibility of a newly created object.
+    if (!response.ok) throw failure(`provider_${response.status}`);
+    const data = await response.json();
+    if (!data || typeof data !== 'object') throw failure('invalid_provider_response');
+    return data;
+  } catch (error) {
+    if (error.status) throw error;
+    throw failure('provider_unavailable');
+  } finally { clearTimeout(timeout); }
 }
 
-// ── Почему Pro иногда не включался после оплаты ──
-// По документации Dodo (Subscription Integration Guide + Metadata reference)
-// metadata из /checkouts привязывается к объекту Payment, а не гарантированно
-// к Subscription. При первой оплате подписки Dodo шлёт ДВА события:
-// subscription.active (сразу) и отдельно payment.succeeded (чуть позже,
-// когда прошло реальное списание). Раньше payment.succeeded вообще не было
-// в MAP — а именно в нём metadata.parentUid приходит надёжнее всего. Если
-// на subscription.active metadata почему-то пустая — parentUid терялся,
-// хендлер тихо возвращал 200 (без ошибки, без ретрая Dodo) — платёж прошёл,
-// а Pro не включался. 'payment.refunded' в реальном API Dodo не существует —
-// правильное имя события 'refund.succeeded'.
-const ON = { pro: true };
-const OFF = { pro: false };
-const MAP = {
-  'payment.succeeded': ON,          // сюда checkout-metadata попадает надёжнее всего
-  'subscription.active': ON,        // первая активация / реактивация
-  'subscription.renewed': ON,
-  'subscription.cancelled': OFF,
-  'subscription.expired': OFF,
-  'subscription.failed': OFF,
-  'refund.succeeded': OFF,          // ақшасын қайтарды
-  // 'subscription.on_hold' — қолжетімділікті алмаймыз, тек белгілеп қоямыз
-};
-
-const DODO_API = process.env.DODO_ENV === 'test_mode'
-  ? 'https://test.dodopayments.com'
-  : 'https://live.dodopayments.com';
-
-// Если parentUid нет прямо в теле вебхука — подтягиваем полный объект по id
-// через REST. GET /payments/{id} и GET /subscriptions/{id} по документации
-// Dodo гарантированно возвращают metadata, даже когда в самом вебхуке её нет.
-// Пробуем несколько правдоподобных id из payload — так это работает и для
-// payment-, и для subscription-, и для refund-событий без знания точной формы.
-async function fetchMetadata(data) {
-  if (!process.env.DODO_PAYMENTS_API_KEY) return null;
-  const attempts = [];
-  if (data.payload_type === 'Subscription' && data.id) attempts.push(['subscriptions', data.id]);
-  if (data.id) attempts.push(['payments', data.id]);
-  if (data.payment_id) attempts.push(['payments', data.payment_id]);
-  if (data.subscription_id) attempts.push(['subscriptions', data.subscription_id]);
-  for (const [path, id] of attempts) {
-    try {
-      const r = await fetch(`${DODO_API}/${path}/${id}`, {
-        headers: { Authorization: `Bearer ${process.env.DODO_PAYMENTS_API_KEY}` },
-      });
-      if (r.ok) {
-        const obj = await r.json().catch(() => null);
-        if (obj?.metadata?.parentUid) return obj.metadata;
-      }
-    } catch (e) {
-      console.error('dodo fetch-by-id failed', path, id, e.message);
+async function legacySubscription(id) {
+  try { return await providerObject('subscriptions', id); }
+  catch (error) {
+    if (error.message !== 'provider_404') throw error;
+    // Old webhook versions sometimes stored payment_id in dodoSubId.
+    let payment;
+    try { payment = await providerObject('payments', id); }
+    catch (paymentError) {
+      if (paymentError.message === 'provider_404') return null;
+      throw paymentError;
+    }
+    if (!idOf(payment.subscription_id)) return null;
+    try { return await providerObject('subscriptions', payment.subscription_id); }
+    catch (subscriptionError) {
+      if (subscriptionError.message === 'provider_404') return null;
+      throw subscriptionError;
     }
   }
-  return null;
+}
+
+function subscriptionState(subscription, parentUid, eventAt, eventId) {
+  const status = String(subscription.status || '');
+  const periodEnd = timestamp(subscription.next_billing_date);
+  const termEnd = timestamp(subscription.expires_at);
+  if (status === 'active' && !periodEnd) throw failure('missing_subscription_period');
+  const expiresAt = periodEnd && termEnd ? Math.min(periodEnd, termEnd) : periodEnd || termEnd;
+  return {
+    parentUid, subscriptionId: subscription.subscription_id, productId: subscription.product_id,
+    status, pro: status === 'active', expiresAt: expiresAt || null,
+    cancelAtPeriodEnd: subscription.cancel_at_next_billing_date === true,
+    eventAt, eventId, reconciledAt: new Date(),
+  };
+}
+
+async function resolveSubscription(db, event) {
+  const data = event.data || {};
+  let payment;
+  let subscriptionId = idOf(data.subscription_id);
+  if (event.type.startsWith('subscription.')) subscriptionId ||= idOf(data.id);
+  else {
+    const paymentId = idOf(data.payment_id) || (event.type === 'payment.succeeded' ? idOf(data.id) : '');
+    if (paymentId) payment = await providerObject('payments', paymentId);
+    subscriptionId = idOf(payment?.subscription_id) || subscriptionId;
+    if (payment && !subscriptionId) return { ignored: 'not_a_subscription' };
+  }
+  const subscription = await providerObject('subscriptions', subscriptionId);
+  if (subscription.subscription_id !== subscriptionId) throw failure('subscription_id_mismatch');
+  const ref = db.collection('paymentSubscriptions').doc(subscriptionId);
+  const previous = await ref.get();
+  if (subscription.product_id !== process.env.DODO_PRODUCT_ID && !previous.exists) {
+    return { ignored: 'other_product' };
+  }
+  const candidates = [subscription.metadata?.parentUid, payment?.metadata?.parentUid,
+    data.metadata?.parentUid, previous.data()?.parentUid].filter(Boolean);
+  const parentUid = candidates[0];
+  if (!idOf(parentUid)) throw failure('unresolved_parent');
+  if (candidates.some((uid) => uid !== parentUid)) throw failure('conflicting_parent');
+  return { subscription, ref, parentUid };
+}
+
+async function syncChildrenPro(db, parentUid) {
+  const familyRef = db.collection('families').doc(parentUid);
+  const children = await familyRef.collection('children').get();
+  for (let start = 0; start < children.docs.length; start += 400) {
+    // A delayed retry reads CURRENT family state inside every transaction,
+    // so it cannot mirror an older activation over a newer cancellation.
+    await db.runTransaction(async (tx) => {
+      const family = await tx.get(familyRef);
+      const data = family.data() || {};
+      const pro = data.pro === true && (!timestamp(data.proExpiresAt) || timestamp(data.proExpiresAt) > Date.now());
+      for (const child of children.docs.slice(start, start + 400)) {
+        tx.set(db.collection('childIndex').doc(child.id), {
+          parentUid, pro, proExpiresAt: data.proExpiresAt || null,
+        }, { merge: true });
+      }
+    });
+  }
 }
 
 async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('POST only');
-
-  const raw = await rawBody(req);
-  if (!verify(raw, req.headers, process.env.DODO_WEBHOOK_SECRET)) {
-    // Частая причина «оплатил — Pro не появился»: DODO_WEBHOOK_SECRET не задан
-    // или задан не в том Vercel-окружении (Production/Preview). Логируем явно,
-    // чтобы это было видно в логах функции, а не терялось молча.
-    console.error('webhook: bad signature — hasSecret =', !!process.env.DODO_WEBHOOK_SECRET);
-    return res.status(403).send('bad signature');
+  if (!process.env.DODO_WEBHOOK_SECRET || !process.env.DODO_PAYMENTS_API_KEY
+      || !process.env.DODO_PRODUCT_ID || (process.env.SYNAQ_USE_EMULATORS !== '1' && (!process.env.FIREBASE_PROJECT_ID
+      || !process.env.FIREBASE_CLIENT_EMAIL || !process.env.FIREBASE_PRIVATE_KEY))) {
+    return res.status(503).send('server_not_configured');
   }
-
-  let event;
-  try { event = JSON.parse(raw.toString('utf8')); }
-  catch { return res.status(400).send('bad json'); }
-
-  const type = event.type || event.event_type;
-  const data = event.data || {};
-
-  const patch = MAP[type];
-  if (!patch && type !== 'subscription.on_hold') {
-    console.log('webhook: событие проигнорировано —', type);
-    return res.status(200).send('ignored');
-  }
-
-  let uid = data.metadata?.parentUid;
-  if (!uid) {
-    // metadata не пришла прямо в вебхуке — подтягиваем объект по id (см. fetchMetadata).
-    const fetched = await fetchMetadata(data);
-    uid = fetched?.parentUid;
-  }
-
-  // Пайдаланушыға байланбаған төлем — 200 қайтарамыз, әйтпесе Dodo шексіз қайталайды.
-  if (!uid) {
-    console.warn('webhook: parentUid не найден —', type, 'id=', data.id, 'subscription_id=', data.subscription_id);
-    return res.status(200).send('ok');
-  }
-
-  console.log('webhook:', type, '→ uid', uid, 'pro=', patch?.pro);
-
   try {
-    const db = await store();
-    await db.collection('families').doc(uid).set({
-      ...(patch || {}),
-      dodoSubId: data.subscription_id || data.id || null,
-      dodoStatus: type,
-      proUpdatedAt: new Date(),
-    }, { merge: true });
-    if (typeof patch?.pro === 'boolean') {
-      await syncChildrenPro(db, uid, patch.pro);
-    }
-  } catch (e) {
-    console.error('firestore қатесі', e);
-    return res.status(500).send('db error');    // Dodo қайта жібереді
-  }
+    const raw = await rawBody(req);
+    if (!verify(raw, req.headers, process.env.DODO_WEBHOOK_SECRET)) return res.status(403).send('bad_signature');
+    let event;
+    try { event = JSON.parse(raw.toString('utf8')); } catch { return res.status(400).send('bad_json'); }
+    if (!EVENTS.has(event.type)) return res.status(200).send('ignored');
+    const eventAt = timestamp(event.timestamp);
+    if (!eventAt || eventAt > Date.now() + 300000) return res.status(400).send('bad_event_timestamp');
 
-  return res.status(200).send('ok');
-};
+    const db = store();
+    const eventId = String(req.headers['webhook-id']);
+    const eventRef = db.collection('paymentEvents').doc(crypto.createHash('sha256').update(eventId).digest('hex'));
+    const previousEvent = (await eventRef.get()).data();
+    if (previousEvent?.status === 'processed' || previousEvent?.status === 'ignored') return res.status(200).send('duplicate');
+    let parentUid = previousEvent?.status === 'applied' ? previousEvent.parentUid : '';
+
+    if (!parentUid) {
+      const resolved = await resolveSubscription(db, event);
+      if (resolved.ignored) {
+        await eventRef.set({ eventId, type: event.type, eventAt, status: 'ignored', reason: resolved.ignored, processedAt: new Date() });
+        return res.status(200).send('ignored');
+      }
+      const { subscription, ref } = resolved;
+      parentUid = resolved.parentUid;
+      const familyRef = db.collection('families').doc(parentUid);
+      const incoming = subscriptionState(subscription, parentUid, eventAt, eventId);
+      if (subscription.product_id !== process.env.DODO_PRODUCT_ID) incoming.pro = false;
+      const familyBefore = await familyRef.get();
+      if (!familyBefore.exists) throw failure('family_not_found');
+
+      // During rollout, retain another live subscription previously tracked
+      // only in the family document, even if the first event is an old expiry.
+      let legacy;
+      const legacyId = idOf(familyBefore.data()?.dodoSubId);
+      if (legacyId && legacyId !== subscription.subscription_id) {
+        const oldRef = db.collection('paymentSubscriptions').doc(legacyId);
+        if (!(await oldRef.get()).exists) {
+          const current = await legacySubscription(legacyId);
+          if (current) {
+            if (current.metadata?.parentUid && current.metadata.parentUid !== parentUid) throw failure('conflicting_legacy_parent');
+            legacy = subscriptionState(current, parentUid, timestamp(familyBefore.data()?.dodoEventAt), 'migration');
+            if (current.product_id !== process.env.DODO_PRODUCT_ID) legacy.pro = false;
+          }
+        }
+      }
+
+      await db.runTransaction(async (tx) => {
+        const [ledger, family, own, all] = await Promise.all([
+          tx.get(eventRef), tx.get(familyRef), tx.get(ref),
+          tx.get(db.collection('paymentSubscriptions').where('parentUid', '==', parentUid)),
+        ]);
+        if (['applied', 'processed'].includes(ledger.data()?.status)) return;
+        if (!family.exists) throw failure('family_not_found');
+        if (own.exists && own.data().parentUid !== parentUid) throw failure('conflicting_parent');
+        const states = new Map(all.docs.map((doc) => [doc.id, doc.data()]));
+        if (legacy && !states.has(legacy.subscriptionId)) {
+          states.set(legacy.subscriptionId, legacy);
+          tx.set(db.collection('paymentSubscriptions').doc(legacy.subscriptionId), legacy);
+        }
+        const stale = own.exists && Number(own.data().eventAt) > eventAt;
+        if (!stale) {
+          states.set(subscription.subscription_id, incoming);
+          tx.set(ref, incoming);
+        }
+        const active = [...states.values()].filter((s) => s.pro === true && Number(s.expiresAt) > Date.now())
+          .sort((a, b) => Number(b.expiresAt) - Number(a.expiresAt));
+        const selected = active[0];
+        tx.set(familyRef, {
+          pro: !!selected, proExpiresAt: selected ? new Date(selected.expiresAt) : null,
+          dodoSubId: selected?.subscriptionId || family.data()?.dodoSubId || subscription.subscription_id,
+          dodoStatus: selected?.status || (stale ? family.data()?.dodoStatus || 'inactive' : incoming.status),
+          dodoEventAt: new Date(Math.max(timestamp(family.data()?.dodoEventAt), eventAt)),
+          proUpdatedAt: new Date(),
+        }, { merge: true });
+        tx.set(eventRef, { eventId, type: event.type, eventAt, parentUid,
+          subscriptionId: subscription.subscription_id, status: 'applied', stale, appliedAt: new Date() });
+      });
+    }
+
+    // Keep 'applied' until every mirror succeeds. A retry resumes sync and
+    // never reapplies the old event to the authoritative family.
+    await syncChildrenPro(db, parentUid);
+    await eventRef.set({ status: 'processed', processedAt: new Date() }, { merge: true });
+    return res.status(200).send('ok');
+  } catch (error) {
+    console.error('payment webhook failed:', error.message);
+    res.setHeader('Retry-After', '30');
+    return res.status(error.status || 503).send(error.status ? error.message : 'processing_failed');
+  }
+}
 
 module.exports = handler;
-// Қолтаңба шикі байттар бойынша есептеледі — Vercel парсерін өшіреміз.
-// (module.exports-тан КЕЙІН тұруы керек, әйтпесе қайта жазылып кетеді.)
 module.exports.config = { api: { bodyParser: false } };

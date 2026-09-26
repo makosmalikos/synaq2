@@ -1,57 +1,16 @@
 // Данные вшиты в приложение (data.js + bank.js) — бэкенд не требуется.
 // Задачи без проверяемого ответа не участвуют в автопроверке.
-import { topics as BASE_TOPICS } from './data.js';
-import { POOL, EXTRA_TOPICS, detectLang } from './bank.js';
-import { auth, db } from './firebase.js';
-import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { topics as BASE_TOPICS, variants } from './data.js';
+import { POOL, EXTRA_TOPICS, ensureBankReady } from './bank.js';
 
 const P = (x) => Promise.resolve(x);
 const shuffle = (a) => a.map((x) => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map((x) => x[1]);
 const toIdSet = (v) => (v instanceof Set ? v : new Set(v || []));
 
-// Нормализация ответа: пробелы, запятая/точка, %. Единицы измерения здесь
-// НЕ срезаются — см. splitUnit ниже, их нужно сверять, а не просто выбрасывать.
-const norm = (v) => (v ?? '').toString().trim().toLowerCase()
-  .replace(/\s+/g, '').replace(',', '.').replace(/%$/, '');
-
-const UNIT_RE = /(км|мм|см|м|мин|кг|г|л|тг|га|°)$/u;
-// Отделяет единицу измерения с конца уже нормализованной строки.
-const splitUnit = (v) => {
-  const m = v.match(UNIT_RE);
-  return m ? { base: v.slice(0, -m[0].length), unit: m[0] } : { base: v, unit: null };
-};
-
-// "12.5" и "12.50" — одно и то же число, но как строки не равны; для похожих
-// на десятичную дробь значений сравниваем численно, а не посимвольно.
-const NUM_RE = /^-?\d+(\.\d+)?$/;
-const numsEqual = (a, b) => NUM_RE.test(a) && NUM_RE.test(b) && parseFloat(a) === parseFloat(b);
-
-// Ответ-заглушка ('—' или '-') — вопрос показываем (в отличие от answer:null,
-// который вообще уходит в карантин в bank.js), но автопроверкой не считаем.
-// Раньше это условие было продублировано в трёх местах (isCorrect,
-// topicQuestions, mockSubmit) и с разными наборами заглушек ('—' проверялся
-// везде, а обычный дефис '-' — только здесь), так что вопрос с "-" мог
-// попасть в подборку и всегда засчитываться как ошибка без явного повода.
-const UNGRADABLE = new Set(['—', '-']);
-export const isGradable = (q) => q?.answer != null
-  && String(q.answer).trim() !== ''
-  && !UNGRADABLE.has(String(q.answer).trim());
-
-// Проверка ответа. Для теста с вариантами — точное совпадение опции.
-export function isCorrect(given, q) {
-  if (!isGradable(q)) return false;
-  const ans = String(q.answer).trim();
-  if (q.options) return String(given).trim() === ans;
-  const a0 = norm(given);
-  if (a0 === '') return false;
-  const a = splitUnit(a0);
-  const b = splitUnit(norm(q.answer));
-  // Единицы указаны с обеих сторон и они разные ("100см" против "100км") —
-  // это разные величины, даже если число совпадает. Раньше unit просто
-  // срезался с обеих строк без сверки, и такой ответ засчитывался верным.
-  if (a.unit && b.unit && a.unit !== b.unit) return false;
-  return a.base === b.base || numsEqual(a.base, b.base);
-}
+import { norm, isGradable, isCorrect } from './grading.js';
+import { addQuestionsToTopics } from './topicSummary.js';
+export { isGradable, isCorrect } from './grading.js';
+export { topicStats, readiness, weekHours, mockSeries } from './analytics.js';
 
 const ALL_TOPICS = [...BASE_TOPICS, ...EXTRA_TOPICS];
 
@@ -104,7 +63,7 @@ function buildNish(excludeIds) {
   const qs = [];
   for (const [subj, want, section] of NISH_SPEC) {
     // казахских задач у НИШ мало — добираем из БИЛ
-    const pool = shuffle(POOL.filter((q) => (q.school === 'НИШ' || q.school === 'БИЛ') && q.subject === subj));
+    const pool = shuffle(examPool('НИШ', subj));
     for (const q of pickPreferFresh(pool, want, excludeIds)) {
       qs.push({ ...q, num: qs.length + 1, subject: subj, section });
     }
@@ -126,9 +85,54 @@ const BIL_SPEC = [
 ];
 const BIL_TIME_MIN = 120;
 
+export const MOCK_SPECS = {
+  'РФМШ': { count: RFMSH_COUNT, minutes: RFMSH_TIME_MIN, subjects: [[null, RFMSH_COUNT, 1]] },
+  'НИШ': { count: 120, minutes: NISH_TIME_MIN, subjects: NISH_SPEC },
+  'БИЛ': { count: 80, minutes: BIL_TIME_MIN, subjects: BIL_SPEC },
+};
+
+function examPool(school, subject) {
+  return POOL.filter((q) => isGradable(q) && (school === 'БИЛ'
+    ? ['БИЛ', 'КТЛ'].includes(q.school)
+    : q.school === school || (school === 'НИШ' && subject === 'kaz' && q.school === 'БИЛ'))
+    && (subject == null || q.subject === subject));
+}
+
+export function mockAvailability(school) {
+  const spec = MOCK_SPECS[school];
+  if (!spec) return { code: school, ready: false, count: 0, sections: 0 };
+  const subjects = spec.subjects.map(([subject, target, section]) => ({
+    subject, target, section, count: Math.min(target, examPool(school, subject).length),
+  }));
+  const count = subjects.reduce((sum, item) => sum + item.count, 0);
+  return { code: school, ready: count > 0, count, targetCount: spec.count,
+    shortened: count < spec.count, missingSubjects: subjects.filter((item) => item.count < item.target),
+    subjects, sections: new Set(subjects.filter((item) => item.count).map((item) => item.section)).size,
+    timeLimitMin: Math.max(1, Math.round(spec.minutes * count / spec.count)),
+  };
+}
+
+export function reviewQuestionIds(review = []) {
+  return [...new Set(review.flatMap((item) => {
+    if (item.qid || item.id) return [item.qid || item.id];
+    // Older reviews did not include qid. Match only unambiguous original text;
+    // never guess from a question number, which repeats between variants.
+    const matches = POOL.filter((q) => q.statement === item.statement
+      && (item.answer == null || String(q.answer) === String(item.answer)));
+    return matches.length === 1 ? [matches[0].id] : [];
+  }))];
+}
+
+export function reviewVariantId(school, review = []) {
+  const found = (variants || []).find((variant) => (variant.school || 'РФМШ') === school
+    && variant.questions.length === review.length && review.length > 0
+    && variant.questions.every((q, index) => q.statement === review[index].statement));
+  return found?.id || null;
+}
+
 function bilPool(subj, excludeIds) {
   // КТЛ и БИЛ — один формат; оба банка пусты до нового импорта.
-  const all = POOL.filter((q) => (q.school === 'БИЛ' || q.school === 'КТЛ') && q.subject === subj);
+  const all = examPool('БИЛ', subj);
   const gradable = shuffle(all.filter(isGradable));
   const ungradable = shuffle(all.filter((q) => !isGradable(q)));
   // Внутри каждой группы (с ответом / без) тоже предпочитаем непросмотренные —
@@ -162,42 +166,34 @@ const GENERATED = new Map();
 
 
 export const api = {
+  reviewQuestionIds,
+  reviewVariantId,
   // ── Тренировка ──
-  topics: () => P(
-    ALL_TOPICS
-      .map((t) => {
-        const qs = POOL.filter((q) => q.topic === t.id);
-        return {
-          ...t,
-          count: qs.length,
-          schools: [...new Set(qs.map((q) => q.school))],
-        };
-      })
-      .filter((t) => t.count > 0)
-  ),
+  topics: async () => {
+    await ensureBankReady();
+    return addQuestionsToTopics(ALL_TOPICS, POOL).filter((topic) => topic.count > 0);
+  },
 
   // excludeIds (Set/массив id уже решённых задач) раньше принимался
   // Training.jsx-те (openTopic/startTopicId-эффект), но здесь второй аргумент
   // просто отбрасывался — "не повторять решённое" молча не работал вообще,
   // ни в одном из путей входа в тренировку.
-  topicQuestions: (id, { excludeIds } = {}) => {
+  topicQuestions: async (id, { excludeIds } = {}) => {
+    await ensureBankReady();
     const exclude = toIdSet(excludeIds);
     return P(shuffle(POOL.filter((q) => q.topic === id && isGradable(q) && !exclude.has(q.id))));
   },
 
   // Аралас дайындык: только математические блоки, вперемешку по школам.
-  mixed: (_lang, limit = 20, block = 'math', excludeIds) => {
+  mixed: async (_lang, limit = 20, block = 'math', excludeIds) => {
+    await ensureBankReady();
     const exclude = toIdSet(excludeIds);
     const ids = ALL_TOPICS.filter((t) => t.block === block).map((t) => t.id);
     return P(shuffle(POOL.filter((q) => ids.includes(q.topic) && isGradable(q) && !exclude.has(q.id))).slice(0, limit));
   },
 
   // ── Мок-тест ──
-  schools: () => P([
-    { code: 'РФМШ', ready: POOL.some((q) => q.school === 'РФМШ') },
-    { code: 'НИШ',  ready: POOL.some((q) => q.school === 'НИШ') },
-    { code: 'БИЛ',  ready: POOL.some((q) => (q.school === 'БИЛ' || q.school === 'КТЛ') && q.subject === 'math') },
-  ]),
+  schools: async () => { await ensureBankReady(); return Object.keys(MOCK_SPECS).map(mockAvailability); },
 
   // Случайный вариант по школе. Никакого выбора «нұсқа» — жмёшь школу и решаешь.
   // Для всех трёх школ вариант собирается заново из общего пула (см. buildRfmsh/
@@ -212,7 +208,10 @@ export const api = {
   // нет устойчивого "id варианта" для сравнения — buildRfmsh/Nish/Bil каждый
   // раз возвращают новый id (`rfmsh_${Date.now()}` и т.п.), так что сравнивать
   // с "недавними вариантами" было бы сравнением со случайным числом.
-  mockRandom: (school, { excludeQuestionIds } = {}) => {
+  mockRandom: async (school, { excludeQuestionIds } = {}) => {
+    await ensureBankReady();
+    const availability = mockAvailability(school);
+    if (!availability.ready) return null;
     let v;
     if (school === 'РФМШ') {
       v = buildRfmsh(excludeQuestionIds);
@@ -223,6 +222,7 @@ export const api = {
     } else {
       return P(null);
     }
+    v = { ...v, ...availability, id: `${school}_${crypto.randomUUID()}` };
     GENERATED.set(v.id, v);
     // отдаём без ответов и разборов — как на экзамене
     return P({ ...v, questions: v.questions.map(({ answer, solution, note, ...rest }) => rest) });
@@ -238,6 +238,28 @@ export const api = {
     });
   },
 
+  // Refresh loses GENERATED. Rehydrate the exact variant using trusted bank
+  // questions; a stored display/translation snapshot never supplies its answers.
+  mockRestore: async (snapshot) => {
+    await ensureBankReady();
+    if (!snapshot || typeof snapshot.id !== 'string' || !snapshot.id
+      || !MOCK_SPECS[snapshot.school] || !Array.isArray(snapshot.questions)
+      || !snapshot.questions.length || snapshot.questions.length > MOCK_SPECS[snapshot.school].count
+      || !Number.isFinite(snapshot.timeLimitMin) || snapshot.timeLimitMin < 1
+      || snapshot.timeLimitMin > MOCK_SPECS[snapshot.school].minutes) throw new Error('invalid_exam_snapshot');
+    const bank = new Map(POOL.map((q) => [q.id, q]));
+    const ids = new Set();
+    const questions = snapshot.questions.map((saved, index) => {
+      const q = bank.get(saved?.id);
+      if (!q || !isGradable(q) || ids.has(q.id) || saved.num !== index + 1
+        || ![1, 2].includes(saved.section)) throw new Error('exam_question_unavailable');
+      ids.add(q.id);
+      return { ...q, num: saved.num, section: saved.section };
+    });
+    GENERATED.set(snapshot.id, { ...snapshot, questions });
+    return api.mockGet(snapshot.id);
+  },
+
   mockSubmit: (id, answers) => {
     const v = GENERATED.get(id);
     if (!v) return P(null);
@@ -249,7 +271,7 @@ export const api = {
       if (ok) correct++;
       else if (has && norm(answers[q.num]) !== '') wrong++;
       return {
-        num: q.num, topic: q.topic || null, subject: q.subject || null, school: v.school,
+        qid: q.id, num: q.num, topic: q.topic || null, subject: q.subject || null, school: v.school,
         statement: q.statement, solution: q.solution || '', image: q.image || null,
         options: q.options || null,
         your: answers[q.num] ?? null, answer: q.answer,
@@ -277,13 +299,12 @@ export const api = {
 // написана по-русски, часть — по-казахски, вперемешку и без общей логики —
 // раньше это и давало «смешение языков» внутри одной темы. Теперь у каждой
 // задачи есть q.lang (bank.js: detectLang) — реальный язык условия. Переводим
-// только то, что не совпадает с выбранным языком интерфейса, через /api/explain
-// (режим translate), и кешируем результат НАВСЕГДА в Firestore — как explain.js
-// кэширует разборы: один раз переведено — дальше отдаётся всем детям бесплатно
-// и мгновенно, без повторных обращений к модели.
+// только то, что не совпадает с выбранным языком интерфейса, через /api/explain.
+// Общий доверенный кэш принадлежит серверу; клиент хранит только память сессии.
 // Задачи по языкам (орыс/ағылшын/қазақ тілі) НЕ переводим: перевод убивает задание.
 const LANG_SUBJECTS = ['rus', 'eng', 'kaz'];
 const trCache = new Map();   // в пределах сессии — вообще без похода в сеть/Firestore
+const translationKey = (q, lang) => JSON.stringify([q.id, q.statement, q.solution || '', lang]);
 
 export const translatable = (q) => !LANG_SUBJECTS.includes(q.subject);
 
@@ -291,26 +312,14 @@ export async function translateQuestions(list, lang) {
   if (!list?.length) return list;
 
   // нужен перевод только тому, чей реальный язык не совпадает с выбранным
-  const need = list.filter((q) => translatable(q) && q.lang && q.lang !== lang && !trCache.has(`${q.id}_${lang}`));
+  const need = list.filter((q) => translatable(q) && q.lang && q.lang !== lang && !trCache.has(translationKey(q, lang)));
 
   if (need.length) {
-    // 1) сначала общий кэш в Firestore — вдруг эту же задачу уже перевели для другого ребёнка
-    const stillMissing = [];
-    await Promise.all(need.map(async (q) => {
-      const key = `${q.id}_${lang}`;
       try {
-        const snap = await getDoc(doc(db, 'translations', key));
-        if (snap.exists()) { trCache.set(key, snap.data()); return; }
-      } catch { /* правила ещё не опубликованы — просто переводим заново */ }
-      stillMissing.push(q);
-    }));
-
-    // 2) чего нигде нет — переводим через Gemini батчами (api/explain ограничивает 30 за раз)
-    if (stillMissing.length) {
-      try {
+        const { auth } = await import('./firebase.js');
         const token = await auth.currentUser?.getIdToken?.();
-        for (let i = 0; i < stillMissing.length; i += 30) {
-          const batch = stillMissing.slice(i, i + 30);
+        for (let i = 0; i < need.length; i += 30) {
+          const batch = need.slice(i, i + 30);
           const r = await fetch('/api/explain', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
@@ -320,92 +329,25 @@ export async function translateQuestions(list, lang) {
               items: batch.map((q) => ({ id: q.id, statement: q.statement, solution: q.solution || '' })),
             }),
           });
+          if (!r.ok) throw new Error(`translation_${r.status}`);
           const data = await r.json();
-          for (const [id, v] of Object.entries(data || {})) {
-            const key = `${id}_${lang}`;
-            trCache.set(key, v);
-            // create-only: готовый перевод больше не перезаписывается
-            setDoc(doc(db, 'translations', key), { ...v, lang, qid: id, at: serverTimestamp() }).catch(() => {});
+          for (const q of batch) {
+            const value = data?.[q.id];
+            if (value && typeof value.statement === 'string' && value.statement.trim()) {
+              trCache.set(translationKey(q, lang), value);
+            }
           }
         }
       } catch (e) {
         console.warn('перевод не удался — показываем оригинал', e);
       }
-    }
   }
 
   return list.map((q) => {
     if (!translatable(q) || !q.lang || q.lang === lang) return q;
-    const tr = trCache.get(`${q.id}_${lang}`);
-    return tr ? { ...q, statement: tr.statement || q.statement, solution: tr.solution || q.solution } : q;
+    const tr = trCache.get(translationKey(q, lang));
+    return tr ? { ...q, statement: tr.statement || q.statement, solution: tr.solution || q.solution } : { ...q, needsTranslation: true };
   });
 }
 
-// ── Статистика по ребёнку ──
-// Считается из реальных данных: attempts (тема, верно/неверно, секунды) и mocks.
-
-const LEVEL = (pct) => (pct >= 70 ? 'strong' : pct >= 50 ? 'mid' : 'weak');
-
-// Освоение по темам: сколько решено, сколько верно, уровень.
-export function topicStats(attempts, topicList) {
-  const by = {};
-  for (const a of attempts) {
-    const k = a.topic || '—';
-    by[k] = by[k] || { tried: 0, ok: 0, secs: 0, days: new Set() };
-    by[k].tried++;
-    if (a.correct) by[k].ok++;
-    by[k].secs += a.secs || 0;
-    const d = a.at?.seconds ? new Date(a.at.seconds * 1000).toDateString() : null;
-    if (d) by[k].days.add(d);
-  }
-  return topicList
-    .map((t) => {
-      const s = by[t.id];
-      if (!s || !s.tried) return null;
-      const pct = Math.round((s.ok / s.tried) * 100);
-      return {
-        id: t.id, name: t.name, block: t.block,
-        tried: s.tried, pct, level: LEVEL(pct), days: s.days.size,
-      };
-    })
-    .filter(Boolean);
-}
-
-// Общая готовность: средний процент по темам, где были попытки.
-export function readiness(stats) {
-  if (!stats.length) return 0;
-  return Math.round(stats.reduce((s, t) => s + t.pct, 0) / stats.length);
-}
-
-// Часы занятий по дням текущей недели (Дс…Жс).
-export function weekHours(attempts) {
-  const DAYS = ['Жс', 'Дс', 'Сс', 'Ср', 'Бс', 'Жм', 'Сб'];
-  const now = new Date();
-  const monday = new Date(now);
-  monday.setDate(now.getDate() - ((now.getDay() + 6) % 7));
-  monday.setHours(0, 0, 0, 0);
-
-  const out = ['Дс', 'Сс', 'Ср', 'Бс', 'Жм', 'Сб', 'Жс'].map((d) => ({ day: d, hours: 0 }));
-  for (const a of attempts) {
-    if (!a.at?.seconds) continue;
-    const t = new Date(a.at.seconds * 1000);
-    if (t < monday) continue;
-    const idx = (t.getDay() + 6) % 7;          // Дс = 0
-    out[idx].hours += (a.secs || 0) / 3600;
-  }
-  return out.map((d) => ({ ...d, hours: Math.round(d.hours * 10) / 10 }));
-}
-
-// Баллы мок-тестов по неделям (для графика роста).
-export function mockSeries(mocks) {
-  return [...mocks]
-    .filter((m) => m.at?.seconds)
-    .sort((a, b) => a.at.seconds - b.at.seconds)
-    .slice(-6)
-    .map((m, i) => ({
-      label: `${i + 1}-ап`,
-      score: m.score || 0,
-      max: m.gradable || 0,
-      school: m.school || '',
-    }));
-}
+// Analytics live in analytics.js so reports do not load the question bank.

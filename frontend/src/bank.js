@@ -1,7 +1,8 @@
 // Единый банк задач: РФМШ + НИШ (+ КТЛ/БИЛ — один формат, сейчас банк пуст).
 import * as DATA from './data.js';
-import { db } from './firebase.js';
-import { collection, getDocs } from 'firebase/firestore';
+import { detectLang, quarantineReason, partitionAdminTasks } from './questionMetadata.js';
+import { readAdminTasks } from './adminTasks.js';
+export { detectLang, normalizeAdminTask } from './questionMetadata.js';
 
 const questions  = DATA.questions  || [];
 const nishMath   = DATA.nishMath   || [];
@@ -44,12 +45,6 @@ const SUBJ_TOPIC = { kolzar: 'kolzar', kaz: 'lang_kaz', rus: 'lang_rus', eng: 'l
 // (ә/і/ң/ғ/ү/ұ/қ/ө/һ, которых в русском алфавите нет) — это надёжнее, чем
 // доверять источнику. Для предметов-языков (kaz/rus/eng) язык известен заранее
 // и не зависит от текста (урок английского не «становится казахским»).
-const KK_LETTERS = /[әіңғүұқөһӘІҢҒҮҰҚӨҺ]/;
-const SUBJ_LANG = { kaz: 'kk', rus: 'ru', eng: 'en' };
-const TOPIC_LANG = { lang_kaz: 'kk', lang_rus: 'ru', lang_eng: 'en' };
-export function detectLang(q) {
-  return SUBJ_LANG[q.subject] || TOPIC_LANG[q.topic] || (KK_LETTERS.test(q.statement || '') ? 'kk' : 'ru');
-}
 
 function cleanLang(text) {
   if (!text) return text;
@@ -87,38 +82,7 @@ const RAW_POOL = [
   ...variantA2.map((q) => one(q, 'НИШ')),
 ];
 
-// Эти ссылки есть в импортированных данных, но самих файлов в public/figures нет.
-// Держим список рядом с банком, чтобы такие вопросы не попадали детям. Валидатор
-// проверяет, что список можно сокращать по мере восстановления изображений.
-const MISSING_FIGURES = new Set([
-  '/figures/logic66.png',
-  '/figures/logic67.png',
-  '/figures/logic68.png',
-  '/figures/logic69.png',
-  '/figures/logic70.png',
-  '/figures/a2_img1.png',
-  '/figures/a2_img2.png',
-  '/figures/a2_img3.png',
-  '/figures/a2_img4.png',
-  '/figures/a2_img5.png',
-  '/figures/a2_img6.png',
-  '/figures/a2_img7.png',
-  '/figures/a2_img8.png',
-  '/figures/a2_img9.png',
-  '/figures/a2_img10.png',
-  '/figures/a2_img11.png',
-  '/figures/a2_img13.png',
-]);
-
-function quarantineReason(q) {
-  if (!q.id || !String(q.id).trim()) return 'missing_id';
-  if (!q.statement || !String(q.statement).trim()) return 'missing_statement';
-  if (q.answer == null || !String(q.answer).trim()) return 'missing_answer';
-  if (q.options != null && (!Array.isArray(q.options) || q.options.length < 2)) return 'insufficient_options';
-  if (Array.isArray(q.options) && !q.options.map(String).includes(String(q.answer))) return 'answer_not_in_options';
-  if (q.image && MISSING_FIGURES.has(q.image)) return 'missing_image';
-  return null;
-}
+// Quarantine rules are shared with the lightweight topic catalog.
 
 // Сохраняем первый встретившийся ID, чтобы не ломать уже записанный прогресс.
 // Только последующие совпадения получают стабильный суффикс __dupN. Нормализуем
@@ -162,34 +126,24 @@ export const EXTRA_TOPICS = [
 // через .push() — т.к. это те же самые массивы (const фиксирует ссылку, не
 // содержимое), все, кто уже сделал `import { POOL } from './bank.js'`, увидят
 // новые задачи без пересборки и передеплоя, как только придёт ответ от Firestore.
-function normalizeAdminTask(raw) {
-  return {
-    id: raw.id,
-    school: raw.school || null,
-    topic: raw.topic || null,
-    difficulty: raw.difficulty ?? null,
-    statement: raw.statement || '',
-    answer: raw.answer ?? null,
-    solution: raw.solution || '',
-    image: raw.image || null,
-    options: Array.isArray(raw.options) ? raw.options : null,
-    lang: detectLang({ topic: raw.topic, statement: raw.statement }),
-  };
+
+let adminLoad;
+// Explicit, shared readiness barrier. Importing the static bank is offline-safe.
+// A failed remote read leaves the static bank available and is retried next time.
+export function ensureBankReady(readTasks = readAdminTasks) {
+  if (!adminLoad) adminLoad = loadAdminTasks(readTasks);
+  return adminLoad;
 }
 
-(async function loadAdminTasks() {
+async function loadAdminTasks(readTasks) {
   try {
-    const snap = await getDocs(collection(db, 'bankTasks'));
-    const seenIds = new Set(POOL.map((q) => q.id));
-    for (const docSnap of snap.docs) {
-      const q = normalizeAdminTask({ id: docSnap.id, ...docSnap.data() });
-      const reason = seenIds.has(q.id) ? 'duplicate_id' : quarantineReason(q);
-      if (reason) { BANK_QUARANTINE.push({ ...q, quarantineReason: reason }); continue; }
-      seenIds.add(q.id);
-      POOL.push(q);
-    }
+    const tasks = await readTasks();
+    const { active, quarantined } = partitionAdminTasks(tasks, POOL.map((q) => q.id));
+    POOL.push(...active);
+    BANK_QUARANTINE.push(...quarantined);
   } catch (e) {
     // Тренировка на статическом банке продолжает работать и без admin-задач.
     console.warn('bankTasks (задачи администратора) не загрузились:', e?.message || e);
+    adminLoad = null;
   }
-})();
+}

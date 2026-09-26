@@ -2,10 +2,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { BANK_QUARANTINE, POOL } from '../frontend/src/bank.js';
+import { MOCK_SPECS, mockAvailability } from '../frontend/src/api.js';
+import { checkTopicCatalog } from './generate-topic-catalog.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = path.join(root, 'frontend', 'public');
 const errors = [];
+if (!checkTopicCatalog()) errors.push('topic catalog is stale; run node scripts/generate-topic-catalog.mjs --write');
 
 function fail(message) {
   errors.push(message);
@@ -38,19 +41,21 @@ for (const q of POOL) {
 }
 
 // Если изображение восстановили, вопрос должен автоматически вернуться в банк:
-// удаляем его путь из MISSING_FIGURES в bank.js.
+// удаляем его путь из MISSING_FIGURES в questionMetadata.js.
 for (const q of BANK_QUARANTINE.filter((item) => item.quarantineReason === 'missing_image')) {
   if (fs.existsSync(path.join(publicDir, q.image))) {
     fail(`${q.id}: ${q.image} exists but is still quarantined`);
   }
 }
 
-// Минимум для мок-теста БИЛ (math 40 · logic 20 · kaz 20) — по мере импорта.
-const bilSpec = { math: 18, logic: 0, kaz: 0 };
-for (const [subject, minimum] of Object.entries(bilSpec)) {
-  if (minimum <= 0) continue;
-  const count = POOL.filter((q) => (q.school === 'БИЛ' || q.school === 'КТЛ') && q.subject === subject).length;
-  if (count < minimum) fail(`BIL ${subject}: need ${minimum}, found ${count}`);
+// Validate the declared full format and the honest, available shortened mode.
+for (const [school, spec] of Object.entries(MOCK_SPECS)) {
+  if (spec.subjects.reduce((sum, [, count]) => sum + count, 0) !== spec.count) fail(`${school}: invalid declared total`);
+  const available = mockAvailability(school);
+  if (!available.ready) fail(`${school}: no gradable questions`);
+  if (available.count !== available.subjects.reduce((sum, item) => sum + item.count, 0)) fail(`${school}: inconsistent available total`);
+  if (available.shortened !== (available.count < spec.count)) fail(`${school}: incomplete format must be labelled shortened`);
+  if (available.shortened) console.log(`  ${school}: shortened ${available.count}/${spec.count}; missing ${available.missingSubjects.map((item) => `${item.subject}: ${item.target - item.count}`).join(', ')}`);
 }
 
 const byReason = BANK_QUARANTINE.reduce((out, q) => {

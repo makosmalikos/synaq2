@@ -1,31 +1,35 @@
 // Firebase: авторизация (родитель по почте, ребёнок по логину+паролю) и прогресс.
-import { initializeApp, deleteApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
-  signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail,
+  signOut, onIdTokenChanged, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail,
   EmailAuthProvider, linkWithCredential, reauthenticateWithCredential, updatePassword,
-  signInWithCustomToken, deleteUser,
+  signInWithCustomToken, connectAuthEmulator,
 } from 'firebase/auth';
 import {
-  getFirestore, doc, setDoc, getDoc, getDocs, addDoc, collection, serverTimestamp,
-  runTransaction, increment,
+  getFirestore, doc, setDoc, getDoc, getDocs, collection, serverTimestamp,
+  runTransaction, onSnapshot, connectFirestoreEmulator, query, orderBy, limit,
 } from 'firebase/firestore';
+import { firebaseSettings } from './firebaseConfig.js';
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyATdVvMsNkN0F66XipkShtFe0wKizu2r6o',
-  authDomain: 'synaq-88779.firebaseapp.com',
-  projectId: 'synaq-88779',
-  storageBucket: 'synaq-88779.firebasestorage.app',
-  messagingSenderId: '592299512879',
-  appId: '1:592299512879:web:b87d2fe2d2e67f6f99e2da',
-};
-
-const app = initializeApp(firebaseConfig);
+const settings = firebaseSettings(import.meta.env, globalThis.location?.hostname);
+const app = initializeApp(settings.config);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+if (settings.emulators) {
+  connectAuthEmulator(auth, 'http://127.0.0.1:19099');
+  connectFirestoreEmulator(db, '127.0.0.1', 18080);
+}
 
 const KID_DOMAIN = '@synaq.kids';
-const kidEmail = (code) => code.trim().toLowerCase() + KID_DOMAIN;
+const kidEmail = (code = '') => {
+  const value = String(code).trim().toLowerCase();
+  const username = value.endsWith(KID_DOMAIN) ? value.slice(0, -KID_DOMAIN.length) : value;
+  if (!/^[a-z0-9]+$/.test(username)) {
+    throw Object.assign(new Error('invalid-child-code'), { code: 'auth/invalid-child-code' });
+  }
+  return username + KID_DOMAIN;
+};
 export const isKid = (user) => !!user && (user.email || '').endsWith(KID_DOMAIN);
 
 // Пароль: без похожих символов (0/O, 1/l) — детям диктовать голосом.
@@ -55,19 +59,34 @@ const normEmail = (email = '') => email.trim().toLowerCase();
 // ── Родитель ──
 // Школа больше не спрашивается вообще: дайындык идёт по всему банку,
 // а школа выбирается только в момент мок-теста.
+export async function ensureFamilyProfile(user, name = user?.displayName || '') {
+  if (!user?.uid || !user.email || isKid(user)) throw Object.assign(new Error('parent_required'), { code: 'auth/parent-required' });
+  const ref = doc(db, 'families', user.uid);
+  const parentName = String(name).trim();
+  return runTransaction(db, async (tx) => {
+    const snapshot = await tx.get(ref);
+    if (snapshot.exists()) {
+      // A parallel auth callback may have created the profile before displayName
+      // finished saving. Fill that name only; never replace an existing family.
+      if (parentName && !snapshot.data().parentName) tx.set(ref, { parentName }, { merge: true });
+      return;
+    }
+    tx.set(ref, { parentEmail: normEmail(user.email), parentName: parentName || null, createdAt: serverTimestamp() });
+  });
+}
+
 export async function registerParent(email, password, name = '') {
   const cred = await createUserWithEmailAndPassword(auth, normEmail(email), password);
   const parentName = name.trim();
   if (parentName) await updateProfile(cred.user, { displayName: parentName }).catch(() => {});
-  await setDoc(doc(db, 'families', cred.user.uid), {
-    parentEmail: normEmail(email),
-    parentName: parentName || null,
-    createdAt: serverTimestamp(),
-  });
+  await ensureFamilyProfile(cred.user, parentName);
   return cred.user;
 }
-export const loginParent = (email, password) =>
-  signInWithEmailAndPassword(auth, normEmail(email), password);
+export async function loginParent(email, password) {
+  const cred = await signInWithEmailAndPassword(auth, normEmail(email), password);
+  await ensureFamilyProfile(cred.user);
+  return cred;
+}
 
 export async function resetParentPassword(email) {
   await sendPasswordResetEmail(auth, normEmail(email));
@@ -102,51 +121,31 @@ export async function loginGoogle() {
   const provider = new GoogleAuthProvider();
   provider.setCustomParameters({ prompt: 'select_account' });
   const cred = await signInWithPopup(auth, provider);
-  try {
-    const ref = doc(db, 'families', cred.user.uid);
-    const snap = await getDoc(ref);
-    if (!snap.exists()) await setDoc(ref, { parentEmail: cred.user.email, createdAt: serverTimestamp() });
-  } catch { /* Firestore міндетті емес — авторизация өтті */ }
+  await ensureFamilyProfile(cred.user);
   return cred.user;
 }
 
 // ── Родитель создаёт ребёнка ──
-// createUserWithEmailAndPassword МОЛЧА логинит нового юзера в тот же app —
-// родитель бы вылетел из сессии и следующая запись упала бы с permission-denied.
-// Поэтому аккаунт ребёнка создаём во ВТОРИЧНОМ экземпляре Firebase.
-export async function createChild(parentUid, { name, klass = '', code, pin }) {
-  const family = await getDoc(doc(db, 'families', parentUid));
-  const pro = !!family.data()?.pro;
-  const secondary = initializeApp(firebaseConfig, 'sec-' + Date.now());
-  const secAuth = getAuth(secondary);
-  // Если один из setDoc ниже упадёт (сеть, временная ошибка правил) уже
-  // ПОСЛЕ того, как Auth-аккаунт ребёнка создан, раньше это оставляло
-  // "зависший" аккаунт: сам логин есть, а Firestore-записей о нём нет —
-  // и повтор с тем же юзернеймом навсегда падал с auth/email-already-in-use,
-  // потому что откатить созданного пользователя было некому. createdUser
-  // держит ссылку, пока запись не завершится полностью, и откатывается
-  // в catch, если что-то пошло не так на полпути.
-  let createdUser = null;
-  try {
-    const cred = await createUserWithEmailAndPassword(secAuth, kidEmail(code), pin);
-    createdUser = cred.user;
-    const childUid = cred.user.uid;
-    // Имя в профиль аккаунта — тогда оно показывается сразу, даже если
-    // childIndex почему-то не прочитается.
-    await updateProfile(cred.user, { displayName: name }).catch(() => {});
-    await setDoc(doc(db, 'families', parentUid, 'children', childUid), {
-      name, klass, code: code.trim().toLowerCase(), createdAt: serverTimestamp(),
-    });
-    await setDoc(doc(db, 'childIndex', childUid), { parentUid, name, klass, pro });
-    createdUser = null; // всё записалось — откатывать больше нечего
-    return { childUid, code };
-  } catch (e) {
-    if (createdUser) await deleteUser(createdUser).catch(() => {});
-    throw e;
-  } finally {
-    await signOut(secAuth).catch(() => {});
-    await deleteApp(secondary).catch(() => {});
+// Auth-аккаунт и связь с семьёй создаёт сервер после проверки родителя.
+// Клиенту запрещено менять childIndex и присваивать существующие аккаунты.
+export async function createChild(parentUid, { name, klass = '', code, pin, requestId, avatar }) {
+  const user = auth.currentUser;
+  if (!user || user.uid !== parentUid) throw Object.assign(new Error('login_required'), { code: 'auth/requires-login' });
+  const normalized = kidEmail(code).slice(0, -KID_DOMAIN.length);
+  const response = await fetch('/api/child-create', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${await user.getIdToken()}` },
+    body: JSON.stringify({ name, klass, code: normalized, pin, requestId, avatar }),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    const errorCode = ({ username_taken: 'auth/email-already-in-use', 'email-already-in-use': 'auth/email-already-in-use',
+      weak_password: 'auth/weak-password', child_limit: 'auth/child-limit', invalid_child_code: 'auth/invalid-child-code',
+      invalid_child: 'auth/invalid-child', family_missing: 'auth/family-missing', rate_limit: 'auth/too-many-requests',
+    })[data.error] || 'auth/child-create-failed';
+    throw Object.assign(new Error(data.error || 'child-create-failed'), { code: errorCode });
   }
+  return { childUid: data.childUid, code: normalized };
 }
 
 // Только родитель. API сверяет ID-токен родителя и связь family/child в
@@ -167,12 +166,15 @@ export async function resetChildPassword(childUid, password) {
       : data.error === 'not_child_owner' ? 'auth/not-child-owner'
         : data.error === 'child_not_found' ? 'auth/user-not-found'
           : 'auth/child-reset-failed';
-    throw Object.assign(new Error(data.error || 'child-reset-failed'), { code });
+    throw Object.assign(new Error(data.error || 'child-reset-failed'), { code, passwordChanged: data.passwordChanged === true });
   }
   return true;
 }
 
-export const loginChild = (code, pin) => signInWithEmailAndPassword(auth, kidEmail(code), pin);
+export async function loginChild(code, pin) {
+  if (String(pin || '').length < 6) throw Object.assign(new Error('invalid-child-pin'), { code: 'auth/invalid-child-pin' });
+  return signInWithEmailAndPassword(auth, kidEmail(code), pin);
+}
 
 export function childErrText(e, lang = 'kk') {
   const code = e?.code || '';
@@ -194,7 +196,7 @@ export function childErrText(e, lang = 'kk') {
   if (code.includes('network')) {
     return ru ? 'Проверьте интернет-соединение и попробуйте снова.' : 'Интернет байланысын тексеріп, қайта көріңіз.';
   }
-  return errText(e);
+  return errText(e, lang);
 }
 
 // Дуэль: XP начисляет только сервер (транзакция + идемпотентность по коду
@@ -250,34 +252,79 @@ export async function loginAdmin() {
 export async function isAdmin(user) {
   if (!user) return false;
   try {
-    const result = await user.getIdTokenResult(true);
+    const result = await user.getIdTokenResult();
     return result.claims?.admin === true && result.claims?.adminAuthVersion === 2;
   } catch { return false; }
 }
 
-// Профиль ребёнка: настоящее имя вместо заглушки «Бала»
+function expiryMillis(value) {
+  if (value?.toMillis) return value.toMillis();
+  if (value == null) return 0;
+  return new Date(value).getTime();
+}
+
+export function familyHasPro(family) {
+  const expiresAt = expiryMillis(family?.proExpiresAt);
+  return family?.pro === true && (family.proExpiresAt == null || Number.isFinite(expiresAt) && expiresAt > Date.now());
+}
+
+// The family is authoritative; childIndex is only a server-owned relationship.
 export async function getMyProfile() {
   const u = auth.currentUser;
-  if (!u) return { name: '', klass: '' };
-  const fallback = { name: u.displayName || '', klass: '' };
-  try {
-    const s = await getDoc(doc(db, 'childIndex', u.uid));
-    if (!s.exists()) return fallback;
-    const d = s.data();
-    return { name: d.name || fallback.name, klass: d.klass || '' };
-  } catch { return fallback; }
+  if (!u) return { name: '', klass: '', pro: false };
+  const s = await getDoc(doc(db, 'childIndex', u.uid));
+  const d = s.data() || {};
+  const family = d.parentUid ? await getDoc(doc(db, 'families', d.parentUid)) : null;
+  return { name: d.name || u.displayName || '', klass: d.klass || '', school: d.school || 'РФМШ', avatar: d.avatar || 'owl',
+    pro: familyHasPro(family?.data()), proExpiresAt: family?.data()?.proExpiresAt || null };
+}
+
+function watchChildProfile(uid, fallbackName, callback, onError = () => {}) {
+  let stopFamily = () => {}, expiryTimer, closed = false;
+  const fail = (error) => { if (!closed) onError(error); };
+  const stopIndex = onSnapshot(doc(db, 'childIndex', uid), (snapshot) => {
+    stopFamily(); clearTimeout(expiryTimer);
+    const index = snapshot.data() || {};
+    const base = { name: index.name || fallbackName || '', klass: index.klass || '', school: index.school || 'РФМШ', avatar: index.avatar || 'owl' };
+    callback({ ...base, pro: false, proLoading: !!index.parentUid });
+    if (!index.parentUid) return;
+    stopFamily = onSnapshot(doc(db, 'families', index.parentUid), (family) => {
+      clearTimeout(expiryTimer);
+      const data = family.data();
+      const emit = () => {
+        if (closed) return;
+        callback({ ...base, pro: familyHasPro(data), proExpiresAt: data?.proExpiresAt || null, proLoading: false });
+        const remaining = expiryMillis(data?.proExpiresAt) - Date.now();
+        if (familyHasPro(data) && remaining > 0) expiryTimer = setTimeout(emit, Math.min(remaining + 25, 2147483647));
+      };
+      emit();
+    }, fail);
+  }, fail);
+  return () => { closed = true; stopIndex(); stopFamily(); clearTimeout(expiryTimer); };
+}
+
+export function watchMyProfile(callback, onError) {
+  const user = auth.currentUser;
+  if (!user) return () => {};
+  return watchChildProfile(user.uid, user.displayName, callback, onError);
+}
+
+export function watchPro(childUid, callback, onError) {
+  return watchChildProfile(childUid, '', (profile) => {
+    if (!profile.proLoading) callback(profile.pro);
+  }, onError);
 }
 
 export const logout = () => signOut(auth);
-export const watchAuth = (cb) => onAuthStateChanged(auth, cb);
+export const watchAuth = (cb) => onIdTokenChanged(auth, cb);
 
 // ── Прогресс ──
 export const setFlag = (uid, qid, on) => on
   ? setDoc(doc(db, 'results', uid, 'flags', qid), { qid, at: serverTimestamp() })
   : import('firebase/firestore').then(({ deleteDoc }) => deleteDoc(doc(db, 'results', uid, 'flags', qid)));
 export async function getFlags(uid) {
-  try { const snap = await getDocs(collection(db, 'results', uid, 'flags')); return snap.docs.map((d) => d.id); }
-  catch { return []; }
+  const snap = await getDocs(collection(db, 'results', uid, 'flags'));
+  return snap.docs.map((d) => d.id);
 }
 
 // attempts — вся история попыток (для процента правильных).
@@ -285,69 +332,74 @@ export async function getFlags(uid) {
 // или нет. Ребёнок решал — значит, задача засчитана как пройденная; счётчик
 // «шешілген есеп» не должен стоять на нуле только потому, что он ошибся.
 // Ключ = qid, поэтому повторное открытие той же задачи счётчик не надувает.
-export async function saveAttempt(uid, a) {
-  await addDoc(collection(db, 'results', uid, 'attempts'), { ...a, at: serverTimestamp() });
-  await setDoc(doc(db, 'results', uid, 'solved', a.qid), {
-    qid: a.qid, topic: a.topic || null, school: a.school || null,
-    correct: !!a.correct, at: serverTimestamp(),
-  }, { merge: true }).catch(() => {});
-  await creditXpFromAttempt(uid, { correct: !!a.correct, secs: a.secs || 0 }).catch(() => {});
+async function learningRequest(uid, body) {
+  const user = auth.currentUser;
+  if (!user || user.uid !== uid) throw Object.assign(new Error('auth-required'), { code: 'learning/auth-required' });
+  const token = await user.getIdToken();
+  if (auth.currentUser?.uid !== uid) throw Object.assign(new Error('auth-required'), { code: 'learning/auth-required' });
+  const response = await fetch('/api/learning', {
+    method: 'POST', signal: AbortSignal.timeout(20000),
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+    body: JSON.stringify(body),
+  });
+  const result = await response.json().catch(() => null);
+  if (!response.ok || !result || typeof result !== 'object') {
+    const reason = result?.error || 'temporarily-unavailable';
+    throw Object.assign(new Error(reason), { code: `learning/${reason}` });
+  }
+  return result;
+}
+
+export function startLearningSession(uid, request, id = crypto.randomUUID()) {
+  const body = request?.mode === 'curriculum'
+    ? { mode: 'curriculum', topicKey: request.topicKey, level: request.level }
+    : { mode: 'training', qid: request?.qid };
+  return learningRequest(uid, { ...body, action: 'start', id });
+}
+
+export async function saveAttempt(uid, a, attemptId = a?.sessionId) {
+  if (!a?.sessionId || a.sessionId !== attemptId) throw Object.assign(new Error('session-required'), { code: 'learning/session-required' });
+  // The browser cannot submit its own grade, XP, school/topic or elapsed time.
+  return learningRequest(uid, { action: 'answer', id: attemptId, answer: a.answer });
 }
 
 const statsRef = (uid) => doc(db, 'results', uid, 'stats', 'summary');
 
 export async function getXpSummary(uid) {
-  try {
-    const snap = await getDoc(statsRef(uid));
-    return snap.exists() ? snap.data() : { xp: 0, studySecs: 0 };
-  } catch { return { xp: 0, studySecs: 0 }; }
+  const snap = await getDoc(statsRef(uid));
+  return snap.exists() ? snap.data() : { xp: 0, studySecs: 0 };
 }
 
 export async function getDiagnosticStatus(uid) {
-  try {
-    const snap = await getDoc(statsRef(uid));
-    const data = snap.exists() ? snap.data() : {};
-    return { used: !!data.diagnosticMockUsed, at: data.diagnosticMockAt || null };
-  } catch { return { used: false, at: null }; }
+  const snap = await getDoc(statsRef(uid));
+  const data = snap.exists() ? snap.data() : {};
+  return { used: !!data.diagnosticMockUsed, at: data.diagnosticMockAt || null };
 }
 
 export async function markDiagnosticComplete(uid) {
-  await setDoc(statsRef(uid), {
-    diagnosticMockUsed: true,
-    diagnosticMockAt: serverTimestamp(),
-    updatedAt: serverTimestamp(),
-  }, { merge: true });
+  await runTransaction(db, async (tx) => {
+    const snapshot = await tx.get(statsRef(uid));
+    const previous = snapshot.data() || {};
+    if (previous.diagnosticMockUsed) return;
+    tx.set(statsRef(uid), { ...(snapshot.exists() ? {} : { xp: 0, studySecs: 0 }),
+      diagnosticMockUsed: true, diagnosticMockAt: serverTimestamp(), updatedAt: serverTimestamp(),
+    }, { merge: true });
+  });
 }
 
 export async function addXp(uid, amount, reason = '') {
-  if (!uid || !amount || amount <= 0) return;
-  await setDoc(statsRef(uid), {
-    xp: increment(amount),
-    lastGain: amount,
-    lastReason: reason,
-    updatedAt: serverTimestamp(),
-  }, { merge: true });
+  throw Object.assign(new Error('XP is awarded only by verified server actions'), { code: 'learning/server-award-required' });
 }
 
-async function creditXpFromAttempt(uid, { correct, secs }) {
-  await runTransaction(db, async (tx) => {
-    const ref = statsRef(uid);
-    const snap = await tx.get(ref);
-    const data = snap.exists() ? snap.data() : { xp: 0, studySecs: 0 };
-    let xp = data.xp || 0;
-    let studySecs = data.studySecs || 0;
-    if (correct) xp += 5;
-    if (secs > 0) {
-      const prevH = Math.floor(studySecs / 3600);
-      studySecs += secs;
-      const newH = Math.floor(studySecs / 3600);
-      xp += (newH - prevH) * 100;
-    }
-    tx.set(ref, { xp, studySecs, updatedAt: serverTimestamp() }, { merge: true });
+async function saveOnce(ref, data) {
+  return runTransaction(db, async (tx) => {
+    if ((await tx.get(ref)).exists()) return { saved: false };
+    tx.set(ref, { ...data, at: serverTimestamp() });
+    return { saved: true };
   });
 }
-export const saveMock = (uid, r) =>
-  addDoc(collection(db, 'results', uid, 'mocks'), { ...r, at: serverTimestamp() });
+export const saveMock = (uid, result, attemptId = crypto.randomUUID()) =>
+  saveOnce(doc(db, 'results', uid, 'mocks', attemptId), result);
 
 // ── Чтение ──
 export async function getChildren(parentUid) {
@@ -355,18 +407,20 @@ export async function getChildren(parentUid) {
   return snap.docs.map((d) => ({ uid: d.id, ...d.data() }));
 }
 export async function getMocks(childUid) {
-  const snap = await getDocs(collection(db, 'results', childUid, 'mocks'));
+  // Отчёт использует последние попытки; не скачиваем бесконечно растущую
+  // историю при каждом открытии кабинета родителя или нового пробника.
+  const snap = await getDocs(query(collection(db, 'results', childUid, 'mocks'), orderBy('at', 'desc'), limit(50)));
   return snap.docs.map((d) => d.data());
 }
 export async function getAttempts(childUid) {
-  const snap = await getDocs(collection(db, 'results', childUid, 'attempts'));
+  // 500 последних ответов достаточно для текущей аналитики и ограничивает
+  // стоимость/память одного чтения даже у давно активного ученика.
+  const snap = await getDocs(query(collection(db, 'results', childUid, 'attempts'), orderBy('at', 'desc'), limit(500)));
   return snap.docs.map((d) => d.data());
 }
 export async function getSolved(childUid) {
-  try {
-    const snap = await getDocs(collection(db, 'results', childUid, 'solved'));
-    return snap.docs.map((d) => d.data());
-  } catch { return []; }
+  const snap = await getDocs(collection(db, 'results', childUid, 'solved'));
+  return snap.docs.map((d) => d.data());
 }
 
 // ── Полная диагностика платформы (PlatformDiagnostic.jsx) ──
@@ -374,24 +428,44 @@ export async function getSolved(childUid) {
 // правило results/{childUid}/diagnostics/{id} в firestore.rules (там жёстко
 // проверяется набор полей). completedAt шлёт сам клиент (ISO-строка момента
 // завершения на устройстве ребёнка), at — серверная метка записи.
-export async function savePlatformDiagnostic(childUid, result) {
+export async function savePlatformDiagnostic(childUid, result, attemptId = crypto.randomUUID()) {
   const { version, grade, completedAt, readiness, correct, total, spentSec, topics, mistakes } = result || {};
-  await addDoc(collection(db, 'results', childUid, 'diagnostics'), {
+  return saveOnce(doc(db, 'results', childUid, 'diagnostics', attemptId), {
     version, grade, completedAt, readiness, correct, total, spentSec, topics, mistakes,
-    at: serverTimestamp(),
   });
 }
 
 export async function getPlatformDiagnostics(childUid) {
-  try {
-    const snap = await getDocs(collection(db, 'results', childUid, 'diagnostics'));
-    return snap.docs.map((d) => d.data()).sort((a, b) => String(b.completedAt || '').localeCompare(String(a.completedAt || '')));
-  } catch { return []; }
+  const snap = await getDocs(query(collection(db, 'results', childUid, 'diagnostics'), orderBy('at', 'desc'), limit(24)));
+  return snap.docs.map((d) => d.data()).sort((a, b) => String(b.completedAt || '').localeCompare(String(a.completedAt || '')));
 }
 
 // Человеческие сообщения об ошибках
-export function errText(e) {
+export function errText(e, lang = 'kk') {
   const c = (e && e.code) || '';
+  if (lang === 'ru') {
+    if (c.includes('email-already-in-use')) return 'Этот логин уже занят. Выберите другой.';
+    if (c.includes('weak-password') || c.includes('invalid-child-pin')) return 'Пароль должен содержать минимум 6 символов.';
+    if (c.includes('invalid-child')) return 'Укажите имя и логин ребёнка: 3–32 латинские буквы или цифры.';
+    if (c.includes('family-missing')) return 'Профиль семьи не найден. Обратитесь в поддержку для восстановления.';
+    if (c.includes('invalid-email')) return 'Проверьте адрес электронной почты.';
+    if (c.includes('invalid-credential') || c.includes('wrong-password') || c.includes('user-not-found')) return 'Неверный логин или пароль.';
+    if (c.includes('too-many-requests')) return 'Слишком много попыток. Повторите через несколько минут.';
+    if (c.includes('network')) return 'Проверьте интернет-соединение и повторите.';
+    if (c.includes('requires-recent-login')) return 'Для этого действия войдите в аккаунт заново.';
+    if (c.includes('child-limit')) return 'В семье уже добавлен ребёнок.';
+    if (c.includes('not-child-owner')) return 'Этот ребёнок не привязан к вашему аккаунту.';
+    if (c.includes('admin/not-allowed') || c.includes('admin-denied')) return 'У этого аккаунта нет доступа к панели администратора.';
+    if (c.includes('popup-closed')) return 'Окно входа закрыто. Попробуйте ещё раз.';
+    if (c.includes('popup-blocked')) return 'Разрешите всплывающее окно для входа.';
+    if (c.includes('provider-already-linked')) return 'Вход по паролю уже подключён.';
+    if (c.includes('credential-already-in-use')) return 'Эта почта уже связана с другим аккаунтом.';
+    return 'Не удалось выполнить действие. Повторите или обратитесь в поддержку.';
+  }
+  if (c.includes('child-limit')) return 'Отбасында бала аккаунты бар.';
+  if (c.includes('invalid-child')) return 'Баланың аты мен логинін енгізіңіз: 3–32 латын әрпі немесе цифр.';
+  if (c.includes('family-missing')) return 'Отбасы профилі табылмады. Қалпына келтіру үшін қолдау қызметіне жазыңыз.';
+  if (c.includes('child-create-failed')) return 'Бала аккаунтын жасау мүмкін болмады. Қайта көріңіз.';
   if (c.includes('email-already-in-use')) return 'Бұл юзернейм бос емес — басқасын таңдаңыз';
   if (c.includes('weak-password')) return 'Пароль тым қысқа (кемінде 6 таңба)';
   if (c.includes('invalid-email')) return 'Юзернейм тек латын әрпі мен цифрдан тұруы керек';
@@ -427,32 +501,19 @@ export async function getFamily(parentUid) {
 
 // Pro күйін баланың өзі оқи алатын индекске көшіреміз.
 // Бұл ескі аккаунттарды ата-ана кірген кезде автоматты түзетеді.
-export async function syncChildrenPro(parentUid, pro) {
-  const children = await getDocs(collection(db, 'families', parentUid, 'children'));
-  await Promise.all(children.docs.map((child) => setDoc(
-    doc(db, 'childIndex', child.id),
-    { parentUid, pro: !!pro },
-    { merge: true },
-  )));
-}
+export async function syncChildrenPro() { /* Compatibility: only the server writes entitlements now. */ }
 
 // ── Тегін тариф шектеуі ──
 // Баланың ата-анасында pro бар ма? (баланың құжатында parentUid сақталады)
 export async function isPro(childUid) {
-  try {
-    const idx = await getDoc(doc(db, 'childIndex', childUid));
-    return !!idx.data()?.pro;
-  } catch { return false; }
+  const idx = await getDoc(doc(db, 'childIndex', childUid));
+  const parentUid = idx.data()?.parentUid;
+  if (!parentUid) return false;
+  const family = await getDoc(doc(db, 'families', parentUid));
+  return familyHasPro(family.data());
 }
 
 // Бүгін неше есеп шығарды (тегін тарифте күніне 5)
 export async function todayCount(childUid) {
-  try {
-    const snap = await getDocs(collection(db, 'results', childUid, 'attempts'));
-    const t0 = new Date(); t0.setHours(0, 0, 0, 0);
-    return snap.docs.filter((d) => {
-      const s = d.data().at?.seconds;
-      return s && s * 1000 >= t0.getTime();
-    }).length;
-  } catch { return 0; }
+  return (await learningRequest(childUid, { action: 'count' })).count;
 }

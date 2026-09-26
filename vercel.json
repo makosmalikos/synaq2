@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm install --prefix frontend && npm run build --prefix frontend",
+  "buildCommand": "npm ci --prefix frontend && npm run build --prefix frontend",
   "outputDirectory": "frontend/dist",
   "rewrites": [
     { "source": "/((?!api/|assets/|figures/).*)", "destination": "/index.html" }
@@ -7,6 +7,8 @@
   "functions": {
     "api/explain.js": { "maxDuration": 30 },
     "api/checkout.js": { "maxDuration": 15 },
-    "api/webhook.js": { "maxDuration": 15 }
+    "api/webhook.js": { "maxDuration": 30 },
+    "api/duel.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,questionMetadata,adminTasks}.js" },
+    "api/learning.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,questionMetadata,adminTasks,grading,curriculumData,platformDiagnostic}.js" }
   }
 }

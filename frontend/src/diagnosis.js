@@ -1,6 +1,6 @@
 // Диагностика слабых сторон из реального review мок-теста.
-import { POOL } from './bank.js';
-import { isGradable } from './api.js';
+import { isGradable } from './grading.js';
+import { STATIC_TOPICS } from './topicCatalog.generated.js';
 
 const LEVEL = (pct) => (pct >= 70 ? 'strong' : pct >= 50 ? 'mid' : 'weak');
 
@@ -11,21 +11,25 @@ function topicName(id, topicList) {
 // isGradable, не просто "answer непустой": иначе задачи-заглушки ('—'/'-',
 // которые никогда не засчитываются верными — см. api.js) завышали бы
 // рекомендованное число задач в плане подготовки.
-function tasksInTopic(id) {
-  return POOL.filter((q) => q.topic === id && isGradable(q)).length;
+function tasksInTopic(id, topicList) {
+  // Training passes live counts; reports pass the lightweight catalog merged
+  // with the same admin tasks. Old callers with name-only topics remain valid.
+  const topic = topicList.find((item) => item.id === id);
+  return topic?.gradableCount ?? STATIC_TOPICS.find((item) => item.id === id)?.gradableCount ?? 0;
 }
 
-function explainTopic({ name, pct, correct, total, wrong, lang }) {
+function explainTopic({ name, pct, correct, total, wrong, skipped, lang }) {
   if (lang === 'ru') {
-    if (pct < 50) return `Из ${total} задач верно ${correct} (${pct}%). Тема «${name}» — главная слабость: много ошибок (${wrong}), нужна отдельная практика.`;
-    if (pct < 70) return `Из ${total} задач верно ${correct} (${pct}%). «${name}» нестабильна — закрепи типовые приёмы.`;
-    return `Из ${total} задач верно ${correct} (${pct}%). «${name}» — сильная сторона, поддерживай уровень.`;
+    const result = `Из ${total} задач верно ${correct} (${pct}%), ошибок: ${wrong}, пропущено: ${skipped}.`;
+    if (pct < 50) return `${result} Тема «${name}» — главная слабость, нужна отдельная практика.`;
+    if (pct < 70) return `${result} «${name}» нестабильна — закрепи типовые приёмы.`;
+    return `${result} «${name}» — сильная сторона, поддерживай уровень.`;
   }
-  return `${total} есептен ${correct} дұрыс (${pct}%). «${name}» — ${pct < 50 ? 'негізгі әлсіз тұс, қателер көп' : pct < 70 ? 'орташа деңгей, тәжірибе керек' : 'мықты тақырып'}.`;
+  return `${total} есептен ${correct} дұрыс (${pct}%), қате: ${wrong}, өткізіп алынды: ${skipped}. «${name}» — ${pct < 50 ? 'негізгі әлсіз тұс, жеке жаттығу керек' : pct < 70 ? 'орташа деңгей, тәжірибе керек' : 'мықты тақырып'}.`;
 }
 
 function planLine(topic, lang) {
-  const n = Math.min(15, Math.max(5, tasksInTopic(topic.id)));
+  const n = Math.min(15, Math.max(5, topic.taskCount));
   if (lang === 'ru') return `«${topic.name}» — решить ${n} задач из банка (сейчас ${topic.pct}%).`;
   return `«${topic.name}» — ${n} есеп шеш (${topic.pct}% қазір).`;
 }
@@ -36,6 +40,7 @@ export function buildDiagnosis(review, topicList, lang = 'kk') {
 
   const by = {};
   for (const r of review) {
+    if (!isGradable(r)) continue;
     const tid = r.topic || r.subject || '—';
     if (!by[tid]) by[tid] = { id: tid, correct: 0, wrong: 0, skipped: 0, mistakes: [] };
     const g = by[tid];
@@ -56,7 +61,7 @@ export function buildDiagnosis(review, topicList, lang = 'kk') {
     .map((g) => {
       const total = g.correct + g.wrong + g.skipped;
       const graded = g.correct + g.wrong;
-      const pct = graded ? Math.round((g.correct / graded) * 100) : 0;
+      const pct = total ? Math.round((g.correct / total) * 100) : 0;
       const name = topicName(g.id, topicList);
       return {
         ...g,
@@ -65,11 +70,11 @@ export function buildDiagnosis(review, topicList, lang = 'kk') {
         graded,
         pct,
         level: graded ? LEVEL(pct) : 'weak',
-        explanation: graded ? explainTopic({ name, pct, correct: g.correct, total: graded, wrong: g.wrong, lang }) : explainTopic({ name, pct: 0, correct: 0, total: 0, wrong: 0, lang }),
-        taskCount: tasksInTopic(g.id),
+        explanation: explainTopic({ name, pct, correct: g.correct, total, wrong: g.wrong, skipped: g.skipped, lang }),
+        taskCount: tasksInTopic(g.id, topicList),
       };
     })
-    .filter((t) => t.graded > 0)
+    .filter((t) => t.total > 0)
     .sort((a, b) => a.pct - b.pct || b.wrong - a.wrong);
 
   if (!topics.length) return null;
@@ -86,7 +91,7 @@ export function buildDiagnosis(review, topicList, lang = 'kk') {
     line: planLine(t, lang),
   }));
 
-  const readiness = Math.round(topics.reduce((s, t) => s + t.pct, 0) / topics.length);
+  const readiness = Math.round(topics.reduce((s, t) => s + t.correct, 0) / topics.reduce((s, t) => s + t.total, 0) * 100);
 
   return {
     topics,

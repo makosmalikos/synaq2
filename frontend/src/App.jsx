@@ -1,280 +1,50 @@
-import React, { lazy, Suspense, useEffect, useRef, useState } from 'react';
-import { watchAuth, isKid, isAdmin, logout, getMyProfile, getXpSummary } from './firebase.js';
-import { useLang, LangToggle } from './i18n.jsx';
-import Auth from './Auth.jsx';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import Landing from './Landing.jsx';
-import Home from './Home.jsx';
-import League from './League.jsx';
-import Brand from './Brand.jsx';
-import { readPublicDiagnosticResult } from './diagnosticPlan.js';
+import { useLang } from './i18n.jsx';
+import { ScreenBoundary } from './components/ScreenBoundary.jsx';
+import { readRoute, routePath, readDuelCode } from './routes.js';
 
-// Банк задач большой: загружаем его только вместе с экраном, которому он нужен.
-const Parent = lazy(() => import('./Parent.jsx'));
-const Admin = lazy(() => import('./Admin.jsx'));
-const Progress = lazy(() => import('./Progress.jsx'));
-const Duel = lazy(() => import('./Duel.jsx'));
-const Training = lazy(() => import('./components/Training.jsx'));
-const Mock = lazy(() => import('./components/Mock.jsx'));
-const Rewards = lazy(() => import('./Rewards.jsx'));
-const Subscription = lazy(() => import('./Subscription.jsx'));
-const Curriculum = lazy(() => import('./Curriculum.jsx'));
+// Публичные страницы не зависят от Firebase, сессии и банка экзаменационных задач.
+const PlatformApp = lazy(() => import('./PlatformApp.jsx'));
 const PublicDiagnostic = lazy(() => import('./PublicDiagnostic.jsx'));
-const PlatformDiagnostic = lazy(() => import('./components/PlatformDiagnostic.jsx'));
-
-const NAV = [
-  { id: 'home', icon: '⌂' }, { id: 'curriculum', icon: '▦' }, { id: 'diagnosis', icon: '◎' }, { id: 'training', icon: '▶' }, { id: 'league', icon: '↗' },
-  { id: 'progress', icon: '▤' }, { id: 'mock', icon: '✓' }, { id: 'duel', icon: '⚔' },
-  { id: 'rewards', icon: '◇' },
-];
-
-const ScreenFallback = () => <div style={{ padding: 40, color: '#6B655B' }}>...</div>;
-
-const ProfileIcon = ({ name }) => {
-  const paths = {
-    plan: <><rect x="3.5" y="5" width="17" height="14" rx="2" /><path d="M3.5 9h17" /></>,
-    support: <><path d="M20 11.5a8 8 0 1 1-3.1-6.3" /><path d="M17 4v5h-5M8.6 9.4c.6 2.4 3.6 5.4 6 6l1.4-1.5-2.2-1.6-1.1 1c-.9-.5-1.8-1.4-2.3-2.3l1-1.1L9.8 8Z" /></>,
-    exit: <><path d="M14 4H6.5A2.5 2.5 0 0 0 4 6.5v11A2.5 2.5 0 0 0 6.5 20H14" /><path d="m16 8 4 4-4 4M9 12h11" /></>,
-  };
-  return <svg viewBox="0 0 24 24" aria-hidden="true">{paths[name]}</svg>;
-};
-
-// Роут: '/' = лендинг, '/app' = авторизация → дашборд.
-const readRoute = () => {
-  if (typeof window === 'undefined') return 'landing';
-  if (window.location.pathname.startsWith('/diagnostic')) return 'diagnostic';
-  return window.location.pathname.startsWith('/app') ? 'app' : 'landing';
-};
-
 
 export default function App() {
-  const { t } = useLang();
-  const [user, setUser] = useState(undefined);
-  // undefined — ещё не проверено, true/false — результат проверки admin custom-claim.
-  const [adminUser, setAdminUser] = useState(undefined);
-  const [route, setRoute] = useState(readRoute);
-  const [tab, setTab] = useState('home');
-  const [menuOpen, setMenuOpen] = useState(false);   // бургер-меню на телефоне
-  const [profileOpen, setProfileOpen] = useState(false);
-  const [tabBeforeSubscription, setTabBeforeSubscription] = useState('home');
-  const [profile, setProfile] = useState({ name: 'Бала', klass: '', school: 'РФМШ' });
-  const [xp, setXp] = useState(0);
-  const [trainTopic, setTrainTopic] = useState(null);
-  const [diagnosticPlan, setDiagnosticPlan] = useState(readPublicDiagnosticResult);
-  const profileMenuRef = useRef(null);
-
+  const { t, lang } = useLang();
+  const [route, setRoute] = useState(() => readRoute(window.location.pathname));
+  const [diagnosticResult, setDiagnosticResult] = useState(null);
   const [duelCode] = useState(() => {
-    if (typeof window === 'undefined') return '';
-    const fromUrl = new URLSearchParams(window.location.search).get('duel')?.toUpperCase() || '';
-    if (fromUrl) {
-      try { sessionStorage.setItem('synaq_duel', fromUrl); } catch {}
-      return fromUrl;
-    }
-    try { return sessionStorage.getItem('synaq_duel')?.toUpperCase() || ''; } catch { return ''; }
+    let storage;
+    try { storage = window.sessionStorage; } catch {}
+    return readDuelCode(window.location.search, storage);
   });
+  // Preserve navigation when Back remounts the lazy cabinet, without keeping
+  // its Firebase listeners and active exercise timers alive on public pages.
+  const [tab, setTab] = useState(() => duelCode ? 'duel' : 'home');
+  const [trainTopic, setTrainTopic] = useState(null);
+  const [tabBeforeSubscription, setTabBeforeSubscription] = useState('home');
 
-  useEffect(() => watchAuth(setUser), []);
   useEffect(() => {
-    if (user && isKid(user)) {
-      getMyProfile().then(setProfile);
-      getXpSummary(user.uid).then((s) => setXp(s.xp || 0)).catch(() => {});
-    }
-  }, [user]);
-  // Роль "администратор" подтверждается custom-claim в ID-токене — читается
-  // асинхронно, поэтому пока проверка идёт, ничего лишнего не показываем.
-  useEffect(() => {
-    if (!user || isKid(user)) { setAdminUser(false); return; }
-    let alive = true;
-    isAdmin(user).then((v) => { if (alive) setAdminUser(v); });
-    return () => { alive = false; };
-  }, [user]);
-  useEffect(() => { if (duelCode) setTab('duel'); }, [duelCode]);
-
-  // кнопки «назад/вперёд» в браузере
-  useEffect(() => {
-    const onPop = () => setRoute(readRoute());
+    const onPop = () => setRoute(readRoute(window.location.pathname));
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
   }, []);
 
-  useEffect(() => {
-    if (!profileOpen) return undefined;
-    const onPointerDown = (event) => {
-      if (profileMenuRef.current && !profileMenuRef.current.contains(event.target)) setProfileOpen(false);
-    };
-    const onKeyDown = (event) => { if (event.key === 'Escape') setProfileOpen(false); };
-    document.addEventListener('pointerdown', onPointerDown);
-    document.addEventListener('keydown', onKeyDown);
-    return () => {
-      document.removeEventListener('pointerdown', onPointerDown);
-      document.removeEventListener('keydown', onKeyDown);
-    };
-  }, [profileOpen]);
-
-  const go = (to) => {
-    const path = to === 'app' ? '/app' : to === 'diagnostic' ? '/diagnostic' : '/';
-    window.history.pushState({}, '', path);
-    setRoute(to);
+  const go = (next) => {
+    window.history.pushState({}, '', routePath(next));
+    setRoute(next);
     window.scrollTo(0, 0);
   };
-
-  // 1. Лендинг — всегда первый экран на '/'
-  if (route === 'landing') return <Landing onStart={() => go('app')} onDiagnostic={() => go('diagnostic')} />;
-  if (route === 'diagnostic') return (
-    <Suspense fallback={<ScreenFallback />}>
-      <PublicDiagnostic onBack={() => go('landing')} onRegister={(result) => { setDiagnosticPlan(result); go('app'); }} />
-    </Suspense>
-  );
-
-  // 2. Авторизация — пока не вошли, дашборда нет
-  if (user === undefined) return <div style={{ padding: 40, color: '#6B655B' }}>{t('common.loading')}</div>;
-  if (!user) return <Auth duelCode={duelCode} />;
-
-  // 3. Дашборд (родитель / ребёнок)
-  const exit = async () => {
-    if (!window.confirm('Шығуды растайсыз ба?')) return;
-    await logout();
-    go('landing');
-  };
-  if (!isKid(user)) {
-    if (adminUser === undefined) return <div style={{ padding: 40, color: '#6B655B' }}>{t('common.loading')}</div>;
-    if (adminUser) return (
-      <Suspense fallback={<ScreenFallback />}>
-        <Admin onExit={exit} />
-      </Suspense>
-    );
-    return (
-      <Suspense fallback={<ScreenFallback />}>
-        <Parent onExit={exit} />
-      </Suspense>
-    );
-  }
-
-  const school = profile.school;
-  const pick = (id) => { setTab(id); setMenuOpen(false); setProfileOpen(false); };
-  const goTrainTopic = (topicId) => { setTrainTopic(topicId); setTab('training'); setMenuOpen(false); };
-  const openSubscription = () => {
-    setTabBeforeSubscription(tab === 'subscription' ? 'home' : tab);
-    setProfileOpen(false);
-    setTab('subscription');
-    window.scrollTo(0, 0);
-  };
-
-  if (tab === 'subscription') return (
-    <Suspense fallback={<ScreenFallback />}>
-      <Subscription active={!!profile.pro} onBack={() => { setTab(tabBeforeSubscription); window.scrollTo(0, 0); }} />
-    </Suspense>
-  );
 
   return (
-    <div className="shell">
-      <aside className={`sidebar sidebar-${tab}`}>
-        {/* Верхняя строка сайдбара: логотип + (на телефоне) аватар и бургер */}
-        <div className="sbar-top">
-          <div className="logo" onClick={() => go('landing')} style={{ cursor: 'pointer' }}>
-            <Brand compact />
-          </div>
-
-          <div className="sbar-right">
-            <div className="header-xp" title="XP">
-              <span aria-hidden="true">★</span><b>{xp}</b>
-            </div>
-            <div className="sbar-language"><LangToggle /></div>
-            {/* Аватар + бургер — только на телефоне (через CSS) */}
-            <div className="sbar-mobile">
-              <div className="ava sm">{(profile.name || 'Б')[0].toUpperCase()}</div>
-              <button className="burger" onClick={() => setMenuOpen((v) => !v)} aria-label="Меню">
-                {menuOpen ? '✕' : '☰'}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Навигация. На телефоне показывается только когда menuOpen. */}
-        <nav className={'nav-v' + (menuOpen ? ' open' : '')}>
-          {NAV.map((it) => (
-            <button key={it.id} disabled={it.disabled} aria-disabled={it.disabled || undefined} title={it.disabled ? t('nav.inDevelopment') : undefined} className={`nav-${it.id}${tab === it.id ? ' on' : ''}${it.disabled ? ' is-disabled' : ''}`} onClick={() => !it.disabled && pick(it.id)}>
-              <span className="num" aria-hidden="true">{it.icon}</span>
-              <span>{t(`nav.${it.id}`)}</span>
-              {it.disabled && <span className="nav-dev">{t('nav.inDevelopment')}</span>}
-              {it.id === 'mock' && <span className="badge">1</span>}
-            </button>
-          ))}
-          {/* Выход внутри раскрытого меню — удобно на телефоне */}
-          <button className="nav-exit" onClick={exit}>{t('common.exit')}</button>
-        </nav>
-
-        {/* Блок пользователя — только десктоп (на телефоне спрятан через CSS) */}
-        <div className="userbox" ref={profileMenuRef}>
-          <button
-            className="profile-trigger"
-            type="button"
-            onClick={() => setProfileOpen((value) => !value)}
-            aria-haspopup="menu"
-            aria-expanded={profileOpen}
-            aria-label={t('profile.open')}
-          >
-            <span className="ava">{(profile.name || 'Б')[0].toUpperCase()}</span>
-          </button>
-
-          {profileOpen && (
-            <div className="profile-dropdown" role="menu">
-              <div className="profile-head">
-                <strong>{profile.name}</strong>
-                <span>{user.email || t('profile.account')}</span>
-                <small>{profile.klass ? `${profile.klass} ${t('common.grade')} · ` : ''}{xp} XP</small>
-              </div>
-
-              <button className="profile-action profile-plan" type="button" role="menuitem" onClick={openSubscription}>
-                <ProfileIcon name="plan" />
-                <span>{t('profile.plan')}</span>
-              </button>
-
-              <a
-                className="profile-action profile-support"
-                href="https://wa.me/message/HAJDNIM2MPOCM1"
-                target="_blank"
-                rel="noreferrer"
-                role="menuitem"
-                onClick={() => setProfileOpen(false)}
-              >
-                <ProfileIcon name="support" />
-                <span>{t('profile.support')}</span>
-              </a>
-
-              <button className="profile-action profile-exit" type="button" role="menuitem" onClick={exit}>
-                <ProfileIcon name="exit" />
-                <span>{t('common.exit')}</span>
-              </button>
-            </div>
-          )}
-        </div>
-      </aside>
-
-      <div className={`content content-${tab}`}>
-        <Suspense fallback={<ScreenFallback />}>
-          {tab === 'home' && <Home go={setTab} name={profile.name} xp={xp} diagnosticPlan={diagnosticPlan} onTrainTopic={goTrainTopic} />}
-          {tab === 'curriculum' && <Curriculum initialGrade={profile.klass} isPro={!!profile.pro} onUpgrade={openSubscription} />}
-          {tab === 'diagnosis' && <PlatformDiagnostic initialGrade={profile.klass} onGoPractice={goTrainTopic} />}
-          {tab === 'training' && (
-            <Training
-              school={school}
-              onXp={(n) => setXp((x) => x + n)}
-              startTopicId={trainTopic}
-              onTopicOpened={() => setTrainTopic(null)}
-            />
-          )}
-          {tab === 'mock' && (
-            <Mock
-              onTrainTopic={goTrainTopic}
-              onGoProgress={() => setTab('progress')}
-            />
-          )}
-          {tab === 'duel' && <Duel initialCode={duelCode} fromLink={!!duelCode} playerName={profile.name} onXp={(n) => setXp((x) => x + n)} />}
-          {tab === 'league' && <League />}
-          {tab === 'progress' && <Progress onXpLoad={setXp} onTrainTopic={goTrainTopic} />}
-          {tab === 'rewards' && <Rewards xp={xp} onGoTraining={() => setTab('training')} />}
-        </Suspense>
-      </div>
-    </div>
+    <ScreenBoundary key={route} lang={lang}>
+      <Suspense fallback={<div role="status" style={{ padding: 40, color: '#60758A' }}>{t('common.loading')}</div>}>
+        {route === 'landing' && <Landing onStart={() => go('app')} onDiagnostic={() => go('diagnostic')} />}
+        {route === 'diagnostic' && <PublicDiagnostic onBack={() => go('landing')} onRegister={(result) => { setDiagnosticResult(result); go('app'); }} />}
+        {route === 'app' && <PlatformApp
+          initialDiagnosticPlan={diagnosticResult} onHome={() => go('landing')} duelCode={duelCode}
+          navigation={{ tab, setTab, trainTopic, setTrainTopic, tabBeforeSubscription, setTabBeforeSubscription }}
+        />}
+      </Suspense>
+    </ScreenBoundary>
   );
 }

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLang } from './i18n.jsx';
-import { auth, getAttempts, getMocks, getXpSummary, isPro } from './firebase.js';
-import { api, topicStats, weekHours, mockSeries } from './api.js';
+import { auth, getAttempts, getMocks, getXpSummary, watchPro } from './firebase.js';
+import { topicStats, weekHours, mockSeries } from './analytics.js';
+import { loadTopicCatalog } from './topicCatalog.js';
 import { buildDiagnosis, pickDiagnosticMock } from './diagnosis.js';
 import DiagnosisReport from './components/DiagnosisReport.jsx';
 
@@ -14,31 +15,67 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
   const [week, setWeek] = useState([]);
   const [mocks, setMocks] = useState([]);
   const [topics, setTopics] = useState([]);
-  const [pro, setPro] = useState(false);
+  const [pro, setPro] = useState(null);
   const [xpInfo, setXpInfo] = useState({ xp: 0, studySecs: 0 });
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
+  const [loadRetry, setLoadRetry] = useState(0);
   const [open, setOpen] = useState(null);   // раскрытый мок
   const [q, setQ] = useState(null);         // раскрытая задача в разборе
+  const uid = auth.currentUser?.uid;
 
   useEffect(() => {
-    const u = auth.currentUser;
-    if (!u) return;
+    let active = true;
+    setLoading(true);
+    setLoadError(false);
+    setPro(null);
+    if (!uid) {
+      setLoading(false);
+      setLoadError(true);
+      return () => { active = false; };
+    }
+    const stopPro = watchPro(uid, (value) => {
+      if (active) setPro(value);
+    }, (error) => {
+      console.error('progress entitlement load failed', error);
+      if (active) { setPro(null); setLoadError(true); }
+    });
     (async () => {
-      const [att, mk, topicList, xp, hasPro] = await Promise.all([
-        getAttempts(u.uid).catch(() => []),
-        getMocks(u.uid).catch(() => []),
-        api.topics(),
-        getXpSummary(u.uid).catch(() => ({ xp: 0, studySecs: 0 })),
-        isPro(u.uid).catch(() => false),
-      ]);
-      setTopics(topicList);
-      setStats(topicStats(att, topicList));
-      setWeek(weekHours(att));
-      setMocks(mk);
-      setXpInfo(xp);
-      setPro(!!hasPro);
-      onXpLoad?.(xp.xp || 0);
+      try {
+        const [att, mk, topicList, xp] = await Promise.all([
+          getAttempts(uid), getMocks(uid), loadTopicCatalog(), getXpSummary(uid),
+        ]);
+        const nextStats = topicStats(att, topicList);
+        const nextWeek = weekHours(att);
+        if (!active) return;
+        setTopics(topicList);
+        setStats(nextStats);
+        setWeek(nextWeek);
+        setMocks(mk);
+        setXpInfo(xp);
+        onXpLoad?.(xp.xp || 0);
+      } catch (error) {
+        console.error('progress load failed', error);
+        if (active) setLoadError(true);
+      } finally {
+        if (active) setLoading(false);
+      }
     })();
-  }, []);
+    return () => { active = false; stopPro(); };
+  }, [uid, loadRetry, onXpLoad]);
+
+  if (loadError) return (
+    <main>
+      <h1>{t('prog.title')}</h1>
+      <p role="alert" className="muted">{lang === 'ru'
+        ? 'Не удалось загрузить прогресс. Проверьте соединение и попробуйте ещё раз.'
+        : 'Прогресті жүктеу мүмкін болмады. Байланысты тексеріп, қайталап көріңіз.'}</p>
+      <button className="btn" onClick={() => setLoadRetry((value) => value + 1)}>
+        {lang === 'ru' ? 'Повторить' : 'Қайталау'}
+      </button>
+    </main>
+  );
+  if (loading || !stats || pro === null) return <main><p className="muted">{t('common.loading')}</p></main>;
 
   // ── разбор одного мока ──
   if (open) return (
@@ -79,8 +116,6 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
       ) : <p className="muted">{t('ui.41')}</p>}
     </main>
   );
-
-  if (!stats) return <main><p className="muted">{t('common.loading')}</p></main>;
 
   const total = week.reduce((s, d) => s + d.hours, 0);
   const maxH = Math.max(1, ...week.map((d) => d.hours));

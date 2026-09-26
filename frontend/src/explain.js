@@ -1,25 +1,18 @@
-// Клиент разбора. Кэш общий: задача объясняется ОДИН раз на всех детей,
-// потом отдаётся из Firestore мгновенно и бесплатно. Иначе каждый ребёнок
-// на каждой задаче жёг бы отдельный запрос к модели.
+// Клиент разбора. Общим доверенным кэшем управляет только сервер;
+// здесь хранится лишь кэш текущей сессии, привязанный к содержимому задачи.
 //
 // Персональный разбор («ты ответил 12 — вот где ошибся») не кэшируем:
 // он завязан на конкретный неверный ответ.
-import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { auth, db } from './firebase.js';
+import { auth } from './firebase.js';
 
 const memory = new Map();   // в пределах сессии — вообще без похода в сеть
 
 export async function explain(q, { given = null, lang = 'kk' } = {}) {
   const personal = given != null && String(given).trim() !== '';
-  const key = `${q.id}_${lang}`;
+  const key = JSON.stringify([q.id, q.statement, q.answer, q.solution, !!q.image, lang]);
 
   if (!personal) {
     if (memory.has(key)) return memory.get(key);
-    try {
-      const snap = await getDoc(doc(db, 'explanations', key));
-      const text = snap.exists() ? snap.data().text : null;
-      if (text) { memory.set(key, text); return text; }
-    } catch { /* правила не опубликованы — просто идём в модель */ }
   }
 
   const token = await auth.currentUser?.getIdToken(true).catch(() => null);
@@ -48,12 +41,26 @@ export async function explain(q, { given = null, lang = 'kk' } = {}) {
 
   if (!personal && text) {
     memory.set(key, text);
-    // create-only: готовый разбор больше не перезаписывается
-    setDoc(doc(db, 'explanations', key), {
-      text, lang, qid: q.id, at: serverTimestamp(),
-    }).catch(() => {});
   }
   return text;
+}
+
+export async function askTutor(q, { action = 'question', message, history = [], given = null, allowAnswer = false, lang = 'kk' } = {}) {
+  const token = await auth.currentUser?.getIdToken(true).catch(() => null);
+  if (!token) throw new Error('unauthorized');
+  const response = await fetch('/api/explain', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+    body: JSON.stringify({
+      mode: 'tutor', action, message, history: history.slice(-6), lang,
+      statement: q.statement, answer: allowAnswer ? q.answer ?? null : null,
+      solution: allowAnswer ? q.solution || '' : '', given: allowAnswer ? given : null,
+      hasImage: !!q.image, allowAnswer,
+    }),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok || typeof data.text !== 'string' || !data.text.trim()) throw new Error(data.error || 'failed');
+  return data.text.trim();
 }
 
 export function explainError(msg) {

@@ -4,7 +4,13 @@ import { useLang } from '../i18n.jsx';
 const LEVEL_COL = { strong: '#4C7A4E', mid: '#B8892B', weak: '#B0342B' };
 const LEVEL_TXT = { strong: 'МЫҚТЫ', mid: 'ОРТАША', weak: 'ӘЛСІЗ' };
 
-function TopicCard({ topic, t }) {
+export function topicResultText(topic, lang = 'kk') {
+  return lang === 'ru'
+    ? `${topic.correct}/${topic.total} верно · Ошибок: ${topic.wrong} · Пропущено: ${topic.skipped}`
+    : `${topic.correct}/${topic.total} дұрыс · Қате: ${topic.wrong} · Өткізіп алынды: ${topic.skipped}`;
+}
+
+function TopicCard({ topic, lang }) {
   return (
     <article className={`diagnosis-topic-card diagnosis-topic-${topic.level}`}>
       <div className="diagnosis-topic-head">
@@ -15,7 +21,7 @@ function TopicCard({ topic, t }) {
         {topic.explanation}
       </p>
       <p className="diagnosis-topic-meta">
-        {topic.correct}/{topic.graded} {t('diag.correct')} · {topic.wrong} {t('diag.wrong')}
+        {topicResultText(topic, lang)}
       </p>
     </article>
   );
@@ -46,7 +52,7 @@ export default function DiagnosisReport({ diagnosis, pro, onUnlock, onTrainTopic
       </div>
 
       <p className="kicker" style={{ marginTop: 16 }}>{t('diag.weakest')}</p>
-      {weakest2.map((tp) => <TopicCard key={tp.id} topic={tp} t={t} />)}
+      {weakest2.map((tp) => <TopicCard key={tp.id} topic={tp} lang={lang} />)}
 
       <div className={'diag-locked' + (locked ? ' is-locked' : '')}>
         {locked && (
@@ -61,14 +67,14 @@ export default function DiagnosisReport({ diagnosis, pro, onUnlock, onTrainTopic
           {!!weak.length && (
             <>
               <p className="kicker">{t('diag.allWeak')}</p>
-              {weak.map((tp) => <TopicCard key={tp.id} topic={tp} t={t} />)}
+              {weak.map((tp) => <TopicCard key={tp.id} topic={tp} lang={lang} />)}
             </>
           )}
 
           {!!strong.length && (
             <>
               <p className="kicker" style={{ marginTop: 16 }}>{t('diag.strong')}</p>
-              {strong.map((tp) => <TopicCard key={tp.id} topic={tp} t={t} />)}
+              {strong.map((tp) => <TopicCard key={tp.id} topic={tp} lang={lang} />)}
             </>
           )}
 
