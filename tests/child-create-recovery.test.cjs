@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const crypto = require('node:crypto');
+const plans = require('../backend/lib/plans');
 
 const source = fs.readFileSync(`${__dirname}/../api/child-create.js`, 'utf8');
 const REQUEST = '11111111-1111-4111-8111-111111111111';
@@ -107,6 +108,7 @@ function fixture() {
       console: { error: (...args) => logs.push(args), warn: (...args) => logs.push(args) },
       require(name) {
         if (name === 'node:crypto') return crypto;
+        if (name === '../backend/lib/plans') return plans;
         if (name === '../backend/lib/firebase-admin') return { getAdmin: () => ({ db, auth }) };
         throw Error(`Unexpected dependency ${name}`);
       },

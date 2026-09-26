@@ -33,22 +33,40 @@ function memoryStore(seed) {
   return db;
 }
 
-function fixture({ pro = false } = {}) {
+function fixture({ pro = false, plan } = {}) {
   let now = Date.parse('2026-09-24T00:00:00Z'), generated = 0;
-  const db = memoryStore({ 'families/parent': { pro }, 'families/parent/children/kid': { code: 'student' }, 'childIndex/kid': { parentUid: 'parent' } });
+  const db = memoryStore({ 'families/parent': { pro, ...(plan ? { plan } : {}) }, 'families/parent/children/kid': { code: 'student' }, 'childIndex/kid': { parentUid: 'parent' } });
   const user = { uid: 'kid', email: 'student@synaq.kids' };
   const act = createLearningService({ db, now: () => now,
+    getTrainingTopics: async () => [{ id: 'num', name: { ru: 'Числа', kk: 'Сандар' }, count: 2 }],
+    getTrainingQuestions: async ({ topicId, mixed, excludeIds, limit }) => [
+      { id: 'q1', statement: '2 + 2?', topic: 'num', school: 'НИШ' },
+      { id: 'q2', statement: '3 + 3?', topic: 'num', school: 'РФМШ' },
+    ].filter((question) => (mixed || question.topic === topicId) && !excludeIds.includes(question.id)).slice(0, limit),
     getTrainingQuestion: async (id) => /^q\d+$/.test(id) ? { id, statement: '2 + 2?', answer: '4', solution: '2 + 2 = 4', topic: 'num', school: 'НИШ' } : null,
     getCurriculumQuestion: async (key, level, id, accessOnly) => {
       if (!['standard', 'premium'].includes(key)) return null;
       if (!accessOnly) generated++;
-      return { standard: key === 'standard', question: { id: `${key}-${id}`, text: { ru: '2 + 2?', kk: '2 + 2?' }, answer: '4', solution: { ru: '4', kk: '4' }, topic: 'num', school: 'curriculum' } };
+      return { free: key === 'standard', standard: key === 'standard', question: { id: `${key}-${id}`, text: { ru: '2 + 2?', kk: '2 + 2?' }, answer: '4', solution: { ru: '4', kk: '4' }, topic: 'num', school: 'curriculum' } };
     }, gradeAnswer: async (given, question) => given === question.answer,
   });
   const start = (id = 'session-1', qid = 'q1') => act(user, { action: 'start', mode: 'training', id, qid });
   const answer = (id = 'session-1', given = '4', extras = {}) => act(user, { ...extras, action: 'answer', id, answer: given });
   return { db, user, act, start, answer, generated: () => generated, advance(ms) { now += ms; }, now: () => now };
 }
+
+test('training catalog and question selection are server-owned and answer-free', async () => {
+  const f = fixture();
+  const catalog = await f.act(f.user, { action: 'topics' });
+  assert.deepEqual(catalog.topics, [{ id: 'num', name: { ru: 'Числа', kk: 'Сандар' }, count: 2 }]);
+  const selection = await f.act(f.user, { action: 'questions', topicId: 'num', mixed: false, excludeIds: ['q1'], limit: 10 });
+  assert.deepEqual(selection.questions.map((question) => question.id), ['q2']);
+  assert.equal(selection.questions[0].answer, undefined);
+  assert.equal(selection.questions[0].solution, undefined);
+  await assert.rejects(f.act({ uid: 'parent', email: 'parent@example.test' }, { action: 'topics' }), /child-required/);
+  await assert.rejects(f.act(f.user, { action: 'questions', topicId: 'num', mixed: false, excludeIds: [], limit: 101 }), /bad-request/);
+  await assert.rejects(f.act(f.user, { action: 'questions', topicId: 'num', mixed: false, excludeIds: ['../q1'], limit: 10 }), /bad-request/);
+});
 
 test('server sessions hide the answer and replay the same question without extra rate charge', async () => {
   const f = fixture();
@@ -95,6 +113,16 @@ test('parallel free answers cannot exceed five, including sessions opened while 
   assert.match(results.find((r) => r.status === 'rejected').reason.message, /daily-limit/);
   assert.equal((await f.act(f.user, { action: 'count' })).count, 5);
   await assert.rejects(f.start('new-session'), /daily-limit/);
+});
+
+test('Standard allows twenty daily tasks and medium curriculum but not premium topics', async () => {
+  const f = fixture({ plan: 'standard' });
+  f.db.records.set('results/kid/daily/2026-09-24', { count: 19 });
+  assert.equal((await f.act(f.user, { action: 'count' })).limit, 20);
+  await f.act(f.user, { action: 'start', mode: 'curriculum', id: 'standard-medium', topicKey: 'standard', level: 'medium' });
+  await f.answer('standard-medium');
+  await assert.rejects(f.start('standard-over', 'q2'), /daily-limit/);
+  await assert.rejects(f.act(f.user, { action: 'start', mode: 'curriculum', id: 'premium-denied', topicKey: 'premium', level: 'easy' }), /daily-limit|pro-required/);
 });
 
 test('repeated questions do not farm correct-answer XP and parallel timers cannot double credit', async () => {

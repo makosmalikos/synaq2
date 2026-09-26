@@ -8,7 +8,7 @@ const source=fs.readFileSync(new URL('../frontend/src/Curriculum.jsx',import.met
 const storageHelpers=source.slice(source.indexOf('const curriculumPracticeKey'),source.indexOf('const copies=')).replaceAll('export function ','function ');
 const handlers=source.slice(source.indexOf(' function storePractice('),source.indexOf(' const openTopic='));
 const effects=source.slice(source.indexOf(' useEffect(()=>{\n   practiceRef.current=null;'),source.indexOf(' },[uid]);')+' },[uid]);'.length);
-const entitlementEffect=source.slice(source.indexOf(' useEffect(()=>{\n   const practice=practiceRef.current;'),source.indexOf(' },[isPro,uid]);')+' },[isPro,uid]);'.length);
+const entitlementEffect=source.slice(source.indexOf(' useEffect(()=>{\n   const practice=practiceRef.current;'),source.indexOf(' },[plan,uid]);')+' },[plan,uid]);'.length);
 const pureHandlers=handlers.replace(effects,'').replace(entitlementEffect,'');
 const tick=()=>new Promise(resolve=>setImmediate(resolve));
 const deferred=()=>{let resolve,reject;const promise=new Promise((yes,no)=>{resolve=yes;reject=no});return{promise,resolve,reject}};
@@ -18,7 +18,7 @@ function fixture({uid='kid',isPro=true,count=5,level='mixed',storage=memoryStora
  let nextId=1,startImpl=start,saveImpl=save;
  const state={SaveState:'idle'},starts=[],saves=[],xp=[],upgrades=[];
  const context={
-   uid,isPro,grade:3,topic:CURRICULUM[3][0],count,level,recoveryError:false,CURRICULUM,
+   uid,isPro,isStandard:false,plan:isPro?'pro':'free',grade:3,topic:CURRICULUM[3][0],count,level,recoveryError:false,CURRICULUM,
    practiceRef:{current:null},operationRef:{current:null},mounted:{current:true},onXpRef:{current:(...args)=>xp.push(args)},
    auth:{currentUser:{uid}},crypto:{randomUUID:()=>`uuid-${nextId++}`},sessionStorage:storage,
    canOpen:()=>true,onUpgrade:()=>upgrades.push(true),
@@ -30,7 +30,7 @@ function fixture({uid='kid',isPro=true,count=5,level='mixed',storage=memoryStora
  for(const name of ['RecoveryAvailable','Session','Grade','Count','Level','Topic','Dialog','SaveState','RequestError','RecoveryError','Ready','LessonStep'])context[`set${name}`]=value=>{state[name]=typeof value==='function'?value(state[name]):value};
  vm.createContext(context);vm.runInContext(storageHelpers+pureHandlers,context);
  return{context,state,storage,starts,saves,xp,upgrades,
-  load:()=>vm.runInContext(effects,context),upgrade:()=>{context.isPro=true;vm.runInContext(entitlementEffect,context)},
+  load:()=>vm.runInContext(effects,context),upgrade:()=>{context.isPro=true;context.plan='pro';vm.runInContext(entitlementEffect,context)},
   setStart:value=>{startImpl=value},setSave:value=>{saveImpl=value},
   read:()=>context.readCurriculumPractice(uid),
   begin:()=>context.begin(),answer:value=>context.changeAnswer(value),check:()=>context.check(),next:()=>context.next(),

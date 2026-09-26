@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLang } from '../i18n.jsx';
-import { CURRICULUM, createCurriculumQuestions, curriculumAnswersMatch } from '../curriculumData.js';
-import { auth, getPlatformDiagnostics, savePlatformDiagnostic } from '../firebase.js';
+import { auth, getPlatformDiagnostics } from '../firebase.js';
+import { diagnosticAnswer, diagnosticResume, diagnosticStart } from '../diagnosticApi.js';
 import {
   PLATFORM_DIAGNOSTIC_VERSION,
   daysUntilDiagnostic,
@@ -13,7 +13,6 @@ import {
 import { acknowledgeDiagnosticResult, diagnosticRecovery, stageDiagnosticResult } from '../diagnosticPersistence.js';
 
 const local = (value, lang) => value?.[lang === 'ru' ? 'ru' : 'kk'] || '';
-const levelOf = (pct) => (pct >= 75 ? 'strong' : pct >= 50 ? 'mid' : 'weak');
 
 const copy = {
   ru: {
@@ -46,53 +45,14 @@ const copy = {
   },
 };
 
-function diagnosticModules(grade) {
-  const modules = [...new Map((CURRICULUM[grade] || []).map((topic) => [topic.moduleId, topic])).values()];
-  if (modules.length <= 8) return modules;
-  return Array.from({ length: 8 }, (_, index) => modules[Math.round(index * (modules.length - 1) / 7)]);
-}
-
-function makeWave(modules, wave, levelFor) {
-  return modules.map((topic, index) => {
-    const difficulty = levelFor(topic);
-    return {
-      id: `${topic.moduleId}-${wave}-${Date.now()}-${index}`,
-      moduleId: topic.moduleId,
-      topic,
-      wave,
-      difficulty,
-      question: createCurriculumQuestions(topic, difficulty, 1)[0],
-    };
-  });
-}
-
-function scoreByModule(records) {
-  const grouped = {};
-  records.forEach((record) => {
-    grouped[record.moduleId] ||= { moduleId: record.moduleId, topic: record.topic, correct: 0, total: 0, seconds: 0 };
-    grouped[record.moduleId].total += 1;
-    grouped[record.moduleId].correct += record.correct ? 1 : 0;
-    grouped[record.moduleId].seconds += record.seconds;
-  });
-  return Object.values(grouped).map((item) => ({
-    ...item,
-    pct: Math.round(item.correct / item.total * 100),
-    level: levelOf(Math.round(item.correct / item.total * 100)),
-  })).sort((a, b) => a.pct - b.pct || b.seconds - a.seconds);
-}
-
 export default function PlatformDiagnostic({ initialGrade, onGoPractice }) {
   const { lang } = useLang();
   const c = copy[lang === 'ru' ? 'ru' : 'kk'];
   const parsed = Number.parseInt(initialGrade, 10);
   const [grade, setGrade] = useState(parsed >= 3 && parsed <= 6 ? parsed : 5);
   const [screen, setScreen] = useState('intro');
-  const [questions, setQuestions] = useState([]);
-  const [records, setRecords] = useState([]);
-  const [index, setIndex] = useState(0);
+  const [session, setSession] = useState(null);
   const [answer, setAnswer] = useState('');
-  const [questionStartedAt, setQuestionStartedAt] = useState(Date.now());
-  const [startedAt, setStartedAt] = useState(null);
   const [result, setResult] = useState(null);
   const [history, setHistory] = useState([]);
   const [resumeData, setResumeData] = useState(null);
@@ -100,12 +60,10 @@ export default function PlatformDiagnostic({ initialGrade, onGoPractice }) {
   const [recoveryAvailable, setRecoveryAvailable] = useState(true);
   const ownerUid = useRef(auth.currentUser?.uid || null).current;
   const mounted = useRef(false);
-  const pendingSave = useRef(null);
-  const savingRef = useRef(false);
   const submittedRef = useRef(false);
   const attemptId = useRef(null);
-  const modules = useMemo(() => diagnosticModules(grade), [grade]);
-  const current = questions[index];
+  const current = session?.question;
+  const index = session?.index || 0;
 
   useEffect(() => {
     mounted.current = true;
@@ -117,16 +75,12 @@ export default function PlatformDiagnostic({ initialGrade, onGoPractice }) {
     const { result: localResult, durable } = diagnosticRecovery(uid);
     const progress = readDiagnosticProgress(uid);
     if (localResult) { setResult(localResult); setHistory([localResult]); }
-    if (localResult?.savePending && localResult.saveId) {
-      pendingSave.current = { uid, result: localResult, id: localResult.saveId };
-      setRecoveryAvailable(durable);
-      setSaveState('error');
-    }
-    if (progress && !localResult?.savePending) setResumeData(progress);
+    if (localResult) setRecoveryAvailable(durable);
+    if (progress) setResumeData(progress);
     if (!uid) return;
     let active = true;
     getPlatformDiagnostics(uid).then((items) => {
-      if (!active || auth.currentUser?.uid !== uid || !items.length || pendingSave.current) return;
+      if (!active || auth.currentUser?.uid !== uid || !items.length) return;
       setHistory(items);
       setResult(items[0]);
       try { localStorage.setItem(diagnosticStorageKey(uid), JSON.stringify(items[0])); } catch {}
@@ -136,110 +90,90 @@ export default function PlatformDiagnostic({ initialGrade, onGoPractice }) {
 
   useEffect(() => { submittedRef.current = false; }, [index, screen]);
 
-  async function persistResult() {
-    if (!pendingSave.current || savingRef.current || (auth.currentUser?.uid || null) !== ownerUid) return;
-    const pending = pendingSave.current;
-    const { uid, result: value, id } = pending;
-    const active = () => mounted.current && (auth.currentUser?.uid || null) === ownerUid && pendingSave.current === pending;
-    savingRef.current = true; setSaveState('saving');
-    const durable = stageDiagnosticResult(uid, value);
-    setRecoveryAvailable(durable);
-    try {
-      if (uid) await savePlatformDiagnostic(uid, value, id);
-      else if (!durable) throw new Error('diagnostic_storage_unavailable');
-      acknowledgeDiagnosticResult(uid, value);
-      if (!active()) return;
-      pendingSave.current = null; setSaveState('saved');
-    } catch { if (active()) setSaveState('error'); }
-    finally { savingRef.current = false; }
-  }
-
   useEffect(() => {
-    if (recoveryAvailable || (screen !== 'test' && !pendingSave.current)) return;
+    if (recoveryAvailable || screen !== 'test') return;
     const warn = (event) => { event.preventDefault(); event.returnValue = ''; };
     window.addEventListener('beforeunload', warn);
     return () => window.removeEventListener('beforeunload', warn);
   }, [screen, saveState, recoveryAvailable]);
 
   useEffect(() => {
-    if (screen !== 'test' || !questions.length) return;
+    if (screen !== 'test' || !session || !attemptId.current) return;
     const uid = ownerUid;
     if ((auth.currentUser?.uid || null) !== uid) return;
     try {
       localStorage.setItem(diagnosticProgressKey(uid), JSON.stringify({
-        version: PLATFORM_DIAGNOSTIC_VERSION, screen: 'test', grade, questions, records,
-        index, answer, startedAt, questionStartedAt, attemptId: attemptId.current,
+        version: PLATFORM_DIAGNOSTIC_VERSION, screen: 'test', grade, index, answer,
+        attemptId: attemptId.current, pendingStart: false,
+        pendingAnswer: readDiagnosticProgress(uid)?.pendingAnswer || null,
       }));
       setRecoveryAvailable(true);
     } catch { setRecoveryAvailable(false); }
-  }, [screen, grade, questions, records, index, answer, startedAt, questionStartedAt, ownerUid]);
+  }, [screen, grade, session, index, answer, ownerUid]);
 
-  const begin = () => {
-    if (pendingSave.current || (auth.currentUser?.uid || null) !== ownerUid) return;
-    attemptId.current = crypto.randomUUID(); setSaveState('idle');
-    try { localStorage.removeItem(diagnosticProgressKey(auth.currentUser?.uid)); } catch {}
-    setQuestions(makeWave(modules, 1, () => 'easy'));
-    setRecords([]); setIndex(0); setAnswer(''); setResult(null);
-    setStartedAt(Date.now()); setQuestionStartedAt(Date.now()); setScreen('test');
-    window.scrollTo(0, 0);
+  const storeProgress = (value) => {
+    try { localStorage.setItem(diagnosticProgressKey(ownerUid), JSON.stringify(value)); setRecoveryAvailable(true); return true; }
+    catch { setRecoveryAvailable(false); return false; }
   };
-
-  const resume = () => {
-    if (pendingSave.current || !resumeData?.questions?.length || (auth.currentUser?.uid || null) !== ownerUid) return;
-    attemptId.current = resumeData.attemptId || crypto.randomUUID();
-    setGrade(resumeData.grade); setQuestions(resumeData.questions); setRecords(resumeData.records || []);
-    setIndex(Math.min(resumeData.index || 0, resumeData.questions.length - 1)); setAnswer(resumeData.answer || '');
-    setStartedAt(resumeData.startedAt || Date.now()); setQuestionStartedAt(Date.now()); setScreen('test');
-    window.scrollTo(0, 0);
+  const fail = (error, draft) => {
+    if (!mounted.current || auth.currentUser?.uid !== ownerUid) return;
+    if (['diagnostic/session-expired', 'diagnostic/session-not-found'].includes(error?.code)) {
+      try { localStorage.removeItem(diagnosticProgressKey(ownerUid)); } catch {}
+      attemptId.current = null; setSession(null); setResumeData(null); setScreen('intro');
+    } else setResumeData(draft);
+    setSaveState('error');
   };
-
-  const complete = (completed) => {
-    const topics = scoreByModule(completed);
-    const correct = completed.filter((item) => item.correct).length;
-    const data = {
-      version: PLATFORM_DIAGNOSTIC_VERSION, grade, completedAt: new Date().toISOString(),
-      readiness: Math.round(correct / completed.length * 100), correct, total: completed.length,
-      spentSec: Math.max(1, Math.round((Date.now() - startedAt) / 1000)),
-      topics: topics.map((item) => ({ moduleId: item.moduleId, kind: item.topic.kind || '', trainingTopicId: trainingTopicForKind(item.topic.kind), title: item.topic.title, pct: item.pct, correct: item.correct, total: item.total, level: item.level })),
-      mistakes: completed.filter((item) => !item.correct).map((item) => ({ moduleId: item.moduleId, trainingTopicId: trainingTopicForKind(item.topic.kind), title: item.topic.title, text: item.question.text, your: item.your, answer: item.question.answer, solution: item.question.solution })),
-    };
-    const uid = ownerUid;
-    const saveId = attemptId.current || crypto.randomUUID();
-    const localResult = { ...data, saveId, savePending: true };
-    pendingSave.current = { uid, result: localResult, id: saveId };
-    persistResult(); setResult(data); setHistory((items) => [data, ...items]); setResumeData(null); setScreen('result'); window.scrollTo(0, 0);
+  const accept = (value, draft = null) => {
+    if (!mounted.current || auth.currentUser?.uid !== ownerUid) return;
+    if (value.completed && value.result) {
+      const saved = { ...value.result, saveId: value.id, savePending: false };
+      stageDiagnosticResult(ownerUid, saved); acknowledgeDiagnosticResult(ownerUid, saved);
+      setResult(value.result); setHistory((items) => [value.result, ...items.filter((item) => item.sourceId !== value.id)]);
+      setResumeData(null); setSession(null); setAnswer(''); setScreen('result'); setSaveState('saved');
+      window.scrollTo(0, 0); return;
+    }
+    attemptId.current = value.id; setGrade(value.grade); setSession(value);
+    const pending = draft?.pendingAnswer;
+    const restoredAnswer = pending?.index === value.index ? pending.answer : draft?.answer || '';
+    storeProgress({ version: PLATFORM_DIAGNOSTIC_VERSION, screen: 'test', grade: value.grade,
+      index: value.index, answer: restoredAnswer, attemptId: value.id, pendingStart: false, pendingAnswer: null });
+    setAnswer(restoredAnswer);
+    setResumeData(null); setScreen('test'); setSaveState('idle'); window.scrollTo(0, 0);
   };
-
-  const submit = (skip = false) => {
-    if (submittedRef.current || !current || (!skip && !answer.trim()) || (auth.currentUser?.uid || null) !== ownerUid) return;
+  const begin = async () => {
+    if (saveState === 'saving' || auth.currentUser?.uid !== ownerUid) return;
+    if (resumeData?.pendingStart) return resume();
+    const id = crypto.randomUUID(), draft = { version: PLATFORM_DIAGNOSTIC_VERSION, screen: 'test', grade,
+      index: 0, answer: '', attemptId: id, pendingStart: true, pendingAnswer: null };
+    attemptId.current = id; setSaveState('saving'); storeProgress(draft);
+    try { accept(await diagnosticStart(id, grade), draft); }
+    catch (error) { fail(error, draft); }
+  };
+  const resume = async () => {
+    const draft = resumeData;
+    if (!draft?.attemptId || saveState === 'saving' || auth.currentUser?.uid !== ownerUid) return;
+    setSaveState('saving');
+    try {
+      let value = draft.pendingStart ? await diagnosticStart(draft.attemptId, draft.grade) : await diagnosticResume(draft.attemptId);
+      if (!value.completed && draft.pendingAnswer?.index === value.index) {
+        value = await diagnosticAnswer(draft.attemptId, draft.pendingAnswer.index, draft.pendingAnswer.answer);
+      }
+      accept(value, draft);
+    } catch (error) { fail(error, draft); }
+  };
+  const submit = async (skip = false) => {
+    if (submittedRef.current || !current || (!skip && !answer.trim()) || saveState === 'saving'
+      || auth.currentUser?.uid !== ownerUid || !attemptId.current) return;
     submittedRef.current = true;
-    const record = {
-      ...current,
-      your: skip ? '' : answer.trim(),
-      correct: !skip && curriculumAnswersMatch(answer, current.question.answer),
-      seconds: Math.max(1, Math.round((Date.now() - questionStartedAt) / 1000)),
-    };
-    const completed = [...records, record];
-    setRecords(completed); setAnswer(''); setQuestionStartedAt(Date.now());
-
-    if (index < questions.length - 1) { setIndex(index + 1); return; }
-    if (current.wave === 1) {
-      const first = new Map(completed.map((item) => [item.moduleId, item.correct]));
-      setQuestions((items) => [...items, ...makeWave(modules, 2, (topic) => first.get(topic.moduleId) ? 'medium' : 'easy')]);
-      setIndex(index + 1); return;
-    }
-    if (current.wave === 2) {
-      const ranked = scoreByModule(completed).slice(0, 4);
-      const third = makeWave(ranked.map((item) => item.topic), 3, (topic) => {
-        const stat = ranked.find((item) => item.moduleId === topic.moduleId);
-        return stat?.pct >= 100 ? 'hard' : 'medium';
-      });
-      setQuestions((items) => [...items, ...third]); setIndex(index + 1); return;
-    }
-    complete(completed);
+    const given = skip ? '' : answer.trim(), draft = { version: PLATFORM_DIAGNOSTIC_VERSION, screen: 'test', grade,
+      index, answer: given, attemptId: attemptId.current, pendingStart: false, pendingAnswer: { index, answer: given } };
+    storeProgress(draft); setSaveState('saving');
+    try { accept(await diagnosticAnswer(attemptId.current, index, given), draft); }
+    catch (error) { fail(error, draft); }
+    finally { submittedRef.current = false; }
   };
   const storageWarning = !recoveryAvailable && (screen === 'test' || saveState === 'error' || saveState === 'saving') ? <p role="alert">{lang === 'ru' ? 'Браузер не может сохранить резервную копию. Не обновляйте и не закрывайте страницу, пока результат не сохранится.' : 'Браузер сақтық көшірмені сақтай алмады. Нәтиже сақталғанша бетті жаңартпаңыз және жаппаңыз.'}</p> : null;
-  const saveNotice = <>{storageWarning}{saveState === 'error' ? <p role="alert">{recoveryAvailable ? (lang === 'ru' ? 'Диагностика сохранена на этом устройстве, но не в аккаунте.' : 'Диагностика осы құрылғыда сақталды, бірақ аккаунтқа жіберілмеді.') : (lang === 'ru' ? 'Результат пока не сохранён.' : 'Нәтиже әлі сақталмады.')} <button className="link" onClick={persistResult}>{lang === 'ru' ? 'Повторить сохранение' : 'Қайта сақтау'}</button></p> : saveState === 'saving' ? <p role="status">{lang === 'ru' ? 'Сохраняем результат…' : 'Нәтиже сақталуда…'}</p> : null}</>;
+  const saveNotice = <>{storageWarning}{saveState === 'error' ? <p role="alert">{lang === 'ru' ? 'Не удалось связаться с сервером. Попробуйте продолжить ещё раз.' : 'Сервермен байланысу мүмкін болмады. Қайта жалғастырып көріңіз.'}</p> : saveState === 'saving' ? <p role="status">{lang === 'ru' ? 'Синхронизируем диагностику…' : 'Диагностика синхрондалуда…'}</p> : null}</>;
 
   if (screen === 'intro') return (
     <main className="platform-diag-page">
@@ -250,7 +184,7 @@ export default function PlatformDiagnostic({ initialGrade, onGoPractice }) {
         <div className="platform-diag-start">
           <label>{c.grade}</label><div className="platform-diag-grades">{[3,4,5,6].map((value) => <button key={value} className={grade === value ? 'on' : ''} onClick={() => setGrade(value)}>{value}</button>)}</div>
           <ul><li>✓ {c.questions}</li><li>✓ {c.minutes}</li><li>✓ {c.adaptive}</li></ul>
-          <button className="platform-diag-primary" disabled={saveState === 'error' || saveState === 'saving'} onClick={begin}>{c.start} →</button><small>{c.noHints}</small>
+          <button className="platform-diag-primary" disabled={saveState === 'saving'} onClick={begin}>{c.start} →</button><small>{c.noHints}</small>
           {resumeData && <button className="platform-diag-resume" onClick={resume}>{c.resume} · {(resumeData.index || 0) + 1}/20 →</button>}
           {result && <button className="platform-diag-last" onClick={() => { setGrade(result.grade); setScreen('result'); window.scrollTo(0, 0); }}>{lang === 'ru' ? `Последний результат: ${result.readiness}%` : `Соңғы нәтиже: ${result.readiness}%`} →</button>}
         </div>
@@ -261,13 +195,13 @@ export default function PlatformDiagnostic({ initialGrade, onGoPractice }) {
   if (screen === 'test' && current) {
     const stageText = current.wave === 1 ? c.stage1 : current.wave === 2 ? c.stage2 : c.stage3;
     return <main className="platform-diag-page platform-diag-test">
-      {storageWarning}
+      {saveNotice}
       <div className="platform-diag-test-head"><div><span>{stageText}</span><strong>{index + 1} / 20</strong></div><div><i style={{ width: `${(index + 1) / 20 * 100}%` }} /></div></div>
       <section className="platform-diag-question-card">
         <div className="platform-diag-question-meta"><span>{local(current.topic.title, lang)}</span><b>{current.difficulty === 'easy' ? '01' : current.difficulty === 'medium' ? '02' : '03'}</b></div>
         <h1>{local(current.question.text, lang)}</h1>
         <input autoFocus inputMode="text" value={answer} onChange={(event) => setAnswer(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') submit(); }} placeholder={c.enter} />
-        <div><button className="platform-diag-skip" onClick={() => submit(true)}>{c.skip}</button><button className="platform-diag-primary" disabled={!answer.trim()} onClick={() => submit()}>{index === 19 ? c.finish : c.next} →</button></div>
+        <div><button className="platform-diag-skip" disabled={saveState === 'saving'} onClick={() => submit(true)}>{c.skip}</button><button className="platform-diag-primary" disabled={!answer.trim() || saveState === 'saving'} onClick={() => submit()}>{index === 19 ? c.finish : c.next} →</button></div>
       </section>
     </main>;
   }
@@ -286,6 +220,6 @@ export default function PlatformDiagnostic({ initialGrade, onGoPractice }) {
     <section className="platform-diag-plan"><div className="platform-diag-section-head"><span>04</span><div><h2>{c.plan}</h2></div></div><div>{plan.map((item, i) => <article key={item.moduleId}><span>{c.day} {i * 2 + 1}</span><b>{local(item.title, lang)}</b><small>{5 + i * 2} {c.tasks}</small></article>)}<article className="repeat"><span>{c.day} 7</span><b>{c.retest}</b><small>↻</small></article></div><button className="platform-diag-primary" onClick={() => onGoPractice?.(practiceTopic)}>{c.practice} →</button></section>
     {!!result.mistakes.length && <section className="platform-diag-review"><div className="platform-diag-section-head"><span>05</span><div><h2>{c.review}</h2><p>{result.mistakes.length}</p></div></div>{result.mistakes.map((item, i) => <details key={`${item.moduleId}-${i}`}><summary><span>{String(i + 1).padStart(2, '0')}</span><b>{local(item.text, lang)}</b><i>+</i></summary><div><p><small>{c.your}</small><b>{item.your || '—'}</b></p><p className="right"><small>{c.right}</small><b>{item.answer}</b></p><aside><strong>{c.solution}</strong>{local(item.solution, lang)}</aside></div></details>)}</section>}
     <section className="platform-diag-history"><div className="platform-diag-section-head"><span>06</span><div><h2>{c.history}</h2><p>{daysLeft ? (lang === 'ru' ? `Повторная проверка через ${daysLeft} дн.` : `Қайта тексеруге ${daysLeft} күн қалды`) : (lang === 'ru' ? 'Можно пройти повторную проверку' : 'Қайта тексеруден өтуге болады')}</p></div></div><div>{history.slice(0, 5).map((item, i) => <article key={item.id || item.completedAt || i}><time>{new Date(item.completedAt).toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'kk-KZ')}</time><i style={{ height: `${Math.max(8, item.readiness)}%` }} /><strong>{item.readiness}%</strong></article>)}</div></section>
-    <div className="platform-diag-actions"><button disabled={saveState === 'error' || saveState === 'saving'} onClick={begin}>{daysLeft ? c.again : c.retest}</button><button className="platform-diag-primary" onClick={() => onGoPractice?.(practiceTopic)}>{c.practice} →</button></div>
+    <div className="platform-diag-actions"><button disabled={saveState === 'saving'} onClick={begin}>{daysLeft ? c.again : c.retest}</button><button className="platform-diag-primary" onClick={() => onGoPractice?.(practiceTopic)}>{c.practice} →</button></div>
   </main>;
 }

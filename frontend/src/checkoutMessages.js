@@ -20,6 +20,22 @@ const messages = {
     'Подписка Pro уже активна. Обновляем её статус — повторная покупка не нужна.',
     'Pro жазылымы белсенді. Күйі жаңартылуда — қайта сатып алудың қажеті жоқ.',
   ],
+  already_plan: [
+    'Этот тариф уже активен. Повторная покупка не нужна.',
+    'Бұл тариф белсенді. Қайта сатып алудың қажеті жоқ.',
+  ],
+  plan_unavailable: [
+    'Этот тариф пока не подключён к оплате. Выберите другой тариф или обратитесь в поддержку.',
+    'Бұл тариф әлі төлемге қосылмаған. Басқа тарифті таңдаңыз немесе қолдау қызметіне жазыңыз.',
+  ],
+  bad_plan: [
+    'Не удалось определить выбранный тариф. Обновите страницу и попробуйте снова.',
+    'Таңдалған тарифті анықтау мүмкін болмады. Бетті жаңартып, қайта көріңіз.',
+  ],
+  plan_change_required: [
+    'Для перехода на Pro напишите в поддержку. Мы изменим действующую подписку без двойной оплаты.',
+    'Pro тарифіне өту үшін қолдау қызметіне жазыңыз. Қосарлы төлемсіз қолданыстағы жазылымды өзгертеміз.',
+  ],
   parent_required: [
     'Оплата доступна в аккаунте родителя. Войдите в родительский аккаунт.',
     'Төлем ата-ана аккаунтында қолжетімді. Ата-ана аккаунтына кіріңіз.',
@@ -60,5 +76,14 @@ export function isCheckoutDestination(value) {
     return url.protocol === 'https:' && !url.username && !url.password && !url.port
       && ['checkout.dodopayments.com', 'test.checkout.dodopayments.com'].includes(url.hostname)
       && /^\/session\/cks_[a-zA-Z0-9_-]{1,160}$/.test(url.pathname);
+  } catch { return false; }
+}
+
+export function isDodoPortalDestination(value) {
+  if (typeof value !== 'string' || value.length > 2048) return false;
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' && !url.username && !url.password && !url.port
+      && (url.hostname === 'dodopayments.com' || url.hostname.endsWith('.dodopayments.com'));
   } catch { return false; }
 }

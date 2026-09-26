@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { useLang } from './i18n.jsx';
 import {
-  auth, db, familyHasPro, createChild, getChildren, getMocks, getAttempts, logout,
+  auth, db, familyPlan, createChild, getChildren, getMocks, getAttempts, logout,
   genPassword, suggestUsername, cleanUsername, errText,
   hasPasswordLogin, linkParentPassword, changeParentPassword, resetChildPassword, getPlatformDiagnostics,
 } from './firebase.js';
@@ -10,14 +10,16 @@ import { topicStats, readiness, mockSeries } from './analytics.js';
 import { loadTopicCatalog } from './topicCatalog.js';
 import Brand from './Brand.jsx';
 import { buildDiagnosticShareText, daysUntilDiagnostic } from './platformDiagnostic.js';
-import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination } from './checkoutMessages.js';
+import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination, isDodoPortalDestination } from './checkoutMessages.js';
 import PetAvatar, { DEFAULT_PET_AVATAR, PET_AVATARS } from './PetAvatar.jsx';
+import { planPrice } from './plans.js';
 
 const Logo = () => <div className="logo"><Brand compact /></div>;
 
 // synaq_want_pro флагі осы уақыттан ескі болса құрметтелмейді (бөлек
 // абзацта түсіндірілген — ортақ компьютердегі ескі белгі мәселесі).
 const WANT_PRO_TTL_MS = 30 * 60 * 1000;
+const planRank = (value) => ({ free: 0, standard: 1, pro: 2 }[value] || 0);
 
 export default function Parent({ onExit }) {
   const { t, lang } = useLang();
@@ -25,17 +27,25 @@ export default function Parent({ onExit }) {
   const exit = async () => {
     await (onExit || logout)();
   };
-  const [pro, setPro] = useState(null);      // null — әлі жүктелуде
+  const [plan, setPlan] = useState(null);    // null — әлі жүктелуде
+  const pro = plan === 'pro';
   const [me, setMe] = useState('');          // ата-ананың аты
   const [paying, setPaying] = useState(false);
   const payingRef = useRef(false);
+  const [openingPortal, setOpeningPortal] = useState(false);
+  const portalRef = useRef(false);
+  const [portalError, setPortalError] = useState('');
   const wantedHandled = useRef(false);
   const [familyError, setFamilyError] = useState('');
+  const [billingStatus, setBillingStatus] = useState({ cancelAtPeriodEnd: false, expiresAt: 0 });
   const [familyRetry, setFamilyRetry] = useState(0);
   const [paymentIssue, setPaymentIssue] = useState(null);
   const paymentError = paymentIssue ? checkoutErrorMessage(paymentIssue.code, lang, paymentIssue.status) : '';
   const checkoutHold = checkoutNeedsVerification(paymentIssue?.code);
-  const [paymentPending, setPaymentPending] = useState(() => new URLSearchParams(window.location.search).get('paid') === '1');
+  const [paymentPending, setPaymentPending] = useState(() => {
+    const paid = new URLSearchParams(window.location.search).get('paid');
+    return ['1', 'standard', 'pro'].includes(paid);
+  });
   const [children, setChildren] = useState([]);
   const [childrenLoaded, setChildrenLoaded] = useState(false);
   const [adding, setAdding] = useState(false);
@@ -51,24 +61,27 @@ export default function Parent({ onExit }) {
     const unsubscribe = onSnapshot(doc(db, 'families', u.uid), (snapshot) => {
       const f = snapshot.data();
       if (!snapshot.exists()) {
-        setPro(null);
+        setPlan(null);
         setFamilyError(text('Не удалось найти профиль семьи. Обратитесь в поддержку.', 'Отбасы профилі табылмады. Қолдау қызметіне жазыңыз.'));
         return;
       }
       clearTimeout(expiryTimer);
-      const has = familyHasPro(f);
-      setPro(has);
+      const currentPlan = familyPlan(f);
+      setPlan(currentPlan);
       setFamilyError('');
-      const expiresMs = f.proExpiresAt?.toMillis?.() || 0;
-      if (has && expiresMs) {
+      const expiresMs = (f.planExpiresAt || f.proExpiresAt)?.toMillis?.() || 0;
+      setBillingStatus({ cancelAtPeriodEnd: f.cancelAtPeriodEnd === true, expiresAt: expiresMs });
+      if (currentPlan !== 'free' && expiresMs) {
         const updateExpiry = () => {
-          setPro(familyHasPro(f));
+          setPlan(familyPlan(f));
           if (expiresMs > Date.now()) expiryTimer = setTimeout(updateExpiry, Math.min(expiresMs - Date.now() + 25, 2147483647));
         };
         expiryTimer = setTimeout(updateExpiry, Math.min(expiresMs - Date.now() + 25, 2147483647));
       }
       if (!u.displayName) setMe(f?.parentName || (u.email || '').split('@')[0]);
-      if (has) {
+      const paidTarget = new URLSearchParams(window.location.search).get('paid');
+      const expectedPlan = paidTarget === 'standard' ? 'standard' : 'pro';
+      if (paidTarget && planRank(currentPlan) >= planRank(expectedPlan)) {
         setPaymentPending(false);
         setPaymentIssue(null);
         const url = new URL(window.location.href);
@@ -77,23 +90,28 @@ export default function Parent({ onExit }) {
           window.history.replaceState({}, '', url.pathname + url.search + url.hash);
         }
       }
-      // лендингте «Про таңдау» басып, содан кейін кірген болса — төлемді бірден ашамыз.
-      // Белгі уақыт бойынша тексеріледі (WANT_PRO_TTL_MS): ортақ компьютерде ескі
-      // белгі басқа ата-ана үшін төлем бетін ашып жібермеуі керек — қараңыз
-      // Landing.jsx-тегі handleBuyPro комментарийі.
+      // Если тариф выбрали на лендинге до входа, открываем правильную оплату
+      // после авторизации. Старый synaq_want_pro поддерживаем для совместимости.
       if (wantedHandled.current) return;
       wantedHandled.current = true;
-      let wanted = false;
+      let wantedPlan = null;
       try {
+        const rawPlan = localStorage.getItem('synaq_want_plan');
+        localStorage.removeItem('synaq_want_plan');
+        if (rawPlan) {
+          const intent = JSON.parse(rawPlan);
+          const ts = Number(intent?.at);
+          if (['standard', 'pro'].includes(intent?.plan) && Number.isFinite(ts) && Date.now() >= ts && Date.now() - ts < WANT_PRO_TTL_MS) wantedPlan = intent.plan;
+        }
         const raw = localStorage.getItem('synaq_want_pro');
         localStorage.removeItem('synaq_want_pro');
         const ts = Number(raw);
-        wanted = raw != null && Number.isFinite(ts) && Date.now() >= ts && Date.now() - ts < WANT_PRO_TTL_MS;
+        if (!wantedPlan && raw != null && Number.isFinite(ts) && Date.now() >= ts && Date.now() - ts < WANT_PRO_TTL_MS) wantedPlan = 'pro';
       } catch {}
-      if (wanted && !has && !paymentPending) buyPro();
+      if (wantedPlan && planRank(currentPlan) < planRank(wantedPlan) && !paymentPending) buyPlan(wantedPlan);
     }, (error) => {
       console.error('family subscription failed', error);
-      setPro(null);
+      setPlan(null);
       setFamilyError(text('Не удалось обновить подписку. Проверьте соединение и повторите.', 'Жазылымды жаңарту мүмкін болмады. Байланысты тексеріп, қайталаңыз.'));
     });
     return () => { unsubscribe(); clearTimeout(expiryTimer); };
@@ -106,13 +124,17 @@ export default function Parent({ onExit }) {
   // «қалып» кетеді, батырма мәңгі «…» күйінде тұрады. pageshow.persisted
   // осындай қайтаруды көрсетеді.
   useEffect(() => {
-    const onShow = (e) => { if (e.persisted) { setPaying(false); payingRef.current = false; } };
+    const onShow = (e) => { if (e.persisted) {
+      setPaying(false); payingRef.current = false;
+      setOpeningPortal(false); portalRef.current = false;
+    } };
     window.addEventListener('pageshow', onShow);
     return () => window.removeEventListener('pageshow', onShow);
   }, []);
 
   // «Про таңдау» → Dodo төлем бетіне жібереміз
-  async function buyPro() {
+  async function buyPlan(targetPlan) {
+    if (!['standard', 'pro'].includes(targetPlan)) return;
     const u = auth.currentUser;
     if (!u || payingRef.current || checkoutHold || paymentPending) return;
     const current = () => mounted.current && auth.currentUser?.uid === u.uid;
@@ -130,7 +152,7 @@ export default function Parent({ onExit }) {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${idToken}`,
         },
-        body: JSON.stringify({ email: u.email }),
+        body: JSON.stringify({ plan: targetPlan }),
       });
       const raw = await r.text();
       let data = null;
@@ -143,7 +165,7 @@ export default function Parent({ onExit }) {
       }
       const code = r.ok ? 'checkout_verification_required' : data?.error || 'checkout_unavailable';
       setPaymentIssue({ code, status: r.status });
-      if (r.status === 409 && data?.error === 'already_pro') {
+      if (r.status === 409 && ['already_pro', 'already_plan'].includes(data?.error)) {
         setFamilyRetry((n) => n + 1);
       }
       console.error('checkout failed', r.status, code);
@@ -155,6 +177,34 @@ export default function Parent({ onExit }) {
       if (!redirected) {
         payingRef.current = false;
         if (current()) setPaying(false);
+      }
+    }
+  }
+
+  async function openSubscriptionPortal() {
+    const u = auth.currentUser;
+    if (!u || plan === 'free' || portalRef.current) return;
+    const current = () => mounted.current && auth.currentUser?.uid === u.uid;
+    portalRef.current = true; setOpeningPortal(true); setPortalError('');
+    let redirected = false;
+    try {
+      const idToken = await u.getIdToken();
+      if (!current()) return;
+      const response = await fetch('/api/subscription-portal', {
+        method: 'POST', headers: { Authorization: `Bearer ${idToken}` },
+      });
+      const data = await response.json().catch(() => null);
+      if (!current()) return;
+      if (response.ok && isDodoPortalDestination(data?.url)) {
+        redirected = true; window.location.href = data.url; return;
+      }
+      setPortalError(text('Не удалось открыть управление подпиской. Попробуйте позже или обратитесь в поддержку.', 'Жазылымды басқару бетін ашу мүмкін болмады. Кейінірек көріңіз немесе қолдау қызметіне жазыңыз.'));
+    } catch {
+      if (current()) setPortalError(text('Не удалось открыть управление подпиской. Проверьте соединение.', 'Жазылымды басқару бетін ашу мүмкін болмады. Байланысты тексеріңіз.'));
+    } finally {
+      if (!redirected) {
+        portalRef.current = false;
+        if (current()) setOpeningPortal(false);
       }
     }
   }
@@ -283,7 +333,7 @@ export default function Parent({ onExit }) {
       {familyError && <div className="card" role="alert" style={{ marginTop: 16 }}>
         <p>{familyError}</p><button className="btn" onClick={() => setFamilyRetry((n) => n + 1)}>{text('Повторить', 'Қайталау')}</button>
       </div>}
-      {paymentPending && !pro && <div className="card" role="status" style={{ marginTop: 16 }}>
+      {paymentPending && <div className="card" role="status" style={{ marginTop: 16 }}>
         {text('Ожидаем подтверждение оплаты. Доступ обновится автоматически — повторно оплачивать не нужно.', 'Төлем расталуын күтіп жатырмыз. Қолжетімділік автоматты жаңарады — қайта төлеудің қажеті жоқ.')}
         <p><button className="link" onClick={() => {
           setPaymentPending(false);
@@ -333,19 +383,19 @@ export default function Parent({ onExit }) {
             </>
           )}
 
-          {/* Тарифтер: Тегін мен Про қатар тұрады, ата-ана таңдайды */}
-          {pro !== null && (
+          {/* Үш тариф: тегін, Standard және Pro. */}
+          {plan !== null && (
             <div style={{
               display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12, marginBottom: 20,
             }}>
               {/* ── Тегін ── */}
               <div className="card" style={{
-                borderColor: pro ? 'var(--line)' : 'var(--ink)',
-                borderWidth: pro ? 1 : 2, opacity: pro ? 0.6 : 1,
+                borderColor: plan === 'free' ? 'var(--ink)' : 'var(--line)',
+                borderWidth: plan === 'free' ? 2 : 1, opacity: plan === 'free' ? 1 : 0.72,
               }}>
                 <div className="row" style={{ marginBottom: 10 }}>
                   <p className="kicker" style={{ margin: 0 }}>{t('plan.free')}</p>
-                  {!pro && <span className="tag" style={{ borderColor: 'var(--ink)' }}>{t('plan.current')}</span>}
+                  {plan === 'free' && <span className="tag" style={{ borderColor: 'var(--ink)' }}>{t('plan.current')}</span>}
                 </div>
                 <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>{t('plan.freePrice')}</div>
                 <ul style={{ margin: 0, padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text'", lineHeight: 2 }}>
@@ -354,6 +404,26 @@ export default function Parent({ onExit }) {
                   <li style={{ color: '#B0B0A6' }}>✗ {t('plan.f3')}</li>
                   <li style={{ color: '#B0B0A6' }}>✗ {t('plan.f4')}</li>
                 </ul>
+              </div>
+
+              {/* ── Standard ── */}
+              <div className="card" style={{
+                borderColor: plan === 'standard' ? '#2F80ED' : 'var(--line)', borderWidth: plan === 'standard' ? 2 : 1,
+                background: plan === 'standard' ? '#EEF6FF' : '#fff',
+              }}>
+                <div className="row" style={{ marginBottom: 10 }}>
+                  <p className="kicker" style={{ margin: 0, color: '#2F80ED' }}>{t('plan.standard')}</p>
+                  {plan === 'standard' && <span className="tag" style={{ borderColor: '#2F80ED', color: '#2F80ED' }}>{t('plan.active')}</span>}
+                </div>
+                <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>
+                  {planPrice('standard', lang)}<span style={{ font: "500 13px 'Golos Text'", color: '#9A9384' }}>{t('plan.month')}</span>
+                </div>
+                <ul style={{ margin: '0 0 14px', padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text'", lineHeight: 2 }}>
+                  <li>✓ {t('plan.s1')}</li><li>✓ {t('plan.s2')}</li><li>✓ {t('plan.s3')}</li><li>✓ {t('plan.s4')}</li>
+                </ul>
+                {plan === 'standard' ? <div style={{ font: "600 13px 'Golos Text'", color: '#2F80ED' }}>{t('plan.activeNote')}</div>
+                  : plan === 'free' && <button className="btn" disabled={paying || paymentPending || checkoutHold}
+                    onClick={() => buyPlan('standard')} style={{ width: '100%' }}>{paying ? '…' : t('plan.chooseStandard')}</button>}
               </div>
 
               {/* ── Про ── */}
@@ -366,7 +436,7 @@ export default function Parent({ onExit }) {
                   {pro && <span className="tag" style={{ borderColor: 'var(--green)', color: 'var(--green)' }}>{t('plan.active')}</span>}
                 </div>
                 <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>
-                  {t('plan.proPrice')}<span style={{ font: "500 13px 'Golos Text'", color: '#9A9384' }}>{t('plan.month')}</span>
+                  {planPrice('pro', lang)}<span style={{ font: "500 13px 'Golos Text'", color: '#9A9384' }}>{t('plan.month')}</span>
                 </div>
                 <ul style={{ margin: '0 0 14px', padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text'", lineHeight: 2 }}>
                   <li>✓ {t('plan.p1')}</li>
@@ -377,11 +447,30 @@ export default function Parent({ onExit }) {
                 {pro ? (
                   <div style={{ font: "600 13px 'Golos Text'", color: 'var(--green)' }}>{t('plan.activeNote')}</div>
                 ) : (
-                  <button className="btn accent" disabled={paying || paymentPending || checkoutHold} onClick={buyPro} style={{ width: '100%' }}>
+                  <button className="btn accent" disabled={paying || paymentPending || checkoutHold} onClick={() => buyPlan('pro')} style={{ width: '100%' }}>
                     {checkoutHold ? text('Нужна проверка оплаты', 'Төлемді тексеру қажет') : paymentPending ? text('Проверяем оплату…', 'Төлем тексерілуде…') : paying ? '…' : t('pro.buy')}
                   </button>
                 )}
               </div>
+            </div>
+          )}
+
+          {plan && plan !== 'free' && (
+            <div className="card" style={{ marginTop: 16 }}>
+              <div className="row">
+                <div>
+                  <p className="kicker" style={{ margin: 0 }}>{text('Управление подпиской', 'Жазылымды басқару')}</p>
+                  <p style={{ margin: '6px 0 0', color: 'var(--muted)', fontSize: 13 }}>
+                    {billingStatus.cancelAtPeriodEnd
+                      ? text(`Автопродление отключено. Доступ сохранится до ${billingStatus.expiresAt ? new Date(billingStatus.expiresAt).toLocaleDateString('ru-RU') : 'конца периода'}.`, `Автожаңарту өшірілді. Қолжетімділік ${billingStatus.expiresAt ? new Date(billingStatus.expiresAt).toLocaleDateString('kk-KZ') : 'кезең соңына'} дейін сақталады.`)
+                      : text('Смена тарифа, автопродление, отмена и история платежей открываются в защищённом кабинете Dodo.', 'Тарифті ауыстыру, автожаңарту, бас тарту және төлем тарихы қорғалған Dodo кабинетінде ашылады.')}
+                  </p>
+                </div>
+                <button className="btn" disabled={openingPortal} onClick={openSubscriptionPortal}>
+                  {openingPortal ? '…' : text('Открыть', 'Ашу')}
+                </button>
+              </div>
+              {portalError && <p role="alert" style={{ color: 'var(--accent)', marginBottom: 0 }}>{portalError}</p>}
             </div>
           )}
 

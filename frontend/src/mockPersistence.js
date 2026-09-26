@@ -1,5 +1,6 @@
 const VERSION = 1;
 const keyFor = (uid) => `synaq_mock_pending_v${VERSION}_${uid}`;
+const startKeyFor = (uid) => `synaq_mock_start_v${VERSION}_${uid}`;
 const finite = (value) => Number.isFinite(value) && value >= 0;
 
 // Only the current tab's exam is restored. In particular, a different child's
@@ -61,6 +62,29 @@ export function clearMockSession(uid, id, storage) {
 export function discardMockSession(uid, storage) {
   try {
     (storage || globalThis.sessionStorage).removeItem(keyFor(uid));
+    return true;
+  } catch { return false; }
+}
+
+export function readMockStart(uid, storage) {
+  try {
+    const value = JSON.parse((storage || globalThis.sessionStorage).getItem(startKeyFor(uid)) || 'null');
+    return value?.uid === uid && typeof value.id === 'string' && /^[A-Za-z0-9_-]{8,128}$/.test(value.id)
+      && ['РФМШ', 'НИШ', 'БИЛ'].includes(value.school) ? value : null;
+  } catch { return null; }
+}
+
+export function writeMockStart(value, storage) {
+  try {
+    (storage || globalThis.sessionStorage).setItem(startKeyFor(value.uid), JSON.stringify(value));
+    return true;
+  } catch { return false; }
+}
+
+export function clearMockStart(uid, id, storage) {
+  try {
+    const target = storage || globalThis.sessionStorage, current = readMockStart(uid, target);
+    if (current?.id === id) target.removeItem(startKeyFor(uid));
     return true;
   } catch { return false; }
 }

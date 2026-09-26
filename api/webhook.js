@@ -4,6 +4,7 @@
 // refund alone does not describe the current subscription entitlement.
 const crypto = require('crypto');
 const { getAdmin } = require('../backend/lib/firebase-admin');
+const { familyPlan, planRank } = require('../backend/lib/plans');
 
 const EVENTS = new Set([
   'payment.succeeded', 'refund.succeeded', 'subscription.active',
@@ -19,6 +20,12 @@ const timestamp = (value) => {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : 0;
 };
 const failure = (message, status = 503) => Object.assign(new Error(message), { status });
+const products = () => ({
+  standard: String(process.env.DODO_STANDARD_PRODUCT_ID || '').trim(),
+  pro: String(process.env.DODO_PRO_PRODUCT_ID || process.env.DODO_PRODUCT_ID || '').trim(),
+});
+const planForProduct = (productId) => Object.entries(products()).find(([, id]) => id && id === productId)?.[0] || '';
+const statePlan = (state) => ['standard', 'pro'].includes(state?.plan) ? state.plan : state?.pro === true ? 'pro' : 'free';
 
 async function rawBody(req) {
   const chunks = [];
@@ -101,9 +108,11 @@ function subscriptionState(subscription, parentUid, eventAt, eventId) {
   const termEnd = timestamp(subscription.expires_at);
   if (status === 'active' && !periodEnd) throw failure('missing_subscription_period');
   const expiresAt = periodEnd && termEnd ? Math.min(periodEnd, termEnd) : periodEnd || termEnd;
+  const plan = planForProduct(subscription.product_id);
+  const active = status === 'active' && !!plan;
   return {
     parentUid, subscriptionId: subscription.subscription_id, productId: subscription.product_id,
-    status, pro: status === 'active', expiresAt: expiresAt || null,
+    status, plan: plan || 'free', active, pro: active && plan === 'pro', expiresAt: expiresAt || null,
     cancelAtPeriodEnd: subscription.cancel_at_next_billing_date === true,
     eventAt, eventId, reconciledAt: new Date(),
   };
@@ -124,7 +133,7 @@ async function resolveSubscription(db, event) {
   if (subscription.subscription_id !== subscriptionId) throw failure('subscription_id_mismatch');
   const ref = db.collection('paymentSubscriptions').doc(subscriptionId);
   const previous = await ref.get();
-  if (subscription.product_id !== process.env.DODO_PRODUCT_ID && !previous.exists) {
+  if (!planForProduct(subscription.product_id) && !previous.exists) {
     return { ignored: 'other_product' };
   }
   const candidates = [subscription.metadata?.parentUid, payment?.metadata?.parentUid,
@@ -144,10 +153,11 @@ async function syncChildrenPro(db, parentUid) {
     await db.runTransaction(async (tx) => {
       const family = await tx.get(familyRef);
       const data = family.data() || {};
-      const pro = data.pro === true && (!timestamp(data.proExpiresAt) || timestamp(data.proExpiresAt) > Date.now());
+      const plan = familyPlan(data), pro = plan === 'pro';
       for (const child of children.docs.slice(start, start + 400)) {
         tx.set(db.collection('childIndex').doc(child.id), {
-          parentUid, pro, proExpiresAt: data.proExpiresAt || null,
+          parentUid, plan, pro, planExpiresAt: data.planExpiresAt || data.proExpiresAt || null,
+          proExpiresAt: data.proExpiresAt || null,
         }, { merge: true });
       }
     });
@@ -157,7 +167,7 @@ async function syncChildrenPro(db, parentUid) {
 async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('POST only');
   if (!process.env.DODO_WEBHOOK_SECRET || !process.env.DODO_PAYMENTS_API_KEY
-      || !process.env.DODO_PRODUCT_ID || (process.env.SYNAQ_USE_EMULATORS !== '1' && (!process.env.FIREBASE_PROJECT_ID
+      || (!products().standard && !products().pro) || (process.env.SYNAQ_USE_EMULATORS !== '1' && (!process.env.FIREBASE_PROJECT_ID
       || !process.env.FIREBASE_CLIENT_EMAIL || !process.env.FIREBASE_PRIVATE_KEY))) {
     return res.status(503).send('server_not_configured');
   }
@@ -187,7 +197,6 @@ async function handler(req, res) {
       parentUid = resolved.parentUid;
       const familyRef = db.collection('families').doc(parentUid);
       const incoming = subscriptionState(subscription, parentUid, eventAt, eventId);
-      if (subscription.product_id !== process.env.DODO_PRODUCT_ID) incoming.pro = false;
       const familyBefore = await familyRef.get();
       if (!familyBefore.exists) throw failure('family_not_found');
 
@@ -202,7 +211,6 @@ async function handler(req, res) {
           if (current) {
             if (current.metadata?.parentUid && current.metadata.parentUid !== parentUid) throw failure('conflicting_legacy_parent');
             legacy = subscriptionState(current, parentUid, timestamp(familyBefore.data()?.dodoEventAt), 'migration');
-            if (current.product_id !== process.env.DODO_PRODUCT_ID) legacy.pro = false;
           }
         }
       }
@@ -225,13 +233,19 @@ async function handler(req, res) {
           states.set(subscription.subscription_id, incoming);
           tx.set(ref, incoming);
         }
-        const active = [...states.values()].filter((s) => s.pro === true && Number(s.expiresAt) > Date.now())
-          .sort((a, b) => Number(b.expiresAt) - Number(a.expiresAt));
+        const active = [...states.values()].filter((s) => (s.active === true || s.pro === true)
+            && statePlan(s) !== 'free' && Number(s.expiresAt) > Date.now())
+          .sort((a, b) => planRank(statePlan(b)) - planRank(statePlan(a))
+            || Number(b.expiresAt) - Number(a.expiresAt));
         const selected = active[0];
+        const selectedPlan = statePlan(selected);
         tx.set(familyRef, {
-          pro: !!selected, proExpiresAt: selected ? new Date(selected.expiresAt) : null,
+          plan: selectedPlan, pro: selectedPlan === 'pro',
+          planExpiresAt: selected ? new Date(selected.expiresAt) : null,
+          proExpiresAt: selected ? new Date(selected.expiresAt) : null,
           dodoSubId: selected?.subscriptionId || family.data()?.dodoSubId || subscription.subscription_id,
           dodoStatus: selected?.status || (stale ? family.data()?.dodoStatus || 'inactive' : incoming.status),
+          cancelAtPeriodEnd: selected?.cancelAtPeriodEnd === true,
           dodoEventAt: new Date(Math.max(timestamp(family.data()?.dodoEventAt), eventAt)),
           proUpdatedAt: new Date(),
         }, { merge: true });

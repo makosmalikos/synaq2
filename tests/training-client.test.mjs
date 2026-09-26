@@ -19,7 +19,7 @@ function fixture({ storage = memoryStorage(), pro = false, count = 4, save, star
   const writes = [], starts = [], xp = [], timers = [];
   const question = { id: 'q1', statement: '2 + 2?', answer: '4', topic: 'eq', school: 'НИШ' };
   const topic = { id: 'eq', name: 'Equations' };
-  const state = { Done: count, Solved: new Set(), SaveState: 'idle', Checked: false, Answer: '4', Topic: topic, Items: [question], Loading: false, LoadErrorCode: '', SessionState: ready ? 'ready' : 'idle', ServerResult: null };
+  const state = { Done: count, Solved: new Set(), SolvedIn: {}, SaveState: 'idle', Checked: false, Answer: '4', Topic: topic, Items: [question], Loading: false, LoadErrorCode: '', SessionState: ready ? 'ready' : 'idle', ServerResult: null };
   let saveImpl = save || (async () => ({ saved: true, gain: 105, totalXp: 130 }));
   let startImpl = start || (async (_owner, _payload, id) => ({ id, question: trainingQuestion(question), startedAt: Date.now(), expiresAt: Date.now() + 3600000 }));
   let countImpl = async () => count;
@@ -40,13 +40,14 @@ function fixture({ storage = memoryStorage(), pro = false, count = 4, save, star
     saveAttempt: async (...args) => { writes.push(args); return { correct: true, answer: '4', solution: '2 + 2 = 4', count: 5, secs: 60, ...await saveImpl(...args) }; },
     startLearningSession: async (...args) => { starts.push(args); return startImpl(...args); },
     todayCount: async () => countImpl(),
-    api: { topics: async () => [topic] }, getSolved: async () => [], getFlags: async () => [],
+    getTrainingTopics: async () => [topic], getTrainingQuestions: async () => [trainingQuestion(question)],
+    getSolved: async () => [], getFlags: async () => [],
     watchPro: (_owner, callback) => { callback(pro); return () => {}; },
     translateQuestions: async (list) => list, t: (key) => key,
     setTimeout: (callback) => timers.push(callback),
     useEffect: (effect) => { context.cleanup = effect(); },
   };
-  for (const name of ['Done', 'Solved', 'SaveState', 'Checked', 'Answer', 'Topic', 'Items', 'I', 'Secs', 'XpPop', 'Opening', 'RecoveryAvailable', 'Loading', 'LoadError', 'LoadErrorCode', 'Pro', 'Flags', 'Topics', 'SessionState', 'SessionNotice', 'ServerResult']) {
+  for (const name of ['Done', 'Solved', 'SolvedIn', 'SaveState', 'Checked', 'Answer', 'Topic', 'Items', 'I', 'Secs', 'XpPop', 'Opening', 'RecoveryAvailable', 'Loading', 'LoadError', 'LoadErrorCode', 'Pro', 'Flags', 'Topics', 'SessionState', 'SessionNotice', 'ServerResult']) {
     context[`set${name}`] = (value) => {
       state[name] = typeof value === 'function' ? value(state[name]) : value;
       context[name[0].toLowerCase() + name.slice(1)] = state[name];
@@ -181,7 +182,7 @@ test('slow bootstrap across midnight reloads the daily count instead of keeping 
   const f = fixture({ count: 5 }), topics = deferred();
   let day = 'yesterday', countReads = 0;
   f.context.trainingDayKey = () => day;
-  f.context.api.topics = () => topics.promise;
+  f.context.getTrainingTopics = () => topics.promise;
   f.setCount(async () => { countReads++; return day === 'yesterday' ? 5 : 0; });
   f.load(); await tick();
   day = 'today';

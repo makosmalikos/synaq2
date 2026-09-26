@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const crypto = require('node:crypto');
+const plans = require('../backend/lib/plans');
 
 function fixture(filename, envOverrides = {}) {
   const docs = new Map([['families/parent', { pro: true, parentEmail: 'parent@test.invalid' }]]);
@@ -68,6 +69,7 @@ function fixture(filename, envOverrides = {}) {
     console: { error() {}, warn() {}, log() {} }, process: { env },
     require(name) {
       if (name === 'node:crypto' || name === 'crypto') return crypto;
+      if (name === '../backend/lib/plans') return plans;
       if (name === 'firebase-admin/app') return { getApps: () => apps, cert: (value) => value,
         initializeApp(options, name) { const app = { name, options }; apps.push(app); return app; } };
       if (name === 'firebase-admin/auth') return { getAuth: () => auth };

@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const crypto = require('node:crypto');
 const { Readable } = require('node:stream');
+const plans = require('../backend/lib/plans');
 
 const SECRET = Buffer.from('local-test-secret');
 const NOW = Date.now();
@@ -53,10 +54,11 @@ function fixture(file = 'webhook.js') {
   const context = { module: { exports: {} }, Buffer, Date, URL, AbortController, AbortSignal, setTimeout, clearTimeout,
     console: { error() {}, warn() {}, log() {} },
     process: { env: { DODO_WEBHOOK_SECRET: 'whsec_' + SECRET.toString('base64'), DODO_PAYMENTS_API_KEY: 'test-key',
-      DODO_PRODUCT_ID: 'pro-product', FIREBASE_PROJECT_ID: 'test-project', FIREBASE_CLIENT_EMAIL: 'test-email',
+      DODO_PRODUCT_ID: 'pro-product', DODO_STANDARD_PRODUCT_ID: 'standard-product', FIREBASE_PROJECT_ID: 'test-project', FIREBASE_CLIENT_EMAIL: 'test-email',
       FIREBASE_PRIVATE_KEY: 'test-private-key', APP_URL: 'https://example.test' } },
     require(name) {
       if (name === 'crypto') return crypto;
+      if (name === '../backend/lib/plans') return plans;
       if (name === '../backend/lib/firebase-admin') return { getAdmin: () => ({ auth, db }) };
       throw Error('Unexpected module ' + name);
     },
@@ -101,6 +103,17 @@ test('metadata/provider outage returns retryable status, then same event succeed
   f.provider.set('payments/pay-1', { subscription_id: 'sub-1', metadata: { parentUid: 'parent' } });
   assert.equal((await f.invoke(payload, { id: 'retry' })).status, 200);
   assert.equal(f.docs.get('families/parent').pro, true);
+});
+
+test('Standard subscription is stored as Standard without granting Pro', async () => {
+  const f = fixture();
+  f.provider.set('subscriptions/sub-standard', active('sub-standard', { product_id: 'standard-product' }));
+  const result = await f.invoke(event('subscription.active', 'sub-standard'), { id: 'standard-active' });
+  assert.equal(result.status, 200);
+  const family = f.docs.get('families/parent');
+  assert.equal(family.plan, 'standard');
+  assert.equal(family.pro, false);
+  assert.ok(family.planExpiresAt instanceof Date);
 });
 
 test('unresolved parent is not acknowledged; payment can establish mapping for later retries', async () => {
@@ -247,9 +260,11 @@ test('child entitlement checks source family and expires even without expiry web
   f.auth.verifyIdToken = async () => ({ uid: 'child', email: 'child@synaq.kids' });
   f.docs.set('childIndex/child', { parentUid: 'parent', pro: true });
   f.docs.set('families/parent', { pro: true, proExpiresAt: new Date(NOW - 1000) });
-  assert.deepEqual((await f.invoke({})).body, { pro: false, expiresAt: null });
+  assert.deepEqual((await f.invoke({})).body, { plan: 'free', standard: false, pro: false, expiresAt: null });
   f.docs.set('families/parent', { pro: true, proExpiresAt: new Date(future) });
-  assert.deepEqual((await f.invoke({})).body, { pro: true, expiresAt: future });
+  assert.deepEqual((await f.invoke({})).body, { plan: 'pro', standard: false, pro: true, expiresAt: future });
   f.docs.set('families/parent', { pro: true, proExpiresAt: 'invalid-expiry' });
-  assert.deepEqual((await f.invoke({})).body, { pro: false, expiresAt: null });
+  assert.deepEqual((await f.invoke({})).body, { plan: 'free', standard: false, pro: false, expiresAt: null });
+  f.docs.set('families/parent', { plan: 'standard', planExpiresAt: new Date(future) });
+  assert.deepEqual((await f.invoke({})).body, { plan: 'standard', standard: true, pro: false, expiresAt: future });
 });

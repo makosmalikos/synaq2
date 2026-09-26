@@ -33,7 +33,7 @@ function client() {
   };
   const source = fs.readFileSync(`${__dirname}/../frontend/src/firebase.js`, 'utf8')
     .replace(/^import[\s\S]*?from ['"][^'"]+['"];\n/gm, '').replace(/\bexport /g, '').replaceAll('import.meta.env', 'undefined');
-  vm.runInNewContext(source + '\nmodule.exports = { getMyProfile, familyHasPro, isPro, watchMyProfile, watchAuth, isAdmin, loginChild, createChild, resetChildPassword, ensureFamilyProfile, saveAttempt, startLearningSession, todayCount, saveMock, savePlatformDiagnostic, markDiagnosticComplete };', context);
+  vm.runInNewContext(source + '\nmodule.exports = { getMyProfile, familyHasPro, isPro, watchMyProfile, watchAuth, isAdmin, loginChild, createChild, resetChildPassword, ensureFamilyProfile, saveAttempt, startLearningSession, todayCount };', context);
   return { api: context.module.exports, docs, auth, calls, rejectNextCommit() { rejectCommit = true; },
     respond(value) { response = value; },
     update(ref, data) { docs.set(ref, data); subscriptions.get(ref)?.(snap(ref)); } };
@@ -49,6 +49,9 @@ test('paid profile and live updates come from family, not stale childIndex mirro
   const stop = c.api.watchMyProfile((value) => values.push(value));
   assert.equal(values.at(-1).pro, true);
   c.update('families/parent', { pro: false });
+  assert.equal(values.at(-1).pro, false);
+  c.update('families/parent', { plan: 'standard', planExpiresAt: new Date(Date.now() + 60000) });
+  assert.equal(values.at(-1).plan, 'standard');
   assert.equal(values.at(-1).pro, false);
   stop();
 });
@@ -131,18 +134,6 @@ test('learning adapter sends only the server session and answer, never client gr
   await assert.rejects(c.api.saveAttempt('other', { sessionId: 'attempt-1', answer: '4' }), { code: 'learning/auth-required' });
 });
 
-test('first diagnostic marker initializes zero stats and preserves server-owned XP', async () => {
-  const c = client();
-  await c.api.markDiagnosticComplete('child');
-  let stats = c.docs.get('results/child/stats/summary');
-  assert.equal(stats.xp, 0); assert.equal(stats.studySecs, 0); assert.equal(stats.diagnosticMockUsed, true);
-  c.docs.set('results/child/stats/summary', { xp: 105, studySecs: 3600, diagnosticMockUsed: false });
-  await c.api.markDiagnosticComplete('child');
-  stats = c.docs.get('results/child/stats/summary');
-  assert.equal(stats.xp, 105); assert.equal(stats.studySecs, 3600);
-  assert.equal(stats.diagnosticMockUsed, true);
-});
-
 test('learning start and daily count use the server API and expose actionable errors', async () => {
   const c = client();
   c.respond({ ok: true, body: { id: 'session-1', question: { id: 'q1' } } });
@@ -152,16 +143,4 @@ test('learning start and daily count use the server API and expose actionable er
   assert.equal(await c.api.todayCount('child'), 4);
   c.respond({ ok: false, body: { error: 'daily-limit' } });
   await assert.rejects(c.api.startLearningSession('child', { mode: 'training', qid: 'q1' }), { code: 'learning/daily-limit' });
-});
-
-test('mock and platform diagnostic retries reuse document IDs', async () => {
-  const c = client();
-  await c.api.saveMock('child', { total: 20 }, 'mock-1');
-  await c.api.saveMock('child', { total: 999 }, 'mock-1');
-  assert.equal(c.docs.get('results/child/mocks/mock-1').total, 20);
-  const result = { version: 1, grade: 5, completedAt: new Date().toISOString(), readiness: 50,
-    correct: 10, total: 20, spentSec: 100, topics: [], mistakes: [] };
-  await c.api.savePlatformDiagnostic('child', result, 'diag-1');
-  await c.api.savePlatformDiagnostic('child', { ...result, correct: 20 }, 'diag-1');
-  assert.equal(c.docs.get('results/child/diagnostics/diag-1').correct, 10);
 });

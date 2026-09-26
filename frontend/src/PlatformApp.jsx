@@ -107,7 +107,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
       });
       return () => { active = false; stop(); };
     }
-    setProfile({ name: 'Бала', klass: '', school: 'РФМШ', avatar: 'owl', pro: false });
+    setProfile({ name: 'Бала', klass: '', school: 'РФМШ', avatar: 'owl', plan: 'free', pro: false });
     setXp(0);
   }, [user]);
   // Роль "администратор" подтверждается custom-claim в ID-токене — читается
@@ -203,7 +203,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
 
   if (tab === 'subscription') return (
     <Suspense fallback={<ScreenFallback />}>
-      <Subscription active={!!profile.pro} onBack={() => { setTab(tabBeforeSubscription); window.scrollTo(0, 0); }} />
+      <Subscription currentPlan={profile.plan || (profile.pro ? 'pro' : 'free')} onBack={() => { setTab(tabBeforeSubscription); window.scrollTo(0, 0); }} />
     </Suspense>
   );
 
@@ -320,7 +320,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
         <Suspense fallback={<ScreenFallback />}>
           {tab === 'home' && <Home go={setTab} name={profile.name} xp={xp} diagnosticPlan={diagnosticPlan} onTrainTopic={goTrainTopic} />}
           {tab === 'curriculum' && <Curriculum
-            initialGrade={profile.klass} isPro={!!profile.pro} onUpgrade={openSubscription}
+            initialGrade={profile.klass} plan={profile.plan || (profile.pro ? 'pro' : 'free')} onUpgrade={openSubscription}
             onXp={(gain, totalXp) => setXp((current) => Number.isFinite(totalXp) ? Math.max(current, totalXp) : current + gain)}
           />}
           {tab === 'diagnosis' && <PlatformDiagnostic initialGrade={profile.klass} onGoPractice={goTrainTopic} />}

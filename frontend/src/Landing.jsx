@@ -1,6 +1,7 @@
 import React from 'react';
 import { LangSwitch, useLang } from './i18n.jsx';
 import Brand from './Brand.jsx';
+import { planPrice } from './plans.js';
 
 // ── ВИДЕО ДЕМО ──
 // Сюда вставь ссылку. Понимает три варианта:
@@ -177,13 +178,13 @@ export default function Landing({ onStart, onDiagnostic }) {
     return () => observer.disconnect();
   }, []);
 
-  // «Про таңдау»: логин қажет (төлем ата-ана аккаунтына байланады),
-  // сондықтан белгі қоямыз — кірген соң кабинет бірден төлемді ашады.
-  // Сохраняем время выбора: Parent.jsx игнорирует устаревшую отметку,
-  // чтобы на общем компьютере оплата не открылась для другого родителя.
-  const handleBuyPro = (e) => {
+  // Платный тариф привязывается к аккаунту родителя. Сохраняем выбранный
+  // вариант и время, чтобы после входа открыть правильную оплату.
+  const handleBuyPlan = (targetPlan) => (e) => {
     e.preventDefault();
-    try { localStorage.setItem('synaq_want_pro', String(Date.now())); } catch {}
+    try {
+      localStorage.setItem('synaq_want_plan', JSON.stringify({ plan: targetPlan, at: Date.now() }));
+    } catch {}
     onStart();
   };
   const handleLeadSubmit = (e) => {
@@ -263,9 +264,10 @@ export default function Landing({ onStart, onDiagnostic }) {
   .lp-pricing-kicker{display:inline-flex;align-items:center;justify-content:center;padding:8px 16px;border-radius:999px;background:#EAF5FF;color:#2F80ED!important;font:700 12px 'Manrope',sans-serif!important;letter-spacing:.08em!important;margin-bottom:16px!important}
   #pricing .lp-pricing-title{max-width:880px;margin-left:auto!important;margin-right:auto!important;font-family:'Manrope','Golos Text',sans-serif!important;font-size:44px!important;font-weight:600!important;line-height:1.08!important;letter-spacing:-.035em!important}
   .lp-pricing-sub{font-family:'Manrope','Golos Text',sans-serif;font-size:16px!important}
-  .lp-prices{max-width:880px!important;gap:18px!important;align-items:start!important}
+  .lp-prices{max-width:1080px!important;gap:18px!important;align-items:stretch!important}
   .lp-price{font-family:'Manrope','Golos Text',sans-serif;border-radius:24px!important;padding:29px 30px!important}
-  .lp-price-standard{border:1.5px solid rgba(47,128,237,.2)!important;background:#fff!important}
+  .lp-price-free{border:1.5px solid rgba(47,128,237,.14)!important;background:#fff!important}
+  .lp-price-standard{border:1.5px solid rgba(47,128,237,.38)!important;background:#F3F9FF!important;box-shadow:0 24px 52px -38px rgba(37,130,208,.55)!important}
   .lp-price-pro{background:#2582D0!important;border-color:#2582D0!important;box-shadow:0 28px 55px -30px rgba(37,130,208,.72)!important}
   .lp-plan-name{font-family:'Manrope',sans-serif!important;font-weight:700!important;letter-spacing:.12em!important}
   .lp-plan-price{font-family:'Manrope','Golos Text',sans-serif!important;font-weight:700!important;letter-spacing:-.045em!important}
@@ -388,7 +390,7 @@ export default function Landing({ onStart, onDiagnostic }) {
     .lp-steps{grid-template-columns:1fr 1fr!important}
     .lp-schools{grid-template-columns:1fr!important}
     .lp-inside{grid-template-columns:1fr!important}
-    .lp-prices{grid-template-columns:1fr 1fr!important;max-width:560px!important;gap:14px!important}
+    .lp-prices{grid-template-columns:1fr 1fr!important;max-width:720px!important;gap:14px!important}
     .lp-navlinks{display:none!important}
     .lp-menu-toggle{display:flex}
     .lp-mobile-menu{display:block}
@@ -652,25 +654,36 @@ export default function Landing({ onStart, onDiagnostic }) {
       <h2 className="lp-pricing-title" style={{font:'800 46px/1.08 \'Manrope\',sans-serif',letterSpacing:'-.025em',margin:'0 0 12px'}}>{t('lp.59')}</h2>
       <p className="lp-pricing-sub" style={{fontSize:'17px',color:'#60758A',margin:'0'}}>{t('lp.60')}</p>
     </div>
-    <div className="lp-prices" style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gap:'22px',maxWidth:'760px',margin:'0 auto',alignItems:'stretch'}}>
+    <div className="lp-prices" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'22px',maxWidth:'1080px',margin:'0 auto',alignItems:'stretch'}}>
 
       
-      <div className="lp-price lp-price-standard lp-card" style={{background:'#fff',border:'1px solid rgba(19,40,60,.1)',borderRadius:'22px',padding:'34px 30px',display:'flex',flexDirection:'column'}}>
-        <div className="lp-plan-name" style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.1em',textTransform:'uppercase',color:'#8094A7'}}>{t('lp.61')}</div>
-        <div style={{display:'flex',alignItems:'baseline',gap:'6px',margin:'16px 0 6px'}}><span className="lp-plan-price" style={{font:'600 46px \'Lora\',serif',color:'#13283C'}}>0 ₸</span></div>
+      <div className="lp-price lp-price-free lp-card" style={{background:'#fff',border:'1px solid rgba(19,40,60,.1)',borderRadius:'22px',padding:'34px 30px',display:'flex',flexDirection:'column'}}>
+        <div className="lp-plan-name" style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.1em',textTransform:'uppercase',color:'#8094A7'}}>{t('plan.free')}</div>
+        <div style={{display:'flex',alignItems:'baseline',gap:'6px',margin:'16px 0 6px'}}><span className="lp-plan-price" style={{font:'600 46px \'Lora\',serif',color:'#13283C'}}>{planPrice('free', lang)}</span></div>
         <div style={{fontSize:'14px',color:'#8094A7',marginBottom:'24px'}}>{t('lp.62')}</div>
         <div className="lp-price-features" style={{display:'flex',flexDirection:'column',gap:'12px'}}>
-          <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#36536B'}}><span style={{color:'#3A9DF5'}}>✓</span>{t('lp.63')}</div>
-          <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#36536B'}}><span style={{color:'#3A9DF5'}}>✓</span>{t('lp.64')}</div>
+          <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#36536B'}}><span style={{color:'#3A9DF5'}}>✓</span>{t('plan.f1')}</div>
+          <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#36536B'}}><span style={{color:'#3A9DF5'}}>✓</span>{t('plan.f2')}</div>
         </div>
         <a href="#" onClick={handleStart} className="lp-ghost" style={{display:'block',textAlign:'center',marginTop:'26px',padding:'14px',borderRadius:'12px',border:'1px solid rgba(19,40,60,.18)',font:'600 15px \'Golos Text\'',color:'#13283C'}}>{t('lp.12')}</a>
       </div>
 
-      
+      <div className="lp-price lp-price-standard lp-card" style={{borderRadius:'22px',padding:'34px 30px',display:'flex',flexDirection:'column',position:'relative'}}>
+        <div style={{position:'absolute',top:'-13px',left:'50%',transform:'translateX(-50%)',background:'#E6F3FF',color:'#146EBA',font:'600 11px \'IBM Plex Mono\',monospace',letterSpacing:'.08em',textTransform:'uppercase',padding:'6px 14px',borderRadius:'100px',whiteSpace:'nowrap'}}>{t('lp.65')}</div>
+        <div className="lp-plan-name" style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.1em',textTransform:'uppercase',color:'#267FCB'}}>{t('plan.standard')}</div>
+        <div style={{display:'flex',alignItems:'baseline',gap:'6px',margin:'16px 0 6px'}}><span className="lp-plan-price" style={{font:'600 46px \'Lora\',serif',color:'#13283C'}}>{planPrice('standard', lang)}</span><span style={{fontSize:'15px',color:'#60758A'}}>{t('lp.67')}</span></div>
+        <div style={{fontSize:'14px',color:'#60758A',marginBottom:'24px'}}>{t('plan.s4')}</div>
+        <div className="lp-price-features" style={{display:'flex',flexDirection:'column',gap:'12px'}}>
+          <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#36536B'}}><span style={{color:'#2B91EA'}}>✓</span>{t('plan.s1')}</div>
+          <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#36536B'}}><span style={{color:'#2B91EA'}}>✓</span>{t('plan.s2')}</div>
+          <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#36536B'}}><span style={{color:'#2B91EA'}}>✓</span>{t('plan.s3')}</div>
+        </div>
+        <a href="#" onClick={handleBuyPlan('standard')} className="lp-cta" style={{display:'block',textAlign:'center',marginTop:'26px',padding:'14px',borderRadius:'12px',background:'#2B91EA',color:'#FFFFFF',font:'600 15px \'Golos Text\''}}>{t('plan.chooseStandard')}</a>
+      </div>
+
       <div className="lp-price lp-price-pro" style={{background:'#167ACB',border:'1px solid #167ACB',borderRadius:'22px',padding:'34px 30px',display:'flex',flexDirection:'column',position:'relative',boxShadow:'0 30px 70px -40px rgba(30,126,204,.8)',transition:'transform .2s'}}>
-        <div style={{position:'absolute',top:'-13px',left:'50%',transform:'translateX(-50%)',background:'#FFFFFF',color:'#146EBA',font:'600 11px \'IBM Plex Mono\',monospace',letterSpacing:'.08em',textTransform:'uppercase',padding:'6px 14px',borderRadius:'100px'}}>{t('lp.65')}</div>
         <div className="lp-plan-name" style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.1em',textTransform:'uppercase',color:'#FFFFFF'}}>{t('lp.66')}</div>
-        <div style={{display:'flex',alignItems:'baseline',gap:'6px',margin:'16px 0 6px'}}><span className="lp-plan-price" style={{font:'600 46px \'Lora\',serif',color:'#FFFFFF'}}>5 999 ₸</span><span style={{fontSize:'15px',color:'#DCEEFF'}}>{t('lp.67')}</span></div>
+        <div style={{display:'flex',alignItems:'baseline',gap:'6px',margin:'16px 0 6px'}}><span className="lp-plan-price" style={{font:'600 46px \'Lora\',serif',color:'#FFFFFF'}}>{planPrice('pro', lang)}</span><span style={{fontSize:'15px',color:'#DCEEFF'}}>{t('lp.67')}</span></div>
         <div style={{fontSize:'14px',color:'#C9E5FB',marginBottom:'24px'}}>{t('lp.68')}</div>
         <div className="lp-price-features" style={{display:'flex',flexDirection:'column',gap:'12px'}}>
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#F4FAFF'}}><span style={{color:'#FFFFFF'}}>✓</span>{t('lp.69')}</div>
@@ -679,7 +692,7 @@ export default function Landing({ onStart, onDiagnostic }) {
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#F4FAFF'}}><span style={{color:'#FFFFFF'}}>✓</span>{t('lp.72')}</div>
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#F4FAFF'}}><span style={{color:'#FFFFFF'}}>✓</span>{t('lp.73')}</div>
         </div>
-        <a href="#" onClick={handleBuyPro} className="lp-cta" style={{display:'block',textAlign:'center',marginTop:'26px',padding:'14px',borderRadius:'12px',background:'#FFFFFF',color:'#146EBA',font:'600 15px \'Golos Text\''}}>{t('lp.74')}</a>
+        <a href="#" onClick={handleBuyPlan('pro')} className="lp-cta" style={{display:'block',textAlign:'center',marginTop:'26px',padding:'14px',borderRadius:'12px',background:'#FFFFFF',color:'#146EBA',font:'600 15px \'Golos Text\''}}>{t('lp.74')}</a>
       </div>
 
       

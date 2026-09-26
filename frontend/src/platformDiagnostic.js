@@ -1,4 +1,4 @@
-export const PLATFORM_DIAGNOSTIC_VERSION = 1;
+export const PLATFORM_DIAGNOSTIC_VERSION = 2;
 
 const KIND_RULES = [
   [/percent|pct/i, 'pct'],
@@ -32,7 +32,15 @@ export function readStoredDiagnostic(uid) {
 export function readDiagnosticProgress(uid) {
   try {
     const value = JSON.parse(localStorage.getItem(diagnosticProgressKey(uid)) || 'null');
-    return value?.version === PLATFORM_DIAGNOSTIC_VERSION && value.screen === 'test' && Array.isArray(value.questions) ? value : null;
+    return value?.version === PLATFORM_DIAGNOSTIC_VERSION && value.screen === 'test'
+      && value.grade >= 3 && value.grade <= 6
+      && typeof value.attemptId === 'string' && /^[A-Za-z0-9_-]{8,128}$/.test(value.attemptId)
+      && Number.isInteger(value.index) && value.index >= 0 && value.index < 20
+      && typeof value.answer === 'string' && value.answer.length <= 2000
+      && typeof value.pendingStart === 'boolean'
+      && (value.pendingAnswer === null || (Number.isInteger(value.pendingAnswer?.index)
+        && value.pendingAnswer.index >= 0 && value.pendingAnswer.index < 20
+        && typeof value.pendingAnswer.answer === 'string' && value.pendingAnswer.answer.length <= 2000)) ? value : null;
   } catch { return null; }
 }
 

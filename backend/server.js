@@ -4,7 +4,7 @@ const cors = require('cors');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const ENDPOINTS = ['explain', 'checkout', 'entitlement', 'child-create', 'child-password', 'admin-login', 'admin-task', 'duel', 'duel-award', 'learning'];
+const ENDPOINTS = ['explain', 'checkout', 'subscription-portal', 'entitlement', 'child-create', 'child-password', 'admin-login', 'admin-task', 'duel', 'duel-award', 'learning', 'mock-session', 'diagnostic-session'];
 
 function createApp({ handlers = {} } = {}) {
   const app = express();

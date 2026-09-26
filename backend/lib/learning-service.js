@@ -1,10 +1,9 @@
 const { createHash } = require('node:crypto');
+const { millis, familyPlan, dailyTaskLimit } = require('./plans');
 
 const FREE_DAILY_LIMIT = 5;
 const SESSION_TTL = 86400000;
 const error = (message, status = 400) => Object.assign(new Error(message), { status });
-const millis = (value) => value?.toMillis?.() ?? (value instanceof Date ? value.getTime()
-  : typeof value === 'number' ? value : typeof value === 'string' ? Date.parse(value) : 0);
 const integer = (value) => Math.max(0, Math.floor(Number(value) || 0));
 const validId = (value) => typeof value === 'string' && /^[A-Za-z0-9_-]{8,128}$/.test(value);
 const publicQuestion = ({ answer, solution, note, ...question }) => question;
@@ -14,11 +13,7 @@ function learningDay(at) {
   const day = new Date(at + 5 * 3600000).toISOString().slice(0, 10);
   return { day, start: Date.parse(`${day}T00:00:00+05:00`) };
 }
-function hasPro(family, at) {
-  return family?.pro === true && (family.proExpiresAt == null || millis(family.proExpiresAt) > at);
-}
-
-function createLearningService({ db, getTrainingQuestion, getCurriculumQuestion, gradeAnswer, now = Date.now }) {
+function createLearningService({ db, getTrainingQuestion, getTrainingTopics, getTrainingQuestions, getCurriculumQuestion, gradeAnswer, now = Date.now }) {
   const resultRef = (uid, collection, id) => db.collection('results').doc(uid).collection(collection).doc(id);
   async function childContext(tx, user) {
     if (!user?.uid || !/^[a-z0-9]+@synaq\.kids$/.test(user.email || '')) throw error('child-required', 403);
@@ -46,11 +41,24 @@ function createLearningService({ db, getTrainingQuestion, getCurriculumQuestion,
   return async function act(user, body) {
     if (!body || typeof body !== 'object' || Array.isArray(body)) throw error('bad-body');
     const at = now(), dayInfo = learningDay(at);
+    if (body.action === 'topics') {
+      await db.runTransaction((tx) => childContext(tx, user));
+      return { topics: await getTrainingTopics() };
+    }
+    if (body.action === 'questions') {
+      const mixed = body.mixed === true;
+      if ((!mixed && (typeof body.topicId !== 'string' || !body.topicId || body.topicId.length > 100))
+        || !Array.isArray(body.excludeIds) || body.excludeIds.length > 1000
+        || body.excludeIds.some((id) => typeof id !== 'string' || !id || id.length > 200 || id.includes('/'))
+        || !Number.isSafeInteger(body.limit) || body.limit < 1 || body.limit > 60) throw error('bad-request');
+      await db.runTransaction((tx) => childContext(tx, user));
+      return { questions: await getTrainingQuestions({ topicId: body.topicId, mixed, excludeIds: body.excludeIds, limit: body.limit }) };
+    }
     if (body.action === 'count') return db.runTransaction(async (tx) => {
-      await childContext(tx, user);
+      const family = await childContext(tx, user);
       const daily = await dailyCount(tx, user.uid, dayInfo);
       tx.set(daily.ref, { count: daily.count, updatedAt: new Date(at) }, { merge: true });
-      return { count: daily.count, day: dayInfo.day, limit: FREE_DAILY_LIMIT };
+      return { count: daily.count, day: dayInfo.day, limit: dailyTaskLimit(familyPlan(family, at)) };
     });
     if (!['start', 'answer'].includes(body.action) || !validId(body.id)) throw error('bad-request');
     const sessionRef = db.collection('learningSessions').doc(`${user.uid}_${body.id}`);
@@ -72,16 +80,20 @@ function createLearningService({ db, getTrainingQuestion, getCurriculumQuestion,
           if (session.expiresAt <= at) throw error('session-expired', 410);
           return { id: body.id, question: publicQuestion(session.question), startedAt: session.startedAt, expiresAt: session.expiresAt };
         }
-        const pro = hasPro(family, at);
-        if (!pro && daily.count >= FREE_DAILY_LIMIT) throw error('daily-limit', 429);
+        const plan = familyPlan(family, at), limit = dailyTaskLimit(plan);
+        if (limit != null && daily.count >= limit) throw error('daily-limit', 429);
         prepared ||= body.mode === 'training' ? { question: await getTrainingQuestion(body.qid), standard: true }
           : await getCurriculumQuestion(body.topicKey, body.level, body.id);
         if (!prepared?.question) throw error('question-unavailable', 404);
-        if (!pro && body.mode === 'curriculum' && (!prepared.standard || body.level !== 'easy')) throw error('pro-required', 403);
+        if (body.mode === 'curriculum' && plan !== 'pro'
+          && (plan === 'free' ? !(prepared.free ?? prepared.standard) || body.level !== 'easy'
+            : !prepared.standard || !['easy', 'medium'].includes(body.level))) {
+          throw error('pro-required', 403);
+        }
         const rateRef = db.collection('learningRateLimits').doc(user.uid);
         const rate = (await tx.get(rateRef)).data() || {};
         const starts = rate.day === dayInfo.day ? integer(rate.starts) : 0;
-        if (starts >= (pro ? 300 : 60)) throw error('rate-limit', 429);
+        if (starts >= (plan === 'pro' ? 300 : plan === 'standard' ? 150 : 60)) throw error('rate-limit', 429);
         const session = { uid: user.uid, fingerprint, mode: body.mode, request, question: prepared.question,
           startedAt: at, expiresAt: at + SESSION_TTL, completed: false };
         tx.create(sessionRef, session);
@@ -108,10 +120,14 @@ function createLearningService({ db, getTrainingQuestion, getCurriculumQuestion,
       }
       if (session.expiresAt <= at) throw error('session-expired', 410);
       if (session.completed) throw error('session-completed', 409);
-      if (!hasPro(family, at) && daily.count >= FREE_DAILY_LIMIT) throw error('daily-limit', 429);
-      if (!hasPro(family, at) && session.mode === 'curriculum') {
+      const plan = familyPlan(family, at), limit = dailyTaskLimit(plan);
+      if (limit != null && daily.count >= limit) throw error('daily-limit', 429);
+      if (plan !== 'pro' && session.mode === 'curriculum') {
         const access = await getCurriculumQuestion(session.request.topicKey, session.request.level, body.id, true);
-        if (!access?.standard || session.request.level !== 'easy') throw error('pro-required', 403);
+        if (plan === 'free' ? !(access?.free ?? access?.standard) || session.request.level !== 'easy'
+          : !access?.standard || !['easy', 'medium'].includes(session.request.level)) {
+          throw error('pro-required', 403);
+        }
       }
       const question = session.question;
       const solvedRef = resultRef(user.uid, 'solved', question.id), solved = (await tx.get(solvedRef)).data() || {};

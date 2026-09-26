@@ -1,9 +1,8 @@
-import React, { useEffect, useState, useRef, useMemo } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useLang } from '../i18n.jsx';
-import { api, translateQuestions } from '../api.js';
-
-import { POOL } from '../bank.js';
-import { auth, startLearningSession, saveAttempt, getSolved, setFlag, getFlags, watchPro, todayCount } from '../firebase.js';
+import { translateQuestions } from '../translateQuestions.js';
+import { auth, startLearningSession, saveAttempt, getSolved, setFlag, getFlags, watchPro, todayCount,
+  getTrainingTopics, getTrainingQuestions } from '../firebase.js';
 import { readPendingTraining, writePendingTraining, clearPendingTraining, trainingDayKey, trainingQuestion } from '../trainingPersistence.js';
 import Explain from './Explain.jsx';
 import AiTutor from './AiTutor.jsx';
@@ -117,6 +116,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
   const topicName = (value) => ru ? value.nameRu || value.name : value.name;
   const [topics, setTopics] = useState([]);
   const [solved, setSolved] = useState(new Set());
+  const [solvedIn, setSolvedIn] = useState({});
   const [flags, setFlags] = useState(new Set());
   const [topic, setTopic] = useState(null);
   const [items, setItems] = useState([]);
@@ -209,7 +209,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
       if (alive) { setLoadErrorCode(error?.code || 'profile-load-failed'); setLoadError(true); setPro(null); }
     });
     const requestedDay = trainingDayKey();
-    Promise.all([api.topics(), todayCount(uid), getSolved(uid), getFlags(uid)]).then(async ([list, count, completed, flagged]) => {
+    Promise.all([getTrainingTopics(uid), todayCount(uid), getSolved(uid), getFlags(uid)]).then(async ([list, count, completed, flagged]) => {
       if (!alive) return;
       // The count can finish before midnight while the question bank is still
       // loading. Never label yesterday's exhausted quota as today's count.
@@ -217,8 +217,10 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
       if (!alive) return;
       dayRef.current = trainingDayKey();
       const completedIds = new Set(completed.map((item) => item.qid));
+      const completedByTopic = {};
+      completed.forEach((item) => { if (item.topic) completedByTopic[item.topic] = (completedByTopic[item.topic] || 0) + 1; });
       solvedRef.current = completedIds;
-      setSolved(completedIds); setDone(count); setFlags(new Set(flagged)); setTopics(list);
+      setSolved(completedIds); setSolvedIn(completedByTopic); setDone(count); setFlags(new Set(flagged)); setTopics(list);
       const restored = pendingAttempt.current || readPendingTraining(uid);
       if (restored?.uid === uid) {
         pendingAttempt.current = restored;
@@ -247,7 +249,9 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
       // болса (сырттан "осы тақырыпты жаттық" сілтемесі бойынша бірден
       // кіргенде), тұйықталған solved әрқашан бос жиын болып қалатын еді —
       // сол кезде бұрын шығарылған есептер қайта көрсетілер еді.
-      const list = await translateQuestions(await api.topicQuestions(tp.id, { lang, excludeIds: solvedRef.current }), lang);
+      const list = await translateQuestions(await getTrainingQuestions(uid, {
+        topicId: tp.id, excludeIds: solvedRef.current, limit: 60,
+      }), lang);
       if (!alive || !mounted.current || request !== topicRequest.current || pendingAttempt.current || auth.currentUser?.uid !== uid) return;
       start(tp, list);
       onTopicOpened?.();
@@ -277,13 +281,6 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
   // тегін тарифте ашық болатын жалғыз тақырып — тізімдегі біріншісі
   const b0 = topics.length ? topics[0].id : null;
 
-  const solvedIn = useMemo(() => {
-    const m = {};
-    const TOPIC_OF = Object.fromEntries(POOL.map((q) => [q.id, q.topic]));
-    solved.forEach((id) => { const t = TOPIC_OF[id]; if (t) m[t] = (m[t] || 0) + 1; });
-    return m;
-  }, [solved, topics]);
-
   const start = (tp, list) => {
     if (pendingAttempt.current) return;
     checkingRef.current = false;
@@ -306,8 +303,12 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
     } }
     finally { if (mounted.current && request === topicRequest.current) setOpening(false); }
   }
-  const openTopic = (tp) => openQuestions(tp, () => api.topicQuestions(tp.id, { lang, excludeIds: solvedRef.current }));
-  const openMixed = () => openQuestions({ id: '_mix', name: t('ui.3') }, () => api.mixed(lang, 20, 'math', solvedRef.current));
+  const openTopic = (tp) => openQuestions(tp, () => getTrainingQuestions(uid, {
+    topicId: tp.id, excludeIds: solvedRef.current, limit: 60,
+  }));
+  const openMixed = () => openQuestions({ id: '_mix', name: t('ui.3') }, () => getTrainingQuestions(uid, {
+    mixed: true, excludeIds: solvedRef.current, limit: 20,
+  }));
   const leaveTopic = () => {
     if (pendingAttempt.current || savingRef.current) return;
     topicRequest.current++;
@@ -409,8 +410,12 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
       onXpRef.current?.(gain, result.totalXp);
       setServerResult({ correct: result.correct, answer: result.answer, solution: result.solution || '' });
       if (Number.isFinite(result.secs)) setSecs(result.secs);
+      const wasSolved = solvedRef.current.has(attempt.question.id);
       solvedRef.current = new Set(solvedRef.current).add(attempt.question.id);
       setSolved(solvedRef.current);
+      if (!wasSolved && attempt.question.topic) setSolvedIn((value) => ({
+        ...value, [attempt.question.topic]: (value[attempt.question.topic] || 0) + 1,
+      }));
       if (gain > 0) { setXpPop(gain); setTimeout(() => { if (mounted.current) setXpPop(null); }, 1800); }
       dayRef.current = trainingDayKey();
       if (confirmedCount != null) setDone(confirmedCount);

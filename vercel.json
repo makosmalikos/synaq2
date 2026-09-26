@@ -7,8 +7,11 @@
   "functions": {
     "api/explain.js": { "maxDuration": 30 },
     "api/checkout.js": { "maxDuration": 15 },
+    "api/subscription-portal.js": { "maxDuration": 15 },
+    "api/mock-session.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,questionMetadata,adminTasks,grading}.js" },
+    "api/diagnostic-session.js": { "maxDuration": 30, "includeFiles": "frontend/src/curriculumData.js" },
     "api/webhook.js": { "maxDuration": 30 },
     "api/duel.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,questionMetadata,adminTasks}.js" },
-    "api/learning.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,questionMetadata,adminTasks,grading,curriculumData,platformDiagnostic}.js" }
+    "api/learning.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,questionMetadata,topicSummary,adminTasks,grading,curriculumData,platformDiagnostic}.js" }
   }
 }

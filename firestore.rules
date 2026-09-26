@@ -80,67 +80,25 @@ service cloud.firestore {
     }
 
     match /results/{childUid}/mocks/{mockId} {
-      allow create: if isSignedIn() && request.auth.uid == childUid;
-      allow update, delete: if false;
+      allow write: if false;
     }
 
-    // Полная диагностика внутри платформы. Результат принадлежит ребёнку,
-    // создаётся один раз и после сохранения не редактируется.
+    // Полная диагностика проверяется и сохраняется только сервером.
     match /results/{childUid}/diagnostics/{diagnosticId} {
-      allow create: if isSignedIn()
-        && request.auth.uid == childUid
-        && request.resource.data.keys().hasOnly([
-          'version', 'grade', 'completedAt', 'readiness', 'correct', 'total',
-          'spentSec', 'topics', 'mistakes', 'at'
-        ])
-        && request.resource.data.version == 1
-        && request.resource.data.grade is int
-        && request.resource.data.grade >= 3
-        && request.resource.data.grade <= 6
-        && request.resource.data.readiness is int
-        && request.resource.data.readiness >= 0
-        && request.resource.data.readiness <= 100
-        && request.resource.data.correct is int
-        && request.resource.data.correct >= 0
-        && request.resource.data.total == 20
-        && request.resource.data.correct <= request.resource.data.total
-        && request.resource.data.spentSec is int
-        && request.resource.data.spentSec > 0
-        && request.resource.data.topics is list
-        && request.resource.data.topics.size() <= 8
-        && request.resource.data.mistakes is list
-        && request.resource.data.mistakes.size() <= 20;
-      allow update, delete: if false;
+      allow write: if false;
     }
 
     match /results/{childUid}/stats/{docId} {
       allow read: if isSignedIn() && (
         request.auth.uid == childUid || isParentOf(childUid)
       );
-      allow create: if isSignedIn()
-        && request.auth.uid == childUid
-        && docId == 'summary'
-        && request.resource.data.keys().hasOnly(['xp', 'studySecs', 'diagnosticMockUsed', 'diagnosticMockAt', 'updatedAt'])
-        && request.resource.data.xp == 0
-        && request.resource.data.studySecs == 0
-        && request.resource.data.diagnosticMockUsed == true
-        && request.resource.data.diagnosticMockAt == request.time
-        && request.resource.data.updatedAt == request.time;
-      allow update: if isSignedIn() && request.auth.uid == childUid
-        && docId == 'summary'
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['diagnosticMockUsed', 'diagnosticMockAt', 'updatedAt'])
-        && request.resource.data.diagnosticMockUsed == true
-        && request.resource.data.diagnosticMockAt == request.time
-        && request.resource.data.updatedAt == request.time;
-      allow delete: if false;
+      allow write: if false;
     }
 
-    // Банк задач от администратора (Admin Panel). Читают все вошедшие — нужно
-    // для Тренировки. Пишет только сервер через Firebase Admin SDK
-    // (api/admin-task.js), который обходит эти правила, — поэтому write: false.
+    // Банк задач содержит правильные ответы, поэтому и чтение, и запись идут
+    // только через серверные API с Firebase Admin SDK.
     match /bankTasks/{taskId} {
-      allow read: if isSignedIn();
-      allow write: if false;
+      allow read, write: if false;
     }
 
     match /explanations/{id} {
@@ -161,6 +119,12 @@ service cloud.firestore {
     match /duelRateLimits/{id} { allow read, write: if false; }
     match /learningSessions/{id} { allow read, write: if false; }
     match /learningRateLimits/{id} { allow read, write: if false; }
+    match /mockSessions/{id} { allow read, write: if false; }
+    match /mockRateLimits/{id} { allow read, write: if false; }
+    match /mockDiagnosticClaims/{id} { allow read, write: if false; }
+    match /diagnosticSessions/{id} { allow read, write: if false; }
+    match /diagnosticRateLimits/{id} { allow read, write: if false; }
+    match /platformRateLimits/{id} { allow read, write: if false; }
     match /checkoutSessions/{id} { allow read, write: if false; }
     match /results/{childUid}/daily/{day} { allow write: if false; }
 

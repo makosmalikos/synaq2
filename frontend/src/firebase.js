@@ -264,19 +264,28 @@ function expiryMillis(value) {
 }
 
 export function familyHasPro(family) {
-  const expiresAt = expiryMillis(family?.proExpiresAt);
-  return family?.pro === true && (family.proExpiresAt == null || Number.isFinite(expiresAt) && expiresAt > Date.now());
+  return familyPlan(family) === 'pro';
+}
+
+export function familyPlan(family) {
+  const plan = ['standard', 'pro'].includes(family?.plan) ? family.plan : family?.pro === true ? 'pro' : 'free';
+  const rawExpiry = family?.planExpiresAt ?? family?.proExpiresAt;
+  if (rawExpiry == null) return plan;
+  const expiresAt = expiryMillis(rawExpiry);
+  return Number.isFinite(expiresAt) && expiresAt > Date.now() ? plan : 'free';
 }
 
 // The family is authoritative; childIndex is only a server-owned relationship.
 export async function getMyProfile() {
   const u = auth.currentUser;
-  if (!u) return { name: '', klass: '', pro: false };
+  if (!u) return { name: '', klass: '', plan: 'free', pro: false };
   const s = await getDoc(doc(db, 'childIndex', u.uid));
   const d = s.data() || {};
   const family = d.parentUid ? await getDoc(doc(db, 'families', d.parentUid)) : null;
+  const plan = familyPlan(family?.data());
   return { name: d.name || u.displayName || '', klass: d.klass || '', school: d.school || 'РФМШ', avatar: d.avatar || 'owl',
-    pro: familyHasPro(family?.data()), proExpiresAt: family?.data()?.proExpiresAt || null };
+    plan, pro: plan === 'pro', planExpiresAt: family?.data()?.planExpiresAt || family?.data()?.proExpiresAt || null,
+    proExpiresAt: family?.data()?.proExpiresAt || null };
 }
 
 function watchChildProfile(uid, fallbackName, callback, onError = () => {}) {
@@ -286,16 +295,18 @@ function watchChildProfile(uid, fallbackName, callback, onError = () => {}) {
     stopFamily(); clearTimeout(expiryTimer);
     const index = snapshot.data() || {};
     const base = { name: index.name || fallbackName || '', klass: index.klass || '', school: index.school || 'РФМШ', avatar: index.avatar || 'owl' };
-    callback({ ...base, pro: false, proLoading: !!index.parentUid });
+    callback({ ...base, plan: 'free', pro: false, proLoading: !!index.parentUid });
     if (!index.parentUid) return;
     stopFamily = onSnapshot(doc(db, 'families', index.parentUid), (family) => {
       clearTimeout(expiryTimer);
       const data = family.data();
       const emit = () => {
         if (closed) return;
-        callback({ ...base, pro: familyHasPro(data), proExpiresAt: data?.proExpiresAt || null, proLoading: false });
-        const remaining = expiryMillis(data?.proExpiresAt) - Date.now();
-        if (familyHasPro(data) && remaining > 0) expiryTimer = setTimeout(emit, Math.min(remaining + 25, 2147483647));
+        const plan = familyPlan(data), expiresAt = data?.planExpiresAt ?? data?.proExpiresAt;
+        callback({ ...base, plan, pro: plan === 'pro', planExpiresAt: expiresAt || null,
+          proExpiresAt: data?.proExpiresAt || null, proLoading: false });
+        const remaining = expiryMillis(expiresAt) - Date.now();
+        if (plan !== 'free' && remaining > 0) expiryTimer = setTimeout(emit, Math.min(remaining + 25, 2147483647));
       };
       emit();
     }, fail);
@@ -357,6 +368,11 @@ export function startLearningSession(uid, request, id = crypto.randomUUID()) {
   return learningRequest(uid, { ...body, action: 'start', id });
 }
 
+export const getTrainingTopics = (uid) => learningRequest(uid, { action: 'topics' }).then((result) => result.topics || []);
+export const getTrainingQuestions = (uid, { topicId = null, mixed = false, excludeIds = [], limit = 60 }) =>
+  learningRequest(uid, { action: 'questions', topicId, mixed, excludeIds: [...excludeIds], limit })
+    .then((result) => result.questions || []);
+
 export async function saveAttempt(uid, a, attemptId = a?.sessionId) {
   if (!a?.sessionId || a.sessionId !== attemptId) throw Object.assign(new Error('session-required'), { code: 'learning/session-required' });
   // The browser cannot submit its own grade, XP, school/topic or elapsed time.
@@ -376,30 +392,9 @@ export async function getDiagnosticStatus(uid) {
   return { used: !!data.diagnosticMockUsed, at: data.diagnosticMockAt || null };
 }
 
-export async function markDiagnosticComplete(uid) {
-  await runTransaction(db, async (tx) => {
-    const snapshot = await tx.get(statsRef(uid));
-    const previous = snapshot.data() || {};
-    if (previous.diagnosticMockUsed) return;
-    tx.set(statsRef(uid), { ...(snapshot.exists() ? {} : { xp: 0, studySecs: 0 }),
-      diagnosticMockUsed: true, diagnosticMockAt: serverTimestamp(), updatedAt: serverTimestamp(),
-    }, { merge: true });
-  });
-}
-
 export async function addXp(uid, amount, reason = '') {
   throw Object.assign(new Error('XP is awarded only by verified server actions'), { code: 'learning/server-award-required' });
 }
-
-async function saveOnce(ref, data) {
-  return runTransaction(db, async (tx) => {
-    if ((await tx.get(ref)).exists()) return { saved: false };
-    tx.set(ref, { ...data, at: serverTimestamp() });
-    return { saved: true };
-  });
-}
-export const saveMock = (uid, result, attemptId = crypto.randomUUID()) =>
-  saveOnce(doc(db, 'results', uid, 'mocks', attemptId), result);
 
 // ── Чтение ──
 export async function getChildren(parentUid) {
@@ -421,18 +416,6 @@ export async function getAttempts(childUid) {
 export async function getSolved(childUid) {
   const snap = await getDocs(collection(db, 'results', childUid, 'solved'));
   return snap.docs.map((d) => d.data());
-}
-
-// ── Полная диагностика платформы (PlatformDiagnostic.jsx) ──
-// Результат создаётся один раз за попытку и больше не редактируется — см.
-// правило results/{childUid}/diagnostics/{id} в firestore.rules (там жёстко
-// проверяется набор полей). completedAt шлёт сам клиент (ISO-строка момента
-// завершения на устройстве ребёнка), at — серверная метка записи.
-export async function savePlatformDiagnostic(childUid, result, attemptId = crypto.randomUUID()) {
-  const { version, grade, completedAt, readiness, correct, total, spentSec, topics, mistakes } = result || {};
-  return saveOnce(doc(db, 'results', childUid, 'diagnostics', attemptId), {
-    version, grade, completedAt, readiness, correct, total, spentSec, topics, mistakes,
-  });
 }
 
 export async function getPlatformDiagnostics(childUid) {

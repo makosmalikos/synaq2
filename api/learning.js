@@ -2,9 +2,17 @@ const { getAdmin } = require('../backend/lib/firebase-admin');
 const { createLearningService } = require('../backend/lib/learning-service');
 
 function content(db) {
+  async function bankContent() {
+    const bank = await import('../frontend/src/bank.js');
+    await bank.ensureBankReady(async () => {
+      const snapshot = await db.collection('bankTasks').get();
+      return snapshot.docs.map((item) => ({ ...item.data(), id: item.id }));
+    });
+    return bank;
+  }
   return {
     async getTrainingQuestion(id) {
-      const { POOL } = await import('../frontend/src/bank.js');
+      const { POOL } = await bankContent();
       const staticQuestion = POOL.find((question) => question.id === id);
       if (staticQuestion) return staticQuestion;
       const snapshot = await db.collection('bankTasks').doc(id).get();
@@ -13,16 +21,35 @@ function content(db) {
       const question = normalizeAdminTask({ ...snapshot.data(), id });
       return quarantineReason(question) ? null : question;
     },
+    async getTrainingTopics() {
+      const [{ POOL, EXTRA_TOPICS }, { topics }, { addQuestionsToTopics }] = await Promise.all([
+        bankContent(), import('../frontend/src/data.js'), import('../frontend/src/topicSummary.js'),
+      ]);
+      return addQuestionsToTopics([...topics, ...EXTRA_TOPICS], POOL).filter((topic) => topic.count > 0);
+    },
+    async getTrainingQuestions({ topicId, mixed, excludeIds, limit }) {
+      const { POOL } = await bankContent();
+      const exclude = new Set(excludeIds);
+      const candidates = POOL.filter((question) => question?.id && question?.statement && question.answer != null
+        && !['', '-', '—'].includes(String(question.answer).trim()) && !exclude.has(question.id)
+        && (mixed ? ['eq', 'num', 'work', 'ratio', 'geo', 'frac', 'pct', 'sys'].includes(question.topic)
+          : question.topic === topicId));
+      const shuffled = candidates.map((question) => [Math.random(), question])
+        .sort((a, b) => a[0] - b[0]).map((item) => item[1]).slice(0, limit);
+      return shuffled.map(({ answer, solution, note, ...question }) => question);
+    },
     async getCurriculumQuestion(key, level, id, accessOnly = false) {
       const { CURRICULUM, createCurriculumQuestions } = await import('../frontend/src/curriculumData.js');
       const { trainingTopicForKind } = await import('../frontend/src/platformDiagnostic.js');
       const list = Object.values(CURRICULUM).find((topics) => topics.some((topic) => topic.key === key));
       const topic = list?.find((item) => item.key === key);
       if (!topic) return null;
-      const standard = list.filter((item) => item.quarter === topic.quarter).slice(0, 2).some((item) => item.key === key);
-      if (accessOnly) return { standard };
+      const quarter = list.filter((item) => item.quarter === topic.quarter);
+      const free = quarter.slice(0, 1).some((item) => item.key === key);
+      const standard = quarter.slice(0, 2).some((item) => item.key === key);
+      if (accessOnly) return { free, standard };
       const question = createCurriculumQuestions(topic, level, 1)[0];
-      return { standard, question: { ...question, id: `${topic.key}-${id}`, topic: trainingTopicForKind(topic.kind), school: 'curriculum' } };
+      return { free, standard, question: { ...question, id: `${topic.key}-${id}`, topic: trainingTopicForKind(topic.kind), school: 'curriculum' } };
     },
     async gradeAnswer(given, question, mode) {
       if (mode === 'curriculum') return (await import('../frontend/src/curriculumData.js')).curriculumAnswersMatch(given, question.answer);

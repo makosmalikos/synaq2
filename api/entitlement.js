@@ -3,6 +3,7 @@
 // remain server-side and are never exposed to the child client.
 
 const { getAdmin } = require('../backend/lib/firebase-admin');
+const { familyPlan, millis } = require('../backend/lib/plans');
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'GET') return res.status(405).json({ error: 'method_not_allowed' });
@@ -24,14 +25,13 @@ module.exports = async function handler(req, res) {
 
     const index = await db.collection('childIndex').doc(child.uid).get();
     const parentUid = index.exists ? String(index.data()?.parentUid || '') : '';
-    if (!parentUid) return res.status(200).json({ pro: false });
+    if (!parentUid) return res.status(200).json({ plan: 'free', standard: false, pro: false, expiresAt: null });
 
     const family = await db.collection('families').doc(parentUid).get();
-    const expiresAt = family.data()?.proExpiresAt;
-    const expiresMs = expiresAt?.toMillis?.() ?? (expiresAt == null ? 0 : new Date(expiresAt).getTime());
-    const pro = family.exists && family.data()?.pro === true
-      && (expiresAt == null || Number.isFinite(expiresMs) && expiresMs > Date.now());
-    return res.status(200).json({ pro, expiresAt: pro && expiresMs ? new Date(expiresMs).toISOString() : null });
+    const plan = family.exists ? familyPlan(family.data()) : 'free';
+    const expiresMs = millis(family.data()?.planExpiresAt ?? family.data()?.proExpiresAt);
+    return res.status(200).json({ plan, standard: plan === 'standard', pro: plan === 'pro',
+      expiresAt: plan !== 'free' && expiresMs ? new Date(expiresMs).toISOString() : null });
   } catch (e) {
     if (e?.code === 'synaq/admin-config') return res.status(503).json({ error: 'server_not_configured' });
     if (e?.code?.startsWith('auth/')) return res.status(401).json({ error: 'login_required' });

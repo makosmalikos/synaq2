@@ -7,6 +7,7 @@
 
 const { getAdmin } = require('../backend/lib/firebase-admin');
 const { createHash, randomUUID } = require('crypto');
+const { familyPlan, planRank } = require('../backend/lib/plans');
 
 const API = process.env.DODO_ENV === 'test_mode'
   ? 'https://test.dodopayments.com'
@@ -22,10 +23,11 @@ const pending = () => failure('checkout_pending', 409,
 const paymentPending = () => failure('checkout_payment_pending', 409,
   'Предыдущий платёж ещё обрабатывается. Дождитесь подтверждения или обратитесь в поддержку.');
 
-function hasPro(family) {
-  const expiresAt = family.proExpiresAt;
-  const expiresMs = expiresAt?.toMillis?.() ?? (expiresAt == null ? 0 : new Date(expiresAt).getTime());
-  return family.pro === true && (expiresAt == null || Number.isFinite(expiresMs) && expiresMs > Date.now());
+function products() {
+  return {
+    standard: String(process.env.DODO_STANDARD_PRODUCT_ID || '').trim(),
+    pro: String(process.env.DODO_PRO_PRODUCT_ID || process.env.DODO_PRODUCT_ID || '').trim(),
+  };
 }
 
 function validSessionId(id) {
@@ -48,17 +50,26 @@ function validCheckoutUrl(value, sessionId) {
 
 // The unmatched collection is denied by Firestore Rules. Reserving before the
 // provider call is essential: a function crash must not permit another POST.
-async function reserve(db, familyRef, checkoutRef, user, productId, replaceAttemptId = null) {
+async function reserve(db, familyRef, checkoutRef, user, productId, targetPlan, replaceAttemptId = null) {
   return db.runTransaction(async (tx) => {
     const [family, existing] = await Promise.all([tx.get(familyRef), tx.get(checkoutRef)]);
     if (!family.exists) throw failure('family_required', 403, 'Оплата доступна только родителю с семейным аккаунтом.');
-    if (hasPro(family.data())) throw failure('already_pro', 409, 'Подписка Pro уже активна.');
+    const currentPlan = familyPlan(family.data());
+    if (planRank(currentPlan) >= planRank(targetPlan)) {
+      const code = targetPlan === 'pro' ? 'already_pro' : 'already_plan';
+      throw failure(code, 409, targetPlan === 'pro' ? 'Подписка Pro уже активна.' : 'Этот тариф уже активен.');
+    }
+    // Never create a second concurrent subscription during an upgrade. Until
+    // provider-side plan changes are implemented, support changes the existing
+    // subscription so a family cannot be charged for Standard and Pro together.
+    if (currentPlan !== 'free') throw failure('plan_change_required', 409,
+      'Для перехода на другой тариф обратитесь в поддержку — мы изменим текущую подписку без двойной оплаты.');
     const current = existing.data();
     if (current && (current.parentUid !== user.uid || current.productId !== productId || current.mode !== MODE)) throw verificationNeeded();
     if (current && (!replaceAttemptId || current.attemptId !== replaceAttemptId || current.status !== 'ready')) {
       return { current };
     }
-    const record = { version: 1, parentUid: user.uid, productId, mode: MODE,
+    const record = { version: 2, parentUid: user.uid, productId, targetPlan, mode: MODE,
       attemptId: randomUUID(), status: 'creating', createdAt: new Date(), updatedAt: new Date() };
     tx.set(checkoutRef, record);
     return { created: record, family: family.data() };
@@ -153,8 +164,8 @@ async function createReserved(db, ref, record, user, family) {
       body: JSON.stringify({
         product_cart: [{ product_id: record.productId, quantity: 1 }],
         customer: (user.email || family.parentEmail) ? { email: user.email || family.parentEmail, name: user.name || family.parentName || undefined } : undefined,
-        return_url: `${process.env.APP_URL || 'https://synaq.app'}/app?paid=1`,
-        metadata: { parentUid: user.uid, checkoutAttemptId: record.attemptId },
+        return_url: `${process.env.APP_URL || 'https://synaq.app'}/app?paid=${record.targetPlan}`,
+        metadata: { parentUid: user.uid, checkoutAttemptId: record.attemptId, plan: record.targetPlan },
       }),
     });
     data = await response.json();
@@ -207,7 +218,7 @@ module.exports = async function handler(req, res) {
 
   if ((process.env.SYNAQ_USE_EMULATORS !== '1' && (!process.env.FIREBASE_PROJECT_ID || !process.env.FIREBASE_CLIENT_EMAIL
       || !process.env.FIREBASE_PRIVATE_KEY)) || !process.env.DODO_PAYMENTS_API_KEY
-      || !process.env.DODO_PRODUCT_ID) {
+      || (!products().standard && !products().pro)) {
     console.error('Checkout environment variables are incomplete');
     return res.status(500).json({ error: 'Төлем баптаулары толық емес' });
   }
@@ -218,15 +229,19 @@ module.exports = async function handler(req, res) {
     if (String(user.email || '').endsWith('@synaq.kids')) {
       return res.status(403).json({ error: 'parent_required' });
     }
-    const db = getAdminStore(), productId = process.env.DODO_PRODUCT_ID;
+    const targetPlan = req.body?.plan == null ? 'pro' : req.body.plan;
+    if (!['standard', 'pro'].includes(targetPlan)) return res.status(400).json({ error: 'bad_plan' });
+    const productId = products()[targetPlan];
+    if (!productId) return res.status(503).json({ error: 'plan_unavailable', message: 'Этот тариф пока недоступен для оплаты.' });
+    const db = getAdminStore();
     const familyRef = db.collection('families').doc(user.uid);
     const key = createHash('sha256').update(JSON.stringify([user.uid, productId, MODE])).digest('hex');
     const ref = db.collection('checkoutSessions').doc(key);
-    let reservation = await reserve(db, familyRef, ref, user, productId);
+    let reservation = await reserve(db, familyRef, ref, user, productId, targetPlan);
     if (reservation.current) {
       const previous = await inspectExisting(reservation.current);
       if (previous.url) return res.status(200).json(previous);
-      reservation = await reserve(db, familyRef, ref, user, productId, reservation.current.attemptId);
+      reservation = await reserve(db, familyRef, ref, user, productId, targetPlan, reservation.current.attemptId);
       // Another request already replaced this exact attempt. It owns the POST.
       if (!reservation.created) throw pending();
     }

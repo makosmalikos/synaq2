@@ -29,13 +29,13 @@ test('Firestore ownership, private state and create-only records', { skip: !enab
   await assertFails(updateDoc(doc(parent, 'childIndex/child'), { parentUid: 'parent' }));
   await assertFails(updateDoc(doc(parent, 'families/parent'), { proExpiresAt: new Date(2099, 1) }));
   await assertSucceeds(updateDoc(doc(parent, 'families/parent'), { parentName: 'New name' }));
-  for (const collection of ['explanations', 'translations', 'aiCache', 'duels', 'duelPrivate', 'paymentEvents', 'paymentSubscriptions', 'learningSessions', 'learningRateLimits', 'checkoutSessions']) {
+  for (const collection of ['explanations', 'translations', 'aiCache', 'bankTasks', 'duels', 'duelPrivate', 'paymentEvents', 'paymentSubscriptions', 'learningSessions', 'learningRateLimits', 'mockSessions', 'diagnosticSessions', 'diagnosticRateLimits', 'checkoutSessions']) {
     await assertFails(setDoc(doc(child, `${collection}/fake`), { host: { uid: 'child' }, text: 'test' }));
     if (collection !== 'duels') await assertFails(getDoc(doc(child, `${collection}/fake`)));
   }
   await assertSucceeds(getDoc(doc(child, 'duels/ABCDEF')));
   await assertFails(getDoc(doc(other, 'duels/ABCDEF')));
-  await assertSucceeds(setDoc(doc(child, 'results/child/stats/summary'), { xp: 0, studySecs: 0, diagnosticMockUsed: true,
+  await assertFails(setDoc(doc(child, 'results/child/stats/summary'), { xp: 0, studySecs: 0, diagnosticMockUsed: true,
     diagnosticMockAt: serverTimestamp(), updatedAt: serverTimestamp() }));
   await assertFails(updateDoc(doc(child, 'results/child/stats/summary'), { diagnosticMockUsed: false }));
   await assertFails(updateDoc(doc(child, 'results/child/stats/summary'), { xp: 100000 }));

@@ -29,7 +29,7 @@ export default function Explain({ q, given = null }) {
       const value = await explain(q, { given: wrong ? given : null, lang });
       if (request === requestRef.current) setText(value);
     } catch (e) {
-      if (request === requestRef.current) setErr(ru ? 'Не удалось получить объяснение. Попробуй ещё раз.' : explainError(e.message));
+      if (request === requestRef.current) setErr(explainError(e.message, lang));
     }
     if (request === requestRef.current) setBusy(false);
   }

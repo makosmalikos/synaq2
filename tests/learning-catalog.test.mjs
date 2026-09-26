@@ -90,13 +90,17 @@ function staticDependencies(entry, seen = new Set()) {
   return seen;
 }
 
-test('Parent and Progress static dependency graphs cannot import the full bank or training API', () => {
+test('student screens that only need public questions cannot import the full bank or legacy training API', () => {
   const sourceRoot = fileURLToPath(new URL('../frontend/src/', import.meta.url));
-  for (const screen of ['Parent.jsx', 'Progress.jsx', 'topicCatalog.js', 'diagnosis.js']) {
+  for (const screen of ['Parent.jsx', 'Progress.jsx', 'components/Training.jsx', 'components/Mock.jsx', 'topicCatalog.js', 'diagnosis.js']) {
     const deps = [...staticDependencies(path.join(sourceRoot, screen))];
     for (const banned of ['bank.js', 'data.js', 'api.js']) assert.equal(deps.includes(path.join(sourceRoot, banned)), false, `${screen} must not eagerly load ${banned}`);
   }
-  assert.equal(staticDependencies(path.join(sourceRoot, 'api.js')).has(path.join(sourceRoot, 'bank.js')), true, 'training keeps its synchronous bank contract');
+  const diagnosticDeps = [...staticDependencies(path.join(sourceRoot, 'components/PlatformDiagnostic.jsx'))];
+  for (const banned of ['bank.js', 'data.js', 'api.js', 'curriculumData.js']) {
+    assert.equal(diagnosticDeps.includes(path.join(sourceRoot, banned)), false, `PlatformDiagnostic.jsx must not eagerly load ${banned}`);
+  }
+  assert.equal(staticDependencies(path.join(sourceRoot, 'api.js')).has(path.join(sourceRoot, 'bank.js')), true, 'the deprecated adapter remains isolated from production screens');
 });
 
 test('the shared lazy admin reader caches parallel calls and retries rejected reads', async () => {

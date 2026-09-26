@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useLang } from '../i18n.jsx';
-import { api, translateQuestions } from '../api.js';
-import { auth, saveMock, watchPro, getDiagnosticStatus, markDiagnosticComplete, getMocks } from '../firebase.js';
+import { translateQuestions } from '../translateQuestions.js';
+import { mockCatalog, mockResume, mockStart, mockSubmit, reviewQuestionIds } from '../mockApi.js';
+import { loadTopicCatalog } from '../topicCatalog.js';
+import { auth, watchPro, getDiagnosticStatus, getMocks } from '../firebase.js';
 import { buildDiagnosis } from '../diagnosis.js';
 import Explain from './Explain.jsx';
 import DiagnosisReport from './DiagnosisReport.jsx';
 import { Kolhar } from './Training.jsx';
-import { readMockSession, writeMockSession, clearMockSession, discardMockSession, mockRemaining, mockSpent } from '../mockPersistence.js';
+import { readMockSession, writeMockSession, clearMockSession, discardMockSession, mockRemaining,
+  readMockStart, writeMockStart, clearMockStart } from '../mockPersistence.js';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
 
@@ -134,26 +137,48 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     setTest(null); setResult(null); setMeta(null); setSchool(null); setPause(false);
     setSaveState('idle'); setStartError(''); setStarting(false);
     if (!uid) { setSessionReady(true); return; }
-    const { record, error } = readMockSession(uid);
+    const stored = readMockSession(uid);
+    let { record } = stored;
+    const { error } = stored;
     if (error === 'unavailable') setRecoveryAvailable(false);
     if (error === 'invalid') setRecoveryError('invalid');
-    if (!record) { setSessionReady(true); return; }
+    const interruptedStart = !record ? readMockStart(uid) : null;
+    if (!record && !interruptedStart) { setSessionReady(true); return; }
     (async () => {
       try {
-        // Finished results do not need the current bank to retry a network save.
-        if (!record.result) await api.mockRestore(record.test);
+        const resumed = await mockResume(record?.id || interruptedStart.id);
+        if (!record && !resumed.completed) {
+          const questions = await translateQuestions(resumed.test.questions, lang);
+          record = { uid, id: interruptedStart.id, school: interruptedStart.school,
+            test: { ...resumed.test, questions }, meta: { school: interruptedStart.school,
+              sections: resumed.test.sections, diagnostic: resumed.diagnostic },
+            isDiagnosticRun: resumed.diagnostic, answers: {}, flags: {}, index: 0,
+            startedAt: resumed.startedAt, deadline: resumed.deadline, pausedAt: null, pausedMs: 0,
+            hideTimer: false, navOpen: false, result: null, pending: null };
+          setRecoveryAvailable(writeMockSession(record));
+          clearMockStart(uid, interruptedStart.id);
+        }
+        if (resumed.completed) {
+          if (!record) throw new Error('completed_start_without_journal');
+          record = { ...record, result: resumed.result, pending: null };
+        } else {
+          const questions = await translateQuestions(resumed.test.questions, lang);
+          record = { ...record, test: { ...resumed.test, questions },
+            isDiagnosticRun: resumed.diagnostic, startedAt: resumed.startedAt,
+            deadline: resumed.deadline, pending: null };
+        }
         if (!alive || !isCurrent()) return;
         applyRun(record);
-        setSaveState(record.pending ? 'error' : record.result ? 'saved' : 'idle');
-        if (record.pending) void persistResult();
-      } catch {
-        if (alive && isCurrent()) setRecoveryError('restore');
+        setSaveState(record.result ? 'saved' : 'idle');
+      } catch (error) {
+        if (interruptedStart && error?.status === 404) clearMockStart(uid, interruptedStart.id);
+        else if (alive && isCurrent()) setRecoveryError('restore');
       } finally {
         if (alive && isCurrent()) setSessionReady(true);
       }
     })();
     return () => { alive = false; };
-  }, [uid, recoveryRetry]);
+  }, [uid, recoveryRetry, lang]);
 
   useEffect(() => {
     let alive = true;
@@ -162,7 +187,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     const stop = watchPro(uid, (value) => { if (alive && isCurrent()) setPro(value); }, () => {
       if (alive && isCurrent()) { setLoadError(true); setPro(null); }
     });
-    Promise.all([api.schools(), api.topics(), getDiagnosticStatus(uid)]).then(([list, topics, diagnostic]) => {
+    Promise.all([mockCatalog(), loadTopicCatalog(), getDiagnosticStatus(uid)]).then(([list, topics, diagnostic]) => {
       if (alive && isCurrent()) {
         setSchools(list); setTopics(topics);
         setDiagUsed((used) => used === true || diagnostic.used);
@@ -209,54 +234,34 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     if (!active()) return;
     const excludeQuestionIds = [
       ...readRecent(code, 'questions'),
-      ...history.flatMap((m) => api.reviewQuestionIds(m.review || [])),
+      ...history.flatMap((m) => reviewQuestionIds(m.review || [])),
     ];
-    const excludeVariantIds = [
-      ...readRecent(code, 'variants'),
-      ...history.map((m) => m.sourceId || api.reviewVariantId(code, m.review || [])).filter(Boolean),
-    ];
-    const v = await api.mockRandom(code, { excludeQuestionIds, excludeVariantIds });
+    const reserved = readMockStart(uid);
+    const requestId = reserved?.school === code ? reserved.id : crypto.randomUUID();
+    if (!reserved && !writeMockStart({ uid, id: requestId, school: code })) setRecoveryAvailable(false);
+    const started = await mockStart({ id: requestId, school: code, excludeQuestionIds });
+    const v = started.test;
     if (!v) throw new Error('empty_exam');
     const qs = await translateQuestions(v.questions, lang);
     if (!active()) return;
     rememberRecent(code, 'questions', v.questions.map((q) => q.id).filter(Boolean), 600);
-    if (v.sourceId) rememberRecent(code, 'variants', [v.sourceId], 7);
-    const startedNow = Date.now();
-    const limitMin = v.timeLimitMin || 60;
-    const freeRun = diagnostic || !pro;
+    const startedNow = started.startedAt;
+    const freeRun = started.diagnostic;
     const record = {
-      uid, id: crypto.randomUUID(), school: code, test: { ...v, questions: qs },
+      uid, id: requestId, school: code, test: { ...v, questions: qs },
       meta: { school: code, sections: v.sections, diagnostic: freeRun }, isDiagnosticRun: freeRun,
       answers: {}, flags: {}, index: 0, startedAt: startedNow,
-      deadline: startedNow + limitMin * 60 * 1000, pausedAt: null, pausedMs: 0,
+      deadline: started.deadline, pausedAt: null, pausedMs: 0,
       hideTimer: false, navOpen: false, result: null, pending: null,
     };
     setRecoveryAvailable(writeMockSession(record));
+    clearMockStart(uid, requestId);
     applyRun(record); setSaveState('idle');
-    } catch { if (active()) setStartError(ru ? 'Не удалось запустить тест. Попробуй ещё раз.' : 'Сынақ басталмады. Қайта көр.'); }
+    } catch (error) {
+      if (error?.status >= 400 && error.status < 500 && error.status !== 409) clearMockStart(uid, readMockStart(uid)?.id);
+      if (active()) setStartError(ru ? 'Не удалось запустить тест. Попробуй ещё раз.' : 'Сынақ басталмады. Қайта көр.');
+    }
     finally { if (active()) { startingRef.current = false; setStarting(false); } }
-  }
-
-  async function persistResult() {
-    if (!isCurrent() || !pendingSave.current || savingRef.current || pendingSave.current.uid !== uid) return;
-    savingRef.current = true; setSaveState('saving');
-    const pending = pendingSave.current;
-    const { uid: owner, payload, id } = pending;
-    try {
-      await saveMock(owner, payload, id);
-      if (payload.diagnostic) {
-        if (auth.currentUser?.uid !== owner) return;
-        await markDiagnosticComplete(owner);
-      }
-      const cleared = clearMockSession(owner, id);
-      if (!isCurrent() || pendingSave.current !== pending) return;
-      if (!cleared) setRecoveryAvailable(false);
-      pendingSave.current = null;
-      runRef.current = { ...runRef.current, pending: null };
-      if (payload.diagnostic) setDiagUsed(true);
-      setSaveState('saved');
-    } catch { if (isCurrent() && pendingSave.current === pending) setSaveState('error'); }
-    finally { if (!pendingSave.current || pendingSave.current === pending) savingRef.current = false; }
   }
 
   async function submit() {
@@ -268,7 +273,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     clearInterval(tick.current);
     let r;
     try {
-      r = await api.mockSubmit(run.test.id, run.answers);
+      r = await mockSubmit(run.id, run.answers);
       if (!r) throw new Error('missing_exam');
     } catch {
       submittingRef.current = false;
@@ -276,14 +281,11 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
       return;
     }
     if (!isCurrent() || runRef.current?.id !== run.id) return;
-    const payload = {
-      ...r,
-      school: run.school, spentSec: mockSpent(run), limitMin: run.test.timeLimitMin || null,
-      diagnostic: run.isDiagnosticRun || (!pro && !diagUsed),
-      shortened: !!run.test.shortened, targetCount: run.test.targetCount,
-    };
-    changeRun({ result: r, pending: { uid, payload, id: run.id }, pausedAt: null });
-    void persistResult();
+    changeRun({ result: r, pending: null, pausedAt: null });
+    if (!clearMockSession(uid, run.id)) setRecoveryAvailable(false);
+    pendingSave.current = null;
+    if (run.isDiagnosticRun) setDiagUsed(true);
+    setSaveState('saved');
   }
 
   function resumeExam() {
@@ -406,8 +408,6 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   if (result) return (
     <main>
       {recoveryNotice}
-      {saveState === 'saving' && <p role="status">{ru ? 'Сохраняем результат…' : 'Нәтиже сақталуда…'}</p>}
-      {saveState === 'error' && <p role="alert">{ru ? (recoveryAvailable ? 'Результат пока не отправлен. Он сохранён в этой вкладке для повторной попытки.' : 'Результат пока не сохранён. Не закрывай страницу.') : (recoveryAvailable ? 'Нәтиже әлі жіберілмеді. Ол қайта жіберу үшін осы қойындыда сақталған.' : 'Нәтиже әлі сақталмады. Бетті жаппа.')} <button type="button" className="link" onClick={persistResult}>{ru ? 'Повторить сохранение' : 'Қайта сақтау'}</button></p>}
       {test.shortened && <p className="muted">{shortenedLabel} ({test.questions.length}/{test.targetCount})</p>}
       <p className="kicker">{t('diag.result')} · {meta.school}</p>
       <div className="hero-card" style={{ marginBottom: 18 }}>

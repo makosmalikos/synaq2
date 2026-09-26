@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination } from '../frontend/src/checkoutMessages.js';
 
 const source = fs.readFileSync(new URL('../frontend/src/Parent.jsx', import.meta.url), 'utf8');
-const buy = source.slice(source.indexOf('  async function buyPro()'), source.indexOf("  const [name, setName]"));
+const buy = source.slice(source.indexOf('  async function buyPlan(targetPlan)'), source.indexOf("  const [name, setName]"));
 const deferred = () => { let resolve, reject; const promise = new Promise((yes, no) => { resolve = yes; reject = no; }); return { promise, resolve, reject }; };
 
 function fixture({ status = 409, body = { error: 'checkout_pending' }, respond, token } = {}) {
@@ -25,7 +25,7 @@ function fixture({ status = 409, body = { error: 'checkout_pending' }, respond, 
     },
   };
   vm.createContext(context); vm.runInContext(buy, context);
-  return { context, state, calls, redirects, run: () => context.buyPro() };
+  return { context, state, calls, redirects, run: (plan = 'pro') => context.buyPlan(plan) };
 }
 
 test('checkout codes have distinct safe RU/KK messages without echoing provider text', () => {
@@ -46,6 +46,11 @@ test('checkout codes have distinct safe RU/KK messages without echoing provider 
   assert.equal(checkoutErrorMessage('Төлем баптаулары толық емес', 'ru'), checkoutErrorMessage('server_not_configured', 'ru'));
 });
 
+test('return URLs for both paid tiers keep checkout pending until the webhook updates the family', () => {
+  assert.match(source, /\['1', 'standard', 'pro'\]\.includes\(paid\)/);
+  assert.match(source, /paidTarget === 'standard' \? 'standard' : 'pro'/);
+});
+
 test('ambiguous and processing payments hold the purchase button without any automatic POST retry', async () => {
   for (const code of ['checkout_verification_required', 'checkout_payment_pending']) {
     const f = fixture({ status: code === 'checkout_verification_required' ? 503 : 409, body: { error: code, message: 'untrusted raw text' } });
@@ -60,7 +65,7 @@ test('ambiguous and processing payments hold the purchase button without any aut
   // The explicit refresh action observes Firestore; it does not call checkout.
   const notice = source.slice(source.indexOf('{paymentError &&'), source.indexOf('{err && !adding'));
   assert.match(notice, /setFamilyRetry\(\(n\) => n \+ 1\)/);
-  assert.doesNotMatch(notice, /buyPro|fetch\(/);
+  assert.doesNotMatch(notice, /buyPlan|fetch\(/);
 });
 
 test('a pending reservation permits an explicit manual retry but never schedules one', async () => {
@@ -104,6 +109,7 @@ test('success uses the exact server URL, including renewed sessions, without add
   assert.equal(f.calls.length, 1);
   assert.equal(f.calls[0][0], '/api/checkout');
   assert.equal(f.calls[0][1].method, 'POST');
+  assert.deepEqual(JSON.parse(f.calls[0][1].body), { plan: 'pro' });
 });
 
 test('unsafe or malformed successful redirect responses require verification, not a substituted URL', async () => {

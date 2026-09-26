@@ -63,12 +63,19 @@ export async function askTutor(q, { action = 'question', message, history = [], 
   return data.text.trim();
 }
 
-export function explainError(msg) {
-  if (msg === 'no_api_key')     return 'GEMINI_API_KEY Vercel-де қосылмаған (Settings → Environment Variables).';
-  if (msg === 'unauthorized')   return 'Қайта кіріп көріңіз (сессия аяқталған болуы мүмкін).';
-  if (msg === 'upstream')       return 'Gemini жауап бермеді. API кілтін тексеріңіз немесе кейін қайталаңыз.';
-  if (msg === 'empty')          return 'Gemini бос жауап қайтарды. Қайта көріңіз.';
-  if (msg === 'failed')         return 'Сервер қатесі. Бір минуттан кейін қайталаңыз.';
-  if (msg === 'bad_statement')  return 'Бұл есеп үшін түсіндірме қолжетімсіз.';
-  return 'Түсіндірмені алу мүмкін болмады. Қайталап көріңіз.';
+export function explainError(msg, lang = 'kk') {
+  const ru = lang === 'ru';
+  if (msg === 'rate_limit') return ru ? 'Лимит AI на сегодня закончился.' : 'Бүгінгі AI лимиті аяқталды.';
+  if (msg === 'service_daily_limit') return ru
+    ? 'Общий лимит AI на сегодня достигнут. Попробуйте завтра.'
+    : 'AI қызметінің бүгінгі жалпы лимиті аяқталды. Ертең қайталап көріңіз.';
+  if (msg === 'no_api_key') return ru
+    ? 'GEMINI_API_KEY не настроен в Vercel (Settings → Environment Variables).'
+    : 'GEMINI_API_KEY Vercel-де қосылмаған (Settings → Environment Variables).';
+  if (msg === 'unauthorized') return ru ? 'Войдите заново: возможно, сессия завершилась.' : 'Қайта кіріп көріңіз (сессия аяқталған болуы мүмкін).';
+  if (msg === 'upstream') return ru ? 'Gemini не ответил. Попробуйте позже.' : 'Gemini жауап бермеді. Кейін қайталаңыз.';
+  if (msg === 'empty') return ru ? 'Gemini вернул пустой ответ. Попробуйте ещё раз.' : 'Gemini бос жауап қайтарды. Қайта көріңіз.';
+  if (msg === 'failed') return ru ? 'Ошибка сервера. Повторите через минуту.' : 'Сервер қатесі. Бір минуттан кейін қайталаңыз.';
+  if (msg === 'bad_statement') return ru ? 'Для этой задачи объяснение недоступно.' : 'Бұл есеп үшін түсіндірме қолжетімсіз.';
+  return ru ? 'Не удалось получить объяснение. Попробуйте ещё раз.' : 'Түсіндірмені алу мүмкін болмады. Қайталап көріңіз.';
 }
