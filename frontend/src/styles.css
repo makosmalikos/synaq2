@@ -482,7 +482,8 @@ input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(58,157,245,.12)
 }
 
 @media (max-width:1050px){
-  .nav-v.open .nav-group{display:block}
+  .nav-v.open .nav-group{display:block;width:100%}
+  .nav-v.open .nav-group-trigger{display:flex;width:100%;text-align:left}
   .nav-v.open .nav-dropdown{position:static;width:auto;margin:3px 0 7px 31px;padding:4px;transform:none;border:0;border-left:2px solid #D8E9FB;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;animation:none}
   .nav-v.open .nav-dropdown:before{display:none}
   .nav-v.open .nav-dropdown button{min-height:40px;padding:8px 12px;font-size:13px}
