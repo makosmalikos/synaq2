@@ -5,6 +5,7 @@ import { topicStats, weekHours, mockSeries } from './analytics.js';
 import { loadTopicCatalog } from './topicCatalog.js';
 import { buildDiagnosis, pickDiagnosticMock } from './diagnosis.js';
 import DiagnosisReport from './components/DiagnosisReport.jsx';
+import BrandLoader from './components/BrandLoader.jsx';
 
 const LEVEL_TXT = { strong: 'МЫҚТЫ', mid: 'ОРТАША', weak: 'ӘЛСІЗ' };
 const LEVEL_COL = { strong: '#4C7A4E', mid: '#B8892B', weak: '#B0342B' };
@@ -75,7 +76,7 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
       </button>
     </main>
   );
-  if (loading || !stats || pro === null) return <main><p className="muted">{t('common.loading')}</p></main>;
+  if (loading || !stats || pro === null) return <main><BrandLoader /></main>;
 
   // ── разбор одного мока ──
   if (open) return (

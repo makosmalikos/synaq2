@@ -6,6 +6,7 @@ import { auth, startLearningSession, saveAttempt, getSolved, setFlag, getFlags, 
 import { readPendingTraining, writePendingTraining, clearPendingTraining, trainingDayKey, trainingQuestion } from '../trainingPersistence.js';
 import Explain from './Explain.jsx';
 import AiTutor from './AiTutor.jsx';
+import BrandLoader from './BrandLoader.jsx';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
 // Блоки раздельно: язык и математика в одной ленте — бессмыслица.
@@ -453,7 +454,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
 
   if (loadError && !checked) return <main><p role="alert">{trainingLoadErrorText(loadErrorCode, ru)}</p>
     <button className="btn" onClick={() => setLoadRetry((value) => value + 1)}>{ru ? 'Повторить' : 'Қайталау'}</button></main>;
-  if ((loading || opening || pro === null) && !checked) return <main><p role="status">{t('common.loading')}</p></main>;
+  if ((loading || opening || pro === null) && !checked) return <main><BrandLoader /></main>;
 
   // ── список тем ──
   if (!topic) {

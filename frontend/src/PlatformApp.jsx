@@ -5,6 +5,7 @@ import Auth from './Auth.jsx';
 import Home from './Home.jsx';
 import League from './League.jsx';
 import Brand from './Brand.jsx';
+import BrandLoader from './components/BrandLoader.jsx';
 import { readPublicDiagnosticResult } from './diagnosticPlan.js';
 import PetAvatar from './PetAvatar.jsx';
 
@@ -47,7 +48,7 @@ const NavIcon = ({ name }) => (
   <svg className="nav-icon" viewBox="0 0 24 24" aria-hidden="true">{NAV_ICONS[name]}</svg>
 );
 
-const ScreenFallback = () => <div style={{ padding: 40, color: '#6B655B' }}>...</div>;
+const ScreenFallback = () => <BrandLoader />;
 
 const ProfileIcon = ({ name }) => {
   const paths = {
@@ -159,7 +160,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   }, [navMenu]);
 
   // 2. Авторизация — пока не вошли, дашборда нет
-  if (user === undefined) return <div style={{ padding: 40, color: '#6B655B' }}>{t('common.loading')}</div>;
+  if (user === undefined) return <BrandLoader fullScreen />;
   if (!user) return <Auth duelCode={duelCode} />;
 
   // 3. Дашборд (родитель / ребёнок)
@@ -169,13 +170,13 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
     onHome();
   };
   if (!isKid(user)) {
-    if (adminUser === undefined) return <div style={{ padding: 40, color: '#6B655B' }}>{t('common.loading')}</div>;
+    if (adminUser === undefined) return <BrandLoader fullScreen />;
     if (adminUser) return (
-      <Suspense fallback={<ScreenFallback />}>
+      <Suspense fallback={<BrandLoader fullScreen />}>
         <Admin onExit={exit} />
       </Suspense>
     );
-    if (familyState?.uid !== user.uid || familyState.status === 'loading') return <ScreenFallback />;
+    if (familyState?.uid !== user.uid || familyState.status === 'loading') return <BrandLoader fullScreen />;
     if (familyState.status === 'error') return (
       <section role="alert" className="card" style={{ maxWidth: 520, margin: '12vh auto', padding: 28 }}>
         <h1>{lang === 'ru' ? 'Не удалось подготовить кабинет' : 'Кабинетті дайындау мүмкін болмады'}</h1>
@@ -185,7 +186,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
       </section>
     );
     return (
-      <Suspense fallback={<ScreenFallback />}>
+      <Suspense fallback={<BrandLoader fullScreen />}>
         <Parent onExit={exit} />
       </Suspense>
     );
@@ -202,7 +203,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   };
 
   if (tab === 'subscription') return (
-    <Suspense fallback={<ScreenFallback />}>
+    <Suspense fallback={<BrandLoader fullScreen />}>
       <Subscription currentPlan={profile.plan || (profile.pro ? 'pro' : 'free')} onBack={() => { setTab(tabBeforeSubscription); window.scrollTo(0, 0); }} />
     </Suspense>
   );

@@ -9,6 +9,7 @@ import {
 import { topicStats, readiness, mockSeries } from './analytics.js';
 import { loadTopicCatalog } from './topicCatalog.js';
 import Brand from './Brand.jsx';
+import BrandLoader from './components/BrandLoader.jsx';
 import { buildDiagnosticShareText, daysUntilDiagnostic } from './platformDiagnostic.js';
 import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination, isDodoPortalDestination } from './checkoutMessages.js';
 import PetAvatar, { DEFAULT_PET_AVATAR, PET_AVATARS } from './PetAvatar.jsx';
@@ -540,13 +541,13 @@ export default function Parent({ onExit }) {
           {resetChild && <ChildPasswordCard key={resetChild.uid} child={resetChild} onClose={() => setResetChild(null)} />}
           {childrenError && <div role="alert"><p>{text('Не удалось загрузить список детей. Проверьте соединение и повторите.', 'Балалар тізімі жүктелмеді. Байланысты тексеріп, қайталаңыз.')}</p>
             <button className="btn" onClick={load}>{text('Повторить', 'Қайталау')}</button></div>}
-          {!childrenLoaded && !childrenError && <p role="status">{t('common.loading')}</p>}
+          {!childrenLoaded && !childrenError && <BrandLoader compact />}
           {childrenLoaded && !children.length && !adding && <p className="muted" style={{ marginTop: 14 }}>{t('ui.32')}</p>}
         </main>
       ) : (
         reportLoading || reportError ? <main>
           <button className="link" onClick={() => { reportRequest.current++; setOpenChild(null); }}>{t('ui.33')}</button>
-          {reportLoading ? <p role="status">{t('common.loading')}</p> : <div role="alert">
+          {reportLoading ? <BrandLoader /> : <div role="alert">
             <p>{text('Не удалось загрузить отчёт. Прогресс сохранён; попробуйте ещё раз.', 'Есепті жүктеу мүмкін болмады. Прогресс сақталған; қайта көріңіз.')}</p>
             <button className="btn" onClick={() => openResults(openChild)}>{text('Повторить', 'Қайталау')}</button>
           </div>}

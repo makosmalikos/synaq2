@@ -6,6 +6,7 @@ import { loadTopicCatalog } from '../topicCatalog.js';
 import { auth, watchPro, getDiagnosticStatus, getMocks } from '../firebase.js';
 import { buildDiagnosis } from '../diagnosis.js';
 import Explain from './Explain.jsx';
+import BrandLoader from './BrandLoader.jsx';
 import DiagnosisReport from './DiagnosisReport.jsx';
 import { Kolhar } from './Training.jsx';
 import { readMockSession, writeMockSession, clearMockSession, discardMockSession, mockRemaining,
@@ -319,7 +320,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     alert(t('diag.parentPro'));
   };
 
-  if (!sessionReady || (runRef.current && runRef.current.uid !== uid)) return <main><p role="status">{t('common.loading')}</p></main>;
+  if (!sessionReady || (runRef.current && runRef.current.uid !== uid)) return <main><BrandLoader /></main>;
   if (recoveryError) return <main><p role="alert">{ru ? 'Не удалось восстановить сохранённый пробник. Он не удалён. Попробуй ещё раз или явно начни заново.' : 'Сақталған сынақты қалпына келтіру мүмкін болмады. Ол жойылған жоқ. Қайта көр немесе жаңадан баста.'}</p>
     <button type="button" className="btn" onClick={() => setRecoveryRetry((value) => value + 1)}>{ru ? 'Повторить' : 'Қайталау'}</button>
     <button type="button" className="btn ghost" onClick={() => {
@@ -329,7 +330,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
 
   if (!school && loadError) return <main><p role="alert">{ru ? 'Не удалось загрузить тесты, подписку или прогресс. Проверь соединение.' : 'Сынақтар, жазылым немесе прогресс жүктелмеді. Байланысты тексер.'}</p>
     <button className="btn" onClick={() => setLoadRetry((value) => value + 1)}>{ru ? 'Повторить' : 'Қайталау'}</button></main>;
-  if (!school && (loading || pro === null || diagUsed === null)) return <main><p role="status">{t('common.loading')}</p></main>;
+  if (!school && (loading || pro === null || diagUsed === null)) return <main><BrandLoader /></main>;
 
   // ── тегін: диагностикалық сынақ немесе Pro upsell ──
   if (!school && pro === false && diagUsed !== null) {
@@ -372,7 +373,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   }
 
   if (!school && pro === null) {
-    return <main><p className="muted">{t('common.loading')}</p></main>;
+    return <main><BrandLoader /></main>;
   }
 
   if (!school) return (

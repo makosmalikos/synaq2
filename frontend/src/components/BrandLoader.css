@@ -1,0 +1,127 @@
+.brand-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: clamp(300px, 56svh, 520px);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.brand-loader--fullscreen { min-height: 100svh; }
+.brand-loader--compact { min-height: 220px; padding: 24px 16px; }
+
+.brand-loader__visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 144px;
+  height: 144px;
+  margin-bottom: 20px;
+}
+
+.brand-loader__halo {
+  position: absolute;
+  inset: -24px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #DBECFF 0%, rgba(224, 240, 255, .55) 38%, transparent 70%);
+  animation: synaq-loader-breathe 3.2s ease-in-out infinite;
+}
+
+.brand-loader__orbit {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #DDEAF9;
+  border-radius: 50%;
+  animation: synaq-loader-orbit 8s linear infinite;
+}
+
+.brand-loader__orbit i {
+  position: absolute;
+  top: -4px;
+  left: calc(50% - 4px);
+  width: 8px;
+  height: 8px;
+  border: 2px solid #F6FAFF;
+  border-radius: 50%;
+  background: #359BF5;
+  box-shadow: 0 0 0 4px rgba(53, 155, 245, .08);
+}
+
+.brand-loader__orbit i + i { top: auto; bottom: -3px; width: 6px; height: 6px; background: #A4C8F4; box-shadow: none; }
+
+.brand-loader__tile {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  border: 1px solid rgba(255, 255, 255, .95);
+  border-radius: 26px;
+  background: linear-gradient(145deg, #FFFFFF, #F4F9FF);
+  box-shadow: 0 12px 30px -14px rgba(47, 112, 200, .25), 0 2px 5px rgba(47, 112, 200, .04);
+  animation: synaq-loader-float 3.2s ease-in-out infinite;
+}
+
+.brand-loader__glyph {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background: #1D4ED8;
+  -webkit-mask: url('/brands/synaq-mark.png') center / contain no-repeat;
+  mask: url('/brands/synaq-mark.png') center / contain no-repeat;
+}
+
+.brand-loader__wordmark {
+  color: #1D4ED8;
+  font: 800 22px/1.2 'Geologica', 'Golos Text', system-ui, sans-serif;
+  letter-spacing: -.025em;
+}
+
+.brand-loader__label {
+  margin-top: 9px;
+  color: #627A92;
+  font: 500 13px/1.5 'Golos Text', system-ui, sans-serif;
+}
+
+.brand-loader__track {
+  display: block;
+  width: 104px;
+  height: 3px;
+  margin-top: 22px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #E2EDF9;
+}
+
+.brand-loader__track i {
+  display: block;
+  width: 44px;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #A4CEFC, #3A9DF5, #A4CEFC);
+  animation: synaq-loader-slide 1.8s ease-in-out infinite;
+}
+
+.brand-loader--compact .brand-loader__visual { width: 104px; height: 104px; margin-bottom: 14px; }
+.brand-loader--compact .brand-loader__tile { width: 66px; height: 66px; border-radius: 20px; }
+.brand-loader--compact .brand-loader__glyph { width: 37px; height: 37px; }
+.brand-loader--compact .brand-loader__wordmark { font-size: 18px; }
+.brand-loader--compact .brand-loader__track { margin-top: 16px; }
+
+@keyframes synaq-loader-orbit { to { transform: rotate(360deg); } }
+@keyframes synaq-loader-breathe { 50% { transform: scale(1.12); opacity: .65; } }
+@keyframes synaq-loader-float { 50% { transform: translateY(-4px); } }
+@keyframes synaq-loader-slide { 0%, 100% { transform: translateX(-44px); } 50% { transform: translateX(104px); } }
+
+@media (max-width: 600px) {
+  .brand-loader { min-height: 48svh; padding: 32px 16px; }
+  .brand-loader--fullscreen { min-height: 100svh; }
+  .brand-loader--compact { min-height: 220px; padding: 24px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-loader *, .brand-loader *::before, .brand-loader *::after { animation: none; }
+  .brand-loader__track i { transform: translateX(30px); }
+}

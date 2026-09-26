@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useEffect, useState } from 'react';
 import Landing from './Landing.jsx';
 import { useLang } from './i18n.jsx';
 import { ScreenBoundary } from './components/ScreenBoundary.jsx';
+import BrandLoader from './components/BrandLoader.jsx';
 import { readRoute, routePath, readDuelCode } from './routes.js';
 
 // Публичные страницы не зависят от Firebase, сессии и банка экзаменационных задач.
@@ -9,7 +10,7 @@ const PlatformApp = lazy(() => import('./PlatformApp.jsx'));
 const PublicDiagnostic = lazy(() => import('./PublicDiagnostic.jsx'));
 
 export default function App() {
-  const { t, lang } = useLang();
+  const { lang } = useLang();
   const [route, setRoute] = useState(() => readRoute(window.location.pathname));
   const [diagnosticResult, setDiagnosticResult] = useState(null);
   const [duelCode] = useState(() => {
@@ -37,7 +38,7 @@ export default function App() {
 
   return (
     <ScreenBoundary key={route} lang={lang}>
-      <Suspense fallback={<div role="status" style={{ padding: 40, color: '#60758A' }}>{t('common.loading')}</div>}>
+      <Suspense fallback={<BrandLoader fullScreen />}>
         {route === 'landing' && <Landing onStart={() => go('app')} onDiagnostic={() => go('diagnostic')} />}
         {route === 'diagnostic' && <PublicDiagnostic onBack={() => go('landing')} onRegister={(result) => { setDiagnosticResult(result); go('app'); }} />}
         {route === 'app' && <PlatformApp
