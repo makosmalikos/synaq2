@@ -8,6 +8,15 @@ const fromStorage = createRequire(require.resolve('@google-cloud/storage'));
 const fromGaxios = createRequire(fromStorage.resolve('gaxios'));
 const { Gaxios } = fromStorage('gaxios');
 
+test('Firebase Admin auth keeps a CommonJS-compatible JWKS verifier for Vercel', () => {
+  const fromAdmin = createRequire(require.resolve('firebase-admin/app'));
+  const fromJwks = createRequire(fromAdmin.resolve('jwks-rsa/package.json'));
+  assert.match(fromAdmin('jwks-rsa/package.json').version, /^3\./);
+  assert.match(fromJwks('jose/package.json').version, /^4\./);
+  assert.equal(typeof fromAdmin('jwks-rsa'), 'function');
+  assert.equal(typeof fromAdmin('firebase-admin/auth').getAuth, 'function');
+});
+
 test('gaxios 6 scoped uuid override preserves its CommonJS v4 contract', () => {
   assert.match(fromStorage('gaxios/package.json').version, /^6\./);
   assert.match(fromGaxios('uuid/package.json').version, /^11\./);
