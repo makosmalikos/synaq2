@@ -2,8 +2,8 @@
 // Returns only the current child's entitlement. Family and payment metadata
 // remain server-side and are never exposed to the child client.
 
-const { getAdmin } = require('../backend/lib/firebase-admin');
-const { familyPlan, millis } = require('../backend/lib/plans');
+const { getAdmin } = require('../lib/firebase-admin');
+const { familyPlan, millis } = require('../lib/plans');
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'GET') return res.status(405).json({ error: 'method_not_allowed' });

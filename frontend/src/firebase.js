@@ -217,10 +217,10 @@ export async function claimDuelXp(code) {
 
 // ── Администратор (Admin Panel) ──
 // Пароля у админа нет: email сверяется server-side с allowlist ADMIN_EMAIL_1/2
-// в api/admin-login.js, который в ответ выдаёт Firebase custom token с клеймом
+// в серверный admin-login, который в ответ выдаёт Firebase custom token с клеймом
 // admin:true. Здесь мы только логинимся этим токеном — сам допуск целиком
 // решает сервер, фронт ничего не проверяет и не может подделать.
-// Владение email подтверждается входом через Google — сервер (api/admin-login.js)
+// Владение email подтверждается входом через Google — серверный admin-login
 // проверяет подпись ID-токена и allowlist ADMIN_EMAIL_1/2, и только затем
 // выдаёт отдельный admin custom token. Прежний вариант слал один email без
 // токена — сервер требует Bearer и сейчас отклонял бы любой такой запрос.

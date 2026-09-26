@@ -22,7 +22,7 @@ function getAdminDb() {
 
 const norm = (s) => String(s || '').trim().toLowerCase();
 
-// Тот же allowlist, что и в api/admin-login.js — держим отдельной копией
+// Тот же allowlist, что и в серверном admin-login — держим отдельной копией
 // по той же причине, что и TOPIC_SCHOOLS (раздельная сборка api/ и frontend/).
 const DEFAULT_ADMIN_EMAILS = ['makosmalikos@gmail.com', 'nurss.aldb@gmail.com'];
 

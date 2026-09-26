@@ -3,7 +3,7 @@
 // The child's Firebase UID stays unchanged, so progress and subscription links
 // remain intact for all existing accounts.
 
-const { getAdmin } = require('../backend/lib/firebase-admin');
+const { getAdmin } = require('../lib/firebase-admin');
 
 function bodyOf(req) {
   if (typeof req.body === 'string') {

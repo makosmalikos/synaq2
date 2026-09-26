@@ -4,7 +4,7 @@
 
 const XP = { CORRECT: 5, SPEED: 3, WIN: 50 };
 const DUEL_SIZE = 15;
-const { getAdmin } = require('../backend/lib/firebase-admin');
+const { getAdmin } = require('../lib/firebase-admin');
 
 function bodyOf(req) {
   if (typeof req.body === 'string') {

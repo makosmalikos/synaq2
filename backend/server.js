@@ -6,6 +6,16 @@ const path = require('node:path');
 
 const ENDPOINTS = ['explain', 'checkout', 'subscription-portal', 'entitlement', 'child-create', 'child-password', 'admin-login', 'admin-task', 'duel', 'duel-award', 'learning', 'mock-session', 'diagnostic-session'];
 
+// These lighter endpoints share the catch-all Vercel function so the project
+// stays within the Hobby plan's 12-function limit. Explicit loaders also make
+// their dependencies visible to Vercel's static file tracer.
+const SHARED_ENDPOINTS = {
+  'admin-login': () => require('./handlers/admin-login'),
+  entitlement: () => require('./handlers/entitlement'),
+  'child-password': () => require('./handlers/child-password'),
+  'duel-award': () => require('./handlers/duel-award'),
+};
+
 function createApp({ handlers = {} } = {}) {
   const app = express();
   app.use(cors());
@@ -13,7 +23,7 @@ function createApp({ handlers = {} } = {}) {
     // Load only the selected endpoint. Never mount api/[...path].js here:
     // that file delegates back to this app on Vercel.
     try {
-      const handler = handlers[name] || require(`../api/${name}.js`);
+      const handler = handlers[name] || SHARED_ENDPOINTS[name]?.() || require(`../api/${name}.js`);
       Promise.resolve(handler(req, res)).catch(next);
     } catch (error) { next(error); }
   };

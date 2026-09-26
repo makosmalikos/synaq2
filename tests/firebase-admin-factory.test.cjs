@@ -153,8 +153,9 @@ for (const mode of ['demo', 'certificate']) {
           'admin-task': '({ auth: getAdminAuth(), db: getAdminDb() })',
           'admin-login': '({ auth: getAdminAuth() })', 'webhook': '({ db: store() })',
         };
+        const shared = new Set(['admin-login', 'child-password', 'duel-award', 'entitlement']);
         for (const [name, accessor] of Object.entries(accessors)) {
-          const filename = path.resolve('api', name + '.js');
+          const filename = path.resolve(shared.has(name) ? 'backend/handlers' : 'api', name + '.js');
           const code = fs.readFileSync(filename, 'utf8');
           assert.doesNotMatch(code, /initializeApp|getApps\\(/, name + ' bypasses the shared factory');
           const context = { module: { exports: {} }, require: createRequire(filename), process, console };
@@ -169,7 +170,7 @@ for (const mode of ['demo', 'certificate']) {
         process.env.DODO_PAYMENTS_API_KEY = 'local-unused-provider-key';
         process.env.DODO_PRODUCT_ID = 'local-unused-product';
         for (const name of Object.keys(accessors).filter((value) => value !== 'webhook')) {
-          const handler = require('./api/' + name);
+          const handler = require(shared.has(name) ? './backend/handlers/' + name : './api/' + name);
           const req = { method: name === 'entitlement' ? 'GET' : 'POST', body: {},
             headers: { authorization: 'Bearer not-a-jwt' } };
           const res = { statusCode: 200, setHeader() {},

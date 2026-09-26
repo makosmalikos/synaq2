@@ -8,7 +8,7 @@
 //   ADMIN_EMAIL_1, ADMIN_EMAIL_2 = реальные email двух администраторов
 //   FIREBASE_PRIVATE_KEY + FIREBASE_CLIENT_EMAIL + FIREBASE_PROJECT_ID (как в webhook/explain)
 
-const { getAdmin } = require('../backend/lib/firebase-admin');
+const { getAdmin } = require('../lib/firebase-admin');
 
 function getAdminAuth() {
   return getAdmin().auth;

@@ -44,11 +44,11 @@ function fixture() {
     process: { env: { FIREBASE_CLIENT_EMAIL: 'test@example.test', FIREBASE_PRIVATE_KEY: 'local-key' } },
     console: { error() {} },
     require(name) {
-      if (name === '../backend/lib/firebase-admin') return { getAdmin: () => ({ auth, db }) };
+      if (name === '../lib/firebase-admin') return { getAdmin: () => ({ auth, db }) };
       throw Error('unexpected module ' + name);
     },
   };
-  vm.runInNewContext(fs.readFileSync(`${__dirname}/../api/duel-award.js`, 'utf8'), context);
+  vm.runInNewContext(fs.readFileSync(`${__dirname}/../backend/handlers/duel-award.js`, 'utf8'), context);
   async function invoke({ uid = 'host', code = CODE, method = 'POST', body } = {}) {
     const req = { method, headers: { authorization: uid ? `Bearer ${uid}` : '' }, body: body ?? { code } };
     const res = { statusCode: 200, headers: {}, setHeader(key, value) { this.headers[key] = value; },

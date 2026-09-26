@@ -6,6 +6,10 @@ const crypto = require('node:crypto');
 const plans = require('../backend/lib/plans');
 
 function fixture(filename, envOverrides = {}) {
+  const shared = new Set(['admin-login.js', 'child-password.js', 'duel-award.js', 'entitlement.js']);
+  const sourcePath = shared.has(filename)
+    ? `${__dirname}/../backend/handlers/${filename}`
+    : `${__dirname}/../api/${filename}`;
   const docs = new Map([['families/parent', { pro: true, parentEmail: 'parent@test.invalid' }]]);
   const created = [], deleted = [], updated = [], revoked = [], fetched = [], reads = [];
   const childUsers = new Map();
@@ -69,12 +73,12 @@ function fixture(filename, envOverrides = {}) {
     console: { error() {}, warn() {}, log() {} }, process: { env },
     require(name) {
       if (name === 'node:crypto' || name === 'crypto') return crypto;
-      if (name === '../backend/lib/plans') return plans;
+      if (name === '../backend/lib/plans' || name === '../lib/plans') return plans;
       if (name === 'firebase-admin/app') return { getApps: () => apps, cert: (value) => value,
         initializeApp(options, name) { const app = { name, options }; apps.push(app); return app; } };
       if (name === 'firebase-admin/auth') return { getAuth: () => auth };
       if (name === 'firebase-admin/firestore') return { getFirestore: () => db, Firestore: class { constructor() { return db; } } };
-      if (name === '../backend/lib/firebase-admin') {
+      if (name === '../backend/lib/firebase-admin' || name === '../lib/firebase-admin') {
         if (!childAdmin) {
           const adminContext = { ...context, module: { exports: {} } };
           vm.runInNewContext(fs.readFileSync(`${__dirname}/../backend/lib/firebase-admin.js`, 'utf8'), adminContext);
@@ -92,7 +96,7 @@ function fixture(filename, envOverrides = {}) {
         json: async () => providerPayload || ({ candidates: [{ finishReason: 'STOP', content: { parts: [{ text: providerText }] } }] }) };
     },
   };
-  vm.runInNewContext(fs.readFileSync(`${__dirname}/../api/${filename}`, 'utf8'), context, { filename });
+  vm.runInNewContext(fs.readFileSync(sourcePath, 'utf8'), context, { filename: sourcePath });
   async function invoke(body = {}, token = 'parent', method = 'POST') {
     const req = { method, body, headers: { authorization: token ? `Bearer ${token}` : '' } };
     const res = { statusCode: 200, headers: {}, setHeader(name, value) { this.headers[name] = value; },

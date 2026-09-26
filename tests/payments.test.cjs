@@ -15,6 +15,9 @@ const event = (type, id = 'sub-1', at = NOW - 1000, extra = {}) => ({ type,
   timestamp: new Date(at).toISOString(), data: { subscription_id: id, ...extra } });
 
 function fixture(file = 'webhook.js') {
+  const sourcePath = file === 'entitlement.js'
+    ? `${__dirname}/../backend/handlers/${file}`
+    : `${__dirname}/../api/${file}`;
   const docs = new Map([['families/parent', { parentName: 'Parent' }]]);
   const provider = new Map([['subscriptions/sub-1', active('sub-1')]]);
   const calls = [];
@@ -58,8 +61,8 @@ function fixture(file = 'webhook.js') {
       FIREBASE_PRIVATE_KEY: 'test-private-key', APP_URL: 'https://example.test' } },
     require(name) {
       if (name === 'crypto') return crypto;
-      if (name === '../backend/lib/plans') return plans;
-      if (name === '../backend/lib/firebase-admin') return { getAdmin: () => ({ auth, db }) };
+      if (name === '../backend/lib/plans' || name === '../lib/plans') return plans;
+      if (name === '../backend/lib/firebase-admin' || name === '../lib/firebase-admin') return { getAdmin: () => ({ auth, db }) };
       throw Error('Unexpected module ' + name);
     },
     fetch: async (url, options) => {
@@ -70,7 +73,7 @@ function fixture(file = 'webhook.js') {
         json: async () => value };
     },
   };
-  vm.runInNewContext(fs.readFileSync(`${__dirname}/../api/${file}`, 'utf8'), context);
+  vm.runInNewContext(fs.readFileSync(sourcePath, 'utf8'), context);
   async function invoke(payload, { id = crypto.randomUUID(), timestamp = String(Math.floor(Date.now() / 1000)),
     signature, method = file === 'entitlement.js' ? 'GET' : 'POST', token = 'test-token' } = {}) {
     const raw = JSON.stringify(payload);

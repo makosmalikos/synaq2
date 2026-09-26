@@ -1,5 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 const { createApp, ENDPOINTS } = require('../backend/server');
 
 async function serve(t, handlers = {}) {
@@ -47,4 +49,16 @@ test('unknown APIs and invalid JSON return JSON errors; legacy API remains avail
   const legacy = await fetch(`${url}/api/training/topics`);
   assert.equal(legacy.status, 200);
   assert.ok(Array.isArray(await legacy.json()));
+});
+
+test('shared endpoints stay routed while the Vercel function count fits Hobby', async (t) => {
+  const apiDir = path.resolve(__dirname, '..', 'api');
+  const functions = fs.readdirSync(apiDir).filter((name) => name.endsWith('.js'));
+  assert.ok(functions.length <= 12, `Vercel Hobby supports 12 functions, found ${functions.length}`);
+
+  const url = await serve(t);
+  const response = await fetch(`${url}/api/child-password`, { method: 'POST',
+    headers: { 'Content-Type': 'application/json' }, body: '{}' });
+  assert.equal(response.status, 401);
+  assert.deepEqual(await response.json(), { error: 'login_required' });
 });
