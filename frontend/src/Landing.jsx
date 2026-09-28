@@ -1,76 +1,10 @@
 import React from 'react';
 import { LangSwitch, useLang } from './i18n.jsx';
 import Brand from './Brand.jsx';
+import LandingDemo from './LandingDemo.jsx';
 import { planPrice } from './plans.js';
 
-// ── ВИДЕО ДЕМО ──
-// Сюда вставь ссылку. Понимает три варианта:
-//   1) файл:     '/figures/demo.mp4'  — сам файл положи в frontend/public/figures/demo.mp4
-//                 (имя файла должно совпадать со строкой ниже)
-//   2) YouTube:  'https://youtu.be/XXXX'
-//   3) пусто:    '' — на месте видео будет заглушка
-const DEMO_VIDEO = '/figures/demo.mp4';
-const DEMO_VIDEO_MOBILE = '/figures/demo-mobile.mp4';
 const WHATSAPP_LEAD_URL = 'https://wa.me/77773424043';
-
-// YouTube-ссылку любого вида превращаем в embed.
-// Параметры максимально убирают обвязку: без заголовка и аватара сверху,
-// без похожих роликов в конце, без подсказок. Логотип YouTube в углу убрать нельзя —
-// если он мешает, хостите видео файлом (/figures/demo.mp4).
-function ytEmbed(url) {
-  const m = url.match(/(?:youtu\.be\/|v=|\/embed\/|\/shorts\/)([\w-]{6,})/);
-  if (!m) return null;
-  const id = m[1];
-  const p = new URLSearchParams({
-    autoplay: '1',        // сам запускается
-    mute: '1',            // без звука — иначе браузер запретит автозапуск
-    loop: '1',
-    playlist: id,         // нужен, чтобы loop работал для одного ролика
-    controls: '0',        // без панели управления → без верхней плашки с названием
-    modestbranding: '1',
-    rel: '0',             // в конце не показывать чужие ролики
-    iv_load_policy: '3',  // без аннотаций
-    playsinline: '1',
-    disablekb: '1',
-  });
-  return `https://www.youtube-nocookie.com/embed/${id}?${p}`;
-}
-
-function Demo() {
-  const { t, lang } = useLang();
-  const [failed, setFailed] = React.useState(false);
-  const [play, setPlay] = React.useState(false);
-  const box = { position: 'relative', width: '100%', borderRadius: '18px', overflow: 'hidden', background: '#167ACB' };
-  const fill = { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0, display: 'block' };
-
-  if (!DEMO_VIDEO || failed) return (
-    <div className="lp-demo-frame" style={box}>
-      <div style={{ ...fill, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '10px', textAlign: 'center', padding: '0 20px' }}>
-        <span style={{ font: "600 12px 'IBM Plex Mono',monospace", letterSpacing: '.16em', textTransform: 'uppercase', color: '#FFFFFF' }}>{t('lp.1')}</span>
-        <span style={{ font: "500 15px 'Golos Text',sans-serif", color: '#DCEEFF' }}>
-          {failed ? `Видео жүктелмеді: ${DEMO_VIDEO} табылмады` : 'Видео жақында қосылады'}
-        </span>
-      </div>
-    </div>
-  );
-
-  const yt = ytEmbed(DEMO_VIDEO);
-  return (
-    <div className="lp-demo-frame" style={box}>
-      {!play ? <button type="button" onClick={() => setPlay(true)} style={{ ...fill, cursor: 'pointer', color: '#fff', background: '#167ACB', font: '700 18px Manrope,sans-serif' }} aria-label={lang === 'ru' ? 'Посмотреть демонстрацию' : 'Демонстрацияны көру'}>▶ {lang === 'ru' ? 'Посмотреть, как работает SYNAQ' : 'SYNAQ қалай жұмыс істейтінін көру'}</button> : yt
-        ? <>
-            <iframe src={yt} title="Synaq demo" loading="lazy" style={{ ...fill, pointerEvents: 'none' }}
-              allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />
-            <div style={fill} />
-          </>
-        : <video controls playsInline autoPlay preload="none"
-            onError={() => setFailed(true)} style={{ ...fill, objectFit: 'cover', background: '#0D5FA4' }}>
-            <source src={DEMO_VIDEO_MOBILE} media="(max-width: 640px)" type="video/mp4" />
-            <source src={DEMO_VIDEO} type="video/mp4" />
-          </video>}
-    </div>
-  );
-}
 
 function HeroVisual() {
   const { t } = useLang();
@@ -90,6 +24,7 @@ function HeroVisual() {
     <div className="lp-hero-stage" aria-label={t('lp.heroVisualLabel')}>
       <div className="lp-orbit lp-orbit-a" />
       <div className="lp-orbit lp-orbit-b" />
+      <div className="lp-motion-specks" aria-hidden="true"><i /><i /><i /></div>
 
       <div className="lp-students-visual" role="img" aria-label="SYNAQ платформасында дайындалып жүрген оқушылар">
         <div className="lp-students-track">
@@ -143,7 +78,7 @@ export default function Landing({ onStart, onDiagnostic }) {
     const selectors = [
       '#diagnostic > div',
       '#how > .lp-pad > div:first-child',
-      '#how .lp-demo',
+      '#how .lp-live-demo-card',
       '#how .lp-steps .lp-card',
       '#schools > div:first-child',
       '#schools .lp-schools .lp-card',
@@ -329,17 +264,26 @@ export default function Landing({ onStart, onDiagnostic }) {
   .lp-footer-links a:hover{color:#67C8FF;transform:translateX(3px)}
   .lp-footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);color:rgba(203,213,225,.6);font:500 12.5px 'Manrope',sans-serif}
   .lp-footer-schools{letter-spacing:.06em}
-  .lp-hero{position:relative}
+  .lp-hero{position:relative;min-height:calc(100vh - 96px);min-height:calc(100svh - 96px)}
   .lp-hero:before{content:'';position:absolute;z-index:-1;right:-120px;top:-90px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(58,157,245,.14),rgba(58,157,245,0) 68%)}
   .lp-hero-copy{width:100%;max-width:940px;margin:0 auto;text-align:center;position:relative;z-index:2}
-  .lp-h1{color:#091126;text-shadow:0 1px 0 rgba(255,255,255,.85)}
+  .lp-h1{color:#091126;text-shadow:0 1px 0 rgba(255,255,255,.85);animation:lpHeroEnter .72s cubic-bezier(.16,1,.3,1) both}
+  .lp-hero-copy>p{animation:lpHeroEnter .72s .12s cubic-bezier(.16,1,.3,1) both}
+  .lp-hero-actions{animation:lpHeroEnter .72s .22s cubic-bezier(.16,1,.3,1) both}
+  .lp-hero-actions .lp-cta{position:relative;overflow:hidden;isolation:isolate}
+  .lp-hero-actions .lp-cta:after{content:'';position:absolute;z-index:1;inset:-80% auto -80% -55%;width:34%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.48),transparent);transform:rotate(18deg);animation:lpCtaShine 4.8s 1.35s ease-in-out infinite}
   .lp-hero-accent{position:relative;display:inline-block;color:#3478F6!important;text-shadow:0 5px 18px rgba(52,120,246,.16)}
-  .lp-hero-accent:after{content:'';position:absolute;left:3%;right:1%;bottom:-5px;height:3px;border-radius:99px;background:#3478F6;opacity:.9}
-  .lp-hero-stage{position:relative;width:100%;max-width:1040px;min-height:430px;margin:24px auto 0;isolation:isolate;perspective:1100px}
+  .lp-hero-accent:after{content:'';position:absolute;left:3%;right:1%;bottom:-5px;height:3px;border-radius:99px;background:#3478F6;opacity:.9;transform-origin:left;animation:lpAccentDraw .65s .48s cubic-bezier(.16,1,.3,1) both}
+  .lp-hero-stage{position:relative;width:100%;max-width:1040px;min-height:430px;margin:24px auto 0;isolation:isolate;perspective:1100px;animation:lpHeroStageEnter .9s .3s cubic-bezier(.16,1,.3,1) both}
   .lp-hero-stage:before{content:'';position:absolute;inset:2% 5% -5%;border-radius:42%;background:radial-gradient(circle at 50% 48%,rgba(29,78,216,.17),rgba(96,165,250,.06) 52%,transparent 74%);filter:blur(5px);z-index:-2}
   .lp-orbit{position:absolute;border:1px solid rgba(29,78,216,.11);border-radius:50%;z-index:-1;pointer-events:none}
   .lp-orbit-a{width:430px;height:430px;left:calc(50% - 215px);top:0}
   .lp-orbit-b{width:330px;height:330px;left:calc(50% - 165px);top:50px;border-style:dashed;animation:lpOrbit 24s linear infinite}
+  .lp-motion-specks{position:absolute;inset:0;z-index:2;pointer-events:none}
+  .lp-motion-specks i{position:absolute;width:9px;height:9px;border-radius:50%;background:#60A5FA;box-shadow:0 0 0 7px rgba(96,165,250,.1);animation:lpSpeckDrift 5.2s ease-in-out infinite}
+  .lp-motion-specks i:nth-child(1){left:8%;top:18%;width:7px;height:7px}
+  .lp-motion-specks i:nth-child(2){right:10%;top:14%;background:#34D399;box-shadow:0 0 0 7px rgba(52,211,153,.1);animation-delay:-1.7s}
+  .lp-motion-specks i:nth-child(3){right:21%;bottom:13%;width:6px;height:6px;background:#A78BFA;box-shadow:0 0 0 7px rgba(167,139,250,.1);animation-delay:-3.2s}
   .lp-students-visual{--student-cell:210px;--student-strip:1050px;position:absolute;left:50%;top:0;width:min(100%,1040px);height:410px;transform:translateX(-50%);overflow:hidden;background:transparent}
   .lp-students-visual:before{content:'';position:absolute;z-index:4;left:-6%;right:-6%;bottom:-36px;height:78px;background:#fff;border-radius:50% 50% 0 0/72% 72% 0 0;box-shadow:0 -12px 34px rgba(255,255,255,.9);pointer-events:none}
   .lp-students-visual:after{content:'';position:absolute;z-index:5;inset:0;border-radius:32px;box-shadow:inset 0 0 0 1px rgba(29,78,216,.08);pointer-events:none}
@@ -389,6 +333,11 @@ export default function Landing({ onStart, onDiagnostic }) {
   .lp-signal-progress em{animation-delay:1.4s}
   .lp-signal-ai:before,.lp-signal-progress:before{right:auto;left:100%;background:linear-gradient(90deg,rgba(29,78,216,.3),transparent)}
   @keyframes lpOrbit{to{transform:rotate(360deg)}}
+  @keyframes lpHeroEnter{from{opacity:0;transform:translate3d(0,22px,0);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+  @keyframes lpHeroStageEnter{from{opacity:0;transform:translate3d(0,28px,0) scale(.985)}to{opacity:1;transform:none}}
+  @keyframes lpAccentDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes lpCtaShine{0%,72%{left:-55%;opacity:0}78%{opacity:1}92%,100%{left:125%;opacity:0}}
+  @keyframes lpSpeckDrift{0%,100%{transform:translate3d(0,0,0);opacity:.55}50%{transform:translate3d(5px,-11px,0);opacity:1}}
   @keyframes lpSchoolCycle{0%{opacity:0;transform:rotateY(-70deg) scale(.82)}7%,27%{opacity:1;transform:rotateY(0) scale(1)}33%,100%{opacity:0;transform:rotateY(70deg) scale(.82)}}
   @keyframes lpSchoolGlow{to{opacity:.55;transform:scale(1.07)}}
   @keyframes lpStudentsMarquee{to{transform:translate3d(-50%,0,0)}}
@@ -431,7 +380,7 @@ export default function Landing({ onStart, onDiagnostic }) {
     .lp-header-actions{gap:8px}
     .lp-header-start{min-width:auto;padding:11px 17px!important;font-size:14px!important}
     .lp-menu-toggle{width:42px;height:42px;border-radius:12px}
-    .lp-hero{padding-top:40px!important;padding-bottom:58px!important;gap:0!important}
+    .lp-hero{min-height:calc(100svh - 65px);padding-top:40px!important;padding-bottom:58px!important;gap:0!important}
     .lp-h1{font-size:43px!important}
     .lp-hero-copy{text-align:left}
     .lp-hero-stage{min-height:0;display:flex;flex-direction:column;align-items:center;margin-top:28px}
@@ -478,7 +427,7 @@ export default function Landing({ onStart, onDiagnostic }) {
   }
   @keyframes lpSignalFloatMobile{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
   @keyframes lpLeadFloat{0%,100%{transform:translateY(0) rotate(-.4deg)}50%{transform:translateY(-8px) rotate(.4deg)}}
-  @media(prefers-reduced-motion:reduce){.lp-orbit-b,.lp-school-glow,.lp-students-track,.lp-signal-card,.lp-signal em{animation:none}.lp-school-slide{animation-name:lpSchoolFade}.lp-signal-card{transition:none}.lp-reveal{opacity:1;filter:none;transform:none;transition:none}}
+  @media(prefers-reduced-motion:reduce){.lp-h1,.lp-hero-copy>p,.lp-hero-actions,.lp-hero-stage,.lp-hero-accent:after,.lp-hero-actions .lp-cta:after,.lp-motion-specks i,.lp-orbit-b,.lp-school-glow,.lp-students-track,.lp-signal-card,.lp-signal em,.lp-lead-note{animation:none}.lp-school-slide{animation-name:lpSchoolFade}.lp-signal-card{transition:none}.lp-reveal{opacity:1;filter:none;transform:none;transition:none}}
   @keyframes lpSchoolFade{0%,33%{opacity:1;transform:none}34%,100%{opacity:0;transform:none}}
 `}</style>
 <header className="lp-site-header">
@@ -510,7 +459,7 @@ export default function Landing({ onStart, onDiagnostic }) {
 </header>
 
   
-  <section className="lp-hero lp-pad" style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',maxWidth:'1280px',margin:'0 auto',padding:'28px 56px 32px',minHeight:'calc(100vh - 96px)'}}>
+  <section className="lp-hero lp-pad" style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',maxWidth:'1280px',margin:'0 auto',padding:'28px 56px 32px'}}>
     <div className="lp-hero-copy">
       <h1 className="lp-h1" style={{font:'800 64px/1.04 \'Manrope\',sans-serif',letterSpacing:'-.04em',margin:'0 auto 18px',maxWidth:'960px'}}>{t('lp.hero1')}<span className="lp-hero-accent">{t('lp.hero2')}</span>{t('lp.hero3')}</h1>
       <p style={{fontSize:'18px',lineHeight:'1.55',color:'#60758A',margin:'0 auto 26px',maxWidth:'720px'}}>{t('lp.11')}</p>
@@ -554,9 +503,7 @@ export default function Landing({ onStart, onDiagnostic }) {
       </div>
 
       
-      <div className="lp-demo" style={{maxWidth:'1000px',margin:'0 auto 54px'}}>
-        <Demo />
-      </div>
+      <LandingDemo />
 
       <div className="lp-steps" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'20px'}}>
         <div className="lp-card" style={{background:'#fff',border:'1px solid rgba(19,40,60,.09)',borderRadius:'18px',padding:'26px 24px'}}>

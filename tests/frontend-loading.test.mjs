@@ -4,7 +4,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readRoute, routePath, readDuelCode } from '../frontend/src/routes.js';
-import { activateFonts } from '../frontend/src/fonts.js';
 
 const src = fileURLToPath(new URL('../frontend/src/', import.meta.url));
 function staticModules(entry, seen = new Set()) {
@@ -60,38 +59,13 @@ test('public routing keeps diagnostic payload and cabinet navigation above the l
   }
 });
 
-function fontLink(cached = false) {
-  const listeners = new Map();
-  return {
-    media: 'print', sheet: cached ? {} : null,
-    addEventListener(name, callback) { listeners.set(name, callback); },
-    removeEventListener(name, callback) { if (listeners.get(name) === callback) listeners.delete(name); },
-    fireLoad() { listeners.get('load')?.(); },
-    listenerCount: () => listeners.size,
-  };
-}
-
-test('fonts apply after load, including the cached-before-bootstrap case', () => {
-  const link = fontLink();
-  activateFonts(link);
-  assert.equal(link.media, 'print');
-  link.fireLoad();
-  assert.equal(link.media, 'all');
-  assert.equal(link.listenerCount(), 0);
-  const cached = fontLink(true);
-  activateFonts(cached);
-  assert.equal(cached.media, 'all');
-  assert.equal(cached.listenerCount(), 0);
-  assert.doesNotThrow(() => activateFonts(null));
-});
-
-test('font bootstrap retains all design families without a render-blocking remote stylesheet', () => {
+test('font bootstrap retains all design families without a late layout-shifting swap', () => {
   const html = fs.readFileSync(new URL('../frontend/index.html', import.meta.url), 'utf8');
-  const font = html.match(/<link[^>]*id="synaq-fonts"[^>]*>/)?.[0];
+  const font = html.match(/<link[^>]*fonts\.googleapis\.com\/css2[^>]*>/)?.[0];
   assert.ok(font);
-  assert.match(font, /media="print"/);
-  assert.match(font, /display=swap/);
+  assert.doesNotMatch(font, /media="print"/);
+  assert.match(font, /display=optional/);
   for (const name of ['Geologica', 'Golos+Text', 'IBM+Plex+Mono', 'Lora', 'Manrope']) assert.ok(font.includes(name));
   const main = fs.readFileSync(path.join(src, 'main.jsx'), 'utf8');
-  assert.ok(main.indexOf('activateFonts(document.') < main.indexOf('createRoot(document.'));
+  assert.doesNotMatch(main, /activateFonts/);
 });
