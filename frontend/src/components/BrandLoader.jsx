@@ -11,7 +11,7 @@ export default function BrandLoader({ fullScreen = false, compact = false }) {
       <div className="brand-loader__visual" aria-hidden="true">
         <span className="brand-loader__halo" />
         <span className="brand-loader__orbit"><i /><i /></span>
-        <span className="brand-loader__tile"><span className="brand-loader__glyph" /></span>
+        <span className="brand-loader__tile"><img className="brand-loader__glyph" src="/brands/synaq-favicon.svg?v=2" alt="" /></span>
       </div>
       <span className="brand-loader__wordmark" aria-hidden="true">SYNAQ</span>
       <span className="brand-loader__label">{t('common.loading')}</span>

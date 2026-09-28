@@ -11,6 +11,7 @@ import { planPrice } from './plans.js';
 //   3) пусто:    '' — на месте видео будет заглушка
 const DEMO_VIDEO = '/figures/demo.mp4';
 const DEMO_VIDEO_MOBILE = '/figures/demo-mobile.mp4';
+const WHATSAPP_LEAD_URL = 'https://wa.me/77773424043';
 
 // YouTube-ссылку любого вида превращаем в embed.
 // Параметры максимально убирают обвязку: без заголовка и аватара сверху,
@@ -127,6 +128,7 @@ function HeroVisual() {
 export default function Landing({ onStart, onDiagnostic }) {
   const { t, lang } = useLang();
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const leadPendingRef = React.useRef(false);
   const handleStart = (e) => { e.preventDefault(); setMenuOpen(false); onStart(); };
   const closeMenu = () => setMenuOpen(false);
   const handleMobileNav = (e, target) => {
@@ -189,15 +191,31 @@ export default function Landing({ onStart, onDiagnostic }) {
   };
   const handleLeadSubmit = (e) => {
     e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    const subject = encodeURIComponent('SYNAQ — жаңа өтінім');
-    const body = encodeURIComponent([
-      `Аты: ${form.get('name') || '—'}`,
-      `Телефон: ${form.get('phone') || '—'}`,
-      `Кім: ${form.get('role') || '—'}`,
-      `Түсініктеме: ${form.get('comment') || '—'}`,
-    ].join('\n'));
-    window.location.href = `mailto:support@synaq.app?subject=${subject}&body=${body}`;
+    if (leadPendingRef.current) return;
+    leadPendingRef.current = true;
+    const element = e.currentTarget;
+    const form = new FormData(element);
+    const payload = Object.fromEntries(form.entries());
+    if (payload.website) return;
+
+    // Reserve a copy without delaying the primary WhatsApp conversion. The
+    // keepalive request may finish after this tab has navigated away.
+    fetch('/api/lead', {
+      method: 'POST',
+      keepalive: true,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...payload, lang }),
+    }).catch(() => {});
+
+    const role = payload.role === 'student'
+      ? (lang === 'ru' ? 'Ученик' : 'Оқушы')
+      : (lang === 'ru' ? 'Родитель' : 'Ата-ана');
+    const message = (lang === 'ru'
+      ? ['Здравствуйте! Хочу получить консультацию по SYNAQ.', `Имя: ${payload.name}`, `Телефон: ${payload.phone}`, `Кто я: ${role}`, payload.comment ? `Комментарий: ${payload.comment}` : '']
+      : ['Сәлеметсіз бе! SYNAQ бойынша кеңес алғым келеді.', `Аты: ${payload.name}`, `Телефон: ${payload.phone}`, `Кім: ${role}`, payload.comment ? `Түсініктеме: ${payload.comment}` : ''])
+      .filter(Boolean).join('\n');
+    element.reset();
+    window.location.assign(`${WHATSAPP_LEAD_URL}?text=${encodeURIComponent(message)}`);
   };
   return (
     <div className="lp-root">
@@ -291,6 +309,7 @@ export default function Landing({ onStart, onDiagnostic }) {
   .lp-lead-field input:focus,.lp-lead-field select:focus,.lp-lead-field textarea:focus{background:#fff;border-color:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.2)}
   .lp-lead-submit{grid-column:1/-1;height:57px;border:0;border-radius:999px;background:#fff;color:#207BD1;font:800 15px 'Manrope',sans-serif;cursor:pointer;box-shadow:0 16px 30px -16px rgba(8,65,123,.48);transition:transform .2s,box-shadow .2s}
   .lp-lead-submit:hover{transform:translateY(-2px);box-shadow:0 20px 34px -15px rgba(8,65,123,.58)}
+  .lp-lead-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
   .lp-lead-visual{position:relative;z-index:2;align-self:stretch;min-height:540px}
   .lp-lead-halo{position:absolute;left:50%;top:49%;width:410px;height:410px;transform:translate(-50%,-50%);border-radius:50%;background:rgba(255,255,255,.12);box-shadow:0 0 0 55px rgba(255,255,255,.045),0 0 90px rgba(0,89,178,.18)}
   .lp-lead-student{position:absolute;z-index:2;left:50%;bottom:-55px;width:min(440px,92%);height:590px;transform:translateX(-50%);object-fit:contain;object-position:center bottom;filter:drop-shadow(0 24px 20px rgba(10,68,126,.24));transition:transform .35s cubic-bezier(.2,.8,.2,1)}
@@ -650,7 +669,7 @@ export default function Landing({ onStart, onDiagnostic }) {
   
   <section id="pricing" className="lp-pad" style={{maxWidth:'1280px',margin:'0 auto',padding:'84px 56px'}}>
     <div className="lp-pricing-head" style={{textAlign:'center',marginBottom:'48px',maxWidth:'600px',marginLeft:'auto',marginRight:'auto'}}>
-      <div className="lp-pricing-kicker" style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#2B91EA',marginBottom:'14px'}}>Тарифы</div>
+      <div className="lp-pricing-kicker" style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#2B91EA',marginBottom:'14px'}}>{t('lp.5')}</div>
       <h2 className="lp-pricing-title" style={{font:'800 46px/1.08 \'Manrope\',sans-serif',letterSpacing:'-.025em',margin:'0 0 12px'}}>{t('lp.59')}</h2>
       <p className="lp-pricing-sub" style={{fontSize:'17px',color:'#60758A',margin:'0'}}>{t('lp.60')}</p>
     </div>
@@ -706,6 +725,10 @@ export default function Landing({ onStart, onDiagnostic }) {
         <h2>{t('lp.leadTitle')}</h2>
         <p>{t('lp.leadText')}</p>
         <form className="lp-lead-form" onSubmit={handleLeadSubmit}>
+          <div className="lp-lead-honeypot" aria-hidden="true">
+            <label htmlFor="lead-website">Website</label>
+            <input id="lead-website" name="website" type="text" tabIndex="-1" autoComplete="off" />
+          </div>
           <div className="lp-lead-field">
             <label htmlFor="lead-name">{t('lp.leadName')}</label>
             <input id="lead-name" name="name" type="text" placeholder={t('lp.leadNamePlaceholder')} required />

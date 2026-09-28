@@ -22,3 +22,12 @@ test('cabinet logo returns to the student home instead of leaving the cabinet', 
   assert.match(app, /className="logo"[^>]+onClick=\{\(\) => pick\('home'\)\}/);
   assert.doesNotMatch(app, /className="logo"[^>]+onClick=\{onHome\}/);
 });
+
+test('mobile navigation overlays content and closes via backdrop or Escape', () => {
+  assert.match(styles, /\.nav-v\.open\{position:absolute;top:100%;left:0;right:0/);
+  assert.match(styles, /\.mobile-nav-backdrop\{display:block;position:fixed/);
+  assert.match(app, /aria-controls="student-navigation"/);
+  assert.match(app, /id="student-navigation"/);
+  assert.match(app, /event\.key === 'Escape'[\s\S]*setMenuOpen\(false\)/);
+  assert.match(app, /className="mobile-nav-backdrop"[\s\S]*setMenuOpen\(false\)/);
+});

@@ -24,7 +24,7 @@ test('reviews retain question IDs and historical reviews have a safe fallback', 
   assert.doesNotThrow(() => [{ review: old }].flatMap((item) => api.reviewQuestionIds(item.review)));
 });
 
-test('every generated exam describes its actual pool and flags shortened BIL', async () => {
+test('every generated exam describes its actual pool, including the full BIL format', async () => {
   for (const school of Object.keys(MOCK_SPECS)) {
     const available = mockAvailability(school);
     const exam = await api.mockRandom(school);
@@ -36,8 +36,8 @@ test('every generated exam describes its actual pool and flags shortened BIL', a
       assert.equal(exam.questions.filter((q) => section.subject == null || q.subject === section.subject).length, section.count);
     }
   }
-  assert.equal(mockAvailability('БИЛ').shortened, true);
-  assert.equal(mockAvailability('БИЛ').count, 60);
+  assert.equal(mockAvailability('БИЛ').shortened, false);
+  assert.equal(mockAvailability('БИЛ').count, 80);
 });
 
 test('new exam prefers questions not in saved review', async () => {

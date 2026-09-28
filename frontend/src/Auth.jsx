@@ -105,7 +105,7 @@ export default function Auth({ onClose, duelCode = '' }) {
           <Logo />
          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
   <LangSwitch />
-  <button onClick={() => (window.location.href = '/')} style={{ background: 'none', border: 'none', cursor: 'pointer', font: "600 13px 'Golos Text',sans-serif", color: '#6B655B' }}>{t('common.exit')}</button>
+  <button onClick={() => (window.location.href = '/')} style={{ background: 'none', border: 'none', cursor: 'pointer', font: "600 13px 'Golos Text',sans-serif", color: '#6B655B' }}>{t('nav.home')}</button>
 </div>
         </div>
 

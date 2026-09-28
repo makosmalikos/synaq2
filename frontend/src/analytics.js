@@ -36,21 +36,29 @@ export function readiness(stats) {
 
 // Часы занятий по дням текущей недели (Дс…Жс).
 export function weekHours(attempts) {
-  const DAYS = ['Жс', 'Дс', 'Сс', 'Ср', 'Бс', 'Жм', 'Сб'];
   const now = new Date();
   const monday = new Date(now);
   monday.setDate(now.getDate() - ((now.getDay() + 6) % 7));
   monday.setHours(0, 0, 0, 0);
 
-  const out = ['Дс', 'Сс', 'Ср', 'Бс', 'Жм', 'Сб', 'Жс'].map((d) => ({ day: d, hours: 0 }));
+  const out = ['Дс', 'Сс', 'Ср', 'Бс', 'Жм', 'Сб', 'Жс'].map((day) => ({ day, seconds: 0 }));
   for (const a of attempts) {
     if (!a.at?.seconds) continue;
     const t = new Date(a.at.seconds * 1000);
     if (t < monday) continue;
     const idx = (t.getDay() + 6) % 7;          // Дс = 0
-    out[idx].hours += (a.secs || 0) / 3600;
+    out[idx].seconds += Math.max(0, Number(a.secs) || 0);
   }
-  return out.map((d) => ({ ...d, hours: Math.round(d.hours * 10) / 10 }));
+  // Keep exact credited seconds until rendering. Rounding each day to 0.1 h
+  // used to hide short sessions and distorted the weekly sum.
+  return out.map((day) => ({ ...day, hours: day.seconds / 3600 }));
+}
+
+export function formatStudyTime(seconds, lang = 'kk') {
+  if (seconds > 0 && seconds < 60) return '<1 мин';
+  if (seconds < 3600) return `${Math.round(seconds / 60)} мин`;
+  const hours = Math.round(seconds / 360) / 10;
+  return `${hours.toLocaleString(lang === 'ru' ? 'ru-RU' : 'kk-KZ')} ${lang === 'ru' ? 'ч' : 'сағ'}`;
 }
 
 // Баллы мок-тестов по неделям (для графика роста).

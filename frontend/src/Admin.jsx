@@ -5,7 +5,7 @@
 // Поток: выбор темы → форма → предпросмотр → «Сохранить задачу» → api/admin-task.js
 // (проверяет Firebase ID token и email администратора, затем пишет в Firestore
 // bankTasks). До нажатия «Сохранить задачу» ничего не отправляется на сервер.
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLang } from './i18n.jsx';
 import { auth, logout } from './firebase.js';
 import Brand from './Brand.jsx';
@@ -53,7 +53,8 @@ const emptyForm = (school = '') => ({
 });
 
 export default function Admin({ onExit }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const [section, setSection] = useState('tasks');
   const [topic, setTopic] = useState(null);
   const [form, setForm] = useState(emptyForm());
   const [step, setStep] = useState('topic'); // topic | form | preview
@@ -156,16 +157,20 @@ export default function Admin({ onExit }) {
       </header>
       <main>
         <p className="kicker">{t('admin.kicker')}</p>
+        <div style={{ display: 'flex', gap: 8, marginBottom: 22, flexWrap: 'wrap' }}>
+          <button type="button" className={`btn ${section === 'tasks' ? 'accent' : 'ghost'}`} onClick={() => setSection('tasks')}>{t('admin.tasksTab')}</button>
+          <button type="button" className={`btn ${section === 'leads' ? 'accent' : 'ghost'}`} onClick={() => setSection('leads')}>{t('admin.leadsTab')}</button>
+        </div>
 
-        {justSaved && step === 'topic' && (
+        {section === 'tasks' && justSaved && step === 'topic' && (
           <div className="card" style={{ borderColor: 'var(--green)', background: '#EEF5EC', marginBottom: 16 }}>
             <p style={{ margin: 0, fontSize: 14 }}>{t('admin.savedMsg')}</p>
           </div>
         )}
 
-        {step === 'topic' && <TopicPicker t={t} onPick={pickTopic} />}
+        {section === 'tasks' && step === 'topic' && <TopicPicker t={t} onPick={pickTopic} />}
 
-        {step === 'form' && topic && (
+        {section === 'tasks' && step === 'form' && topic && (
           <TaskForm
             t={t} topic={topic} form={form} setForm={setForm}
             setOption={setOption} addOption={addOption} removeOption={removeOption}
@@ -175,15 +180,94 @@ export default function Admin({ onExit }) {
           />
         )}
 
-        {step === 'preview' && topic && (
+        {section === 'tasks' && step === 'preview' && topic && (
           <Preview
             t={t} topic={topic} form={form} err={err} busy={busy}
             onEdit={() => { setErr(''); setStep('form'); }}
             onSave={save}
           />
         )}
+        {section === 'leads' && <LeadInbox t={t} lang={lang} />}
       </main>
     </div>
+  );
+}
+
+function LeadInbox({ t, lang }) {
+  const [leads, setLeads] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [updating, setUpdating] = useState('');
+
+  const request = async (options = {}) => {
+    const token = await auth.currentUser?.getIdToken();
+    if (!token) throw new Error('login_required');
+    const response = await fetch('/api/admin-leads', { ...options,
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}`, ...(options.headers || {}) } });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.error || 'failed');
+    return data;
+  };
+
+  const load = async () => {
+    setLoading(true); setError('');
+    try {
+      const data = await request();
+      setLeads(Array.isArray(data.leads) ? data.leads : []);
+    } catch {
+      setError(t('admin.leadsError'));
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => { load(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const setStatus = async (id, status) => {
+    if (updating) return;
+    setUpdating(id); setError('');
+    try {
+      const data = await request({ method: 'PATCH', body: JSON.stringify({ id, status }) });
+      setLeads((items) => items.map((lead) => lead.id === id ? { ...lead, status: data.status, updatedAt: data.updatedAt } : lead));
+    } catch {
+      setError(t('admin.leadsUpdateError'));
+    } finally {
+      setUpdating('');
+    }
+  };
+
+  if (loading) return <div className="card"><p style={{ margin: 0 }}>{t('common.loading')}</p></div>;
+  return (
+    <section>
+      <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'end', marginBottom: 16 }}>
+        <div><h1 style={{ margin: '0 0 4px' }}>{t('admin.leadsTitle')}</h1><p className="muted" style={{ margin: 0 }}>{t('admin.leadsSubtitle')}</p></div>
+        <button type="button" className="btn ghost" onClick={load}>{t('admin.refresh')}</button>
+      </div>
+      {error && <div className="card" style={{ color: 'var(--accent)', marginBottom: 12 }}>{error}</div>}
+      {!leads.length ? <div className="card"><p className="muted" style={{ margin: 0 }}>{t('admin.leadsEmpty')}</p></div> : (
+        <div style={{ display: 'grid', gap: 12 }}>
+          {leads.map((lead) => (
+            <article className="card" key={lead.id} style={{ borderColor: lead.status === 'new' ? '#93C5FD' : undefined }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', gap: 14, flexWrap: 'wrap' }}>
+                <div>
+                  <div style={{ font: "700 17px 'Golos Text'" }}>{lead.name}</div>
+                  <a href={`tel:${lead.phone.replace(/[^+\d]/g, '')}`} style={{ display: 'inline-block', marginTop: 5, color: '#2563EB', fontWeight: 700 }}>{lead.phone}</a>
+                  <div className="muted" style={{ fontSize: 12, marginTop: 5 }}>
+                    {lead.role === 'student' ? t('admin.leadStudent') : t('admin.leadParent')} · {lead.createdAt ? new Intl.DateTimeFormat(lang === 'ru' ? 'ru-RU' : 'kk-KZ', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(lead.createdAt)) : '—'}
+                  </div>
+                </div>
+                <span className="tag">{t(`admin.leadStatus.${lead.status}`)}</span>
+              </div>
+              {lead.comment && <p style={{ margin: '14px 0 0', whiteSpace: 'pre-wrap' }}>{lead.comment}</p>}
+              <div style={{ display: 'flex', gap: 8, marginTop: 16, flexWrap: 'wrap' }}>
+                {['new', 'contacted', 'closed'].map((status) => <button key={status} type="button" className={`btn ${lead.status === status ? 'accent' : 'ghost'}`}
+                  disabled={updating === lead.id || lead.status === status} onClick={() => setStatus(lead.id, status)}>{t(`admin.leadStatus.${status}`)}</button>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+    </section>
   );
 }
 

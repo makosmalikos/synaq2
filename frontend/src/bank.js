@@ -1,5 +1,6 @@
 // Единый банк задач: РФМШ + НИШ (+ КТЛ/БИЛ — один формат, сейчас банк пуст).
 import * as DATA from './data.js';
+import { bilLogicQuestions } from './bilLogicQuestions.js';
 import { detectLang, quarantineReason, partitionAdminTasks } from './questionMetadata.js';
 import { readAdminTasks } from './adminTasks.js';
 export { detectLang, normalizeAdminTask } from './questionMetadata.js';
@@ -74,6 +75,7 @@ const RAW_POOL = [
   ...questions.map((q) => one(q, 'РФМШ')),
   ...nishMath.map((q) => one(q, 'НИШ')),
   ...bilQ.map((q) => one(q, 'БИЛ')),
+  ...bilLogicQuestions.map((q) => one(q, 'БИЛ')),
   ...ktlQ.map((q) => one(q, 'КТЛ')),
   ...ktlNish.map((q) => one(q, 'НИШ')),
   ...kolzar2.map((q) => one(q, 'НИШ')),

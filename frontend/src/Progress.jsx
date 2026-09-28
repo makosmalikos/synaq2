@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLang } from './i18n.jsx';
 import { auth, getAttempts, getMocks, getXpSummary, watchPro } from './firebase.js';
-import { topicStats, weekHours, mockSeries } from './analytics.js';
+import { topicStats, weekHours, mockSeries, formatStudyTime } from './analytics.js';
 import { loadTopicCatalog } from './topicCatalog.js';
 import { buildDiagnosis, pickDiagnosticMock } from './diagnosis.js';
 import DiagnosisReport from './components/DiagnosisReport.jsx';
@@ -118,8 +118,8 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
     </main>
   );
 
-  const total = week.reduce((s, d) => s + d.hours, 0);
-  const maxH = Math.max(1, ...week.map((d) => d.hours));
+  const totalSeconds = week.reduce((sum, day) => sum + day.seconds, 0);
+  const maxSeconds = Math.max(1, ...week.map((day) => day.seconds));
   const series = mockSeries(mocks);
   const accuracy = stats.length
     ? Math.round(stats.reduce((sum, item) => sum + item.pct, 0) / stats.length)
@@ -147,7 +147,7 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
           <small>{stats.length} {lang === 'ru' ? 'тем с результатами' : 'нәтижесі бар тақырып'}</small>
         </article>
         <article className="progress-overview-card progress-overview-xp"><span>★</span><small>{t('xp.title')}</small><strong>{xpInfo.xp || 0} XP</strong></article>
-        <article className="progress-overview-card progress-overview-time"><span>◷</span><small>{t('prog.hours')}</small><strong>{total.toFixed(1)} {lang === 'ru' ? 'ч' : 'сағ'}</strong></article>
+        <article className="progress-overview-card progress-overview-time"><span>◷</span><small>{t('prog.hours')}</small><strong>{formatStudyTime(totalSeconds, lang)}</strong></article>
         <article className="progress-overview-card progress-overview-mock"><span>✓</span><small>{lang === 'ru' ? 'Пробные тесты' : 'Сынақтар'}</small><strong>{mocks.length}</strong></article>
       </section>
 
@@ -170,19 +170,21 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
       <div className="card">
         <div className="row" style={{ marginBottom: 18 }}>
           <span style={{ fontSize: 15 }}>{t('prog.hours')}</span>
-          <b style={{ font: "700 16px 'IBM Plex Mono',monospace", color: 'var(--accent)' }}>{total.toFixed(1)} сағ</b>
+          <b style={{ font: "700 16px 'IBM Plex Mono',monospace", color: 'var(--accent)' }}>{formatStudyTime(totalSeconds, lang)}</b>
         </div>
         <div style={{ display: 'flex', alignItems: 'flex-end', gap: 10, height: 120 }}>
-          {week.map((d) => (
+          {week.map((d, index) => (
             <div key={d.day} style={{ flex: 1, textAlign: 'center' }}>
-              <div style={{ font: "600 11px 'IBM Plex Mono',monospace", color: d.hours ? 'var(--accent)' : '#B7B0A2', marginBottom: 4 }}>
-                {d.hours ? `${d.hours}с` : ''}
+              <div style={{ font: "600 11px 'IBM Plex Mono',monospace", color: d.seconds ? 'var(--accent)' : '#B7B0A2', marginBottom: 4 }}>
+                {d.seconds ? formatStudyTime(d.seconds, lang) : ''}
               </div>
               <div style={{
-                height: `${(d.hours / maxH) * 78}px`, minHeight: d.hours ? 4 : 0,
-                background: d.hours >= maxH * 0.6 ? 'var(--accent)' : '#D8D3C8',
+                height: `${(d.seconds / maxSeconds) * 78}px`, minHeight: d.seconds ? 4 : 0,
+                background: d.seconds >= maxSeconds * 0.6 ? 'var(--accent)' : '#D8D3C8',
               }} />
-              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 6 }}>{d.day}</div>
+              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 6 }}>
+                {lang === 'ru' ? ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'][index] : d.day}
+              </div>
             </div>
           ))}
         </div>

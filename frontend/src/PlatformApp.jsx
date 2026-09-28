@@ -82,6 +82,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   const [diagnosticPlan] = useState(() => initialDiagnosticPlan || readPublicDiagnosticResult());
   const profileMenuRef = useRef(null);
   const navRef = useRef(null);
+  const burgerRef = useRef(null);
 
   useEffect(() => watchAuth((nextUser) => {
     setAdminUser(undefined);
@@ -158,6 +159,40 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
       document.removeEventListener('keydown', onKeyDown);
     };
   }, [navMenu]);
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const previousOverflow = document.body.style.overflow;
+    if (window.matchMedia('(max-width: 1050px)').matches) document.body.style.overflow = 'hidden';
+    navRef.current?.querySelector('button')?.focus();
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+        setNavMenu(null);
+        burgerRef.current?.focus();
+      } else if (event.key === 'Tab') {
+        const buttons = [...(navRef.current?.querySelectorAll('button') || [])];
+        const first = buttons[0], last = buttons.at(-1);
+        if (!first || !last) return;
+        if (event.shiftKey && (document.activeElement === first || !navRef.current.contains(document.activeElement))) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && (document.activeElement === last || !navRef.current.contains(document.activeElement))) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    const onResize = () => {
+      if (!window.matchMedia('(max-width: 1050px)').matches) setMenuOpen(false);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    window.addEventListener('resize', onResize);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('resize', onResize);
+    };
+  }, [menuOpen]);
 
   // 2. Авторизация — пока не вошли, дашборда нет
   if (user === undefined) return <BrandLoader fullScreen />;
@@ -225,7 +260,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
             {/* Аватар + бургер — только на телефоне (через CSS) */}
             <div className="sbar-mobile">
               <PetAvatar id={profile.avatar} size="small" label={profile.name} />
-              <button className="burger" onClick={() => { setMenuOpen((v) => !v); setNavMenu(null); }} aria-label={menuOpen ? t('nav.close') : t('nav.open')} aria-expanded={menuOpen}>
+              <button ref={burgerRef} className="burger" type="button" onClick={() => { setMenuOpen((v) => !v); setNavMenu(null); }} aria-label={menuOpen ? t('nav.close') : t('nav.open')} aria-controls="student-navigation" aria-expanded={menuOpen}>
                 {menuOpen ? '✕' : '☰'}
               </button>
             </div>
@@ -233,7 +268,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
         </div>
 
         {/* Навигация. На телефоне показывается только когда menuOpen. */}
-        <nav ref={navRef} className={'nav-v' + (menuOpen ? ' open' : '')} aria-label={t('nav.main')}>
+        <nav id="student-navigation" ref={navRef} className={'nav-v' + (menuOpen ? ' open' : '')} aria-label={t('nav.main')}>
           {NAV.map((item) => {
             const active = item.id === tab || item.children?.includes(tab);
             if (!item.children) return (
@@ -313,6 +348,8 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
           )}
         </div>
       </aside>
+
+      {menuOpen && <div className="mobile-nav-backdrop" aria-hidden="true" onClick={() => { setMenuOpen(false); setNavMenu(null); burgerRef.current?.focus(); }} />}
 
       <div className={`content content-${tab}`}>
         {profileError && <p className="card" role="alert" style={{ margin: 20 }}>
