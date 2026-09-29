@@ -7,7 +7,7 @@ import { planPrice } from './plans.js';
 const WHATSAPP_LEAD_URL = 'https://wa.me/77773424043';
 
 function HeroVisual() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const schoolLogos = [
     { src: '/schools/bil.png', alt: 'БИЛ' },
     { src: '/schools/rfmsh.png', alt: 'РФМШ' },
@@ -55,7 +55,11 @@ function HeroVisual() {
 
       <div className="lp-signal lp-signal-ai"><div className="lp-signal-card"><em>⚡</em><span>{t('lp.heroAI')}</span></div></div>
       <div className="lp-signal lp-signal-format"><div className="lp-signal-card"><em>🎯</em><span>{t('lp.heroFormat')}</span></div></div>
-      <div className="lp-signal lp-signal-progress"><div className="lp-signal-card"><em>📊</em><span>{t('lp.heroProgress')}</span></div></div>
+      <div className="lp-hero-product" aria-label={t('lp.heroProgress')}>
+        <div className="lp-hero-product-head"><strong>SYNAQ</strong><span>{t('lp.heroProgress')}</span></div>
+        <div className="lp-hero-product-score"><strong>68%</strong><span>{lang === 'ru' ? 'готовность к экзамену' : 'емтиханға дайындық'}</span></div>
+        <div className="lp-hero-product-bars" aria-hidden="true"><i><b /></i><i><b /></i><i className="weak"><b /></i></div>
+      </div>
     </div>
   );
 }
@@ -267,13 +271,13 @@ export default function Landing({ onStart, onDiagnostic }) {
   .lp-hero{position:relative;min-height:calc(100vh - 96px);min-height:calc(100svh - 96px)}
   .lp-hero:before{content:'';position:absolute;z-index:-1;right:-120px;top:-90px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(58,157,245,.14),rgba(58,157,245,0) 68%)}
   .lp-hero-copy{width:100%;max-width:940px;margin:0 auto;text-align:center;position:relative;z-index:2}
-  .lp-h1{color:#091126;text-shadow:0 1px 0 rgba(255,255,255,.85);animation:lpHeroEnter .72s cubic-bezier(.16,1,.3,1) both}
+  .lp-root .lp-h1{color:#091126;font-family:'Geologica','Manrope',sans-serif!important;font-weight:700!important;text-shadow:none;animation:lpHeroEnter .72s cubic-bezier(.16,1,.3,1) both}
   .lp-hero-copy>p{animation:lpHeroEnter .72s .12s cubic-bezier(.16,1,.3,1) both}
   .lp-hero-actions{animation:lpHeroEnter .72s .22s cubic-bezier(.16,1,.3,1) both}
   .lp-hero-actions .lp-cta{position:relative;overflow:hidden;isolation:isolate}
   .lp-hero-actions .lp-cta:after{content:'';position:absolute;z-index:1;inset:-80% auto -80% -55%;width:34%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.48),transparent);transform:rotate(18deg);animation:lpCtaShine 4.8s 1.35s ease-in-out infinite}
-  .lp-hero-accent{position:relative;display:inline-block;color:#3478F6!important;text-shadow:0 5px 18px rgba(52,120,246,.16)}
-  .lp-hero-accent:after{content:'';position:absolute;left:3%;right:1%;bottom:-5px;height:3px;border-radius:99px;background:#3478F6;opacity:.9;transform-origin:left;animation:lpAccentDraw .65s .48s cubic-bezier(.16,1,.3,1) both}
+  .lp-hero-accent{position:relative;display:inline;color:#3478F6!important}
+  .lp-hero-accent:after{display:none}
   .lp-hero-stage{position:relative;width:100%;max-width:1040px;min-height:430px;margin:24px auto 0;isolation:isolate;perspective:1100px;animation:lpHeroStageEnter .9s .3s cubic-bezier(.16,1,.3,1) both}
   .lp-hero-stage:before{content:'';position:absolute;inset:2% 5% -5%;border-radius:42%;background:radial-gradient(circle at 50% 48%,rgba(29,78,216,.17),rgba(96,165,250,.06) 52%,transparent 74%);filter:blur(5px);z-index:-2}
   .lp-orbit{position:absolute;border:1px solid rgba(29,78,216,.11);border-radius:50%;z-index:-1;pointer-events:none}
@@ -287,9 +291,10 @@ export default function Landing({ onStart, onDiagnostic }) {
   .lp-students-visual{--student-cell:210px;--student-strip:1050px;position:absolute;left:50%;top:0;width:min(100%,1040px);height:410px;transform:translateX(-50%);overflow:hidden;background:transparent}
   .lp-students-visual:before{content:'';position:absolute;z-index:4;left:-6%;right:-6%;bottom:-36px;height:78px;background:#fff;border-radius:50% 50% 0 0/72% 72% 0 0;box-shadow:0 -12px 34px rgba(255,255,255,.9);pointer-events:none}
   .lp-students-visual:after{content:'';position:absolute;z-index:5;inset:0;border-radius:32px;box-shadow:inset 0 0 0 1px rgba(29,78,216,.08);pointer-events:none}
-  .lp-students-track{position:absolute;inset:0 auto 0 0;display:flex;width:max-content;animation:lpStudentsMarquee 34s linear infinite;will-change:transform}
-  .lp-students-set{width:var(--student-strip);height:100%;display:flex;align-items:flex-end;flex:none}
-  .lp-student-cutout{--panel:#32B7EC;--figure:#70D2F4;--figure-2:#168FCE;--tilt:-3deg;position:relative;width:var(--student-cell);height:100%;overflow:visible;flex:none;transform-origin:center bottom;z-index:1}
+  .lp-students-track{position:absolute;inset:0;display:flex;width:100%;will-change:transform}
+  .lp-students-set{width:100%;height:100%;display:flex;align-items:flex-end;flex:none;padding:0 7px}
+  .lp-students-set[aria-hidden="true"]{display:none}
+  .lp-student-cutout{--panel:#32B7EC;--figure:#70D2F4;--figure-2:#168FCE;--tilt:-3deg;position:relative;width:20%;height:100%;overflow:visible;flex:none;transform-origin:center bottom;z-index:1}
   .lp-student-pattern{position:absolute;left:8px;right:8px;top:39px;bottom:12px;overflow:hidden;border-radius:58px 58px 28px 28px;background:var(--panel);transform:rotate(var(--tilt));box-shadow:0 24px 38px -27px color-mix(in srgb,var(--panel) 68%,#173252);transition:transform .34s cubic-bezier(.2,.8,.2,1),filter .34s ease}
   .lp-student-pattern:before,.lp-student-pattern:after,.lp-student-pattern i{content:'';position:absolute;display:block;pointer-events:none}
   .lp-student-pattern:before{width:190px;height:190px;left:-76px;top:-56px;border:38px solid var(--figure);border-radius:50%;opacity:.78}
@@ -330,14 +335,16 @@ export default function Landing({ onStart, onDiagnostic }) {
   .lp-signal-format .lp-signal-card{animation:lpSignalFloatB 6s ease-in-out .7s infinite}
   .lp-signal-progress .lp-signal-card{animation:lpSignalFloatC 5.7s ease-in-out 1.4s infinite}
   .lp-signal-format em{animation-delay:.7s}
-  .lp-signal-progress em{animation-delay:1.4s}
-  .lp-signal-ai:before,.lp-signal-progress:before{right:auto;left:100%;background:linear-gradient(90deg,rgba(29,78,216,.3),transparent)}
+  .lp-signal-ai:before{right:auto;left:100%;background:linear-gradient(90deg,rgba(29,78,216,.3),transparent)}
+  .lp-hero-product{position:absolute;z-index:6;left:50%;bottom:-10px;width:286px;padding:14px 16px;border:1px solid rgba(29,78,216,.16);border-radius:17px;background:rgba(255,255,255,.94);box-shadow:0 22px 52px -25px rgba(29,78,216,.48),inset 0 1px 0 #fff;backdrop-filter:blur(18px);transform:translateX(-50%);animation:lpProductFloat 5.8s ease-in-out 1.2s infinite}
+  .lp-hero-product-head,.lp-hero-product-score{display:flex;align-items:center;justify-content:space-between;gap:12px}.lp-hero-product-head{margin-bottom:10px}.lp-hero-product-head strong{color:#1D4ED8;font:850 11px 'Manrope',sans-serif;letter-spacing:.08em}.lp-hero-product-head span{color:#7890A5;font:700 9px 'Manrope',sans-serif}.lp-hero-product-score strong{color:#10243A;font:850 28px 'Manrope',sans-serif}.lp-hero-product-score span{max-width:135px;color:#60758A;font:650 9px/1.25 'Manrope',sans-serif;text-align:right}.lp-hero-product-bars{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:9px}.lp-hero-product-bars i{height:5px;overflow:hidden;border-radius:99px;background:#E5EDF7}.lp-hero-product-bars b{display:block;width:86%;height:100%;border-radius:inherit;background:#22C55E}.lp-hero-product-bars i:nth-child(2) b{width:62%;background:#60A5FA}.lp-hero-product-bars .weak b{width:38%;background:#F97316}
   @keyframes lpOrbit{to{transform:rotate(360deg)}}
   @keyframes lpHeroEnter{from{opacity:0;transform:translate3d(0,22px,0);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
   @keyframes lpHeroStageEnter{from{opacity:0;transform:translate3d(0,28px,0) scale(.985)}to{opacity:1;transform:none}}
   @keyframes lpAccentDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
   @keyframes lpCtaShine{0%,72%{left:-55%;opacity:0}78%{opacity:1}92%,100%{left:125%;opacity:0}}
   @keyframes lpSpeckDrift{0%,100%{transform:translate3d(0,0,0);opacity:.55}50%{transform:translate3d(5px,-11px,0);opacity:1}}
+  @keyframes lpProductFloat{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-6px)}}
   @keyframes lpSchoolCycle{0%{opacity:0;transform:rotateY(-70deg) scale(.82)}7%,27%{opacity:1;transform:rotateY(0) scale(1)}33%,100%{opacity:0;transform:rotateY(70deg) scale(.82)}}
   @keyframes lpSchoolGlow{to{opacity:.55;transform:scale(1.07)}}
   @keyframes lpStudentsMarquee{to{transform:translate3d(-50%,0,0)}}
@@ -345,6 +352,13 @@ export default function Landing({ onStart, onDiagnostic }) {
   @keyframes lpSignalFloatB{0%,100%{transform:translate3d(0,0,0) rotate(.3deg)}50%{transform:translate3d(-10px,-8px,0) rotate(-.5deg)}}
   @keyframes lpSignalFloatC{0%,100%{transform:translate3d(0,0,0) rotate(-.2deg)}50%{transform:translate3d(8px,-9px,0) rotate(.4deg)}}
   @keyframes lpIconPulse{0%,100%{transform:scale(1);box-shadow:inset 0 0 0 1px rgba(29,78,216,.08),0 0 0 0 rgba(59,130,246,0)}50%{transform:scale(1.08);box-shadow:inset 0 0 0 1px rgba(29,78,216,.12),0 0 0 7px rgba(59,130,246,.1)}}
+  @media(max-width:1120px){
+    .lp-nav{min-height:78px;padding:11px 22px!important}
+    .lp-navlinks{display:none!important}
+    .lp-menu-toggle{display:flex}
+    .lp-mobile-menu{display:block}
+    .lp-mobile-menu.is-open{max-height:390px;opacity:1}
+  }
   @media(max-width:1000px){
     .lp-nav{min-height:78px;padding:11px 22px!important}
     .lp-header-brand{min-width:0!important;padding:0!important}
@@ -390,6 +404,9 @@ export default function Landing({ onStart, onDiagnostic }) {
     .lp-student-pattern{left:5px;right:5px;top:29px;bottom:8px;border-radius:42px 42px 20px 20px}
     .lp-student-cutout img{left:-5%;width:110%;height:97%}
     .lp-students-track{animation-duration:28s}
+    .lp-students-track{inset:0 auto 0 0;width:max-content;animation:lpStudentsMarquee 28s linear infinite}
+    .lp-students-set{display:flex!important;width:var(--student-strip);padding:0}
+    .lp-student-cutout{width:var(--student-cell)}
     .lp-school-carousel{right:8px;top:min(48vw,178px);bottom:auto;width:82px;height:82px}
     .lp-school-frame{width:72px;height:72px}
     .lp-school-slide{padding:10px}
@@ -401,6 +418,7 @@ export default function Landing({ onStart, onDiagnostic }) {
     .lp-signal-ai .lp-signal-card{animation-name:lpSignalFloatMobile}
     .lp-signal-format .lp-signal-card{animation-name:lpSignalFloatMobile}
     .lp-signal-progress .lp-signal-card{animation-name:lpSignalFloatMobile}
+    .lp-hero-product{position:relative;left:auto;bottom:auto;width:min(100%,330px);margin:10px auto 0;transform:none;animation:lpProductFloatMobile 5.8s ease-in-out 1.2s infinite}
     #pricing{padding-top:46px!important;padding-bottom:50px!important;border-radius:26px}
     .lp-pricing-head{margin-bottom:24px!important}
     .lp-pricing-title{font-size:34px!important;line-height:1.1!important}
@@ -426,8 +444,9 @@ export default function Landing({ onStart, onDiagnostic }) {
     .lp-footer-bottom{align-items:flex-start;flex-direction:column;gap:8px}
   }
   @keyframes lpSignalFloatMobile{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  @keyframes lpProductFloatMobile{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
   @keyframes lpLeadFloat{0%,100%{transform:translateY(0) rotate(-.4deg)}50%{transform:translateY(-8px) rotate(.4deg)}}
-  @media(prefers-reduced-motion:reduce){.lp-h1,.lp-hero-copy>p,.lp-hero-actions,.lp-hero-stage,.lp-hero-accent:after,.lp-hero-actions .lp-cta:after,.lp-motion-specks i,.lp-orbit-b,.lp-school-glow,.lp-students-track,.lp-signal-card,.lp-signal em,.lp-lead-note{animation:none}.lp-school-slide{animation-name:lpSchoolFade}.lp-signal-card{transition:none}.lp-reveal{opacity:1;filter:none;transform:none;transition:none}}
+  @media(prefers-reduced-motion:reduce){.lp-h1,.lp-hero-copy>p,.lp-hero-actions,.lp-hero-stage,.lp-hero-accent:after,.lp-hero-actions .lp-cta:after,.lp-motion-specks i,.lp-orbit-b,.lp-school-glow,.lp-students-track,.lp-signal-card,.lp-signal em,.lp-hero-product,.lp-lead-note{animation:none}.lp-school-slide{animation-name:lpSchoolFade}.lp-signal-card{transition:none}.lp-reveal{opacity:1;filter:none;transform:none;transition:none}}
   @keyframes lpSchoolFade{0%,33%{opacity:1;transform:none}34%,100%{opacity:0;transform:none}}
 `}</style>
 <header className="lp-site-header">
@@ -461,7 +480,7 @@ export default function Landing({ onStart, onDiagnostic }) {
   
   <section className="lp-hero lp-pad" style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',maxWidth:'1280px',margin:'0 auto',padding:'28px 56px 32px'}}>
     <div className="lp-hero-copy">
-      <h1 className="lp-h1" style={{font:'800 64px/1.04 \'Manrope\',sans-serif',letterSpacing:'-.04em',margin:'0 auto 18px',maxWidth:'960px'}}>{t('lp.hero1')}<span className="lp-hero-accent">{t('lp.hero2')}</span>{t('lp.hero3')}</h1>
+      <h1 className="lp-h1" style={{font:"700 clamp(46px,5.2vw,64px)/1.05 'Geologica','Manrope',sans-serif",letterSpacing:'-.04em',margin:'0 auto 20px',maxWidth:'1080px'}}>{t('lp.hero1')}<span className="lp-hero-accent">{t('lp.hero2')}</span>{t('lp.hero3')}</h1>
       <p style={{fontSize:'18px',lineHeight:'1.55',color:'#60758A',margin:'0 auto 26px',maxWidth:'720px'}}>{t('lp.11')}</p>
       <div className="lp-hero-actions" style={{display:'flex',justifyContent:'center',gap:'13px',flexWrap:'wrap'}}>
         <a href="#" onClick={handleStart} className="lp-cta" style={{background:'#1D4ED8',color:'#FFFFFF',padding:'15px 32px',borderRadius:'12px',font:'600 16px \'Golos Text\',sans-serif'}}>{t('lp.12')}</a>
