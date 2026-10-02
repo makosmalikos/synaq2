@@ -105,7 +105,7 @@ module.exports = async function handler(req, res) {
 
     if (body.action === 'submit') {
       if (!body.answers || typeof body.answers !== 'object' || Array.isArray(body.answers)
-        || Object.keys(body.answers).length > 120
+        || Object.keys(body.answers).length > 180
         || Object.entries(body.answers).some(([key, value]) => !/^\d{1,3}$/.test(key)
           || typeof value !== 'string' || value.length > 2000)) throw error('bad-answers');
       await childContext(db, user);

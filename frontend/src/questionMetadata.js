@@ -40,7 +40,7 @@ export function normalizeAdminTask(raw) {
   return {
     id: raw.id,
     school: raw.school || null,
-    subject: raw.subject || ({ lang_kaz: 'kaz', lang_rus: 'rus', lang_eng: 'eng', kolzar: 'kolzar', mtx: 'logic', seq: 'logic', spat: 'logic', comb: 'logic' }[raw.topic] || 'math'),
+    subject: raw.subject || ({ lang_kaz: 'kaz', lang_rus: 'rus', lang_eng: 'eng', kolzar: 'kolzar', science: 'science', reading: 'reading', mtx: 'logic', seq: 'logic', spat: 'logic', comb: 'logic' }[raw.topic] || 'math'),
     topic: raw.topic || null,
     difficulty: raw.difficulty ?? null,
     statement: raw.statement || '',

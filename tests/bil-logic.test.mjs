@@ -18,9 +18,9 @@ test('the BIL logic section has 20 original, complete and distinct questions', (
     assert.ok(POOL.some((item) => item.id === question.id && item.school === 'БИЛ'));
   }
   const available = mockAvailability('БИЛ');
-  assert.equal(available.count, 80);
+  assert.equal(available.count, 60);
   assert.equal(available.shortened, false);
-  assert.equal(available.subjects.find((subject) => subject.subject === 'logic').count, 20);
+  assert.equal(available.subjects.find((subject) => subject.subject === 'logic').count, 10);
 });
 
 test('BIL logic answer key agrees with independent calculations', () => {

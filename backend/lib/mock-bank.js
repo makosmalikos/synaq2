@@ -1,7 +1,7 @@
 const SPECS = Object.freeze({
   'РФМШ': { count: 30, minutes: 120, subjects: [[null, 30, 1]] },
-  'НИШ': { count: 120, minutes: 150, subjects: [['math', 40, 1], ['kolzar', 20, 1], ['eng', 20, 2], ['rus', 20, 2], ['kaz', 20, 2]] },
-  'БИЛ': { count: 80, minutes: 120, subjects: [['math', 40, 1], ['logic', 20, 1], ['kaz', 20, 2]] },
+  'НИШ': { count: 180, minutes: 240, subjects: [['math', 40, 1], ['kolzar', 60, 1], ['science', 20, 1], ['eng', 20, 2], ['rus', 20, 2], ['kaz', 20, 2]] },
+  'БИЛ': { count: 60, minutes: 110, subjects: [['math', 40, 1], ['logic', 10, 1], ['reading', 10, 1]] },
 });
 
 let bankPromise;
@@ -79,7 +79,7 @@ async function restoreMock(db, session) {
     if (!gradable(question) || ref.num !== index + 1 || ![1, 2].includes(ref.section)) throw new Error('question_unavailable');
     return { ...question, num: ref.num, section: ref.section, subject: ref.subject || question.subject || null };
   });
-  if (!questions.length || questions.length > 120) throw new Error('question_unavailable');
+  if (!questions.length || questions.length > SPECS[session.school].count) throw new Error('question_unavailable');
   return { id: session.attemptId, school: session.school, title: session.title,
     timeLimitMin: session.timeLimitMin, sections: session.sections, shortened: !!session.shortened,
     targetCount: session.targetCount, questions };

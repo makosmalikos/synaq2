@@ -51,13 +51,13 @@ function buildRfmsh(excludeIds) {
 
 // ── Мок-тест НИШ ──
 // Готовых вариантов НИШ в банке нет, поэтому собираем их сами по формату экзамена:
-// математика 40 · колзар 20 · ағылшын 20 · орыс 20 · қазақ 20.
-// Секция 1 — математика и колзар. Секция 2 — языки. Между ними перерыв.
+// Актуальный официальный формат: день 1 — математика 40, количественные
+// характеристики 60, естествознание 20; день 2 — три языка по 20 заданий.
 const NISH_SPEC = [
-  ['math', 40, 1], ['kolzar', 20, 1],
+  ['math', 40, 1], ['kolzar', 60, 1], ['science', 20, 1],
   ['eng', 20, 2], ['rus', 20, 2], ['kaz', 20, 2],
 ];
-const NISH_TIME_MIN = 150;
+const NISH_TIME_MIN = 240;
 
 function buildNish(excludeIds) {
   const qs = [];
@@ -78,17 +78,17 @@ function buildNish(excludeIds) {
 }
 
 // ── Мок-тест БИЛ ──
-// 40 математика · 20 логика · 20 қазақ тілі. Случайно из банка БИЛ. 2 часа.
+// Формат приёма в 7 класс на 2026 год: математика и логика — 50 заданий,
+// читательская грамотность — 10 заданий, всего 110 минут.
 const BIL_SPEC = [
-  ['math', 40, 1], ['logic', 20, 1],
-  ['kaz', 20, 2],
+  ['math', 40, 1], ['logic', 10, 1], ['reading', 10, 1],
 ];
-const BIL_TIME_MIN = 120;
+const BIL_TIME_MIN = 110;
 
 export const MOCK_SPECS = {
   'РФМШ': { count: RFMSH_COUNT, minutes: RFMSH_TIME_MIN, subjects: [[null, RFMSH_COUNT, 1]] },
-  'НИШ': { count: 120, minutes: NISH_TIME_MIN, subjects: NISH_SPEC },
-  'БИЛ': { count: 80, minutes: BIL_TIME_MIN, subjects: BIL_SPEC },
+  'НИШ': { count: 180, minutes: NISH_TIME_MIN, subjects: NISH_SPEC },
+  'БИЛ': { count: 60, minutes: BIL_TIME_MIN, subjects: BIL_SPEC },
 };
 
 function examPool(school, subject) {

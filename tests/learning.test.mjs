@@ -37,7 +37,8 @@ test('every generated exam describes its actual pool, including the full BIL for
     }
   }
   assert.equal(mockAvailability('БИЛ').shortened, false);
-  assert.equal(mockAvailability('БИЛ').count, 80);
+  assert.equal(mockAvailability('БИЛ').count, 60);
+  assert.equal(mockAvailability('НИШ').count, 180);
 });
 
 test('new exam prefers questions not in saved review', async () => {

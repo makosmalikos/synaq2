@@ -14,7 +14,7 @@ export function readMockSession(uid, storage) {
       || typeof value.id !== 'string' || !value.id || value.id.length > 128
       || !value.test || typeof value.test.id !== 'string'
       || !Array.isArray(value.test.questions) || !value.test.questions.length
-      || value.test.questions.length > 120
+      || value.test.questions.length > 180
       || value.test.questions.some((question, index) => !question || typeof question.id !== 'string'
         || !question.id || question.num !== index + 1 || ![1, 2].includes(question.section)
         || typeof question.statement !== 'string')
@@ -31,7 +31,7 @@ export function readMockSession(uid, storage) {
       || typeof value.isDiagnosticRun !== 'boolean'
       || (value.pending && (value.pending.uid !== uid || value.pending.id !== value.id
         || !value.pending.payload || !value.result))
-      || (value.result && (!Array.isArray(value.result.review) || value.result.review.length > 120
+      || (value.result && (!Array.isArray(value.result.review) || value.result.review.length > 180
         || value.result.review.some((item) => !item || typeof item !== 'object')))) {
       return { record: null, error: 'invalid' };
     }

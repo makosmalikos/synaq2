@@ -1,6 +1,8 @@
 // Единый банк задач: РФМШ + НИШ (+ КТЛ/БИЛ — один формат, сейчас банк пуст).
 import * as DATA from './data.js';
 import { bilLogicQuestions } from './bilLogicQuestions.js';
+import { bilReadingQuestions } from './bilReadingQuestions.js';
+import { nishScienceQuestions } from './nishScienceQuestions.js';
 import { detectLang, quarantineReason, partitionAdminTasks } from './questionMetadata.js';
 import { readAdminTasks } from './adminTasks.js';
 export { detectLang, normalizeAdminTask } from './questionMetadata.js';
@@ -38,7 +40,7 @@ function guessTopic(text) {
   return best;
 }
 
-const SUBJ_TOPIC = { kolzar: 'kolzar', kaz: 'lang_kaz', rus: 'lang_rus', eng: 'lang_eng', logic: 'mtx' };
+const SUBJ_TOPIC = { kolzar: 'kolzar', science: 'science', reading: 'reading', kaz: 'lang_kaz', rus: 'lang_rus', eng: 'lang_eng', logic: 'mtx' };
 
 // ── На каком языке реально написано условие ──
 // В data.js есть задачи вперемешку: часть РФМШ/НИШ написана по-русски, часть —
@@ -76,6 +78,8 @@ const RAW_POOL = [
   ...nishMath.map((q) => one(q, 'НИШ')),
   ...bilQ.map((q) => one(q, 'БИЛ')),
   ...bilLogicQuestions.map((q) => one(q, 'БИЛ')),
+  ...bilReadingQuestions.map((q) => one(q, 'БИЛ')),
+  ...nishScienceQuestions.map((q) => one(q, 'НИШ')),
   ...ktlQ.map((q) => one(q, 'КТЛ')),
   ...ktlNish.map((q) => one(q, 'НИШ')),
   ...kolzar2.map((q) => one(q, 'НИШ')),
@@ -116,6 +120,8 @@ export const POOL = reviewed
 
 export const EXTRA_TOPICS = [
   { id: 'kolzar',   block: 'math',     name: 'Сандық салыстыру (колхар)' },
+  { id: 'science',  block: 'science',  name: 'Естествознание' },
+  { id: 'reading',  block: 'reading',  name: 'Оқу сауаттылығы' },
   { id: 'lang_kaz', block: 'lang_kaz', name: 'Қазақ тілі' },
   { id: 'lang_rus', block: 'lang_rus', name: 'Орыс тілі' },
   { id: 'lang_eng', block: 'lang_eng', name: 'Ағылшын тілі' },

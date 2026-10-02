@@ -25,6 +25,8 @@ export const TOPICS = [
   { id: 'pct',      block: 'math',  name: 'Пайыздар',                         schools: ['РФМШ', 'НИШ'] },
   { id: 'sys',      block: 'math',  name: 'Теңдеулер жүйесі, теңсіздіктер',   schools: ['РФМШ', 'НИШ', 'БИЛ'] },
   { id: 'kolzar',   block: 'math',  name: 'Сандық салыстыру (колхар)',        schools: ['НИШ'] },
+  { id: 'science',  block: 'science', name: 'Естествознание',                 schools: ['НИШ'] },
+  { id: 'reading',  block: 'reading', name: 'Оқу сауаттылығы',                schools: ['БИЛ'] },
   { id: 'seq',      block: 'logic', name: 'Фигуралар/сандар тізбегі',         schools: ['РФМШ', 'НИШ'] },
   { id: 'mtx',      block: 'logic', name: 'Матрицалар және аналогиялар',      schools: ['РФМШ', 'НИШ'] },
   { id: 'spat',     block: 'logic', name: 'Кеңістіктік ойлау',                schools: ['РФМШ', 'НИШ'] },
@@ -33,8 +35,8 @@ export const TOPICS = [
   { id: 'lang_rus', block: 'lang',  name: 'Орыс тілі',                        schools: ['НИШ'] },
   { id: 'lang_eng', block: 'lang',  name: 'Ағылшын тілі',                     schools: ['НИШ'] },
 ];
-const BLOCK_LABEL = { math: 'Математика', logic: 'Логика', lang: 'Тілдер' };
-const BLOCKS = ['math', 'logic', 'lang'];
+const BLOCK_LABEL = { math: 'Математика', logic: 'Логика', science: 'Естествознание', reading: 'Оқу сауаттылығы', lang: 'Тілдер' };
+const BLOCKS = ['math', 'logic', 'science', 'reading', 'lang'];
 
 const DIFFICULTIES = [1, 2, 3, 4, 5];
 const MIN_OPTIONS = 2;
