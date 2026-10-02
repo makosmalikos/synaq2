@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createRequire } from 'node:module';
 import { nishScienceQuestions } from '../frontend/src/nishScienceQuestions.js';
+import { nishOfficialLanguageQuestions } from '../frontend/src/nishOfficialLanguageQuestions.js';
 import { bilReadingQuestions } from '../frontend/src/bilReadingQuestions.js';
 import { MOCK_SPECS, mockAvailability } from '../frontend/src/api.js';
 
@@ -33,6 +34,31 @@ test('BIL reading sample is added once despite the two shuffled public booklets'
     assert.ok(question.options.includes(question.answer), question.id);
   }
   assert.equal(mockAvailability('БИЛ').subjects.find((item) => item.subject === 'reading').count, 10);
+});
+
+test('official NIS language sample adds 20 questions for each language with the published key', () => {
+  const officialKey = [
+    'D', 'B', 'A', 'B', 'B', 'D', 'D', 'A', 'A', 'C',
+    'C', 'D', 'B', 'B', 'D', 'B', 'B', 'B', 'A', 'C',
+    'D', 'C', 'D', 'B', 'B', 'A', 'C', 'A', 'B', 'D',
+    'D', 'D', 'A', 'D', 'C', 'C', 'D', 'A', 'B', 'A',
+    'B', 'A', 'A', 'D', 'B', 'B', 'C', 'B', 'C', 'C',
+    'B', 'A', 'B', 'A', 'B', 'A', 'A', 'C', 'B', 'B',
+  ];
+  assert.equal(nishOfficialLanguageQuestions.length, 60);
+  assert.equal(new Set(nishOfficialLanguageQuestions.map((question) => question.id)).size, 60);
+  assert.deepEqual(
+    Object.fromEntries(['rus', 'kaz', 'eng'].map((subject) => [subject, nishOfficialLanguageQuestions.filter((question) => question.subject === subject).length])),
+    { rus: 20, kaz: 20, eng: 20 },
+  );
+  for (const [index, question] of nishOfficialLanguageQuestions.entries()) {
+    assert.equal(question.school, 'НИШ');
+    assert.ok(question.options.length >= 3 && question.options.length <= 4, question.id);
+    assert.ok(question.options.includes(question.answer), question.id);
+    assert.equal('ABCD'[question.options.indexOf(question.answer)], officialKey[index], question.id);
+    assert.ok(question.solution.length > 20, question.id);
+    assert.match(question.source, /official language sample \(adapted\)/);
+  }
 });
 
 test('client and server publish the same current NIS and BIL exam structures', () => {

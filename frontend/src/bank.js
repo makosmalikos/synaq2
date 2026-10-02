@@ -3,6 +3,7 @@ import * as DATA from './data.js';
 import { bilLogicQuestions } from './bilLogicQuestions.js';
 import { bilReadingQuestions } from './bilReadingQuestions.js';
 import { nishScienceQuestions } from './nishScienceQuestions.js';
+import { nishOfficialLanguageQuestions } from './nishOfficialLanguageQuestions.js';
 import { expandedQuestions } from './expandedQuestionBank.js';
 import { detectLang, quarantineReason, partitionAdminTasks } from './questionMetadata.js';
 import { readAdminTasks } from './adminTasks.js';
@@ -81,6 +82,7 @@ const RAW_POOL = [
   ...bilLogicQuestions.map((q) => one(q, 'БИЛ')),
   ...bilReadingQuestions.map((q) => one(q, 'БИЛ')),
   ...nishScienceQuestions.map((q) => one(q, 'НИШ')),
+  ...nishOfficialLanguageQuestions.map((q) => one(q, 'НИШ')),
   ...ktlQ.map((q) => one(q, 'КТЛ')),
   ...ktlNish.map((q) => one(q, 'НИШ')),
   ...kolzar2.map((q) => one(q, 'НИШ')),

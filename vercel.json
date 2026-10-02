@@ -19,10 +19,10 @@
     "api/explain.js": { "maxDuration": 30 },
     "api/checkout.js": { "maxDuration": 15 },
     "api/subscription-portal.js": { "maxDuration": 15 },
-    "api/mock-session.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,bilLogicQuestions,bilReadingQuestions,nishScienceQuestions,expandedQuestionBank,questionMetadata,adminTasks,grading}.js" },
+    "api/mock-session.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,bilLogicQuestions,bilReadingQuestions,nishScienceQuestions,nishOfficialLanguageQuestions,expandedQuestionBank,questionMetadata,adminTasks,grading}.js" },
     "api/diagnostic-session.js": { "maxDuration": 30, "includeFiles": "frontend/src/curriculumData.js" },
     "api/webhook.js": { "maxDuration": 30 },
-    "api/duel.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,bilLogicQuestions,bilReadingQuestions,nishScienceQuestions,expandedQuestionBank,questionMetadata,adminTasks}.js" },
-    "api/learning.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,bilLogicQuestions,bilReadingQuestions,nishScienceQuestions,expandedQuestionBank,questionMetadata,topicSummary,adminTasks,grading,curriculumData,platformDiagnostic}.js" }
+    "api/duel.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,bilLogicQuestions,bilReadingQuestions,nishScienceQuestions,nishOfficialLanguageQuestions,expandedQuestionBank,questionMetadata,adminTasks}.js" },
+    "api/learning.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,bilLogicQuestions,bilReadingQuestions,nishScienceQuestions,nishOfficialLanguageQuestions,expandedQuestionBank,questionMetadata,topicSummary,adminTasks,grading,curriculumData,platformDiagnostic}.js" }
   }
 }
