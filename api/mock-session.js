@@ -60,7 +60,7 @@ module.exports = async function handler(req, res) {
 
     if (body.action === 'start') {
       if (!validSchool(body.school) || !Array.isArray(body.excludeQuestionIds)
-        || body.excludeQuestionIds.length > 1000
+        || body.excludeQuestionIds.length > 2500
         || body.excludeQuestionIds.some((id) => typeof id !== 'string' || !id || id.length > 200 || id.includes('/'))) throw error('bad-request');
       const prepared = await createMock(db, body.school, body.excludeQuestionIds);
       if (!prepared?.questions?.length) throw error('exam-unavailable', 404);

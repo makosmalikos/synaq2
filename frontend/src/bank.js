@@ -3,6 +3,7 @@ import * as DATA from './data.js';
 import { bilLogicQuestions } from './bilLogicQuestions.js';
 import { bilReadingQuestions } from './bilReadingQuestions.js';
 import { nishScienceQuestions } from './nishScienceQuestions.js';
+import { expandedQuestions } from './expandedQuestionBank.js';
 import { detectLang, quarantineReason, partitionAdminTasks } from './questionMetadata.js';
 import { readAdminTasks } from './adminTasks.js';
 export { detectLang, normalizeAdminTask } from './questionMetadata.js';
@@ -86,6 +87,7 @@ const RAW_POOL = [
   ...kolzar3.map((q) => one(q, 'НИШ')),
   ...logic1.map((q) => one(q, 'НИШ')),
   ...variantA2.map((q) => one(q, 'НИШ')),
+  ...expandedQuestions.map((q) => one(q, q.school)),
 ];
 
 // Quarantine rules are shared with the lightweight topic catalog.

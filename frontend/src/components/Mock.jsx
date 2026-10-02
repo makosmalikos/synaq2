@@ -245,7 +245,9 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     if (!v) throw new Error('empty_exam');
     const qs = await translateQuestions(v.questions, lang);
     if (!active()) return;
-    rememberRecent(code, 'questions', v.questions.map((q) => q.id).filter(Boolean), 600);
+    // Десять полных НИШ-пробников содержат 1800 разных вопросов. Храним запас,
+    // чтобы клиент не начинал повторять старые задания раньше десятой попытки.
+    rememberRecent(code, 'questions', v.questions.map((q) => q.id).filter(Boolean), 2500);
     const startedNow = started.startedAt;
     const freeRun = started.diagnostic;
     const record = {
