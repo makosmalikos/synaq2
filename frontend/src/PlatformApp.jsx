@@ -83,9 +83,16 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   const profileMenuRef = useRef(null);
   const navRef = useRef(null);
   const burgerRef = useRef(null);
+  const authUidRef = useRef(undefined);
 
   useEffect(() => watchAuth((nextUser) => {
-    setAdminUser(undefined);
+    // Token refreshes and profile reloads must not unmount the current cabinet.
+    // A different account still waits for its own role verification.
+    const nextUid = nextUser?.uid ?? null;
+    if (authUidRef.current !== nextUid) {
+      authUidRef.current = nextUid;
+      setAdminUser(undefined);
+    }
     setUser(nextUser);
     setAuthRevision((value) => value + 1);
   }), []);
@@ -112,8 +119,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
     setProfile({ name: 'Бала', klass: '', school: 'РФМШ', avatar: 'owl', plan: 'free', pro: false });
     setXp(0);
   }, [user]);
-  // Роль "администратор" подтверждается custom-claim в ID-токене — читается
-  // асинхронно, поэтому пока проверка идёт, ничего лишнего не показываем.
+  // При входе ждём custom-claim; обновления токена перепроверяют роль в фоне.
   useEffect(() => {
     if (!user || isKid(user)) { setAdminUser(false); return; }
     let alive = true;

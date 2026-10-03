@@ -168,3 +168,47 @@ test('profile and XP callbacks from a previous child cannot replace the new chil
   stopSecond();
   assert.ok(f.listeners.every((listener) => listener.stopped));
 });
+
+const authCallback = source.slice(
+  source.indexOf('useEffect(() => watchAuth(') + 'useEffect(() => watchAuth('.length,
+  source.indexOf('}), []);', source.indexOf('useEffect(() => watchAuth(')) + 1,
+);
+function authHarness() {
+  const state = { role: undefined, revision: 0, user: undefined };
+  const onAuth = vm.runInNewContext(`(${authCallback})`, {
+    authUidRef: { current: undefined },
+    setAdminUser: (role) => { state.role = role; },
+    setUser: (user) => { state.user = user; },
+    setAuthRevision: (update) => { state.revision = update(state.revision); },
+  });
+  return { state, onAuth };
+}
+
+test('same-account token events recheck claims without reopening the loading gate', () => {
+  const { state, onAuth } = authHarness();
+  onAuth({ uid: 'parent' });
+  state.role = false;
+  for (let i = 0; i < 5; i++) onAuth({ uid: 'parent' });
+  assert.equal(state.role, false);
+  assert.equal(state.revision, 6);
+  state.role = true;
+  onAuth({ uid: 'parent' });
+  assert.equal(state.role, true);
+  assert.equal(state.revision, 7);
+});
+
+test('switching accounts and signing out invalidate the previous verified role', () => {
+  const { state, onAuth } = authHarness();
+  onAuth({ uid: 'first' });
+  state.role = true;
+  onAuth({ uid: 'second' });
+  assert.equal(state.role, undefined);
+  assert.equal(state.user.uid, 'second');
+  state.role = false;
+  onAuth(null);
+  assert.equal(state.role, undefined);
+  assert.equal(state.user, null);
+  state.role = false;
+  onAuth({ uid: 'second' });
+  assert.equal(state.role, undefined);
+});

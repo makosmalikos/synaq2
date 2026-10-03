@@ -805,12 +805,6 @@ function LoginPasswordCard({ t }) {
   const [msg, setMsg] = useState('');
   const [err, setErr] = useState('');
 
-  useEffect(() => {
-    auth.currentUser?.reload().then(() => {
-      setLinked(hasPasswordLogin(auth.currentUser));
-    }).catch(() => {});
-  }, []);
-
   async function save() {
     setErr(''); setMsg(''); setBusy(true);
     try {
