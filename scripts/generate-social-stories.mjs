@@ -1,52 +1,28 @@
 import fs from 'node:fs';
 import path from 'node:path';
-
-const W = 1080;
-const H = 1920;
-const source = path.resolve('marketing/social-stories/screens');
-const out = path.resolve('output/social-stories-final');
-fs.mkdirSync(out, { recursive: true });
-
-const C = {
-  navy: '#07162F', blue: '#1769E8', cyan: '#20B9E8', white: '#FFFFFF',
-  pale: '#EEF5FF', muted: '#60758A', line: '#D9E6F4', light: '#DDF5FF',
-};
-const esc = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
-const rect = (x,y,w,h,fill,rx=0,extra='') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${fill}" ${extra}/>`;
-const line = (x1,y1,x2,y2,color=C.line,width=2) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="${width}"/>`;
-const text = (x,y,value,size=40,weight=500,fill=C.navy,anchor='start') => `<text x="${x}" y="${y}" font-family="Arial,Helvetica,sans-serif" font-size="${size}" font-weight="${weight}" fill="${fill}" text-anchor="${anchor}">${esc(value)}</text>`;
-const rows = (x,y,items,size,leading=1.08,weight=800,fill=C.navy,anchor='start') => items.map((item,index)=>text(x,y+index*size*leading,item,size,weight,fill,anchor)).join('');
-const image = name => {
-  const file = path.join(source,name);
-  if (!fs.existsSync(file)) throw new Error(`Missing source screenshot: ${file}`);
-  return `data:image/png;base64,${fs.readFileSync(file).toString('base64')}`;
-};
-const defs = `<defs>
-  <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse"><path d="M72 0H0V72" fill="none" stroke="#1769E8" stroke-opacity=".06"/></pattern>
-  <filter id="shadow" x="-30%" y="-40%" width="160%" height="190%"><feDropShadow dx="0" dy="24" stdDeviation="26" flood-color="#07162F" flood-opacity=".18"/></filter>
-  <clipPath id="screenClip"><rect width="1060" height="700" rx="22"/></clipPath>
-</defs>`;
-const base = (content,dark=false) => `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${defs}${rect(0,0,W,H,dark?C.blue:C.white)}${rect(0,0,W,H,'url(#grid)')}${text(70,88,'SYNAQ',30,800,dark?C.white:C.navy)}${line(70,120,1010,120,dark?'#FFFFFF66':C.line)}${content}</svg>`;
-const screenshot = (name,{x=70,y=690,w=1060,h=700,angle=0,position='xMidYMid slice'}={}) => `<g transform="translate(${x} ${y}) rotate(${angle} ${w/2} ${h/2})" filter="url(#shadow)">${rect(0,0,w,h,C.white,22,'stroke="#D9E6F4" stroke-width="2"')}<image href="${image(name)}" width="${w}" height="${h}" preserveAspectRatio="${position}" clip-path="url(#screenClip)"/></g>`;
-const labels = (values,dark=false) => values.map((value,index)=>`${rect(70+index*325,1510,290,76,dark?'#FFFFFF22':C.pale,16)}${text(215+index*325,1559,value,26,700,dark?C.white:C.blue,'middle')}`).join('');
-
-const stories = [
-  base(`${rows(70,285,['Подготовка к','поступлению'],84,1.02,800,C.blue)}${text(70,505,'РФМШ, БИЛ и НИШ — в одном месте.',30,400,C.muted)}${screenshot('00-landing.png',{x:-60,y:755,w:1060,h:700,angle:-5})}${labels(['РФМШ','БИЛ','НИШ'])}`),
-
-  base(`${text(540,315,'Выберите школу',76,800,C.white,'middle')}${text(540,415,'Сразу видно число заданий и время.',30,400,C.light,'middle')}${screenshot('01-school-selection.png',{x:95,y:680,w:1060,h:700,angle:5})}${text(85,1590,'Бесплатный вариант без регистрации',29,600,C.white)}`,true),
-
-  base(`${text(70,285,'РФМШ',92,800,C.blue)}${text(70,380,'30 заданий · 120 минут',34,600,C.navy)}${text(70,435,'Формат вступительного теста.',28,400,C.muted)}${screenshot('02-rfmsh-question.png',{x:90,y:660,w:1060,h:700,angle:-4})}${line(70,1540,1010,1540,C.line,2)}${text(70,1610,'Задания с рисунками и открытым ответом',30,600,C.navy)}`),
-
-  base(`${text(540,315,'НИШ',92,800,C.white,'middle')}${text(540,405,'180 заданий · 240 минут',33,600,C.light,'middle')}${screenshot('04-nis-question.png',{x:-110,y:665,w:1060,h:700,angle:5})}${text(75,1575,'Математика, языки, естественные науки',28,600,C.white)}`,true),
-
-  base(`${rows(70,285,['Результат','сразу после теста'],76,1.03,800,C.blue)}${text(70,480,'Общий балл и уровень подготовки.',30,400,C.muted)}${screenshot('05-result-summary.png',{x:70,y:690,w:1060,h:700,angle:-4})}${text(70,1560,'Без ожидания и ручной проверки',29,600,C.navy)}`),
-
-  base(`${rows(70,280,['Прогресс','по каждой теме'],76,1.04,800,C.white)}${text(70,490,'Понятно, что повторять дальше.',30,400,C.light)}${screenshot('06-topic-report.png',{x:-50,y:695,w:1060,h:700,angle:4})}${text(75,1560,'Сильные стороны · темы для повторения',27,600,C.white)}`,true),
-
-  base(`${text(70,285,'Разбор ошибок',74,800,C.blue)}${text(70,390,'Ваш ответ и верный — рядом.',30,400,C.muted)}${screenshot('07-error-review.png',{x:70,y:635,w:1060,h:700,angle:-5})}${line(70,1560,1010,1560,C.line)}${text(70,1630,'Видно, что стоит повторить',30,600,C.navy)}`),
-
-  base(`${rows(70,285,['Попробуйте','свой вариант'],78,1.04,800,C.white)}${text(70,485,'РФМШ · БИЛ · НИШ',32,600,C.light)}${screenshot('08-landing-cta.png',{x:10,y:745,w:1060,h:420,angle:-3})}${text(70,1310,'Три школы. Один первый шаг.',30,600,C.white)}${rect(70,1440,940,160,C.white,28)}${text(120,1504,'Бесплатно · без регистрации',26,600,C.blue)}${text(120,1567,'Открыть тест →',42,800,C.navy)}${text(70,1720,'synaq.app/diagnostic',32,600,C.white)}`,true),
+const source=path.resolve('marketing/social-stories/screens');
+const out=path.resolve('output/social-stories-final');fs.mkdirSync(out,{recursive:true});
+const C={blue:'#1868EE',navy:'#091A3B',cyan:'#0BBADB',pale:'#EDF5FF',muted:'#546A85',white:'#fff'};
+const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;');
+const rect=(x,y,w,h,c,r=0,extra='')=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${c}" ${extra}/>`;
+const txt=(x,y,s,size=36,weight=400,c=C.navy,anchor='start')=>`<text x="${x}" y="${y}" font-family="Arial,Helvetica,sans-serif" font-size="${size}" font-weight="${weight}" fill="${c}" text-anchor="${anchor}">${esc(s)}</text>`;
+const lines=(x,y,ss,size=64,c=C.navy,weight=700,gap=1.13)=>ss.map((s,i)=>txt(x,y+i*size*gap,s,size,weight,c)).join('');
+const circle=(x,y,r,c)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/>`;
+const img=name=>`data:image/png;base64,${fs.readFileSync(path.join(source,name)).toString('base64')}`;
+let id=0;
+const screen=(name,x,y,w,h,angle=0,view)=>{const k='clip'+(++id);return `<g transform="translate(${x} ${y}) rotate(${angle} ${w/2} ${h/2})"><g filter="url(#shadow)">${rect(0,0,w,h,'#fff',20)}</g><defs><clipPath id="${k}">${rect(0,0,w,h,'#fff',20)}</clipPath></defs><g clip-path="url(#${k})">${view?`<svg width="${w}" height="${h}" viewBox="${view}"><image href="${img(name)}" width="2160" height="1365"/></svg>`:`<image href="${img(name)}" width="${w}" height="${h}" preserveAspectRatio="xMidYMin slice"/>`}</g></g>`};
+const pill=(x,y,w,label,dark=false)=>rect(x,y,w,62,dark?'#FFFFFF24':C.pale,31)+txt(x+w/2,y+41,label,25,600,dark?'#fff':C.blue,'middle');
+const base=(content,dark=false)=>`<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920"><defs><linearGradient id="bg" x2=".85" y2="1"><stop stop-color="#08AFCF"/><stop offset="1" stop-color="#2864EF"/></linearGradient><pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="${dark?'#fff':'#4381CA'}" stroke-opacity=".065"/></pattern><filter id="shadow" x="-40%" y="-50%" width="180%" height="210%"><feDropShadow dx="0" dy="22" stdDeviation="25" flood-color="#082956" flood-opacity=".2"/></filter></defs>${rect(0,0,1080,1920,dark?'url(#bg)':'#fff')}${rect(0,0,1080,1920,'url(#grid)')}${txt(72,155,'SYNAQ',31,800,dark?'#fff':C.blue)}${txt(1008,155,'synaq.app',23,400,dark?'#DDF8FF':C.muted,'end')}${content}</svg>`;
+const stories=[
+base(`${lines(72,305,['Для кого','платформа SYNAQ?'],68,C.blue)}${rect(72,540,936,176,C.pale,24)}${txt(108,602,'Ученикам 3–6 классов',34,700)}${lines(108,650,['Разобраться в темах и закрепить','знания на практике.'],28,C.muted,400,1.35)}${rect(72,740,936,176,C.pale,24)}${txt(108,802,'Будущим ученикам РФМШ, БИЛ и НИШ',32,700)}${lines(108,850,['Готовиться к вступительным тестам','и видеть свои сильные стороны.'],28,C.muted,400,1.35)}${screen('feature-home.png',10,1050,1110,700,-5)}${pill(72,1770,385,'Учиться в своём темпе')}`),
+base(`${txt(540,310,'Дуэль с другом',72,700,'#fff','middle')}${txt(540,397,'Кто решает точнее и быстрее?',31,400,'#E4F7FF','middle')}${circle(330,610,99,'#FFFFFF22')}${txt(330,634,'ТЫ',40,700,'#fff','middle')}${txt(540,631,'VS',62,800,'#fff','middle')}${circle(750,610,99,'#FFFFFF22')}${txt(750,634,'ДРУГ',36,700,'#fff','middle')}${screen('feature-duel.png',-30,810,1160,734,5)}${pill(75,1660,240,'15 раундов',true)}${pill(335,1660,315,'Одна ссылка',true)}${txt(75,1795,'Пригласи друга. Прими вызов.',32,600,'#fff')}`,true),
+base(`${lines(72,305,['Что уже знаешь,','а что повторить?'],67,'#fff')}${lines(72,495,['Диагностика подстраивает сложность','и помогает найти пробелы в знаниях.'],30,'#E2F8FF',400,1.4)}${screen('feature-diagnostic.png',60,740,1120,708,-5)}${txt(85,1645,'20',108,700,'#fff')}${txt(85,1700,'заданий',28,400,'#E2F8FF')}${txt(420,1645,'3',108,700,'#fff')}${txt(420,1700,'этапа',28,400,'#E2F8FF')}${txt(715,1645,'15–20',82,700,'#fff')}${txt(715,1700,'минут',28,400,'#E2F8FF')}`,true),
+base(`${txt(72,340,'2 786',156,800,C.blue)}${txt(80,425,'заданий в банке SYNAQ',43,600)}${lines(80,515,['Математика, логика и другие предметы','для подготовки к РФМШ, БИЛ и НИШ.'],29,C.muted,400,1.4)}${screen('02-rfmsh-question.png',215,710,1050,700,-7)}${screen('04-nis-question.png',-180,1120,1020,675,6)}${pill(645,1735,340,'От задачи к навыку')}`),
+base(`${txt(540,310,'Смотри. Понимай.',68,700,'#fff','middle')}${txt(540,395,'Пробуй сам.',68,700,'#fff','middle')}${lines(150,515,['Наглядные видеоуроки: объяснение,','примеры и практика по теме.'],30,'#E1F7FF',400,1.4)}<g transform="translate(75 790) rotate(-3 465 300)">${rect(0,0,930,555,'#14213B',27)}${screen('feature-video.png',17,18,896,488)}${rect(-45,555,1020,28,'#CBD8E8',7)}${rect(360,555,210,9,'#94A8C0',4)}</g>${pill(80,1530,320,'Смотрим разбор',true)}${pill(445,1530,540,'Закрепляем заданиями',true)}${txt(80,1710,'Например: десятки и единицы',29,600,'#fff')}`,true),
+base(`${lines(72,300,['Прогресс ученика —','перед глазами'],66,C.blue)}${lines(72,490,['Точность ответов, время занятий','и темы, которым нужно внимание.'],30,C.muted,400,1.4)}${screen('feature-progress.png',-45,750,1160,733,4)}${rect(75,1595,930,140,C.pale,22)}${txt(115,1650,'Занимайся регулярно',34,700,C.blue)}${txt(115,1700,'Сравнивай результаты и повторяй сложное.',28,400,C.muted)}`),
+base(`${txt(75,300,'Не просто балл.',69,700,'#fff')}${txt(75,380,'Понятный результат.',69,700,'#fff')}${lines(75,500,['После теста видно, что получилось','и какие ошибки стоит разобрать.'],30,'#E2F8FF',400,1.4)}${screen('05-result-summary.png',100,740,1070,690,-5)}${screen('07-error-review.png',-50,1260,860,460,5)}${pill(640,1750,350,'Разбор ответов',true)}`,true),
+base(`${txt(72,305,'Знания растут.',69,700,C.blue)}${txt(72,385,'XP — тоже.',69,700,C.blue)}${txt(72,495,'Баллы за подготовку и победы.',32,400,C.muted)}${screen('feature-xp.png',65,685,1080,650,-4,'320 100 1790 1080')}${[ ['+5','Верный ответ'],['+100','Час подготовки'],['+50','Победа в дуэли'] ].map(([n,s],i)=>{let x=70+i*323;return rect(x,1435,293,286,i===1?C.blue:C.pale,25)+circle(x+147,1525,57,i===1?'#FFFFFF22':'#D9E9FF')+txt(x+147,1542,'XP',35,800,i===1?'#fff':C.blue,'middle')+txt(x+147,1640,n,52,700,i===1?'#fff':C.blue,'middle')+txt(x+147,1692,s,23,500,i===1?'#fff':C.navy,'middle')}).join('')}`),
+base(`${lines(72,315,['Твоя цель —','поступить?'],82,'#fff')}${txt(75,555,'Начни с пробного теста.',36,400,'#E1F7FF')}${screen('01-school-selection.png',25,745,1110,700,4)}${rect(72,1510,936,166,'#fff',27)}${txt(120,1570,'РФМШ · БИЛ · НИШ',27,600,C.blue)}${txt(120,1637,'Выбрать свой тест →',43,700)}${txt(75,1760,'Бесплатно · без регистрации',29,400,'#fff')}${txt(75,1815,'synaq.app/diagnostic',31,700,'#fff')}`,true)
 ];
-
-stories.forEach((svg,index) => fs.writeFileSync(path.join(out,`synaq-story-${String(index+1).padStart(2,'0')}.svg`),svg));
-console.log(`Generated ${stories.length} distinct SVG stories in ${out}`);
+stories.forEach((s,i)=>fs.writeFileSync(path.join(out,`synaq-story-${String(i+1).padStart(2,'0')}.svg`),s));
+console.log(`Generated ${stories.length} stories`);

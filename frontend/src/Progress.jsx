@@ -8,6 +8,7 @@ import DiagnosisReport from './components/DiagnosisReport.jsx';
 import BrandLoader from './components/BrandLoader.jsx';
 
 const LEVEL_TXT = { strong: 'МЫҚТЫ', mid: 'ОРТАША', weak: 'ӘЛСІЗ' };
+const LEVEL_TXT_RU = { strong: 'СИЛЬНЫЙ', mid: 'СРЕДНИЙ', weak: 'СЛАБЫЙ' };
 const LEVEL_COL = { strong: '#4C7A4E', mid: '#B8892B', weak: '#B0342B' };
 
 export default function Progress({ onXpLoad, onTrainTopic }) {
@@ -194,7 +195,7 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
       <div className="list" style={{ marginTop: 16 }}>
         {stats.length ? stats.map((s) => (
           <div key={s.id} className="row-item" style={{ cursor: 'default' }}>
-            <b style={{ flex: 1 }}>{s.name}</b>
+            <b style={{ flex: 1 }}>{lang === 'ru' ? (topics.find((topic) => topic.id === s.id)?.nameRu || s.name) : s.name}</b>
             <div style={{ width: 150 }}>
               <div className="bar"><i style={{ width: s.pct + '%', background: LEVEL_COL[s.level] }} /></div>
             </div>
@@ -202,7 +203,7 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
               font: "600 11px 'IBM Plex Mono',monospace", letterSpacing: '.08em',
               color: LEVEL_COL[s.level], border: `1px solid ${LEVEL_COL[s.level]}`,
               padding: '3px 9px', width: 82, textAlign: 'center',
-            }}>{LEVEL_TXT[s.level]}</span>
+            }}>{(lang === 'ru' ? LEVEL_TXT_RU : LEVEL_TXT)[s.level]}</span>
           </div>
         )) : <div style={{ padding: 18 }}><p className="muted" style={{ margin: 0 }}>{t('prog.empty')}</p></div>}
       </div>
