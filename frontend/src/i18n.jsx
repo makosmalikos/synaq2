@@ -6,6 +6,21 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const DICT = {
   kk: {
+    'founders.label': 'Негізін қалаушылар',
+    'founders.title': 'SYNAQ-ты кімдер құрды',
+    'founders.intro': 'Біз РФММ мен БИЛ-де оқыдық. Түсу жолын өзіміз өткердік, енді балаларға осы қадамға дайындалуға көмектесеміз.',
+    'founders.malika.badge': 'РФММ түлегі',
+    'founders.malika.role': 'SYNAQ негізін қалаушы',
+    'founders.malika.story': 'РФММ-ге түсу жолын өзі өткерген, дайындықтың қандай болатынын жақсы біледі.',
+    'founders.malika.school': 'Республикалық физика-математика мектебінде математикалық білім алған.',
+    'founders.malika.incubator': 'nFactorial Incubator 2026 қатысушысы.',
+    'founders.malika.award': 'Global Sparks Showcase байқауының Business & IT бағыты бойынша 3-орын иегері.',
+    'founders.nurislam.badge': 'БИЛ түлегі',
+    'founders.nurislam.role': 'SYNAQ негізін қалаушы',
+    'founders.nurislam.story': '9-сыныптан бері оқушыларды БИЛ, НЗМ және РФММ-ге түсуге дайындайды.',
+    'founders.nurislam.school': 'Қарағанды «Білім-инновация» лицейінің түлегі.',
+    'founders.nurislam.olympiads': 'Математикадан облыстық және республикалық олимпиадалардың жүлдегері.',
+    'founders.nurislam.coach': 'Олимпиадалық математика жаттықтырушысы.',
     // ── общее ──
     'nav.home': 'Басты бет',
     'nav.main': 'Негізгі навигация',
@@ -504,6 +519,21 @@ const DICT = {
   },
 
   ru: {
+    'founders.label': 'Основатели',
+    'founders.title': 'Кто стоит за SYNAQ',
+    'founders.intro': 'Мы сами учились в РФМШ и БИЛ. Знаем, что стоит за поступлением, и помогаем детям подготовиться к этому шагу.',
+    'founders.malika.badge': 'Выпускница РФМШ',
+    'founders.malika.role': 'Соосновательница SYNAQ',
+    'founders.malika.story': 'Сама прошла путь поступления в РФМШ и знает подготовку изнутри.',
+    'founders.malika.school': 'Математическая подготовка в Республиканской физико-математической школе.',
+    'founders.malika.incubator': 'Участница nFactorial Incubator 2026.',
+    'founders.malika.award': '3-е место на Global Sparks Showcase в направлении Business & IT.',
+    'founders.nurislam.badge': 'Выпускник БИЛ',
+    'founders.nurislam.role': 'Сооснователь SYNAQ',
+    'founders.nurislam.story': 'С 9-го класса готовит учеников к поступлению в БИЛ, НИШ и РФМШ.',
+    'founders.nurislam.school': 'Выпускник лицея «Білім-инновация» в Караганде.',
+    'founders.nurislam.olympiads': 'Призёр областных и республиканских олимпиад по математике.',
+    'founders.nurislam.coach': 'Тренер по олимпиадной математике.',
     'nav.home': 'Главная',
     'nav.main': 'Основная навигация',
     'nav.open': 'Открыть меню',

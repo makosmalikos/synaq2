@@ -2,6 +2,7 @@ import React from 'react';
 import { LangSwitch, useLang } from './i18n.jsx';
 import Brand from './Brand.jsx';
 import LandingDemo from './LandingDemo.jsx';
+import LandingFounders from './LandingFounders.jsx';
 import { planPrice } from './plans.js';
 
 const WHATSAPP_LEAD_URL = 'https://wa.me/77773424043';
@@ -633,6 +634,8 @@ export default function Landing({ onStart, onDiagnostic }) {
   </section>
 
   
+  <LandingFounders />
+
   <section id="pricing" className="lp-pad" style={{maxWidth:'1280px',margin:'0 auto',padding:'84px 56px'}}>
     <div className="lp-pricing-head" style={{textAlign:'center',marginBottom:'48px',maxWidth:'600px',marginLeft:'auto',marginRight:'auto'}}>
       <div className="lp-pricing-kicker" style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#2B91EA',marginBottom:'14px'}}>{t('lp.5')}</div>
