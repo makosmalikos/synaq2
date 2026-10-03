@@ -1,18 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
-import { PUBLIC_DEMO_QUESTIONS } from '../frontend/src/diagnosticData.js';
+import { PUBLIC_MOCKS } from '../frontend/src/publicMockData.generated.js';
 
 const require = createRequire(import.meta.url);
 const { PRICE_KZT, weeklyWindow, deterministicOrder } = require('../backend/lib/weekly-mock');
 const { createWeeklyMock } = require('../backend/lib/mock-bank');
 
-test('landing exposes one fixed complete demo variant for each school', () => {
-  assert.deepEqual(Object.keys(PUBLIC_DEMO_QUESTIONS).sort(), ['БИЛ', 'НИШ', 'РФМШ'].sort());
-  for (const [school, questions] of Object.entries(PUBLIC_DEMO_QUESTIONS)) {
-    assert.equal(questions.length, 10, school);
-    assert.equal(new Set(questions.map((question) => question.id)).size, 10, school);
-    for (const question of questions) assert.ok(question.options.includes(question.answer), `${school}/${question.id}`);
+test('landing exposes one fixed full-format variant for each school', () => {
+  assert.deepEqual(Object.keys(PUBLIC_MOCKS).sort(), ['БИЛ', 'НИШ', 'РФМШ'].sort());
+  const expected = { 'РФМШ': 30, 'БИЛ': 60, 'НИШ': 180 };
+  for (const [school, mock] of Object.entries(PUBLIC_MOCKS)) {
+    const { questions } = mock;
+    assert.equal(questions.length, expected[school], school);
+    assert.ok(mock.minutes >= 110, school);
+    assert.equal(new Set(questions.map((question) => question.id)).size, expected[school], school);
+    for (const question of questions) {
+      assert.ok(question.statement && question.answer, `${school}/${question.id}`);
+      if (question.options) assert.ok(question.options.includes(question.answer), `${school}/${question.id}`);
+    }
   }
 });
 

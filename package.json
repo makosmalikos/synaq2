@@ -13,7 +13,8 @@
     "check": "npm test && npm run validate:bank && npm run validate:curriculum && npm run build --prefix frontend && npm run validate:build",
     "validate:bank": "node scripts/validate-bank.mjs",
     "validate:curriculum": "node scripts/validate-curriculum.mjs",
-    "validate:build": "node scripts/validate-build.mjs"
+    "validate:build": "node scripts/validate-build.mjs",
+    "generate:public-mocks": "node scripts/generate-public-mocks.mjs"
   },
   "engines": {
     "node": ">=22.12"

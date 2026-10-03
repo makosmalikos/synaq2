@@ -1,16 +1,17 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Brand from './Brand.jsx';
 import { LangSwitch, useLang } from './i18n.jsx';
-import { PUBLIC_DEMO_QUESTIONS, diagnosticExplanation, topicName } from './diagnosticData.js';
+import { topicName } from './diagnosticData.js';
+import { PUBLIC_MOCKS } from './publicMockData.generated.js';
 import { createPublicDiagnosticResult, savePublicDiagnosticResult } from './diagnosticPlan.js';
 
 const copy = {
   ru: {
     free: 'БЕСПЛАТНЫЙ ПРОБНИК', title: 'Попробуйте тест выбранной школы',
-    sub: 'Три фиксированных демо-варианта: БИЛ, НИШ и РФМШ. Без регистрации, вопросы не меняются.',
+    sub: 'Три полных фиксированных варианта: БИЛ, НИШ и РФМШ. Без регистрации, вопросы не меняются.',
     grade: 'Уровень', target: 'Выберите школу', general: 'Общий уровень', start: 'Начать пробный тест',
     back: 'На главную', question: 'Задание', of: 'из', next: 'Следующее задание', finish: 'Показать результат',
-    pick: 'Выберите один ответ', result: 'ВАШ РЕЗУЛЬТАТ', ready: 'Готовность по математике', correct: 'правильных ответов',
+    pick: 'Выберите или введите ответ', result: 'ВАШ РЕЗУЛЬТАТ', ready: 'Результат теста', correct: 'правильных ответов',
     strong: 'Сильные стороны', weak: 'Нужно подтянуть', all: 'Результат по темам', recommendation: 'Что делать дальше',
     retry: 'Пройти ещё раз', account: 'Создать бесплатный аккаунт', noStrong: 'Пока рано выделять сильную тему — это нормально.',
     noWeak: 'Критичных пробелов не найдено. Продолжайте усложнять задачи.',
@@ -21,10 +22,10 @@ const copy = {
   },
   kk: {
     free: 'ТЕГІН СЫНАҚ', title: 'Таңдаған мектебіңнің тестін байқап көр',
-    sub: 'БИЛ, НИШ және РФМШ үшін үш тұрақты демо-нұсқа. Тіркелусіз, сұрақтар өзгермейді.',
+    sub: 'БИЛ, НИШ және РФМШ үшін үш толық тұрақты нұсқа. Тіркелусіз, сұрақтар өзгермейді.',
     grade: 'Деңгей', target: 'Мектепті таңда', general: 'Жалпы деңгей', start: 'Сынақты бастау',
     back: 'Басты бетке', question: 'Тапсырма', of: '/', next: 'Келесі тапсырма', finish: 'Нәтижені көру',
-    pick: 'Бір жауапты таңда', result: 'СЕНІҢ НӘТИЖЕҢ', ready: 'Математикаға дайындық', correct: 'дұрыс жауап',
+    pick: 'Жауапты таңда немесе енгіз', result: 'СЕНІҢ НӘТИЖЕҢ', ready: 'Тест нәтижесі', correct: 'дұрыс жауап',
     strong: 'Мықты тұстарың', weak: 'Жетілдіру керек', all: 'Тақырыптар бойынша нәтиже', recommendation: 'Келесі қадам',
     retry: 'Қайта өту', account: 'Тегін аккаунт ашу', noStrong: 'Мықты тақырыпты бөлуге әлі ерте — бұл қалыпты.',
     noWeak: 'Маңызды олқылық табылмады. Енді күрделі есептерге көш.',
@@ -36,6 +37,19 @@ const copy = {
 };
 
 const schools = ['РФМШ', 'НИШ', 'БИЛ'];
+const subjectNames = {
+  math: { ru: 'Математика', kk: 'Математика' }, kolzar: { ru: 'Количественные характеристики', kk: 'Сандық сипаттамалар' },
+  science: { ru: 'Естествознание', kk: 'Жаратылыстану' }, eng: { ru: 'Английский язык', kk: 'Ағылшын тілі' },
+  rus: { ru: 'Русский язык', kk: 'Орыс тілі' }, kaz: { ru: 'Казахский язык', kk: 'Қазақ тілі' },
+  logic: { ru: 'Логика', kk: 'Логика' }, reading: { ru: 'Чтение', kk: 'Оқу сауаттылығы' },
+};
+const normalizeAnswer = (value) => String(value ?? '').trim().toLocaleLowerCase().replace(/\s+/g, ' ');
+const formatTime = (seconds) => {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor(seconds % 3600 / 60);
+  const rest = seconds % 60;
+  return hours ? `${hours}:${String(minutes).padStart(2, '0')}:${String(rest).padStart(2, '0')}` : `${minutes}:${String(rest).padStart(2, '0')}`;
+};
 
 export default function PublicDiagnostic({ onBack, onRegister }) {
   const { lang } = useLang();
@@ -44,8 +58,11 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
   const [target, setTarget] = useState('РФМШ');
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState({});
+  const [deadline, setDeadline] = useState(null);
+  const [clock, setClock] = useState(() => Date.now());
   const grade = target === 'БИЛ' ? 4 : target === 'НИШ' ? 5 : 6;
-  const questions = PUBLIC_DEMO_QUESTIONS[target];
+  const mock = PUBLIC_MOCKS[target];
+  const questions = mock.questions;
   const current = questions[index];
 
   const report = useMemo(() => {
@@ -53,19 +70,33 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
     questions.forEach((item) => {
       grouped[item.topic] ||= { id: item.topic, total: 0, correct: 0 };
       grouped[item.topic].total += 1;
-      if (answers[item.id] === item.answer) grouped[item.topic].correct += 1;
+      if (normalizeAnswer(answers[item.id]) === normalizeAnswer(item.answer)) grouped[item.topic].correct += 1;
     });
     const topics = Object.values(grouped).map((item) => ({ ...item, pct: Math.round(item.correct / item.total * 100) }));
     const correct = topics.reduce((sum, item) => sum + item.correct, 0);
     const pct = Math.round(correct / questions.length * 100);
-    const mistakes = questions.filter((item) => answers[item.id] !== item.answer);
+    const mistakes = questions.filter((item) => normalizeAnswer(answers[item.id]) !== normalizeAnswer(item.answer));
     return { topics, correct, pct, weak: topics.filter((item) => item.pct < 60), strong: topics.filter((item) => item.pct >= 75), mistakes };
   }, [answers, questions]);
 
-  const begin = () => { setAnswers({}); setIndex(0); setScreen('test'); window.scrollTo(0, 0); };
+  const begin = () => { setAnswers({}); setIndex(0); setDeadline(Date.now() + mock.minutes * 60000); setClock(Date.now()); setScreen('test'); window.scrollTo(0, 0); };
   const persistResult = () => savePublicDiagnosticResult(createPublicDiagnosticResult({ grade, target, report }));
+  useEffect(() => {
+    if (screen !== 'test' || !deadline) return undefined;
+    const timer = setInterval(() => {
+      const now = Date.now();
+      setClock(now);
+      if (now >= deadline) {
+        clearInterval(timer);
+        persistResult();
+        setScreen('result');
+        window.scrollTo(0, 0);
+      }
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [screen, deadline, report]);
+  const remainingSec = deadline ? Math.max(0, Math.ceil((deadline - clock) / 1000)) : mock.minutes * 60;
   const next = () => {
-    if (answers[current.id] == null) return;
     if (index < questions.length - 1) setIndex((value) => value + 1);
     else { persistResult(); setScreen('result'); window.scrollTo(0, 0); }
   };
@@ -89,7 +120,7 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
           <span className="public-diag-kicker">✓ {c.free}</span>
           <h1>{c.title}</h1>
           <p>{c.sub}</p>
-          <div className="public-diag-facts"><span>10 {lang === 'ru' ? 'заданий' : 'тапсырма'}</span><span>≈ 7 {lang === 'ru' ? 'минут' : 'минут'}</span><span>{lang === 'ru' ? 'Результат сразу' : 'Нәтиже бірден'}</span></div>
+          <div className="public-diag-facts"><span>{questions.length} {lang === 'ru' ? 'заданий' : 'тапсырма'}</span><span>{mock.minutes} {lang === 'ru' ? 'минут' : 'минут'}</span><span>{lang === 'ru' ? 'Полный формат' : 'Толық формат'}</span></div>
         </section>
         <section className="public-diag-config">
           <label>{c.target}</label>
@@ -101,12 +132,14 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
 
       {screen === 'test' && <main className="public-diag-test">
         <div className="public-diag-progress"><i style={{ width: `${(index + 1) / questions.length * 100}%` }} /></div>
-        <div className="public-diag-testmeta"><span>{c.question} {index + 1} {c.of} {questions.length}</span><b>{grade} {lang === 'ru' ? 'класс' : 'сынып'} · {targetLabel}</b></div>
+        <div className="public-diag-testmeta"><span>{c.question} {index + 1} {c.of} {questions.length}</span><b>{targetLabel} · {formatTime(remainingSec)}</b></div>
         <section className="public-diag-question">
-          <span className="public-diag-topic">{topicName(current.topic, lang)}</span>
-          <h1>{current[lang]}</h1>
-          <div className="public-diag-options">{current.options.map((option, optionIndex) => <button type="button" key={option} className={answers[current.id] === option ? 'on' : ''} onClick={() => setAnswers((value) => ({ ...value, [current.id]: option }))}><i>{String.fromCharCode(65 + optionIndex)}</i><span>{option}</span></button>)}</div>
-          <div className="public-diag-question-foot"><span>{answers[current.id] == null ? c.pick : '✓'}</span><button type="button" className="public-diag-primary" disabled={answers[current.id] == null} onClick={next}>{index === questions.length - 1 ? c.finish : c.next} →</button></div>
+          <span className="public-diag-topic">{subjectNames[current.topic]?.[lang] || topicName(current.topic, lang)}</span>
+          <h1>{current.statement}</h1>
+          {current.image && <img className="public-diag-question-image" src={current.image} alt="" />}
+          {current.options ? <div className="public-diag-options">{current.options.map((option, optionIndex) => <button type="button" key={`${optionIndex}-${option}`} className={answers[current.id] === option ? 'on' : ''} onClick={() => setAnswers((value) => ({ ...value, [current.id]: option }))}><i>{String.fromCharCode(65 + optionIndex)}</i><span>{option}</span></button>)}</div>
+            : <input className="public-diag-answer-input" value={answers[current.id] || ''} onChange={(event) => setAnswers((value) => ({ ...value, [current.id]: event.target.value }))} placeholder={lang === 'ru' ? 'Введите ответ' : 'Жауапты енгізіңіз'} />}
+          <div className="public-diag-question-foot"><button type="button" className="public-diag-secondary" disabled={index === 0} onClick={() => setIndex((value) => value - 1)}>← {lang === 'ru' ? 'Назад' : 'Артқа'}</button><span>{answers[current.id] == null || answers[current.id] === '' ? c.pick : '✓'}</span><button type="button" className="public-diag-primary" onClick={next}>{index === questions.length - 1 ? c.finish : c.next} →</button></div>
         </section>
       </main>}
 
@@ -128,7 +161,7 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
           <div className="public-diag-review-head"><div><span>{c.review}</span><h2>{report.mistakes.length ? mistakeCountLabel : c.allCorrect}</h2></div><strong>{report.correct}/{questions.length}</strong></div>
           {!!report.mistakes.length && <div className="public-diag-review-list">{report.mistakes.map((item, mistakeIndex) => <article key={item.id}>
             <div className="public-diag-review-num">{String(mistakeIndex + 1).padStart(2, '0')}</div>
-            <div className="public-diag-review-copy"><span>{topicName(item.topic, lang)}</span><h3>{item[lang]}</h3><div className="public-diag-answer-pair"><p><small>{c.your}</small><b>{answers[item.id]}</b></p><i>→</i><p className="is-right"><small>{c.right}</small><b>{item.answer}</b></p></div><div className="public-diag-solution"><strong>✓ {c.why}</strong><p>{diagnosticExplanation(item.id, lang)}</p></div></div>
+            <div className="public-diag-review-copy"><span>{subjectNames[item.topic]?.[lang] || topicName(item.topic, lang)}</span><h3>{item.statement}</h3><div className="public-diag-answer-pair"><p><small>{c.your}</small><b>{answers[item.id] || '—'}</b></p><i>→</i><p className="is-right"><small>{c.right}</small><b>{item.answer}</b></p></div></div>
           </article>)}</div>}
         </section>
         <div className="public-diag-actions"><button type="button" className="public-diag-secondary" onClick={begin}>{c.retry}</button><button type="button" className="public-diag-primary" onClick={registerWithResult}>{c.account} →</button></div>
