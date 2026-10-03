@@ -43,7 +43,9 @@ const stories = [
 
   base(`${rows(70,280,['Прогресс','по каждой теме'],76,1.04,800,C.white)}${text(70,490,'Понятно, что повторять дальше.',30,400,C.light)}${screenshot('06-topic-report.png',{x:-50,y:695,w:1060,h:700,angle:4})}${text(75,1560,'Сильные стороны · темы для повторения',27,600,C.white)}`,true),
 
-  base(`${text(70,285,'Разбор ошибок',74,800,C.blue)}${text(70,390,'Ваш ответ и верный — рядом.',30,400,C.muted)}${screenshot('07-error-review.png',{x:70,y:635,w:1060,h:700,angle:-5})}${rect(70,1560,940,142,C.blue,26)}${text(120,1615,'synaq.app',25,600,C.light)}${text(120,1674,'Начать бесплатно',38,800,C.white)}${text(950,1670,'→',54,500,C.white,'end')}`),
+  base(`${text(70,285,'Разбор ошибок',74,800,C.blue)}${text(70,390,'Ваш ответ и верный — рядом.',30,400,C.muted)}${screenshot('07-error-review.png',{x:70,y:635,w:1060,h:700,angle:-5})}${line(70,1560,1010,1560,C.line)}${text(70,1630,'Видно, что стоит повторить',30,600,C.navy)}`),
+
+  base(`${rows(70,285,['Попробуйте','свой вариант'],78,1.04,800,C.white)}${text(70,485,'РФМШ · БИЛ · НИШ',32,600,C.light)}${screenshot('08-landing-cta.png',{x:10,y:745,w:1060,h:420,angle:-3})}${text(70,1310,'Три школы. Один первый шаг.',30,600,C.white)}${rect(70,1440,940,160,C.white,28)}${text(120,1504,'Бесплатно · без регистрации',26,600,C.blue)}${text(120,1567,'Открыть тест →',42,800,C.navy)}${text(70,1720,'synaq.app/diagnostic',32,600,C.white)}`,true),
 ];
 
 stories.forEach((svg,index) => fs.writeFileSync(path.join(out,`synaq-story-${String(index+1).padStart(2,'0')}.svg`),svg));
