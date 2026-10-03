@@ -1,6 +1,7 @@
 const { getAdmin } = require('../backend/lib/firebase-admin');
 const { familyPlan } = require('../backend/lib/plans');
-const { mockCatalog, createMock, restoreMock, gradeMock, publicMock } = require('../backend/lib/mock-bank');
+const { mockCatalog, createWeeklyMock, restoreMock, gradeMock, publicMock } = require('../backend/lib/mock-bank');
+const { PRICE_KZT, weeklyWindow, passId } = require('../backend/lib/weekly-mock');
 
 const SESSION_GRACE_MS = 30 * 60 * 1000;
 const error = (message, status = 400) => Object.assign(new Error(message), { status });
@@ -22,7 +23,7 @@ async function childContext(db, user, tx = null) {
 const sessionRef = (db, uid, id) => db.collection('mockSessions').doc(`${uid}_${id}`);
 const resultRef = (db, uid, id) => db.collection('results').doc(uid).collection('mocks').doc(id);
 const publicSession = async (db, session) => ({
-  test: publicMock(await restoreMock(db, session)), diagnostic: session.diagnostic === true,
+  test: publicMock(await restoreMock(db, session)), diagnostic: false, weekKey: session.weekKey || null,
   startedAt: session.startedAt, deadline: session.deadline, expiresAt: session.expiresAt,
 });
 
@@ -38,8 +39,13 @@ module.exports = async function handler(req, res) {
     if (!body || typeof body !== 'object' || Array.isArray(body)) throw error('bad-body');
 
     if (body.action === 'catalog') {
-      await childContext(db, user);
-      return res.status(200).json({ schools: await mockCatalog(db) });
+      const { family, parentUid } = await childContext(db, user);
+      const window = weeklyWindow();
+      const pass = await db.collection('weeklyMockPasses').doc(passId(parentUid, window.weekKey)).get();
+      const pro = familyPlan(family) === 'pro', paid = pass.exists && pass.data()?.paid === true;
+      return res.status(200).json({ schools: await mockCatalog(db), weekly: {
+        ...window, pro, paid, access: pro || paid, priceKzt: PRICE_KZT,
+      } });
     }
     if (!validId(body.id)) throw error('bad-request');
     const ref = sessionRef(db, user.uid, body.id);
@@ -62,35 +68,30 @@ module.exports = async function handler(req, res) {
       if (!validSchool(body.school) || !Array.isArray(body.excludeQuestionIds)
         || body.excludeQuestionIds.length > 2500
         || body.excludeQuestionIds.some((id) => typeof id !== 'string' || !id || id.length > 200 || id.includes('/'))) throw error('bad-request');
-      const prepared = await createMock(db, body.school, body.excludeQuestionIds);
+      const window = weeklyWindow();
+      if (body.weekKey != null && body.weekKey !== window.weekKey) throw error('week-changed', 409);
+      const prepared = await createWeeklyMock(db, body.school, window.weekKey);
       if (!prepared?.questions?.length) throw error('exam-unavailable', 404);
       const now = Date.now(), day = new Date(now + 5 * 3600000).toISOString().slice(0, 10);
       const session = await db.runTransaction(async (tx) => {
-        const { family } = await childContext(db, user, tx);
+        const { family, parentUid } = await childContext(db, user, tx);
         const existing = await tx.get(ref);
         if (existing.exists) {
           const value = existing.data();
           if (value.uid !== user.uid || value.school !== body.school) throw error('request-conflict', 409);
           return value;
         }
-        const plan = familyPlan(family, now), diagnostic = plan !== 'pro';
-        const statsRef = db.collection('results').doc(user.uid).collection('stats').doc('summary');
-        const claimRef = db.collection('mockDiagnosticClaims').doc(user.uid);
+        const plan = familyPlan(family, now);
+        const passRef = db.collection('weeklyMockPasses').doc(passId(parentUid, window.weekKey));
         const rateRef = db.collection('mockRateLimits').doc(user.uid);
-        const [stats, claim, rate] = await Promise.all([tx.get(statsRef), tx.get(claimRef), tx.get(rateRef)]);
-        if (diagnostic) {
-          const claimData = claim.data() || {};
-          if (stats.data()?.diagnosticMockUsed || claimData.completed
-            || (claim.exists && claimData.sessionId !== body.id && claimData.expiresAt > now)) throw error('pro-required', 403);
-          tx.set(claimRef, { sessionId: body.id, completed: false,
-            expiresAt: now + prepared.timeLimitMin * 60000 + SESSION_GRACE_MS, updatedAt: new Date(now) });
-        }
+        const [pass, rate] = await Promise.all([tx.get(passRef), tx.get(rateRef)]);
+        if (plan !== 'pro' && (!pass.exists || pass.data()?.paid !== true)) throw error('weekly-payment-required', 402);
         const rateData = rate.data() || {}, starts = rateData.day === day ? Number(rateData.starts || 0) : 0;
         if (!Number.isSafeInteger(starts) || starts < 0 || starts >= (plan === 'pro' ? 20 : 3)) throw error('rate-limit', 429);
         tx.set(rateRef, { day, starts: starts + 1, updatedAt: new Date(now) });
         const value = { uid: user.uid, attemptId: body.id, school: prepared.school, title: prepared.title,
           timeLimitMin: prepared.timeLimitMin, sections: prepared.sections, shortened: !!prepared.shortened,
-          targetCount: prepared.targetCount, diagnostic, startedAt: now,
+          targetCount: prepared.targetCount, diagnostic: false, weekKey: window.weekKey, startedAt: now,
           deadline: now + prepared.timeLimitMin * 60000,
           expiresAt: now + prepared.timeLimitMin * 60000 + SESSION_GRACE_MS, completed: false,
           questionRefs: prepared.questions.map((question) => ({ id: question.id, num: question.num,
@@ -115,25 +116,18 @@ module.exports = async function handler(req, res) {
       const now = Date.now();
       const result = await db.runTransaction(async (tx) => {
         await childContext(db, user, tx);
-        const outRef = resultRef(db, user.uid, body.id), statsRef = db.collection('results').doc(user.uid).collection('stats').doc('summary');
-        const [current, saved, stats] = await Promise.all([tx.get(ref), tx.get(outRef), tx.get(statsRef)]);
+        const outRef = resultRef(db, user.uid, body.id);
+        const [current, saved] = await Promise.all([tx.get(ref), tx.get(outRef)]);
         if (!current.exists || current.data().uid !== user.uid) throw error('session-not-found', 404);
         if (saved.exists) return saved.data();
         const session = current.data();
         if (session.completed || session.expiresAt < now) throw error(session.completed ? 'session-completed' : 'session-expired', session.completed ? 409 : 410);
         const spentSec = Math.max(1, Math.min(session.timeLimitMin * 60, Math.floor((now - session.startedAt) / 1000)));
         const payload = { ...graded, school: session.school, spentSec, limitMin: session.timeLimitMin,
-          diagnostic: session.diagnostic === true, shortened: !!session.shortened,
+          diagnostic: false, weekKey: session.weekKey || null, shortened: !!session.shortened,
           targetCount: session.targetCount, sourceId: session.attemptId, verified: true, at: new Date(now) };
         tx.create(outRef, payload);
         tx.update(ref, { completed: true, completedAt: now });
-        if (session.diagnostic) {
-          tx.set(statsRef, { ...(stats.exists ? {} : { xp: 0, studySecs: 0 }), diagnosticMockUsed: true,
-            diagnosticMockAt: new Date(now), updatedAt: new Date(now) }, { merge: true });
-          tx.set(db.collection('mockDiagnosticClaims').doc(user.uid), {
-            sessionId: body.id, completed: true, expiresAt: session.expiresAt, updatedAt: new Date(now),
-          });
-        }
         return payload;
       });
       return res.status(200).json({ result });

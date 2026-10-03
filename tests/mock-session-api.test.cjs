@@ -10,11 +10,12 @@ const secretQuestions = [
   { id: 'q2', num: 2, section: 1, school: 'РФМШ', topic: 'num', statement: '3 + 3?', answer: '6', solution: '3 + 3 = 6' },
 ];
 
-function fixture({ pro = false } = {}) {
+function fixture({ pro = false, paid = false } = {}) {
   const docs = new Map([
     ['childIndex/kid', { parentUid: 'parent' }],
     ['families/parent', { plan: pro ? 'pro' : 'free' }],
     ['families/parent/children/kid', { code: 'bala' }],
+    ...(paid ? [['weeklyMockPasses/pass_parent_2026-09-28', { paid: true, parentUid: 'parent', weekKey: '2026-09-28' }]] : []),
   ]);
   let serial = Promise.resolve();
   const snapshot = (path) => ({ exists: docs.has(path), data: () => docs.get(path) });
@@ -51,7 +52,7 @@ function fixture({ pro = false } = {}) {
   } };
   const mockBank = {
     mockCatalog: async () => [{ code: 'РФМШ', ready: true, count: 2, targetCount: 2, timeLimitMin: 1 }],
-    createMock: async (_db, school) => school === 'РФМШ' ? { school, title: 'Пробник', timeLimitMin: 1,
+    createWeeklyMock: async (_db, school, weekKey) => school === 'РФМШ' ? { school, weekKey, title: 'Пробник', timeLimitMin: 1,
       sections: 1, shortened: false, targetCount: 2, questions: secretQuestions } : null,
     restoreMock: async (_db, session) => ({ id: session.attemptId, school: session.school, title: session.title,
       timeLimitMin: session.timeLimitMin, sections: session.sections,
@@ -67,6 +68,9 @@ function fixture({ pro = false } = {}) {
       if (name === '../backend/lib/firebase-admin') return { getAdmin: () => ({ db, auth }) };
       if (name === '../backend/lib/plans') return plans;
       if (name === '../backend/lib/mock-bank') return mockBank;
+      if (name === '../backend/lib/weekly-mock') return { PRICE_KZT: 2500,
+        weeklyWindow: () => ({ weekKey: '2026-09-28', startsAt: 1, endsAt: 2 }),
+        passId: (parentUid, weekKey) => `pass_${parentUid}_${weekKey}` };
       throw Error(`unexpected ${name}`);
     } };
   vm.runInNewContext(source, context);
@@ -81,12 +85,13 @@ function fixture({ pro = false } = {}) {
 }
 
 test('server creates an answer-free mock session for the linked child', async () => {
-  const f = fixture();
+  const f = fixture({ paid: true });
   const catalog = await f.invoke({ action: 'catalog' });
   assert.equal(catalog.status, 200);
   const started = await f.invoke({ action: 'start', id: 'attempt_12345678', school: 'РФМШ', excludeQuestionIds: [] });
   assert.equal(started.status, 200);
-  assert.equal(started.body.diagnostic, true);
+  assert.equal(started.body.diagnostic, false);
+  assert.equal(started.body.weekKey, '2026-09-28');
   assert.equal(started.body.test.questions.length, 2);
   assert.equal(Object.hasOwn(started.body.test.questions[0], 'answer'), false);
   assert.equal(Object.hasOwn(started.body.test.questions[0], 'solution'), false);
@@ -97,34 +102,51 @@ test('server creates an answer-free mock session for the linked child', async ()
 });
 
 test('server grades and persists a verified result exactly once', async () => {
-  const f = fixture();
+  const f = fixture({ paid: true });
   await f.invoke({ action: 'start', id: 'attempt_12345678', school: 'РФМШ', excludeQuestionIds: [] });
   const first = await f.invoke({ action: 'submit', id: 'attempt_12345678', answers: { 1: '4', 2: '0' }, score: 99 });
   assert.equal(first.status, 200);
   assert.equal(first.body.result.score, 1);
   assert.equal(first.body.result.verified, true);
   assert.equal(f.docs.get('results/kid/mocks/attempt_12345678').score, 1);
-  assert.equal(f.docs.get('results/kid/stats/summary').diagnosticMockUsed, true);
+  assert.equal(f.docs.get('results/kid/mocks/attempt_12345678').weekKey, '2026-09-28');
   const replay = await f.invoke({ action: 'submit', id: 'attempt_12345678', answers: { 1: '0', 2: '6' } });
   assert.equal(replay.status, 200);
   assert.equal(replay.body.result.score, 1);
   assert.equal(replay.body.result.review[0].your, '4');
 });
 
-test('free diagnostic is single-use while Pro can create another server session', async () => {
+test('weekly mock requires Pro or the current paid weekly pass', async () => {
   const free = fixture();
-  await free.invoke({ action: 'start', id: 'attempt_12345678', school: 'РФМШ', excludeQuestionIds: [] });
-  await free.invoke({ action: 'submit', id: 'attempt_12345678', answers: {} });
-  assert.equal((await free.invoke({ action: 'start', id: 'attempt_87654321', school: 'РФМШ', excludeQuestionIds: [] })).status, 403);
+  assert.equal((await free.invoke({ action: 'start', id: 'attempt_12345678', school: 'РФМШ', excludeQuestionIds: [] })).status, 402);
+  const paid = fixture({ paid: true });
+  assert.equal((await paid.invoke({ action: 'start', id: 'attempt_12345678', school: 'РФМШ', excludeQuestionIds: [] })).status, 200);
   const pro = fixture({ pro: true });
   assert.equal((await pro.invoke({ action: 'start', id: 'attempt_12345678', school: 'РФМШ', excludeQuestionIds: [] })).body.diagnostic, false);
   assert.equal((await pro.invoke({ action: 'start', id: 'attempt_87654321', school: 'РФМШ', excludeQuestionIds: [] })).status, 200);
 });
 
 test('parents, forged sessions and malformed answers cannot submit a mock', async () => {
-  const f = fixture();
+  const f = fixture({ paid: true });
   assert.equal((await f.invoke({ action: 'catalog' }, 'parent')).status, 403);
   assert.equal((await f.invoke({ action: 'resume', id: 'missing_12345678' })).status, 404);
   await f.invoke({ action: 'start', id: 'attempt_12345678', school: 'РФМШ', excludeQuestionIds: [] });
   assert.equal((await f.invoke({ action: 'submit', id: 'attempt_12345678', answers: { 1: { correct: true } } })).status, 400);
+});
+
+
+test('a previous week pass does not unlock the current week and stale starts refresh', async () => {
+  const f = fixture();
+  f.docs.set('weeklyMockPasses/pass_parent_2026-09-21', { paid: true });
+  assert.equal((await f.invoke({ action: 'catalog' })).body.weekly.access, false);
+  assert.equal((await f.invoke({ action: 'start', id: 'attempt_12345678', school: 'РФМШ', weekKey: '2026-09-21', excludeQuestionIds: [] })).status, 409);
+});
+
+test('sessions started before weekly rollout can still save a result', async () => {
+  const f = fixture({ pro: true });
+  await f.invoke({ action: 'start', id: 'attempt_12345678', school: 'РФМШ', excludeQuestionIds: [] });
+  delete f.docs.get('mockSessions/kid_attempt_12345678').weekKey;
+  const response = await f.invoke({ action: 'submit', id: 'attempt_12345678', answers: { 1: '4' } });
+  assert.equal(response.status, 200);
+  assert.equal(f.docs.get('results/kid/mocks/attempt_12345678').weekKey, null);
 });

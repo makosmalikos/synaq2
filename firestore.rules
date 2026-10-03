@@ -126,6 +126,8 @@ service cloud.firestore {
     match /diagnosticRateLimits/{id} { allow read, write: if false; }
     match /platformRateLimits/{id} { allow read, write: if false; }
     match /checkoutSessions/{id} { allow read, write: if false; }
+    match /weeklyMockCheckoutSessions/{id} { allow read, write: if false; }
+    match /weeklyMockPasses/{id} { allow read, write: if false; }
     match /results/{childUid}/daily/{day} { allow write: if false; }
 
     // Лимит AI-запросов на пользователя (счётчик пишет только сервер через Admin SDK — клиент не может)

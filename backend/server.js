@@ -4,7 +4,7 @@ const cors = require('cors');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const ENDPOINTS = ['explain', 'checkout', 'subscription-portal', 'entitlement', 'child-create', 'child-password', 'admin-login', 'admin-task', 'admin-leads', 'duel', 'duel-award', 'learning', 'mock-session', 'diagnostic-session', 'lead'];
+const ENDPOINTS = ['explain', 'checkout', 'weekly-mock-checkout', 'subscription-portal', 'entitlement', 'child-create', 'child-password', 'admin-login', 'admin-task', 'admin-leads', 'duel', 'duel-award', 'learning', 'mock-session', 'diagnostic-session', 'lead'];
 
 // These lighter endpoints share the catch-all Vercel function so the project
 // stays within the Hobby plan's 12-function limit. Explicit loaders also make

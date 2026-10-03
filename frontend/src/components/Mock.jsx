@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useLang } from '../i18n.jsx';
 import { translateQuestions } from '../translateQuestions.js';
-import { mockCatalog, mockResume, mockStart, mockSubmit, reviewQuestionIds } from '../mockApi.js';
+import { mockCatalog, mockResume, mockStart, mockSubmit, weeklyMockCheckout } from '../mockApi.js';
 import { loadTopicCatalog } from '../topicCatalog.js';
-import { auth, watchPro, getDiagnosticStatus, getMocks } from '../firebase.js';
+import { auth, watchPro } from '../firebase.js';
 import { buildDiagnosis } from '../diagnosis.js';
 import Explain from './Explain.jsx';
 import BrandLoader from './BrandLoader.jsx';
@@ -13,18 +13,6 @@ import { readMockSession, writeMockSession, clearMockSession, discardMockSession
   readMockStart, writeMockStart, clearMockStart } from '../mockPersistence.js';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
-
-const recentKey = (school, type) => `synaq_recent_${type}_${school}`;
-const readRecent = (school, type) => {
-  try { const value = JSON.parse(localStorage.getItem(recentKey(school, type)) || '[]'); return Array.isArray(value) ? value : []; }
-  catch { return []; }
-};
-const rememberRecent = (school, type, values, limit) => {
-  try {
-    const merged = [...new Set([...values, ...readRecent(school, type)])].slice(0, limit);
-    localStorage.setItem(recentKey(school, type), JSON.stringify(merged));
-  } catch {}
-};
 
 function formatExamTimer(totalSec, lang) {
   const s = Math.max(0, totalSec);
@@ -55,7 +43,8 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   const [school, setSchool] = useState(null);
   const [pause, setPause] = useState(false);
   const [pro, setPro] = useState(null);
-  const [diagUsed, setDiagUsed] = useState(null);
+  const [weekly, setWeekly] = useState(null);
+  const [paying, setPaying] = useState(false);
   const [topics, setTopics] = useState([]);
   const [test, setTest] = useState(null);
   const [meta, setMeta] = useState(null);
@@ -183,20 +172,27 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
 
   useEffect(() => {
     let alive = true;
-    setLoading(true); setLoadError(false); setPro(null); setDiagUsed(null);
+    setLoading(true); setLoadError(false); setPro(null); setWeekly(null);
     if (!uid) { setLoadError(true); setLoading(false); return; }
     const stop = watchPro(uid, (value) => { if (alive && isCurrent()) setPro(value); }, () => {
       if (alive && isCurrent()) { setLoadError(true); setPro(null); }
     });
-    Promise.all([mockCatalog(), loadTopicCatalog(), getDiagnosticStatus(uid)]).then(([list, topics, diagnostic]) => {
+    Promise.all([mockCatalog(), loadTopicCatalog()]).then(([catalog, topics]) => {
       if (alive && isCurrent()) {
-        setSchools(list); setTopics(topics);
-        setDiagUsed((used) => used === true || diagnostic.used);
+        setSchools(catalog.schools || []); setWeekly(catalog.weekly || null); setTopics(topics);
       }
     }).catch(() => { if (alive && isCurrent()) setLoadError(true); })
       .finally(() => { if (alive && isCurrent()) setLoading(false); });
     return () => { alive = false; stop(); };
   }, [uid, loadRetry]);
+
+  useEffect(() => {
+    if (!weekly?.endsAt || school) return;
+    const refresh = () => setLoadRetry((value) => value + 1);
+    const timer = setTimeout(refresh, Math.max(0, weekly.endsAt - Date.now()) + 100);
+    window.addEventListener('focus', refresh);
+    return () => { clearTimeout(timer); window.removeEventListener('focus', refresh); };
+  }, [weekly?.endsAt, school]);
 
   // Держим submitRef синхронным со «свежим» submit на каждый рендер.
   useEffect(() => {
@@ -224,35 +220,25 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     return buildDiagnosis(result.review, topics, lang);
   }, [result, topics, lang]);
 
-  async function startExam(code, diagnostic = false) {
+  async function startExam(code) {
     if (!isCurrent() || startingRef.current || !sessionReady || recoveryError || runRef.current
-      || pro === null || diagUsed === null || (!pro && diagUsed)) return;
+      || pro === null || !weekly?.access) return;
     startingRef.current = true; setStarting(true); setStartError('');
     const generation = generationRef.current;
     const active = () => isCurrent() && generationRef.current === generation;
     try {
-    const history = uid ? (await getMocks(uid)).filter((item) => item.school === code) : [];
-    if (!active()) return;
-    const excludeQuestionIds = [
-      ...readRecent(code, 'questions'),
-      ...history.flatMap((m) => reviewQuestionIds(m.review || [])),
-    ];
     const reserved = readMockStart(uid);
     const requestId = reserved?.school === code ? reserved.id : crypto.randomUUID();
     if (!reserved && !writeMockStart({ uid, id: requestId, school: code })) setRecoveryAvailable(false);
-    const started = await mockStart({ id: requestId, school: code, excludeQuestionIds });
+    const started = await mockStart({ id: requestId, school: code, weekKey: weekly.weekKey, excludeQuestionIds: [] });
     const v = started.test;
     if (!v) throw new Error('empty_exam');
     const qs = await translateQuestions(v.questions, lang);
     if (!active()) return;
-    // Десять полных НИШ-пробников содержат 1800 разных вопросов. Храним запас,
-    // чтобы клиент не начинал повторять старые задания раньше десятой попытки.
-    rememberRecent(code, 'questions', v.questions.map((q) => q.id).filter(Boolean), 2500);
     const startedNow = started.startedAt;
-    const freeRun = started.diagnostic;
     const record = {
       uid, id: requestId, school: code, test: { ...v, questions: qs },
-      meta: { school: code, sections: v.sections, diagnostic: freeRun }, isDiagnosticRun: freeRun,
+      meta: { school: code, sections: v.sections, diagnostic: false, weekKey: started.weekKey }, isDiagnosticRun: false,
       answers: {}, flags: {}, index: 0, startedAt: startedNow,
       deadline: started.deadline, pausedAt: null, pausedMs: 0,
       hideTimer: false, navOpen: false, result: null, pending: null,
@@ -262,7 +248,15 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     applyRun(record); setSaveState('idle');
     } catch (error) {
       if (error?.status >= 400 && error.status < 500 && error.status !== 409) clearMockStart(uid, readMockStart(uid)?.id);
-      if (active()) setStartError(ru ? 'Не удалось запустить тест. Попробуй ещё раз.' : 'Сынақ басталмады. Қайта көр.');
+      if (active()) {
+        if (error.message === 'week-changed' || error.message === 'weekly-payment-required') {
+          clearMockStart(uid, readMockStart(uid)?.id);
+          setLoadRetry((value) => value + 1);
+        }
+        setStartError(error.message === 'week-changed'
+          ? (ru ? 'Началась новая неделя. Выберите обновлённый пробник.' : 'Жаңа апта басталды. Жаңартылған сынақты таңдаңыз.')
+          : (ru ? 'Не удалось запустить тест. Попробуй ещё раз.' : 'Сынақ басталмады. Қайта көр.'));
+      }
     }
     finally { if (active()) { startingRef.current = false; setStarting(false); } }
   }
@@ -287,7 +281,6 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     changeRun({ result: r, pending: null, pausedAt: null });
     if (!clearMockSession(uid, run.id)) setRecoveryAvailable(false);
     pendingSave.current = null;
-    if (run.isDiagnosticRun) setDiagUsed(true);
     setSaveState('saved');
   }
 
@@ -322,6 +315,19 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     alert(t('diag.parentPro'));
   };
 
+  async function buyWeeklyAccess() {
+    if (paying) return;
+    setPaying(true); setStartError('');
+    try {
+      const value = await weeklyMockCheckout();
+      if (value.access) { setLoadRetry((revision) => revision + 1); return; }
+      if (typeof value.url !== 'string' || !/^https:\/\//.test(value.url)) throw new Error('unsafe_checkout');
+      window.location.assign(value.url);
+    } catch {
+      setStartError(ru ? 'Не удалось открыть оплату. Попробуйте ещё раз или обратитесь в поддержку.' : 'Төлемді ашу мүмкін болмады. Қайта көріңіз немесе қолдау қызметіне жазыңыз.');
+    } finally { if (isCurrent()) setPaying(false); }
+  }
+
   if (!sessionReady || (runRef.current && runRef.current.uid !== uid)) return <main><BrandLoader /></main>;
   if (recoveryError) return <main><p role="alert">{ru ? 'Не удалось восстановить сохранённый пробник. Он не удалён. Попробуй ещё раз или явно начни заново.' : 'Сақталған сынақты қалпына келтіру мүмкін болмады. Ол жойылған жоқ. Қайта көр немесе жаңадан баста.'}</p>
     <button type="button" className="btn" onClick={() => setRecoveryRetry((value) => value + 1)}>{ru ? 'Повторить' : 'Қайталау'}</button>
@@ -332,62 +338,38 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
 
   if (!school && loadError) return <main><p role="alert">{ru ? 'Не удалось загрузить тесты, подписку или прогресс. Проверь соединение.' : 'Сынақтар, жазылым немесе прогресс жүктелмеді. Байланысты тексер.'}</p>
     <button className="btn" onClick={() => setLoadRetry((value) => value + 1)}>{ru ? 'Повторить' : 'Қайталау'}</button></main>;
-  if (!school && (loading || pro === null || diagUsed === null)) return <main><BrandLoader /></main>;
+  if (!school && (loading || pro === null || weekly === null)) return <main><BrandLoader /></main>;
 
-  // ── тегін: диагностикалық сынақ немесе Pro upsell ──
-  if (!school && pro === false && diagUsed !== null) {
-    if (!diagUsed) {
-      return (
-        <main>
-          {startNotice}
-          <p className="kicker">{t('diag.freeMock')}</p>
-          <h1>{t('diag.freeMockTitle')}</h1>
-          <p className="muted" style={{ marginTop: 8, lineHeight: 1.6 }}>{t('diag.freeMockSub')}</p>
-          <div className="list" style={{ marginTop: 16 }}>
-            {schools.map((s) => (
-              <div className="row-item" key={s.code}
-                onClick={() => s.ready && !starting && startExam(s.code, true)}
-                style={{ opacity: s.ready ? 1 : 0.5, cursor: s.ready ? 'pointer' : 'default' }}>
-                <div style={{ flex: 1 }}><b>{s.code}</b><p className="muted">{formatLabel(s)}</p>{s.shortened && <small>{shortenedLabel} ({s.count}/{s.targetCount})</small>}</div>
-                <span className="rt">{s.ready ? t('diag.startFree') : t('ui.60')}</span>
-              </div>
-            ))}
-          </div>
-        </main>
-      );
-    }
-    return (
-      <main>
-        <p className="kicker">{t('ui.11')}</p>
-        <h1>{t('ui.12')}</h1>
-        <div className="card" style={{ marginTop: 18, borderColor: 'var(--accent)' }}>
-          <p className="kicker" style={{ color: 'var(--accent)', margin: '0 0 8px' }}>{t('diag.doneFree')}</p>
-          <p style={{ margin: '0 0 14px', fontSize: 15, lineHeight: 1.6 }}>{t('diag.doneFreeSub')}</p>
-          {onGoProgress && (
-            <button type="button" className="btn accent" style={{ marginBottom: 10 }} onClick={onGoProgress}>
-              {t('diag.viewInProgress')}
-            </button>
-          )}
-          <p className="muted" style={{ margin: 0, fontSize: 13.5 }}>{t('diag.parentPro')}</p>
-        </div>
-      </main>
-    );
-  }
-
-  if (!school && pro === null) {
-    return <main><BrandLoader /></main>;
-  }
+  if (!school && !weekly.access) return (
+    <main>
+      {startNotice}
+      <p className="kicker">{ru ? 'ПРОБНИК НЕДЕЛИ' : 'АПТАЛЫҚ СЫНАҚ'}</p>
+      <h1>{ru ? 'Новый пробный тест каждую неделю' : 'Әр апта сайын жаңа сынақ тесті'}</h1>
+      <div className="card" style={{ marginTop: 18, borderColor: 'var(--accent)' }}>
+        <p style={{ margin: '0 0 8px', fontSize: 17, fontWeight: 800 }}>{ru ? 'Доступ ко всем трём вариантам' : 'Үш нұсқаның барлығына қолжетімділік'}</p>
+        <p className="muted" style={{ margin: '0 0 16px', lineHeight: 1.6 }}>
+          {ru ? 'БИЛ, НИШ и РФМШ. Вопросы одинаковы всю неделю и автоматически обновятся в следующий понедельник.' : 'БИЛ, НИШ және РФМШ. Сұрақтар апта бойы өзгермейді және келесі дүйсенбіде автоматты түрде жаңарады.'}
+        </p>
+        <div style={{ fontSize: 28, fontWeight: 850, marginBottom: 14 }}>{weekly.priceKzt?.toLocaleString('ru-RU')} ₸</div>
+        <button type="button" className="btn accent" disabled={paying} onClick={buyWeeklyAccess}>
+          {paying ? (ru ? 'Открываем оплату…' : 'Төлем ашылуда…') : (ru ? 'Купить пробник недели' : 'Апталық сынақты сатып алу')}
+        </button>
+        <button type="button" className="btn" style={{ marginLeft: 8 }} onClick={() => setLoadRetry((value) => value + 1)}>{ru ? 'Уже оплатили? Проверить доступ' : 'Төледіңіз бе? Қолжетімділікті тексеру'}</button>
+        <p className="muted" style={{ margin: '12px 0 0', fontSize: 13 }}>{ru ? 'Для Pro доступ уже включён в подписку.' : 'Pro жазылымында қолжетімділік қосылған.'}</p>
+      </div>
+    </main>
+  );
 
   if (!school) return (
     <main>
       {startNotice}
-      <p className="kicker">{t('ui.11')}</p>
-      <h1>{t('ui.12')}</h1>
-      <p className="muted" style={{ marginTop: 6 }}>{t('ui.13')}</p>
+      <p className="kicker">{ru ? 'ПРОБНИК НЕДЕЛИ' : 'АПТАЛЫҚ СЫНАҚ'} · {weekly.weekKey}</p>
+      <h1>{ru ? 'Выберите школу' : 'Мектепті таңдаңыз'}</h1>
+      <p className="muted" style={{ marginTop: 6 }}>{weekly.pro ? (ru ? 'Включено в Pro. Новые вопросы появятся в понедельник.' : 'Pro құрамына кіреді. Жаңа сұрақтар дүйсенбіде шығады.') : (ru ? 'Оплачено на текущую неделю.' : 'Ағымдағы аптаға төленді.')}</p>
       <div className="list" style={{ marginTop: 16 }}>
         {schools.map((s) => (
           <div className="row-item" key={s.code}
-            onClick={() => s.ready && !starting && startExam(s.code, false)}
+            onClick={() => s.ready && !starting && startExam(s.code)}
             style={{ opacity: s.ready ? 1 : 0.5, cursor: s.ready ? 'pointer' : 'default' }}>
             <div style={{ flex: 1 }}><b>{s.code}</b><p className="muted">{formatLabel(s)}</p>{s.shortened && <small>{shortenedLabel} ({s.count}/{s.targetCount})</small>}</div>
             <span className="rt">{s.ready ? '→' : t('ui.60')}</span>
@@ -436,13 +418,13 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
       {diagnosis && (
         <DiagnosisReport
           diagnosis={diagnosis}
-          pro={!!pro}
+          pro={!!weekly?.access}
           onUnlock={proUnlockHint}
-          onTrainTopic={pro ? onTrainTopic : undefined}
+          onTrainTopic={weekly?.access ? onTrainTopic : undefined}
         />
       )}
 
-      {pro && (
+      {weekly?.access && (
         <>
           <p className="kicker" style={{ marginTop: 22 }}>{t('ui.19')}</p>
           <div className="list">

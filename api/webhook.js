@@ -5,6 +5,7 @@
 const crypto = require('crypto');
 const { getAdmin } = require('../backend/lib/firebase-admin');
 const { familyPlan, planRank } = require('../backend/lib/plans');
+const { passId, validWeekKey } = require('../backend/lib/weekly-mock');
 
 const EVENTS = new Set([
   'payment.succeeded', 'refund.succeeded', 'subscription.active',
@@ -25,6 +26,7 @@ const products = () => ({
   pro: String(process.env.DODO_PRO_PRODUCT_ID || process.env.DODO_PRODUCT_ID || '').trim(),
 });
 const planForProduct = (productId) => Object.entries(products()).find(([, id]) => id && id === productId)?.[0] || '';
+const weeklyProduct = () => String(process.env.DODO_WEEKLY_MOCK_PRODUCT_ID || '').trim();
 const statePlan = (state) => ['standard', 'pro'].includes(state?.plan) ? state.plan : state?.pro === true ? 'pro' : 'free';
 
 async function rawBody(req) {
@@ -164,6 +166,49 @@ async function syncChildrenPro(db, parentUid) {
   }
 }
 
+function paymentProductId(payment) {
+  return idOf(payment?.product_id)
+    || idOf(payment?.product_cart?.[0]?.product_id)
+    || idOf(payment?.items?.[0]?.product_id);
+}
+
+async function applyWeeklyMockPayment(db, event, eventRef, eventId, eventAt) {
+  if (event.type !== 'payment.succeeded' || !weeklyProduct()) return false;
+  const paymentId = idOf(event.data?.payment_id) || idOf(event.data?.id);
+  if (!paymentId) return false;
+  const payment = await providerObject('payments', paymentId);
+  if (paymentProductId(payment) !== weeklyProduct()) return false;
+  if (payment.payment_id !== paymentId || payment.status !== 'succeeded') throw failure('weekly_payment_mismatch');
+  const metadata = { ...(event.data?.metadata || {}), ...(payment.metadata || {}) };
+  const parentUid = idOf(metadata.parentUid), weekKey = metadata.weekKey;
+  const attemptId = idOf(metadata.checkoutAttemptId), sessionId = idOf(payment.checkout_session_id);
+  if (metadata.kind !== 'weekly_mock' || !parentUid || !validWeekKey(weekKey) || !attemptId || !sessionId) {
+    throw failure('invalid_weekly_payment_metadata');
+  }
+  const mode = process.env.DODO_ENV === 'test_mode' ? 'test_mode' : 'live_mode';
+  const checkoutKey = crypto.createHash('sha256').update(`${parentUid}:${weekKey}:${weeklyProduct()}:${mode}`).digest('hex');
+  const checkoutRef = db.collection('weeklyMockCheckoutSessions').doc(checkoutKey);
+  const familyRef = db.collection('families').doc(parentUid);
+  const passRef = db.collection('weeklyMockPasses').doc(passId(parentUid, weekKey));
+  await db.runTransaction(async (tx) => {
+    const [ledger, family, checkout, pass] = await Promise.all([
+      tx.get(eventRef), tx.get(familyRef), tx.get(checkoutRef), tx.get(passRef),
+    ]);
+    if (['processed', 'ignored'].includes(ledger.data()?.status)) return;
+    if (!family.exists) throw failure('family_not_found');
+    const record = checkout.data();
+    if (!checkout.exists || record.parentUid !== parentUid || record.weekKey !== weekKey
+        || record.productId !== weeklyProduct() || record.attemptId !== attemptId
+        || record.sessionId !== sessionId || record.status !== 'ready') throw failure('weekly_checkout_mismatch');
+    if (pass.exists && pass.data()?.paymentId !== paymentId) throw failure('weekly_pass_conflict');
+    tx.set(passRef, { parentUid, weekKey, paid: true, priceKzt: 2500, productId: weeklyProduct(),
+      paymentId, checkoutSessionId: sessionId, purchasedAt: new Date(eventAt), updatedAt: new Date() });
+    tx.set(eventRef, { eventId, type: event.type, eventAt, parentUid, paymentId,
+      weekKey, status: 'processed', processedAt: new Date() });
+  });
+  return true;
+}
+
 async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('POST only');
   if (!process.env.DODO_WEBHOOK_SECRET || !process.env.DODO_PAYMENTS_API_KEY
@@ -185,6 +230,7 @@ async function handler(req, res) {
     const eventRef = db.collection('paymentEvents').doc(crypto.createHash('sha256').update(eventId).digest('hex'));
     const previousEvent = (await eventRef.get()).data();
     if (previousEvent?.status === 'processed' || previousEvent?.status === 'ignored') return res.status(200).send('duplicate');
+    if (await applyWeeklyMockPayment(db, event, eventRef, eventId, eventAt)) return res.status(200).send('ok');
     let parentUid = previousEvent?.status === 'applied' ? previousEvent.parentUid : '';
 
     if (!parentUid) {

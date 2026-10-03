@@ -1,14 +1,14 @@
 import React, { useMemo, useState } from 'react';
 import Brand from './Brand.jsx';
 import { LangSwitch, useLang } from './i18n.jsx';
-import { DIAGNOSTIC_QUESTIONS, diagnosticExplanation, topicName } from './diagnosticData.js';
+import { PUBLIC_DEMO_QUESTIONS, diagnosticExplanation, topicName } from './diagnosticData.js';
 import { createPublicDiagnosticResult, savePublicDiagnosticResult } from './diagnosticPlan.js';
 
 const copy = {
   ru: {
-    free: 'БЕСПЛАТНАЯ ДИАГНОСТИКА', title: 'Узнайте слабые темы по математике',
-    sub: '10 коротких заданий. Без регистрации. Сразу после теста покажем готовность, сильные и слабые стороны.',
-    grade: 'Выберите класс', target: 'Цель подготовки', general: 'Общий уровень', start: 'Начать диагностику',
+    free: 'БЕСПЛАТНЫЙ ПРОБНИК', title: 'Попробуйте тест выбранной школы',
+    sub: 'Три фиксированных демо-варианта: БИЛ, НИШ и РФМШ. Без регистрации, вопросы не меняются.',
+    grade: 'Уровень', target: 'Выберите школу', general: 'Общий уровень', start: 'Начать пробный тест',
     back: 'На главную', question: 'Задание', of: 'из', next: 'Следующее задание', finish: 'Показать результат',
     pick: 'Выберите один ответ', result: 'ВАШ РЕЗУЛЬТАТ', ready: 'Готовность по математике', correct: 'правильных ответов',
     strong: 'Сильные стороны', weak: 'Нужно подтянуть', all: 'Результат по темам', recommendation: 'Что делать дальше',
@@ -20,9 +20,9 @@ const copy = {
     excellent: 'Отличная база', good: 'Хорошая база', medium: 'Есть пробелы', low: 'Нужна системная подготовка',
   },
   kk: {
-    free: 'ТЕГІН ДИАГНОСТИКА', title: 'Математикадан әлсіз тақырыптарды анықта',
-    sub: '10 қысқа тапсырма. Тіркелусіз. Сынақтан кейін дайындық деңгейін, мықты және әлсіз тұстарды бірден көрсетеміз.',
-    grade: 'Сыныпты таңда', target: 'Дайындық мақсаты', general: 'Жалпы деңгей', start: 'Диагностиканы бастау',
+    free: 'ТЕГІН СЫНАҚ', title: 'Таңдаған мектебіңнің тестін байқап көр',
+    sub: 'БИЛ, НИШ және РФМШ үшін үш тұрақты демо-нұсқа. Тіркелусіз, сұрақтар өзгермейді.',
+    grade: 'Деңгей', target: 'Мектепті таңда', general: 'Жалпы деңгей', start: 'Сынақты бастау',
     back: 'Басты бетке', question: 'Тапсырма', of: '/', next: 'Келесі тапсырма', finish: 'Нәтижені көру',
     pick: 'Бір жауапты таңда', result: 'СЕНІҢ НӘТИЖЕҢ', ready: 'Математикаға дайындық', correct: 'дұрыс жауап',
     strong: 'Мықты тұстарың', weak: 'Жетілдіру керек', all: 'Тақырыптар бойынша нәтиже', recommendation: 'Келесі қадам',
@@ -41,11 +41,11 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
   const { lang } = useLang();
   const c = copy[lang] || copy.kk;
   const [screen, setScreen] = useState('setup');
-  const [grade, setGrade] = useState(5);
   const [target, setTarget] = useState('РФМШ');
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState({});
-  const questions = DIAGNOSTIC_QUESTIONS[grade];
+  const grade = target === 'БИЛ' ? 4 : target === 'НИШ' ? 5 : 6;
+  const questions = PUBLIC_DEMO_QUESTIONS[target];
   const current = questions[index];
 
   const report = useMemo(() => {
@@ -92,10 +92,8 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
           <div className="public-diag-facts"><span>10 {lang === 'ru' ? 'заданий' : 'тапсырма'}</span><span>≈ 7 {lang === 'ru' ? 'минут' : 'минут'}</span><span>{lang === 'ru' ? 'Результат сразу' : 'Нәтиже бірден'}</span></div>
         </section>
         <section className="public-diag-config">
-          <label>{c.grade}</label>
-          <div className="public-diag-grades">{[3, 4, 5, 6].map((value) => <button key={value} type="button" className={grade === value ? 'on' : ''} onClick={() => setGrade(value)}>{value}</button>)}</div>
           <label>{c.target}</label>
-          <div className="public-diag-targets">{[{ id: 'general', label: c.general }, ...schools.map((value) => ({ id: value, label: value }))].map((item) => <button key={item.id} type="button" className={target === item.id ? 'on' : ''} onClick={() => setTarget(item.id)}>{item.label}</button>)}</div>
+          <div className="public-diag-targets">{schools.map((value) => ({ id: value, label: value })).map((item) => <button key={item.id} type="button" className={target === item.id ? 'on' : ''} onClick={() => { setTarget(item.id); setAnswers({}); setIndex(0); }}>{item.label}</button>)}</div>
           <button type="button" className="public-diag-primary" onClick={begin}>{c.start} →</button>
           <small>{lang === 'ru' ? 'Email и номер телефона не нужны' : 'Email мен телефон нөмірі қажет емес'}</small>
         </section>

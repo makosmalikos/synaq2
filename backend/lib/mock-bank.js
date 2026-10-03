@@ -3,6 +3,7 @@ const SPECS = Object.freeze({
   'НИШ': { count: 180, minutes: 240, subjects: [['math', 40, 1], ['kolzar', 60, 1], ['science', 20, 1], ['eng', 20, 2], ['rus', 20, 2], ['kaz', 20, 2]] },
   'БИЛ': { count: 60, minutes: 110, subjects: [['math', 40, 1], ['logic', 10, 1], ['reading', 10, 1]] },
 });
+const { deterministicOrder } = require('./weekly-mock');
 
 let bankPromise;
 async function loadBank(db) {
@@ -72,6 +73,23 @@ async function createMock(db, school, excluded = []) {
     targetCount: info.targetCount, questions };
 }
 
+async function createWeeklyMock(db, school, weekKey) {
+  const pool = await loadBank(db), spec = SPECS[school];
+  if (!spec) return null;
+  const info = availability(pool, school);
+  if (!info.ready) return null;
+  const questions = [];
+  for (const [subject, target, section] of spec.subjects) {
+    const candidates = deterministicOrder(poolFor(pool, school, subject), `${weekKey}:${school}:${subject || 'all'}`);
+    for (const question of candidates.slice(0, target)) {
+      questions.push({ ...question, num: questions.length + 1, subject: subject || question.subject || null, section });
+    }
+  }
+  return { school, title: `${school} · Недельный пробник`, weekKey,
+    timeLimitMin: info.timeLimitMin, sections: info.sections, shortened: info.shortened,
+    targetCount: info.targetCount, questions };
+}
+
 async function restoreMock(db, session) {
   const pool = await loadBank(db), byId = new Map(pool.map((question) => [question.id, question]));
   const questions = (session.questionRefs || []).map((ref, index) => {
@@ -112,4 +130,4 @@ function publicMock(variant) {
   return { ...variant, questions: variant.questions.map(publicQuestion) };
 }
 
-module.exports = { SPECS, mockCatalog, createMock, restoreMock, gradeMock, publicMock };
+module.exports = { SPECS, mockCatalog, createMock, createWeeklyMock, restoreMock, gradeMock, publicMock };

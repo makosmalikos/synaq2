@@ -456,7 +456,7 @@ export default function Landing({ onStart, onDiagnostic }) {
       <a href="#how">{t('lp.2')}</a>
       <a href="#schools">{t('lp.3')}</a>
       <a href="#parents">{t('lp.4')}</a>
-      <a href="#diagnostic">Диагностика</a>
+      <a href="#diagnostic">{lang === 'ru' ? 'Бесплатный пробник' : 'Тегін сынақ'}</a>
       <a href="#pricing">{t('lp.5')}</a>
     </div>
     <div className="lp-header-actions">
@@ -470,7 +470,7 @@ export default function Landing({ onStart, onDiagnostic }) {
       <a href="#how" onClick={(e) => handleMobileNav(e, '#how')}>{t('lp.2')}</a>
       <a href="#schools" onClick={(e) => handleMobileNav(e, '#schools')}>{t('lp.3')}</a>
       <a href="#parents" onClick={(e) => handleMobileNav(e, '#parents')}>{t('lp.4')}</a>
-      <a href="#diagnostic" onClick={(e) => handleMobileNav(e, '#diagnostic')}>Диагностика</a>
+      <a href="#diagnostic" onClick={(e) => handleMobileNav(e, '#diagnostic')}>{lang === 'ru' ? 'Бесплатный пробник' : 'Тегін сынақ'}</a>
       <a href="#pricing" onClick={(e) => handleMobileNav(e, '#pricing')}>{t('lp.5')}</a>
       <div className="lp-mobile-language"><span>Тіл / Язык</span><LangSwitch /></div>
     </div>
@@ -484,7 +484,7 @@ export default function Landing({ onStart, onDiagnostic }) {
       <p style={{fontSize:'18px',lineHeight:'1.55',color:'#60758A',margin:'0 auto 26px',maxWidth:'720px'}}>{t('lp.11')}</p>
       <div className="lp-hero-actions" style={{display:'flex',justifyContent:'center',gap:'13px',flexWrap:'wrap'}}>
         <a href="#" onClick={handleStart} className="lp-cta" style={{background:'#1D4ED8',color:'#FFFFFF',padding:'15px 32px',borderRadius:'12px',font:'600 16px \'Golos Text\',sans-serif'}}>{t('lp.12')}</a>
-        <a href="#diagnostic" className="lp-ghost" style={{padding:'15px 28px',borderRadius:'12px',border:'1px solid rgba(19,40,60,.16)',font:'600 16px \'Golos Text\',sans-serif',color:'#13283C'}}>{lang === 'ru' ? 'Бесплатная диагностика' : 'Тегін диагностика'}</a>
+        <a href="#diagnostic" className="lp-ghost" style={{padding:'15px 28px',borderRadius:'12px',border:'1px solid rgba(19,40,60,.16)',font:'600 16px \'Golos Text\',sans-serif',color:'#13283C'}}>{lang === 'ru' ? 'Бесплатный пробник' : 'Тегін сынақ'}</a>
       </div>
     </div>
 
@@ -496,9 +496,9 @@ export default function Landing({ onStart, onDiagnostic }) {
     <div className="lp-diagnostic-card">
       <div className="lp-diagnostic-copy">
         <span>{lang === 'ru' ? 'БЕСПЛАТНО · БЕЗ РЕГИСТРАЦИИ' : 'ТЕГІН · ТІРКЕЛУСІЗ'}</span>
-        <h2>{lang === 'ru' ? 'Узнайте слабые темы ребёнка за 7 минут' : 'Баланың әлсіз тақырыптарын 7 минутта анықтаңыз'}</h2>
-        <p>{lang === 'ru' ? '10 заданий для 3–6 класса. После теста покажем готовность, результат по каждой теме и понятный план подготовки.' : '3–6 сыныпқа арналған 10 тапсырма. Соңында дайындық деңгейін, әр тақырыптың нәтижесін және нақты дайындық жоспарын көрсетеміз.'}</p>
-        <button type="button" onClick={onDiagnostic}>{lang === 'ru' ? 'Пройти диагностику' : 'Диагностикадан өту'} →</button>
+        <h2>{lang === 'ru' ? 'Попробуйте тест БИЛ, НИШ или РФМШ' : 'БИЛ, НИШ немесе РФМШ тестін байқап көріңіз'}</h2>
+        <p>{lang === 'ru' ? 'По одному бесплатному фиксированному варианту для каждой школы. 10 заданий, результат и разбор сразу после теста.' : 'Әр мектепке бір тегін тұрақты нұсқа. 10 тапсырма, нәтиже және талдау сынақтан кейін бірден көрсетіледі.'}</p>
+        <button type="button" onClick={onDiagnostic}>{lang === 'ru' ? 'Выбрать бесплатный тест' : 'Тегін тестті таңдау'} →</button>
       </div>
       <div className="lp-diagnostic-preview" aria-hidden="true">
         <div className="lp-diagnostic-score"><strong>68%</strong><span>{lang === 'ru' ? 'готовность' : 'дайындық'}</span></div>

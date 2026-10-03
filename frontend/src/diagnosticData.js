@@ -111,6 +111,15 @@ export const DIAGNOSTIC_QUESTIONS = {
   ],
 };
 
+// Three fixed landing variants. They deliberately do not depend on date,
+// random order or the private platform bank, so every visitor sees the same
+// questions for the selected school until we intentionally edit this mapping.
+export const PUBLIC_DEMO_QUESTIONS = Object.freeze({
+  'РФМШ': DIAGNOSTIC_QUESTIONS[6],
+  'НИШ': DIAGNOSTIC_QUESTIONS[5],
+  'БИЛ': DIAGNOSTIC_QUESTIONS[4],
+});
+
 export const topicName = (topic, lang) => T[topic]?.[lang] || topic;
 
 export function validateDiagnosticData() {

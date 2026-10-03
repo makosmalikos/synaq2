@@ -20,7 +20,7 @@ export default function App() {
   });
   // Preserve navigation when Back remounts the lazy cabinet, without keeping
   // its Firebase listeners and active exercise timers alive on public pages.
-  const [tab, setTab] = useState(() => duelCode ? 'duel' : 'home');
+  const [tab, setTab] = useState(() => new URLSearchParams(window.location.search).has('weeklyMock') ? 'mock' : duelCode ? 'duel' : 'home');
   const [trainTopic, setTrainTopic] = useState(null);
   const [tabBeforeSubscription, setTabBeforeSubscription] = useState('home');
 

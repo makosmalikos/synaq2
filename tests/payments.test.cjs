@@ -14,7 +14,7 @@ const active = (id, extra = {}) => ({ subscription_id: id, status: 'active', pro
 const event = (type, id = 'sub-1', at = NOW - 1000, extra = {}) => ({ type,
   timestamp: new Date(at).toISOString(), data: { subscription_id: id, ...extra } });
 
-function fixture(file = 'webhook.js') {
+function fixture(file = 'webhook.js', { weekly = false } = {}) {
   const sourcePath = file === 'entitlement.js'
     ? `${__dirname}/../backend/handlers/${file}`
     : `${__dirname}/../api/${file}`;
@@ -44,7 +44,8 @@ function fixture(file = 'webhook.js') {
       if (!reference.query) return snap(reference.path);
       return { docs: [...docs.keys()].filter((key) => key.startsWith(reference.query + '/')
         && docs.get(key)[reference.key] === reference.value).map(snap) };
-    }, set(reference, data, options) { writes.push([reference.path, data, options]); } };
+    }, set(reference, data, options) { writes.push([reference.path, data, options]); },
+      create(reference, data) { assert.equal(docs.has(reference.path), false); writes.push([reference.path, data]); } };
     const result = await callback(tx);
     if (mirrorFailures && writes.some(([path]) => path.startsWith('childIndex/'))) {
       mirrorFailures--;
@@ -58,10 +59,12 @@ function fixture(file = 'webhook.js') {
     console: { error() {}, warn() {}, log() {} },
     process: { env: { DODO_WEBHOOK_SECRET: 'whsec_' + SECRET.toString('base64'), DODO_PAYMENTS_API_KEY: 'test-key',
       DODO_PRODUCT_ID: 'pro-product', DODO_STANDARD_PRODUCT_ID: 'standard-product', FIREBASE_PROJECT_ID: 'test-project', FIREBASE_CLIENT_EMAIL: 'test-email',
-      FIREBASE_PRIVATE_KEY: 'test-private-key', APP_URL: 'https://example.test' } },
+      FIREBASE_PRIVATE_KEY: 'test-private-key', APP_URL: 'https://example.test',
+      ...(weekly ? { DODO_WEEKLY_MOCK_PRODUCT_ID: 'weekly-product' } : {}) } },
     require(name) {
-      if (name === 'crypto') return crypto;
+      if (name === 'crypto' || name === 'node:crypto') return crypto;
       if (name === '../backend/lib/plans' || name === '../lib/plans') return plans;
+      if (name === '../backend/lib/weekly-mock') return require('../backend/lib/weekly-mock');
       if (name === '../backend/lib/firebase-admin' || name === '../lib/firebase-admin') return { getAdmin: () => ({ auth, db }) };
       throw Error('Unexpected module ' + name);
     },
@@ -117,6 +120,24 @@ test('Standard subscription is stored as Standard without granting Pro', async (
   assert.equal(family.plan, 'standard');
   assert.equal(family.pro, false);
   assert.ok(family.planExpiresAt instanceof Date);
+});
+
+test('successful one-time weekly product grants only the verified family week pass', async () => {
+  const f = fixture('webhook.js', { weekly: true });
+  const weekKey = '2026-09-28', attemptId = 'attempt_weekly_1', sessionId = 'cks_weekly_1';
+  const checkoutKey = crypto.createHash('sha256').update(`parent:${weekKey}:weekly-product:live_mode`).digest('hex');
+  f.docs.set(`weeklyMockCheckoutSessions/${checkoutKey}`, { kind: 'weekly_mock', parentUid: 'parent',
+    weekKey, productId: 'weekly-product', attemptId, sessionId, status: 'ready' });
+  f.provider.set('payments/pay-weekly', { payment_id: 'pay-weekly', status: 'succeeded',
+    checkout_session_id: sessionId, product_cart: [{ product_id: 'weekly-product' }],
+    metadata: { kind: 'weekly_mock', parentUid: 'parent', weekKey, checkoutAttemptId: attemptId } });
+  const result = await f.invoke(event('payment.succeeded', undefined, NOW - 1000, { payment_id: 'pay-weekly' }), { id: 'weekly-paid' });
+  assert.equal(result.status, 200);
+  const passKey = crypto.createHash('sha256').update(`parent:${weekKey}`).digest('hex');
+  const pass = f.docs.get(`weeklyMockPasses/${passKey}`);
+  assert.equal(pass.paid, true);
+  assert.equal(pass.priceKzt, 2500);
+  assert.equal(f.docs.get('families/parent').pro, undefined);
 });
 
 test('unresolved parent is not acknowledged; payment can establish mapping for later retries', async () => {
@@ -270,4 +291,39 @@ test('child entitlement checks source family and expires even without expiry web
   assert.deepEqual((await f.invoke({})).body, { plan: 'free', standard: false, pro: false, expiresAt: null });
   f.docs.set('families/parent', { plan: 'standard', planExpiresAt: new Date(future) });
   assert.deepEqual((await f.invoke({})).body, { plan: 'standard', standard: true, pro: false, expiresAt: future });
+});
+
+
+test('weekly checkout requires authentication and reuses a verified unpaid session', async () => {
+  const f = fixture('weekly-mock-checkout.js', { weekly: true });
+  assert.equal((await f.invoke({}, { token: '' })).status, 401);
+  f.provider.set('checkouts', { session_id: 'cks_weekly', checkout_url: 'https://checkout.dodopayments.com/session/cks_weekly' });
+  const first = await f.invoke({});
+  assert.equal(first.status, 200);
+  assert.equal(first.body.priceKzt, 2500);
+  f.provider.set('checkouts/cks_weekly', { id: 'cks_weekly', payment_status: null });
+  const replay = await f.invoke({});
+  assert.equal(replay.status, 200);
+  assert.equal(replay.body.url, first.body.url);
+  assert.equal(f.calls.filter((call) => call.options.method === 'POST').length, 1);
+});
+
+test('weekly checkout bypasses charging Pro and rejects unsafe provider redirects', async () => {
+  const pro = fixture('weekly-mock-checkout.js', { weekly: true });
+  pro.docs.set('families/parent', { plan: 'pro' });
+  assert.equal((await pro.invoke({})).body.access, true);
+  assert.equal(pro.calls.length, 0);
+  const free = fixture('weekly-mock-checkout.js', { weekly: true });
+  free.provider.set('checkouts', { session_id: 'cks_weekly', checkout_url: 'https://example.test/session/cks_weekly' });
+  assert.equal((await free.invoke({})).status, 503);
+  assert.equal((await free.invoke({})).status, 503);
+  assert.equal(free.calls.length, 1);
+});
+
+test('enabling weekly payments preserves subscription payment handling', async () => {
+  const f = fixture('webhook.js', { weekly: true });
+  f.provider.set('payments/pay-pro', { subscription_id: 'sub-1', metadata: { parentUid: 'parent' } });
+  const response = await f.invoke(event('payment.succeeded', undefined, NOW - 1000, { payment_id: 'pay-pro' }));
+  assert.equal(response.status, 200);
+  assert.equal(f.docs.get('families/parent').pro, true);
 });
