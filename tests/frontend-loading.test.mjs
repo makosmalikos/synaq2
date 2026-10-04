@@ -21,7 +21,7 @@ function staticModules(entry, seen = new Set()) {
 }
 
 test('public entry and diagnostic do not statically import Firebase or the exam bank', () => {
-  for (const entry of ['main.jsx', 'PublicDiagnostic.jsx']) {
+  for (const entry of ['main.jsx', 'PublicDiagnostic.jsx', 'FreeDiagnostic.jsx']) {
     const modules = [...staticModules(entry)];
     assert.ok(!modules.some((name) => /firebase/i.test(name) || /\/(?:bank\.js|data\.js|PlatformApp\.jsx|Auth\.jsx)$/.test(name)), `${entry}: ${modules.join(', ')}`);
   }
@@ -31,6 +31,9 @@ test('public routing preserves direct app/diagnostic paths but rejects unrelated
   for (const pathname of ['/app', '/app/', '/app/child']) assert.equal(readRoute(pathname), 'app');
   for (const pathname of ['/diagnostic', '/diagnostic/']) assert.equal(readRoute(pathname), 'diagnostic');
   for (const pathname of ['/', '/application', '/diagnostics', '/other']) assert.equal(readRoute(pathname), 'landing');
+  for (const pathname of ['/free-diagnostic', '/free-diagnostic/', '/free-diagnostic/start']) assert.equal(readRoute(pathname), 'free-diagnostic');
+  assert.equal(readRoute('/free-diagnostics'), 'landing');
+  assert.equal(routePath('free-diagnostic'), '/free-diagnostic');
   assert.equal(routePath('app'), '/app');
   assert.equal(routePath('diagnostic'), '/diagnostic');
   assert.equal(routePath('landing'), '/');

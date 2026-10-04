@@ -65,7 +65,7 @@ function HeroVisual() {
   );
 }
 
-export default function Landing({ onStart, onDiagnostic }) {
+export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
   const { t, lang } = useLang();
   const [menuOpen, setMenuOpen] = React.useState(false);
   const leadPendingRef = React.useRef(false);
@@ -82,6 +82,7 @@ export default function Landing({ onStart, onDiagnostic }) {
   React.useEffect(() => {
     const selectors = [
       '#diagnostic > div',
+      '#free-diagnostic > div',
       '#how > .lp-pad > div:first-child',
       '#how .lp-live-demo-card',
       '#how .lp-steps .lp-card',
@@ -171,7 +172,7 @@ export default function Landing({ onStart, onDiagnostic }) {
   .lp-nav{width:100%;max-width:1440px;min-height:92px;margin:0 auto;padding:16px 50px!important}
   .lp-header-home{display:inline-flex;flex:none}
   .lp-header-brand{min-width:0!important;width:auto!important;height:auto!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
-  .lp-navlinks{gap:40px!important;font:650 15px 'Manrope',sans-serif!important;color:#29465F!important}
+  .lp-navlinks{gap:22px!important;font:650 15px 'Manrope',sans-serif!important;color:#29465F!important}
   .lp-navlinks a{position:relative;padding:11px 0;transition:color .18s ease}
   .lp-navlinks a:after{content:'';position:absolute;left:50%;right:50%;bottom:3px;height:2px;border-radius:99px;background:#2F80ED;transition:left .18s ease,right .18s ease}
   .lp-navlinks a:hover{color:#2F80ED}
@@ -353,7 +354,7 @@ export default function Landing({ onStart, onDiagnostic }) {
   @keyframes lpSignalFloatB{0%,100%{transform:translate3d(0,0,0) rotate(.3deg)}50%{transform:translate3d(-10px,-8px,0) rotate(-.5deg)}}
   @keyframes lpSignalFloatC{0%,100%{transform:translate3d(0,0,0) rotate(-.2deg)}50%{transform:translate3d(8px,-9px,0) rotate(.4deg)}}
   @keyframes lpIconPulse{0%,100%{transform:scale(1);box-shadow:inset 0 0 0 1px rgba(29,78,216,.08),0 0 0 0 rgba(59,130,246,0)}50%{transform:scale(1.08);box-shadow:inset 0 0 0 1px rgba(29,78,216,.12),0 0 0 7px rgba(59,130,246,.1)}}
-  @media(max-width:1120px){
+  @media(max-width:1280px){
     .lp-nav{min-height:78px;padding:11px 22px!important}
     .lp-navlinks{display:none!important}
     .lp-menu-toggle{display:flex}
@@ -457,6 +458,7 @@ export default function Landing({ onStart, onDiagnostic }) {
       <a href="#how">{t('lp.2')}</a>
       <a href="#schools">{t('lp.3')}</a>
       <a href="#parents">{t('lp.4')}</a>
+      <a href="#free-diagnostic">{lang === 'ru' ? 'Бесплатная диагностика' : 'Тегін диагностика'}</a>
       <a href="#diagnostic">{lang === 'ru' ? 'Бесплатный пробник' : 'Тегін сынақ'}</a>
       <a href="#pricing">{t('lp.5')}</a>
     </div>
@@ -471,6 +473,7 @@ export default function Landing({ onStart, onDiagnostic }) {
       <a href="#how" onClick={(e) => handleMobileNav(e, '#how')}>{t('lp.2')}</a>
       <a href="#schools" onClick={(e) => handleMobileNav(e, '#schools')}>{t('lp.3')}</a>
       <a href="#parents" onClick={(e) => handleMobileNav(e, '#parents')}>{t('lp.4')}</a>
+      <a href="#free-diagnostic" onClick={(e) => handleMobileNav(e, '#free-diagnostic')}>{lang === 'ru' ? 'Бесплатная диагностика' : 'Тегін диагностика'}</a>
       <a href="#diagnostic" onClick={(e) => handleMobileNav(e, '#diagnostic')}>{lang === 'ru' ? 'Бесплатный пробник' : 'Тегін сынақ'}</a>
       <a href="#pricing" onClick={(e) => handleMobileNav(e, '#pricing')}>{t('lp.5')}</a>
       <div className="lp-mobile-language"><span>Тіл / Язык</span><LangSwitch /></div>
@@ -485,12 +488,33 @@ export default function Landing({ onStart, onDiagnostic }) {
       <p style={{fontSize:'18px',lineHeight:'1.55',color:'#60758A',margin:'0 auto 26px',maxWidth:'720px'}}>{t('lp.11')}</p>
       <div className="lp-hero-actions" style={{display:'flex',justifyContent:'center',gap:'13px',flexWrap:'wrap'}}>
         <a href="#" onClick={handleStart} className="lp-cta" style={{background:'#1D4ED8',color:'#FFFFFF',padding:'15px 32px',borderRadius:'12px',font:'600 16px \'Golos Text\',sans-serif'}}>{t('lp.12')}</a>
+        <a href="#free-diagnostic" className="lp-ghost" style={{padding:'15px 28px',borderRadius:'12px',border:'1px solid rgba(19,40,60,.16)',font:"600 16px 'Golos Text',sans-serif",color:'#13283C'}}>{lang === 'ru' ? 'Бесплатная диагностика' : 'Тегін диагностика'}</a>
         <a href="#diagnostic" className="lp-ghost" style={{padding:'15px 28px',borderRadius:'12px',border:'1px solid rgba(19,40,60,.16)',font:'600 16px \'Golos Text\',sans-serif',color:'#13283C'}}>{lang === 'ru' ? 'Бесплатный пробник' : 'Тегін сынақ'}</a>
       </div>
     </div>
 
     
     <HeroVisual />
+  </section>
+
+  <section id="free-diagnostic" className="lp-diagnostic-section">
+    <div className="lp-diagnostic-card">
+      <div className="lp-diagnostic-copy">
+        <span>{lang === 'ru' ? 'БЕСПЛАТНАЯ ДИАГНОСТИКА · БЕЗ РЕГИСТРАЦИИ' : 'ТЕГІН ДИАГНОСТИКА · ТІРКЕЛУСІЗ'}</span>
+        <h2>{lang === 'ru' ? 'Узнайте, какие темы стоит подтянуть' : 'Қай тақырыптарды қайталау керегін анықтаңыз'}</h2>
+        <p>{lang === 'ru' ? '10 коротких заданий по математике для 3–6 классов. Примерно за 7 минут вы получите оценку по темам, разбор ошибок и план подготовки на неделю.' : '3–6 сыныптарға арналған математикадан 10 қысқа тапсырма. Шамамен 7 минутта тақырыптар бойынша баға, қателерді талдау және бір апталық дайындық жоспарын аласыз.'}</p>
+        <button type="button" onClick={onFreeDiagnostic}>{lang === 'ru' ? 'Пройти бесплатную диагностику' : 'Тегін диагностикадан өту'} →</button>
+      </div>
+      <div className="lp-diagnostic-preview" aria-hidden="true">
+        <div className="lp-diagnostic-score"><strong>10</strong><span>{lang === 'ru' ? 'коротких заданий' : 'қысқа тапсырма'}</span></div>
+        <div className="lp-diagnostic-bars">
+          <div><span>{lang === 'ru' ? 'Сильные темы' : 'Мықты тақырыптар'}</span><i><b style={{width:'86%'}} /></i><em>✓</em></div>
+          <div className="weak"><span>{lang === 'ru' ? 'Точки роста' : 'Даму нүктелері'}</span><i><b style={{width:'45%'}} /></i><em>↗</em></div>
+          <div><span>{lang === 'ru' ? 'Личный план' : 'Жеке жоспар'}</span><i><b style={{width:'70%'}} /></i><em>7 {lang === 'ru' ? 'дн.' : 'күн'}</em></div>
+        </div>
+        <div className="lp-diagnostic-note">◷ <span>{lang === 'ru' ? '≈ 7 минут · результат сразу' : '≈ 7 минут · нәтиже бірден'}</span></div>
+      </div>
+    </div>
   </section>
 
   <section id="diagnostic" className="lp-diagnostic-section">

@@ -7,6 +7,7 @@ import { readRoute, routePath, readDuelCode } from './routes.js';
 
 // Публичные страницы не зависят от Firebase, сессии и банка экзаменационных задач.
 const PlatformApp = lazy(() => import('./PlatformApp.jsx'));
+const FreeDiagnostic = lazy(() => import('./FreeDiagnostic.jsx'));
 const PublicDiagnostic = lazy(() => import('./PublicDiagnostic.jsx'));
 
 export default function App() {
@@ -39,7 +40,8 @@ export default function App() {
   return (
     <ScreenBoundary key={route} lang={lang}>
       <Suspense fallback={<BrandLoader fullScreen />}>
-        {route === 'landing' && <Landing onStart={() => go('app')} onDiagnostic={() => go('diagnostic')} />}
+        {route === 'landing' && <Landing onStart={() => go('app')} onDiagnostic={() => go('diagnostic')} onFreeDiagnostic={() => go('free-diagnostic')} />}
+        {route === 'free-diagnostic' && <FreeDiagnostic onBack={() => go('landing')} onRegister={(result) => { setDiagnosticResult(result); go('app'); }} />}
         {route === 'diagnostic' && <PublicDiagnostic onBack={() => go('landing')} onRegister={(result) => { setDiagnosticResult(result); go('app'); }} />}
         {route === 'app' && <PlatformApp
           initialDiagnosticPlan={diagnosticResult} onHome={() => go('landing')} duelCode={duelCode}

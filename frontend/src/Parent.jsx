@@ -9,6 +9,7 @@ import {
 import { topicStats, readiness, mockSeries } from './analytics.js';
 import { loadTopicCatalog } from './topicCatalog.js';
 import Brand from './Brand.jsx';
+import ParentDashboard from './ParentDashboard.jsx';
 import BrandLoader from './components/BrandLoader.jsx';
 import { buildDiagnosticShareText, daysUntilDiagnostic } from './platformDiagnostic.js';
 import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination, isDodoPortalDestination } from './checkoutMessages.js';
@@ -325,7 +326,7 @@ export default function Parent({ onExit }) {
   };
 
   return (
-    <div className="app">
+    <div className="app parent-app">
       <header>
         <Logo />
         <button className="logout" onClick={exit}>{t('ui.26')}</button>
@@ -378,12 +379,16 @@ export default function Parent({ onExit }) {
               <h1 style={{ margin: '0 0 4px' }}>{text('Привет', 'Сәлем')}, {me}!</h1>
               <p className="muted" style={{ margin: '0 0 20px' }}>
                 {children.length
-                  ? text(`Детей в аккаунте: ${children.length}. Выберите ребёнка, чтобы увидеть прогресс.`, `${children.length} бала тіркелген. Прогресті көру үшін балаңызды таңдаңыз.`)
+                  ? text('Всё важное о подготовке ребёнка — в одном месте.', 'Баланың дайындығы туралы маңызды ақпарат — бір жерде.')
                   : text('Добавьте ребёнка, чтобы он мог начать подготовку.', 'Балаңызды қосыңыз — сол арқылы ол дайындықты бастайды.')}
               </p>
             </>
           )}
 
+          <ParentDashboard children={children} lang={lang} onDetails={openResults} />
+
+          <details className="pd-settings" open={paymentPending || !!paymentIssue || !!portalError || undefined}>
+            <summary>{text('Тариф и настройки аккаунта', 'Тариф және аккаунт баптаулары')} <span>{plan?.toUpperCase() || '…'}</span></summary>
           {/* Үш тариф: тегін, Standard және Pro. */}
           {plan !== null && (
             <div style={{
@@ -476,6 +481,7 @@ export default function Parent({ onExit }) {
           )}
 
           <LoginPasswordCard t={t} />
+          </details>
 
           <div className="row">
             <h1 style={{ margin: 0 }}>{t('ui.27')}</h1>
