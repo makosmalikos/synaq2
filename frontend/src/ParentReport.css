@@ -1,0 +1,65 @@
+.pd-report { padding-top: 24px; }
+.pdr-back { display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:1px solid #DCE7F5; border-radius:12px; background:#fff; color:#56738E; font:650 12px 'Golos Text',sans-serif; cursor:pointer; }
+.pdr-heading { display:flex; align-items:center; justify-content:space-between; gap:20px; margin:23px 0; }
+.pdr-child { display:flex; align-items:center; gap:16px; min-width:0; }
+.pdr-child>.pet-avatar { flex:none; }
+.pdr-heading h1 { margin:5px 0 6px; color:#173252; font:800 32px/1.15 'Geologica','Golos Text',sans-serif; letter-spacing:-.035em; overflow-wrap:anywhere; }
+.pdr-heading p { margin:0; color:#71869A; font:500 13px/1.5 'Golos Text',sans-serif; }
+.pdr-topics { padding:27px; border:1px solid #DFEAF6; border-radius:25px; background:linear-gradient(135deg,#fff,#F5F9FF); scroll-margin-top:24px; }
+.pdr-section-heading { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.pdr-section-heading h2 { margin:7px 0; font:800 25px/1.2 'Geologica',sans-serif; letter-spacing:-.03em; color:#173252; }
+.pdr-section-heading p { margin:0; font:500 13px/1.5 'Golos Text',sans-serif; color:#71869A; }
+.pdr-filters { display:flex; flex-wrap:wrap; gap:8px; margin:22px 0; }
+.pdr-filters button { display:flex; align-items:center; gap:8px; padding:10px 13px; border:1px solid #DFE8F5; border-radius:12px; background:white; color:#6D849B; font:650 11px 'Golos Text',sans-serif; cursor:pointer; transition:background .18s,border-color .18s; }
+.pdr-filters button span { padding:2px 5px; border-radius:5px; background:#EDF3FA; font-size:10px; }
+.pdr-filters button[aria-pressed=true] { color:#2466D5; background:#EAF2FF; border-color:#AAC7F4; }
+.pdr-filters button[aria-pressed=true] span { background:#D8E7FF; }
+.pdr-topic-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+.pdr-topic-grid-single { grid-template-columns:minmax(0,1fr); }
+.pdr-topic-card { --topic-color:#E28D43; --topic-soft:#FFF4E8; min-width:0; display:flex; flex-direction:column; padding:21px; border:1px solid #E0EAF5; border-radius:20px; background:#fff; box-shadow:0 12px 26px -24px #356AA1; }
+.pdr-topic-strong { --topic-color:#23AA85; --topic-soft:#E6F8F0; }
+.pdr-topic-new { --topic-color:#8062D8; --topic-soft:#F1ECFF; }
+.pdr-topic-top { display:flex; align-items:center; gap:10px; }
+.pdr-topic-top .pd-icon { color:var(--topic-color); background:var(--topic-soft); width:35px; height:35px; font-size:19px; flex:none; }
+.pdr-status { color:var(--topic-color); font:650 10px/1.4 'Golos Text',sans-serif; }
+.pdr-topic-card h3 { margin:18px 0 15px; font:750 15px/1.45 'Geologica','Golos Text',sans-serif; color:#18334F; }
+.pdr-topic-score { display:flex; align-items:baseline; gap:9px; margin-top:auto; }
+.pdr-topic-score strong { color:#18334F; font:800 29px 'Geologica',sans-serif; letter-spacing:-.035em; }
+.pdr-topic-score span { color:#8296A8; font:500 10px 'Golos Text',sans-serif; }
+.pdr-topic-card .pd-topic-track { margin:13px 0 10px; }
+.pdr-topic-card .pd-topic-track i { background:var(--topic-color); }
+.pdr-topic-meta { display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; color:#8497AA; font:550 10px/1.5 'Golos Text',sans-serif; }
+.pdr-topic-card>p { padding-top:13px; margin:13px 0 0; border-top:1px solid #EBF0F7; color:#6F869B; font:500 11px/1.6 'Golos Text',sans-serif; }
+.pdr-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:210px; padding:28px 20px; border:1px dashed #CFE0F3; border-radius:18px; background:#F8FBFF; }
+.pdr-empty h3 { margin:16px 0 8px; color:#406280; font:700 17px/1.4 'Geologica',sans-serif; }
+.pdr-empty p { max-width:440px; margin:0; color:#8296A8; font:500 12px/1.7 'Golos Text',sans-serif; }
+.pdr-empty-compact { border:0; min-height:220px; background:transparent; padding:22px 10px; }
+.pdr-empty-compact>span { display:grid; place-items:center; width:68px; height:68px; border-radius:22px; background:#EDF3FF; color:#8DAFE8; font-size:29px; }
+.pdr-history-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:22px 0 10px; }
+.pdr-diagnostic { background:linear-gradient(135deg,#fff,#F4F1FF); }
+.pdr-diagnostic .pd-eyebrow { color:#8062D8; }
+.pdr-diagnostic-result { display:flex; align-items:center; gap:24px; margin:22px 0; }
+.pdr-score-ring { width:106px; height:106px; display:flex; flex:none; flex-direction:column; align-items:center; justify-content:center; border-radius:50%; background:radial-gradient(circle closest-side,#fff 82%,transparent 83%),conic-gradient(#8062D8 var(--score),#E6E0F8 0); }
+.pdr-score-ring strong { color:#8062D8; font:800 25px 'Geologica',sans-serif; }
+.pdr-score-ring span { color:#9285B1; margin-top:4px; font:550 8px 'Golos Text',sans-serif; }
+.pdr-diagnostic-result>div:last-child>strong { font:800 27px 'Geologica',sans-serif; color:#18334F; }
+.pdr-diagnostic-result p { font:500 12px 'Golos Text',sans-serif; color:#71869A; margin:5px 0 9px; }
+.pdr-diagnostic-result small { color:#8D9CAC; font:500 11px 'Golos Text',sans-serif; }
+.pdr-diagnostic-topics>div { display:flex; justify-content:space-between; gap:15px; padding:10px 0; border-bottom:1px solid #E7E2F2; font:550 12px/1.5 'Golos Text',sans-serif; color:#637B91; }
+.pdr-diagnostic-topics strong { color:#8062D8; }
+.pdr-diagnostic-next { padding:12px 14px; border-radius:12px; background:#EEE8FF; color:#8062D8; font:650 11px/1.5 'Golos Text',sans-serif; }
+.pdr-diagnostic-history { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0; }
+.pdr-diagnostic-history>div { padding:9px 11px; border:1px solid #E5E0F5; border-radius:10px; background:white; }
+.pdr-diagnostic-history strong,.pdr-diagnostic-history small { display:block; color:#8062D8; font:700 12px 'Golos Text',sans-serif; }
+.pdr-diagnostic-history small { color:#9A8FB1; font-size:9px; font-weight:500; margin-top:4px; }
+.pdr-share { display:inline-flex; padding:11px 13px; border:1px solid #D7E5F5; border-radius:11px; background:white; color:#2B77C4; text-decoration:none; font:650 11px 'Golos Text',sans-serif; }
+.pdr-test-list { max-height:470px; overflow:auto; }
+.pdr-test-list article { display:flex; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid #E8EFF7; }
+.pdr-test-number { display:grid; place-items:center; width:35px; height:35px; flex:none; border-radius:11px; background:#EEF5FF; color:#6796D7; font:700 10px 'Golos Text',sans-serif; }
+.pdr-test-list article>div { flex:1; min-width:0; }
+.pdr-test-list strong { color:#42637F; font:650 13px 'Golos Text',sans-serif; }
+.pdr-test-list small { display:block; color:#8FA2B4; font:500 10px 'Golos Text',sans-serif; margin-top:4px; }
+.pdr-test-score { text-align:right; color:#2F80ED; font:750 16px 'Geologica',sans-serif; }
+.pdr-filters button:focus-visible,.pdr-back:focus-visible,.pdr-share:focus-visible { outline:3px solid #EBA43B; outline-offset:3px; }
+@media(max-width:850px) { .pdr-topic-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) { .pdr-heading { align-items:flex-start; flex-direction:column; gap:14px; } .pdr-heading h1 { font-size:27px; } .pdr-child { align-items:flex-start; gap:12px; } .pdr-heading p { font-size:12px; } .pdr-topics { padding:20px 16px; } .pdr-section-heading { align-items:flex-start; flex-direction:column; gap:12px; } .pdr-topic-grid,.pdr-history-grid { grid-template-columns:1fr; } .pdr-topic-card { padding:19px; } .pdr-filters { gap:7px; } .pdr-filters button { padding:9px 10px; } .pdr-diagnostic-result { gap:18px; } }

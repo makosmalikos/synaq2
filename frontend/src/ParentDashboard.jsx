@@ -8,7 +8,7 @@ import PetAvatar from './PetAvatar.jsx';
 import BrandLoader from './components/BrandLoader.jsx';
 import './ParentDashboard.css';
 
-export function ParentDashboardView({ child, summary: s, lang, onDetails }) {
+export function ParentDashboardView({ child, summary: s, lang, onDetails, detailsLabel }) {
   const text = (ru, kk) => lang === 'ru' ? ru : kk;
   const locale = lang === 'ru' ? 'ru-RU' : 'kk-KZ';
   const title = a => lang === 'ru' ? a.nameRu || a.name : a.name;
@@ -24,7 +24,7 @@ export function ParentDashboardView({ child, summary: s, lang, onDetails }) {
       <div className="pd-hero-copy"><span className="pd-eyebrow">{text('Рядом на каждом шаге', 'Әр қадамда бірге')}</span>
         <h2>{text('Большой путь начинается с маленьких побед.', 'Үлкен жол кішкентай жеңістерден басталады.')}</h2>
         <p>{insight} {weak && text(`Сейчас стоит уделить внимание теме «${title(weak)}».`, `Қазір «${title(weak)}» тақырыбына көңіл бөлген жөн.`)}</p>
-        <button className="home-primary" onClick={onDetails}>{text('Подробный отчёт', 'Толық есеп')} <span aria-hidden="true">↗</span></button>
+        <button className="home-primary" onClick={onDetails}>{detailsLabel || text('Подробный отчёт', 'Толық есеп')} <span aria-hidden="true">↗</span></button>
       </div>
       <div className="pd-visual" aria-hidden="true"><div className="pd-orbit" /><img src="/hero/students/cutout-2.png" alt="" /><span className="pd-float pd-float-one">✓ {text('Шаг за шагом', 'Қадам сайын')}</span><span className="pd-float pd-float-two">{s.currentCount} {text('задач за неделю', 'есеп бір аптада')}</span></div>
     </section>

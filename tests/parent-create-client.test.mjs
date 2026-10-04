@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import { randomUUID } from 'node:crypto';
 
 const source = fs.readFileSync(new URL('../frontend/src/Parent.jsx', import.meta.url), 'utf8');
-const methods = source.slice(source.indexOf('  async function add()'), source.indexOf('  const [stats, setStats]'));
+const methods = source.slice(source.indexOf('  async function add()'), source.indexOf('  const [diagnostics, setDiagnostics]'));
 const tick = () => new Promise((resolve) => setImmediate(resolve));
 function deferred() {
   let resolve, reject;

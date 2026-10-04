@@ -4,14 +4,14 @@ import { useLang } from './i18n.jsx';
 import {
   auth, db, familyPlan, createChild, getChildren, getMocks, getAttempts, logout,
   genPassword, suggestUsername, cleanUsername, errText,
-  hasPasswordLogin, linkParentPassword, changeParentPassword, resetChildPassword, getPlatformDiagnostics,
+  hasPasswordLogin, linkParentPassword, changeParentPassword, resetChildPassword, getPlatformDiagnostics, getXpSummary,
 } from './firebase.js';
-import { topicStats, readiness, mockSeries } from './analytics.js';
+import { parentSummary } from './parentAnalytics.js';
+import ParentReport from './ParentReport.jsx';
 import { loadTopicCatalog } from './topicCatalog.js';
 import Brand from './Brand.jsx';
 import ParentDashboard from './ParentDashboard.jsx';
 import BrandLoader from './components/BrandLoader.jsx';
-import { buildDiagnosticShareText, daysUntilDiagnostic } from './platformDiagnostic.js';
 import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination, isDodoPortalDestination } from './checkoutMessages.js';
 import PetAvatar, { DEFAULT_PET_AVATAR, PET_AVATARS } from './PetAvatar.jsx';
 import { planPrice } from './plans.js';
@@ -217,7 +217,7 @@ export default function Parent({ onExit }) {
   const [avatar, setAvatar] = useState(DEFAULT_PET_AVATAR);
   const [created, setCreated] = useState(null);
   const [openChild, setOpenChild] = useState(null);
-  const [mocks, setMocks] = useState([]);
+  const [reportData, setReportData] = useState(null);
   const [reportLoading, setReportLoading] = useState(false);
   const [reportError, setReportError] = useState(false);
   const reportRequest = useRef(0);
@@ -298,7 +298,6 @@ export default function Parent({ onExit }) {
     setName(value);
     if (!usernameEdited.current) setUsername(cleanUsername(value));
   }
-  const [stats, setStats] = useState([]);
   const [diagnostics, setDiagnostics] = useState([]);
 
   // Кірген соң бала жоқ болса — «Бала қосу» формасын бірден ашамыз
@@ -312,11 +311,11 @@ export default function Parent({ onExit }) {
     setReportLoading(true); setReportError(false);
     const request = ++reportRequest.current;
     try {
-      const [ms, att, topics, diagnosticItems] = await Promise.all([
-        getMocks(c.uid), getAttempts(c.uid), loadTopicCatalog(), getPlatformDiagnostics(c.uid),
+      const [ms, att, topics, diagnosticItems, xp] = await Promise.all([
+        getMocks(c.uid), getAttempts(c.uid), loadTopicCatalog(), getPlatformDiagnostics(c.uid), getXpSummary(c.uid),
       ]);
       if (request !== reportRequest.current) return;
-      setMocks(ms); setStats(topicStats(att, topics)); setDiagnostics(diagnosticItems);
+      setReportData({ summary: parentSummary(att, ms, topics), xp: xp.xp, mocks: ms }); setDiagnostics(diagnosticItems);
     } catch (error) {
       console.error('child report failed', error);
       if (request === reportRequest.current) setReportError(true);
@@ -557,7 +556,7 @@ export default function Parent({ onExit }) {
             <p>{text('Не удалось загрузить отчёт. Прогресс сохранён; попробуйте ещё раз.', 'Есепті жүктеу мүмкін болмады. Прогресс сақталған; қайта көріңіз.')}</p>
             <button className="btn" onClick={() => openResults(openChild)}>{text('Повторить', 'Қайталау')}</button>
           </div>}
-        </main> : <ChildReport child={openChild} mocks={mocks} stats={stats} diagnostics={diagnostics} lang={lang} onBack={() => { reportRequest.current++; setOpenChild(null); }} t={t} />
+        </main> : <ParentReport child={{ ...openChild, xp: reportData.xp }} summary={reportData.summary} mocks={reportData.mocks} diagnostics={diagnostics} lang={lang} onBack={() => { reportRequest.current++; setOpenChild(null); }} />
       )}
     </div>
   );
@@ -627,173 +626,6 @@ function ChildPasswordCard({ child, onClose }) {
       <button className="btn ghost" disabled={busy} onClick={onClose}>{text('Закрыть', 'Жабу')}</button>
     </div>
   </div>;
-}
-
-// ── Ата-анаға арналған есеп: дайындық, апталық баллдар, тақырыптық жылу картасы ──
-const LVL_COL = { strong: '#4C7A4E', mid: '#B8892B', weak: '#B0342B' };
-const LVL_BG = { strong: '#EEF5EC', mid: '#FBF3E3', weak: '#FBEDEC' };
-const LVL_TXT = { strong: 'МЫҚТЫ', mid: 'ОРТАША', weak: 'ӘЛСІЗ' };
-
-function ChildReport({ child, mocks, stats, diagnostics, lang, onBack, t }) {
-  const text = (ru, kk) => lang === 'ru' ? ru : kk;
-  const levels = lang === 'ru' ? { strong: 'СИЛЬНО', mid: 'СРЕДНЕ', weak: 'СЛАБО' } : LVL_TXT;
-  // Толық дашборд әрқашан көрінеді. Есеп шығарылмаған тақырыптар да тұрады — тек 0%.
-  const all = stats.length ? stats : [];
-  const used = all.filter((s) => s.tried);
-  const started = used.length > 0;
-  const ready = readiness(stats);
-  const series = mockSeries(mocks);
-  const maxScore = Math.max(1, ...series.map((s) => s.max || 60));
-  const counts = { strong: 0, mid: 0, weak: 0 };
-  used.forEach((s) => counts[s.level]++);
-  const weak = [...used].sort((a, b) => a.pct - b.pct).slice(0, 2);
-  const diagnostic = diagnostics?.[0];
-  const diagnosticWeak = diagnostic?.topics?.filter((item) => item.level !== 'strong').slice(0, 3) || [];
-  const shareText = buildDiagnosticShareText(diagnostic, child.name, lang);
-
-  return (
-    <main>
-      <button className="link" onClick={onBack}>{t('ui.33')}</button>
-      <p className="kicker">{text('Отчёт · последние недели', 'Есеп · соңғы апталар')}</p>
-      <h1 style={{ marginBottom: 6 }}>{child.name}</h1>
-      <div style={{ borderTop: '2px solid var(--ink)', margin: '10px 0 20px' }} />
-
-      {!started && (
-        <div className="card" style={{ marginBottom: 16, background: '#FBF3E3', borderColor: 'var(--mid,#B8892B)' }}>
-          <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.6 }}>
-            {text(`${child.name} ещё не решал задачи. После начала тренировок здесь появятся результаты.`, `${child.name} әлі есеп шығара бастаған жоқ. Ол кіріп жаттыға бастаған соң, мұндағы сандар нақты деректермен толады.`)}
-          </p>
-        </div>
-      )}
-
-      <div className="grid2" style={{ marginBottom: 16 }}>
-        {/* Жалпы дайындық */}
-        <div className="card">
-          <p className="kicker" style={{ margin: '0 0 14px' }}>{text('Общая подготовка', 'Жалпы дайындық')}</p>
-          <div className="bar" style={{ marginBottom: 16 }}><i style={{ width: ready + '%' }} /></div>
-          <div style={{ display: 'flex', alignItems: 'flex-end', gap: 18 }}>
-            <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
-              {ready}<span style={{ fontSize: 22, color: 'var(--accent)' }}>%</span>
-            </div>
-            <div style={{ flex: 1, fontSize: 13.5 }}>
-              {['strong', 'mid', 'weak'].map((k) => (
-                <div key={k} style={{ display: 'flex', justifyContent: 'space-between', color: LVL_COL[k] }}>
-                  <span>■ {levels[k].toLowerCase()}</span><b>{counts[k]}</b>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Сынақ баллдары */}
-        <div className="card">
-          <div className="row" style={{ marginBottom: 12 }}>
-            <span className="kicker" style={{ margin: 0 }}>{text('Баллы за тест / неделя', 'Сынақ балы / апта')}</span>
-            <span className="tag">{text(`из ${maxScore}`, `${maxScore}-тан`)}</span>
-          </div>
-          {series.length ? (
-            <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, height: 110 }}>
-              {series.map((s, i) => (
-                <div key={i} style={{ flex: 1, textAlign: 'center' }}>
-                  <div style={{ font: "700 12px 'IBM Plex Mono',monospace", color: i === series.length - 1 ? 'var(--accent)' : '#6B655B' }}>{s.score}</div>
-                  <div style={{
-                    height: `${(s.score / maxScore) * 74}px`, minHeight: 3, marginTop: 4,
-                    background: i === series.length - 1 ? 'var(--accent)' : '#D8D3C8',
-                  }} />
-                  <div style={{ font: "500 10px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 5 }}>{s.label}</div>
-                </div>
-              ))}
-            </div>
-          ) : <p className="muted" style={{ margin: 0 }}>{text('Тесты ещё не пройдены.', 'Сынақ әлі тапсырылмаған.')}</p>}
-        </div>
-      </div>
-
-      {diagnostic && (
-        <section className="parent-diagnostic-card">
-          <div className="parent-diagnostic-head">
-            <div><p className="kicker">SYNAQ DIAGNOSTIC</p><h2>{lang === 'ru' ? 'Диагностика знаний' : 'Білім диагностикасы'}</h2></div>
-            <a href={`https://wa.me/?text=${encodeURIComponent(shareText)}`} target="_blank" rel="noreferrer">WhatsApp ↗</a>
-          </div>
-          <div className="parent-diagnostic-summary">
-            <strong>{diagnostic.readiness}%</strong>
-            <span>{diagnostic.correct}/{diagnostic.total} {lang === 'ru' ? 'правильно' : 'дұрыс'}</span>
-            <small>{new Date(diagnostic.completedAt).toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'kk-KZ')}</small>
-          </div>
-          <div className="parent-diagnostic-weak">
-            {diagnosticWeak.map((item) => <div key={item.moduleId}><span>{item.title?.[lang === 'ru' ? 'ru' : 'kk']}</span><b>{item.pct}%</b></div>)}
-          </div>
-          <div className="parent-diagnostic-history">
-            {diagnostics.slice(0, 6).reverse().map((item, i) => <i key={item.id || i} title={`${item.readiness}%`} style={{ height: `${Math.max(8, item.readiness)}%` }} />)}
-          </div>
-          <p className="parent-diagnostic-next">{daysUntilDiagnostic(diagnostic.completedAt) ? (lang === 'ru' ? `Повторная проверка через ${daysUntilDiagnostic(diagnostic.completedAt)} дн.` : `Қайта тексеруге ${daysUntilDiagnostic(diagnostic.completedAt)} күн қалды`) : (lang === 'ru' ? 'Пора пройти повторную диагностику' : 'Қайта диагностикадан өтетін уақыт келді')}</p>
-        </section>
-      )}
-
-      {/* Ұсыныс */}
-      {!!weak.length && (
-        <div className="card" style={{ borderLeft: '4px solid var(--accent)', marginBottom: 16 }}>
-          <p className="kicker" style={{ color: 'var(--accent)', margin: '0 0 8px' }}>{text('Рекомендация', 'Ұсыныс')}</p>
-          <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.6 }}>
-            {text(`Уделите больше внимания темам: ${weak.map((w) => `${w.name} (${w.pct}%)`).join(', ')}.`, `${weak.map((w) => `${w.name} (${w.pct}%)`).join(' мен ')} тақырыптарына көбірек көңіл бөліңіз — қазір ең әлсіз тұсы.`)}
-          </p>
-        </div>
-      )}
-
-      {/* Тақырыптық жылу картасы — барлық тақырып (шығарылмағаны 0%) */}
-      <p className="kicker">{text('Подготовка по темам', 'Тақырыптық жылу картасы')}</p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(150px,1fr))', gap: 10, marginBottom: 22 }}>
-        {all.map((s) => (
-          <div key={s.id} style={{
-            border: `1px solid ${s.tried ? LVL_COL[s.level] : 'var(--line)'}`,
-            background: s.tried ? LVL_BG[s.level] : '#fff', padding: '12px 13px',
-            opacity: s.tried ? 1 : 0.6,
-          }}>
-            <div style={{ fontSize: 12.5, lineHeight: 1.35, marginBottom: 8, minHeight: 34 }}>{s.name}</div>
-            <b style={{ font: "700 17px 'Golos Text'", color: s.tried ? LVL_COL[s.level] : '#9A9384' }}>{s.pct}%</b>
-          </div>
-        ))}
-      </div>
-
-      {/* Тақырыптар тізімі — деңгеймен (барлығы) */}
-      <p className="kicker">{text('Карта прогресса', 'Прогресс картасы')}</p>
-      <div className="list">
-        {all.map((s) => (
-          <div key={s.id} className="row-item" style={{ cursor: 'default', opacity: s.tried ? 1 : 0.6 }}>
-            <div style={{ flex: 1 }}>
-              <b>{s.name}</b>
-              <div style={{ font: "500 11.5px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 3 }}>
-                {s.tried} {text('вопросов', 'сұрақ')}{s.days ? ` · ${s.days} ${text('дн.', 'күн')}` : ''}
-              </div>
-            </div>
-            <div style={{ width: 130 }}>
-              <div className="bar"><i style={{ width: s.pct + '%', background: s.tried ? LVL_COL[s.level] : '#D8D3C8' }} /></div>
-            </div>
-            <span style={{ font: "600 13px 'IBM Plex Mono',monospace", width: 40, textAlign: 'right', color: s.tried ? LVL_COL[s.level] : '#9A9384' }}>{s.pct}</span>
-            <span style={{
-              font: "600 10px 'IBM Plex Mono',monospace", letterSpacing: '.08em',
-              color: s.tried ? LVL_COL[s.level] : '#C4BEB2',
-              border: `1px solid ${s.tried ? LVL_COL[s.level] : 'var(--line)'}`, padding: '3px 8px', width: 76, textAlign: 'center',
-            }}>{s.tried ? levels[s.level] : '—'}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Сынақ тарихы */}
-      {!!mocks.length && (
-        <>
-          <p className="kicker" style={{ marginTop: 24 }}>{t('ui.34')}</p>
-          <div className="list">
-            {mocks.map((m, i) => (
-              <div className="row-item" key={i} style={{ cursor: 'default' }}>
-                <b style={{ flex: 1 }}>{m.school || 'Мок-тест'}</b>
-                <span className="rt">{m.score}/{m.gradable} балл</span>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
-    </main>
-  );
 }
 
 const lab = { display: 'block', font: "500 11px 'IBM Plex Mono',monospace", letterSpacing: '.08em', textTransform: 'uppercase', color: '#9A9384', marginBottom: 6 };
