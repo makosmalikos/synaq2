@@ -29,7 +29,7 @@ test('Firestore ownership, private state and create-only records', { skip: !enab
   await assertFails(updateDoc(doc(parent, 'childIndex/child'), { parentUid: 'parent' }));
   await assertFails(updateDoc(doc(parent, 'families/parent'), { proExpiresAt: new Date(2099, 1) }));
   await assertSucceeds(updateDoc(doc(parent, 'families/parent'), { parentName: 'New name' }));
-  for (const collection of ['explanations', 'translations', 'aiCache', 'bankTasks', 'duels', 'duelPrivate', 'paymentEvents', 'paymentSubscriptions', 'learningSessions', 'learningRateLimits', 'mockSessions', 'diagnosticSessions', 'diagnosticRateLimits', 'checkoutSessions']) {
+  for (const collection of ['explanations', 'translations', 'aiCache', 'bankTasks', 'bankTaskKeys', 'duels', 'duelPrivate', 'paymentEvents', 'paymentSubscriptions', 'learningSessions', 'learningRateLimits', 'mockSessions', 'diagnosticSessions', 'diagnosticRateLimits', 'checkoutSessions']) {
     await assertFails(setDoc(doc(child, `${collection}/fake`), { host: { uid: 'child' }, text: 'test' }));
     if (collection !== 'duels') await assertFails(getDoc(doc(child, `${collection}/fake`)));
   }

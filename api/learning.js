@@ -2,23 +2,26 @@ const { getAdmin } = require('../backend/lib/firebase-admin');
 const { createLearningService } = require('../backend/lib/learning-service');
 
 function content(db) {
-  async function bankContent() {
+  let requestContent;
+  function bankContent() {
+    return requestContent ||= readContent();
+  }
+  async function readContent() {
     const bank = await import('../frontend/src/bank.js');
-    await bank.ensureBankReady(async () => {
-      const snapshot = await db.collection('bankTasks').get();
-      return snapshot.docs.map((item) => ({ ...item.data(), id: item.id }));
-    });
-    return bank;
+    const { loadPublishedBank } = require('../backend/lib/published-bank');
+    return { ...bank, POOL: await loadPublishedBank(db) };
   }
   return {
     async getTrainingQuestion(id) {
-      const { POOL } = await bankContent();
-      const staticQuestion = POOL.find((question) => question.id === id);
-      if (staticQuestion) return staticQuestion;
+      const bank = await import('../frontend/src/bank.js');
+      const bundled = bank.POOL.find((question) => question.id === id);
+      if (bundled) return bundled;
       const snapshot = await db.collection('bankTasks').doc(id).get();
       if (!snapshot.exists) return null;
+      const raw = snapshot.data();
+      if (raw.status != null && raw.status !== 'published') return null;
       const { normalizeAdminTask, quarantineReason } = await import('../frontend/src/questionMetadata.js');
-      const question = normalizeAdminTask({ ...snapshot.data(), id });
+      const question = normalizeAdminTask({ ...raw, id });
       return quarantineReason(question) ? null : question;
     },
     async getTrainingTopics() {

@@ -48,7 +48,7 @@ export function normalizeAdminTask(raw) {
     solution: raw.solution || '',
     image: raw.image || null,
     options: Array.isArray(raw.options) ? raw.options : null,
-    lang: detectLang({ topic: raw.topic, statement: raw.statement }),
+    lang: ['ru', 'kk', 'en'].includes(raw.lang) ? raw.lang : detectLang({ topic: raw.topic, statement: raw.statement }),
   };
 }
 
@@ -56,6 +56,8 @@ export function partitionAdminTasks(tasks, existingIds) {
   const seenIds = new Set(existingIds);
   const active = [], quarantined = [];
   for (const raw of tasks) {
+    // Legacy records were already live. New records must be explicitly published.
+    if (raw.status != null && raw.status !== 'published') continue;
     const q = normalizeAdminTask(raw);
     const reason = seenIds.has(q.id) ? 'duplicate_id' : quarantineReason(q);
     if (reason) { quarantined.push({ ...q, quarantineReason: reason }); continue; }

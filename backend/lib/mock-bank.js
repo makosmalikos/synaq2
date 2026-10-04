@@ -5,18 +5,7 @@ const SPECS = Object.freeze({
 });
 const { deterministicOrder } = require('./weekly-mock');
 
-let bankPromise;
-async function loadBank(db) {
-  if (!bankPromise) bankPromise = (async () => {
-    const bank = await import('../../frontend/src/bank.js');
-    await bank.ensureBankReady(async () => {
-      const snapshot = await db.collection('bankTasks').get();
-      return snapshot.docs.map((item) => ({ ...item.data(), id: item.id }));
-    });
-    return bank.POOL;
-  })().catch((error) => { bankPromise = null; throw error; });
-  return bankPromise;
-}
+const { loadPublishedBank: loadBank } = require('./published-bank');
 
 const shuffled = (items) => items.map((item) => [Math.random(), item])
   .sort((a, b) => a[0] - b[0]).map((item) => item[1]);

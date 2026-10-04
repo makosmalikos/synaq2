@@ -112,6 +112,7 @@ service cloud.firestore {
     }
 
     // Content-addressed AI cache, billing ledger and duel proofs are server-only.
+    match /bankTaskKeys/{id} { allow read, write: if false; }
     match /aiCache/{id} { allow read, write: if false; }
     match /paymentEvents/{id} { allow read, write: if false; }
     match /paymentSubscriptions/{id} { allow read, write: if false; }
