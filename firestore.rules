@@ -118,6 +118,8 @@ service cloud.firestore {
     match /paymentSubscriptions/{id} { allow read, write: if false; }
     match /duelPrivate/{id} { allow read, write: if false; }
     match /duelRateLimits/{id} { allow read, write: if false; }
+    match /rewardWallets/{id} { allow read, write: if false; }
+    match /rewardRequests/{id} { allow read, write: if false; }
     match /learningSessions/{id} { allow read, write: if false; }
     match /learningRateLimits/{id} { allow read, write: if false; }
     match /mockSessions/{id} { allow read, write: if false; }

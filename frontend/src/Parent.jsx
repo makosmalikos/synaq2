@@ -11,6 +11,7 @@ import ParentReport from './ParentReport.jsx';
 import { loadTopicCatalog } from './topicCatalog.js';
 import Brand from './Brand.jsx';
 import ParentDashboard from './ParentDashboard.jsx';
+import RewardApprovals from './RewardApprovals.jsx';
 import BrandLoader from './components/BrandLoader.jsx';
 import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination, isDodoPortalDestination } from './checkoutMessages.js';
 import PetAvatar, { DEFAULT_PET_AVATAR, PET_AVATARS } from './PetAvatar.jsx';
@@ -385,6 +386,7 @@ export default function Parent({ onExit }) {
           )}
 
           <ParentDashboard children={children} lang={lang} onDetails={openResults} />
+          <RewardApprovals children={children} lang={lang} />
 
           <details className="pd-settings" open={paymentPending || !!paymentIssue || !!portalError || undefined}>
             <summary>{text('Тариф и настройки аккаунта', 'Тариф және аккаунт баптаулары')} <span>{plan?.toUpperCase() || '…'}</span></summary>

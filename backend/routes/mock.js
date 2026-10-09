@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { variants, byId } = require('../data/mockVariants');
+const { scoreBil } = require('../lib/bil-scoring');
 
 const stripAnswers = (v) => ({
   ...v,
@@ -77,15 +78,8 @@ router.post('/variants/:id/submit', (req, res) => {
   });
 
   if (v.school === 'БИЛ') {
-    const cancelled = Math.floor(wrong / 4);
-    const net = Math.max(0, correct - cancelled);
     return res.json({
-      scoring: 'bil',
-      score: correct,
-      wrong,
-      cancelled,
-      points: +(net * 1.5).toFixed(1),
-      maxPoints: +(gradable * 1.5).toFixed(1),
+      ...scoreBil(correct, wrong, gradable),
       gradable,
       total: v.questions.length,
       review,

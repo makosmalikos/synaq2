@@ -1,3 +1,5 @@
+import QuestionFigure from './QuestionFigure.jsx';
+import FigureOption, { hasFigureOptions } from './FigureOption.jsx';
 import React, { useEffect, useState, useRef } from 'react';
 import { useLang } from '../i18n.jsx';
 import { translateQuestions } from '../translateQuestions.js';
@@ -563,14 +565,14 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
       ) : (
         <>
           <Stmt text={q.statement} />
-          {q.image && <img className="fig" src={q.image} alt="сурет" />}
+          {q.image && !hasFigureOptions(q) && <QuestionFigure src={q.image} />}
 
           {!checked ? (
             q.options ? (
-              <div className="opts">
+              <div className={`opts${hasFigureOptions(q) ? ' figure-options' : ''}`}>
                 {q.options.map((o, k) => (
                   <button key={k} disabled={sessionState !== 'ready'} className={'opt' + (answer === o ? ' sel' : '')} onClick={() => setAnswer(o)}>
-                    <span className="lt">{LT[k]}</span><span>{o}</span>
+                    <span className="lt">{LT[k]}</span><FigureOption question={q} value={o} />
                   </button>
                 ))}
               </div>
@@ -580,10 +582,10 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
             )
           ) : (
             q.options && (
-              <div className="opts" style={{ marginBottom: 14 }}>
+              <div className={`opts${hasFigureOptions(q) ? ' figure-options' : ''}`} style={{ marginBottom: 14 }}>
                 {q.options.map((o, k) => (
                   <div key={k} className={'opt' + (serverResult ? (o === q.answer ? ' ok' : (o === answer ? ' bad' : '')) : (o === answer ? ' sel' : ''))}>
-                    <span className="lt">{LT[k]}</span><span>{o}</span>
+                    <span className="lt">{LT[k]}</span><FigureOption question={q} value={o} />
                   </div>
                 ))}
               </div>

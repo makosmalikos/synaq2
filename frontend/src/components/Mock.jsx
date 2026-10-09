@@ -1,3 +1,5 @@
+import QuestionFigure from './QuestionFigure.jsx';
+import FigureOption, { hasFigureOptions } from './FigureOption.jsx';
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useLang } from '../i18n.jsx';
 import { translateQuestions } from '../translateQuestions.js';
@@ -5,6 +7,7 @@ import { mockCatalog, mockResume, mockStart, mockSubmit, weeklyMockCheckout } fr
 import { loadTopicCatalog } from '../topicCatalog.js';
 import { auth, watchPro } from '../firebase.js';
 import { buildDiagnosis } from '../diagnosis.js';
+import { mockDisplayScore } from '../analytics.js';
 import Explain from './Explain.jsx';
 import BrandLoader from './BrandLoader.jsx';
 import DiagnosisReport from './DiagnosisReport.jsx';
@@ -371,7 +374,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
           <div className="row-item" key={s.code}
             onClick={() => s.ready && !starting && startExam(s.code)}
             style={{ opacity: s.ready ? 1 : 0.5, cursor: s.ready ? 'pointer' : 'default' }}>
-            <div style={{ flex: 1 }}><b>{s.code}</b><p className="muted">{formatLabel(s)}</p>{s.shortened && <small>{shortenedLabel} ({s.count}/{s.targetCount})</small>}</div>
+            <div style={{ flex: 1 }}><b>{s.code}</b><p className="muted">{formatLabel(s)}</p>{s.code === 'БИЛ' && <small>{ru ? 'Оценка: +4 за верный, −1 за неверный, 0 за пропуск' : 'Бағалау: дұрыс +4, қате −1, жауапсыз 0'}</small>}{s.code === 'РФМШ' && <small>{ru ? 'Здесь — число верных; официальный балл зависит от уровней A/B/C' : 'Мұнда — дұрыс жауап саны; ресми ұпай A/B/C деңгейлеріне тәуелді'}</small>}{s.code === 'НИШ' && <small>{ru ? 'Здесь — число верных; официальный результат НИШ рассчитывается отдельно' : 'Мұнда — дұрыс жауап саны; НЗМ ресми нәтижесі бөлек есептеледі'}</small>}{s.shortened && <small>{shortenedLabel} ({s.count}/{s.targetCount})</small>}</div>
             <span className="rt">{s.ready ? '→' : t('ui.60')}</span>
           </div>
         ))}
@@ -399,18 +402,19 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
         {result.scoring === 'bil' ? (
           <>
             <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
-              {result.points}<span style={{ fontSize: 20, color: '#9A9384' }}> / {result.maxPoints}</span>
+              {mockDisplayScore(result).score}<span style={{ fontSize: 20, color: '#9A9384' }}> / {mockDisplayScore(result).max}</span>
             </div>
             <p style={{ margin: '10px 0 0', fontSize: 14 }}>
-              {result.score} {t('diag.correctShort')}, {result.wrong} {t('diag.wrong')}
+              {result.score} {t('diag.correctShort')}, {result.wrong} {t('diag.wrong')}, {result.unanswered ?? result.gradable - result.score - result.wrong} {ru ? 'без ответа' : 'жауапсыз'}
             </p>
+            <p className="muted" style={{ margin: '6px 0 0', fontSize: 13 }}>{ru ? 'БИЛ: правильный +4, неправильный −1, пропуск 0' : 'БИЛ: дұрыс +4, қате −1, жауапсыз 0'}</p>
           </>
         ) : (
           <>
             <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
               {result.score}<span style={{ fontSize: 20, color: '#9A9384' }}> / {result.gradable}</span>
             </div>
-            <p style={{ margin: '10px 0 0' }}>{t('ui.18')}</p>
+            <p style={{ margin: '10px 0 0' }}>{ru ? 'верных ответов · сохранено в прогресс' : 'дұрыс жауап · прогреске сақталды'}</p>
           </>
         )}
       </div>
@@ -494,12 +498,12 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
       ) : (
         <>
           <Stmt text={q.statement} />
-          {q.image && <img className="fig" src={q.image} alt="" />}
+          {q.image && !hasFigureOptions(q) && <QuestionFigure src={q.image} />}
           {q.options ? (
-            <div className="opts">
+            <div className={`opts${hasFigureOptions(q) ? ' figure-options' : ''}`}>
               {q.options.map((o, k) => (
                 <button type="button" key={k} disabled={left <= 0} className={'opt' + (answers[q.num] === o ? ' sel' : '')} onClick={() => pick(o)}>
-                  <span className="lt">{LT[k]}</span><span>{o}</span>
+                  <span className="lt">{LT[k]}</span><FigureOption question={q} value={o} />
                 </button>
               ))}
             </div>

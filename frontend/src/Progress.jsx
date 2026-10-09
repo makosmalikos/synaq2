@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLang } from './i18n.jsx';
 import { auth, getAttempts, getMocks, getXpSummary, watchPro } from './firebase.js';
-import { topicStats, weekHours, mockSeries, formatStudyTime } from './analytics.js';
+import { topicStats, weekHours, mockSeries, mockDisplayScore, formatStudyTime } from './analytics.js';
 import { loadTopicCatalog } from './topicCatalog.js';
 import { buildDiagnosis, pickDiagnosticMock } from './diagnosis.js';
 import DiagnosisReport from './components/DiagnosisReport.jsx';
@@ -84,7 +84,7 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
     <main>
       <button className="link" onClick={() => { setOpen(null); setQ(null); }}>← {t('ui.42')}</button>
       <h1 style={{ marginBottom: 4 }}>{open.school || 'Мок-тест'}</h1>
-      <p className="kicker">{fmtDate(open.at)} · {open.score}/{open.gradable} балл{open.spentSec ? ` · ${fmtSpent(open.spentSec)}` : ''}</p>
+      <p className="kicker">{fmtDate(open.at)} · {mockDisplayScore(open).score}/{mockDisplayScore(open).max} {open.school === 'БИЛ' ? (lang === 'ru' ? 'баллов' : 'ұпай') : (lang === 'ru' ? 'верных ответов' : 'дұрыс жауап')}{open.spentSec ? ` · ${fmtSpent(open.spentSec)}` : ''}</p>
 
       {open.review ? (
         <div className="list" style={{ marginTop: 16 }}>
@@ -221,7 +221,7 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
                     {fmtDate(m.at)}{m.spentSec ? ` · ${fmtSpent(m.spentSec)}` : ''}
                   </div>
                 </div>
-                <span className="rt">{m.score}/{m.gradable} балл →</span>
+                <span className="rt">{mockDisplayScore(m).score}/{mockDisplayScore(m).max} {m.school === 'БИЛ' ? (lang === 'ru' ? 'баллов' : 'ұпай') : (lang === 'ru' ? 'верных' : 'дұрыс')} →</span>
               </div>
             ))}
           </div>

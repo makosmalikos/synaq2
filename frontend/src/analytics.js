@@ -62,6 +62,14 @@ export function formatStudyTime(seconds, lang = 'kk') {
 }
 
 // Баллы мок-тестов по неделям (для графика роста).
+export function mockDisplayScore(mock) {
+  if ((mock.school === 'БИЛ' || mock.scoring === 'bil')
+    && Number.isFinite(mock.score) && Number.isFinite(mock.wrong) && Number.isFinite(mock.gradable)) {
+    return { score: 4 * mock.score - mock.wrong, max: 4 * mock.gradable };
+  }
+  return { score: mock.score || 0, max: mock.gradable || 0 };
+}
+
 export function mockSeries(mocks) {
   return [...mocks]
     .filter((m) => m.at?.seconds)
@@ -69,8 +77,7 @@ export function mockSeries(mocks) {
     .slice(-6)
     .map((m, i) => ({
       label: `${i + 1}-ап`,
-      score: m.score || 0,
-      max: m.gradable || 0,
+      ...mockDisplayScore(m),
       school: m.school || '',
     }));
 }

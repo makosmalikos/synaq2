@@ -5,6 +5,9 @@ import { bilReadingQuestions } from './bilReadingQuestions.js';
 import { nishScienceQuestions } from './nishScienceQuestions.js';
 import { nishOfficialLanguageQuestions } from './nishOfficialLanguageQuestions.js';
 import { expandedQuestions } from './expandedQuestionBank.js';
+import { reviewedBilArchive } from './reviewedBilArchive.js';
+import { formatAlignedQuestions } from './formatAlignedQuestions.js';
+import { formatAlignedQuestions2 } from './formatAlignedQuestions2.js';
 import { detectLang, quarantineReason, partitionAdminTasks } from './questionMetadata.js';
 import { readAdminTasks } from './adminTasks.js';
 export { detectLang, normalizeAdminTask } from './questionMetadata.js';
@@ -79,6 +82,7 @@ const RAW_POOL = [
   ...questions.map((q) => one(q, 'РФМШ')),
   ...nishMath.map((q) => one(q, 'НИШ')),
   ...bilQ.map((q) => one(q, 'БИЛ')),
+  ...reviewedBilArchive.map((q) => one(q, 'БИЛ')),
   ...bilLogicQuestions.map((q) => one(q, 'БИЛ')),
   ...bilReadingQuestions.map((q) => one(q, 'БИЛ')),
   ...nishScienceQuestions.map((q) => one(q, 'НИШ')),
@@ -90,6 +94,8 @@ const RAW_POOL = [
   ...logic1.map((q) => one(q, 'НИШ')),
   ...variantA2.map((q) => one(q, 'НИШ')),
   ...expandedQuestions.map((q) => one(q, q.school)),
+  ...formatAlignedQuestions.map((q) => one(q, q.school)),
+  ...formatAlignedQuestions2.map((q) => one(q, q.school)),
 ];
 
 // Quarantine rules are shared with the lightweight topic catalog.

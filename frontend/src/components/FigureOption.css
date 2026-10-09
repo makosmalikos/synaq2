@@ -1,0 +1,35 @@
+.figure-options > .opt,
+.public-diag-options.figure-options > button {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 170px;
+  padding: 18px;
+}
+.figure-option-art {
+  display: block;
+  width: min(100%, 230px);
+  height: 160px;
+  object-fit: contain;
+  margin: auto;
+  min-width: 0;
+}
+@media (max-width: 540px) {
+  .figure-options > .opt,
+  .public-diag-options.figure-options > button { padding: 12px; gap: 4px; min-height: 140px; }
+  .figure-option-art { height: 130px; }
+}
+.opts.figure-options,
+.public-diag-options.figure-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+@media (max-width: 540px) {
+  .figure-options > .opt,
+  .public-diag-options.figure-options > button { padding: 34px 8px 8px; }
+  .figure-options > .opt > .lt,
+  .public-diag-options.figure-options > button > i { position: absolute; top: 10px; left: 10px; width: 28px; height: 28px; }
+  .figure-option-art { width: 100%; }
+}

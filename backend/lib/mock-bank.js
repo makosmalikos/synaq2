@@ -4,6 +4,7 @@ const SPECS = Object.freeze({
   'БИЛ': { count: 60, minutes: 110, subjects: [['math', 40, 1], ['logic', 10, 1], ['reading', 10, 1]] },
 });
 const { deterministicOrder } = require('./weekly-mock');
+const { scoreBil } = require('./bil-scoring');
 
 const { loadPublishedBank: loadBank } = require('./published-bank');
 
@@ -108,9 +109,7 @@ async function gradeMock(db, session, answers) {
       your: answers[question.num] ?? null, answer: question.answer, correct: ok, note: question.note || null };
   });
   if (variant.school === 'БИЛ') {
-    const cancelled = Math.floor(wrong / 4), net = Math.max(0, correct - cancelled);
-    return { scoring: 'bil', score: correct, wrong, cancelled, points: +(net * 1.5).toFixed(1),
-      maxPoints: +(gradableCount * 1.5).toFixed(1), gradable: gradableCount, total: review.length, review };
+    return { ...scoreBil(correct, wrong, gradableCount), gradable: gradableCount, total: review.length, review };
   }
   return { score: correct, gradable: gradableCount, total: review.length, review };
 }

@@ -1,13 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { PUBLIC_MOCKS } from '../frontend/src/publicMockData.generated.js';
 
 const require = createRequire(import.meta.url);
 const { PRICE_KZT, weeklyWindow, deterministicOrder } = require('../backend/lib/weekly-mock');
-const { createWeeklyMock } = require('../backend/lib/mock-bank');
+const { createWeeklyMock, gradeMock } = require('../backend/lib/mock-bank');
 
-test('landing exposes one fixed full-format variant for each school', () => {
+test('landing mocks follow school answer formats and retain usable figures', () => {
   assert.deepEqual(Object.keys(PUBLIC_MOCKS).sort(), ['БИЛ', 'НИШ', 'РФМШ'].sort());
   const expected = { 'РФМШ': 30, 'БИЛ': 60, 'НИШ': 180 };
   for (const [school, mock] of Object.entries(PUBLIC_MOCKS)) {
@@ -17,9 +20,29 @@ test('landing exposes one fixed full-format variant for each school', () => {
     assert.equal(new Set(questions.map((question) => question.id)).size, expected[school], school);
     for (const question of questions) {
       assert.ok(question.statement && question.answer, `${school}/${question.id}`);
-      if (question.options) assert.ok(question.options.includes(question.answer), `${school}/${question.id}`);
+      if (school === 'РФМШ') {
+        assert.equal(question.options, null, question.id);
+        assert.match(question.answer, /^-?\d+$/, question.id);
+      } else {
+        assert.equal(question.options?.length, 4, question.id);
+        assert.equal(new Set(question.options).size, 4, question.id);
+        assert.ok(question.options.includes(question.answer), `${school}/${question.id}`);
+      }
+      if (question.image) {
+        const publicDir = fileURLToPath(new URL('../frontend/public/', import.meta.url));
+        assert.ok(fs.existsSync(path.join(publicDir, question.image.replace(/^\//, ''))), question.id);
+      }
     }
   }
+  const nis = PUBLIC_MOCKS['НИШ'].questions;
+  assert.deepEqual(['math', 'kolzar', 'science', 'eng', 'rus', 'kaz'].map((subject) => nis.filter((question) => question.topic === subject).length), [40, 60, 20, 20, 20, 20]);
+  assert.equal(nis.filter((question) => question.section === 1).length, 120);
+  assert.equal(nis.filter((question) => question.section === 2).length, 60);
+  const bil = PUBLIC_MOCKS['БИЛ'].questions;
+  assert.deepEqual(['math', 'logic', 'reading'].map((subject) => bil.filter((question) => question.topic === subject).length), [40, 10, 10]);
+  assert.ok(PUBLIC_MOCKS['РФМШ'].questions.every((question) => !question.id.endsWith('v1_1')));
+  assert.ok(nis.every((question) => !/^public-НИШ-nm\d+$/.test(question.id)));
+  assert.ok(bil.every((question) => !/^public-БИЛ-bil_sets_/.test(question.id)));
 });
 
 test('Almaty weekly key changes on Monday and price stays server-owned', () => {
@@ -48,4 +71,19 @@ test('real weekly school variants replay exactly within a week and rotate next w
     assert.notDeepEqual(ids(first), ids(next), school);
     assert.equal(first.questions.length, first.targetCount, school);
   }
+});
+
+test('weekly BIL submission scores answered errors and skips separately', async () => {
+  const db = { collection: () => ({ get: async () => ({ docs: [] }) }) };
+  const variant = await createWeeklyMock(db, 'БИЛ', '2026-09-28');
+  const session = {
+    school: 'БИЛ', attemptId: 'bil-scoring-test', title: variant.title,
+    timeLimitMin: variant.timeLimitMin, sections: variant.sections,
+    targetCount: variant.targetCount,
+    questionRefs: variant.questions.map(({ id, num, section, subject }) => ({ id, num, section, subject })),
+  };
+  const answers = { [variant.questions[0].num]: variant.questions[0].answer };
+  for (const question of variant.questions.slice(1, 5)) answers[question.num] = '__wrong_answer__';
+  const result = await gradeMock(db, session, answers);
+  assert.deepEqual([result.score, result.wrong, result.unanswered, result.points, result.maxPoints], [1, 4, 55, 0, 240]);
 });

@@ -24,6 +24,7 @@ export function createPublicDiagnosticResult({ grade, target, report }) {
     target,
     readiness: report.pct,
     correct: report.correct,
+    ...(target === 'БИЛ' ? { points: report.points, maxPoints: report.maxPoints, wrong: report.wrong, unanswered: report.unanswered } : {}),
     total: report.topics.reduce((sum, item) => sum + item.total, 0),
     completedAt: new Date().toISOString(),
     topics: report.topics.map((item) => ({

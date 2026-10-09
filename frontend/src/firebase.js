@@ -386,6 +386,19 @@ export async function getXpSummary(uid) {
   return snap.exists() ? snap.data() : { xp: 0, studySecs: 0 };
 }
 
+export async function rewardRequest(body) {
+  const user = auth.currentUser;
+  if (!user) throw new Error('login_required');
+  const response = await fetch('/api/rewards', {
+    method: body ? 'POST' : 'GET',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${await user.getIdToken()}` },
+    ...(body ? { body: JSON.stringify(body) } : {}),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw Object.assign(new Error(data.error || 'failed'), { status: response.status });
+  return data;
+}
+
 export async function getDiagnosticStatus(uid) {
   const snap = await getDoc(statsRef(uid));
   const data = snap.exists() ? snap.data() : {};
