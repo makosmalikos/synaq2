@@ -609,6 +609,7 @@ const DICT = {
     'auth.passwordLogin': 'Пароль',
     'auth.parentHint': 'Вошли через Google? Задайте пароль в кабинете — тогда можно входить и по email.',
     'auth.forgot': 'Забыли пароль?',
+    'auth.resetSent': 'Ссылка для восстановления пароля отправлена на вашу почту.',
     'parent.loginTitle': 'Вход по email',
     'parent.loginHint': 'Если регистрировались через Google — задайте пароль здесь, и потом можно входить по email+пароль.',
     'parent.loginDone': 'Email+пароль подключены — можно входить через {email}.',

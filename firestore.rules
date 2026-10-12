@@ -25,10 +25,10 @@ service cloud.firestore {
       );
     }
 
+    // Not used by the app any more (landing leads go through /api/lead).
+    // Anonymous writes only allowed junk to fill the database.
     match /waitlist/{doc} {
-      allow create: if request.resource.data.email is string
-                    && request.resource.data.email.size() < 200;
-      allow read, update, delete: if false;
+      allow read, write: if false;
     }
 
     // Семья: родитель читает/пишет свой профиль, но НЕ поля подписки — их

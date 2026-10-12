@@ -21,7 +21,17 @@ const SHARED_ENDPOINTS = {
 
 function createApp({ handlers = {} } = {}) {
   const app = express();
-  app.use(cors());
+  const allowedOrigins = new Set(['https://synaq.app', 'https://www.synaq.app',
+    process.env.APP_URL && String(process.env.APP_URL).replace(/\/+$/, '')].filter(Boolean));
+  app.use(cors({
+    origin(origin, callback) {
+      // No Origin header: same-origin requests, curl and server-to-server (webhook).
+      if (!origin || allowedOrigins.has(origin) || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) {
+        return callback(null, true);
+      }
+      return callback(null, false);
+    },
+  }));
   const invoke = (name) => (req, res, next) => {
     // Load only the selected endpoint. Never mount api/[...path].js here:
     // that file delegates back to this app on Vercel.
@@ -36,8 +46,10 @@ function createApp({ handlers = {} } = {}) {
   app.use(express.json({ limit: '1mb' }));
   for (const name of ENDPOINTS) app.all(`/api/${name}`, invoke(name));
   app.get('/', (_req, res) => res.json({ service: 'synaq-backend', ok: true }));
-  app.use('/api/training', require('./routes/training'));
-  app.use('/api/mock', require('./routes/mock'));
+  // Legacy /api/training/* and /api/mock/* were unauthenticated and returned
+  // correct answers and solutions. Training and mocks are served only by the
+  // authenticated /api/learning and /api/mock-session handlers, so these
+  // routes are intentionally not mounted and fall through to the JSON 404.
   app.use('/api', (_req, res) => res.status(404).json({ error: 'not_found' }));
   app.use((error, _req, res, _next) => {
     if (res.headersSent) return _next(error);

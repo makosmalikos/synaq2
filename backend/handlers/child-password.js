@@ -4,6 +4,7 @@
 // remain intact for all existing accounts.
 
 const { getAdmin } = require('../lib/firebase-admin');
+const { isWeakPin } = require('../lib/plans');
 
 function bodyOf(req) {
   if (typeof req.body === 'string') {
@@ -29,7 +30,7 @@ module.exports = async function handler(req, res) {
     const childUid = String(body.childUid || '').trim();
     const password = String(body.password || '');
     if (!childUid) return res.status(400).json({ error: 'child_not_found' });
-    if (password.length < 6 || password.length > 128) {
+    if (password.length < 6 || password.length > 128 || isWeakPin(password)) {
       return res.status(400).json({ error: 'weak_password' });
     }
 

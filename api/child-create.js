@@ -1,7 +1,7 @@
 // A child identity is owned by a durable, server-written reservation BEFORE
 // Auth creation. Recovery only ever looks up that reserved UID, never an email.
 const { getAdmin } = require('../backend/lib/firebase-admin');
-const { familyPlan } = require('../backend/lib/plans');
+const { familyPlan, isWeakPin } = require('../backend/lib/plans');
 const { createHash, randomUUID } = require('node:crypto');
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const RESERVED_UID = /^synaqkid_[a-f0-9]{32}$/;
@@ -169,7 +169,7 @@ module.exports = async function handler(req, res) {
     const avatar = requestedAvatar || 'owl';
     const code = String(body.code || '').trim().toLowerCase().replace(/@synaq\.kids$/, ''), pin = String(body.pin || '');
     if (!name || name.length > 80 || !/^[a-z0-9]{3,32}$/.test(code) || !/^([1-9]|1[01])?$/.test(klass) || !PET_AVATARS.has(avatar)) return res.status(400).json({ error: 'invalid_child' });
-    if (pin.length < 6 || pin.length > 128) return res.status(400).json({ error: 'weak_password' });
+    if (pin.length < 6 || pin.length > 128 || isWeakPin(pin, code)) return res.status(400).json({ error: 'weak_password' });
     const requestId = body.requestId == null ? null : String(body.requestId).toLowerCase();
     if (requestId !== null && !UUID.test(requestId)) return res.status(400).json({ error: 'invalid_request_id' });
     const hashPayload = { name, klass, code, pin };
