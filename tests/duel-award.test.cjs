@@ -38,7 +38,7 @@ function fixture() {
   const auth = { verifyIdToken: async (token, revoked) => {
     assert.equal(revoked, true);
     if (token === 'invalid') throw Object.assign(Error('invalid'), { code: 'auth/invalid-id-token' });
-    return { uid: token };
+    return { uid: token, email: /^[a-z0-9]+$/.test(token) ? `${token}@synaq.kids` : 'parent@example.test' };
   } };
   const context = { module: { exports: {} }, Date,
     process: { env: { FIREBASE_CLIENT_EMAIL: 'test@example.test', FIREBASE_PRIVATE_KEY: 'local-key' } },
@@ -135,6 +135,14 @@ test('failed transaction cannot partially credit XP and a later retry credits on
   assert.deepEqual((await f.invoke()).body, { gain: 122, credited: true });
   assert.deepEqual((await f.invoke()).body, { gain: 122, credited: false });
   assert.equal(f.docs.get('results/host/stats/summary').xp, 122);
+});
+
+test('non-child accounts are never credited duel XP', async () => {
+  const f = fixture();
+  f.docs.set(`duelPrivate/${CODE}`, proof());
+  // The mock auth treats tokens that are not [a-z0-9]+ as a parent e-mail account.
+  assert.deepEqual(await f.invoke({ uid: 'parent-account' }), { status: 403, body: { error: 'child_required' } });
+  assert.equal(f.commits.length, 0);
 });
 
 test('award endpoint rejects unauthenticated requests, wrong methods and invalid codes', async () => {

@@ -401,3 +401,14 @@ test('invalid request JSON is a 400 without an AI call; malformed provider JSON 
   const broken = fixture('explain.js'); broken.respondWith('not JSON');
   assert.equal((await broken.invoke({ mode: 'translate', lang: 'kk', items: [{ id: 'q', statement: 'Два' }] })).status, 500);
 });
+
+test('trivially guessable child PINs are rejected, ordinary ones are accepted', () => {
+  for (const pin of ['123456', '654321', '111111', '000000', 'aaaaaa', '345678', 'qwerty', 'Password1', '12345678', 'abcdef', 'short']) {
+    assert.equal(plans.isWeakPin(pin), true, pin);
+  }
+  assert.equal(plans.isWeakPin('student1', 'student1'), true, 'PIN equal to the login code');
+  assert.equal(plans.isWeakPin('Student1', 'student1@synaq.kids'), true, 'case-insensitive and with domain');
+  for (const pin of ['481526', 'secret123', 'private-pin-456', 'changed123', 'new-secret', 'Zhanar2015']) {
+    assert.equal(plans.isWeakPin(pin, 'kidcode'), false, pin);
+  }
+});

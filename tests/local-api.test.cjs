@@ -38,7 +38,7 @@ test('webhook receives byte-for-byte raw JSON before express parser', async (t) 
   assert.deepEqual(await response.json(), { raw: body });
 });
 
-test('unknown APIs and invalid JSON return JSON errors; legacy API remains available', async (t) => {
+test('unknown APIs and invalid JSON return JSON errors; legacy answer-leaking APIs are gone', async (t) => {
   const url = await serve(t);
   const absent = await fetch(`${url}/api/does-not-exist`);
   assert.equal(absent.status, 404);
@@ -46,9 +46,16 @@ test('unknown APIs and invalid JSON return JSON errors; legacy API remains avail
   const invalid = await fetch(`${url}/api/checkout`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{' });
   assert.equal(invalid.status, 400);
   assert.deepEqual(await invalid.json(), { error: 'invalid_json' });
-  const legacy = await fetch(`${url}/api/training/topics`);
-  assert.equal(legacy.status, 200);
-  assert.ok(Array.isArray(await legacy.json()));
+  // These unauthenticated routes used to return questions with answers.
+  for (const legacyPath of ['/api/training/topics', '/api/training/mixed?limit=3',
+    '/api/mock/variants', '/api/mock/variants/rfmsh2025_v1']) {
+    const legacy = await fetch(`${url}${legacyPath}`);
+    assert.equal(legacy.status, 404, legacyPath);
+    assert.deepEqual(await legacy.json(), { error: 'not_found' }, legacyPath);
+  }
+  const legacySubmit = await fetch(`${url}/api/mock/variants/rfmsh2025_v1/submit`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{"answers":{}}' });
+  assert.equal(legacySubmit.status, 404);
 });
 
 test('shared endpoints stay routed while the Vercel function count fits Hobby', async (t) => {

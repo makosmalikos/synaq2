@@ -8,6 +8,9 @@ module.exports = async function handler(req, res) {
     const token = String(req.headers.authorization || '').match(/^Bearer\s+(.+)$/i)?.[1];
     if (!token) return res.status(401).json({ error: 'auth' });
     const { auth, db } = getAdmin(), user = await auth.verifyIdToken(token, true);
+    // Duels award XP that can be exchanged for real rewards; parents and other
+    // sign-ups must not be able to play them (two throwaway accounts farm XP).
+    if (!/^[a-z0-9]+@synaq\.kids$/.test(user.email || '')) return res.status(403).json({ error: 'child_required' });
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body || {};
     const service = createDuelService({ db, getPool: async () => (await import('../frontend/src/bank.js')).POOL });
     return res.status(200).json(await service(user, body));

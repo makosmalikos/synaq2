@@ -35,6 +35,7 @@ module.exports = async function handler(req, res) {
     if (!match) return res.status(401).json({ error: 'login_required' });
     const { auth, db } = getAdmin();
     const user = await auth.verifyIdToken(match[1], true);
+    if (!/^[a-z0-9]+@synaq\.kids$/.test(user.email || '')) return res.status(403).json({ error: 'child_required' });
 
     const code = String(bodyOf(req).code || '').trim().toUpperCase();
     if (!/^[A-HJ-NP-Z2-9]{6}$/.test(code)) return res.status(400).json({ error: 'bad_code' });
