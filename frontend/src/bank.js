@@ -4,7 +4,7 @@ import { bilLogicQuestions } from './bilLogicQuestions.js';
 import { bilReadingQuestions } from './bilReadingQuestions.js';
 import { nishScienceQuestions } from './nishScienceQuestions.js';
 import { nishOfficialLanguageQuestions } from './nishOfficialLanguageQuestions.js';
-import { expandedQuestions } from './expandedQuestionBank.js';
+import { expandedQuestions, importedQuestions } from './expandedQuestionBank.js';
 import { reviewedBilArchive } from './reviewedBilArchive.js';
 import { formatAlignedQuestions } from './formatAlignedQuestions.js';
 import { formatAlignedQuestions2 } from './formatAlignedQuestions2.js';
@@ -94,6 +94,7 @@ const RAW_POOL = [
   ...logic1.map((q) => one(q, 'НИШ')),
   ...variantA2.map((q) => one(q, 'НИШ')),
   ...expandedQuestions.map((q) => one(q, q.school)),
+  ...importedQuestions.map((q) => one(q, q.school)),
   ...formatAlignedQuestions.map((q) => one(q, q.school)),
   ...formatAlignedQuestions2.map((q) => one(q, q.school)),
 ];
