@@ -1,14 +1,11 @@
-import React, { useRef, useState } from 'react';
-import { ParentDashboardView } from './ParentDashboard.jsx';
-import PetAvatar from './PetAvatar.jsx';
+import React, { useState } from 'react';
 import { buildDiagnosticShareText, daysUntilDiagnostic } from './platformDiagnostic.js';
 import './ParentReport.css';
 
-export default function ParentReport({ child, summary, mocks = [], diagnostics = [], lang, onBack }) {
+export default function ParentReport({ child, summary, mocks = [], diagnostics = [], lang }) {
   const text = (ru, kk) => lang === 'ru' ? ru : kk;
   const locale = lang === 'ru' ? 'ru-RU' : 'kk-KZ';
   const [filter, setFilter] = useState('all');
-  const topicSection = useRef(null);
   const topicName = topic => lang === 'ru' ? topic.nameRu || topic.name : topic.name;
   const topics = [...summary.topics].sort((a, b) => a.pct - b.pct);
   const level = topic => topic.count < 3 ? 'new' : topic.pct >= 70 ? 'strong' : 'practice';
@@ -20,16 +17,8 @@ export default function ParentReport({ child, summary, mocks = [], diagnostics =
     return Number.isFinite(ms) && ms > 0 ? new Date(ms).toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' }) : text('Дата не указана', 'Күні көрсетілмеген');
   };
 
-  return <main className="pd-report">
-    <button type="button" className="pdr-back" onClick={onBack}>← {text('К обзору семьи', 'Отбасы шолуына')}</button>
-    <div className="pdr-heading">
-      <div className="pdr-child"><PetAvatar id={child.avatar} /><div><span className="pd-eyebrow">{text('Подготовка ребёнка', 'Баланың дайындығы')}</span><h1>{child.name}</h1><p>{text('Прогресс, который легко понять. Следующий шаг, который легко сделать.', 'Түсінікті прогресс. Орындауға оңай келесі қадам.')}</p></div></div>
-      <span className="pd-chip">{text('Обзор за 7 дней', '7 күндік шолу')}</span>
-    </div>
-
-    <ParentDashboardView report child={child} summary={summary} lang={lang} detailsLabel={text('Посмотреть все темы', 'Барлық тақырыптарды көру')} onDetails={() => topicSection.current?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' })} />
-
-    <section ref={topicSection} className="pdr-topics" aria-label={text('Подробный прогресс по темам', 'Тақырыптар бойынша толық прогресс')}>
+  return <div className="pd-report">
+    <section id="pdr-topics" className="pdr-topics" aria-label={text('Подробный прогресс по темам', 'Тақырыптар бойынша толық прогресс')}>
       <div className="pdr-section-heading"><div><span className="pd-eyebrow">{text('Полная картина', 'Толық көрініс')}</span><h2>{text('Карта тем', 'Тақырыптар картасы')}</h2><p>{text('Каждая тема — маленький шаг к уверенности.', 'Әр тақырып — сенімділікке бір қадам.')}</p></div><span className="pd-chip">{topics.length} {text('тем в практике', 'жаттығу тақырыбы')}</span></div>
       <div className="pdr-filters" aria-label={text('Фильтр тем', 'Тақырып сүзгісі')}>
         {[['all', text('Все темы', 'Барлық тақырыптар')], ['practice', text('Стоит повторить', 'Қайталау керек')], ['strong', text('Получается хорошо', 'Жақсы нәтиже')]].map(([id, label]) => <button type="button" key={id} aria-pressed={filter === id} onClick={() => setFilter(id)}>{label} <span>{id === 'all' ? topics.length : topics.filter(topic => level(topic) === id).length}</span></button>)}
@@ -65,5 +54,5 @@ export default function ParentReport({ child, summary, mocks = [], diagnostics =
         {mocks.length ? <div className="pdr-test-list">{mocks.map((mock, index) => <article key={mock.id || index}><span className="pdr-test-number">{String(index + 1).padStart(2, '0')}</span><div><strong>{mock.school || text('Пробный тест', 'Сынақ')}</strong><small>{dateLabel(mock)}</small></div><span className="pdr-test-score">{mock.score ?? 0}/{mock.gradable ?? '—'}<small>{text('баллов', 'балл')}</small></span></article>)}</div> : <div className="pdr-empty pdr-empty-compact"><span aria-hidden="true">✓</span><h3>{text('Первый пробник ещё впереди', 'Алғашқы сынақ әлі алда')}</h3><p>{text('Когда ребёнок пройдёт тест, здесь появятся дата, школа и набранные баллы.', 'Балаңыз сынақтан өткен соң, күні, мектебі және жинаған ұпайы көрсетіледі.')}</p></div>}
       </section>
     </div>
-  </main>;
+  </div>;
 }

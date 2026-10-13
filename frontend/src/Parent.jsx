@@ -2,13 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { useLang } from './i18n.jsx';
 import {
-  auth, db, familyPlan, createChild, getChildren, getMocks, getAttempts, logout,
+  auth, db, familyPlan, createChild, getChildren, logout,
   genPassword, suggestUsername, cleanUsername, errText,
-  hasPasswordLogin, linkParentPassword, changeParentPassword, resetChildPassword, getPlatformDiagnostics, getXpSummary,
+  hasPasswordLogin, linkParentPassword, changeParentPassword, resetChildPassword,
 } from './firebase.js';
-import { parentSummary } from './parentAnalytics.js';
-import ParentReport from './ParentReport.jsx';
-import { loadTopicCatalog } from './topicCatalog.js';
 import Brand from './Brand.jsx';
 import ParentDashboard from './ParentDashboard.jsx';
 import RewardApprovals from './RewardApprovals.jsx';
@@ -217,11 +214,6 @@ export default function Parent({ onExit }) {
   const [pass, setPass] = useState('');
   const [avatar, setAvatar] = useState(DEFAULT_PET_AVATAR);
   const [created, setCreated] = useState(null);
-  const [openChild, setOpenChild] = useState(null);
-  const [reportData, setReportData] = useState(null);
-  const [reportLoading, setReportLoading] = useState(false);
-  const [reportError, setReportError] = useState(false);
-  const reportRequest = useRef(0);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
   const [childrenError, setChildrenError] = useState(false);
@@ -252,7 +244,7 @@ export default function Parent({ onExit }) {
   useEffect(() => {
     mounted.current = true;
     load();
-    return () => { mounted.current = false; childrenRequest.current++; reportRequest.current++; };
+    return () => { mounted.current = false; childrenRequest.current++; };
   }, []);
 
   async function add() {
@@ -299,31 +291,11 @@ export default function Parent({ onExit }) {
     setName(value);
     if (!usernameEdited.current) setUsername(cleanUsername(value));
   }
-  const [diagnostics, setDiagnostics] = useState([]);
 
   // Кірген соң бала жоқ болса — «Бала қосу» формасын бірден ашамыз
   useEffect(() => {
     if (childrenLoaded && firstLoad && !children.length && !created) { setAdding(true); setFirstLoad(false); }
   }, [children, childrenLoaded, firstLoad, created]);
-
-  // Баланы ашқанда: мок-тестер + тақырып бойынша статистика
-  const openResults = async (c) => {
-    setOpenChild(c);
-    setReportLoading(true); setReportError(false);
-    const request = ++reportRequest.current;
-    try {
-      const [ms, att, topics, diagnosticItems, xp] = await Promise.all([
-        getMocks(c.uid), getAttempts(c.uid), loadTopicCatalog(), getPlatformDiagnostics(c.uid), getXpSummary(c.uid),
-      ]);
-      if (request !== reportRequest.current) return;
-      setReportData({ summary: parentSummary(att, ms, topics), xp: xp.xp, mocks: ms }); setDiagnostics(diagnosticItems);
-    } catch (error) {
-      console.error('child report failed', error);
-      if (request === reportRequest.current) setReportError(true);
-    } finally {
-      if (request === reportRequest.current) setReportLoading(false);
-    }
-  };
 
   return (
     <div className="app parent-app">
@@ -371,7 +343,7 @@ export default function Parent({ onExit }) {
         </div>
       )}
 
-      {!openChild ? (
+      {(
         <main>
           {/* Сәлемдесу */}
           {me && (
@@ -385,7 +357,7 @@ export default function Parent({ onExit }) {
             </>
           )}
 
-          <ParentDashboard children={children} lang={lang} onDetails={openResults} />
+          <ParentDashboard children={children} lang={lang} />
           <RewardApprovals children={children} lang={lang} />
 
           <details className="pd-settings" open={paymentPending || !!paymentIssue || !!portalError || undefined}>
@@ -537,10 +509,10 @@ export default function Parent({ onExit }) {
 
           <div className="list">
             {children.map((c) => (
-              <div className="row-item" key={c.uid} onClick={() => openResults(c)}>
+              <div className="row-item" key={c.uid}>
                 <PetAvatar id={c.avatar} size="small" />
                 <b>{c.name}</b>
-                <span className="rt">логин: {c.code} · {text('результаты', 'нәтижелер')} →</span>
+                <span className="rt">логин: {c.code}</span>
                 <button className="link" onClick={(event) => { event.stopPropagation(); setResetChild(c); }}>{text('Изменить PIN', 'PIN өзгерту')}</button>
               </div>
             ))}
@@ -551,14 +523,6 @@ export default function Parent({ onExit }) {
           {!childrenLoaded && !childrenError && <BrandLoader compact />}
           {childrenLoaded && !children.length && !adding && <p className="muted" style={{ marginTop: 14 }}>{t('ui.32')}</p>}
         </main>
-      ) : (
-        reportLoading || reportError ? <main>
-          <button className="link" onClick={() => { reportRequest.current++; setOpenChild(null); }}>{t('ui.33')}</button>
-          {reportLoading ? <BrandLoader /> : <div role="alert">
-            <p>{text('Не удалось загрузить отчёт. Прогресс сохранён; попробуйте ещё раз.', 'Есепті жүктеу мүмкін болмады. Прогресс сақталған; қайта көріңіз.')}</p>
-            <button className="btn" onClick={() => openResults(openChild)}>{text('Повторить', 'Қайталау')}</button>
-          </div>}
-        </main> : <ParentReport child={{ ...openChild, xp: reportData.xp }} summary={reportData.summary} mocks={reportData.mocks} diagnostics={diagnostics} lang={lang} onBack={() => { reportRequest.current++; setOpenChild(null); }} />
       )}
     </div>
   );
