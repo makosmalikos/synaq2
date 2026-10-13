@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { registerParent, loginParent, loginChild, loginAdmin, loginGoogle, resetParentPassword, errText, childErrText } from './firebase.js';
+import { registerParent, loginParent, loginChild, loginAdmin, loginGoogle, resetParentPassword, errText } from './firebase.js';
 import { useLang, LangSwitch } from './i18n.jsx';
 import Brand from './Brand.jsx';
 
@@ -9,20 +9,17 @@ export default function Auth({ onClose, duelCode = '' }) {
   const { t, lang } = useLang();
   const [pname, setPname] = useState('');
   // ?admin=1 в адресе — единственный путь к входу администратора: обычный
-  // посетитель его не видит и кнопки на экране «Кто входит?» для него нет.
-  // По этой ссылке экран «Кто входит?» показывает ТОЛЬКО кнопку «Администратор».
+  // посетитель его не видит. По этой ссылке сразу открывается вход администратора.
   const [isAdminLink] = useState(() => {
     try {
       return typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('admin') === '1';
     } catch { return false; }
   });
-  const [stage, setStage] = useState(() => (isAdminLink ? 'loginRole' : 'start')); // start | register | loginRole | loginParent | loginChild | loginAdmin
+  const [stage, setStage] = useState(() => (isAdminLink ? 'loginAdmin' : 'start')); // start | register | login | loginAdmin
   const [err, setErr] = useState('');
   const [busy, setBusy] = useState(false);
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
-  const [code, setCode] = useState('');
-  const [pin, setPin] = useState('');
   const [showPin, setShowPin] = useState(false);
   const [info, setInfo] = useState('');
 
@@ -48,10 +45,12 @@ export default function Auth({ onClose, duelCode = '' }) {
     }
   };
 
-  const submitChild = (e) => {
+  // Одна форма для всех: есть «@» — это email родителя, иначе — логин ребёнка.
+  const submitLogin = (e) => {
     e.preventDefault();
-    if (busy || !code.trim() || pin.length < 6) return;
-    run(() => loginChild(code, pin), (error) => childErrText(error, lang))();
+    const id = email.trim();
+    if (busy || !id || !pass) return;
+    run(() => (id.includes('@') && !/@synaq\.kids$/i.test(id) ? loginParent(id, pass) : loginChild(id, pass)))();
   };
 
   return (
@@ -139,7 +138,7 @@ export default function Auth({ onClose, duelCode = '' }) {
             </div>
             <div className="auth-start-actions">
               <button style={S.dark} onClick={() => setStage('register')}>{t('auth.create')}</button>
-              <button style={S.outline} onClick={() => setStage('loginRole')}>{t('auth.have')}</button>
+              <button style={S.outline} onClick={() => setStage('login')}>{t('auth.have')}</button>
 
               <div style={S.divider}>
                 <div style={S.line} />
@@ -183,21 +182,6 @@ export default function Auth({ onClose, duelCode = '' }) {
           </div>
         )}
 
-        {stage === 'loginRole' && (
-          <div style={{ animation: 'rise .3s ease both' }}>
-            <h1 style={S.h1}>{t('auth.whoEnters')}</h1>
-            {isAdminLink ? (
-              <button style={{ ...S.dark, marginTop: 18 }} onClick={() => setStage('loginAdmin')}>{t('auth.admin')}</button>
-            ) : (
-              <>
-                <button style={{ ...S.dark, marginTop: 18 }} onClick={() => setStage('loginChild')}>{t('auth.child')}</button>
-                <button style={S.outline} onClick={() => setStage('loginParent')}>{t('auth.parent')}</button>
-              </>
-            )}
-            <button style={S.back} onClick={() => setStage('start')}>{t('common.back')}</button>
-          </div>
-        )}
-
         {stage === 'loginAdmin' && (
           <div style={{ animation: 'rise .3s ease both' }}>
             <h1 style={S.h1}>{t('admin.loginTitle')}</h1>
@@ -206,24 +190,32 @@ export default function Auth({ onClose, duelCode = '' }) {
             <button style={{ ...S.google, marginTop: 18 }} disabled={busy} onClick={run(loginAdmin)}>
               <span style={{ font: "800 15px 'Manrope'", color: '#4285F4' }}>G</span> {t('admin.googleLogin')}
             </button>
-            <button style={S.back} onClick={() => setStage('loginRole')}>{t('common.back')}</button>
+            {!isAdminLink && <button style={S.back} onClick={() => setStage('start')}>{t('common.back')}</button>}
           </div>
         )}
 
-        {stage === 'loginParent' && (
-          <div style={{ animation: 'rise .3s ease both' }}>
-            <h1 style={S.h1}>{t('auth.parent')}</h1>
-            <p style={S.hint}>{t('auth.parentHint')}</p>
-            <input style={S.input} type="email" aria-label={t('auth.email')} autoComplete="email"
-              placeholder={t('auth.email')} value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input style={S.input} type="password" aria-label={t('auth.passwordLogin')} autoComplete="current-password"
-              placeholder={t('auth.passwordLogin')} value={pass} onChange={(e) => setPass(e.target.value)} />
+        {stage === 'login' && (
+          <form style={{ animation: 'rise .3s ease both' }} onSubmit={submitLogin}>
+            <h1 style={S.h1}>{t('auth.loginTitle')}</h1>
+            <p style={S.hint}>{t('auth.loginHint')}</p>
+            <input style={S.input} aria-label={t('auth.loginId')} placeholder={t('auth.loginId')} value={email}
+              autoCapitalize="none" autoCorrect="off" spellCheck={false} autoComplete="username"
+              onChange={(e) => setEmail(e.target.value)} />
+            <div style={S.pinWrap}>
+              <input style={{ ...S.input, marginBottom: 0, paddingRight: 76 }}
+                type={showPin ? 'text' : 'password'} aria-label={t('auth.passwordLogin')} placeholder={t('auth.passwordLogin')}
+                value={pass} autoComplete="current-password" onChange={(e) => setPass(e.target.value)} />
+              <button type="button" style={S.pinToggle} onClick={() => setShowPin((value) => !value)}>
+                {showPin ? t('auth.hidePin') : t('auth.showPin')}
+              </button>
+            </div>
             <Err v={err} />
             {info && <p style={{ color: '#4C7A4E', fontSize: 13, margin: '10px 0 0', textAlign: 'center' }}>{info}</p>}
-            <button style={{ ...S.dark, marginTop: 6 }} disabled={busy || !email.trim()} onClick={run(() => loginParent(email, pass))}>{t('auth.login')}</button>
+            <button type="submit" style={{ ...S.dark, marginTop: 14 }} disabled={busy || !email.trim() || !pass}>{t('auth.login')}</button>
             <button
+              type="button"
               style={S.linkBtn}
-              disabled={busy || !email.trim()}
+              disabled={busy || !email.includes('@')}
               onClick={run(async () => {
                 await resetParentPassword(email);
                 if (mountedRef.current) setInfo(t('auth.resetSent'));
@@ -238,34 +230,10 @@ export default function Auth({ onClose, duelCode = '' }) {
               <div style={S.line} />
             </div>
 
-            <button style={S.google} disabled={busy} onClick={run(loginGoogle)}>
+            <button type="button" style={S.google} disabled={busy} onClick={run(loginGoogle)}>
               <span style={{ font: "700 15px 'Golos Text'", color: '#4285F4' }}>G</span> {t('auth.google')}
             </button>
-            <button style={S.back} onClick={() => setStage('loginRole')}>{t('common.back')}</button>
-          </div>
-        )}
-
-        {stage === 'loginChild' && (
-          <form style={{ animation: 'rise .3s ease both' }} onSubmit={submitChild}>
-            <h1 style={S.h1}>{t('auth.child')}</h1>
-            <p style={S.hint}>{t('auth.childHint')}</p>
-            <label style={S.fieldLabel} htmlFor="child-code">{t('auth.code')}</label>
-            <input id="child-code" style={S.input} placeholder={t('auth.codeExample')} value={code}
-              autoCapitalize="none" autoCorrect="off" spellCheck={false} autoComplete="username"
-              onChange={(e) => setCode(e.target.value)} />
-            <p style={S.fieldHelp}>{t('auth.codeHelp')}</p>
-            <label style={S.fieldLabel} htmlFor="child-pin">{t('auth.pin')}</label>
-            <div style={S.pinWrap}>
-              <input id="child-pin" style={{ ...S.input, marginBottom: 0, paddingRight: 76 }}
-                type={showPin ? 'text' : 'password'} placeholder={t('auth.pin')}
-                value={pin} autoComplete="current-password" onChange={(e) => setPin(e.target.value)} />
-              <button type="button" style={S.pinToggle} onClick={() => setShowPin((value) => !value)}>
-                {showPin ? t('auth.hidePin') : t('auth.showPin')}
-              </button>
-            </div>
-            <Err v={err} />
-            <button type="submit" style={{ ...S.dark, marginTop: 14 }} disabled={busy || !code.trim() || pin.length < 6}>{t('auth.login')}</button>
-            <button type="button" style={S.back} onClick={() => setStage('loginRole')}>{t('common.back')}</button>
+            <button type="button" style={S.back} onClick={() => setStage('start')}>{t('common.back')}</button>
           </form>
         )}
 
