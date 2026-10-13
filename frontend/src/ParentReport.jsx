@@ -27,7 +27,7 @@ export default function ParentReport({ child, summary, mocks = [], diagnostics =
       <span className="pd-chip">{text('Обзор за 7 дней', '7 күндік шолу')}</span>
     </div>
 
-    <ParentDashboardView child={child} summary={summary} lang={lang} detailsLabel={text('Посмотреть все темы', 'Барлық тақырыптарды көру')} onDetails={() => topicSection.current?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' })} />
+    <ParentDashboardView report child={child} summary={summary} lang={lang} detailsLabel={text('Посмотреть все темы', 'Барлық тақырыптарды көру')} onDetails={() => topicSection.current?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' })} />
 
     <section ref={topicSection} className="pdr-topics" aria-label={text('Подробный прогресс по темам', 'Тақырыптар бойынша толық прогресс')}>
       <div className="pdr-section-heading"><div><span className="pd-eyebrow">{text('Полная картина', 'Толық көрініс')}</span><h2>{text('Карта тем', 'Тақырыптар картасы')}</h2><p>{text('Каждая тема — маленький шаг к уверенности.', 'Әр тақырып — сенімділікке бір қадам.')}</p></div><span className="pd-chip">{topics.length} {text('тем в практике', 'жаттығу тақырыбы')}</span></div>

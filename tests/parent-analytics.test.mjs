@@ -28,3 +28,11 @@ test('truncated history cannot claim weekly growth', () => {
   const s=parentSummary(items,[],topics,now);
   assert.equal(s.delta,null); assert.equal(s.topics[0].delta,null);
 });
+test('school readiness uses the latest and best mock per school and ignores future or ungraded tests', () => {
+  const mock = (school, daysAgo, score, gradable = 30) => ({ school, score, gradable, at: { seconds: (now - daysAgo * 86400000) / 1000 } });
+  const s = parentSummary([], [mock('РФМШ', 5, 12), mock('РФМШ', 1, 24), mock('РФМШ', -2, 30), mock('БИЛ', 1, 0, 0)], topics, now);
+  const rfmsh = s.schools.find(r => r.code === 'РФМШ');
+  assert.equal(rfmsh.count, 2); assert.equal(rfmsh.last, 80); assert.equal(rfmsh.best, 80);
+  assert.equal(s.schools.find(r => r.code === 'БИЛ').last, null);
+  assert.equal(s.schools.find(r => r.code === 'НИШ').count, 0);
+});
