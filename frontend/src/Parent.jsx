@@ -340,6 +340,10 @@ export default function Parent({ onExit }) {
             onClick={() => copy(`Synaq\nЮзернейм: ${created.code}\nПароль: ${created.pass}`)}>
             {text('Скопировать логин и пароль', 'Екеуін де көшіру')}
           </button>
+          <a className="btn ghost" style={{ marginTop: 12, marginLeft: 8, display: 'inline-block' }} target="_blank" rel="noreferrer"
+            href={`https://wa.me/?text=${encodeURIComponent(`Synaq (synaq.app)\n${text('Логин', 'Логин')}: ${created.code}\n${text('Пароль', 'Құпиясөз')}: ${created.pass}`)}`}>
+            {text('Отправить в WhatsApp', 'WhatsApp-қа жіберу')}
+          </a>
         </div>
       )}
 

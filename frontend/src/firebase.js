@@ -32,9 +32,9 @@ const kidEmail = (code = '') => {
 };
 export const isKid = (user) => !!user && (user.email || '').endsWith(KID_DOMAIN);
 
-// Пароль: без похожих символов (0/O, 1/l) — детям диктовать голосом.
+// Пароль: короткий (6 знаков — минимум Firebase) и без похожих символов (0/O, 1/l) — ребёнку легко ввести и продиктовать.
 const ALPHABET = 'abcdefghijkmnpqrstuvwxyz23456789';
-export function genPassword(len = 8) {
+export function genPassword(len = 6) {
   const buf = new Uint32Array(len);
   crypto.getRandomValues(buf);
   return Array.from(buf, (n) => ALPHABET[n % ALPHABET.length]).join('');
