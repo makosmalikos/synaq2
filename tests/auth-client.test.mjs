@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 
 const source = fs.readFileSync(new URL('../frontend/src/Auth.jsx', import.meta.url), 'utf8');
-const handlers = source.slice(source.indexOf('  const requestPending ='), source.indexOf('  const submitChild ='));
+const handlers = source.slice(source.indexOf('  const requestPending ='), source.indexOf('  const submitLogin ='));
 
 function authHarness() {
   const writes = [];
