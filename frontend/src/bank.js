@@ -4,7 +4,7 @@ import { bilLogicQuestions } from './bilLogicQuestions.js';
 import { bilReadingQuestions } from './bilReadingQuestions.js';
 import { nishScienceQuestions } from './nishScienceQuestions.js';
 import { nishOfficialLanguageQuestions } from './nishOfficialLanguageQuestions.js';
-import { expandedQuestions, importedQuestions } from './expandedQuestionBank.js';
+import { expandedQuestions, importedQuestions, stepSolutions } from './expandedQuestionBank.js';
 import { reviewedBilArchive } from './reviewedBilArchive.js';
 import { formatAlignedQuestions } from './formatAlignedQuestions.js';
 import { formatAlignedQuestions2 } from './formatAlignedQuestions2.js';
@@ -117,6 +117,7 @@ function withUniqueId(q) {
 
 const reviewed = RAW_POOL
   .map((q) => withUniqueId(q))
+  .map((q) => (!q.originalId && stepSolutions[q.id] ? { ...q, solution: stepSolutions[q.id] } : q))
   .map((q) => ({ question: q, reason: quarantineReason(q) }));
 
 // Экспорт нужен валидатору и позволяет видеть масштаб проблем без выдачи
