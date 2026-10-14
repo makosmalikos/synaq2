@@ -1,5 +1,5 @@
 import QuestionFigure from './QuestionFigure.jsx';
-import FigureOption, { hasFigureOptions } from './FigureOption.jsx';
+import FigureOption, { hasFigureOptions, mainFigureSrc } from './FigureOption.jsx';
 import React, { useEffect, useState, useRef } from 'react';
 import { useLang } from '../i18n.jsx';
 import { translateQuestions } from '../translateQuestions.js';
@@ -565,7 +565,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
       ) : (
         <>
           <Stmt text={q.statement} />
-          {q.image && !hasFigureOptions(q) && <QuestionFigure src={q.image} />}
+          {mainFigureSrc(q) && <QuestionFigure src={mainFigureSrc(q)} />}
 
           {!checked ? (
             q.options ? (

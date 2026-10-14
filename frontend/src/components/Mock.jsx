@@ -1,5 +1,5 @@
 import QuestionFigure from './QuestionFigure.jsx';
-import FigureOption, { hasFigureOptions } from './FigureOption.jsx';
+import FigureOption, { hasFigureOptions, mainFigureSrc } from './FigureOption.jsx';
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useLang } from '../i18n.jsx';
 import { translateQuestions } from '../translateQuestions.js';
@@ -498,7 +498,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
       ) : (
         <>
           <Stmt text={q.statement} />
-          {q.image && !hasFigureOptions(q) && <QuestionFigure src={q.image} />}
+          {mainFigureSrc(q) && <QuestionFigure src={mainFigureSrc(q)} />}
           {q.options ? (
             <div className={`opts${hasFigureOptions(q) ? ' figure-options' : ''}`}>
               {q.options.map((o, k) => (

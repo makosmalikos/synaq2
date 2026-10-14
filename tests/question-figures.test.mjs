@@ -7,7 +7,8 @@ const mapping = JSON.parse(readFileSync(new URL('../scripts/figures/asset-map.js
 
 test('active question illustrations use existing vector assets', () => {
   for (const q of POOL.filter(q => q.image)) {
-    assert.match(q.image, /\.svg$/i, q.id);
+    // Векторные рисунки; исключение — отсканированные рисунки пробных экзаменов НИШ (PNG).
+    assert.match(q.image, /\.svg$|^\/figures\/(opts\/[A-Za-z0-9_]+|nis\d{4})\/[A-Za-z0-9_]+\.png$/i, q.id);
     assert.ok(existsSync(new URL(q.image.slice(1), publicRoot)), `${q.id}: ${q.image}`);
   }
 });
