@@ -552,7 +552,6 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
       {sessionState === 'expired' && <p role="alert">{ru ? 'Сессия задачи закончилась. Этот ответ не засчитан. Начни задачу заново, чтобы продолжить.' : 'Есеп сессиясының мерзімі бітті. Бұл жауап есептелмеді. Жалғастыру үшін есепті қайта баста.'} <button type="button" className="link" onClick={() => beginQuestion({ fresh: true })}>{ru ? 'Начать заново' : 'Қайта бастау'}</button></p>}
       <div className="qhead">
         <span className="qnum-chip">{i + 1}/{items.length}</span>
-        <span style={chip}>{q.school}</span>
         {q.needsTranslation && <span style={{ ...chip, color: '#9A9384' }} title="Қазақша аудармасы әзірге жоқ">рус</span>}
         <button className={'flagbtn' + (flags.has(q.id) ? ' on' : '')} onClick={toggleFlag}>
           <span className="fl">⚑</span> {ru ? 'Повторить позже' : 'Кейін қайталау'}
