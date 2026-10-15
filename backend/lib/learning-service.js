@@ -7,6 +7,8 @@ const error = (message, status = 400) => Object.assign(new Error(message), { sta
 const integer = (value) => Math.max(0, Math.floor(Number(value) || 0));
 const validId = (value) => typeof value === 'string' && /^[A-Za-z0-9_-]{8,128}$/.test(value);
 const publicQuestion = ({ answer, solution, note, ...question }) => question;
+// Firestore отклоняет undefined в документе (иначе сессия задачи не открывается).
+const withoutUndefined = (value) => JSON.parse(JSON.stringify(value));
 
 // The product's daily allowance follows Kazakhstan time, not a browser clock.
 function learningDay(at) {
@@ -94,7 +96,7 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
         const rate = (await tx.get(rateRef)).data() || {};
         const starts = rate.day === dayInfo.day ? integer(rate.starts) : 0;
         if (starts >= (plan === 'pro' ? 300 : plan === 'standard' ? 150 : 60)) throw error('rate-limit', 429);
-        const session = { uid: user.uid, fingerprint, mode: body.mode, request, question: prepared.question,
+        const session = { uid: user.uid, fingerprint, mode: body.mode, request, question: withoutUndefined(prepared.question),
           startedAt: at, expiresAt: at + SESSION_TTL, completed: false };
         tx.create(sessionRef, session);
         tx.set(rateRef, { day: dayInfo.day, starts: starts + 1, updatedAt: new Date(at) });

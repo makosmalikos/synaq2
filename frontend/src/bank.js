@@ -69,7 +69,7 @@ const one = (q, school) => ({
   school,
   subject: q.subject || null,
   topic: q.topic || SUBJ_TOPIC[q.subject] || guessTopic(`${q.statement} ${q.answer ?? ''}`),
-  num: q.num,
+  num: q.num ?? null,
   statement: LANGS.includes(q.subject) ? cleanLang(q.statement) : q.statement,
   answer: q.answer,
   solution: q.solution || '',
