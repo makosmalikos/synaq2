@@ -477,9 +477,6 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
                 <span style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#B7B0A2', width: 26 }}>{String(k + 1).padStart(2, '0')}</span>
                 <div style={{ flex: 1 }}>
                   <b>{topicName(t)}</b>
-                  <div style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 3 }}>
-                    {t.schools.join(' · ')}
-                  </div>
                 </div>
                 <div style={{ width: 110 }}><div className="bar"><i style={{ width: pct + '%' }} /></div></div>
                 <span style={{ font: "600 13px 'IBM Plex Mono',monospace", width: 46, textAlign: 'right', color: pct >= 60 ? '#4C7A4E' : '#6B655B' }}>
