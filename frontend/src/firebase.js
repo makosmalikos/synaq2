@@ -76,7 +76,15 @@ export async function ensureFamilyProfile(user, name = user?.displayName || '') 
 }
 
 export async function registerParent(email, password, name = '') {
-  const cred = await createUserWithEmailAndPassword(auth, normEmail(email), password);
+  let cred;
+  try {
+    cred = await createUserWithEmailAndPassword(auth, normEmail(email), password);
+  } catch (e) {
+    // Аккаунт уже создан (например, прошлая попытка прервалась на шаге профиля):
+    // если пароль тот же — просто входим и достраиваем профиль семьи.
+    if (!String(e?.code || '').includes('email-already-in-use')) throw e;
+    cred = await signInWithEmailAndPassword(auth, normEmail(email), password).catch(() => { throw e; });
+  }
   const parentName = name.trim();
   if (parentName) await updateProfile(cred.user, { displayName: parentName }).catch(() => {});
   await ensureFamilyProfile(cred.user, parentName);
