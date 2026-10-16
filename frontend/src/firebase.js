@@ -83,7 +83,10 @@ export async function registerParent(email, password, name = '') {
     // Аккаунт уже создан (например, прошлая попытка прервалась на шаге профиля):
     // если пароль тот же — просто входим и достраиваем профиль семьи.
     if (!String(e?.code || '').includes('email-already-in-use')) throw e;
-    cred = await signInWithEmailAndPassword(auth, normEmail(email), password).catch(() => { throw e; });
+    // Почта занята, а пароль не подошёл (например, вход был через Google): это не «занятый логин»,
+    // а уже существующий аккаунт родителя — Auth.jsx переведёт на экран входа.
+    cred = await signInWithEmailAndPassword(auth, normEmail(email), password)
+      .catch(() => { throw Object.assign(new Error('parent-email-exists'), { code: 'auth/parent-email-exists' }); });
   }
   const parentName = name.trim();
   if (parentName) await updateProfile(cred.user, { displayName: parentName }).catch(() => {});
@@ -447,13 +450,21 @@ export async function getPlatformDiagnostics(childUid) {
 // Человеческие сообщения об ошибках
 export function errText(e, lang = 'kk') {
   const c = (e && e.code) || '';
+  if (c.includes('parent-email-exists')) return lang === 'ru'
+    ? 'Эта почта уже зарегистрирована. Введите свой пароль или нажмите «Войти через Google».'
+    : 'Бұл пошта тіркелген. Парольді енгізіңіз немесе «Google арқылы кіру» түймесін басыңыз.';
+  if (c.includes('account-exists-with-different-credential')) return lang === 'ru'
+    ? 'Для этой почты уже есть аккаунт. Войдите по паролю или через Google тем же способом, что и раньше.'
+    : 'Бұл пошта үшін аккаунт бар. Бұрынғыдай пароль немесе Google арқылы кіріңіз.';
+  if (c.includes('user-disabled')) return lang === 'ru' ? 'Аккаунт отключён. Напишите в поддержку.' : 'Аккаунт өшірілген. Қолдауға жазыңыз.';
+  if (c.includes('cancelled-popup-request')) return lang === 'ru' ? 'Окно входа закрыто. Попробуйте ещё раз.' : 'Терезе жабылды, қайта көріңіз';
   if (lang === 'ru') {
     if (c.includes('email-already-in-use')) return 'Этот логин уже занят. Выберите другой.';
     if (c.includes('weak-password') || c.includes('invalid-child-pin')) return 'Пароль должен содержать минимум 6 символов.';
     if (c.includes('invalid-child')) return 'Укажите имя и логин ребёнка: 3–32 латинские буквы или цифры.';
     if (c.includes('family-missing')) return 'Профиль семьи не найден. Обратитесь в поддержку для восстановления.';
     if (c.includes('invalid-email')) return 'Проверьте адрес электронной почты.';
-    if (c.includes('invalid-credential') || c.includes('wrong-password') || c.includes('user-not-found')) return 'Неверный логин или пароль.';
+    if (c.includes('invalid-credential') || c.includes('wrong-password') || c.includes('user-not-found')) return 'Неверный логин или пароль. Если вы входили через Google — нажмите «Войти через Google».';
     if (c.includes('too-many-requests')) return 'Слишком много попыток. Повторите через несколько минут.';
     if (c.includes('network')) return 'Проверьте интернет-соединение и повторите.';
     if (c.includes('requires-recent-login')) return 'Для этого действия войдите в аккаунт заново.';

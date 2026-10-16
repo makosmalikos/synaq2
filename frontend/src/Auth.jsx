@@ -177,7 +177,10 @@ export default function Auth({ onClose, duelCode = '' }) {
               placeholder={t('auth.password')} value={pass} onChange={(e) => setPass(e.target.value)} />
             <Err v={err} />
             <button style={{ ...S.dark, marginTop: 6 }} disabled={busy || !email || pass.length < 6}
-              onClick={run(() => registerParent(email, pass, pname))}>{t('auth.create')} →</button>
+              onClick={run(() => registerParent(email, pass, pname), (e) => {
+                if (String(e?.code || '').includes('parent-email-exists')) setStage('login');
+                return errText(e, lang);
+              })}>{t('auth.create')} →</button>
             <button style={S.back} onClick={() => setStage('start')}>{t('common.back')}</button>
           </div>
         )}
