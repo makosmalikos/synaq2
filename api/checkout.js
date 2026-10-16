@@ -23,10 +23,13 @@ const pending = () => failure('checkout_pending', 409,
 const paymentPending = () => failure('checkout_payment_pending', 409,
   'Предыдущий платёж ещё обрабатывается. Дождитесь подтверждения или обратитесь в поддержку.');
 
+// pro = Standard 9 990 ₸ (полный доступ); mentor = Pro с живыми уроками (2/3 в неделю).
 function products() {
+  const env = (name) => String(process.env[name] || '').trim();
   return {
-    standard: String(process.env.DODO_STANDARD_PRODUCT_ID || '').trim(),
-    pro: String(process.env.DODO_PRO_PRODUCT_ID || process.env.DODO_PRODUCT_ID || '').trim(),
+    pro: env('DODO_STANDARD_PRODUCT_ID') || env('DODO_PRO_PRODUCT_ID') || env('DODO_PRODUCT_ID'),
+    mentor2: env('DODO_PRO2_PRODUCT_ID'),
+    mentor3: env('DODO_PRO3_PRODUCT_ID'),
   };
 }
 
@@ -50,14 +53,14 @@ function validCheckoutUrl(value, sessionId) {
 
 // The unmatched collection is denied by Firestore Rules. Reserving before the
 // provider call is essential: a function crash must not permit another POST.
-async function reserve(db, familyRef, checkoutRef, user, productId, targetPlan, replaceAttemptId = null) {
+async function reserve(db, familyRef, checkoutRef, user, productId, targetPlan, lessons = null, replaceAttemptId = null) {
   return db.runTransaction(async (tx) => {
     const [family, existing] = await Promise.all([tx.get(familyRef), tx.get(checkoutRef)]);
     if (!family.exists) throw failure('family_required', 403, 'Оплата доступна только родителю с семейным аккаунтом.');
     const currentPlan = familyPlan(family.data());
     if (planRank(currentPlan) >= planRank(targetPlan)) {
       const code = targetPlan === 'pro' ? 'already_pro' : 'already_plan';
-      throw failure(code, 409, targetPlan === 'pro' ? 'Подписка Pro уже активна.' : 'Этот тариф уже активен.');
+      throw failure(code, 409, targetPlan === 'pro' ? 'Подписка уже активна.' : 'Этот тариф уже активен.');
     }
     // Never create a second concurrent subscription during an upgrade. Until
     // provider-side plan changes are implemented, support changes the existing
@@ -69,7 +72,7 @@ async function reserve(db, familyRef, checkoutRef, user, productId, targetPlan, 
     if (current && (!replaceAttemptId || current.attemptId !== replaceAttemptId || current.status !== 'ready')) {
       return { current };
     }
-    const record = { version: 2, parentUid: user.uid, productId, targetPlan, mode: MODE,
+    const record = { version: 2, parentUid: user.uid, productId, targetPlan, lessonsPerWeek: lessons, mode: MODE,
       attemptId: randomUUID(), status: 'creating', createdAt: new Date(), updatedAt: new Date() };
     tx.set(checkoutRef, record);
     return { created: record, family: family.data() };
@@ -165,7 +168,8 @@ async function createReserved(db, ref, record, user, family) {
         product_cart: [{ product_id: record.productId, quantity: 1 }],
         customer: (user.email || family.parentEmail) ? { email: user.email || family.parentEmail, name: user.name || family.parentName || undefined } : undefined,
         return_url: `${process.env.APP_URL || 'https://synaq.app'}/app?paid=${record.targetPlan}`,
-        metadata: { parentUid: user.uid, checkoutAttemptId: record.attemptId, plan: record.targetPlan },
+        metadata: { parentUid: user.uid, checkoutAttemptId: record.attemptId, plan: record.targetPlan,
+          ...(record.lessonsPerWeek ? { lessonsPerWeek: String(record.lessonsPerWeek) } : {}) },
       }),
     });
     data = await response.json();
@@ -218,7 +222,7 @@ module.exports = async function handler(req, res) {
 
   if ((process.env.SYNAQ_USE_EMULATORS !== '1' && (!process.env.FIREBASE_PROJECT_ID || !process.env.FIREBASE_CLIENT_EMAIL
       || !process.env.FIREBASE_PRIVATE_KEY)) || !process.env.DODO_PAYMENTS_API_KEY
-      || (!products().standard && !products().pro)) {
+      || !Object.values(products()).some(Boolean)) {
     console.error('Checkout environment variables are incomplete');
     return res.status(500).json({ error: 'Төлем баптаулары толық емес' });
   }
@@ -230,18 +234,20 @@ module.exports = async function handler(req, res) {
       return res.status(403).json({ error: 'parent_required' });
     }
     const targetPlan = req.body?.plan == null ? 'pro' : req.body.plan;
-    if (!['standard', 'pro'].includes(targetPlan)) return res.status(400).json({ error: 'bad_plan' });
-    const productId = products()[targetPlan];
+    if (!['pro', 'mentor'].includes(targetPlan)) return res.status(400).json({ error: 'bad_plan' });
+    const lessons = targetPlan === 'mentor' ? Number(req.body?.lessons) : null;
+    if (targetPlan === 'mentor' && ![2, 3].includes(lessons)) return res.status(400).json({ error: 'bad_plan' });
+    const productId = targetPlan === 'pro' ? products().pro : products()[`mentor${lessons}`];
     if (!productId) return res.status(503).json({ error: 'plan_unavailable', message: 'Этот тариф пока недоступен для оплаты.' });
     const db = getAdminStore();
     const familyRef = db.collection('families').doc(user.uid);
     const key = createHash('sha256').update(JSON.stringify([user.uid, productId, MODE])).digest('hex');
     const ref = db.collection('checkoutSessions').doc(key);
-    let reservation = await reserve(db, familyRef, ref, user, productId, targetPlan);
+    let reservation = await reserve(db, familyRef, ref, user, productId, targetPlan, lessons);
     if (reservation.current) {
       const previous = await inspectExisting(reservation.current);
       if (previous.url) return res.status(200).json(previous);
-      reservation = await reserve(db, familyRef, ref, user, productId, targetPlan, reservation.current.attemptId);
+      reservation = await reserve(db, familyRef, ref, user, productId, targetPlan, lessons, reservation.current.attemptId);
       // Another request already replaced this exact attempt. It owns the POST.
       if (!reservation.created) throw pending();
     }

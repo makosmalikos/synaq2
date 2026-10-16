@@ -5,15 +5,16 @@ import { planPrice } from './plans.js';
 
 export default function Subscription({ currentPlan = 'free', onBack }) {
   const { t, lang } = useLang();
-  const [selected, setSelected] = useState(currentPlan === 'pro' ? 'pro' : 'standard');
+  const [selected, setSelected] = useState(currentPlan === 'mentor' ? 'pro' : 'standard');
   const ru = lang === 'ru';
   const plans = [
     { id: 'free', name: t('plan.free'), price: planPrice('free', lang), features: [t('plan.f1'), t('plan.f2'), '5 AI'], tone: 'free' },
-    { id: 'standard', name: t('plan.standard'), price: planPrice('standard', lang), features: [t('plan.s1'), t('plan.s2'), t('plan.s3'), t('plan.s4')], tone: 'standard' },
-    { id: 'pro', name: 'SYNAQ Pro', price: planPrice('pro', lang), features: [t('plan.p1'), t('plan.p2'), t('plan.p3'), t('plan.p4')], tone: 'pro' },
+    { id: 'standard', name: t('plan.standard'), price: planPrice('pro', lang), features: [t('plan.s1'), t('plan.s2'), t('plan.s3'), t('plan.s4')], tone: 'standard' },
+    { id: 'pro', name: t('plan.pro'), price: `${t('plan.from')} ${planPrice('mentor', lang)}`, features: [t('plan.p1'), t('plan.p2'), t('plan.p3'), t('plan.p4')], tone: 'pro' },
   ];
   const chosen = plans.find((item) => item.id === selected);
-  const active = currentPlan === selected;
+  const shownPlan = currentPlan === 'pro' ? 'standard' : currentPlan === 'mentor' ? 'pro' : currentPlan;
+  const active = shownPlan === selected;
 
   return (
     <main className="subscription-page">
@@ -28,12 +29,12 @@ export default function Subscription({ currentPlan = 'free', onBack }) {
         <section className="subscription-hero">
           <span className="subscription-kicker">⚡ {t('subscription.kicker')}</span>
           <h1>{ru ? 'Выберите подходящий' : 'Өзіңізге ыңғайлы'} <em>{ru ? 'тариф' : 'тарифті таңдаңыз'}</em></h1>
-          <p>{ru ? 'Начните бесплатно, выберите Стандартный для регулярной подготовки или Pro для полного доступа.' : 'Тегін бастаңыз, тұрақты дайындыққа Стандартты, толық қолжетімділікке Pro таңдаңыз.'}</p>
+          <p>{ru ? 'Начните бесплатно, выберите Standard для самостоятельной подготовки или Pro с живыми уроками наставника.' : 'Тегін бастаңыз, өз бетінше дайындалуға Standard, тірі сабақтарға тәлімгермен Pro таңдаңыз.'}</p>
         </section>
 
         <section className="subscription-choice subscription-plans" aria-label={t('subscription.tariff')}>
           {plans.map((item) => {
-            const isCurrent = currentPlan === item.id, isSelected = selected === item.id;
+            const isCurrent = (currentPlan === 'pro' ? 'standard' : currentPlan === 'mentor' ? 'pro' : currentPlan) === item.id, isSelected = selected === item.id;
             return <button type="button" key={item.id} className={`subscription-plan-card is-${item.tone}${isSelected ? ' selected' : ''}${isCurrent ? ' active' : ''}`}
               onClick={() => item.id !== 'free' && setSelected(item.id)} aria-pressed={isSelected}>
               <span className="subscription-plan-status">{isCurrent ? t('plan.current') : isSelected ? '✓' : ''}</span>

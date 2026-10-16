@@ -123,10 +123,10 @@ export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
 
   // Платный тариф привязывается к аккаунту родителя. Сохраняем выбранный
   // вариант и время, чтобы после входа открыть правильную оплату.
-  const handleBuyPlan = (targetPlan) => (e) => {
+  const handleBuyPlan = (targetPlan, lessons = null) => (e) => {
     e.preventDefault();
     try {
-      localStorage.setItem('synaq_want_plan', JSON.stringify({ plan: targetPlan, at: Date.now() }));
+      localStorage.setItem('synaq_want_plan', JSON.stringify({ plan: targetPlan, lessons, at: Date.now() }));
     } catch {}
     onStart();
   };
@@ -683,19 +683,19 @@ export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
       <div className="lp-price lp-price-standard lp-card" style={{borderRadius:'22px',padding:'34px 30px',display:'flex',flexDirection:'column',position:'relative'}}>
         <div style={{position:'absolute',top:'-13px',left:'50%',transform:'translateX(-50%)',background:'#E6F3FF',color:'#146EBA',font:'600 11px \'IBM Plex Mono\',monospace',letterSpacing:'.08em',textTransform:'uppercase',padding:'6px 14px',borderRadius:'100px',whiteSpace:'nowrap'}}>{t('lp.65')}</div>
         <div className="lp-plan-name" style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.1em',textTransform:'uppercase',color:'#267FCB'}}>{t('plan.standard')}</div>
-        <div style={{display:'flex',alignItems:'baseline',gap:'6px',margin:'16px 0 6px'}}><span className="lp-plan-price" style={{font:'600 46px \'Lora\',serif',color:'#13283C'}}>{planPrice('standard', lang)}</span><span style={{fontSize:'15px',color:'#60758A'}}>{t('lp.67')}</span></div>
+        <div style={{display:'flex',alignItems:'baseline',gap:'6px',margin:'16px 0 6px'}}><span className="lp-plan-price" style={{font:'600 46px \'Lora\',serif',color:'#13283C'}}>{planPrice('pro', lang)}</span><span style={{fontSize:'15px',color:'#60758A'}}>{t('lp.67')}</span></div>
         <div style={{fontSize:'14px',color:'#60758A',marginBottom:'24px'}}>{t('plan.s4')}</div>
         <div className="lp-price-features" style={{display:'flex',flexDirection:'column',gap:'12px'}}>
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#36536B'}}><span style={{color:'#2B91EA'}}>✓</span>{t('plan.s1')}</div>
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#36536B'}}><span style={{color:'#2B91EA'}}>✓</span>{t('plan.s2')}</div>
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#36536B'}}><span style={{color:'#2B91EA'}}>✓</span>{t('plan.s3')}</div>
         </div>
-        <a href="#" onClick={handleBuyPlan('standard')} className="lp-cta" style={{display:'block',textAlign:'center',marginTop:'26px',padding:'14px',borderRadius:'12px',background:'#2B91EA',color:'#FFFFFF',font:'600 15px \'Golos Text\''}}>{t('plan.chooseStandard')}</a>
+        <a href="#" onClick={handleBuyPlan('pro')} className="lp-cta" style={{display:'block',textAlign:'center',marginTop:'26px',padding:'14px',borderRadius:'12px',background:'#2B91EA',color:'#FFFFFF',font:'600 15px \'Golos Text\''}}>{t('plan.chooseStandard')}</a>
       </div>
 
       <div className="lp-price lp-price-pro" style={{background:'#167ACB',border:'1px solid #167ACB',borderRadius:'22px',padding:'34px 30px',display:'flex',flexDirection:'column',position:'relative',boxShadow:'0 30px 70px -40px rgba(30,126,204,.8)',transition:'transform .2s'}}>
         <div className="lp-plan-name" style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.1em',textTransform:'uppercase',color:'#FFFFFF'}}>{t('lp.66')}</div>
-        <div style={{display:'flex',alignItems:'baseline',gap:'6px',margin:'16px 0 6px'}}><span className="lp-plan-price" style={{font:'600 46px \'Lora\',serif',color:'#FFFFFF'}}>{planPrice('pro', lang)}</span><span style={{fontSize:'15px',color:'#DCEEFF'}}>{t('lp.67')}</span></div>
+        <div style={{display:'flex',alignItems:'baseline',gap:'6px',margin:'16px 0 6px'}}><span className="lp-plan-price" style={{font:'600 46px \'Lora\',serif',color:'#FFFFFF'}}><small style={{fontSize:'15px',marginRight:'6px'}}>{t('plan.from')}</small>{planPrice('mentor', lang)}</span><span style={{fontSize:'15px',color:'#DCEEFF'}}>{t('lp.67')}</span></div>
         <div style={{fontSize:'14px',color:'#C9E5FB',marginBottom:'24px'}}>{t('lp.68')}</div>
         <div className="lp-price-features" style={{display:'flex',flexDirection:'column',gap:'12px'}}>
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#F4FAFF'}}><span style={{color:'#FFFFFF'}}>✓</span>{t('lp.69')}</div>
@@ -704,7 +704,8 @@ export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#F4FAFF'}}><span style={{color:'#FFFFFF'}}>✓</span>{t('lp.72')}</div>
           <div style={{display:'flex',gap:'10px',fontSize:'14.5px',color:'#F4FAFF'}}><span style={{color:'#FFFFFF'}}>✓</span>{t('lp.73')}</div>
         </div>
-        <a href="#" onClick={handleBuyPlan('pro')} className="lp-cta" style={{display:'block',textAlign:'center',marginTop:'26px',padding:'14px',borderRadius:'12px',background:'#FFFFFF',color:'#146EBA',font:'600 15px \'Golos Text\''}}>{t('lp.74')}</a>
+        <a href="#" onClick={handleBuyPlan('mentor', 2)} className="lp-cta" style={{display:'block',textAlign:'center',marginTop:'26px',padding:'14px',borderRadius:'12px',background:'#FFFFFF',color:'#146EBA',font:'600 15px \'Golos Text\''}}>{t('plan.lessons2')} · {planPrice('mentor', lang, 2)}</a>
+        <a href="#" onClick={handleBuyPlan('mentor', 3)} className="lp-cta" style={{display:'block',textAlign:'center',marginTop:'10px',padding:'14px',borderRadius:'12px',background:'#FFFFFF',color:'#146EBA',font:'600 15px \'Golos Text\''}}>{t('plan.lessons3')} · {planPrice('mentor', lang, 3)}</a>
       </div>
 
       

@@ -1,6 +1,6 @@
 // One-time Dodo checkout for the current weekly mock pass (2500 KZT product).
 const { getAdmin } = require('../backend/lib/firebase-admin');
-const { familyPlan } = require('../backend/lib/plans');
+const { familyPlan, hasFullAccess } = require('../backend/lib/plans');
 const { createHash, randomUUID } = require('node:crypto');
 const { weeklyWindow, passId, PRICE_KZT } = require('../backend/lib/weekly-mock');
 
@@ -69,7 +69,7 @@ module.exports = async function handler(req, res) {
     const user = await auth.verifyIdToken(token, true);
     const owner = await identity(db, user);
     const window = weeklyWindow();
-    if (familyPlan(owner.family) === 'pro') return res.status(200).json({ access: true, included: true, ...window });
+    if (hasFullAccess(familyPlan(owner.family))) return res.status(200).json({ access: true, included: true, ...window });
     const passRef = db.collection('weeklyMockPasses').doc(passId(owner.parentUid, window.weekKey));
     if ((await passRef.get()).data()?.paid === true) return res.status(200).json({ access: true, paid: true, ...window });
 
@@ -80,7 +80,7 @@ module.exports = async function handler(req, res) {
         tx.get(db.collection('families').doc(owner.parentUid)), tx.get(passRef), tx.get(ref),
       ]);
       if (!family.exists) throw failure('family-required', 403);
-      if (familyPlan(family.data()) === 'pro' || pass.data()?.paid === true) return { access: true };
+      if (hasFullAccess(familyPlan(family.data())) || pass.data()?.paid === true) return { access: true };
       const current = existing.data();
       if (current) return { current };
       const created = { version: 1, kind: 'weekly_mock', parentUid: owner.parentUid,

@@ -56,7 +56,7 @@ function fixture() {
     static now() { return now; }
   }
   const env = { FIREBASE_PROJECT_ID: 'local-test', FIREBASE_CLIENT_EMAIL: 'local@example.invalid', FIREBASE_PRIVATE_KEY: 'unused-stub-key',
-    DODO_PAYMENTS_API_KEY: 'unused-stub-provider-key', DODO_PRODUCT_ID: 'pro-product', DODO_STANDARD_PRODUCT_ID: 'standard-product', DODO_ENV: 'test_mode', APP_URL: 'https://example.test' };
+    DODO_PAYMENTS_API_KEY: 'unused-stub-provider-key', DODO_PRODUCT_ID: 'pro-product', DODO_PRO2_PRODUCT_ID: 'mentor2-product', DODO_PRO3_PRODUCT_ID: 'mentor3-product', DODO_ENV: 'test_mode', APP_URL: 'https://example.test' };
   async function defaultProvider(url, options) {
     if (options.method === 'POST') {
       const id = `cks_${++nextSession}`;
@@ -138,18 +138,21 @@ test('reservation scope separates authenticated parents and products, never clie
   assert.equal(f.records().length, 3);
 });
 
-test('checkout selects the server-owned Standard product and blocks double-billed upgrades', async () => {
+test('checkout selects the server-owned mentor product by lessons and blocks double-billed upgrades', async () => {
   const f = fixture();
-  const standard = await f.invoke({ body: { plan: 'standard', productId: 'attacker-product' } });
-  assert.equal(standard.status, 200);
+  const mentor = await f.invoke({ body: { plan: 'mentor', lessons: 3, productId: 'attacker-product' } });
+  assert.equal(mentor.status, 200);
   const payload = JSON.parse(f.posts()[0].body);
-  assert.equal(payload.product_cart[0].product_id, 'standard-product');
-  assert.equal(payload.metadata.plan, 'standard');
-  assert.equal(payload.return_url, 'https://example.test/app?paid=standard');
+  assert.equal(payload.product_cart[0].product_id, 'mentor3-product');
+  assert.equal(payload.metadata.plan, 'mentor');
+  assert.equal(payload.metadata.lessonsPerWeek, '3');
+  assert.equal(payload.return_url, 'https://example.test/app?paid=mentor');
+  assert.equal((await fixture().invoke({ body: { plan: 'mentor', lessons: 1 } })).body.error, 'bad_plan');
+  assert.equal((await fixture().invoke({ body: { plan: 'standard' } })).body.error, 'bad_plan');
 
   const upgrade = fixture();
-  upgrade.docs.set('families/parent', { parentName: 'Parent', plan: 'standard', planExpiresAt: new Date(Date.now() + DAY) });
-  const denied = await upgrade.invoke({ body: { plan: 'pro' } });
+  upgrade.docs.set('families/parent', { parentName: 'Parent', plan: 'pro', planExpiresAt: new Date(Date.now() + DAY) });
+  const denied = await upgrade.invoke({ body: { plan: 'mentor', lessons: 2 } });
   assert.equal(denied.status, 409);
   assert.equal(denied.body.error, 'plan_change_required');
   assert.equal(upgrade.posts().length, 0);

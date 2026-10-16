@@ -3,7 +3,7 @@
 // remain server-side and are never exposed to the child client.
 
 const { getAdmin } = require('../lib/firebase-admin');
-const { familyPlan, millis } = require('../lib/plans');
+const { familyPlan, hasFullAccess, millis } = require('../lib/plans');
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'GET') return res.status(405).json({ error: 'method_not_allowed' });
@@ -30,7 +30,8 @@ module.exports = async function handler(req, res) {
     const family = await db.collection('families').doc(parentUid).get();
     const plan = family.exists ? familyPlan(family.data()) : 'free';
     const expiresMs = millis(family.data()?.planExpiresAt ?? family.data()?.proExpiresAt);
-    return res.status(200).json({ plan, standard: plan === 'standard', pro: plan === 'pro',
+    return res.status(200).json({ plan, standard: plan === 'standard', pro: hasFullAccess(plan),
+      ...(plan === 'mentor' ? { mentor: true, lessonsPerWeek: Number(family.data()?.lessonsPerWeek) || null } : {}),
       expiresAt: plan !== 'free' && expiresMs ? new Date(expiresMs).toISOString() : null });
   } catch (e) {
     if (e?.code === 'synaq/admin-config') return res.status(503).json({ error: 'server_not_configured' });

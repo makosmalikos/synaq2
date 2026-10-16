@@ -1,5 +1,5 @@
 const { createHash } = require('node:crypto');
-const { millis, familyPlan, dailyTaskLimit } = require('./plans');
+const { millis, familyPlan, hasFullAccess, dailyTaskLimit } = require('./plans');
 
 const FREE_DAILY_LIMIT = 5;
 const SESSION_TTL = 86400000;
@@ -87,7 +87,7 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
         prepared ||= body.mode === 'training' ? { question: await getTrainingQuestion(body.qid), standard: true }
           : await getCurriculumQuestion(body.topicKey, body.level, body.id);
         if (!prepared?.question) throw error('question-unavailable', 404);
-        if (body.mode === 'curriculum' && plan !== 'pro'
+        if (body.mode === 'curriculum' && !hasFullAccess(plan)
           && (plan === 'free' ? !(prepared.free ?? prepared.standard) || body.level !== 'easy'
             : !prepared.standard || !['easy', 'medium'].includes(body.level))) {
           throw error('pro-required', 403);
@@ -95,7 +95,7 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
         const rateRef = db.collection('learningRateLimits').doc(user.uid);
         const rate = (await tx.get(rateRef)).data() || {};
         const starts = rate.day === dayInfo.day ? integer(rate.starts) : 0;
-        if (starts >= (plan === 'pro' ? 300 : plan === 'standard' ? 150 : 60)) throw error('rate-limit', 429);
+        if (starts >= (hasFullAccess(plan) ? 300 : plan === 'standard' ? 150 : 60)) throw error('rate-limit', 429);
         const session = { uid: user.uid, fingerprint, mode: body.mode, request, question: withoutUndefined(prepared.question),
           startedAt: at, expiresAt: at + SESSION_TTL, completed: false };
         tx.create(sessionRef, session);
@@ -124,7 +124,7 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
       if (session.completed) throw error('session-completed', 409);
       const plan = familyPlan(family, at), limit = dailyTaskLimit(plan);
       if (limit != null && daily.count >= limit) throw error('daily-limit', 429);
-      if (plan !== 'pro' && session.mode === 'curriculum') {
+      if (!hasFullAccess(plan) && session.mode === 'curriculum') {
         const access = await getCurriculumQuestion(session.request.topicKey, session.request.level, body.id, true);
         if (plan === 'free' ? !(access?.free ?? access?.standard) || session.request.level !== 'easy'
           : !access?.standard || !['easy', 'medium'].includes(session.request.level)) {

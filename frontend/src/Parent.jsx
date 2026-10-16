@@ -19,7 +19,7 @@ const Logo = () => <div className="logo"><Brand compact /></div>;
 // synaq_want_pro флагі осы уақыттан ескі болса құрметтелмейді (бөлек
 // абзацта түсіндірілген — ортақ компьютердегі ескі белгі мәселесі).
 const WANT_PRO_TTL_MS = 30 * 60 * 1000;
-const planRank = (value) => ({ free: 0, standard: 1, pro: 2 }[value] || 0);
+const planRank = (value) => ({ free: 0, standard: 1, pro: 2, mentor: 3 }[value] || 0);
 
 export default function Parent({ onExit }) {
   const { t, lang } = useLang();
@@ -28,7 +28,8 @@ export default function Parent({ onExit }) {
     await (onExit || logout)();
   };
   const [plan, setPlan] = useState(null);    // null — әлі жүктелуде
-  const pro = plan === 'pro';
+  const pro = plan === 'mentor';        // карточка «Pro с наставником»
+  const full = plan === 'pro';          // карточка Standard (полный доступ, самостоятельно)
   const [me, setMe] = useState('');          // ата-ананың аты
   const [paying, setPaying] = useState(false);
   const payingRef = useRef(false);
@@ -44,7 +45,7 @@ export default function Parent({ onExit }) {
   const checkoutHold = checkoutNeedsVerification(paymentIssue?.code);
   const [paymentPending, setPaymentPending] = useState(() => {
     const paid = new URLSearchParams(window.location.search).get('paid');
-    return ['1', 'standard', 'pro'].includes(paid);
+    return ['1', 'standard', 'pro', 'mentor'].includes(paid);
   });
   const [children, setChildren] = useState([]);
   const [childrenLoaded, setChildrenLoaded] = useState(false);
@@ -80,7 +81,7 @@ export default function Parent({ onExit }) {
       }
       if (!u.displayName) setMe(f?.parentName || (u.email || '').split('@')[0]);
       const paidTarget = new URLSearchParams(window.location.search).get('paid');
-      const expectedPlan = paidTarget === 'standard' ? 'standard' : 'pro';
+      const expectedPlan = paidTarget === 'mentor' ? 'mentor' : 'pro';
       if (paidTarget && planRank(currentPlan) >= planRank(expectedPlan)) {
         setPaymentPending(false);
         setPaymentIssue(null);
@@ -94,21 +95,23 @@ export default function Parent({ onExit }) {
       // после авторизации. Старый synaq_want_pro поддерживаем для совместимости.
       if (wantedHandled.current) return;
       wantedHandled.current = true;
-      let wantedPlan = null;
+      let wantedPlan = null, wantedLessons = null;
       try {
         const rawPlan = localStorage.getItem('synaq_want_plan');
         localStorage.removeItem('synaq_want_plan');
         if (rawPlan) {
           const intent = JSON.parse(rawPlan);
           const ts = Number(intent?.at);
-          if (['standard', 'pro'].includes(intent?.plan) && Number.isFinite(ts) && Date.now() >= ts && Date.now() - ts < WANT_PRO_TTL_MS) wantedPlan = intent.plan;
+          if (['pro', 'mentor'].includes(intent?.plan) && Number.isFinite(ts) && Date.now() >= ts && Date.now() - ts < WANT_PRO_TTL_MS) {
+            wantedPlan = intent.plan; wantedLessons = [2, 3].includes(intent.lessons) ? intent.lessons : 2;
+          }
         }
         const raw = localStorage.getItem('synaq_want_pro');
         localStorage.removeItem('synaq_want_pro');
         const ts = Number(raw);
         if (!wantedPlan && raw != null && Number.isFinite(ts) && Date.now() >= ts && Date.now() - ts < WANT_PRO_TTL_MS) wantedPlan = 'pro';
       } catch {}
-      if (wantedPlan && planRank(currentPlan) < planRank(wantedPlan) && !paymentPending) buyPlan(wantedPlan);
+      if (wantedPlan && planRank(currentPlan) < planRank(wantedPlan) && !paymentPending) buyPlan(wantedPlan, wantedLessons);
     }, (error) => {
       console.error('family subscription failed', error);
       setPlan(null);
@@ -133,8 +136,8 @@ export default function Parent({ onExit }) {
   }, []);
 
   // «Про таңдау» → Dodo төлем бетіне жібереміз
-  async function buyPlan(targetPlan) {
-    if (!['standard', 'pro'].includes(targetPlan)) return;
+  async function buyPlan(targetPlan, lessons = null) {
+    if (!['pro', 'mentor'].includes(targetPlan)) return;
     const u = auth.currentUser;
     if (!u || payingRef.current || checkoutHold || paymentPending) return;
     const current = () => mounted.current && auth.currentUser?.uid === u.uid;
@@ -152,7 +155,7 @@ export default function Parent({ onExit }) {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${idToken}`,
         },
-        body: JSON.stringify({ plan: targetPlan }),
+        body: JSON.stringify(targetPlan === 'mentor' ? { plan: targetPlan, lessons } : { plan: targetPlan }),
       });
       const raw = await r.text();
       let data = null;
@@ -391,22 +394,22 @@ export default function Parent({ onExit }) {
 
               {/* ── Standard ── */}
               <div className="card" style={{
-                borderColor: plan === 'standard' ? '#2F80ED' : 'var(--line)', borderWidth: plan === 'standard' ? 2 : 1,
-                background: plan === 'standard' ? '#EEF6FF' : '#fff',
+                borderColor: full ? '#2F80ED' : 'var(--line)', borderWidth: full ? 2 : 1,
+                background: full ? '#EEF6FF' : '#fff',
               }}>
                 <div className="row" style={{ marginBottom: 10 }}>
                   <p className="kicker" style={{ margin: 0, color: '#2F80ED' }}>{t('plan.standard')}</p>
-                  {plan === 'standard' && <span className="tag" style={{ borderColor: '#2F80ED', color: '#2F80ED' }}>{t('plan.active')}</span>}
+                  {full && <span className="tag" style={{ borderColor: '#2F80ED', color: '#2F80ED' }}>{t('plan.active')}</span>}
                 </div>
                 <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>
-                  {planPrice('standard', lang)}<span style={{ font: "500 13px 'Golos Text'", color: '#9A9384' }}>{t('plan.month')}</span>
+                  {planPrice('pro', lang)}<span style={{ font: "500 13px 'Golos Text'", color: '#9A9384' }}>{t('plan.month')}</span>
                 </div>
                 <ul style={{ margin: '0 0 14px', padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text'", lineHeight: 2 }}>
                   <li>✓ {t('plan.s1')}</li><li>✓ {t('plan.s2')}</li><li>✓ {t('plan.s3')}</li><li>✓ {t('plan.s4')}</li>
                 </ul>
-                {plan === 'standard' ? <div style={{ font: "600 13px 'Golos Text'", color: '#2F80ED' }}>{t('plan.activeNote')}</div>
+                {full ? <div style={{ font: "600 13px 'Golos Text'", color: '#2F80ED' }}>{t('plan.activeNote')}</div>
                   : plan === 'free' && <button className="btn" disabled={paying || paymentPending || checkoutHold}
-                    onClick={() => buyPlan('standard')} style={{ width: '100%' }}>{paying ? '…' : t('plan.chooseStandard')}</button>}
+                    onClick={() => buyPlan('pro')} style={{ width: '100%' }}>{paying ? '…' : t('plan.chooseStandard')}</button>}
               </div>
 
               {/* ── Про ── */}
@@ -419,7 +422,7 @@ export default function Parent({ onExit }) {
                   {pro && <span className="tag" style={{ borderColor: 'var(--green)', color: 'var(--green)' }}>{t('plan.active')}</span>}
                 </div>
                 <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>
-                  {planPrice('pro', lang)}<span style={{ font: "500 13px 'Golos Text'", color: '#9A9384' }}>{t('plan.month')}</span>
+                  <small style={{ font: "500 13px 'Golos Text'", color: '#9A9384', marginRight: 6 }}>{t('plan.from')}</small>{planPrice('mentor', lang)}<span style={{ font: "500 13px 'Golos Text'", color: '#9A9384' }}>{t('plan.month')}</span>
                 </div>
                 <ul style={{ margin: '0 0 14px', padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text'", lineHeight: 2 }}>
                   <li>✓ {t('plan.p1')}</li>
@@ -429,11 +432,13 @@ export default function Parent({ onExit }) {
                 </ul>
                 {pro ? (
                   <div style={{ font: "600 13px 'Golos Text'", color: 'var(--green)' }}>{t('plan.activeNote')}</div>
-                ) : (
-                  <button className="btn accent" disabled={paying || paymentPending || checkoutHold} onClick={() => buyPlan('pro')} style={{ width: '100%' }}>
-                    {checkoutHold ? text('Нужна проверка оплаты', 'Төлемді тексеру қажет') : paymentPending ? text('Проверяем оплату…', 'Төлем тексерілуде…') : paying ? '…' : t('pro.buy')}
+                ) : plan === 'pro' ? (
+                  <div style={{ font: "600 13px 'Golos Text'", color: '#9A9384' }}>{text('Переход на Pro — через поддержку, без двойной оплаты', 'Pro-ға өту — қолдау арқылы, қос төлемсіз')}</div>
+                ) : [2, 3].map((n) => (
+                  <button key={n} className="btn accent" disabled={paying || paymentPending || checkoutHold} onClick={() => buyPlan('mentor', n)} style={{ width: '100%', marginTop: n === 2 ? 0 : 8 }}>
+                    {checkoutHold ? text('Нужна проверка оплаты', 'Төлемді тексеру қажет') : paymentPending ? text('Проверяем оплату…', 'Төлем тексерілуде…') : paying ? '…' : `${t('plan.lessons' + n)} · ${planPrice('mentor', lang, n)}`}
                   </button>
-                )}
+                ))}
               </div>
             </div>
           )}

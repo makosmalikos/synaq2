@@ -1,7 +1,7 @@
 // A child identity is owned by a durable, server-written reservation BEFORE
 // Auth creation. Recovery only ever looks up that reserved UID, never an email.
 const { getAdmin } = require('../backend/lib/firebase-admin');
-const { familyPlan, isWeakPin } = require('../backend/lib/plans');
+const { familyPlan, hasFullAccess, isWeakPin } = require('../backend/lib/plans');
 const { createHash, randomUUID } = require('node:crypto');
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const RESERVED_UID = /^synaqkid_[a-f0-9]{32}$/;
@@ -104,7 +104,7 @@ async function finish(db, requestRef, proof, name, klass, avatar) {
     if (!family.exists) throw failure('family_missing');
     if (child.exists || index.exists) throw failure('request_incomplete');
     if (!children.empty || family.data().childAccountUid) throw failure('child_limit');
-    const data = family.data(), plan = familyPlan(data), pro = plan === 'pro';
+    const data = family.data(), plan = familyPlan(data), pro = hasFullAccess(plan);
     tx.create(refs.child, { name, klass, avatar, code: proof.code, createdAt: new Date() });
     tx.create(refs.index, { parentUid: proof.parentUid, name, klass, avatar, plan, pro, linkedByServer: true });
     // This shared family write serializes distinct reservations racing for the

@@ -30,6 +30,11 @@ function hasAtLeast(family, required, at = Date.now()) {
   return planRank(familyPlan(family, at)) >= planRank(required);
 }
 
+// «Полный доступ» = Standard (внутренний ключ pro) и Pro с наставником (mentor).
+function hasFullAccess(plan) {
+  return planRank(plan) >= PLAN_RANK.pro;
+}
+
 function dailyTaskLimit(plan) {
   return PLAN_CATALOG[validPlan(plan) || 'free'].tasksPerDay;
 }
@@ -60,4 +65,4 @@ function isWeakPin(pin, code = '') {
   return !!login && lower === login;
 }
 
-module.exports = { PLAN_CATALOG, PLAN_RANK, millis, validPlan, familyPlan, planRank, hasAtLeast, dailyTaskLimit, isWeakPin };
+module.exports = { PLAN_CATALOG, PLAN_RANK, millis, validPlan, familyPlan, planRank, hasAtLeast, hasFullAccess, dailyTaskLimit, isWeakPin };

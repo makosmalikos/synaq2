@@ -272,11 +272,11 @@ function expiryMillis(value) {
 }
 
 export function familyHasPro(family) {
-  return familyPlan(family) === 'pro';
+  return ['pro', 'mentor'].includes(familyPlan(family));
 }
 
 export function familyPlan(family) {
-  const plan = ['standard', 'pro'].includes(family?.plan) ? family.plan : family?.pro === true ? 'pro' : 'free';
+  const plan = ['standard', 'pro', 'mentor'].includes(family?.plan) ? family.plan : family?.pro === true ? 'pro' : 'free';
   const rawExpiry = family?.planExpiresAt ?? family?.proExpiresAt;
   if (rawExpiry == null) return plan;
   const expiresAt = expiryMillis(rawExpiry);
@@ -292,7 +292,7 @@ export async function getMyProfile() {
   const family = d.parentUid ? await getDoc(doc(db, 'families', d.parentUid)) : null;
   const plan = familyPlan(family?.data());
   return { name: d.name || u.displayName || '', klass: d.klass || '', school: d.school || 'РФМШ', avatar: d.avatar || 'owl',
-    plan, pro: plan === 'pro', planExpiresAt: family?.data()?.planExpiresAt || family?.data()?.proExpiresAt || null,
+    plan, pro: ['pro', 'mentor'].includes(plan), lessonsPerWeek: plan === 'mentor' ? family?.data()?.lessonsPerWeek || null : null, planExpiresAt: family?.data()?.planExpiresAt || family?.data()?.proExpiresAt || null,
     proExpiresAt: family?.data()?.proExpiresAt || null };
 }
 
@@ -311,7 +311,7 @@ function watchChildProfile(uid, fallbackName, callback, onError = () => {}) {
       const emit = () => {
         if (closed) return;
         const plan = familyPlan(data), expiresAt = data?.planExpiresAt ?? data?.proExpiresAt;
-        callback({ ...base, plan, pro: plan === 'pro', planExpiresAt: expiresAt || null,
+        callback({ ...base, plan, pro: ['pro', 'mentor'].includes(plan), lessonsPerWeek: plan === 'mentor' ? data?.lessonsPerWeek || null : null, planExpiresAt: expiresAt || null,
           proExpiresAt: data?.proExpiresAt || null, proLoading: false });
         const remaining = expiryMillis(expiresAt) - Date.now();
         if (plan !== 'free' && remaining > 0) expiryTimer = setTimeout(emit, Math.min(remaining + 25, 2147483647));

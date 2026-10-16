@@ -1,5 +1,5 @@
 const { getAdmin } = require('../backend/lib/firebase-admin');
-const { familyPlan } = require('../backend/lib/plans');
+const { familyPlan, hasFullAccess } = require('../backend/lib/plans');
 const { mockCatalog, createWeeklyMock, restoreMock, gradeMock, publicMock } = require('../backend/lib/mock-bank');
 const { PRICE_KZT, weeklyWindow, passId } = require('../backend/lib/weekly-mock');
 
@@ -42,7 +42,7 @@ module.exports = async function handler(req, res) {
       const { family, parentUid } = await childContext(db, user);
       const window = weeklyWindow();
       const pass = await db.collection('weeklyMockPasses').doc(passId(parentUid, window.weekKey)).get();
-      const pro = familyPlan(family) === 'pro', paid = pass.exists && pass.data()?.paid === true;
+      const pro = hasFullAccess(familyPlan(family)), paid = pass.exists && pass.data()?.paid === true;
       return res.status(200).json({ schools: await mockCatalog(db), weekly: {
         ...window, pro, paid, access: pro || paid, priceKzt: PRICE_KZT,
       } });
@@ -85,9 +85,9 @@ module.exports = async function handler(req, res) {
         const passRef = db.collection('weeklyMockPasses').doc(passId(parentUid, window.weekKey));
         const rateRef = db.collection('mockRateLimits').doc(user.uid);
         const [pass, rate] = await Promise.all([tx.get(passRef), tx.get(rateRef)]);
-        if (plan !== 'pro' && (!pass.exists || pass.data()?.paid !== true)) throw error('weekly-payment-required', 402);
+        if (!hasFullAccess(plan) && (!pass.exists || pass.data()?.paid !== true)) throw error('weekly-payment-required', 402);
         const rateData = rate.data() || {}, starts = rateData.day === day ? Number(rateData.starts || 0) : 0;
-        if (!Number.isSafeInteger(starts) || starts < 0 || starts >= (plan === 'pro' ? 20 : 3)) throw error('rate-limit', 429);
+        if (!Number.isSafeInteger(starts) || starts < 0 || starts >= (hasFullAccess(plan) ? 20 : 3)) throw error('rate-limit', 429);
         tx.set(rateRef, { day, starts: starts + 1, updatedAt: new Date(now) });
         const value = { uid: user.uid, attemptId: body.id, school: prepared.school, title: prepared.title,
           timeLimitMin: prepared.timeLimitMin, sections: prepared.sections, shortened: !!prepared.shortened,

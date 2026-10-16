@@ -4,7 +4,7 @@
 // refund alone does not describe the current subscription entitlement.
 const crypto = require('crypto');
 const { getAdmin } = require('../backend/lib/firebase-admin');
-const { familyPlan, planRank } = require('../backend/lib/plans');
+const { familyPlan, planRank, hasFullAccess } = require('../backend/lib/plans');
 const { passId, validWeekKey } = require('../backend/lib/weekly-mock');
 
 const EVENTS = new Set([
@@ -21,13 +21,22 @@ const timestamp = (value) => {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : 0;
 };
 const failure = (message, status = 503) => Object.assign(new Error(message), { status });
-const products = () => ({
-  standard: String(process.env.DODO_STANDARD_PRODUCT_ID || '').trim(),
-  pro: String(process.env.DODO_PRO_PRODUCT_ID || process.env.DODO_PRODUCT_ID || '').trim(),
-});
-const planForProduct = (productId) => Object.entries(products()).find(([, id]) => id && id === productId)?.[0] || '';
+// Внутренний ключ `pro` = полный доступ (на сайте «Standard», 9 990 ₸; сюда же
+// относятся старые продукты 5 999 ₸). `mentor` = Pro с живыми уроками (2 или 3 в неделю).
+const products = () => {
+  const env = (name) => String(process.env[name] || '').trim();
+  return [
+    [env('DODO_PRO2_PRODUCT_ID'), { plan: 'mentor', lessonsPerWeek: 2 }],
+    [env('DODO_PRO3_PRODUCT_ID'), { plan: 'mentor', lessonsPerWeek: 3 }],
+    [env('DODO_STANDARD_PRODUCT_ID'), { plan: 'pro' }],
+    [env('DODO_PRO_PRODUCT_ID'), { plan: 'pro' }],
+    [env('DODO_PRODUCT_ID'), { plan: 'pro' }],
+  ].filter(([id]) => id);
+};
+const productInfo = (productId) => products().find(([id]) => id === productId)?.[1] || null;
+const planForProduct = (productId) => productInfo(productId)?.plan || '';
 const weeklyProduct = () => String(process.env.DODO_WEEKLY_MOCK_PRODUCT_ID || '').trim();
-const statePlan = (state) => ['standard', 'pro'].includes(state?.plan) ? state.plan : state?.pro === true ? 'pro' : 'free';
+const statePlan = (state) => ['standard', 'pro', 'mentor'].includes(state?.plan) ? state.plan : state?.pro === true ? 'pro' : 'free';
 
 async function rawBody(req) {
   const chunks = [];
@@ -110,11 +119,11 @@ function subscriptionState(subscription, parentUid, eventAt, eventId) {
   const termEnd = timestamp(subscription.expires_at);
   if (status === 'active' && !periodEnd) throw failure('missing_subscription_period');
   const expiresAt = periodEnd && termEnd ? Math.min(periodEnd, termEnd) : periodEnd || termEnd;
-  const plan = planForProduct(subscription.product_id);
+  const info = productInfo(subscription.product_id), plan = info?.plan || '';
   const active = status === 'active' && !!plan;
   return {
     parentUid, subscriptionId: subscription.subscription_id, productId: subscription.product_id,
-    status, plan: plan || 'free', active, pro: active && plan === 'pro', expiresAt: expiresAt || null,
+    status, plan: plan || 'free', active, pro: active && hasFullAccess(plan), lessonsPerWeek: info?.lessonsPerWeek || null, expiresAt: expiresAt || null,
     cancelAtPeriodEnd: subscription.cancel_at_next_billing_date === true,
     eventAt, eventId, reconciledAt: new Date(),
   };
@@ -155,10 +164,11 @@ async function syncChildrenPro(db, parentUid) {
     await db.runTransaction(async (tx) => {
       const family = await tx.get(familyRef);
       const data = family.data() || {};
-      const plan = familyPlan(data), pro = plan === 'pro';
+      const plan = familyPlan(data), pro = hasFullAccess(plan);
+      const lessonsPerWeek = plan === 'mentor' ? data.lessonsPerWeek || null : null;
       for (const child of children.docs.slice(start, start + 400)) {
         tx.set(db.collection('childIndex').doc(child.id), {
-          parentUid, plan, pro, planExpiresAt: data.planExpiresAt || data.proExpiresAt || null,
+          parentUid, plan, pro, lessonsPerWeek, planExpiresAt: data.planExpiresAt || data.proExpiresAt || null,
           proExpiresAt: data.proExpiresAt || null,
         }, { merge: true });
       }
@@ -212,7 +222,7 @@ async function applyWeeklyMockPayment(db, event, eventRef, eventId, eventAt) {
 async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('POST only');
   if (!process.env.DODO_WEBHOOK_SECRET || !process.env.DODO_PAYMENTS_API_KEY
-      || (!products().standard && !products().pro) || (process.env.SYNAQ_USE_EMULATORS !== '1' && (!process.env.FIREBASE_PROJECT_ID
+      || !products().length || (process.env.SYNAQ_USE_EMULATORS !== '1' && (!process.env.FIREBASE_PROJECT_ID
       || !process.env.FIREBASE_CLIENT_EMAIL || !process.env.FIREBASE_PRIVATE_KEY))) {
     return res.status(503).send('server_not_configured');
   }
@@ -286,7 +296,8 @@ async function handler(req, res) {
         const selected = active[0];
         const selectedPlan = statePlan(selected);
         tx.set(familyRef, {
-          plan: selectedPlan, pro: selectedPlan === 'pro',
+          plan: selectedPlan, pro: hasFullAccess(selectedPlan),
+          lessonsPerWeek: selectedPlan === 'mentor' ? selected.lessonsPerWeek || null : null,
           planExpiresAt: selected ? new Date(selected.expiresAt) : null,
           proExpiresAt: selected ? new Date(selected.expiresAt) : null,
           dodoSubId: selected?.subscriptionId || family.data()?.dodoSubId || subscription.subscription_id,

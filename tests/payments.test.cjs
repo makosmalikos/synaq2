@@ -58,7 +58,7 @@ function fixture(file = 'webhook.js', { weekly = false } = {}) {
   const context = { module: { exports: {} }, Buffer, Date, URL, AbortController, AbortSignal, setTimeout, clearTimeout,
     console: { error() {}, warn() {}, log() {} },
     process: { env: { DODO_WEBHOOK_SECRET: 'whsec_' + SECRET.toString('base64'), DODO_PAYMENTS_API_KEY: 'test-key',
-      DODO_PRODUCT_ID: 'pro-product', DODO_STANDARD_PRODUCT_ID: 'standard-product', FIREBASE_PROJECT_ID: 'test-project', FIREBASE_CLIENT_EMAIL: 'test-email',
+      DODO_PRODUCT_ID: 'pro-product', DODO_PRO2_PRODUCT_ID: 'mentor2-product', DODO_PRO3_PRODUCT_ID: 'mentor3-product', FIREBASE_PROJECT_ID: 'test-project', FIREBASE_CLIENT_EMAIL: 'test-email',
       FIREBASE_PRIVATE_KEY: 'test-private-key', APP_URL: 'https://example.test',
       ...(weekly ? { DODO_WEEKLY_MOCK_PRODUCT_ID: 'weekly-product' } : {}) } },
     require(name) {
@@ -111,14 +111,15 @@ test('metadata/provider outage returns retryable status, then same event succeed
   assert.equal(f.docs.get('families/parent').pro, true);
 });
 
-test('Standard subscription is stored as Standard without granting Pro', async () => {
+test('mentor subscription is stored as mentor with lessons per week and full access', async () => {
   const f = fixture();
-  f.provider.set('subscriptions/sub-standard', active('sub-standard', { product_id: 'standard-product' }));
+  f.provider.set('subscriptions/sub-standard', active('sub-standard', { product_id: 'mentor2-product' }));
   const result = await f.invoke(event('subscription.active', 'sub-standard'), { id: 'standard-active' });
   assert.equal(result.status, 200);
   const family = f.docs.get('families/parent');
-  assert.equal(family.plan, 'standard');
-  assert.equal(family.pro, false);
+  assert.equal(family.plan, 'mentor');
+  assert.equal(family.pro, true);
+  assert.equal(family.lessonsPerWeek, 2);
   assert.ok(family.planExpiresAt instanceof Date);
 });
 
@@ -289,8 +290,8 @@ test('child entitlement checks source family and expires even without expiry web
   assert.deepEqual((await f.invoke({})).body, { plan: 'pro', standard: false, pro: true, expiresAt: future });
   f.docs.set('families/parent', { pro: true, proExpiresAt: 'invalid-expiry' });
   assert.deepEqual((await f.invoke({})).body, { plan: 'free', standard: false, pro: false, expiresAt: null });
-  f.docs.set('families/parent', { plan: 'standard', planExpiresAt: new Date(future) });
-  assert.deepEqual((await f.invoke({})).body, { plan: 'standard', standard: true, pro: false, expiresAt: future });
+  f.docs.set('families/parent', { plan: 'mentor', lessonsPerWeek: 3, planExpiresAt: new Date(future) });
+  assert.deepEqual((await f.invoke({})).body, { plan: 'mentor', standard: false, pro: true, mentor: true, lessonsPerWeek: 3, expiresAt: future });
 });
 
 

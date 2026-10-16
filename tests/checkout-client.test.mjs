@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination } from '../frontend/src/checkoutMessages.js';
 
 const source = fs.readFileSync(new URL('../frontend/src/Parent.jsx', import.meta.url), 'utf8');
-const buy = source.slice(source.indexOf('  async function buyPlan(targetPlan)'), source.indexOf("  const [name, setName]"));
+const buy = source.slice(source.indexOf('  async function buyPlan(targetPlan, lessons = null)'), source.indexOf("  const [name, setName]"));
 const deferred = () => { let resolve, reject; const promise = new Promise((yes, no) => { resolve = yes; reject = no; }); return { promise, resolve, reject }; };
 
 function fixture({ status = 409, body = { error: 'checkout_pending' }, respond, token } = {}) {
@@ -47,8 +47,8 @@ test('checkout codes have distinct safe RU/KK messages without echoing provider 
 });
 
 test('return URLs for both paid tiers keep checkout pending until the webhook updates the family', () => {
-  assert.match(source, /\['1', 'standard', 'pro'\]\.includes\(paid\)/);
-  assert.match(source, /paidTarget === 'standard' \? 'standard' : 'pro'/);
+  assert.match(source, /\['1', 'standard', 'pro', 'mentor'\]\.includes\(paid\)/);
+  assert.match(source, /paidTarget === 'mentor' \? 'mentor' : 'pro'/);
 });
 
 test('ambiguous and processing payments hold the purchase button without any automatic POST retry', async () => {

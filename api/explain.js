@@ -7,7 +7,7 @@
 
 const { createHash } = require('node:crypto');
 const { getAdmin } = require('../backend/lib/firebase-admin');
-const { PLAN_CATALOG, familyPlan } = require('../backend/lib/plans');
+const { PLAN_CATALOG, familyPlan, hasFullAccess } = require('../backend/lib/plans');
 // Respect explicit deployment configuration, including provider errors. Never
 // silently switch to another model with different cost or output behavior.
 const MODEL = String(process.env.GEMINI_MODEL || '').trim() || 'gemini-3.1-flash-lite';
@@ -89,7 +89,7 @@ async function getLearningAccount(user) {
 
 function explainBudget(family) {
   const plan = familyPlan(family);
-  if (plan === 'pro') return { limit: EXPLAIN_PRO_DAILY_LIMIT, byteLimit: EXPLAIN_PRO_DAILY_INPUT_BYTES };
+  if (hasFullAccess(plan)) return { limit: EXPLAIN_PRO_DAILY_LIMIT, byteLimit: EXPLAIN_PRO_DAILY_INPUT_BYTES };
   if (plan === 'standard') return { limit: EXPLAIN_STANDARD_DAILY_LIMIT, byteLimit: EXPLAIN_STANDARD_DAILY_INPUT_BYTES };
   return { limit: EXPLAIN_FREE_DAILY_LIMIT, byteLimit: EXPLAIN_FREE_DAILY_INPUT_BYTES };
 }

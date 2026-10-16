@@ -16,8 +16,8 @@ test('three-tier plan resolver preserves legacy Pro and fails expired or malform
 });
 
 test('plan capabilities and task limits increase monotonically', () => {
-  assert.deepEqual(Object.keys(PLAN_CATALOG), ['free', 'standard', 'pro']);
-  assert.deepEqual(Object.values(PLAN_CATALOG).map((plan) => plan.priceKzt), [0, 2990, 5999]);
+  assert.deepEqual(Object.keys(PLAN_CATALOG), ['free', 'standard', 'pro', 'mentor']);
+  assert.deepEqual(Object.values(PLAN_CATALOG).map((plan) => plan.priceKzt), [0, 2990, 9990, 44999]);
   assert.equal(dailyTaskLimit('free'), 5);
   assert.equal(dailyTaskLimit('standard'), 20);
   assert.equal(dailyTaskLimit('pro'), null);
