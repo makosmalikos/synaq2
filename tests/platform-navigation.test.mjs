@@ -9,7 +9,7 @@ test('student navigation keeps six primary choices and groups secondary screens'
   const definition = app.slice(app.indexOf('const NAV = ['), app.indexOf('const NAV_ICONS'));
   assert.deepEqual([...definition.matchAll(/\{ id: '([^']+)'/g)].map((match) => match[1]),
     ['home', 'learning', 'diagnosis', 'mock', 'progress', 'more']);
-  assert.match(definition, /children: \['curriculum', 'training'\]/);
+  assert.match(definition, /children: \['curriculum', 'training', 'mentor'\]/);
   assert.match(definition, /children: \['duel', 'league', 'rewards'\]/);
 });
 

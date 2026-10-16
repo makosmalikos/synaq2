@@ -5,6 +5,7 @@ import Brand from './Brand.jsx';
 import AdminWorkspace from './AdminWorkspace.jsx';
 import RewardQueue from './RewardQueue.jsx';
 import AdminMentors from './AdminMentors.jsx';
+import AdminLessons from './AdminLessons.jsx';
 import './AdminWorkspace.css';
 
 export default function Admin({ onExit }) {
@@ -27,11 +28,13 @@ export default function Admin({ onExit }) {
         <button className={section === 'tasks' ? 'active' : ''} onClick={() => setSection('tasks')}>{t('admin.tasksTab')}</button>
         <button className={section === 'leads' ? 'active' : ''} onClick={() => setSection('leads')}>{t('admin.leadsTab')}</button>
         <button className={section === 'mentors' ? 'active' : ''} onClick={() => setSection('mentors')}>{lang === 'ru' ? 'Наставники' : 'Тәлімгерлер'}</button>
+        <button className={section === 'lessons' ? 'active' : ''} onClick={() => setSection('lessons')}>{lang === 'ru' ? 'Уроки' : 'Сабақтар'}</button>
         <button className={section === 'rewards' ? 'active' : ''} onClick={() => setSection('rewards')}>{lang === 'ru' ? 'Награды' : 'Сыйлықтар'}</button>
       </nav>
       <div hidden={section !== 'tasks'}><AdminWorkspace request={request} lang={lang} storageKey={`synaq-admin-draft:${auth.currentUser?.uid || 'local'}`} /></div>
       {section === 'leads' && <LeadInbox t={t} lang={lang} />}
       {section === 'mentors' && <AdminMentors lang={lang} />}
+      {section === 'lessons' && <AdminLessons lang={lang} />}
       {section === 'rewards' && <RewardQueue />}
     </main>
   </div>;

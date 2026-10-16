@@ -13,6 +13,7 @@ import BrandLoader from './components/BrandLoader.jsx';
 import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination, isDodoPortalDestination } from './checkoutMessages.js';
 import PetAvatar, { DEFAULT_PET_AVATAR, PET_AVATARS } from './PetAvatar.jsx';
 import { planPrice } from './plans.js';
+import ParentLessons from './ParentLessons.jsx';
 
 const Logo = () => <div className="logo"><Brand compact /></div>;
 
@@ -442,6 +443,8 @@ export default function Parent({ onExit }) {
               </div>
             </div>
           )}
+
+          {plan === 'mentor' && <ParentLessons />}
 
           {plan && plan !== 'free' && (
             <div className="card" style={{ marginTop: 16 }}>

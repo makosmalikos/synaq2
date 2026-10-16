@@ -37,7 +37,13 @@ function cleanSlots(value) {
     const key = `${day}_${time}`;
     if (!seen.has(key)) { seen.add(key); slots.push({ day, time }); }
   }
-  return slots.sort((a, b) => a.day - b.day || a.time.localeCompare(b.time));
+  slots.sort((a, b) => a.day - b.day || a.time.localeCompare(b.time));
+  // Урок длится 40 минут: слоты в один день не должны пересекаться.
+  const minutes = (t) => Number(t.slice(0, 2)) * 60 + Number(t.slice(3));
+  for (let i = 1; i < slots.length; i += 1) {
+    if (slots[i].day === slots[i - 1].day && minutes(slots[i].time) - minutes(slots[i - 1].time) < 40) throw bad('slots_overlap');
+  }
+  return slots;
 }
 
 function cleanMentor(body) {

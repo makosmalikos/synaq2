@@ -7,6 +7,7 @@ import { auth, startLearningSession, saveAttempt, getSolved, setFlag, getFlags, 
   getTrainingTopics, getTrainingQuestions } from '../firebase.js';
 import { readPendingTraining, writePendingTraining, clearPendingTraining, trainingDayKey, trainingQuestion } from '../trainingPersistence.js';
 import Explain from './Explain.jsx';
+import UnclearButton from './UnclearButton.jsx';
 import AiTutor from './AiTutor.jsx';
 import BrandLoader from './BrandLoader.jsx';
 
@@ -591,6 +592,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
       )}
 
       <AiTutor q={q} checked={checked} given={checked && !ok ? answer : null} />
+      {checked && <UnclearButton q={q} />}
 
       {checked && serverResult && (
         <>

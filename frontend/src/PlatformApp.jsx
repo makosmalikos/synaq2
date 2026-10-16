@@ -8,6 +8,7 @@ import Brand from './Brand.jsx';
 import BrandLoader from './components/BrandLoader.jsx';
 import { readPublicDiagnosticResult } from './diagnosticPlan.js';
 import PetAvatar from './PetAvatar.jsx';
+import LessonReminder from './LessonReminder.jsx';
 
 // Банк задач большой: загружаем его только вместе с экраном, которому он нужен.
 const Parent = lazy(() => import('./Parent.jsx'));
@@ -19,11 +20,12 @@ const Mock = lazy(() => import('./components/Mock.jsx'));
 const Rewards = lazy(() => import('./Rewards.jsx'));
 const Subscription = lazy(() => import('./Subscription.jsx'));
 const Curriculum = lazy(() => import('./Curriculum.jsx'));
+const Mentor = lazy(() => import('./components/Mentor.jsx'));
 const PlatformDiagnostic = lazy(() => import('./components/PlatformDiagnostic.jsx'));
 
 const NAV = [
   { id: 'home', icon: 'home' },
-  { id: 'learning', icon: 'book', children: ['curriculum', 'training'] },
+  { id: 'learning', icon: 'book', children: ['curriculum', 'training', 'mentor'] },
   { id: 'diagnosis', icon: 'diagnosis' },
   { id: 'mock', icon: 'test' },
   { id: 'progress', icon: 'progress' },
@@ -39,6 +41,7 @@ const NAV_ICONS = {
   more: <><circle cx="5" cy="12" r="1.5" /><circle cx="12" cy="12" r="1.5" /><circle cx="19" cy="12" r="1.5" /></>,
   curriculum: <><path d="M4 5h16v14H4zM8 5v14M4 9h4" /></>,
   training: <><path d="m8 5 10 7-10 7Z" /></>,
+  mentor: <><circle cx="12" cy="8" r="3.5" /><path d="M5 20c.8-4 3.5-6 7-6s6.2 2 7 6" /></>,
   duel: <><path d="m5 4 14 16M19 4 5 20M4 3l4 1-3 3M20 3l-4 1 3 3" /></>,
   league: <><path d="M7 4h10v4a5 5 0 0 1-10 0ZM9 18h6M12 13v5" /><path d="M7 6H4v2a4 4 0 0 0 4 4M17 6h3v2a4 4 0 0 1-4 4" /></>,
   rewards: <><path d="M12 3.5 14.7 9l6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z" /></>,
@@ -361,12 +364,14 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
         {profileError && <p className="card" role="alert" style={{ margin: 20 }}>
           {lang === 'ru' ? 'Не удалось загрузить профиль или прогресс. Проверьте соединение и обновите страницу.' : 'Профильді немесе прогресті жүктеу мүмкін болмады. Байланысты тексеріп, бетті жаңартыңыз.'}
         </p>}
+        <LessonReminder go={setTab} tab={tab} />
         <Suspense fallback={<ScreenFallback />}>
           {tab === 'home' && <Home go={setTab} name={profile.name} xp={xp} diagnosticPlan={diagnosticPlan} onTrainTopic={goTrainTopic} />}
           {tab === 'curriculum' && <Curriculum
             initialGrade={profile.klass} plan={profile.plan || (profile.pro ? 'pro' : 'free')} onUpgrade={openSubscription}
             onXp={(gain, totalXp) => setXp((current) => Number.isFinite(totalXp) ? Math.max(current, totalXp) : current + gain)}
           />}
+          {tab === 'mentor' && <Mentor onUpgrade={openSubscription} />}
           {tab === 'diagnosis' && <PlatformDiagnostic initialGrade={profile.klass} onGoPractice={goTrainTopic} />}
           {tab === 'training' && (
             <Training
