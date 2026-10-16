@@ -37,13 +37,13 @@ export default function AdminLessons({ lang }) {
   const kzt = (n) => `${new Intl.NumberFormat('ru-RU').format(n)} ₸`;
 
   return (
-    <section>
+    <section className="aw">
       <h1 style={{ margin: '0 0 12px' }}>{text('Уроки и выплаты', 'Сабақтар мен төлемдер')}</h1>
       {error && <div className="card" style={{ color: 'var(--accent)', marginBottom: 12 }}>{error}</div>}
       <div className="card" style={{ marginBottom: 16 }}>
         <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
           <b>{text('Выплаты наставникам за', 'Тәлімгерлерге төлем:')}</b>
-          <input type="month" value={month} onChange={(e) => setMonth(e.target.value)} />
+          <input type="month" style={{ width: 'auto', margin: 0 }} value={month} onChange={(e) => setMonth(e.target.value)} />
         </div>
         {payouts && (payouts.mentors.length
           ? <>{payouts.mentors.map((m) => <div key={m.mentorId} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderTop: '1px solid var(--line)' }}>

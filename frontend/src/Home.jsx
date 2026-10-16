@@ -128,6 +128,11 @@ export default function Home({ go, name, xp = 0, diagnosticPlan, onTrainTopic })
           <span className="home-action-copy"><small>{t('nav.progress')}</small><strong>{t('home.progressTitle')}</strong><em>{t('home.progressText')}</em></span>
           <span className="home-action-arrow">→</span>
         </button>
+        <button className="home-action home-action-mentor" onClick={() => go('mentor')}>
+          <span className="home-action-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5" /><path d="M5 20c.8-4 3.5-6 7-6s6.2 2 7 6" /></svg></span>
+          <span className="home-action-copy"><small>{lang === 'ru' ? 'Живые уроки' : 'Тірі сабақтар'}</small><strong>{lang === 'ru' ? 'Наставник' : 'Тәлімгер'}</strong><em>{lang === 'ru' ? 'Урок 1-на-1 по математике, 40 минут' : 'Математикадан 1-ге-1 сабақ, 40 минут'}</em></span>
+          <span className="home-action-arrow">→</span>
+        </button>
       </section>
     </main>
   );

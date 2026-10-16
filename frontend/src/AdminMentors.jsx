@@ -68,10 +68,10 @@ export default function AdminMentors({ lang }) {
   const set = (key) => (event) => setEditing((m) => ({ ...m, [key]: event.target.value }));
 
   if (editing) return (
-    <section>
+    <section className="aw">
       <h1 style={{ margin: '0 0 12px' }}>{editing.id ? text('Наставник', 'Тәлімгер') : text('Новый наставник', 'Жаңа тәлімгер')}</h1>
       {error && <div className="card" style={{ color: 'var(--accent)', marginBottom: 12 }}>{error}</div>}
-      <form className="card" onSubmit={save} style={{ display: 'grid', gap: 12 }}>
+      <form className="card" onSubmit={save}>
         <label>{text('Имя', 'Аты')}<input required maxLength={80} value={editing.name} onChange={set('name')} /></label>
         <label>Email<input required type="email" value={editing.email} onChange={set('email')} /></label>
         <label>{text('Телефон / WhatsApp', 'Телефон / WhatsApp')}<input maxLength={30} value={editing.phone} onChange={set('phone')} /></label>
@@ -80,8 +80,8 @@ export default function AdminMentors({ lang }) {
         <div>
           <b>{text('Расписание на неделю (время начала, урок 40 минут, время Алматы)', 'Апталық кесте (басталу уақыты, сабақ 40 минут, Алматы уақыты)')}</b>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', margin: '10px 0' }}>
-            <select value={pickDay} onChange={(e) => setPickDay(Number(e.target.value))}>{days.map((d, i) => <option key={d} value={i + 1}>{d}</option>)}</select>
-            <input type="time" value={pickTime} onChange={(e) => setPickTime(e.target.value)} />
+            <select style={{ width: 'auto', margin: 0 }} value={pickDay} onChange={(e) => setPickDay(Number(e.target.value))}>{days.map((d, i) => <option key={d} value={i + 1}>{d}</option>)}</select>
+            <input type="time" style={{ width: 'auto', margin: 0 }} value={pickTime} onChange={(e) => setPickTime(e.target.value)} />
             <button type="button" className="btn" onClick={addSlot}>+ {text('Добавить время', 'Уақыт қосу')}</button>
           </div>
           {days.map((d, i) => {
@@ -93,7 +93,7 @@ export default function AdminMentors({ lang }) {
             </div>;
           })}
         </div>
-        <label style={{ display: 'flex', gap: 8, alignItems: 'center' }}><input type="checkbox" checked={editing.active} onChange={(e) => setEditing((m) => ({ ...m, active: e.target.checked }))} />{text('Активен (виден детям при записи)', 'Белсенді (жазылғанда балаларға көрінеді)')}</label>
+        <label className="aw-check"><input type="checkbox" checked={editing.active} onChange={(e) => setEditing((m) => ({ ...m, active: e.target.checked }))} />{text('Активен (виден детям при записи)', 'Белсенді (жазылғанда балаларға көрінеді)')}</label>
         <div style={{ display: 'flex', gap: 8 }}>
           <button className="btn accent" disabled={saving}>{saving ? '…' : text('Сохранить', 'Сақтау')}</button>
           <button type="button" className="btn ghost" onClick={() => { setEditing(null); setError(''); }}>{text('Отмена', 'Бас тарту')}</button>
@@ -103,7 +103,7 @@ export default function AdminMentors({ lang }) {
   );
 
   return (
-    <section>
+    <section className="aw">
       <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'end', marginBottom: 16, flexWrap: 'wrap' }}>
         <div><h1 style={{ margin: '0 0 4px' }}>{text('Наставники', 'Тәлімгерлер')}</h1>
           <p className="muted" style={{ margin: 0 }}>{text('Оплата наставнику — 3 000 ₸ за урок. Преподают только математику.', 'Тәлімгерге төлем — сабағына 3 000 ₸. Тек математика.')}</p></div>
