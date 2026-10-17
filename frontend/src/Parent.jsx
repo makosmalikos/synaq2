@@ -301,6 +301,7 @@ export default function Parent({ onExit }) {
     pendingCreation.current = null;
     setName(value);
     if (!usernameEdited.current) setUsername(cleanUsername(value));
+    if (!pass && value.trim()) setPass(genPassword());
   }
 
   // Кірген соң бала жоқ болса — «Бала қосу» формасын бірден ашамыз
