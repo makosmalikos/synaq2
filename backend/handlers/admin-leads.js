@@ -48,6 +48,7 @@ function createHandler({ admin = getAdmin } = {}) {
             role: data.role === 'student' ? 'student' : 'parent',
             comment: String(data.comment || ''),
             lang: data.lang === 'ru' ? 'ru' : 'kk',
+            source: ['mentor_purchase', 'mentor_upgrade_request'].includes(data.source) ? data.source : 'landing',
             status: STATUSES.has(data.status) ? data.status : 'new',
             createdAt: iso(data.createdAt),
             updatedAt: iso(data.updatedAt),

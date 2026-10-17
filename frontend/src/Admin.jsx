@@ -11,6 +11,17 @@ import './AdminWorkspace.css';
 export default function Admin({ onExit }) {
   const { t, lang } = useLang();
   const [section, setSection] = useState('tasks');
+  const [newCount, setNewCount] = useState(0);
+  const refreshCount = async () => {
+    try {
+      const token = await auth.currentUser?.getIdToken();
+      if (!token) return;
+      const response = await fetch('/api/admin-leads', { headers: { Authorization: `Bearer ${token}` } });
+      const data = await response.json().catch(() => ({}));
+      if (response.ok && Array.isArray(data.leads)) setNewCount(data.leads.filter((lead) => lead.status === 'new').length);
+    } catch { /* счётчик не должен мешать работе */ }
+  };
+  useEffect(() => { refreshCount(); const id = setInterval(refreshCount, 60000); return () => clearInterval(id); }, []);
   const request = async (options = {}) => {
     const token = await auth.currentUser?.getIdToken();
     if (!token) throw new Error('not_allowed');
@@ -22,17 +33,19 @@ export default function Admin({ onExit }) {
     return data;
   };
   return <div className="app admin-app">
-    <header><div className="logo"><Brand compact /></div><button className="logout" onClick={() => (onExit || logout)()}>{t('common.exit')}</button></header>
+    <header><div className="logo"><Brand compact /></div><div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+      <button type="button" className="logout" onClick={() => setSection('leads')} aria-label={lang === 'ru' ? 'Сообщения' : 'Хабарламалар'}>🔔{newCount > 0 && <b style={{ marginLeft: 6, background: '#DC2626', color: '#fff', borderRadius: 10, padding: '1px 7px', fontSize: 12 }}>{newCount}</b>}</button>
+      <button className="logout" onClick={() => (onExit || logout)()}>{t('common.exit')}</button></div></header>
     <main>
       <nav className="aw-tabs" aria-label={lang === 'ru' ? 'Разделы администратора' : 'Әкімші бөлімдері'}>
         <button className={section === 'tasks' ? 'active' : ''} onClick={() => setSection('tasks')}>{t('admin.tasksTab')}</button>
-        <button className={section === 'leads' ? 'active' : ''} onClick={() => setSection('leads')}>{t('admin.leadsTab')}</button>
+        <button className={section === 'leads' ? 'active' : ''} onClick={() => setSection('leads')}>{t('admin.leadsTab')}{newCount > 0 && <b style={{ marginLeft: 6, background: '#DC2626', color: '#fff', borderRadius: 10, padding: '1px 7px', fontSize: 12 }}>{newCount}</b>}</button>
         <button className={section === 'mentors' ? 'active' : ''} onClick={() => setSection('mentors')}>{lang === 'ru' ? 'Наставники' : 'Тәлімгерлер'}</button>
         <button className={section === 'lessons' ? 'active' : ''} onClick={() => setSection('lessons')}>{lang === 'ru' ? 'Уроки' : 'Сабақтар'}</button>
         <button className={section === 'rewards' ? 'active' : ''} onClick={() => setSection('rewards')}>{lang === 'ru' ? 'Награды' : 'Сыйлықтар'}</button>
       </nav>
       <div hidden={section !== 'tasks'}><AdminWorkspace request={request} lang={lang} storageKey={`synaq-admin-draft:${auth.currentUser?.uid || 'local'}`} /></div>
-      {section === 'leads' && <LeadInbox t={t} lang={lang} />}
+      {section === 'leads' && <LeadInbox t={t} lang={lang} onChanged={refreshCount} />}
       {section === 'mentors' && <AdminMentors lang={lang} />}
       {section === 'lessons' && <AdminLessons lang={lang} />}
       {section === 'rewards' && <RewardQueue />}
@@ -40,7 +53,7 @@ export default function Admin({ onExit }) {
   </div>;
 }
 
-function LeadInbox({ t, lang }) {
+function LeadInbox({ t, lang, onChanged = () => {} }) {
   const [leads, setLeads] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -61,6 +74,7 @@ function LeadInbox({ t, lang }) {
     try {
       const data = await request();
       setLeads(Array.isArray(data.leads) ? data.leads : []);
+      onChanged();
     } catch {
       setError(t('admin.leadsError'));
     } finally {
@@ -76,6 +90,7 @@ function LeadInbox({ t, lang }) {
     try {
       const data = await request({ method: 'PATCH', body: JSON.stringify({ id, status }) });
       setLeads((items) => items.map((lead) => lead.id === id ? { ...lead, status: data.status, updatedAt: data.updatedAt } : lead));
+      onChanged();
     } catch {
       setError(t('admin.leadsUpdateError'));
     } finally {
@@ -97,8 +112,9 @@ function LeadInbox({ t, lang }) {
             <article className="card" key={lead.id} style={{ borderColor: lead.status === 'new' ? '#93C5FD' : undefined }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', gap: 14, flexWrap: 'wrap' }}>
                 <div>
+                  {lead.source !== 'landing' && <span className="tag" style={{ borderColor: '#DC2626', color: '#DC2626', marginBottom: 6, display: 'inline-block' }}>{lead.source === 'mentor_purchase' ? (lang === 'ru' ? '💳 Покупка Pro с наставником' : '💳 Наставникпен Pro сатып алды') : (lang === 'ru' ? '⬆ Хочет перейти на Pro' : '⬆ Pro-ға көшкісі келеді')}</span>}
                   <div style={{ font: "700 17px 'Golos Text'" }}>{lead.name}</div>
-                  <a href={`tel:${lead.phone.replace(/[^+\d]/g, '')}`} style={{ display: 'inline-block', marginTop: 5, color: '#2563EB', fontWeight: 700 }}>{lead.phone}</a>
+                  {lead.phone ? <a href={`tel:${lead.phone.replace(/[^+\d]/g, '')}`} style={{ display: 'inline-block', marginTop: 5, color: '#2563EB', fontWeight: 700 }}>{lead.phone}</a> : <span className="muted" style={{ display: 'inline-block', marginTop: 5 }}>{lang === 'ru' ? 'телефон не указан — см. email в тексте' : 'телефон жоқ — мәтіндегі email-ді қараңыз'}</span>}
                   <div className="muted" style={{ fontSize: 12, marginTop: 5 }}>
                     {lead.role === 'student' ? t('admin.leadStudent') : t('admin.leadParent')} · {lead.createdAt ? new Intl.DateTimeFormat(lang === 'ru' ? 'ru-RU' : 'kk-KZ', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(lead.createdAt)) : '—'}
                   </div>
