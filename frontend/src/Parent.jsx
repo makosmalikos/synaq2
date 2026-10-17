@@ -3,7 +3,7 @@ import { doc, onSnapshot } from 'firebase/firestore';
 import { useLang } from './i18n.jsx';
 import {
   auth, db, familyPlan, createChild, getChildren, logout,
-  genPassword, suggestUsername, cleanUsername, errText,
+  cleanUsername, errText,
   hasPasswordLogin, linkParentPassword, changeParentPassword, resetChildPassword,
 } from './firebase.js';
 import Brand from './Brand.jsx';
@@ -271,10 +271,17 @@ export default function Parent({ onExit }) {
         setAdding(false);
         return;
       }
+      if (!/^[a-z0-9]{3,32}$/.test(cleanUsername(username))) {
+        setErr(text('Придумайте логин ребёнка: 3–32 латинские буквы или цифры.', 'Баланың логинін ойлап табыңыз: 3–32 латын әрпі немесе цифр.'));
+        return;
+      }
+      if (pass.length < 6) {
+        setErr(text('Придумайте пароль ребёнка: минимум 6 символов.', 'Баланың құпиясөзін ойлап табыңыз: кемінде 6 таңба.'));
+        return;
+      }
       if (!pendingCreation.current || pendingCreation.current.parentUid !== uid) {
         pendingCreation.current = { parentUid: uid, requestId: crypto.randomUUID(), name: name.trim(), avatar,
-          code: cleanUsername(username) || suggestUsername(name) || ('bala' + Math.floor(1000 + Math.random() * 9000)),
-          pin: pass || genPassword() };
+          code: cleanUsername(username), pin: pass };
       }
       const request = pendingCreation.current;
       // Keep the exact credentials visible even if the HTTP response is lost.
@@ -300,7 +307,6 @@ export default function Parent({ onExit }) {
   function changeName(value) {
     pendingCreation.current = null;
     setName(value);
-    if (!usernameEdited.current) setUsername(cleanUsername(value));
   }
 
   // Кірген соң бала жоқ болса — «Бала қосу» формасын бірден ашамыз
@@ -510,20 +516,17 @@ export default function Parent({ onExit }) {
                 <input placeholder={t('ui.38')} value={username} style={inp} disabled={busy}
                   onChange={(e) => { pendingCreation.current = null; usernameEdited.current = !!e.target.value; setUsername(cleanUsername(e.target.value)); }} />
                 <p style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384', margin: '6px 0 0' }}>
-                  {text('3–32 латинские буквы или цифры', '3–32 латын әрпі немесе цифр')}
+                  {text('Логин пишете вы сами: 3–32 латинские буквы или цифры', 'Логинді өзіңіз жазасыз: 3–32 латын әрпі немесе цифр')}
                 </p>
               </div>
               <div>
                 <label style={lab}>{t('ui.31')}</label>
                 <div style={{ display: 'flex', gap: 8 }}>
                   <input placeholder={t('ui.39')} value={pass} disabled={busy} onChange={(e) => { pendingCreation.current = null; setPass(e.target.value); }} style={{ ...inp, flex: 1 }} />
-                  <button className="btn ghost" type="button" disabled={busy} onClick={() => { pendingCreation.current = null; setPass(genPassword()); }} style={{ whiteSpace: 'nowrap' }}>
-                    {text('Сгенерировать', 'Генерациялау')}
-                  </button>
                 </div>
               </div>
               {err && <p style={{ color: 'var(--accent)', fontSize: 13, margin: 0 }}>{err}</p>}
-              <button className="btn accent" disabled={busy || !name.trim() || !childrenLoaded} onClick={add}>
+              <button className="btn accent" disabled={busy || !name.trim() || !username || pass.length < 6 || !childrenLoaded} onClick={add}>
                 {busy ? text('Создаём…', 'Жасалуда…') : text('Создать', 'Жасау')}
               </button>
             </div>
