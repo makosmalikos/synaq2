@@ -1,0 +1,36 @@
+.pet-creature{display:block;overflow:visible}
+.pc-body-bob,.pc-egg,.pc-blink,.pc-tail,.pc-wave,.pc-aura,.pc-spark,.pc-shadow,.pc-crown{transform-box:fill-box}
+.pc-body-bob{animation:pc-bob 2.8s ease-in-out infinite;transform-origin:50% 100%}
+.pc-egg{transform-origin:50% 100%;animation:pc-wobble 3.6s ease-in-out infinite}
+.pc-egg--shaky{animation:pc-shake 1.4s ease-in-out infinite}
+.pc-blink{transform-origin:center;animation:pc-blink 4.2s infinite}
+.pc-tail{transform-origin:0% 100%;animation:pc-wag 1.6s ease-in-out infinite}
+.pc-wave{transform-origin:50% 0%;animation:pc-wave 2.2s ease-in-out infinite}
+.pc-aura{animation:pc-aura 2.6s ease-in-out infinite;transform-origin:center}
+.pc-crown{animation:pc-crown 2.4s ease-in-out infinite}
+.pc-spark{animation:pc-twinkle 1.8s ease-in-out infinite;transform-origin:center}
+.pc-shadow{animation:pc-shadow 2.8s ease-in-out infinite;transform-origin:center}
+@keyframes pc-bob{0%,100%{transform:translateY(0) scale(1,1)}50%{transform:translateY(-5px) scale(.99,1.02)}}
+@keyframes pc-wobble{0%,70%,100%{transform:rotate(0)}76%{transform:rotate(-5deg)}84%{transform:rotate(5deg)}92%{transform:rotate(-3deg)}}
+@keyframes pc-shake{0%,100%{transform:rotate(0)}20%{transform:rotate(-6deg)}40%{transform:rotate(6deg)}60%{transform:rotate(-4deg)}80%{transform:rotate(4deg)}}
+@keyframes pc-blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+@keyframes pc-wag{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(9deg)}}
+@keyframes pc-wave{0%,60%,100%{transform:rotate(0)}70%{transform:rotate(-28deg)}80%{transform:rotate(8deg)}90%{transform:rotate(-22deg)}}
+@keyframes pc-aura{0%,100%{opacity:.55;transform:scale(.95)}50%{opacity:1;transform:scale(1.05)}}
+@keyframes pc-crown{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes pc-twinkle{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:1;transform:scale(1.15)}}
+@keyframes pc-shadow{0%,100%{transform:scaleX(1);opacity:.14}50%{transform:scaleX(.92);opacity:.1}}
+@media (prefers-reduced-motion:reduce){.pet-creature *{animation:none!important}}
+
+.home-pet{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;margin:16px 0;padding:18px 22px;border:1px solid var(--line,#e6e1d4);border-radius:20px;background:linear-gradient(135deg,#FFF8E6,#EAF4FF)}
+.home-pet-stage{display:grid;place-items:center;min-width:180px}
+.home-pet-info h3{margin:0 0 2px;font-size:22px}
+.home-pet-info p{margin:0 0 10px;color:#6b6659;font-size:14px}
+.home-pet-bar{height:12px;border-radius:99px;background:rgba(0,0,0,.08);overflow:hidden}
+.home-pet-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#FFB547,#FF7A45);transition:width .6s}
+.home-pet-stages{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.home-pet-stages span{padding:3px 10px;border-radius:99px;font-size:12px;background:rgba(0,0,0,.06);color:#8a8473}
+.home-pet-stages span.on{background:#2F80ED;color:#fff}
+.home-pet-grew{margin:0 0 10px;padding:10px 14px;border-radius:12px;background:#FFF3C4;font-weight:600;animation:pc-pop .6s ease}
+@keyframes pc-pop{0%{transform:scale(.8);opacity:0}60%{transform:scale(1.05)}100%{transform:scale(1);opacity:1}}
+@media (max-width:620px){.home-pet{grid-template-columns:1fr;text-align:center}}

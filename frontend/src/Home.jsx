@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import PetCreature from './PetCreature.jsx';
+import { PET_STAGES, petStage } from './pets.js';
+import { petAvatar } from './PetAvatar.jsx';
 import { useLang } from './i18n.jsx';
 import { xpLevel } from './xp.js';
 import { topicName } from './diagnosticData.js';
@@ -9,7 +12,45 @@ const DashboardIcon = ({ type }) => {
   return <span aria-hidden="true">↗</span>;
 };
 
-export default function Home({ go, name, xp = 0, diagnosticPlan, onTrainTopic }) {
+const STAGE_KEY = 'synaq_pet_stage';
+function PetCard({ avatar, xp, lang }) {
+  const pet = petAvatar(avatar);
+  const info = petStage(xp);
+  const [grew, setGrew] = useState(false);
+  useEffect(() => {
+    try {
+      const seen = Number(localStorage.getItem(STAGE_KEY) || 0);
+      if (seen && info.stage > seen) setGrew(true);
+      localStorage.setItem(STAGE_KEY, String(Math.max(seen, info.stage)));
+    } catch { /* без localStorage просто нет поздравления */ }
+  }, [info.stage]);
+  const ru = lang === 'ru';
+  const petName = ru ? pet.ru : pet.kk;
+  const stageName = ru ? info.ru : info.kk;
+  const nextText = info.next
+    ? (info.stage === 1
+      ? (ru ? `До вылупления: ${info.xpToNext} XP — решай задачи, и питомец появится!` : `Шығуына: ${info.xpToNext} XP — есеп шығар, досың пайда болады!`)
+      : (ru ? `До стадии «${info.next.ru}»: ${info.xpToNext} XP` : `«${info.next.kk}» сатысына: ${info.xpToNext} XP`))
+    : (ru ? 'Высшая стадия — ты легенда!' : 'Ең жоғары саты — сен аңызсың!');
+  return (
+    <section className="home-pet" aria-label={ru ? 'Мой питомец' : 'Менің досым'}>
+      <div className="home-pet-stage">
+        <PetCreature pet={pet.id} stage={info.stage} progress={info.progress} size={170} label={`${petName}: ${stageName}`} />
+      </div>
+      <div className="home-pet-info">
+        {grew && <p className="home-pet-grew">{info.stage === 2 ? (ru ? '🎉 Питомец вылупился!' : '🎉 Дос жұмыртқадан шықты!') : (ru ? '🎉 Питомец вырос!' : '🎉 Дос есейді!')}</p>}
+        <h3>{petName} · {stageName}</h3>
+        <p>{nextText}</p>
+        <div className="home-pet-bar"><i style={{ width: `${Math.round(info.progress * 100)}%` }} /></div>
+        <div className="home-pet-stages">
+          {PET_STAGES.map((st) => <span key={st.stage} className={info.stage >= st.stage ? 'on' : ''}>{ru ? st.ru : st.kk}</span>)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default function Home({ go, name, avatar, xp = 0, diagnosticPlan, onTrainTopic }) {
   const { t, lang } = useLang();
   const lvl = xpLevel(xp);
   const levelXp = xp % 500;
@@ -75,6 +116,8 @@ export default function Home({ go, name, xp = 0, diagnosticPlan, onTrainTopic })
           <small>{levelProgress}% · {t('home.xpProgress')}</small>
         </div>
       </section>
+
+      <PetCard avatar={avatar} xp={xp} lang={lang} />
 
       {!!diagnosticPlan && (
         <section className="home-diagnostic-plan">
