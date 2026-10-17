@@ -364,7 +364,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
         {profileError && <p className="card" role="alert" style={{ margin: 20 }}>
           {lang === 'ru' ? 'Не удалось загрузить профиль или прогресс. Проверьте соединение и обновите страницу.' : 'Профильді немесе прогресті жүктеу мүмкін болмады. Байланысты тексеріп, бетті жаңартыңыз.'}
         </p>}
-        <LessonReminder go={setTab} tab={tab} />
+        {profile.plan === 'mentor' && <LessonReminder go={setTab} tab={tab} />}
         <Suspense fallback={<ScreenFallback />}>
           {tab === 'home' && <Home go={setTab} name={profile.name} xp={xp} diagnosticPlan={diagnosticPlan} onTrainTopic={goTrainTopic} />}
           {tab === 'curriculum' && <Curriculum

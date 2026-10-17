@@ -70,7 +70,8 @@ const ACTIONS = {
     const snap = await db.collection('lessons').where(field, '==', ctx.role === 'child' ? ctx.childUid : ctx.parentUid).limit(300).get();
     const all = snap.docs.map((d) => ({ id: d.id, l: d.data() })).sort((a, b) => b.l.startAt - a.l.startAt);
     const used = info.active ? (await creditRef(db, ctx.parentUid, info.periodEnd).get()).data()?.used || 0 : 0;
-    const mentors = (await activeMentors(db)).map((m) => publicMentor(m.id, m.data));
+    // Список наставников нужен только семьям с активным тарифом: остальным не тратим чтения.
+    const mentors = info.active ? (await activeMentors(db)).map((m) => publicMentor(m.id, m.data)) : [];
     const previous = all.find((x) => ['completed', 'no_show_child'].includes(L.effectiveStatus(x.l, now)))?.l.mentorId || null;
     mentors.sort((a, b) => (b.id === previous) - (a.id === previous) || (b.rating || 0) - (a.rating || 0));
     return { plan: { active: info.active, lessonsPerWeek: info.lessonsPerWeek, quota: info.quota, used: Math.min(used, info.quota * 3),
