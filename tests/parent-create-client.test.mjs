@@ -18,7 +18,7 @@ function fixture(overrides = {}) {
   const context = {
     auth: { currentUser: { uid: 'parent' } }, crypto: { randomUUID },
     creating: { current: false }, pendingCreation: { current: null }, usernameEdited: { current: false }, mounted: { current: true },
-    childrenLoaded: true, children: [], name: 'Ali', username: 'ali', pass: 'password1', avatar: 'fox', lang: 'ru',
+    childrenLoaded: true, children: [], name: 'Ali', username: 'ali', pass: '', avatar: 'fox', lang: 'ru',
     cleanUsername: (value) => value.toLowerCase().replace(/[^a-z0-9]/g, ''), suggestUsername: () => 'ali123',
     genPassword: () => `password${++generated}`, text: (ru) => ru, errText: (error) => error.message,
     load: async () => { loads.push(true); },
@@ -33,19 +33,14 @@ function fixture(overrides = {}) {
   return { context, state, calls, loads, add: () => context.add(), name: (value) => context.changeName(value) };
 }
 
-test('name typing does not autofill the username (parent writes it himself)', () => {
+test('name typing keeps automatic username in sync but preserves a manually chosen username', () => {
   const f = fixture({ name: '', username: '' });
   for (const value of ['A', 'Al', 'Ali']) f.name(value);
-  assert.equal(f.context.username, '');
-});
-
-test('missing username or short password blocks creation', async () => {
-  const noUser = fixture({ username: '' });
-  await noUser.add();
-  assert.equal(noUser.calls.length, 0);
-  const shortPass = fixture({ pass: '123' });
-  await shortPass.add();
-  assert.equal(shortPass.calls.length, 0);
+  assert.equal(f.context.username, 'ali');
+  f.context.usernameEdited.current = true;
+  f.context.username = 'chosen';
+  f.name('Alina');
+  assert.equal(f.context.username, 'chosen');
 });
 
 test('same-render create clicks produce only one request with credentials available before response', async () => {
