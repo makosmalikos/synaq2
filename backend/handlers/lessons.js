@@ -80,6 +80,41 @@ const ACTIONS = {
       lessons: all.slice(0, 60).map((x) => publicLesson(x.id, x.l, now)), mentors, previousMentorId: previous, now };
   },
 
+  // Уведомления считаются из текущего состояния (ничего отдельно не хранится),
+  // «прочитано» запоминает сам клиент по стабильному ключу.
+  async notifications(db, ctx, _body, now) {
+    const info = planInfo(ctx.family, now);
+    const items = [];
+    const plan = familyPlan(ctx.family, now);
+    const expiresAt = millis(ctx.family.planExpiresAt ?? ctx.family.proExpiresAt);
+    if (plan !== 'free' && ctx.family.cancelAtPeriodEnd === true && expiresAt - now <= 3 * 86400000 && expiresAt > now) {
+      items.push({ key: `plan_ending:${expiresAt}`, kind: 'plan_ending', days: Math.max(1, Math.ceil((expiresAt - now) / 86400000)), at: now });
+    }
+    if (!info.active) return { items };
+    const field = ctx.role === 'child' ? 'childUid' : 'parentUid';
+    const snap = await db.collection('lessons').where(field, '==', ctx.role === 'child' ? ctx.childUid : ctx.parentUid).limit(300).get();
+    const lessons = snap.docs.map((d) => ({ id: d.id, l: d.data() }));
+    const used = (await creditRef(db, ctx.parentUid, info.periodEnd).get()).data()?.used || 0;
+    const left = Math.max(0, info.quota - used);
+    const upcoming = lessons.filter((x) => L.effectiveStatus(x.l, now) === 'booked' && x.l.endAt > now).sort((a, b) => a.l.startAt - b.l.startAt);
+    const next = upcoming[0];
+    if (next) {
+      const l = next.l;
+      if (now >= l.startAt - L.JOIN_BEFORE_MS && now <= l.endAt) items.push({ key: `lesson_now:${next.id}`, kind: 'lesson_now', startAt: l.startAt, mentorName: l.mentorName, at: now });
+      else if (l.startAt - now <= 24 * 3600000) items.push({ key: `lesson_today:${next.id}`, kind: 'lesson_today', startAt: l.startAt, mentorName: l.mentorName, at: l.startAt - 24 * 3600000 });
+    }
+    if (left > 0 && !upcoming.length) items.push({ key: `book_prompt:${info.periodEnd}:${left}`, kind: 'book_prompt', left, at: now });
+    const daysLeft = Math.ceil((info.periodEnd - now) / 86400000);
+    if (left > 0 && daysLeft <= 7) items.push({ key: `period_ending:${info.periodEnd}:${left}`, kind: 'period_ending', left, days: Math.max(1, daysLeft), at: now });
+    for (const { id, l } of lessons) {
+      const status = L.effectiveStatus(l, now);
+      if (now - l.endAt > 7 * 86400000) continue;
+      if (status === 'completed' && !l.rating && ctx.role === 'child') items.push({ key: `rate_prompt:${id}`, kind: 'rate_prompt', mentorName: l.mentorName, at: l.endAt });
+      if (status === 'no_show_mentor') items.push({ key: `credit_returned:${id}`, kind: 'credit_returned', mentorName: l.mentorName, at: l.endAt });
+    }
+    return { items: items.sort((a, b) => b.at - a.at) };
+  },
+
   async slots(db, ctx, body, now) {
     const info = planInfo(ctx.family, now);
     if (!info.active || !safeId(body.mentorId)) throw fail('mentor_plan_required', 403);

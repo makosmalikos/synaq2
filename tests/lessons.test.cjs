@@ -126,3 +126,21 @@ test('parent can request an upgrade; admin sees it once in the lead inbox', asyn
   assert.equal(leads[0][1].status, 'new');
   assert.match(leads[0][1].comment, /3 урока/);
 });
+
+test('notifications: reminders for booking, today lesson, rating and returned lessons', async () => {
+  const w = world();
+  const kinds = async (t) => (await w.call(t, { action: 'notifications' })).body.items.map((i) => i.kind);
+  assert.deepEqual(await kinds('kid'), ['book_prompt']);
+  const id = (await w.call('kid', { action: 'book', mentorId: 'm1', startAt: WED, topic: 'Дроби' })).body.lesson.id;
+  assert.deepEqual(await kinds('parent'), []);
+  w.setNow(WED - 20 * H);
+  assert.deepEqual(await kinds('parent'), ['lesson_today']);
+  w.setNow(WED - 5 * 60000);
+  assert.deepEqual(await kinds('kid'), ['lesson_now']);
+  w.setNow(WED + H);
+  assert.deepEqual(await kinds('kid'), ['book_prompt', 'rate_prompt']);
+  assert.deepEqual(await kinds('parent'), ['book_prompt']);
+  await w.adminCall('POST', { id, status: 'no_show_mentor' });
+  assert.ok((await kinds('kid')).includes('credit_returned'));
+  assert.deepEqual((await world({ plan: 'pro' }).call('kid', { action: 'notifications' })).body.items, []);
+});

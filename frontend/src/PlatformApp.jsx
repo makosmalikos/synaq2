@@ -8,7 +8,7 @@ import Brand from './Brand.jsx';
 import BrandLoader from './components/BrandLoader.jsx';
 import { readPublicDiagnosticResult } from './diagnosticPlan.js';
 import PetAvatar from './PetAvatar.jsx';
-import LessonReminder from './LessonReminder.jsx';
+import Notifications from './Notifications.jsx';
 
 // Банк задач большой: загружаем его только вместе с экраном, которому он нужен.
 const Parent = lazy(() => import('./Parent.jsx'));
@@ -265,6 +265,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
             <div className="header-xp" title="XP">
               <span className="header-xp-coin" aria-hidden="true">★</span><b>{xp}</b><small>XP</small>
             </div>
+            <Notifications role="child" onOpenLessons={() => pick('mentor')} />
             <div className="sbar-language"><LangToggle /></div>
             {/* Аватар + бургер — только на телефоне (через CSS) */}
             <div className="sbar-mobile">
@@ -364,7 +365,6 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
         {profileError && <p className="card" role="alert" style={{ margin: 20 }}>
           {lang === 'ru' ? 'Не удалось загрузить профиль или прогресс. Проверьте соединение и обновите страницу.' : 'Профильді немесе прогресті жүктеу мүмкін болмады. Байланысты тексеріп, бетті жаңартыңыз.'}
         </p>}
-        {profile.plan === 'mentor' && <LessonReminder go={setTab} tab={tab} />}
         <Suspense fallback={<ScreenFallback />}>
           {tab === 'home' && <Home go={setTab} name={profile.name} xp={xp} diagnosticPlan={diagnosticPlan} onTrainTopic={goTrainTopic} />}
           {tab === 'curriculum' && <Curriculum

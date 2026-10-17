@@ -14,6 +14,7 @@ import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination,
 import PetAvatar, { DEFAULT_PET_AVATAR, PET_AVATARS } from './PetAvatar.jsx';
 import { planPrice } from './plans.js';
 import ParentLessons from './ParentLessons.jsx';
+import Notifications from './Notifications.jsx';
 import { lessonsCall } from './lessonsApi.js';
 
 const Logo = () => <div className="logo"><Brand compact /></div>;
@@ -311,7 +312,7 @@ export default function Parent({ onExit }) {
     <div className="app parent-app">
       <header>
         <Logo />
-        <button className="logout" onClick={exit}>{t('ui.26')}</button>
+        <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}><Notifications role="parent" /><button className="logout" onClick={exit}>{t('ui.26')}</button></div>
       </header>
 
       {familyError && <div className="card" role="alert" style={{ marginTop: 16 }}>
