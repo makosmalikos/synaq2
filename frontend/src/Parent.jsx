@@ -14,6 +14,7 @@ import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination,
 import PetAvatar, { DEFAULT_PET_AVATAR, PET_AVATARS } from './PetAvatar.jsx';
 import { planPrice } from './plans.js';
 import ParentLessons from './ParentLessons.jsx';
+import { lessonsCall } from './lessonsApi.js';
 
 const Logo = () => <div className="logo"><Brand compact /></div>;
 
@@ -48,6 +49,11 @@ export default function Parent({ onExit }) {
     const paid = new URLSearchParams(window.location.search).get('paid');
     return ['1', 'standard', 'pro', 'mentor'].includes(paid);
   });
+  const [upgradeSent, setUpgradeSent] = useState(false);
+  const requestUpgrade = async (lessons) => {
+    try { await lessonsCall({ action: 'upgrade_request', lessons }); setUpgradeSent(true); }
+    catch { setPaymentIssue({ code: 'checkout_unavailable', status: 503 }); }
+  };
   const [children, setChildren] = useState([]);
   const [childrenLoaded, setChildrenLoaded] = useState(false);
   const [adding, setAdding] = useState(false);
@@ -434,7 +440,10 @@ export default function Parent({ onExit }) {
                 {pro ? (
                   <div style={{ font: "600 13px 'Golos Text'", color: 'var(--green)' }}>{t('plan.activeNote')}</div>
                 ) : plan === 'pro' ? (
-                  <div style={{ font: "600 13px 'Golos Text'", color: '#9A9384' }}>{text('Переход на Pro — через поддержку, без двойной оплаты', 'Pro-ға өту — қолдау арқылы, қос төлемсіз')}</div>
+                  upgradeSent ? <div style={{ font: "600 13px 'Golos Text'", color: 'var(--green)' }}>{text('Заявка отправлена — мы свяжемся с вами', 'Өтінім жіберілді — сізбен байланысамыз')}</div>
+                    : <>{[2, 3].map((n) => <button key={n} className="btn accent" type="button" style={{ width: '100%', marginTop: n === 2 ? 0 : 8 }} onClick={() => requestUpgrade(n)}>
+                      {text('Хочу перейти: ', 'Көшкім келеді: ')}{t('plan.lessons' + n)}</button>)}
+                      <p className="muted" style={{ margin: '8px 0 0', fontSize: 12 }}>{text('Переход делаем вручную, без двойной оплаты. Мы свяжемся с вами.', 'Көшуді қолмен жасаймыз, қос төлемсіз. Сізбен байланысамыз.')}</p></>
                 ) : [2, 3].map((n) => (
                   <button key={n} className="btn accent" disabled={paying || paymentPending || checkoutHold} onClick={() => buyPlan('mentor', n)} style={{ width: '100%', marginTop: n === 2 ? 0 : 8 }}>
                     {checkoutHold ? text('Нужна проверка оплаты', 'Төлемді тексеру қажет') : paymentPending ? text('Проверяем оплату…', 'Төлем тексерілуде…') : paying ? '…' : `${t('plan.lessons' + n)} · ${planPrice('mentor', lang, n)}`}

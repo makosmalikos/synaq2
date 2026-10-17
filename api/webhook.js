@@ -6,6 +6,7 @@ const crypto = require('crypto');
 const { getAdmin } = require('../backend/lib/firebase-admin');
 const { familyPlan, planRank, hasFullAccess } = require('../backend/lib/plans');
 const { passId, validWeekKey } = require('../backend/lib/weekly-mock');
+const { notifyAdmin } = require('../backend/lib/admin-notify');
 
 const EVENTS = new Set([
   'payment.succeeded', 'refund.succeeded', 'subscription.active',
@@ -242,6 +243,7 @@ async function handler(req, res) {
     if (previousEvent?.status === 'processed' || previousEvent?.status === 'ignored') return res.status(200).send('duplicate');
     if (await applyWeeklyMockPayment(db, event, eventRef, eventId, eventAt)) return res.status(200).send('ok');
     let parentUid = previousEvent?.status === 'applied' ? previousEvent.parentUid : '';
+    let notifySubscription = null;
 
     if (!parentUid) {
       const resolved = await resolveSubscription(db, event);
@@ -250,6 +252,7 @@ async function handler(req, res) {
         return res.status(200).send('ignored');
       }
       const { subscription, ref } = resolved;
+      notifySubscription = subscription;
       parentUid = resolved.parentUid;
       const familyRef = db.collection('families').doc(parentUid);
       const incoming = subscriptionState(subscription, parentUid, eventAt, eventId);
@@ -310,6 +313,18 @@ async function handler(req, res) {
           subscriptionId: subscription.subscription_id, status: 'applied', stale, appliedAt: new Date() });
       });
     }
+
+    // Новая покупка Pro с наставником — сообщаем админу (запись во входящих «Өтінімдер»).
+    // Это не должно ломать обработку платежа, поэтому ошибки только логируются.
+    try {
+      const fam = (await db.collection('families').doc(parentUid).get()).data() || {};
+      if (fam.plan === 'mentor' && fam.dodoSubId) {
+        const customer = notifySubscription?.customer || {};
+        await notifyAdmin(db, { id: `mentor_${fam.dodoSubId}`, source: 'mentor_purchase',
+          name: fam.parentName || customer.name, phone: customer.phone_number,
+          comment: `Купил(а) Pro с наставником: ${fam.lessonsPerWeek || '?'} урока в неделю. Нужно связаться и познакомить с наставником. Email: ${fam.parentEmail || customer.email || '—'}` });
+      }
+    } catch (notifyError) { console.warn('mentor purchase notification failed:', notifyError.message); }
 
     // Keep 'applied' until every mirror succeeds. A retry resumes sync and
     // never reapplies the old event to the authoritative family.

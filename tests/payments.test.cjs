@@ -65,6 +65,7 @@ function fixture(file = 'webhook.js', { weekly = false } = {}) {
       if (name === 'crypto' || name === 'node:crypto') return crypto;
       if (name === '../backend/lib/plans' || name === '../lib/plans') return plans;
       if (name === '../backend/lib/weekly-mock') return require('../backend/lib/weekly-mock');
+      if (name === '../backend/lib/admin-notify') return require('../backend/lib/admin-notify');
       if (name === '../backend/lib/firebase-admin' || name === '../lib/firebase-admin') return { getAdmin: () => ({ auth, db }) };
       throw Error('Unexpected module ' + name);
     },
@@ -120,6 +121,9 @@ test('mentor subscription is stored as mentor with lessons per week and full acc
   assert.equal(family.plan, 'mentor');
   assert.equal(family.pro, true);
   assert.equal(family.lessonsPerWeek, 2);
+  const lead = [...f.docs].find(([key]) => key.startsWith('leads/mentor_'));
+  assert.ok(lead, 'admin notification is created');
+  assert.match(lead[1].comment, /Pro с наставником: 2/);
   assert.ok(family.planExpiresAt instanceof Date);
 });
 

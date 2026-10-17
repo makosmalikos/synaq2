@@ -5,6 +5,7 @@ const { createHash, randomUUID } = require('node:crypto');
 const { getAdmin } = require('../lib/firebase-admin');
 const { familyPlan, millis } = require('../lib/plans');
 const L = require('../lib/lessons');
+const { notifyAdmin } = require('../lib/admin-notify');
 
 const fail = (message, status = 400) => Object.assign(new Error(message), { status });
 const safeId = (v) => typeof v === 'string' && /^[A-Za-z0-9_-]{1,128}$/.test(v);
@@ -174,6 +175,15 @@ const ACTIONS = {
     if (!message) throw fail('bad_request');
     const { ref } = await ownLesson(db, ctx, body.id);
     await ref.set({ complaint: { text: message, by: ctx.role, at: new Date(now) } }, { merge: true });
+    return { ok: true };
+  },
+
+  // Родитель на Standard просит перейти на Pro с наставником: админ видит заявку во входящих.
+  async upgrade_request(db, ctx, body) {
+    if (ctx.role !== 'parent') throw fail('parent_required', 403);
+    const lessons = [2, 3].includes(Number(body.lessons)) ? Number(body.lessons) : 2;
+    await notifyAdmin(db, { id: `upgrade_${ctx.parentUid}`, source: 'mentor_upgrade_request', name: ctx.family.parentName,
+      comment: `Хочет перейти на Pro с наставником: ${lessons} урока в неделю. Сейчас тариф: ${familyPlan(ctx.family, Date.now())}. Email: ${ctx.family.parentEmail || '—'}` });
     return { ok: true };
   },
 

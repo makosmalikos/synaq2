@@ -115,3 +115,14 @@ test('admin marks no-shows and payouts count only paid lessons', async () => {
   assert.equal((await w.adminCall('GET', null, { view: 'payouts', month: '2026-10' })).body.totalKzt, 3000); // неявка ребёнка оплачивается
   assert.equal((await w.adminCall('GET', null, { view: 'payouts', month: 'bad' })).statusCode, 400);
 });
+
+test('parent can request an upgrade; admin sees it once in the lead inbox', async () => {
+  const w = world({ plan: 'pro' });
+  assert.equal((await w.call('kid', { action: 'upgrade_request', lessons: 3 })).statusCode, 403);
+  assert.equal((await w.call('parent', { action: 'upgrade_request', lessons: 3 })).statusCode, 200);
+  assert.equal((await w.call('parent', { action: 'upgrade_request', lessons: 2 })).statusCode, 200);
+  const leads = [...w.db.records].filter(([k]) => k.startsWith('leads/'));
+  assert.equal(leads.length, 1);
+  assert.equal(leads[0][1].status, 'new');
+  assert.match(leads[0][1].comment, /3 урока/);
+});
