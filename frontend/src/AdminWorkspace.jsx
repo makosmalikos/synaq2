@@ -106,7 +106,6 @@ export default function AdminWorkspace({ request, lang='ru', storageKey='synaq-a
   };
   const visible = tasks.filter((task) => (!status || task.status === status) && `${task.statement} ${topicName(task.topic)}`.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
   return <section className="aw">
-    <div className="aw-hero"><div><p>{w.kicker}</p><h1>{w.title}</h1><span>{w.intro}</span></div><div className="aw-hero-mark" aria-hidden="true">✦</div></div>
     <div className="aw-toolbar"><nav className="aw-tabs" aria-label={w.kicker}>{['editor','bank','import'].map((item) => <button disabled={busy} key={item} className={tab === item ? 'active' : ''} onClick={() => { setTab(item); setError(''); setNotice(''); if (item === 'bank') load(); }}>{w[item]}</button>)}</nav><span className="aw-flow">{w.flow}</span></div>
     {error && <div className="aw-alert error" role="alert">{error}</div>}
     {notice && <div className="aw-alert success" role="status">{notice}</div>}
