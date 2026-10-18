@@ -23,11 +23,12 @@ const pending = () => failure('checkout_pending', 409,
 const paymentPending = () => failure('checkout_payment_pending', 409,
   'Предыдущий платёж ещё обрабатывается. Дождитесь подтверждения или обратитесь в поддержку.');
 
-// pro = Standard 9 990 ₸ (полный доступ); mentor = Pro с живыми уроками (2/3 в неделю).
+// pro = Standard (полный доступ, сейчас 5 999 ₸); mentor = Pro с живыми уроками (2/3 в неделю).
 function products() {
   const env = (name) => String(process.env[name] || '').trim();
   return {
-    pro: env('DODO_STANDARD_PRODUCT_ID') || env('DODO_PRO_PRODUCT_ID') || env('DODO_PRODUCT_ID'),
+    // Пока продаём старый продукт за 5 999 ₸ (DODO_PRODUCT_ID); новые 9 990 ₸ — запасные.
+    pro: env('DODO_PRODUCT_ID') || env('DODO_STANDARD_PRODUCT_ID') || env('DODO_PRO_PRODUCT_ID'),
     mentor2: env('DODO_PRO2_PRODUCT_ID'),
     mentor3: env('DODO_PRO3_PRODUCT_ID'),
   };
