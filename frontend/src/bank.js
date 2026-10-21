@@ -8,6 +8,7 @@ import { expandedQuestions, importedQuestions, stepSolutions } from './expandedQ
 import { reviewedBilArchive } from './reviewedBilArchive.js';
 import { formatAlignedQuestions } from './formatAlignedQuestions.js';
 import { formatAlignedQuestions2 } from './formatAlignedQuestions2.js';
+import { formatAlignedQuestions3 } from './formatAlignedQuestions3.js';
 import { detectLang, quarantineReason, partitionAdminTasks } from './questionMetadata.js';
 import { readAdminTasks } from './adminTasks.js';
 export { detectLang, normalizeAdminTask } from './questionMetadata.js';
@@ -97,6 +98,7 @@ const RAW_POOL = [
   ...importedQuestions.map((q) => one(q, q.school)),
   ...formatAlignedQuestions.map((q) => one(q, q.school)),
   ...formatAlignedQuestions2.map((q) => one(q, q.school)),
+  ...formatAlignedQuestions3.map((q) => one(q, q.school)),
 ];
 
 // Quarantine rules are shared with the lightweight topic catalog.
