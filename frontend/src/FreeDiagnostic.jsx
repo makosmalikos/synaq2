@@ -1,3 +1,4 @@
+import './platform-fonts.css';
 import React, { useMemo, useState } from 'react';
 import Brand from './Brand.jsx';
 import { LangSwitch, useLang } from './i18n.jsx';

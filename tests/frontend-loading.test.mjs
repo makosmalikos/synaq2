@@ -62,13 +62,36 @@ test('public routing keeps diagnostic payload and cabinet navigation above the l
   }
 });
 
-test('font bootstrap retains all design families without a late layout-shifting swap', () => {
+test('landing fonts load locally, cover Kazakh, and avoid a late layout-shifting swap', () => {
   const html = fs.readFileSync(new URL('../frontend/index.html', import.meta.url), 'utf8');
-  const font = html.match(/<link[^>]*fonts\.googleapis\.com\/css2[^>]*>/)?.[0];
-  assert.ok(font);
-  assert.doesNotMatch(font, /media="print"/);
-  assert.match(font, /display=optional/);
-  for (const name of ['Geologica', 'Golos+Text', 'IBM+Plex+Mono', 'Lora', 'Manrope']) assert.ok(font.includes(name));
+  assert.doesNotMatch(html, /fonts\.googleapis\.com|fonts\.gstatic\.com/);
+  assert.match(html, /rel="stylesheet" href="\/fonts\/manrope\/font.css"/);
+  const font = fs.readFileSync(new URL('../frontend/public/fonts/manrope/font.css', import.meta.url), 'utf8');
+  assert.match(font, /font-display: optional/);
+  assert.match(font, /U\+0460-052F/); // Kazakh Ә, Ғ, Қ, Ң, Ө, Ұ, Ү, Һ, І.
+  let bytes = 0;
+  for (const [, url] of font.matchAll(/url\(([^)]+)\)/g)) {
+    assert.ok(url.startsWith('/fonts/manrope/'));
+    const buffer = fs.readFileSync(new URL(`../frontend/public${url}`, import.meta.url));
+    assert.equal(buffer.subarray(0, 4).toString(), 'wOF2');
+    bytes += buffer.length;
+  }
+  assert.ok(bytes < 50_000, `Local font budget: ${bytes}`);
+  const platformFont = fs.readFileSync(path.join(src, 'platform-fonts.css'), 'utf8');
+  for (const name of ['Geologica', 'Golos+Text', 'IBM+Plex+Mono', 'Lora']) assert.ok(platformFont.includes(name));
+  assert.match(platformFont, /display=optional/);
   const main = fs.readFileSync(path.join(src, 'main.jsx'), 'utf8');
-  assert.doesNotMatch(main, /activateFonts/);
+  assert.doesNotMatch(main, /platform-fonts|styles\.css/);
+});
+
+test('above-the-fold school logos stay within a small image budget', () => {
+  const bytes = ['bil', 'nis', 'rfmsh'].reduce((total, school) => total + fs.statSync(new URL(`../frontend/public/landing/mobile/school-${school}.webp`, import.meta.url)).size, 0);
+  assert.ok(bytes < 20_000, `Three tiny school logos: ${bytes} bytes`);
+  for (const file of ['LandingRefresh.jsx', 'LandingFounders.jsx']) {
+    assert.doesNotMatch(fs.readFileSync(path.join(src, file), 'utf8'), /src=\{`\/schools\//);
+  }
+  assert.ok(fs.statSync(new URL('../frontend/public/brands/synaq-mark-320.webp', import.meta.url)).size < 30_000);
+  for (const file of ['Brand.jsx', 'public.css', 'LandingRefresh.css']) {
+    assert.doesNotMatch(fs.readFileSync(path.join(src, file), 'utf8'), /\/brands\/synaq-mark\.png/);
+  }
 });

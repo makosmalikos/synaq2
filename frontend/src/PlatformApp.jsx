@@ -1,3 +1,5 @@
+import './platform-fonts.css';
+import './styles.css';
 import React, { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { watchAuth, watchMyProfile, isKid, isAdmin, logout, getXpSummary, ensureFamilyProfile } from './firebase.js';
 import { useLang, LangToggle } from './i18n.jsx';

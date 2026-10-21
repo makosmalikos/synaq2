@@ -92,6 +92,7 @@ export default function Auth({ onClose, duelCode = '' }) {
           .auth-overlay:before,.auth-overlay:after{opacity:.5}
         }
         @media(max-width:480px){
+          .auth-card input,.auth-card select,.auth-card textarea{font-size:16px!important}
           .auth-card{border-radius:22px!important;padding:22px 20px 24px!important}
         }
       `}</style>
@@ -152,7 +153,7 @@ export default function Auth({ onClose, duelCode = '' }) {
               <div className="auth-visual" aria-hidden="true">
                 <span className="auth-float-icon auth-float-icon--book">📘</span>
                 <span className="auth-float-icon auth-float-icon--target">🎯</span>
-                <img className="auth-student" src="/hero/students/cutout-3.png" alt="" />
+                <img className="auth-student" src="/landing/mobile/student-3-600.webp" srcSet="/landing/mobile/student-3-360.webp 360w, /landing/mobile/student-3-600.webp 600w" sizes="(max-width: 620px) 240px, 400px" width="600" height="900" decoding="async" alt="" />
                 <div className="auth-progress">
                   <div className="auth-progress-head"><span>ПРОГРЕСС</span><span className="auth-progress-value">82%</span></div>
                   <div className="auth-progress-track"><span /></div>

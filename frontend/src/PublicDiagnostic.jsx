@@ -1,3 +1,4 @@
+import './platform-fonts.css';
 import QuestionFigure from './components/QuestionFigure.jsx';
 import FigureOption, { hasFigureOptions, mainFigureSrc } from './components/FigureOption.jsx';
 import React, { useEffect, useMemo, useState } from 'react';

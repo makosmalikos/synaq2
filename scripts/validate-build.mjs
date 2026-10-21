@@ -26,8 +26,16 @@ function check(entry, banned, gzipBudget) {
 // Validate the actual production graph, not just source imports. A new shared
 // chunk must not accidentally pull private SDKs/data back into public routes.
 check('index.html', /^(?:firebase|question-bank|PlatformApp|curriculumData)$/, 110_000);
-// Budget raised from 130 kB: the public diagnostic grew by ~50 bytes with the
-// current landing/demo work, which left `npm run check` permanently red.
+// Do not ship cabinet styles or remote font imports with the landing.
+const landingCss = new Set([...dependencies('index.html')].flatMap(key => manifest[key].css || []));
+let cssBytes = 0;
+for (const file of landingCss) {
+  const css = fs.readFileSync(path.join(dist, file), 'utf8');
+  assert.doesNotMatch(css, /\.curriculum-reader|\.duel-arena|fonts\.googleapis\.com/);
+  cssBytes += gzipSync(css).length;
+}
+assert.ok(cssBytes <= 28_000, `Landing CSS exceeds mobile budget: ${cssBytes}`);
+console.log(`Landing CSS: ${(cssBytes / 1000).toFixed(1)} kB gzip`);
 check('src/PublicDiagnostic.jsx', /^(?:firebase|question-bank|PlatformApp|curriculumData)$/, 135_000);
 check('src/PlatformApp.jsx', /^question-bank$/);
 check('src/Parent.jsx', /^question-bank$/);

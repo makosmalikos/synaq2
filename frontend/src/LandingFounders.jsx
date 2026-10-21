@@ -19,7 +19,7 @@ export default function LandingFounders() {
         {founders.map(({ id, name, school, facts }) => (
           <article className={`lp-founder lp-founder-${id}`} key={id}>
             <div className="lp-founder-photo">
-              <img src={`/founders/${id}.webp`} alt={name} width={1000} height={id === 'malika' ? 1778 : 1225} loading="lazy" decoding="async" />
+              <img src={`/landing/mobile/founder-${id}-800.webp`} srcSet={`/landing/mobile/founder-${id}-480.webp 480w, /landing/mobile/founder-${id}-800.webp 800w`} sizes="(max-width: 700px) calc(100vw - 70px), 480px" alt={name} width={1000} height={id === 'malika' ? 1778 : 1225} loading="lazy" decoding="async" />
             </div>
             <div className="lp-founder-nameplate">
               <h3>{name}</h3>
@@ -27,7 +27,7 @@ export default function LandingFounders() {
             </div>
             <div className="lp-founder-body">
               <div className="lp-founder-school">
-                <img src={`/schools/${school}.png`} alt="" width="30" height="30" loading="lazy" />
+                <img src={`/landing/mobile/school-${school}.webp`} alt="" width="30" height="30" loading="lazy" decoding="async" />
                 <span>{t(`founders.${id}.badge`)}</span>
               </div>
               <ul>
