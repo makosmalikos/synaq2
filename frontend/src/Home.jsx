@@ -10,7 +10,7 @@ import { readDiagnosticProgress } from './platformDiagnostic.js';
 import { DAILY_GOAL, emptyHomeOverview, homeModel } from './homeModel.js';
 import { useHomeOverview } from './useHomeOverview.js';
 import { studyPlanDate } from './studyPlan.js';
-import { topicName } from './diagnosticData.js';
+import { topicName } from './topicNames.js';
 import './Home.css';
 
 const HomeCourseProgress = lazy(() => import('./HomeCourseProgress.jsx'));

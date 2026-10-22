@@ -1,3 +1,5 @@
+import { createLessonExercise, lessonWorkedExample } from './curriculumLessonContent.js';
+
 const L = (ru, kk) => ({ ru, kk });
 const T = (key, quarter, hours, kind, title, summary, rule, example) => ({ key, quarter, hours, kind, title, summary, rule, example });
 
@@ -280,26 +282,6 @@ const prereq = {
   6:L('Действия с дробями, проценты и базовые уравнения.','Бөлшектермен амалдар, пайыздар және негізгі теңдеулер.'),
 };
 
-const genericCheck = (title) => L(
-  `Назови правило темы «${title.ru}» своими словами. До вычислений оцени примерный ответ, после — проверь обратным действием, подстановкой или здравым смыслом.`,
-  `«${title.kk}» тақырыбының ережесін өз сөзіңмен айт. Есептеуге дейін шамамен жауапты бағала, кейін кері амалмен, орнына қоюмен немесе мағынасы бойынша тексер.`
-);
-
-const mistakeFor = (kind) => {
-  if(['area','perimeter','perimeterArea','volume','circle','scale','geometryLines','symmetry'].includes(kind)) return L('Не смешивай длину, площадь и объём. Сначала приведи величины к одной единице, а в конце подпиши единицу ответа.','Ұзындықты, аудан мен көлемді араластырма. Алдымен шамаларды бір өлшем бірлігіне келтіріп, соңында жауап бірлігін жаз.');
-  if(['fractionPart','fractionCompare','fractionAdd','fractionMultiply','fractionDivide','mixedNumber'].includes(kind)) return L('Не выполняй одинаковое действие только с числителем. Следи за знаменателем и сокращай дробь лишь общим делителем.','Бірдей амалды тек алыммен орындама. Бөлімді бақылап, бөлшекті тек ортақ бөлгішке қысқарт.');
-  if(['decimal','decimalOps','decimalMultiply','decimalDivide','decimalShift','percent','percentReverse','percentChange'].includes(kind)) return L('Запятая и знак процента меняют значение числа. Подпиши разряды, оцени результат и проверь, должен ли ответ стать больше или меньше.','Үтір мен пайыз белгісі санның мәнін өзгертеді. Разрядтарды жазып, нәтижені бағала және жауаптың артуы не кемуін тексер.');
-  if(['equation','equationMul','linearEquation','algebra','proportion'].includes(kind)) return L('Не переноси число механически. Выполни одно и то же допустимое действие с обеими частями и подставь найденное значение для проверки.','Санды механикалық түрде көшірме. Екі бөлікке де бірдей рұқсат етілген амалды орындап, табылған мәнді орнына қойып тексер.');
-  if(['integers','integerOps','coordinate'].includes(kind)) return L('Отдельно определи знак и отдельно — числовую часть. На прямой проверь направление движения и расстояние до нуля.','Таңбаны және сандық бөлікті бөлек анықта. Түзуде қозғалыс бағыты мен нөлге дейінгі қашықтықты тексер.');
-  return L('Не начинай вычислять, пока не понял вопрос. Запиши данные, оцени примерный результат и проверь ответ обратным действием.','Сұрақты түсінбей тұрып есептеуді бастама. Берілгендерді жазып, шамамен нәтижені бағала және жауапты кері амалмен тексер.');
-};
-
-const stagePlans = [
-  [L('Разбери новые слова и обозначения','Жаңа сөздер мен белгілерді түсін'),L('Свяжи понятие с рисунком или жизненной ситуацией','Ұғымды суретпен немесе өмірлік жағдаймен байланыстыр'),L('Проверь смысл на простом примере','Мағынасын қарапайым мысалмен тексер'),L('Объясни идею своими словами','Ойды өз сөзіңмен түсіндір')],
-  [L('Запиши правило коротко','Ережені қысқаша жаз'),L('Раздели алгоритм на шаги','Алгоритмді қадамдарға бөл'),L('Выполни базовый пример','Негізгі мысалды орында'),L('Проверь результат обратным действием','Нәтижені кері амалмен тексер')],
-  [L('Выдели данные и вопрос','Берілгендер мен сұрақты анықта'),L('Выбери модель и правило','Модель мен ережені таңда'),L('Реши по шагам без пропусков','Қадамдарды қалдырмай шеш'),L('Найди и исправь типичную ошибку','Жиі кездесетін қатені тауып түзет')],
-];
-
 const lessonPracticeKinds = {
   'g3-measures':['length','mass','time'],
   'g3-mental':['mental','mental','division'],
@@ -330,60 +312,27 @@ const lessonPracticeKinds = {
 };
 const extendedGrade6Modules = new Set(['g6-ratio','g6-proportion','g6-percent','g6-integers','g6-rational-ops','g6-expressions','g6-linear','g6-coordinate','g6-dependencies','g6-inequalities','g6-systems']);
 
-const contentByKind = {
-  mass:{summary:L('Переводим килограммы и граммы и сравниваем массу предметов.','Килограмм мен грамды түрлендіріп, заттардың массасын салыстырамыз.'),rule:L('1 кг = 1000 г. Перед сложением или сравнением переведи обе массы в одну единицу.','1 кг = 1000 г. Қосу немесе салыстыру алдында екі массаны бір өлшем бірлігіне келтір.'),example:L('2 кг 350 г = 2350 г.','2 кг 350 г = 2350 г.')},
-  time:{summary:L('Находим начало, конец и продолжительность события.','Оқиғаның басталуын, аяқталуын және ұзақтығын табамыз.'),rule:L('1 час = 60 минут, 1 минута = 60 секунд. Удобно считать отдельно полные часы и оставшиеся минуты.','1 сағат = 60 минут, 1 минут = 60 секунд. Толық сағаттар мен қалған минуттарды бөлек есептеген ыңғайлы.'),example:L('С 14:35 до 15:00 — 25 минут, затем до 16:05 — 65 минут; всего 90 минут.','14:35-тен 15:00-ге дейін 25 минут, кейін 16:05-ке дейін 65 минут; барлығы 90 минут.')},
-  twoDigitMul:{summary:L('Умножаем многозначное число на двузначное через два неполных произведения.','Көптаңбалы санды екі толымсыз көбейтінді арқылы екі таңбалы санға көбейтеміз.'),rule:L('Сначала умножь на единицы, затем на десятки со сдвигом на один разряд и сложи результаты.','Алдымен бірліктерге, кейін бір разрядқа ығыстырып ондықтарға көбейт те, нәтижелерді қос.'),example:L('124 × 23 = 124 × 3 + 124 × 20 = 372 + 2480 = 2852.','124 × 23 = 124 × 3 + 124 × 20 = 372 + 2480 = 2852.')},
-  remainder:{summary:L('Делим число на равные группы и определяем, сколько единиц осталось.','Санды тең топтарға бөліп, неше бірлік қалғанын анықтаймыз.'),rule:L('Делимое = делитель × частное + остаток, причём остаток всегда меньше делителя.','Бөлінгіш = бөлгіш × бөлінді + қалдық, әрі қалдық әрқашан бөлгіштен кіші.'),example:L('47 ÷ 6 = 7 (остаток 5), потому что 47 = 6 × 7 + 5.','47 ÷ 6 = 7 (қалдық 5), себебі 47 = 6 × 7 + 5.')},
-  twoDigitDivision:{summary:L('Делим многозначное число на двузначное и оцениваем каждую цифру частного.','Көптаңбалы санды екі таңбалы санға бөліп, бөліндінің әр цифрын бағалаймыз.'),rule:L('Бери минимальную часть делимого, которая не меньше делителя; подбирай цифру частного и проверяй умножением.','Бөлінгіштің бөлгіштен кем емес ең кіші бөлігін ал; бөлінді цифрын таңдап, көбейтумен тексер.'),example:L('936 ÷ 24 = 39, потому что 24 × 39 = 936.','936 ÷ 24 = 39, себебі 24 × 39 = 936.')},
-  fractionMultiply:{summary:L('Находим часть от части с помощью умножения обыкновенных дробей.','Жай бөлшектерді көбейту арқылы бөліктің бөлігін табамыз.'),rule:L('Умножь числитель на числитель, знаменатель на знаменатель и сократи результат. До умножения можно выполнить сокращение крест-накрест.','Алымды алымға, бөлімді бөлімге көбейтіп, нәтижені қысқарт. Көбейтпей тұрып айқыштап қысқартуға болады.'),example:L('2/3 × 3/5 = 6/15 = 2/5.','2/3 × 3/5 = 6/15 = 2/5.')},
-  fractionDivide:{summary:L('Делим на дробь, заменяя деление умножением на обратное число.','Бөлшекке бөлуді кері санға көбейтумен алмастырамыз.'),rule:L('Первую дробь оставь, знак деления замени умножением, вторую дробь переверни, затем сократи.','Бірінші бөлшекті қалдыр, бөлу белгісін көбейтуге ауыстыр, екінші бөлшекті төңкеріп, қысқарт.'),example:L('3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8 = 1 7/8.','3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8 = 1 7/8.')},
-  mixedOps:{summary:L('Выполняем действия со смешанными числами и выделяем целую часть ответа.','Аралас сандармен амалдар орындап, жауаптың бүтін бөлігін ажыратамыз.'),rule:L('Переведи смешанные числа в неправильные дроби, выполни действие, сократи и снова выдели целую часть.','Аралас сандарды бұрыс бөлшекке айналдырып, амалды орында, қысқарт және қайтадан бүтін бөлігін ажырат.'),example:L('1 1/3 + 2 1/3 = 4/3 + 7/3 = 11/3 = 3 2/3.','1 1/3 + 2 1/3 = 4/3 + 7/3 = 11/3 = 3 2/3.')},
-  decimalMultiply:{summary:L('Умножаем десятичные дроби и правильно возвращаем запятую в произведение.','Ондық бөлшектерді көбейтіп, көбейтіндіге үтірді дұрыс қоямыз.'),rule:L('Сначала умножь как целые числа. В ответе отдели справа столько цифр, сколько их вместе было после запятых в обоих множителях.','Алдымен бүтін сандардай көбейт. Жауапта екі көбейткіште үтірден кейін барлығы неше цифр болса, оң жақтан сонша цифр бөл.'),example:L('1,2 × 0,35: 12 × 35 = 420, всего три знака после запятой, ответ 0,420 = 0,42.','1,2 × 0,35: 12 × 35 = 420, үтірден кейін барлығы үш цифр, жауап 0,420 = 0,42.')},
-  decimalDivide:{summary:L('Делим десятичную дробь на натуральное число по разрядам.','Ондық бөлшекті натурал санға разрядтар бойынша бөлеміз.'),rule:L('Дели как целые числа; когда переходишь через запятую в делимом, поставь запятую в частном.','Бүтін сандардай бөл; бөлінгіштегі үтірден өткенде бөліндіге үтір қой.'),example:L('8,4 ÷ 4 = 2,1. Проверка: 2,1 × 4 = 8,4.','8,4 ÷ 4 = 2,1. Тексеру: 2,1 × 4 = 8,4.')},
-  decimalShift:{summary:L('Быстро умножаем и делим десятичные дроби на 10, 100 и 1000.','Ондық бөлшектерді 10, 100 және 1000-ға жылдам көбейтеміз және бөлеміз.'),rule:L('При умножении перенеси запятую вправо, при делении — влево; число шагов равно числу нулей.','Көбейткенде үтірді оңға, бөлгенде солға жылжыт; қадам саны нөлдер санына тең.'),example:L('3,47 × 100 = 347; 3,47 ÷ 100 = 0,0347.','3,47 × 100 = 347; 3,47 ÷ 100 = 0,0347.')},
-  percentReverse:{summary:L('Восстанавливаем целое число, когда известны его процент и соответствующая часть.','Пайызы және оған сәйкес бөлігі белгілі болғанда бүтін санды табамыз.'),rule:L('Если p% числа равно a, то всё число равно a ÷ p × 100. Сначала найди 1%, затем 100%.','Санның p%-ы a-ға тең болса, бүкіл сан a ÷ p × 100 болады. Алдымен 1%-ды, кейін 100%-ды тап.'),example:L('20% числа равны 60: 1% = 60 ÷ 20 = 3, поэтому 100% = 300.','Санның 20%-ы 60: 1% = 60 ÷ 20 = 3, сондықтан 100% = 300.')},
-  geometryLines:{summary:L('Распознаём параллельные и перпендикулярные прямые по их направлению и углу.','Параллель және перпендикуляр түзулерді бағыты мен бұрышы бойынша анықтаймыз.'),rule:L('Параллельные прямые не пересекаются, а перпендикулярные пересекаются под прямым углом 90°.','Параллель түзулер қиылыспайды, ал перпендикуляр түзулер 90° тік бұрыш жасап қиылысады.'),example:L('Противоположные стороны прямоугольника параллельны, соседние — перпендикулярны.','Тіктөртбұрыштың қарама-қарсы қабырғалары параллель, көршілес қабырғалары перпендикуляр.')},
-  symmetry:{summary:L('Строим отражение фигуры относительно точки или прямой и сравниваем расстояния.','Фигураны нүктеге немесе түзуге қатысты шағылдырып, қашықтықтарды салыстырамыз.'),rule:L('Соответствующие точки лежат на равных расстояниях от оси; отрезок между ними перпендикулярен оси симметрии.','Сәйкес нүктелер осьтен бірдей қашықтықта жатады; олардың арасындағы кесінді симметрия осіне перпендикуляр.'),example:L('При отражении точки (3; 2) относительно оси x получаем (3; −2).','(3; 2) нүктесін x осіне қатысты шағылдырғанда (3; −2) аламыз.')},
-  linearGraph:{summary:L('Связываем формулу линейной зависимости с точками на координатной плоскости.','Сызықтық тәуелділік формуласын координаталық жазықтықтағы нүктелермен байланыстырамыз.'),rule:L('Чтобы построить график y = kx + b, выбери несколько значений x, вычисли y, отметь точки и проведи через них прямую.','y = kx + b графигін салу үшін бірнеше x мәнін таңдап, y-ті есепте, нүктелерді белгілеп, олар арқылы түзу жүргіз.'),example:L('Для y = 2x + 1 при x = 0 получаем y = 1, при x = 2 получаем y = 5. Точки (0; 1) и (2; 5) лежат на графике.','y = 2x + 1 үшін x = 0 болса y = 1, x = 2 болса y = 5. (0; 1) және (2; 5) нүктелері графикте жатады.')},
-};
-
 const expandTopic = (topic, grade) => {
   const lessons=lessonSplits[topic.key] || [topic.title];
   return lessons.map((title,index) => {
-    const stage=Math.min(index,2), plan=stagePlans[stage], practiceKind=lessonPracticeKinds[topic.key]?.[index] || topic.kind, content=contentByKind[practiceKind] || topic;
-    const focus=L(
-      `На уроке «${title.ru}» мы разберём не только готовое правило, но и почему оно работает. ${content.summary.ru}`,
-      `«${title.kk}» сабағында дайын ережені ғана емес, оның неге жұмыс істейтінін де талдаймыз. ${content.summary.kk}`
-    );
-    const model=L(
-      `${content.rule.ru} Сначала проговори связь между величинами, затем запиши её числами или формулой.`,
-      `${content.rule.kk} Алдымен шамалар арасындағы байланысты айт, содан кейін оны сандармен немесе формуламен жаз.`
-    );
-    const worked=L(
-      `${content.example.ru} Объясни каждый переход: что нашли, каким правилом воспользовались и почему результат разумен.`,
-      `${content.example.kk} Әр өтуді түсіндір: нені таптық, қандай ережені қолдандық және нәтиже неге мағыналы.`
-    );
-    const mistake=mistakeFor(practiceKind);
+    const key=`${topic.key}-${index+1}`;
+    const worked=lessonWorkedExample({key});
+    if(!worked) throw new Error(`Missing lesson content: ${key}`);
+    const guide=worked.lesson;
     return {
-      ...topic,
-      key:`${topic.key}-${index+1}`,
-      topicId:`${topic.key}-${index+1}`,
-      moduleId:topic.key,
-      moduleTitle:topic.title,
-      title,
-      kind:practiceKind,
-      summary:focus,
+      ...topic, key, topicId:key, moduleId:topic.key, moduleTitle:topic.title, title,
+      kind:lessonPracticeKinds[topic.key]?.[index] || topic.kind,
+      summary:guide.idea, rule:guide.rule, example:worked.solution,
       grade:Number(grade),
       hours:Number(grade)===6 ? 3+(index===0&&extendedGrade6Modules.has(topic.key)?1:0) : Math.max(1,Math.round(topic.hours/lessons.length)),
-      unit:units[topic.quarter],
-      prerequisites:prereq[grade],
-      steps:plan,
+      unit:units[topic.quarter], prerequisites:prereq[grade],
+      steps:[L('Понять модель задачи','Есептің моделін түсіну'),guide.rule,worked.text,guide.check],
+      workedSteps:guide.workedSteps, visual:guide.visual,
       lecture:[
-        [L('Смысл и наглядная модель','Мағынасы және көрнекі модель'),focus,L(`Представь ситуацию, нарисуй схему и найди в ней идею темы «${title.ru}».`,`Жағдайды елестетіп, сызба сал және одан «${title.kk}» тақырыбының идеясын тап.`)],
-        [L('Главное правило и обозначения','Негізгі ереже және белгілер'),model,content.rule],
-        [L('Разобранный пример','Талданған мысал'),worked,content.example],
-        [L('Типичная ошибка и проверка','Жиі қате және тексеру'),mistake,genericCheck(title)],
+        [L('Смысл и наглядная модель','Мағынасы және көрнекі модель'),guide.idea,worked.text],
+        [L('Главное правило и обозначения','Негізгі ереже және белгілер'),guide.rule,guide.calculation],
+        [L('Разобранный пример','Талданған мысал'),worked.text,worked.solution],
+        [L('Типичная ошибка и проверка','Жиі қате және тексеру'),guide.mistake,guide.check],
       ],
     };
   });
@@ -396,83 +345,7 @@ export const CURRICULUM = Object.fromEntries(Object.entries(raw).map(([grade, it
 
 const rnd = (a,b) => Math.floor(Math.random()*(b-a+1))+a;
 const pick = (items) => items[rnd(0,items.length-1)];
-const gcd = (a,b) => b ? gcd(b,a%b) : Math.abs(a);
-const lcm = (a,b) => Math.abs(a*b)/gcd(a,b);
-const M = (ru,kk,answer,solutionRu,solutionKk) => ({text:L(ru,kk),answer:String(answer),solution:L(solutionRu,solutionKk)});
-const fmt = (n) => Number.isInteger(n) ? String(n) : String(Number(n.toFixed(6)));
 const supportedKinds = new Set(['table','division','order','area','perimeter','perimeterArea','equation','equationMul','place1000','placeBig','addsub','addsub1000','bigAddSub','length','mass','money','mental','bigMul','twoDigitMul','columnMD','longDivision','remainder','twoDigitDivision','rounding','fractionPart','fractionCompare','fractionAdd','fractionMultiply','fractionDivide','mixedNumber','mixedOps','motion','time','volume','divisibility','gcd','decimal','decimalOps','decimalMultiply','decimalDivide','decimalShift','percent','percentReverse','angles','average','ratio','proportion','dependency','scale','percentChange','integers','integerOps','algebra','linearEquation','inequality','linearSystem','linearGraph','coordinate','geometryLines','symmetry','circle','probability','combinatorics','word']);
-
-function makeQuestion(kind, level='easy') {
-  const hard=level==='hard', medium=level==='medium';
-  if(kind==='table'){const a=rnd(2,9),b=rnd(2,9);return M(`${a} × ${b} = ?`,`${a} × ${b} = ?`,a*b,`${a} × ${b} = ${a*b}.`,`${a} × ${b} = ${a*b}.`)}
-  if(kind==='division'){const b=rnd(2,9),q=rnd(2,9),a=b*q;return M(`${a} ÷ ${b} = ?`,`${a} ÷ ${b} = ?`,q,`Проверка: ${q} × ${b} = ${a}.`,`Тексеру: ${q} × ${b} = ${a}.`)}
-  if(kind==='order'){const a=rnd(10,hard?90:40),b=rnd(2,9),c=rnd(2,9),ans=a+b*c;return M(`${a} + ${b} × ${c} = ?`,`${a} + ${b} × ${c} = ?`,ans,`Сначала ${b} × ${c} = ${b*c}, затем + ${a}: ${ans}.`,`Алдымен ${b} × ${c} = ${b*c}, кейін + ${a}: ${ans}.`)}
-  if(kind==='area'){const a=rnd(3,hard?18:10),b=rnd(2,hard?14:8),ans=a*b;return M(`Найди площадь прямоугольника ${a} см × ${b} см.`,`${a} см × ${b} см тіктөртбұрыштың ауданын тап.`,ans,`S = ${a} × ${b} = ${ans} см².`,`S = ${a} × ${b} = ${ans} см².`)}
-  if(kind==='perimeter'||kind==='perimeterArea'){const a=rnd(3,16),b=rnd(2,12),ans=2*(a+b);return M(`Найди периметр прямоугольника со сторонами ${a} см и ${b} см.`,`Қабырғалары ${a} см және ${b} см тіктөртбұрыштың периметрін тап.`,ans,`P = 2 × (${a} + ${b}) = ${ans} см.`,`P = 2 × (${a} + ${b}) = ${ans} см.`)}
-  if(kind==='equation'||kind==='equationMul'){const x=rnd(3,hard?90:35),a=rnd(2,12);if(kind==='equationMul'){const product=x*a;return M(`Реши: ${a}x = ${product}.`,`Шеш: ${a}x = ${product}.`,x,`x = ${product} ÷ ${a} = ${x}.`,`x = ${product} ÷ ${a} = ${x}.`)}const sum=x+a;return M(`Реши: x + ${a} = ${sum}.`,`Шеш: x + ${a} = ${sum}.`,x,`x = ${sum} − ${a} = ${x}.`,`x = ${sum} − ${a} = ${x}.`)}
-  if(kind==='place1000'){const n=rnd(101,999),ans=Math.floor(n/10)%10;return M(`Какая цифра стоит в разряде десятков числа ${n}?`,`${n} санының ондық разрядында қай цифр тұр?`,ans,`Разряд десятков — второй справа: ${ans}.`,`Ондық разряды — оңнан екінші: ${ans}.`)}
-  if(kind==='placeBig'){const n=rnd(100,999),ans=Math.floor(n/100);return M(`Сколько полных сотен в числе ${n}?`,`${n} санында неше толық жүздік бар?`,ans,`${n} ÷ 100: полных сотен ${ans}.`,`${n} ÷ 100: ${ans} толық жүздік.`)}
-  if(kind==='addsub'||kind==='addsub1000'||kind==='bigAddSub'){const max=kind==='bigAddSub'?90000:kind==='addsub1000'?900:hard?500:100;const a=rnd(20,max),b=rnd(10,Math.min(a,max/2)),plus=Math.random()>.5,ans=plus?a+b:a-b,op=plus?'+':'−';return M(`${a} ${op} ${b} = ?`,`${a} ${op} ${b} = ?`,ans,`Вычисляем по разрядам: ${ans}.`,`Разрядтар бойынша есептейміз: ${ans}.`)}
-  if(kind==='length'){const m=rnd(1,9),cm=rnd(1,99),ans=m*100+cm;return M(`${m} м ${cm} см — сколько сантиметров?`,`${m} м ${cm} см — неше сантиметр?`,ans,`${m} м = ${m*100} см; всего ${ans} см.`,`${m} м = ${m*100} см; барлығы ${ans} см.`)}
-  if(kind==='mass'){const kg=rnd(1,9),g=pick([100,200,250,300,500,750]),ans=kg*1000+g;return M(`${kg} кг ${g} г — сколько граммов?`,`${kg} кг ${g} г — неше грамм?`,ans,`${kg} кг = ${kg*1000} г; всего ${ans} г.`,`${kg} кг = ${kg*1000} г; барлығы ${ans} г.`)}
-  if(kind==='money'){const price=pick([100,150,200,250,300]),count=rnd(2,9),ans=price*count;return M(`${count} тетрадей по ${price} ₸. Найди стоимость.`,`${price} ₸ тұратын ${count} дәптердің құнын тап.`,ans,`${price} × ${count} = ${ans} ₸.`,`${price} × ${count} = ${ans} ₸.`)}
-  if(kind==='mental'||kind==='bigMul'||kind==='columnMD'){const a=rnd(kind==='bigMul'?120:20,kind==='bigMul'?2500:hard?300:99),b=rnd(2,9),ans=a*b;return M(`${a} × ${b} = ?`,`${a} × ${b} = ?`,ans,`${a} × ${b} = ${ans}.`,`${a} × ${b} = ${ans}.`)}
-  if(kind==='twoDigitMul'){const a=rnd(12,hard?999:199),b=rnd(11,hard?79:35),ans=a*b;return M(`${a} × ${b} = ?`,`${a} × ${b} = ?`,ans,`Умножаем по разрядам и складываем неполные произведения: ${ans}.`,`Разрядтар бойынша көбейтіп, толымсыз көбейтінділерді қосамыз: ${ans}.`)}
-  if(kind==='longDivision'){const b=rnd(2,9),q=rnd(100,hard?2500:800),a=b*q;return M(`${a} ÷ ${b} = ?`,`${a} ÷ ${b} = ?`,q,`Проверка: ${q} × ${b} = ${a}.`,`Тексеру: ${q} × ${b} = ${a}.`)}
-  if(kind==='remainder'){const b=rnd(3,9),q=rnd(12,hard?150:60),rem=rnd(1,b-1),a=b*q+rem;return M(`Найди остаток: ${a} ÷ ${b}.`,`Қалдықты тап: ${a} ÷ ${b}.`,rem,`${a} = ${b} × ${q} + ${rem}; остаток ${rem} меньше ${b}.`,`${a} = ${b} × ${q} + ${rem}; ${rem} қалдығы ${b}-ден кіші.`)}
-  if(kind==='twoDigitDivision'){const b=rnd(11,hard?75:35),q=rnd(12,hard?180:70),a=b*q;return M(`${a} ÷ ${b} = ?`,`${a} ÷ ${b} = ?`,q,`Подбираем цифры частного и проверяем: ${q} × ${b} = ${a}.`,`Бөлінді цифрларын таңдап, тексереміз: ${q} × ${b} = ${a}.`)}
-  if(kind==='rounding'){const n=rnd(1000,9999),ans=Math.round(n/100)*100;return M(`Округли ${n} до сотен.`,`${n} санын жүздікке дейін дөңгелекте.`,ans,`Смотрим на десятки и получаем ${ans}.`,`Ондықтарға қарап, ${ans} аламыз.`)}
-  if(kind==='fractionPart'){const d=pick([2,3,4,5,6,8,10]),part=rnd(1,d-1),unit=rnd(2,10)*d,ans=unit*part/d;return M(`Найди ${part}/${d} от числа ${unit}.`,`${unit} санының ${part}/${d} бөлігін тап.`,ans,`${unit} ÷ ${d} × ${part} = ${ans}.`,`${unit} ÷ ${d} × ${part} = ${ans}.`)}
-  if(kind==='fractionCompare'){const d=rnd(4,12),a=rnd(1,d-2),b=rnd(a+1,d-1);return M(`Что больше: ${a}/${d} или ${b}/${d}? Введи большую дробь.`,`${a}/${d} әлде ${b}/${d} қайсысы үлкен? Үлкен бөлшекті енгіз.`,`${b}/${d}`,`Знаменатели равны, поэтому больше ${b}/${d}.`,`Бөлімдер тең, сондықтан ${b}/${d} үлкен.`)}
-  if(kind==='fractionAdd'){const d=pick([4,5,6,8,10]),a=rnd(1,Math.floor(d/2)),b=rnd(1,d-a),num=a+b,g=gcd(num,d),answer=`${num/g}/${d/g}`;return M(`${a}/${d} + ${b}/${d} = ?`,`${a}/${d} + ${b}/${d} = ?`,answer,`Знаменатель сохраняем: ${num}/${d}. После сокращения: ${answer}.`,`Бөлімді сақтаймыз: ${num}/${d}. Қысқартқаннан кейін: ${answer}.`)}
-  if(kind==='fractionMultiply'){const a=rnd(1,6),b=rnd(a+1,10),c=rnd(1,6),d=rnd(c+1,10),num=a*c,den=b*d,g=gcd(num,den),answer=`${num/g}/${den/g}`;return M(`${a}/${b} × ${c}/${d} = ?`,`${a}/${b} × ${c}/${d} = ?`,answer,`Перемножаем числители и знаменатели: ${num}/${den}; сокращаем: ${answer}.`,`Алымдар мен бөлімдерді көбейтеміз: ${num}/${den}; қысқартамыз: ${answer}.`)}
-  if(kind==='fractionDivide'){const a=rnd(1,6),b=rnd(a+1,10),c=rnd(1,6),d=rnd(c+1,10),num=a*d,den=b*c,g=gcd(num,den),answer=`${num/g}/${den/g}`;return M(`${a}/${b} ÷ ${c}/${d} = ?`,`${a}/${b} ÷ ${c}/${d} = ?`,answer,`Умножаем на обратную дробь: ${a}/${b} × ${d}/${c} = ${num}/${den} = ${answer}.`,`Кері бөлшекке көбейтеміз: ${a}/${b} × ${d}/${c} = ${num}/${den} = ${answer}.`)}
-  if(kind==='mixedNumber'){const d=pick([3,4,5,6]),whole=rnd(1,5),rem=rnd(1,d-1),num=whole*d+rem;return M(`Сколько целых частей в дроби ${num}/${d}?`,`${num}/${d} бөлшегінде неше бүтін бөлік бар?`,whole,`${num} ÷ ${d} = ${whole} (остаток ${rem}).`,`${num} ÷ ${d} = ${whole} (қалдық ${rem}).`)}
-  if(kind==='mixedOps'){const d=pick([3,4,5,6]),w1=rnd(1,4),w2=rnd(1,4),a=rnd(1,d-1),b=rnd(1,d-1),num=(w1+w2)*d+a+b,g=gcd(num,d),answer=`${num/g}/${d/g}`;return M(`${w1} ${a}/${d} + ${w2} ${b}/${d} = ? Введи ответ дробью.`,`${w1} ${a}/${d} + ${w2} ${b}/${d} = ? Жауапты бөлшекпен енгіз.`,answer,`Переводим и складываем: (${w1*d+a} + ${w2*d+b})/${d} = ${num}/${d} = ${answer}.`,`Айналдырып қосамыз: (${w1*d+a} + ${w2*d+b})/${d} = ${num}/${d} = ${answer}.`)}
-  if(kind==='motion'){const v=rnd(3,hard?90:30),t=rnd(2,8),ans=v*t;return M(`Скорость ${v} км/ч, время ${t} ч. Найди расстояние.`,`Жылдамдық ${v} км/сағ, уақыт ${t} сағ. Қашықтықты тап.`,ans,`S = ${v} × ${t} = ${ans} км.`,`S = ${v} × ${t} = ${ans} км.`)}
-  if(kind==='time'){const h=rnd(1,5),m=pick([10,15,20,30,45]),ans=h*60+m;return M(`${h} ч ${m} мин — сколько минут?`,`${h} сағ ${m} мин — неше минут?`,ans,`${h} × 60 + ${m} = ${ans} мин.`,`${h} × 60 + ${m} = ${ans} мин.`)}
-  if(kind==='volume'){const a=rnd(2,8),b=rnd(2,7),h=rnd(2,6),ans=a*b*h;return M(`Найди объём: ${a} см × ${b} см × ${h} см.`,`Көлемді тап: ${a} см × ${b} см × ${h} см.`,ans,`V = ${a} × ${b} × ${h} = ${ans} см³.`,`V = ${a} × ${b} × ${h} = ${ans} см³.`)}
-  if(kind==='divisibility'){const factor=pick([2,3,5,9]),q=rnd(12,hard?250:80),remainder=hard&&Math.random()>.5?rnd(1,factor-1):0,n=factor*q+remainder;return M(`Найди остаток от деления ${n} на ${factor}.`,`${n} санын ${factor}-ке бөлгендегі қалдықты тап.`,remainder,`${n} = ${factor} × ${q} + ${remainder}.`,`${n} = ${factor} × ${q} + ${remainder}.`)}
-  if(kind==='gcd'){const factor=hard?rnd(4,12):rnd(2,8),a=rnd(2,hard?15:8)*factor,b=rnd(2,hard?15:8)*factor,useLcm=(medium||hard)&&Math.random()>.5,ans=useLcm?lcm(a,b):gcd(a,b),nameRu=useLcm?'НОК':'НОД',nameKk=useLcm?'ЕКОЕ':'ЕҮОБ';return M(`Найди ${nameRu}(${a}, ${b}).`,`${nameKk}(${a}, ${b}) тап.`,ans,`${nameRu} чисел ${a} и ${b} равен ${ans}.`,`${a} және ${b} сандарының ${nameKk}-і ${ans}.`)}
-  if(kind==='decimal'||kind==='decimalOps'){const places=hard?100:10,a=rnd(10,hard?900:90)/places,b=rnd(10,hard?500:90)/places,subtract=kind==='decimalOps'&&Math.random()>.5,left=subtract?Math.max(a,b):a,right=subtract?Math.min(a,b):b,ans=fmt(subtract?left-right:left+right),op=subtract?'−':'+';return M(`${String(left).replace('.',',')} ${op} ${String(right).replace('.',',')} = ?`,`${String(left).replace('.',',')} ${op} ${String(right).replace('.',',')} = ?`,ans,`Выравниваем запятые и получаем ${String(ans).replace('.',',')}.`,`Үтірлерді түзеп, ${String(ans).replace('.',',')} аламыз.`)}
-  if(kind==='decimalMultiply'){const a=rnd(12,hard?250:99)/10,b=rnd(2,hard?40:15)/10,ans=fmt(a*b);return M(`${String(a).replace('.',',')} × ${String(b).replace('.',',')} = ?`,`${String(a).replace('.',',')} × ${String(b).replace('.',',')} = ?`,ans,`Умножаем как целые и отделяем суммарное число знаков: ${String(ans).replace('.',',')}.`,`Бүтін сандардай көбейтіп, үтірден кейінгі жалпы цифр санын бөлеміз: ${String(ans).replace('.',',')}.`)}
-  if(kind==='decimalDivide'){const divisor=rnd(2,hard?15:9),ans=rnd(2,hard?100:30)/10,dividend=fmt(divisor*ans);return M(`${String(dividend).replace('.',',')} ÷ ${divisor} = ?`,`${String(dividend).replace('.',',')} ÷ ${divisor} = ?`,fmt(ans),`Делим поразрядно и ставим запятую: ${String(fmt(ans)).replace('.',',')}.`,`Разрядтар бойынша бөліп, үтір қоямыз: ${String(fmt(ans)).replace('.',',')}.`)}
-  if(kind==='decimalShift'){const n=rnd(11,999)/100,factor=pick([10,100,1000]),multiply=Math.random()>.35,ans=fmt(multiply?n*factor:n/factor),op=multiply?'×':'÷';return M(`${String(n).replace('.',',')} ${op} ${factor} = ?`,`${String(n).replace('.',',')} ${op} ${factor} = ?`,ans,`Переносим запятую на ${String(factor).length-1} разряда и получаем ${String(ans).replace('.',',')}.`,`Үтірді ${String(factor).length-1} орынға жылжытып, ${String(ans).replace('.',',')} аламыз.`)}
-  if(kind==='percent'){const p=pick([10,20,25,50]),base=rnd(2,12)*100,ans=base*p/100;return M(`Найди ${p}% от ${base}.`,`${base} санының ${p}%-ын тап.`,ans,`${base} × ${p} ÷ 100 = ${ans}.`,`${base} × ${p} ÷ 100 = ${ans}.`)}
-  if(kind==='percentReverse'){const p=pick([10,20,25,50]),base=rnd(2,12)*100,part=base*p/100;return M(`${p}% числа равны ${part}. Найди число.`,`Санның ${p}%-ы ${part}-ға тең. Санды тап.`,base,`${part} ÷ ${p} × 100 = ${base}.`,`${part} ÷ ${p} × 100 = ${base}.`)}
-  if(kind==='angles'){const angle=pick([35,60,90,110,145]),ans=angle<90?1:angle===90?2:3;return M(`Угол ${angle}°. Введи 1 — острый, 2 — прямой, 3 — тупой.`,`${angle}° бұрыш. 1 — сүйір, 2 — тік, 3 — доғал деп енгіз.`,ans,`${angle}° — ${ans===1?'острый':ans===2?'прямой':'тупой'} угол.`,`${angle}° — ${ans===1?'сүйір':ans===2?'тік':'доғал'} бұрыш.`)}
-  if(kind==='average'){const values=[rnd(2,15),rnd(2,15),rnd(2,15)].sort((a,b)=>a-b);if(hard){const ans=values[1];return M(`Найди медиану набора: ${values.join(', ')}.`,`Жиынның медианасын тап: ${values.join(', ')}.`,ans,`После упорядочивания среднее значение — ${ans}.`,`Реттегеннен кейін ортадағы мән — ${ans}.`)}if(medium){const ans=values[2]-values[0];return M(`Найди размах набора: ${values.join(', ')}.`,`Жиынның құлашын тап: ${values.join(', ')}.`,ans,`${values[2]} − ${values[0]} = ${ans}.`,`${values[2]} − ${values[0]} = ${ans}.`)}const [a,b,c]=values,sum=a+b+c,adjust=(3-sum%3)%3,cc=c+adjust,ans=(a+b+cc)/3;return M(`Найди среднее чисел ${a}, ${b}, ${cc}.`,`${a}, ${b}, ${cc} сандарының ортасын тап.`,ans,`(${a} + ${b} + ${cc}) ÷ 3 = ${ans}.`,`(${a} + ${b} + ${cc}) ÷ 3 = ${ans}.`)}
-  if(kind==='ratio'){const k=rnd(2,6),a=rnd(2,8)*k,b=rnd(2,8)*k,g=gcd(a,b),ans=`${a/g}:${b/g}`;return M(`Сократи отношение ${a}:${b}.`,`${a}:${b} қатынасын қысқарт.`,ans,`Делим оба члена на ${g}: ${ans}.`,`Екі мүшені ${g}-ге бөлеміз: ${ans}.`)}
-  if(kind==='proportion'){const a=rnd(2,8),b=rnd(2,9),k=rnd(2,6),c=a*k,ans=b*k;return M(`Реши пропорцию ${a}/${b} = ${c}/x.`,`Пропорцияны шеш: ${a}/${b} = ${c}/x.`,ans,`${a}x = ${b} × ${c}; x = ${ans}.`,`${a}x = ${b} × ${c}; x = ${ans}.`)}
-  if (kind === 'dependency') {
-    const x1 = rnd(2, 7), k = rnd(2, 9), x2 = x1 * rnd(2, 5), direct = Math.random() > .5;
-    const numerator = direct ? k * x2 : k * x1;
-    const denominator = direct ? x1 : x2;
-    const divisor = gcd(numerator, denominator);
-    const answer = denominator / divisor === 1 ? String(numerator / divisor) : `${numerator / divisor}/${denominator / divisor}`;
-    return M(`При ${direct ? 'прямой' : 'обратной'} зависимости x = ${x1}, y = ${k}. Найди y при x = ${x2}. При необходимости введи точную дробь.`,
-      `${direct ? 'Тура' : 'Кері'} тәуелділікте x = ${x1}, y = ${k}. x = ${x2} болғандағы y-ті тап. Қажет болса, дәл бөлшекпен енгіз.`, answer,
-      direct ? `y = ${k} × ${x2} / ${x1} = ${answer}.` : `Произведение постоянно: ${x1} × ${k} = ${x2} × y; y = ${answer}.`,
-      direct ? `y = ${k} × ${x2} / ${x1} = ${answer}.` : `Көбейтінді тұрақты: ${x1} × ${k} = ${x2} × y; y = ${answer}.`);
-  }
-  if(kind==='scale'){const cm=rnd(2,9),km=rnd(1,5),ans=cm*km;return M(`В масштабе 1 см = ${km} км. Сколько километров показывают ${cm} см?`,`Масштабта 1 см = ${km} км. ${cm} см неше километрді көрсетеді?`,ans,`${cm} × ${km} = ${ans} км.`,`${cm} × ${km} = ${ans} км.`)}
-  if(kind==='percentChange'){const base=rnd(2,20)*100,p=pick([10,20,25,50]),decrease=(medium||hard)&&Math.random()>.5,ans=base*(decrease?100-p:100+p)/100,actionRu=decrease?'уменьшили':'увеличили',actionKk=decrease?'кемітті':'арттырды',factor=(decrease?100-p:100+p)/100;return M(`${base} ${actionRu} на ${p}%. Найди новое значение.`,`${base} санын ${p}%-ға ${actionKk}. Жаңа мәнді тап.`,ans,`${base} × ${String(factor).replace('.',',')} = ${ans}.`,`${base} × ${String(factor).replace('.',',')} = ${ans}.`)}
-  if(kind==='integers'){const a=-rnd(2,hard?35:15),ans=Math.abs(a);return M(`Найди модуль числа ${a}.`,`${a} санының модулін тап.`,ans,`|${a}| = ${ans}: это расстояние до нуля.`,`|${a}| = ${ans}: бұл нөлге дейінгі қашықтық.`)}
-  if(kind==='integerOps'){const a=rnd(-15,15),b=rnd(-15,15)||4,operation=hard?'×':medium?'−':'+',ans=operation==='×'?a*b:operation==='−'?a-b:a+b;return M(`(${a}) ${operation} (${b}) = ?`,`(${a}) ${operation} (${b}) = ?`,ans,`Учитываем знаки и получаем ${ans}.`,`Таңбаларды ескеріп, ${ans} аламыз.`)}
-  if(kind==='algebra'){const a=rnd(2,8),b=rnd(2,8),x=rnd(2,9),ans=(a+b)*x;return M(`Найди ${a}x + ${b}x при x = ${x}.`,`x = ${x} болса, ${a}x + ${b}x тап.`,ans,`(${a} + ${b}) × ${x} = ${ans}.`,`(${a} + ${b}) × ${x} = ${ans}.`)}
-  if(kind==='linearEquation'){const x=rnd(-8,15),a=rnd(2,7),b=rnd(1,12),right=a*x+b;return M(`Реши: ${a}x + ${b} = ${right}.`,`Шеш: ${a}x + ${b} = ${right}.`,x,`${a}x = ${right-b}; x = ${x}.`,`${a}x = ${right-b}; x = ${x}.`)}
-  if(kind==='inequality'){const a=rnd(2,8),x=rnd(-5,12),b=rnd(1,10),right=a*x+b,strict=Math.random()>.5,sign=strict?'<':'≤';return M(`Какое наибольшее целое x удовлетворяет ${a}x + ${b} ${sign} ${right}?`,`Қандай ең үлкен бүтін x саны ${a}x + ${b} ${sign} ${right} теңсіздігін қанағаттандырады?`,strict?x-1:x,`${a}x ${sign} ${right-b}; x ${sign} ${x}. Наибольшее целое: ${strict?x-1:x}.`,`${a}x ${sign} ${right-b}; x ${sign} ${x}. Ең үлкен бүтін сан: ${strict?x-1:x}.`)}
-  if(kind==='linearSystem'){const x=rnd(1,hard?12:8),y=rnd(1,hard?12:8),sum=x+y,diff=x-y;return M(`Реши систему x + y = ${sum}, x − y = ${diff}. Введи x.`,`x + y = ${sum}, x − y = ${diff} жүйесін шеш. x мәнін енгіз.`,x,`Складываем уравнения: 2x = ${sum+diff}; x = ${x}, затем y = ${y}.`,`Теңдеулерді қосамыз: 2x = ${sum+diff}; x = ${x}, содан кейін y = ${y}.`)}
-  if(kind==='linearGraph'){const k=rnd(-5,5)||2,b=rnd(-8,8),x=rnd(-5,8),ans=k*x+b;return M(`Точка графика y = ${k}x ${b<0?'−':'+'} ${Math.abs(b)} имеет x = ${x}. Найди y.`,`y = ${k}x ${b<0?'−':'+'} ${Math.abs(b)} графигіндегі нүктеде x = ${x}. y-ті тап.`,ans,`Подставляем: y = ${k} × (${x}) ${b<0?'−':'+'} ${Math.abs(b)} = ${ans}.`,`Орнына қоямыз: y = ${k} × (${x}) ${b<0?'−':'+'} ${Math.abs(b)} = ${ans}.`)}
-  if(kind==='coordinate'){const x=(Math.random()>.5?1:-1)*rnd(1,8),y=(Math.random()>.5?1:-1)*rnd(1,8),ans=x>0&&y>0?1:x<0&&y>0?2:x<0&&y<0?3:4;return M(`В какой четверти находится точка (${x}; ${y})? Введи номер.`,`(${x}; ${y}) нүктесі қай ширекте? Нөмірін енгіз.`,ans,`По знакам координат получаем ${ans} четверть.`,`Координаталар таңбалары бойынша ${ans}-ширек.`)}
-  if(kind==='geometryLines'){const parallel=Math.random()>.5,angle=parallel?0:90,answer=parallel?1:2;return M(`Угол между направлениями равен ${angle}°. Введи 1 — параллельные, 2 — перпендикулярные.`,`Бағыттар арасындағы бұрыш ${angle}°. 1 — параллель, 2 — перпендикуляр деп енгіз.`,answer,angle===0?'Направления совпадают, прямые параллельны.':'Угол 90°, прямые перпендикулярны.',angle===0?'Бағыттар сәйкес, түзулер параллель.':'Бұрыш 90°, түзулер перпендикуляр.')} 
-  if(kind==='symmetry'){const x=rnd(-8,8)||3,y=rnd(-8,8)||4,axis=Math.random()>.5?'x':'y',answer=axis==='x'?`${x};${-y}`:`${-x};${y}`;return M(`Точка (${x}; ${y}) отражена относительно оси ${axis}. Введи новые координаты как x;y.`,`(${x}; ${y}) нүктесі ${axis} осіне қатысты шағылды. Жаңа координаталарды x;y түрінде енгіз.`,answer,axis==='x'?`Координата x не меняется, знак y меняется: (${x}; ${-y}).`:`Координата y не меняется, знак x меняется: (${-x}; ${y}).`,axis==='x'?`x координатасы өзгермейді, y таңбасы өзгереді: (${x}; ${-y}).`:`y координатасы өзгермейді, x таңбасы өзгереді: (${-x}; ${y}).`)}
-  if(kind==='circle'){const r=rnd(2,hard?15:9);if(hard){const ans=fmt(3.14*r*r);return M(`Найди площадь круга радиуса ${r} см. Используй π = 3,14.`,`Радиусы ${r} см дөңгелектің ауданын тап. π = 3,14 ал.`,ans,`S = 3,14 × ${r}² = ${String(ans).replace('.',',')} см².`,`S = 3,14 × ${r}² = ${String(ans).replace('.',',')} см².`)}if(medium){const ans=fmt(2*3.14*r);return M(`Найди длину окружности радиуса ${r} см. Используй π = 3,14.`,`Радиусы ${r} см шеңбердің ұзындығын тап. π = 3,14 ал.`,ans,`C = 2 × 3,14 × ${r} = ${String(ans).replace('.',',')} см.`,`C = 2 × 3,14 × ${r} = ${String(ans).replace('.',',')} см.`)}const ans=2*r;return M(`Радиус окружности ${r} см. Найди диаметр.`,`Шеңбер радиусы ${r} см. Диаметрді тап.`,ans,`d = 2r = ${ans} см.`,`d = 2r = ${ans} см.`)}
-  if(kind==='probability'){const red=rnd(1,5),blue=rnd(1,5),total=red+blue,g=gcd(red,total);return M(`В мешке ${red} красных и ${blue} синих шара. Вероятность красного? Введи дробь.`,`Қапта ${red} қызыл және ${blue} көк шар бар. Қызыл шар ықтималдығы? Бөлшекпен енгіз.`,`${red/g}/${total/g}`,`P = ${red}/${total} = ${red/g}/${total/g}.`,`P = ${red}/${total} = ${red/g}/${total/g}.`)}
-  if(kind==='combinatorics'){const a=rnd(2,7),b=rnd(2,6),ans=a*b;return M(`${a} вида верха и ${b} вида низа. Сколько разных комплектов?`,`Үстіңгі киімнің ${a} түрі және астыңғы киімнің ${b} түрі бар. Неше түрлі жиынтық?`,ans,`${a} × ${b} = ${ans}.`,`${a} × ${b} = ${ans}.`)}
-  if(kind==='word'){const groups=rnd(3,hard?12:7),inGroup=rnd(4,hard?18:10),extra=rnd(2,hard?25:9),ans=groups*inGroup+extra;return M(`В ${groups} группах по ${inGroup} учеников и ещё ${extra} учеников. Сколько всего?`,`${groups} топтың әрқайсысында ${inGroup} оқушыдан және тағы ${extra} оқушы бар. Барлығы неше оқушы?`,ans,`${groups} × ${inGroup} + ${extra} = ${ans}.`,`${groups} × ${inGroup} + ${extra} = ${ans}.`)}
-  const a=rnd(20,hard?150:80),b=rnd(2,9),ans=a+b;return M(`${a} + ${b} = ?`,`${a} + ${b} = ?`,ans,`${a} + ${b} = ${ans}.`,`${a} + ${b} = ${ans}.`);
-}
 
 export const normalizeCurriculumAnswer = (value) => String(value ?? '').trim().replace(/\s+/g,'').replace(',','.').replace('−','-');
 export function curriculumAnswersMatch(actual,expected) {
@@ -484,7 +357,12 @@ export function curriculumAnswersMatch(actual,expected) {
 }
 export function createCurriculumQuestions(topic, level, count) {
   const levels=level==='mixed'?['easy','medium','hard']:[level];
-  return Array.from({length:count},(_,index)=>({...makeQuestion(topic.kind,pick(levels)),id:`${topic.key}-${Date.now()}-${index}`}));
+  return Array.from({length:count},(_,index)=>{
+    const question=createLessonExercise(topic,pick(levels));
+    if(!question) throw new Error(`Unsupported lesson: ${topic.key}`);
+    // Teaching metadata contains worked answers and must never enter a live session payload.
+    return {text:question.text,answer:question.answer,solution:question.solution,id:`${topic.key}-${Date.now()}-${index}`};
+  });
 }
 
 export function validateCurriculum() {

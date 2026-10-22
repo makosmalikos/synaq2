@@ -1,21 +1,20 @@
-import { STATIC_TOPICS, STATIC_BANK_IDS } from './topicCatalog.generated.js';
-import { partitionAdminTasks } from './questionMetadata.js';
-import { addQuestionsToTopics } from './topicSummary.js';
+import { STATIC_TOPICS } from './topicCatalog.generated.js';
+export { topicsWithAdminTasks } from './adminTopicCatalog.js';
 
-export function topicsWithAdminTasks(tasks = []) {
-  const { active } = partitionAdminTasks(tasks, STATIC_BANK_IDS);
-  return addQuestionsToTopics(STATIC_TOPICS, active).filter((topic) => topic.count > 0);
-}
+const baseline = () => STATIC_TOPICS.filter(topic => topic.count > 0)
+  .map(topic => ({ ...topic, schools: [...topic.schools] }));
 
-// Same readiness/fallback policy as the training bank, but no statements or
-// solutions from the bundled question bank are downloaded for a report.
-// Browser reports use the generated answer-free baseline. Server code may
-// inject an Admin SDK reader when it needs live custom-task counts.
-export async function loadTopicCatalog(readTasks = async () => []) {
+// Browser reports need only summary counts. The larger duplicate-ID index and
+// admin normalizer load only when a caller actually supplies custom tasks.
+export async function loadTopicCatalog(readTasks) {
+  if (!readTasks) return baseline();
   try {
-    return topicsWithAdminTasks(await readTasks());
+    const tasks = await readTasks();
+    if (!tasks.length) return baseline();
+    const { topicsWithAdminTasks } = await import('./adminTopicCatalog.js');
+    return topicsWithAdminTasks(tasks);
   } catch (error) {
     console.warn('bankTasks (каталог тем) не загрузились:', error?.message || error);
-    return topicsWithAdminTasks();
+    return baseline();
   }
 }

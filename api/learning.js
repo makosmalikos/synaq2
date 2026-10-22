@@ -1,4 +1,5 @@
 const { getAdmin } = require('../backend/lib/firebase-admin');
+const { findTrainingQuestion } = require('../backend/lib/training-question');
 const { createLearningService } = require('../backend/lib/learning-service');
 
 function content(db) {
@@ -13,16 +14,7 @@ function content(db) {
   }
   return {
     async getTrainingQuestion(id) {
-      const bank = await import('../frontend/src/bank.js');
-      const bundled = bank.POOL.find((question) => question.id === id);
-      if (bundled) return bundled;
-      const snapshot = await db.collection('bankTasks').doc(id).get();
-      if (!snapshot.exists) return null;
-      const raw = snapshot.data();
-      if (raw.status != null && raw.status !== 'published') return null;
-      const { normalizeAdminTask, quarantineReason } = await import('../frontend/src/questionMetadata.js');
-      const question = normalizeAdminTask({ ...raw, id });
-      return quarantineReason(question) ? null : question;
+      return findTrainingQuestion(db, id);
     },
     async getTrainingTopics() {
       const [{ POOL, EXTRA_TOPICS }, { topics }, { addQuestionsToTopics }] = await Promise.all([

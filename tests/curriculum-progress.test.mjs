@@ -161,3 +161,16 @@ test('invalid and future attempt dates cannot contribute to mastery', () => {
     assert.equal(model.topics[0].practiceMastered, false);
   }
 });
+
+test('server lesson IDs and old curriculum question IDs both count toward lesson practice',()=>{
+ const at=new Date('2026-01-01'),now=Date.parse('2026-02-01');
+ const history=[
+   {sessionId:'new-session',topic:'num',curriculumTopicKey:topic.key,qid:`${topic.key}-new-session`,school:'curriculum',verified:true,correct:true,at},
+   {sessionId:'old-session',topic:'num',qid:`${topic.key}-old-session`,school:'curriculum',verified:true,correct:false,at},
+   {sessionId:'unrelated',topic:'num',qid:`${topic.key}-not-a-lesson`,school:'БИЛ',verified:true,correct:true,at},
+   {sessionId:'unverified',topic:'num',curriculumTopicKey:topic.key,verified:false,correct:true,at},
+ ];
+ const model=curriculumProgressModel({grade:3,plan:'free',attempts:history,now});
+ const lesson=model.topics.find(item=>item.topic.key===topic.key);
+ assert.equal(lesson.practiceCount,2);assert.equal(lesson.practiceAccuracy,50);
+});

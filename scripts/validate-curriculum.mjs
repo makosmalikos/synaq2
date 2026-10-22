@@ -1,3 +1,4 @@
+import { checkCurriculumCatalog } from './generate-curriculum-catalog.mjs';
 import {
   CURRICULUM,
   createCurriculumQuestions,
@@ -6,6 +7,7 @@ import {
 } from '../frontend/src/curriculumData.js';
 
 const errors = validateCurriculum();
+if (!checkCurriculumCatalog()) errors.push('Curriculum metadata is stale: run node scripts/generate-curriculum-catalog.mjs --write');
 const seen = new Set();
 let generated = 0;
 

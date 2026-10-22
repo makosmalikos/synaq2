@@ -88,9 +88,9 @@ test('diagnosis cards use total questions and distinguish wrong answers from ski
 });
 
 test('inverse dependency accepts exact equivalent fractions', (t) => {
-  const numbers = [0, .999, .3, .3, .1];
+  const numbers = [0, 0, 0, 0, .15];
   t.mock.method(Math, 'random', () => numbers.shift() ?? .1);
-  const topic = CURRICULUM[6].find((item) => item.kind === 'dependency');
+  const topic = CURRICULUM[6].find((item) => item.key === 'g6-dependencies-2');
   const q = createCurriculumQuestions(topic, 'easy', 1)[0];
   assert.equal(q.answer, '4/3');
   // createCurriculumQuestions picks the single difficulty before generating.

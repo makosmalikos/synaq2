@@ -1,10 +1,9 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLang } from '../i18n.jsx';
-import { topics } from '../data.js';
-import { POOL } from '../bank.js';
+import { MENTOR_TOPICS } from '../topicCatalog.generated.js';
 import { lessonsCall, lessonError, fmtDay, fmtTime, dayKey } from '../lessonsApi.js';
 
-const MATH = topics.filter((t) => t.block === 'math');
+const MATH = MENTOR_TOPICS;
 const stars = (n) => '★'.repeat(Math.round(n || 0)) + '☆'.repeat(5 - Math.round(n || 0));
 
 // Экран ребёнка: запись на урок с наставником (только математика).
@@ -28,7 +27,6 @@ export default function Mentor({ onUpgrade }) {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { load(); const id = setInterval(load, 60000); return () => clearInterval(id); }, [load]);
 
-  const title = (qid) => POOL.find((q) => q.id === qid)?.statement?.slice(0, 70) || qid;
   const startBooking = async () => {
     setStep('topic'); setTopic(''); setPicked([]); setMentor(null); setError(''); setNotice('');
     try { setUnclear((await lessonsCall({ action: 'unclear_list' })).tasks || []); } catch { setUnclear([]); }
@@ -139,7 +137,7 @@ export default function Mentor({ onUpgrade }) {
           {unclear.map((u) => { const on = picked.some((p) => p.key === u.key);
             return <label key={u.key} style={{ display: 'flex', gap: 8, padding: '4px 0' }}>
               <input type="checkbox" checked={on} disabled={!on && picked.length >= 10} onChange={() => setPicked((p) => on ? p.filter((x) => x.key !== u.key) : [...p, u])} />
-              <span>{title(u.qid)}</span></label>; })}</>}
+              <span>{u.preview || u.qid}</span></label>; })}</>}
         <div style={{ display: 'flex', gap: 8, marginTop: 16 }}>
           <button className="btn ghost" type="button" onClick={() => setStep('home')}>{text('Назад', 'Артқа')}</button>
           <button className="btn accent" type="button" disabled={!topic} onClick={() => setStep('mentor')}>{text('Дальше', 'Әрі қарай')}</button>

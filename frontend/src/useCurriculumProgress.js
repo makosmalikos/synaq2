@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { collection, doc, getDocsFromServer, runTransaction } from 'firebase/firestore';
 import { auth, db, getAttempts } from './firebase.js';
-import { CURRICULUM } from './curriculumData.js';
+import { CURRICULUM_CATALOG as CURRICULUM } from './curriculumCatalog.generated.js';
 import { createCurriculumTheoryStore, curriculumProgressModel, emptyCurriculumTheory, loadCurriculumAttempts,
   mergeCurriculumLesson, validCurriculumLesson } from './curriculumProgress.js';
 

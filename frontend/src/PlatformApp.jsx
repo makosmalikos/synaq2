@@ -4,8 +4,6 @@ import React, { lazy, Suspense, useCallback, useEffect, useRef, useState } from 
 import { watchAuth, watchMyProfile, isKid, isAdmin, logout, getXpSummary, ensureFamilyProfile } from './firebase.js';
 import { useLang, LangToggle } from './i18n.jsx';
 import Auth from './Auth.jsx';
-import Home from './Home.jsx';
-import League from './League.jsx';
 import Brand from './Brand.jsx';
 import BrandLoader from './components/BrandLoader.jsx';
 import PetAvatar from './PetAvatar.jsx';
@@ -14,6 +12,8 @@ import StudentMobileNav from './StudentMobileNav.jsx';
 import { bindInitialDiagnostic } from './homeModel.js';
 
 // Банк задач большой: загружаем его только вместе с экраном, которому он нужен.
+const Home = lazy(() => import('./Home.jsx'));
+const League = lazy(() => import('./League.jsx'));
 const Parent = lazy(() => import('./Parent.jsx'));
 const Admin = lazy(() => import('./Admin.jsx'));
 const Progress = lazy(() => import('./Progress.jsx'));

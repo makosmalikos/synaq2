@@ -144,9 +144,10 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
       const questionGain = correct && !solved.xpAwarded && !solved.correct ? 5 : 0;
       const gain = questionGain + (Math.floor((studySecs + seconds) / 3600) - Math.floor(studySecs / 3600)) * 100;
       const totalXp = integer(previous.xp) + gain;
-      tx.create(attemptRef, { sessionId: body.id, qid: question.id, topic: question.topic || null,
+      const curriculumIdentity = session.mode === 'curriculum' ? { curriculumTopicKey: session.request.topicKey } : {};
+      tx.create(attemptRef, { ...curriculumIdentity, sessionId: body.id, qid: question.id, topic: question.topic || null,
         school: question.school || null, answer: given, correct, secs: seconds, gain, at: new Date(at), verified: true });
-      tx.set(solvedRef, { qid: question.id, topic: question.topic || null, school: question.school || null,
+      tx.set(solvedRef, { ...curriculumIdentity, qid: question.id, topic: question.topic || null, school: question.school || null,
         correct, xpAwarded: !!solved.xpAwarded || !!solved.correct || questionGain > 0, at: new Date(at) }, { merge: true });
       tx.set(statsRef, { xp: totalXp, studySecs: studySecs + seconds, studyCreditedUntil: new Date(at), updatedAt: new Date(at) }, { merge: true });
       tx.set(daily.ref, { count: daily.count + 1, updatedAt: new Date(at) }, { merge: true });

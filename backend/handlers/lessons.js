@@ -5,6 +5,7 @@ const { createHash, randomUUID } = require('node:crypto');
 const { getAdmin } = require('../lib/firebase-admin');
 const { familyPlan, millis } = require('../lib/plans');
 const L = require('../lib/lessons');
+const { mentorTaskPreviews } = require('../lib/mentor-task-previews');
 const { notifyAdmin } = require('../lib/admin-notify');
 
 const fail = (message, status = 400) => Object.assign(new Error(message), { status });
@@ -235,7 +236,7 @@ const ACTIONS = {
     if (ctx.role !== 'child') throw fail('child_required', 403);
     const snap = await db.collection('unclearTasks').where('childUid', '==', ctx.childUid).limit(100).get();
     const items = snap.docs.map((d) => ({ key: d.id, ...d.data() })).sort((a, b) => millis(b.at) - millis(a.at)).slice(0, 30);
-    return { tasks: items.map((t) => ({ key: t.key, qid: t.qid, topic: t.topic || '' })) };
+    return { tasks: await mentorTaskPreviews(db, items) };
   },
   async unclear_remove(db, ctx, body) {
     if (ctx.role !== 'child') throw fail('child_required', 403);

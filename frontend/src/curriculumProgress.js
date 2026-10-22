@@ -1,11 +1,11 @@
-import { CURRICULUM } from './curriculumData.js';
+import { CURRICULUM_CATALOG as CURRICULUM } from './curriculumCatalog.generated.js';
 
 export const CURRICULUM_ATTEMPT_LIMIT = 500;
 export const CURRICULUM_TOPIC_WINDOW = 10;
 const allTopics = new Map(Object.values(CURRICULUM).flat().map((topic) => [topic.key, topic]));
 const theoryKey = (uid) => `synaq_curriculum_theory_v1_${uid}`;
 export const emptyCurriculumTheory = (uid) => ({ version: 1, uid, lessons: {} });
-export const curriculumLessonPages = (topic) => ['intro', ...topic.lecture.map((_, index) => index), 'check', 'summary'];
+export const curriculumLessonPages = (topic) => ['intro', ...Array.from({length:topic.chapterCount ?? topic.lecture.length},(_,index)=>index), 'check', 'summary'];
 
 export function curriculumTheoryStudied(topic, lesson) {
   return !!lesson && Number.isFinite(lesson.studiedAt) && lesson.studiedAt > 0 && lesson.checkPassed === true
@@ -79,7 +79,7 @@ export function mergeCurriculumLesson(topic, left, right) {
   const merged = { ...latest, completedSteps: curriculumLessonPages(topic).slice(0, -2)
     .filter((step) => left.completedSteps.includes(step) || right.completedSteps.includes(step)),
   checkPassed: left.checkPassed || right.checkPassed };
-  const complete = merged.checkPassed && merged.completedSteps.length === topic.lecture.length + 1;
+  const complete = merged.checkPassed && merged.completedSteps.length === curriculumLessonPages(topic).length - 2;
   merged.studiedAt = complete ? Math.min(...[left.studiedAt, right.studiedAt, merged.updatedAt].filter((value) => value > 0)) : null;
   return merged;
 }
@@ -100,20 +100,32 @@ function attemptTime(at) {
   return Number.isFinite(value) ? value : 0;
 }
 
+// Older server attempts kept only the broad training topic. Their server-issued
+// question IDs still contain the lesson key; retain this history after upgrading.
+export function curriculumAttemptTopic(attempt) {
+  if(allTopics.has(attempt?.curriculumTopicKey)) return attempt.curriculumTopicKey;
+  if(allTopics.has(attempt?.topic)) return attempt.topic;
+  if(attempt?.school==='curriculum'&&typeof attempt.qid==='string') {
+    return [...allTopics.keys()].find(key=>attempt.qid.startsWith(`${key}-`)) || null;
+  }
+  return null;
+}
+
 export function curriculumProgressModel({ grade = 3, plan = 'free', attempts = [], theory,
   historyLimit = CURRICULUM_ATTEMPT_LIMIT, now = Date.now() } = {}) {
   const available = curriculumAccessibleKeys(grade, plan), byTopic = new Map(), seen = new Set();
   const historyTruncated = attempts.length >= historyLimit;
   const recent = [...attempts].filter((attempt) => attempt?.verified === true && typeof attempt.correct === 'boolean'
-    && typeof attempt.sessionId === 'string' && attempt.sessionId && allTopics.has(attempt.topic)
+    && typeof attempt.sessionId === 'string' && attempt.sessionId && allTopics.has(curriculumAttemptTopic(attempt))
     && attemptTime(attempt.at) > 0 && attemptTime(attempt.at) <= Number(now))
     .sort((a, b) => attemptTime(b.at) - attemptTime(a.at)).slice(0, historyLimit);
   for (const attempt of recent) {
     if (seen.has(attempt.sessionId)) continue;
     seen.add(attempt.sessionId);
-    const answers = byTopic.get(attempt.topic) || [];
+    const key = curriculumAttemptTopic(attempt);
+    const answers = byTopic.get(key) || [];
     if (answers.length < CURRICULUM_TOPIC_WINDOW) answers.push(attempt.correct);
-    byTopic.set(attempt.topic, answers);
+    byTopic.set(key, answers);
   }
   const topics = (CURRICULUM[grade] || []).map((topic) => {
     const answers = byTopic.get(topic.key) || [], correct = answers.filter(Boolean).length;

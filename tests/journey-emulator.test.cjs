@@ -169,3 +169,55 @@ test('sign-in repairs a missing family after an interrupted signup without repla
     await sdk.terminate(client.db); await sdk.deleteApp(client.auth.app);
   }
 });
+
+test('curriculum lesson → verified practice → second-device progress → parent summary', { skip: !enabled, timeout: 120000 }, async () => {
+  const { loadEmulatorClient, sdk } = require('./helpers/emulator-browser-client.cjs');
+  const { CURRICULUM } = await import('../frontend/src/curriculumData.js');
+  const { emptyCurriculumTheory, curriculumLessonPages, updateCurriculumTheory, curriculumTheoryStudied, curriculumProgressModel } = await import('../frontend/src/curriculumProgress.js');
+  const { createApp } = require('../backend/server');
+  const { getAdmin } = require('../backend/lib/firebase-admin');
+  const server=createApp().listen(0,'127.0.0.1');
+  await once(server,'listening');
+  const origin=`http://127.0.0.1:${server.address().port}`,rawFetch=global.fetch;
+  global.fetch=(input,options)=>{
+    const url=new URL(typeof input==='string'&&input.startsWith('/api/')?new URL(input,origin):input);
+    assert.equal(url.hostname,'127.0.0.1');
+    assert.ok([String(server.address().port),'19099','18080'].includes(url.port));
+    return rawFetch(url,options);
+  };
+  const suffix=randomUUID().replaceAll('-','').slice(0,12),clients=[];
+  const client=async name=>{const value=await loadEmulatorClient(`${name}-${suffix}`);clients.push(value);return value;};
+  try {
+    const parent=await client('lesson-parent');
+    const credential=await parent.registerParent(`lesson-${suffix}@example.test`,'test-parent-123','Родитель уроков');
+    const request={name:'Ученик уроков',klass:'3',code:`lesson${suffix}`,pin:'test-lesson-123',requestId:randomUUID()};
+    const {childUid}=await parent.createChild(credential.uid,request);
+    const child=await client('lesson-child');await child.loginChild(request.code,request.pin);
+    const topic=CURRICULUM[3][0];
+    const theory=curriculumLessonPages(topic).slice(0,-1).reduce((record,step,i)=>updateCurriculumTheory(record,topic,{step,advance:true,checkPassed:step==='check',now:Date.now()+i}),emptyCurriculumTheory(childUid));
+    await sdk.setDoc(sdk.doc(child.db,'results',childUid,'lessonReading',topic.key),theory.lessons[topic.key]);
+    assert.equal(curriculumTheoryStudied(topic,theory.lessons[topic.key]),true);
+    const id=randomUUID(),session=await child.startLearningSession(childUid,{mode:'curriculum',topicKey:topic.key,level:'easy'},id);
+    assert.equal(session.question.answer,undefined);assert.equal(session.question.solution,undefined);assert.equal(session.question.lesson,undefined);
+    const privateSession=await getAdmin().db.collection('learningSessions').doc(`${childUid}_${id}`).get();
+    const answer=privateSession.data().question.answer;
+    const saved=await child.saveAttempt(childUid,{sessionId:id,answer},id);
+    assert.equal(saved.correct,true);assert.equal(saved.gain,5);
+    const retry=await child.saveAttempt(childUid,{sessionId:id,answer},id);assert.equal(retry.saved,false);assert.equal(retry.totalXp,5);
+    await child.logout();
+    const secondDevice=await client('lesson-second-device');await secondDevice.loginChild(request.code,request.pin);
+    const read=await sdk.getDocFromServer(sdk.doc(secondDevice.db,'results',childUid,'lessonReading',topic.key));
+    assert.equal(curriculumTheoryStudied(topic,read.data()),true);
+    const attempts=await secondDevice.getAttempts(childUid),model=curriculumProgressModel({grade:3,plan:'free',theory:{version:1,uid:childUid,lessons:{[topic.key]:read.data()}},attempts});
+    assert.equal(attempts.length,1);assert.equal(attempts[0].curriculumTopicKey,topic.key);assert.equal(attempts[0].topic,'num');assert.equal(attempts[0].verified,true);
+    assert.equal((await secondDevice.getXpSummary(childUid)).xp,5);
+    assert.equal((await parent.getXpSummary(childUid)).xp,5);
+    assert.equal((await parent.getAttempts(childUid))[0].sessionId,id);
+    assert.equal(model.studiedCount,1);
+    assert.equal(model.topics.find(item=>item.topic.key===topic.key).practiceCount,1);
+    assert.equal(model.topics.find(item=>item.topic.key===topic.key).practiceAccuracy,100);
+  } finally {
+    for(const c of clients){await sdk.terminate(c.db);await sdk.deleteApp(c.auth.app);}
+    global.fetch=rawFetch;await new Promise(resolve=>server.close(resolve));
+  }
+});

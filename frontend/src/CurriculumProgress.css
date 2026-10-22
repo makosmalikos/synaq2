@@ -213,3 +213,15 @@
  .curriculum-page .curriculum-train{min-width:0;width:100%}
 }
 @media(prefers-reduced-motion:reduce){.curriculum-page *{animation:none!important;transition:none!important}}
+
+@media(max-width:640px){
+ /* Keep lesson text readable and prevent iOS focus zoom on answer fields. */
+ .curriculum-detail .curriculum-reader-body input{font-size:16px;min-height:48px}
+ .curriculum-detail .curriculum-definition p,
+ .curriculum-detail .curriculum-worked li,
+ .curriculum-detail .curriculum-formula,
+ .curriculum-detail .curriculum-chapter-check p,
+ .curriculum-detail .curriculum-mini-check p{font-size:16px;line-height:1.65}
+ .curriculum-detail .curriculum-reader-body button{font-size:14px;min-height:44px}
+ .curriculum-detail .curriculum-reader-actions button{font-size:15px;min-height:48px}
+}

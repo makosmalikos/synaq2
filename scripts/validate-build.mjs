@@ -37,7 +37,10 @@ for (const file of landingCss) {
 assert.ok(cssBytes <= 28_000, `Landing CSS exceeds mobile budget: ${cssBytes}`);
 console.log(`Landing CSS: ${(cssBytes / 1000).toFixed(1)} kB gzip`);
 check('src/PublicDiagnostic.jsx', /^(?:firebase|question-bank|PlatformApp|curriculumData)$/, 135_000);
-check('src/PlatformApp.jsx', /^question-bank$/);
+check('src/PlatformApp.jsx', /^(?:question-bank|Home|curriculumData|useCurriculumProgress|diagnosticData)$/, 310_000);
+check('src/Home.jsx', /^(?:question-bank|curriculumData|Curriculum|diagnosticData)$/, 340_000);
+check('src/HomeCourseProgress.jsx', /^(?:question-bank|curriculumData|Curriculum|diagnosticData)$/, 320_000);
+check('src/components/Mentor.jsx', /^(?:question-bank|bank|Admin|curriculumData|Curriculum)$/, 315_000);
 check('src/Parent.jsx', /^question-bank$/);
 check('src/Progress.jsx', /^question-bank$/);
 console.log('Build loading boundaries OK');

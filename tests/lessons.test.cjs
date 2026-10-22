@@ -144,3 +144,13 @@ test('notifications: reminders for booking, today lesson, rating and returned le
   assert.ok((await kinds('kid')).includes('credit_returned'));
   assert.deepEqual((await world({ plan: 'pro' }).call('kid', { action: 'notifications' })).body.items, []);
 });
+
+test('unclear list returns only this child’s previews, without answers or private saved fields', async () => {
+  const w = world();
+  w.db.records.set('bankTasks/mentor-preview', { status: 'published', topic: 'eq', statement: 'Найди x: x + 2 = 4.', answer: '2' });
+  w.db.records.set('unclearTasks/own', { childUid: 'kid1', qid: 'mentor-preview', topic: 'Уравнения', at: new Date(NOW), note: 'private note' });
+  w.db.records.set('unclearTasks/foreign', { childUid: 'another-child', qid: 'secret-task', topic: 'private topic', at: new Date(NOW) });
+  const response = await w.call('kid', { action: 'unclear_list' });
+  assert.equal(response.statusCode, 200);
+  assert.deepEqual(response.body.tasks, [{ key: 'own', qid: 'mentor-preview', topic: 'Уравнения', preview: 'Найди x: x + 2 = 4.' }]);
+});
