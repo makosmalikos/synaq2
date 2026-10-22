@@ -55,7 +55,8 @@ test('public routing keeps diagnostic payload and cabinet navigation above the l
   const platform = fs.readFileSync(path.join(src, 'PlatformApp.jsx'), 'utf8');
   assert.match(app, /setDiagnosticResult\(result\)/);
   assert.match(app, /initialDiagnosticPlan=\{diagnosticResult\}/);
-  assert.match(platform, /initialDiagnosticPlan \|\| readPublicDiagnosticResult\(\)/);
+  assert.match(platform, /bindInitialDiagnostic\(current, initialDiagnosticPlan, nextUid\)/);
+  assert.match(platform, /diagnosticSeed\?\.uid === user\.uid \? diagnosticSeed\.result : null/);
   for (const value of ['tab', 'trainTopic', 'tabBeforeSubscription']) {
     assert.ok(app.includes(`const [${value},`));
     assert.ok(!platform.includes(`const [${value},`));

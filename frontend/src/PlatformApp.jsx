@@ -8,9 +8,10 @@ import Home from './Home.jsx';
 import League from './League.jsx';
 import Brand from './Brand.jsx';
 import BrandLoader from './components/BrandLoader.jsx';
-import { readPublicDiagnosticResult } from './diagnosticPlan.js';
 import PetAvatar from './PetAvatar.jsx';
 import Notifications from './Notifications.jsx';
+import StudentMobileNav from './StudentMobileNav.jsx';
+import { bindInitialDiagnostic } from './homeModel.js';
 
 // Банк задач большой: загружаем его только вместе с экраном, которому он нужен.
 const Parent = lazy(() => import('./Parent.jsx'));
@@ -80,14 +81,15 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   const [profile, setProfile] = useState({ name: 'Бала', klass: '', school: 'РФМШ', avatar: 'owl' });
   const [profileError, setProfileError] = useState(false);
   const [xp, setXp] = useState(0);
+  const [diagnosticSeed, setDiagnosticSeed] = useState(null);
   const mergeXp = useCallback((loadedXp) => {
     const total = Number(loadedXp);
     setXp((current) => Number.isFinite(total) ? Math.max(current, total) : current);
   }, []);
-  const [diagnosticPlan] = useState(() => initialDiagnosticPlan || readPublicDiagnosticResult());
   const profileMenuRef = useRef(null);
   const navRef = useRef(null);
   const burgerRef = useRef(null);
+  const menuReturnRef = useRef(null);
   const authUidRef = useRef(undefined);
 
   useEffect(() => watchAuth((nextUser) => {
@@ -101,6 +103,12 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
     setUser(nextUser);
     setAuthRevision((value) => value + 1);
   }), []);
+  useEffect(() => {
+    // Never show an anonymous result saved by a different child on this device.
+    if (!user || !isKid(user) || !initialDiagnosticPlan) return;
+    const nextUid = user.uid;
+    setDiagnosticSeed((current) => bindInitialDiagnostic(current, initialDiagnosticPlan, nextUid));
+  }, [user?.uid, initialDiagnosticPlan]);
   useEffect(() => {
     setProfileError(false);
     setXp(0);
@@ -172,6 +180,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   }, [navMenu]);
   useEffect(() => {
     if (!menuOpen) return undefined;
+    menuReturnRef.current = document.activeElement;
     const previousOverflow = document.body.style.overflow;
     if (window.matchMedia('(max-width: 1050px)').matches) document.body.style.overflow = 'hidden';
     navRef.current?.querySelector('button')?.focus();
@@ -179,7 +188,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
       if (event.key === 'Escape') {
         setMenuOpen(false);
         setNavMenu(null);
-        burgerRef.current?.focus();
+        (menuReturnRef.current || burgerRef.current)?.focus();
       } else if (event.key === 'Tab') {
         const buttons = [...(navRef.current?.querySelectorAll('button') || [])];
         const first = buttons[0], last = buttons.at(-1);
@@ -239,8 +248,8 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   }
 
   const school = profile.school;
-  const pick = (id) => { setTab(id); setMenuOpen(false); setNavMenu(null); setProfileOpen(false); window.scrollTo(0, 0); };
-  const goTrainTopic = (topicId) => { setTrainTopic(topicId); setTab('training'); setMenuOpen(false); };
+  const pick = (id) => { setTab(id); setMenuOpen(false); setNavMenu(null); setProfileOpen(false); window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); };
+  const goTrainTopic = (topicId) => { setTrainTopic(topicId); pick('training'); };
   const openSubscription = () => {
     setTabBeforeSubscription(tab === 'subscription' ? 'home' : tab);
     setProfileOpen(false);
@@ -255,7 +264,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   );
 
   return (
-    <div className="shell">
+    <div className="shell student-shell">
       <aside className={`sidebar sidebar-${tab}`}>
         {/* Верхняя строка сайдбара: логотип + (на телефоне) аватар и бургер */}
         <div className="sbar-top">
@@ -264,8 +273,8 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
           </button>
 
           <div className="sbar-right">
-            <div className="header-xp" title="XP">
-              <span className="header-xp-coin" aria-hidden="true">★</span><b>{xp}</b><small>XP</small>
+            <div className="header-xp" title={lang === 'ru' ? 'XP — опыт. Не расходуется на награды.' : 'XP — тәжірибе. Сыйлықтарға жұмсалмайды.'}>
+              <span className="header-xp-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="m14 2-2 8h8L9 23l2-9H3L14 2Z" fill="currentColor" /></svg></span><b>{xp}</b><small>XP</small>
             </div>
             <Notifications role="child" onOpenLessons={() => pick('mentor')} />
             <div className="sbar-language"><LangToggle /></div>
@@ -311,6 +320,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
             );
           })}
           {/* Выход внутри раскрытого меню — удобно на телефоне */}
+          <div className="nav-mobile-language"><span>{lang === 'ru' ? 'Язык интерфейса' : 'Интерфейс тілі'}</span><LangToggle /></div>
           <button className="nav-exit" onClick={exit}>{t('common.exit')}</button>
         </nav>
 
@@ -361,14 +371,15 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
         </div>
       </aside>
 
-      {menuOpen && <div className="mobile-nav-backdrop" aria-hidden="true" onClick={() => { setMenuOpen(false); setNavMenu(null); burgerRef.current?.focus(); }} />}
+      {menuOpen && <div className="mobile-nav-backdrop" aria-hidden="true" onClick={() => { setMenuOpen(false); setNavMenu(null); (menuReturnRef.current || burgerRef.current)?.focus(); }} />}
 
       <div className={`content content-${tab}`}>
         {profileError && <p className="card" role="alert" style={{ margin: 20 }}>
           {lang === 'ru' ? 'Не удалось загрузить профиль или прогресс. Проверьте соединение и обновите страницу.' : 'Профильді немесе прогресті жүктеу мүмкін болмады. Байланысты тексеріп, бетті жаңартыңыз.'}
         </p>}
         <Suspense fallback={<ScreenFallback />}>
-          {tab === 'home' && <Home go={setTab} name={profile.name} avatar={profile.avatar} xp={xp} diagnosticPlan={diagnosticPlan} onTrainTopic={goTrainTopic} />}
+          {tab === 'home' && <Home key={user.uid} uid={user.uid} go={pick} name={profile.name} avatar={profile.avatar} xp={xp} onTrainTopic={goTrainTopic}
+            initialDiagnostic={diagnosticSeed?.uid === user.uid ? diagnosticSeed.result : null} />}
           {tab === 'curriculum' && <Curriculum
             initialGrade={profile.klass} plan={profile.plan || (profile.pro ? 'pro' : 'free')} onUpgrade={openSubscription}
             onXp={(gain, totalXp) => setXp((current) => Number.isFinite(totalXp) ? Math.max(current, totalXp) : current + gain)}
@@ -392,9 +403,11 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
           {tab === 'duel' && <Duel initialCode={duelCode} fromLink={!!duelCode} playerName={profile.name} onXp={(n) => setXp((x) => x + n)} />}
           {tab === 'league' && <League />}
           {tab === 'progress' && <Progress onXpLoad={mergeXp} onTrainTopic={goTrainTopic} />}
-          {tab === 'rewards' && <Rewards xp={xp} onGoTraining={() => setTab('training')} />}
+          {tab === 'rewards' && <Rewards key={user.uid} onGoTraining={() => pick('training')} />}
         </Suspense>
       </div>
+      <StudentMobileNav tab={tab} lang={lang} menuOpen={menuOpen} onPick={pick} Icon={NavIcon}
+        onMenu={() => { setMenuOpen((value) => !value); setNavMenu(null); setProfileOpen(false); }} />
     </div>
   );
 }

@@ -54,6 +54,9 @@ test('child request needs parent approval, admin can decline and coins return', 
   const claim = await f.call('kid', 'POST', { action: 'claim', rewardId: 'steam' });
   assert.equal(claim.status, 200);
   assert.equal(claim.data.balance, 2000);
+  const reserved = await f.call('kid');
+  assert.equal(reserved.data.balance, 2000);
+  assert.equal(reserved.data.xp, 8000, 'reserving coins must not spend experience');
   assert.equal((await f.call('kid', 'POST', { action: 'claim', rewardId: 'book' })).status, 409);
   assert.equal((await f.call('stranger', 'POST', { action: 'approve', id: claim.data.id })).status, 403);
   assert.equal((await f.call('parent', 'POST', { action: 'approve', id: claim.data.id })).data.status, 'pending_fulfillment');

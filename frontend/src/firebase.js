@@ -431,10 +431,11 @@ export async function getMocks(childUid) {
   const snap = await getDocs(query(collection(db, 'results', childUid, 'mocks'), orderBy('at', 'desc'), limit(50)));
   return snap.docs.map((d) => d.data());
 }
-export async function getAttempts(childUid) {
+export async function getAttempts(childUid, max = 500) {
   // 500 последних ответов достаточно для текущей аналитики и ограничивает
   // стоимость/память одного чтения даже у давно активного ученика.
-  const snap = await getDocs(query(collection(db, 'results', childUid, 'attempts'), orderBy('at', 'desc'), limit(500)));
+  const count = Number.isFinite(max) ? Math.max(1, Math.min(500, Math.floor(max))) : 500;
+  const snap = await getDocs(query(collection(db, 'results', childUid, 'attempts'), orderBy('at', 'desc'), limit(count)));
   return snap.docs.map((d) => d.data());
 }
 export async function getSolved(childUid) {
@@ -530,5 +531,9 @@ export async function isPro(childUid) {
 
 // Бүгін неше есеп шығарды (тегін тарифте күніне 5)
 export async function todayCount(childUid) {
-  return (await learningRequest(childUid, { action: 'count' })).count;
+  return (await getDailyLearningState(childUid)).count;
+}
+
+export async function getDailyLearningState(childUid) {
+  return learningRequest(childUid, { action: 'count' });
 }
