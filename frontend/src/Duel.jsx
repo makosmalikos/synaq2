@@ -330,7 +330,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
         <section className="duel-join-card">
           <div><span className="section-eyebrow">{lang === 'ru' ? 'ЕСТЬ КОД?' : 'КОДЫҢ БАР МА?'}</span><h2>{t('duel.join')}</h2><p>{lang === 'ru' ? 'Введи 6 символов из приглашения.' : 'Шақырудағы 6 таңбаны енгіз.'}</p></div>
           <div className="duel-join-form">
-            <input value={joinInput} onChange={(e) => setJoinInput(e.target.value.toUpperCase())} placeholder={t('duel.codePlaceholder')} maxLength={6} />
+            <input aria-label={lang === 'ru' ? 'Код дуэли' : 'Дуэль коды'} autoComplete="off" autoCapitalize="characters" spellCheck={false} value={joinInput} onChange={(e) => setJoinInput(e.target.value.toUpperCase())} placeholder={t('duel.codePlaceholder')} maxLength={6} />
             <button disabled={busy || !joinInput.trim()} onClick={onJoin}>{t('duel.joinBtn')} →</button>
           </div>
         </section>
@@ -352,7 +352,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
 
         <div className="card" style={{ marginTop: 16 }}>
           <p className="muted" style={{ fontSize: 14 }}>{t('duel.shareHint')}</p>
-          <input readOnly value={link} onFocus={(e) => e.target.select()} />
+          <input aria-label={lang === 'ru' ? 'Ссылка для приглашения' : 'Шақыру сілтемесі'} readOnly value={link} onFocus={(e) => e.target.select()} />
           <button className="btn accent full" style={{ marginTop: 10 }} onClick={onCopy}>
             {copied ? t('duel.copied') : t('duel.copy')}
           </button>

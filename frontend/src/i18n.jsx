@@ -1071,9 +1071,9 @@ export function LangSwitch({ dark = false }) {
   const on = { ...base, background: dark ? 'rgba(255,255,255,.18)' : '#EAF5FF', color: dark ? '#fff' : '#167AD1' };
   const off = { ...base, color: dark ? 'rgba(255,255,255,.62)' : '#8094A7' };
   return (
-    <div style={{ display: 'inline-flex', gap: 2, alignItems: 'center' }}>
-      <button style={lang === 'kk' ? on : off} onClick={() => setLang('kk')}>ҚАЗ</button>
-      <button style={lang === 'ru' ? on : off} onClick={() => setLang('ru')}>РУС</button>
+    <div className="lang-switch" style={{ display: 'inline-flex', gap: 2, alignItems: 'center' }}>
+      <button type="button" aria-pressed={lang === 'kk'} style={lang === 'kk' ? on : off} onClick={() => setLang('kk')}>ҚАЗ</button>
+      <button type="button" aria-pressed={lang === 'ru'} style={lang === 'ru' ? on : off} onClick={() => setLang('ru')}>РУС</button>
     </div>
   );
 }

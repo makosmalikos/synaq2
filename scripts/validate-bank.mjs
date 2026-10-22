@@ -29,6 +29,11 @@ for (const q of POOL) {
     } else if (!q.options.map(String).includes(String(q.answer))) {
       fail(`${q.id}: answer is absent from options`);
     }
+    if (Array.isArray(q.options)) {
+      // Preserve spaces inside mixed fractions: 2 3/20 is not 23/20.
+      const options = q.options.map(value => String(value).trim().replace(/\s+/g, ' ').toLocaleLowerCase());
+      if (new Set(options).size !== options.length) fail(`${q.id}: duplicate answer options`);
+    }
   }
 
   if (q.image) {

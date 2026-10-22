@@ -90,7 +90,7 @@ export default function FreeDiagnostic({ onBack, onRegister }) {
       <header className="public-diag-head">
         <button type="button" className="public-diag-brand" onClick={onBack}><Brand /></button>
         <LangSwitch />
-        <button type="button" className="public-diag-back" onClick={onBack}>← {c.back}</button>
+        <button type="button" className="public-diag-back" aria-label={c.back} onClick={onBack}>← {c.back}</button>
       </header>
 
       {screen === 'setup' && <main className="public-diag-setup">

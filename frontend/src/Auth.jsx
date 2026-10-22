@@ -57,6 +57,13 @@ export default function Auth({ onClose, duelCode = '' }) {
     <div className={`auth-overlay ${stage === 'start' ? 'auth-overlay--start' : ''}`} style={S.overlay}>
       <style>{`
         .auth-card{animation:authCardIn .35s cubic-bezier(.2,.8,.2,1) both}
+        .auth-card button{min-height:44px;touch-action:manipulation}
+        .auth-card :is(button,input):focus-visible{outline:3px solid #4975ed!important;outline-offset:3px}
+        .auth-top{gap:12px;flex-wrap:wrap}
+        .auth-top>.brand-mark{flex-shrink:0}
+        .auth-top-actions{display:flex;align-items:center;gap:8px;margin-left:auto}
+        .auth-top-actions .lang-switch button{min-width:44px}
+        @media(prefers-reduced-motion:reduce){.auth-card{animation:none}.auth-student{transition:none}}
         .auth-overlay:before,.auth-overlay:after{content:'';position:fixed;pointer-events:none;border:1px solid rgba(255,255,255,.38);transform:rotate(-13deg);border-radius:48px}
         .auth-overlay:before{width:42vw;height:31vw;left:-13vw;bottom:-16vw}
         .auth-overlay:after{width:34vw;height:43vw;right:-12vw;top:-20vw;transform:rotate(22deg)}
@@ -95,15 +102,18 @@ export default function Auth({ onClose, duelCode = '' }) {
           .auth-card input,.auth-card select,.auth-card textarea{font-size:16px!important}
           .auth-card{border-radius:22px!important;padding:22px 20px 24px!important}
         }
+        @media(max-width:400px){
+          .auth-top-actions{width:100%;justify-content:space-between;margin-left:0}
+        }
       `}</style>
       <div className={`auth-card ${stage === 'start' ? 'auth-card--start' : ''}`} style={{ ...S.card, ...(stage === 'start' ? S.cardStart : null) }}>
 
 
 
 
-        <div style={S.top}>
+        <div className="auth-top" style={S.top}>
           <Logo />
-         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+         <div className="auth-top-actions">
   <LangSwitch />
   <button onClick={() => (window.location.href = '/')} style={{ background: 'none', border: 'none', cursor: 'pointer', font: "600 13px 'Golos Text',sans-serif", color: '#6B655B' }}>{t('nav.home')}</button>
 </div>

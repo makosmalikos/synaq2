@@ -12,6 +12,39 @@ const legacySource=readFileSync(new URL('../backend/data/nishQuestions.js',impor
 const legacy=JSON.parse(JSON.stringify(vm.runInNewContext(`${legacySource}\nmodule.exports`,{module:{exports:{}}})));
 const question=id=>{const found=nishMath.find(item=>item.id===id);assert.ok(found,`missing ${id}`);return found};
 
+test('active multiple-choice questions have distinct visible options', () => {
+ for (const q of POOL.filter(q => q.options)) {
+  const options=q.options.map(value=>String(value).trim().replace(/\s+/g,' ').toLocaleLowerCase());
+  assert.equal(new Set(options).size,options.length,q.id);
+ }
+});
+
+test('repaired duplicate distractors retain independently verified answer keys', () => {
+ const gcd=(a,b)=>b?gcd(b,a%b):a;
+ const lcm=(a,b)=>a/gcd(a,b)*b;
+ const even=Array.from({length:90},(_,i)=>i+10).filter(n=>Math.floor(n/10)+n%10===9&&n%2===0).length;
+ const expected={
+  bil_t2_23:String((15-4)+(12*.5+2)),
+  bil_ve_kaz2_47:'лицейде', // «қайда оқимын?» — жатыс септік
+  att6_t5_14:String([360,180,240,80].reduce(lcm)),
+  att6_t8_08:`${Math.floor(13/4)} ${13%4}/4`,
+  att6_t8_20:'5/11',
+  att6k_t5_19:`${even} жұп, ${9-even} тақ сан`,
+  att6_t10_02:'4 5/7',
+  att6_t14_05:String((17*8*9*11-22*3*51)/(51*9*11)),
+  att6_t14_11:`${String(60+4/5).replace('.',',')} м/сек`,
+  att6_t43_03:'−5/2',
+ };
+ assert.equal((195*41+5*41)/(465*82-245*82),5/11);
+ assert.ok(Math.abs((5/7+3+1/4+3/4)-(4+5/7))<1e-12);
+ assert.equal((2/3)/4-2/(3/4),-5/2);
+ for (const [id,answer] of Object.entries(expected)) {
+  const q=POOL.find(q=>q.id===id);assert.ok(q,id);
+  assert.equal(q.answer,answer,id);
+  assert.equal(q.options.filter(option=>option===answer).length,1,id);
+ }
+});
+
 test('nm1 uses total distance / total time, not an unweighted mean of speeds',()=>{
  const q=question('nm1');
  assert.match(q.statement,/3 часа.*5км\/ч.*4часа.*12 раз.*8 часов.*4\/5/);
