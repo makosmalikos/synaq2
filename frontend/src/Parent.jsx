@@ -15,6 +15,7 @@ import PetAvatar, { DEFAULT_PET_AVATAR, PET_AVATARS } from './PetAvatar.jsx';
 import { planPrice } from './plans.js';
 import ParentLessons from './ParentLessons.jsx';
 import Notifications from './Notifications.jsx';
+import './ParentWorkspace.css';
 import { lessonsCall } from './lessonsApi.js';
 
 const Logo = () => <div className="logo"><Brand compact /></div>;
@@ -25,7 +26,7 @@ const WANT_PRO_TTL_MS = 30 * 60 * 1000;
 const planRank = (value) => ({ free: 0, standard: 1, pro: 2, mentor: 3 }[value] || 0);
 
 export default function Parent({ onExit }) {
-  const { t, lang } = useLang();
+  const { t, lang, setLang } = useLang();
   const text = (ru, kk) => lang === 'ru' ? ru : kk;
   const exit = async () => {
     await (onExit || logout)();
@@ -311,9 +312,9 @@ export default function Parent({ onExit }) {
 
   return (
     <div className="app parent-app">
-      <header>
-        <Logo />
-        <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}><Notifications role="parent" /><button className="logout" onClick={exit}>{t('ui.26')}</button></div>
+      <header className="parent-header">
+        <div className="parent-brand"><Logo /><span>{text('Кабинет родителя', 'Ата-ана кабинеті')}</span></div>
+        <div className="parent-header-actions"><Notifications role="parent" /><button className="parent-language" type="button" onClick={() => setLang(lang === 'ru' ? 'kk' : 'ru')} aria-label={text('Қазақ тіліне ауысу', 'Переключить на русский')}>{lang === 'ru' ? 'ҚАЗ' : 'РУС'}</button><button className="logout" onClick={exit}>{t('ui.26')}</button></div>
       </header>
 
       {familyError && <div className="card" role="alert" style={{ marginTop: 16 }}>
@@ -336,7 +337,7 @@ export default function Parent({ onExit }) {
       {err && !adding && <p role="alert" style={{ color: 'var(--accent)', marginTop: 16 }}>{err}</p>}
 
       {created && (
-        <div className="card" style={{ marginTop: 16, borderColor: 'var(--green)', background: '#EEF5EC' }}>
+        <div className="card parent-created" style={{ marginTop: 16, borderColor: 'var(--green)', background: '#EEF5EC' }}>
           <div className="row" style={{ marginBottom: 10 }}>
             <p className="kicker" style={{ color: 'var(--green)', margin: 0 }}>{text(`Аккаунт ${created.name} создан`, `${created.name} аккаунты жасалды`)}</p>
             {/* Пароль ашық мәтінмен көрінеді — ортақ/қоғамдық компьютерде
@@ -345,8 +346,8 @@ export default function Parent({ onExit }) {
           </div>
           <p style={{ margin: '0 0 14px', fontSize: 14 }}>{text('Передайте ребёнку эти данные для входа:', 'Балаға осыны беріңіз — ол осымен кіреді:')}</p>
 
-          <CopyRow label="Юзернейм" value={created.code} />
-          <CopyRow label="Пароль" value={created.pass} />
+          <CopyRow label={text('Логин', 'Логин')} value={created.code} />
+          <CopyRow label={text('Пароль', 'Құпиясөз')} value={created.pass} />
 
           <button className="btn ghost" style={{ marginTop: 12 }}
             onClick={() => copy(`Synaq\nЮзернейм: ${created.code}\nПароль: ${created.pass}`)}>
@@ -361,28 +362,102 @@ export default function Parent({ onExit }) {
 
       {(
         <main>
-          {/* Сәлемдесу */}
-          {me && (
-            <>
-              <h1 style={{ margin: '0 0 4px' }}>{text('Привет', 'Сәлем')}, {me}!</h1>
-              <p className="muted" style={{ margin: '0 0 20px' }}>
-                {children.length
-                  ? text('Всё важное о подготовке ребёнка — в одном месте.', 'Баланың дайындығы туралы маңызды ақпарат — бір жерде.')
-                  : text('Добавьте ребёнка, чтобы он мог начать подготовку.', 'Балаңызды қосыңыз — сол арқылы ол дайындықты бастайды.')}
-              </p>
-            </>
+          <div className="parent-intro">
+            <span className="parent-eyebrow">{text('Вместе к большим целям', 'Үлкен мақсатқа бірге')}</span>
+            <h1>{me ? text(`Привет, ${me}!`, `Сәлем, ${me}!`) : text('Ваш семейный кабинет', 'Сіздің отбасы кабинетіңіз')}</h1>
+            <p>{children.length ? text('Подготовка, успехи и следующие шаги ребёнка — рядом.', 'Баланың дайындығы, жетістігі мен келесі қадамдары — осында.') : text('Создайте профиль ребёнка — и начните подготовку вместе.', 'Балаңызға профиль ашып, дайындықты бірге бастаңыз.')}</p>
+          </div>
+          <ParentDashboard children={children} lang={lang} />
+
+          <div className="parent-children-head">
+            <div><span className="parent-eyebrow">{text('Личный профиль', 'Жеке профиль')}</span><h2>{text('Аккаунт ребёнка', 'Бала аккаунты')}</h2></div>
+            {childrenLoaded && children.length === 0 && (
+              <button className="btn" disabled={busy} onClick={() => { setAdding(!adding); setErr(''); }}>{adding ? text('Свернуть', 'Жинау') : t('ui.28')}</button>
+            )}
+          </div>
+
+          <div className={`parent-setup${children.length ? ' has-child' : ''}`}>
+            {!children.length && <aside className="parent-start" aria-labelledby="parent-start-title">
+              <span className="parent-eyebrow">SYNAQ · {text('БИЛ, НИШ, РФМШ', 'БИЛ, НИШ, РФМШ')}</span>
+              <h2 id="parent-start-title">{text('Большие цели. Первый шаг — здесь.', 'Үлкен мақсат. Алғашқы қадам — осында.')}</h2>
+              <img className="parent-start-owl" src="/mascot/synaq-owl-study.webp" width="640" height="640" alt="" decoding="async" />
+              <p>{text('Ребёнок учится в своём аккаунте. Вы видите, что получается и где нужна поддержка.', 'Балаңыз өз аккаунтында оқиды. Сіз жетістігін және қай жерде көмек керегін көресіз.')}</p>
+              <ol className="parent-start-steps">
+                <li><span>1</span><div><strong>{text('Создайте профиль', 'Профиль ашыңыз')}</strong><small>{text('Имя, питомец и данные для входа', 'Аты, кейіпкері және кіру деректері')}</small></div></li>
+                <li><span>2</span><div><strong>{text('Передайте ребёнку логин', 'Балаға логинін беріңіз')}</strong><small>{text('Он войдёт в свой учебный кабинет', 'Ол өзінің оқу кабинетіне кіреді')}</small></div></li>
+                <li><span>3</span><div><strong>{text('Поддерживайте его успехи', 'Жетістігін қолдаңыз')}</strong><small>{text('Результаты появятся в этом кабинете', 'Нәтижелер осы кабинетте көрінеді')}</small></div></li>
+              </ol>
+              <span className="parent-start-note">{text('Маленькие шаги. Настоящий прогресс.', 'Кішкентай қадамдар. Нақты жетістік.')}</span>
+            </aside>}
+          {adding && (
+            <form className="parent-child-form" onSubmit={(event) => { event.preventDefault(); if (!busy && name.trim() && childrenLoaded) add(); }}>
+              <div className="parent-form-heading"><span className="parent-eyebrow">{text('Знакомство с SYNAQ', 'SYNAQ-пен танысу')}</span><h3>{text('Давайте знакомиться', 'Таныс болайық')}</h3><p>{text('Эти данные нужны для отдельного входа ребёнка.', 'Бұл деректер балаңыздың жеке кіруіне қажет.')}</p></div>
+              <div className="parent-field">
+                <label htmlFor="parent-child-name">{t('ui.29')}</label>
+                <input id="parent-child-name" autoComplete="off" placeholder={t('ui.37')} value={name} style={inp} disabled={busy}
+                  onChange={(e) => changeName(e.target.value)} />
+              </div>
+              <fieldset className="pet-picker" disabled={busy}>
+                <legend>{text('Выберите питомца', 'Кейіпкерді таңдаңыз')}</legend>
+                <p>{text('Он будет аватаром ребёнка в платформе.', 'Ол платформадағы баланың аватары болады.')}</p>
+                <div className="pet-picker-grid">
+                  {PET_AVATARS.map((pet) => (
+                    <button key={pet.id} type="button" className={avatar === pet.id ? 'is-selected' : ''}
+                      aria-pressed={avatar === pet.id} aria-label={lang === 'ru' ? pet.ru : pet.kk}
+                      onClick={() => { pendingCreation.current = null; setAvatar(pet.id); }}>
+                      <span className="parent-pet-art"><PetAvatar id={pet.id} size="picker" appearance="mascot" /></span><small>{lang === 'ru' ? pet.ru : pet.kk}</small>{avatar === pet.id && <span className="parent-pet-check" aria-hidden="true">✓</span>}
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+              <div>
+                <label htmlFor="parent-child-login">{text('Логин ребёнка', 'Баланың логині')}</label>
+                <input id="parent-child-login" autoComplete="off" autoCapitalize="none" spellCheck={false} aria-describedby="parent-login-hint" placeholder={t('ui.38')} value={username} style={inp} disabled={busy}
+                  onChange={(e) => { pendingCreation.current = null; usernameEdited.current = !!e.target.value; setUsername(cleanUsername(e.target.value)); }} />
+                <p id="parent-login-hint" className="parent-field-hint">
+                  {text('3–32 латинские буквы или цифры', '3–32 латын әрпі немесе цифр')}
+                </p>
+              </div>
+              <div>
+                <label htmlFor="parent-child-pin">{text('Пароль для входа', 'Кіру құпиясөзі')}</label>
+                <div className="parent-pin-row">
+                  <input id="parent-child-pin" autoComplete="new-password" placeholder={t('ui.39')} value={pass} disabled={busy} onChange={(e) => { pendingCreation.current = null; setPass(e.target.value); }} style={{ ...inp, flex: 1 }} />
+                  <button className="btn ghost" type="button" disabled={busy} onClick={() => { pendingCreation.current = null; setPass(genPassword()); }} style={{ whiteSpace: 'nowrap' }}>
+                    {text('Сгенерировать', 'Генерациялау')}
+                  </button>
+                </div>
+              </div>
+              {err && <p role="alert" className="parent-form-error">{err}</p>}
+              <button className="btn accent parent-create-button" type="submit" disabled={busy || !name.trim() || !childrenLoaded}>
+                {busy ? text('Создаём…', 'Жасалуда…') : text('Создать аккаунт ребёнка', 'Бала аккаунтын ашу')} <span aria-hidden="true">→</span>
+              </button>
+              <p className="parent-form-footnote">{text('После создания покажем логин и PIN — сохраните их для ребёнка.', 'Аккаунт ашылғанда логин мен PIN көрсетіледі — балаңызға сақтап қойыңыз.')}</p>
+            </form>
           )}
 
-          <ParentDashboard children={children} lang={lang} />
-          <RewardApprovals children={children} lang={lang} />
+          <div className="parent-child-list">
+            {children.map((c) => (
+              <article className="parent-child-card" key={c.uid}>
+                <PetAvatar id={c.avatar} size="small" />
+                <div className="parent-child-identity"><span className="parent-eyebrow">{text('Учебный аккаунт', 'Оқу аккаунты')}</span><h3>{c.name}</h3><p>{text('Ребёнок входит со своим логином и PIN.', 'Бала өз логині мен PIN арқылы кіреді.')}</p></div>
+                <CopyRow label={text('Логин', 'Логин')} value={c.code} />
+                <button className="link" onClick={(event) => { event.stopPropagation(); setResetChild(c); }}>{text('Изменить PIN', 'PIN өзгерту')}</button>
+              </article>
+            ))}
+          </div>
+          {resetChild && <ChildPasswordCard key={resetChild.uid} child={resetChild} onClose={() => setResetChild(null)} />}
+          {childrenError && <div role="alert"><p>{text('Не удалось загрузить список детей. Проверьте соединение и повторите.', 'Балалар тізімі жүктелмеді. Байланысты тексеріп, қайталаңыз.')}</p>
+            <button className="btn" onClick={load}>{text('Повторить', 'Қайталау')}</button></div>}
+          {!childrenLoaded && !childrenError && <BrandLoader compact />}
+          {childrenLoaded && !children.length && !adding && <p className="muted" style={{ marginTop: 14 }}>{t('ui.32')}</p>}
+          </div>
+          {children.length > 0 && <RewardApprovals children={children} lang={lang} />}
 
-          <details className="pd-settings" open={paymentPending || !!paymentIssue || !!portalError || undefined}>
-            <summary>{text('Тариф и настройки аккаунта', 'Тариф және аккаунт баптаулары')} <span>{plan === 'standard' ? text('Standard · архивный', 'Standard · архивтік') : plan === 'pro' ? 'Standard' : plan === 'mentor' ? 'Pro' : plan === 'free' ? text('Бесплатный', 'Тегін') : '…'}</span></summary>
+          <details className="pd-settings parent-account-settings" open={paymentPending || !!paymentIssue || !!portalError || undefined}>
+            <summary><span className="parent-settings-icon" aria-hidden="true">☷</span><strong>{text('Тариф и настройки аккаунта', 'Тариф және аккаунт баптаулары')}</strong> <span className="parent-plan-chip">{plan === 'standard' ? text('Standard · архивный', 'Standard · архивтік') : plan === 'pro' ? 'Standard' : plan === 'mentor' ? 'Pro' : plan === 'free' ? text('Бесплатный', 'Тегін') : '…'}</span></summary>
           {/* Үш тариф: тегін, Standard және Pro. */}
           {plan !== null && (
-            <div style={{
-              display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12, marginBottom: 20,
-            }}>
+            <div className="parent-plan-grid">
               {/* ── Тегін ── */}
               <div className="card" style={{
                 borderColor: plan === 'free' ? 'var(--ink)' : 'var(--line)',
@@ -479,72 +554,7 @@ export default function Parent({ onExit }) {
           <LoginPasswordCard t={t} />
           </details>
 
-          <div className="row">
-            <h1 style={{ margin: 0 }}>{t('ui.27')}</h1>
-            {childrenLoaded && children.length === 0 && (
-              <button className="btn" disabled={busy} onClick={() => { setAdding(!adding); setErr(''); }}>{t('ui.28')}</button>
-            )}
-          </div>
 
-          {adding && (
-            <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 14 }}>
-              <div>
-                <label style={lab}>{t('ui.29')}</label>
-                <input placeholder={t('ui.37')} value={name} style={inp} disabled={busy}
-                  onChange={(e) => changeName(e.target.value)} />
-              </div>
-              <fieldset className="pet-picker" disabled={busy}>
-                <legend>{text('Выберите питомца', 'Кейіпкерді таңдаңыз')}</legend>
-                <p>{text('Он будет аватаром ребёнка в платформе.', 'Ол платформадағы баланың аватары болады.')}</p>
-                <div className="pet-picker-grid">
-                  {PET_AVATARS.map((pet) => (
-                    <button key={pet.id} type="button" className={avatar === pet.id ? 'is-selected' : ''}
-                      aria-pressed={avatar === pet.id} aria-label={lang === 'ru' ? pet.ru : pet.kk}
-                      onClick={() => { pendingCreation.current = null; setAvatar(pet.id); }}>
-                      <PetAvatar id={pet.id} /><small>{lang === 'ru' ? pet.ru : pet.kk}</small>
-                    </button>
-                  ))}
-                </div>
-              </fieldset>
-              <div>
-                <label style={lab}>{t('ui.30')}</label>
-                <input placeholder={t('ui.38')} value={username} style={inp} disabled={busy}
-                  onChange={(e) => { pendingCreation.current = null; usernameEdited.current = !!e.target.value; setUsername(cleanUsername(e.target.value)); }} />
-                <p style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384', margin: '6px 0 0' }}>
-                  {text('3–32 латинские буквы или цифры', '3–32 латын әрпі немесе цифр')}
-                </p>
-              </div>
-              <div>
-                <label style={lab}>{t('ui.31')}</label>
-                <div style={{ display: 'flex', gap: 8 }}>
-                  <input placeholder={t('ui.39')} value={pass} disabled={busy} onChange={(e) => { pendingCreation.current = null; setPass(e.target.value); }} style={{ ...inp, flex: 1 }} />
-                  <button className="btn ghost" type="button" disabled={busy} onClick={() => { pendingCreation.current = null; setPass(genPassword()); }} style={{ whiteSpace: 'nowrap' }}>
-                    {text('Сгенерировать', 'Генерациялау')}
-                  </button>
-                </div>
-              </div>
-              {err && <p style={{ color: 'var(--accent)', fontSize: 13, margin: 0 }}>{err}</p>}
-              <button className="btn accent" disabled={busy || !name.trim() || !childrenLoaded} onClick={add}>
-                {busy ? text('Создаём…', 'Жасалуда…') : text('Создать', 'Жасау')}
-              </button>
-            </div>
-          )}
-
-          <div className="list">
-            {children.map((c) => (
-              <div className="row-item" key={c.uid}>
-                <PetAvatar id={c.avatar} size="small" />
-                <b>{c.name}</b>
-                <span className="rt">логин: {c.code}</span>
-                <button className="link" onClick={(event) => { event.stopPropagation(); setResetChild(c); }}>{text('Изменить PIN', 'PIN өзгерту')}</button>
-              </div>
-            ))}
-          </div>
-          {resetChild && <ChildPasswordCard key={resetChild.uid} child={resetChild} onClose={() => setResetChild(null)} />}
-          {childrenError && <div role="alert"><p>{text('Не удалось загрузить список детей. Проверьте соединение и повторите.', 'Балалар тізімі жүктелмеді. Байланысты тексеріп, қайталаңыз.')}</p>
-            <button className="btn" onClick={load}>{text('Повторить', 'Қайталау')}</button></div>}
-          {!childrenLoaded && !childrenError && <BrandLoader compact />}
-          {childrenLoaded && !children.length && !adding && <p className="muted" style={{ marginTop: 14 }}>{t('ui.32')}</p>}
         </main>
       )}
     </div>
@@ -561,10 +571,7 @@ function CopyRow({ label, value }) {
   const { lang } = useLang();
   const [ok, setOk] = useState(false);
   return (
-    <div style={{
-      display: 'flex', alignItems: 'center', gap: 12, background: '#fff',
-      border: '1px solid var(--line)', padding: '11px 14px', marginBottom: 8,
-    }}>
+    <div className="parent-copy-row">
       <span style={{ font: "500 11px 'IBM Plex Mono',monospace", letterSpacing: '.08em', textTransform: 'uppercase', color: '#9A9384', width: 78 }}>
         {label}
       </span>
@@ -617,8 +624,8 @@ function ChildPasswordCard({ child, onClose }) {
   </div>;
 }
 
-const lab = { display: 'block', font: "500 11px 'IBM Plex Mono',monospace", letterSpacing: '.08em', textTransform: 'uppercase', color: '#9A9384', marginBottom: 6 };
-const inp = { width: '100%', padding: '12px 14px', border: '1px solid var(--line)', background: '#fff', font: "500 15px 'Golos Text',system-ui,sans-serif", color: 'var(--ink)', outline: 'none' };
+const lab = { display: 'block', font: "600 12px 'Golos Text',sans-serif", color: '#526782', marginBottom: 7 };
+const inp = { width: '100%', padding: '12px 14px', border: '1px solid var(--line)', background: '#fff', font: "500 16px 'Golos Text',system-ui,sans-serif", color: 'var(--ink)' };
 
 function LoginPasswordCard({ t }) {
   const { lang } = useLang();
@@ -674,17 +681,17 @@ function LoginPasswordCard({ t }) {
       )}
       {linked && editing && (
         <div style={{ marginBottom: 10 }}>
-          <label style={lab}>{t('parent.currentPass')}</label>
-          <input type="password" style={inp} value={current} onChange={(e) => setCurrent(e.target.value)} />
+          <label style={lab} htmlFor="parent-current-password">{t('parent.currentPass')}</label>
+          <input id="parent-current-password" type="password" autoComplete="current-password" style={inp} value={current} onChange={(e) => setCurrent(e.target.value)} />
         </div>
       )}
       <div style={{ marginBottom: 10 }}>
-        <label style={lab}>{t('parent.newPass')}</label>
-        <input type="password" style={inp} value={pass1} onChange={(e) => setPass1(e.target.value)} />
+        <label style={lab} htmlFor="parent-new-password">{t('parent.newPass')}</label>
+        <input id="parent-new-password" type="password" autoComplete="new-password" style={inp} value={pass1} onChange={(e) => setPass1(e.target.value)} />
       </div>
       <div style={{ marginBottom: 10 }}>
-        <label style={lab}>{t('parent.newPass2')}</label>
-        <input type="password" style={inp} value={pass2} onChange={(e) => setPass2(e.target.value)} />
+        <label style={lab} htmlFor="parent-confirm-password">{t('parent.newPass2')}</label>
+        <input id="parent-confirm-password" type="password" autoComplete="new-password" style={inp} value={pass2} onChange={(e) => setPass2(e.target.value)} />
       </div>
       {err && <p style={{ color: 'var(--accent)', fontSize: 13, margin: '0 0 10px' }}>{err}</p>}
       {msg && <p style={{ color: 'var(--green)', fontSize: 13, margin: '0 0 10px' }}>{msg}</p>}
