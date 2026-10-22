@@ -79,8 +79,9 @@ test('landing fonts load locally, cover Kazakh, and avoid a late layout-shifting
   }
   assert.ok(bytes < 50_000, `Local font budget: ${bytes}`);
   const platformFont = fs.readFileSync(path.join(src, 'platform-fonts.css'), 'utf8');
-  for (const name of ['Geologica', 'Golos+Text', 'IBM+Plex+Mono', 'Lora']) assert.ok(platformFont.includes(name));
-  assert.match(platformFont, /display=optional/);
+  for (const name of ['Geologica', 'Golos Text', 'IBM Plex Mono', 'Lora']) assert.ok(platformFont.includes(name));
+  assert.match(platformFont, /font-display: optional/);
+  assert.doesNotMatch(platformFont, /@import|https?:\/\//);
   const main = fs.readFileSync(path.join(src, 'main.jsx'), 'utf8');
   assert.doesNotMatch(main, /platform-fonts|styles\.css/);
 });

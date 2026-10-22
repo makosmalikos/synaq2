@@ -73,3 +73,15 @@ test('inverse proportionality keeps fractional answers exact',()=>{
  assert.equal(curriculumAnswersMatch('1.333333',q.answer),false);
  assert.equal(numeric(q.answer)*3,4);
 });
+
+test('same-direction movement states a shared start in both languages; proportionality is not confused with any dependence',()=>{
+ const q=sample('g5-motion-3');
+ assert.match(q.text.ru,/одновременно.*одной точки/);
+ assert.match(q.text.kk,/бір нүктеден бір уақытта/);
+ assert.doesNotMatch(q.text.ru,/велосипед|Ответ со знаком/);
+ const values=q.text.ru.match(/\d+/g).map(Number);
+ assert.equal(Number(q.answer),values[0]*values[2]-values[1]*values[2]);
+ const dependency=topics.find(q=>q.key==='g6-dependencies-2');
+ assert.match(dependency.lecture[0][1].ru,/прямой пропорциональности/);
+ assert.match(dependency.lecture[0][1].kk,/Тура пропорционалдықта/);
+});

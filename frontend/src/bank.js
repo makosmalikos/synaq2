@@ -1,4 +1,4 @@
-// Единый банк задач: РФМШ + НИШ (+ КТЛ/БИЛ — один формат, сейчас банк пуст).
+// Единый банк тренировочных задач РФМШ, НИШ и БИЛ/КТЛ.
 import * as DATA from './data.js';
 import { bilLogicQuestions } from './bilLogicQuestions.js';
 import { bilReadingQuestions } from './bilReadingQuestions.js';
@@ -9,6 +9,7 @@ import { reviewedBilArchive } from './reviewedBilArchive.js';
 import { formatAlignedQuestions } from './formatAlignedQuestions.js';
 import { formatAlignedQuestions2 } from './formatAlignedQuestions2.js';
 import { formatAlignedQuestions3 } from './formatAlignedQuestions3.js';
+import { formatAlignedQuestions4 } from './formatAlignedQuestions4.js';
 import { detectLang, quarantineReason, partitionAdminTasks } from './questionMetadata.js';
 import { readAdminTasks } from './adminTasks.js';
 export { detectLang, normalizeAdminTask } from './questionMetadata.js';
@@ -99,6 +100,7 @@ const RAW_POOL = [
   ...formatAlignedQuestions.map((q) => one(q, q.school)),
   ...formatAlignedQuestions2.map((q) => one(q, q.school)),
   ...formatAlignedQuestions3.map((q) => one(q, q.school)),
+  ...formatAlignedQuestions4.map((q) => one(q, q.school)),
 ];
 
 // Quarantine rules are shared with the lightweight topic catalog.

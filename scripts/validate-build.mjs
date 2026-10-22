@@ -36,6 +36,11 @@ for (const file of landingCss) {
 }
 assert.ok(cssBytes <= 28_000, `Landing CSS exceeds mobile budget: ${cssBytes}`);
 console.log(`Landing CSS: ${(cssBytes / 1000).toFixed(1)} kB gzip`);
+// Fonts for private routes must also work without third-party font servers.
+const allCss = new Set(Object.values(manifest).flatMap(entry => entry.css || []));
+for (const file of allCss) {
+  assert.doesNotMatch(fs.readFileSync(path.join(dist, file), 'utf8'), /fonts\.(?:googleapis|gstatic)\.com/);
+}
 check('src/PublicDiagnostic.jsx', /^(?:firebase|question-bank|PlatformApp|curriculumData)$/, 135_000);
 check('src/PlatformApp.jsx', /^(?:question-bank|Home|curriculumData|useCurriculumProgress|diagnosticData)$/, 310_000);
 check('src/Home.jsx', /^(?:question-bank|curriculumData|Curriculum|diagnosticData)$/, 340_000);

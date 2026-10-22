@@ -118,3 +118,12 @@ test('18 additional quantitative tasks have independently checked answer keys',a
   assert.ok(POOL.some(item=>item.id===id),`${id} remains active`);
  });
 });
+
+test('bil_nzm_23 is restored as an editorial repair with a valid option and Kazakh solution',()=>{
+ const q=POOL.find(q=>q.id==='bil_nzm_23');assert.ok(q);
+ const initial=36*100/(30-12),difference=initial*(40-20)/100;
+ assert.equal(initial,200);assert.equal(q.answer,String(difference));
+ assert.equal(q.options.filter(x=>x===q.answer).length,1);
+ assert.match(q.solution,/Санның/);assert.match(q.solution,/60 − 24 = 36/);
+ assert.equal(BANK_QUARANTINE.some(q=>q.id==='bil_nzm_23'),false);
+});
