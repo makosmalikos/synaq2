@@ -66,6 +66,82 @@ service cloud.firestore {
       );
     }
 
+    // Self-reported reading only. Verified mastery, attempts and XP remain
+    // server-owned. Keep this allowlist aligned with the curriculum catalog.
+    match /results/{childUid}/lessonReading/{lessonKey} {
+      function knownLesson() {
+        return lessonKey in [
+          'g3-review-1', 'g3-review-2', 'g3-review-3', 'g3-multiplication-1',
+          'g3-multiplication-2', 'g3-multiplication-3', 'g3-division-1', 'g3-division-2',
+          'g3-division-3', 'g3-order-1', 'g3-order-2', 'g3-order-3',
+          'g3-area-1', 'g3-area-2', 'g3-area-3', 'g3-perimeter-1',
+          'g3-perimeter-2', 'g3-perimeter-3', 'g3-equation-1', 'g3-equation-2',
+          'g3-equation-3', 'g3-to1000-1', 'g3-to1000-2', 'g3-to1000-3',
+          'g3-written-1', 'g3-written-2', 'g3-written-3', 'g3-measures-1',
+          'g3-measures-2', 'g3-measures-3', 'g3-money-1', 'g3-money-2',
+          'g3-money-3', 'g3-mental-1', 'g3-mental-2', 'g3-mental-3',
+          'g3-column-md-1', 'g3-column-md-2', 'g3-column-md-3', 'g3-word-1',
+          'g3-word-2', 'g3-word-3', 'g4-big-1', 'g4-big-2',
+          'g4-big-3', 'g4-round-1', 'g4-round-2', 'g4-round-3',
+          'g4-addsub-1', 'g4-addsub-2', 'g4-addsub-3', 'g4-mul-1',
+          'g4-mul-2', 'g4-mul-3', 'g4-mul-4', 'g4-division-1',
+          'g4-division-2', 'g4-division-3', 'g4-division-4', 'g4-fractions-1',
+          'g4-fractions-2', 'g4-fractions-3', 'g4-fraction-compare-1', 'g4-fraction-compare-2',
+          'g4-fraction-compare-3', 'g4-geometry-1', 'g4-geometry-2', 'g4-geometry-3',
+          'g4-motion-1', 'g4-motion-2', 'g4-motion-3', 'g4-time-1',
+          'g4-time-2', 'g4-time-3', 'g4-equations-1', 'g4-equations-2',
+          'g4-equations-3', 'g4-volume-1', 'g4-volume-2', 'g4-volume-3',
+          'g4-combined-1', 'g4-combined-2', 'g4-combined-3', 'g5-natural-1',
+          'g5-natural-2', 'g5-natural-3', 'g5-expressions-1', 'g5-expressions-2',
+          'g5-expressions-3', 'g5-divisibility-1', 'g5-divisibility-2', 'g5-divisibility-3',
+          'g5-gcd-1', 'g5-gcd-2', 'g5-gcd-3', 'g5-fraction-1',
+          'g5-fraction-2', 'g5-fraction-3', 'g5-fraction-add-1', 'g5-fraction-add-2',
+          'g5-fraction-add-3', 'g5-mixed-1', 'g5-mixed-2', 'g5-mixed-3',
+          'g5-mixed-4', 'g5-decimals-1', 'g5-decimals-2', 'g5-decimals-3',
+          'g5-decimal-ops-1', 'g5-decimal-ops-2', 'g5-decimal-ops-3', 'g5-decimal-ops-4',
+          'g5-decimal-ops-5', 'g5-percent-1', 'g5-percent-2', 'g5-percent-3',
+          'g5-angles-1', 'g5-angles-2', 'g5-angles-3', 'g5-data-1',
+          'g5-data-2', 'g5-data-3', 'g5-motion-1', 'g5-motion-2',
+          'g5-motion-3', 'g6-ratio-1', 'g6-ratio-2', 'g6-ratio-3',
+          'g6-ratio-4', 'g6-proportion-1', 'g6-proportion-2', 'g6-proportion-3',
+          'g6-scale-1', 'g6-scale-2', 'g6-scale-3', 'g6-percent-1',
+          'g6-percent-2', 'g6-percent-3', 'g6-dependencies-1', 'g6-dependencies-2',
+          'g6-dependencies-3', 'g6-integers-1', 'g6-integers-2', 'g6-integers-3',
+          'g6-rational-ops-1', 'g6-rational-ops-2', 'g6-rational-ops-3', 'g6-expressions-1',
+          'g6-expressions-2', 'g6-expressions-3', 'g6-linear-1', 'g6-linear-2',
+          'g6-linear-3', 'g6-inequalities-1', 'g6-inequalities-2', 'g6-inequalities-3',
+          'g6-coordinate-1', 'g6-coordinate-2', 'g6-coordinate-3', 'g6-geometry-1',
+          'g6-geometry-2', 'g6-geometry-3', 'g6-systems-1', 'g6-systems-2',
+          'g6-systems-3', 'g6-systems-4', 'g6-statistics-1', 'g6-statistics-2',
+          'g6-statistics-3', 'g6-probability-1', 'g6-probability-2', 'g6-probability-3',
+          'g6-combinatorics-1', 'g6-combinatorics-2', 'g6-combinatorics-3', 'g6-word-1',
+          'g6-word-2', 'g6-word-3'
+        ];
+      }
+      function validReading() {
+        let data = request.resource.data;
+        return knownLesson()
+          && data.keys().hasAll(['lastStep', 'completedSteps', 'checkPassed', 'studiedAt', 'updatedAt'])
+          && data.keys().hasOnly(['lastStep', 'completedSteps', 'checkPassed', 'studiedAt', 'updatedAt'])
+          && data.lastStep in ['intro', 0, 1, 2, 3, 'check', 'summary']
+          && data.completedSteps is list && data.completedSteps.size() <= 5
+          && data.completedSteps.hasOnly(['intro', 0, 1, 2, 3])
+          && data.completedSteps.toSet().size() == data.completedSteps.size()
+          && data.checkPassed is bool
+          && data.updatedAt is int && data.updatedAt > 0
+          && data.updatedAt <= request.time.toMillis() + 300000
+          && (data.studiedAt == null || (data.studiedAt is int && data.studiedAt > 0
+            && data.studiedAt <= data.updatedAt && data.checkPassed
+            && data.completedSteps.hasAll(['intro', 0, 1, 2, 3])));
+      }
+      allow create: if isSignedIn() && request.auth.uid == childUid && validReading();
+      allow update: if isSignedIn() && request.auth.uid == childUid && validReading()
+        && request.resource.data.completedSteps.hasAll(resource.data.completedSteps)
+        && (!resource.data.checkPassed || request.resource.data.checkPassed)
+        && (resource.data.studiedAt == null || request.resource.data.studiedAt != null);
+      allow delete: if false;
+    }
+
     match /results/{childUid}/attempts/{attemptId} {
       allow write: if false;
     }

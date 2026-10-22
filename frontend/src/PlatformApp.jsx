@@ -82,6 +82,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   const [profileError, setProfileError] = useState(false);
   const [xp, setXp] = useState(0);
   const [diagnosticSeed, setDiagnosticSeed] = useState(null);
+  const [curriculumTopic, setCurriculumTopic] = useState(null);
   const mergeXp = useCallback((loadedXp) => {
     const total = Number(loadedXp);
     setXp((current) => Number.isFinite(total) ? Math.max(current, total) : current);
@@ -99,6 +100,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
     if (authUidRef.current !== nextUid) {
       authUidRef.current = nextUid;
       setAdminUser(undefined);
+      setCurriculumTopic(null);
     }
     setUser(nextUser);
     setAuthRevision((value) => value + 1);
@@ -379,8 +381,11 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
         </p>}
         <Suspense fallback={<ScreenFallback />}>
           {tab === 'home' && <Home key={user.uid} uid={user.uid} go={pick} name={profile.name} avatar={profile.avatar} xp={xp} onTrainTopic={goTrainTopic}
+            grade={profile.klass} plan={profile.plan || (profile.pro ? 'pro' : 'free')}
+            onOpenCurriculum={(topicKey) => { setCurriculumTopic(topicKey); pick('curriculum'); }}
             initialDiagnostic={diagnosticSeed?.uid === user.uid ? diagnosticSeed.result : null} />}
           {tab === 'curriculum' && <Curriculum
+            initialTopicKey={curriculumTopic} onTopicOpened={() => setCurriculumTopic(null)}
             initialGrade={profile.klass} plan={profile.plan || (profile.pro ? 'pro' : 'free')} onUpgrade={openSubscription}
             onXp={(gain, totalXp) => setXp((current) => Number.isFinite(totalXp) ? Math.max(current, totalXp) : current + gain)}
           />}

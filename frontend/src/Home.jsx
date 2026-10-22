@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import PetCreature from './PetCreature.jsx';
 import { petStage } from './pets.js';
 import { petAvatar } from './PetAvatar.jsx';
@@ -9,8 +9,11 @@ import { readPendingTraining } from './trainingPersistence.js';
 import { readDiagnosticProgress } from './platformDiagnostic.js';
 import { DAILY_GOAL, emptyHomeOverview, homeModel } from './homeModel.js';
 import { useHomeOverview } from './useHomeOverview.js';
+import { studyPlanDate } from './studyPlan.js';
 import { topicName } from './diagnosticData.js';
 import './Home.css';
+
+const HomeCourseProgress = lazy(() => import('./HomeCourseProgress.jsx'));
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 const label = (topic, ru) => topic ? (ru ? topic.nameRu || topic.name : topic.name) : '';
@@ -18,7 +21,7 @@ const Bar = ({ value, label: text }) => <div className="sh-bar" role="progressba
 
 // The view receives data explicitly so all loading, new-student and recovery
 // states can be checked without signing into a real child's account.
-export function HomeView({ go, name, avatar, xp = 0, onTrainTopic, lang = 'kk', overview = emptyHomeOverview(),
+export function HomeView({ go, name, avatar, xp = 0, onTrainTopic, courseContent, lang = 'kk', overview = emptyHomeOverview(),
   pendingTraining = false, pendingDiagnostic = false, onRetry = () => {} }) {
   const ru = lang === 'ru';
   const model = homeModel({
@@ -33,22 +36,24 @@ export function HomeView({ go, name, avatar, xp = 0, onTrainTopic, lang = 'kk', 
   const level = xpLevel(totalXp);
   const topicTitle = label(model.next.topic, ru);
   const copy = ru ? {
-    continue: [topicTitle, 'Вернись к теме, которую решал в прошлый раз.', 'Продолжить тему'],
-    recommended: [topicTitle, 'Начни с этой темы по результатам последней диагностики.', 'Начать практику'],
+    continue: ['Продолжим путь', `Твоя тема — «${topicTitle}». Несколько задач помогут закрепить её.`, 'Продолжить тему'],
+    recommended: ['Начнём с важного', `По результатам диагностики стоит повторить «${topicTitle}».`, 'Начать практику'],
+    review: ['Шаг за шагом', `Повторим «${topicTitle}». Цель недели — 3 верных ответа в этой теме.`, 'Повторить тему'],
     resumeTraining: ['Закончим начатое?', 'Вернись к незавершённой задаче и продолжи тренировку.', 'Вернуться к задаче'],
-    resumeDiagnostic: ['Продолжим диагностику', 'Вернись к проверке знаний. Сохранённые ответы уже учтены.', 'Продолжить диагностику'],
-    diagnosis: ['Найди свою точку старта', 'Узнай сильные темы и то, что стоит повторить.', 'Пройти диагностику'],
-    lessons: ['Вернёмся к урокам', 'Выбери тему и закрепи её практикой.', 'Продолжить обучение'],
-    done: ['План на сегодня выполнен', 'Дневной лимит задач использован. Посмотри результаты и возвращайся завтра.', 'Посмотреть результаты'],
+    resumeDiagnostic: ['Проверим знания', 'Продолжи диагностику. Сохранённые ответы уже учтены.', 'Продолжить диагностику'],
+    diagnosis: ['С чего начнём?', 'Узнай сильные темы и то, что стоит повторить.', 'Пройти диагностику'],
+    lessons: ['Время учиться', 'Выбери тему и закрепи её практикой.', 'Продолжить обучение'],
+    done: ['На сегодня всё!', 'Дневной лимит задач использован. Посмотри результаты и возвращайся завтра.', 'Посмотреть результаты'],
     practice: ['Время для практики', 'Одна тема и несколько задач — начни с малого.', 'Выбрать тему'],
   } : {
-    continue: [topicTitle, 'Өткен жолы шығарған тақырыбыңды жалғастыр.', 'Тақырыпты жалғастыру'],
-    recommended: [topicTitle, 'Соңғы диагностика нәтижесі бойынша осы тақырыптан баста.', 'Жаттығуды бастау'],
-    resumeTraining: ['Бастағанды аяқтайық!', 'Аяқталмаған есепке оралып, жаттығуды жалғастыр.', 'Есепке оралу'],
-    resumeDiagnostic: ['Диагностиканы жалғастыр', 'Біліміңді тексеруді жалғастыр. Сақталған жауаптар ескеріледі.', 'Диагностиканы жалғастыру'],
-    diagnosis: ['Неден бастайтыныңды біл', 'Мықты тұстарыңды және қайталауды қажет ететін тақырыптарды анықта.', 'Диагностикадан өту'],
-    lessons: ['Сабақтарға оралайық', 'Тақырыпты таңдап, жаттығумен бекіт.', 'Оқуды жалғастыру'],
-    done: ['Бүгінгі жоспар орындалды', 'Бүгінгі есеп лимитін пайдаландың. Нәтижелеріңді көріп, ертең қайта кел.', 'Нәтижелерді көру'],
+    continue: ['Тағы бір қадам', `Тақырыбың — «${topicTitle}». Бірнеше есеппен біліміңді бекіт.`, 'Тақырыпты жалғастыру'],
+    recommended: ['Бірге үйренейік', `Диагностика бойынша «${topicTitle}» тақырыбын қайталаған жөн.`, 'Жаттығуды бастау'],
+    review: ['Алға бір қадам', `«${topicTitle}» тақырыбын қайталайық. Апта мақсаты — осы тақырыптан 3 дұрыс жауап.`, 'Тақырыпты қайталау'],
+    resumeTraining: ['Есепке оралайық', 'Аяқталмаған есепке оралып, жаттығуды жалғастыр.', 'Есепке оралу'],
+    resumeDiagnostic: ['Біліміңді тексер', 'Диагностиканы жалғастыр. Сақталған жауаптар ескеріледі.', 'Диагностиканы жалғастыру'],
+    diagnosis: ['Алғашқы қадам', 'Мықты тұстарыңды және қайталауды қажет ететін тақырыптарды анықта.', 'Диагностикадан өту'],
+    lessons: ['Оқу уақыты', 'Тақырыпты таңдап, жаттығумен бекіт.', 'Оқуды жалғастыру'],
+    done: ['Мақсатқа жеттің!', 'Бүгінгі есеп лимитін пайдаландың. Нәтижелеріңді көріп, ертең қайта кел.', 'Нәтижелерді көру'],
     practice: ['Жаттығу уақыты', 'Бір тақырып пен бірнеше есеп — аздан баста.', 'Тақырыпты таңдау'],
   };
   const [title, description, action] = copy[model.next.kind];
@@ -59,8 +64,13 @@ export function HomeView({ go, name, avatar, xp = 0, onTrainTopic, lang = 'kk', 
   const hasError = Object.values(overview).some((section) => section.status === 'error');
   const progressLoading = overview.attempts.status === 'loading' || overview.diagnostics.status === 'loading';
   const goalDone = model.todayCount !== null && model.todayCount >= DAILY_GOAL;
-  const format = (value) => value === null ? '—' : value.toLocaleString(ru ? 'ru-RU' : 'kk-KZ');
+  const format = (value) => value === null ? '—' : value.toLocaleString('ru-RU');
   const rewardTitle = model.reward?.title?.[lang] || model.reward?.title?.ru;
+  const week = model.plan;
+  const weekdays = ru ? ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'] : ['Дс','Сс','Ср','Бс','Жм','Сб','Жс'];
+  const dateLabel = (key) => studyPlanDate(key, lang);
+  const weeklyLabels = ru ? { days: '3 дня практики', answers: '15 решённых задач', review: '3 верных ответа в теме для повторения' } : { days: '3 күн жаттығу', answers: '15 шығарылған есеп', review: 'Қайталау тақырыбынан 3 дұрыс жауап' };
+  const openWeeklyReview = () => pendingTraining ? go('training') : week.review.topic ? openTopic(week.review.topic) : go('diagnosis');
 
   return <main className="student-home">
     <header className="sh-heading">
@@ -69,13 +79,11 @@ export function HomeView({ go, name, avatar, xp = 0, onTrainTopic, lang = 'kk', 
     </header>
 
     <section className="sh-hero" aria-labelledby="student-next-step">
-      <div className="sh-hero-top">
-        <div><span className="sh-hero-tag">{ru ? 'ТВОЙ СЛЕДУЮЩИЙ ШАГ' : 'КЕЛЕСІ ҚАДАМЫҢ'}</span><h2 id="student-next-step">{title}</h2></div>
-        <div className="sh-pet"><PetCreature pet={pet.id} stage={stage.stage} progress={stage.progress} size={150} label={`${ru ? pet.ru : pet.kk}: ${ru ? stage.ru : stage.kk}`} /></div>
-      </div>
+      <div className="sh-hero-top"><div><span className="sh-hero-tag">{ru ? 'ТВОЙ СЛЕДУЮЩИЙ ШАГ' : 'КЕЛЕСІ ҚАДАМЫҢ'}</span><h2 id="student-next-step">{title}</h2></div>
+        <div className="sh-owl-scene" aria-hidden="true"><span className="sh-math-orbit">×</span><span className="sh-math-orbit">+</span><span className="sh-math-orbit">÷</span><img src={goalDone ? '/mascot/synaq-owl-celebrate.webp' : '/mascot/synaq-owl-study.webp'} width="640" height="640" alt="" decoding="async" /></div></div>
       <p className="sh-hero-description">{description}</p>
       <button className="sh-primary" type="button" onClick={continueStudy}>{action}<Arrow /></button>
-      <div className="sh-pet-progress"><span><b>{ru ? pet.ru : pet.kk}</b> · {ru ? stage.ru : stage.kk}</span><span>{stage.next ? `${format(stage.xpToNext)} XP ${ru ? 'до роста' : 'өсімге дейін'}` : (ru ? 'Высшая стадия!' : 'Ең жоғары саты!')}</span><Bar value={Math.round(stage.progress * 100)} label={ru ? 'Рост питомца' : 'Досыңның өсуі'} /></div>
+      <span className="sh-hero-note">{ru ? 'Маленькие шаги. Настоящий прогресс.' : 'Шағын қадамдар. Нақты нәтиже.'}</span>
     </section>
 
     <dl className="sh-stats">
@@ -85,6 +93,13 @@ export function HomeView({ go, name, avatar, xp = 0, onTrainTopic, lang = 'kk', 
     </dl>
     <p className="sh-stats-note">{overview.attempts.status === 'loading' ? (ru ? 'Загружаем историю ответов…' : 'Жауаптар тарихы жүктелуде…') : overview.attempts.status === 'error' ? (ru ? 'История ответов пока недоступна.' : 'Жауаптар тарихы әзірге қолжетімсіз.') : model.answerCount ? (ru ? `Точность по последним ${model.answerCount} ответам в практике.` : `Дәлдік жаттығудағы соңғы ${model.answerCount} жауап бойынша.`) : (ru ? 'Точность появится после первых ответов в практике.' : 'Дәлдік жаттығудағы алғашқы жауаптардан кейін көрсетіледі.')}</p>
     {hasError && <div className="sh-notice" role="status"><p>{ru ? 'Часть данных не загрузилась. Можно продолжить занятия или попробовать ещё раз.' : 'Кейбір деректер жүктелмеді. Оқуды жалғастыруға немесе қайта жүктеуге болады.'}</p><button type="button" onClick={onRetry}>{ru ? 'Обновить данные' : 'Деректерді жаңарту'}</button></div>}
+
+    <section className="sh-week" aria-labelledby="student-week">
+      <div className="sh-section-title"><div><span className="sh-eyebrow">{dateLabel(week.week.start)} — {dateLabel(week.week.end)}</span><h2 id="student-week">{ru ? 'Твоя неделя маленьких побед' : 'Шағын жеңістер аптасы'}</h2></div><span className="sh-week-score">{format(week.completedCount)}<small> / 3</small><span>{ru ? 'цели' : 'мақсат'}</span></span></div>
+      <div className="sh-week-layout"><div className="sh-week-calendar" aria-label={ru ? 'Дни практики на этой неделе' : 'Осы аптадағы жаттығу күндері'}>{week.days.map(day => <div key={day.key} className={`${day.active ? 'active' : ''} ${day.isToday ? 'today' : ''} ${day.isFuture ? 'future' : ''}`} aria-current={day.isToday ? 'date' : undefined} aria-label={`${dateLabel(day.key)}: ${day.isFuture ? (ru ? 'впереди' : 'алда') : day.count === null ? (ru ? 'нет данных' : 'дерек жоқ') : `${day.count}${day.exact ? '' : '+'} ${ru ? 'задач' : 'есеп'}`}`}><span>{weekdays[day.index]}</span><b aria-hidden="true">{day.active ? '✓' : day.isFuture ? '·' : day.active === null ? '—' : '·'}</b><small>{day.isToday ? (ru ? 'сегодня' : 'бүгін') : Number(day.key.slice(-2))}</small></div>)}</div>
+        <div className="sh-week-goals">{week.milestones.map(milestone => <div className={milestone.done ? 'done' : ''} key={milestone.id}><span className="sh-goal-check" aria-hidden="true">{milestone.done ? '✓' : '○'}</span><div><strong>{weeklyLabels[milestone.id]}</strong>{milestone.id === 'review' && <small>{week.review.needsDiagnostic ? (ru ? 'Сначала пройди диагностику' : 'Алдымен диагностикадан өт') : label(week.review.topic, ru)}</small>}</div><b>{milestone.current === null ? '—' : `${Math.min(milestone.target, milestone.current)}${!milestone.exact && !milestone.done ? '+' : ''}`}<small>/{milestone.target}</small></b></div>)}</div></div>
+      <div className="sh-week-bottom"><p>{week.completedCount === null ? (ru ? 'План появится после загрузки результатов.' : 'Жоспар нәтижелер жүктелгенде көрсетіледі.') : !week.historyComplete ? (ru ? 'Учтена доступная история. «+» означает не меньше указанного.' : 'Қолжетімді тарих есепке алынды. «+» — көрсетілгеннен кем емес.') : (ru ? 'Отметки появляются автоматически после ответов на задачи.' : 'Белгілер есепке жауап бергеннен кейін автоматты түрде қойылады.')}</p>{week.completedCount !== null && !week.review.done && <button type="button" className="sh-text-link" onClick={openWeeklyReview}>{week.review.needsDiagnostic ? (ru ? 'Найти тему для повторения' : 'Қайталау тақырыбын анықтау') : (ru ? 'Повторить тему' : 'Тақырыпты қайталау')} <Arrow /></button>}</div>
+    </section>
 
     <div className="sh-study-grid">
       <section className="sh-card sh-plan" aria-labelledby="student-today">
@@ -107,6 +122,8 @@ export function HomeView({ go, name, avatar, xp = 0, onTrainTopic, lang = 'kk', 
       </section>
     </div>
 
+    {courseContent}
+
     <div className="sh-extras-grid">
       <section className="sh-duel" aria-labelledby="student-duel">
         <div className="sh-duel-art" aria-hidden="true"><span>×</span><b>VS</b><span>÷</span></div>
@@ -121,20 +138,24 @@ export function HomeView({ go, name, avatar, xp = 0, onTrainTopic, lang = 'kk', 
       </section>
     </div>
 
+    <section className="sh-companion" aria-label={ru ? 'Твой питомец и опыт' : 'Сенің досың және тәжірибең'}><PetCreature pet={pet.id} stage={stage.stage} progress={stage.progress} size={64} label={`${ru ? pet.ru : pet.kk}: ${ru ? stage.ru : stage.kk}`} /><div><strong>{ru ? pet.ru : pet.kk} · {ru ? stage.ru : stage.kk}</strong><p>{format(totalXp)} XP · {ru ? 'Опыт и уровень сохраняются при обмене коинов' : 'Коин айырбастағанда тәжірибе мен деңгей сақталады'}</p></div><div className="sh-companion-growth"><span>{stage.next ? `${format(stage.xpToNext)} XP ${ru ? 'до роста' : 'өсімге дейін'}` : (ru ? 'Высшая стадия!' : 'Ең жоғары саты!')}</span><Bar value={Math.round(stage.progress * 100)} label={ru ? 'Рост питомца' : 'Досыңның өсуі'} /></div></section>
+
     <nav className="sh-shortcuts" aria-label={ru ? 'Ещё для подготовки' : 'Дайындыққа қосымша'}>
+      <button type="button" className="sh-logic-shortcut" onClick={() => pendingTraining ? go('training') : openTopic(STATIC_TOPICS.find(topic => topic.id === 'comb' && topic.gradableCount > 0))}><span aria-hidden="true">◇</span><strong>{ru ? 'Прокачай логику' : 'Логиканы дамыт'}</strong><small>{ru ? 'Находи связи и закономерности' : 'Байланыс пен заңдылықтарды тап'}</small><Arrow /></button>
       <button type="button" onClick={() => go('mock')}><span aria-hidden="true">▤</span><strong>{ru ? 'Пробный экзамен' : 'Сынақ емтиханы'}</strong><small>БИЛ · НИШ · РФМШ</small><Arrow /></button>
       <button type="button" onClick={() => go('mentor')}><span aria-hidden="true">✳</span><strong>{ru ? 'Урок с наставником' : 'Тәлімгермен сабақ'}</strong><small>{ru ? 'Разберитесь в сложном вместе' : 'Күрделі тақырыпты бірге түсініңдер'}</small><Arrow /></button>
     </nav>
   </main>;
 }
 
-export default function Home({ uid, initialDiagnostic, ...props }) {
+export default function Home({ uid, initialDiagnostic, grade, plan, onOpenCurriculum, ...props }) {
   const { lang } = useLang();
   const { overview, retry } = useHomeOverview(uid);
   const sections = initialDiagnostic ? { ...overview, diagnostics: { ...overview.diagnostics, value: [
     ...(overview.diagnostics.value || []), { ...initialDiagnostic, source: 'public', topics: initialDiagnostic.topics.map((item) => ({ ...item,
       moduleId: `public-${item.id}`, title: { ru: topicName(item.id, 'ru'), kk: topicName(item.id, 'kk') } })) },
   ] } } : overview;
-  return <HomeView {...props} lang={lang} overview={sections} onRetry={retry}
+  const courseContent = <Suspense fallback={<div className="sh-course-loading">{lang === 'ru' ? 'Загружаем твои уроки…' : 'Сабақтарың жүктелуде…'}</div>}><HomeCourseProgress uid={uid} grade={grade} plan={plan} lang={lang} attempts={overview.attempts.value} historyStatus={overview.attempts.status} onOpen={onOpenCurriculum || (() => props.go('curriculum'))} /></Suspense>;
+  return <HomeView {...props} lang={lang} overview={sections} onRetry={retry} courseContent={courseContent}
     pendingTraining={!!readPendingTraining(uid)} pendingDiagnostic={!!readDiagnosticProgress(uid)} />;
 }

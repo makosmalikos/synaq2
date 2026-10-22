@@ -1,6 +1,7 @@
 import { trainingDayKey } from './trainingPersistence.js';
+import { studyPlan, STUDY_PLAN_ATTEMPT_LIMIT } from './studyPlan.js';
 
-export const HOME_ATTEMPT_LIMIT = 100;
+export const HOME_ATTEMPT_LIMIT = STUDY_PLAN_ATTEMPT_LIMIT;
 export const DAILY_GOAL = 5;
 
 export function bindInitialDiagnostic(previous, result, uid) {
@@ -43,6 +44,7 @@ export function homeModel({ attempts = [], diagnostics = [], topics = [], daily,
   const weak = progressTopics.find((item) => item.pct < 70);
   const todayCount = currentDailyCount(daily, now);
   const limitReached = todayCount !== null && Number.isFinite(daily.limit) && daily.limit > 0 && todayCount >= daily.limit;
+  const plan = studyPlan({ attempts, diagnostics, daily, topics, historyReady, now });
 
   // Recovery owns its topic/session. Opening a different topic must not replace
   // an answer waiting for acknowledgement or an unfinished diagnostic.
@@ -50,6 +52,7 @@ export function homeModel({ attempts = [], diagnostics = [], topics = [], daily,
   if (pendingTraining) next = { kind: 'resumeTraining', tab: 'training' };
   else if (pendingDiagnostic) next = { kind: 'resumeDiagnostic', tab: 'diagnosis' };
   else if (limitReached) next = { kind: 'done', tab: 'progress' };
+  else if (plan.next) next = plan.next;
   else if (diagnosticIsNewer && diagnosticTopics.length) next = { kind: 'recommended', topic: diagnosticTopics[0].topic };
   else if (recent) next = { kind: 'continue', topic: catalog.get(recent.topic) };
   else if (answers.length) next = { kind: 'lessons', tab: 'curriculum' };
@@ -60,7 +63,7 @@ export function homeModel({ attempts = [], diagnostics = [], topics = [], daily,
   const reward = [...(wallet?.rewards || [])].filter((item) => Number.isFinite(item.price) && item.price > 0)
     .sort((a, b) => a.price - b.price)[0];
   return {
-    next, weak, todayCount, limitReached,
+    next, weak, todayCount, limitReached, plan,
     accuracy: answers.length ? Math.round(100 * answers.filter((item) => item.correct).length / answers.length) : null,
     answerCount: answers.length, progressTopics: progressTopics.slice(0, 3),
     progressSource: diagnosticIsNewer || !practiceTopics.length ? 'diagnostic' : 'practice',

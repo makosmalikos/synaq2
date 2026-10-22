@@ -3,13 +3,52 @@ import { getAttempts, getMocks, getXpSummary, getPlatformDiagnostics } from './f
 import ParentReport from './ParentReport.jsx';
 import { loadTopicCatalog } from './topicCatalog.js';
 import { parentSummary } from './parentAnalytics.js';
+import { studyPlan, studyPlanDate } from './studyPlan.js';
 import { formatStudyTime } from './analytics.js';
 import { xpLevel } from './xp.js';
 import PetAvatar from './PetAvatar.jsx';
 import BrandLoader from './components/BrandLoader.jsx';
 import './ParentDashboard.css';
 
-export function ParentDashboardView({ child, summary: s, lang, onDetails, detailsLabel }) {
+function ParentWeeklyPlan({ plan, lang, onRetry }) {
+  const text = (ru, kk) => lang === 'ru' ? ru : kk;
+  const dateLabel = key => studyPlanDate(key, lang);
+  const unavailable = plan.completedCount === null;
+  const partial = !unavailable && plan.milestones.some(item => !item.exact && !item.done);
+  const completed = unavailable ? '—' : `${plan.completedCount}${partial ? '+' : ''}`;
+  const topicName = plan.review.topic && (lang === 'ru' ? plan.review.topic.nameRu || plan.review.topic.name : plan.review.topic.name);
+  const labels = {
+    days: text('Заниматься в 3 разные дни', '3 бөлек күнде жаттығу'),
+    answers: text('Ответить на 15 задач', '15 есепке жауап беру'),
+    review: text('Закрепить тему', 'Тақырыпты бекіту'),
+  };
+  return <section className="pd-week-plan" aria-label={text('План этой недели', 'Осы аптаның жоспары')}>
+    <div className="pd-week-head">
+      <div><span className="pd-eyebrow">{text('Небольшие шаги вместе', 'Шағын қадамдарды бірге жасау')}</span><h3>{text('План этой недели', 'Осы аптаның жоспары')}</h3><p>{dateLabel(plan.week.start)} — {dateLabel(plan.week.end)} · {text('по времени Казахстана', 'Қазақстан уақытымен')}</p></div>
+      <div className="pd-week-score"><img src="/mascot/synaq-owl-celebrate.webp" width="64" height="64" alt="" aria-hidden="true" loading="lazy" /><div><strong>{completed}<span> / {plan.totalMilestones}</span></strong><small>{text('шагов выполнено', 'қадам орындалды')}</small></div></div>
+    </div>
+    <ol className="pd-week-milestones">{plan.milestones.map((item, index) => {
+      const needsDiagnostic = item.id === 'review' && plan.review.needsDiagnostic;
+      const current = item.current === null ? '—' : `${Math.min(item.current, item.target)}${item.exact || item.done ? '' : '+'}`;
+      const detail = unavailable ? text('Данные пока недоступны', 'Деректер әзірге қолжетімсіз')
+        : item.id === 'days' ? text('Любой день с проверенным ответом', 'Тексерілген жауабы бар кез келген күн')
+        : item.id === 'answers' ? text('Проверенные ответы за эту неделю', 'Осы аптадағы тексерілген жауаптар')
+        : needsDiagnostic ? text('Сначала пройти диагностику', 'Алдымен диагностиканы өту')
+        : text(`3 верных ответа после диагностики: ${topicName}`, `Диагностикадан кейін 3 дұрыс жауап: ${topicName}`);
+      return <li className={`pd-week-step${item.done ? ' is-done' : ''}`} key={item.id}>
+        <span className="pd-week-step-icon" aria-hidden="true">{item.done ? '✓' : index + 1}</span>
+        <div className="pd-week-step-copy"><div className="pd-week-step-title"><strong>{labels[item.id]}</strong><span>{needsDiagnostic ? text('Нужна диагностика', 'Диагностика қажет') : `${current} / ${item.target}`}</span></div><p>{detail}</p>
+          {!unavailable && !needsDiagnostic && <div className="pd-week-track" aria-hidden="true"><i style={{ width: `${Math.min(100, item.current / item.target * 100)}%` }} /></div>}
+          {item.done && <span className="pd-week-done">{text('Выполнено', 'Орындалды')}</span>}
+        </div>
+      </li>;
+    })}</ol>
+    {unavailable ? <div className="pd-week-note"><span>{text('История занятий или диагностика недоступна. Обновите данные, чтобы увидеть прогресс.', 'Жаттығу тарихы немесе диагностика қолжетімсіз. Прогресті көру үшін деректерді жаңартыңыз.')}</span>{onRetry && <button type="button" onClick={onRetry}>{text('Обновить', 'Жаңарту')}</button>}</div>
+      : !plan.historyComplete && <p className="pd-week-note">{text('«+» означает подтверждённый минимум: часть истории может быть за пределами последних 500 ответов.', '«+» — расталған ең аз сан: тарихтың бір бөлігі соңғы 500 жауаптан тыс қалуы мүмкін.')}</p>}
+  </section>;
+}
+
+export function ParentDashboardView({ child, summary: s, lang, onDetails, detailsLabel, weeklyPlan, onPlanRetry }) {
   const text = (ru, kk) => lang === 'ru' ? ru : kk;
   const locale = lang === 'ru' ? 'ru-RU' : 'kk-KZ';
   const title = a => lang === 'ru' ? a.nameRu || a.name : a.name;
@@ -29,6 +68,7 @@ export function ParentDashboardView({ child, summary: s, lang, onDetails, detail
       </div>
       <div className="pd-visual" aria-hidden="true"><div className="pd-orbit" /><img src="/hero/students/cutout-2.png" alt="" /><span className="pd-float pd-float-one">✓ {text('Шаг за шагом', 'Қадам сайын')}</span><span className="pd-float pd-float-two">{s.currentCount} {text('задач за неделю', 'есеп бір аптада')}</span></div>
     </section>
+    {weeklyPlan && <ParentWeeklyPlan plan={weeklyPlan} lang={lang} onRetry={onPlanRetry} />}
     <div className="pd-metrics">
       {[['◎', text('Точность за 7 дней', '7 күндегі дәлдік'), s.accuracy === null ? '—' : `${s.accuracy}%`, s.delta === null ? text('Набираем данные для сравнения', 'Салыстыру үшін дерек жиналуда') : text(`${s.delta > 0 ? '+' : ''}${s.delta} п. п. к прошлой неделе`, `Өткен аптамен: ${s.delta > 0 ? '+' : ''}${s.delta} п. т.`)],
         ['✓', text('Освоено по практике', 'Жаттығуда меңгерілген'), s.mastered, text('От 10 ответов и 70% точности', 'Кемінде 10 жауап және 70% дәлдік')],
@@ -79,13 +119,22 @@ export default function ParentDashboard({ children, lang }) {
   useEffect(() => {
     let alive = true;
     setReport(null); setError(false);
-    if (uid) Promise.all([getAttempts(uid), getMocks(uid), loadTopicCatalog(), getXpSummary(uid), getPlatformDiagnostics(uid).catch(()=>[])]).then(([attempts,mocks,topics,xp,diagnostics])=>{ if(alive) setReport({uid,xp:xp.xp,mocks,diagnostics,summary:parentSummary(attempts,mocks,topics)}); }).catch(()=>{ if(alive) setError(true); });
+    if (uid) Promise.all([
+      getAttempts(uid, 500), getMocks(uid), loadTopicCatalog(), getXpSummary(uid),
+      getPlatformDiagnostics(uid).then(rows => ({ rows, ready: true })).catch(() => ({ rows: [], ready: false })),
+    ]).then(([attempts,mocks,topics,xp,diagnostics]) => {
+      if (alive) setReport({
+        uid, xp: xp.xp, mocks, diagnostics: diagnostics.rows,
+        summary: parentSummary(attempts,mocks,topics),
+        weeklyPlan: studyPlan({ attempts, diagnostics: diagnostics.rows, topics, historyReady: diagnostics.ready, attemptLimit: 500 }),
+      });
+    }).catch(() => { if (alive) setError(true); });
     return () => { alive = false; };
   }, [uid,retry]);
   if (!child) return null;
   return <section aria-label={lang==='ru'?'Обзор ребёнка':'Балаға шолу'}>
     <div className="pd-child-picker">{children.map(c=><button type="button" key={c.uid} aria-pressed={c.uid===uid} onClick={()=>setSelected(c.uid)}><PetAvatar id={c.avatar} size="small" /><span>{c.name}</span>{c.uid===uid&&<span aria-hidden="true">✓</span>}</button>)}</div>
-    {error ? <div className="pd-panel" role="alert"><p>{lang==='ru'?'Не удалось загрузить прогресс ребёнка. Попробуйте ещё раз.':'Баланың прогресі жүктелмеді. Қайта көріңіз.'}</p><button className="btn" onClick={()=>setRetry(n=>n+1)}>{lang==='ru'?'Повторить':'Қайталау'}</button></div> : report?.uid===uid ? <><ParentDashboardView child={{...child,xp:report.xp}} summary={report.summary} lang={lang} detailsLabel={lang==='ru'?'Посмотреть все темы':'Барлық тақырыптарды көру'} onDetails={()=>document.getElementById('pdr-topics')?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})} />
+    {error ? <div className="pd-panel" role="alert"><p>{lang==='ru'?'Не удалось загрузить прогресс ребёнка. Попробуйте ещё раз.':'Баланың прогресі жүктелмеді. Қайта көріңіз.'}</p><button className="btn" onClick={()=>setRetry(n=>n+1)}>{lang==='ru'?'Повторить':'Қайталау'}</button></div> : report?.uid===uid ? <><ParentDashboardView child={{...child,xp:report.xp}} summary={report.summary} weeklyPlan={report.weeklyPlan} onPlanRetry={()=>setRetry(n=>n+1)} lang={lang} detailsLabel={lang==='ru'?'Посмотреть все темы':'Барлық тақырыптарды көру'} onDetails={()=>document.getElementById('pdr-topics')?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})} />
       <ParentReport embedded child={{...child,xp:report.xp}} summary={report.summary} mocks={report.mocks} diagnostics={report.diagnostics} lang={lang} /></> : <BrandLoader />}
   </section>;
 }

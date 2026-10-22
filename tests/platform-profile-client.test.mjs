@@ -174,10 +174,11 @@ const authCallback = source.slice(
   source.indexOf('}), []);', source.indexOf('useEffect(() => watchAuth(')) + 1,
 );
 function authHarness() {
-  const state = { role: undefined, revision: 0, user: undefined };
+  const state = { role: undefined, revision: 0, user: undefined, curriculumTopic: null };
   const onAuth = vm.runInNewContext(`(${authCallback})`, {
     authUidRef: { current: undefined },
     setAdminUser: (role) => { state.role = role; },
+    setCurriculumTopic: (topic) => { state.curriculumTopic = topic; },
     setUser: (user) => { state.user = user; },
     setAuthRevision: (update) => { state.revision = update(state.revision); },
   });
@@ -188,9 +189,11 @@ test('same-account token events recheck claims without reopening the loading gat
   const { state, onAuth } = authHarness();
   onAuth({ uid: 'parent' });
   state.role = false;
+  state.curriculumTopic = 'g3-review-1';
   for (let i = 0; i < 5; i++) onAuth({ uid: 'parent' });
   assert.equal(state.role, false);
   assert.equal(state.revision, 6);
+  assert.equal(state.curriculumTopic, 'g3-review-1');
   state.role = true;
   onAuth({ uid: 'parent' });
   assert.equal(state.role, true);
@@ -201,7 +204,9 @@ test('switching accounts and signing out invalidate the previous verified role',
   const { state, onAuth } = authHarness();
   onAuth({ uid: 'first' });
   state.role = true;
+  state.curriculumTopic = 'g5-natural-1';
   onAuth({ uid: 'second' });
+  assert.equal(state.curriculumTopic, null);
   assert.equal(state.role, undefined);
   assert.equal(state.user.uid, 'second');
   state.role = false;
