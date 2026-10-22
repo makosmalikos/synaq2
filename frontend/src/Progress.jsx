@@ -1,35 +1,46 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLang } from './i18n.jsx';
 import { auth, getAttempts, getMocks, getPlatformDiagnostics, getXpSummary, watchPro } from './firebase.js';
-import { topicStats, weekHours, mockSeries, mockDisplayScore, formatStudyTime } from './analytics.js';
+import { mockDisplayScore, formatStudyTime } from './analytics.js';
 import { loadTopicCatalog } from './topicCatalog.js';
 import { buildDiagnosis, pickDiagnosticMock } from './diagnosis.js';
+import { buildProgressModel, formatProgressDate, PROGRESS_ATTEMPT_LIMIT } from './progressModel.js';
 import DiagnosisReport from './components/DiagnosisReport.jsx';
 import BrandLoader from './components/BrandLoader.jsx';
+import './Progress.css';
+import { trainingTopicName } from './trainingCatalogModel.js';
 
-const LEVEL_TXT = { strong: 'МЫҚТЫ', mid: 'ОРТАША', weak: 'ӘЛСІЗ' };
-const LEVEL_TXT_RU = { strong: 'СИЛЬНЫЙ', mid: 'СРЕДНИЙ', weak: 'СЛАБЫЙ' };
-const LEVEL_COL = { strong: '#4C7A4E', mid: '#B8892B', weak: '#B0342B' };
+const Arrow = () => <span aria-hidden="true">→</span>;
+const topicLabel = (topic, ru) => trainingTopicName(topic, ru ? 'ru' : 'kk');
 
-export default function Progress({ onXpLoad, onTrainTopic, onGoDiagnostic }) {
+export default function Progress(props) {
+  const uid = auth.currentUser?.uid || null;
+  // The entire screen belongs to this child, including an open review, filter
+  // and focus target. A key change resets them before the next child renders.
+  return React.createElement(ProgressAccount, { ...props, uid, key: uid || 'signed-out' });
+}
+
+function ProgressAccount({ uid, onXpLoad, onTrainTopic, onGoDiagnostic }) {
   const { t, lang } = useLang();
+  const ru = lang === 'ru';
   const [stats, setStats] = useState(null);
-  const [week, setWeek] = useState([]);
   const [mocks, setMocks] = useState([]);
   const [diagnostics, setDiagnostics] = useState([]);
-  const [practiceAccuracy, setPracticeAccuracy] = useState(null);
   const [topics, setTopics] = useState([]);
   const [pro, setPro] = useState(null);
   const [xpInfo, setXpInfo] = useState({ xp: 0, studySecs: 0 });
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState(false);
   const [loadRetry, setLoadRetry] = useState(0);
-  const [open, setOpen] = useState(null);   // раскрытый мок
-  const [q, setQ] = useState(null);         // раскрытая задача в разборе
-  const uid = auth.currentUser?.uid;
+  const [open, setOpen] = useState(null);
+  const [q, setQ] = useState(null);
+  const [onlyErrors, setOnlyErrors] = useState(false);
+  const reviewHeading = useRef(null);
+  const returnToMock = useRef(null);
 
   useEffect(() => {
     let active = true;
+    const isCurrent = () => active && auth.currentUser?.uid === uid;
     setLoading(true);
     setLoadError(false);
     setPro(null);
@@ -39,209 +50,147 @@ export default function Progress({ onXpLoad, onTrainTopic, onGoDiagnostic }) {
       return () => { active = false; };
     }
     const stopPro = watchPro(uid, (value) => {
-      if (active) setPro(value);
+      if (isCurrent()) setPro(value);
     }, (error) => {
       console.error('progress entitlement load failed', error);
-      if (active) { setPro(null); setLoadError(true); }
+      if (isCurrent()) { setPro(null); setLoadError(true); }
     });
     (async () => {
       try {
         const [att, mk, topicList, xp, diagnosticResults] = await Promise.all([
-          getAttempts(uid), getMocks(uid), loadTopicCatalog(), getXpSummary(uid), getPlatformDiagnostics(uid),
+          getAttempts(uid, PROGRESS_ATTEMPT_LIMIT), getMocks(uid), loadTopicCatalog(), getXpSummary(uid), getPlatformDiagnostics(uid),
         ]);
-        const nextStats = topicStats(att, topicList);
-        const nextWeek = weekHours(att);
-        if (!active) return;
+        const nextStats = buildProgressModel({ attempts: att, topics: topicList });
+        if (!isCurrent()) return;
         setDiagnostics(diagnosticResults);
-        setPracticeAccuracy(att.length ? Math.round(100 * att.filter(item => item.correct).length / att.length) : null);
         setTopics(topicList);
         setStats(nextStats);
-        setWeek(nextWeek);
         setMocks(mk);
         setXpInfo(xp);
         onXpLoad?.(xp.xp || 0);
       } catch (error) {
         console.error('progress load failed', error);
-        if (active) setLoadError(true);
+        if (isCurrent()) setLoadError(true);
       } finally {
-        if (active) setLoading(false);
+        if (isCurrent()) setLoading(false);
       }
     })();
     return () => { active = false; stopPro(); };
   }, [uid, loadRetry, onXpLoad]);
 
+  useEffect(() => {
+    if (open) reviewHeading.current?.focus();
+    else if (returnToMock.current !== null) document.getElementById(`progress-mock-${returnToMock.current}`)?.focus();
+  }, [open]);
+
   if (loadError) return (
-    <main>
-      <h1>{t('prog.title')}</h1>
-      <p role="alert" className="muted">{lang === 'ru'
-        ? 'Не удалось загрузить прогресс. Проверьте соединение и попробуйте ещё раз.'
-        : 'Прогресті жүктеу мүмкін болмады. Байланысты тексеріп, қайталап көріңіз.'}</p>
-      <button className="btn" onClick={() => setLoadRetry((value) => value + 1)}>
-        {lang === 'ru' ? 'Повторить' : 'Қайталау'}
-      </button>
+    <main className="student-progress">
+      <header className="sp-heading"><h1>{t('prog.title')}</h1></header>
+      <section className="sp-state sp-error" role="alert">
+        <span className="sp-state-icon" aria-hidden="true">↻</span>
+        <h2>{ru ? 'Результаты пока не загрузились' : 'Нәтижелер әзірге жүктелмеді'}</h2>
+        <p>{ru ? 'Проверь соединение и попробуй ещё раз.' : 'Байланысты тексеріп, қайталап көр.'}</p>
+        <button type="button" className="sp-button" onClick={() => setLoadRetry((value) => value + 1)}>{ru ? 'Повторить' : 'Қайталау'}</button>
+      </section>
     </main>
   );
-  if (loading || !stats || pro === null) return <main><BrandLoader /></main>;
+  if (loading || !stats || pro === null) return <main className="student-progress" aria-busy="true"><header className="sp-heading"><h1>{t('prog.title')}</h1></header><BrandLoader /></main>;
 
-  // ── разбор одного мока ──
   if (open) return (
-    <main>
-      <button className="link" onClick={() => { setOpen(null); setQ(null); }}>← {t('ui.42')}</button>
-      <h1 style={{ marginBottom: 4 }}>{open.school || 'Мок-тест'}</h1>
-      <p className="kicker">{fmtDate(open.at, lang)} · {mockDisplayScore(open).score}/{mockDisplayScore(open).max} {open.school === 'БИЛ' ? (lang === 'ru' ? 'баллов' : 'ұпай') : (lang === 'ru' ? 'верных ответов' : 'дұрыс жауап')}{open.spentSec ? ` · ${fmtSpent(open.spentSec)}` : ''}</p>
-
-      {open.review ? (
-        <div className="list" style={{ marginTop: 16 }}>
-          {open.review.map((r) => {
-            const on = q === r.num;
-            return (
-              <div key={r.num} style={{ borderBottom: '1px solid var(--line-soft)' }}>
-                <div onClick={() => setQ(on ? null : r.num)}
-                  style={{ display: 'flex', gap: 10, alignItems: 'baseline', padding: '13px 18px', cursor: 'pointer' }}>
-                  <span style={{ font: "600 13px 'IBM Plex Mono',monospace", color: r.correct ? LEVEL_COL.strong : LEVEL_COL.weak }}>
-                    {r.correct ? '✓' : '✗'} №{r.num}
-                  </span>
-                  <span className="muted" style={{ fontSize: 13, flex: 1 }}>
-                    {lang === 'ru' ? 'твой ответ' : 'сенің жауабың'} «{r.your ?? '—'}» · {lang === 'ru' ? 'верный' : 'дұрыс'} «{r.answer ?? '?'}»
-                  </span>
-                  <span className="muted" style={{ fontSize: 13 }}>{on ? '▲' : '▼'}</span>
-                </div>
-                {on && (
-                  <div style={{ padding: '0 18px 16px' }}>
-                    {String(r.statement || '').split(/\n{2,}/).map((p, i) => (
-                      <p className="stmt" key={i} style={{ fontSize: 14.5 }}>{p}</p>
-                    ))}
-                    {r.image && <img className="fig" src={r.image} alt="сурет" />}
-                    {r.solution && <p className="muted" style={{ fontSize: 13.5, lineHeight: 1.55 }}>{r.solution}</p>}
-                  </div>
-                )}
+    <main className="student-progress sp-review">
+      <button type="button" className="sp-back" onClick={() => { setOpen(null); setQ(null); }}>← {ru ? 'К моему прогрессу' : 'Менің прогресіме'}</button>
+      <header className="sp-heading">
+        <p className="sp-eyebrow">{ru ? 'РАЗБОР ПРОБНОГО ТЕСТА' : 'СЫНАҚТЫ ТАЛДАУ'}</p>
+        <h1 ref={reviewHeading} tabIndex={-1}>{open.school || (ru ? 'Пробный тест' : 'Сынақ тесті')}</h1>
+        <p>{fmtDate(open.at, lang)}{open.spentSec ? ` · ${fmtSpent(open.spentSec)}` : ''}</p>
+      </header>
+      <div className="sp-review-score"><strong>{mockDisplayScore(open).score}<small> / {mockDisplayScore(open).max}</small></strong><span>{open.school === 'БИЛ' || open.scoring === 'bil' ? (ru ? 'баллов' : 'ұпай') : (ru ? 'верных ответов' : 'дұрыс жауап')}</span><p>{ru ? 'Открой задачу, чтобы посмотреть условие и решение.' : 'Шарты мен шешімін көру үшін есепті аш.'}</p></div>
+      {open.review?.length ? (
+        <div className="sp-review-list">
+          {open.review.map((r, index) => {
+            const on = q === index;
+            return <article key={index} className="sp-question">
+              <h2><button type="button" id={`progress-question-toggle-${index}`} aria-expanded={on} aria-controls={`progress-question-${index}`} onClick={() => setQ(on ? null : index)}>
+                <span className={`sp-answer-mark ${r.correct ? 'is-correct' : 'is-wrong'}`} aria-hidden="true">{r.correct ? '✓' : '×'}</span>
+                <span className="sp-question-copy"><strong>№{r.num} · {r.correct ? (ru ? 'Верно' : 'Дұрыс') : (ru ? 'Разберём вместе' : 'Бірге талдайық')}</strong><span>{ru ? 'Твой ответ' : 'Сенің жауабың'}: «{r.your ?? '—'}» · {ru ? 'Верный' : 'Дұрыс'}: «{r.answer ?? '?' }»</span></span>
+                <span className="sp-question-chevron" aria-hidden="true">{on ? '−' : '+'}</span>
+              </button></h2>
+              <div className="sp-question-detail" id={`progress-question-${index}`} hidden={!on} aria-labelledby={`progress-question-toggle-${index}`}>
+                {String(r.statement || '').split(/\n{2,}/).map((paragraph, i) => <p className="stmt" key={i}>{paragraph}</p>)}
+                {r.image && <img className="fig" src={r.image} alt={ru ? `Рисунок к задаче ${r.num}` : `${r.num}-есептің суреті`} />}
+                {r.solution && <div className="sp-solution"><strong>{ru ? 'Решение' : 'Шешімі'}</strong><p>{r.solution}</p></div>}
               </div>
-            );
+            </article>;
           })}
         </div>
-      ) : <p className="muted">{t('ui.41')}</p>}
+      ) : <section className="sp-state"><h2>{ru ? 'Разбор не сохранился' : 'Талдау сақталмады'}</h2><p>{t('ui.41')}</p></section>}
     </main>
   );
 
-  const totalSeconds = week.reduce((sum, day) => sum + day.seconds, 0);
-  const maxSeconds = Math.max(1, ...week.map((day) => day.seconds));
-  const series = mockSeries(mocks);
-  const accuracy = practiceAccuracy;
+  const { accuracy, answerCount, totalSeconds, week, next, historyLimited } = stats;
+  const maxSeconds = Math.max(1, ...week.map(day => day.seconds));
+  const errorTopics = stats.topics.filter(topic => topic.wrong > 0);
+  const visibleTopics = onlyErrors ? errorTopics : stats.topics;
   const latestDiagnostic = diagnostics.find(item => item.completedAt && item.total > 0 && Number.isFinite(item.readiness) && item.topics?.length);
   const diagMock = pickDiagnosticMock(mocks);
-  const diagnosis = diagMock?.review?.length
-    ? buildDiagnosis(diagMock.review, topics, lang)
-    : null;
-
+  const diagnosis = diagMock?.review?.length ? buildDiagnosis(diagMock.review, topics, lang) : null;
   const proUnlockHint = () => alert(t('diag.parentPro'));
+  const weekdays = ru ? ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'] : ['Дс', 'Сс', 'Ср', 'Бс', 'Жм', 'Сб', 'Жс'];
 
   return (
-    <main className="progress-page">
-      <header className="progress-title">
-        <span className="section-eyebrow">SYNAQ ANALYTICS</span>
-        <h1>{t('prog.title')}</h1>
-        <p>{t('home.progressText')}</p>
-      </header>
+    <main className="student-progress">
+      <header className="sp-heading"><p className="sp-eyebrow">{ru ? 'КАЖДЫЙ ОТВЕТ — ШАГ ВПЕРЁД' : 'ӘР ЖАУАП — АЛҒА ҚАДАМ'}</p><h1>{t('prog.title')}</h1><p>{ru ? 'Посмотри, что уже получается и что можно потренировать дальше.' : 'Не жақсы шығып жатқанын көріп, келесі жаттығуға тақырып таңда.'}</p></header>
 
-      <section className="progress-overview">
-        <article className="progress-overview-main">
-          <span>{lang === 'ru' ? 'Точность в практике' : 'Жаттығудағы дәлдік'}</span>
-          <strong>{accuracy === null ? '—' : `${accuracy}%`}</strong>
-          <div><i style={{ width: `${accuracy || 0}%` }} /></div>
-          <small>{stats.length} {lang === 'ru' ? 'тем с результатами' : 'нәтижесі бар тақырып'}</small>
-        </article>
-        <article className="progress-overview-card progress-overview-xp"><span>★</span><small>{t('xp.title')}</small><strong>{xpInfo.xp || 0} XP</strong></article>
-        <article className="progress-overview-card progress-overview-time"><span>◷</span><small>{t('prog.hours')}</small><strong>{formatStudyTime(totalSeconds, lang)}</strong></article>
-        <article className="progress-overview-card progress-overview-mock"><span>✓</span><small>{lang === 'ru' ? 'Пробные тесты' : 'Сынақтар'}</small><strong>{mocks.length}</strong></article>
+      <section className="sp-next" aria-labelledby="progress-next-title">
+        <div className="sp-next-copy"><span className="sp-next-tag">{ru ? 'ТВОЙ СЛЕДУЮЩИЙ ШАГ' : 'КЕЛЕСІ ҚАДАМЫҢ'}</span>
+          <h2 id="progress-next-title">{next ? (next.kind === 'review' ? (ru ? 'Давай разберём ошибки' : 'Қателерді бірге талдайық') : (ru ? 'Отличное начало. Продолжим?' : 'Жақсы бастама. Жалғастырайық?')) : (ru ? 'Узнай, с чего начать' : 'Неден бастау керегін біл')}</h2>
+          {next ? <><p className="sp-next-topic">{topicLabel(next.topic, ru)}</p><p>{next.kind === 'review' ? (ru ? `Верно ${next.topic.correct} из ${next.topic.total} ответов. Ещё немного практики поможет разобраться.` : `${next.topic.total} жауаптың ${next.topic.correct}-і дұрыс. Тағы біраз жаттығу тақырыпты түсінуге көмектеседі.`) : (ru ? `Все ${next.topic.total} ответа в этой теме верные. Закрепи результат на следующих задачах.` : `Бұл тақырыптағы ${next.topic.total} жауаптың бәрі дұрыс. Келесі есептермен нәтижеңді бекіт.`)}</p>
+            {onTrainTopic && <button type="button" className="sp-button sp-button-mint" onClick={() => onTrainTopic(next.topic.id)}>{next.kind === 'review' ? (ru ? 'Потренировать тему' : 'Тақырыпты жаттықтыру') : (ru ? 'Продолжить практику' : 'Жаттығуды жалғастыру')}<Arrow /></button>}
+          </> : <><p>{ru ? 'Пройди диагностику: она поможет выбрать тему для первых занятий.' : 'Диагностикадан өт: ол алғашқы сабақтарға тақырып таңдауға көмектеседі.'}</p><button type="button" className="sp-button sp-button-mint" onClick={onGoDiagnostic}>{ru ? 'Пройти диагностику' : 'Диагностикадан өту'}<Arrow /></button></>}
+        </div>
+        <img className="sp-owl" src="/mascot/synaq-owl-study.webp" width="640" height="640" alt="" decoding="async" />
       </section>
 
-      {latestDiagnostic ? <section className="progress-diagnostic">
-        <div className="progress-diagnostic-head"><h2>{lang === 'ru' ? 'Последняя диагностика' : 'Соңғы диагностика'}</h2><strong>{latestDiagnostic.readiness}%</strong></div>
-        <p>{latestDiagnostic.correct}/{latestDiagnostic.total} {lang === 'ru' ? 'верных ответов' : 'дұрыс жауап'} · {new Date(latestDiagnostic.completedAt).toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'kk-KZ')}</p>
-        <ul>{latestDiagnostic.topics.map(item => <li key={item.moduleId}>{typeof item.title === 'string' ? item.title : item.title?.[lang] || item.title?.kk} — <b>{item.pct}%</b></li>)}</ul>
-        <button type="button" className="btn" onClick={onGoDiagnostic}>{lang === 'ru' ? 'Открыть диагностику' : 'Диагностиканы ашу'} →</button>
-      </section> : diagnosis ? (
-        <DiagnosisReport
-          diagnosis={diagnosis}
-          pro={pro}
-          onUnlock={proUnlockHint}
-          onTrainTopic={pro ? onTrainTopic : undefined}
-          compact
-        />
-      ) : (
-        <div className="card" style={{ marginBottom: 16, borderColor: 'var(--accent)', background: '#FBF3E3' }}>
-          <p className="kicker" style={{ color: 'var(--accent)', margin: '0 0 8px' }}>{t('diag.noData')}</p>
-          <p className="muted">{lang === 'ru' ? 'Пройди диагностику, чтобы увидеть результат по темам и план подготовки.' : 'Тақырыптар бойынша нәтиже мен дайындық жоспарын көру үшін диагностикадан өт.'}</p><button type="button" className="btn" onClick={onGoDiagnostic}>{lang === 'ru' ? 'Пройти диагностику' : 'Диагностикадан өту'}</button>
-        </div>
-      )}
+      <dl className="sp-summary">
+        <div className="sp-summary-accuracy"><dt>{ru ? 'Точность в практике' : 'Жаттығудағы дәлдік'}</dt><dd>{accuracy === null ? '—' : `${accuracy}%`}</dd><span>{answerCount ? (ru ? `${stats.correct} из ${answerCount} ответов верно` : `${answerCount} жауаптың ${stats.correct}-і дұрыс`) : (ru ? 'После первых ответов' : 'Алғашқы жауаптардан кейін')}</span></div>
+        <div className="sp-summary-time"><dt>{ru ? 'Практика за неделю' : 'Аптадағы жаттығу'}</dt><dd>{formatStudyTime(totalSeconds, lang)}</dd><span>{ru ? 'Время решения задач' : 'Есеп шығаруға кеткен уақыт'}</span></div>
+        <div className="sp-summary-xp"><dt>{ru ? 'Твой опыт' : 'Сенің тәжірибең'}</dt><dd>{(xpInfo.xp || 0).toLocaleString(ru ? 'ru-RU' : 'kk-KZ')} <small>XP</small></dd><span>{ru ? 'Опыт для роста и уровня' : 'Өсу мен деңгейге арналған тәжірибе'}</span></div>
+      </dl>
+      <p className="sp-data-note">{historyLimited ? (ru ? `Показаны подтверждённые ответы из последних ${PROGRESS_ATTEMPT_LIMIT} записей практики. Более ранние занятия могут не попасть в итог недели.` : `Жаттығудағы соңғы ${PROGRESS_ATTEMPT_LIMIT} жазбаның расталған жауаптары көрсетілген. Бұрынғы жаттығулар апта қорытындысына кірмеуі мүмкін.`) : (ru ? 'Точность и время считаются по подтверждённым ответам в практике. XP — опыт; коины для наград доступны в магазине.' : 'Дәлдік пен уақыт жаттығудағы расталған жауаптар бойынша есептеледі. XP — тәжірибе; сыйлық коиндары дүкенде көрсетіледі.')}</p>
 
-      {/* Сағаттар — апта бойынша */}
-      <div className="card">
-        <div className="row" style={{ marginBottom: 18 }}>
-          <span style={{ fontSize: 15 }}>{t('prog.hours')}</span>
-          <b style={{ font: "700 16px 'IBM Plex Mono',monospace", color: 'var(--accent)' }}>{formatStudyTime(totalSeconds, lang)}</b>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'flex-end', gap: 10, height: 120 }}>
-          {week.map((d, index) => (
-            <div key={d.day} style={{ flex: 1, textAlign: 'center' }}>
-              <div style={{ font: "600 11px 'IBM Plex Mono',monospace", color: d.seconds ? 'var(--accent)' : '#B7B0A2', marginBottom: 4 }}>
-                {d.seconds ? formatStudyTime(d.seconds, lang) : ''}
-              </div>
-              <div style={{
-                height: `${(d.seconds / maxSeconds) * 78}px`, minHeight: d.seconds ? 4 : 0,
-                background: d.seconds >= maxSeconds * 0.6 ? 'var(--accent)' : '#D8D3C8',
-              }} />
-              <div style={{ font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 6 }}>
-                {lang === 'ru' ? ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'][index] : d.day}
-              </div>
-            </div>
-          ))}
-        </div>
+      <section className="sp-topics" aria-labelledby="progress-topics-title">
+        <div className="sp-section-head"><div><span className="sp-eyebrow">{ru ? 'УЧИМСЯ НА СВОИХ ОТВЕТАХ' : 'ЖАУАПТАРДАН ҮЙРЕНЕМІЗ'}</span><h2 id="progress-topics-title">{ru ? 'Твои темы' : 'Сенің тақырыптарың'}</h2></div>{!!stats.topics.length && <div className="sp-filters" role="group" aria-label={ru ? 'Показать темы' : 'Тақырыптарды көрсету'}><button type="button" aria-pressed={!onlyErrors} onClick={() => setOnlyErrors(false)}>{ru ? 'Все' : 'Барлығы'} <span>{stats.topics.length}</span></button><button type="button" aria-pressed={onlyErrors} onClick={() => setOnlyErrors(true)}>{ru ? 'Есть ошибки' : 'Қате бар'} <span>{errorTopics.length}</span></button></div>}</div>
+        {visibleTopics.length ? <div className="sp-topic-grid">{visibleTopics.map(topic => <article className={`sp-topic-card${topic.wrong ? '' : ' sp-topic-clear'}`} key={topic.id}>
+          <div className="sp-topic-top"><span className="sp-topic-badge">{topic.wrong ? (ru ? 'Можно повторить' : 'Қайталап көр') : (ru ? 'Без ошибок' : 'Қатесіз')}</span><strong>{topic.pct}%</strong></div>
+          <h3>{topicLabel(topic, ru)}</h3>
+          <div className="sp-meter" aria-hidden="true"><i style={{ width: `${topic.pct}%` }} /></div>
+          <p className="sp-topic-count">{ru ? `${topic.correct} из ${topic.total} ответов верно` : `${topic.total} жауаптың ${topic.correct}-і дұрыс`} <span>· {ru ? `Ошибок: ${topic.wrong}` : `Қате: ${topic.wrong}`}</span></p>
+          {topic.total < 5 && <p className="sp-small-sample">{ru ? 'Пока мало ответов — продолжай пробовать.' : 'Әзірге жауап аз — жаттығуды жалғастыр.'}</p>}
+          {topic.canPractice && onTrainTopic ? <button type="button" className="sp-topic-action" onClick={() => onTrainTopic(topic.id)} aria-label={`${ru ? 'Практика' : 'Жаттығу'}: ${topicLabel(topic, ru)}`}>{ru ? 'Практика по теме' : 'Тақырып бойынша жаттығу'}<Arrow /></button> : <p className="sp-small-sample">{ru ? 'Новые задачи по теме появятся позже.' : 'Тақырып бойынша жаңа есептер кейін қосылады.'}</p>}
+        </article>)}</div> : <div className="sp-state sp-topic-empty"><span className="sp-state-icon" aria-hidden="true">{onlyErrors ? '✓' : '↗'}</span><h3>{onlyErrors ? (ru ? 'В этих ответах нет ошибок' : 'Бұл жауаптарда қате жоқ') : (ru ? 'Здесь появятся твои результаты' : 'Мұнда сенің нәтижелерің пайда болады')}</h3><p>{onlyErrors ? (ru ? 'Выбери любую из своих тем и продолжай практику.' : 'Өз тақырыптарыңның бірін таңдап, жаттығуды жалғастыр.') : (ru ? 'Ответь на задачи в практике — увидишь точность и количество верных ответов по каждой теме.' : 'Жаттығуда есептерге жауап бер: әр тақырып бойынша дәлдік пен дұрыс жауап санын көресің.')}</p>{onlyErrors && <button type="button" className="sp-text-button" onClick={() => setOnlyErrors(false)}>{ru ? 'Показать все темы' : 'Барлық тақырыпты көрсету'}<Arrow /></button>}</div>}
+      </section>
+
+      <div className="sp-details-grid">
+        <section className="sp-panel sp-week" aria-labelledby="progress-week-title"><div className="sp-section-head"><div><span className="sp-eyebrow">{ru ? 'ПОНЕМНОГУ КАЖДЫЙ ДЕНЬ' : 'КҮН САЙЫН АЗ-АЗДАН'}</span><h2 id="progress-week-title">{ru ? 'Практика на неделе' : 'Аптадағы жаттығу'}</h2></div></div>
+          <div className="sp-week-chart" role="img" aria-label={week.map(day => `${weekdays[day.index]}: ${formatStudyTime(day.seconds, lang)}`).join('; ')}>{week.map(day => <div className="sp-week-day" key={day.key} aria-hidden="true"><div className="sp-week-track"><i style={{ height: day.seconds ? `${Math.max(5, day.seconds / maxSeconds * 100)}%` : '0%' }} /></div><span>{weekdays[day.index]}</span></div>)}</div>
+          <p>{totalSeconds ? (ru ? `На этой неделе: ${formatStudyTime(totalSeconds, lang)} решения задач. Каждый подход — ещё один шаг.` : `Осы аптада: ${formatStudyTime(totalSeconds, lang)} есеп шығардың. Әр жаттығу — тағы бір қадам.`) : (ru ? 'На этой неделе пока нет времени практики. Начни с одной задачи.' : 'Осы аптада жаттығу уақыты әзірге жоқ. Бір есептен баста.')}</p>
+        </section>
+        <section className="sp-panel sp-diagnostic" aria-labelledby="progress-diagnostic-title"><span className="sp-eyebrow">{ru ? 'ВЗГЛЯД НА ПОДГОТОВКУ' : 'ДАЙЫНДЫҚҚА КӨЗҚАРАС'}</span><h2 id="progress-diagnostic-title">{ru ? 'Твоя диагностика' : 'Сенің диагностикаң'}</h2>
+          {latestDiagnostic ? <><div className="sp-diagnostic-score"><strong>{latestDiagnostic.readiness}%</strong><span>{latestDiagnostic.correct}/{latestDiagnostic.total} {ru ? 'верных ответов' : 'дұрыс жауап'}<small>{fmtDate(latestDiagnostic.completedAt, lang)}</small></span></div><ul>{latestDiagnostic.topics.map((item, index) => <li key={item.moduleId || index}><span>{typeof item.title === 'string' ? item.title : item.title?.[lang] || item.title?.kk}</span><b>{item.pct}%</b></li>)}</ul></> : <p>{ru ? 'Диагностика помогает увидеть сильные стороны и выбрать, что повторить.' : 'Диагностика мықты тұстарыңды көруге және нені қайталау керегін таңдауға көмектеседі.'}</p>}
+          <button type="button" className="sp-text-button" onClick={onGoDiagnostic}>{latestDiagnostic ? (ru ? 'Открыть диагностику' : 'Диагностиканы ашу') : (ru ? 'Пройти диагностику' : 'Диагностикадан өту')}<Arrow /></button>
+        </section>
       </div>
 
-      {/* Тақырыптар және деңгей */}
-      <div className="list" style={{ marginTop: 16 }}>
-        {stats.length ? stats.map((s) => (
-          <div key={s.id} className="row-item" style={{ cursor: 'default' }}>
-            <b style={{ flex: 1 }}>{lang === 'ru' ? (topics.find((topic) => topic.id === s.id)?.nameRu || s.name) : s.name}</b>
-            <div style={{ width: 150 }}>
-              <div className="bar"><i style={{ width: s.pct + '%', background: LEVEL_COL[s.level] }} /></div>
-            </div>
-            <span style={{
-              font: "600 11px 'IBM Plex Mono',monospace", letterSpacing: '.08em',
-              color: LEVEL_COL[s.level], border: `1px solid ${LEVEL_COL[s.level]}`,
-              padding: '3px 9px', width: 82, textAlign: 'center',
-            }}>{(lang === 'ru' ? LEVEL_TXT_RU : LEVEL_TXT)[s.level]}</span>
-          </div>
-        )) : <div style={{ padding: 18 }}><p className="muted" style={{ margin: 0 }}>{t('prog.empty')}</p></div>}
-      </div>
+      {!latestDiagnostic && diagnosis && <div className="sp-legacy-diagnosis"><DiagnosisReport diagnosis={diagnosis} pro={pro} onUnlock={proUnlockHint} onTrainTopic={pro ? onTrainTopic : undefined} compact /></div>}
 
-      {/* Мок-тест тарихы */}
-      {!!series.length && (
-        <>
-          <p className="kicker" style={{ marginTop: 26 }}>{t('ui.43')}</p>
-          <div className="list">
-            {mocks.map((m, k) => (
-              <div className="row-item" key={k} onClick={() => setOpen(m)}>
-                <div style={{ flex: 1 }}>
-                  <b>{m.school || 'Мок-тест'}</b>
-                  <div style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 3 }}>
-                    {fmtDate(m.at, lang)}{m.spentSec ? ` · ${fmtSpent(m.spentSec)}` : ''}
-                  </div>
-                </div>
-                <span className="rt">{mockDisplayScore(m).score}/{mockDisplayScore(m).max} {m.school === 'БИЛ' ? (lang === 'ru' ? 'баллов' : 'ұпай') : (lang === 'ru' ? 'верных' : 'дұрыс')} →</span>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
+      <section className="sp-mocks" aria-labelledby="progress-mocks-title"><div className="sp-section-head"><div><span className="sp-eyebrow">{ru ? 'ПОСМОТРИ И РАЗБЕРИСЬ' : 'ҚАРАП, ТҮСІНІП АЛ'}</span><h2 id="progress-mocks-title">{ru ? 'Твои пробные тесты' : 'Сенің сынақ тесттерің'}</h2></div><span className="sp-count">{mocks.length}</span></div>
+        {mocks.length ? <div className="sp-mock-list">{mocks.map((mock, index) => <button type="button" id={`progress-mock-${index}`} className="sp-mock" key={index} onClick={() => { returnToMock.current = index; setQ(null); setOpen(mock); }}><span className="sp-mock-icon" aria-hidden="true">▤</span><span className="sp-mock-copy"><strong>{mock.school || (ru ? 'Пробный тест' : 'Сынақ тесті')}</strong><small>{fmtDate(mock.at, lang)}{mock.spentSec ? ` · ${fmtSpent(mock.spentSec)}` : ''}</small></span><span className="sp-mock-result"><strong>{mockDisplayScore(mock).score}/{mockDisplayScore(mock).max}</strong><small>{mock.school === 'БИЛ' || mock.scoring === 'bil' ? (ru ? 'баллов' : 'ұпай') : (ru ? 'верных ответов' : 'дұрыс жауап')}</small></span><Arrow /></button>)}</div> : <div className="sp-mock-empty"><p>{ru ? 'Пока нет завершённых пробных тестов. После первого здесь появятся результат и разбор задач.' : 'Әзірге аяқталған сынақ тесті жоқ. Бірінші сынақтан кейін нәтиже мен есептерді талдау осы жерде пайда болады.'}</p></div>}
+      </section>
     </main>
   );
 }
 
 function fmtDate(at, lang) {
-  const ms = at?.seconds ? at.seconds * 1000 : (at ? Date.parse(at) : NaN);
-  if (!ms || Number.isNaN(ms)) return '';
-  return new Date(ms).toLocaleString(lang === 'ru' ? 'ru-RU' : 'kk-KZ', { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' });
+  return formatProgressDate(at, lang);
 }
-const fmtSpent = (s) => `${Math.floor(s / 60)} мин ${String(s % 60).padStart(2, '0')} сек`;
+const fmtSpent = (seconds) => `${Math.floor(seconds / 60)} мин ${String(Math.floor(seconds % 60)).padStart(2, '0')} сек`;

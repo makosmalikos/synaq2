@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { askTutor } from '../explain.js';
 import { useLang } from '../i18n.jsx';
+import './AiTutorCompanion.css';
 
 export default function AiTutor({ q, checked, given }) {
   const { lang } = useLang();
@@ -45,16 +46,17 @@ export default function AiTutor({ q, checked, given }) {
 
   return (
     <section className="ai-tutor" aria-label={ru ? 'AI-репетитор' : 'AI-репетитор'}>
-      <header><span aria-hidden="true">✦</span><div><strong>SYNAQ AI</strong><small>{ru ? 'Репетитор по текущей задаче' : 'Осы есеп бойынша көмекші'}</small></div></header>
+      <header><img className="ai-tutor-owl" src="/mascot/synaq-owl-study.webp" width="640" height="640" alt="" loading="lazy" decoding="async" /><div><strong>SYNAQ AI</strong><small>{ru ? 'Репетитор по текущей задаче' : 'Осы есеп бойынша көмекші'}</small></div></header>
+      {!messages.length && <p className="ai-tutor-welcome">{ru ? 'Разберёмся вместе. Подскажу, с какого шага начать.' : 'Бірге түсінейік. Қай қадамнан бастау керегін айтамын.'}</p>}
       <div className="ai-tutor-actions">
-        {!checked && <button type="button" disabled={busy} onClick={() => send('hint')}>{ru ? '💡 Дай подсказку' : '💡 Кеңес бер'}</button>}
+        {!checked && <button type="button" disabled={busy} onClick={() => send('hint')}>{ru ? 'Дай подсказку' : 'Кеңес бер'}</button>}
         {checked && <><button type="button" disabled={busy} onClick={() => send('simplify')}>{ru ? 'Объясни проще' : 'Қарапайым түсіндір'}</button><button type="button" disabled={busy} onClick={() => send('similar')}>{ru ? 'Похожий пример' : 'Ұқсас мысал'}</button></>}
       </div>
       {!!messages.length && <div className="ai-tutor-chat" aria-live="polite">{messages.map((item, index) => <div key={index} className={`ai-tutor-message is-${item.role}`}>{item.text}</div>)}</div>}
       {busy && <p className="ai-tutor-thinking" role="status">{ru ? 'AI думает…' : 'AI ойлануда…'}</p>}
       {error && <p className="ai-tutor-error" role="alert">{error}</p>}
       <form className="ai-tutor-form" onSubmit={(event) => { event.preventDefault(); send('question', input); }}>
-        <input value={input} maxLength={1000} disabled={busy} onChange={(event) => setInput(event.target.value)} placeholder={ru ? 'Задай вопрос по задаче…' : 'Есеп бойынша сұрақ қой…'} />
+        <input aria-label={ru ? 'Вопрос по задаче' : 'Есеп бойынша сұрақ'} value={input} maxLength={1000} disabled={busy} onChange={(event) => setInput(event.target.value)} placeholder={ru ? 'Задай вопрос по задаче…' : 'Есеп бойынша сұрақ қой…'} />
         <button type="submit" disabled={busy || !input.trim()} aria-label={ru ? 'Отправить' : 'Жіберу'}>↑</button>
       </form>
       <small className="ai-tutor-note">{ru ? 'AI может ошибаться. Оценку и XP рассчитывает только система.' : 'AI қателесуі мүмкін. Баға мен XP-ді тек жүйе есептейді.'}</small>

@@ -10,20 +10,10 @@ import Explain from './Explain.jsx';
 import UnclearButton from './UnclearButton.jsx';
 import AiTutor from './AiTutor.jsx';
 import BrandLoader from './BrandLoader.jsx';
+import TrainingCatalog from './TrainingCatalog.jsx';
+import { trainingTopicName } from '../trainingCatalogModel.js';
 
 const LT = ['A', 'B', 'C', 'D', 'E'];
-// Блоки раздельно: язык и математика в одной ленте — бессмыслица.
-// Заголовок — через t(), чтобы шёл за выбранным языком интерфейса (не только сами задачи).
-const BLOCKS = [
-  { id: 'math',     titleKey: 'ui.68', only: null },
-  { id: 'logic',    titleKey: 'ui.69', only: null },
-  { id: 'lang_kaz', titleKey: 'ui.70', only: 'lang_kaz' },
-  { id: 'lang_rus', titleKey: 'ui.71', only: 'lang_rus' },
-  { id: 'lang_eng', titleKey: 'ui.72', only: 'lang_eng' },
-];
-// id → тема, чтобы не фильтровать весь пул на каждый рендер
-
-
 // ── КОЛХАР: екі баған + салыстыру батырмалары ──
 // statement форматы: "Салыстыр...:\n[ортақ шарт]\nА) ...\nВ) ..."
 // Шартты абзацтарға бөліп шығарамыз (тілдік есептерде мәтін мен сұрақ бөлек тұрады).
@@ -114,10 +104,10 @@ export function Kolhar({ q, answer, onPick, disabled, correct }) {
   );
 }
 
-export default function Training({ onXp, startTopicId, onTopicOpened }) {
+export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade }) {
   const { t, lang } = useLang();
   const ru = lang === 'ru';
-  const topicName = (value) => ru ? value.nameRu || value.name : value.name;
+  const topicName = (value) => trainingTopicName(value, lang);
   const [topics, setTopics] = useState([]);
   const [solved, setSolved] = useState(new Set());
   const [solvedIn, setSolvedIn] = useState({});
@@ -460,59 +450,8 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
   if ((loading || opening || pro === null) && !checked) return <main><BrandLoader /></main>;
 
   // ── список тем ──
-  if (!topic) {
-    const Group = ({ title, arr }) => !arr.length ? null : (
-      <>
-        <div className="row" style={{ margin: '26px 0 12px' }}>
-          <span className="kicker" style={{ margin: 0 }}>{title}</span>
-        </div>
-        <div className="list">
-          {arr.map((t, k) => {
-            const done = Math.min(solvedIn[t.id] || 0, t.count);
-            const pct = Math.round(done / t.count * 100);
-            const shut = !pro && !(b0 && t.id === b0);      // тегін тарифте — бір ғана тақырып
-            return (
-              <div className="row-item" key={t.id}
-                onClick={() => (shut ? null : openTopic(t))}
-                style={{ opacity: shut ? 0.45 : 1, cursor: shut ? 'default' : 'pointer' }}>
-                <span style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#B7B0A2', width: 26 }}>{String(k + 1).padStart(2, '0')}</span>
-                <div style={{ flex: 1 }}>
-                  <b>{topicName(t)}</b>
-                </div>
-                <div style={{ width: 110 }}><div className="bar"><i style={{ width: pct + '%' }} /></div></div>
-                <span style={{ font: "600 13px 'IBM Plex Mono',monospace", width: 46, textAlign: 'right', color: pct >= 60 ? '#4C7A4E' : '#6B655B' }}>
-                  {shut ? '🔒' : pct + '%'}
-                </span>
-              </div>
-            );
-          })}
-        </div>
-      </>
-    );
-
-    return (
-      <main>
-        {saveNotice}
-        {loadError && <p role="alert">{trainingLoadErrorText(loadErrorCode, ru)}</p>}
-        <p className="kicker">{t('ui.1')}</p>
-        <h1>{t('ui.2')}</h1>
-        <p className="muted" style={{ marginTop: 6 }}>
-          {ru ? 'Задачи трёх школ выдаются вперемешку.' : 'Есептер үш мектептің бәрінен араласып беріледі.'}
-        </p>
-
-        <div className="hero-card" style={{ marginTop: 16 }}>
-          <h2>{t('ui.3')}</h2>
-          <p>{t('ui.4')}</p>
-          <button className="btn accent" disabled={pro === null} onClick={openMixed}>{t('ui.5')}</button>
-        </div>
-
-        {BLOCKS.map((b) => (
-          <Group key={b.id} title={t(b.titleKey)}
-            arr={topics.filter((tp) => (b.only ? tp.id === b.only : tp.block === b.id))} />
-        ))}
-      </main>
-    );
-  }
+  if (!topic) return <TrainingCatalog topics={topics} solvedIn={solvedIn} pro={pro} freeTopicId={b0}
+    lang={lang} onOpen={openTopic} onMixed={openMixed} onUpgrade={onUpgrade} notice={saveNotice} />;
 
   // ── тегін тариф лимиті ──
   if (topic && (sessionState === 'limited' || sessionState === 'locked' || showTrainingLimit(pro, done, checked, FREE_DAY))) return (

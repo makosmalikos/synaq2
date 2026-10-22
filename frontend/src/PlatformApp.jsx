@@ -394,6 +394,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
           {tab === 'training' && (
             <Training
               school={school}
+              onUpgrade={openSubscription}
               onXp={(gain, totalXp) => setXp((current) => Number.isFinite(totalXp) ? Math.max(current, totalXp) : current + gain)}
               startTopicId={trainTopic}
               onTopicOpened={() => setTrainTopic(null)}
