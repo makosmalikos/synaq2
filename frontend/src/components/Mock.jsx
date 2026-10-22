@@ -1,3 +1,4 @@
+import useScreenStart from '../useScreenStart.js';
 import QuestionFigure from './QuestionFigure.jsx';
 import FigureOption, { hasFigureOptions, mainFigureSrc } from './FigureOption.jsx';
 import React, { useEffect, useState, useRef, useMemo } from 'react';
@@ -294,6 +295,8 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     changeRun({ pausedAt: null, pausedMs: run.pausedMs + duration, deadline: run.deadline + duration });
   }
 
+  useScreenStart(`${school}:${!!test}:${i}:${pause}:${!!result}`);
+
   function goToQuestion(index) {
     const run = runRef.current;
     if (!run || run.result || mockRemaining(run) <= 0 || index < 0 || index >= run.test.questions.length) return;
@@ -368,15 +371,15 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
       {startNotice}
       <p className="kicker">{ru ? 'ПРОБНИК НЕДЕЛИ' : 'АПТАЛЫҚ СЫНАҚ'} · {weekly.weekKey}</p>
       <h1>{ru ? 'Выберите школу' : 'Мектепті таңдаңыз'}</h1>
-      <p className="muted" style={{ marginTop: 6 }}>{weekly.pro ? (ru ? 'Включено в Pro. Новые вопросы появятся в понедельник.' : 'Pro құрамына кіреді. Жаңа сұрақтар дүйсенбіде шығады.') : (ru ? 'Оплачено на текущую неделю.' : 'Ағымдағы аптаға төленді.')}</p>
+      <p className="muted" style={{ marginTop: 6 }}>{weekly.pro ? (ru ? 'Включено в Standard и Pro. Новые вопросы появятся в понедельник.' : 'Standard және Pro құрамына кіреді. Жаңа сұрақтар дүйсенбіде шығады.') : (ru ? 'Оплачено на текущую неделю.' : 'Ағымдағы аптаға төленді.')}</p>
       <div className="list" style={{ marginTop: 16 }}>
         {schools.map((s) => (
-          <div className="row-item" key={s.code}
+          <button type="button" className="row-item mock-school-option" key={s.code} disabled={!s.ready || starting}
             onClick={() => s.ready && !starting && startExam(s.code)}
             style={{ opacity: s.ready ? 1 : 0.5, cursor: s.ready ? 'pointer' : 'default' }}>
             <div style={{ flex: 1 }}><b>{s.code}</b><p className="muted">{formatLabel(s)}</p>{s.code === 'БИЛ' && <small>{ru ? 'Оценка: +4 за верный, −1 за неверный, 0 за пропуск' : 'Бағалау: дұрыс +4, қате −1, жауапсыз 0'}</small>}{s.code === 'РФМШ' && <small>{ru ? 'Здесь — число верных; официальный балл зависит от уровней A/B/C' : 'Мұнда — дұрыс жауап саны; ресми ұпай A/B/C деңгейлеріне тәуелді'}</small>}{s.code === 'НИШ' && <small>{ru ? 'Здесь — число верных; официальный результат НИШ рассчитывается отдельно' : 'Мұнда — дұрыс жауап саны; НЗМ ресми нәтижесі бөлек есептеледі'}</small>}{s.shortened && <small>{shortenedLabel} ({s.count}/{s.targetCount})</small>}</div>
             <span className="rt">{s.ready ? '→' : t('ui.60')}</span>
-          </div>
+          </button>
         ))}
       </div>
     </main>
@@ -516,9 +519,9 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
       {navOpen && (
         <div className="qgrid" style={{ marginTop: 18 }}>
           {test.questions.map((qq, k) => (
-            <div key={qq.num}
+            <button type="button" key={qq.num} aria-current={k === i ? 'step' : undefined} aria-label={`${ru ? 'Задание' : 'Тапсырма'} ${qq.num}`}
               className={'qcell' + (answered(qq.num) ? ' done' : '') + (k === i ? ' cur' : '') + (flags[qq.num] ? ' flag' : '')}
-              onClick={() => goToQuestion(k)}>{qq.num}</div>
+              onClick={() => goToQuestion(k)}>{qq.num}</button>
           ))}
         </div>
       )}

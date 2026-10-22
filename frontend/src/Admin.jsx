@@ -113,7 +113,7 @@ function LeadInbox({ t, lang, onChanged = () => {} }) {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', gap: 14, flexWrap: 'wrap' }}>
                 <div>
                   {lead.source !== 'landing' && <span className="tag" style={{ borderColor: '#DC2626', color: '#DC2626', marginBottom: 6, display: 'inline-block' }}>{lead.source === 'mentor_purchase' ? (lang === 'ru' ? '💳 Покупка Pro с наставником' : '💳 Наставникпен Pro сатып алды') : (lang === 'ru' ? '⬆ Хочет перейти на Pro' : '⬆ Pro-ға көшкісі келеді')}</span>}
-                  <div style={{ font: "700 17px 'Golos Text'" }}>{lead.name}</div>
+                  <div style={{ font: "700 17px 'Golos Text',system-ui,sans-serif" }}>{lead.name}</div>
                   {lead.phone ? <a href={`tel:${lead.phone.replace(/[^+\d]/g, '')}`} style={{ display: 'inline-block', marginTop: 5, color: '#2563EB', fontWeight: 700 }}>{lead.phone}</a> : <span className="muted" style={{ display: 'inline-block', marginTop: 5 }}>{lang === 'ru' ? 'телефон не указан — см. email в тексте' : 'телефон жоқ — мәтіндегі email-ді қараңыз'}</span>}
                   <div className="muted" style={{ fontSize: 12, marginTop: 5 }}>
                     {lead.role === 'student' ? t('admin.leadStudent') : t('admin.leadParent')} · {lead.createdAt ? new Intl.DateTimeFormat(lang === 'ru' ? 'ru-RU' : 'kk-KZ', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(lead.createdAt)) : '—'}

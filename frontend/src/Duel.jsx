@@ -1,3 +1,4 @@
+import useScreenStart from './useScreenStart.js';
 import React, { useEffect, useRef, useState } from 'react';
 import { useLang } from './i18n.jsx';
 import { auth, claimDuelXp } from './firebase.js';
@@ -64,6 +65,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
   const [verdict, setVerdict] = useState(null);
   const [awardError, setAwardError] = useState(false);
   const invitePending = shouldJoinInvite(initialCode, consumedInvite);
+  useScreenStart(`${code}:${duel?.status}:${duel?.qIndex}:${gameReady}`);
   const roundKey = duelRoundKey(code, duel);
   const feedbackKey = duelFeedbackKey(code, duel);
   const awardUid = auth.currentUser?.uid;

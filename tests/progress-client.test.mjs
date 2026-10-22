@@ -18,6 +18,7 @@ function fixture(overrides = {}) {
   const context = {
     uid: 'kid', console: { error() {} },
     getAttempts: async () => [{ qid: 'q1', correct: true }],
+    getPlatformDiagnostics: async () => [{ readiness: 10, correct: 2, total: 20 }],
     getMocks: async () => [{ score: 10 }],
     getXpSummary: async () => ({ xp: 85, studySecs: 500 }),
     loadTopicCatalog: async () => [{ id: 'topic' }],
@@ -31,7 +32,7 @@ function fixture(overrides = {}) {
     },
     ...overrides,
   };
-  for (const name of ['Loading', 'LoadError', 'Pro', 'Topics', 'Stats', 'Week', 'Mocks', 'XpInfo']) {
+  for (const name of ['Loading', 'LoadError', 'Pro', 'Topics', 'Stats', 'Week', 'Mocks', 'XpInfo', 'Diagnostics', 'PracticeAccuracy']) {
     context[`set${name}`] = (value) => { state[name] = value; };
   }
   vm.createContext(context);
@@ -40,7 +41,7 @@ function fixture(overrides = {}) {
 }
 
 test('failed progress reads never replace existing XP or progress with fake zeros', async () => {
-  for (const helper of ['getAttempts', 'getMocks', 'getXpSummary']) {
+  for (const helper of ['getAttempts', 'getMocks', 'getXpSummary', 'getPlatformDiagnostics']) {
     const f = fixture({ [helper]: async () => { throw Error('offline'); } });
     const stop = f.mount();
     f.listeners[0].callback(true);
@@ -67,6 +68,8 @@ test('retry recovers progress and Pro updates stay live', async () => {
   f.listeners[1].callback(false);
   await tick();
   assert.equal(f.state.XpInfo.xp, 85);
+  assert.equal(f.state.Diagnostics[0].readiness, 10);
+  assert.equal(f.state.PracticeAccuracy, null);
   assert.deepEqual(f.xpLoads, [85]);
   assert.equal(f.state.Pro, false);
   f.listeners[1].callback(true);

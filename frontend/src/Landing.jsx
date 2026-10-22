@@ -1,10 +1,11 @@
+import { validateLeadForm, sendLead } from './leadForm.js';
 import React from 'react';
 import { LangSwitch, useLang } from './i18n.jsx';
 import Brand from './Brand.jsx';
 import LandingDemo from './LandingDemo.jsx';
 import LandingFounders from './LandingFounders.jsx';
 import './Landing.css';
-import { LandingHero, LandingBenefits, LandingMentor, LandingFAQ, LandingReviewExamples } from './LandingRefresh.jsx';
+import { LandingHero, LandingBenefits, LandingMentor, LandingFAQ, LandingFamilyBenefits } from './LandingRefresh.jsx';
 import LandingPricing from './LandingPricing.jsx';
 import useLandingMotion from './useLandingMotion.js';
 
@@ -13,6 +14,8 @@ const WHATSAPP_LEAD_URL = 'https://wa.me/77773424043';
 export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
   const { t, lang } = useLang();
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [leadState, setLeadState] = React.useState('idle');
+  const leadErrorId = 'lead-submit-error';
   const leadPendingRef = React.useRef(false);
   const landingRef = React.useRef(null);
   useLandingMotion(landingRef);
@@ -62,33 +65,27 @@ export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
     } catch {}
     onStart();
   };
-  const handleLeadSubmit = (e) => {
+  const handleLeadSubmit = async (e) => {
     e.preventDefault();
     if (leadPendingRef.current) return;
-    leadPendingRef.current = true;
     const element = e.currentTarget;
-    const form = new FormData(element);
-    const payload = Object.fromEntries(form.entries());
-    if (payload.website) return;
-
-    // Reserve a copy without delaying the primary WhatsApp conversion. The
-    // keepalive request may finish after this tab has navigated away.
-    fetch('/api/lead', {
-      method: 'POST',
-      keepalive: true,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...payload, lang }),
-    }).catch(() => {});
-
-    const role = payload.role === 'student'
-      ? (lang === 'ru' ? 'Ученик' : 'Оқушы')
-      : (lang === 'ru' ? 'Родитель' : 'Ата-ана');
-    const message = (lang === 'ru'
-      ? ['Здравствуйте! Хочу получить консультацию по SYNAQ.', `Имя: ${payload.name}`, `Телефон: ${payload.phone}`, `Кто я: ${role}`, payload.comment ? `Комментарий: ${payload.comment}` : '']
-      : ['Сәлеметсіз бе! SYNAQ бойынша кеңес алғым келеді.', `Аты: ${payload.name}`, `Телефон: ${payload.phone}`, `Кім: ${role}`, payload.comment ? `Түсініктеме: ${payload.comment}` : ''])
-      .filter(Boolean).join('\n');
-    element.reset();
-    window.location.assign(`${WHATSAPP_LEAD_URL}?text=${encodeURIComponent(message)}`);
+    const raw = Object.fromEntries(new FormData(element).entries());
+    if (raw.website) return;
+    const payload = validateLeadForm(raw);
+    if (!payload) { setLeadState('invalid'); return; }
+    leadPendingRef.current = true;
+    setLeadState('saving');
+    try {
+      await sendLead(payload, lang);
+      const role = payload.role === 'student'
+        ? (lang === 'ru' ? 'Ученик' : 'Оқушы') : (lang === 'ru' ? 'Родитель' : 'Ата-ана');
+      const message = (lang === 'ru'
+        ? ['Здравствуйте! Хочу получить консультацию по SYNAQ.', `Имя: ${payload.name}`, `Телефон: ${payload.phone}`, `Кто я: ${role}`, payload.comment ? `Комментарий: ${payload.comment}` : '']
+        : ['Сәлеметсіз бе! SYNAQ бойынша кеңес алғым келеді.', `Аты: ${payload.name}`, `Телефон: ${payload.phone}`, `Кім: ${role}`, payload.comment ? `Түсініктеме: ${payload.comment}` : '']).filter(Boolean).join('\n');
+      setLeadState('saved');
+      window.location.assign(`${WHATSAPP_LEAD_URL}?text=${encodeURIComponent(message)}`);
+    } catch { setLeadState('error'); }
+    finally { leadPendingRef.current = false; }
   };
   return (
     <div ref={landingRef} className="lp-root">
@@ -270,7 +267,7 @@ export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
   
   <LandingFounders />
 
-  <LandingReviewExamples />
+  <LandingFamilyBenefits />
 
   <LandingPricing onStart={handleStart} onBuyPlan={handleBuyPlan} />
 
@@ -281,18 +278,18 @@ export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
       <div className="lp-lead-copy">
         <h2>{t('lp.leadTitle')}</h2>
         <p>{t('lp.leadText')}</p>
-        <form className="lp-lead-form" onSubmit={handleLeadSubmit}>
+        <form className="lp-lead-form" onSubmit={handleLeadSubmit} aria-busy={leadState === 'saving'}>
           <div className="lp-lead-honeypot" aria-hidden="true">
             <label htmlFor="lead-website">Website</label>
             <input id="lead-website" name="website" type="text" tabIndex="-1" autoComplete="off" />
           </div>
           <div className="lp-lead-field">
             <label htmlFor="lead-name">{t('lp.leadName')}</label>
-            <input id="lead-name" name="name" type="text" placeholder={t('lp.leadNamePlaceholder')} required />
+            <input id="lead-name" name="name" type="text" autoComplete="name" minLength={2} maxLength={80} placeholder={t('lp.leadNamePlaceholder')} required />
           </div>
           <div className="lp-lead-field">
             <label htmlFor="lead-phone">{t('lp.leadPhone')}</label>
-            <input id="lead-phone" name="phone" type="tel" inputMode="tel" placeholder="+7 ___ ___ __ __" required />
+            <input id="lead-phone" name="phone" type="tel" autoComplete="tel" maxLength={25} inputMode="tel" aria-describedby={leadState === 'invalid' ? leadErrorId : undefined} placeholder="+7 ___ ___ __ __" required />
           </div>
           <div className="lp-lead-field lp-lead-field-wide">
             <label htmlFor="lead-role">{t('lp.leadRole')}</label>
@@ -305,7 +302,11 @@ export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
             <label htmlFor="lead-comment">{t('lp.leadComment')}</label>
             <textarea id="lead-comment" name="comment" placeholder={t('lp.leadCommentPlaceholder')} />
           </div>
-          <button className="lp-lead-submit" type="submit">{t('lp.leadSubmit')}</button>
+          <button className="lp-lead-submit" type="submit" disabled={leadState === 'saving'}>{leadState === 'saving' ? (lang === 'ru' ? 'Отправляем…' : 'Жіберілуде…') : t('lp.leadSubmit')}</button>
+          {['error', 'invalid'].includes(leadState) && <p id={leadErrorId} role="alert" className="lp-lead-error">{leadState === 'invalid'
+            ? (lang === 'ru' ? 'Проверьте имя и номер телефона: например, +7 777 123 45 67.' : 'Атыңыз бен телефон нөмірін тексеріңіз: мысалы, +7 777 123 45 67.')
+            : (lang === 'ru' ? 'Не удалось подтвердить отправку. Данные остались в форме — попробуйте ещё раз.' : 'Өтінімнің жіберілгенін растау мүмкін болмады. Деректер формада сақталды — қайталап көріңіз.')}</p>}
+          {leadState === 'saved' && <p role="status">{lang === 'ru' ? 'Заявка сохранена. Открываем WhatsApp…' : 'Өтінім сақталды. WhatsApp ашылуда…'}</p>}
         </form>
       </div>
       <div className="lp-lead-visual" aria-label={t('lp.leadVisualLabel')}>

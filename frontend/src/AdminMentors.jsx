@@ -115,7 +115,7 @@ export default function AdminMentors({ lang }) {
         : <div style={{ display: 'grid', gap: 12 }}>{mentors.map((m) => (
           <article className="card" key={m.id} style={{ opacity: m.active ? 1 : 0.6 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>
-              <div><div style={{ font: "700 17px 'Golos Text'" }}>{m.name}</div>
+              <div><div style={{ font: "700 17px 'Golos Text',system-ui,sans-serif" }}>{m.name}</div>
                 <div className="muted" style={{ fontSize: 13 }}>{m.email}{m.phone ? ` · ${m.phone}` : ''}</div></div>
               <span className="tag">{m.active ? text('активен', 'белсенді') : text('скрыт', 'жасырын')}</span>
             </div>

@@ -31,7 +31,7 @@ function StudentRibbon({ ru }) {
     <div ref={rail} id="sx-student-rail" className="sx-student-rail" role="region" aria-label={ru ? 'Фотографии учеников — листайте' : 'Оқушылар суреттері — сырғытыңыз'} tabIndex={0}>
       {[1, 2, 3, 4, 5].map((id, index) => <div className={`sx-student-tile sx-student-tile-${id}`} key={id}>
         <div className="sx-student-backdrop" aria-hidden="true" />
-        <img src={`/landing/mobile/student-${id}-600.webp`} srcSet={`/landing/mobile/student-${id}-360.webp 360w, /landing/mobile/student-${id}-600.webp 600w`} sizes="(max-width: 760px) 190px, 250px" width="600" height="900" decoding="async" loading={index < 2 ? 'eager' : 'lazy'} fetchPriority={index < 2 ? 'high' : 'auto'} alt={descriptions[index]} draggable="false" />
+        <img src={`/landing/mobile/student-${id}-600.webp`} srcSet={`/landing/mobile/student-${id}-360.webp 360w, /landing/mobile/student-${id}-600.webp 600w`} sizes="(max-width: 760px) 190px, 250px" width="600" height="900" decoding="async" loading={index < 2 ? 'eager' : 'lazy'} fetchpriority={index < 2 ? 'high' : 'auto'} alt={descriptions[index]} draggable="false" />
       </div>)}
     </div>
     <div className="sx-ribbon-footer">
@@ -70,22 +70,21 @@ export function LandingHero({ onFreeDiagnostic }) {
   </>;
 }
 
-export function LandingReviewExamples() {
+export function LandingFamilyBenefits() {
   const { lang } = useLang();
   const ru = lang === 'ru';
-  // Draft copy is explicitly labelled and carries no invented customer identity or rating.
-  const reviews = ru ? [
-    ['Диагностика', 'Стало понятно, с чего начать', 'До диагностики не понимала, что именно повторять с ребёнком. В результате увидела темы, на которые стоит обратить внимание, и план на неделю.'],
-    ['Объяснения', 'Можно разобраться в ошибке', 'Мне нравится, когда ребёнок видит не только правильный ответ, но и объяснение. Можно вернуться к задаче и спокойно понять, на каком шаге ошибся.'],
-    ['Прогресс', 'Подготовка стала понятнее', 'Хочется видеть, чем ребёнок занимался и где нужна помощь. В кабинете удобно смотреть результаты по темам и обсуждать, что делать дальше.'],
+  const items = ru ? [
+    ['Диагностика', 'Понятно, с чего начать', 'Результат по темам помогает увидеть сильные стороны ребёнка и выбрать, что повторить на этой неделе.'],
+    ['Объяснения', 'Ошибка — повод разобраться', 'После ответа можно посмотреть решение. ИИ-помощник помогает разобрать непонятный шаг.'],
+    ['Прогресс', 'Подготовка на виду', 'В кабинете родителя собраны результаты, время занятий и темы, которым нужно уделить внимание.'],
   ] : [
-    ['Диагностика', 'Неден бастау керегі түсінікті', 'Диагностикаға дейін баламен нақты нені қайталау керегін білмедім. Нәтижеден көңіл бөлу керек тақырыптарды және бір апталық жоспарды көрдім.'],
-    ['Түсіндіру', 'Қатені түсінуге болады', 'Бала тек дұрыс жауапты емес, түсіндірмені де көргені ұнайды. Есепке қайта оралып, қай қадамда қателескенін асықпай түсіне алады.'],
-    ['Прогресс', 'Дайындық түсінікті болды', 'Баланың немен айналысқанын және қай жерде көмек керегін көргім келеді. Кабинетте тақырыптар бойынша нәтижені қарап, келесі қадамды талқылау ыңғайлы.'],
+    ['Диагностика', 'Неден бастау керегі түсінікті', 'Тақырыптар бойынша нәтиже баланың мықты тұстарын көрсетіп, осы аптада нені қайталау керегін таңдауға көмектеседі.'],
+    ['Түсіндіру', 'Қате арқылы үйрену', 'Жауап бергеннен кейін шешімін көруге болады. ЖИ-көмекші түсініксіз қадамды талдауға көмектеседі.'],
+    ['Прогресс', 'Дайындық барысы көрінеді', 'Ата-ана кабинетінде нәтижелер, сабаққа кеткен уақыт және көңіл бөлу керек тақырыптар жиналған.'],
   ];
-  return <section className="sx-review-examples" aria-labelledby="sx-review-title">
-    <div className="sx-review-heading"><div><span className="sx-eyebrow">{ru ? 'РОДИТЕЛЯМ' : 'АТА-АНАЛАРҒА'}</span><h2 id="sx-review-title">{ru ? <>Примеры отзывов.<br /><span>О том, что важно семье.</span></> : <>Пікір үлгілері.<br /><span>Отбасы үшін маңыздысы.</span></>}</h2></div><p>{ru ? 'Демонстрационные тексты для макета. Это не отзывы реальных клиентов.' : 'Макетке арналған үлгі мәтіндер. Бұлар нақты клиенттердің пікірлері емес.'}</p></div>
-    <div className="sx-review-grid">{reviews.map(([topic, title, text]) => <article key={topic}><div className="sx-review-card-meta"><span>{topic}</span><small>{ru ? 'Пример отзыва' : 'Пікір үлгісі'}</small></div><h3>{title}</h3><blockquote>«{text}»</blockquote><div className="sx-review-card-foot"><span aria-hidden="true">“</span>{ru ? 'Демонстрационный текст' : 'Үлгі мәтін'}</div></article>)}</div>
+  return <section className="sx-review-examples" aria-labelledby="sx-family-title">
+    <div className="sx-review-heading"><div><span className="sx-eyebrow">{ru ? 'РОДИТЕЛЯМ' : 'АТА-АНАЛАРҒА'}</span><h2 id="sx-family-title">{ru ? <>Ребёнок учится.<br /><span>Вы видите результат.</span></> : <>Бала үйренеді.<br /><span>Сіз нәтижені көресіз.</span></>}</h2></div><p>{ru ? 'Всё, чтобы поддержать ребёнка на каждом этапе подготовки.' : 'Дайындықтың әр кезеңінде балаға қолдау көрсету үшін.'}</p></div>
+    <div className="sx-review-grid">{items.map(([topic, title, text]) => <article key={topic}><div className="sx-review-card-meta"><span>{topic}</span></div><h3>{title}</h3><p className="sx-family-description">{text}</p></article>)}</div>
   </section>;
 }
 

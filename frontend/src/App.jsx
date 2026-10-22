@@ -38,7 +38,7 @@ export default function App() {
   };
 
   return (
-    <ScreenBoundary key={route} lang={lang}>
+    <ScreenBoundary key={route} lang={lang} recoverChunks={route !== 'app'}>
       <Suspense fallback={<BrandLoader fullScreen />}>
         {route === 'landing' && <Landing onStart={() => go('app')} onDiagnostic={() => go('diagnostic')} onFreeDiagnostic={() => go('free-diagnostic')} />}
         {route === 'free-diagnostic' && <FreeDiagnostic onBack={() => go('landing')} onRegister={(result) => { setDiagnosticResult(result); go('app'); }} />}

@@ -377,7 +377,7 @@ export default function Parent({ onExit }) {
           <RewardApprovals children={children} lang={lang} />
 
           <details className="pd-settings" open={paymentPending || !!paymentIssue || !!portalError || undefined}>
-            <summary>{text('Тариф и настройки аккаунта', 'Тариф және аккаунт баптаулары')} <span>{plan?.toUpperCase() || '…'}</span></summary>
+            <summary>{text('Тариф и настройки аккаунта', 'Тариф және аккаунт баптаулары')} <span>{plan === 'standard' ? text('Standard · архивный', 'Standard · архивтік') : plan === 'pro' ? 'Standard' : plan === 'mentor' ? 'Pro' : plan === 'free' ? text('Бесплатный', 'Тегін') : '…'}</span></summary>
           {/* Үш тариф: тегін, Standard және Pro. */}
           {plan !== null && (
             <div style={{
@@ -393,7 +393,7 @@ export default function Parent({ onExit }) {
                   {plan === 'free' && <span className="tag" style={{ borderColor: 'var(--ink)' }}>{t('plan.current')}</span>}
                 </div>
                 <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>{t('plan.freePrice')}</div>
-                <ul style={{ margin: 0, padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text'", lineHeight: 2 }}>
+                <ul style={{ margin: 0, padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text',system-ui,sans-serif", lineHeight: 2 }}>
                   <li>✓ {t('plan.f1')}</li>
                   <li>✓ {t('plan.f2')}</li>
                   <li style={{ color: '#B0B0A6' }}>✗ {t('plan.f3')}</li>
@@ -411,12 +411,12 @@ export default function Parent({ onExit }) {
                   {full && <span className="tag" style={{ borderColor: '#2F80ED', color: '#2F80ED' }}>{t('plan.active')}</span>}
                 </div>
                 <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>
-                  {planPrice('pro', lang)}<span style={{ font: "500 13px 'Golos Text'", color: '#9A9384' }}>{t('plan.month')}</span>
+                  {planPrice('pro', lang)}<span style={{ font: "500 13px 'Golos Text',system-ui,sans-serif", color: '#9A9384' }}>{t('plan.month')}</span>
                 </div>
-                <ul style={{ margin: '0 0 14px', padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text'", lineHeight: 2 }}>
+                <ul style={{ margin: '0 0 14px', padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text',system-ui,sans-serif", lineHeight: 2 }}>
                   <li>✓ {t('plan.s1')}</li><li>✓ {t('plan.s2')}</li><li>✓ {t('plan.s3')}</li><li>✓ {t('plan.s4')}</li>
                 </ul>
-                {full ? <div style={{ font: "600 13px 'Golos Text'", color: '#2F80ED' }}>{t('plan.activeNote')}</div>
+                {full ? <div style={{ font: "600 13px 'Golos Text',system-ui,sans-serif", color: '#2F80ED' }}>{t('plan.activeNote')}</div>
                   : plan === 'free' && <button className="btn" disabled={paying || paymentPending || checkoutHold}
                     onClick={() => buyPlan('pro')} style={{ width: '100%' }}>{paying ? '…' : t('plan.chooseStandard')}</button>}
               </div>
@@ -431,18 +431,18 @@ export default function Parent({ onExit }) {
                   {pro && <span className="tag" style={{ borderColor: 'var(--green)', color: 'var(--green)' }}>{t('plan.active')}</span>}
                 </div>
                 <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>
-                  <small style={{ font: "500 13px 'Golos Text'", color: '#9A9384', marginRight: 6 }}>{t('plan.from')}</small>{planPrice('mentor', lang)}<span style={{ font: "500 13px 'Golos Text'", color: '#9A9384' }}>{t('plan.month')}</span>
+                  <small style={{ font: "500 13px 'Golos Text',system-ui,sans-serif", color: '#9A9384', marginRight: 6 }}>{t('plan.from')}</small>{planPrice('mentor', lang)}<span style={{ font: "500 13px 'Golos Text',system-ui,sans-serif", color: '#9A9384' }}>{t('plan.month')}</span>
                 </div>
-                <ul style={{ margin: '0 0 14px', padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text'", lineHeight: 2 }}>
+                <ul style={{ margin: '0 0 14px', padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text',system-ui,sans-serif", lineHeight: 2 }}>
                   <li>✓ {t('plan.p1')}</li>
                   <li>✓ {t('plan.p2')}</li>
                   <li>✓ {t('plan.p3')}</li>
                   <li>✓ {t('plan.p4')}</li>
                 </ul>
                 {pro ? (
-                  <div style={{ font: "600 13px 'Golos Text'", color: 'var(--green)' }}>{t('plan.activeNote')}</div>
+                  <div style={{ font: "600 13px 'Golos Text',system-ui,sans-serif", color: 'var(--green)' }}>{t('plan.activeNote')}</div>
                 ) : plan === 'pro' ? (
-                  upgradeSent ? <div style={{ font: "600 13px 'Golos Text'", color: 'var(--green)' }}>{text('Заявка отправлена — мы свяжемся с вами', 'Өтінім жіберілді — сізбен байланысамыз')}</div>
+                  upgradeSent ? <div style={{ font: "600 13px 'Golos Text',system-ui,sans-serif", color: 'var(--green)' }}>{text('Заявка отправлена — мы свяжемся с вами', 'Өтінім жіберілді — сізбен байланысамыз')}</div>
                     : <>{[2, 3].map((n) => <button key={n} className="btn accent" type="button" style={{ width: '100%', marginTop: n === 2 ? 0 : 8 }} onClick={() => requestUpgrade(n)}>
                       {text('Хочу перейти: ', 'Көшкім келеді: ')}{t('plan.lessons' + n)}</button>)}
                       <p className="muted" style={{ margin: '8px 0 0', fontSize: 12 }}>{text('Переход делаем вручную, без двойной оплаты. Мы свяжемся с вами.', 'Көшуді қолмен жасаймыз, қос төлемсіз. Сізбен байланысамыз.')}</p></>
@@ -618,7 +618,7 @@ function ChildPasswordCard({ child, onClose }) {
 }
 
 const lab = { display: 'block', font: "500 11px 'IBM Plex Mono',monospace", letterSpacing: '.08em', textTransform: 'uppercase', color: '#9A9384', marginBottom: 6 };
-const inp = { width: '100%', padding: '12px 14px', border: '1px solid var(--line)', background: '#fff', font: "500 15px 'Golos Text'", color: 'var(--ink)', outline: 'none' };
+const inp = { width: '100%', padding: '12px 14px', border: '1px solid var(--line)', background: '#fff', font: "500 15px 'Golos Text',system-ui,sans-serif", color: 'var(--ink)', outline: 'none' };
 
 function LoginPasswordCard({ t }) {
   const { lang } = useLang();

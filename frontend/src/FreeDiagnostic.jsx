@@ -1,3 +1,4 @@
+import usePublicTestDraft from './usePublicTestDraft.js';
 import './platform-fonts.css';
 import React, { useMemo, useState } from 'react';
 import Brand from './Brand.jsx';
@@ -48,6 +49,13 @@ export default function FreeDiagnostic({ onBack, onRegister }) {
   const [answers, setAnswers] = useState({});
   const questions = DIAGNOSTIC_QUESTIONS[grade];
   const current = questions[index];
+  const { resumeDraft, durable } = usePublicTestDraft('quick', ({ grade }) => DIAGNOSTIC_QUESTIONS[grade], screen, { grade, target, index, answers }, questions);
+  const resume = () => {
+    if (!resumeDraft) return;
+    setGrade(resumeDraft.grade); setTarget(resumeDraft.target); setIndex(resumeDraft.index);
+    setAnswers(resumeDraft.answers); setScreen('test'); window.scrollTo(0, 0);
+  };
+
 
   const report = useMemo(() => {
     const grouped = {};
@@ -97,12 +105,14 @@ export default function FreeDiagnostic({ onBack, onRegister }) {
           <div className="public-diag-grades">{[3, 4, 5, 6].map((value) => <button key={value} type="button" className={grade === value ? 'on' : ''} onClick={() => setGrade(value)}>{value}</button>)}</div>
           <label>{c.target}</label>
           <div className="public-diag-targets">{[{ id: 'general', label: c.general }, ...schools.map((value) => ({ id: value, label: value }))].map((item) => <button key={item.id} type="button" className={target === item.id ? 'on' : ''} onClick={() => setTarget(item.id)}>{item.label}</button>)}</div>
-          <button type="button" className="public-diag-primary" onClick={begin}>{c.start} →</button>
+          <button type="button" className="public-diag-primary" onClick={begin}>{resumeDraft ? (lang === 'ru' ? 'Начать новый тест' : 'Жаңа тест бастау') : c.start} →</button>
+          {resumeDraft && <button type="button" className="public-diag-secondary public-diag-resume" onClick={resume}>{lang === 'ru' ? 'Продолжить сохранённый тест' : 'Сақталған тестті жалғастыру'} · {resumeDraft.index + 1} →</button>}
           <small>{lang === 'ru' ? 'Email и номер телефона не нужны' : 'Email мен телефон нөмірі қажет емес'}</small>
         </section>
       </main>}
 
       {screen === 'test' && <main className="public-diag-test">
+        {!durable && <p role="alert">{lang === 'ru' ? 'Браузер не смог сохранить ответы. Не закрывайте страницу до завершения теста.' : 'Браузер жауаптарды сақтай алмады. Тест аяқталғанша бетті жаппаңыз.'}</p>}
         <div className="public-diag-progress"><i style={{ width: `${(index + 1) / questions.length * 100}%` }} /></div>
         <div className="public-diag-testmeta"><span>{c.question} {index + 1} {c.of} {questions.length}</span><b>{grade} {lang === 'ru' ? 'класс' : 'сынып'} · {targetLabel}</b></div>
         <section className="public-diag-question">

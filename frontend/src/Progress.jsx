@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLang } from './i18n.jsx';
-import { auth, getAttempts, getMocks, getXpSummary, watchPro } from './firebase.js';
+import { auth, getAttempts, getMocks, getPlatformDiagnostics, getXpSummary, watchPro } from './firebase.js';
 import { topicStats, weekHours, mockSeries, mockDisplayScore, formatStudyTime } from './analytics.js';
 import { loadTopicCatalog } from './topicCatalog.js';
 import { buildDiagnosis, pickDiagnosticMock } from './diagnosis.js';
@@ -11,11 +11,13 @@ const LEVEL_TXT = { strong: 'МЫҚТЫ', mid: 'ОРТАША', weak: 'ӘЛСІЗ
 const LEVEL_TXT_RU = { strong: 'СИЛЬНЫЙ', mid: 'СРЕДНИЙ', weak: 'СЛАБЫЙ' };
 const LEVEL_COL = { strong: '#4C7A4E', mid: '#B8892B', weak: '#B0342B' };
 
-export default function Progress({ onXpLoad, onTrainTopic }) {
+export default function Progress({ onXpLoad, onTrainTopic, onGoDiagnostic }) {
   const { t, lang } = useLang();
   const [stats, setStats] = useState(null);
   const [week, setWeek] = useState([]);
   const [mocks, setMocks] = useState([]);
+  const [diagnostics, setDiagnostics] = useState([]);
+  const [practiceAccuracy, setPracticeAccuracy] = useState(null);
   const [topics, setTopics] = useState([]);
   const [pro, setPro] = useState(null);
   const [xpInfo, setXpInfo] = useState({ xp: 0, studySecs: 0 });
@@ -44,12 +46,14 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
     });
     (async () => {
       try {
-        const [att, mk, topicList, xp] = await Promise.all([
-          getAttempts(uid), getMocks(uid), loadTopicCatalog(), getXpSummary(uid),
+        const [att, mk, topicList, xp, diagnosticResults] = await Promise.all([
+          getAttempts(uid), getMocks(uid), loadTopicCatalog(), getXpSummary(uid), getPlatformDiagnostics(uid),
         ]);
         const nextStats = topicStats(att, topicList);
         const nextWeek = weekHours(att);
         if (!active) return;
+        setDiagnostics(diagnosticResults);
+        setPracticeAccuracy(att.length ? Math.round(100 * att.filter(item => item.correct).length / att.length) : null);
         setTopics(topicList);
         setStats(nextStats);
         setWeek(nextWeek);
@@ -84,7 +88,7 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
     <main>
       <button className="link" onClick={() => { setOpen(null); setQ(null); }}>← {t('ui.42')}</button>
       <h1 style={{ marginBottom: 4 }}>{open.school || 'Мок-тест'}</h1>
-      <p className="kicker">{fmtDate(open.at)} · {mockDisplayScore(open).score}/{mockDisplayScore(open).max} {open.school === 'БИЛ' ? (lang === 'ru' ? 'баллов' : 'ұпай') : (lang === 'ru' ? 'верных ответов' : 'дұрыс жауап')}{open.spentSec ? ` · ${fmtSpent(open.spentSec)}` : ''}</p>
+      <p className="kicker">{fmtDate(open.at, lang)} · {mockDisplayScore(open).score}/{mockDisplayScore(open).max} {open.school === 'БИЛ' ? (lang === 'ru' ? 'баллов' : 'ұпай') : (lang === 'ru' ? 'верных ответов' : 'дұрыс жауап')}{open.spentSec ? ` · ${fmtSpent(open.spentSec)}` : ''}</p>
 
       {open.review ? (
         <div className="list" style={{ marginTop: 16 }}>
@@ -98,7 +102,7 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
                     {r.correct ? '✓' : '✗'} №{r.num}
                   </span>
                   <span className="muted" style={{ fontSize: 13, flex: 1 }}>
-                    сенің «{r.your ?? '—'}» · дұрыс «{r.answer ?? '?'}»
+                    {lang === 'ru' ? 'твой ответ' : 'сенің жауабың'} «{r.your ?? '—'}» · {lang === 'ru' ? 'верный' : 'дұрыс'} «{r.answer ?? '?'}»
                   </span>
                   <span className="muted" style={{ fontSize: 13 }}>{on ? '▲' : '▼'}</span>
                 </div>
@@ -122,9 +126,8 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
   const totalSeconds = week.reduce((sum, day) => sum + day.seconds, 0);
   const maxSeconds = Math.max(1, ...week.map((day) => day.seconds));
   const series = mockSeries(mocks);
-  const accuracy = stats.length
-    ? Math.round(stats.reduce((sum, item) => sum + item.pct, 0) / stats.length)
-    : 0;
+  const accuracy = practiceAccuracy;
+  const latestDiagnostic = diagnostics.find(item => item.completedAt && item.total > 0 && Number.isFinite(item.readiness) && item.topics?.length);
   const diagMock = pickDiagnosticMock(mocks);
   const diagnosis = diagMock?.review?.length
     ? buildDiagnosis(diagMock.review, topics, lang)
@@ -142,9 +145,9 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
 
       <section className="progress-overview">
         <article className="progress-overview-main">
-          <span>{t('diag.readiness')}</span>
-          <strong>{accuracy}%</strong>
-          <div><i style={{ width: `${accuracy}%` }} /></div>
+          <span>{lang === 'ru' ? 'Точность в практике' : 'Жаттығудағы дәлдік'}</span>
+          <strong>{accuracy === null ? '—' : `${accuracy}%`}</strong>
+          <div><i style={{ width: `${accuracy || 0}%` }} /></div>
           <small>{stats.length} {lang === 'ru' ? 'тем с результатами' : 'нәтижесі бар тақырып'}</small>
         </article>
         <article className="progress-overview-card progress-overview-xp"><span>★</span><small>{t('xp.title')}</small><strong>{xpInfo.xp || 0} XP</strong></article>
@@ -152,7 +155,12 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
         <article className="progress-overview-card progress-overview-mock"><span>✓</span><small>{lang === 'ru' ? 'Пробные тесты' : 'Сынақтар'}</small><strong>{mocks.length}</strong></article>
       </section>
 
-      {diagnosis ? (
+      {latestDiagnostic ? <section className="progress-diagnostic">
+        <div className="progress-diagnostic-head"><h2>{lang === 'ru' ? 'Последняя диагностика' : 'Соңғы диагностика'}</h2><strong>{latestDiagnostic.readiness}%</strong></div>
+        <p>{latestDiagnostic.correct}/{latestDiagnostic.total} {lang === 'ru' ? 'верных ответов' : 'дұрыс жауап'} · {new Date(latestDiagnostic.completedAt).toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'kk-KZ')}</p>
+        <ul>{latestDiagnostic.topics.map(item => <li key={item.moduleId}>{typeof item.title === 'string' ? item.title : item.title?.[lang] || item.title?.kk} — <b>{item.pct}%</b></li>)}</ul>
+        <button type="button" className="btn" onClick={onGoDiagnostic}>{lang === 'ru' ? 'Открыть диагностику' : 'Диагностиканы ашу'} →</button>
+      </section> : diagnosis ? (
         <DiagnosisReport
           diagnosis={diagnosis}
           pro={pro}
@@ -163,7 +171,7 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
       ) : (
         <div className="card" style={{ marginBottom: 16, borderColor: 'var(--accent)', background: '#FBF3E3' }}>
           <p className="kicker" style={{ color: 'var(--accent)', margin: '0 0 8px' }}>{t('diag.noData')}</p>
-          <p className="muted" style={{ margin: 0, fontSize: 14, lineHeight: 1.55 }}>{t('diag.noDataSub')}</p>
+          <p className="muted">{lang === 'ru' ? 'Пройди диагностику, чтобы увидеть результат по темам и план подготовки.' : 'Тақырыптар бойынша нәтиже мен дайындық жоспарын көру үшін диагностикадан өт.'}</p><button type="button" className="btn" onClick={onGoDiagnostic}>{lang === 'ru' ? 'Пройти диагностику' : 'Диагностикадан өту'}</button>
         </div>
       )}
 
@@ -218,7 +226,7 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
                 <div style={{ flex: 1 }}>
                   <b>{m.school || 'Мок-тест'}</b>
                   <div style={{ font: "500 12px 'IBM Plex Mono',monospace", color: '#9A9384', marginTop: 3 }}>
-                    {fmtDate(m.at)}{m.spentSec ? ` · ${fmtSpent(m.spentSec)}` : ''}
+                    {fmtDate(m.at, lang)}{m.spentSec ? ` · ${fmtSpent(m.spentSec)}` : ''}
                   </div>
                 </div>
                 <span className="rt">{mockDisplayScore(m).score}/{mockDisplayScore(m).max} {m.school === 'БИЛ' ? (lang === 'ru' ? 'баллов' : 'ұпай') : (lang === 'ru' ? 'верных' : 'дұрыс')} →</span>
@@ -231,9 +239,9 @@ export default function Progress({ onXpLoad, onTrainTopic }) {
   );
 }
 
-function fmtDate(at) {
+function fmtDate(at, lang) {
   const ms = at?.seconds ? at.seconds * 1000 : (at ? Date.parse(at) : NaN);
   if (!ms || Number.isNaN(ms)) return '';
-  return new Date(ms).toLocaleString('kk-KZ', { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' });
+  return new Date(ms).toLocaleString(lang === 'ru' ? 'ru-RU' : 'kk-KZ', { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' });
 }
 const fmtSpent = (s) => `${Math.floor(s / 60)} мин ${String(s % 60).padStart(2, '0')} сек`;

@@ -13,7 +13,7 @@ export default function Subscription({ currentPlan = 'free', onBack }) {
     { id: 'pro', name: t('plan.pro'), price: `${t('plan.from')} ${planPrice('mentor', lang)}`, features: [t('plan.p1'), t('plan.p2'), t('plan.p3'), t('plan.p4')], tone: 'pro' },
   ];
   const chosen = plans.find((item) => item.id === selected);
-  const shownPlan = currentPlan === 'pro' ? 'standard' : currentPlan === 'mentor' ? 'pro' : currentPlan;
+  const shownPlan = currentPlan === 'pro' ? 'standard' : currentPlan === 'mentor' ? 'pro' : currentPlan === 'standard' ? 'legacy' : currentPlan;
   const active = shownPlan === selected;
 
   return (
@@ -32,9 +32,10 @@ export default function Subscription({ currentPlan = 'free', onBack }) {
           <p>{ru ? 'Начните бесплатно, выберите Standard для самостоятельной подготовки или Pro с живыми уроками наставника.' : 'Тегін бастаңыз, өз бетінше дайындалуға Standard, тірі сабақтарға тәлімгермен Pro таңдаңыз.'}</p>
         </section>
 
+        {currentPlan === 'standard' && <p className="subscription-legacy-note">{ru ? 'У вас архивный Standard — 2 990 ₸/мес. Его лимиты сохраняются. Новый Standard за 5 999 ₸/мес. включает все темы и задачи без дневного лимита.' : 'Сізде архивтік Standard — айына 2 990 ₸. Оның лимиттері сақталады. Айына 5 999 ₸ жаңа Standard-та барлық тақырыптар мен есептер күндік шектеусіз ашылады.'}</p>}
         <section className="subscription-choice subscription-plans" aria-label={t('subscription.tariff')}>
           {plans.map((item) => {
-            const isCurrent = (currentPlan === 'pro' ? 'standard' : currentPlan === 'mentor' ? 'pro' : currentPlan) === item.id, isSelected = selected === item.id;
+            const isCurrent = shownPlan === item.id, isSelected = selected === item.id;
             return <button type="button" key={item.id} className={`subscription-plan-card is-${item.tone}${isSelected ? ' selected' : ''}${isCurrent ? ' active' : ''}`}
               onClick={() => item.id !== 'free' && setSelected(item.id)} aria-pressed={isSelected}>
               <span className="subscription-plan-status">{isCurrent ? t('plan.current') : isSelected ? '✓' : ''}</span>

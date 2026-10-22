@@ -71,12 +71,12 @@ body{
 @media(max-width:1100px){.lp-live-demo-grid{grid-template-columns:1fr}.lp-live-demo-card{min-height:0}.lp-live-demo-task{min-height:620px}.lp-live-demo-diagnostic,.lp-live-demo-parent{min-height:390px}.lp-live-demo-task .lp-live-demo-copy h3{font-size:26px}}
 @media(max-width:560px){.lp-live-demo-grid{margin-bottom:40px;gap:14px}.lp-live-demo-card{padding:20px;border-radius:20px}.lp-live-demo-task{min-height:590px}.lp-live-demo-diagnostic,.lp-live-demo-parent{min-height:380px}.lp-live-demo-copy h3,.lp-live-demo-task .lp-live-demo-copy h3{font-size:22px}.lp-live-demo-copy p,.lp-live-demo-task .lp-live-demo-copy p{font-size:13px}.lp-live-demo-scene{padding:10px}.lp-live-demo-task .lp-live-demo-scene{min-height:405px;padding:12px}.lp-live-window{padding:13px}.lp-task-window h4{margin:23px 0 19px;font-size:38px}.lp-task-options>span{min-height:53px}.lp-live-demo-foot{align-items:flex-start;flex-direction:column-reverse;gap:4px}.lp-live-demo-foot>span{max-width:none}.lp-live-demo-foot button{align-self:flex-end}.lp-live-weak-note,.lp-live-parent-tip{left:13px;right:13px;bottom:11px}}
 @media(prefers-reduced-motion:reduce){.lp-live-cursor{display:none}.lp-live-bars b,.lp-live-parent-score b,.lp-task-explain,.lp-live-weak-note,.lp-live-parent-tip{transition:none}}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 0 16px;border-bottom:1px solid var(--line)}
+.parent-app>header,.admin-app>header{display:flex;justify-content:space-between;align-items:center;padding:20px 0 16px;border-bottom:1px solid var(--line)}
 .logo{display:inline-flex;align-items:center}
 .brand-mark{display:inline-flex;align-items:center;justify-content:center;min-width:154px;padding:13px 24px;border-radius:13px;background:linear-gradient(135deg,#48ACFF,#2B91EA);color:#fff;font:800 25px/1 'Golos Text',system-ui,sans-serif;letter-spacing:.055em;box-shadow:0 12px 28px -18px rgba(18,112,194,.9)}
 .brand-mark.compact{min-width:112px;padding:10px 16px;border-radius:10px;font-size:18px}
 nav{display:flex;align-items:center;gap:6px}
-nav button{background:none;border:none;color:var(--muted);font:600 13.5px 'Golos Text';cursor:pointer;padding:7px 10px}
+nav button{background:none;border:none;color:var(--muted);font:600 13.5px 'Golos Text',system-ui,sans-serif;cursor:pointer;padding:7px 10px}
 main{padding-top:22px;animation:rise .35s ease both}
 h1{font:600 26px 'Lora',serif;letter-spacing:-.02em;margin:0 0 4px}
 h2{font:600 20px 'Lora',serif;letter-spacing:-.01em;margin:0 0 14px}
@@ -84,14 +84,14 @@ h2{font:600 20px 'Lora',serif;letter-spacing:-.01em;margin:0 0 14px}
 .muted{color:var(--muted);font-size:14px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 12px 35px -30px rgba(31,107,172,.65)}
 .card + .card{margin-top:14px}
-.btn{padding:13px 24px;border:none;border-radius:11px;background:var(--accent);color:#fff;font:600 15px 'Golos Text';cursor:pointer;box-shadow:0 9px 22px -15px rgba(22,122,209,.9);transition:transform .18s,background .18s}
+.btn{padding:13px 24px;border:none;border-radius:11px;background:var(--accent);color:#fff;font:600 15px 'Golos Text',system-ui,sans-serif;cursor:pointer;box-shadow:0 9px 22px -15px rgba(22,122,209,.9);transition:transform .18s,background .18s}
 .btn:hover:not(:disabled){transform:translateY(-1px);background:var(--accent-dark)}
 .btn.accent{background:var(--accent);color:#fff}
 .btn.ghost{background:#fff;color:var(--accent-dark);border:1px solid var(--line);box-shadow:none}
 .btn:disabled{opacity:.4;cursor:default}
 .btn.full{width:100%}
-.link{background:none;border:none;color:var(--muted);font:500 13px 'Golos Text';cursor:pointer;padding:8px 0}
-input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font:500 15px 'Golos Text';color:var(--ink);outline:none;margin-bottom:12px}
+.link{background:none;border:none;color:var(--muted);font:500 13px 'Golos Text',system-ui,sans-serif;cursor:pointer;padding:8px 0}
+input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font:500 15px 'Golos Text',system-ui,sans-serif;color:var(--ink);outline:none;margin-bottom:12px}
 input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(58,157,245,.12)}
 .sidebar .logo { margin-bottom:34px; }
 .grid2 .card { border:1px solid var(--line); display:flex; flex-direction:column; justify-content:flex-start; min-height:120px; }
@@ -162,3 +162,5 @@ input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(58,157,245,.12)
 .lp-demo-coin{display:grid;place-items:center;align-self:center;width:88px;height:88px;border:6px solid #FFE5A0;outline:1px solid #EFB847;border-radius:50%;margin:30px 0 20px;background:#FFD264;color:#A96A0A;font-size:44px;transition:transform .7s}.lp-demo-coin.earned{transform:rotateY(360deg)}.lp-reward-total{text-align:center}.lp-reward-total strong{display:block;color:#1D4ED8;font:800 42px 'Manrope',sans-serif;margin:8px 0}.lp-reward-total em{font-style:normal;font-size:18px}.lp-reward-rule{margin:12px auto;padding:10px 16px;border-radius:9px;background:#FFF7E3;font-size:12px;color:#9B680F}
 .lp-demo-level{display:flex;flex-direction:column;align-items:center;justify-content:center;align-self:center;width:90px;height:90px;margin:26px 0 18px;background:#EDF2FF;border:1px solid #DCE5FF;border-radius:24px;color:#1D4ED8;transition:transform .4s,background .4s}.lp-demo-level small{font-size:11px}.lp-demo-level strong{font-size:38px}.lp-demo-level.level-up{transform:scale(1.06);background:#E4ECFF}.lp-xp-track{height:8px;background:#E7EEF6;border-radius:9px;margin:15px 0;overflow:hidden}.lp-xp-track i{display:block;height:100%;background:linear-gradient(90deg,#1D4ED8,#38BDF8);transition:width .7s}
 @media(prefers-reduced-motion:reduce){.lp-demo-coin,.lp-demo-level,.lp-xp-track i,.lp-motivation-result,.lp-duel-options span{transition:none}}
+
+.public-diag-resume{display:block;margin:12px auto 0;padding:14px 22px;max-width:100%;line-height:1.45;min-height:44px}

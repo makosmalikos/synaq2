@@ -57,7 +57,7 @@ export default function DiagnosisReport({ diagnosis, pro, onUnlock, onTrainTopic
       <div className={'diag-locked' + (locked ? ' is-locked' : '')}>
         {locked && (
           <div className="diag-lock-overlay">
-            <p style={{ margin: '0 0 12px', font: "600 16px 'Golos Text'" }}>{t('diag.lockedTitle')}</p>
+            <p style={{ margin: '0 0 12px', font: "600 16px 'Golos Text',system-ui,sans-serif" }}>{t('diag.lockedTitle')}</p>
             <p className="muted" style={{ margin: '0 0 16px', fontSize: 13.5, lineHeight: 1.5 }}>{t('diag.lockedSub')}</p>
             <button type="button" className="btn accent" onClick={onUnlock}>{t('diag.unlock')}</button>
           </div>
@@ -86,7 +86,7 @@ export default function DiagnosisReport({ diagnosis, pro, onUnlock, onTrainTopic
                   <div key={tp.id} className="row-item" style={{ cursor: 'default' }}>
                     <b style={{ flex: 1 }}>{tp.name}</b>
                     <span className="diagnosis-level" style={{ color: LEVEL_COL[tp.level] }}>
-                      {tp.pct}% · {LEVEL_TXT[tp.level]}
+                      {tp.pct}% · {lang === 'ru' ? ({ strong: 'СИЛЬНЫЙ', mid: 'СРЕДНИЙ', weak: 'СЛАБЫЙ' }[tp.level]) : LEVEL_TXT[tp.level]}
                     </span>
                   </div>
                 ))}

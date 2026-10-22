@@ -235,7 +235,7 @@ export default function Auth({ onClose, duelCode = '' }) {
             </div>
 
             <button type="button" style={S.google} disabled={busy} onClick={run(loginGoogle)}>
-              <span style={{ font: "700 15px 'Golos Text'", color: '#4285F4' }}>G</span> {t('auth.google')}
+              <span style={{ font: "700 15px 'Golos Text',system-ui,sans-serif", color: '#4285F4' }}>G</span> {t('auth.google')}
             </button>
             <button type="button" style={S.back} onClick={() => setStage('start')}>{t('common.back')}</button>
           </form>
@@ -289,12 +289,12 @@ const S = {
   or: { font: "500 11px 'IBM Plex Mono',monospace", color: '#9A9384' },
   dark: { width: '100%', padding: 15, background: '#1D4ED8', color: '#FFFFFF', border: 'none', borderRadius: 13, font: "750 14.5px 'Manrope',sans-serif", cursor: 'pointer', marginBottom: 10, boxShadow: '0 12px 24px -14px rgba(29,78,216,.75)' },
   outline: { width: '100%', padding: 15, background: '#FFFFFF', color: '#167AD1', border: '1px solid rgba(39,132,211,.24)', borderRadius: 13, font: "750 14.5px 'Manrope',sans-serif", cursor: 'pointer' },
-  input: { width: '100%', padding: '13px 14px', border: '1px solid rgba(39,132,211,.24)', borderRadius: 10, font: "500 15px 'Golos Text'", color: '#13283C', outline: 'none', background: '#fff', marginBottom: 10 },
-  fieldLabel: { display: 'block', margin: '0 0 6px', font: "600 12px 'Golos Text'", color: '#36536B' },
-  fieldHelp: { margin: '-3px 0 11px', font: "500 11.5px/1.4 'Golos Text'", color: '#8094A7' },
+  input: { width: '100%', padding: '13px 14px', border: '1px solid rgba(39,132,211,.24)', borderRadius: 10, font: "500 15px 'Golos Text',system-ui,sans-serif", color: '#13283C', outline: 'none', background: '#fff', marginBottom: 10 },
+  fieldLabel: { display: 'block', margin: '0 0 6px', font: "600 12px 'Golos Text',system-ui,sans-serif", color: '#36536B' },
+  fieldHelp: { margin: '-3px 0 11px', font: "500 11.5px/1.4 'Golos Text',system-ui,sans-serif", color: '#8094A7' },
   pinWrap: { position: 'relative', marginBottom: 10 },
-  pinToggle: { position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', border: 0, background: '#EAF5FF', color: '#167AD1', borderRadius: 7, padding: '6px 8px', cursor: 'pointer', font: "600 11px 'Golos Text'" },
-  back: { width: '100%', marginTop: 6, padding: 9, background: 'transparent', color: '#6B655B', border: 'none', font: "500 13.5px 'Golos Text'", cursor: 'pointer' },
-  linkBtn: { width: '100%', marginTop: 4, padding: 8, background: 'transparent', color: '#6B655B', border: 'none', font: "500 13px 'Golos Text'", cursor: 'pointer', textDecoration: 'underline' },
+  pinToggle: { position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', border: 0, background: '#EAF5FF', color: '#167AD1', borderRadius: 7, padding: '6px 8px', cursor: 'pointer', font: "600 11px 'Golos Text',system-ui,sans-serif" },
+  back: { width: '100%', marginTop: 6, padding: 9, background: 'transparent', color: '#6B655B', border: 'none', font: "500 13.5px 'Golos Text',system-ui,sans-serif", cursor: 'pointer' },
+  linkBtn: { width: '100%', marginTop: 4, padding: 8, background: 'transparent', color: '#6B655B', border: 'none', font: "500 13px 'Golos Text',system-ui,sans-serif", cursor: 'pointer', textDecoration: 'underline' },
   google: { width: '100%', padding: 14, background: '#fff', color: '#13283C', border: '1px solid rgba(39,132,211,.2)', borderRadius: 13, font: "700 14px 'Manrope',sans-serif", cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9 },
 };

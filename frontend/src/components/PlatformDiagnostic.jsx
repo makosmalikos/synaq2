@@ -8,6 +8,7 @@ import {
   diagnosticProgressKey,
   diagnosticStorageKey,
   readDiagnosticProgress,
+  restoredDiagnosticAnswer,
   trainingTopicForKind,
 } from '../platformDiagnostic.js';
 import { acknowledgeDiagnosticResult, diagnosticRecovery, stageDiagnosticResult } from '../diagnosticPersistence.js';
@@ -22,7 +23,7 @@ const copy = {
     adaptive: 'Адаптивная сложность', noHints: 'Без подсказок — так результат будет точнее',
     stage1: 'Проверяем фундамент', stage2: 'Подстраиваем сложность', stage3: 'Уточняем слабые места',
     enter: 'Введите ответ', next: 'Ответить', skip: 'Пропустить', finish: 'Завершить диагностику',
-    result: 'Диагностика завершена', readiness: 'Общая готовность', correct: 'правильных',
+    result: 'Диагностика завершена', readiness: 'Результат диагностики', correct: 'правильных',
     time: 'минут', map: 'Карта навыков', weak: 'Нужно подтянуть', strong: 'Сильные навыки',
     plan: 'Персональный план на 7 дней', practice: 'Начать тренировку', again: 'Пройти заново',
     resume: 'Продолжить диагностику', history: 'История диагностики', retest: 'Повторная диагностика',
@@ -36,7 +37,7 @@ const copy = {
     adaptive: 'Бейімделетін күрделілік', noHints: 'Нәтиже дәл болу үшін көмексіз орында',
     stage1: 'Негізді тексереміз', stage2: 'Күрделілікті бейімдейміз', stage3: 'Әлсіз тұстарды нақтылаймыз',
     enter: 'Жауапты енгіз', next: 'Жауап беру', skip: 'Өткізіп жіберу', finish: 'Диагностиканы аяқтау',
-    result: 'Диагностика аяқталды', readiness: 'Жалпы дайындық', correct: 'дұрыс',
+    result: 'Диагностика аяқталды', readiness: 'Диагностика нәтижесі', correct: 'дұрыс',
     time: 'минут', map: 'Дағдылар картасы', weak: 'Күшейту керек', strong: 'Мықты дағдылар',
     plan: '7 күндік жеке жоспар', practice: 'Жаттығуды бастау', again: 'Қайта өту',
     resume: 'Диагностиканы жалғастыру', history: 'Диагностика тарихы', retest: 'Қайта диагностика',
@@ -133,8 +134,7 @@ export default function PlatformDiagnostic({ initialGrade, onGoPractice }) {
       window.scrollTo(0, 0); return;
     }
     attemptId.current = value.id; setGrade(value.grade); setSession(value);
-    const pending = draft?.pendingAnswer;
-    const restoredAnswer = pending?.index === value.index ? pending.answer : draft?.answer || '';
+    const restoredAnswer = restoredDiagnosticAnswer(value, draft);
     storeProgress({ version: PLATFORM_DIAGNOSTIC_VERSION, screen: 'test', grade: value.grade,
       index: value.index, answer: restoredAnswer, attemptId: value.id, pendingStart: false, pendingAnswer: null });
     setAnswer(restoredAnswer);
@@ -200,13 +200,14 @@ export default function PlatformDiagnostic({ initialGrade, onGoPractice }) {
       <section className="platform-diag-question-card">
         <div className="platform-diag-question-meta"><span>{local(current.topic.title, lang)}</span><b>{current.difficulty === 'easy' ? '01' : current.difficulty === 'medium' ? '02' : '03'}</b></div>
         <h1>{local(current.question.text, lang)}</h1>
-        <input autoFocus inputMode="text" value={answer} onChange={(event) => setAnswer(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') submit(); }} placeholder={c.enter} />
+        <input aria-label={c.enter} autoFocus inputMode="text" value={answer} onChange={(event) => setAnswer(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') submit(); }} placeholder={c.enter} />
         <div><button className="platform-diag-skip" disabled={saveState === 'saving'} onClick={() => submit(true)}>{c.skip}</button><button className="platform-diag-primary" disabled={!answer.trim() || saveState === 'saving'} onClick={() => submit()}>{index === 19 ? c.finish : c.next} →</button></div>
       </section>
     </main>;
   }
 
   const ranked = result?.topics || [];
+  const mistakes = result?.mistakes || [];
   const weak = ranked.filter((item) => item.level !== 'strong').slice(0, 3);
   const strong = ranked.filter((item) => item.level === 'strong');
   const plan = (weak.length ? weak : ranked.slice(0, 3));
@@ -218,7 +219,7 @@ export default function PlatformDiagnostic({ initialGrade, onGoPractice }) {
     <section className="platform-diag-map"><div className="platform-diag-section-head"><span>01</span><div><h2>{c.map}</h2><p>{grade} {c.grade.toLowerCase()}</p></div></div><div className="platform-diag-skill-grid">{ranked.map((item) => <article className={`is-${item.level}`} key={item.moduleId}><div><b>{local(item.title, lang)}</b><strong>{item.pct}%</strong></div><div><i style={{ width: `${item.pct}%` }} /></div><small>{item.correct}/{item.total}</small></article>)}</div></section>
     <div className="platform-diag-columns"><section><div className="platform-diag-section-head"><span>02</span><div><h2>{c.weak}</h2></div></div>{weak.map((item) => <article className="platform-diag-topic-row weak" key={item.moduleId}><b>{local(item.title, lang)}</b><strong>{item.pct}%</strong></article>)}</section><section><div className="platform-diag-section-head"><span>03</span><div><h2>{c.strong}</h2></div></div>{strong.length ? strong.slice(0,3).map((item) => <article className="platform-diag-topic-row strong" key={item.moduleId}><b>{local(item.title, lang)}</b><strong>{item.pct}%</strong></article>) : <p className="platform-diag-empty">{c.emptyStrong}</p>}</section></div>
     <section className="platform-diag-plan"><div className="platform-diag-section-head"><span>04</span><div><h2>{c.plan}</h2></div></div><div>{plan.map((item, i) => <article key={item.moduleId}><span>{c.day} {i * 2 + 1}</span><b>{local(item.title, lang)}</b><small>{5 + i * 2} {c.tasks}</small></article>)}<article className="repeat"><span>{c.day} 7</span><b>{c.retest}</b><small>↻</small></article></div><button className="platform-diag-primary" onClick={() => onGoPractice?.(practiceTopic)}>{c.practice} →</button></section>
-    {!!result.mistakes.length && <section className="platform-diag-review"><div className="platform-diag-section-head"><span>05</span><div><h2>{c.review}</h2><p>{result.mistakes.length}</p></div></div>{result.mistakes.map((item, i) => <details key={`${item.moduleId}-${i}`}><summary><span>{String(i + 1).padStart(2, '0')}</span><b>{local(item.text, lang)}</b><i>+</i></summary><div><p><small>{c.your}</small><b>{item.your || '—'}</b></p><p className="right"><small>{c.right}</small><b>{item.answer}</b></p><aside><strong>{c.solution}</strong>{local(item.solution, lang)}</aside></div></details>)}</section>}
+    {!!mistakes.length && <section className="platform-diag-review"><div className="platform-diag-section-head"><span>05</span><div><h2>{c.review}</h2><p>{mistakes.length}</p></div></div>{mistakes.map((item, i) => <details key={`${item.moduleId}-${i}`}><summary><span>{String(i + 1).padStart(2, '0')}</span><b>{local(item.text, lang)}</b><i>+</i></summary><div><p><small>{c.your}</small><b>{item.your || '—'}</b></p><p className="right"><small>{c.right}</small><b>{item.answer}</b></p><aside><strong>{c.solution}</strong>{local(item.solution, lang)}</aside></div></details>)}</section>}
     <section className="platform-diag-history"><div className="platform-diag-section-head"><span>06</span><div><h2>{c.history}</h2><p>{daysLeft ? (lang === 'ru' ? `Повторная проверка через ${daysLeft} дн.` : `Қайта тексеруге ${daysLeft} күн қалды`) : (lang === 'ru' ? 'Можно пройти повторную проверку' : 'Қайта тексеруден өтуге болады')}</p></div></div><div>{history.slice(0, 5).map((item, i) => <article key={item.id || item.completedAt || i}><time>{new Date(item.completedAt).toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'kk-KZ')}</time><i style={{ height: `${Math.max(8, item.readiness)}%` }} /><strong>{item.readiness}%</strong></article>)}</div></section>
     <div className="platform-diag-actions"><button disabled={saveState === 'saving'} onClick={begin}>{daysLeft ? c.again : c.retest}</button><button className="platform-diag-primary" onClick={() => onGoPractice?.(practiceTopic)}>{c.practice} →</button></div>
   </main>;

@@ -4,8 +4,9 @@ import { STATIC_TOPICS } from './topicCatalog.generated.js';
 
 const LEVEL = (pct) => (pct >= 70 ? 'strong' : pct >= 50 ? 'mid' : 'weak');
 
-function topicName(id, topicList) {
-  return topicList.find((t) => t.id === id)?.name || id;
+function topicName(id, topicList, lang) {
+  const topic = topicList.find((t) => t.id === id);
+  return (lang === 'ru' ? topic?.nameRu || topic?.name : topic?.name) || id;
 }
 
 // isGradable, не просто "answer непустой": иначе задачи-заглушки ('—'/'-',
@@ -62,7 +63,7 @@ export function buildDiagnosis(review, topicList, lang = 'kk') {
       const total = g.correct + g.wrong + g.skipped;
       const graded = g.correct + g.wrong;
       const pct = total ? Math.round((g.correct / total) * 100) : 0;
-      const name = topicName(g.id, topicList);
+      const name = topicName(g.id, topicList, lang);
       return {
         ...g,
         name,
@@ -110,9 +111,9 @@ export function pickDiagnosticMock(mocks) {
   if (!mocks?.length) return null;
   const diag = mocks.filter((m) => m.diagnostic && m.review?.length);
   if (diag.length) {
-    return diag.sort((a, b) => (b.at?.seconds || 0) - (a.at?.seconds || 0))[0];
+    return diag.sort((a, b) => (b.at?.seconds || 0) - (a.at?.seconds || 0))[0] || null;
   }
   return [...mocks]
-    .filter((m) => m.review?.length)
-    .sort((a, b) => (b.at?.seconds || 0) - (a.at?.seconds || 0))[0];
+    .filter((m) => m.diagnostic === true && m.review?.length)
+    .sort((a, b) => (b.at?.seconds || 0) - (a.at?.seconds || 0))[0] || null;
 }

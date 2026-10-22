@@ -402,7 +402,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
           )}
           {tab === 'duel' && <Duel initialCode={duelCode} fromLink={!!duelCode} playerName={profile.name} onXp={(n) => setXp((x) => x + n)} />}
           {tab === 'league' && <League />}
-          {tab === 'progress' && <Progress onXpLoad={mergeXp} onTrainTopic={goTrainTopic} />}
+          {tab === 'progress' && <Progress onXpLoad={mergeXp} onTrainTopic={goTrainTopic} onGoDiagnostic={() => pick('diagnosis')} />}
           {tab === 'rewards' && <Rewards key={user.uid} onGoTraining={() => pick('training')} />}
         </Suspense>
       </div>

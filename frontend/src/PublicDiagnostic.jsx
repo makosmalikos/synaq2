@@ -1,3 +1,4 @@
+import usePublicTestDraft from './usePublicTestDraft.js';
 import './platform-fonts.css';
 import QuestionFigure from './components/QuestionFigure.jsx';
 import FigureOption, { hasFigureOptions, mainFigureSrc } from './components/FigureOption.jsx';
@@ -67,6 +68,13 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
   const mock = PUBLIC_MOCKS[target];
   const questions = mock.questions;
   const current = questions[index];
+  const { resumeDraft, durable } = usePublicTestDraft('mock', ({ target }) => PUBLIC_MOCKS[target]?.questions, screen, { grade, target, index, answers, deadline }, questions);
+  const resume = () => {
+    if (!resumeDraft) return;
+    setDeadline(resumeDraft.deadline); setClock(Date.now()); setTarget(resumeDraft.target); setIndex(resumeDraft.index);
+    setAnswers(resumeDraft.answers); setScreen('test'); window.scrollTo(0, 0);
+  };
+
 
   const report = useMemo(() => scorePublicMock(questions, answers, target), [answers, questions, target]);
 
@@ -74,6 +82,7 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
   const persistResult = () => savePublicDiagnosticResult(createPublicDiagnosticResult({ grade, target, report }));
   useEffect(() => {
     if (screen !== 'test' || !deadline) return undefined;
+    if (Date.now() >= deadline) { persistResult(); setScreen('result'); window.scrollTo(0, 0); return; }
     const timer = setInterval(() => {
       const now = Date.now();
       setClock(now);
@@ -118,7 +127,8 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
         <section className="public-diag-config">
           <label>{c.target}</label>
           <div className="public-diag-targets">{schools.map((value) => ({ id: value, label: value })).map((item) => <button key={item.id} type="button" className={target === item.id ? 'on' : ''} onClick={() => { setTarget(item.id); setAnswers({}); setIndex(0); }}>{item.label}</button>)}</div>
-          <button type="button" className="public-diag-primary" onClick={begin}>{c.start} →</button>
+          <button type="button" className="public-diag-primary" onClick={begin}>{resumeDraft ? (lang === 'ru' ? 'Начать новый тест' : 'Жаңа тест бастау') : c.start} →</button>
+          {resumeDraft && <button type="button" className="public-diag-secondary public-diag-resume" onClick={resume}>{lang === 'ru' ? 'Продолжить сохранённый тест' : 'Сақталған тестті жалғастыру'} · {resumeDraft.index + 1} →</button>}
           <small>{target === 'БИЛ'
             ? (lang === 'ru' ? 'БИЛ: правильный +4, неправильный −1, без ответа 0' : 'БИЛ: дұрыс +4, қате −1, жауапсыз 0')
             : target === 'РФМШ'
@@ -128,6 +138,7 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
       </main>}
 
       {screen === 'test' && <main className="public-diag-test">
+        {!durable && <p role="alert">{lang === 'ru' ? 'Браузер не смог сохранить ответы. Не закрывайте страницу до завершения теста.' : 'Браузер жауаптарды сақтай алмады. Тест аяқталғанша бетті жаппаңыз.'}</p>}
         <div className="public-diag-progress"><i style={{ width: `${(index + 1) / questions.length * 100}%` }} /></div>
         <div className="public-diag-testmeta"><span>{c.question} {index + 1} {c.of} {questions.length}</span><b>{targetLabel} · {formatTime(remainingSec)}</b></div>
         <section className="public-diag-question">
@@ -135,7 +146,7 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
           <h1>{current.statement}</h1>
           {mainFigureSrc(current) && <QuestionFigure src={mainFigureSrc(current)} />}
           {current.options ? <div className={`public-diag-options${hasFigureOptions(current) ? ' figure-options' : ''}`}>{current.options.map((option, optionIndex) => <button type="button" key={`${optionIndex}-${option}`} className={answers[current.id] === option ? 'on' : ''} onClick={() => setAnswers((value) => ({ ...value, [current.id]: option }))}><i>{String.fromCharCode(65 + optionIndex)}</i><FigureOption question={current} value={option} /></button>)}</div>
-            : <input className="public-diag-answer-input" value={answers[current.id] || ''} onChange={(event) => setAnswers((value) => ({ ...value, [current.id]: event.target.value }))} placeholder={lang === 'ru' ? 'Введите ответ' : 'Жауапты енгізіңіз'} />}
+            : <input aria-label={lang === 'ru' ? 'Ваш ответ' : 'Жауабыңыз'} className="public-diag-answer-input" value={answers[current.id] || ''} onChange={(event) => setAnswers((value) => ({ ...value, [current.id]: event.target.value }))} placeholder={lang === 'ru' ? 'Введите ответ' : 'Жауапты енгізіңіз'} />}
           <div className="public-diag-question-foot"><button type="button" className="public-diag-secondary" disabled={index === 0} onClick={() => setIndex((value) => value - 1)}>← {lang === 'ru' ? 'Назад' : 'Артқа'}</button><span>{answers[current.id] == null || answers[current.id] === '' ? c.pick : '✓'}</span><button type="button" className="public-diag-primary" onClick={next}>{index === questions.length - 1 ? c.finish : c.next} →</button></div>
         </section>
       </main>}

@@ -42,6 +42,12 @@ export default function Notifications({ role = 'child', onOpenLessons }) {
     document.addEventListener('pointerdown', close);
     return () => document.removeEventListener('pointerdown', close);
   }, [open]);
+  useEffect(() => {
+    if (!open) return;
+    const escape = e => { if (e.key === 'Escape') { setOpen(false); box.current?.querySelector('button')?.focus(); } };
+    document.addEventListener('keydown', escape);
+    return () => document.removeEventListener('keydown', escape);
+  }, [open]);
   const unread = items.filter((item) => !read.has(item.key));
   const toggle = () => {
     const next = !open;
@@ -55,12 +61,12 @@ export default function Notifications({ role = 'child', onOpenLessons }) {
         🔔{unread.length > 0 && <b style={{ marginLeft: 6, background: '#DC2626', color: '#fff', borderRadius: 10, padding: '1px 7px', fontSize: 12 }}>{unread.length}</b>}
       </button>
       {open && (
-        <div className="card" role="dialog" style={{ position: 'absolute', right: 0, top: '110%', width: 'min(340px, 86vw)', zIndex: 60, padding: 12, boxShadow: '0 18px 40px rgba(20,40,80,.2)' }}>
+        <div className="card notifications-panel" role="dialog" aria-label={lang === 'ru' ? 'Уведомления' : 'Хабарландырулар'} onKeyDown={e => { if (e.key === 'Escape') { setOpen(false); box.current?.querySelector('button')?.focus(); } }}>
           <b>{lang === 'ru' ? 'Уведомления' : 'Хабарландырулар'}</b>
           {!items.length && <p className="muted" style={{ margin: '8px 0 0' }}>{lang === 'ru' ? 'Пока ничего нового.' : 'Әзірге жаңалық жоқ.'}</p>}
           {items.map((item) => (
             <button key={item.key} type="button" onClick={() => { setOpen(false); if (role === 'child' && onOpenLessons && item.kind !== 'plan_ending') onOpenLessons(); }}
-              style={{ display: 'block', width: '100%', textAlign: 'left', background: read.has(item.key) ? 'transparent' : '#EEF6FF', border: 0, borderTop: '1px solid var(--line)', padding: '10px 6px', cursor: 'pointer', font: "500 14px 'Golos Text'", color: 'inherit' }}>
+              style={{ display: 'block', width: '100%', textAlign: 'left', background: read.has(item.key) ? 'transparent' : '#EEF6FF', border: 0, borderTop: '1px solid var(--line)', padding: '10px 6px', cursor: 'pointer', font: "500 14px 'Golos Text',system-ui,sans-serif", color: 'inherit' }}>
               {notificationText(item, lang, role)}
             </button>))}
         </div>)}

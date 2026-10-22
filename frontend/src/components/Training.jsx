@@ -105,7 +105,7 @@ export function Kolhar({ q, answer, onPick, disabled, correct }) {
                 display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
               }}>
               <span style={{ font: "700 22px 'Lora',serif", lineHeight: 1 }}>{o.sign}</span>
-              <span style={{ font: "600 12.5px 'Golos Text'" }}>{o.label}</span>
+              <span style={{ font: "600 12.5px 'Golos Text',system-ui,sans-serif" }}>{o.label}</span>
             </button>
           );
         })}
@@ -550,7 +550,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened }) {
       {sessionState === 'expired' && <p role="alert">{ru ? 'Сессия задачи закончилась. Этот ответ не засчитан. Начни задачу заново, чтобы продолжить.' : 'Есеп сессиясының мерзімі бітті. Бұл жауап есептелмеді. Жалғастыру үшін есепті қайта баста.'} <button type="button" className="link" onClick={() => beginQuestion({ fresh: true })}>{ru ? 'Начать заново' : 'Қайта бастау'}</button></p>}
       <div className="qhead">
         <span className="qnum-chip">{i + 1}/{items.length}</span>
-        {q.needsTranslation && <span style={{ ...chip, color: '#9A9384' }} title="Қазақша аудармасы әзірге жоқ">рус</span>}
+        {q.needsTranslation && <span style={{ ...chip, color: '#9A9384' }} title={ru ? 'Перевод временно недоступен. Показан оригинал задания.' : 'Аударма уақытша қолжетімсіз. Есеп түпнұсқада көрсетілген.'}>{q.lang === 'kk' ? 'ҚАЗ' : q.lang === 'ru' ? 'РУС' : q.lang?.toUpperCase()}</span>}
         <button className={'flagbtn' + (flags.has(q.id) ? ' on' : '')} onClick={toggleFlag}>
           <span className="fl">⚑</span> {ru ? 'Повторить позже' : 'Кейін қайталау'}
         </button>

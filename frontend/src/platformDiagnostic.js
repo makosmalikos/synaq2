@@ -1,5 +1,12 @@
 export const PLATFORM_DIAGNOSTIC_VERSION = 2;
 
+// A response may advance the server past a pending answer (including a retry).
+export function restoredDiagnosticAnswer(session, draft) {
+  if (!draft || draft.attemptId !== session.id) return '';
+  if (draft.pendingAnswer?.index === session.index) return draft.pendingAnswer.answer;
+  return draft.index === session.index ? draft.answer || '' : '';
+}
+
 const KIND_RULES = [
   [/percent|pct/i, 'pct'],
   [/fraction|decimal|mixed/i, 'frac'],
