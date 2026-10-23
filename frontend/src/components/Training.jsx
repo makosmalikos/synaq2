@@ -1,4 +1,5 @@
 import QuestionFigure from './QuestionFigure.jsx';
+import MathText from './MathText.jsx';
 import FigureOption, { hasFigureOptions, mainFigureSrc } from './FigureOption.jsx';
 import React, { useEffect, useState, useRef } from 'react';
 import { useLang } from '../i18n.jsx';
@@ -20,7 +21,7 @@ const LT = ['A', 'B', 'C', 'D', 'E'];
 const Stmt = ({ text }) => (
   <>
     {String(text || '').split(/\n{2,}/).map((p, i) => (
-      <p className="stmt" key={i} style={i ? { marginTop: 14 } : undefined}>{p}</p>
+      <p className="stmt" key={i} style={i ? { marginTop: 14 } : undefined}><MathText text={p} /></p>
     ))}
   </>
 );
@@ -146,6 +147,11 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
   const uid = auth.currentUser?.uid;
   const questionKey = topic && items[i]?.id ? `${uid}:${topic.id}:${i}:${items[i].id}` : null;
   currentQuestion.current = questionKey;
+  useEffect(() => {
+    // A long solution or mobile keyboard can leave the page near its bottom.
+    // Show the next condition immediately, without moving a checked answer.
+    if (questionKey) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [questionKey]);
   // "Тексеру" батырмасы disabled={!answer} шартымен ғана бөгеледі, checked-ке
   // қарамастан — тез қос басу/тап (әсіресе телефонда touchend+click) екі
   // check()-ті бір сұраққа қатар шақырып, XP мен күнделікті лимитті қосарлап
@@ -535,7 +541,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
 
       {checked && serverResult && (
         <>
-          <div className={ok ? 'fb ok' : 'fb no'}>{ok ? t('ui.66') : `${t('ui.67')} ${q.answer ?? '—'}`}</div>
+          <div className={ok ? 'fb ok' : 'fb no'}>{ok ? t('ui.66') : <>{t('ui.67')} <MathText text={q.answer ?? '—'} /></>}</div>
           {xpPop && <div className="xp-pop">+{xpPop} XP</div>}
           <Explain q={q} given={ok ? null : answer} />
         </>

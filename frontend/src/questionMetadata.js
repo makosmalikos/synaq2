@@ -3,7 +3,21 @@ const KK_LETTERS = /[әіңғүұқөһӘІҢҒҮҰҚӨҺ]/;
 const SUBJ_LANG = { kaz: 'kk', rus: 'ru', eng: 'en' };
 const TOPIC_LANG = { lang_kaz: 'kk', lang_rus: 'ru', lang_eng: 'en' };
 export function detectLang(q) {
-  return SUBJ_LANG[q.subject] || TOPIC_LANG[q.topic] || (KK_LETTERS.test(q.statement || '') ? 'kk' : 'ru');
+  // Reviewed metadata also covers formula-only statements without Kazakh letters.
+  const declared = ['ru', 'kk', 'en'].includes(q.lang) ? q.lang : null;
+  return SUBJ_LANG[q.subject] || TOPIC_LANG[q.topic] || declared || (KK_LETTERS.test(q.statement || '') ? 'kk' : 'ru');
+}
+
+// Keep the access contract when a task passes through the bundled or admin bank.
+// The server remains responsible for checking both the edition and the family plan.
+export function questionAccessMetadata(raw) {
+  return {
+    ...(typeof raw.minimumPlan === 'string' ? { minimumPlan: raw.minimumPlan } : {}),
+    ...(typeof raw.editorialStatus === 'string' ? { editorialStatus: raw.editorialStatus } : {}),
+    ...(typeof raw.sourceProvider === 'string' ? { sourceProvider: raw.sourceProvider } : {}),
+    ...(raw.sourceAdapted === true ? { sourceAdapted: true } : {}),
+    ...(raw.adaptationNote ? { adaptationNote: raw.adaptationNote } : {}),
+  };
 }
 
 const MISSING_FIGURES = new Set([
@@ -48,6 +62,9 @@ export function normalizeAdminTask(raw) {
     solution: raw.solution || '',
     image: raw.image || null,
     options: Array.isArray(raw.options) ? raw.options : null,
+    ...(raw.practiceOnly === true ? { practiceOnly: true } : {}),
+    ...(Number.isInteger(raw.grade) ? { grade: raw.grade } : {}),
+    ...questionAccessMetadata(raw),
     lang: ['ru', 'kk', 'en'].includes(raw.lang) ? raw.lang : detectLang({ topic: raw.topic, statement: raw.statement }),
   };
 }

@@ -1,0 +1,87 @@
+{
+  "figures": [
+    {
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-9.1-L2-10.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/9.1-L2-10.png",
+        "image": "/figures/zerek-courses/course-5-9.1-L2-10.svg",
+        "sha256": "05db7af733c61fcd782141c6f85e103cf2aac999bf21e415f6a918e7d729a941",
+        "method": "adapted_from_source_solution",
+        "sourceAdapted": true,
+        "adaptationNote": "Жазба түпнұсқа шешіміндегі 22 см, 4 см және 3 см өлшемдері бойынша қайта құрастырылды. Үстіңгі және астыңғы жақтарды жолаққа тіркеу орны сызбада шартты түрде таңдалған; барлық қажетті өлшемдер сақталған.",
+        "visualReview": "verified",
+        "visualReviewNotes": "Root visually verified a valid six-face net: four lateral widths 8/3/8/3, strip height4, two8x3 lids, and only given labels22/4/3. Exact volume96 independently checked, not printed. Attachment layout is explicitly adapted; unavailable original raster was not compared.",
+        "reconstructionEvidence": "problems/sources/zerek/courses/reconstruction-evidence-higher47.json"
+      },
+      "evidence": {
+        "sourceContentId": "fbeac7e14f948353",
+        "sourceFile": "5-math-9-1-level2.json",
+        "sourceIndex": 1,
+        "sourceQuestionSha256": "153daaa80eca101d2470e429dcc867423263e02509585db23ef11f042e2b1c2b",
+        "statement": "Суретте тік бұрышты параллелепипедтің жазбасы берілген: ортадағы жолақ — төрт бүйір жағы, оның үсті мен астында — параллелепипедтің үстіңгі және астыңғы жақтары. Ұзындықтар сантиметрмен көрсетілген.\n\n[Image: diagram]\n\nПараллелепипедтің көлемін (см³) табыңдар.",
+        "sourceSolution": "Суреттен оқимыз: жолақтың ұзындығы $22$ см, биіктігі $4$ см, үстіңгі жақтың ені $3$ см. Жолақ бүйір жақтардан тұрады: ұзындығы + ені + ұзындығы + ені.\n\n\n\nПараллелепипедтің биіктігі — жолақтың биіктігі: $4$ см. Ені — үстіңгі жақтың ені: $3$ см.\n\n\n\n\nЖолақ: $2 \\cdot (\\text{ұзындығы} + \\text{ені}) = 22$, демек ұзындығы $+$ ені $= 22 : 2 = 11$ (см).\n\n\n\n\nҰзындығы: $11 - 3 = 8$ (см).\n\n\n\n\nКөлемі: $8 \\cdot 3 \\cdot 4 = 96$ (см³).\n\n\n\n\nТексеру: $8 + 3 + 8 + 3 = 22$ см.\n\nЖауабы: $96$",
+        "sourceAnswer": "96",
+        "sourceAdapted": true,
+        "adaptationDisclosure": "Жазба түпнұсқа шешіміндегі 22 см, 4 см және 3 см өлшемдері бойынша қайта құрастырылды. Үстіңгі және астыңғы жақтарды жолаққа тіркеу орны сызбада шартты түрде таңдалған; барлық қажетті өлшемдер сақталған.",
+        "unknownOriginalData": "Original attachment positions of the top and bottom faces are unavailable. This equivalent valid net places both on one long lateral face; this placement is not claimed to match the original raster.",
+        "givenDimensionsCm": {
+          "lateralStripTotalLength": 22,
+          "lateralStripHeight": 4,
+          "lidWidth": 3
+        },
+        "constructionDimensionsCm": {
+          "lateralStripWidths": [
+            8,
+            3,
+            8,
+            3
+          ],
+          "stripHeight": 4,
+          "topAndBottom": [
+            8,
+            3
+          ]
+        },
+        "foldedFaceNormals": {
+          "lateral0": [
+            0,
+            0,
+            1
+          ],
+          "lateral1": [
+            1,
+            0,
+            0
+          ],
+          "lateral2": [
+            0,
+            0,
+            -1
+          ],
+          "lateral3": [
+            -1,
+            0,
+            0
+          ],
+          "top": [
+            0,
+            1,
+            0
+          ],
+          "bottom": [
+            0,
+            -1,
+            0
+          ]
+        },
+        "independentAnswerCheck": {
+          "expression": "(22 / 2 - 3) * 3 * 4",
+          "value": 96,
+          "shownAsAnswerOnFigure": false
+        },
+        "editorialEditNeeded": false,
+        "reviewedAt": "2026-10-23T10:15:14.577317+00:00"
+      }
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import useScreenStart from '../useScreenStart.js';
 import QuestionFigure from './QuestionFigure.jsx';
+import MathText from './MathText.jsx';
 import FigureOption, { hasFigureOptions, mainFigureSrc } from './FigureOption.jsx';
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useLang } from '../i18n.jsx';
@@ -34,7 +35,7 @@ function formatExamTimer(totalSec, lang) {
 const Stmt = ({ text }) => (
   <>
     {String(text || '').split(/\n{2,}/).map((p, i) => (
-      <p className="stmt" key={i} style={i ? { marginTop: 14 } : undefined}>{p}</p>
+      <p className="stmt" key={i} style={i ? { marginTop: 14 } : undefined}><MathText text={p} /></p>
     ))}
   </>
 );
@@ -444,16 +445,16 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
                     <span style={{ font: "600 13px 'IBM Plex Mono',monospace", color: r.correct ? '#4C7A4E' : '#B0342B' }}>
                       {r.correct ? '✓' : '✗'} №{r.num}
                     </span>
-                    <span className="muted" style={{ fontSize: 13, flex: 1 }}>
-                      «{r.your ?? '—'}» · «{r.answer ?? '?'}»
+                    <span className="muted" style={{ fontSize: 13, flex: 1, minWidth: 0 }}>
+                      «<MathText text={r.your ?? '—'} />» · «<MathText text={r.answer ?? '?'} />»
                     </span>
                     <span className="muted" style={{ fontSize: 13 }}>{on ? '▲' : '▼'}</span>
                   </div>
                   {on && (
                     <div style={{ padding: '0 0 16px' }}>
-                      <p style={{ margin: 0, fontSize: 14, lineHeight: 1.5 }}>{r.statement}</p>
-                      {r.image && <img className="fig" src={r.image} alt="" />}
-                      {r.solution && <p className="muted" style={{ margin: '10px 0 0', fontSize: 13.5, lineHeight: 1.55 }}>{r.solution}</p>}
+                      <p style={{ margin: 0, fontSize: 14, lineHeight: 1.5 }}><MathText text={r.statement} /></p>
+                      {r.image && <QuestionFigure src={r.image} />}
+                      {r.solution && <p className="muted" style={{ margin: '10px 0 0', fontSize: 13.5, lineHeight: 1.55 }}><MathText text={r.solution} /></p>}
                       <Explain q={r} given={r.correct ? null : r.your} />
                     </div>
                   )}

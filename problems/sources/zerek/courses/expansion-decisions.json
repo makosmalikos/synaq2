@@ -1,0 +1,473 @@
+{
+  "4f513eb47798bc4f": {
+    "falseExamples": [
+      "6^3 = 6 \\cdot 3 = 18"
+    ],
+    "reason": "Source explicitly labels this as an incorrect example or asks which remainder notation is wrong; retained in context."
+  },
+  "98687ffaf89ab2ee": {
+    "falseExamples": [
+      "30^2 = 90"
+    ],
+    "reason": "Source explicitly labels this as an incorrect example or asks which remainder notation is wrong; retained in context."
+  },
+  "5b79c3d0e6e7163e": {
+    "falseExamples": [
+      "60^2 = 120"
+    ],
+    "reason": "Source explicitly labels this as an incorrect example or asks which remainder notation is wrong; retained in context."
+  },
+  "dc5be19425bee5ab": {
+    "falseExamples": [
+      "530 : 61 = 7"
+    ],
+    "reason": "Source explicitly labels this as an incorrect example or asks which remainder notation is wrong; retained in context."
+  },
+  "becb26757a006574": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$200$ а $\\cdot$ $4 = 800$ а",
+        "after": "$200 \\cdot 4 = 800$ а",
+        "reason": "Keep the entire verified equality in one math span instead of splitting it around a unit."
+      }
+    ]
+  },
+  "3679deccaaa05fae": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$6\\,000 = 5$ мыңдық $+ 9$ жүздік $+ 9$ ондық $+ 10$ бірлік",
+        "after": "$6\\,000 = 5\\cdot1000+9\\cdot100+9\\cdot10+10$",
+        "reason": "Preserve place-value units in one complete exact equality."
+      }
+    ]
+  },
+  "5c5d67beaa111f1a": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$5\\,000 = 4$ мыңдық $+ 9$ жүздік $+ 10$ ондық",
+        "after": "$5\\,000 = 4\\cdot1000+9\\cdot100+10\\cdot10$",
+        "reason": "Preserve place-value units in one complete exact equality."
+      }
+    ]
+  },
+  "260e93c530cbd0b8": {
+    "falseExamples": [
+      "(20 - 3) \\cdot 4 = 20 \\cdot 4 - 3"
+    ],
+    "reason": "The requested answer is the false equality; the explanation explicitly computes 68 versus 77."
+  },
+  "fe27889eb079019e": {
+    "falseExamples": [
+      "1^9 = 9",
+      "47^1 = 1"
+    ],
+    "reason": "Explicitly labelled common incorrect power rules; correct values are stated and checked earlier."
+  },
+  "b0ebb9866a6299be": {
+    "falseExamples": [
+      "2{,}4 : 8 = 0{,}03"
+    ],
+    "reason": "Explicitly labelled incorrect decimal-place example; the correct division 0.3 and final 30% are given earlier."
+  },
+  "65af6cedcc7e6417": {
+    "falseExamples": [
+      "0{,}9 \\cdot 20 = 1{,}8"
+    ],
+    "reason": "Explicit common decimal-place error; the correct result 18 litres is stated and independently checked using two groups of ten cartons."
+  },
+  "b5d423f092f80be6": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "Сан $+ 1\\,000 = 45\\,600$, демек сан $= 45\\,600 - 1\\,000 = 44\\,600$.",
+        "after": "Бастапқы санды $x$ деп белгілейік: $x + 1\\,000 = 45\\,600$. Сондықтан $x = 45\\,600 - 1\\,000 = 44\\,600$.",
+        "reason": "Expanded the source verbal unknown into a complete equation; 44600+1000=45600 and 44600-1000=43600."
+      }
+    ]
+  },
+  "dafc0d4a6ab41380": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "Демек, ойлаған сан $+ 2 = 500\\,000$, ойлаған сан $= 500\\,000 - 2 = 499\\,998$.",
+        "after": "Ойлаған санды $x$ деп белгілейік. Демек, $x + 2 = 500\\,000$, сондықтан $x = 500\\,000 - 2 = 499\\,998$.",
+        "reason": "Expanded the verbal unknown into a complete equation; 499998-1999+2001=500000."
+      }
+    ]
+  },
+  "b0b93ab9e003f774": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "60 \\cdot 0{,}5 = 30\\%",
+        "after": "60\\% \\cdot 0{,}5 = 30\\%",
+        "reason": "Preserved percentage units on both sides: half of 60 percent is 30 percent."
+      }
+    ]
+  },
+  "c376b43e213d20bf": {
+    "falseExamples": [
+      "62\\,305 - 17\\,846 = 44\\,469"
+    ],
+    "reason": "The question asks for the incorrect example. The source checks 44469+17846=62315, not 62305, and gives the correct difference 44459."
+  },
+  "09038c3253e0b678": {
+    "falseExamples": [
+      "0 : (-7) = -7"
+    ],
+    "reason": "Explicitly labelled incorrect; the source verifies that (-7)*(-7)=49, not zero. Correct option is 0/(-7)=0."
+  },
+  "3c21b142ca9bfa9a": {
+    "falseExamples": [
+      "20 + 12 = 8",
+      "20 = 8 - 12"
+    ],
+    "reason": "Both are explicitly explained as incorrect sign-transfer options; the selected and verified equality is 20-12=8."
+  },
+  "8555c5da63ad8165": {
+    "falseExamples": [
+      "0 = 7"
+    ],
+    "reason": "The impossible equality is explicitly used as a contradiction to prove that 0*x+0*y=7 has no solution."
+  },
+  "0bb46e5931adac38": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "100 - 40 = 60\\%",
+        "after": "100\\% - 40\\% = 60\\%",
+        "reason": "Retained percentage units on both sides; a battery falls from 100 percent to 40 percent."
+      }
+    ]
+  },
+  "9c024cd6b68676b6": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "Сан $- 4\\,528 = 37\\,319$, демек сан $= 37\\,319 + 4\\,528 = 41\\,847$.",
+        "after": "Бастапқы санды $x$ деп белгілейік: $x - 4\\,528 = 37\\,319$. Сондықтан $x = 37\\,319 + 4\\,528 = 41\\,847$.",
+        "reason": "Expanded the verbal unknown into a complete equation; 41847-4528=37319 and 41847+4528=46375."
+      }
+    ]
+  },
+  "e3c3ddcb2c3a30ed": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "Тексеру: $50$ а $\\cdot$ $10 = 500$ а $= 5$ га.",
+        "after": "Тексеру: $50\\cdot10=500$ а, яғни $5$ га.",
+        "reason": "Keep the complete product in one expression; the unit conversion is unchanged."
+      }
+    ]
+  },
+  "cb7d161a64e70609": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$150$ мин $= 120 + 30 = 2$ сағ $30$ мин.",
+        "after": "$150=120+30$ минут. $120$ минут — $2$ сағат, сондықтан $150$ минут — $2$ сағ $30$ мин.",
+        "reason": "Separate the numeric sum from the hours/minutes conversion; 150 min is 2 h 30 min."
+      }
+    ]
+  },
+  "3e205eee28ccb924": {
+    "falseExamples": [
+      "31\\,021 \\cdot 3 = 93\\,036"
+    ],
+    "reason": "Question explicitly asks which worked example is incorrect. 31021*3=93063, and the solution identifies the swapped tens/units in 93036. The source key correctly selects the incorrect example."
+  },
+  "83fd7f3e26b0dff9": {
+    "falseExamples": [
+      "28\\,056 : 7 = 408"
+    ],
+    "reason": "Question asks for the incorrect equality. 28056/7=4008 and 408*7=2856; the solution correctly explains the omitted zeros. The source key intentionally selects 28056:7=408."
+  },
+  "4421e13389a6e627": {
+    "falseExamples": [
+      "7\\,080 : 100 = 7"
+    ],
+    "reason": "The question asks which quotient/remainder statement is wrong. The option 7 080 : 100 = 7 (remainder 80) is intentionally false: 7 080 = 100 × 70 + 80, so the quotient is 70."
+  },
+  "8531c2462d192bf4": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "Демек, үш биіктік $+ 6 = 15$.",
+        "after": "Биіктікті $h$ деп белгілейік. Сонда $3h + 6 = 15$, яғни $3h = 9$ және $h = 3$.",
+        "reason": "Completed the verbal unknown as an equation. Height 3, width 5, length 7 give total edge length 4*(3+5+7)=60 and volume 105."
+      }
+    ]
+  },
+  "730dcbc481bc12d3": {
+    "falseExamples": [
+      "43\\,200 : 80 = 54"
+    ],
+    "reason": "The task explicitly asks for the incorrect equality. 54*80=4320, while 43200/80=540; the selected option intentionally omits a zero."
+  },
+  "1224e0a1929199bb": {
+    "falseExamples": [
+      "27\\,000 : 900 = 300"
+    ],
+    "reason": "The condition explicitly asks which equality is incorrect. 27 000 / 900 is 30; the marked option with 300 is deliberately false, while the solution gives 30."
+  },
+  "c3f3e3a205df9ec6": {
+    "falseExamples": [
+      "9\\,282 : 221 = 41"
+    ],
+    "reason": "The condition asks which equality is incorrect. 9 282 = 221 × 42. The selected equality with 41 is deliberately false and explained correctly."
+  },
+  "06e62ecdb3ba9443": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "себебі $1000 = 100$ ондық",
+        "after": "себебі $1000$ бірлікте $100$ ондық бар",
+        "reason": "Expressed the correct unit conversion explicitly instead of a misleading bare numerical equality: 1000 units contain 100 tens. Answer remains floor(4386/10)=438."
+      }
+    ]
+  },
+  "1d0396b970d22dbb": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$40\\,000 = 3$ он мыңдық $+ 9$ мыңдық $+ 9$ жүздік $+ 9$ ондық $+ 10$ бірлік.",
+        "after": "$40\\,000 = 30\\,000 + 9\\,000 + 900 + 90 + 10$. Бұл — $3$ он мыңдық, $9$ мыңдық, $9$ жүздік, $9$ ондық және $10$ бірлік.",
+        "reason": "Made the correct regrouping explicit as a numeric equality. The original mixed a partial equation with written units; 30000+9000+900+90+10=40000 and 40000-17365=22635."
+      }
+    ]
+  },
+  "39f33719f3116103": {
+    "falseExamples": [
+      "0 \\cdot 345 = 345"
+    ],
+    "reason": "The condition asks for an incorrect equality. Zero times 345 is zero, so the selected equality is intentionally false and explained correctly."
+  },
+  "316555335f843f2a": {
+    "falseExamples": [
+      "x \\cdot 0 + 5 = 7"
+    ],
+    "reason": "The solution explicitly uses this contradictory equation as an example with no roots; the actual question x·0+5=5 correctly has every number as a root."
+  },
+  "576cb8a326e25273": {
+    "falseExamples": [
+      "\\dfrac{200}{13} = 15\\dfrac{3}{13}"
+    ],
+    "reason": "The question explicitly asks which equality is incorrect; the solution correctly obtains 15 5/13 and identifies 15 3/13 as the wrong option."
+  },
+  "35965ea3876c3e27": {
+    "falseExamples": [
+      "\\dfrac{4}{7} = \\dfrac{12}{28}"
+    ],
+    "reason": "The question explicitly asks which denominator conversion is wrong; the solution correctly gives 16/28 and identifies 12/28 as the mistaken option."
+  },
+  "25e03a3861905f6c": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$\\dfrac{3}{10} = \\dfrac{3}{30}$",
+        "after": "$\\dfrac{1+1+1}{2+3+5} = \\dfrac{3}{10}$",
+        "reason": "Correct the explanation of the distractor: adding numerators and denominators separately produces 3/10, not an equality between 3/10 and 3/30. The correct sum 31/30 and key remain unchanged."
+      }
+    ]
+  },
+  "df6952ee82fe636b": {
+    "falseExamples": [
+      "25 - 15\\dfrac{3}{20} = 10\\dfrac{3}{20}"
+    ],
+    "reason": "The source explicitly labels this as a frequent subtraction mistake and correctly demonstrates borrowing to obtain 9 17/20 kg."
+  },
+  "f7332c9945dff9fe": {
+    "falseExamples": [
+      "\\dfrac{1}{2} + \\dfrac{1}{3} = \\dfrac{2}{5}"
+    ],
+    "reason": "The explanation explicitly labels this as a frequent mistake; the correct sum 5/6 and unread part 1/6 are demonstrated and source key is 1/6."
+  },
+  "0434a890f2a334e5": {
+    "falseExamples": [
+      "\\dfrac{2}{25} = 0{,}8"
+    ],
+    "reason": "The task asks which equality is false; the solution explicitly corrects 2/25 to 0.08. The false equality is the intended source choice."
+  },
+  "c6b3d9bbd6bdeef1": {
+    "falseExamples": [
+      "0{,}25 = \\dfrac{1}{25}"
+    ],
+    "reason": "Explicit frequent-error example. The same explanation gives 0.25 = 1/4 and 1/25 = 0.04; the computed result remains 7."
+  },
+  "a159f16091483262": {
+    "falseExamples": [
+      "\\dfrac{3}{4} = 0{,}34"
+    ],
+    "reason": "The explanation identifies this as the incorrect numerator/denominator concatenation; the correct conversion 3/4 = 0.75 is shown."
+  },
+  "e26a7aa10ecac0f6": {
+    "falseExamples": [
+      "0{,}6 \\cdot 5 = 0{,}3"
+    ],
+    "reason": "Explicitly labelled false distractor; the explanation demonstrates the correct product 3."
+  },
+  "4f95420b328599fb": {
+    "falseExamples": [
+      "6{,}05 \\cdot 8 = 4{,}84"
+    ],
+    "reason": "The statement asks about the pupil’s erroneous displayed calculation. The source diagram and quoted mistake must stay; the solution correctly gives 48.4."
+  },
+  "d6933019f6d73e14": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$1{,}2 = 120$ жүздік.",
+        "after": "$1{,}2 = \\dfrac{120}{100}$, яғни $120$ жүздік.",
+        "reason": "Make the hundredths unit explicit in the equality; preserve the reasoning and maximum n=120."
+      }
+    ]
+  },
+  "dd8e08c5254c28aa": {
+    "falseExamples": [
+      "0{,}045 = 45\\%"
+    ],
+    "reason": "The task explicitly asks which equality is false. Its official explanation gives 0.045 = 4.5% and identifies the displayed 45% equality as the intended wrong choice."
+  },
+  "2602ee711c432c55": {
+    "falseExamples": [
+      "15\\% + 10 = 25\\%"
+    ],
+    "reason": "The official solution explicitly labels adding a mass to a percentage as a meaningless common mistake. Independently: 40*0.15 = 6 kg salt; adding 10 kg gives 16/50 = 32%, matching the key. Preserve the pedagogical false example."
+  },
+  "146be0405fa9a785": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "Жауабы: $1$ және $2$",
+        "after": "Қосымша тексеру: торкөздің қабырғасын 1 бірлік деп аламыз. 1- және 2-төртбұрыштардың аудандары 5 шаршы бірлік; 1-төртбұрышты 90°-қа бұрып, жылжытсақ, 2-төртбұрышпен беттеседі. 3-төртбұрыштың табандары 2 және 1, биіктігі 2: ауданы (2 + 1) · 2 : 2 = 3. 4-төртбұрыштың табандары 4 және 3, биіктігі 2: ауданы (4 + 3) · 2 : 2 = 7. Аудандары әртүрлі фигуралар беттеспейді. Сондықтан тең төртбұрыштар жұбы — тек 1 және 2.\n\nЖауабы: $1$ және $2$",
+        "reason": "Authorised adaptation of unavailable distractor polygons; adds an explicit congruence/area check while preserving the source key."
+      }
+    ],
+    "sourceAdapted": true,
+    "adaptationNote": "Түпнұсқа сурет қолжетімсіз болғандықтан, 3- және 4-төртбұрыштар белгілі белгілері сақталып қайта құрастырылды."
+  },
+  "fbeac7e14f948353": {
+    "sourceAdapted": true,
+    "adaptationNote": "Жазба түпнұсқа шешіміндегі 22 см, 4 см және 3 см өлшемдері бойынша қайта құрастырылды. Үстіңгі және астыңғы жақтарды жолаққа тіркеу орны сызбада шартты түрде таңдалған; барлық қажетті өлшемдер сақталған.",
+    "reason": "Equivalent valid net reconstructed from all three source dimensions; only unprovided lid attachment layout is adapted. Original solution and key retained."
+  },
+  "96c1bd39a654c077": {
+    "falseExamples": [
+      "100 - 53 = 47\\%"
+    ],
+    "reason": "The source explicitly calls this an incorrect answer produced by omitting the intersection of multiples of 3 and 5. Independent enumeration of 1–100 gives 53 numbers divisible by neither; the final answer remains 53%."
+  },
+  "5fd34c8395da2b4c": {
+    "falseExamples": [
+      "3 : 12 = 4 : 9"
+    ],
+    "reason": "The question explicitly asks which displayed equality is NOT a proportion. This selected false equality occurs twice in the explanation; its cross-products are 3×9=27 and 12×4=48. The other three options have equal cross-products."
+  },
+  "5f8bac7f025dbac2": {
+    "falseExamples": [
+      "18 + 6 = 24\\%"
+    ],
+    "reason": "Explicitly labelled common error: adding the six extra days to the completed percentage is not direct proportionality. The correct work percentage is 18×10/4=45; daily productivity and its check retain percent units.",
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$18 : 4 = 4{,}5\\%$",
+        "after": "$18\\% : 4 = 4{,}5\\%$",
+        "reason": "Retain percent units on both sides of the daily-productivity equality: 18% divided by 4 days gives 4.5% per day."
+      },
+      {
+        "field": "solution",
+        "before": "$4{,}5 \\cdot 10 = 45\\%$",
+        "after": "$4{,}5\\% \\cdot 10 = 45\\%$",
+        "reason": "Multiply the completed percentage per day by ten days; the equality is 4.5%×10=45%, not 4.5×10=45%."
+      }
+    ]
+  },
+  "8a18018ccd9e39c9": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$100 - 40 = 60\\%$",
+        "after": "$100\\% - 40\\% = 60\\%$",
+        "reason": "The remaining fraction of the plan is correctly 60%, although finding only its nine months would answer the wrong question. Preserve percent units on both operands without labelling this valid subtraction as a false equality."
+      }
+    ]
+  },
+  "6743cc1e416d63d1": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$\\dfrac{130 \\cdot 10}{100} = 13\\%$",
+        "after": "$130\\% \\cdot \\dfrac{10}{100} = 13\\%$",
+        "reason": "Ten percent of the 130% selling-price baseline is 13% of the acquisition price. Keep the percent unit on the baseline; the resulting 17% profit still gives 1020/0.17=6000 tenge."
+      }
+    ]
+  },
+  "5340cce42f365244": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$\\dfrac{18 \\cdot 100}{150} = 12\\%$",
+        "after": "$\\dfrac{18}{150} \\cdot 100\\% = 12\\%$",
+        "reason": "Express the dimensionless 18/150 share as a percentage by multiplying by 100%; 18 minutes is exactly 12% of the 150-minute trip."
+      }
+    ]
+  },
+  "90f598cf2268301e": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$\\dfrac{5{,}4 \\cdot 100}{18} = 30\\%$",
+        "after": "$\\dfrac{5{,}4}{18} \\cdot 100\\% = 30\\%$",
+        "reason": "Convert the 5.4/18 copper mass fraction to a percentage with 100%; the verified mixture remains 6 kg at 40% plus 12 kg at 25%."
+      }
+    ]
+  },
+  "d6fd3dcaa88350be": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$900\\pi : 100\\pi = 9$",
+        "after": "$\\dfrac{900\\pi}{100\\pi} = 9$",
+        "reason": "Group the entire small-pizza area in the denominator. The source explicitly compares π×30² with π×10², whose exact ratio is 9; this avoids reading the trailing π as multiplication after division."
+      }
+    ]
+  },
+  "5d3611a0ef9e1259": {
+    "edits": [
+      {
+        "field": "solution",
+        "before": "$2\\pi \\cdot 4 : 2\\pi \\cdot 6 = 4 : 6 = 2 : 3$",
+        "after": "$\\dfrac{2\\pi \\cdot 4}{2\\pi \\cdot 6} = 4 : 6 = 2 : 3$",
+        "reason": "Group each complete circumference so the quotient is (2π×4)/(2π×6)=2/3, matching the requested ratio 2:3."
+      },
+      {
+        "field": "solution",
+        "before": "$\\pi \\cdot 16 : \\pi \\cdot 36 = 16 : 36 = 4 : 9$",
+        "after": "$\\dfrac{\\pi \\cdot 16}{\\pi \\cdot 36} = 16 : 36 = 4 : 9$",
+        "reason": "Group each complete disk area so the quotient is (π×16)/(π×36)=4/9, matching the requested ratio 4:9."
+      },
+      {
+        "field": "solution",
+        "before": "$2 \\cdot 2 : 3 \\cdot 3$",
+        "after": "$\\dfrac{2 \\cdot 2}{3 \\cdot 3}$",
+        "reason": "Make the intended square of the 2:3 circumference ratio explicit: (2×2)/(3×3)=4/9. The complete denominator must not be read as left-to-right division followed by multiplication."
+      }
+    ]
+  },
+  "7396eb885a2b88d2": {
+    "falseExamples": [
+      "\\pi - 1 = 2"
+    ],
+    "reason": "The source identifies the distractors 15 cm and 7.5 cm as the result of using π=3 rather than the instructed approximation 22/7. Retain this explicitly wrong method in context; the correct coefficient is 22/7−1=15/7, giving diameter 14 cm and radius 7 cm."
+  },
+  "94f115b1e3fe2479": {
+    "falseExamples": [
+      "-(-0{,}3) = -0{,}3"
+    ],
+    "reason": "Full source statement asks which equality is false. The official key selects C and its solution explicitly explains -(-0.3)=+0.3, not -0.3; the other three options are true. Retain the deliberately false answer equality in context."
+  }
+}

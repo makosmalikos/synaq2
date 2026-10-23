@@ -67,6 +67,7 @@ function fixture({ pro = false, paid = false } = {}) {
     require(name) {
       if (name === '../backend/lib/firebase-admin') return { getAdmin: () => ({ db, auth }) };
       if (name === '../backend/lib/plans') return plans;
+      if (name === '../backend/lib/question-access') return require('../backend/lib/question-access');
       if (name === '../backend/lib/mock-bank') return mockBank;
       if (name === '../backend/lib/weekly-mock') return { PRICE_KZT: 2500,
         weeklyWindow: () => ({ weekKey: '2026-09-28', startsAt: 1, endsAt: 2 }),
@@ -114,6 +115,22 @@ test('server grades and persists a verified result exactly once', async () => {
   assert.equal(replay.status, 200);
   assert.equal(replay.body.result.score, 1);
   assert.equal(replay.body.result.review[0].your, '4');
+});
+
+test('completed resume and duplicate submit redact only withdrawn or paid mock review snapshots', async () => {
+  const f=fixture({paid:true}),id='attempt_redacted1';
+  await f.invoke({action:'start',id,school:'РФМШ',excludeQuestionIds:[]});
+  await f.invoke({action:'submit',id,answers:{1:'4',2:'6'}});
+  const stored=f.docs.get(`results/kid/mocks/${id}`);
+  const first=JSON.stringify(stored.review[0]);
+  stored.review.push({qid:'zerek_crypt_01',statement:'withdrawn secret',answer:'hidden',solution:'private',image:'/old.svg',options:['hidden','x'],your:'x',num:3,correct:false});
+  for(const body of [{action:'resume',id},{action:'submit',id,answers:{1:'4',2:'6'}}]){
+    const response=await f.invoke(body);assert.equal(response.status,200);
+    assert.equal(JSON.stringify(response.body.result.review[0]),first);
+    assert.equal(response.body.result.score,2);
+    const closed=response.body.result.review[2];assert.equal(closed.unavailable,true);
+    for(const field of ['statement','answer','solution','image','options','your'])assert.equal(Object.hasOwn(closed,field),false,field);
+  }
 });
 
 test('weekly mock requires Pro or the current paid weekly pass', async () => {

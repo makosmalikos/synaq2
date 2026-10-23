@@ -14,7 +14,7 @@ export default function QuestionFigure({ src }) {
       <img src={src} alt={kk ? 'Тапсырмаға арналған сурет' : 'Схема к заданию'} />
       <span className="question-figure-hint">{expand} ↗</span>
     </button>
-    <dialog ref={dialog} className="question-figure-dialog" onClick={event => {
+    <dialog ref={dialog} className="question-figure-dialog" aria-label={expand} onClick={event => {
       if (event.target === event.currentTarget) dialog.current.close();
     }}>
       <div className="question-figure-toolbar"><button type="button" onClick={() => dialog.current.close()} autoFocus>{close} ×</button></div>

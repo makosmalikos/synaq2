@@ -10,7 +10,7 @@ import { formatAlignedQuestions } from './formatAlignedQuestions.js';
 import { formatAlignedQuestions2 } from './formatAlignedQuestions2.js';
 import { formatAlignedQuestions3 } from './formatAlignedQuestions3.js';
 import { formatAlignedQuestions4 } from './formatAlignedQuestions4.js';
-import { detectLang, quarantineReason, partitionAdminTasks } from './questionMetadata.js';
+import { detectLang, quarantineReason, partitionAdminTasks, questionAccessMetadata } from './questionMetadata.js';
 import { readAdminTasks } from './adminTasks.js';
 export { detectLang, normalizeAdminTask } from './questionMetadata.js';
 
@@ -49,12 +49,10 @@ function guessTopic(text) {
 
 const SUBJ_TOPIC = { kolzar: 'kolzar', science: 'science', reading: 'reading', kaz: 'lang_kaz', rus: 'lang_rus', eng: 'lang_eng', logic: 'mtx' };
 
-// ── На каком языке реально написано условие ──
-// В data.js есть задачи вперемешку: часть РФМШ/НИШ написана по-русски, часть —
-// по-казахски, без единой пометки языка. Определяем по казахским буквам
-// (ә/і/ң/ғ/ү/ұ/қ/ө/һ, которых в русском алфавите нет) — это надёжнее, чем
-// доверять источнику. Для предметов-языков (kaz/rus/eng) язык известен заранее
-// и не зависит от текста (урок английского не «становится казахским»).
+// ── На каком языке написано условие ──
+// Предметы-языки задают язык заранее. Для проверенных импортов сохраняем
+// явную пометку lang, в том числе у условий из одних формул. Старые записи
+// без пометки определяем по наличию казахских букв в условии.
 
 function cleanLang(text) {
   if (!text) return text;
@@ -77,6 +75,10 @@ const one = (q, school) => ({
   solution: q.solution || '',
   image: q.image || null,
   options: q.options || null,
+  ...(q.practiceOnly === true ? { practiceOnly: true } : {}),
+  ...(Number.isInteger(q.grade) ? { grade: q.grade } : {}),
+  ...(q.difficulty ? { difficulty: q.difficulty } : {}),
+  ...questionAccessMetadata(q),
   lang: detectLang(q),
 });
 
@@ -101,6 +103,8 @@ const RAW_POOL = [
   ...formatAlignedQuestions2.map((q) => one(q, q.school)),
   ...formatAlignedQuestions3.map((q) => one(q, q.school)),
   ...formatAlignedQuestions4.map((q) => one(q, q.school)),
+  // Source transfers remain an offline archive. Verified paid editions are loaded
+  // by the server, so their conditions/keys never enter a downloadable JS chunk.
 ];
 
 // Quarantine rules are shared with the lightweight topic catalog.
@@ -135,6 +139,8 @@ export const POOL = reviewed
   .map((item) => item.question);
 
 export const EXTRA_TOPICS = [
+  { id: 'stats', block: 'math', name: 'Статистика және диаграммалар', nameRu: 'Статистика и диаграммы' },
+  { id: 'sets', block: 'math', name: 'Жиындар', nameRu: 'Множества' },
   { id: 'kolzar',   block: 'math',     name: 'Сандық салыстыру (колхар)' },
   { id: 'science',  block: 'science',  name: 'Естествознание' },
   { id: 'reading',  block: 'reading',  name: 'Оқу сауаттылығы' },

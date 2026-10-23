@@ -6,6 +6,17 @@ import { gzipSync } from 'node:zlib';
 
 const dist = fileURLToPath(new URL('../frontend/dist/', import.meta.url));
 const manifest = JSON.parse(fs.readFileSync(path.join(dist, '.vite/manifest.json'), 'utf8'));
+for (const directory of ['zerek', 'zerek-courses']) {
+  assert.equal(fs.existsSync(path.join(dist, 'figures', directory)), false, 'Offline source diagrams must not be deployed');
+}
+const privateEditions = JSON.parse(fs.readFileSync(new URL('../backend/data/synaqAdaptedQuestions.json', import.meta.url)));
+for (const entry of Object.values(manifest).filter(entry => entry.file.endsWith('.js'))) {
+  const js = fs.readFileSync(path.join(dist, entry.file), 'utf8');
+  for (const edition of privateEditions) {
+    assert.equal(js.includes(edition.id), false, 'A paid edition was bundled into public JavaScript: ' + edition.id);
+    assert.equal(js.includes(edition.statement), false, 'A paid condition was bundled into public JavaScript');
+  }
+}
 
 function dependencies(entry, seen = new Set()) {
   assert.ok(manifest[entry], `Missing build entry: ${entry}`);
@@ -45,7 +56,7 @@ check('src/PublicDiagnostic.jsx', /^(?:firebase|question-bank|PlatformApp|curric
 check('src/PlatformApp.jsx', /^(?:question-bank|Home|curriculumData|useCurriculumProgress|diagnosticData)$/, 310_000);
 check('src/Home.jsx', /^(?:question-bank|curriculumData|Curriculum|diagnosticData)$/, 340_000);
 check('src/HomeCourseProgress.jsx', /^(?:question-bank|curriculumData|Curriculum|diagnosticData)$/, 320_000);
-check('src/components/Mentor.jsx', /^(?:question-bank|bank|Admin|curriculumData|Curriculum)$/, 315_000);
+check('src/components/Mentor.jsx', /^(?:question-bank|bank|Admin|curriculumData|Curriculum|topicCatalog\.generated)$/, 315_000);
 check('src/Parent.jsx', /^question-bank$/);
 check('src/Progress.jsx', /^question-bank$/);
 console.log('Build loading boundaries OK');

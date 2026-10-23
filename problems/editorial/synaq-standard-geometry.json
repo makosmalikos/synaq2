@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "sourcePolicy": "New SYNAQ editorial problems informed by archived mathematical models; original wording and source images are not copied. Original source records stay offline.",
+  "editions": [
+    {
+      "editionId": "geometry-courtyard-corner",
+      "modelId": "l-shape-area",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "width": 13,
+        "height": 9,
+        "cutWidth": 4,
+        "cutHeight": 3
+      },
+      "answer": "105",
+      "sourceRefs": [
+        {
+          "sourceId": "ce5c3630b43e6904",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level1.json"
+        }
+      ],
+      "figureTitle": "L пішінді гүлзар",
+      "figureDescription": "13 м × 9 м тіктөртбұрыштың жоғарғы оң жақ бұрышынан 4 м × 3 м бөлік алынған.",
+      "adaptationChanges": [
+        "Жер телімі туралы шарт мектеп гүлзары туралы жаңа сюжетпен ауыстырылды.",
+        "Ортадағы ойықтың орнына жоғарғы оң жақ бұрыш алынып, П пішіні L пішініне өзгертілді.",
+        "Өлшемдер 13 м, 9 м, 4 м және 3 м болып жаңадан таңдалды; шешім өздігінен қайта есептелді.",
+        "Түпнұсқа сурет қолданылмады: алты төбелі көпбұрыш native SVG ретінде жаңадан салынды."
+      ],
+      "image": "/figures/synaq-editions/geometry-courtyard-corner.svg",
+      "statement": "Мектеп ауласына L пішінді гүлзар жасалды. Ол ұзындығы 13 м, ені 9 м тіктөртбұрыштың жоғарғы оң жақ бұрышынан ұзындығы 4 м, ені 3 м бөлікті алып тастағанда шығады. Гүлзардың ауданын шаршы метрмен табыңдар.",
+      "solution": "Алдымен бүкіл тіктөртбұрыштың ауданын табамыз: 13 × 9 = 117 м². Бұрыштағы алынған бөліктің ауданы: 4 × 3 = 12 м². Қалған аудан: 117 − 12 = 105 м². Жауабы: 105.",
+      "editorialStatus": "verified",
+      "minimumPlan": "pro",
+      "figureSha256": "baf798a8fc8e10aa8a1743edff7e527aa547e687ece0769095576bbe0a7f73e8",
+      "independentVerification": {
+        "answer": "105",
+        "checks": [
+          "six-vertex orthogonal polygon",
+          "shoelace area",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "figureReview": {
+        "status": "verified",
+        "widthPx": 343,
+        "proof": "problems/editorial/reviews/geometry-previews/geometry-courtyard-corner-343.png",
+        "reviewedAt": "2026-10-23",
+        "notes": "Each new SVG was rendered and visually inspected at343px. Given labels, units and the unknown target were checked; chart weekday labels shortened to avoid collisions."
+      }
+    },
+    {
+      "editionId": "geometry-tile-footpath",
+      "modelId": "tile-boundary",
+      "grade": 4,
+      "topic": "spat",
+      "difficulty": "hard",
+      "params": {
+        "sideCm": 3,
+        "cells": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "answer": "48",
+      "sourceRefs": [
+        {
+          "sourceId": "bcae7df0a7662afc",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-4-level3.json"
+        }
+      ],
+      "figureTitle": "Жеті шаршы плиткадан құралған соқпақ",
+      "figureDescription": "Жоғарғы және төменгі қатарларда үш-үш плитка, оларды ортадағы бір плитка жалғайды. Әр плитканың қабырғасы 3 см.",
+      "adaptationChanges": [
+        "Ойығы бар металл парақтың орнына бірдей жеті плиткадан құралған жаңа соқпақ алынды.",
+        "Дайын ұзындықтарды қосудың орнына ортақ қабырғаларды алып тастап, сыртқы жиекті санау сұралады.",
+        "3 см қабырғалы жаңа I пішінді орналасу таңдалып, периметр жеке қабырғалар арқылы тексерілді.",
+        "Плиткалар сұлбасы түпнұсқасыз native SVG тіктөртбұрыштарынан салынды."
+      ],
+      "image": "/figures/synaq-editions/geometry-tile-footpath.svg",
+      "statement": "Ойын алаңындағы соқпақ суреттегідей бірдей шаршы плиткалардан құралған. Әр плитканың қабырғасы 3 см. Плиткалар қабырғаларымен толық жанасады. Соқпақтың сыртқы жиегінің жалпы ұзындығын сантиметрмен табыңдар; плиткалардың ортақ қабырғаларын санамаңдар.",
+      "solution": "Сыртқа қарап тұрған кіші қабырғаларды қатар бойынша санаймыз: 7 + 2 + 7 = 16 қабырға. Ортақ қабырғалар сыртқы жиекке кірмейді. Әрқайсысы 3 см болғандықтан, 16 × 3 = 48 см. Жауабы: 48.",
+      "editorialStatus": "verified",
+      "minimumPlan": "pro",
+      "figureSha256": "b9079c7462d931e2bf2228aa158ba1a5a466e9fab64c3dbe7cca4081ccb86225",
+      "independentVerification": {
+        "answer": "48",
+        "checks": [
+          "connected nonoverlapping tiles",
+          "unpaired boundary edges: 16",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "figureReview": {
+        "status": "verified",
+        "widthPx": 343,
+        "proof": "problems/editorial/reviews/geometry-previews/geometry-tile-footpath-343.png",
+        "reviewedAt": "2026-10-23",
+        "notes": "Each new SVG was rendered and visually inspected at343px. Given labels, units and the unknown target were checked; chart weekday labels shortened to avoid collisions."
+      }
+    },
+    {
+      "editionId": "geometry-robot-box-height",
+      "modelId": "cuboid-missing-height",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "lengthCm": 12,
+        "widthCm": 7,
+        "volumeCm3": 504
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "9a1860dc1b5231a3",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-2-leveltest.json"
+        }
+      ],
+      "figureTitle": "Робот қорабының белгісіз биіктігі",
+      "figureDescription": "Табан қабырғалары 12 см және 7 см, ішкі көлемі 504 см³ болатын тікбұрышты қорап. Биіктігі h белгісімен көрсетілген.",
+      "adaptationChanges": [
+        "Су құйылған бактың орнына робот сақтайтын қорап туралы жаңа шарт жасалды.",
+        "Литрден көлем ауыстыру алынып тасталып, белгісіз ішкі биіктікті көлемнен табу негізгі мақсат болды.",
+        "Табаны 12 см × 7 см және көлемі 504 см³ болып жаңартылды.",
+        "Қораптың үш жағы жаңа native SVG көпбұрыштарымен көрсетілді; белгісіз биіктіктің жауабы суретте жазылмады."
+      ],
+      "image": "/figures/synaq-editions/geometry-robot-box-height.svg",
+      "statement": "Роботқа арналған тікбұрышты қораптың ішкі көлемі 504 см³. Оның ішкі табанының ұзындығы 12 см, ені 7 см. Қораптың ішкі биіктігі неше сантиметр? Қабырғалардың қалыңдығы есепке алынбайды.",
+      "solution": "Табанның ауданы 12 × 7 = 84 см². Көлем табан ауданы мен биіктіктің көбейтіндісіне тең. Биіктік: 504 : 84 = 6 см. Тексеру: 12 × 7 × 6 = 504 см³. Жауабы: 6.",
+      "editorialStatus": "verified",
+      "minimumPlan": "pro",
+      "figureSha256": "eaf35a79e69d4cfb8b4cbbce42d4987561e7db15e3310d8651bd422ef629a9f4",
+      "independentVerification": {
+        "answer": "6",
+        "checks": [
+          "positive height enumerated from volume",
+          "base dimensions retained",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "figureReview": {
+        "status": "verified",
+        "widthPx": 343,
+        "proof": "problems/editorial/reviews/geometry-previews/geometry-robot-box-height-343.png",
+        "reviewedAt": "2026-10-23",
+        "notes": "Each new SVG was rendered and visually inspected at343px. Given labels, units and the unknown target were checked; chart weekday labels shortened to avoid collisions."
+      }
+    },
+    {
+      "editionId": "geometry-straight-angle-gap",
+      "modelId": "straight-angle-gap",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "leftDeg": 42,
+        "rightDeg": 73
+      },
+      "answer": "65",
+      "sourceRefs": [
+        {
+          "sourceId": "742237e4ea784e01",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-3-level2.json"
+        }
+      ],
+      "figureTitle": "Үш іргелес бұрыш",
+      "figureDescription": "AOB түзу бұрышы OC және OD сәулелерімен үш бөлікке бөлінген. Шеткі бұрыштар 42° және 73°, ортаңғы бұрыш x°.",
+      "adaptationChanges": [
+        "Биссектриса мен тең бұрыштар туралы шарттың орнына үш іргелес бұрыштың толықтыру моделі алынды.",
+        "Жаңа 42° және 73° беріліп, COD бұрышы сұралады; теңдік белгілеулері қолданылмайды.",
+        "Сәулелердің реті шартта толық жазылып, бірмәнді шешімге жеткізілді.",
+        "Сәулелер мен доғалар нақты жаңа бұрыш өлшемдерінен есептеліп, native SVG арқылы салынды."
+      ],
+      "image": "/figures/synaq-editions/geometry-straight-angle-gap.svg",
+      "statement": "A, O, B нүктелері бір түзудің бойында жатыр, ал O нүктесі A мен B арасында. OC және OD сәулелері AOB жазыңқы бұрышының ішінде; OC сәулесі OA мен OD арасында орналасқан. AOC бұрышы 42°, DOB бұрышы 73°. COD бұрышын градуспен табыңдар.",
+      "solution": "AOB жазыңқы бұрышы 180°-қа тең. Оның ішіндегі үш іргелес бұрыштың қосындысы да 180°. Белгілі бұрыштар: 42 + 73 = 115°. Сондықтан COD = 180 − 115 = 65°. Жауабы: 65.",
+      "editorialStatus": "verified",
+      "minimumPlan": "pro",
+      "figureSha256": "91f5032d26023d7a54c1e1cf1096cfa0ab8f71d6bbda7c07129757426cee0a30",
+      "independentVerification": {
+        "answer": "65",
+        "checks": [
+          "three adjacent sectors fill a straight angle",
+          "unique positive missing sector",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "figureReview": {
+        "status": "verified",
+        "widthPx": 343,
+        "proof": "problems/editorial/reviews/geometry-previews/geometry-straight-angle-gap-343.png",
+        "reviewedAt": "2026-10-23",
+        "notes": "Each new SVG was rendered and visually inspected at343px. Given labels, units and the unknown target were checked; chart weekday labels shortened to avoid collisions."
+      }
+    },
+    {
+      "editionId": "geometry-light-grid-percent",
+      "modelId": "shaded-grid-percent",
+      "grade": 5,
+      "topic": "pct",
+      "difficulty": "basic",
+      "params": {
+        "rows": 4,
+        "columns": 5,
+        "shaded": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ]
+      },
+      "answer": "35",
+      "sourceRefs": [
+        {
+          "sourceId": "74176f720bd29355",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-level1.json"
+        }
+      ],
+      "figureTitle": "Жарық тақтасындағы қосылған ұяшықтар",
+      "figureDescription": "Төрт қатар мен бес бағаннан тұратын тақта. Көк ұяшықтар қосылған, ақ ұяшықтар өшірілген.",
+      "adaptationChanges": [
+        "Үшбұрыштарға бөлінген шаршы жарық тақтасы туралы жаңа сюжетке өзгертілді.",
+        "20 бірдей төртбұрыш ұяшық пен жаңа асимметриялық бояу үлгісі жасалды.",
+        "Бөліктерді көзбен санау мен пайызға айналдыру жеке тексерілді.",
+        "Түпнұсқа бейне пайдаланылмай, барлық ұяшық native SVG элементтерімен салынды."
+      ],
+      "image": "/figures/synaq-editions/geometry-light-grid-percent.svg",
+      "statement": "Жарық тақтасы 4 қатар мен 5 бағанға бөлінген бірдей ұяшықтардан тұрады. Суретте қосылған ұяшықтар көк түспен белгіленген. Барлық ұяшықтың неше пайызы қосылған? Жауапты пайыз санымен жазыңдар.",
+      "solution": "Барлығы 4 × 5 = 20 бірдей ұяшық бар. Көк ұяшықтарды қатар бойынша санасақ, 7 ұяшық шығады. Қосылған бөлік 7/20. Пайызбен: 7 : 20 × 100 = 35%. Жауабы: 35.",
+      "editorialStatus": "verified",
+      "minimumPlan": "pro",
+      "figureSha256": "7d29aec12fa25242d01f281e2598e778a13027a9b7f25a9598191948e398e821",
+      "independentVerification": {
+        "answer": "35",
+        "checks": [
+          "equal-area cells",
+          "distinct shaded cells: 7",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "figureReview": {
+        "status": "verified",
+        "widthPx": 343,
+        "proof": "problems/editorial/reviews/geometry-previews/geometry-light-grid-percent-343.png",
+        "reviewedAt": "2026-10-23",
+        "notes": "Each new SVG was rendered and visually inspected at343px. Given labels, units and the unknown target were checked; chart weekday labels shortened to avoid collisions."
+      }
+    },
+    {
+      "editionId": "geometry-library-bar-total",
+      "modelId": "bar-chart-total",
+      "grade": 4,
+      "topic": "stats",
+      "difficulty": "basic",
+      "params": {
+        "labels": [
+          "Дүйсенбі",
+          "Сейсенбі",
+          "Сәрсенбі",
+          "Бейсенбі"
+        ],
+        "values": [
+          12,
+          18,
+          15,
+          21
+        ],
+        "shortLabels": [
+          "Дс",
+          "Сс",
+          "Ср",
+          "Бс"
+        ]
+      },
+      "answer": "66",
+      "sourceRefs": [
+        {
+          "sourceId": "849c012d81c60dcb",
+          "sourceFile": "problems/sources/zerek/courses/5-math-8-3-level2.json"
+        }
+      ],
+      "figureTitle": "Кітапханаға қайтарылған кітаптар",
+      "figureDescription": "Дүйсенбіде 12, сейсенбіде 18, сәрсенбіде 15, бейсенбіде 21 кітап қайтарылған.",
+      "adaptationChanges": [
+        "Мұражай келушілерінің графигі мектеп кітапханасы туралы жаңа төрт күндік дерекке ауыстырылды.",
+        "Сынық сызық пен ең үлкен өсімді іздеу орнына төрт бағанның жалпы саны сұралады.",
+        "Жаңа деректер 12, 18, 15, 21 ретінде беріліп, шкала мен баған биіктіктері сәйкес салынды.",
+        "Кесте нүктелері көшірілмей, жаңа native SVG бағанды диаграммасы жасалды."
+      ],
+      "image": "/figures/synaq-editions/geometry-library-bar-total.svg",
+      "statement": "Бағанды диаграммада мектеп кітапханасына төрт күнде қайтарылған кітап саны көрсетілген. Дүйсенбі, Сейсенбі, Сәрсенбі, Бейсенбі күндерінде барлығы неше кітап қайтарылған? Әр бағанның үстіндегі сан — сол күннің кітап саны.",
+      "solution": "Әр күннің кітап саны жеке бағанмен берілген. Барлығын қосамыз: 12 + 18 + 15 + 21 = 66 кітап. Бағандардың биіктіктерін салыстыру ғана жеткіліксіз: сұрақ төрт күннің жалпы санын сұрайды. Жауабы: 66.",
+      "editorialStatus": "verified",
+      "minimumPlan": "pro",
+      "figureSha256": "59cee095bdd433797d25ec40168d8cf45821a272db2c38d9598b78605685b65d",
+      "independentVerification": {
+        "answer": "66",
+        "checks": [
+          "four labelled bars",
+          "all individual books counted once",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "figureReview": {
+        "status": "verified",
+        "widthPx": 343,
+        "proof": "problems/editorial/reviews/geometry-previews/geometry-library-bar-total-343.png",
+        "reviewedAt": "2026-10-23",
+        "notes": "Each new SVG was rendered and visually inspected at343px. Given labels, units and the unknown target were checked; chart weekday labels shortened to avoid collisions."
+      }
+    },
+    {
+      "editionId": "geometry-park-coordinate-walk",
+      "modelId": "coordinate-walk-distance",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "start": -5,
+        "end": 7,
+        "metresPerUnit": 200
+      },
+      "answer": "2400",
+      "sourceRefs": [
+        {
+          "sourceId": "e6db1123d5557018",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-2-level2.json"
+        }
+      ],
+      "figureTitle": "Саябақтағы екі аялдама",
+      "figureDescription": "Координаталық түзуде A нүктесі −5-те, B нүктесі 7-де. Бір бірлік 200 м-ге тең.",
+      "adaptationChanges": [
+        "Бір нүктенің бөлшек координатасын оқу орнына екі аялдаманың нақты арақашықтығын табу сұралады.",
+        "Нөлдің екі жағындағы −5 пен 7 және 200 м бірлік ұзындығы жаңадан енгізілді.",
+        "Жауап координата саны емес, метрмен берілетін физикалық ұзындық ретінде қайта жасалды.",
+        "Барлық бөлік белгілері мен аялдамалар түпнұсқасыз жаңа native SVG түзуде салынды."
+      ],
+      "image": "/figures/synaq-editions/geometry-park-coordinate-walk.svg",
+      "statement": "Саябақтағы түзу жол координаталық түзумен көрсетілген. A аялдамасының координатасы -5, B аялдамасының координатасы 7. Бір координаталық бірлік 200 м-ге тең. A-дан B-ға дейінгі жолдың ұзындығын метрмен табыңдар.",
+      "solution": "Екі аялдама нөлдің екі жағында. A-дан 0-ге дейін 5 бірлік, 0-ден B-ға дейін 7 бірлік. Барлығы 5 + 7 = 12 бірлік. Әр бірлік 200 м: 12 × 200 = 2400 м. Жауабы: 2400.",
+      "editorialStatus": "verified",
+      "minimumPlan": "pro",
+      "figureSha256": "2509a1db8faf2e726bbe4c9873354ee90d1c6143f8304c2645a48554b411580a",
+      "independentVerification": {
+        "answer": "2400",
+        "checks": [
+          "unit intervals enumerated across zero",
+          "metres per unit applied",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "figureReview": {
+        "status": "verified",
+        "widthPx": 343,
+        "proof": "problems/editorial/reviews/geometry-previews/geometry-park-coordinate-walk-343.png",
+        "reviewedAt": "2026-10-23",
+        "notes": "Each new SVG was rendered and visually inspected at343px. Given labels, units and the unknown target were checked; chart weekday labels shortened to avoid collisions."
+      }
+    },
+    {
+      "editionId": "geometry-sport-route-scale",
+      "modelId": "scaled-route-distance",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "segmentsMm": [
+          25,
+          15,
+          30
+        ],
+        "denominator": 200000
+      },
+      "answer": "14",
+      "sourceRefs": [
+        {
+          "sourceId": "b975ea1258791667",
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-1-level2.json"
+        }
+      ],
+      "figureTitle": "Үйден спортзалға баратын маршрут",
+      "figureDescription": "Үш бөлік: 2,5 см, 1,5 см және 3 см. Масштаб 1 : 200 000. Жол екі рет бұрылады.",
+      "adaptationChanges": [
+        "Ауылдар арасындағы екі бөлік орнына үй мен спортзал арасындағы үш бұрылысты маршрут жасалды.",
+        "Сөзбен берілген масштаб 1 : 200 000 сандық масштабына ауыстырылды.",
+        "Жаңа ондық ұзындықтар мен сантиметрден километрге түрлендіру енгізілді.",
+        "Маршрут ұзындықтарының қатынастарына сай жаңа native SVG сынық сызық салынды; бастапқы карта қолданылмады."
+      ],
+      "image": "/figures/synaq-editions/geometry-sport-route-scale.svg",
+      "statement": "Картада үйден спортзалға баратын жол үш бөліктен тұрады: 2,5 см, 1,5 см, 3 см. Картаның масштабы 1 : 200 000. Бала суретте белгіленген жолмен жүреді. Оның жүрген жолын километрмен табыңдар; нүктелердің арасын төте сызықпен қоспаңдар.",
+      "solution": "Картадағы үш бөліктің қосындысы: 2,5 + 1,5 + 3 = 7 см. Масштаб бойынша 1 см жердегі 200000 см-ге, яғни 2 км-ге тең. Жол: 7 × 2 = 14 км. Жауабы: 14.",
+      "editorialStatus": "verified",
+      "minimumPlan": "pro",
+      "figureSha256": "4c75eab74d2ef082dccf0f3764c9af117a5e839cad20f7c4eac6e923b78fd072",
+      "independentVerification": {
+        "answer": "14",
+        "checks": [
+          "three route legs, not endpoint shortcut",
+          "exact mm to kilometre conversion",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "figureReview": {
+        "status": "verified",
+        "widthPx": 343,
+        "proof": "problems/editorial/reviews/geometry-previews/geometry-sport-route-scale-343.png",
+        "reviewedAt": "2026-10-23",
+        "notes": "Each new SVG was rendered and visually inspected at343px. Given labels, units and the unknown target were checked; chart weekday labels shortened to avoid collisions."
+      }
+    },
+    {
+      "editionId": "geometry-gift-box-surface",
+      "modelId": "closed-box-surface",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "lengthCm": 8,
+        "widthCm": 5,
+        "heightCm": 3
+      },
+      "answer": "158",
+      "sourceRefs": [
+        {
+          "sourceId": "4cf6555398dbd78d",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level3.json"
+        }
+      ],
+      "figureTitle": "Қағазбен қапталатын жабық қорап",
+      "figureDescription": "Қораптың ұзындығы 8 см, ені 5 см, биіктігі 3 см. Қақпағы мен табаны да сыртқы бетке кіреді.",
+      "adaptationChanges": [
+        "Желімделген текшелер тізбегінің орнына сыйлық қорабын қаптау туралы жаңа сюжет алынды.",
+        "Жасырылған беттерді шегеру орнына үш жұп сыртқы беттің ауданын қосу сұралады.",
+        "8 см, 5 см, 3 см өлшемдері және қосымша қағаз алынбайтыны нақты көрсетілді.",
+        "Қораптың жаңа native SVG сұлбасы жасалып, алты бетке арналған есеп бірлік шаршыларды санаумен тексерілді."
+      ],
+      "image": "/figures/synaq-editions/geometry-gift-box-surface.svg",
+      "statement": "Сыйлық салынған жабық тікбұрышты қораптың ұзындығы 8 см, ені 5 см, биіктігі 3 см. Қақпағы мен табанын қоса алғанда, барлық сыртқы бетін қағазбен қаптайды. Қабаттасуға қосымша қағаз алмай, неше шаршы сантиметр қағаз керек?",
+      "solution": "Қорапта үш жұп бірдей жақ бар. Табаны мен қақпағы: 2 × 8 × 5 = 80 см². Ұзын екі бүйірі: 2 × 8 × 3 = 48 см². Қалған екі бүйірі: 2 × 5 × 3 = 30 см². Қосындысы 80 + 48 + 30 = 158 см². Жауабы: 158.",
+      "editorialStatus": "verified",
+      "minimumPlan": "pro",
+      "figureSha256": "7df5f2b5aa553aaf30d2dad0edff6d737b7629dea93e14dbcf725ee7b307cb9f",
+      "independentVerification": {
+        "answer": "158",
+        "checks": [
+          "closed cuboid has six external sides",
+          "exposed unit-square faces enumerated",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "figureReview": {
+        "status": "verified",
+        "widthPx": 343,
+        "proof": "problems/editorial/reviews/geometry-previews/geometry-gift-box-surface-343.png",
+        "reviewedAt": "2026-10-23",
+        "notes": "Each new SVG was rendered and visually inspected at343px. Given labels, units and the unknown target were checked; chart weekday labels shortened to avoid collisions."
+      }
+    },
+    {
+      "editionId": "geometry-window-rectangles",
+      "modelId": "grid-rectangle-count",
+      "grade": 5,
+      "topic": "comb",
+      "difficulty": "hard",
+      "params": {
+        "rows": 3,
+        "columns": 4
+      },
+      "answer": "60",
+      "sourceRefs": [
+        {
+          "sourceId": "7eccaf6025f2451f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-4-level3.json"
+        }
+      ],
+      "figureTitle": "Терезе торындағы тіктөртбұрыштар",
+      "figureDescription": "Терезе торы үш қатар мен төрт бағанға бөлінген. Барлық шекаралар толық жүргізілген.",
+      "adaptationChanges": [
+        "Абстрактілі бөлінген тіктөртбұрыштың орнына терезе торы туралы жаңа шарт жазылды.",
+        "Тор 3 қатар мен 4 бағанға өзгертіліп, үлкен және кіші тіктөртбұрыштардың бәрі есептелетіні нақтыланды.",
+        "Шешім жолдар бойынша емес, екі тік және екі көлденең шекараны таңдау арқылы қайта жазылды.",
+        "Жаңа тор native SVG сызықтарымен салынды; барлық шекара жұптары жеке перебормен тексерілді."
+      ],
+      "image": "/figures/synaq-editions/geometry-window-rectangles.svg",
+      "statement": "Терезе торы 3 қатар мен 4 бағанға бөлінген. Қабырғалары осы тордың сызықтарымен өтетін барлық тіктөртбұрышты санаңдар. Бірнеше ұяшықтан құралған үлкен тіктөртбұрыштар мен квадраттар да есептеледі.",
+      "solution": "Тіктөртбұрыш үшін екі көлденең және екі тік шекара таңдалады. 4 көлденең сызықтан екі шекараны 6 тәсілмен, 5 тік сызықтан екі шекараны 10 тәсілмен таңдаймыз. Барлығы 6 × 10 = 60 тіктөртбұрыш. Жауабы: 60.",
+      "editorialStatus": "verified",
+      "minimumPlan": "pro",
+      "figureSha256": "4e8fa765353c3c4ad28e3912ad82cde05f436d788c6a899c1bbccaa793943c78",
+      "independentVerification": {
+        "answer": "60",
+        "checks": [
+          "all pairs of vertical grid lines",
+          "all pairs of horizontal grid lines, including outer frame",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "figureReview": {
+        "status": "verified",
+        "widthPx": 343,
+        "proof": "problems/editorial/reviews/geometry-previews/geometry-window-rectangles-343.png",
+        "reviewedAt": "2026-10-23",
+        "notes": "Each new SVG was rendered and visually inspected at343px. Given labels, units and the unknown target were checked; chart weekday labels shortened to avoid collisions."
+      }
+    }
+  ]
+}

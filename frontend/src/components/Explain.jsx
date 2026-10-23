@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import MathText from './MathText.jsx';
 import { useLang } from '../i18n.jsx';
 import { explain, explainError } from '../explain.js';
 
@@ -39,7 +40,7 @@ export default function Explain({ q, given = null }) {
       {q.solution ? (
         <div className="sol">
           <div className="lead">{ru ? 'Краткое решение' : 'Қысқа шешім'}</div>
-          {q.solution}
+          <MathText text={q.solution} />
         </div>
       ) : null}
 

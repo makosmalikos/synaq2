@@ -1,0 +1,24 @@
+// Rebuild static question module and provenance after the offline source review.
+import fs from 'node:fs';
+import {execFileSync} from 'node:child_process';
+const tasks=JSON.parse(fs.readFileSync('output/zerek-import/ready-tasks.json'));
+const review=JSON.parse(fs.readFileSync('problems/sources/zerek/import-dispositions.json'));
+const catalog=JSON.parse(fs.readFileSync('problems/sources/zerek/catalog.json'));
+const vectors=JSON.parse(fs.readFileSync('problems/sources/zerek/vector-manifest.json'));
+const images=JSON.parse(fs.readFileSync('problems/sources/zerek/image-manifest.json'));
+if(catalog.collections.some(c=>!c.sourceReviewCaptured))throw Error('Collection review capture is incomplete');
+if(review.records.length!==catalog.collections.reduce((n,c)=>n+c.questionCount,0))throw Error('Question inventory mismatch');
+if(new Set(tasks.map(q=>q.id)).size!==tasks.length)throw Error('Duplicate task IDs');
+for(const q of tasks){
+ if(q.image&&!vectors.files.some(v=>v.image===q.image&&v.visualReview==='verified'))throw Error('Figure visual review incomplete '+q.id);
+ if(!q.answer||!q.solution||!q.statement)throw Error('Incomplete question '+q.id);
+ if(q.options&&(!q.options.includes(q.answer)||new Set(q.options).size!==q.options.length))throw Error('Invalid choices '+q.id);
+ if(/[\\$]/.test(q.statement+' '+q.solution+' '+(q.options||[]).join(' ')))throw Error('Unrendered notation '+q.id);
+ if(!review.records.some(r=>r.id===q.id&&r.status==='ready'))throw Error('Unreviewed task '+q.id);
+}
+fs.writeFileSync('frontend/src/zerekImportedQuestions.js','// Generated from all 117 Zerek collections. Author reuse permission confirmed by user.\n// Source keys and detailed solutions retained; independent exact checks where supported.\n// Provenance, exclusions and editorial changes: problems/reviews/zerek-bulk-2026-10-22.json.\nexport const zerekImportedQuestions = '+JSON.stringify(tasks,null,2)+';\n');
+const tally=(list,key)=>list.reduce((out,q)=>(out[q[key]]=(out[q[key]]||0)+1,out),{});
+const report={date:'2026-10-22',source:'Zerek (https://zerek.app/tests)',permission:'User states author explicitly permitted reuse. User explicitly authorized empty attempts in the working source account to access solutions.',scope:{collections:catalog.collections.length,schools:tally(catalog.collections,'school'),allCollectionsWithSourceSolutions:true,sourceQuestions:review.records.length},summary:{newlyImported:tasks.length,previouslyImported:21,bySchool:tally(tasks,'school'),dispositions:tally(review.records,'status'),deferredReasons:tally(review.records.filter(q=>q.status==='needs_review'),'reason'),independentlyRecomputedTargets:review.records.filter(q=>q.independentlyComputed).length,exactArithmeticRelationsChecked:review.records.reduce((n,q)=>n+(q.explicitArithmeticChecks||0),0),mathematicalPresentationChecks:review.records.reduce((n,q)=>n+(q.presentationChecks||0),0),recoveredSinceFirstBulk:tasks.length-2067,practiceOnly:tasks.filter(q=>q.practiceOnly).length,tasksWithVectors:tasks.filter(q=>q.image).length,vectorAssets:vectors.files.length,constructedVectors:vectors.files.filter(v=>v.method.startsWith('constructed')).length,archivedImages:images.files.filter(q=>q.file).length,archivedImageBytes:images.files.reduce((n,q)=>n+(q.bytes||0),0)},methods:['Rendered source conditions, answer keys and detailed solutions captured through authorized browser UI','Exact symbolic/rational cross-checks for supported models; exact constant arithmetic checks in explanations','Mathematical grouping checked before/after plain-text conversion','Full-condition exact duplicate screening against prior SYNAQ bank','Visual source comparison of all restored SVGs: geometric construction for regular diagrams, separate colour-mask linework tracing for complex illustrations','Source choice formats retained for olympiad practice and excluded from school mock selection'],limits:['Most target answers checked against source key and explanation, not independently solved by a second teacher','Number-masked diversity is approximate, not proof of semantic uniqueness','Complex silhouettes and folding figures retain source linework as vector paths; not all diagrams are manually constructed','RFMSH tasks with fractional, symbolic, negative or text choices are practiceOnly and excluded from mock exams'],references:{catalog:'problems/sources/zerek/catalog.json',perQuestion:'problems/sources/zerek/import-dispositions.json',collections:'problems/sources/zerek/collections/',images:'problems/sources/zerek/image-manifest.json',vectors:'problems/sources/zerek/vector-manifest.json',questions:'frontend/src/zerekImportedQuestions.js',previousBatch:'problems/reviews/zerek-2026-10-22.json'}};
+fs.writeFileSync('problems/reviews/zerek-bulk-2026-10-22.json',JSON.stringify(report,null,2)+'\n');
+execFileSync(process.execPath,['scripts/generate-topic-catalog.mjs','--write'],{stdio:'inherit'});
+console.log(JSON.stringify(report.summary,null,2));

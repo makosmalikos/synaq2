@@ -232,11 +232,11 @@ const ACTIONS = {
     await db.collection('unclearTasks').doc(`${ctx.childUid}_${key}`).set({ childUid: ctx.childUid, qid, topic: text(body.topic, 80), at: new Date(now) });
     return { ok: true };
   },
-  async unclear_list(db, ctx) {
+  async unclear_list(db, ctx, _body, now) {
     if (ctx.role !== 'child') throw fail('child_required', 403);
     const snap = await db.collection('unclearTasks').where('childUid', '==', ctx.childUid).limit(100).get();
     const items = snap.docs.map((d) => ({ key: d.id, ...d.data() })).sort((a, b) => millis(b.at) - millis(a.at)).slice(0, 30);
-    return { tasks: await mentorTaskPreviews(db, items) };
+    return { tasks: await mentorTaskPreviews(db, items, undefined, { plan: familyPlan(ctx.family, now) }) };
   },
   async unclear_remove(db, ctx, body) {
     if (ctx.role !== 'child') throw fail('child_required', 403);

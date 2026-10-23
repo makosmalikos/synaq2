@@ -1,4 +1,5 @@
 const { randomInt } = require('node:crypto');
+const { publicQuestionAllowed } = require('./question-access');
 const SIZE = 15, ROUND_MS = 35000;
 const CODE_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 const roleOf = (room, uid) => room.host?.uid === uid ? 'host' : room.guest?.uid === uid ? 'guest' : null;
@@ -20,7 +21,7 @@ function winnerOf(scores, speed) {
   return 'draw';
 }
 function selectQuestions(pool) {
-  const available = pool.filter((q) => q.id && q.statement && !q.image && q.answer != null
+  const available = pool.filter((q) => publicQuestionAllowed(q) && q.id && q.statement && !q.image && q.answer != null
     && !['', '-', '—'].includes(String(q.answer).trim())
     && (!q.options || (Array.isArray(q.options) && q.options.length >= 2 && q.options.map(String).includes(String(q.answer)))));
   if (available.length < SIZE) throw error('bank_unavailable', 503);
@@ -81,6 +82,7 @@ function createDuelService({ db, getPool, now = Date.now, newCode = () => Array.
       if (!snap.exists || !privateSnap.exists) throw error('not_found', 404);
       const room = snap.data(), secret = privateSnap.data();
       if (room.serverVersion !== 2 || secret.version !== 2 || room.host?.uid !== secret.hostUid) throw error('not_found', 404);
+      if ([...(room.questions || []), ...(secret.questions || [])].some((question) => !publicQuestionAllowed(question))) throw error('bank_unavailable', 503);
       const role = roleOf(room, user.uid), at = now();
       if (action === 'join') {
         if (room.status === 'finished') throw error('finished');

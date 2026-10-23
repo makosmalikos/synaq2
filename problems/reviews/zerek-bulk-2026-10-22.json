@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-22",
+  "source": "Zerek (https://zerek.app/tests)",
+  "permission": "User states author explicitly permitted reuse. User explicitly authorized empty attempts in the working source account to access solutions.",
+  "scope": {
+    "collections": 117,
+    "schools": {
+      "PREP": 8,
+      "BIL": 38,
+      "NIS": 46,
+      "RFMSH": 25
+    },
+    "allCollectionsWithSourceSolutions": true,
+    "sourceQuestions": 2419
+  },
+  "summary": {
+    "newlyImported": 2341,
+    "previouslyImported": 21,
+    "bySchool": {
+      "НИШ": 752,
+      "БИЛ": 1162,
+      "РФМШ": 427
+    },
+    "dispositions": {
+      "ready": 2341,
+      "duplicate": 57,
+      "previous_batch": 21
+    },
+    "deferredReasons": {},
+    "independentlyRecomputedTargets": 221,
+    "exactArithmeticRelationsChecked": 9726,
+    "mathematicalPresentationChecks": 13733,
+    "recoveredSinceFirstBulk": 274,
+    "practiceOnly": 34,
+    "tasksWithVectors": 241,
+    "vectorAssets": 239,
+    "constructedVectors": 68,
+    "archivedImages": 239,
+    "archivedImageBytes": 4386244
+  },
+  "methods": [
+    "Rendered source conditions, answer keys and detailed solutions captured through authorized browser UI",
+    "Exact symbolic/rational cross-checks for supported models; exact constant arithmetic checks in explanations",
+    "Mathematical grouping checked before/after plain-text conversion",
+    "Full-condition exact duplicate screening against prior SYNAQ bank",
+    "Visual source comparison of all restored SVGs: geometric construction for regular diagrams, separate colour-mask linework tracing for complex illustrations",
+    "Source choice formats retained for olympiad practice and excluded from school mock selection"
+  ],
+  "limits": [
+    "Most target answers checked against source key and explanation, not independently solved by a second teacher",
+    "Number-masked diversity is approximate, not proof of semantic uniqueness",
+    "Complex silhouettes and folding figures retain source linework as vector paths; not all diagrams are manually constructed",
+    "RFMSH tasks with fractional, symbolic, negative or text choices are practiceOnly and excluded from mock exams"
+  ],
+  "references": {
+    "catalog": "problems/sources/zerek/catalog.json",
+    "perQuestion": "problems/sources/zerek/import-dispositions.json",
+    "collections": "problems/sources/zerek/collections/",
+    "images": "problems/sources/zerek/image-manifest.json",
+    "vectors": "problems/sources/zerek/vector-manifest.json",
+    "questions": "frontend/src/zerekImportedQuestions.js",
+    "previousBatch": "problems/reviews/zerek-2026-10-22.json"
+  }
+}

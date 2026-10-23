@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLang } from '../i18n.jsx';
-import { MENTOR_TOPICS } from '../topicCatalog.generated.js';
+import { MENTOR_TOPICS } from '../mentorTopics.generated.js';
 import { lessonsCall, lessonError, fmtDay, fmtTime, dayKey } from '../lessonsApi.js';
 
 const MATH = MENTOR_TOPICS;

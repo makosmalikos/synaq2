@@ -1,4 +1,5 @@
 import React from 'react';
+import MathText from './MathText.jsx';
 import './FigureOption.css';
 
 const LEGACY_IMAGES = ['/figures/bil_v1_q14.png', '/figures/bil_v1_q14.svg'];
@@ -24,7 +25,7 @@ export function mainFigureSrc(question) {
 }
 
 export default function FigureOption({ question, value }) {
-  if (!hasFigureOptions(question)) return <span>{value}</span>;
+  if (!hasFigureOptions(question)) return <span className="figure-option-text"><MathText text={value} /></span>;
   const m = OPTS_RE.exec(question.image);
   if (m) return <img className="figure-option-art" src={`/figures/opts/${m[1]}/${value}.png`} alt="" aria-hidden="true" />;
   return <img className="figure-option-art" src={`/figures/bil-half/${value}.svg`} alt="" aria-hidden="true" />;

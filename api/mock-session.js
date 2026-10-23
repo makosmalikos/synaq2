@@ -2,6 +2,7 @@ const { getAdmin } = require('../backend/lib/firebase-admin');
 const { familyPlan, hasFullAccess } = require('../backend/lib/plans');
 const { mockCatalog, createWeeklyMock, restoreMock, gradeMock, publicMock } = require('../backend/lib/mock-bank');
 const { PRICE_KZT, weeklyWindow, passId } = require('../backend/lib/weekly-mock');
+const { sanitizeMockResult } = require('../backend/lib/question-access');
 
 const SESSION_GRACE_MS = 30 * 60 * 1000;
 const error = (message, status = 400) => Object.assign(new Error(message), { status });
@@ -58,7 +59,7 @@ module.exports = async function handler(req, res) {
       if (session.completed) {
         const result = await resultRef(db, user.uid, body.id).get();
         if (!result.exists) throw error('session-not-found', 404);
-        return res.status(200).json({ completed: true, result: result.data() });
+        return res.status(200).json({ completed: true, result: sanitizeMockResult(result.data()) });
       }
       if (session.expiresAt <= Date.now()) throw error('session-expired', 410);
       return res.status(200).json(await publicSession(db, session));
@@ -130,7 +131,7 @@ module.exports = async function handler(req, res) {
         tx.update(ref, { completed: true, completedAt: now });
         return payload;
       });
-      return res.status(200).json({ result });
+      return res.status(200).json({ result: sanitizeMockResult(result) });
     }
     throw error('bad-action');
   } catch (cause) {

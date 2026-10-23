@@ -10,13 +10,15 @@
     "test:rules": "firebase emulators:exec --only firestore --project demo-synaq-tests 'node --test tests/rules.test.mjs tests/curriculum-reading-rules.test.mjs tests/duel-emulator.test.cjs'",
     "test:journey": "firebase emulators:exec --only auth,firestore --project demo-synaq-tests 'node --test tests/journey-emulator.test.cjs'",
     "dev:emulators": "firebase emulators:exec --only auth,firestore --project demo-synaq-tests 'node scripts/dev-emulators.mjs'",
-    "check": "npm test && npm run validate:bank && npm run validate:curriculum && npm run build --prefix frontend && npm run validate:build",
+    "check": "npm test && npm run editorial:check && npm run validate:bank && npm run validate:curriculum && npm run build --prefix frontend && npm run validate:build",
     "validate:bank": "node scripts/validate-bank.mjs",
     "bank:coverage": "node scripts/bank-coverage.mjs",
     "validate:curriculum": "node scripts/validate-curriculum.mjs",
     "validate:build": "node scripts/validate-build.mjs",
     "verify:release": "node scripts/check-release.mjs",
-    "generate:public-mocks": "node scripts/generate-public-mocks.mjs"
+    "generate:public-mocks": "node scripts/generate-public-mocks.mjs",
+    "editorial:check": "node scripts/editorial/publish-standard-editions.mjs --check",
+    "editorial:publish": "node scripts/editorial/publish-standard-editions.mjs --write"
   },
   "engines": {
     "node": ">=22.12"

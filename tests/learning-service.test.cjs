@@ -205,3 +205,94 @@ test('invalid payloads and excessive session creation are bounded before result 
   f.db.records.set('learningRateLimits/kid', { day: learningDay(f.now()).day, starts: 60 });
   await assert.rejects(f.start('session-next'), /rate-limit/);
 });
+
+test('training uses the linked child grade, ignores client ceilings and rejects a direct higher-course qid', async () => {
+  const db = memoryStore({ 'families/parent': { pro: true }, 'families/parent/children/kid': { code: 'student', klass: '4' }, 'childIndex/kid': { parentUid: 'parent' } });
+  const user = { uid: 'kid', email: 'student@synaq.kids' };
+  const questions = [4, 5, 6].map(grade => ({ id: `synaq_adapted_grade_review_${grade}`,
+    minimumPlan: 'pro', editorialStatus: 'verified', sourceProvider: 'zerek',
+    grade, practiceOnly: true, subject: 'math', school: 'Математика', statement: '2 + 2?', answer: '4', topic: 'num' }));
+  questions.push({ id: 'legacy-admission-7', grade: 7, school: 'НИШ', statement: '2 + 2?', answer: '4', topic: 'num' });
+  const calls = [];
+  const act = createLearningService({ db,
+    getTrainingTopics: async options => { calls.push(options); return []; },
+    getTrainingQuestions: async options => { calls.push(options); return []; },
+    getTrainingQuestion: async id => questions.find(q => q.id === id),
+    gradeAnswer: async (answer, q) => answer === q.answer,
+  });
+  await act(user, { action: 'topics', gradeCeiling: 6, klass: '6' });
+  await act(user, { action: 'questions', topicId: 'num', excludeIds: [], limit: 60, grade: 6, gradeCeiling: 6, klass: '6' });
+  assert.deepEqual(calls.map(call => call.gradeCeiling), [4, 4]);
+  const start = (id, qid) => act(user, { action: 'start', mode: 'training', id, qid, gradeCeiling: 6, klass: '6' });
+  await assert.rejects(start('forged-ceiling', questions[2].id), /question-unavailable/);
+  assert.equal(db.records.has('learningSessions/kid_forged-ceiling'), false);
+  assert.equal((await start('lower-course-4', questions[0].id)).question.grade, 4);
+  assert.equal((await start('legacy-grade-7', questions[3].id)).question.grade, 7);
+
+  db.records.set('families/parent/children/kid', { code: 'student', klass: '6' });
+  for (const q of questions.slice(0, 3)) assert.equal((await start(`grade-six-${q.grade}`, q.id)).question.grade, q.grade);
+  db.records.set('families/parent/children/kid', { code: 'student' });
+  assert.equal((await start('unknown-profile', questions[2].id)).question.grade, 6);
+
+  // A legitimately opened question remains replayable after a profile edit;
+  // fresh sessions use the new ceiling without discarding an existing answer.
+  db.records.set('families/parent/children/kid', { code: 'student', klass: '4' });
+  assert.equal((await start('grade-six-6', questions[2].id)).question.grade, 6);
+  await assert.rejects(start('new-high-course', questions[2].id), /question-unavailable/);
+  assert.equal((await act(user, { action: 'answer', id: 'grade-six-6', answer: '4' })).correct, true);
+});
+
+test('rewritten tasks require current public Standard/internal pro, never a forged or retired plan', async () => {
+  const db = memoryStore({ 'families/parent': { plan: 'free' }, 'families/parent/children/kid': { code: 'student' }, 'childIndex/kid': { parentUid: 'parent' } });
+  const user = { uid: 'kid', email: 'student@synaq.kids' }, calls = [];
+  const adapted = { id: 'synaq_adapted_paid_review', minimumPlan: 'pro', editorialStatus: 'verified', sourceProvider: 'zerek', statement: '2+2?', answer: '4', solution: '2+2=4', topic: 'num' };
+  const originals = ['zerek_crypt_01', 'zerek_02c8cf84-6eb2-4fff-b411-8f69e54951b1_01', 'zerek_course_0000000000000004', 'zerek_course_extra_0000000000000004'].map(id => ({ ...adapted, id }));
+  const act = createLearningService({ db,
+    getTrainingTopics: async options => { calls.push(options); return []; },
+    getTrainingQuestions: async options => { calls.push(options); return []; },
+    getTrainingQuestion: async id => [adapted, ...originals].find(q => q.id === id), gradeAnswer: async (answer, q) => answer === q.answer,
+  });
+  const start = (id, qid = adapted.id) => act(user, { action: 'start', mode: 'training', id, qid, plan: 'mentor', pro: true, minimumPlan: 'free', editorialStatus: 'verified' });
+  await act(user, { action: 'topics', plan: 'pro', pro: true });
+  await act(user, { action: 'questions', topicId: 'num', limit: 60, excludeIds: [], plan: 'mentor', pro: true });
+  assert.deepEqual(calls.map(call => call.plan), ['free', 'free']);
+  for (const plan of ['free', 'standard', 'pro', 'mentor']) {
+    db.records.set('families/parent', { plan });
+    for (let i = 0; i < originals.length; i++) await assert.rejects(start(`original-${plan}-${i}`, originals[i].id), { message: 'question-unavailable', status: 404 });
+    if (['free', 'standard'].includes(plan)) await assert.rejects(start(`paid-denied-${plan}`), { message: 'pro-required', status: 403 });
+    else assert.equal((await start(`paid-allowed-${plan}`)).question.id, adapted.id);
+  }
+  db.records.set('families/parent', { pro: true });
+  assert.equal((await start('legacy-pro-access')).question.id, adapted.id);
+  db.records.set('families/parent', { plan: 'pro', planExpiresAt: 1 });
+  await assert.rejects(start('expired-paid-plan'), /pro-required/);
+  assert.equal(db.records.has('learningSessions/kid_expired-paid-plan'), false);
+});
+
+test('downgrade blocks restricted resume and answer replays before returning keys or changing quota/XP', async () => {
+  let now = Date.parse('2026-09-24T00:00:00Z');
+  const db = memoryStore({ 'families/parent': { plan: 'pro', planExpiresAt: now + 1000 }, 'families/parent/children/kid': { code: 'student' }, 'childIndex/kid': { parentUid: 'parent' } });
+  const user = { uid: 'kid', email: 'student@synaq.kids' };
+  const question = { id: 'synaq_adapted_downgrade', minimumPlan: 'pro', editorialStatus: 'verified', statement: '2+2?', answer: '4', solution: 'private solution', topic: 'num' };
+  const act = createLearningService({ db, now: () => now, getTrainingQuestion: async () => question, gradeAnswer: async given => given === '4' });
+  const start = id => act(user, { action: 'start', mode: 'training', id, qid: question.id, plan: 'pro' });
+  const answer = id => act(user, { action: 'answer', id, answer: '4', pro: true, plan: 'mentor' });
+  await start('paid-pending'); await start('paid-completed');
+  const complete = await answer('paid-completed');
+  assert.equal(complete.gain, 5); assert.equal(complete.count, 1);
+  const before = JSON.stringify([...db.records]);
+  now += 1001; // Natural subscription expiry, without a client-side flag.
+  for (const id of ['paid-pending', 'paid-completed']) {
+    await assert.rejects(start(id), { message: 'pro-required', status: 403 });
+    await assert.rejects(answer(id), { message: 'pro-required', status: 403 });
+  }
+  assert.equal(JSON.stringify([...db.records]), before);
+  db.records.set('families/parent', { plan: 'mentor' });
+  assert.equal((await start('paid-pending')).question.id, question.id);
+  assert.equal((await answer('paid-completed')).gain, 0);
+  assert.equal((await answer('paid-pending')).count, 2);
+  // A local session from before original transfers were withdrawn also stays closed.
+  db.records.get('learningSessions/kid_paid-pending').question = { ...question, id: 'zerek_crypt_01' };
+  await assert.rejects(start('paid-pending'), /question-unavailable/);
+  await assert.rejects(answer('paid-pending'), /question-unavailable/);
+});

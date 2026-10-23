@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/synaq-standard-core.json",
+  "reviewedAt": "2026-10-23",
+  "scope": "Independent reading of all24 final conditions and solutions, condition-based arithmetic/enumerations, Kazakh language and ambiguity review, and inspection of every archival curriculum skill reference. No edition model generator or model verifier was called. Original underdetermined numbering, passenger wording, grammar and three skill references were corrected by the author before approval.",
+  "entries": [
+    {
+      "editionId": "core-equal-rows",
+      "sha256": "493fe72ec4bc2f231f160a16e9060b4104fdcc168aca9489940b1683ba557c00",
+      "verdict": "verified",
+      "method": "complete divisor enumeration",
+      "notes": "Enumerated 1,2,3,4,6,9,12,18,36. Each divides all 36 pupils into equal nonempty rows, and each possible row size is distinct: nine choices. One-pupil and one-row arrangements are allowed."
+    },
+    {
+      "editionId": "core-identical-kits",
+      "sha256": "55bafff88b8a5abdb4ffd547c9e7a2f6f41dce2d924f2694bdfdac00e4344c53",
+      "verdict": "verified",
+      "method": "maximal feasible common partition",
+      "notes": "Exhaustive common-divisor check gives maximum24. Each of24 identical packs contains2 cards and3 stickers, exhausting48 and72; no larger integer pack count divides both stocks."
+    },
+    {
+      "editionId": "core-synchronised-lights",
+      "sha256": "884b1744c326a792f86dcd25a11f741a50d274a57f3bba5d4d7eef5ae2a9bd66",
+      "verdict": "verified",
+      "method": "first positive simultaneous event search",
+      "notes": "The first positive common multiple is36s. Earlier positive seconds fail at least one interval;36/12=3 and36/18=2. Initial t=0 is excluded by asking when they meet again."
+    },
+    {
+      "editionId": "core-minimum-shuttles",
+      "sha256": "5c33fb05764d0ca54933c8a2fc75c2a4c208a9f2d76523ec487bbe85276cfb54",
+      "verdict": "verified",
+      "method": "minimum feasible vehicle count",
+      "notes": "Eight vehicles carry72 passengers and fail; nine carry81 and suffice. Revised wording explicitly counts74 passengers and excludes drivers from each nine-passenger capacity."
+    },
+    {
+      "editionId": "core-place-value-code",
+      "sha256": "fc72e5bb5e4763a0c1388db73e3a06739d7e7a6c4bb4986c1db5ece7ed777dac",
+      "verdict": "verified",
+      "method": "positional reconstruction",
+      "notes": "Thousands/hundreds/tens/units reconstruct6438. The first digit is nonzero, so the stated four-digit code and every solution term agree."
+    },
+    {
+      "editionId": "core-round-visitors",
+      "sha256": "bb497b2de1af1a6c0356ed77c12bba2f182bb8259dc0df33b60b5ebc868d5e9f",
+      "verdict": "verified",
+      "method": "nearest-multiple distance comparison",
+      "notes": "Distances to57000 and58000 are650 and350. Nearest thousand is58000, with no halfway tie. The solution uses the correct hundreds digit6."
+    },
+    {
+      "editionId": "core-digit-divisible-nine",
+      "sha256": "50171887ecc2302151f91babd209600066db7241a248271b9d0c7b84fa4b7454",
+      "verdict": "verified",
+      "method": "direct ten-digit divisibility enumeration",
+      "notes": "Tested each possible digit in34□5 by actual integer division. Only digit6 gives3465 divisible by9; known digit sum12 plus6 is18. Revised source ref35893ab0e1ae9754 directly exercises this rule."
+    },
+    {
+      "editionId": "core-smallest-prime-code",
+      "sha256": "bfc2e9a240790a9831c0ec58acc7794b8b4a78a1c443ce10b3d138c11035b2ad",
+      "verdict": "verified",
+      "method": "trial division and minimum search",
+      "notes": "Candidates in the strict interval70<n<80 give primes71,73,79. Trial divisors up to each square root confirm71 is the smallest; interval endpoints are excluded."
+    },
+    {
+      "editionId": "core-digit-sum-pins",
+      "sha256": "87c238e463c485565a6c423e4646a686bb2045cf21f83ee3e0d55ebf3752943b",
+      "verdict": "verified",
+      "method": "exhaustive four-digit integer enumeration",
+      "notes": "Enumerated integers1000–9999 and selected decimal digit sum3; exactly10 remain. Leading zeros are excluded explicitly. The solution distribution of two remaining units across four positions gives4+6=10."
+    },
+    {
+      "editionId": "core-fixed-fee-packs",
+      "sha256": "2eb472ae658f68072f326f02d12bc764ac773f64835177e9eacd033fc2743031",
+      "verdict": "verified",
+      "method": "integer price equation inverse check",
+      "notes": "The unique nonnegative integer price satisfying six equal-priced kits plus350 packaging equals2210 is310. Packaging is charged once;6×310+350=2210."
+    },
+    {
+      "editionId": "core-balance-two-sides",
+      "sha256": "afb65bd63449c589e28f3ace4f3f212cbce369948b663753eaee03585f67108e",
+      "verdict": "verified",
+      "method": "two-output equality substitution",
+      "notes": "The linear difference is2x−28; its only zero is14. Both independent robot outputs then equal84, agreeing with every algebra step."
+    },
+    {
+      "editionId": "core-strict-capacity",
+      "sha256": "dcc1fa51c9f577af916d3290f5077f795d0a8cd6962d1069e4431968e56c8878",
+      "verdict": "verified",
+      "method": "strict integer boundary enumeration",
+      "notes": "Maximum feasible integer count is11: total41kg. The next count12 gives44kg and is excluded by strict less-than. Revised source f66cf8f92a5c132c directly asks for a maximal natural solution of a strict inequality."
+    },
+    {
+      "editionId": "core-temperature-changes",
+      "sha256": "fde83512a75a3ffdcf12d66c236ecc6af146f2096b74ea61734d1055bdd65c5f",
+      "verdict": "verified",
+      "method": "signed sequential state changes",
+      "notes": "Start−9, rise14 gives5, then drop6 gives−1°C. The target is the final signed temperature, not the magnitude below zero."
+    },
+    {
+      "editionId": "core-coordinate-distance",
+      "sha256": "e84335e3a518d52803dea704ecd1c63d271ba24f7533a6fa7b14d7bc80c77149",
+      "verdict": "verified",
+      "method": "unit-interval counting",
+      "notes": "Counted13 unit intervals from−8 to5; equivalent absolute difference is|5−(−8)|=13m. No negative distance is introduced. Revised coordinate/interval source ref3c6d2b1a7611f905 inspected."
+    },
+    {
+      "editionId": "core-bounded-multiples",
+      "sha256": "3c82b5c4e29d8bacd95413e1a75b5137818da249b48713de6de77ce01927464f",
+      "verdict": "verified",
+      "method": "explicit assigned-number enumeration",
+      "notes": "Revised statement now assigns every integer13…27 to exactly one pupil, resolving the original underdetermination. Multiples15,18,21,24,27 give exactly five pupils;12 is excluded and27 included."
+    },
+    {
+      "editionId": "core-increasing-display",
+      "sha256": "2234467f269a02bd771c0185268d5738b35249fa7c93172b88150c2ca01cf6a1",
+      "verdict": "verified",
+      "method": "iterated recurrence simulation",
+      "notes": "Started at7 and applied eight increments of4 to reach row9; result39. The first-row/index distinction is explicit and the solution uses eight, not nine, increments."
+    },
+    {
+      "editionId": "core-median-odd",
+      "sha256": "d328670756221ccaecdc6337e7820be8162361299d5caacb4acce854aad4fca0",
+      "verdict": "verified",
+      "method": "ordered central-rank selection",
+      "notes": "Sorted data8,10,12,15,17,19,22; the fourth of seven observations is15min. Revised Kazakh object is квестті; condition and solution agree."
+    },
+    {
+      "editionId": "core-median-even",
+      "sha256": "ac8aeb2de7715f262803bbefd5128e24ca7c95ee7b0e8f277641483afcd93fb3",
+      "verdict": "verified",
+      "method": "ordered central-pair mean",
+      "notes": "Sorted data12,15,18,21,24,30; the central pair18 and21 has exact mean39/2=19.5km. This intentionally changes median parity while retaining the source median skill."
+    },
+    {
+      "editionId": "core-unique-mode",
+      "sha256": "55d85ad906dba2018d6407bce4c5d4e57abdedbd690ad2f7c455693ef91b9310",
+      "verdict": "verified",
+      "method": "frequency histogram with unique-maximum check",
+      "notes": "Histogram1→2,2→1,3→3,4→1 has a unique maximum at value3. The explanation distinguishes the modal value from its occurrence count even though both happen to equal3."
+    },
+    {
+      "editionId": "core-measurement-range",
+      "sha256": "9dd3dc1f9f431ed3934bc2feb4c02fbb229db7a67e18d85fc16c44c831180f83",
+      "verdict": "verified",
+      "method": "maximum pairwise difference",
+      "notes": "Largest separation among all measured heights is30−16=14cm, equivalent to the range. The asked statistic and units are explicit."
+    },
+    {
+      "editionId": "core-voucher-combinations",
+      "sha256": "c5659ae809d0dcc8f0bd766e515cf5efcd661c6dfb0612a4a0b91deb896275c7",
+      "verdict": "verified",
+      "method": "exhaustive unordered nonnegative denomination counts",
+      "notes": "Enumerated all triples(a,b,c) with80a+120b+200c=600. By c=0,1,2,3, counts are3,2,1,1: total7. Repetition, order irrelevance and unused types are all stated."
+    },
+    {
+      "editionId": "core-poster-product",
+      "sha256": "13fe6747df81ff2774fac4eabd328640fb3e0d6713c3dbff2f29912ed925dc5b",
+      "verdict": "verified",
+      "method": "Cartesian product enumeration",
+      "notes": "Enumerated all triples of one background, one font and one icon:3×4×2=24 distinct designs. Unlike its broader source choice-counting reference, this edition explicitly imposes no budget constraint."
+    },
+    {
+      "editionId": "core-weighted-average",
+      "sha256": "09bfd64995010c31ec25c5e14f89c16d38d005d3ff95e8cd78baea5d53ac0085",
+      "verdict": "verified",
+      "method": "expanded individual-observation mean",
+      "notes": "Expanded the two frequency groups into individual observations6,6,10,10,10. Total42 over five robots gives exact42/5=8.4min; averaging the two group labels would be incorrect."
+    },
+    {
+      "editionId": "core-distinct-pairs",
+      "sha256": "cd5abef50596e8f6b347542b1bea178a02799d318005d1f6aa25b5fa9aa5ee61",
+      "verdict": "verified",
+      "method": "exhaustive unordered distinct-pair enumeration",
+      "notes": "Constructed all pairs of distinct students among nine exactly once;36 pairs. No self-pairs or reverse-order duplicates are included, matching the pair-photo condition and solution."
+    }
+  ]
+}

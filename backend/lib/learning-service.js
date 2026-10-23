@@ -1,5 +1,7 @@
 const { createHash } = require('node:crypto');
 const { millis, familyPlan, hasFullAccess, dailyTaskLimit } = require('./plans');
+const { schoolGrade, trainingGradeAllowed } = require('./training-grade');
+const { assertQuestionAccess } = require('./question-access');
 
 const FREE_DAILY_LIMIT = 5;
 const SESSION_TTL = 86400000;
@@ -27,7 +29,7 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
     // Keep legitimate pre-server legacy children while rejecting orphaned or
     // reassigned Auth accounts. A supplied parentUid is never trusted.
     if (!family.exists || !child.exists || `${child.data().code}@synaq.kids` !== user.email) throw error('child-required', 403);
-    return family.data();
+    return { family: family.data(), gradeCeiling: schoolGrade(child.data().klass) };
   }
 
   async function dailyCount(tx, uid, dayInfo) {
@@ -44,8 +46,8 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
     if (!body || typeof body !== 'object' || Array.isArray(body)) throw error('bad-body');
     const at = now(), dayInfo = learningDay(at);
     if (body.action === 'topics') {
-      await db.runTransaction((tx) => childContext(tx, user));
-      return { topics: await getTrainingTopics() };
+      const { family, gradeCeiling } = await db.runTransaction((tx) => childContext(tx, user));
+      return { topics: await getTrainingTopics({ gradeCeiling, plan: familyPlan(family, at) }) };
     }
     if (body.action === 'questions') {
       const mixed = body.mixed === true;
@@ -53,11 +55,11 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
         || !Array.isArray(body.excludeIds) || body.excludeIds.length > 1000
         || body.excludeIds.some((id) => typeof id !== 'string' || !id || id.length > 200 || id.includes('/'))
         || !Number.isSafeInteger(body.limit) || body.limit < 1 || body.limit > 60) throw error('bad-request');
-      await db.runTransaction((tx) => childContext(tx, user));
-      return { questions: await getTrainingQuestions({ topicId: body.topicId, mixed, excludeIds: body.excludeIds, limit: body.limit }) };
+      const { family, gradeCeiling } = await db.runTransaction((tx) => childContext(tx, user));
+      return { questions: await getTrainingQuestions({ topicId: body.topicId, mixed, excludeIds: body.excludeIds, limit: body.limit, gradeCeiling, plan: familyPlan(family, at) }) };
     }
     if (body.action === 'count') return db.runTransaction(async (tx) => {
-      const family = await childContext(tx, user);
+      const { family } = await childContext(tx, user);
       const daily = await dailyCount(tx, user.uid, dayInfo);
       tx.set(daily.ref, { count: daily.count, updatedAt: new Date(at) }, { merge: true });
       return { count: daily.count, day: dayInfo.day, limit: dailyTaskLimit(familyPlan(family, at)) };
@@ -74,19 +76,22 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
       // Generate once per HTTP request, not again on Firestore transaction retry.
       let prepared;
       return db.runTransaction(async (tx) => {
-        const family = await childContext(tx, user);
+        const { family, gradeCeiling } = await childContext(tx, user);
+        const plan = familyPlan(family, at), limit = dailyTaskLimit(plan);
         const [existing, daily] = await Promise.all([tx.get(sessionRef), dailyCount(tx, user.uid, dayInfo)]);
         if (existing.exists) {
           const session = existing.data();
           if (session.uid !== user.uid || session.fingerprint !== fingerprint) throw error('request-conflict', 409);
           if (session.expiresAt <= at) throw error('session-expired', 410);
+          assertQuestionAccess(session.question, plan);
           return { id: body.id, question: publicQuestion(session.question), startedAt: session.startedAt, expiresAt: session.expiresAt };
         }
-        const plan = familyPlan(family, at), limit = dailyTaskLimit(plan);
         if (limit != null && daily.count >= limit) throw error('daily-limit', 429);
         prepared ||= body.mode === 'training' ? { question: await getTrainingQuestion(body.qid), standard: true }
           : await getCurriculumQuestion(body.topicKey, body.level, body.id);
         if (!prepared?.question) throw error('question-unavailable', 404);
+        assertQuestionAccess(prepared.question, plan);
+        if (body.mode === 'training' && !trainingGradeAllowed(prepared.question, gradeCeiling)) throw error('question-unavailable', 404);
         if (body.mode === 'curriculum' && !hasFullAccess(plan)
           && (plan === 'free' ? !(prepared.free ?? prepared.standard) || body.level !== 'easy'
             : !prepared.standard || !['easy', 'medium'].includes(body.level))) {
@@ -107,13 +112,15 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
     if (typeof body.answer !== 'string' || !body.answer.trim() || body.answer.length > 2000) throw error('bad-answer');
     const given = body.answer.trim();
     return db.runTransaction(async (tx) => {
-      const family = await childContext(tx, user);
+      const { family } = await childContext(tx, user);
+      const plan = familyPlan(family, at), limit = dailyTaskLimit(plan);
       const attemptRef = resultRef(user.uid, 'attempts', body.id), statsRef = resultRef(user.uid, 'stats', 'summary');
       const [sessionSnap, attemptSnap, statsSnap, daily] = await Promise.all([
         tx.get(sessionRef), tx.get(attemptRef), tx.get(statsRef), dailyCount(tx, user.uid, dayInfo),
       ]);
       if (!sessionSnap.exists || sessionSnap.data().uid !== user.uid) throw error('session-not-found', 404);
       const session = sessionSnap.data(), previous = statsSnap.data() || {};
+      assertQuestionAccess(session.question, plan);
       if (attemptSnap.exists) {
         const saved = attemptSnap.data();
         if (saved.answer !== given || saved.sessionId !== body.id) throw error('request-conflict', 409);
@@ -122,7 +129,6 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
       }
       if (session.expiresAt <= at) throw error('session-expired', 410);
       if (session.completed) throw error('session-completed', 409);
-      const plan = familyPlan(family, at), limit = dailyTaskLimit(plan);
       if (limit != null && daily.count >= limit) throw error('daily-limit', 429);
       if (!hasFullAccess(plan) && session.mode === 'curriculum') {
         const access = await getCurriculumQuestion(session.request.topicKey, session.request.level, body.id, true);

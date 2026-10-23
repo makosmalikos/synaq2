@@ -24,10 +24,11 @@ function staticDependencies(entry,seen=new Set()){
 test('the student shell, home and mentor cannot eagerly import the exam bank or lesson engine',()=>{
  for(const entry of ['PlatformApp.jsx','Home.jsx','HomeCourseProgress.jsx','components/Mentor.jsx','Parent.jsx','Progress.jsx']){
   const deps=staticDependencies(entry);
-  for(const file of ['bank.js','data.js','api.js','curriculumData.js','curriculumLessonContent.js','diagnosticData.js'])assert.equal(deps.has(path.join(src,file)),false,`${entry} imports ${file}`);
+  for(const file of ['bank.js','data.js','api.js','curriculumData.js','curriculumLessonContent.js','diagnosticData.js','bankIds.generated.js'])assert.equal(deps.has(path.join(src,file)),false,`${entry} imports ${file}`);
  }
  const shell=staticDependencies('PlatformApp.jsx');
  assert.equal(shell.has(path.join(src,'Home.jsx')),false,'parents and sign-in must not download the child dashboard');
+ assert.equal(staticDependencies('components/Mentor.jsx').has(path.join(src,'topicCatalog.generated.js')),false,'booking must not download all question IDs when the bank grows');
 });
 
 test('lightweight curriculum metadata matches every full lesson and persisted reading step',()=>{

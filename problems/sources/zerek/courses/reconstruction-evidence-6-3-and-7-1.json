@@ -1,0 +1,96 @@
+{
+  "figures": [
+    {
+      "sourceContentId": "17441249be34ba61",
+      "sourceFile": "5-math-6-3-level3.json",
+      "sourceIndex": 1,
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-6.3-L3-04.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/6.3-L3-04.png",
+        "image": "/figures/zerek-courses/course-5-6.3-L3-04.svg",
+        "sha256": "b58a19d409128847d5e9e17c4052cba579eb82361c21c313d1dda031be3dde30",
+        "method": "constructed_from_complete_condition",
+        "visualReview": "verified",
+        "reviewNotes": "Rendered and visually reviewed: shared start/scale, B ends at 100%, A at 80%, red two-ended difference arrow 1 500 тг; no balances or requested total drawn. Reconstructed from the complete recorded source solution; unavailable original raster was not visually compared."
+      },
+      "evidence": {
+        "statement": "Асан мен Бек ақша жинап жүр. Суретте $B$ жолағы — Бектің ақшасы, $A$ жолағы — Асанның ақшасы (бір масштабта). Астындағы шкала Бектің ақшасына қатысты пайызды көрсетеді, ал қызыл нұсқар — олардың ақшасының айырмасы (теңгемен).\n\n[Image: diagram]\n\nАсан мен Бекте барлығы неше теңге бар?",
+        "sourceSolution": "Бектің ақшасы — $100\\%$. Суреттен Асанның ақшасы неше пайыз екенін және айырманың пайызын оқимыз.\n\n\n\n$A$ жолағы шкаладағы $80\\%$ белгісінде аяқталады: Асанда Бектің ақшасының $80\\%$-і бар.\n\n\n\n\nАйырма (қызыл нұсқар): $100\\% - 80\\% = 20\\%$, бұл $1\\,500$ тг.\n\n\n\n\nБектің ақшасы: $1\\,500 : 0{,}2 = 15\\,000 : 2 = 7\\,500$ (тг).\n\n\n\n\nАсанның ақшасы: $7\\,500 - 1\\,500 = 6\\,000$ (тг).\n\n\n\n\nЕкеуінде: $7\\,500 + 6\\,000 = 13\\,500$ (тг).\n\n\n\n\nТексеру: $7\\,500 \\cdot 0{,}8 = 6\\,000$ — Асанның ақшасы.\n\nЖиі қате: $1\\,500$-ді Асанның ақшасы деп алу — бұл тек айырма, яғни Бектің ақшасының $20\\%$-і.\n\nЖауабы: $13\\,500$",
+        "sourceAnswer": "13500",
+        "sourceQuestionSha256": "8428794273666cd599bb65669c9dcbfe9ffea64968f2783647a9c6bc0411bee4",
+        "givenDiagramData": {
+          "BPercent": 100,
+          "APercent": 80,
+          "differenceTenge": 1500,
+          "sharedOriginAndScale": true
+        },
+        "answerNotDrawn": true,
+        "independentAnswerCheck": {
+          "expression": "1500 / (1 - 80/100) * (1 + 80/100)",
+          "value": 13500,
+          "shownOnFigure": false
+        },
+        "svgTextLabels": [
+          "B",
+          "A",
+          "0%",
+          "20%",
+          "40%",
+          "60%",
+          "80%",
+          "100%",
+          "1 500 тг"
+        ],
+        "reviewedAt": "2026-10-23T08:28:48.587742+00:00"
+      }
+    },
+    {
+      "sourceContentId": "5b68b6d3ab61264c",
+      "sourceFile": "5-math-7-1-level3.json",
+      "sourceIndex": 1,
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-7.1-L3-03.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/7.1-L3-03.png",
+        "image": "/figures/zerek-courses/course-5-7.1-L3-03.svg",
+        "sha256": "de360962603171d62b6572dd61a4a622dc9013dfc84461ffe3377aaf68430b77",
+        "method": "constructed_from_complete_condition",
+        "visualReview": "verified",
+        "reviewNotes": "Rendered and visually reviewed: six distinct rays OA, OB, OC, OD, OE, OF with one origin O; labels/tips remain inside viewBox; no angle counts or degree measures drawn. Fan positions are schematic, since the recorded statement/solution specifies no angular sizes. Unavailable original raster was not visually compared."
+      },
+      "evidence": {
+        "statement": "Суретте $O$ нүктесінен $6$ сәуле жүргізілген.\n\n[Image: diagram]\n\nСуретте төбесі $O$ болатын неше бұрыш бар?",
+        "sourceSolution": "Кез келген екі сәуле бір бұрыш құрайды, ал әр бұрыш дәл бір жұп сәулемен анықталады. Сондықтан жұптарды жүйелі түрде санаймыз.\n\n\n\n$OA$ сәулесі қалған $5$ сәулемен $5$ бұрыш құрайды: $\\angle AOB$, $\\angle AOC$, $\\angle AOD$, $\\angle AOE$, $\\angle AOF$.\n\n\n\n\n$OB$ — $OA$-дан басқа $4$ сәулемен: $4$ жаңа бұрыш.\n\n\n\n\n$OC$ — $3$ жаңа бұрыш, $OD$ — $2$, $OE$ — $1$ ($\\angle EOF$).\n\n\n\n\nБарлығы: $5 + 4 + 3 + 2 + 1 = 15$.\n\n\n\n\nТексеру: әр сәуле $5$ бұрышқа қатысады, $6 \\cdot 5 = 30$, бірақ әр бұрыш екі рет саналды: $30 : 2 = 15$.\n\nЖауабы: $15$",
+        "sourceAnswer": "15",
+        "sourceQuestionSha256": "324e5887922d1dde8165c5a63f0ed0dba381c883c412d279983200f34b68ebcf",
+        "givenDiagramData": {
+          "origin": "O",
+          "distinctRayNames": [
+            "OA",
+            "OB",
+            "OC",
+            "OD",
+            "OE",
+            "OF"
+          ],
+          "positions": "Schematic; no angle measures are given or needed."
+        },
+        "answerNotDrawn": true,
+        "independentAnswerCheck": {
+          "expression": "C(6,2)",
+          "value": 15,
+          "shownOnFigure": false
+        },
+        "svgTextLabels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "O"
+        ],
+        "reviewedAt": "2026-10-23T08:28:48.588438+00:00"
+      }
+    }
+  ]
+}

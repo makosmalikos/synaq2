@@ -1,4 +1,5 @@
-import { STATIC_TOPICS, STATIC_BANK_IDS } from './topicCatalog.generated.js';
+import { STATIC_TOPICS } from './topicCatalog.generated.js';
+import { STATIC_BANK_IDS } from './bankIds.generated.js';
 import { partitionAdminTasks } from './questionMetadata.js';
 import { addQuestionsToTopics } from './topicSummary.js';
 

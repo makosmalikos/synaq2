@@ -37,7 +37,7 @@ function pickPreferFresh(pool, want, excludeIds) {
 }
 
 function buildRfmsh(excludeIds) {
-  const pool = shuffle(POOL.filter((q) => q.school === 'РФМШ' && isGradable(q)));
+  const pool = shuffle(examPool('РФМШ', null));
   const qs = pickPreferFresh(pool, RFMSH_COUNT, excludeIds).map((q, k) => ({ ...q, num: k + 1, section: 1 }));
   return {
     id: `rfmsh_${Date.now()}`,
@@ -92,7 +92,7 @@ export const MOCK_SPECS = {
 };
 
 function examPool(school, subject) {
-  return POOL.filter((q) => isGradable(q) && (school === 'БИЛ'
+  return POOL.filter((q) => !q.practiceOnly && isGradable(q) && (school === 'БИЛ'
     ? ['БИЛ', 'КТЛ'].includes(q.school)
     : q.school === school || (school === 'НИШ' && subject === 'kaz' && q.school === 'БИЛ'))
     && (subject == null || q.subject === subject));

@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-22",
+  "source": "https://zerek.app/courses",
+  "permission": "User confirmed permission from the author and explicitly authorized answer submissions in the working account for all grade 4–6 courses. Grade 7 excluded by user.",
+  "scope": {
+    "grades": [
+      4,
+      5,
+      6
+    ],
+    "excludedGrades": [
+      7
+    ],
+    "capturedLevel": 1,
+    "selectedTopics": 11,
+    "catalogTopics": 171,
+    "completeCourses": false,
+    "practiceOnly": true
+  },
+  "summary": {
+    "captured": 176,
+    "ready": 176,
+    "duplicates": 0,
+    "grades": {
+      "4": 48,
+      "5": 48,
+      "6": 80
+    },
+    "figures": 24,
+    "topics": 11,
+    "excludedGrades": [
+      7
+    ],
+    "reviewKinds": {
+      "exact": 140,
+      "concept": 12,
+      "tuple": 7,
+      "denominator": 2,
+      "equation": 12,
+      "numerator": 2,
+      "fractionalNumerator": 1
+    },
+    "presentationChecks": 1427,
+    "sourceArithmeticChecks": 578,
+    "reviewedFalseExamples": 4,
+    "unresolved": 0
+  },
+  "review": [
+    "Every answer checked against a condition-derived arithmetic model, symbolic relation or documented conceptual/diagram review. This is agent review, not a second teacher’s certification.",
+    "1427 supported formula presentations checked for unchanged mathematical value; 578 explicit arithmetic equalities in solutions checked.",
+    "Four explanations contain deliberate wrong-answer examples or contradictions; reviewed in context and retained.",
+    "Two remainder-division explanations rewritten as exact dividend = divisor × quotient + remainder equalities.",
+    "24 diagrams constructed as native SVG and visually compared. One unavailable abacus source image reconstructed from its complete written condition.",
+    "Exact duplicate screening uses complete statements, choices and diagram references; this is not a semantic uniqueness count."
+  ],
+  "references": {
+    "tasks": "frontend/src/zerekCourseQuestions.js",
+    "proofs": "problems/sources/zerek/courses/review-dispositions.json",
+    "source": "problems/sources/zerek/courses/",
+    "vectors": "problems/sources/zerek/courses/vector-manifest.json",
+    "model": "scripts/review-zerek-courses.py"
+  },
+  "remaining": "160 other topic paths in the grade 4–6 catalog, plus higher levels/tests within the selected topics; additional enrolment-gated trainers not imported.",
+  "validation": {
+    "activeBank": 7907,
+    "quarantineBeforeAndAfter": 9,
+    "fullProjectCheck": "passed",
+    "tests": {
+      "total": 490,
+      "passed": 482,
+      "skipped": 8,
+      "failed": 0
+    },
+    "offlineMathTests": 7,
+    "browser": "Native question figure rendered and enlarged in a temporary local review page; saved screenshot output/zerek-courses/preview.png.",
+    "mentorStaticGzipKbApprox": 290.1,
+    "postFormattingChecks": "Course and loading-boundary tests plus source proof regeneration passed."
+  }
+}

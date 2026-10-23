@@ -1,4 +1,8 @@
-import { POOL } from '../frontend/src/bank.js';
+import { POOL as publicPool } from '../frontend/src/bank.js';
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
+const { getStandardBank } = require('../backend/lib/standard-bank');
+const POOL = [...publicPool, ...getStandardBank()];
 
 // A diagnostic, not a proof of semantic uniqueness. It catches the most common
 // numerical reskins so the active row count cannot masquerade as content depth.

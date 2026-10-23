@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/synaq-standard-geometry.json",
+  "reviewedAt": "2026-10-23",
+  "scope": "Independent reading of all 10 complete conditions and solutions, alternative arithmetic/geometry calculations, SVG coordinate/cell/bar checks, units and ambiguity review, and visual inspection of all existing renders at 343 px. No geometry producer/verifier imported.",
+  "entries": [
+    {
+      "editionId": "geometry-courtyard-corner",
+      "sha256": "38c8311d93be8ac98649cd9ee9f425500d36c46f30bc65379216a3ca146f91ca",
+      "verdict": "verified",
+      "method": "horizontal strip decomposition",
+      "notes": "Upper strip is 9×3=27 m²; lower strip is 13×6=78 m²; total 105 m². The six polygon vertices at scale 32 match this L shape and the removed 4×3 corner. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+    },
+    {
+      "editionId": "geometry-tile-footpath",
+      "sha256": "658879c79eea6cf73b5330a0d59482869df68578b7a3afac9967ff2c5e39147f",
+      "verdict": "verified",
+      "method": "shared-edge cancellation",
+      "notes": "Seven tiles contribute 28 sides; six full shared edges remove 12 sides. Remaining 16×3=48 cm. The SVG has exactly the stated connected seven-tile I arrangement, with no hole. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+    },
+    {
+      "editionId": "geometry-robot-box-height",
+      "sha256": "09da74995965333f843de0539220517e12b20fe87d6131bf0bf553eac1c0f7a6",
+      "verdict": "verified",
+      "method": "successive unit-column volume division",
+      "notes": "504 cm³ over 12 unit columns leaves 42 cm² per column; division by 7 gives 6 cm height. Inner dimensions and neglect of wall thickness make the volume model unambiguous; h is unknown in the SVG. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+    },
+    {
+      "editionId": "geometry-straight-angle-gap",
+      "sha256": "53c465e6daa0b0dbc4c6184fc300d499474f065dee54ef12c5cc2c558190bb11",
+      "verdict": "verified",
+      "method": "angles measured from SVG ray coordinates",
+      "notes": "atan 2 of the two SVG rays gives 138° and 73° from OB, so their separation is 65°. The outside sectors are 42° and 73°; the written ray order and straight angle uniquely specify the middle sector. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+    },
+    {
+      "editionId": "geometry-light-grid-percent",
+      "sha256": "8592f8c3d224363c2d15e79eb277312925443a073685bcda835e0ce90542182b",
+      "verdict": "verified",
+      "method": "unlit-cell complement",
+      "notes": "The SVG contains 20 equal cells,13 unlit and 7 blue. Unlit percentage is 65%, so lit percentage is 35%. The requested answer is the percent number, not a fraction or cell count. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+    },
+    {
+      "editionId": "geometry-library-bar-total",
+      "sha256": "653b83bdde3521cfe1f3daadec0ba5251a1b3a44f8b982a4636bda816597c178",
+      "verdict": "verified",
+      "method": "bar-height calibration and symmetric pairing",
+      "notes": "Bar heights divided by 11 pixels/book give 12,18,15,21. Pairing first+last and second+third gives 33+33=66 books. Day abbreviations are readable; the full day order is specified in the condition. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+    },
+    {
+      "editionId": "geometry-park-coordinate-walk",
+      "sha256": "1431f543a391de54ffe807142515972676bb79e1f5a0efcc2a15afadd4b5788b",
+      "verdict": "verified",
+      "method": "coordinate positions calibrated to the SVG tick pitch",
+      "notes": "A and B are 456 pixels apart, with 38 pixels per coordinate unit:12 units. Twelve 200 m intervals give 2400 m. Opposite signs, zero mark and requested physical unit are clear. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+    },
+    {
+      "editionId": "geometry-sport-route-scale",
+      "sha256": "4ac0dbaa94bf1f26b07429a185c83e34db8ee25a12a8830b1e840afbeed4745a",
+      "verdict": "verified",
+      "method": "independent leg conversion",
+      "notes": "The three legs correspond to 5 km,3 km,6 km under 1:200000; total 14 km. Actual SVG lengths 250,150,300 pixels preserve 25:15:30. The condition explicitly asks for the route rather than a straight shortcut. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+    },
+    {
+      "editionId": "geometry-gift-box-surface",
+      "sha256": "1382546b6da246f5895a0a543b48f45cb1fbe8ddf35eb16a1d8b53b92f9b6b84",
+      "verdict": "verified",
+      "method": "lateral strip plus two lids",
+      "notes": "The lateral strip has perimeter 2×(8+5)=26 cm and height 3 cm, area 78 cm². Two 8×5 lids add 80 cm²; total 158 cm². Closed box, lid/base and zero overlap allowance are explicit. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+    },
+    {
+      "editionId": "geometry-window-rectangles",
+      "sha256": "00d5a55b56997e328b34f932c752ca9179d8110bdd1f7886adccb3a6e646a88c",
+      "verdict": "verified",
+      "method": "enumeration by rectangle dimensions and placements",
+      "notes": "For each width 1–4 and height 1–3, count(5−width)×(4−height) placements; sum 60. The SVG has five complete vertical lines and four complete horizontal lines. Large rectangles and squares are explicitly included. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+    }
+  ]
+}

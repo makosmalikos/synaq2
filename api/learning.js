@@ -1,6 +1,8 @@
 const { getAdmin } = require('../backend/lib/firebase-admin');
 const { findTrainingQuestion } = require('../backend/lib/training-question');
 const { createLearningService } = require('../backend/lib/learning-service');
+const { trainingGradeAllowed } = require('../backend/lib/training-grade');
+const { questionAccessAllowed } = require('../backend/lib/question-access');
 
 function content(db) {
   let requestContent;
@@ -16,17 +18,20 @@ function content(db) {
     async getTrainingQuestion(id) {
       return findTrainingQuestion(db, id);
     },
-    async getTrainingTopics() {
+    async getTrainingTopics({ gradeCeiling, plan = 'free' } = {}) {
       const [{ POOL, EXTRA_TOPICS }, { topics }, { addQuestionsToTopics }] = await Promise.all([
         bankContent(), import('../frontend/src/data.js'), import('../frontend/src/topicSummary.js'),
       ]);
-      return addQuestionsToTopics([...topics, ...EXTRA_TOPICS], POOL).filter((topic) => topic.count > 0);
+      return addQuestionsToTopics([...topics, ...EXTRA_TOPICS], POOL.filter((question) => trainingGradeAllowed(question, gradeCeiling) && questionAccessAllowed(question, plan)))
+        .filter((topic) => topic.count > 0);
     },
-    async getTrainingQuestions({ topicId, mixed, excludeIds, limit }) {
+    async getTrainingQuestions({ topicId, mixed, excludeIds, limit, gradeCeiling, plan = 'free' }) {
       const { POOL } = await bankContent();
       const exclude = new Set(excludeIds);
       const candidates = POOL.filter((question) => question?.id && question?.statement && question.answer != null
         && !['', '-', '—'].includes(String(question.answer).trim()) && !exclude.has(question.id)
+        && trainingGradeAllowed(question, gradeCeiling)
+        && questionAccessAllowed(question, plan)
         && (mixed ? ['eq', 'num', 'work', 'ratio', 'geo', 'frac', 'pct', 'sys'].includes(question.topic)
           : question.topic === topicId));
       const shuffled = candidates.map((question) => [Math.random(), question])

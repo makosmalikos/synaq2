@@ -1,5 +1,4 @@
 import { STATIC_TOPICS } from './topicCatalog.generated.js';
-export { topicsWithAdminTasks } from './adminTopicCatalog.js';
 
 const baseline = () => STATIC_TOPICS.filter(topic => topic.count > 0)
   .map(topic => ({ ...topic, schools: [...topic.schools] }));

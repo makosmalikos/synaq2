@@ -1,0 +1,649 @@
+{
+  "figures": [
+    {
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-7.2-L2-07.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/7.2-L2-07.png",
+        "image": "/figures/zerek-courses/course-5-7.2-L2-07.svg",
+        "sha256": "ae4b82dcd5c5867d0c13a3086a386b3bb5652167ba092bdf1c6898d1dd1a6c28",
+        "method": "constructed_from_complete_condition",
+        "visualReview": "verified",
+        "visualReviewNotes": "Visually verified both scales, 1-degree ticks, OA at inner zero, and OB at 132 degrees. The requested bisector OC is not drawn. Unavailable original raster was not visually compared."
+      },
+      "evidence": {
+        "sourceContentId": "c0a9129a701e4e88",
+        "sourceFile": "5-math-7-2-level2.json",
+        "sourceIndex": 12,
+        "sourceQuestionSha256": "973726bbffabe96e161688859d799c3ffb3ba6fe2b34839bc09b4eddcea09da7",
+        "statement": "Суретте $\\angle AOB$ және транспортир көрсетілген. Айгерім $\\angle AOB$-ның биссектрисасы $OC$-ны транспортирмен салғысы келеді.\n\n[Image: diagram]\n\n$OC$ сәулесін ішкі (көк) қатардың қай белгісі арқылы жүргізу керек?",
+        "sourceSolution": "Биссектриса бұрышты тең екі бұрышқа бөледі. Алдымен $\\angle AOB$-ны өлшеп, сосын оны $2$-ге бөлеміз.\n\n\n\n$OA$ ішкі қатардың $0$-і арқылы өтеді, $OB$ — $130$-дан кейінгі $2$-сызықша арқылы: $\\angle AOB = 132^\\circ$.\n\n\n\n\n$\\angle AOC = 132 : 2 = 66^\\circ$.\n\n\n\n\n$OA$ ішкі қатардың $0$-інде тұрғандықтан, $OC$ ішкі қатардың $66$ белгісі арқылы өтуі керек.\n\n\n\n\nТексеру: $\\angle COB = 132 - 66 = 66^\\circ = \\angle AOC$.\n\nЖауабы: $66$",
+        "sourceAnswer": "66",
+        "mathematicalData": {
+          "innerScaleZeroRay": "OA",
+          "otherRayInnerDegrees": 132,
+          "tickStepDegrees": 1,
+          "requestedBisectorNotDrawn": true
+        },
+        "independentAnswerCheck": {
+          "expression": "132 / 2",
+          "value": 66,
+          "shownAsAnswerOnFigure": false
+        },
+        "sourceAdapted": false,
+        "svgTextLabels": [
+          "A",
+          "B",
+          "180",
+          "0",
+          "170",
+          "10",
+          "160",
+          "20",
+          "150",
+          "30",
+          "140",
+          "40",
+          "130",
+          "50",
+          "120",
+          "60",
+          "110",
+          "70",
+          "100",
+          "80",
+          "90",
+          "90",
+          "80",
+          "100",
+          "70",
+          "110",
+          "60",
+          "120",
+          "50",
+          "130",
+          "40",
+          "140",
+          "30",
+          "150",
+          "20",
+          "160",
+          "10",
+          "170",
+          "0",
+          "180",
+          "O"
+        ],
+        "reviewedAt": "2026-10-23T09:01:14.474741+00:00"
+      }
+    },
+    {
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-7.3-L2-02.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/7.3-L2-02.png",
+        "image": "/figures/zerek-courses/course-5-7.3-L2-02.svg",
+        "sha256": "b800a13d1021e126be75634273802817ff23f53cd9a59bdcf8be7ae9886a8957",
+        "method": "constructed_from_complete_condition",
+        "visualReview": "verified",
+        "visualReviewNotes": "Visually verified opposite OA/OB rays and consecutive BOC=30, COD=50, DOA=100 degree sectors. No acute-angle count is supplied. Unavailable original raster was not visually compared."
+      },
+      "evidence": {
+        "sourceContentId": "f6b046937cb4861b",
+        "sourceFile": "5-math-7-3-level2.json",
+        "sourceIndex": 1,
+        "sourceQuestionSha256": "9008635a016f06e82305c5f5560e0ebce690b53a3a86c773f5b8cb29dd9d1c5f",
+        "statement": "Суретте $AOB$ — жазыңқы бұрыш, $OC$ және $OD$ — оның ішіндегі сәулелер. Кейбір бұрыштардың шамасы суретте жазылған.\n\n[Image: diagram]\n\nСуреттегі төбесі $O$ болатын барлық бұрыштардың (жазыңқы бұрышты қоса) нешеуі сүйір бұрыш?",
+        "sourceSolution": "Төрт сәуле ($OB$, $OC$, $OD$, $OA$) әр жұбы бойынша бір бұрыш құрайды: барлығы $6$ бұрыш. Әрқайсысының шамасын тауып, $90^\\circ$-пен салыстырамыз.\n\n\n\nСуреттен: $\\angle BOC = 30^\\circ$, $\\angle COD = 50^\\circ$, $\\angle DOA = 100^\\circ$.\n\n\n\n\nҚұрама бұрыштар: $\\angle BOD = 30^\\circ + 50^\\circ = 80^\\circ$, $\\angle COA = 50^\\circ + 100^\\circ = 150^\\circ$, $\\angle BOA = 180^\\circ$.\n\n\n\n\n$90^\\circ$-тан кемдері: $30^\\circ$, $50^\\circ$, $80^\\circ$ — үш сүйір бұрыш. $100^\\circ$ мен $150^\\circ$ — доғал, $180^\\circ$ — жазыңқы.\n\n\n\n\nЖиі қате: тек кіші бұрыштарды санап, екі бұрыштан құралған $BOD$ сүйір бұрышын ұмыту.\n\nЖауабы: $3$",
+        "sourceAnswer": "3",
+        "mathematicalData": {
+          "straightAngle": "AOB",
+          "consecutiveSectors": {
+            "BOC": 30,
+            "COD": 50,
+            "DOA": 100
+          }
+        },
+        "independentAnswerCheck": {
+          "expression": "acute pairwise ray angles from [0,30,80,180]",
+          "value": 3,
+          "shownAsAnswerOnFigure": false
+        },
+        "sourceAdapted": false,
+        "svgTextLabels": [
+          "B",
+          "C",
+          "D",
+          "A",
+          "O",
+          "30°",
+          "50°",
+          "100°"
+        ],
+        "reviewedAt": "2026-10-23T09:01:14.475397+00:00"
+      }
+    },
+    {
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-7.3-L2-07.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/7.3-L2-07.png",
+        "image": "/figures/zerek-courses/course-5-7.3-L2-07.svg",
+        "sha256": "e5970f1ca884b8c2640b815e957686f9825c81377146964777c35b7d9267ed7a",
+        "method": "constructed_from_complete_condition",
+        "visualReview": "verified",
+        "visualReviewNotes": "Visually verified the AOC right-angle marker, opposite OA/OB rays, and OD inside COB with DOB=28 degrees; COD remains unknown. Unavailable original raster was not visually compared."
+      },
+      "evidence": {
+        "sourceContentId": "a25171ed09d767d4",
+        "sourceFile": "5-math-7-3-level2.json",
+        "sourceIndex": 6,
+        "sourceQuestionSha256": "9814d7c2c8ed3bfcfaa679f1160e98d7125c2373708a10005f359c3b19bbbfd1",
+        "statement": "Суретте $AOB$ — жазыңқы бұрыш, $AOC$ — тік бұрыш, $OD$ — сәуле.\n\n[Image: diagram]\n\n$COD$ бұрышы неше градус?",
+        "sourceSolution": "Алдымен $COB$ бұрышын табамыз (жазыңқы бұрыштан тік бұрышты азайтамыз), сосын одан $DOB$ бұрышын азайтамыз.\n\n\n\nСуреттен: $\\angle AOC = 90^\\circ$ (шаршы белгісі), $\\angle DOB = 28^\\circ$.\n\n\n\n\n$\\angle COB = 180^\\circ - 90^\\circ = 90^\\circ$ — бұл да тік бұрыш.\n\n\n\n\n$OD$ сәулесі $COB$ бұрышының ішінде: $\\angle COD = 90^\\circ - 28^\\circ = 62^\\circ$.\n\n\n\n\nТексеру: $90^\\circ + 62^\\circ + 28^\\circ = 180^\\circ$.\n\nЖиі қате: $180^\\circ - 28^\\circ = 152^\\circ$ — бұл $AOD$ бұрышы, ал сұралғаны $COD$.\n\nЖауабы: $62$",
+        "sourceAnswer": "62",
+        "mathematicalData": {
+          "straightAngle": "AOB",
+          "rightAngle": "AOC",
+          "DOBDegrees": 28,
+          "ODInsideCOB": true
+        },
+        "independentAnswerCheck": {
+          "expression": "180 - 90 - 28",
+          "value": 62,
+          "shownAsAnswerOnFigure": false
+        },
+        "sourceAdapted": false,
+        "svgTextLabels": [
+          "A",
+          "C",
+          "D",
+          "B",
+          "O",
+          "28°",
+          "?"
+        ],
+        "reviewedAt": "2026-10-23T09:01:14.475640+00:00"
+      }
+    },
+    {
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-7.3-L2-14.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/7.3-L2-14.png",
+        "image": "/figures/zerek-courses/course-5-7.3-L2-14.svg",
+        "sha256": "e253e00c30196fea088ad184795a5c708b93b91d696e81359452593469524849",
+        "method": "constructed_from_complete_condition",
+        "visualReview": "verified",
+        "visualReviewNotes": "Visually verified AOC=100 degrees and identical one-tick arc marks for COD and DOB; no derived angle measures are supplied. Unavailable original raster was not visually compared."
+      },
+      "evidence": {
+        "sourceContentId": "742237e4ea784e01",
+        "sourceFile": "5-math-7-3-level2.json",
+        "sourceIndex": 15,
+        "sourceQuestionSha256": "4dbfc8d91c164711e414abe200921dc9eb8a2ee4f260c0845ff7b2828dd9e65b",
+        "statement": "Суретте $AOB$ — жазыңқы бұрыш. Бірдей доғалармен белгіленген $COD$ және $DOB$ бұрыштары тең.\n\n[Image: diagram]\n\n$AOD$ бұрышы неше градус?",
+        "sourceSolution": "$\\angle COD = \\angle DOB$, яғни $OD$ — $COB$ бұрышының биссектрисасы. Алдымен $COB$ бұрышын табамыз.\n\n\n\nСуреттен: $\\angle AOC = 100^\\circ$.\n\n\n\n\n$\\angle COB = 180^\\circ - 100^\\circ = 80^\\circ$.\n\n\n\n\n$\\angle COD = 80^\\circ : 2 = 40^\\circ$.\n\n\n\n\n$\\angle AOD = \\angle AOC + \\angle COD = 100^\\circ + 40^\\circ = 140^\\circ$.\n\n\n\n\nТексеру: $\\angle AOD + \\angle DOB = 140^\\circ + 40^\\circ = 180^\\circ$.\n\nЖауабы: $140$",
+        "sourceAnswer": "140",
+        "mathematicalData": {
+          "straightAngle": "AOB",
+          "AOCDegrees": 100,
+          "equalAngles": [
+            "COD",
+            "DOB"
+          ]
+        },
+        "independentAnswerCheck": {
+          "expression": "100 + (180 - 100) / 2",
+          "value": 140,
+          "shownAsAnswerOnFigure": false
+        },
+        "sourceAdapted": false,
+        "svgTextLabels": [
+          "A",
+          "C",
+          "D",
+          "B",
+          "O",
+          "100°"
+        ],
+        "reviewedAt": "2026-10-23T09:01:14.475894+00:00"
+      }
+    },
+    {
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-7.3-L3-05.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/7.3-L3-05.png",
+        "image": "/figures/zerek-courses/course-5-7.3-L3-05.svg",
+        "sha256": "7844d8bbf308baf5e834c18c8a866d496750e9430abaf65800bcfe568e655966",
+        "method": "constructed_from_complete_condition",
+        "visualReview": "verified",
+        "visualReviewNotes": "Visually verified the full-turn order OA,OB,OC,OD; AOB right-angle marker, DOA=130 degrees, and equal BOC/COD marks. Origin label moved clear of the OD ray. Unavailable original raster was not visually compared."
+      },
+      "evidence": {
+        "sourceContentId": "b2e10343cb3e16a8",
+        "sourceFile": "5-math-7-3-level3.json",
+        "sourceIndex": 7,
+        "sourceQuestionSha256": "eb3fa3cc2d6c657d2e8e14aa3455c031ac47bd0affd25ebccfda531fd54fdc4d",
+        "statement": "$OA$, $OB$, $OC$, $OD$ сәулелері $O$ нүктесінің айналасындағы толық бұрышты төрт бұрышқа бөледі. Суретте $AOB$ — тік бұрыш, бірдей белгіленген $BOC$ және $COD$ бұрыштары тең.\n\n[Image: diagram]\n\n$BOD$ бұрышы неше градус?",
+        "sourceSolution": "Төрт бұрыштың қосындысы — толық бұрыш, $360^\\circ$. Суреттен $\\angle AOB = 90^\\circ$ (шаршы белгісі) және $\\angle DOA = 130^\\circ$.\n\n\n\n$\\angle BOC + \\angle COD = 360^\\circ - 90^\\circ - 130^\\circ = 140^\\circ$.\n\n\n\n\nБұл екі бұрыш тең: әрқайсысы $140^\\circ : 2 = 70^\\circ$.\n\n\n\n\n$\\angle BOD = \\angle BOC + \\angle COD = 140^\\circ$ — доғал бұрыш, ол $OC$ сәулесі арқылы өтетін бұрыш.\n\n\n\n\nТексеру: $90^\\circ + 70^\\circ + 70^\\circ + 130^\\circ = 360^\\circ$.\n\nЖиі қате: $BOD$ бұрышы ретінде $OA$ жағындағы $90^\\circ + 130^\\circ = 220^\\circ$ бұрышты алу — бірақ бұрыш деп $180^\\circ$-тан аспайтын бөлігін айтамыз; немесе тек $70^\\circ$ деп жауап беру.\n\nЖауабы: $140$",
+        "sourceAnswer": "140",
+        "mathematicalData": {
+          "fullTurnOrder": [
+            "OA",
+            "OB",
+            "OC",
+            "OD"
+          ],
+          "AOBDegrees": 90,
+          "DOADegrees": 130,
+          "equalAngles": [
+            "BOC",
+            "COD"
+          ]
+        },
+        "independentAnswerCheck": {
+          "expression": "360 - 90 - 130",
+          "value": 140,
+          "shownAsAnswerOnFigure": false
+        },
+        "sourceAdapted": false,
+        "svgTextLabels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "O",
+          "130°"
+        ],
+        "reviewedAt": "2026-10-23T09:01:14.476475+00:00"
+      }
+    },
+    {
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-7.4-L2-15.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/7.4-L2-15.png",
+        "image": "/figures/zerek-courses/course-5-7.4-L2-15.svg",
+        "sha256": "044a6946a589dd7820da9de38d8fbe9da2dcb81022c52ee579088e28924bb369",
+        "method": "adapted_from_source_solution",
+        "visualReview": "verified",
+        "visualReviewNotes": "Visually verified all vertices on grid intersections, known source side lengths, and exact rotational congruence of 1/2. Distractors 3/4 are newly constructed with the known top=1/bottom=4 constraints and distinct areas; not claimed to reproduce unavailable original vertices. Unavailable original raster was not visually compared.",
+        "sourceAdapted": true,
+        "adaptationNote": "Түпнұсқа сурет қолжетімсіз болғандықтан, 3- және 4-төртбұрыштар белгілі белгілері сақталып қайта құрастырылды."
+      },
+      "evidence": {
+        "sourceContentId": "146be0405fa9a785",
+        "sourceFile": "5-math-7-4-level2.json",
+        "sourceIndex": 0,
+        "sourceQuestionSha256": "568fe1270b9d5ff0a30247cd714437984ba86a507ab463928a6a245cd74a73d6",
+        "statement": "Торкөзді қағазда төрт төртбұрыш салынған.\n\n[Image: diagram]\n\nОлардың қай екеуі тең?",
+        "sourceSolution": "Тең көпбұрыштарды беттестіруге болады, яғни олардың сәйкес қабырғалары тең. Торкөздермен қабырғаларды салыстырамыз.\n\n\n\n$1$-төртбұрыш: астыңғы қабырғасы $3$, тік қабырғасы $2$, жоғарғы қабырғасы $2$, ал көлбеу қабырғасы — $1 \\times 2$ торкөздің диагоналы.\n\n\n\n\n$2$-төртбұрыш: тік қабырғасы $3$, жоғарғы $2$, сол жақ $2$, көлбеу — $2 \\times 1$ торкөздің диагоналы. Бұл — $1$-төртбұрыштың бұрылған түрі, оларды беттестіруге болады.\n\n\n\n\n$3$-төртбұрыштың жоғарғы қабырғасы $1$, ал $4$-төртбұрыштың астыңғы қабырғасы $4$ — басқаларға тең емес.\n\n\n\n\nЖауабы: $1$ және $2$",
+        "sourceAnswer": "$1$ және $2$",
+        "mathematicalData": {
+          "verticesByGridUnit": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          ],
+          "areasByGridUnit": [
+            5.0,
+            5.0,
+            3.0,
+            7.0
+          ],
+          "knownSourceSidesPreserved": {
+            "1Bottom": 3,
+            "1Top": 2,
+            "1Height": 2,
+            "2Top": 2,
+            "2Left": 2,
+            "2Right": 3,
+            "3Top": 1,
+            "4Bottom": 4
+          }
+        },
+        "independentAnswerCheck": {
+          "uniqueCongruentPair": [
+            1,
+            2
+          ],
+          "rigidMap": "(x,y) -> (2-y,x), a 90-degree rotation followed by translation",
+          "otherPairsExcludedByDifferentAreas": true
+        },
+        "sourceAdapted": true,
+        "missingOriginalData": "Full vertices and remaining sides of original distractors 3 and 4 are unknown. Their new vertices are an explicitly authorised SYNAQ adaptation, not an asserted original reconstruction.",
+        "editorialExcerpt": "Қосымша тексеру: торкөздің қабырғасын 1 бірлік деп аламыз. 1- және 2-төртбұрыштардың аудандары 5 шаршы бірлік; 1-төртбұрышты 90°-қа бұрып, жылжытсақ, 2-төртбұрышпен беттеседі. 3-төртбұрыштың табандары 2 және 1, биіктігі 2: ауданы (2 + 1) · 2 : 2 = 3. 4-төртбұрыштың табандары 4 және 3, биіктігі 2: ауданы (4 + 3) · 2 : 2 = 7. Аудандары әртүрлі фигуралар беттеспейді. Сондықтан тең төртбұрыштар жұбы — тек 1 және 2.",
+        "adaptationDisclosure": "Түпнұсқа сурет қолжетімсіз болғандықтан, 3- және 4-төртбұрыштар белгілі белгілері сақталып қайта құрастырылды.",
+        "svgTextLabels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "reviewedAt": "2026-10-23T09:01:14.477248+00:00"
+      }
+    },
+    {
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-7.4-L3-04.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/7.4-L3-04.png",
+        "image": "/figures/zerek-courses/course-5-7.4-L3-04.svg",
+        "sha256": "bb5d5d484d7fc538dcfaf8a6ae1cec2652eaff4aed25e1856a7163789b2abb21",
+        "method": "constructed_from_complete_condition",
+        "visualReview": "verified",
+        "visualReviewNotes": "Visually verified exactly two aligned rows and three columns of equal rectangles; no requested total count is printed. Unavailable original raster was not visually compared."
+      },
+      "evidence": {
+        "sourceContentId": "7eccaf6025f2451f",
+        "sourceFile": "5-math-7-4-level3.json",
+        "sourceIndex": 5,
+        "sourceQuestionSha256": "4a735c35050aa6e17af5d905a491894b1d8ac5786f2d177af7efa121deebfcfb",
+        "statement": "Тіктөртбұрыш кесінділермен $6$ бірдей тіктөртбұрышқа бөлінген.\n\n[Image: diagram]\n\nСуретте барлығы неше тіктөртбұрыш бар (квадраттар да санап есептеледі)?",
+        "sourceSolution": "Әр тіктөртбұрыш бір жолдан не екі жолдан тұрады. Бір жолдағы тіктөртбұрыштарды санап, жол таңдау тәсілдеріне көбейтеміз.\n\n\n\nБір жолда (үш бөлік) тіктөртбұрыштар: бір бөліктен $3$, екі бөліктен $2$, үш бөліктен $1$ — барлығы $6$.\n\n\n\n\nТіктөртбұрыш биіктігі бойынша: тек жоғарғы жол, тек төменгі жол немесе екі жол бірге — $3$ тәсіл.\n\n\n\n\nӘр тәсілде ені бойынша $6$ таңдау бар: $3 \\cdot 6 = 18$.\n\n\n\n\n$6$ — тек кіші бөліктерді санаған; $12$ — екі жолдан тұратын тіктөртбұрыштарды ұмытқан; $17$ — бүкіл үлкен тіктөртбұрышты санамаған.\n\nЖауабы: $18$",
+        "sourceAnswer": "$18$",
+        "mathematicalData": {
+          "equalCellRows": 2,
+          "equalCellColumns": 3
+        },
+        "independentAnswerCheck": {
+          "expression": "C(4,2) * C(3,2)",
+          "value": 18,
+          "shownAsAnswerOnFigure": false
+        },
+        "sourceAdapted": false,
+        "svgTextLabels": [],
+        "reviewedAt": "2026-10-23T09:01:14.477771+00:00"
+      }
+    },
+    {
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-7.4-L3-06.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/7.4-L3-06.png",
+        "image": "/figures/zerek-courses/course-5-7.4-L3-06.svg",
+        "sha256": "e0d7d4130ef45716ea5cb8e52e9064d832a961a544a56c08847143ebce6d3bfd",
+        "method": "constructed_from_complete_condition",
+        "visualReview": "verified",
+        "visualReviewNotes": "Visually verified outer width 14 cm, height 10 cm and notch depth 4 cm. Notch width/offset are unlabelled schematic choices immaterial to the perimeter. Unavailable original raster was not visually compared."
+      },
+      "evidence": {
+        "sourceContentId": "bcae7df0a7662afc",
+        "sourceFile": "5-math-7-4-level3.json",
+        "sourceIndex": 6,
+        "sourceQuestionSha256": "028bac1fbaa1e1eb76f6b7e4866cf91a34b98e6415291f7afad8d8d7599af62f",
+        "statement": "Тіктөртбұрыш пішінді темір парақтың жоғарғы жағынан тіктөртбұрыш ойық қиып алынды; парақтың барлық бұрыштары тік. Ұзындықтар сантиметрмен берілген.\n\n[Image: diagram]\n\nШыққан көпбұрыштың периметрі неше сантиметр?",
+        "sourceSolution": "Ойықтың ені белгісіз, бірақ оның қажеті жоқ: көлденең қабырғалардың қосындысын табуға болады.\n\n\n\nСуреттен: ені $14$ см, биіктігі $10$ см, ойықтың тереңдігі $4$ см.\n\n\n\n\nЖоғарыдағы екі көлденең қабырға мен ойықтың түбі бірге астыңғы қабырғаға тең: $14$ см. Демек, көлденең қабырғалар: $14 + 14 = 28$ (см).\n\n\n\n\nСыртқы тік қабырғалар: $10 + 10 = 20$ (см). Ойықтың ішкі екі тік қабырғасы: $4 + 4 = 8$ (см).\n\n\n\n\n$P = 28 + 20 + 8 = 56$ (см).\n\n\n\n\n$48$ см — ойықтың ішкі тік қабырғаларын ұмытып, тіктөртбұрыштың периметрін алу (ойық қиылса да, периметр кемімейді, керісінше артады).\n\nЖауабы: $56$",
+        "sourceAnswer": "56",
+        "mathematicalData": {
+          "outerWidthCm": 14,
+          "outerHeightCm": 10,
+          "notchDepthCm": 4,
+          "notchWidthAndOffset": "Unlabelled schematic values; not needed for perimeter."
+        },
+        "independentAnswerCheck": {
+          "expression": "2 * (14 + 10) + 2 * 4",
+          "value": 56,
+          "shownAsAnswerOnFigure": false
+        },
+        "sourceAdapted": false,
+        "svgTextLabels": [
+          "14 см",
+          "10 см",
+          "4 см"
+        ],
+        "reviewedAt": "2026-10-23T09:01:14.478008+00:00"
+      }
+    },
+    {
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-8.2-L2-06.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/8.2-L2-06.png",
+        "image": "/figures/zerek-courses/course-5-8.2-L2-06.svg",
+        "sha256": "3849dbc5ede64eb87b6bfa79f16e069025f89c7ab19a56e0c24565bee6e0d578",
+        "method": "constructed_from_complete_condition",
+        "visualReview": "verified",
+        "visualReviewNotes": "Visually verified minute hand at 12, shorter hour hand at 4, equally spaced dial numbers and no printed sector angles. Unavailable original raster was not visually compared."
+      },
+      "evidence": {
+        "sourceContentId": "7c63c62fcfd4a7da",
+        "sourceFile": "5-math-8-2-level2.json",
+        "sourceIndex": 13,
+        "sourceQuestionSha256": "53d3c2f253efadef0926d9421f3b4a4dd0ddecc5b8970601c9e474865fe6666c",
+        "statement": "Суретте сағат көрсетілген. Сағат тілі мен минут тілі циферблаттың дөңгелегін екі секторға бөледі.\n\n[Image: diagram]\n\nҮлкен сектордың бұрышы неше градус?",
+        "sourceSolution": "Суреттен оқимыз: минут тілі $12$-де, сағат тілі $4$-те, яғни уақыт $4:00$. Циферблаттағы $12$ сан дөңгелекті $12$ тең секторға бөледі.\n\n\n\nКөрші екі сан арасындағы бұрыш: $360^\\circ : 12 = 30^\\circ$.\n\n\n\n\n$12$-ден $4$-ке дейін $4$ аралық: кіші сектор $30^\\circ \\cdot 4 = 120^\\circ$.\n\n\n\n\nҮлкен сектор: $360^\\circ - 120^\\circ = 240^\\circ$ (ол $4$-тен $12$-ге дейінгі $8$ аралық: $30^\\circ \\cdot 8 = 240^\\circ$).\n\n\n\n\nЖауабы: $240$",
+        "sourceAnswer": "240",
+        "mathematicalData": {
+          "hour": 4,
+          "minute": 0
+        },
+        "independentAnswerCheck": {
+          "expression": "360 - 4 * 360 / 12",
+          "value": 240,
+          "shownAsAnswerOnFigure": false
+        },
+        "sourceAdapted": false,
+        "svgTextLabels": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "reviewedAt": "2026-10-23T09:01:14.478814+00:00"
+      }
+    },
+    {
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-8.3-L2-15.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/8.3-L2-15.png",
+        "image": "/figures/zerek-courses/course-5-8.3-L2-15.svg",
+        "sha256": "2a497a31f1697fec9ef7a6b98396d83c870b798d2f287dc23192361a238c0188",
+        "method": "constructed_from_complete_condition",
+        "visualReview": "verified",
+        "visualReviewNotes": "Visually verified axes d and n, uniform 50-person grid, all seven daily values and equal day spacing; no growth difference highlighted. Unavailable original raster was not visually compared."
+      },
+      "evidence": {
+        "sourceContentId": "849c012d81c60dcb",
+        "sourceFile": "5-math-8-3-level2.json",
+        "sourceIndex": 1,
+        "sourceQuestionSha256": "eb4b15e352b0e3311fb8baabe283042f2ef76145e9cb74232de181bd08dbc0a4",
+        "statement": "Графикте мұражайға бір аптада келген адамдар саны ($n$) күн сайын көрсетілген: $d$ — күннің нөмірі.\n\n[Image: diagram]\n\nКелушілер саны алдыңғы күнге қарағанда ең көп өскен күні келушілер неше адамға көбейді?",
+        "sourceSolution": "Әр көршілес екі күннің айырмасын табамыз: сынық сызықтың ең тік көтерілген бөлігі ең үлкен өсімге сәйкес. Бір тор — $50$ адам.\n\n\n\nГрафиктен: $100$, $150$, $150$, $200$, $250$, $400$, $350$.\n\n\n\n\nӨзгерістер: $+50$, $0$, $+50$, $+50$, $+150$, ал $7$-күні азайған ($400$-ден $350$-ге).\n\n\n\n\nЕң үлкен өсім — $5$-күннен $6$-күнге: $400 - 250 = 150$.\n\n\n\n\nЖауабы: $150$",
+        "sourceAnswer": "150",
+        "mathematicalData": {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "visitors": [
+            100,
+            150,
+            150,
+            200,
+            250,
+            400,
+            350
+          ],
+          "gridPeople": 50
+        },
+        "independentAnswerCheck": {
+          "expression": "max consecutive increase of [100,150,150,200,250,400,350]",
+          "value": 150,
+          "shownAsAnswerOnFigure": false
+        },
+        "sourceAdapted": false,
+        "svgTextLabels": [
+          "0",
+          "50",
+          "100",
+          "150",
+          "200",
+          "250",
+          "300",
+          "350",
+          "400",
+          "450",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "d",
+          "n"
+        ],
+        "reviewedAt": "2026-10-23T09:01:14.479207+00:00"
+      }
+    },
+    {
+      "proofSvg": "frontend/public/figures/zerek-courses/course-5-8.3-L3-03.svg",
+      "manifestRow": {
+        "src": "https://cbklwwsbmfzendipdpsj.supabase.co/storage/v1/object/public/questions/course-5/8.3-L3-03.png",
+        "image": "/figures/zerek-courses/course-5-8.3-L3-03.svg",
+        "sha256": "1c72248c2e11b172b1ca3656e9882ef467a79ee3be74099521c599e89f78d0b9",
+        "method": "constructed_from_complete_condition",
+        "visualReview": "verified",
+        "visualReviewNotes": "Visually verified 100-tenge grid, S/w axes, A=500+200w and B=1300+100w for weeks 0..4. Exceeding/crossing weeks are outside the view; no requested week is printed. Unavailable original raster was not visually compared."
+      },
+      "evidence": {
+        "sourceContentId": "55c0d13fb23a92b2",
+        "sourceFile": "5-math-8-3-level3.json",
+        "sourceIndex": 3,
+        "sourceQuestionSha256": "8fb038d5a2c454fb587a032b07fff644c48b5c180c845adc684cdf281020856c",
+        "statement": "Әсем ($A$) мен Бекзат ($B$) әр апта сайын тұрақты сомадан ақша жинайды. Графикте олардың жинағы ($S$, теңге) $w$ аптадан кейін көрсетілген.\n\n[Image: diagram]\n\nОсылай жалғаса берсе, неше аптадан кейін Әсемнің жинағы алғаш рет Бекзаттың жинағынан көп болады?",
+        "sourceSolution": "Графиктен бастапқы соманы және апталық қосылымды оқимыз. Сосын айырма апта сайын қалай азаятынын есептейміз. Бір тор — $100$ теңге.\n\n\n\n$A$: $w = 0$-де $500$ тг, әр апта $+200$ тг ($500$, $700$, $900$, …). $B$: $w = 0$-де $1\\,300$ тг, әр апта $+100$ тг.\n\n\n\n\nБасында айырма: $1\\,300 - 500 = 800$ тг. Әр апта Әсем $200 - 100 = 100$ тг-ге жақындайды.\n\n\n\n\n$800 : 100 = 8$ аптадан кейін жинақтар тең болады: $500 + 200 \\cdot 8 = 2\\,100$, $1\\,300 + 100 \\cdot 8 = 2\\,100$.\n\n\n\n\n«Көп» болу үшін тағы бір апта керек: $9$-аптада $A = 2\\,300$, $B = 2\\,200$.\n\n\n\n\nЖауабы: $9$",
+        "sourceAnswer": "9",
+        "mathematicalData": {
+          "AInitialTenge": 500,
+          "AWeeklyTenge": 200,
+          "BInitialTenge": 1300,
+          "BWeeklyTenge": 100,
+          "gridTenge": 100,
+          "displayedWeeks": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "crossingWeekNotDrawn": true
+        },
+        "independentAnswerCheck": {
+          "expression": "first integer w >= 0 where 500 + 200w > 1300 + 100w",
+          "value": 9,
+          "shownAsAnswerOnFigure": false
+        },
+        "sourceAdapted": false,
+        "svgTextLabels": [
+          "0",
+          "100",
+          "200",
+          "300",
+          "400",
+          "500",
+          "600",
+          "700",
+          "800",
+          "900",
+          "1000",
+          "1100",
+          "1200",
+          "1300",
+          "1400",
+          "1500",
+          "1600",
+          "1700",
+          "1800",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "w",
+          "S, тг",
+          "A",
+          "B"
+        ],
+        "reviewedAt": "2026-10-23T09:01:14.479615+00:00"
+      }
+    }
+  ]
+}

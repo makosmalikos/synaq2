@@ -1,0 +1,1857 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "status": "verified_editorial_batch",
+  "access": {
+    "publicName": "Standard",
+    "minimumInternalPlan": "pro",
+    "includedHigherPlans": [
+      "mentor"
+    ],
+    "excluded": [
+      "free",
+      "standard (retired)"
+    ]
+  },
+  "summary": {
+    "verifiedEditions": 51,
+    "distinctModels": 51,
+    "newFigures": 10,
+    "originalSourceTasksPublished": 0
+  },
+  "scope": "This is the first reviewed authored batch. The larger source archive remains closed; source references are not a claim that every captured original has been rewritten.",
+  "sourceCollection": "Stopped by user at 9645 source occurrences. No further collection is scheduled.",
+  "records": [
+    {
+      "id": "synaq_adapted_core_equal_rows",
+      "editionId": "core-equal-rows",
+      "modelId": "equal-rows",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "493fe72ec4bc2f231f160a16e9060b4104fdcc168aca9489940b1683ba557c00",
+      "independentReview": {
+        "editionId": "core-equal-rows",
+        "sha256": "493fe72ec4bc2f231f160a16e9060b4104fdcc168aca9489940b1683ba557c00",
+        "verdict": "verified",
+        "method": "complete divisor enumeration",
+        "notes": "Enumerated 1,2,3,4,6,9,12,18,36. Each divides all 36 pupils into equal nonempty rows, and each possible row size is distinct: nine choices. One-pupil and one-row arrangements are allowed."
+      },
+      "verification": {
+        "answer": "9",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "4d54fde5b3414c5c",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "2e359ff988493f349de971e8f887d638666913b0e3ecd75d1ec11874c93d1d8c"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_identical_kits",
+      "editionId": "core-identical-kits",
+      "modelId": "identical-kits",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "55bafff88b8a5abdb4ffd547c9e7a2f6f41dce2d924f2694bdfdac00e4344c53",
+      "independentReview": {
+        "editionId": "core-identical-kits",
+        "sha256": "55bafff88b8a5abdb4ffd547c9e7a2f6f41dce2d924f2694bdfdac00e4344c53",
+        "verdict": "verified",
+        "method": "maximal feasible common partition",
+        "notes": "Exhaustive common-divisor check gives maximum24. Each of24 identical packs contains2 cards and3 stickers, exhausting48 and72; no larger integer pack count divides both stocks."
+      },
+      "verification": {
+        "answer": "24",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "aca08380eb5a2c3a",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "c1a86fc354f22acd425c36d67305653018273172fe22801fda1121700780fc95"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_synchronised_lights",
+      "editionId": "core-synchronised-lights",
+      "modelId": "synchronised-lights",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "884b1744c326a792f86dcd25a11f741a50d274a57f3bba5d4d7eef5ae2a9bd66",
+      "independentReview": {
+        "editionId": "core-synchronised-lights",
+        "sha256": "884b1744c326a792f86dcd25a11f741a50d274a57f3bba5d4d7eef5ae2a9bd66",
+        "verdict": "verified",
+        "method": "first positive simultaneous event search",
+        "notes": "The first positive common multiple is36s. Earlier positive seconds fail at least one interval;36/12=3 and36/18=2. Initial t=0 is excluded by asking when they meet again."
+      },
+      "verification": {
+        "answer": "36",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "eb9a6c817007aa30",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "24d1b808dc3c161862f8a758a58d7038031e0f02a69c66c1adbb2d639a8ea8d4"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_minimum_shuttles",
+      "editionId": "core-minimum-shuttles",
+      "modelId": "minimum-shuttles",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "5c33fb05764d0ca54933c8a2fc75c2a4c208a9f2d76523ec487bbe85276cfb54",
+      "independentReview": {
+        "editionId": "core-minimum-shuttles",
+        "sha256": "5c33fb05764d0ca54933c8a2fc75c2a4c208a9f2d76523ec487bbe85276cfb54",
+        "verdict": "verified",
+        "method": "minimum feasible vehicle count",
+        "notes": "Eight vehicles carry72 passengers and fail; nine carry81 and suffice. Revised wording explicitly counts74 passengers and excludes drivers from each nine-passenger capacity."
+      },
+      "verification": {
+        "answer": "9",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "d369920e5c98482d",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "27ef5cf442b55f01ea2d9d3eb337562664557bbddb56f2b254f56f2de15c3927"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_place_value_code",
+      "editionId": "core-place-value-code",
+      "modelId": "place-value-code",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "fc72e5bb5e4763a0c1388db73e3a06739d7e7a6c4bb4986c1db5ece7ed777dac",
+      "independentReview": {
+        "editionId": "core-place-value-code",
+        "sha256": "fc72e5bb5e4763a0c1388db73e3a06739d7e7a6c4bb4986c1db5ece7ed777dac",
+        "verdict": "verified",
+        "method": "positional reconstruction",
+        "notes": "Thousands/hundreds/tens/units reconstruct6438. The first digit is nonzero, so the stated four-digit code and every solution term agree."
+      },
+      "verification": {
+        "answer": "6438",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "0be36aa6c2c614ed",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "08d854ad1bdd127b70c98c1b29cf724bdc11b38913a6b89e8c5d7e9600f3f1a7"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_round_visitors",
+      "editionId": "core-round-visitors",
+      "modelId": "round-visitors",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "bb497b2de1af1a6c0356ed77c12bba2f182bb8259dc0df33b60b5ebc868d5e9f",
+      "independentReview": {
+        "editionId": "core-round-visitors",
+        "sha256": "bb497b2de1af1a6c0356ed77c12bba2f182bb8259dc0df33b60b5ebc868d5e9f",
+        "verdict": "verified",
+        "method": "nearest-multiple distance comparison",
+        "notes": "Distances to57000 and58000 are650 and350. Nearest thousand is58000, with no halfway tie. The solution uses the correct hundreds digit6."
+      },
+      "verification": {
+        "answer": "58000",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "2c2369403838ce24",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "84026f62bec58f6e2733ac91f921b85e7278304feb31871ad7a0ab0b57f04895"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_digit_divisible_nine",
+      "editionId": "core-digit-divisible-nine",
+      "modelId": "digit-divisible-nine",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "50171887ecc2302151f91babd209600066db7241a248271b9d0c7b84fa4b7454",
+      "independentReview": {
+        "editionId": "core-digit-divisible-nine",
+        "sha256": "50171887ecc2302151f91babd209600066db7241a248271b9d0c7b84fa4b7454",
+        "verdict": "verified",
+        "method": "direct ten-digit divisibility enumeration",
+        "notes": "Tested each possible digit in34□5 by actual integer division. Only digit6 gives3465 divisible by9; known digit sum12 plus6 is18. Revised source ref35893ab0e1ae9754 directly exercises this rule."
+      },
+      "verification": {
+        "answer": "6",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "35893ab0e1ae9754",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "d5d9b640c34b5f8e1a6582c26b673392b6aec7694b06dca17b891f6c81a8bb4a"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_smallest_prime_code",
+      "editionId": "core-smallest-prime-code",
+      "modelId": "smallest-prime-code",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "bfc2e9a240790a9831c0ec58acc7794b8b4a78a1c443ce10b3d138c11035b2ad",
+      "independentReview": {
+        "editionId": "core-smallest-prime-code",
+        "sha256": "bfc2e9a240790a9831c0ec58acc7794b8b4a78a1c443ce10b3d138c11035b2ad",
+        "verdict": "verified",
+        "method": "trial division and minimum search",
+        "notes": "Candidates in the strict interval70<n<80 give primes71,73,79. Trial divisors up to each square root confirm71 is the smallest; interval endpoints are excluded."
+      },
+      "verification": {
+        "answer": "71",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "974732f32d20b66e",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "9049f8f0603ab8f3f04f03824635485b168b4852ea25def312b065cc17b3e745"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_digit_sum_pins",
+      "editionId": "core-digit-sum-pins",
+      "modelId": "digit-sum-pins",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "87c238e463c485565a6c423e4646a686bb2045cf21f83ee3e0d55ebf3752943b",
+      "independentReview": {
+        "editionId": "core-digit-sum-pins",
+        "sha256": "87c238e463c485565a6c423e4646a686bb2045cf21f83ee3e0d55ebf3752943b",
+        "verdict": "verified",
+        "method": "exhaustive four-digit integer enumeration",
+        "notes": "Enumerated integers1000–9999 and selected decimal digit sum3; exactly10 remain. Leading zeros are excluded explicitly. The solution distribution of two remaining units across four positions gives4+6=10."
+      },
+      "verification": {
+        "answer": "10",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "a39a6e8ed3773cc6",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "eb336c2073ddfdbc5da60c5f1228a4c96b7797fa93a290efe3db51ec7d7ecee8"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_fixed_fee_packs",
+      "editionId": "core-fixed-fee-packs",
+      "modelId": "fixed-fee-packs",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "2eb472ae658f68072f326f02d12bc764ac773f64835177e9eacd033fc2743031",
+      "independentReview": {
+        "editionId": "core-fixed-fee-packs",
+        "sha256": "2eb472ae658f68072f326f02d12bc764ac773f64835177e9eacd033fc2743031",
+        "verdict": "verified",
+        "method": "integer price equation inverse check",
+        "notes": "The unique nonnegative integer price satisfying six equal-priced kits plus350 packaging equals2210 is310. Packaging is charged once;6×310+350=2210."
+      },
+      "verification": {
+        "answer": "310",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "89c7df74f9d9d0b6",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "90f089aef5581ab067b069aec47396d2a4a974e25cf54169491816aff729fa18"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_balance_two_sides",
+      "editionId": "core-balance-two-sides",
+      "modelId": "balance-two-sides",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "afb65bd63449c589e28f3ace4f3f212cbce369948b663753eaee03585f67108e",
+      "independentReview": {
+        "editionId": "core-balance-two-sides",
+        "sha256": "afb65bd63449c589e28f3ace4f3f212cbce369948b663753eaee03585f67108e",
+        "verdict": "verified",
+        "method": "two-output equality substitution",
+        "notes": "The linear difference is2x−28; its only zero is14. Both independent robot outputs then equal84, agreeing with every algebra step."
+      },
+      "verification": {
+        "answer": "14",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "4aad7a8c53b157a9",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "2c092af2fd451a7138549c4d3f768b1acafdaf8196f6dad010a78cb8d5b659d5"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_strict_capacity",
+      "editionId": "core-strict-capacity",
+      "modelId": "strict-capacity",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "dcc1fa51c9f577af916d3290f5077f795d0a8cd6962d1069e4431968e56c8878",
+      "independentReview": {
+        "editionId": "core-strict-capacity",
+        "sha256": "dcc1fa51c9f577af916d3290f5077f795d0a8cd6962d1069e4431968e56c8878",
+        "verdict": "verified",
+        "method": "strict integer boundary enumeration",
+        "notes": "Maximum feasible integer count is11: total41kg. The next count12 gives44kg and is excluded by strict less-than. Revised source f66cf8f92a5c132c directly asks for a maximal natural solution of a strict inequality."
+      },
+      "verification": {
+        "answer": "11",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "f66cf8f92a5c132c",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "8b7b2e0ddbdc6f3ee230f1e595880bc9577c14bec638a6ee8f4c6084fd314ef3"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_temperature_changes",
+      "editionId": "core-temperature-changes",
+      "modelId": "temperature-changes",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "fde83512a75a3ffdcf12d66c236ecc6af146f2096b74ea61734d1055bdd65c5f",
+      "independentReview": {
+        "editionId": "core-temperature-changes",
+        "sha256": "fde83512a75a3ffdcf12d66c236ecc6af146f2096b74ea61734d1055bdd65c5f",
+        "verdict": "verified",
+        "method": "signed sequential state changes",
+        "notes": "Start−9, rise14 gives5, then drop6 gives−1°C. The target is the final signed temperature, not the magnitude below zero."
+      },
+      "verification": {
+        "answer": "-1",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "be08524b50364efb",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "55f05e5de344e0dbef99ec5496bb3ab8131142f77e1fbedd326c062c0f334863"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_coordinate_distance",
+      "editionId": "core-coordinate-distance",
+      "modelId": "coordinate-distance",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "e84335e3a518d52803dea704ecd1c63d271ba24f7533a6fa7b14d7bc80c77149",
+      "independentReview": {
+        "editionId": "core-coordinate-distance",
+        "sha256": "e84335e3a518d52803dea704ecd1c63d271ba24f7533a6fa7b14d7bc80c77149",
+        "verdict": "verified",
+        "method": "unit-interval counting",
+        "notes": "Counted13 unit intervals from−8 to5; equivalent absolute difference is|5−(−8)|=13m. No negative distance is introduced. Revised coordinate/interval source ref3c6d2b1a7611f905 inspected."
+      },
+      "verification": {
+        "answer": "13",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "3c6d2b1a7611f905",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "7a10c7274788467d312dba24e99885d8aef38a3760af47f24667524b5b7cea91"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_bounded_multiples",
+      "editionId": "core-bounded-multiples",
+      "modelId": "bounded-multiples",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "3c82b5c4e29d8bacd95413e1a75b5137818da249b48713de6de77ce01927464f",
+      "independentReview": {
+        "editionId": "core-bounded-multiples",
+        "sha256": "3c82b5c4e29d8bacd95413e1a75b5137818da249b48713de6de77ce01927464f",
+        "verdict": "verified",
+        "method": "explicit assigned-number enumeration",
+        "notes": "Revised statement now assigns every integer13…27 to exactly one pupil, resolving the original underdetermination. Multiples15,18,21,24,27 give exactly five pupils;12 is excluded and27 included."
+      },
+      "verification": {
+        "answer": "5",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "6cf772c695b595c4",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "440d00bb0f69050bcb258953c3d5f63a78e180b2082e4ca2924a839528973731"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_increasing_display",
+      "editionId": "core-increasing-display",
+      "modelId": "increasing-display",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "2234467f269a02bd771c0185268d5738b35249fa7c93172b88150c2ca01cf6a1",
+      "independentReview": {
+        "editionId": "core-increasing-display",
+        "sha256": "2234467f269a02bd771c0185268d5738b35249fa7c93172b88150c2ca01cf6a1",
+        "verdict": "verified",
+        "method": "iterated recurrence simulation",
+        "notes": "Started at7 and applied eight increments of4 to reach row9; result39. The first-row/index distinction is explicit and the solution uses eight, not nine, increments."
+      },
+      "verification": {
+        "answer": "39",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "8c3b2dc6deb0bffb",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "c4f60229636f9b6b6a61aba030ebdc6fd771f5424280796660b3c0afcbd85f35"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_median_odd",
+      "editionId": "core-median-odd",
+      "modelId": "median-odd",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "d328670756221ccaecdc6337e7820be8162361299d5caacb4acce854aad4fca0",
+      "independentReview": {
+        "editionId": "core-median-odd",
+        "sha256": "d328670756221ccaecdc6337e7820be8162361299d5caacb4acce854aad4fca0",
+        "verdict": "verified",
+        "method": "ordered central-rank selection",
+        "notes": "Sorted data8,10,12,15,17,19,22; the fourth of seven observations is15min. Revised Kazakh object is квестті; condition and solution agree."
+      },
+      "verification": {
+        "answer": "15",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "0d70753e3eb6b08b",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "a61a016cf0d585a088a779d55ce256877010196fad0c1116c144959bbc076fd3"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_median_even",
+      "editionId": "core-median-even",
+      "modelId": "median-even",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "ac8aeb2de7715f262803bbefd5128e24ca7c95ee7b0e8f277641483afcd93fb3",
+      "independentReview": {
+        "editionId": "core-median-even",
+        "sha256": "ac8aeb2de7715f262803bbefd5128e24ca7c95ee7b0e8f277641483afcd93fb3",
+        "verdict": "verified",
+        "method": "ordered central-pair mean",
+        "notes": "Sorted data12,15,18,21,24,30; the central pair18 and21 has exact mean39/2=19.5km. This intentionally changes median parity while retaining the source median skill."
+      },
+      "verification": {
+        "answer": "19.5",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "0d70753e3eb6b08b",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "a61a016cf0d585a088a779d55ce256877010196fad0c1116c144959bbc076fd3"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_unique_mode",
+      "editionId": "core-unique-mode",
+      "modelId": "unique-mode",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "55d85ad906dba2018d6407bce4c5d4e57abdedbd690ad2f7c455693ef91b9310",
+      "independentReview": {
+        "editionId": "core-unique-mode",
+        "sha256": "55d85ad906dba2018d6407bce4c5d4e57abdedbd690ad2f7c455693ef91b9310",
+        "verdict": "verified",
+        "method": "frequency histogram with unique-maximum check",
+        "notes": "Histogram1→2,2→1,3→3,4→1 has a unique maximum at value3. The explanation distinguishes the modal value from its occurrence count even though both happen to equal3."
+      },
+      "verification": {
+        "answer": "3",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "4ace784e6149e961",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "ca7d55a3b22364fb5168965c4a4761e4ab69900b120271081657510ae6ccef5a"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_measurement_range",
+      "editionId": "core-measurement-range",
+      "modelId": "measurement-range",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "9dd3dc1f9f431ed3934bc2feb4c02fbb229db7a67e18d85fc16c44c831180f83",
+      "independentReview": {
+        "editionId": "core-measurement-range",
+        "sha256": "9dd3dc1f9f431ed3934bc2feb4c02fbb229db7a67e18d85fc16c44c831180f83",
+        "verdict": "verified",
+        "method": "maximum pairwise difference",
+        "notes": "Largest separation among all measured heights is30−16=14cm, equivalent to the range. The asked statistic and units are explicit."
+      },
+      "verification": {
+        "answer": "14",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "890237c50f880110",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "bba095860dc2fbfe9254b145cbd6bb23449b005c93feb4c3815abaac16710d20"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_voucher_combinations",
+      "editionId": "core-voucher-combinations",
+      "modelId": "voucher-combinations",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "c5659ae809d0dcc8f0bd766e515cf5efcd661c6dfb0612a4a0b91deb896275c7",
+      "independentReview": {
+        "editionId": "core-voucher-combinations",
+        "sha256": "c5659ae809d0dcc8f0bd766e515cf5efcd661c6dfb0612a4a0b91deb896275c7",
+        "verdict": "verified",
+        "method": "exhaustive unordered nonnegative denomination counts",
+        "notes": "Enumerated all triples(a,b,c) with80a+120b+200c=600. By c=0,1,2,3, counts are3,2,1,1: total7. Repetition, order irrelevance and unused types are all stated."
+      },
+      "verification": {
+        "answer": "7",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "07133becf5b9b990",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "60e4230bc71915814bc87b7f2a68ce851ccf938fee56241fa0aa3c0c8f8fbdb2"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_poster_product",
+      "editionId": "core-poster-product",
+      "modelId": "poster-product",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "13fe6747df81ff2774fac4eabd328640fb3e0d6713c3dbff2f29912ed925dc5b",
+      "independentReview": {
+        "editionId": "core-poster-product",
+        "sha256": "13fe6747df81ff2774fac4eabd328640fb3e0d6713c3dbff2f29912ed925dc5b",
+        "verdict": "verified",
+        "method": "Cartesian product enumeration",
+        "notes": "Enumerated all triples of one background, one font and one icon:3×4×2=24 distinct designs. Unlike its broader source choice-counting reference, this edition explicitly imposes no budget constraint."
+      },
+      "verification": {
+        "answer": "24",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "d6dd919268dd4403",
+          "sourceFile": "frontend/src/zerekCourseExpansionQuestions.js",
+          "sha256": "14d5f118dad547c6e6fb4e110e6a9e9e019917df534f53113f0bcb7e7b800128"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_weighted_average",
+      "editionId": "core-weighted-average",
+      "modelId": "weighted-average",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "09bfd64995010c31ec25c5e14f89c16d38d005d3ff95e8cd78baea5d53ac0085",
+      "independentReview": {
+        "editionId": "core-weighted-average",
+        "sha256": "09bfd64995010c31ec25c5e14f89c16d38d005d3ff95e8cd78baea5d53ac0085",
+        "verdict": "verified",
+        "method": "expanded individual-observation mean",
+        "notes": "Expanded the two frequency groups into individual observations6,6,10,10,10. Total42 over five robots gives exact42/5=8.4min; averaging the two group labels would be incorrect."
+      },
+      "verification": {
+        "answer": "8.4",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "2b7337dec1a7b193",
+          "sourceFile": "frontend/src/zerekCourseQuestions.js",
+          "sha256": "5f69ca290a1f6b40b3f78b553b0a292a50f6376be77ccd91e962b1a2c77824ae"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_core_distinct_pairs",
+      "editionId": "core-distinct-pairs",
+      "modelId": "distinct-pairs",
+      "editorialFile": "problems/editorial/synaq-standard-core.json",
+      "reviewedEditionSha256": "cd5abef50596e8f6b347542b1bea178a02799d318005d1f6aa25b5fa9aa5ee61",
+      "independentReview": {
+        "editionId": "core-distinct-pairs",
+        "sha256": "cd5abef50596e8f6b347542b1bea178a02799d318005d1f6aa25b5fa9aa5ee61",
+        "verdict": "verified",
+        "method": "exhaustive unordered distinct-pair enumeration",
+        "notes": "Constructed all pairs of distinct students among nine exactly once;36 pairs. No self-pairs or reverse-order duplicates are included, matching the pair-photo condition and solution."
+      },
+      "verification": {
+        "answer": "36",
+        "checks": [
+          "finite exact model",
+          "statement/parameter binding",
+          "fresh solution/parameter binding",
+          "domain constraints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "zerek_14930a2d-fe09-4297-8fa1-f1039923dd16_37",
+          "sourceFile": "frontend/src/zerekImportedQuestions.js",
+          "sha256": "7cc0c6e40c7ddd527bd14cdb521181e2fe562c7bebb3e5dddbcfeac58539ce21"
+        }
+      ],
+      "adaptationChanges": [
+        "Condition and requested quantity written for a new classroom setting or an explicit mathematical task.",
+        "Numerical givens and solution recomputed independently; original answer/solution not used as a generator."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_led_signs",
+      "editionId": "synaq-standard-led-signs",
+      "modelId": "fraction-unit-capacity",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "57f6e37df190c197ba1293d89c472d8992fb210b31c248414106cad18d1a898d",
+      "independentReview": {
+        "editionId": "synaq-standard-led-signs",
+        "sha256": "57f6e37df190c197ba1293d89c472d8992fb210b31c248414106cad18d1a898d",
+        "verdict": "verified",
+        "method": "whole-capacity fraction check",
+        "notes": "140 LEDs would make 20 seven-LED signs; 3/5 of that capacity is 12. Allocation 84 is integral and has no remainder. Condition and all solution steps agree."
+      },
+      "verification": {
+        "answer": "12",
+        "checks": [
+          "proper allocation fraction",
+          "allocated stock and complete-sign count are integers",
+          "no unused allocated stock",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "ef7b6d02181aa44e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-14-level1.json",
+          "sha256": "ed1398c89888ed3b8917a80b4689b243229150019188cbed4421df692e28f89e"
+        }
+      ],
+      "adaptationChanges": [
+        "Үй саны туралы бастапқы жағдайдың орнына жарық белгісін құрастыруға арналған дербес есеп жазылды.",
+        "Табылған үлесті бір бұйымға қажет материалға бөлу қадамы қосылды; сұрақ дайын бұйым санын сұрайды."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_eco_route_map",
+      "editionId": "synaq-standard-eco-route-map",
+      "modelId": "inverse-fraction-remaining",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "cda6c46dba8ae4bf478f7b0e48d840f079b5a94b11907fecd58c15567eb00fe6",
+      "independentReview": {
+        "editionId": "synaq-standard-eco-route-map",
+        "sha256": "cda6c46dba8ae4bf478f7b0e48d840f079b5a94b11907fecd58c15567eb00fe6",
+        "verdict": "verified",
+        "method": "complementary ratio units",
+        "notes": "7 shares correspond to 21 stops, so the five remaining shares contain 15. The total 36 and all stated fractions are consistent. The target is clearly unmarked stops."
+      },
+      "verification": {
+        "answer": "15",
+        "checks": [
+          "known fraction is proper",
+          "whole and remaining stops are positive integers",
+          "known plus remaining equals whole",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "084106fa017e439b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-14-level1.json",
+          "sha256": "9b7e6fabcc8743b7c31319194f34a55a7e54a7d583a95096f66823ee58a467f0"
+        }
+      ],
+      "adaptationChanges": [
+        "Жалаң белгісіз санның орнына экобағыт картасындағы аялдамаларды аяқтау жағдайы құрылды.",
+        "Белгілі бөлік арқылы бүтінді табудан кейін белгіленбеген аялдамаларды есептеу қажет."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_plastic_thread",
+      "editionId": "synaq-standard-plastic-thread",
+      "modelId": "same-whole-two-shares-capacity",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "14b3556c9defd46b82e44ee9ede26183dad121f1f08127d855562462f3f3abe6",
+      "independentReview": {
+        "editionId": "synaq-standard-plastic-thread",
+        "sha256": "14b3556c9defd46b82e44ee9ede26183dad121f1f08127d855562462f3f3abe6",
+        "verdict": "verified",
+        "method": "capacity subtraction on a common physical unit",
+        "notes": "The initial stock is 48 two-metre blanks. The two original-stock allocations consume 15 and 14 blank equivalents;48−15−14=19. Both fractions explicitly refer to the same whole, so no sequential-fraction ambiguity."
+      },
+      "verification": {
+        "answer": "19",
+        "checks": [
+          "both shares refer to the original stock",
+          "sum of shares is strictly below one",
+          "remaining metres and piece count are positive integers",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "7dfe1cadd684683f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-1-level2.json",
+          "sha256": "c00db4cedc4bc6b5ba55e80dddbd6861dcc073a0c590b384a4a7bf602c726a1a"
+        }
+      ],
+      "adaptationChanges": [
+        "Картоп сату жағдайы қолданылмай, модельдеу үйірмесіндегі пластик жіп туралы жаңа шарт жазылды.",
+        "Екі үлестің де бастапқы қордан алынатыны нақтыланды; қалдықтан бірдей дайындамалар жасау қадамы қосылды."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_ceramic_clay",
+      "editionId": "synaq-standard-ceramic-clay",
+      "modelId": "mixed-mass-consumption-conversion",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "04ebef7b7be8ded1d461072a21c360bb4c31026b9472d10ef16bfe8566dd3672",
+      "independentReview": {
+        "editionId": "synaq-standard-ceramic-clay",
+        "sha256": "04ebef7b7be8ded1d461072a21c360bb4c31026b9472d10ef16bfe8566dd3672",
+        "verdict": "verified",
+        "method": "integer-gram mass balance",
+        "notes": "Convert stocks to 2750 g and 1625 g and use 375 g per item:2750+1625−10×375=625 g. All mixed-number equalities and kg/g units in the solution are correct."
+      },
+      "verification": {
+        "answer": "625",
+        "checks": [
+          "mixed-number fractional parts are proper",
+          "consumption is less than available clay",
+          "kilogram-to-gram conversion is exact",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "b488d9dbeb883dc0",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-9-level1.json",
+          "sha256": "a525bbbe1f860a8be897b984693e8bfb97d088e5c12c40e7a6a4172ba558ee02"
+        }
+      ],
+      "adaptationChanges": [
+        "Екі жәшіктегі өнімді қосу орнына керамика үйірмесінің саз қоры мен шығыны туралы дербес жағдай берілді.",
+        "Аралас сандарды қосу, бірнеше бұйымға кеткен массаны азайту және килограмды грамға ауыстыру біріктірілді."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_reading_pages",
+      "editionId": "synaq-standard-reading-pages",
+      "modelId": "different-wholes-share-comparison",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "849817705b992084854df63c6ab3d6c66f22e279a8909d259a1050bd254a6f4e",
+      "independentReview": {
+        "editionId": "synaq-standard-reading-pages",
+        "sha256": "849817705b992084854df63c6ab3d6c66f22e279a8909d259a1050bd254a6f4e",
+        "verdict": "verified",
+        "method": "common-denominator comparison across different wholes",
+        "notes": "With denominator 40, the page difference is(240×15−180×16)/40=18. The text clearly distinguishes the two book lengths; Daniyar does read more, as asked."
+      },
+      "verification": {
+        "answer": "18",
+        "checks": [
+          "each read fraction is proper",
+          "page counts are integral",
+          "second actual quantity exceeds first despite unequal wholes",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "f58a3408ff57ca9d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-7-leveltest.json",
+          "sha256": "871d2657e2fea7c91dab8536c93f8dc0c5121ad8bc003cece38300c01938bfb5"
+        }
+      ],
+      "adaptationChanges": [
+        "Бірдей құмыралардың үлестерін салыстырудан ұзындығы әртүрлі екі кітаптағы оқылған бет санын салыстыруға көшірілді.",
+        "Бүтіндер тең емес: алдымен әр үлестің нақты мәні табылады, кейін олардың айырмасы есептеледі."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_fair_tickets",
+      "editionId": "synaq-standard-fair-tickets",
+      "modelId": "complementary-shares-difference",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "a7699caac61b93201c6f7dc7b6815a7791612b068fb634a3354132019b239e75",
+      "independentReview": {
+        "editionId": "synaq-standard-fair-tickets",
+        "sha256": "a7699caac61b93201c6f7dc7b6815a7791612b068fb634a3354132019b239e75",
+        "verdict": "verified",
+        "method": "independent integral population enumeration",
+        "notes": "Enumerated positive integer ticket totals whose sold share is integral and whose unsold-minus-sold difference is 48. Unique total 120; sold 36 and unsold 84. Complementary groups and question are unambiguous."
+      },
+      "verification": {
+        "answer": "120",
+        "checks": [
+          "sold fraction is below one half",
+          "sold and unsold quantities are positive integers",
+          "difference and conservation of total tickets verified",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "d9daef1bc5137d8b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-1-level3.json",
+          "sha256": "8b3dc9b38c6dfb04cfec65cdd7835e27fb64543a279a366b35b9ab921850b3fe"
+        }
+      ],
+      "adaptationChanges": [
+        "Жол ұзындығы туралы шарттың орнына жәрмеңкенің сатылған және сатылмаған билеттері туралы жаңа есеп құрылды.",
+        "Бүтін белгісіз; толықтырушы екі үлестің айырмасы арқылы қалпына келтіріледі."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_science_festival",
+      "editionId": "synaq-standard-science-festival",
+      "modelId": "nested-percent-selection",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "8f98b3282679603d73555b2f7b9fa4623ab84b4f49bb7ac440400da542dda262",
+      "independentReview": {
+        "editionId": "synaq-standard-science-festival",
+        "sha256": "8f98b3282679603d73555b2f7b9fa4623ab84b4f49bb7ac440400da542dda262",
+        "verdict": "verified",
+        "method": "combined selection proportion",
+        "notes": "The nested group is 25×30/10000=3/40 of all 320 pupils, giving 24. The second percentage explicitly applies only to the robotics group. Solution and participant counts are integral."
+      },
+      "verification": {
+        "answer": "24",
+        "checks": [
+          "two percentages are conditional stages",
+          "both group sizes are integers",
+          "final group is a subset of the first group",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "bc7f8ac30cf68126",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-2-level1.json",
+          "sha256": "9e50baaac4b46057273bd68185c9a6edfb981f812188220346864753f5f889d2"
+        }
+      ],
+      "adaptationChanges": [
+        "Кітап сөресіндегі бір үлестің орнына ғылым фестиваліндегі екі сатылы таңдау жағдайы жасалды.",
+        "Екінші пайыз барлық қатысушыдан емес, бірінші топтың ішінен алынатыны шартта анық айтылды."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_study_kit_delivery",
+      "editionId": "synaq-standard-study-kit-delivery",
+      "modelId": "inverse-discount-fixed-fee",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "a22887343aaba0613fa31a8c29d07bb2cccf554c4edd2df188baa0abbf3e6d9d",
+      "independentReview": {
+        "editionId": "synaq-standard-study-kit-delivery",
+        "sha256": "a22887343aaba0613fa31a8c29d07bb2cccf554c4edd2df188baa0abbf3e6d9d",
+        "verdict": "verified",
+        "method": "inverse-price equation enumeration",
+        "notes": "Enumerated positive prices satisfying 4 P/5+1200=10800; unique price 12000. Delivery is a separate fixed fee and is removed before undoing the discount. Every displayed equality is valid."
+      },
+      "verification": {
+        "answer": "12000",
+        "checks": [
+          "delivery is a separate fixed fee",
+          "discount is between zero and 100 percent",
+          "inverse price exactly reproduces amount paid",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "4a2a33f0f1daab78",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sha256": "74857b4458092e203a1483352536de2e532dfa28e036fcaac0c1c68ce5ada8ef"
+        }
+      ],
+      "adaptationChanges": [
+        "Зейнетақы өсімі орнына оқу жинағына жеңілдік және бөлек жеткізу ақысы бар жаңа сатып алу жағдайы құрылды.",
+        "Пайыздық негізді табудан бұрын тұрақты жеткізу ақысын ажырату қажет; бастапқы баға кері есептеледі."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_skating_pass",
+      "editionId": "synaq-standard-skating-pass",
+      "modelId": "sequential-relative-price-changes",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "bfe6de47af036b2bf193cc7681a399194281ea3569a3bbfa9e99ff6cbe844e2d",
+      "independentReview": {
+        "editionId": "synaq-standard-skating-pass",
+        "sha256": "bfe6de47af036b2bf193cc7681a399194281ea3569a3bbfa9e99ff6cbe844e2d",
+        "verdict": "verified",
+        "method": "relative multiplier difference",
+        "notes": "120%×85%=102% of the original price. The excess is 2% of 9600=192; final price 9792 exceeds the original, matching the question direction. Both percentage bases are explicit."
+      },
+      "verification": {
+        "answer": "192",
+        "checks": [
+          "percentage changes use successive bases",
+          "both intermediate prices are exact integer tenge",
+          "final price is above original as stated",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "4b1ec0906f346c7b",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sha256": "2cf0de419336690c69df3b9603139c931b3603dc0c3405aa44503a940a4417b6"
+        }
+      ],
+      "adaptationChanges": [
+        "Суреттегі көйлек бағасы қолданылмай, мұз айдыны абонементінің толық мәтіндік жағдайы жазылды.",
+        "Барлық бастапқы дерек өзгертілді; сұрақ соңғы бағаны емес, бастапқы бағамен теңгелік айырмасын сұрайды."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_lab_dilution",
+      "editionId": "synaq-standard-lab-dilution",
+      "modelId": "dilution-solute-conservation",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "1c826f31286a834c245d21452d6f7207f98b846428c9df9546a730ebb22242d6",
+      "independentReview": {
+        "editionId": "synaq-standard-lab-dilution",
+        "sha256": "1c826f31286a834c245d21452d6f7207f98b846428c9df9546a730ebb22242d6",
+        "verdict": "verified",
+        "method": "concentration mass-conservation equation",
+        "notes": "For final percentage c,400 c=300×8, giving c=6. Salt mass 24 g stays fixed while total mass becomes 400 g. No evaporation/salt loss is explicitly excluded in the statement; solution and units agree."
+      },
+      "verification": {
+        "answer": "6",
+        "checks": [
+          "pure-water addition conserves salt mass",
+          "total mass increases",
+          "new concentration is positive and below initial concentration",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "c627c7b1e7c1d8fe",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sha256": "713af852144586b98fd757b5a8ad4c913ae6378e186f2ae810dbf3cecf5b4427"
+        }
+      ],
+      "adaptationChanges": [
+        "Тұз қосылатын бастапқы тәжірибенің орнына таза сумен сұйылту туралы жаңа тәжірибе берілді.",
+        "Массалар мен бастапқы концентрация өзгертілді; тұз массасының сақталуы мен жалпы массаның өсуі пайдаланылды."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_podcast_budget",
+      "editionId": "synaq-standard-podcast-budget",
+      "modelId": "three-way-ratio-budget-difference",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "f573e8ce223184b4a260ddd8dac070bab7e12575847c8ea894947a0b8223ed89",
+      "independentReview": {
+        "editionId": "synaq-standard-podcast-budget",
+        "sha256": "f573e8ce223184b4a260ddd8dac070bab7e12575847c8ea894947a0b8223ed89",
+        "verdict": "verified",
+        "method": "difference of ratio weights",
+        "notes": "The requested budget gap is(5−3)/(3+5+4) of 36000=6000. All three component amounts sum back to 36000. The order of the named categories is explicit."
+      },
+      "verification": {
+        "answer": "6000",
+        "checks": [
+          "three positive ratio weights",
+          "all budget shares are integer tenge",
+          "three allocations conserve total budget",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "73ee7a974ad093d1",
+          "sourceFile": "problems/sources/zerek/courses/6-math-1-2-level1.json",
+          "sha256": "84c3e13585052dcd5c37337675d258b72ee92d9d4ebbe8ab518a9bdfa3ba7696"
+        }
+      ],
+      "adaptationChanges": [
+        "Үш досқа ақша бөлу орнына мектеп подкастының үш шығын бабы бойынша бюджеті құрылды.",
+        "Деректер өзгертілді; ең үлкен үлесті табудың орнына екі мақсатқа бөлінген сомалардың айырмасы сұралды."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_paper_collection",
+      "editionId": "synaq-standard-paper-collection",
+      "modelId": "ratio-scale-from-difference",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "006ae467d3b40ea2bca582cd71569856d500614d8a749212ea0a6362caa26be8",
+      "independentReview": {
+        "editionId": "synaq-standard-paper-collection",
+        "sha256": "006ae467d3b40ea2bca582cd71569856d500614d8a749212ea0a6362caa26be8",
+        "verdict": "verified",
+        "method": "two-variable integral system enumeration",
+        "notes": "Enumerated x>0 with the second collection x+18 and 7 x=4(x+18); x=24,second 42,total 66. The larger group and mass unit are clearly specified."
+      },
+      "verification": {
+        "answer": "66",
+        "checks": [
+          "larger ratio weight is strictly greater",
+          "difference fixes a unique positive scale",
+          "both masses and their sum are integers",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "78538f5d524cf442",
+          "sourceFile": "problems/sources/zerek/courses/6-math-1-2-level2.json",
+          "sha256": "199cf682b4ba3a21065ff2b952f0c022f4d5f2f9f354cb23bd47265896046183"
+        }
+      ],
+      "adaptationChanges": [
+        "Екі жалаң санның орнына экоакциядағы екі үйірменің қағаз жинауы туралы жағдай жазылды.",
+        "Қатынас пен айырма жаңартылды; үлкен санның орнына жалпы жиналған масса сұралады."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_camp_water",
+      "editionId": "synaq-standard-camp-water",
+      "modelId": "inverse-resource-after-elapsed-use",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "6ecd9ef978059be0edb1a43baefba5cc9ea4b4e69e4a154641d501c5940bdb4e",
+      "independentReview": {
+        "editionId": "synaq-standard-camp-water",
+        "sha256": "6ecd9ef978059be0edb1a43baefba5cc9ea4b4e69e4a154641d501c5940bdb4e",
+        "verdict": "verified",
+        "method": "remaining-days rescaling",
+        "notes": "After 3 days, the original group has 12 days of stock left. Scaling for 32 instead of 24 pupils gives 12×24/32=9 days. Constant per-pupil daily consumption is stated, and the answer is exactly a whole number."
+      },
+      "verification": {
+        "answer": "9",
+        "checks": [
+          "elapsed time is below initial reserve duration",
+          "per-person daily consumption is constant",
+          "remaining reserve exactly covers an integer number of days",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "b5790358b2ca3a31",
+          "sourceFile": "problems/sources/zerek/courses/6-math-1-6-level1.json",
+          "sha256": "978cc78bc1c601ec286a8936d51720c5aab5aaedf2057950a17f643918afea03"
+        }
+      ],
+      "adaptationChanges": [
+        "Жылқы жемінің орнына лагерьдің ауызсу қоры туралы жаңа жағдай берілді.",
+        "Қордың бір бөлігі жұмсалып болғаннан кейін адам саны өзгеретін қосымша кезең енгізілді."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_cap_sorting",
+      "editionId": "synaq-standard-cap-sorting",
+      "modelId": "piecewise-joint-production",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "78085b39e9f448cf6787ab99550dea6b3f49f0701f900673b056a8ec872d2508",
+      "independentReview": {
+        "editionId": "synaq-standard-cap-sorting",
+        "sha256": "78085b39e9f448cf6787ab99550dea6b3f49f0701f900673b056a8ec872d2508",
+        "verdict": "verified",
+        "method": "separate-machine time accounting",
+        "notes": "The first device runs 4 minutes and the second runs 7:18×4+24×7=240 caps. This independently confirms the solution grouped by time interval. The stopped device and remaining work period are clear."
+      },
+      "verification": {
+        "answer": "240",
+        "checks": [
+          "positive constant rates",
+          "two disjoint time phases",
+          "only the second device operates in the final phase",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "7ed683ff0e9f3375",
+          "sourceFile": "problems/sources/zerek/courses/4-math-6-2-level1.json",
+          "sha256": "1c18b2ab9f583c3a78cbd099390924a6e9a5a55a3068c60bf94e3eb397bab458"
+        }
+      ],
+      "adaptationChanges": [
+        "Жұмысшылардың сағаттық өнімділігі орнына қайта өңдеуге арналған қақпақ сұрыптайтын екі құрылғы сипатталды.",
+        "Бірге істеген кезеңнен кейін бір құрылғы тоқтайтын кезең қосылды; барлық өңделген қақпақ саны сұралды."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_exhibition_markers",
+      "editionId": "synaq-standard-exhibition-markers",
+      "modelId": "unit-price-from-two-differences",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "16ca10bfae6fc38f3de5c7a5097847ab72ce3e6fc05d2e52c4c4390827302e37",
+      "independentReview": {
+        "editionId": "synaq-standard-exhibition-markers",
+        "sha256": "16ca10bfae6fc38f3de5c7a5097847ab72ce3e6fc05d2e52c4c4390827302e37",
+        "verdict": "verified",
+        "method": "divisor and count-difference enumeration",
+        "notes": "Enumerated common unit prices dividing 3120 and 1820 with purchaser counts differing by 5; unique price 260,counts 12 and 7. Same per-marker pricing and currency units are explicit."
+      },
+      "verification": {
+        "answer": "260",
+        "checks": [
+          "identical unit price for both groups",
+          "both purchased counts are positive integers",
+          "payment and quantity differences agree",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "24bdbb5a2629d99f",
+          "sourceFile": "problems/sources/zerek/courses/4-math-6-4-level1.json",
+          "sha256": "6b9a6d5eb0071280c2aae623e2ac5708fbe9a90dc948a6a6791681772ecacfcb"
+        }
+      ],
+      "adaptationChanges": [
+        "Альбом сатып алу орнына көрме дайындайтын екі топтың маркерлері туралы жаңа шарт құрылды.",
+        "Барлық сома мен зат санының айырмасы өзгертілді; сатып алынған зат саны емес, бір маркердің бағасы сұралды."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_delayed_walkers",
+      "editionId": "synaq-standard-delayed-walkers",
+      "modelId": "meeting-with-delayed-departure",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "8a81ec46f0fc0127ede8fd99728148e01bf23492e655ddf24e9b9d39686434cf",
+      "independentReview": {
+        "editionId": "synaq-standard-delayed-walkers",
+        "sha256": "8a81ec46f0fc0127ede8fd99728148e01bf23492e655ddf24e9b9d39686434cf",
+        "verdict": "verified",
+        "method": "minute-based meeting equation enumeration",
+        "notes": "For t minutes after the second departure,4(t+30)/60+3 t/60=23. The unique positive integral t is 180; distances 14 km and 9 km sum to 23. The time origin, opposing directions and steady speeds are explicit."
+      },
+      "verification": {
+        "answer": "180",
+        "checks": [
+          "first walker has not already reached the other start",
+          "constant speeds and opposite directions",
+          "meeting time is measured from second departure and is an integer number of minutes",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "123d7e820a0e0e7a",
+          "sourceFile": "problems/sources/zerek/courses/4-math-6-6-level1.json",
+          "sha256": "c03006aaa5c85597f9e53cb0064940a97ade6080f3e626b1f17d58d1268093ed"
+        }
+      ],
+      "adaptationChanges": [
+        "Бір уақытта шыққан жолаушылардың теңдеуін таңдау орнына біреуі кеш шығатын туристер туралы жаңа есеп берілді.",
+        "Кешіккен уақытты сағатқа ауыстыру, алдын ала жүрген жолды шегеру және жауапты минутпен беру қадамдары енгізілді."
+      ]
+    },
+    {
+      "id": "synaq_adapted_synaq_standard_river_return",
+      "editionId": "synaq-standard-river-return",
+      "modelId": "river-round-trip-time",
+      "editorialFile": "problems/editorial/synaq-standard-fractions.json",
+      "reviewedEditionSha256": "9ffd4ea2eb2edb16c58c807d00471a3deef264a0a20583eb03fa964b550c6cd2",
+      "independentReview": {
+        "editionId": "synaq-standard-river-return",
+        "sha256": "9ffd4ea2eb2edb16c58c807d00471a3deef264a0a20583eb03fa964b550c6cd2",
+        "verdict": "verified",
+        "method": "round-trip reciprocal-speed identity",
+        "notes": "Total time is 36×2×15/(15²−3²)=5 h. Individual legs are 2 h downstream and 3 h upstream; both water-relative speeds are positive. Stops are excluded and the return endpoint is clear."
+      },
+      "verification": {
+        "answer": "5",
+        "checks": [
+          "still-water speed is greater than current speed",
+          "equal outward and return distances",
+          "direction-specific times are added instead of averaging speeds",
+          "full statement and solution bound to parameters",
+          "new authored scenario with immutable archival references"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "6907fa557e9a73e4",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json",
+          "sha256": "611a030e0ba8e3f859170d4419f0ffb8347465e51c3be000b928fef8d06c6a99"
+        }
+      ],
+      "adaptationChanges": [
+        "Тек ағысқа қарсы жылдамдықты табудан өзенмен барып-қайту уақыты туралы толық маршрутқа көшірілді.",
+        "Қашықтық қосылды, екі бағыттың уақыты бөлек есептеледі; ағыс жылдамдығы қай бағытта қосылып, қай бағытта азайтылады деген дағды сақталды."
+      ]
+    },
+    {
+      "id": "synaq_adapted_geometry_courtyard_corner",
+      "editionId": "geometry-courtyard-corner",
+      "modelId": "l-shape-area",
+      "editorialFile": "problems/editorial/synaq-standard-geometry.json",
+      "reviewedEditionSha256": "38c8311d93be8ac98649cd9ee9f425500d36c46f30bc65379216a3ca146f91ca",
+      "independentReview": {
+        "editionId": "geometry-courtyard-corner",
+        "sha256": "38c8311d93be8ac98649cd9ee9f425500d36c46f30bc65379216a3ca146f91ca",
+        "verdict": "verified",
+        "method": "horizontal strip decomposition",
+        "notes": "Upper strip is 9×3=27 m²; lower strip is 13×6=78 m²; total 105 m². The six polygon vertices at scale 32 match this L shape and the removed 4×3 corner. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+      },
+      "verification": {
+        "answer": "105",
+        "checks": [
+          "six-vertex orthogonal polygon",
+          "shoelace area",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "ce5c3630b43e6904",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level1.json",
+          "sha256": "2ba7f8a04b50cd4f95c3cbbcde13822fa10b9c491aaff9032e682fb4f51e5c17"
+        }
+      ],
+      "adaptationChanges": [
+        "Жер телімі туралы шарт мектеп гүлзары туралы жаңа сюжетпен ауыстырылды.",
+        "Ортадағы ойықтың орнына жоғарғы оң жақ бұрыш алынып, П пішіні L пішініне өзгертілді.",
+        "Өлшемдер 13 м, 9 м, 4 м және 3 м болып жаңадан таңдалды; шешім өздігінен қайта есептелді.",
+        "Түпнұсқа сурет қолданылмады: алты төбелі көпбұрыш native SVG ретінде жаңадан салынды."
+      ],
+      "figure": {
+        "image": "/figures/synaq-editions/geometry-courtyard-corner.svg",
+        "sha256": "baf798a8fc8e10aa8a1743edff7e527aa547e687ece0769095576bbe0a7f73e8",
+        "newDrawing": true
+      }
+    },
+    {
+      "id": "synaq_adapted_geometry_tile_footpath",
+      "editionId": "geometry-tile-footpath",
+      "modelId": "tile-boundary",
+      "editorialFile": "problems/editorial/synaq-standard-geometry.json",
+      "reviewedEditionSha256": "658879c79eea6cf73b5330a0d59482869df68578b7a3afac9967ff2c5e39147f",
+      "independentReview": {
+        "editionId": "geometry-tile-footpath",
+        "sha256": "658879c79eea6cf73b5330a0d59482869df68578b7a3afac9967ff2c5e39147f",
+        "verdict": "verified",
+        "method": "shared-edge cancellation",
+        "notes": "Seven tiles contribute 28 sides; six full shared edges remove 12 sides. Remaining 16×3=48 cm. The SVG has exactly the stated connected seven-tile I arrangement, with no hole. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+      },
+      "verification": {
+        "answer": "48",
+        "checks": [
+          "connected nonoverlapping tiles",
+          "unpaired boundary edges: 16",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "bcae7df0a7662afc",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-4-level3.json",
+          "sha256": "08800b6434d74cfe2f048379b0fbda9fea0914f4b945e181f0a4128c6233b163"
+        }
+      ],
+      "adaptationChanges": [
+        "Ойығы бар металл парақтың орнына бірдей жеті плиткадан құралған жаңа соқпақ алынды.",
+        "Дайын ұзындықтарды қосудың орнына ортақ қабырғаларды алып тастап, сыртқы жиекті санау сұралады.",
+        "3 см қабырғалы жаңа I пішінді орналасу таңдалып, периметр жеке қабырғалар арқылы тексерілді.",
+        "Плиткалар сұлбасы түпнұсқасыз native SVG тіктөртбұрыштарынан салынды."
+      ],
+      "figure": {
+        "image": "/figures/synaq-editions/geometry-tile-footpath.svg",
+        "sha256": "b9079c7462d931e2bf2228aa158ba1a5a466e9fab64c3dbe7cca4081ccb86225",
+        "newDrawing": true
+      }
+    },
+    {
+      "id": "synaq_adapted_geometry_robot_box_height",
+      "editionId": "geometry-robot-box-height",
+      "modelId": "cuboid-missing-height",
+      "editorialFile": "problems/editorial/synaq-standard-geometry.json",
+      "reviewedEditionSha256": "09da74995965333f843de0539220517e12b20fe87d6131bf0bf553eac1c0f7a6",
+      "independentReview": {
+        "editionId": "geometry-robot-box-height",
+        "sha256": "09da74995965333f843de0539220517e12b20fe87d6131bf0bf553eac1c0f7a6",
+        "verdict": "verified",
+        "method": "successive unit-column volume division",
+        "notes": "504 cm³ over 12 unit columns leaves 42 cm² per column; division by 7 gives 6 cm height. Inner dimensions and neglect of wall thickness make the volume model unambiguous; h is unknown in the SVG. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+      },
+      "verification": {
+        "answer": "6",
+        "checks": [
+          "positive height enumerated from volume",
+          "base dimensions retained",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "9a1860dc1b5231a3",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-2-leveltest.json",
+          "sha256": "767223f0f09e3a64d60ebd7f84aa21eac20350ad6e881a029a7d32a6ce88e714"
+        }
+      ],
+      "adaptationChanges": [
+        "Су құйылған бактың орнына робот сақтайтын қорап туралы жаңа шарт жасалды.",
+        "Литрден көлем ауыстыру алынып тасталып, белгісіз ішкі биіктікті көлемнен табу негізгі мақсат болды.",
+        "Табаны 12 см × 7 см және көлемі 504 см³ болып жаңартылды.",
+        "Қораптың үш жағы жаңа native SVG көпбұрыштарымен көрсетілді; белгісіз биіктіктің жауабы суретте жазылмады."
+      ],
+      "figure": {
+        "image": "/figures/synaq-editions/geometry-robot-box-height.svg",
+        "sha256": "eaf35a79e69d4cfb8b4cbbce42d4987561e7db15e3310d8651bd422ef629a9f4",
+        "newDrawing": true
+      }
+    },
+    {
+      "id": "synaq_adapted_geometry_straight_angle_gap",
+      "editionId": "geometry-straight-angle-gap",
+      "modelId": "straight-angle-gap",
+      "editorialFile": "problems/editorial/synaq-standard-geometry.json",
+      "reviewedEditionSha256": "53c465e6daa0b0dbc4c6184fc300d499474f065dee54ef12c5cc2c558190bb11",
+      "independentReview": {
+        "editionId": "geometry-straight-angle-gap",
+        "sha256": "53c465e6daa0b0dbc4c6184fc300d499474f065dee54ef12c5cc2c558190bb11",
+        "verdict": "verified",
+        "method": "angles measured from SVG ray coordinates",
+        "notes": "atan 2 of the two SVG rays gives 138° and 73° from OB, so their separation is 65°. The outside sectors are 42° and 73°; the written ray order and straight angle uniquely specify the middle sector. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+      },
+      "verification": {
+        "answer": "65",
+        "checks": [
+          "three adjacent sectors fill a straight angle",
+          "unique positive missing sector",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "742237e4ea784e01",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-3-level2.json",
+          "sha256": "1f5fe6588702492a2359e45a6ef0448eda68dcc592f718bae7ce41d85452a8e5"
+        }
+      ],
+      "adaptationChanges": [
+        "Биссектриса мен тең бұрыштар туралы шарттың орнына үш іргелес бұрыштың толықтыру моделі алынды.",
+        "Жаңа 42° және 73° беріліп, COD бұрышы сұралады; теңдік белгілеулері қолданылмайды.",
+        "Сәулелердің реті шартта толық жазылып, бірмәнді шешімге жеткізілді.",
+        "Сәулелер мен доғалар нақты жаңа бұрыш өлшемдерінен есептеліп, native SVG арқылы салынды."
+      ],
+      "figure": {
+        "image": "/figures/synaq-editions/geometry-straight-angle-gap.svg",
+        "sha256": "91f5032d26023d7a54c1e1cf1096cfa0ab8f71d6bbda7c07129757426cee0a30",
+        "newDrawing": true
+      }
+    },
+    {
+      "id": "synaq_adapted_geometry_light_grid_percent",
+      "editionId": "geometry-light-grid-percent",
+      "modelId": "shaded-grid-percent",
+      "editorialFile": "problems/editorial/synaq-standard-geometry.json",
+      "reviewedEditionSha256": "8592f8c3d224363c2d15e79eb277312925443a073685bcda835e0ce90542182b",
+      "independentReview": {
+        "editionId": "geometry-light-grid-percent",
+        "sha256": "8592f8c3d224363c2d15e79eb277312925443a073685bcda835e0ce90542182b",
+        "verdict": "verified",
+        "method": "unlit-cell complement",
+        "notes": "The SVG contains 20 equal cells,13 unlit and 7 blue. Unlit percentage is 65%, so lit percentage is 35%. The requested answer is the percent number, not a fraction or cell count. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+      },
+      "verification": {
+        "answer": "35",
+        "checks": [
+          "equal-area cells",
+          "distinct shaded cells: 7",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "74176f720bd29355",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-level1.json",
+          "sha256": "84e95f1a89f638875a7604dcbe0aab057034ff9b3abada85e440f14fa310ef21"
+        }
+      ],
+      "adaptationChanges": [
+        "Үшбұрыштарға бөлінген шаршы жарық тақтасы туралы жаңа сюжетке өзгертілді.",
+        "20 бірдей төртбұрыш ұяшық пен жаңа асимметриялық бояу үлгісі жасалды.",
+        "Бөліктерді көзбен санау мен пайызға айналдыру жеке тексерілді.",
+        "Түпнұсқа бейне пайдаланылмай, барлық ұяшық native SVG элементтерімен салынды."
+      ],
+      "figure": {
+        "image": "/figures/synaq-editions/geometry-light-grid-percent.svg",
+        "sha256": "7d29aec12fa25242d01f281e2598e778a13027a9b7f25a9598191948e398e821",
+        "newDrawing": true
+      }
+    },
+    {
+      "id": "synaq_adapted_geometry_library_bar_total",
+      "editionId": "geometry-library-bar-total",
+      "modelId": "bar-chart-total",
+      "editorialFile": "problems/editorial/synaq-standard-geometry.json",
+      "reviewedEditionSha256": "653b83bdde3521cfe1f3daadec0ba5251a1b3a44f8b982a4636bda816597c178",
+      "independentReview": {
+        "editionId": "geometry-library-bar-total",
+        "sha256": "653b83bdde3521cfe1f3daadec0ba5251a1b3a44f8b982a4636bda816597c178",
+        "verdict": "verified",
+        "method": "bar-height calibration and symmetric pairing",
+        "notes": "Bar heights divided by 11 pixels/book give 12,18,15,21. Pairing first+last and second+third gives 33+33=66 books. Day abbreviations are readable; the full day order is specified in the condition. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+      },
+      "verification": {
+        "answer": "66",
+        "checks": [
+          "four labelled bars",
+          "all individual books counted once",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "849c012d81c60dcb",
+          "sourceFile": "problems/sources/zerek/courses/5-math-8-3-level2.json",
+          "sha256": "983bccbdd04b8feff5068d75a30e4e8c102a0ff9308bfc02f083395f89b98faa"
+        }
+      ],
+      "adaptationChanges": [
+        "Мұражай келушілерінің графигі мектеп кітапханасы туралы жаңа төрт күндік дерекке ауыстырылды.",
+        "Сынық сызық пен ең үлкен өсімді іздеу орнына төрт бағанның жалпы саны сұралады.",
+        "Жаңа деректер 12, 18, 15, 21 ретінде беріліп, шкала мен баған биіктіктері сәйкес салынды.",
+        "Кесте нүктелері көшірілмей, жаңа native SVG бағанды диаграммасы жасалды."
+      ],
+      "figure": {
+        "image": "/figures/synaq-editions/geometry-library-bar-total.svg",
+        "sha256": "59cee095bdd433797d25ec40168d8cf45821a272db2c38d9598b78605685b65d",
+        "newDrawing": true
+      }
+    },
+    {
+      "id": "synaq_adapted_geometry_park_coordinate_walk",
+      "editionId": "geometry-park-coordinate-walk",
+      "modelId": "coordinate-walk-distance",
+      "editorialFile": "problems/editorial/synaq-standard-geometry.json",
+      "reviewedEditionSha256": "1431f543a391de54ffe807142515972676bb79e1f5a0efcc2a15afadd4b5788b",
+      "independentReview": {
+        "editionId": "geometry-park-coordinate-walk",
+        "sha256": "1431f543a391de54ffe807142515972676bb79e1f5a0efcc2a15afadd4b5788b",
+        "verdict": "verified",
+        "method": "coordinate positions calibrated to the SVG tick pitch",
+        "notes": "A and B are 456 pixels apart, with 38 pixels per coordinate unit:12 units. Twelve 200 m intervals give 2400 m. Opposite signs, zero mark and requested physical unit are clear. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+      },
+      "verification": {
+        "answer": "2400",
+        "checks": [
+          "unit intervals enumerated across zero",
+          "metres per unit applied",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "e6db1123d5557018",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-2-level2.json",
+          "sha256": "8773394232b4f620e63ecb5d9da83a213d628357d9883de545742c9f580ab981"
+        }
+      ],
+      "adaptationChanges": [
+        "Бір нүктенің бөлшек координатасын оқу орнына екі аялдаманың нақты арақашықтығын табу сұралады.",
+        "Нөлдің екі жағындағы −5 пен 7 және 200 м бірлік ұзындығы жаңадан енгізілді.",
+        "Жауап координата саны емес, метрмен берілетін физикалық ұзындық ретінде қайта жасалды.",
+        "Барлық бөлік белгілері мен аялдамалар түпнұсқасыз жаңа native SVG түзуде салынды."
+      ],
+      "figure": {
+        "image": "/figures/synaq-editions/geometry-park-coordinate-walk.svg",
+        "sha256": "2509a1db8faf2e726bbe4c9873354ee90d1c6143f8304c2645a48554b411580a",
+        "newDrawing": true
+      }
+    },
+    {
+      "id": "synaq_adapted_geometry_sport_route_scale",
+      "editionId": "geometry-sport-route-scale",
+      "modelId": "scaled-route-distance",
+      "editorialFile": "problems/editorial/synaq-standard-geometry.json",
+      "reviewedEditionSha256": "4ac0dbaa94bf1f26b07429a185c83e34db8ee25a12a8830b1e840afbeed4745a",
+      "independentReview": {
+        "editionId": "geometry-sport-route-scale",
+        "sha256": "4ac0dbaa94bf1f26b07429a185c83e34db8ee25a12a8830b1e840afbeed4745a",
+        "verdict": "verified",
+        "method": "independent leg conversion",
+        "notes": "The three legs correspond to 5 km,3 km,6 km under 1:200000; total 14 km. Actual SVG lengths 250,150,300 pixels preserve 25:15:30. The condition explicitly asks for the route rather than a straight shortcut. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+      },
+      "verification": {
+        "answer": "14",
+        "checks": [
+          "three route legs, not endpoint shortcut",
+          "exact mm to kilometre conversion",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "b975ea1258791667",
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-1-level2.json",
+          "sha256": "4f00af1a047e9007af433f775f9306f688a1a3ff9a76c34636a4bfb40acc88e5"
+        }
+      ],
+      "adaptationChanges": [
+        "Ауылдар арасындағы екі бөлік орнына үй мен спортзал арасындағы үш бұрылысты маршрут жасалды.",
+        "Сөзбен берілген масштаб 1 : 200 000 сандық масштабына ауыстырылды.",
+        "Жаңа ондық ұзындықтар мен сантиметрден километрге түрлендіру енгізілді.",
+        "Маршрут ұзындықтарының қатынастарына сай жаңа native SVG сынық сызық салынды; бастапқы карта қолданылмады."
+      ],
+      "figure": {
+        "image": "/figures/synaq-editions/geometry-sport-route-scale.svg",
+        "sha256": "4c75eab74d2ef082dccf0f3764c9af117a5e839cad20f7c4eac6e923b78fd072",
+        "newDrawing": true
+      }
+    },
+    {
+      "id": "synaq_adapted_geometry_gift_box_surface",
+      "editionId": "geometry-gift-box-surface",
+      "modelId": "closed-box-surface",
+      "editorialFile": "problems/editorial/synaq-standard-geometry.json",
+      "reviewedEditionSha256": "1382546b6da246f5895a0a543b48f45cb1fbe8ddf35eb16a1d8b53b92f9b6b84",
+      "independentReview": {
+        "editionId": "geometry-gift-box-surface",
+        "sha256": "1382546b6da246f5895a0a543b48f45cb1fbe8ddf35eb16a1d8b53b92f9b6b84",
+        "verdict": "verified",
+        "method": "lateral strip plus two lids",
+        "notes": "The lateral strip has perimeter 2×(8+5)=26 cm and height 3 cm, area 78 cm². Two 8×5 lids add 80 cm²; total 158 cm². Closed box, lid/base and zero overlap allowance are explicit. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+      },
+      "verification": {
+        "answer": "158",
+        "checks": [
+          "closed cuboid has six external sides",
+          "exposed unit-square faces enumerated",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "4cf6555398dbd78d",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level3.json",
+          "sha256": "7fba172983dd923d0cbda276691eef071037131d611f495e72879bd1b430403d"
+        }
+      ],
+      "adaptationChanges": [
+        "Желімделген текшелер тізбегінің орнына сыйлық қорабын қаптау туралы жаңа сюжет алынды.",
+        "Жасырылған беттерді шегеру орнына үш жұп сыртқы беттің ауданын қосу сұралады.",
+        "8 см, 5 см, 3 см өлшемдері және қосымша қағаз алынбайтыны нақты көрсетілді.",
+        "Қораптың жаңа native SVG сұлбасы жасалып, алты бетке арналған есеп бірлік шаршыларды санаумен тексерілді."
+      ],
+      "figure": {
+        "image": "/figures/synaq-editions/geometry-gift-box-surface.svg",
+        "sha256": "7df5f2b5aa553aaf30d2dad0edff6d737b7629dea93e14dbcf725ee7b307cb9f",
+        "newDrawing": true
+      }
+    },
+    {
+      "id": "synaq_adapted_geometry_window_rectangles",
+      "editionId": "geometry-window-rectangles",
+      "modelId": "grid-rectangle-count",
+      "editorialFile": "problems/editorial/synaq-standard-geometry.json",
+      "reviewedEditionSha256": "00d5a55b56997e328b34f932c752ca9179d8110bdd1f7886adccb3a6e646a88c",
+      "independentReview": {
+        "editionId": "geometry-window-rectangles",
+        "sha256": "00d5a55b56997e328b34f932c752ca9179d8110bdd1f7886adccb3a6e646a88c",
+        "verdict": "verified",
+        "method": "enumeration by rectangle dimensions and placements",
+        "notes": "For each width 1–4 and height 1–3, count(5−width)×(4−height) placements; sum 60. The SVG has five complete vertical lines and four complete horizontal lines. Large rectangles and squares are explicitly included. Independently read the full Kazakh statement and each solution step; no ambiguity, inconsistent unit or answer mismatch found. Existing 343 px render visually inspected: labels and unknown target readable, no clipping or collisions. SVG SHA/title/description and archival reference checked."
+      },
+      "verification": {
+        "answer": "60",
+        "checks": [
+          "all pairs of vertical grid lines",
+          "all pairs of horizontal grid lines, including outer frame",
+          "Kazakh condition/units and explanation bound to parameters",
+          "new local SVG path",
+          "source reference and editorial changes retained"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "7eccaf6025f2451f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-4-level3.json",
+          "sha256": "34bf207da3ee4f0af6826666d3f9db0713e4a668f1036b556957be006736fd8e"
+        }
+      ],
+      "adaptationChanges": [
+        "Абстрактілі бөлінген тіктөртбұрыштың орнына терезе торы туралы жаңа шарт жазылды.",
+        "Тор 3 қатар мен 4 бағанға өзгертіліп, үлкен және кіші тіктөртбұрыштардың бәрі есептелетіні нақтыланды.",
+        "Шешім жолдар бойынша емес, екі тік және екі көлденең шекараны таңдау арқылы қайта жазылды.",
+        "Жаңа тор native SVG сызықтарымен салынды; барлық шекара жұптары жеке перебормен тексерілді."
+      ],
+      "figure": {
+        "image": "/figures/synaq-editions/geometry-window-rectangles.svg",
+        "sha256": "4e8fa765353c3c4ad28e3912ad82cde05f436d788c6a899c1bbccaa793943c78",
+        "newDrawing": true
+      }
+    }
+  ]
+}

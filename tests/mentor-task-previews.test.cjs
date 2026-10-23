@@ -19,6 +19,16 @@ test('unavailable task previews keep the saved task available and do not leak lo
  assert.deepEqual(result,[{key:'saved',qid:'unavailable',topic:'Тема',preview:''}]);
 });
 
+test('a saved qid cannot reveal a paid adaptation preview after downgrade or before review',async()=>{
+ const task={key:'saved',qid:'synaq_adapted_preview_test',topic:'Числа'};
+ const reviewed={id:task.qid,minimumPlan:'pro',editorialStatus:'verified',sourceProvider:'zerek',statement:'Private paid condition',answer:'4'};
+ for(const plan of ['free','standard'])assert.equal((await mentorTaskPreviews({},[task],async()=>reviewed,{plan}))[0].preview,'');
+ for(const plan of ['pro','mentor'])assert.equal((await mentorTaskPreviews({},[task],async()=>reviewed,{plan}))[0].preview,'Private paid condition');
+ for(const q of [{...reviewed,editorialStatus:'draft'},{...reviewed,id:'zerek_crypt_01'}]){
+  assert.equal((await mentorTaskPreviews({},[task],async()=>q,{plan:'mentor'}))[0].preview,'');
+ }
+});
+
 test('shared lookup accepts published content and rejects drafts, missing answers and missing tasks',async()=>{
  const db=fakeFirestore({
   'bankTasks/published':{topic:'eq',school:'БИЛ',statement:'Найди x: x + 2 = 4.',answer:'2',solution:'private',status:'published'},

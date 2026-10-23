@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
 import { BANK_QUARANTINE, POOL } from '../frontend/src/bank.js';
 import { MOCK_SPECS, mockAvailability } from '../frontend/src/api.js';
 import { checkTopicCatalog } from './generate-topic-catalog.mjs';
@@ -8,6 +9,9 @@ import { checkTopicCatalog } from './generate-topic-catalog.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = path.join(root, 'frontend', 'public');
 const errors = [];
+const require = createRequire(import.meta.url);
+const { getStandardBank } = require('../backend/lib/standard-bank');
+const activeBank = [...POOL, ...getStandardBank()];
 if (!checkTopicCatalog()) errors.push('topic catalog is stale; run node scripts/generate-topic-catalog.mjs --write');
 
 function fail(message) {
@@ -15,7 +19,7 @@ function fail(message) {
 }
 
 const seen = new Set();
-for (const q of POOL) {
+for (const q of activeBank) {
   if (!q.id || !String(q.id).trim()) fail('active question without id');
   if (seen.has(q.id)) fail(`duplicate active id: ${q.id}`);
   seen.add(q.id);
@@ -67,14 +71,14 @@ const byReason = BANK_QUARANTINE.reduce((out, q) => {
   out[q.quarantineReason] = (out[q.quarantineReason] || 0) + 1;
   return out;
 }, {});
-const bySchool = POOL.reduce((out, q) => {
+const bySchool = activeBank.reduce((out, q) => {
   out[q.school] = (out[q.school] || 0) + 1;
   return out;
 }, {});
 const normalizedIds = POOL.filter((q) => q.originalId).length;
 
 console.log('Synaq question bank');
-console.log(`  active:      ${POOL.length}`);
+console.log(`  active:      ${activeBank.length} (${getStandardBank().length} server-only Standard editions)`);
 console.log(`  quarantined: ${BANK_QUARANTINE.length}`, byReason);
 console.log(`  normalized:  ${normalizedIds} duplicate IDs`);
 console.log('  schools:    ', bySchool);

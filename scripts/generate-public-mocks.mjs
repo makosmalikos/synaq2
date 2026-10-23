@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
 import { POOL } from '../frontend/src/bank.js';
+const { publicQuestionAllowed } = createRequire(import.meta.url)('../backend/lib/question-access');
 
 const root = fileURLToPath(new URL('../frontend/public/', import.meta.url));
 const byId = new Map(POOL.map((question) => [question.id, question]));
@@ -65,7 +67,7 @@ const specs = {
   },
 };
 
-const valid = (question) => question?.id && question?.statement
+const valid = (question) => publicQuestionAllowed(question) && !question?.practiceOnly && question?.id && question?.statement
   && question.answer != null && !['', '-', '—'].includes(String(question.answer).trim())
   && (!question.options || (Array.isArray(question.options)
     && question.options.map(String).includes(String(question.answer))));

@@ -5,6 +5,7 @@ const SPECS = Object.freeze({
 });
 const { deterministicOrder } = require('./weekly-mock');
 const { scoreBil } = require('./bil-scoring');
+const { publicQuestionAllowed } = require('./question-access');
 
 const { loadPublishedBank: loadBank } = require('./published-bank');
 
@@ -17,7 +18,7 @@ const gradable = (question) => question?.id && question?.statement && question.a
 const publicQuestion = ({ answer, solution, note, ...question }) => question;
 
 function poolFor(pool, school, subject) {
-  return pool.filter((question) => gradable(question)
+  return pool.filter((question) => !question.practiceOnly && gradable(question) && publicQuestionAllowed(question)
     && (school === 'БИЛ' ? ['БИЛ', 'КТЛ'].includes(question.school)
       : question.school === school || (school === 'НИШ' && subject === 'kaz' && question.school === 'БИЛ'))
     && (subject == null || question.subject === subject));
@@ -84,7 +85,7 @@ async function restoreMock(db, session) {
   const pool = await loadBank(db), byId = new Map(pool.map((question) => [question.id, question]));
   const questions = (session.questionRefs || []).map((ref, index) => {
     const question = byId.get(ref.id);
-    if (!gradable(question) || ref.num !== index + 1 || ![1, 2].includes(ref.section)) throw new Error('question_unavailable');
+    if (!gradable(question) || !publicQuestionAllowed(question) || ref.num !== index + 1 || ![1, 2].includes(ref.section)) throw new Error('question_unavailable');
     return { ...question, num: ref.num, section: ref.section, subject: ref.subject || question.subject || null };
   });
   if (!questions.length || questions.length > SPECS[session.school].count) throw new Error('question_unavailable');
@@ -115,6 +116,7 @@ async function gradeMock(db, session, answers) {
 }
 
 function publicMock(variant) {
+  if (variant.questions.some((question) => !publicQuestionAllowed(question))) throw Object.assign(new Error('question-unavailable'), { status: 404 });
   return { ...variant, questions: variant.questions.map(publicQuestion) };
 }
 

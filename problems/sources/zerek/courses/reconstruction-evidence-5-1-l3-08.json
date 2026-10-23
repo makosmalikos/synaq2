@@ -1,0 +1,140 @@
+{
+  "sourceFile": "problems/sources/zerek/courses/5-math-5-1-level3.json",
+  "sourceFileSha256": "4e2b708692b1f4bc536c25fa53dd76b10f0f726f32b9d69553a52efbfaf1c6e0",
+  "sourceQuestionId": "31b4132ae6643d12",
+  "sourceAnswer": "92",
+  "basis": "Full official solution explicitly enumerates A, B and both exterior elements. Diagram reconstruction changes layout only; no number, membership or answer is inferred.",
+  "sets": {
+    "A": [
+      6,
+      12,
+      18,
+      24,
+      30
+    ],
+    "B": [
+      4,
+      6,
+      8,
+      20,
+      24
+    ],
+    "outsideBoth": [
+      5,
+      9
+    ]
+  },
+  "positionsChecked": [
+    {
+      "value": 12,
+      "position": [
+        205,
+        155
+      ],
+      "inA": true,
+      "inB": false
+    },
+    {
+      "value": 18,
+      "position": [
+        195,
+        240
+      ],
+      "inA": true,
+      "inB": false
+    },
+    {
+      "value": 30,
+      "position": [
+        270,
+        280
+      ],
+      "inA": true,
+      "inB": false
+    },
+    {
+      "value": 6,
+      "position": [
+        360,
+        155
+      ],
+      "inA": true,
+      "inB": true
+    },
+    {
+      "value": 24,
+      "position": [
+        360,
+        245
+      ],
+      "inA": true,
+      "inB": true
+    },
+    {
+      "value": 4,
+      "position": [
+        515,
+        155
+      ],
+      "inA": false,
+      "inB": true
+    },
+    {
+      "value": 8,
+      "position": [
+        525,
+        240
+      ],
+      "inA": false,
+      "inB": true
+    },
+    {
+      "value": 20,
+      "position": [
+        450,
+        280
+      ],
+      "inA": false,
+      "inB": true
+    },
+    {
+      "value": 5,
+      "position": [
+        90,
+        350
+      ],
+      "inA": false,
+      "inB": false
+    },
+    {
+      "value": 9,
+      "position": [
+        630,
+        85
+      ],
+      "inA": false,
+      "inB": false
+    }
+  ],
+  "answerCheck": {
+    "P": 60,
+    "Q": 32,
+    "PplusQ": 92
+  },
+  "solutionExcerpt": "Әр санның орнын суреттен оқып, қай жиынға тиісті екенін анықтаймыз.\n\n\n\n$A = \\{6; 12; 18; 24; 30\\}$, $B = \\{4; 6; 8; 20; 24\\}$. ",
+  "proofSvg": "frontend/public/figures/zerek-courses/course-5-5.1-L3-08.svg",
+  "svgTextLabelsChecked": [
+    "A",
+    "B",
+    "12",
+    "18",
+    "30",
+    "6",
+    "24",
+    "4",
+    "8",
+    "20",
+    "5",
+    "9"
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/synaq-standard-fractions.json",
+  "reviewedAt": "2026-10-23",
+  "scope": "Full independent reading of all 17 conditions and solutions, alternative exact arithmetic/system checks and Kazakh ambiguity/unit review. No edition verifier or source archive was used.",
+  "entries": [
+    {
+      "editionId": "synaq-standard-led-signs",
+      "sha256": "57f6e37df190c197ba1293d89c472d8992fb210b31c248414106cad18d1a898d",
+      "verdict": "verified",
+      "method": "whole-capacity fraction check",
+      "notes": "140 LEDs would make 20 seven-LED signs; 3/5 of that capacity is 12. Allocation 84 is integral and has no remainder. Condition and all solution steps agree."
+    },
+    {
+      "editionId": "synaq-standard-eco-route-map",
+      "sha256": "cda6c46dba8ae4bf478f7b0e48d840f079b5a94b11907fecd58c15567eb00fe6",
+      "verdict": "verified",
+      "method": "complementary ratio units",
+      "notes": "7 shares correspond to 21 stops, so the five remaining shares contain 15. The total 36 and all stated fractions are consistent. The target is clearly unmarked stops."
+    },
+    {
+      "editionId": "synaq-standard-plastic-thread",
+      "sha256": "14b3556c9defd46b82e44ee9ede26183dad121f1f08127d855562462f3f3abe6",
+      "verdict": "verified",
+      "method": "capacity subtraction on a common physical unit",
+      "notes": "The initial stock is 48 two-metre blanks. The two original-stock allocations consume 15 and 14 blank equivalents;48−15−14=19. Both fractions explicitly refer to the same whole, so no sequential-fraction ambiguity."
+    },
+    {
+      "editionId": "synaq-standard-ceramic-clay",
+      "sha256": "04ebef7b7be8ded1d461072a21c360bb4c31026b9472d10ef16bfe8566dd3672",
+      "verdict": "verified",
+      "method": "integer-gram mass balance",
+      "notes": "Convert stocks to 2750 g and 1625 g and use 375 g per item:2750+1625−10×375=625 g. All mixed-number equalities and kg/g units in the solution are correct."
+    },
+    {
+      "editionId": "synaq-standard-reading-pages",
+      "sha256": "849817705b992084854df63c6ab3d6c66f22e279a8909d259a1050bd254a6f4e",
+      "verdict": "verified",
+      "method": "common-denominator comparison across different wholes",
+      "notes": "With denominator 40, the page difference is(240×15−180×16)/40=18. The text clearly distinguishes the two book lengths; Daniyar does read more, as asked."
+    },
+    {
+      "editionId": "synaq-standard-fair-tickets",
+      "sha256": "a7699caac61b93201c6f7dc7b6815a7791612b068fb634a3354132019b239e75",
+      "verdict": "verified",
+      "method": "independent integral population enumeration",
+      "notes": "Enumerated positive integer ticket totals whose sold share is integral and whose unsold-minus-sold difference is 48. Unique total 120; sold 36 and unsold 84. Complementary groups and question are unambiguous."
+    },
+    {
+      "editionId": "synaq-standard-science-festival",
+      "sha256": "8f98b3282679603d73555b2f7b9fa4623ab84b4f49bb7ac440400da542dda262",
+      "verdict": "verified",
+      "method": "combined selection proportion",
+      "notes": "The nested group is 25×30/10000=3/40 of all 320 pupils, giving 24. The second percentage explicitly applies only to the robotics group. Solution and participant counts are integral."
+    },
+    {
+      "editionId": "synaq-standard-study-kit-delivery",
+      "sha256": "a22887343aaba0613fa31a8c29d07bb2cccf554c4edd2df188baa0abbf3e6d9d",
+      "verdict": "verified",
+      "method": "inverse-price equation enumeration",
+      "notes": "Enumerated positive prices satisfying 4 P/5+1200=10800; unique price 12000. Delivery is a separate fixed fee and is removed before undoing the discount. Every displayed equality is valid."
+    },
+    {
+      "editionId": "synaq-standard-skating-pass",
+      "sha256": "bfe6de47af036b2bf193cc7681a399194281ea3569a3bbfa9e99ff6cbe844e2d",
+      "verdict": "verified",
+      "method": "relative multiplier difference",
+      "notes": "120%×85%=102% of the original price. The excess is 2% of 9600=192; final price 9792 exceeds the original, matching the question direction. Both percentage bases are explicit."
+    },
+    {
+      "editionId": "synaq-standard-lab-dilution",
+      "sha256": "1c826f31286a834c245d21452d6f7207f98b846428c9df9546a730ebb22242d6",
+      "verdict": "verified",
+      "method": "concentration mass-conservation equation",
+      "notes": "For final percentage c,400 c=300×8, giving c=6. Salt mass 24 g stays fixed while total mass becomes 400 g. No evaporation/salt loss is explicitly excluded in the statement; solution and units agree."
+    },
+    {
+      "editionId": "synaq-standard-podcast-budget",
+      "sha256": "f573e8ce223184b4a260ddd8dac070bab7e12575847c8ea894947a0b8223ed89",
+      "verdict": "verified",
+      "method": "difference of ratio weights",
+      "notes": "The requested budget gap is(5−3)/(3+5+4) of 36000=6000. All three component amounts sum back to 36000. The order of the named categories is explicit."
+    },
+    {
+      "editionId": "synaq-standard-paper-collection",
+      "sha256": "006ae467d3b40ea2bca582cd71569856d500614d8a749212ea0a6362caa26be8",
+      "verdict": "verified",
+      "method": "two-variable integral system enumeration",
+      "notes": "Enumerated x>0 with the second collection x+18 and 7 x=4(x+18); x=24,second 42,total 66. The larger group and mass unit are clearly specified."
+    },
+    {
+      "editionId": "synaq-standard-camp-water",
+      "sha256": "6ecd9ef978059be0edb1a43baefba5cc9ea4b4e69e4a154641d501c5940bdb4e",
+      "verdict": "verified",
+      "method": "remaining-days rescaling",
+      "notes": "After 3 days, the original group has 12 days of stock left. Scaling for 32 instead of 24 pupils gives 12×24/32=9 days. Constant per-pupil daily consumption is stated, and the answer is exactly a whole number."
+    },
+    {
+      "editionId": "synaq-standard-cap-sorting",
+      "sha256": "78085b39e9f448cf6787ab99550dea6b3f49f0701f900673b056a8ec872d2508",
+      "verdict": "verified",
+      "method": "separate-machine time accounting",
+      "notes": "The first device runs 4 minutes and the second runs 7:18×4+24×7=240 caps. This independently confirms the solution grouped by time interval. The stopped device and remaining work period are clear."
+    },
+    {
+      "editionId": "synaq-standard-exhibition-markers",
+      "sha256": "16ca10bfae6fc38f3de5c7a5097847ab72ce3e6fc05d2e52c4c4390827302e37",
+      "verdict": "verified",
+      "method": "divisor and count-difference enumeration",
+      "notes": "Enumerated common unit prices dividing 3120 and 1820 with purchaser counts differing by 5; unique price 260,counts 12 and 7. Same per-marker pricing and currency units are explicit."
+    },
+    {
+      "editionId": "synaq-standard-delayed-walkers",
+      "sha256": "8a81ec46f0fc0127ede8fd99728148e01bf23492e655ddf24e9b9d39686434cf",
+      "verdict": "verified",
+      "method": "minute-based meeting equation enumeration",
+      "notes": "For t minutes after the second departure,4(t+30)/60+3 t/60=23. The unique positive integral t is 180; distances 14 km and 9 km sum to 23. The time origin, opposing directions and steady speeds are explicit."
+    },
+    {
+      "editionId": "synaq-standard-river-return",
+      "sha256": "9ffd4ea2eb2edb16c58c807d00471a3deef264a0a20583eb03fa964b550c6cd2",
+      "verdict": "verified",
+      "method": "round-trip reciprocal-speed identity",
+      "notes": "Total time is 36×2×15/(15²−3²)=5 h. Individual legs are 2 h downstream and 3 h upstream; both water-relative speeds are positive. Stops are excluded and the return endpoint is clear."
+    }
+  ]
+}

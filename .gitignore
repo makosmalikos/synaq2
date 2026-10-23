@@ -20,3 +20,13 @@ output/
 outputs/
 tmp/
 *.dataless
+
+# Offline question-review helpers
+__pycache__/
+*.pyc
+
+# Local transfer checkpoints; canonical level/test snapshots remain versioned.
+problems/sources/zerek/courses/mastery-*.json
+problems/sources/zerek/courses/*transfer-progress*.json
+problems/sources/zerek/courses/test-history-links.json
+problems/sources/zerek/courses/tests/

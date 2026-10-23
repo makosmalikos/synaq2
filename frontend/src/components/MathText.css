@@ -1,0 +1,25 @@
+.math-inline {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.math-native {
+  font-size: 1.04em;
+  margin-inline: .12em;
+}
+.math-native mtext {
+  font-family: inherit;
+}
+
+.math-table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin-block: .75em;
+  padding: .3em;
+}
+.math-table .math-native {
+  margin: 0;
+}
