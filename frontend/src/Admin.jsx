@@ -6,6 +6,7 @@ import AdminWorkspace from './AdminWorkspace.jsx';
 import RewardQueue from './RewardQueue.jsx';
 import AdminMentors from './AdminMentors.jsx';
 import AdminLessons from './AdminLessons.jsx';
+import AdminStats from './AdminStats.jsx';
 import './AdminWorkspace.css';
 
 export default function Admin({ onExit }) {
@@ -42,12 +43,14 @@ export default function Admin({ onExit }) {
         <button className={section === 'leads' ? 'active' : ''} onClick={() => setSection('leads')}>{t('admin.leadsTab')}{newCount > 0 && <b style={{ marginLeft: 6, background: '#DC2626', color: '#fff', borderRadius: 10, padding: '1px 7px', fontSize: 12 }}>{newCount}</b>}</button>
         <button className={section === 'mentors' ? 'active' : ''} onClick={() => setSection('mentors')}>{lang === 'ru' ? 'Наставники' : 'Тәлімгерлер'}</button>
         <button className={section === 'lessons' ? 'active' : ''} onClick={() => setSection('lessons')}>{lang === 'ru' ? 'Уроки' : 'Сабақтар'}</button>
+        <button className={section === 'stats' ? 'active' : ''} onClick={() => setSection('stats')}>{lang === 'ru' ? 'Статистика' : 'Статистика'}</button>
         <button className={section === 'rewards' ? 'active' : ''} onClick={() => setSection('rewards')}>{lang === 'ru' ? 'Награды' : 'Сыйлықтар'}</button>
       </nav>
       <div hidden={section !== 'tasks'}><AdminWorkspace request={request} lang={lang} storageKey={`synaq-admin-draft:${auth.currentUser?.uid || 'local'}`} /></div>
       {section === 'leads' && <LeadInbox t={t} lang={lang} onChanged={refreshCount} />}
       {section === 'mentors' && <AdminMentors lang={lang} />}
       {section === 'lessons' && <AdminLessons lang={lang} />}
+      {section === 'stats' && <AdminStats lang={lang} />}
       {section === 'rewards' && <RewardQueue />}
     </main>
   </div>;
