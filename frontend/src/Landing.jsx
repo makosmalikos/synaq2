@@ -223,43 +223,43 @@ export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
   <section id="parents" style={{background:'#167ACB',padding:'82px 0'}}>
     <div className="lp-inside lp-pad" style={{maxWidth:'1280px',margin:'0 auto',padding:'0 56px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'56px',alignItems:'center'}}>
       
-      <div style={{background:'#FFFFFF',borderRadius:'22px',padding:'28px 30px',boxShadow:'0 40px 90px -50px rgba(0,0,0,.6)'}}>
+      <div className="lp-parent-preview" style={{background:'#FFFFFF',borderRadius:'22px',padding:'28px 30px',boxShadow:'0 40px 90px -50px rgba(0,0,0,.6)'}}>
         <div style={{display:'flex',alignItems:'center',gap:'12px',marginBottom:'22px'}}>
-          <div style={{width:'40px',height:'40px',borderRadius:'11px',background:'#2B91EA',color:'#fff',display:'flex',alignItems:'center',justifyContent:'center',font:'700 17px \'Golos Text\''}}>Д</div>
-          <div><div style={{font:'600 16px \'Golos Text\'',color:'#13283C'}}>{t('lp.39')}</div><div style={{font:'500 12px \'IBM Plex Mono\',monospace',color:'#8094A7'}}>{t('lp.40')}</div></div>
+          <div style={{width:'40px',height:'40px',borderRadius:'11px',background:'#2B91EA',color:'#fff',display:'flex',alignItems:'center',justifyContent:'center',font:'700 17px \'Manrope\',sans-serif'}}>Д</div>
+          <div><div style={{font:'600 16px \'Manrope\',sans-serif',color:'#13283C'}}>{t('lp.39')}</div><div style={{font:'500 12px \'Manrope\',sans-serif',color:'#8094A7'}}>{t('lp.40')}</div></div>
         </div>
-        <div style={{display:'flex',gap:'22px',alignItems:'center',marginBottom:'22px'}}>
+        <div className="lp-parent-metrics" style={{display:'flex',gap:'22px',alignItems:'center',marginBottom:'22px'}}>
           <svg width="120" height="120" viewBox="0 0 120 120" style={{flex:'none'}}>
             <circle cx="60" cy="60" r="48" fill="none" stroke="#DFEFFC" strokeWidth="12"></circle>
             <circle cx="60" cy="60" r="48" fill="none" stroke="#3A9DF5" strokeWidth="12" strokeLinecap="round" strokeDasharray="187 302" transform="rotate(-90 60 60)"></circle>
-            <text x="60" y="58" textAnchor="middle" style={{font:'700 30px \'IBM Plex Mono\',monospace',fill:'#13283C'}}>62%</text>
-            <text x="60" y="76" textAnchor="middle" style={{font:'500 11px \'Golos Text\'',fill:'#8094A7'}}>{t('lp.41')}</text>
+            <text x="60" y="58" textAnchor="middle" style={{font:'700 30px \'Manrope\',sans-serif',fill:'#13283C'}}>62%</text>
+            <text x="60" y="76" textAnchor="middle" style={{font:'500 11px \'Manrope\',sans-serif',fill:'#8094A7'}}>{t('lp.41')}</text>
           </svg>
           <div style={{flex:'1'}}>
-            <div style={{font:'600 11px \'IBM Plex Mono\',monospace',letterSpacing:'.1em',textTransform:'uppercase',color:'#8094A7',marginBottom:'10px'}}>{t('lp.42')}</div>
-            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'8px'}}>
-              <div style={{background:'#EAF5FF',borderRadius:'9px',padding:'8px 11px'}}><div style={{font:'600 12px \'Golos Text\'',color:'#13283C'}}>{t('lp.43')}</div><div style={{font:'700 15px \'IBM Plex Mono\',monospace',color:'#167AD1'}}>86%</div></div>
-              <div style={{background:'#EAF5FF',borderRadius:'9px',padding:'8px 11px'}}><div style={{font:'600 12px \'Golos Text\'',color:'#13283C'}}>{t('lp.44')}</div><div style={{font:'700 15px \'IBM Plex Mono\',monospace',color:'#167AD1'}}>74%</div></div>
-              <div style={{background:'#EEF7FF',borderRadius:'9px',padding:'8px 11px'}}><div style={{font:'600 12px \'Golos Text\'',color:'#13283C'}}>{t('lp.45')}</div><div style={{font:'700 15px \'IBM Plex Mono\',monospace',color:'#8A5A12'}}>50%</div></div>
-              <div style={{background:'#EAF5FF',borderRadius:'9px',padding:'8px 11px'}}><div style={{font:'600 12px \'Golos Text\'',color:'#13283C'}}>{t('lp.46')}</div><div style={{font:'700 15px \'IBM Plex Mono\',monospace',color:'#2B91EA'}}>38%</div></div>
+            <div style={{font:'600 11px \'Manrope\',sans-serif',letterSpacing:'.02em',textTransform:'uppercase',color:'#8094A7',marginBottom:'10px'}}>{t('lp.42')}</div>
+            <div className="lp-parent-topic-grid" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'8px'}}>
+              <div style={{background:'#EAF5FF',borderRadius:'9px',padding:'8px 11px'}}><div style={{font:'600 12px \'Manrope\',sans-serif',color:'#13283C'}}>{t('lp.43')}</div><div style={{font:'700 15px \'Manrope\',sans-serif',color:'#167AD1'}}>86%</div></div>
+              <div style={{background:'#EAF5FF',borderRadius:'9px',padding:'8px 11px'}}><div style={{font:'600 12px \'Manrope\',sans-serif',color:'#13283C'}}>{t('lp.44')}</div><div style={{font:'700 15px \'Manrope\',sans-serif',color:'#167AD1'}}>74%</div></div>
+              <div style={{background:'#EEF7FF',borderRadius:'9px',padding:'8px 11px'}}><div style={{font:'600 12px \'Manrope\',sans-serif',color:'#13283C'}}>{t('lp.45')}</div><div style={{font:'700 15px \'Manrope\',sans-serif',color:'#8A5A12'}}>50%</div></div>
+              <div style={{background:'#EAF5FF',borderRadius:'9px',padding:'8px 11px'}}><div style={{font:'600 12px \'Manrope\',sans-serif',color:'#13283C'}}>{t('lp.46')}</div><div style={{font:'700 15px \'Manrope\',sans-serif',color:'#2B91EA'}}>38%</div></div>
             </div>
           </div>
         </div>
         <div style={{display:'flex',alignItems:'center',gap:'12px',background:'#EAF5FF',border:'1px solid #C6E4FC',borderRadius:'12px',padding:'12px 16px'}}>
-          <span style={{width:'30px',height:'30px',borderRadius:'8px',background:'#2B91EA',color:'#fff',display:'flex',alignItems:'center',justifyContent:'center',font:'700 15px \'Golos Text\''}}>!</span>
-          <div style={{font:'500 13.5px \'Golos Text\'',color:'#176FB8'}}>{t('lp.47')} <b>{t('lp.46')}</b> {t('lp.48')}</div>
+          <span style={{width:'30px',height:'30px',borderRadius:'8px',background:'#2B91EA',color:'#fff',display:'flex',alignItems:'center',justifyContent:'center',font:'700 15px \'Manrope\',sans-serif'}}>!</span>
+          <div style={{font:'500 13.5px \'Manrope\',sans-serif',color:'#176FB8'}}>{t('lp.47')} <b>{t('lp.46')}</b> {t('lp.48')}</div>
         </div>
       </div>
       
       <div>
-        <div style={{font:'600 12px \'IBM Plex Mono\',monospace',letterSpacing:'.16em',textTransform:'uppercase',color:'#FFFFFF',marginBottom:'16px'}}>{t('lp.49')}</div>
+        <div style={{font:'600 12px \'Manrope\',sans-serif',letterSpacing:'.16em',textTransform:'uppercase',color:'#FFFFFF',marginBottom:'16px'}}>{t('lp.49')}</div>
         <h2 style={{font:'800 42px/1.08 \'Manrope\',sans-serif',letterSpacing:'-.025em',margin:'0 0 26px',color:'#FFFFFF'}}>{t('lp.50')} <span style={{color:'#FFFFFF'}}>{t('lp.51')}</span></h2>
         <div style={{display:'flex',flexDirection:'column',gap:'18px'}}>
-          <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#FFFFFF',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Golos Text\'',marginBottom:'3px',color:'#FFFFFF'}}>{t('lp.52')}</div><div style={{fontSize:'15px',color:'#DCEEFF',lineHeight:'1.5'}}>{t('lp.53')}</div></div></div>
-          <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#FFFFFF',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Golos Text\'',marginBottom:'3px',color:'#FFFFFF'}}>{t('lp.54')}</div><div style={{fontSize:'15px',color:'#DCEEFF',lineHeight:'1.5'}}>{t('lp.55')}</div></div></div>
-          <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#FFFFFF',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Golos Text\'',marginBottom:'3px',color:'#FFFFFF'}}>{t('lp.56')}</div><div style={{fontSize:'15px',color:'#DCEEFF',lineHeight:'1.5'}}>{t('lp.57')}</div></div></div>
+          <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#FFFFFF',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Manrope\',sans-serif',marginBottom:'3px',color:'#FFFFFF'}}>{t('lp.52')}</div><div style={{fontSize:'15px',color:'#DCEEFF',lineHeight:'1.5'}}>{t('lp.53')}</div></div></div>
+          <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#FFFFFF',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Manrope\',sans-serif',marginBottom:'3px',color:'#FFFFFF'}}>{t('lp.54')}</div><div style={{fontSize:'15px',color:'#DCEEFF',lineHeight:'1.5'}}>{t('lp.55')}</div></div></div>
+          <div style={{display:'flex',gap:'14px'}}><div style={{flex:'none',width:'7px',height:'7px',borderRadius:'50%',background:'#FFFFFF',marginTop:'8px'}}></div><div><div style={{font:'600 17px \'Manrope\',sans-serif',marginBottom:'3px',color:'#FFFFFF'}}>{t('lp.56')}</div><div style={{fontSize:'15px',color:'#DCEEFF',lineHeight:'1.5'}}>{t('lp.57')}</div></div></div>
         </div>
-        <a href="#" onClick={handleStart} className="lp-cta" style={{display:'inline-block',marginTop:'32px',background:'#FFFFFF',color:'#146EBA',padding:'14px 30px',borderRadius:'12px',font:'600 16px \'Golos Text\',sans-serif'}}>{t('lp.58')}</a>
+        <a href="#" onClick={handleStart} className="lp-cta" style={{display:'inline-block',marginTop:'32px',background:'#FFFFFF',color:'#146EBA',padding:'14px 30px',borderRadius:'12px',font:'600 16px \'Manrope\',sans-serif'}}>{t('lp.58')}</a>
       </div>
     </div>
   </section>

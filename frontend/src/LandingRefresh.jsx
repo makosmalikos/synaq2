@@ -5,11 +5,10 @@ import './LandingRefresh.css';
 const schools = [['bil', 'БИЛ'], ['nis', 'НИШ'], ['rfmsh', 'РФМШ']];
 
 function StudentRibbon({ ru }) {
-  const [paused, setPaused] = React.useState(false);
   const descriptions = ru
     ? ['Ученица с тетрадью', 'Ученик с рюкзаком', 'Ученик SYNAQ', 'Ученик с планшетом', 'Ученица с рюкзаком']
     : ['Дәптер ұстаған оқушы қыз', 'Рюкзак ұстаған оқушы бала', 'SYNAQ оқушысы', 'Планшет ұстаған оқушы бала', 'Рюкзак ұстаған оқушы қыз'];
-  return <div className="sx-student-ribbon" data-paused={paused}>
+  return <div className="sx-student-ribbon">
     <div id="sx-student-rail" className="sx-student-rail" role="region" aria-label={ru ? 'Фотографии учеников' : 'Оқушылар суреттері'} tabIndex={0}>
       {[0, 1].map(copy => <div className="sx-student-group" key={copy} aria-hidden={copy === 1 ? true : undefined}>
         {[1, 2, 3, 4, 5].map((id, index) => <div className={`sx-student-tile sx-student-tile-${id}`} key={id}>
@@ -20,11 +19,6 @@ function StudentRibbon({ ru }) {
     </div>
     <div className="sx-ribbon-footer">
       <span>{ru ? 'Учиться. Идти вперёд.' : 'Үйрен. Алға ұмтыл.'}</span>
-      <div className="sx-ribbon-controls">
-        <button type="button" aria-controls="sx-student-rail" aria-label={ru ? (paused ? 'Продолжить прокрутку фотографий' : 'Приостановить прокрутку фотографий') : (paused ? 'Суреттерді айналдыруды жалғастыру' : 'Суреттерді айналдыруды тоқтату')} onClick={() => setPaused(value => !value)}>
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true">{paused ? <path d="M5 3 15 9 5 15Z" /> : <><rect x="4" y="3" width="3" height="12" rx="1" /><rect x="11" y="3" width="3" height="12" rx="1" /></>}</svg>
-        </button>
-      </div>
     </div>
   </div>;
 }
@@ -38,7 +32,7 @@ export function LandingHero({ onFreeDiagnostic }) {
       <div className="sx-hero-copy">
         <h1 id="sx-hero-title">{ru ? <>Подготовка к <span className="sx-school-names">БИЛ, НИШ и РФМШ</span><br /> — понятная ребёнку</> : <><span className="sx-school-names">БИЛ, НИШ, РФМШ</span>-ке дайындық<br /> — балаға түсінікті жолмен</>}</h1>
         <p className="sx-hero-intro">{ru ? 'Математика и логика для 3–6 классов. Практика, ИИ-помощник и поддержка наставника.' : '3–6 сыныптарға арналған математика мен логика. Жаттығу, ЖИ-көмекші және тәлімгердің қолдауы.'}</p>
-        <div className="sx-hero-actions sx-hero-actions-single"><button type="button" className="sx-primary" onClick={onFreeDiagnostic}>{ru ? 'Узнать уровень ребёнка' : 'Баланың деңгейін анықтау'} <span aria-hidden="true">↗</span></button></div>
+        <div className="sx-hero-actions sx-hero-actions-single"><button type="button" className="sx-primary" onClick={onFreeDiagnostic}>{ru ? 'Узнать уровень ребёнка' : 'Баланың деңгейін анықтау'} <span className="sx-primary-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></span></button></div>
         <p className="sx-hero-note">{ru ? '10 заданий · около 7 минут · бесплатно' : '10 тапсырма · шамамен 7 минут · тегін'}</p>
         <div className="sx-schools sx-schools-featured">
           <span>{ru ? 'Готовимся к поступлению в' : 'Оқуға түсуге дайындық'}</span>
