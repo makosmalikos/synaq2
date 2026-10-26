@@ -36,7 +36,6 @@ export function LandingHero({ onFreeDiagnostic }) {
     <section className="sx-hero sx-hero-ribbon" aria-labelledby="sx-hero-title">
       <StudentRibbon ru={ru} />
       <div className="sx-hero-copy">
-        <div className="sx-eyebrow"><i />{ru ? 'МАТЕМАТИКА · ЛОГИКА · 3–6 КЛАССЫ' : 'МАТЕМАТИКА · ЛОГИКА · 3–6 СЫНЫПТАР'}</div>
         <h1 id="sx-hero-title">{ru ? <>Подготовка к <span className="sx-school-names">БИЛ, НИШ и РФМШ</span><br /> — понятная ребёнку</> : <><span className="sx-school-names">БИЛ, НИШ, РФМШ</span>-ке дайындық<br /> — балаға түсінікті жолмен</>}</h1>
         <p className="sx-hero-intro">{ru ? 'Математика и логика для 3–6 классов. Практика, ИИ-помощник и поддержка наставника.' : '3–6 сыныптарға арналған математика мен логика. Жаттығу, ЖИ-көмекші және тәлімгердің қолдауы.'}</p>
         <div className="sx-hero-actions sx-hero-actions-single"><button type="button" className="sx-primary" onClick={onFreeDiagnostic}>{ru ? 'Узнать уровень ребёнка' : 'Баланың деңгейін анықтау'} <span aria-hidden="true">↗</span></button></div>
