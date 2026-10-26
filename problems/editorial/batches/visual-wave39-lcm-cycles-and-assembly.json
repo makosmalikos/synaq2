@@ -1,0 +1,370 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All6 saved visual grade5topic2.9; sourcearchiveonly, no capture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5topic2.9sources",
+    "sourceVisualOccurrences": 6,
+    "addressedNewDrafts": 6,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "30d0f307788f6aee",
+      "64778322135eda0f",
+      "6c2f465978c0e99e",
+      "818c8ba6d637d225",
+      "a5cf9ab0cbdf998f",
+      "ac0f86aa5a1191bf"
+    ],
+    "distinctModels": 6,
+    "semantics": "Allsixsource targets individuallyrewritten; variant/modelcounts are not claims ofnew semanticmeanings."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave39-eight-twelve-ray-jumps",
+      "modelId": "visual-wave39-ray-smallest-positive-common-landing",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ray",
+        "first": 8,
+        "second": 12,
+        "limit": 48
+      },
+      "answer": "24",
+      "sourceRefs": [
+        {
+          "sourceId": "64778322135eda0f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-9-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-9-level1.json#10",
+      "sourceCanonicalSha256": "337794cd282678010ac3828e6196b1442aaab9e38e810984b904bb827f2a7f0a",
+      "sourceSkill": "Reading two sets of exact ray landings and distinguishing first positive common multiple fromGCD/nonminimum",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: сан сәулесіндегі алғашқы ортақ оң қону, бұрылмайтын тақталардан ең кіші шаршы және саны, белгіленген тіс жұбының қайта кездесуі, іздердің алғашқы ортақ орны, үш өлшемнен текше құру, екі дөңгелектің бүтін айналым жолы және бірлік ауыстыру.",
+        "Секірістер 8/12, тақта 12×8 см, тістегершіктер 18/30 тіс, қадамдар 75/50 см, блок 12×10×15 см, дөңгелек шеңберлері 140/175 см болып жаңарды. Бастапқы0/сәт есепке алынбайды; уақыттың емес, іздің орны сұралады.",
+        "Native SVG сан шкаласы/доғаларды бір өлшеммен салады. Әр тіс өз involute-профиль параметрінен,18/30жеке тіс болып салынады; дөңгелек радиустары шеңберлер қатынасымен сәйкес. Блоктың бағыттары өзгермейді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ортақ еселік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview; actual8/12raylandings,12×8tile,18/30toothcountandmarkedpair,75/50twoinitialjumps,12/10/15block,140/175circumferencesandradii; native343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave39-eight-twelve-ray-jumps.svg",
+      "verificationModule": "scripts/editorial/visual-wave39-models.mjs",
+      "options": [
+        "4",
+        "48",
+        "24",
+        "96"
+      ],
+      "statement": "Сан сәулесінде көк секірістер жоғарыда, күлгін секірістер төменде берілген. 0 есептелмейді. Екі түстің қону нүктелері алғаш сәйкес келетін ЕҢ КІШІ оң сан қайсысы?",
+      "solution": "Көк қону нүктелері 8, 16, 24, 32, 40, 48, күлгін қону нүктелері 12, 24, 36, 48. Ортақ оң нүктелер 24, 48, ең кішісі 24. Демек 8 және 12 сандарының ең кіші ортақ еселігі 24. 0 — екі тізбектің басталуы ғана, шарт бойынша есептелмейді. Үлкен ортақ еселік те ортақ, бірақ бірінші емес.",
+      "figureDescription": "0–48 сан сәулесінде үстіңгі көк доғалар 8 бірліктен, төменгі күлгін доғалар 12 бірліктен секіреді. Әр қону орны көрсетілген, ерекше ортақ жауап белгіленбеген.",
+      "figureSha256": "0981edcc63acca428dad8aec34fa58c7c1356e6025e93e8d48442b407dd8f311",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "24",
+        "checks": {
+          "upperLandings": [
+            8,
+            16,
+            24,
+            32,
+            40,
+            48
+          ],
+          "lowerLandings": [
+            12,
+            24,
+            36,
+            48
+          ],
+          "common": [
+            24,
+            48
+          ],
+          "minimum": 24
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave39-twelve-eight-tile-square",
+      "modelId": "visual-wave39-smallest-aligned-tile-square-count",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "tile",
+        "length": 12,
+        "width": 8
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "6c2f465978c0e99e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-9-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-9-level2.json#1",
+      "sourceCanonicalSha256": "5812a207c09ed2965712dee904cce258721dfe847d26db5f27efe631145c9c74",
+      "sourceSkill": "Smallest square from same-orientation whole rectangular tiles; LCMedge then count both grid axes",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: сан сәулесіндегі алғашқы ортақ оң қону, бұрылмайтын тақталардан ең кіші шаршы және саны, белгіленген тіс жұбының қайта кездесуі, іздердің алғашқы ортақ орны, үш өлшемнен текше құру, екі дөңгелектің бүтін айналым жолы және бірлік ауыстыру.",
+        "Секірістер 8/12, тақта 12×8 см, тістегершіктер 18/30 тіс, қадамдар 75/50 см, блок 12×10×15 см, дөңгелек шеңберлері 140/175 см болып жаңарды. Бастапқы0/сәт есепке алынбайды; уақыттың емес, іздің орны сұралады.",
+        "Native SVG сан шкаласы/доғаларды бір өлшеммен салады. Әр тіс өз involute-профиль параметрінен,18/30жеке тіс болып салынады; дөңгелек радиустары шеңберлер қатынасымен сәйкес. Блоктың бағыттары өзгермейді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ортақ еселік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview; actual8/12raylandings,12×8tile,18/30toothcountandmarkedpair,75/50twoinitialjumps,12/10/15block,140/175circumferencesandradii; native343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave39-twelve-eight-tile-square.svg",
+      "verificationModule": "scripts/editorial/visual-wave39-models.mjs",
+      "statement": "Суретте бір тікбұрышты тақта берілген. Осындай тақталарды бұрмай, бірдей бағытпен параллель қатарларға орналастырып, саңылаусыз шаршы жасайды. Ең кіші осындай шаршыға барлығы неше тақта керек? Жауапқа тек санды жазыңыз.",
+      "solution": "Тақталарды бұрмаймыз, сондықтан шаршының қабырғасы 12 және 8 сандарына да бүтін рет бөлінеді. Ең кіші ортақ еселік 24 см. Екі бағытта 2 және 3 тақта сыяды. Барлығы 2 × 3 = 6. Ауданмен тексеру: 24 × 24 = 576 см² және 6 × 96 = 576 см². Қабырғаның 24 см ұзындығын тақталар санымен шатастырмаймыз.",
+      "figureDescription": "Бір тікбұрышты тақтаның көлденең өлшемі 12 см, тік өлшемі 8 см. Құрастырылатын шаршы әзірге көрсетілмеген.",
+      "figureSha256": "1fb85a79c1eb23970b139e25674112a708ee474aeeb83852466aa727938f79b6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "minimumSquareSide": 24,
+          "tilesPerAxis": [
+            2,
+            3
+          ],
+          "squareArea": 576,
+          "tileArea": 96
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave39-eighteen-thirty-tooth-gears",
+      "modelId": "visual-wave39-first-gear-marked-pair-turn-count",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "gears",
+        "left": 18,
+        "right": 30
+      },
+      "answer": "5",
+      "sourceRefs": [
+        {
+          "sourceId": "a5cf9ab0cbdf998f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-9-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-9-level2.json#3",
+      "sourceCanonicalSha256": "ed1d02e0de09ed0413cc99ad1a41829ca4b2b696f54e7847ac3a4da127b92638",
+      "sourceSkill": "First return of the same pair of marked gear teeth, asking leftturncount rather than teethpassed",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: сан сәулесіндегі алғашқы ортақ оң қону, бұрылмайтын тақталардан ең кіші шаршы және саны, белгіленген тіс жұбының қайта кездесуі, іздердің алғашқы ортақ орны, үш өлшемнен текше құру, екі дөңгелектің бүтін айналым жолы және бірлік ауыстыру.",
+        "Секірістер 8/12, тақта 12×8 см, тістегершіктер 18/30 тіс, қадамдар 75/50 см, блок 12×10×15 см, дөңгелек шеңберлері 140/175 см болып жаңарды. Бастапқы0/сәт есепке алынбайды; уақыттың емес, іздің орны сұралады.",
+        "Native SVG сан шкаласы/доғаларды бір өлшеммен салады. Әр тіс өз involute-профиль параметрінен,18/30жеке тіс болып салынады; дөңгелек радиустары шеңберлер қатынасымен сәйкес. Блоктың бағыттары өзгермейді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ортақ еселік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview; actual8/12raylandings,12×8tile,18/30toothcountandmarkedpair,75/50twoinitialjumps,12/10/15block,140/175circumferencesandradii; native343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave39-eighteen-thirty-tooth-gears.svg",
+      "verificationModule": "scripts/editorial/visual-wave39-models.mjs",
+      "statement": "Екі тістегершік ілінісіп айналады; орталарында тістер саны берілген. Бастапқыда жанасқан екі тіс қызылмен белгіленді. Бастапқы сәт есептелмейді. Сол жақ тістегершік кемінде неше толық айналым жасағанда дәл осы екі белгіленген тіс қайта жанасады? Жауапқа тек санды жазыңыз.",
+      "solution": "Жанасу нүктесінен өткен тістер саны екі тістегершік үшін бірдей. Екі белгі қайта кездескенде бұл сан 18 және 30 сандарына да бөлінуі тиіс. Ең кіші ортақ еселік 90. Сол жақ тістегершік 90 : 18 = 5 айналым, оң жақтағысы 90 : 30 = 3 айналым жасайды. Бұдан аз оң тіс саны екеуіне бірдей еселік емес. Жауапқа сол жақтың айналымын жазамыз, өткен тістер санын емес.",
+      "figureDescription": "Сол жақ тістегершікте 18, оң жақта 30 жеке тіс сұлбасы бар; бұл сандар орталарында да жазылған. Бір-біріне қарайтын екі тіс қызыл. Тістер санына сай радиустардың қатынасы 18:30.",
+      "figureSha256": "ce2cd313576b9c5841dbdf0138220beeb4e9a5723322be79a3d441d689e52552",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5",
+        "checks": {
+          "firstReturnToothPassages": 90,
+          "leftTurns": 5,
+          "rightTurns": 3,
+          "teeth": [
+            18,
+            30
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave39-seventy-five-fifty-footsteps",
+      "modelId": "visual-wave39-first-footprint-distance",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "steps",
+        "first": 75,
+        "second": 50
+      },
+      "answer": "150 см",
+      "sourceRefs": [
+        {
+          "sourceId": "30d0f307788f6aee",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-9-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-9-level2.json#4",
+      "sourceCanonicalSha256": "77f66c338aa9dca0313e8b3344cc64dfc1edb8cab857f17be11da2c65eea6afe",
+      "sourceSkill": "First positive coincident footprints on same direction with constant lengths, not simultaneoustime",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: сан сәулесіндегі алғашқы ортақ оң қону, бұрылмайтын тақталардан ең кіші шаршы және саны, белгіленген тіс жұбының қайта кездесуі, іздердің алғашқы ортақ орны, үш өлшемнен текше құру, екі дөңгелектің бүтін айналым жолы және бірлік ауыстыру.",
+        "Секірістер 8/12, тақта 12×8 см, тістегершіктер 18/30 тіс, қадамдар 75/50 см, блок 12×10×15 см, дөңгелек шеңберлері 140/175 см болып жаңарды. Бастапқы0/сәт есепке алынбайды; уақыттың емес, іздің орны сұралады.",
+        "Native SVG сан шкаласы/доғаларды бір өлшеммен салады. Әр тіс өз involute-профиль параметрінен,18/30жеке тіс болып салынады; дөңгелек радиустары шеңберлер қатынасымен сәйкес. Блоктың бағыттары өзгермейді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ортақ еселік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview; actual8/12raylandings,12×8tile,18/30toothcountandmarkedpair,75/50twoinitialjumps,12/10/15block,140/175circumferencesandradii; native343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave39-seventy-five-fifty-footsteps.svg",
+      "verificationModule": "scripts/editorial/visual-wave39-models.mjs",
+      "options": [
+        "25 см",
+        "3750 см",
+        "100 см",
+        "150 см"
+      ],
+      "statement": "Дина мен Мерей бір жерден бір бағытта жүрді. Жоғарыда Динаның, төменде Мерейдің алғашқы екі қадамы берілген; әрқайсысының қадам ұзындығы тұрақты. Бастапқы 0 нүктесінен кейін іздері алғаш сәйкес келетін қашықтықты таңдаңыз.",
+      "solution": "Дина ізі әр 75 см сайын, Мерей ізі әр 50 см сайын түседі. Ортақ іздің алғашқы оң орны — 75 және 50 сандарының ең кіші ортақ еселігі 150 см. Дина 2, Мерей 3 қадам жасайды. Екі қашықтық та 150 см. Тек қадамдардың айырмасы не жалпы көбейтіндісі ең қысқа ортақ орынды бермейді.",
+      "figureDescription": "Ортақ0нүктесі. Жоғарыдағы Дина доғалары0→75→150 см, төмендегі Мерей доғалары0→50→100 см. Әрқайсысының екі қадамы ғана көрсетілген.",
+      "figureSha256": "d1d8201c06df27e9f68f4f49c636c77f75cc83a0794a95e49172f019369481a9",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "150 см",
+        "checks": {
+          "minimumCm": 150,
+          "firstSteps": 2,
+          "secondSteps": 3
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave39-twelve-ten-fifteen-block-cube",
+      "modelId": "visual-wave39-smallest-aligned-brick-cube-count",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "brick",
+        "sides": [
+          12,
+          10,
+          15
+        ]
+      },
+      "answer": "120",
+      "sourceRefs": [
+        {
+          "sourceId": "ac0f86aa5a1191bf",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-9-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-9-level3.json#9",
+      "sourceCanonicalSha256": "d99e56d8e01553d8ef1a5f5ecadabbf4b02c4e2591757d8133e03592c109eeac",
+      "sourceSkill": "Smallest solid cube assembled from identically oriented bricks, LCMallthreeaxes andvolumebinding",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: сан сәулесіндегі алғашқы ортақ оң қону, бұрылмайтын тақталардан ең кіші шаршы және саны, белгіленген тіс жұбының қайта кездесуі, іздердің алғашқы ортақ орны, үш өлшемнен текше құру, екі дөңгелектің бүтін айналым жолы және бірлік ауыстыру.",
+        "Секірістер 8/12, тақта 12×8 см, тістегершіктер 18/30 тіс, қадамдар 75/50 см, блок 12×10×15 см, дөңгелек шеңберлері 140/175 см болып жаңарды. Бастапқы0/сәт есепке алынбайды; уақыттың емес, іздің орны сұралады.",
+        "Native SVG сан шкаласы/доғаларды бір өлшеммен салады. Әр тіс өз involute-профиль параметрінен,18/30жеке тіс болып салынады; дөңгелек радиустары шеңберлер қатынасымен сәйкес. Блоктың бағыттары өзгермейді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ортақ еселік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview; actual8/12raylandings,12×8tile,18/30toothcountandmarkedpair,75/50twoinitialjumps,12/10/15block,140/175circumferencesandradii; native343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave39-twelve-ten-fifteen-block-cube.svg",
+      "verificationModule": "scripts/editorial/visual-wave39-models.mjs",
+      "statement": "Суретте тікбұрышты бір блоктың өлшемдері көрсетілген. Бірдей блоктарды бұрмай, бірдей бағытпен қатарлап жинап, ішінде саңылаусыз текше жасайды. Ең кіші текшеге неше блок қажет? Жауапқа тек санды жазыңыз.",
+      "solution": "Блоктар бір бағытта болғандықтан, текше қыры 12, 10, 15 өлшемдерінің әрқайсысына бүтін рет бөлінуі тиіс. Ең кіші ортақ еселік 60 см. Үш бағытта блоктар саны 5, 6, 4. Барлығы 5 × 6 × 4 = 120. Көлеммен тексеру: 216000 : 1800 = 120. Текше қыры мен блок саны бөлек шамалар.",
+      "figureDescription": "Бір блоктың көлденең қыры 12 см, тереңдігі 10 см, биіктігі 15 см. Біртұтас текше құрастыру көрсетілмеген.",
+      "figureSha256": "0f90cbe09a588c11ab6d9aa00e3b3cd7d3df482c088bcd48e5ffc54a0ce94f86",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "120",
+        "checks": {
+          "minimumCubeSide": 60,
+          "bricksPerAxis": [
+            5,
+            6,
+            4
+          ],
+          "brickVolume": 1800,
+          "cubeVolume": 216000
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave39-one-forty-one-seventy-five-wheels",
+      "modelId": "visual-wave39-two-wheel-whole-turn-distance-metres",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "wheels",
+        "front": 140,
+        "rear": 175
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "818c8ba6d637d225",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-9-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-9-leveltest.json#5",
+      "sourceCanonicalSha256": "eaa912ba9899c49730ca3cf007d12ef8e170c9812b175a4ab93413c300a2485d",
+      "sourceSkill": "Common rollingdistance for whole wheelturns with circumference labels, then centimetretometreconversion",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: сан сәулесіндегі алғашқы ортақ оң қону, бұрылмайтын тақталардан ең кіші шаршы және саны, белгіленген тіс жұбының қайта кездесуі, іздердің алғашқы ортақ орны, үш өлшемнен текше құру, екі дөңгелектің бүтін айналым жолы және бірлік ауыстыру.",
+        "Секірістер 8/12, тақта 12×8 см, тістегершіктер 18/30 тіс, қадамдар 75/50 см, блок 12×10×15 см, дөңгелек шеңберлері 140/175 см болып жаңарды. Бастапқы0/сәт есепке алынбайды; уақыттың емес, іздің орны сұралады.",
+        "Native SVG сан шкаласы/доғаларды бір өлшеммен салады. Әр тіс өз involute-профиль параметрінен,18/30жеке тіс болып салынады; дөңгелек радиустары шеңберлер қатынасымен сәйкес. Блоктың бағыттары өзгермейді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ортақ еселік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview; actual8/12raylandings,12×8tile,18/30toothcountandmarkedpair,75/50twoinitialjumps,12/10/15block,140/175circumferencesandradii; native343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave39-one-forty-one-seventy-five-wheels.svg",
+      "verificationModule": "scripts/editorial/visual-wave39-models.mjs",
+      "statement": "Арба сырғанамай түзу жүреді. Оң жақтағы сүйрегішке жақын дөңгелек — алдыңғы, сол жақтағысы — артқы. Әрқайсысының астында шеңберінің ұзындығы берілген. Бастапқы сәттен кейін екі дөңгелек те бүтін айналым жасайтын ең қысқа жол неше МЕТР? Жауапқа тек санды жазыңыз.",
+      "solution": "Бір айналымдағы жол — дөңгелек шеңберінің ұзындығы. Екі дөңгелек те бүтін айналуы үшін жол 140 және 175 сандарына да еселік. Ең қысқа жол 700 см. Бұл кезде алдыңғысы 5, артқысы 4 толық айналады. Метрге ауыстырсақ 700 : 100 = 7 м. Шеңбер ұзындығын диаметрмен шатастырмаймыз және жауапты сантиметрмен қалдырмаймыз.",
+      "figureDescription": "Сүйрегіші оң жақта тұрған арба. Сол артқы дөңгелектің шеңбері 175 см, оң алдыңғы дөңгелектікі 140 см. Шеңбер ұзындықтары дөңгелектердің астында жазылған.",
+      "figureSha256": "2b23bea5e58fb8cd026c3be657bba38df0ad86d18b90e7f340ac610617c861df",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": {
+          "distanceCm": 700,
+          "frontTurns": 5,
+          "rearTurns": 4,
+          "metres": 7
+        }
+      }
+    }
+  ]
+}

@@ -8,15 +8,17 @@ import {
 } from './firebase.js';
 import Brand from './Brand.jsx';
 import ParentDashboard from './ParentDashboard.jsx';
+import ParentSectionNav, { openParentSection } from './ParentSectionNav.jsx';
 import RewardApprovals from './RewardApprovals.jsx';
 import BrandLoader from './components/BrandLoader.jsx';
 import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination, isDodoPortalDestination } from './checkoutMessages.js';
 import PetAvatar, { DEFAULT_PET_AVATAR, PET_AVATARS } from './PetAvatar.jsx';
-import { planPrice } from './plans.js';
+import ParentPlans from './ParentPlans.jsx';
 import ParentLessons from './ParentLessons.jsx';
 import Notifications from './Notifications.jsx';
 import './ParentWorkspace.css';
 import { lessonsCall } from './lessonsApi.js';
+import { authenticatedRequest } from './authenticatedRequest.js';
 
 const Logo = () => <div className="logo"><Brand compact /></div>;
 
@@ -32,8 +34,6 @@ export default function Parent({ onExit }) {
     await (onExit || logout)();
   };
   const [plan, setPlan] = useState(null);    // null — әлі жүктелуде
-  const pro = plan === 'mentor';        // карточка «Pro с наставником»
-  const full = plan === 'pro';          // карточка Standard (полный доступ, самостоятельно)
   const [me, setMe] = useState('');          // ата-ананың аты
   const [paying, setPaying] = useState(false);
   const payingRef = useRef(false);
@@ -52,9 +52,16 @@ export default function Parent({ onExit }) {
     return ['1', 'standard', 'pro', 'mentor'].includes(paid);
   });
   const [upgradeSent, setUpgradeSent] = useState(false);
+  const [upgrading, setUpgrading] = useState(false);
+  const upgradeRef = useRef(false);
   const requestUpgrade = async (lessons) => {
-    try { await lessonsCall({ action: 'upgrade_request', lessons }); setUpgradeSent(true); }
-    catch { setPaymentIssue({ code: 'checkout_unavailable', status: 503 }); }
+    if (upgradeRef.current || upgradeSent) return;
+    const uid = auth.currentUser?.uid;
+    const current = () => mounted.current && auth.currentUser?.uid === uid;
+    upgradeRef.current = true; setUpgrading(true); setPaymentIssue(null);
+    try { await lessonsCall({ action: 'upgrade_request', lessons }); if (current()) setUpgradeSent(true); }
+    catch { if (current()) setPaymentIssue({ code: 'checkout_unavailable', status: 503 }); }
+    finally { upgradeRef.current = false; if (current()) setUpgrading(false); }
   };
   const [children, setChildren] = useState([]);
   const [childrenLoaded, setChildrenLoaded] = useState(false);
@@ -155,36 +162,27 @@ export default function Parent({ onExit }) {
     setPaymentIssue(null);
     let requestSent = false, redirected = false;
     try {
-      const idToken = await u.getIdToken();
-      if (!current()) return;
-      requestSent = true;
-      const r = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${idToken}`,
-        },
-        body: JSON.stringify(targetPlan === 'mentor' ? { plan: targetPlan, lessons } : { plan: targetPlan }),
+      const data = await authenticatedRequest(auth, '/api/checkout', {
+        uid: u.uid, authError: 'login_required', fallback: 'checkout_unavailable',
+        body: targetPlan === 'mentor' ? { plan: targetPlan, lessons } : { plan: targetPlan },
+        onDispatch: () => { if (!current()) throw new Error('checkout_unavailable'); requestSent = true; },
       });
-      const raw = await r.text();
-      let data = null;
-      try { data = JSON.parse(raw); } catch {}
       if (!current()) return;
-      if (r.ok && isCheckoutDestination(data?.url)) {
+      if (isCheckoutDestination(data?.url)) {
         redirected = true;
         window.location.href = data.url;
         return;
       }
-      const code = r.ok ? 'checkout_verification_required' : data?.error || 'checkout_unavailable';
-      setPaymentIssue({ code, status: r.status });
-      if (r.status === 409 && ['already_pro', 'already_plan'].includes(data?.error)) {
-        setFamilyRetry((n) => n + 1);
-      }
-      console.error('checkout failed', r.status, code);
+      setPaymentIssue({ code: 'checkout_verification_required', status: 200 });
     } catch (e) {
       console.error('checkout failed', e?.code || 'network');
-      if (current()) setPaymentIssue({ code: requestSent ? 'checkout_network_error'
-        : e?.code?.startsWith('auth/') ? 'login_required' : 'checkout_unavailable' });
+      if (current()) {
+        const status = e?.status || 0;
+        const code = status >= 400 ? e.message : status >= 200 ? 'checkout_verification_required'
+          : requestSent ? 'checkout_network_error' : e?.code?.startsWith('auth/') ? 'login_required' : 'checkout_unavailable';
+        setPaymentIssue({ code, status });
+        if (status === 409 && ['already_pro', 'already_plan'].includes(code)) setFamilyRetry((n) => n + 1);
+      }
     } finally {
       if (!redirected) {
         payingRef.current = false;
@@ -200,14 +198,11 @@ export default function Parent({ onExit }) {
     portalRef.current = true; setOpeningPortal(true); setPortalError('');
     let redirected = false;
     try {
-      const idToken = await u.getIdToken();
-      if (!current()) return;
-      const response = await fetch('/api/subscription-portal', {
-        method: 'POST', headers: { Authorization: `Bearer ${idToken}` },
+      const data = await authenticatedRequest(auth, '/api/subscription-portal', {
+        uid: u.uid, authError: 'login_required', onDispatch: () => { if (!current()) throw new Error('unmounted'); },
       });
-      const data = await response.json().catch(() => null);
       if (!current()) return;
-      if (response.ok && isDodoPortalDestination(data?.url)) {
+      if (isDodoPortalDestination(data?.url)) {
         redirected = true; window.location.href = data.url; return;
       }
       setPortalError(text('Не удалось открыть управление подпиской. Попробуйте позже или обратитесь в поддержку.', 'Жазылымды басқару бетін ашу мүмкін болмады. Кейінірек көріңіз немесе қолдау қызметіне жазыңыз.'));
@@ -314,7 +309,7 @@ export default function Parent({ onExit }) {
     <div className="app parent-app">
       <header className="parent-header">
         <div className="parent-brand"><Logo /><span>{text('Кабинет родителя', 'Ата-ана кабинеті')}</span></div>
-        <div className="parent-header-actions"><Notifications role="parent" /><button className="parent-language" type="button" onClick={() => setLang(lang === 'ru' ? 'kk' : 'ru')} aria-label={text('Қазақ тіліне ауысу', 'Переключить на русский')}>{lang === 'ru' ? 'ҚАЗ' : 'РУС'}</button><button className="logout" onClick={exit}>{t('ui.26')}</button></div>
+        <div className="parent-header-actions"><Notifications role="parent" onOpenLessons={() => openParentSection(plan === 'mentor' ? 'parent-lessons' : 'parent-settings')} onOpenPlan={() => openParentSection('parent-settings')} /><button className="parent-language" type="button" onClick={() => setLang(lang === 'ru' ? 'kk' : 'ru')} aria-label={text('Қазақ тіліне ауысу', 'Переключить на русский')}>{lang === 'ru' ? 'ҚАЗ' : 'РУС'}</button><button className="logout" onClick={exit}>{t('ui.26')}</button></div>
       </header>
 
       {familyError && <div className="card" role="alert" style={{ marginTop: 16 }}>
@@ -362,14 +357,15 @@ export default function Parent({ onExit }) {
 
       {(
         <main>
-          <div className="parent-intro">
+          <div className="parent-intro" id="parent-overview">
             <span className="parent-eyebrow">{text('Вместе к большим целям', 'Үлкен мақсатқа бірге')}</span>
             <h1>{me ? text(`Привет, ${me}!`, `Сәлем, ${me}!`) : text('Ваш семейный кабинет', 'Сіздің отбасы кабинетіңіз')}</h1>
             <p>{children.length ? text('Подготовка, успехи и следующие шаги ребёнка — рядом.', 'Баланың дайындығы, жетістігі мен келесі қадамдары — осында.') : text('Создайте профиль ребёнка — и начните подготовку вместе.', 'Балаңызға профиль ашып, дайындықты бірге бастаңыз.')}</p>
           </div>
+          <ParentSectionNav lang={lang} hasChildren={children.length > 0} hasLessons={plan === 'mentor'} />
           <ParentDashboard children={children} lang={lang} />
 
-          <div className="parent-children-head">
+          <div className="parent-children-head" id="parent-profile">
             <div><span className="parent-eyebrow">{text('Личный профиль', 'Жеке профиль')}</span><h2>{text('Аккаунт ребёнка', 'Бала аккаунты')}</h2></div>
             {childrenLoaded && children.length === 0 && (
               <button className="btn" disabled={busy} onClick={() => { setAdding(!adding); setErr(''); }}>{adding ? text('Свернуть', 'Жинау') : t('ui.28')}</button>
@@ -451,86 +447,13 @@ export default function Parent({ onExit }) {
           {!childrenLoaded && !childrenError && <BrandLoader compact />}
           {childrenLoaded && !children.length && !adding && <p className="muted" style={{ marginTop: 14 }}>{t('ui.32')}</p>}
           </div>
-          {children.length > 0 && <RewardApprovals children={children} lang={lang} />}
+          {children.length > 0 && <section id="parent-rewards" aria-label={text('Награды ребёнка', 'Баланың сыйлықтары')}><RewardApprovals children={children} lang={lang} /></section>}
+          {plan === 'mentor' && <section id="parent-lessons" aria-label={text('Уроки с наставником', 'Тәлімгермен сабақтар')}><ParentLessons /></section>}
 
-          <details className="pd-settings parent-account-settings" open={paymentPending || !!paymentIssue || !!portalError || undefined}>
+          <details id="parent-settings" className="pd-settings parent-account-settings" open={paymentPending || !!paymentIssue || !!portalError || undefined}>
             <summary><span className="parent-settings-icon" aria-hidden="true">☷</span><strong>{text('Тариф и настройки аккаунта', 'Тариф және аккаунт баптаулары')}</strong> <span className="parent-plan-chip">{plan === 'standard' ? text('Standard · архивный', 'Standard · архивтік') : plan === 'pro' ? 'Standard' : plan === 'mentor' ? 'Pro' : plan === 'free' ? text('Бесплатный', 'Тегін') : '…'}</span></summary>
-          {/* Үш тариф: тегін, Standard және Pro. */}
-          {plan !== null && (
-            <div className="parent-plan-grid">
-              {/* ── Тегін ── */}
-              <div className="card" style={{
-                borderColor: plan === 'free' ? 'var(--ink)' : 'var(--line)',
-                borderWidth: plan === 'free' ? 2 : 1, opacity: plan === 'free' ? 1 : 0.72,
-              }}>
-                <div className="row" style={{ marginBottom: 10 }}>
-                  <p className="kicker" style={{ margin: 0 }}>{t('plan.free')}</p>
-                  {plan === 'free' && <span className="tag" style={{ borderColor: 'var(--ink)' }}>{t('plan.current')}</span>}
-                </div>
-                <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>{t('plan.freePrice')}</div>
-                <ul style={{ margin: 0, padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text',system-ui,sans-serif", lineHeight: 2 }}>
-                  <li>✓ {t('plan.f1')}</li>
-                  <li>✓ {t('plan.f2')}</li>
-                  <li style={{ color: '#B0B0A6' }}>✗ {t('plan.f3')}</li>
-                  <li style={{ color: '#B0B0A6' }}>✗ {t('plan.f4')}</li>
-                </ul>
-              </div>
-
-              {/* ── Standard ── */}
-              <div className="card" style={{
-                borderColor: full ? '#2F80ED' : 'var(--line)', borderWidth: full ? 2 : 1,
-                background: full ? '#EEF6FF' : '#fff',
-              }}>
-                <div className="row" style={{ marginBottom: 10 }}>
-                  <p className="kicker" style={{ margin: 0, color: '#2F80ED' }}>{t('plan.standard')}</p>
-                  {full && <span className="tag" style={{ borderColor: '#2F80ED', color: '#2F80ED' }}>{t('plan.active')}</span>}
-                </div>
-                <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>
-                  {planPrice('pro', lang)}<span style={{ font: "500 13px 'Golos Text',system-ui,sans-serif", color: '#9A9384' }}>{t('plan.month')}</span>
-                </div>
-                <ul style={{ margin: '0 0 14px', padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text',system-ui,sans-serif", lineHeight: 2 }}>
-                  <li>✓ {t('plan.s1')}</li><li>✓ {t('plan.s2')}</li><li>✓ {t('plan.s3')}</li><li>✓ {t('plan.s4')}</li>
-                </ul>
-                {full ? <div style={{ font: "600 13px 'Golos Text',system-ui,sans-serif", color: '#2F80ED' }}>{t('plan.activeNote')}</div>
-                  : plan === 'free' && <button className="btn" disabled={paying || paymentPending || checkoutHold}
-                    onClick={() => buyPlan('pro')} style={{ width: '100%' }}>{paying ? '…' : t('plan.chooseStandard')}</button>}
-              </div>
-
-              {/* ── Про ── */}
-              <div className="card" style={{
-                borderColor: pro ? 'var(--green)' : 'var(--accent)',
-                borderWidth: 2, background: pro ? '#EEF5EC' : '#FBF3E3',
-              }}>
-                <div className="row" style={{ marginBottom: 10 }}>
-                  <p className="kicker" style={{ margin: 0, color: pro ? 'var(--green)' : 'var(--accent)' }}>{t('plan.pro')}</p>
-                  {pro && <span className="tag" style={{ borderColor: 'var(--green)', color: 'var(--green)' }}>{t('plan.active')}</span>}
-                </div>
-                <div style={{ font: "700 26px 'Lora',serif", marginBottom: 12 }}>
-                  <small style={{ font: "500 13px 'Golos Text',system-ui,sans-serif", color: '#9A9384', marginRight: 6 }}>{t('plan.from')}</small>{planPrice('mentor', lang)}<span style={{ font: "500 13px 'Golos Text',system-ui,sans-serif", color: '#9A9384' }}>{t('plan.month')}</span>
-                </div>
-                <ul style={{ margin: '0 0 14px', padding: 0, listStyle: 'none', font: "500 13.5px 'Golos Text',system-ui,sans-serif", lineHeight: 2 }}>
-                  <li>✓ {t('plan.p1')}</li>
-                  <li>✓ {t('plan.p2')}</li>
-                  <li>✓ {t('plan.p3')}</li>
-                  <li>✓ {t('plan.p4')}</li>
-                </ul>
-                {pro ? (
-                  <div style={{ font: "600 13px 'Golos Text',system-ui,sans-serif", color: 'var(--green)' }}>{t('plan.activeNote')}</div>
-                ) : plan === 'pro' ? (
-                  upgradeSent ? <div style={{ font: "600 13px 'Golos Text',system-ui,sans-serif", color: 'var(--green)' }}>{text('Заявка отправлена — мы свяжемся с вами', 'Өтінім жіберілді — сізбен байланысамыз')}</div>
-                    : <>{[2, 3].map((n) => <button key={n} className="btn accent" type="button" style={{ width: '100%', marginTop: n === 2 ? 0 : 8 }} onClick={() => requestUpgrade(n)}>
-                      {text('Хочу перейти: ', 'Көшкім келеді: ')}{t('plan.lessons' + n)}</button>)}
-                      <p className="muted" style={{ margin: '8px 0 0', fontSize: 12 }}>{text('Переход делаем вручную, без двойной оплаты. Мы свяжемся с вами.', 'Көшуді қолмен жасаймыз, қос төлемсіз. Сізбен байланысамыз.')}</p></>
-                ) : [2, 3].map((n) => (
-                  <button key={n} className="btn accent" disabled={paying || paymentPending || checkoutHold} onClick={() => buyPlan('mentor', n)} style={{ width: '100%', marginTop: n === 2 ? 0 : 8 }}>
-                    {checkoutHold ? text('Нужна проверка оплаты', 'Төлемді тексеру қажет') : paymentPending ? text('Проверяем оплату…', 'Төлем тексерілуде…') : paying ? '…' : `${t('plan.lessons' + n)} · ${planPrice('mentor', lang, n)}`}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {plan === 'mentor' && <ParentLessons />}
+          {plan !== null && <ParentPlans upgrading={upgrading} plan={plan} paying={paying} paymentPending={paymentPending} checkoutHold={checkoutHold}
+            upgradeSent={upgradeSent} onBuy={buyPlan} onUpgrade={requestUpgrade} />}
 
           {plan && plan !== 'free' && (
             <div className="card" style={{ marginTop: 16 }}>

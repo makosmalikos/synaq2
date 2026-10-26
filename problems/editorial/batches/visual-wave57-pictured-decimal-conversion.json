@@ -1,0 +1,628 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All10savedvisualgrade5topic4.2; archived sources only, no new capture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5 topic4.2 sources",
+    "sourceVisualOccurrences": 10,
+    "addressedNewDrafts": 10,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "06c64b0a7bc78041",
+      "27304df32f423c1d",
+      "2911664d643e66fa",
+      "46ea232794a729a7",
+      "526d12c45f4f6122",
+      "5b73864d16197c31",
+      "97b6951e9f75ad59",
+      "c4b3277e1a46805a",
+      "dd3c83fc8337eeb1",
+      "f8a3aa6f6961fc9f"
+    ],
+    "distinctModels": 10,
+    "semantics": "Ten source-specific pictorial conversion targets, not ten interchangeable number variants."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave57-three-fifths-tenths-digit",
+      "modelId": "visual-wave57-five-part-strip-request-decimal-digit",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "strip",
+        "parts": 5,
+        "blue": 3
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "c4b3277e1a46805a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-2-level1.json#8",
+      "sourceCanonicalSha256": "36d66294cbab33e3bd0ecbef216be6c07355b359d7a7f2349a464b5f65e80b28",
+      "sourceSkill": "Read3/5thenREALexpandby2to6/10→0,6; requestedAFTERCOMMA digit6, notdecimal0,6.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.2 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы сурет парағы қаралды. Суреттен жай бөлшекті оқу, бөлімді10/100/1000/100000-ға нақты келтіру, тек үтірден кейінгі цифрды сұрау, бүтінді сақтаған аралас ондық және екі нақты ЕҮОБ қысқартуы сақталды.",
+        "Жаңа деректер:3/5→0,6цифр6;46/100→0,46;3/4→0,75;9/20→0,45;5/8→0,625;2+3/5→2,6;76/100ЕҮОБ4→19/25қосынды44;19/32→0,59375;3/5сектор→0,6;2+65/100ЕҮОБ5→2+13/20. Бастапқы қате нұсқалардың әрқайсысы:қосымша көбейткішті алымға қолданбау, қатар жазу, ақ үлес, соңғы цифрды түсіру, үтірді жылжыту және бөлімге артық0 — адрес бойынша қайта құрылды.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең шаршылар, тең секторлар және бірдей толық фигуралар. Source raster/traced path жоқ; сурет сипаттамасында жасырын жауап жоқ. Өздігінен қол қойылмайды; сыртқы тәуелсіз review күтілуде."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі үлесті ондық бөлшекке айналдыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full10saved/new/solutions/everyMCQ plus all343pxsheets. Countactual5partstrip3B;100cells46B;4sectorpie3B;4x5grid9B;8sectorpie5B;threeequal5sectorcirclesfull/full/3B;100cells76BwithGCD4;4x8grid19Bfiveexactplaces;5sectorpie3B;threeequal100gridsfull/full/65BwithGCD5. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave57-three-fifths-tenths-digit.svg",
+      "verificationModule": "scripts/editorial/visual-wave57-models.mjs",
+      "statement": "Бір бүтін таспа тең бөліктерге бөлінген. Көк бөліктің үлесін алдымен ондық бөлшекке айналдырыңыз. Жауапқа сол жазудың ҮТІРДЕН КЕЙІНГІ БІР ЦИФРЫН ғана жазыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Таспада 5 тең бөлік, оның 3 бөлігі көк: (3/5). Бөлімді 10 ету үшін екеуін де 2 санына көбейтеміз: (3/5) = (6/10) = 0,6. Сұралғаны бөлшектің өзі емес, үтірден кейінгі цифр: 6.",
+      "figureDescription": "5 тең ұяшықты таспаның алғашқы 3 бөлігі көк, қалғандары ақ.",
+      "figureSha256": "db4e4f06434bf054a688a39485359f6079312e48ba35c2ababf7b4e668cff83d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "equalParts": 5,
+          "blueParts": 3,
+          "unpaintedParts": 2,
+          "powerTenDenominator": 10,
+          "additionalMultiplier": 2,
+          "newNumerator": 6,
+          "decimal": "0,6",
+          "requested": "one_fractional_digit_not_decimal"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave57-hundred-grid-forty-six-painted",
+      "modelId": "visual-wave57-hundred-grid-painted-decimal",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "grid",
+        "rows": 10,
+        "cols": 10,
+        "blue": 46
+      },
+      "answer": "0,46",
+      "sourceRefs": [
+        {
+          "sourceId": "06c64b0a7bc78041",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-2-level1.json#10",
+      "sourceCanonicalSha256": "ffe0f7850ca9a6510bbe6a57f0fc34b86c91d22314c3c7e81260d4beef141660",
+      "sourceSkill": "100cells4fullrows+6→46/100=0,46; comma×10/÷10 andwhite0,54traps.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.2 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы сурет парағы қаралды. Суреттен жай бөлшекті оқу, бөлімді10/100/1000/100000-ға нақты келтіру, тек үтірден кейінгі цифрды сұрау, бүтінді сақтаған аралас ондық және екі нақты ЕҮОБ қысқартуы сақталды.",
+        "Жаңа деректер:3/5→0,6цифр6;46/100→0,46;3/4→0,75;9/20→0,45;5/8→0,625;2+3/5→2,6;76/100ЕҮОБ4→19/25қосынды44;19/32→0,59375;3/5сектор→0,6;2+65/100ЕҮОБ5→2+13/20. Бастапқы қате нұсқалардың әрқайсысы:қосымша көбейткішті алымға қолданбау, қатар жазу, ақ үлес, соңғы цифрды түсіру, үтірді жылжыту және бөлімге артық0 — адрес бойынша қайта құрылды.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең шаршылар, тең секторлар және бірдей толық фигуралар. Source raster/traced path жоқ; сурет сипаттамасында жасырын жауап жоқ. Өздігінен қол қойылмайды; сыртқы тәуелсіз review күтілуде."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі үлесті ондық бөлшекке айналдыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full10saved/new/solutions/everyMCQ plus all343pxsheets. Countactual5partstrip3B;100cells46B;4sectorpie3B;4x5grid9B;8sectorpie5B;threeequal5sectorcirclesfull/full/3B;100cells76BwithGCD4;4x8grid19Bfiveexactplaces;5sectorpie3B;threeequal100gridsfull/full/65BwithGCD5. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave57-hundred-grid-forty-six-painted.svg",
+      "verificationModule": "scripts/editorial/visual-wave57-models.mjs",
+      "options": [
+        "0,46",
+        "4,6",
+        "0,046",
+        "0,54"
+      ],
+      "statement": "Квадрат мозаика — бір бүтін. Көк ұяшықтардың бүкіл квадратқа қатысты үлесін ондық бөлшекпен таңдаңыз.",
+      "solution": "Квадратта 10 × 10 = 100 тең ұяшық. Көгі 4 толық қатар және 6 ұяшық: 40 + 6 = 46. Үлес (46/100) = 0,46. 0,54 — ақ бөлік; басқа нұсқаларда үтірдің орны қате.",
+      "figureDescription": "10 қатар және 10 бағанды тең шаршылар. Алғашқы 4 қатар түгел көк, келесі қатардың алғашқы 6 ұяшығы көк, қалғандары ақ.",
+      "figureSha256": "537ddd9f6202e1a469305630086b6b76356720109699efddb2e8cd1677b2e365",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,46",
+        "checks": {
+          "equalParts": 100,
+          "blueParts": 46,
+          "unpaintedParts": 54,
+          "fullBlueRows": 4,
+          "extraBlue": 6,
+          "decimal": "0,46"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave57-three-quarter-pie-decimal",
+      "modelId": "visual-wave57-quarter-pie-convert-to-hundredths",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "pie",
+        "parts": 4,
+        "blue": 3
+      },
+      "answer": "0,75",
+      "sourceRefs": [
+        {
+          "sourceId": "97b6951e9f75ad59",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-2-level1.json#15",
+      "sourceCanonicalSha256": "af6937b2d6c5155f73cc39c26b34299a695c994ab1c12765f07e39260ac668ed",
+      "sourceSkill": "3of4equal90degrees→multiply25→75/100; retainDENonly0,4 andconcat0,34/3,4diagnostics.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.2 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы сурет парағы қаралды. Суреттен жай бөлшекті оқу, бөлімді10/100/1000/100000-ға нақты келтіру, тек үтірден кейінгі цифрды сұрау, бүтінді сақтаған аралас ондық және екі нақты ЕҮОБ қысқартуы сақталды.",
+        "Жаңа деректер:3/5→0,6цифр6;46/100→0,46;3/4→0,75;9/20→0,45;5/8→0,625;2+3/5→2,6;76/100ЕҮОБ4→19/25қосынды44;19/32→0,59375;3/5сектор→0,6;2+65/100ЕҮОБ5→2+13/20. Бастапқы қате нұсқалардың әрқайсысы:қосымша көбейткішті алымға қолданбау, қатар жазу, ақ үлес, соңғы цифрды түсіру, үтірді жылжыту және бөлімге артық0 — адрес бойынша қайта құрылды.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең шаршылар, тең секторлар және бірдей толық фигуралар. Source raster/traced path жоқ; сурет сипаттамасында жасырын жауап жоқ. Өздігінен қол қойылмайды; сыртқы тәуелсіз review күтілуде."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі үлесті ондық бөлшекке айналдыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full10saved/new/solutions/everyMCQ plus all343pxsheets. Countactual5partstrip3B;100cells46B;4sectorpie3B;4x5grid9B;8sectorpie5B;threeequal5sectorcirclesfull/full/3B;100cells76BwithGCD4;4x8grid19Bfiveexactplaces;5sectorpie3B;threeequal100gridsfull/full/65BwithGCD5. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave57-three-quarter-pie-decimal.svg",
+      "verificationModule": "scripts/editorial/visual-wave57-models.mjs",
+      "options": [
+        "0,75",
+        "0,4",
+        "0,34",
+        "3,4"
+      ],
+      "statement": "Тең секторлы дөңгелек — бір бүтін. Көк секторлардың үлесін дәл беретін ондық бөлшек қайсы?",
+      "solution": "Суретте 4 тең сектор, 3 бөлігі көк: (3/4). Бөлім 100 болу үшін қосымша көбейткіш 25. Алым мен бөлімнің ЕКЕУІН де көбейтеміз: (3/4) = (75/100) = 0,75. 0,4 — бөлімді ондық үлес сияқты алу; 0,34 мен 3,4 — бөлшектің цифрларын қатар жазу.",
+      "figureDescription": "4 тең сектордың алғашқы 3 бөлігі көк, қалғаны ақ.",
+      "figureSha256": "d7692ddb9e949858d7a33344031e6eb0976f66287cd15e1070608f5cc4b896a7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,75",
+        "checks": {
+          "equalParts": 4,
+          "blueParts": 3,
+          "unpaintedParts": 1,
+          "powerTenDenominator": 100,
+          "additionalMultiplier": 25,
+          "newNumerator": 75,
+          "decimal": "0,75"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave57-nine-twentieths-grid-decimal",
+      "modelId": "visual-wave57-twenty-grid-read-convert-to-hundredths",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "grid",
+        "rows": 4,
+        "cols": 5,
+        "blue": 9
+      },
+      "answer": "0,45",
+      "sourceRefs": [
+        {
+          "sourceId": "5b73864d16197c31",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-2-level2.json#0",
+      "sourceCanonicalSha256": "491e32a2b65ae0f2979973c95a0eab1ae2c8b87cc15c4fd53d6a9e4c6ce7f82b",
+      "sourceSkill": "Actual4x5=20cells5+4blue9→multiply5→45/100; countasTEN0,9/complement0,55/commashift4,5wrong.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.2 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы сурет парағы қаралды. Суреттен жай бөлшекті оқу, бөлімді10/100/1000/100000-ға нақты келтіру, тек үтірден кейінгі цифрды сұрау, бүтінді сақтаған аралас ондық және екі нақты ЕҮОБ қысқартуы сақталды.",
+        "Жаңа деректер:3/5→0,6цифр6;46/100→0,46;3/4→0,75;9/20→0,45;5/8→0,625;2+3/5→2,6;76/100ЕҮОБ4→19/25қосынды44;19/32→0,59375;3/5сектор→0,6;2+65/100ЕҮОБ5→2+13/20. Бастапқы қате нұсқалардың әрқайсысы:қосымша көбейткішті алымға қолданбау, қатар жазу, ақ үлес, соңғы цифрды түсіру, үтірді жылжыту және бөлімге артық0 — адрес бойынша қайта құрылды.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең шаршылар, тең секторлар және бірдей толық фигуралар. Source raster/traced path жоқ; сурет сипаттамасында жасырын жауап жоқ. Өздігінен қол қойылмайды; сыртқы тәуелсіз review күтілуде."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі үлесті ондық бөлшекке айналдыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full10saved/new/solutions/everyMCQ plus all343pxsheets. Countactual5partstrip3B;100cells46B;4sectorpie3B;4x5grid9B;8sectorpie5B;threeequal5sectorcirclesfull/full/3B;100cells76BwithGCD4;4x8grid19Bfiveexactplaces;5sectorpie3B;threeequal100gridsfull/full/65BwithGCD5. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave57-nine-twentieths-grid-decimal.svg",
+      "verificationModule": "scripts/editorial/visual-wave57-models.mjs",
+      "options": [
+        "0,9",
+        "0,55",
+        "0,45",
+        "4,5"
+      ],
+      "statement": "Тіктөртбұрыш — бір бүтін және тең шаршыларға бөлінген. Көк шаршылардың барлық шаршыларға қатысты үлесін ондық санмен таңдаңыз.",
+      "solution": "Суретте 4 × 5 = 20 тең шаршы, 9 бөлігі көк: (9/20). Бөлім 100 болу үшін қосымша көбейткіш 5. Алым мен бөлімнің ЕКЕУІН де көбейтеміз: (9/20) = (45/100) = 0,45. 0,9 — бүтін бөліктер санын 10 деп қате алу; 0,55 — ақ бөлік.",
+      "figureDescription": "4 қатар және 5 бағанды тең шаршылар. Алғашқы 1 қатар түгел көк, келесі қатардың алғашқы 4 ұяшығы көк, қалғандары ақ.",
+      "figureSha256": "3e911d891284a20599f2416b0f454c9e2964bb45071176462f91b8a578522901",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,45",
+        "checks": {
+          "equalParts": 20,
+          "blueParts": 9,
+          "unpaintedParts": 11,
+          "powerTenDenominator": 100,
+          "additionalMultiplier": 5,
+          "newNumerator": 45,
+          "decimal": "0,45"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave57-five-eighths-pie-decimal",
+      "modelId": "visual-wave57-eighth-pie-convert-to-thousandths",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "pie",
+        "parts": 8,
+        "blue": 5
+      },
+      "answer": "0,625",
+      "sourceRefs": [
+        {
+          "sourceId": "27304df32f423c1d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-2-level2.json#10",
+      "sourceCanonicalSha256": "a76fddd7a7634f0d3e9efd140f2e3f078fca35a38ae5fb4f054154e347257a59",
+      "sourceSkill": "5of8equal45degree sectors→multiply125→625/1000; concat0,58/complement0,375/NUMonly0,5wrong.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.2 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы сурет парағы қаралды. Суреттен жай бөлшекті оқу, бөлімді10/100/1000/100000-ға нақты келтіру, тек үтірден кейінгі цифрды сұрау, бүтінді сақтаған аралас ондық және екі нақты ЕҮОБ қысқартуы сақталды.",
+        "Жаңа деректер:3/5→0,6цифр6;46/100→0,46;3/4→0,75;9/20→0,45;5/8→0,625;2+3/5→2,6;76/100ЕҮОБ4→19/25қосынды44;19/32→0,59375;3/5сектор→0,6;2+65/100ЕҮОБ5→2+13/20. Бастапқы қате нұсқалардың әрқайсысы:қосымша көбейткішті алымға қолданбау, қатар жазу, ақ үлес, соңғы цифрды түсіру, үтірді жылжыту және бөлімге артық0 — адрес бойынша қайта құрылды.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең шаршылар, тең секторлар және бірдей толық фигуралар. Source raster/traced path жоқ; сурет сипаттамасында жасырын жауап жоқ. Өздігінен қол қойылмайды; сыртқы тәуелсіз review күтілуде."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі үлесті ондық бөлшекке айналдыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full10saved/new/solutions/everyMCQ plus all343pxsheets. Countactual5partstrip3B;100cells46B;4sectorpie3B;4x5grid9B;8sectorpie5B;threeequal5sectorcirclesfull/full/3B;100cells76BwithGCD4;4x8grid19Bfiveexactplaces;5sectorpie3B;threeequal100gridsfull/full/65BwithGCD5. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave57-five-eighths-pie-decimal.svg",
+      "verificationModule": "scripts/editorial/visual-wave57-models.mjs",
+      "options": [
+        "0,625",
+        "0,58",
+        "0,375",
+        "0,5"
+      ],
+      "statement": "Бір бүтін дөңгелек тең секторларға бөлінген. Көк секторлардың үлесін ДӘЛ ондық бөлшекпен таңдаңыз; жуықтамаңыз.",
+      "solution": "Суретте 8 тең сектор, 5 бөлігі көк: (5/8). Бөлім 1000 болу үшін қосымша көбейткіш 125. Алым мен бөлімнің ЕКЕУІН де көбейтеміз: (5/8) = (625/1000) = 0,625. 0,58 — алым мен бөлімді тізіп жазу, 0,375 — ақ үлес, 0,5 — боялған сектор санын ғана ондық үлес деп алу.",
+      "figureDescription": "8 тең сектордың алғашқы 5 бөлігі көк, қалғаны ақ.",
+      "figureSha256": "743d24d3edc2116a79055b9fda7eade6ad1deccb6a5c64a6a0f8377ef82b077f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,625",
+        "checks": {
+          "equalParts": 8,
+          "blueParts": 5,
+          "unpaintedParts": 3,
+          "powerTenDenominator": 1000,
+          "additionalMultiplier": 125,
+          "newNumerator": 625,
+          "decimal": "0,625"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave57-two-whole-circles-three-fifths",
+      "modelId": "visual-wave57-mixed-fifths-circles-decimal",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "mixed-pies",
+        "parts": 5,
+        "whole": 2,
+        "blue": 3
+      },
+      "answer": "2,6",
+      "sourceRefs": [
+        {
+          "sourceId": "526d12c45f4f6122",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-2-level2.json#11",
+      "sourceCanonicalSha256": "a8edc35dc0678557897bf925c04dc1dd24ba0ee1fe26a2b816c04e0dbc8dfcd7",
+      "sourceSkill": "2wholecircles+3/5→2+6/10→2,6; NUMonly2,3/concat2,35/shift0,26wrong.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.2 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы сурет парағы қаралды. Суреттен жай бөлшекті оқу, бөлімді10/100/1000/100000-ға нақты келтіру, тек үтірден кейінгі цифрды сұрау, бүтінді сақтаған аралас ондық және екі нақты ЕҮОБ қысқартуы сақталды.",
+        "Жаңа деректер:3/5→0,6цифр6;46/100→0,46;3/4→0,75;9/20→0,45;5/8→0,625;2+3/5→2,6;76/100ЕҮОБ4→19/25қосынды44;19/32→0,59375;3/5сектор→0,6;2+65/100ЕҮОБ5→2+13/20. Бастапқы қате нұсқалардың әрқайсысы:қосымша көбейткішті алымға қолданбау, қатар жазу, ақ үлес, соңғы цифрды түсіру, үтірді жылжыту және бөлімге артық0 — адрес бойынша қайта құрылды.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең шаршылар, тең секторлар және бірдей толық фигуралар. Source raster/traced path жоқ; сурет сипаттамасында жасырын жауап жоқ. Өздігінен қол қойылмайды; сыртқы тәуелсіз review күтілуде."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі үлесті ондық бөлшекке айналдыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full10saved/new/solutions/everyMCQ plus all343pxsheets. Countactual5partstrip3B;100cells46B;4sectorpie3B;4x5grid9B;8sectorpie5B;threeequal5sectorcirclesfull/full/3B;100cells76BwithGCD4;4x8grid19Bfiveexactplaces;5sectorpie3B;threeequal100gridsfull/full/65BwithGCD5. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave57-two-whole-circles-three-fifths.svg",
+      "verificationModule": "scripts/editorial/visual-wave57-models.mjs",
+      "options": [
+        "2,3",
+        "2,35",
+        "2,6",
+        "0,26"
+      ],
+      "statement": "Бірдей дөңгелектердің әрқайсысы — бір бүтін және тең секторларға бөлінген. БАРЛЫҚ көк бөліктер бірге қандай ондық санды білдіреді?",
+      "solution": "Толық көк дөңгелек саны 2. Соңғысында 5 сектордың 3 бөлігі көк, яғни (3/5). (3/5) = (6/10). Барлығы (2 + (3/5)) = 2,6. 2,3 — тек боялған сектор санын жазу; 2,35 — алым мен бөлімді тізу; 0,26 — бүтінді бөлшек бөлікке көшіріп жіберу.",
+      "figureDescription": "Бірдей 3 дөңгелектің әрқайсысында 5 тең сектор. Алғашқы 2 дөңгелек түгел көк, соңғысындағы алғашқы 3 сектор көк.",
+      "figureSha256": "eaa28e3f5f2a948afa06aa6d7740df0318232045803deb83d9d5c9aa0cbddab8",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2,6",
+        "checks": {
+          "equalParts": 5,
+          "blueParts": 3,
+          "unpaintedParts": 2,
+          "fullWholes": 2,
+          "additionalMultiplier": 2,
+          "fractionalNumeratorTenths": 6,
+          "decimal": "2,6"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave57-seventy-six-hundredths-reduced-sum",
+      "modelId": "visual-wave57-hundred-grid-reduce-request-numerator-plus-denominator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "grid",
+        "rows": 10,
+        "cols": 10,
+        "blue": 76
+      },
+      "answer": "44",
+      "sourceRefs": [
+        {
+          "sourceId": "2911664d643e66fa",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-2-level2.json#13",
+      "sourceCanonicalSha256": "0eeb637ac473def5a4f78fa06f85f84e464a184509e33ee1bff95d36e56a3fdb",
+      "sourceSkill": "Read76/100=0,76, actualGCD4→19/25coprime; requesta+b44, notraw176/count76.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.2 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы сурет парағы қаралды. Суреттен жай бөлшекті оқу, бөлімді10/100/1000/100000-ға нақты келтіру, тек үтірден кейінгі цифрды сұрау, бүтінді сақтаған аралас ондық және екі нақты ЕҮОБ қысқартуы сақталды.",
+        "Жаңа деректер:3/5→0,6цифр6;46/100→0,46;3/4→0,75;9/20→0,45;5/8→0,625;2+3/5→2,6;76/100ЕҮОБ4→19/25қосынды44;19/32→0,59375;3/5сектор→0,6;2+65/100ЕҮОБ5→2+13/20. Бастапқы қате нұсқалардың әрқайсысы:қосымша көбейткішті алымға қолданбау, қатар жазу, ақ үлес, соңғы цифрды түсіру, үтірді жылжыту және бөлімге артық0 — адрес бойынша қайта құрылды.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең шаршылар, тең секторлар және бірдей толық фигуралар. Source raster/traced path жоқ; сурет сипаттамасында жасырын жауап жоқ. Өздігінен қол қойылмайды; сыртқы тәуелсіз review күтілуде."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі үлесті ондық бөлшекке айналдыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full10saved/new/solutions/everyMCQ plus all343pxsheets. Countactual5partstrip3B;100cells46B;4sectorpie3B;4x5grid9B;8sectorpie5B;threeequal5sectorcirclesfull/full/3B;100cells76BwithGCD4;4x8grid19Bfiveexactplaces;5sectorpie3B;threeequal100gridsfull/full/65BwithGCD5. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave57-seventy-six-hundredths-reduced-sum.svg",
+      "verificationModule": "scripts/editorial/visual-wave57-models.mjs",
+      "statement": "Квадраттағы көк үлесті алдымен ондық бөлшекпен, содан кейін қысқартылмайтын (a/b) түрінде өрнектеңіз. Соңғы a + b қосындысын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Барлығы 100 ұяшық, көгі 7 толық қатар және 6 ұяшық: 76. Үлес (76/100) = 0,76. Алым мен бөлімнің ЕҮОБ-ы 4: (76/100) = (19/25). Соңғы алым мен бөлім өзара жай. Сондықтан a + b = 19 + 25 = 44. Бастапқы 76 + 100 қосындысы сұралмаған.",
+      "figureDescription": "10 қатар және 10 бағанды тең шаршылар. Алғашқы 7 қатар түгел көк, келесі қатардың алғашқы 6 ұяшығы көк, қалғандары ақ.",
+      "figureSha256": "2375a8408acb814df56c086cf44a9c99e651905faaff1d4840acd73dd5a56417",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "44",
+        "checks": {
+          "equalParts": 100,
+          "blueParts": 76,
+          "unpaintedParts": 24,
+          "decimal": "0,76",
+          "gcd": 4,
+          "reducedNumerator": 19,
+          "reducedDenominator": 25,
+          "sum": 44
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave57-nineteen-thirty-seconds-exact-decimal",
+      "modelId": "visual-wave57-thirty-two-grid-five-place-exact-decimal",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "grid",
+        "rows": 4,
+        "cols": 8,
+        "blue": 19
+      },
+      "answer": "0,59375",
+      "sourceRefs": [
+        {
+          "sourceId": "f8a3aa6f6961fc9f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-2-level3.json#0",
+      "sourceCanonicalSha256": "3256bac0112bed8c531ce9dc73140e2204010621c2f2714cf79dc0faa7b4eb87",
+      "sourceSkill": "Actual4x8=32cells8+8+3blue19; denominator32requires100000/multiplier3125→59375; concat0,1932/truncated0,5937/complement0,40625wrong.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.2 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы сурет парағы қаралды. Суреттен жай бөлшекті оқу, бөлімді10/100/1000/100000-ға нақты келтіру, тек үтірден кейінгі цифрды сұрау, бүтінді сақтаған аралас ондық және екі нақты ЕҮОБ қысқартуы сақталды.",
+        "Жаңа деректер:3/5→0,6цифр6;46/100→0,46;3/4→0,75;9/20→0,45;5/8→0,625;2+3/5→2,6;76/100ЕҮОБ4→19/25қосынды44;19/32→0,59375;3/5сектор→0,6;2+65/100ЕҮОБ5→2+13/20. Бастапқы қате нұсқалардың әрқайсысы:қосымша көбейткішті алымға қолданбау, қатар жазу, ақ үлес, соңғы цифрды түсіру, үтірді жылжыту және бөлімге артық0 — адрес бойынша қайта құрылды.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең шаршылар, тең секторлар және бірдей толық фигуралар. Source raster/traced path жоқ; сурет сипаттамасында жасырын жауап жоқ. Өздігінен қол қойылмайды; сыртқы тәуелсіз review күтілуде."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі үлесті ондық бөлшекке айналдыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full10saved/new/solutions/everyMCQ plus all343pxsheets. Countactual5partstrip3B;100cells46B;4sectorpie3B;4x5grid9B;8sectorpie5B;threeequal5sectorcirclesfull/full/3B;100cells76BwithGCD4;4x8grid19Bfiveexactplaces;5sectorpie3B;threeequal100gridsfull/full/65BwithGCD5. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave57-nineteen-thirty-seconds-exact-decimal.svg",
+      "verificationModule": "scripts/editorial/visual-wave57-models.mjs",
+      "options": [
+        "0,1932",
+        "0,59375",
+        "0,5937",
+        "0,40625"
+      ],
+      "statement": "Тіктөртбұрыш тең шаршылардан тұрады. Көк үлесті көрсететін ДӘЛ ондық жазуды таңдаңыз. Бір де бір цифрды түсірмеңіз және жуықтамаңыз.",
+      "solution": "Суретте 4 × 8 = 32 тең шаршы, 19 бөлігі көк: (19/32). Бөлім 100000 болу үшін қосымша көбейткіш 3125. Алым мен бөлімнің ЕКЕУІН де көбейтеміз: (19/32) = (59375/100000) = 0,59375. 0,5937 соңғы цифрды түсірген, 0,1932 алым мен бөлімді тізген, 0,40625 ақ бөлікті алған. Бес ондық цифрдың бәрі қажет.",
+      "figureDescription": "4 қатар және 8 бағанды тең шаршылар. Алғашқы 2 қатар түгел көк, келесі қатардың алғашқы 3 ұяшығы көк, қалғандары ақ.",
+      "figureSha256": "0f809c2e9fb1971e5080f590354ebc8c016d60cef36181470bc26f6bbf6ea066",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,59375",
+        "checks": {
+          "equalParts": 32,
+          "blueParts": 19,
+          "unpaintedParts": 13,
+          "powerTenDenominator": 100000,
+          "additionalMultiplier": 3125,
+          "newNumerator": 59375,
+          "decimal": "0,59375"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave57-three-fifths-pie-decimal",
+      "modelId": "visual-wave57-fifth-pie-numerator-doubling-decimal",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "pie",
+        "parts": 5,
+        "blue": 3
+      },
+      "answer": "0,6",
+      "sourceRefs": [
+        {
+          "sourceId": "46ea232794a729a7",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-2-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-2-leveltest.json#2",
+      "sourceCanonicalSha256": "3152d50bf87f110b244db8350e6c9d0db4b0ebf7b6352818dc832463dd2ddd69",
+      "sourceSkill": "3of5equal72degree sectors→multiplyBOTHby2→6/10=0,6; failedNUMmultiply0,3/concat0,35/3,5wrong.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.2 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы сурет парағы қаралды. Суреттен жай бөлшекті оқу, бөлімді10/100/1000/100000-ға нақты келтіру, тек үтірден кейінгі цифрды сұрау, бүтінді сақтаған аралас ондық және екі нақты ЕҮОБ қысқартуы сақталды.",
+        "Жаңа деректер:3/5→0,6цифр6;46/100→0,46;3/4→0,75;9/20→0,45;5/8→0,625;2+3/5→2,6;76/100ЕҮОБ4→19/25қосынды44;19/32→0,59375;3/5сектор→0,6;2+65/100ЕҮОБ5→2+13/20. Бастапқы қате нұсқалардың әрқайсысы:қосымша көбейткішті алымға қолданбау, қатар жазу, ақ үлес, соңғы цифрды түсіру, үтірді жылжыту және бөлімге артық0 — адрес бойынша қайта құрылды.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең шаршылар, тең секторлар және бірдей толық фигуралар. Source raster/traced path жоқ; сурет сипаттамасында жасырын жауап жоқ. Өздігінен қол қойылмайды; сыртқы тәуелсіз review күтілуде."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі үлесті ондық бөлшекке айналдыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full10saved/new/solutions/everyMCQ plus all343pxsheets. Countactual5partstrip3B;100cells46B;4sectorpie3B;4x5grid9B;8sectorpie5B;threeequal5sectorcirclesfull/full/3B;100cells76BwithGCD4;4x8grid19Bfiveexactplaces;5sectorpie3B;threeequal100gridsfull/full/65BwithGCD5. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave57-three-fifths-pie-decimal.svg",
+      "verificationModule": "scripts/editorial/visual-wave57-models.mjs",
+      "options": [
+        "0,3",
+        "0,35",
+        "0,6",
+        "3,5"
+      ],
+      "statement": "Дөңгелектегі секторлар тең. Көк секторлардың бір бүтінге қатысты үлесін ондық бөлшек түрінде таңдаңыз.",
+      "solution": "Суретте 5 тең сектор, 3 бөлігі көк: (3/5). Бөлім 10 болу үшін қосымша көбейткіш 2. Алым мен бөлімнің ЕКЕУІН де көбейтеміз: (3/5) = (6/10) = 0,6. 0,3 — алымды 2 санына көбейтуді ұмыту; 0,35 мен 3,5 — алым мен бөлімді қатар жазу.",
+      "figureDescription": "5 тең сектордың алғашқы 3 бөлігі көк, қалғаны ақ.",
+      "figureSha256": "efc3f8183e0238d69550afa08e774a671679c41a4d9e08759e4a7d513143b26c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,6",
+        "checks": {
+          "equalParts": 5,
+          "blueParts": 3,
+          "unpaintedParts": 2,
+          "powerTenDenominator": 10,
+          "additionalMultiplier": 2,
+          "newNumerator": 6,
+          "decimal": "0,6"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave57-two-whole-sixty-five-hundredths-mixed",
+      "modelId": "visual-wave57-hundred-grids-request-reduced-mixed",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "mixed-grids",
+        "whole": 2,
+        "rows": 10,
+        "cols": 10,
+        "blue": 65
+      },
+      "answer": "(2 + (13/20))",
+      "sourceRefs": [
+        {
+          "sourceId": "dd3c83fc8337eeb1",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-2-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-2-leveltest.json#6",
+      "sourceCanonicalSha256": "f390f3cd60672f40cd436bd75af8b3af7303f747555d87283f582c0f1f9a3ae0",
+      "sourceSkill": "TwoFULL100cellgrids+65bluecells→2,65→actualGCD5→2+13/20. Retain×10comma26+1/2/complement2+7/20/den×10only2+13/200wrong.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.2 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы сурет парағы қаралды. Суреттен жай бөлшекті оқу, бөлімді10/100/1000/100000-ға нақты келтіру, тек үтірден кейінгі цифрды сұрау, бүтінді сақтаған аралас ондық және екі нақты ЕҮОБ қысқартуы сақталды.",
+        "Жаңа деректер:3/5→0,6цифр6;46/100→0,46;3/4→0,75;9/20→0,45;5/8→0,625;2+3/5→2,6;76/100ЕҮОБ4→19/25қосынды44;19/32→0,59375;3/5сектор→0,6;2+65/100ЕҮОБ5→2+13/20. Бастапқы қате нұсқалардың әрқайсысы:қосымша көбейткішті алымға қолданбау, қатар жазу, ақ үлес, соңғы цифрды түсіру, үтірді жылжыту және бөлімге артық0 — адрес бойынша қайта құрылды.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең шаршылар, тең секторлар және бірдей толық фигуралар. Source raster/traced path жоқ; сурет сипаттамасында жасырын жауап жоқ. Өздігінен қол қойылмайды; сыртқы тәуелсіз review күтілуде."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі үлесті ондық бөлшекке айналдыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full10saved/new/solutions/everyMCQ plus all343pxsheets. Countactual5partstrip3B;100cells46B;4sectorpie3B;4x5grid9B;8sectorpie5B;threeequal5sectorcirclesfull/full/3B;100cells76BwithGCD4;4x8grid19Bfiveexactplaces;5sectorpie3B;threeequal100gridsfull/full/65BwithGCD5. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave57-two-whole-sixty-five-hundredths-mixed.svg",
+      "verificationModule": "scripts/editorial/visual-wave57-models.mjs",
+      "options": [
+        "(2 + (13/20))",
+        "(26 + (1/2))",
+        "(2 + (7/20))",
+        "(2 + (13/200))"
+      ],
+      "statement": "Әр үлкен квадрат — бір бүтін, ұяшықтар тең. Барлық көк бөліктерді аралас санмен таңдаңыз. Оның бөлшек бөлігі міндетті түрде ҚЫСҚАРТЫЛМАЙТЫН болсын.",
+      "solution": "Алғашқы 2 квадрат түгел көк. Соңғы квадраттың 100 ұяшығының 65 бөлігі көк: 6 толық қатар және 5 ұяшық. Барлығы 2,65 = (2 + (65/100)). Бөлшек бөліктің ЕҮОБ-ы 5, сондықтан (65/100) = (13/20), дұрыс жауап (2 + (13/20)). (2 + (7/20)) — соңғы квадраттың ақ үлесі; (2 + (13/200)) — бөлімге артық 0 қосу; (26 + (1/2)) — жалпы санның үтірін бір орынға жылжыту.",
+      "figureDescription": "Бірдей 3 квадраттың әрқайсысы 10×10 тең ұяшық. Алғашқы 2 квадрат түгел көк. Соңғысында 6 толық қатар және келесі қатардың 5 ұяшығы көк.",
+      "figureSha256": "805001ddc48b21f48d974b9458424f7554b6fdf242528a039b6ffbb4bd07d1d4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(2 + (13/20))",
+        "checks": {
+          "fullWholes": 2,
+          "equalPartsPerWhole": 100,
+          "partialBlue": 65,
+          "partialWhite": 35,
+          "rawFraction": [
+            65,
+            100
+          ],
+          "gcd": 5,
+          "reducedFraction": [
+            13,
+            20
+          ],
+          "decimal": "2,65",
+          "reducedMixed": "(2 + (13/20))"
+        }
+      }
+    }
+  ]
+}

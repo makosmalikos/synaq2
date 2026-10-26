@@ -1,0 +1,662 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "root_separate_computational_check_same_author",
+  "scope": "All10 frozen FEMO4winter grade4 full source/new conditions/full official/new\nsolutions read, no source MCQs and sourceAnswer null. Source partial-fence raster\nviewed and new343px original native corner preview inspected. Separate exact\nprinted-input enumeration/dynamic programming by same root author; no separate\nhuman/agent reviewer. Numeric adaptations not semantic uniqueness counts.\n",
+  "summary": {
+    "verified": 10,
+    "sourceKeysNotCaptured": 10,
+    "allSourceNewConditionsFullSolutionsRead": 10,
+    "wrongKeysRejected": 10,
+    "printedSemanticCanariesRejected": 10,
+    "printedSolutionEqualitiesVerified": 32,
+    "distinctDigitAssignmentsCheckedPerCryptarithm": 4536,
+    "fourDigitNumbersChecked": 9000,
+    "allClosedRingStatesChecked": true,
+    "nativeOverlines": 2,
+    "originalFigures": 1,
+    "actualFigureCornerMutationRejected": true,
+    "pythonJavaScriptHashesMatched": 10,
+    "separateHumanReviewer": false
+  },
+  "evidence": [
+    {
+      "editionId": "femo4-winter-grade4-01",
+      "savedSource": {
+        "allFourLengthPartitions": [
+          {
+            "fourDigitPosition": 1,
+            "parts": [
+              "5041",
+              "202",
+              "010",
+              "215"
+            ],
+            "valid": false
+          },
+          {
+            "fourDigitPosition": 2,
+            "parts": [
+              "504",
+              "1202",
+              "010",
+              "215"
+            ],
+            "valid": false
+          },
+          {
+            "fourDigitPosition": 3,
+            "parts": [
+              "504",
+              "120",
+              "2010",
+              "215"
+            ],
+            "valid": true
+          },
+          {
+            "fourDigitPosition": 4,
+            "parts": [
+              "504",
+              "120",
+              "201",
+              "0215"
+            ],
+            "valid": false
+          }
+        ],
+        "answer": "2010"
+      },
+      "rewritten": {
+        "allFourLengthPartitions": [
+          {
+            "fourDigitPosition": 1,
+            "parts": [
+              "7184",
+              "060",
+              "235",
+              "674"
+            ],
+            "valid": false
+          },
+          {
+            "fourDigitPosition": 2,
+            "parts": [
+              "718",
+              "4060",
+              "235",
+              "674"
+            ],
+            "valid": true
+          },
+          {
+            "fourDigitPosition": 3,
+            "parts": [
+              "718",
+              "406",
+              "0235",
+              "674"
+            ],
+            "valid": false
+          },
+          {
+            "fourDigitPosition": 4,
+            "parts": [
+              "718",
+              "406",
+              "023",
+              "5674"
+            ],
+            "valid": false
+          }
+        ],
+        "answer": "4060"
+      }
+    },
+    {
+      "editionId": "femo4-winter-grade4-02",
+      "savedSource": {
+        "sameCarriageFrontBackCheck": [
+          17,
+          14,
+          30
+        ],
+        "answer": "30"
+      },
+      "rewritten": {
+        "sameCarriageFrontBackCheck": [
+          18,
+          11,
+          28
+        ],
+        "answer": "28"
+      }
+    },
+    {
+      "editionId": "femo4-winter-grade4-03",
+      "savedSource": {
+        "consistentAgesWitness": {
+          "brothers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "girl": 15,
+          "yearsLater": 3,
+          "sumGap": 12,
+          "allChildren": 6
+        },
+        "answer": "6"
+      },
+      "rewritten": {
+        "consistentAgesWitness": {
+          "brothers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "girl": 21,
+          "yearsLater": 4,
+          "sumGap": 20,
+          "allChildren": 7
+        },
+        "answer": "7"
+      }
+    },
+    {
+      "editionId": "femo4-winter-grade4-04",
+      "savedSource": {
+        "everySavingsWeek": {
+          "transactions": [
+            [
+              "gift",
+              1
+            ],
+            [
+              "deposit",
+              2
+            ],
+            [
+              "deposit",
+              3
+            ],
+            [
+              "deposit",
+              4
+            ],
+            [
+              "deposit",
+              5
+            ],
+            [
+              "deposit",
+              6
+            ],
+            [
+              "deposit",
+              7
+            ],
+            [
+              "deposit",
+              8
+            ],
+            [
+              "deposit",
+              9
+            ]
+          ],
+          "weekly": 3,
+          "gift": 12,
+          "deposits": 24,
+          "finalBalance": 36
+        },
+        "answer": "36"
+      },
+      "rewritten": {
+        "everySavingsWeek": {
+          "transactions": [
+            [
+              "gift",
+              1
+            ],
+            [
+              "deposit",
+              2
+            ],
+            [
+              "deposit",
+              3
+            ],
+            [
+              "deposit",
+              4
+            ],
+            [
+              "deposit",
+              5
+            ],
+            [
+              "deposit",
+              6
+            ],
+            [
+              "deposit",
+              7
+            ],
+            [
+              "deposit",
+              8
+            ],
+            [
+              "deposit",
+              9
+            ],
+            [
+              "deposit",
+              10
+            ]
+          ],
+          "weekly": 400,
+          "gift": 1800,
+          "deposits": 3600,
+          "finalBalance": 5400
+        },
+        "answer": "5400"
+      }
+    },
+    {
+      "editionId": "femo4-winter-grade4-05",
+      "savedSource": {
+        "everyDistinctDigitAssignmentCount": 4536,
+        "allValidAssignments": [
+          {
+            "digits": {
+              "F": 1,
+              "E": 9,
+              "M": 8,
+              "O": 7
+            },
+            "summands": [
+              1987,
+              19,
+              8,
+              7
+            ]
+          }
+        ],
+        "askedLetter": "O",
+        "answer": "7"
+      },
+      "rewritten": {
+        "everyDistinctDigitAssignmentCount": 4536,
+        "allValidAssignments": [
+          {
+            "digits": {
+              "J": 3,
+              "A": 6,
+              "R": 8,
+              "Y": 4
+            },
+            "summands": [
+              3684,
+              36,
+              8,
+              4
+            ]
+          }
+        ],
+        "askedLetter": "Y",
+        "answer": "4"
+      }
+    },
+    {
+      "editionId": "femo4-winter-grade4-06",
+      "savedSource": {
+        "wholeSquareCellLedger": {
+          "outerSide": 11,
+          "borderCount": 40,
+          "interiorCount": 81,
+          "fullCount": 121
+        },
+        "answer": "81"
+      },
+      "rewritten": {
+        "wholeSquareCellLedger": {
+          "outerSide": 12,
+          "borderCount": 44,
+          "interiorCount": 100,
+          "fullCount": 144
+        },
+        "answer": "100",
+        "figure": {
+          "sha256": "d0237bafcbd0d7ddcf3b7938571d9e00498b90f9cfdfa1e942ffbe7f99d2cdce",
+          "visibleIllustrativeCubes": 7,
+          "actualFaceCount": 21,
+          "actualProjectedVertices": 84,
+          "illustrativePartialCornerNotFullBorder": true
+        }
+      }
+    },
+    {
+      "editionId": "femo4-winter-grade4-07",
+      "savedSource": {
+        "unitAndBundlePrices": [
+          "32",
+          "58",
+          "148",
+          "122",
+          "90"
+        ],
+        "answer": "90"
+      },
+      "rewritten": {
+        "unitAndBundlePrices": [
+          "200",
+          "270",
+          "740",
+          "670",
+          "470"
+        ],
+        "answer": "470"
+      }
+    },
+    {
+      "editionId": "femo4-winter-grade4-08",
+      "savedSource": {
+        "all9000FourDigitNumbersChecked": true,
+        "allAdmissibleNumbers": [
+          1036,
+          1126,
+          1216,
+          1306,
+          2027,
+          2117,
+          2207,
+          3018,
+          3108,
+          4009
+        ],
+        "answer": "10"
+      },
+      "rewritten": {
+        "all9000FourDigitNumbersChecked": true,
+        "allAdmissibleNumbers": [
+          1046,
+          1136,
+          1226,
+          1316,
+          1406,
+          2037,
+          2127,
+          2217,
+          2307,
+          3028,
+          3118,
+          3208,
+          4019,
+          4109
+        ],
+        "answer": "14"
+      }
+    },
+    {
+      "editionId": "femo4-winter-grade4-09",
+      "savedSource": {
+        "allClosedRingTruthCounts": {
+          "13": 1650
+        },
+        "dynamicStatesChecked": 455,
+        "consistentSeatWitness": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "answer": "13"
+      },
+      "rewritten": {
+        "allClosedRingTruthCounts": {
+          "14": 7293
+        },
+        "dynamicStatesChecked": 695,
+        "consistentSeatWitness": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "answer": "14"
+      }
+    },
+    {
+      "editionId": "femo4-winter-grade4-10",
+      "savedSource": {
+        "exactContinuousPath": {
+          "meetingTime": "1",
+          "dogDistance": 9,
+          "firstFourBounces": [
+            {
+              "time": "2/3",
+              "position": "6",
+              "legDistance": "6"
+            },
+            {
+              "time": "12/13",
+              "position": "48/13",
+              "legDistance": "30/13"
+            },
+            {
+              "time": "38/39",
+              "position": "54/13",
+              "legDistance": "6/13"
+            },
+            {
+              "time": "168/169",
+              "position": "672/169",
+              "legDistance": "30/169"
+            }
+          ],
+          "remainingTimeRatioPerTwoBounces": "1/13"
+        },
+        "answer": "9"
+      },
+      "rewritten": {
+        "exactContinuousPath": {
+          "meetingTime": "2",
+          "dogDistance": 22,
+          "firstFourBounces": [
+            {
+              "time": "1",
+              "position": "11",
+              "legDistance": "11"
+            },
+            {
+              "time": "11/7",
+              "position": "33/7",
+              "legDistance": "44/7"
+            },
+            {
+              "time": "25/14",
+              "position": "99/14",
+              "legDistance": "33/14"
+            },
+            {
+              "time": "187/98",
+              "position": "561/98",
+              "legDistance": "66/49"
+            }
+          ],
+          "remainingTimeRatioPerTwoBounces": "3/14"
+        },
+        "answer": "22"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "editionId": "femo4-winter-grade4-01",
+      "sha256": "dfb4e5f597707495241c0dd2b3be4ff403b4bd302bc1eaca08bc8b49a55daad9",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read all10full source/new conditions and full solutions, source keys absent. All4length partitions,4536distinct digit assignments,9000four-digit numbers, complete circular local-truth DP states, exact savings/cohort/bundle/whole-square and continuous moving-endpoint ledgers checked. Same root author, no separate human review.",
+      "notes": [
+        "{\"allFourLengthPartitions\": [{\"fourDigitPosition\": 1, \"parts\": [\"7184\", \"060\", \"235\", \"674\"], \"valid\": false}, {\"fourDigitPosition\": 2, \"parts\": [\"718\", \"4060\", \"235\", \"674\"], \"valid\": true}, {\"fourDigitPosition\": 3, \"parts\": [\"718\", \"406\", \"0235\", \"674\"], \"valid\": false}, {\"fourDigitPosition\": 4, \"parts\": [\"718\", \"406\", \"023\", \"5674\"], \"valid\": false}], \"answer\": \"4060\"}"
+      ]
+    },
+    {
+      "editionId": "femo4-winter-grade4-02",
+      "sha256": "c1819acbdc5a174b65e9bf598824a43b7110b538e014fb5647991e00b33f2682",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read all10full source/new conditions and full solutions, source keys absent. All4length partitions,4536distinct digit assignments,9000four-digit numbers, complete circular local-truth DP states, exact savings/cohort/bundle/whole-square and continuous moving-endpoint ledgers checked. Same root author, no separate human review.",
+      "notes": [
+        "{\"sameCarriageFrontBackCheck\": [18, 11, 28], \"answer\": \"28\"}"
+      ]
+    },
+    {
+      "editionId": "femo4-winter-grade4-03",
+      "sha256": "49ac099da5226d860800447402cfd277e168af3d5d426a76a4754a102d680890",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read all10full source/new conditions and full solutions, source keys absent. All4length partitions,4536distinct digit assignments,9000four-digit numbers, complete circular local-truth DP states, exact savings/cohort/bundle/whole-square and continuous moving-endpoint ledgers checked. Same root author, no separate human review.",
+      "notes": [
+        "{\"consistentAgesWitness\": {\"brothers\": [1, 2, 3, 4, 5, 6], \"girl\": 21, \"yearsLater\": 4, \"sumGap\": 20, \"allChildren\": 7}, \"answer\": \"7\"}"
+      ]
+    },
+    {
+      "editionId": "femo4-winter-grade4-04",
+      "sha256": "6f1f8cb6753982c893c81469bb353410d56f2e27ffe647c63f7cdd772bae2f8d",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read all10full source/new conditions and full solutions, source keys absent. All4length partitions,4536distinct digit assignments,9000four-digit numbers, complete circular local-truth DP states, exact savings/cohort/bundle/whole-square and continuous moving-endpoint ledgers checked. Same root author, no separate human review.",
+      "notes": [
+        "{\"everySavingsWeek\": {\"transactions\": [[\"gift\", 1], [\"deposit\", 2], [\"deposit\", 3], [\"deposit\", 4], [\"deposit\", 5], [\"deposit\", 6], [\"deposit\", 7], [\"deposit\", 8], [\"deposit\", 9], [\"deposit\", 10]], \"weekly\": 400, \"gift\": 1800, \"deposits\": 3600, \"finalBalance\": 5400}, \"answer\": \"5400\"}"
+      ]
+    },
+    {
+      "editionId": "femo4-winter-grade4-05",
+      "sha256": "f0720823eb1ce586f688d9cacc82edeed4d9e0c9b8f146d21c0324658767e481",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read all10full source/new conditions and full solutions, source keys absent. All4length partitions,4536distinct digit assignments,9000four-digit numbers, complete circular local-truth DP states, exact savings/cohort/bundle/whole-square and continuous moving-endpoint ledgers checked. Same root author, no separate human review.",
+      "notes": [
+        "{\"everyDistinctDigitAssignmentCount\": 4536, \"allValidAssignments\": [{\"digits\": {\"J\": 3, \"A\": 6, \"R\": 8, \"Y\": 4}, \"summands\": [3684, 36, 8, 4]}], \"askedLetter\": \"Y\", \"answer\": \"4\"}"
+      ]
+    },
+    {
+      "editionId": "femo4-winter-grade4-06",
+      "sha256": "df0e75c633d5b1a225c5ec0fded84c44dcbdfb6cc4c8cb81f20c86a7891b4dcb",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read all10full source/new conditions and full solutions, source keys absent. All4length partitions,4536distinct digit assignments,9000four-digit numbers, complete circular local-truth DP states, exact savings/cohort/bundle/whole-square and continuous moving-endpoint ledgers checked. Same root author, no separate human review.",
+      "notes": [
+        "{\"wholeSquareCellLedger\": {\"outerSide\": 12, \"borderCount\": 44, \"interiorCount\": 100, \"fullCount\": 144}, \"answer\": \"100\"}"
+      ],
+      "figureReview": {
+        "status": "verified",
+        "sha256": "d0237bafcbd0d7ddcf3b7938571d9e00498b90f9cfdfa1e942ffbe7f99d2cdce",
+        "method": "Actual21unit-cube faces/84projected corners checked; diagram explicitly illustrative partial corner, full44cube border separately enumerated. Archived source raster and new343px preview inspected. No tracing/source image."
+      }
+    },
+    {
+      "editionId": "femo4-winter-grade4-07",
+      "sha256": "ecac92771e508c1ca548a1a57a6788ffde83d9767777700a59128df9de494db7",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read all10full source/new conditions and full solutions, source keys absent. All4length partitions,4536distinct digit assignments,9000four-digit numbers, complete circular local-truth DP states, exact savings/cohort/bundle/whole-square and continuous moving-endpoint ledgers checked. Same root author, no separate human review.",
+      "notes": [
+        "{\"unitAndBundlePrices\": [\"200\", \"270\", \"740\", \"670\", \"470\"], \"answer\": \"470\"}"
+      ]
+    },
+    {
+      "editionId": "femo4-winter-grade4-08",
+      "sha256": "edad7279b6349eed662d3f6ca089b06d1d6c29b96c10e9326339e9aebc2b769e",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read all10full source/new conditions and full solutions, source keys absent. All4length partitions,4536distinct digit assignments,9000four-digit numbers, complete circular local-truth DP states, exact savings/cohort/bundle/whole-square and continuous moving-endpoint ledgers checked. Same root author, no separate human review.",
+      "notes": [
+        "{\"all9000FourDigitNumbersChecked\": true, \"allAdmissibleNumbers\": [1046, 1136, 1226, 1316, 1406, 2037, 2127, 2217, 2307, 3028, 3118, 3208, 4019, 4109], \"answer\": \"14\"}"
+      ]
+    },
+    {
+      "editionId": "femo4-winter-grade4-09",
+      "sha256": "700e61a7fa0b1facda7800bb665411ed44917dd83859fd4797bc1fab7a91071b",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read all10full source/new conditions and full solutions, source keys absent. All4length partitions,4536distinct digit assignments,9000four-digit numbers, complete circular local-truth DP states, exact savings/cohort/bundle/whole-square and continuous moving-endpoint ledgers checked. Same root author, no separate human review.",
+      "notes": [
+        "{\"allClosedRingTruthCounts\": {\"14\": 7293}, \"dynamicStatesChecked\": 695, \"consistentSeatWitness\": [1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0], \"answer\": \"14\"}"
+      ]
+    },
+    {
+      "editionId": "femo4-winter-grade4-10",
+      "sha256": "ef4d10185290fce04d6686c0e773d964a83aca1d09770310e82745df29794241",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read all10full source/new conditions and full solutions, source keys absent. All4length partitions,4536distinct digit assignments,9000four-digit numbers, complete circular local-truth DP states, exact savings/cohort/bundle/whole-square and continuous moving-endpoint ledgers checked. Same root author, no separate human review.",
+      "notes": [
+        "{\"exactContinuousPath\": {\"meetingTime\": \"2\", \"dogDistance\": 22, \"firstFourBounces\": [{\"time\": \"1\", \"position\": \"11\", \"legDistance\": \"11\"}, {\"time\": \"11/7\", \"position\": \"33/7\", \"legDistance\": \"44/7\"}, {\"time\": \"25/14\", \"position\": \"99/14\", \"legDistance\": \"33/14\"}, {\"time\": \"187/98\", \"position\": \"561/98\", \"legDistance\": \"66/49\"}], \"remainingTimeRatioPerTwoBounces\": \"3/14\"}, \"answer\": \"22\"}"
+      ]
+    }
+  ]
+}

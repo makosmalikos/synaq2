@@ -1,0 +1,412 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All7 saved visual grade5topic1.10 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade5topic1.10",
+    "sourceVisualOccurrences": 7,
+    "addressedNewDrafts": 7,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "0ee7a8860c9283a5",
+      "1d0668bd66b8af5b",
+      "1d6481c44af93caf",
+      "3dd6dcde825a8b9b",
+      "69b0bc240adaf987",
+      "6d6f8827339cfd5a",
+      "7452b587be9b403d"
+    ],
+    "distinctModels": 7,
+    "semantics": "All7pictured-equation targets remain source-specific: multi/single unknown balance, price tape, baseline-person bars, mixed-unit repeated cuts, pair-weighing double counting and boxes-plus-loose-items equation."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave29-four-boxes-plus-eleven-balance",
+      "modelId": "visual-wave29-multiple-box-balance",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "balance",
+        "count": 4,
+        "known": 11,
+        "total": 47
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "7452b587be9b403d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-10-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-10-level1.json#6",
+      "sourceCanonicalSha256": "fb415052d0b5e69ec055c652990f5a2118b3195c2c0ecd2c9046505bc81d0f7c",
+      "sourceSkill": "Reading a level balance with repeated unknown masses and a known mass, inverting addition then multiplication",
+      "adaptationChanges": [
+        "Әр бастапқы модель жеке сақталды: белгісіз қосылғыш/көбейткіш, бағасы бірдей бөліктер, үш адамның салыстырмалы жолағы, арқаннан тең бөліктер кесу, жұп массаларды екі рет санау және жеке қарындаштарды қосу.",
+        "Жәшік/қорап/кесінді сандары, белгілі гірлер, бағалар, қосымша бөліктер, барлық ұзындықтар мен массалар жаңадан берілді.",
+        "Native SVG жаңа параметрлерден математикалық құрылым бойынша салынды. Жеті бастапқы raster архивте бар; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша теңдеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7fullsource/newsolution/MCQ review; level balances and actual box counts, ellipsis semantics, equal blue bars with metric extra, cm/m conversion, three pair labels, actual loose-pencil count and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave29-four-boxes-plus-eleven-balance.svg",
+      "verificationModule": "scripts/editorial/visual-wave29-models.mjs",
+      "statement": "Таразы тепе-теңдікте тұр. Бірдей көк жәшіктердің әрқайсысының массасы x кг; белгілі гірлердің массалары суретте көрсетілген. Таразыға сәйкес теңдеу құрып, бір жәшіктің массасын килограммен табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Сол табақта 4 жәшік және 11 кг, оң жақта 47 кг. Теңдеу 4 × x + 11 = 47. Жәшіктер бірге 47 − 11 = 36 кг. Біреуі x = 36 : 4 = 9 кг. Тексеру: 4 × 9 + 11 = 47.",
+      "figureDescription": "Тепе-тең таразы: сол жақта 4 көк x жәшік пен 11 кг гір, оңда 47 кг гір.",
+      "figureSha256": "d5985a78c7405c8cfd52e6cb16e87d8ca7745f6301b6c8d653f30c152658728d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": {
+          "boxes": 36,
+          "count": 4,
+          "total": 47
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave29-single-box-plus-thirty-two",
+      "modelId": "visual-wave29-single-box-balance",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "balance",
+        "count": 1,
+        "known": 32,
+        "total": 86
+      },
+      "answer": "54",
+      "sourceRefs": [
+        {
+          "sourceId": "0ee7a8860c9283a5",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-10-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-10-level1.json#14",
+      "sourceCanonicalSha256": "45351cafae34b38d4f3213e07196d3df3f0e1a005a8d0839f366d2b509efb805",
+      "sourceSkill": "Reading a single unknown addend from a balanced scale and subtracting the known mass",
+      "adaptationChanges": [
+        "Әр бастапқы модель жеке сақталды: белгісіз қосылғыш/көбейткіш, бағасы бірдей бөліктер, үш адамның салыстырмалы жолағы, арқаннан тең бөліктер кесу, жұп массаларды екі рет санау және жеке қарындаштарды қосу.",
+        "Жәшік/қорап/кесінді сандары, белгілі гірлер, бағалар, қосымша бөліктер, барлық ұзындықтар мен массалар жаңадан берілді.",
+        "Native SVG жаңа параметрлерден математикалық құрылым бойынша салынды. Жеті бастапқы raster архивте бар; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша теңдеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7fullsource/newsolution/MCQ review; level balances and actual box counts, ellipsis semantics, equal blue bars with metric extra, cm/m conversion, three pair labels, actual loose-pencil count and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave29-single-box-plus-thirty-two.svg",
+      "verificationModule": "scripts/editorial/visual-wave29-models.mjs",
+      "statement": "Таразы тепе-теңдікте тұр. Көк жәшіктің массасы x кг; белгілі гірлердің массалары суретте көрсетілген. Теңдеу құрып, жәшіктің массасын килограммен табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Сол табақта бір x жәшік және 32 кг, оң жақта 86 кг. Теңдеу x + 32 = 86. Белгісіз қосылғыш x = 86 − 32 = 54 кг. Тексеру: 54 + 32 = 86.",
+      "figureDescription": "Тепе-тең таразы: сол жақта 1 көк x жәшік пен 32 кг гір, оңда 86 кг гір.",
+      "figureSha256": "184e062d3bdb2ec2eb46b8a6bc48fab6a10d717be3c5e3a0d084c5d39967804f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "54",
+        "checks": {
+          "boxes": 54,
+          "count": 1,
+          "total": 86
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave29-unknown-notebook-count-equation",
+      "modelId": "visual-wave29-equal-price-equation",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "price-tape",
+        "price": 180,
+        "total": 1260
+      },
+      "answer": "180 × x = 1260",
+      "sourceRefs": [
+        {
+          "sourceId": "3dd6dcde825a8b9b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-10-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-10-level1.json#15",
+      "sourceCanonicalSha256": "646529e2797086f1640b63c65dd2a2b7f37a0b2b356e76e0107650c73395c3c5",
+      "sourceSkill": "Choosing a unit-price-times-unknown-count equation from an incomplete repeated-price tape",
+      "adaptationChanges": [
+        "Әр бастапқы модель жеке сақталды: белгісіз қосылғыш/көбейткіш, бағасы бірдей бөліктер, үш адамның салыстырмалы жолағы, арқаннан тең бөліктер кесу, жұп массаларды екі рет санау және жеке қарындаштарды қосу.",
+        "Жәшік/қорап/кесінді сандары, белгілі гірлер, бағалар, қосымша бөліктер, барлық ұзындықтар мен массалар жаңадан берілді.",
+        "Native SVG жаңа параметрлерден математикалық құрылым бойынша салынды. Жеті бастапқы raster архивте бар; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша теңдеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7fullsource/newsolution/MCQ review; level balances and actual box counts, ellipsis semantics, equal blue bars with metric extra, cm/m conversion, three pair labels, actual loose-pencil count and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave29-unknown-notebook-count-equation.svg",
+      "verificationModule": "scripts/editorial/visual-wave29-models.mjs",
+      "options": [
+        "180 × x = 1260",
+        "x + 180 = 1260",
+        "x : 180 = 1260",
+        "1260 × x = 180"
+      ],
+      "statement": "Бірдей дәптерлердің жалпы құны мен біреуінің бағасы сызбада берілген. Бөліктердің толық саны x, көп нүкте басқа дәптерлердің жалғасын білдіреді. Осы сатып алуға сәйкес теңдеуді таңдаңыз.",
+      "solution": "Бір дәптер 180 теңге, саны x. Жалпы құн 180 × x, сондықтан 180 × x = 1260. Бұл көбейту теңдеуі; баға мен санды қосу немесе рөлдерін ауыстыру жарамайды. Тексеру үшін x = 1260 : 180 = 7; 180 × 7 = 1260.",
+      "figureDescription": "Жалпы 1260 теңгелік жолақ; бірдей бөліктер 180 теңгеден, көп нүкте жалғасын білдіреді, толық саны x.",
+      "figureSha256": "b64904d0cae2d551311d78e2ebc69a1d0292d82740ab37392d815ed8bd482f2d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "180 × x = 1260",
+        "checks": {
+          "target": 7,
+          "roots": [
+            "7",
+            "1080",
+            "226800",
+            "1/7"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave29-three-stamp-bars-ali",
+      "modelId": "visual-wave29-three-stamp-bars",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "stamp-bars",
+        "secondFactor": 3,
+        "extra": 14,
+        "total": 154
+      },
+      "answer": "28",
+      "sourceRefs": [
+        {
+          "sourceId": "6d6f8827339cfd5a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-10-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-10-level2.json#0",
+      "sourceCanonicalSha256": "ab6ce00c4004f61a3df498b526cc8a04d78ec2ce720535caec78f0ab9c432a84",
+      "sourceSkill": "Choosing the queried baseline quantity in a three-person tape, combining repeated coefficients and a fixed extra",
+      "adaptationChanges": [
+        "Әр бастапқы модель жеке сақталды: белгісіз қосылғыш/көбейткіш, бағасы бірдей бөліктер, үш адамның салыстырмалы жолағы, арқаннан тең бөліктер кесу, жұп массаларды екі рет санау және жеке қарындаштарды қосу.",
+        "Жәшік/қорап/кесінді сандары, белгілі гірлер, бағалар, қосымша бөліктер, барлық ұзындықтар мен массалар жаңадан берілді.",
+        "Native SVG жаңа параметрлерден математикалық құрылым бойынша салынды. Жеті бастапқы raster архивте бар; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша теңдеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7fullsource/newsolution/MCQ review; level balances and actual box counts, ellipsis semantics, equal blue bars with metric extra, cm/m conversion, three pair labels, actual loose-pencil count and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave29-three-stamp-bars-ali.svg",
+      "verificationModule": "scripts/editorial/visual-wave29-models.mjs",
+      "statement": "Әли (A), Бота (B) және Дәурен (D) марка жинаған. Бірдей көк бөліктер бірдей марка санын білдіреді; сары бөлікте қосымша марка саны берілген. Үшеуінің жалпы саны жақшада көрсетілген. Әли неше марка жинаған? Жауапқа тек санды жазыңыз.",
+      "solution": "Әлидің маркасы x болса, Ботада 3 × x, Дәуренде x + 14. Теңдеу x + 3 × x + x + 14 = 154, яғни 5 × x + 14 = 154. 5 × x = 140, x = 28. Тексеру: 28 + 84 + 42 = 154. Әли туралы сұралғандықтан, x-тің өзі алынады.",
+      "figureDescription": "A бір көк бөлік; B 3 сондай бөлік; D бір көк бөлік пен 14 сары қосымша. Үшеуі бірге 154.",
+      "figureSha256": "c2aad80f263b0269e60cb0e3b300886629db21fc8ea0aa3312fdab7906e86acf",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "28",
+        "checks": {
+          "coeff": 5,
+          "remaining": 140,
+          "counts": [
+            28,
+            84,
+            42
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave29-four-equal-rope-cuts",
+      "modelId": "visual-wave29-rope-cut-equation",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rope",
+        "wholeMetres": 7,
+        "cuts": 4,
+        "remaining": 180
+      },
+      "answer": "130",
+      "sourceRefs": [
+        {
+          "sourceId": "69b0bc240adaf987",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-10-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-10-level2.json#9",
+      "sourceCanonicalSha256": "879aea6b1be26511264409fd75cd0c9159449a0893050ad55eb26650959dee37",
+      "sourceSkill": "Converting metres to centimetres, forming whole-minus-repeated-cuts equals remainder and finding one cut",
+      "adaptationChanges": [
+        "Әр бастапқы модель жеке сақталды: белгісіз қосылғыш/көбейткіш, бағасы бірдей бөліктер, үш адамның салыстырмалы жолағы, арқаннан тең бөліктер кесу, жұп массаларды екі рет санау және жеке қарындаштарды қосу.",
+        "Жәшік/қорап/кесінді сандары, белгілі гірлер, бағалар, қосымша бөліктер, барлық ұзындықтар мен массалар жаңадан берілді.",
+        "Native SVG жаңа параметрлерден математикалық құрылым бойынша салынды. Жеті бастапқы raster архивте бар; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша теңдеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7fullsource/newsolution/MCQ review; level balances and actual box counts, ellipsis semantics, equal blue bars with metric extra, cm/m conversion, three pair labels, actual loose-pencil count and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave29-four-equal-rope-cuts.svg",
+      "verificationModule": "scripts/editorial/visual-wave29-models.mjs",
+      "options": [
+        "130",
+        "520",
+        "175",
+        "43"
+      ],
+      "statement": "Арқаннан ұзындықтары бірдей көк бөліктер кесілген. Бүкіл ұзындық пен қалған ақ бөліктің ұзындығы сызбада берілген. Теңдеу құрып, әр кесілген бөліктің сантиметрмен ұзындығын таңдаңыз.",
+      "solution": "Алдымен 7 м = 700 см. Кесілген 4 бөлік 4 × x см. Теңдеу 700 − 4 × x = 180. Демек, 4 × x = 700 − 180 = 520, x = 520 : 4 = 130 см. Тексеру: 4 × 130 + 180 = 700 см.",
+      "figureDescription": "Арқанның бүкіл ұзындығы 7 м, 4 бірдей көк бөліктің әрқайсысы x; ақ қалған бөлік 180 см.",
+      "figureSha256": "83ca41c1bed786302f8561355b933766644bf2c76ae2194aebc262d5ba14e5f6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "130",
+        "checks": {
+          "total": 700,
+          "left": 520,
+          "cuts": 4
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave29-three-pair-weighings-middle-child",
+      "modelId": "visual-wave29-pair-masses-target-middle",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "pair-scales",
+        "ab": 72,
+        "bd": 80,
+        "ad": 68
+      },
+      "answer": "42",
+      "sourceRefs": [
+        {
+          "sourceId": "1d6481c44af93caf",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-10-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-10-level3.json#5",
+      "sourceCanonicalSha256": "98bd1f4ed6e7748f8c77277b95dcd175258e674d1a579c9f504072baf007ebb9",
+      "sourceSkill": "Recognizing every person is counted twice across the three pair masses, then subtracting the non-target pair",
+      "adaptationChanges": [
+        "Әр бастапқы модель жеке сақталды: белгісіз қосылғыш/көбейткіш, бағасы бірдей бөліктер, үш адамның салыстырмалы жолағы, арқаннан тең бөліктер кесу, жұп массаларды екі рет санау және жеке қарындаштарды қосу.",
+        "Жәшік/қорап/кесінді сандары, белгілі гірлер, бағалар, қосымша бөліктер, барлық ұзындықтар мен массалар жаңадан берілді.",
+        "Native SVG жаңа параметрлерден математикалық құрылым бойынша салынды. Жеті бастапқы raster архивте бар; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша теңдеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7fullsource/newsolution/MCQ review; level balances and actual box counts, ellipsis semantics, equal blue bars with metric extra, cm/m conversion, three pair labels, actual loose-pencil count and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave29-three-pair-weighings-middle-child.svg",
+      "verificationModule": "scripts/editorial/visual-wave29-models.mjs",
+      "statement": "A, B және D оқушылары таразыға екеуден шықты. Үш таразының көрсеткіштері суретте берілген. B оқушысының массасы неше килограмм? Жауапқа тек санды жазыңыз.",
+      "solution": "Үш жұп массасын қоссақ, әр оқушы екі рет есептеледі: 72 + 80 + 68 = 220 кг. Үшеуінің массасы 220 : 2 = 110 кг. A мен D бірге 68 кг, сондықтан B = 110 − 68 = 42 кг. Тексеру: A = 30, D = 38; 30 + 42 = 72, 42 + 38 = 80, 30 + 38 = 68.",
+      "figureDescription": "Үш таразы: A және B 72 кг; B және D 80 кг; A және D 68 кг.",
+      "figureSha256": "475f08bc42335cd61285d28f111a3549b9f1c6cf563dcb52133a86d991162780",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "42",
+        "checks": {
+          "doubled": 220,
+          "combined": 110,
+          "a": 30,
+          "b": 42,
+          "d": 38
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave29-four-pencil-boxes-nine-loose",
+      "modelId": "visual-wave29-pencil-box-equation",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "pencils",
+        "boxes": 4,
+        "loose": 9,
+        "total": 73
+      },
+      "answer": "4 × x + 9 = 73",
+      "sourceRefs": [
+        {
+          "sourceId": "1d0668bd66b8af5b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-10-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-10-leveltest.json#6",
+      "sourceCanonicalSha256": "7f35e6f8d86ec4e93b04dbd2c01cd3b2942a536be7573e39c73e8828a0960060",
+      "sourceSkill": "Choosing the additive loose-item plus repeated unknown-box equation without repeating loose pencils in every box",
+      "adaptationChanges": [
+        "Әр бастапқы модель жеке сақталды: белгісіз қосылғыш/көбейткіш, бағасы бірдей бөліктер, үш адамның салыстырмалы жолағы, арқаннан тең бөліктер кесу, жұп массаларды екі рет санау және жеке қарындаштарды қосу.",
+        "Жәшік/қорап/кесінді сандары, белгілі гірлер, бағалар, қосымша бөліктер, барлық ұзындықтар мен массалар жаңадан берілді.",
+        "Native SVG жаңа параметрлерден математикалық құрылым бойынша салынды. Жеті бастапқы raster архивте бар; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша теңдеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7fullsource/newsolution/MCQ review; level balances and actual box counts, ellipsis semantics, equal blue bars with metric extra, cm/m conversion, three pair labels, actual loose-pencil count and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave29-four-pencil-boxes-nine-loose.svg",
+      "verificationModule": "scripts/editorial/visual-wave29-models.mjs",
+      "options": [
+        "4 + x + 9 = 73",
+        "4 × x + 9 = 73",
+        "4 × (x + 9) = 73",
+        "4 × x − 9 = 73"
+      ],
+      "statement": "Әр көк қорапта x қарындаш бар, сары белгілер — жеке қарындаштар. Жоғарыда барлық қарындаш саны жазылған. Суретке сәйкес теңдеуді таңдаңыз.",
+      "solution": "4 қорапта 4 × x қарындаш бар. Тағы 9 жеке қарындаш қосылады, сондықтан 4 × x + 9 = 73. Жеке қарындаштарды әр қорапқа қайталап қоспаймыз. Шешсек, x = (73 − 9) : 4 = 16. Тексеру: 4 × 16 + 9 = 73.",
+      "figureDescription": "4 көк x қорап және 9 жеке сары қарындаш; жалпы саны 73.",
+      "figureSha256": "53d16f791de101b082cda8a1e17cec9f6a61022e3199e2fb021c0a44c153718c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4 × x + 9 = 73",
+        "checks": {
+          "target": 16,
+          "roots": [
+            "60",
+            "16",
+            "37/4",
+            "41/2"
+          ]
+        }
+      }
+    }
+  ]
+}

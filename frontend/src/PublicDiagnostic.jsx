@@ -144,7 +144,7 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
         <section className="public-diag-question">
           <span className="public-diag-topic">{subjectNames[current.topic]?.[lang] || topicName(current.topic, lang)}</span>
           <h1>{current.statement}</h1>
-          {mainFigureSrc(current) && <QuestionFigure src={mainFigureSrc(current)} />}
+          {mainFigureSrc(current) && <QuestionFigure src={mainFigureSrc(current)} questionId={current.id} />}
           {current.options ? <div className={`public-diag-options${hasFigureOptions(current) ? ' figure-options' : ''}`}>{current.options.map((option, optionIndex) => <button type="button" key={`${optionIndex}-${option}`} className={answers[current.id] === option ? 'on' : ''} onClick={() => setAnswers((value) => ({ ...value, [current.id]: option }))}><i>{String.fromCharCode(65 + optionIndex)}</i><FigureOption question={current} value={option} /></button>)}</div>
             : <input aria-label={lang === 'ru' ? 'Ваш ответ' : 'Жауабыңыз'} className="public-diag-answer-input" value={answers[current.id] || ''} onChange={(event) => setAnswers((value) => ({ ...value, [current.id]: event.target.value }))} placeholder={lang === 'ru' ? 'Введите ответ' : 'Жауапты енгізіңіз'} />}
           <div className="public-diag-question-foot"><button type="button" className="public-diag-secondary" disabled={index === 0} onClick={() => setIndex((value) => value - 1)}>← {lang === 'ru' ? 'Назад' : 'Артқа'}</button><span>{answers[current.id] == null || answers[current.id] === '' ? c.pick : '✓'}</span><button type="button" className="public-diag-primary" onClick={next}>{index === questions.length - 1 ? c.finish : c.next} →</button></div>

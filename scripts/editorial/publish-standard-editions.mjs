@@ -5,11 +5,26 @@ import assert from 'node:assert/strict';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {editionHash} from './edition-review.mjs';
 const root=fileURLToPath(new URL('../../',import.meta.url));
-const groups=[['core','core-models.mjs'],['fractions','fraction-models.mjs'],['geometry','geometry-models.mjs']];
+const baseGroups=[['core','core-models.mjs'],['fractions','fraction-models.mjs'],['geometry','geometry-models.mjs']].map(([name,verifier])=>({name,verifier,file:`problems/editorial/synaq-standard-${name}.json`,reviewFile:`problems/editorial/reviews/${name}.json`}));
 const read=relative=>JSON.parse(fs.readFileSync(path.join(root,relative),'utf8'));
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const clean=s=>String(s).normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim();
 const sourceCache=new Map();
+// Course IDs and old JS aliases stay exact. Canonical collection captures use a
+// question number scoped by the source file; that number is not a global ID.
+export function findArchivedSourceQuestion(questions,ref) {
+ assert.ok(Array.isArray(questions),'Missing archived question list');
+ assert.ok(typeof ref?.sourceId==='string' && ref.sourceId.length>0,'Source reference ID must be a nonempty string');
+ const collection=typeof ref.sourceFile==='string' && ref.sourceFile.startsWith('problems/sources/zerek/collections/');
+ const matches=questions.filter(q=>{
+  if(!q || typeof q!=='object')return false;
+  const id=q.sourceContentId||q.id;
+  if(id)return id===ref.sourceId;
+  return collection && Number.isSafeInteger(q.number) && q.number>0 && String(q.number)===ref.sourceId;
+ });
+ assert.equal(matches.length,1,(matches.length?'Ambiguous':'Missing')+' archived source reference '+ref.sourceId);
+ return matches[0];
+}
 async function sourceReference(ref) {
  assert.ok(typeof ref.sourceFile==='string' && (ref.sourceFile.startsWith('problems/sources/zerek/') || /^frontend\/src\/zerek\w+Questions\.js$/.test(ref.sourceFile)),'Reference must be in the offline archive');
  assert.equal(path.resolve(root,ref.sourceFile).startsWith(root),true,'Reference escaped the repository');
@@ -17,30 +32,40 @@ async function sourceReference(ref) {
   if(ref.sourceFile.endsWith('.json'))sourceCache.set(ref.sourceFile,read(ref.sourceFile).questions);
   else {const mod=await import(pathToFileURL(path.join(root,ref.sourceFile)).href);sourceCache.set(ref.sourceFile,Object.values(mod).find(Array.isArray));}
  }
- const source=sourceCache.get(ref.sourceFile)?.find(q=>(q.sourceContentId||q.id)===ref.sourceId);
- assert.ok(source,'Missing archived source reference '+ref.sourceId);
+ const source=findArchivedSourceQuestion(sourceCache.get(ref.sourceFile),ref);
  return {source,hash:editionHash(source)};
 }
 export async function prepareStandardEditions() {
  const questions=[],records=[],seen=new Set(),models=new Set();
- for(const [group,verifierFile] of groups){
-  const file=`problems/editorial/synaq-standard-${group}.json`;
+ const manifest=read('problems/editorial/verified-batches.json');
+ assert.equal(manifest.schemaVersion,1);assert.ok(Array.isArray(manifest.batches));
+ const seenGroups=new Set();
+ for(const group of manifest.batches){
+  assert.match(group.name,/^[a-z0-9-]+$/);
+  assert.match(group.file,/^problems\/editorial\/batches\/[a-z0-9-]+\.json$/);
+  assert.match(group.reviewFile,/^problems\/editorial\/reviews\/[a-z0-9-]+\.json$/);
+  assert.match(group.verifier,/^[a-z0-9-]+\.mjs$/);
+ }
+ for(const {name:group,file,reviewFile,verifier:verifierFile} of [...baseGroups,...manifest.batches]){
+  assert.ok(!seenGroups.has(group),'Duplicate editorial group');seenGroups.add(group);
   const container=read(file),rows=Array.isArray(container)?container:container.editions;
   assert.ok(Array.isArray(rows)&&rows.length,'Missing editorial group '+group);
-  const reviews=read(`problems/editorial/reviews/${group}.json`);
-  const approved=new Map((Array.isArray(reviews)?reviews:reviews.entries).map(r=>[r.editionId,r]));
+  const reviews=read(reviewFile),reviewEntries=Array.isArray(reviews)?reviews:reviews.entries;
+  assert.ok(Array.isArray(reviewEntries),'Missing independent review entries');
+  const approved=new Map(reviewEntries.map(r=>[r.editionId,r]));
+  assert.equal(approved.size,reviewEntries.length,'Duplicate independent reviews');
   const {verifyEdition}=await import(new URL(verifierFile,import.meta.url));
   for(const row of rows){
    assert.match(row.editionId,/^[a-z0-9-]+$/);
    assert.ok([4,5,6].includes(row.grade));
-   assert.ok(['basic','medium','hard'].includes(row.difficulty));
+   assert.ok(['basic','easy','medium','hard'].includes(row.difficulty));
    const review=approved.get(row.editionId);
    assert.equal(review?.verdict,'verified','Independent review is required: '+row.editionId);
    assert.equal(review.sha256,editionHash(row),'Edited after review: '+row.editionId);
    const proof=verifyEdition(row);assert.equal(String(proof.answer),row.answer);
    assert.ok(proof.checks?.length,'Missing independent checks');
    assert.ok(row.statement.trim() && row.solution.trim() && row.answer.trim());
-   assert.doesNotMatch(row.statement+row.solution,/[\\$]|\[Image:|\[SVG/,'Unrendered source notation');
+   assert.doesNotMatch([row.statement,row.solution,row.answer,...(row.options||[])].join('\n'),/[\\$]|\[Image:|\[SVG/,'Unrendered source notation');
    assert.ok(row.sourceRefs?.length && row.adaptationChanges?.length>=2);
    const refs=[];
    for(const ref of row.sourceRefs){
@@ -52,7 +77,9 @@ export async function prepareStandardEditions() {
     assert.match(row.image,/^\/figures\/synaq-editions\/[a-z0-9-]+\.svg$/,'Only original SYNAQ edition diagrams allowed');
     const bytes=fs.readFileSync(path.join(root,'frontend/public',row.image));
     assert.equal(sha(bytes),row.figureSha256,'Figure changed after review');
-    assert.equal(row.figureReview?.status,'verified');
+    const figureReview=review.figureReview||row.figureReview;
+    assert.equal(figureReview?.status,'verified','Independent figure review is required');
+    if(review.figureReview)assert.equal(figureReview.sha256,row.figureSha256,'Figure review is for another drawing');
     assert.match(bytes.toString(),/<svg[^>]+viewBox=/);
     assert.doesNotMatch(bytes.toString(),/<image\b|<script\b|<foreignObject\b|data:image|(?:href|onload|onclick)=/i);
    }
@@ -63,7 +90,7 @@ export async function prepareStandardEditions() {
     statement:row.statement,answer:row.answer,solution:row.solution,...(row.image?{image:row.image}:{})};
    if(row.options){assert.equal(new Set(row.options).size,row.options.length);assert.equal(row.options.filter(x=>x===row.answer).length,1);question.options=row.options;}
    questions.push(question);
-   records.push({id,editionId:row.editionId,modelId:row.modelId,editorialFile:file,reviewedEditionSha256:review.sha256,
+   records.push({id,editionId:row.editionId,modelId:row.modelId,editorialFile:file,independentReviewFile:reviewFile,reviewedEditionSha256:review.sha256,
     independentReview:review,verification:proof,sourceRefs:refs,adaptationChanges:row.adaptationChanges,
     ...(row.image?{figure:{image:row.image,sha256:row.figureSha256,newDrawing:true}}:{})});
   }
@@ -71,7 +98,7 @@ export async function prepareStandardEditions() {
  return {questions,report:{schemaVersion:1,date:'2026-10-23',status:'verified_editorial_batch',
   access:{publicName:'Standard',minimumInternalPlan:'pro',includedHigherPlans:['mentor'],excluded:['free','standard (retired)']},
   summary:{verifiedEditions:questions.length,distinctModels:models.size,newFigures:questions.filter(q=>q.image).length,originalSourceTasksPublished:0},
-  scope:'This is the first reviewed authored batch. The larger source archive remains closed; source references are not a claim that every captured original has been rewritten.',
+  scope:'Only independently reviewed authored editions are included in this local registry. Remaining captured tasks stay closed until their own adaptation and review. Source references and numerical variants are not a claim of semantic uniqueness.',
   sourceCollection:'Stopped by user at 9645 source occurrences. No further collection is scheduled.',records}};
 }
 function atomicWrite(relative,value){const filename=path.join(root,relative);fs.mkdirSync(path.dirname(filename),{recursive:true});fs.writeFileSync(filename+'.next',JSON.stringify(value,null,2)+'\n');fs.renameSync(filename+'.next',filename);}

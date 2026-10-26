@@ -1,0 +1,1404 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All14savedvisualgrade5topic4.3; archived sources only, no new capture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5 topic4.3 sources",
+    "sourceVisualOccurrences": 14,
+    "addressedNewDrafts": 14,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "1bd9a9827651b5a6",
+      "1e806d7e1fb11d8b",
+      "2698fa6401e50d00",
+      "3a6ac1b0f6a50f93",
+      "53b2bbe23c1b61bc",
+      "8c74bde3bda8d2b8",
+      "8e0808d20e8da4ef",
+      "8e6df65e76531639",
+      "9965c3bfac8e9c4b",
+      "9d89468cec112c8f",
+      "af27c3cc70e0ff87",
+      "c9521adf39952822",
+      "d06d6e786cd2e854",
+      "d8b8992dfece0149"
+    ],
+    "distinctModels": 14,
+    "semantics": "Fourteen source-specific ray targets, including two-label scale inference, two-level zoom and strict interior vs unit-distance distinctions."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave58-point-one-six-tenths",
+      "modelId": "visual-wave58-tenths-ray-coordinate-with-whole",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ray",
+        "start": 0,
+        "step": 10,
+        "ticks": 20,
+        "labels": [
+          [
+            0,
+            "0"
+          ],
+          [
+            10,
+            "1"
+          ],
+          [
+            20,
+            "2"
+          ]
+        ],
+        "points": [
+          [
+            "A",
+            16
+          ]
+        ]
+      },
+      "answer": "1,6",
+      "sourceRefs": [
+        {
+          "sourceId": "2698fa6401e50d00",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-level1.json#0",
+      "sourceCanonicalSha256": "cba910445ca7bc031aa67edd26801fafd1725a58326f8fa581b800184377066d",
+      "sourceSkill": "Read10equalintervals/unit, A6tenthsafter1→1,6; hundredths1,06/lostwhole0,16/reversefrom2→1,4wrong.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-point-one-six-tenths.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "options": [
+        "1,06",
+        "0,16",
+        "1,6",
+        "1,4"
+      ],
+      "statement": "Бірлік кесінді тең аралықтарға бөлінген координаталық сәуледегі A нүктесінің координатасын таңдаңыз.",
+      "solution": "0 мен 1 арасында 10 тең аралық бар: бір қадам 0,1. A нүктесі 1-ден кейінгі 6-қадамда. Координатасы 1,6. 1,06 ондықты жүздік деп алған, 0,16 бүтін 1 мен ондық цифрды бөлшек цифрлар ретінде тізіп жазған; 1,4 — 2-ге дейін қалған 4 аралықты 1-ден кейінгі аралықтар деп шатастыру.",
+      "figureDescription": "Бірдей аралықты сәуле. Жазылған белгілер: 0 саны 0-белгіде; 1 саны 10-белгіде; 2 саны 20-белгіде. A сол жақ алғашқы белгіден 16 қадам оңда. Нұсқар оңға бағытталған.",
+      "figureSha256": "6882f7a0329ab06a8bbc1c6ad7186a584d54ba4abaad8d5357f6df135d8d3324",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "1,6",
+        "checks": {
+          "startHundredths": 0,
+          "stepHundredths": 10,
+          "intervals": 20,
+          "printedLabels": [
+            [
+              0,
+              "0"
+            ],
+            [
+              10,
+              "1"
+            ],
+            [
+              20,
+              "2"
+            ]
+          ],
+          "pointHundredths": {
+            "A": 160
+          }
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave58-fifths-ray-four-steps",
+      "modelId": "visual-wave58-fifths-ray-coordinate",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ray",
+        "start": 0,
+        "step": 20,
+        "ticks": 10,
+        "labels": [
+          [
+            0,
+            "0"
+          ],
+          [
+            5,
+            "1"
+          ],
+          [
+            10,
+            "2"
+          ]
+        ],
+        "points": [
+          [
+            "M",
+            4
+          ]
+        ]
+      },
+      "answer": "0,8",
+      "sourceRefs": [
+        {
+          "sourceId": "8e6df65e76531639",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-level1.json#2",
+      "sourceCanonicalSha256": "286a6037f4f02f3d6d881190c3c6b7e9c9988ba41473f0c34265b689fca4c676",
+      "sourceSkill": "Actual5intervals/unit→step0,2;M4steps→0,8, notstep0,1→0,4 orconcat0,45/adjacent0,6.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-fifths-ray-four-steps.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "options": [
+        "0,4",
+        "0,8",
+        "0,45",
+        "0,6"
+      ],
+      "statement": "Сәуледе 0 мен 1 арасы 5 тең бөлікке бөлінген. M нүктесінің ондық координатасы қандай?",
+      "solution": "Бір қадам (1/5) = (2/10) = 0,2. M-ға дейін 4 қадам: 4 × 0,2 = 0,8. 0,4 қадамды 0,1 деп алғанда шығады; бірлік 10-ға емес, 5-ке бөлінген.",
+      "figureDescription": "Бірдей аралықты сәуле. Жазылған белгілер: 0 саны 0-белгіде; 1 саны 5-белгіде; 2 саны 10-белгіде. M сол жақ алғашқы белгіден 4 қадам оңда. Нұсқар оңға бағытталған.",
+      "figureSha256": "a90c4de5b57f21c5de4708ef712f2f3f3e1d5329144e95b616aaf9780fe8026d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,8",
+        "checks": {
+          "startHundredths": 0,
+          "stepHundredths": 20,
+          "intervals": 10,
+          "printedLabels": [
+            [
+              0,
+              "0"
+            ],
+            [
+              5,
+              "1"
+            ],
+            [
+              10,
+              "2"
+            ]
+          ],
+          "pointHundredths": {
+            "M": 80
+          },
+          "unitSubdivision": 5
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave58-point-three-two-total-tenths",
+      "modelId": "visual-wave58-tenths-ray-total-tenths-not-decimal",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ray",
+        "start": 0,
+        "step": 10,
+        "ticks": 40,
+        "labels": [
+          [
+            0,
+            "0"
+          ],
+          [
+            10,
+            "1"
+          ],
+          [
+            20,
+            "2"
+          ],
+          [
+            30,
+            "3"
+          ],
+          [
+            40,
+            "4"
+          ]
+        ],
+        "points": [
+          [
+            "B",
+            32
+          ]
+        ]
+      },
+      "answer": "32",
+      "sourceRefs": [
+        {
+          "sourceId": "d8b8992dfece0149",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-level1.json#9",
+      "sourceCanonicalSha256": "86a2295297ef762ccbf834fcd3a62b89f404dfe5301be54767557dde28de2d46",
+      "sourceSkill": "ReadB3,2, requestTOTAL0,1units32including3whole30, notcoordinate3,2orfractional2.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-point-three-two-total-tenths.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "statement": "Сәуледегі B нүктесінің координатасын оқыңыз. Ол O бастауынан НЕШЕ ондық үлес, яғни 0,1 бірлік қашықта? Жауапқа тек санды жазыңыз.",
+      "solution": "Бір қадам — 0,1. Суреттен B(3,2) оқимыз. 3,2 = (32/10), сондықтан бастауға дейінгі қашықтық 32 ондық үлес. Бүтін 3 бірліктегі 30 ондықты да қосамыз; тек соңғы цифрды жазбаймыз.",
+      "figureDescription": "Бірдей аралықты сәуле. Жазылған белгілер: 0 саны 0-белгіде; 1 саны 10-белгіде; 2 саны 20-белгіде; 3 саны 30-белгіде; 4 саны 40-белгіде. B сол жақ алғашқы белгіден 32 қадам оңда. Нұсқар оңға бағытталған.",
+      "figureSha256": "02f05545970c3fbbb67df207c63223375461bef41ec53cf7feee8542838769d1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "32",
+        "checks": {
+          "startHundredths": 0,
+          "stepHundredths": 10,
+          "intervals": 40,
+          "printedLabels": [
+            [
+              0,
+              "0"
+            ],
+            [
+              10,
+              "1"
+            ],
+            [
+              20,
+              "2"
+            ],
+            [
+              30,
+              "3"
+            ],
+            [
+              40,
+              "4"
+            ]
+          ],
+          "pointHundredths": {
+            "B": 320
+          },
+          "totalTenths": 32,
+          "decimal": "3,2"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave58-zero-three-hidden-digit",
+      "modelId": "visual-wave58-tenths-ray-fractional-digit",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ray",
+        "start": 0,
+        "step": 10,
+        "ticks": 10,
+        "labels": [
+          [
+            0,
+            "0"
+          ],
+          [
+            10,
+            "1"
+          ]
+        ],
+        "points": [
+          [
+            "K",
+            3
+          ]
+        ]
+      },
+      "answer": "3",
+      "sourceRefs": [
+        {
+          "sourceId": "9d89468cec112c8f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-level1.json#12",
+      "sourceCanonicalSha256": "0e4d1c5f490630fec4b452760f2f15f5fb63a9214f7aeb1288f9bc05ce29204a",
+      "sourceSkill": "ReadK0,3ontenthsray;requestdigitin0,□notcoordinate0,3;complement7check.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-zero-three-hidden-digit.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "statement": "K нүктесінің координатасы 0,□ түрінде жазылады. □ орнындағы цифрды табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "0–1 арасы 10 тең қадам: әрқайсысы 0,1. K-ға дейін 3 қадам, координатасы 0,3. Сондықтан 0,□ жазуындағы □ = 3. Бірлікке дейін 7 қадам қалуы тек тексеру, сұралған цифр емес.",
+      "figureDescription": "Бірдей аралықты сәуле. Жазылған белгілер: 0 саны 0-белгіде; 1 саны 10-белгіде. K сол жақ алғашқы белгіден 3 қадам оңда. Нұсқар оңға бағытталған.",
+      "figureSha256": "214d5cea40f804e51a835a3c755a4dddba79b6f905a2b81976c8330b64c8401d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3",
+        "checks": {
+          "startHundredths": 0,
+          "stepHundredths": 10,
+          "intervals": 10,
+          "printedLabels": [
+            [
+              0,
+              "0"
+            ],
+            [
+              10,
+              "1"
+            ]
+          ],
+          "pointHundredths": {
+            "K": 30
+          },
+          "decimal": "0,3"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave58-four-points-above-one-fifteen",
+      "modelId": "visual-wave58-tenths-ray-count-above-hundredths-bound",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ray",
+        "start": 0,
+        "step": 10,
+        "ticks": 20,
+        "labels": [
+          [
+            0,
+            "0"
+          ],
+          [
+            10,
+            "1"
+          ],
+          [
+            20,
+            "2"
+          ]
+        ],
+        "points": [
+          [
+            "P",
+            6
+          ],
+          [
+            "Q",
+            12
+          ],
+          [
+            "R",
+            15
+          ],
+          [
+            "S",
+            19
+          ]
+        ],
+        "threshold": 115
+      },
+      "answer": "3",
+      "sourceRefs": [
+        {
+          "sourceId": "8c74bde3bda8d2b8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-level1.json#14",
+      "sourceCanonicalSha256": "33d9be8045a60f5e3887ef3e389ce2731a4ed542f6b3fa9c6e1fef30f57b02f1",
+      "sourceSkill": "P0,6/Q1,2/R1,5/S1,9 actualticks;compareSTRICT>1,15atdifferentfractionlength,3validQRS.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-four-points-above-one-fifteen.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "statement": "Белгіленген P, Q, R, S нүктелерінің НЕШЕУІ 1,15 санынан ҚАТАҢ ҮЛКЕН координатаға ие? Жауапқа тек санды жазыңыз.",
+      "solution": "Нүктелерді оқимыз: P(0,6), Q(1,2), R(1,5), S(1,9). Оларды 1,15 шекарасымен салыстырсақ, Q, R, S ғана қатаң үлкен. Барлығы 3. Әртүрлі орын санымен жазылған бөлшектерді салыстырғанда соңына нөл қосуға болады; шекараға теңдік қабылданбайды.",
+      "figureDescription": "Бірдей аралықты сәуле. Жазылған белгілер: 0 саны 0-белгіде; 1 саны 10-белгіде; 2 саны 20-белгіде. P сол жақ алғашқы белгіден 6 қадам оңда; Q сол жақ алғашқы белгіден 12 қадам оңда; R сол жақ алғашқы белгіден 15 қадам оңда; S сол жақ алғашқы белгіден 19 қадам оңда. Нұсқар оңға бағытталған.",
+      "figureSha256": "3e9ab35a7e49e95f7b89f366f6af969d2f1c6ecb47a70029a6b6a4a7f55ed420",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3",
+        "checks": {
+          "startHundredths": 0,
+          "stepHundredths": 10,
+          "intervals": 20,
+          "printedLabels": [
+            [
+              0,
+              "0"
+            ],
+            [
+              10,
+              "1"
+            ],
+            [
+              20,
+              "2"
+            ]
+          ],
+          "pointHundredths": {
+            "P": 60,
+            "Q": 120,
+            "R": 150,
+            "S": 190
+          },
+          "thresholdHundredths": 115,
+          "acceptedPoints": [
+            "Q",
+            "R",
+            "S"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave58-partial-ray-four-seventy-three",
+      "modelId": "visual-wave58-hundredths-partial-ray-coordinate",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "ray",
+        "start": 460,
+        "step": 1,
+        "ticks": 20,
+        "labels": [
+          [
+            0,
+            "4,6"
+          ],
+          [
+            10,
+            "4,7"
+          ],
+          [
+            20,
+            "4,8"
+          ]
+        ],
+        "points": [
+          [
+            "A",
+            7
+          ],
+          [
+            "B",
+            13
+          ]
+        ]
+      },
+      "answer": "4,73",
+      "sourceRefs": [
+        {
+          "sourceId": "d06d6e786cd2e854",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-level2.json#1",
+      "sourceCanonicalSha256": "06f368249f55b168357c7f59eb4d183fa1d9db3bb7f3f93a0f534f626e3dbdc7",
+      "sourceSkill": "Readhundredthstepfrom4,6/4,7/4,8labels;B3stepsafter4,7→4,73, notthousandth4,703/wrongbaseline4,63/swapped4,37.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-partial-ray-four-seventy-three.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "options": [
+        "4,703",
+        "4,73",
+        "4,63",
+        "4,37"
+      ],
+      "statement": "Сәуленің бір бөлігі көрсетілген. Әр ондық үлес 10 тең аралыққа бөлінген. B нүктесінің координатасын таңдаңыз.",
+      "solution": "Көршілес жазылған ондықтар арасы 10 кіші қадам, сондықтан қадам 0,01. B нүктесі 4,7 белгісінен кейінгі 3-қадамда: 4,70 + 0,03 = 4,73. 4,703 жүздікті мыңдыққа қойған, 4,63 қадамды алдыңғы ондық белгіден қате санаған, 4,37 бөлшек цифрлардың орнын ауыстырған.",
+      "figureDescription": "Бірдей аралықты сәуле. Жазылған белгілер: 4,6 саны 0-белгіде; 4,7 саны 10-белгіде; 4,8 саны 20-белгіде. A сол жақ алғашқы белгіден 7 қадам оңда; B сол жақ алғашқы белгіден 13 қадам оңда. Нұсқар оңға бағытталған.",
+      "figureSha256": "1e5eee8090e29fa372439e622e50276a716f5b3bfad973ad7cbdc26784f3a6b7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4,73",
+        "checks": {
+          "startHundredths": 460,
+          "stepHundredths": 1,
+          "intervals": 20,
+          "printedLabels": [
+            [
+              0,
+              "4,6"
+            ],
+            [
+              10,
+              "4,7"
+            ],
+            [
+              20,
+              "4,8"
+            ]
+          ],
+          "pointHundredths": {
+            "A": 467,
+            "B": 473
+          }
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave58-four-points-strict-one-fifty-five-two-eight",
+      "modelId": "visual-wave58-tenths-ray-one-point-strict-two-bounds",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "ray",
+        "start": 0,
+        "step": 10,
+        "ticks": 30,
+        "labels": [
+          [
+            0,
+            "0"
+          ],
+          [
+            10,
+            "1"
+          ],
+          [
+            20,
+            "2"
+          ],
+          [
+            30,
+            "3"
+          ]
+        ],
+        "points": [
+          [
+            "A",
+            7
+          ],
+          [
+            "B",
+            16
+          ],
+          [
+            "C",
+            23
+          ],
+          [
+            "D",
+            29
+          ]
+        ],
+        "low": 155,
+        "high": 208
+      },
+      "answer": "B",
+      "sourceRefs": [
+        {
+          "sourceId": "af27c3cc70e0ff87",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-level2.json#7",
+      "sourceCanonicalSha256": "ced7624387bdfc73f3f36af4d74c74436ef8b4cd1035d5da7d6140337ea15e7e",
+      "sourceSkill": "A0,7/B1,6/C2,3/D2,9;only1,55<B<2,08. Differentplacecomparison2,3>2,08kept, keysymbolincidentalnotnewsemanticcount.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-four-points-strict-one-fifty-five-two-eight.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "options": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "statement": "Сәуледегі қай нүктенің координатасы 1,55 санынан үлкен әрі 2,08 санынан кіші? Екі шарт та қатаң.",
+      "solution": "Координаталар A(0,7), B(1,6), C(2,3), D(2,9). Әрқайсысын екі шекарамен тексереміз: 1,55 < 1,6 < 2,08. Қалған нүктелердің кемінде бір шарты орындалмайды. Сондықтан жалғыз дұрыс әріп B. Ондық пен жүздік цифрларды өз орындарынсыз жеке салыстырмаймыз.",
+      "figureDescription": "Бірдей аралықты сәуле. Жазылған белгілер: 0 саны 0-белгіде; 1 саны 10-белгіде; 2 саны 20-белгіде; 3 саны 30-белгіде. A сол жақ алғашқы белгіден 7 қадам оңда; B сол жақ алғашқы белгіден 16 қадам оңда; C сол жақ алғашқы белгіден 23 қадам оңда; D сол жақ алғашқы белгіден 29 қадам оңда. Нұсқар оңға бағытталған.",
+      "figureSha256": "2ee8640e5e7fec12c69c0fc60a7b5cbbe5742598e16958241ebef8a9b03affb1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "B",
+        "checks": {
+          "startHundredths": 0,
+          "stepHundredths": 10,
+          "intervals": 30,
+          "printedLabels": [
+            [
+              0,
+              "0"
+            ],
+            [
+              10,
+              "1"
+            ],
+            [
+              20,
+              "2"
+            ],
+            [
+              30,
+              "3"
+            ]
+          ],
+          "pointHundredths": {
+            "A": 70,
+            "B": 160,
+            "C": 230,
+            "D": 290
+          },
+          "strictLower": 155,
+          "strictUpper": 208,
+          "acceptedNames": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave58-hundredths-ray-five-sixteen-to-thirty-nine",
+      "modelId": "visual-wave58-hundredths-ray-count-unit-intervals",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "ray",
+        "start": 510,
+        "step": 1,
+        "ticks": 30,
+        "labels": [
+          [
+            0,
+            "5,1"
+          ],
+          [
+            10,
+            "5,2"
+          ],
+          [
+            20,
+            "5,3"
+          ],
+          [
+            30,
+            "5,4"
+          ]
+        ],
+        "points": [
+          [
+            "M",
+            6
+          ],
+          [
+            "N",
+            29
+          ]
+        ]
+      },
+      "answer": "23",
+      "sourceRefs": [
+        {
+          "sourceId": "3a6ac1b0f6a50f93",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-level2.json#13",
+      "sourceCanonicalSha256": "d63b58158403d5f00c08b238dc8989898013f71c67024ebebf3ad0049b144caa",
+      "sourceSkill": "ReadM5,16/N5,39→539−516=23HUNDREDTHintervals. Askdistanceunits,notstrictinteriorpointcount22.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-hundredths-ray-five-sixteen-to-thirty-nine.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "statement": "Сәуленің әр ондық үлесі 10 тең аралыққа бөлінген. M мен N арақашықтығы НЕШЕ жүздік үлеске, яғни 0,01 бірлікке тең? Жауапқа тек санды жазыңыз.",
+      "solution": "Бір қадам 0,01. M(5,16), N(5,39). Координаталарды жүздік үлестермен жазсақ 516 және 539. Арақашықтық 539 − 516 = 23 жүздік үлес. Сұралғаны ішкі нүктелер саны емес, ұзындықтағы 0,01 аралықтар саны.",
+      "figureDescription": "Бірдей аралықты сәуле. Жазылған белгілер: 5,1 саны 0-белгіде; 5,2 саны 10-белгіде; 5,3 саны 20-белгіде; 5,4 саны 30-белгіде. M сол жақ алғашқы белгіден 6 қадам оңда; N сол жақ алғашқы белгіден 29 қадам оңда. Нұсқар оңға бағытталған.",
+      "figureSha256": "6551e84c2a1d2f19dc6a4123074433e18401dfad89de9073ad56ba69bda6cf10",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "23",
+        "checks": {
+          "startHundredths": 510,
+          "stepHundredths": 1,
+          "intervals": 30,
+          "printedLabels": [
+            [
+              0,
+              "5,1"
+            ],
+            [
+              10,
+              "5,2"
+            ],
+            [
+              20,
+              "5,3"
+            ],
+            [
+              30,
+              "5,4"
+            ]
+          ],
+          "pointHundredths": {
+            "M": 516,
+            "N": 539
+          },
+          "distanceHundredths": 23,
+          "requested": "interval_units_not_interior_points"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave58-twentieths-seventeen-steps",
+      "modelId": "visual-wave58-twentieths-ray-five-hundredths-step",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "ray",
+        "start": 0,
+        "step": 5,
+        "ticks": 24,
+        "labels": [
+          [
+            0,
+            "0"
+          ],
+          [
+            10,
+            "0,5"
+          ],
+          [
+            20,
+            "1"
+          ]
+        ],
+        "points": [
+          [
+            "A",
+            17
+          ]
+        ]
+      },
+      "answer": "0,85",
+      "sourceRefs": [
+        {
+          "sourceId": "1bd9a9827651b5a6",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-level2.json#15",
+      "sourceCanonicalSha256": "b5a3c224f32a9d5a207fffb2d55c3e8e1ce93df33c29ac5760d9ff90ac837ef3",
+      "sourceSkill": "Actual20intervals/unit→0,05step,17steps→0,85;countas100→0,17 andtenthsround0,8/0,9wrong.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-twentieths-seventeen-steps.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "options": [
+        "0,17",
+        "0,8",
+        "0,9",
+        "0,85"
+      ],
+      "statement": "Сәуледе 0 мен 1 арасы 20 тең бөлікке бөлінген. A нүктесінің координатасын ондық бөлшекпен таңдаңыз.",
+      "solution": "Бір қадам (1/20) = (5/100) = 0,05. A-ға дейін 17 қадам, сондықтан (17/20) = (85/100) = 0,85. 0,17 қадам санын жүздік деп алған; 0,8 мен 0,9 дәл өлшемді ондыққа жуықтап жіберген, ал мұнда 0,05 қадам сақталуы керек.",
+      "figureDescription": "Бірдей аралықты сәуле. Жазылған белгілер: 0 саны 0-белгіде; 0,5 саны 10-белгіде; 1 саны 20-белгіде. A сол жақ алғашқы белгіден 17 қадам оңда. Нұсқар оңға бағытталған.",
+      "figureSha256": "4e500cfb11a980ac00df74aa96de92b96f0e3de3ab949978838c6fd930a62baa",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,85",
+        "checks": {
+          "startHundredths": 0,
+          "stepHundredths": 5,
+          "intervals": 24,
+          "printedLabels": [
+            [
+              0,
+              "0"
+            ],
+            [
+              10,
+              "0,5"
+            ],
+            [
+              20,
+              "1"
+            ]
+          ],
+          "pointHundredths": {
+            "A": 85
+          },
+          "unitsPerWhole": 20
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave58-tenfold-zoom-two-sixty-four",
+      "modelId": "visual-wave58-nested-tenfold-ray-hundredths-coordinate",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "zoom",
+        "upperStart": 200,
+        "upperEnd": 300,
+        "highlight": [
+          6,
+          7
+        ],
+        "point": 4
+      },
+      "answer": "2,64",
+      "sourceRefs": [
+        {
+          "sourceId": "1e806d7e1fb11d8b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-level3.json#1",
+      "sourceCanonicalSha256": "0bf457bf4af0c9234ccaed5c6855ac4180efe290c9c3bcfeee6ded4d6952b681",
+      "sourceSkill": "Upper2…3 divided10, highlighted2,6…2,7. LOWERsamewidth10x physicalzoom subdiv10,point4hundredths→2,64;1000place2,604/rightbase2,74/lostwhole0,64wrong.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-tenfold-zoom-two-sixty-four.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "options": [
+        "2,64",
+        "2,604",
+        "2,74",
+        "0,64"
+      ],
+      "statement": "Жоғарғы сәуленің көк аралығы төменде 10 есе үлкейтілген. Төменгі аралық та 10 тең бөлікке бөлінген. A нүктесінің координатасын таңдаңыз.",
+      "solution": "Жоғарғы бірлік 10 қадамға бөлінген: қадам 0,1. Көк аралық 2,6 пен 2,7 арасында, ұзындығы 0,1. Төменде сол аралық 10 қадамға бөлінген: қадам 0,01. A сол жақ шеттен 4 қадамда: 2,60 + 0,04 = 2,64. 2,604 жүздікті мыңдық деп алған, 2,74 қате оң жақ шеттен қосқан, 0,64 бүтін бөлікті жоғалтқан.",
+      "figureDescription": "Жоғарғы сәуленің сол жақ белгісі 2, оң жағы 3, арасы 10 тең қадам. Сол жақтан 6 және 7 қадамдағы екі көрші белгі арасы көк. Көк кесінді төменде 10 есе үлкейтілген, оның физикалық ұзындығы жоғарғы бірлік кесіндісіне тең. Төменгі кесінді 10 тең қадамға бөлінген; A төменгі сол шеттен 4 қадамда.",
+      "figureSha256": "8c8abe330134df34c228729688fd85bc040d1ec2b6d3353477886957ca2d9dbc",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2,64",
+        "checks": {
+          "upperStartHundredths": 200,
+          "upperEndHundredths": 300,
+          "upperStepHundredths": 10,
+          "highlightFromHundredths": 260,
+          "highlightToHundredths": 270,
+          "lowerStepHundredths": 1,
+          "lowerPointIndex": 4,
+          "coordinateHundredths": 264,
+          "physicalZoom": 10
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave58-unlabelled-fifties-strict-interior-count",
+      "modelId": "visual-wave58-two-label-derived-step-count-all-hundredth-values",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "ray",
+        "start": 620,
+        "step": 5,
+        "ticks": 12,
+        "labels": [
+          [
+            0,
+            "6,2"
+          ],
+          [
+            8,
+            "6,6"
+          ]
+        ],
+        "points": [
+          [
+            "A",
+            3
+          ],
+          [
+            "B",
+            10
+          ]
+        ]
+      },
+      "answer": "34",
+      "sourceRefs": [
+        {
+          "sourceId": "8e0808d20e8da4ef",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-level3.json#5",
+      "sourceCanonicalSha256": "17ff5c5cf59b92d0e0a0bc5c4c74cc19ef655564642c970adb8659661609e131",
+      "sourceSkill": "TwoONLYlabels6,2/6,6at8intervals→0,05. A6,35/B6,70,askALLtwo-placeSTRICTinteriorvalues6,36…6,69→34,not7visibleintervalsor35inclusive.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-unlabelled-fifties-strict-interior-count.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "statement": "Сәуленің бөлігінде тек екі сан белгісі жазылған. A мен B координаталарының ҚАТАҢ АРАСЫНДА үтірден кейін дәл ЕКІ цифрмен жазылатын неше ондық мән бар? Мысалы, соңғы 0 бар жазулар да екі орынмен беріледі. Шеткі нүктелерді қоспаңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Жазылған екі белгі арасындағы айырма 40 жүздік, олардың арасында 8 тең қадам. Бір қадам 40 ÷ 8 = 5 жүздік, яғни 0,05. A(6,35), B(6,7). Қатаң ішкі жүздік мәндер 6,36 санынан 6,69 санына дейін. Саны 669 − 636 + 1 = 34. 6,40 сияқты соңғы 0-мен аяқталған жазу да есепке кіреді; тек суреттегі ірі қадамдарды санамаймыз.",
+      "figureDescription": "Бірдей аралықты сәуле. Жазылған белгілер: 6,2 саны 0-белгіде; 6,6 саны 8-белгіде. A сол жақ алғашқы белгіден 3 қадам оңда; B сол жақ алғашқы белгіден 10 қадам оңда. Нұсқар оңға бағытталған.",
+      "figureSha256": "8364976352de06bea24be3e44ac1b31b40845f00006fd9f9a64f02270d9a1aa3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "34",
+        "checks": {
+          "startHundredths": 620,
+          "stepHundredths": 5,
+          "intervals": 12,
+          "printedLabels": [
+            [
+              0,
+              "6,2"
+            ],
+            [
+              8,
+              "6,6"
+            ]
+          ],
+          "pointHundredths": {
+            "A": 635,
+            "B": 670
+          },
+          "labelGapHundredths": 40,
+          "labelGapIntervals": 8,
+          "allStrictInteriorHundredths": [
+            636,
+            637,
+            638,
+            639,
+            640,
+            641,
+            642,
+            643,
+            644,
+            645,
+            646,
+            647,
+            648,
+            649,
+            650,
+            651,
+            652,
+            653,
+            654,
+            655,
+            656,
+            657,
+            658,
+            659,
+            660,
+            661,
+            662,
+            663,
+            664,
+            665,
+            666,
+            667,
+            668,
+            669
+          ],
+          "requested": "all_hundredth_values_not_visible_ticks"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave58-two-label-step-point-four-fifty-five",
+      "modelId": "visual-wave58-two-label-derived-five-hundredths-coordinate",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "ray",
+        "start": 410,
+        "step": 5,
+        "ticks": 14,
+        "labels": [
+          [
+            0,
+            "4,1"
+          ],
+          [
+            12,
+            "4,7"
+          ]
+        ],
+        "points": [
+          [
+            "K",
+            9
+          ]
+        ]
+      },
+      "answer": "4,55",
+      "sourceRefs": [
+        {
+          "sourceId": "c9521adf39952822",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-level3.json#6",
+      "sourceCanonicalSha256": "38a7428cdc46b3ff269f20f7cc88a6531aa9c02aeab53025c3253bcfa114bc3f",
+      "sourceSkill": "TwoONLYlabels4,1/4,7gap12intervals→0,05,K9steps→4,55. Stepas0,01→4,19/0,1→5,0 andlastdigitcount9→4,59wrong.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-two-label-step-point-four-fifty-five.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "options": [
+        "4,55",
+        "4,19",
+        "5,0",
+        "4,59"
+      ],
+      "statement": "Сәуленің көрсетілген бөлігінде тек екі сан жазылған. Солар арқылы бір кіші аралықтың мәнін анықтап, K координатасын таңдаңыз.",
+      "solution": "Екі жазылған белгі айырмасы 60 жүздік, арасы 12 тең қадам. Қадам 60 ÷ 12 = 5 жүздік = 0,05. K нүктесі сол жақ белгіден 9 қадамда: 4,10 + 9 × 0,05 = 4,55. 4,19 қадамды 0,01 деп, 5,0 қадамды 0,1 деп алған. 4,59 соңғы разрядқа қадам санының цифрын қоюдан шыққан, ол қадам құнын сақтамайды.",
+      "figureDescription": "Бірдей аралықты сәуле. Жазылған белгілер: 4,1 саны 0-белгіде; 4,7 саны 12-белгіде. K сол жақ алғашқы белгіден 9 қадам оңда. Нұсқар оңға бағытталған.",
+      "figureSha256": "a4a3aee3b743bca35179f3017fedf64ad10ae2e28dc67982d3288227ad5a45a6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4,55",
+        "checks": {
+          "startHundredths": 410,
+          "stepHundredths": 5,
+          "intervals": 14,
+          "printedLabels": [
+            [
+              0,
+              "4,1"
+            ],
+            [
+              12,
+              "4,7"
+            ]
+          ],
+          "pointHundredths": {
+            "K": 455
+          },
+          "labelGapHundredths": 60,
+          "labelGapIntervals": 12
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave58-equal-trailing-zero-coordinate-six-tenths",
+      "modelId": "visual-wave58-trailing-zero-target-ray-point-name",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "ray",
+        "start": 0,
+        "step": 10,
+        "ticks": 12,
+        "labels": [
+          [
+            0,
+            "0"
+          ],
+          [
+            10,
+            "1"
+          ]
+        ],
+        "points": [
+          [
+            "D",
+            1
+          ],
+          [
+            "C",
+            3
+          ],
+          [
+            "A",
+            6
+          ],
+          [
+            "B",
+            8
+          ]
+        ],
+        "target": 60
+      },
+      "answer": "A",
+      "sourceRefs": [
+        {
+          "sourceId": "9965c3bfac8e9c4b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-leveltest.json#2",
+      "sourceCanonicalSha256": "5116742e554b5d0ae7af7e24f6ae559ec6419acf4d65c994877537393f0409a2",
+      "sourceSkill": "Target0,60=0,6trailingzero;actualD0,1/C0,3/A0,6/B0,8→A,pointnamesnotalphabetical.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-equal-trailing-zero-coordinate-six-tenths.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "statement": "Сәуледегі қай әріппен белгіленген нүкте 0,60 санын кескіндейді?",
+      "solution": "0,60 = 0,6: тек соңғы бөлшек 0-ін алып тастаймыз. Бір қадам 0,1. Суреттен D(0,1), C(0,3), A(0,6), B(0,8). 0,6 координатасына сәйкес әріп A. Әріптердің алфавиттік реті координата ретін анықтамайды.",
+      "figureDescription": "Бірдей аралықты сәуле. Жазылған белгілер: 0 саны 0-белгіде; 1 саны 10-белгіде. D сол жақ алғашқы белгіден 1 қадам оңда; C сол жақ алғашқы белгіден 3 қадам оңда; A сол жақ алғашқы белгіден 6 қадам оңда; B сол жақ алғашқы белгіден 8 қадам оңда. Нұсқар оңға бағытталған.",
+      "figureSha256": "c4ca1d60fd80c7095427926ca65b47071240e44dc9e18f92fd756c63e8bd2726",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "A",
+        "checks": {
+          "startHundredths": 0,
+          "stepHundredths": 10,
+          "intervals": 12,
+          "printedLabels": [
+            [
+              0,
+              "0"
+            ],
+            [
+              10,
+              "1"
+            ]
+          ],
+          "pointHundredths": {
+            "D": 10,
+            "C": 30,
+            "A": 60,
+            "B": 80
+          },
+          "targetHundredths": 60
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave58-quarter-ray-five-steps-total-hundredths",
+      "modelId": "visual-wave58-quarter-ray-coordinate-total-hundredths",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "ray",
+        "start": 0,
+        "step": 25,
+        "ticks": 8,
+        "labels": [
+          [
+            0,
+            "0"
+          ],
+          [
+            4,
+            "1"
+          ],
+          [
+            8,
+            "2"
+          ]
+        ],
+        "points": [
+          [
+            "A",
+            5
+          ]
+        ]
+      },
+      "answer": "125",
+      "sourceRefs": [
+        {
+          "sourceId": "53b2bbe23c1b61bc",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-3-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-3-leveltest.json#5",
+      "sourceCanonicalSha256": "01f8e1af17227b1e97be4590cd759a2958d9d4fba84f38a7be3e8df99945b3e5",
+      "sourceSkill": "4intervals/unit→1/4=25/100;A5steps=5/4=1,25,requestTOTALhundredths125,wholeincluded.",
+      "adaptationChanges": [
+        "Барлық 14 сақталған 4.3 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Бірлік/ондық/жүздік қадам,5/20/4-ке бөлінген бірлік, бүтінді қоса санау, екі белгі арқылы қадам құнын табу, екі түрлі ұзындықтағы ондықтарды қатаң салыстыру және нүктенің аты сақталды.",
+        "Жаңа деректер: A1,6;M4/5=0,8;B3,2→32ондық;K0,3цифры3;P0,6/Q1,2/R1,5/S1,9ішінен>1,15үшнүкте;B4,73;1,55<B1,6<2,08;M5,16/N5,39арасы23жүздік;A17/20=0,85;жоғары2…3көк2,6…2,7төменгі4қадам→2,64;6,2/6,6арасында8қадам→0,05,A6,35/B6,7қатаңішкі34екіорындымән;4,1/4,7арасы12қадам,K9қадам→4,55;0,60саныA0,6;A5/4=1,25→125жүздік.",
+        "Барлық SVG жаңа параметрден нативті салынған. Қадамдар тең, сандық белгілер мен нақты нүктелер бір геометриялық шкалаға байланған. Zoom жоғарғы0,1бөлігін төменде дәл10есе физикалық үлкейтеді; төменгі нүкте жауабы координатамен жазылмайды. Source raster/traced path жоқ; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық координаталарды сәуледен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual printed scales/point pixels; fifths/twentieths/quarters; two-label inferred step; physical10x nestedray; ALLstrictinteriorhundredths vs distanceunits. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave58-quarter-ray-five-steps-total-hundredths.svg",
+      "verificationModule": "scripts/editorial/visual-wave58-models.mjs",
+      "statement": "Сәуледе 0 мен 1 арасы 4 тең бөлікке бөлінген. A координатасын ондық бөлшекке айналдырыңыз. Ол барлығы НЕШЕ жүздік үлестен тұрады? Жауапқа тек санды жазыңыз.",
+      "solution": "Бір қадам (1/4) = (25/100) = 0,25. A-ға дейін 5 қадам: (5/4) = (125/100) = 1,25. Демек барлығы 125 жүздік үлес. Бүтін бөлік те жүздік үлеске айналады; тек бөлшек бөліктің цифрларын алу жеткіліксіз.",
+      "figureDescription": "Бірдей аралықты сәуле. Жазылған белгілер: 0 саны 0-белгіде; 1 саны 4-белгіде; 2 саны 8-белгіде. A сол жақ алғашқы белгіден 5 қадам оңда. Нұсқар оңға бағытталған.",
+      "figureSha256": "8ff35109d4c4ab2d0e1ce97dd2e8200d963d5285991eca72f78ff7e4c1e99765",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "125",
+        "checks": {
+          "startHundredths": 0,
+          "stepHundredths": 25,
+          "intervals": 8,
+          "printedLabels": [
+            [
+              0,
+              "0"
+            ],
+            [
+              4,
+              "1"
+            ],
+            [
+              8,
+              "2"
+            ]
+          ],
+          "pointHundredths": {
+            "A": 125
+          },
+          "totalHundredths": 125,
+          "coordinate": "1,25",
+          "quarterMultiplier": 25
+        }
+      }
+    }
+  ]
+}

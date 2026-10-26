@@ -1,6 +1,20 @@
 // Interpret only explicit canonical math and rectangular tables from the bank
 // importer. Answer strings stay unchanged; this tree is for display only.
-const mathematical = /^[0-9A-Za-zπ√\s+\-−*×·÷^().,:/]+$/u;
+const mathematical = /^[0-9A-Za-z₀₁₂₃₄₅₆₇₈₉⁰¹²³⁴⁵⁶⁷⁸⁹π√□\s+\-−*×·÷^().,:/|]+$/u;
+function canonicalMath(value) {
+  if (!mathematical.test(value)) return false;
+  if (!value.includes('|')) return true;
+  // Support one complete modulus per fraction operand. Bars cannot straddle
+  // the main fraction bar or contain incomplete groups; unsupported forms stay text.
+  const parts = value.split('|');
+  if (parts.length !== 3 || !/[0-9A-Za-z₀₁₂₃₄₅₆₇₈₉π√□]/u.test(parts[1])) return false;
+  let depth = 0;
+  for (const character of parts[1]) {
+    if (character === '(') depth++;
+    if (character === ')' && --depth < 0) return false;
+  }
+  return depth === 0;
+}
 function closeParen(text, start) {
   let depth = 0;
   for (let i = start; i < text.length && i - start <= 240; i++) {
@@ -25,7 +39,7 @@ function group(text) {
   }
   if (slashes.length === 1) {
     const at = slashes[0], n = ungroup(inner.slice(0, at)), d = ungroup(inner.slice(at + 1));
-    if (n && d && mathematical.test(n) && mathematical.test(d)) {
+    if (n && d && canonicalMath(n) && canonicalMath(d)) {
       return { type: 'fraction', numerator: mathFragments(n), denominator: mathFragments(d) };
     }
   }
@@ -65,6 +79,14 @@ export function mathFragments(value) {
   let plain = '';
   const flush = () => { if (plain) { nodes.push({ type: 'text', value: plain }); plain = ''; } };
   for (let i = 0; i < text.length; i++) {
+    // Canonical vector names use a native arrow spanning the full name. Keep
+    // the grammar small so ordinary prose and unsupported markup stay literal.
+    if (text.startsWith('vector(', i) && (i === 0 || !/[\p{L}_]/u.test(text[i - 1]))) {
+      const match = text.slice(i, i + 12).match(/^vector\(([A-Za-z]{1,3})\)/);
+      if (match) {
+        flush(); nodes.push({ type: 'vector', content: [{ type: 'text', value: match[1] }] }); i += match[0].length - 1; continue;
+      }
+    }
     if (text[i] === '|') {
       const table = tableAt(text, i);
       if (table) { flush(); nodes.push(table.node); i = table.end - 1; continue; }

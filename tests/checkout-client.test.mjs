@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
+import { authenticatedRequest } from '../frontend/src/authenticatedRequest.js';
 import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination } from '../frontend/src/checkoutMessages.js';
 
 const source = fs.readFileSync(new URL('../frontend/src/Parent.jsx', import.meta.url), 'utf8');
@@ -18,10 +19,11 @@ function fixture({ status = 409, body = { error: 'checkout_pending' }, respond, 
     setPaying: (value) => { state.paying = value; },
     setPaymentIssue: (value) => { state.issue = value; context.checkoutHold = checkoutNeedsVerification(value?.code); },
     setFamilyRetry: (update) => { state.refresh = update(state.refresh); },
+    authenticatedRequest: (auth, path, options) => authenticatedRequest(auth, path, { ...options, fetcher: context.fetch, timeoutMs: context.timeoutMs || 20000 }),
     isCheckoutDestination, window: { location }, console: { error() {} },
     fetch: async (...args) => {
       calls.push(args);
-      return respond ? respond(...args) : { ok: status >= 200 && status < 300, status, text: async () => JSON.stringify(body) };
+      return respond ? respond(...args) : { ok: status >= 200 && status < 300, status, json: async () => body, text: async () => JSON.stringify(body) };
     },
   };
   vm.createContext(context); vm.runInContext(buy, context);
@@ -132,8 +134,26 @@ test('same-render duplicate purchase and late response after account change cann
   await f.run();
   assert.equal(f.calls.length, 1);
   f.context.auth.currentUser = { uid: 'other-parent' };
-  pending.resolve({ ok: true, status: 200, text: async () => JSON.stringify({ url: 'https://checkout.dodopayments.com/session/cks_a' }) });
+  pending.resolve({ ok: true, status: 200, json: async () => ({ url: 'https://checkout.dodopayments.com/session/cks_a' }) });
   await first;
   assert.deepEqual(f.redirects, []);
   assert.equal(f.state.issue, null);
+});
+
+test('stalled checkout headers or response body leave a verification hold and never replay', async () => {
+  for (const respond of [() => new Promise(()=>{}), async () => ({ok:true,status:200,json:()=>new Promise(()=>{})})]) {
+    const f=fixture({respond}); f.context.timeoutMs=15;
+    await f.run();
+    assert.equal(f.state.paying,false); assert.equal(f.state.issue.code,'checkout_network_error');
+    assert.equal(f.context.checkoutHold,true);
+    await f.run(); assert.equal(f.calls.length,1);
+  }
+});
+
+test('stalled authentication and leaving the cabinet before token refresh never send checkout', async () => {
+  const f=fixture({token:()=>new Promise(()=>{})}); f.context.timeoutMs=15;
+  await f.run(); assert.equal(f.state.paying,false); assert.equal(f.calls.length,0);
+  const token=deferred(); const g=fixture({token:()=>token.promise});
+  const buying=g.run(); g.context.mounted.current=false; token.resolve('local-token');
+  await buying; assert.equal(g.calls.length,0); assert.deepEqual(g.redirects,[]);
 });

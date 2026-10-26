@@ -1,0 +1,1130 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All20 saved visual sources grade6chapters3–4 only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources in grade6topics3.1–3.5 and4.1–4.3",
+    "sourceVisualOccurrences": 20,
+    "addressedNewDrafts": 20,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "030ce18352980860",
+      "03c84f688dae2a1c",
+      "09c4a6fdfdf0cc5f",
+      "14e153446ff0fb9d",
+      "1b563c9aa32e82d3",
+      "2a773c7faadf403c",
+      "2ed680130b050823",
+      "368f7701f1da412f",
+      "3efd409becb1ca04",
+      "3f441ba9983fcfce",
+      "4dc6f3409f058b45",
+      "54f120eab04f57a8",
+      "5caea41bc38dd939",
+      "610ac06464fcd4fc",
+      "6ad3ed928ce5ac9c",
+      "7689091f2e2aec7b",
+      "ac8185b668af8c25",
+      "b2c2d83c10f31225",
+      "bcacdda9f340f64c",
+      "ce436e1bf501eb88"
+    ],
+    "distinctModels": 20,
+    "semantics": "20 individually addressed source targets; models explicitly distinguish coefficient, constant, nonidentity, equality operation, root count and distance direction. Not20 unrelated mathematical families."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave10-variable-triangle-area",
+      "modelId": "visual-wave10-variable-right-area",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "right-triangle",
+        "fixed": 9,
+        "value": 8
+      },
+      "answer": "36",
+      "sourceRefs": [
+        {
+          "sourceId": "bcacdda9f340f64c",
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-3-1-level1.json#12",
+      "sourceCanonicalSha256": "4462815e29a2d04462c2a96dcad0c38ee90cbf57010965008745e1ae0ddf723e",
+      "sourceSkill": "Substituting a variable leg into the right-triangle half-rectangle area formula, explicitly preserving division by2",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-variable-triangle-area.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Тікбұрышты үшбұрыштың бір катеті 9 см, екіншісі m см. m = 8 болғанда оның ауданы неше шаршы сантиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Катеттер 9 және 8 см. Тікбұрышты үшбұрыш ауданы осы катеттерден құралған тіктөртбұрыш ауданының жартысына тең: 9 × 8 : 2 = 36 см². Екіге бөлуді ұмытпау керек.",
+      "figureDescription": "Тікбұрышты үшбұрыш. Көлденең катеті m, тік катеті 9 см. Суреттегі қатынас m = 8 үшін сақталған.",
+      "figureSha256": "3e1db0585685f2be9b18bd2fa2cedc227a3d910f73d676b17b36c751bd25bbc1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "36",
+        "checks": {
+          "twiceArea": 72
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-ordered-number-machine",
+      "modelId": "visual-wave10-machine-order",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "machine",
+        "input": 7,
+        "operations": [
+          {
+            "op": "multiply",
+            "value": 5
+          },
+          {
+            "op": "subtract",
+            "value": 6
+          }
+        ]
+      },
+      "answer": "29",
+      "sourceRefs": [
+        {
+          "sourceId": "ac8185b668af8c25",
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-3-1-level1.json#13",
+      "sourceCanonicalSha256": "df2134accd5cc48fff699ce3a47cd92939e3a3203c8cb7d4138aa66e16e46aea",
+      "sourceSkill": "Evaluating a multiply-then-subtract machine without reversing the operational order",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-ordered-number-machine.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Сан машинасына x = 7 саны берілді. Сызбадағы амалдарды солдан оңға қарай орындағанда соңғы ұяшыққа қандай сан жазылады? Жауапқа тек санды жазыңыз.",
+      "solution": "Алдымен 7 × 5 = 35. Содан кейін 35 − 6 = 29. Амалдардың орнын ауыстыруға болмайды.",
+      "figureDescription": "Солдан оңға: x кірісі; ×5; аралық бос ұяшық; −6; сұрақ белгісі бар шығыс.",
+      "figureSha256": "cee1ee6358de6b31582134846c8fc152fa506f318c4618634c308ac9f94defa7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "29",
+        "checks": {
+          "operationOrder": [
+            "multiply",
+            "subtract"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-variable-rectangle-boundary",
+      "modelId": "visual-wave10-variable-rectangle-perimeter",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "fixed": 6,
+        "value": 14
+      },
+      "answer": "40",
+      "sourceRefs": [
+        {
+          "sourceId": "6ad3ed928ce5ac9c",
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-3-1-level1.json#14",
+      "sourceCanonicalSha256": "fd69f73a86e0fa0029942d359a82c433f8e945ef8b1a6670214c0ca88e695f62",
+      "sourceSkill": "Substituting a variable side into the complete four-side rectangle perimeter rather than its area or semiperimeter",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-variable-rectangle-boundary.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Суреттегі тіктөртбұрыштың өлшемдері сантиметрмен берілген. x = 14 болса, оның толық периметрі неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Екі ұзын қабырға 14 см-ден, екі қысқа қабырға 6 см-ден: 14 + 6 + 14 + 6 = 40 см.",
+      "figureDescription": "Тіктөртбұрыштың көлденең қабырғасы x см, тік қабырғасы 6 см.",
+      "figureSha256": "9206fa19d73c9379f7a297a8367fb9835a4559906bcd8fb5ec998ddd080adb0d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "40",
+        "checks": {
+          "fourSides": [
+            14,
+            6,
+            14,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-signed-coefficient-cards",
+      "modelId": "visual-wave10-negative-coefficient-count",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cards",
+        "cards": [
+          "-5ab",
+          "y × (-4)",
+          "(-2m) × 3",
+          "-p",
+          "(-u) × (-v)",
+          "0,75q"
+        ]
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "14e153446ff0fb9d",
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-3-2-level1.json#5",
+      "sourceCanonicalSha256": "a0a638edc5ac2acb06a508ceee5b573b0c707f388f839b5d904bee8387fd246e",
+      "sourceSkill": "Counting negative monomial coefficients after actual factor multiplication, including implicit-minus, decimal, two-negative and reordered factors",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-signed-coefficient-cards.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Алты карточкадағы өрнектерді көбейткіштері бойынша ықшамдаңыз. Неше өрнектің сандық коэффициенті теріс болады? Жауапқа тек санды жазыңыз.",
+      "solution": "Карточкалардағы коэффициенттер ретімен: -5; -4; -6; -1; 1; 3/4. Теріс коэффициенттер саны 4. Екі теріс көбейткіш оң коэффициент береді; жалғыз минус −1 көбейткішін білдіреді.",
+      "figureDescription": "Карточкалар ретімен: 1: -5ab; 2: y × (-4); 3: (-2m) × 3; 4: -p; 5: (-u) × (-v); 6: 0,75q.",
+      "figureSha256": "e95188a2741d2bda985bff90dcedb9979be982bd594d62dc59055940ff5dd59f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": {
+          "coefficients": [
+            "-5",
+            "-4",
+            "-6",
+            "-1",
+            "1",
+            "3/4"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-area-distributive-identity",
+      "modelId": "visual-wave10-distributive-equality",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "split",
+        "height": 7,
+        "constant": 5,
+        "variable": "x"
+      },
+      "answer": "7(x + 5) = 7x + 35",
+      "sourceRefs": [
+        {
+          "sourceId": "5caea41bc38dd939",
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-3-2-level1.json#7",
+      "sourceCanonicalSha256": "607f5e86e67738402a025f1749fb1760484da0eee3bcadff433cee00277f4f4d",
+      "sourceSkill": "Equating whole and partitioned rectangle areas to apply the multiplier to both terms",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-area-distributive-identity.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "options": [
+        "7(x + 5) = 7x + 5",
+        "7(x + 5) = 7x + 12",
+        "7(x + 5) = 7x + 35",
+        "7 + (x + 5) = 7x + 35"
+      ],
+      "statement": "Бір тіктөртбұрыш екі бөлікке бөлінген. Толық аудан мен екі бөліктің аудандарының қосындысын салыстырғанда қай теңдік барлық x үшін орындалады?",
+      "solution": "Тұтас аудан 7(x + 5). Екі бөлік 7x және 35 аудан береді. Сондықтан 7(x + 5) = 7x + 35. 7 саны жақшадағы екі қосылғышқа да көбейтіледі.",
+      "figureDescription": "Тіктөртбұрыштың биіктігі 7. Көлденең ұзындығы x және 5 бөліктерінен тұрады. Бөліктердің ортақ шекарасы тік.",
+      "figureSha256": "223d03818a0d5082f17c605aa52b417251ba994a9f81dc13d9c27e8e3476289a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7(x + 5) = 7x + 35",
+        "checks": {
+          "identityCoefficients": [
+            "7",
+            "35"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-algebra-tile-coefficient",
+      "modelId": "visual-wave10-tile-like-coefficient",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "tiles",
+        "groups": [
+          {
+            "strips": 4,
+            "squares": 2
+          },
+          {
+            "strips": 3,
+            "squares": 6
+          }
+        ]
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "3f441ba9983fcfce",
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-3-3-level1.json#1",
+      "sourceCanonicalSha256": "eb6e5b737cecff5de12a1d018d113377d28cdb68431ceaa318f50f30f3b980d9",
+      "sourceSkill": "Combining like variable-area tiles while separately combining constant-area squares; requested target is the variable coefficient",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-algebra-tile-coefficient.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Екі жиынтықтағы әр ұзын тақтайшаның ауданы x, ал әр шаршының ауданы 1. Барлық тақтайшалардың жалпы ауданын ықшамдағанда x алдындағы коэффициент қандай болады? Жауапқа тек санды жазыңыз.",
+      "solution": "Бірінші топ 4x + 2, екінші топ 3x + 6. Жолақтар саны 4 + 3 = 7, ал шаршылар саны 8. Жалпы аудан 7x + 8; x коэффициенті 7.",
+      "figureDescription": "Екі жиынтық: 1: 4 ұзын x тақтайшасы және 2 бірлік шаршы; 2: 3 ұзын x тақтайшасы және 6 бірлік шаршы.",
+      "figureSha256": "38f02a3a745d664af43cf5814bdc5416058ad9f6bdcee886cbe865ece531b822",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": {
+          "constant": 8
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-variable-strip-like-terms",
+      "modelId": "visual-wave10-like-strip-value",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "strip",
+        "coefficients": [
+          2,
+          3,
+          1
+        ],
+        "value": 5
+      },
+      "answer": "30",
+      "sourceRefs": [
+        {
+          "sourceId": "b2c2d83c10f31225",
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-3-3-level1.json#2",
+      "sourceCanonicalSha256": "3fb9ac1788bde5c98807126ec5c2681f49ab6101c1a39fa09fe516d6dda2357f",
+      "sourceSkill": "Summing three monomial lengths before variable substitution and distinguishing3t from t+3",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-variable-strip-like-terms.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Жолақтың үш бөлігінің ұзындығы метрмен көрсетілген. t = 5 болса, бүкіл жолақтың ұзындығы неше метр? Жауапқа тек санды жазыңыз.",
+      "solution": "2t + 3t + t = 6t. t = 5 болғанда 6 × 5 = 30 м.",
+      "figureDescription": "Үш іргелес бөлік ретімен 2t, 3t, t метр.",
+      "figureSha256": "1a1b3813442b4cf02f1b2237150efa844f17d7102b4cab4a624416d2e41a531a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "30",
+        "checks": {
+          "coefficient": 6
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-triangle-like-term-perimeter",
+      "modelId": "visual-wave10-like-triangle-perimeter",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "triangle",
+        "sides": [
+          3,
+          5,
+          6
+        ],
+        "value": 4
+      },
+      "answer": "56",
+      "sourceRefs": [
+        {
+          "sourceId": "3efd409becb1ca04",
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-3-3-level1.json#8",
+      "sourceCanonicalSha256": "b7447f5200ea0ad281d578d0ea9595802d8b3d68b26c9d49b08ee6407b0bb109",
+      "sourceSkill": "Combining three variable side lengths into a perimeter, with actual triangle inequalities and exact drawn side ratios",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-triangle-like-term-perimeter.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Үшбұрыш қабырғаларының ұзындықтары суретте сантиметрмен белгіленген. a = 4 болғанда оның периметрі неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Периметр 3a + 5a + 6a = 14a. a = 4 болса, 14 × 4 = 56 см.",
+      "figureDescription": "Үшбұрыштың сол, оң және төменгі қабырғалары ретімен 3a, 5a, 6a см.",
+      "figureSha256": "bc715112ccda17908382ae21b3e51832838c9777d5211c2956ab61b320e81a86",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "56",
+        "checks": {
+          "coefficient": 14
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-area-constant-after-expansion",
+      "modelId": "visual-wave10-identity-constant",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "split",
+        "height": 5,
+        "constant": 7,
+        "variable": "y"
+      },
+      "answer": "35",
+      "sourceRefs": [
+        {
+          "sourceId": "4dc6f3409f058b45",
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-3-4-level1.json#0",
+      "sourceCanonicalSha256": "bdc0cd6b3b8c4da81fc237da877f7ebea6786164530dc55ad4e14c0186bfd8de",
+      "sourceSkill": "Identifying only the constant term in the distributed total area, separately from the variable coefficient",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-area-constant-after-expansion.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Тіктөртбұрыштың ауданын бөліктердің аудандары арқылы жазыңыз да, ықшамдаңыз. Алынған өрнектің әріпсіз қосылғышы неге тең? Жауапқа тек санды жазыңыз.",
+      "solution": "Бөліктердің аудандары 5y және 5 × 7 = 35. Сондықтан 5(y + 7) = 5y + 35. Әріпсіз қосылғыш 35.",
+      "figureDescription": "Тіктөртбұрыштың биіктігі 5. Көлденең ұзындығы y және 7 бөліктерінен тұрады. Бөліктердің ортақ шекарасы тік.",
+      "figureSha256": "6d5b99823bf6f1927a509d63ebc3f189386bd16bfdaf480809e95b8da4fda11d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "35",
+        "checks": {
+          "polynomial": [
+            "5",
+            "35"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-false-area-identity",
+      "modelId": "visual-wave10-not-area-identity",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "hard",
+      "params": {
+        "scene": "split",
+        "height": 4,
+        "constant": 6,
+        "variable": "a"
+      },
+      "answer": "4a + 6",
+      "sourceRefs": [
+        {
+          "sourceId": "ce436e1bf501eb88",
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-3-4-level1.json#8",
+      "sourceCanonicalSha256": "98aec1f433f96c406dfacbdd8ae7a6ddd478c8bd865b72be4995562f99fc4469",
+      "sourceSkill": "Selecting the expression that is NOT an area identity among factored, expanded and reordered equivalent forms",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-false-area-identity.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "options": [
+        "4(a + 6)",
+        "4a + 24",
+        "(a + 6) × 4",
+        "4a + 6"
+      ],
+      "statement": "Суреттегі тіктөртбұрыштың ауданына теңбе-тең ЕМЕС өрнекті таңдаңыз.",
+      "solution": "Тұтас аудан 4(a + 6) = 4a + 24. 4a + 6 өрнегі тұрақты бөліктің ауданын 24 орнына 6 деп алады. Сондықтан ол ауданға теңбе-тең емес.",
+      "figureDescription": "Тіктөртбұрыштың биіктігі 4. Көлденең ұзындығы a және 6 бөліктерінен тұрады. Бөліктердің ортақ шекарасы тік.",
+      "figureSha256": "79c13a23575d4c9af51732adc9f1cb0fefe7fbe717289420bc13d56a432ad14f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4a + 6",
+        "checks": {
+          "targetCoefficients": [
+            "4",
+            "24"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-square-tiling-continued-ratio",
+      "modelId": "visual-wave10-square-tiling-ratio",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "hard",
+      "params": {
+        "scene": "tiling",
+        "largeSquares": 3,
+        "smallSquares": 4,
+        "smallSide": 2
+      },
+      "answer": "(3 + (1/4))",
+      "sourceRefs": [
+        {
+          "sourceId": "03c84f688dae2a1c",
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-3-5-level1.json#3",
+      "sourceCanonicalSha256": "e8c09dc969e78d6e95243e7e6c4b3bd5dc6ca1d912d359418ff87e38ddf0f222",
+      "sourceSkill": "Reading successive largest-square counts as a continued-fraction aspect ratio, rejecting inversion and swapped counts",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-square-tiling-continued-ratio.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "options": [
+        "(4 + (1/3))",
+        "(3 + (1/3))",
+        "(1/(3 + (1/4)))",
+        "(3 + (1/4))"
+      ],
+      "statement": "Тіктөртбұрыш ең үлкен квадраттарға, ал қалған жолағы ең кіші квадраттарға бөлінген. Кішкене квадрат қабырғасы 2 бірлік. Көлденең ұзындықтың тік енге қатынасын білдіретін өрнекті таңдаңыз.",
+      "solution": "Тік ен 4 × 2 = 8. Әр үлкен квадраттың қабырғасы осыған тең. Көлденең ұзындық 3 × 8 + 2 = 26. Қатынас 26/8 = 3 + 1/4. Кері қатынаспен шатастырмаймыз.",
+      "figureDescription": "Қатар тұрған 3 үлкен квадрат. Оң жақ жіңішке жолақта 4 бірдей кіші квадрат бірінің үстіне бірі орналасқан. Кішісінің көлденең қабырғасы 2.",
+      "figureSha256": "51ae424c47875cd1b68526174a38f24d29b5a509a6f777558666e46267864a4a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(3 + (1/4))",
+        "checks": {
+          "width": 26,
+          "height": 8,
+          "ratio": "13/4"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-memberwise-equality-product",
+      "modelId": "visual-wave10-equality-product",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "equalities",
+        "equalities": [
+          [
+            "4 + 7",
+            "11"
+          ],
+          [
+            "17 - 9",
+            "8"
+          ]
+        ]
+      },
+      "answer": "88",
+      "sourceRefs": [
+        {
+          "sourceId": "09c4a6fdfdf0cc5f",
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-4-1-level1.json#5",
+      "sourceCanonicalSha256": "e914fc0f4cf0f5f797e5e551197dad03aaf9aeeaffa2cd13aaa0889f7585ba2c",
+      "sourceSkill": "Multiplying corresponding sides of two true numerical equalities while retaining grouped sums and differences",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-memberwise-equality-product.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Екі тура теңдікті сол және оң жақтары бойынша мүшелеп көбейтті. Соңғы жолдағы сұрақ белгісінің орнына қандай сан жазылады? Жауапқа тек санды жазыңыз.",
+      "solution": "Оң жақтарды көбейтеміз: 11 × 8 = 88. Сол жақтағы әр қосынды мен айырма жақшада сақталады, сондықтан теңдік бұзылмайды.",
+      "figureDescription": "Берілген тура теңдіктер 4 + 7 = 11; 17 - 9 = 8. Төменде сол жақтары жақшалармен көбейтілген, оң жақта сұрақ белгісі тұр.",
+      "figureSha256": "a1741de9a409e943e70e5b68faa712395d14156598526a9029522484f07e9234",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "88",
+        "checks": {
+          "premises": [
+            "11",
+            "8"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-signed-memberwise-equality-sum",
+      "modelId": "visual-wave10-equality-sum",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "equalities",
+        "equalities": [
+          [
+            "-11 + 4",
+            "-7"
+          ],
+          [
+            "5 × 3",
+            "15"
+          ]
+        ]
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "7689091f2e2aec7b",
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-4-1-level1.json#7",
+      "sourceCanonicalSha256": "12cf303b77abb527c2e8029add1a5cedc12b1e7c177260427a66c65a2f0e9ad6",
+      "sourceSkill": "Adding corresponding sides of two true equalities with a negative first total and a positive second total",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-signed-memberwise-equality-sum.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "options": [
+        "22",
+        "-22",
+        "8",
+        "-8"
+      ],
+      "statement": "Екі тура теңдікті мүшелеп қосты. Таңбаларды сақтап есептеңіз: соңғы жолдағы сұрақ белгісінің орнына қай сан келеді?",
+      "solution": "Оң жақтарды таңбасымен қосамыз: (-7) + 15 = 8. Теріс таңбаны жоғалтсақ, басқа сан шығады.",
+      "figureDescription": "Берілген тура теңдіктер -11 + 4 = -7; 5 × 3 = 15. Төменде сол жақтары қосылған, оң жақта сұрақ белгісі тұр.",
+      "figureSha256": "2c63de6bcdeb9139c246fb6aa61d69b479180c1f53e3cfbcfa455c867d50afa4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": {
+          "premises": [
+            "-7",
+            "15"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-balanced-unknown-mass",
+      "modelId": "visual-wave10-balanced-missing-mass",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "balance",
+        "leftCount": 4,
+        "leftMass": 7,
+        "rightKnown": 16
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "2ed680130b050823",
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-4-1-level1.json#10",
+      "sourceCanonicalSha256": "6d43ebb1caf71cac5c9d999d7e21606e6f5432f92728f7124183521abeee63a1",
+      "sourceSkill": "Turning balanced masses into a numerical equality, multiplying repeated known masses and subtracting the known other mass",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-balanced-unknown-mass.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Таразы тепе-теңдікте. Барлық жүктердегі сандар килограмды білдіреді. Сұрақ белгісі бар жүктің массасы неше килограмм? Жауапқа тек санды жазыңыз.",
+      "solution": "Сол табақтағы 4 жүктің әрқайсысы 7 кг: барлығы 28 кг. Оң жақта 16 + ? = 28. Белгісіз масса 28 − 16 = 12 кг.",
+      "figureDescription": "Тең таразы. Сол жақта 4 жүк, әрқайсысында 7; оң жақта 16 және ?.",
+      "figureSha256": "c4d20c99b0e58e76c2970c20bf24aabeb27f6f485072ee8db5a7332f5b349943",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "leftTotal": 28
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-two-balances-transitivity",
+      "modelId": "visual-wave10-balance-transitivity",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "balance",
+        "productCount": 5,
+        "productMass": 8,
+        "bridge": [
+          25,
+          15
+        ],
+        "secondKnown": 11
+      },
+      "answer": "29",
+      "sourceRefs": [
+        {
+          "sourceId": "54f120eab04f57a8",
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-4-1-level1.json#12",
+      "sourceCanonicalSha256": "5517a7466784df579def199e372aa9b122adbd5d2f6b6679892fc48c8bb4987d",
+      "sourceSkill": "Using equality transitivity through an explicitly repeated two-weight bridge across two balances",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-two-balances-transitivity.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Екі таразы да тепе-теңдікте. Сандар килограммен берілген. Екінші таразыдағы сұрақ белгісі бар жүктің массасын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Бірінші таразы: 5 × 8 = 25 + 15 = 40. Екінші таразының сол жағы да 40 кг. Сондықтан ? + 11 = 40, яғни ? = 40 − 11 = 29 кг.",
+      "figureDescription": "Екі тең таразы. Біріншінің сол жағында 5 бірдей 8 жүгі, оң жағында 25 және 15. Екіншінің сол жағында 25 және 15, оң жағында ? және 11.",
+      "figureSha256": "6d445cf2b0b36bd22bdc2f40ac4aba70edcff79919b1fe235d9e58ccaf71b7e1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "29",
+        "checks": {
+          "commonTotal": 40
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-coordinate-selects-equation",
+      "modelId": "visual-wave10-point-equation-root",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -6,
+        "max": 6,
+        "target": -4
+      },
+      "answer": "3x + 5 = -7",
+      "sourceRefs": [
+        {
+          "sourceId": "610ac06464fcd4fc",
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-4-2-level1.json#3",
+      "sourceCanonicalSha256": "bc0d01aa4a85673e6502d44514deb98f8f860e50efb8d39919f0a5b68eaf0ffe",
+      "sourceSkill": "Reading a negative point then selecting its linear equation, rejecting opposite-sign and fractional-root distractors",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-coordinate-selects-equation.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "options": [
+        "3x - 5 = 7",
+        "-x + 8 = 4",
+        "4x = -5",
+        "3x + 5 = -7"
+      ],
+      "statement": "Сандық түзуде A нүктесі белгіленген. Оның координатасы қай теңдеудің түбірі болады?",
+      "solution": "A координатасы -4. Нұсқалардағы теңдеулердің түбірлері ретімен 4; 4; -5/4; -4. Координатаға сәйкес келетін жалғыз теңдеу: 3x + 5 = -7.",
+      "figureDescription": "Бірлік сандық түзу. A нүктесі -4 санында.",
+      "figureSha256": "848709d8b434b1ba1f8996287d1a70b9bbda97b53960475f7ce5e3f670e4e734",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3x + 5 = -7",
+        "checks": {
+          "candidateRoots": [
+            "4",
+            "4",
+            "-5/4",
+            "-4"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-equal-strip-parts-equation",
+      "modelId": "visual-wave10-partition-equation",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "partition",
+        "count": 4,
+        "constant": 6,
+        "total": 42
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "2a773c7faadf403c",
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-4-2-level1.json#11",
+      "sourceCanonicalSha256": "791f4e059988b8e6e6ad63286be1b83a276fd1970ca66490197c8b77087561ab",
+      "sourceSkill": "Forming a one-variable linear equation from repeated equal strip lengths and one known tail length",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-equal-strip-parts-equation.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Жолақтың 4 бірдей бөлігінің әрқайсысының ұзындығы x см. Соңғы бөліктің және бүкіл жолақтың ұзындығы сызбада берілген. x неге тең? Жауапқа тек санды жазыңыз.",
+      "solution": "Бөліктердің қосындысы бойынша 4x + 6 = 42. Белгілі бөлікті алып тастаймыз: 4x = 36. Бірдей 4 бөлікке бөлсек, x = 36 : 4 = 9 см.",
+      "figureDescription": "Көлденең жолақта 4 бірдей x бөлігі, одан кейін 6 см бөлік. Толық ұзындығы 42 см.",
+      "figureSha256": "a0f5e92b2c45694779c539c3bbcf21e39dc9323a8c3ba0814b955cc2129f9187",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": {
+          "repeatedParts": 4,
+          "remaining": 36
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-balance-variable-both-sides",
+      "modelId": "visual-wave10-two-sided-balance",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "hard",
+      "params": {
+        "scene": "balance",
+        "leftCount": 5,
+        "leftKnown": 3,
+        "rightCount": 2,
+        "rightKnown": 24
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "030ce18352980860",
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-4-2-level1.json#15",
+      "sourceCanonicalSha256": "58f59c9b741bd0791ad07684432b80721486596d699bf572f61ca9806a4991f1",
+      "sourceSkill": "Removing equal variable weights from both balanced sides before subtracting equal constant masses",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-balance-variable-both-sides.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Таразы теңесіп тұр. x деп белгіленген барлық жүктердің массалары бірдей, сандары бар жүктер килограммен берілген. Бір x жүгінің массасы неше килограмм? Жауапқа тек санды жазыңыз.",
+      "solution": "Таразы теңдігі 5x + 3 = 2x + 24. Екі жақтан 2x пен 3-ті аламыз: 3x = 21. Сондықтан x = 7 кг. Тексеру: екі табақта да 38 кг.",
+      "figureDescription": "Тең таразы. Сол жақта 5 x жүгі мен 3; оң жақта 2 x жүгі мен 24.",
+      "figureSha256": "9332a885f413230bbaaf91fb25c7d9ae4681aceb592b3693c5eb615ea99e29ce",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": {
+          "leftTotal": "38",
+          "rightTotal": "38"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-shifted-absolute-right-root",
+      "modelId": "visual-wave10-shifted-absolute-right",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -8,
+        "max": 6,
+        "center": -1,
+        "distance": 5
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "368f7701f1da412f",
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-4-3-level1.json#5",
+      "sourceCanonicalSha256": "aeea345f4dd2bb5816850f9cb429fe31b193b666cc4d6f73d32cd9b71a503911",
+      "sourceSkill": "Reading a nonzero negative absolute-distance center and choosing its right root rather than the left root",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-shifted-absolute-right-root.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "statement": "Қара нүкте a санын көрсетеді. A мен B — |x − a| = d теңдеуінің түбірлері; олардың a нүктесіне дейінгі бірдей қашықтықтары нұсқарлармен берілген. Оң жақтағы B нүктесінің координатасын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Қара нүкте a = -1, қашықтық d = 5. B оң жақта болғандықтан, оның координатасы -1 + 5 = 4. Сол жақтағы A координатасы -6; ол сұралған B емес.",
+      "figureDescription": "Бірлік сандық түзу. Қара нүкте -1 санында. A осы нүктеден солға, B оңға 5 бірлік қашықтықта. A мен B координаталары жазылмаған.",
+      "figureSha256": "7b7ce2ba1772d2a9abc4fe77879ff0d2bebb3021b32aa4909cb52a7a483108ac",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": {
+          "leftRoot": -6,
+          "rightRoot": 4
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave10-absolute-equation-two-roots",
+      "modelId": "visual-wave10-absolute-pair-equation",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -6,
+        "max": 6,
+        "targets": [
+          -4,
+          4
+        ]
+      },
+      "answer": "|x| = 4",
+      "sourceRefs": [
+        {
+          "sourceId": "1b563c9aa32e82d3",
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-4-3-level1.json#11",
+      "sourceCanonicalSha256": "22566e8d56308e73dede629519df5810d3e1e39706ea66a8273f102a545c35fe",
+      "sourceSkill": "Selecting an absolute-value equation with precisely both plotted roots, excluding doubled-distance and one-root equations",
+      "adaptationChanges": [
+        "Дереккөздің нақты алгебралық дағдысы сақталды: мәнді қою, амал реті, коэффициент таңбасы, ұқсас мүшелер, үлестірімділік, кері емес қатынас, теңдік қасиеті не теңдеудің түбірі.",
+        "Барлық берілген сандар, таңбалар, өлшемдер, санақ орындары, плитка/жүк сандары және дұрыс жауаптар жаңадан таңдалды; қате нұсқалар бастапқы дидактикалық қателерді сақтайды.",
+        "Сызбалар жаңа параметрлерден native SVG түрінде жасалды; source raster мен traced path қолданылмады. Өрнек нұсқаларының өз мәтіні дәл рационал арифметикамен қайта талданады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Алгебралық сызба",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, actual printed polynomial/linear and absolute-equation checks, scale balance masses, exact geometry and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave10-absolute-equation-two-roots.svg",
+      "verificationModule": "scripts/editorial/visual-wave10-models.mjs",
+      "options": [
+        "|x| = 8",
+        "|x - 4| = 0",
+        "|x| = 4",
+        "x = 4"
+      ],
+      "statement": "Түзудегі екі көк нүктенің координаталары қай теңдеудің барлық түбірлерін береді? Бір ғана түбірі бар теңдеумен шатастырмаңыз.",
+      "solution": "Көк нүктелердің координаталары -4 және 4. Екеуі де 0-ден 4 бірлік қашықтықта. Сондықтан |x| = 4 теңдеуінің дәл осы екі түбірі бар. Нүктелердің өзара арақашықтығы бұл модульдің мәні емес.",
+      "figureDescription": "Бірлік сандық түзу. Көк нүктелер -4 және 4 сандарында.",
+      "figureSha256": "cf33a77915f1a8c400eae6f681f3e1b09cfaef68bd850eda93e4d2158bcfbd37",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "|x| = 4",
+        "checks": {
+          "targetRoots": [
+            "-4",
+            "4"
+          ]
+        }
+      }
+    }
+  ]
+}

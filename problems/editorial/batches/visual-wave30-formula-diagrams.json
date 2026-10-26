@@ -1,0 +1,566 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All10 saved visual grade5topic1.11 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade5topic1.11",
+    "sourceVisualOccurrences": 10,
+    "addressedNewDrafts": 10,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "447bdcdc6c6274d2",
+      "53845b07fe033df4",
+      "60c4a36c78fbfa67",
+      "a437ddc90efcf943",
+      "b1953df34e8fb550",
+      "ba8081109ed8974d",
+      "c16988d2760c1dac",
+      "df1d341d16d6249c",
+      "f98bac940552ce97",
+      "ff48e386f172fc00"
+    ],
+    "distinctModels": 10,
+    "semantics": "All10formula targets are individuallysource-addressed: linear/squared/cubic measures, mixed-unit conversion, equalitycomparison, speed formulas, inversearea, boundarycontact andvolume-flow time."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave30-fifteen-by-eight-flower-bed",
+      "modelId": "visual-wave30-rectangle-area-formula",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "length": 15,
+        "width": 8
+      },
+      "answer": "120",
+      "sourceRefs": [
+        {
+          "sourceId": "b1953df34e8fb550",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-11-level1.json#4",
+      "sourceCanonicalSha256": "f70dda8529dc7887968bf1f4f62bd4dbd5d10199290f991bff91c7889c28006a",
+      "sourceSkill": "Reading two dimensions and substituting into the rectangle area formula, retaining squared units",
+      "adaptationChanges": [
+        "Әр сақталған формула нысанасы бөлек сақталды: аудан/периметр/көлем бірліктері, қозғалыстың қосынды жылдамдығы, алынып тасталған жолақ, екі рет есептелген ортақ шекара және көлемді сағаттық су ағынына бөлу.",
+        "Барлық өлшемдер, жолақ/қалған аудан, жылдамдықтар/уақыт және бассейннің сорғы өнімділігі жаңа параметрлермен берілді. Шынайы қала арақашықтығы туралы мәлімдеме қолданылмады.",
+        "Native SVG жаңа метрлік/проекциялық құрылымдардан салынды: ортақ геометриялық масштаб, сыртқы шекара мен жасырын қырлар сақталды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Формуланы қолдану",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent10source/newfullsolution/MCQreview; actualmetric rectangles and square contact, hidden/visible cuboid edge topology, allunits and dimensional conversions, inward/outward arrows, nonleaking description, positive root uniqueness and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave30-fifteen-by-eight-flower-bed.svg",
+      "verificationModule": "scripts/editorial/visual-wave30-models.mjs",
+      "statement": "Тіктөртбұрыш пішінді гүлзардың өлшемдері суретте берілген. Формуланы қолданып, ауданын м²-пен табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Тіктөртбұрыштың ауданы S = a · b. Суреттен a = 15 м, b = 8 м. S = 15 · 8 = 120 м². Ауданды ұзындық бірлігімен емес, шаршы метрмен өлшейміз.",
+      "figureDescription": "Тіктөртбұрыштың ұзындығы 15 м, ені 8 м.",
+      "figureSha256": "9420fd255d12874e649ad134becb38aadb73bb574f8b688a231bf4d9fc44abcc",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "120",
+        "checks": {
+          "length": 15,
+          "width": 8
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave30-three-dm-eight-cm-perimeter",
+      "modelId": "visual-wave30-mixed-unit-rectangle-perimeter",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "mixed-rectangle",
+        "decimetres": 3,
+        "width": 8
+      },
+      "answer": "76",
+      "sourceRefs": [
+        {
+          "sourceId": "c16988d2760c1dac",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-11-level1.json#5",
+      "sourceCanonicalSha256": "bd1d86f4278135e73954a93265799a0725bf61f78d6c71fe183a5366146b3c5e",
+      "sourceSkill": "Converting a mixed dm/cm rectangle to one linear unit before perimeter, distinguishing half-perimeter and area",
+      "adaptationChanges": [
+        "Әр сақталған формула нысанасы бөлек сақталды: аудан/периметр/көлем бірліктері, қозғалыстың қосынды жылдамдығы, алынып тасталған жолақ, екі рет есептелген ортақ шекара және көлемді сағаттық су ағынына бөлу.",
+        "Барлық өлшемдер, жолақ/қалған аудан, жылдамдықтар/уақыт және бассейннің сорғы өнімділігі жаңа параметрлермен берілді. Шынайы қала арақашықтығы туралы мәлімдеме қолданылмады.",
+        "Native SVG жаңа метрлік/проекциялық құрылымдардан салынды: ортақ геометриялық масштаб, сыртқы шекара мен жасырын қырлар сақталды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Формуланы қолдану",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent10source/newfullsolution/MCQreview; actualmetric rectangles and square contact, hidden/visible cuboid edge topology, allunits and dimensional conversions, inward/outward arrows, nonleaking description, positive root uniqueness and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave30-three-dm-eight-cm-perimeter.svg",
+      "verificationModule": "scripts/editorial/visual-wave30-models.mjs",
+      "options": [
+        "22",
+        "38",
+        "76",
+        "240"
+      ],
+      "statement": "Тіктөртбұрыш қабырғаларының өлшем бірліктері әртүрлі. Оның периметрін сантиметрмен таңдаңыз.",
+      "solution": "3 дм = 30 см. P = 2 · (a + b) = 2 · (30 + 8) = 2 · 38 = 76 см. Бірлікті ауыстырмай есептеу қате; 240 — ауданның сандық мәні, периметр емес.",
+      "figureDescription": "Тіктөртбұрыштың ұзындығы 3 дм, ені 8 см.",
+      "figureSha256": "bf83b9f3edbf5007400fd6627e7472bedd59b3f8c136049c875d999e35d4cd43",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "76",
+        "checks": {
+          "lengthCm": 30,
+          "half": 38,
+          "area": 240
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave30-seven-four-six-dm-box",
+      "modelId": "visual-wave30-cuboid-volume-formula",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "solid",
+        "length": 7,
+        "depth": 4,
+        "height": 6,
+        "unit": "дм"
+      },
+      "answer": "168",
+      "sourceRefs": [
+        {
+          "sourceId": "53845b07fe033df4",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-11-level1.json#8",
+      "sourceCanonicalSha256": "72cc3342429a703b2fb38f81964d87a58bbf16da266a9f38ea6d0a7683813355",
+      "sourceSkill": "Reading three independent orthogonal dimensions and multiplying them for cuboid volume in cubic decimetres",
+      "adaptationChanges": [
+        "Әр сақталған формула нысанасы бөлек сақталды: аудан/периметр/көлем бірліктері, қозғалыстың қосынды жылдамдығы, алынып тасталған жолақ, екі рет есептелген ортақ шекара және көлемді сағаттық су ағынына бөлу.",
+        "Барлық өлшемдер, жолақ/қалған аудан, жылдамдықтар/уақыт және бассейннің сорғы өнімділігі жаңа параметрлермен берілді. Шынайы қала арақашықтығы туралы мәлімдеме қолданылмады.",
+        "Native SVG жаңа метрлік/проекциялық құрылымдардан салынды: ортақ геометриялық масштаб, сыртқы шекара мен жасырын қырлар сақталды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Формуланы қолдану",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent10source/newfullsolution/MCQreview; actualmetric rectangles and square contact, hidden/visible cuboid edge topology, allunits and dimensional conversions, inward/outward arrows, nonleaking description, positive root uniqueness and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave30-seven-four-six-dm-box.svg",
+      "verificationModule": "scripts/editorial/visual-wave30-models.mjs",
+      "statement": "Тікбұрышты параллелепипед пішінді қораптың үш өлшемі суретте берілген. Қораптың көлемін дм³-пен табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "V = a · b · c = 7 · 4 · 6 = 28 · 6 = 168 дм³. Үш өзара перпендикуляр өлшем көбейтіледі.",
+      "figureDescription": "Тікбұрышты параллелепипед: ұзындығы 7 дм, ені 4 дм, биіктігі 6 дм. Көрінбейтін қырлар үзік сызықпен.",
+      "figureSha256": "f396565a259fbfca36d09e059ca7d43e5a5622ab41f4d636a3bde435329615e7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "168",
+        "checks": {
+          "base": 28,
+          "height": 6
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave30-aquarium-inner-cm-to-litres",
+      "modelId": "visual-wave30-aquarium-cm-to-litres",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "solid",
+        "length": 60,
+        "depth": 40,
+        "height": 30,
+        "unit": "см"
+      },
+      "answer": "72",
+      "sourceRefs": [
+        {
+          "sourceId": "ff48e386f172fc00",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-11-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-11-level2.json#6",
+      "sourceCanonicalSha256": "3a9a4e43ece65c8d7e9722b82d91e01d8188943dd02ea402d61456731017997b",
+      "sourceSkill": "Converting every cm dimension to dm before volume and using1dm³=1L, with cm³ crosscheck",
+      "adaptationChanges": [
+        "Әр сақталған формула нысанасы бөлек сақталды: аудан/периметр/көлем бірліктері, қозғалыстың қосынды жылдамдығы, алынып тасталған жолақ, екі рет есептелген ортақ шекара және көлемді сағаттық су ағынына бөлу.",
+        "Барлық өлшемдер, жолақ/қалған аудан, жылдамдықтар/уақыт және бассейннің сорғы өнімділігі жаңа параметрлермен берілді. Шынайы қала арақашықтығы туралы мәлімдеме қолданылмады.",
+        "Native SVG жаңа метрлік/проекциялық құрылымдардан салынды: ортақ геометриялық масштаб, сыртқы шекара мен жасырын қырлар сақталды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Формуланы қолдану",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent10source/newfullsolution/MCQreview; actualmetric rectangles and square contact, hidden/visible cuboid edge topology, allunits and dimensional conversions, inward/outward arrows, nonleaking description, positive root uniqueness and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave30-aquarium-inner-cm-to-litres.svg",
+      "verificationModule": "scripts/editorial/visual-wave30-models.mjs",
+      "statement": "Аквариумның ішкі өлшемдері суретте сантиметрмен берілген. Оны толық толтыруға неше литр су керек? 1 л = 1 дм³. Жауапқа тек санды жазыңыз.",
+      "solution": "Өлшемдерді дециметрге айналдырамыз: 60 см = 6 дм; 40 см = 4 дм; 30 см = 3 дм. V = 6 · 4 · 3 = 72 дм³ = 72 л. Тексеру: 60 · 40 · 30 = 72000 см³; 72000 : 1000 = 72 л.",
+      "figureDescription": "Тікбұрышты параллелепипед: ұзындығы 60 см, ені 40 см, биіктігі 30 см. Көрінбейтін қырлар үзік сызықпен.",
+      "figureSha256": "da0579f88f23144876d8b508e3451bcb28a5cc78a00ee802cf66b58d86e218a9",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "72",
+        "checks": {
+          "cm3": 72000,
+          "dmDimensions": [
+            6,
+            4,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave30-equal-area-long-rectangle-square",
+      "modelId": "visual-wave30-equal-area-different-perimeter",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "compare",
+        "length": 16,
+        "width": 4,
+        "square": 8
+      },
+      "answer": "Аудандары тең, A периметрі үлкен",
+      "sourceRefs": [
+        {
+          "sourceId": "447bdcdc6c6274d2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-11-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-11-level2.json#9",
+      "sourceCanonicalSha256": "a2daee6fd717e928bb2e66afeb49a21f64b96c10c3d24cbc5f47fffa686a113f",
+      "sourceSkill": "Separately comparing equal areas with distinct perimeters instead of inferring one equality from the other",
+      "adaptationChanges": [
+        "Әр сақталған формула нысанасы бөлек сақталды: аудан/периметр/көлем бірліктері, қозғалыстың қосынды жылдамдығы, алынып тасталған жолақ, екі рет есептелген ортақ шекара және көлемді сағаттық су ағынына бөлу.",
+        "Барлық өлшемдер, жолақ/қалған аудан, жылдамдықтар/уақыт және бассейннің сорғы өнімділігі жаңа параметрлермен берілді. Шынайы қала арақашықтығы туралы мәлімдеме қолданылмады.",
+        "Native SVG жаңа метрлік/проекциялық құрылымдардан салынды: ортақ геометриялық масштаб, сыртқы шекара мен жасырын қырлар сақталды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Формуланы қолдану",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent10source/newfullsolution/MCQreview; actualmetric rectangles and square contact, hidden/visible cuboid edge topology, allunits and dimensional conversions, inward/outward arrows, nonleaking description, positive root uniqueness and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave30-equal-area-long-rectangle-square.svg",
+      "verificationModule": "scripts/editorial/visual-wave30-models.mjs",
+      "options": [
+        "Аудандары да, периметрлері де тең",
+        "Аудандары тең, A периметрі үлкен",
+        "Периметрлері тең, B ауданы үлкен",
+        "A ауданы үлкен, периметрлері тең"
+      ],
+      "statement": "A тіктөртбұрышы мен B шаршысының өлшемдері берілген. Аудан мен периметрді өз формулаларымен есептеп, дұрыс салыстыруды таңдаңыз.",
+      "solution": "A ауданы 16 · 4 = 64 см², периметрі 2 · (16 + 4) = 40 см. B ауданы 8 · 8 = 64 см², периметрі 4 · 8 = 32 см. Аудандары тең, бірақ 40 > 32. Ауданның теңдігі периметрлердің теңдігін білдірмейді.",
+      "figureDescription": "A тіктөртбұрышы 16 см × 4 см; B шаршысы 8 см қабырғалы.",
+      "figureSha256": "73b056d32437a4ffaa56c3288d7d9c09f9a3e7a7b86a757ebd4cf36bb5852c1b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "Аудандары тең, A периметрі үлкен",
+        "checks": {
+          "areaA": 64,
+          "areaB": 64,
+          "perimeterA": 40,
+          "perimeterB": 32,
+          "optionTruths": [
+            false,
+            true,
+            false,
+            false
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave30-opposing-cars-three-hours",
+      "modelId": "visual-wave30-head-on-meeting-time",
+      "grade": 5,
+      "topic": "speed",
+      "difficulty": "medium",
+      "params": {
+        "scene": "head-on",
+        "firstSpeed": 75,
+        "secondSpeed": 55,
+        "distance": 390
+      },
+      "answer": "3",
+      "sourceRefs": [
+        {
+          "sourceId": "60c4a36c78fbfa67",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-11-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-11-level2.json#10",
+      "sourceCanonicalSha256": "7a2bc9157fb05a085fbcfd138783003327603fecaccb764d98378c87aab16b87",
+      "sourceSkill": "Dividing the original distance by a sum of opposing speeds; checking both component paths",
+      "adaptationChanges": [
+        "Әр сақталған формула нысанасы бөлек сақталды: аудан/периметр/көлем бірліктері, қозғалыстың қосынды жылдамдығы, алынып тасталған жолақ, екі рет есептелген ортақ шекара және көлемді сағаттық су ағынына бөлу.",
+        "Барлық өлшемдер, жолақ/қалған аудан, жылдамдықтар/уақыт және бассейннің сорғы өнімділігі жаңа параметрлермен берілді. Шынайы қала арақашықтығы туралы мәлімдеме қолданылмады.",
+        "Native SVG жаңа метрлік/проекциялық құрылымдардан салынды: ортақ геометриялық масштаб, сыртқы шекара мен жасырын қырлар сақталды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Формуланы қолдану",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent10source/newfullsolution/MCQreview; actualmetric rectangles and square contact, hidden/visible cuboid edge topology, allunits and dimensional conversions, inward/outward arrows, nonleaking description, positive root uniqueness and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave30-opposing-cars-three-hours.svg",
+      "verificationModule": "scripts/editorial/visual-wave30-models.mjs",
+      "statement": "A және B елді мекендерінен екі көлік бір мезгілде бір-біріне қарай шықты. Жолдың ұзындығы мен тұрақты жылдамдықтары суретте берілген. Неше сағаттан кейін кездеседі? Жауапқа тек санды жазыңыз.",
+      "solution": "Жақындасу жылдамдығы 75 + 55 = 130 км/сағ. t = s : v = 390 : 130 = 3 сағ. Тексеру: 75 · 3 = 225 км және 55 · 3 = 165 км; 225 + 165 = 390 км.",
+      "figureDescription": "A-дан оңға 75 км/сағ, B-дан солға 55 км/сағ нұсқар; A мен B арасы 390 км.",
+      "figureSha256": "58fdc3b98e17e2fd80986a6b612f3bb733ca3259df651b7cb9730bfd5973f14f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3",
+        "checks": {
+          "rate": 130,
+          "first": 225,
+          "second": 165
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave30-original-square-remaining-one-eighty",
+      "modelId": "visual-wave30-original-square-from-cut-area",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "strip",
+        "strip": 3,
+        "remaining": 180
+      },
+      "answer": "225",
+      "sourceRefs": [
+        {
+          "sourceId": "f98bac940552ce97",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-11-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-11-level3.json#1",
+      "sourceCanonicalSha256": "602b15f906d30f24626e9de6026f559efc8c21c598145d14e2c1538606836cf3",
+      "sourceSkill": "Recovering a square side from a remaining-area product of two factors with a fixed difference, then finding the original area",
+      "adaptationChanges": [
+        "Әр сақталған формула нысанасы бөлек сақталды: аудан/периметр/көлем бірліктері, қозғалыстың қосынды жылдамдығы, алынып тасталған жолақ, екі рет есептелген ортақ шекара және көлемді сағаттық су ағынына бөлу.",
+        "Барлық өлшемдер, жолақ/қалған аудан, жылдамдықтар/уақыт және бассейннің сорғы өнімділігі жаңа параметрлермен берілді. Шынайы қала арақашықтығы туралы мәлімдеме қолданылмады.",
+        "Native SVG жаңа метрлік/проекциялық құрылымдардан салынды: ортақ геометриялық масштаб, сыртқы шекара мен жасырын қырлар сақталды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Формуланы қолдану",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent10source/newfullsolution/MCQreview; actualmetric rectangles and square contact, hidden/visible cuboid edge topology, allunits and dimensional conversions, inward/outward arrows, nonleaking description, positive root uniqueness and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave30-original-square-remaining-one-eighty.svg",
+      "verificationModule": "scripts/editorial/visual-wave30-models.mjs",
+      "statement": "Шаршы картоннан сары тіктөртбұрыш жолақ қиылды. Жолақ бүкіл қабырға бойымен созылған, оның ені мен қалған көк бөліктің ауданы суретте берілген. Бастапқы шаршының ауданын см²-пен табыңыз. Сызба масштабсыз берілген. Жауапқа тек санды жазыңыз.",
+      "solution": "Шаршы қабырғасы a болса, қалған тіктөртбұрыштың қабырғалары a және a − 3. Сондықтан a · (a − 3) = 180. Айырмасы 3 болатын 12 және 15 сандарының көбейтіндісі 180. Қабырға a = 15 см. Бастапқы аудан 15 · 15 = 225 см². Тексеру: қиылған жолақ 15 · 3 = 45 см²; 180 + 45 = 225. Ауданға жолақ енін жай ғана қосуға болмайды.",
+      "figureDescription": "Белгісіз қабырғалы толық шаршының оң жағындағы сары жолақтың ені 3 см. Қалған көк тіктөртбұрыштың ауданы 180 см².",
+      "figureSha256": "9af31e54aa1f2af25fa82fbbfcd2fb64de222ef4720ce6423a4a3c1e7bf47bc4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "225",
+        "checks": {
+          "side": 15,
+          "otherRoot": -12,
+          "removed": 45
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave30-adjacent-twelve-seven-squares",
+      "modelId": "visual-wave30-adjacent-squares-outer-perimeter",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "adjacent",
+        "large": 12,
+        "small": 7
+      },
+      "answer": "62",
+      "sourceRefs": [
+        {
+          "sourceId": "df1d341d16d6249c",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-11-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-11-level3.json#3",
+      "sourceCanonicalSha256": "376506584a7f29e3419209e104d775da57060fbcb7ccff6ec635bb2bf1a4e2d3",
+      "sourceSkill": "Removing a shared segment twice from separate square perimeters and confirming the actual six-segment outer boundary",
+      "adaptationChanges": [
+        "Әр сақталған формула нысанасы бөлек сақталды: аудан/периметр/көлем бірліктері, қозғалыстың қосынды жылдамдығы, алынып тасталған жолақ, екі рет есептелген ортақ шекара және көлемді сағаттық су ағынына бөлу.",
+        "Барлық өлшемдер, жолақ/қалған аудан, жылдамдықтар/уақыт және бассейннің сорғы өнімділігі жаңа параметрлермен берілді. Шынайы қала арақашықтығы туралы мәлімдеме қолданылмады.",
+        "Native SVG жаңа метрлік/проекциялық құрылымдардан салынды: ортақ геометриялық масштаб, сыртқы шекара мен жасырын қырлар сақталды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Формуланы қолдану",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent10source/newfullsolution/MCQreview; actualmetric rectangles and square contact, hidden/visible cuboid edge topology, allunits and dimensional conversions, inward/outward arrows, nonleaking description, positive root uniqueness and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave30-adjacent-twelve-seven-squares.svg",
+      "verificationModule": "scripts/editorial/visual-wave30-models.mjs",
+      "options": [
+        "76",
+        "69",
+        "62",
+        "52"
+      ],
+      "statement": "Екі шаршы төменгі қабырғалары бір түзуде жататындай жалғасқан. Кіші шаршының бір қабырғасы түгел үлкенімен жанасады; ортақ ішкі сызық үзікпен көрсетілген. Сыртқы фигураның периметрін сантиметрмен таңдаңыз.",
+      "solution": "Екі бөлек периметр қосындысы 4 · 12 + 4 · 7 = 76 см. 7 см ортақ сызық екеуінде де бар, бірақ сыртқы шекараға кірмейді. Оны екі рет азайтамыз: 76 − 2 · 7 = 62 см. Сыртқы шекара бойымен бөлек тексеру: 12 + 5 + 7 + 7 + 19 + 12 = 62 см.",
+      "figureDescription": "Төменгі қабырғалары бір түзуде жатқан 12 см және 7 см шаршылар, ортақ ішкі 7 см сызық үзікпен көрсетілген.",
+      "figureSha256": "aac8009282382c9afeefc26ab65b2d970eefd55a7de7b0a9a379f1dc548cca43",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "62",
+        "checks": {
+          "separate": 76,
+          "shared": 7,
+          "outerSegments": [
+            12,
+            5,
+            7,
+            7,
+            19,
+            12
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave30-outward-walking-five-six",
+      "modelId": "visual-wave30-outward-distance-formula",
+      "grade": 5,
+      "topic": "speed",
+      "difficulty": "medium",
+      "params": {
+        "scene": "separate",
+        "firstSpeed": 5,
+        "secondSpeed": 6,
+        "hours": 4
+      },
+      "answer": "44",
+      "sourceRefs": [
+        {
+          "sourceId": "a437ddc90efcf943",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-11-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-11-leveltest.json#6",
+      "sourceCanonicalSha256": "5897cefb921abe9841ea4bce7470b89e1633f64802447f2f4bbbe58eb275cedf",
+      "sourceSkill": "Using the sum of outward speeds from one start point in the distance formula",
+      "adaptationChanges": [
+        "Әр сақталған формула нысанасы бөлек сақталды: аудан/периметр/көлем бірліктері, қозғалыстың қосынды жылдамдығы, алынып тасталған жолақ, екі рет есептелген ортақ шекара және көлемді сағаттық су ағынына бөлу.",
+        "Барлық өлшемдер, жолақ/қалған аудан, жылдамдықтар/уақыт және бассейннің сорғы өнімділігі жаңа параметрлермен берілді. Шынайы қала арақашықтығы туралы мәлімдеме қолданылмады.",
+        "Native SVG жаңа метрлік/проекциялық құрылымдардан салынды: ортақ геометриялық масштаб, сыртқы шекара мен жасырын қырлар сақталды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Формуланы қолдану",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent10source/newfullsolution/MCQreview; actualmetric rectangles and square contact, hidden/visible cuboid edge topology, allunits and dimensional conversions, inward/outward arrows, nonleaking description, positive root uniqueness and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave30-outward-walking-five-six.svg",
+      "verificationModule": "scripts/editorial/visual-wave30-models.mjs",
+      "statement": "Екі саяхатшы O нүктесінен бір мезгілде екі қарама-қарсы бағытқа шықты. Тұрақты жылдамдықтары суретте берілген. 4 сағаттан кейін олардың арақашықтығы неше километр болады? Жауапқа тек санды жазыңыз.",
+      "solution": "Алшақтау жылдамдығы 5 + 6 = 11 км/сағ. s = v · t = 11 · 4 = 44 км. Жолдар бөлек 20 және 24 км, олардың қосындысы 44 км.",
+      "figureDescription": "Ортақ O нүктесінен солға 5 км/сағ, оңға 6 км/сағ бағытталған екі нұсқар.",
+      "figureSha256": "fcae8b2fe5ad199ff53fb8b4c8dac3491bc3635f3062330f8dd92c95696855af",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "44",
+        "checks": {
+          "rate": 11,
+          "first": 20,
+          "second": 24
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave30-pool-inner-volume-then-fill-time",
+      "modelId": "visual-wave30-pool-volume-fill-time",
+      "grade": 5,
+      "topic": "work",
+      "difficulty": "medium",
+      "params": {
+        "scene": "solid",
+        "length": 24,
+        "depth": 12,
+        "height": 3,
+        "unit": "м",
+        "rate": 72
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "ba8081109ed8974d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-11-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-11-leveltest.json#8",
+      "sourceCanonicalSha256": "b40af1ad35d507a76cf6287a53796946aa411de46b2f73e0296b143a12496ac2",
+      "sourceSkill": "Computing a cuboid capacity then dividing by hourly volume flow; identifying requested work time rather than just geometric volume",
+      "adaptationChanges": [
+        "Әр сақталған формула нысанасы бөлек сақталды: аудан/периметр/көлем бірліктері, қозғалыстың қосынды жылдамдығы, алынып тасталған жолақ, екі рет есептелген ортақ шекара және көлемді сағаттық су ағынына бөлу.",
+        "Барлық өлшемдер, жолақ/қалған аудан, жылдамдықтар/уақыт және бассейннің сорғы өнімділігі жаңа параметрлермен берілді. Шынайы қала арақашықтығы туралы мәлімдеме қолданылмады.",
+        "Native SVG жаңа метрлік/проекциялық құрылымдардан салынды: ортақ геометриялық масштаб, сыртқы шекара мен жасырын қырлар сақталды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Формуланы қолдану",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent10source/newfullsolution/MCQreview; actualmetric rectangles and square contact, hidden/visible cuboid edge topology, allunits and dimensional conversions, inward/outward arrows, nonleaking description, positive root uniqueness and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave30-pool-inner-volume-then-fill-time.svg",
+      "verificationModule": "scripts/editorial/visual-wave30-models.mjs",
+      "statement": "Бос бассейннің ішкі пішіні — тікбұрышты параллелепипед. Ішкі өлшемдері суретте берілген. Сорғы сағатына 72 м³ су құяды, су сыртқа ақпайды. Бассейнді толық толтыруға неше сағат керек? Жауапқа тек санды жазыңыз.",
+      "solution": "V = a · b · c = 24 · 12 · 3 = 864 м³. Бір сағатта 72 м³ құйылса, t = V : q = 864 : 72 = 12 сағ. Тексеру: 72 · 12 = 864 м³.",
+      "figureDescription": "Тікбұрышты параллелепипед: ұзындығы 24 м, ені 12 м, биіктігі 3 м. Көрінбейтін қырлар үзік сызықпен.",
+      "figureSha256": "dcd25069c33b8dc3978a7b7c0625cb98f5e96e6684bcb4ddc149dd1c09d752ce",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "volume": 864,
+          "rate": 72
+        }
+      }
+    }
+  ]
+}

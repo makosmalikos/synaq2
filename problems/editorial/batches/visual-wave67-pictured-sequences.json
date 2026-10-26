@@ -1,0 +1,766 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All10savedvisualgrade5topic4.12; archived sources only, no capture/download/traces; all10source rasters available.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5 topic4.12 sources",
+    "sourceVisualOccurrences": 10,
+    "addressedNewDrafts": 10,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "unavailableSourceRasters": [],
+    "exactNewSourceIds": [
+      "06f8759e7c2e1250",
+      "12a73d197e1973b9",
+      "19518d51eb43cb27",
+      "39e1a72e626957f3",
+      "5a2474bcb53e0db5",
+      "5db9b895e1d7d19e",
+      "7a808ee757f04cd0",
+      "7e8c33a7fd7c8fb9",
+      "9c8450fc5455eb02",
+      "e3928affd16738fd"
+    ],
+    "distinctModels": 10,
+    "semantics": "Ten source-specific visualsequence skills:constantsteps/geometriciterations, fractionalpatterns, offsetjumpcount, remaindercomplement, completefivefloorhitpath, nthsideTHENperimeter."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave67-table-seven-tenths-tenth",
+      "modelId": "visual-wave67-decimal-table-constant-step-nth",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "easy",
+      "params": {
+        "scene": "decimal-table",
+        "firstTenths": 7,
+        "stepTenths": 7,
+        "shown": 4,
+        "target": 10
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "19518d51eb43cb27",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-12-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-12-level1.json#0",
+      "sourceCanonicalSha256": "7a6639b3845f1dd979d6671fd1ab1b387f40cfbb211844e24be799b22fb3071c",
+      "sourceSkill": "Read allfourvalues .7/1.4/2.1/2.8, inferconstant .7step; tenthhasNINEincrements or .7×10.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.12 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; екі парақтағы 10 бастапқы растр қаралды. Әр дерекке жеке жаңа параметр/нативті SVG жасалды, сан тізбегінің нақты берілген ережесі сақталды.",
+        "Жаңа деректер:кесте0,7/1,4/2,1/2,8→оныншы7;шеңбер2/3…5/6→алтыншы7/8;бестікшкалаA3/5B7/5C11/5D3→3+4/5;баған0,5/1,1/1,7/2,3→сегізінші4,7;шегірткеA3/4шаг3/4мақсат9+3/4→12секіріс;машина0,12×3бесрет→29,16;2мтаспа7жартылайқию→1+63/64м;доп2,4/1,2→бесіншіеденге6,9м;бөлшеккестеn/(n+3)төртінші4/7;шаршылар1,75/2,5/3,25→тоғызыншыP31.",
+        "Тек өз нативті геометрия:тең секторлар/шкала/бағандар/бес нұсқар/толықжолақ/масштабты доғалар/бөлшектер/бір масштабты шаршылар. Бастапқы traced SVG немесе raster қолданылмады. Жауаптары суретте ашылмаған. Сыртқы тәуелсіз тексеріс қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттердегі сандар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/newconditions/official/newsolutions/everyMCQ plus2source/native343sheets. Observeactualtablevalues/sectors/fifths/quarters/bargrid/sixboxesFIVEarrows/tapehalfremaining/ballONEinitialplusTWICEfourrebounds/rawfractionpattern/commonscalesquares andNminusONEincrements. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave67-table-seven-tenths-tenth.svg",
+      "verificationModule": "scripts/editorial/visual-wave67-models.mjs",
+      "statement": "Кестенің жоғарғы жолы — мүшенің нөмірі n, төменгі жолы — мәні. Әр келесі мүше алдыңғысынан бірдей санға артады. ОНЫНШЫ мүшенің мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Кестедегі мәндер 0,7; 1,4; 2,1; 2,8. Айырымы 0,7. Біріншіден оныншыға дейін 10 − 1 = 9 өсім: 0,7 + 9 × 0,7 = 7. Бірінші мүше де қадамға тең болғандықтан, 0,7 × 10 = 7 деп те тексеруге болады.",
+      "figureDescription": "n жолында 1,2,3,4; мәндер жолында 0,7; 1,4; 2,1; 2,8.",
+      "figureSha256": "aadfb305182ae61be0d45cd0536cec9cab766020217e3944a89138e6ce3307c7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": {
+          "shownTenths": [
+            7,
+            14,
+            21,
+            28
+          ],
+          "stepTenths": 7,
+          "targetIndex": 10,
+          "increments": 9,
+          "targetTenths": 70,
+          "fromLastShownTenths": 70,
+          "previousTenths": 63,
+          "nextTenths": 77,
+          "wrongIgnoringFirstTenths": 70
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave67-circles-two-thirds-sixth",
+      "modelId": "visual-wave67-one-white-sector-next-colored-fraction",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "easy",
+      "params": {
+        "scene": "circles",
+        "firstColored": 2,
+        "shown": 4,
+        "target": 6
+      },
+      "answer": "(7/8)",
+      "sourceRefs": [
+        {
+          "sourceId": "7a808ee757f04cd0",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-12-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-12-level1.json#3",
+      "sourceCanonicalSha256": "2e79ba0b8466cb2b22bfb6dcf69b136d2b9dbce770f1350484bde20ad65aba71",
+      "sourceSkill": "Fourcircles2/3,3/4,4/5,5/6; eachnextONEextraequalpieceandoneextracolored,onewhitealways;6th7/8. Previous/next/white traps kept.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.12 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; екі парақтағы 10 бастапқы растр қаралды. Әр дерекке жеке жаңа параметр/нативті SVG жасалды, сан тізбегінің нақты берілген ережесі сақталды.",
+        "Жаңа деректер:кесте0,7/1,4/2,1/2,8→оныншы7;шеңбер2/3…5/6→алтыншы7/8;бестікшкалаA3/5B7/5C11/5D3→3+4/5;баған0,5/1,1/1,7/2,3→сегізінші4,7;шегірткеA3/4шаг3/4мақсат9+3/4→12секіріс;машина0,12×3бесрет→29,16;2мтаспа7жартылайқию→1+63/64м;доп2,4/1,2→бесіншіеденге6,9м;бөлшеккестеn/(n+3)төртінші4/7;шаршылар1,75/2,5/3,25→тоғызыншыP31.",
+        "Тек өз нативті геометрия:тең секторлар/шкала/бағандар/бес нұсқар/толықжолақ/масштабты доғалар/бөлшектер/бір масштабты шаршылар. Бастапқы traced SVG немесе raster қолданылмады. Жауаптары суретте ашылмаған. Сыртқы тәуелсіз тексеріс қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттердегі сандар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/newconditions/official/newsolutions/everyMCQ plus2source/native343sheets. Observeactualtablevalues/sectors/fifths/quarters/bargrid/sixboxesFIVEarrows/tapehalfremaining/ballONEinitialplusTWICEfourrebounds/rawfractionpattern/commonscalesquares andNminusONEincrements. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave67-circles-two-thirds-sixth.svg",
+      "verificationModule": "scripts/editorial/visual-wave67-models.mjs",
+      "options": [
+        "(6/7)",
+        "(7/8)",
+        "(8/9)",
+        "(1/8)"
+      ],
+      "statement": "Нөмірленген шеңберлердің әрқайсысы тең секторларға бөлінген. Әр келесі фигурада жалпы сектор саны да, көк сектор саны да біреуге артады; бір сектор ақ қалады. АЛТЫНШЫ фигураның қандай бөлігі көк болады?",
+      "solution": "Алғашқы боялған үлестер: (2/3); (3/4); (4/5); (5/6). Боялған секторлар 2, 3, 4, 5 болып өседі, жалпы секторлар одан біреуге көп. Бесіншісінде 6 көк сектордың үлесі (6/7), алтыншысында 7 көк сектордың үлесі (7/8). (8/9) — жетінші фигура, (1/8) — алтыншыдағы ақ сектордың үлесі; сұралғаны көк бөлік.",
+      "figureDescription": "Нөмірлері1,2,3,4 төрт тең секторлы шеңбер. Жалпы сектор саны 3, 4, 5, 6, әр шеңберде бір сектор ақ, қалғаны көк.",
+      "figureSha256": "39e1273a65c13b506e4487c6e06f95c9ea5e4d8d0d4d758867a0db5a13396a52",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(7/8)",
+        "checks": {
+          "shownRawFractions": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "targetIndex": 6,
+          "targetRawFraction": [
+            7,
+            8
+          ],
+          "whitePieces": 1,
+          "previous": [
+            6,
+            7
+          ],
+          "next": [
+            8,
+            9
+          ],
+          "white": [
+            1,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave67-ray-three-fifths-four-fifths-step",
+      "modelId": "visual-wave67-fifths-coordinate-next-term",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ray",
+        "denominator": 5,
+        "maxTick": 20,
+        "points": [
+          [
+            "A",
+            3
+          ],
+          [
+            "B",
+            7
+          ],
+          [
+            "C",
+            11
+          ],
+          [
+            "D",
+            15
+          ]
+        ],
+        "target": 5
+      },
+      "answer": "(3 + (4/5))",
+      "sourceRefs": [
+        {
+          "sourceId": "12a73d197e1973b9",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-12-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-12-level1.json#15",
+      "sourceCanonicalSha256": "f01b8088cf50c9f535dc52004c64d040d553e2f640c1e1d940777a740dd77c16",
+      "sourceSkill": "Fifthunitread actualA3/5,B7/5,C11/5,D15/5, equalFOURticks4/5;next19/5;onefewer/extra/repeat traps.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.12 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; екі парақтағы 10 бастапқы растр қаралды. Әр дерекке жеке жаңа параметр/нативті SVG жасалды, сан тізбегінің нақты берілген ережесі сақталды.",
+        "Жаңа деректер:кесте0,7/1,4/2,1/2,8→оныншы7;шеңбер2/3…5/6→алтыншы7/8;бестікшкалаA3/5B7/5C11/5D3→3+4/5;баған0,5/1,1/1,7/2,3→сегізінші4,7;шегірткеA3/4шаг3/4мақсат9+3/4→12секіріс;машина0,12×3бесрет→29,16;2мтаспа7жартылайқию→1+63/64м;доп2,4/1,2→бесіншіеденге6,9м;бөлшеккестеn/(n+3)төртінші4/7;шаршылар1,75/2,5/3,25→тоғызыншыP31.",
+        "Тек өз нативті геометрия:тең секторлар/шкала/бағандар/бес нұсқар/толықжолақ/масштабты доғалар/бөлшектер/бір масштабты шаршылар. Бастапқы traced SVG немесе raster қолданылмады. Жауаптары суретте ашылмаған. Сыртқы тәуелсіз тексеріс қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттердегі сандар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/newconditions/official/newsolutions/everyMCQ plus2source/native343sheets. Observeactualtablevalues/sectors/fifths/quarters/bargrid/sixboxesFIVEarrows/tapehalfremaining/ballONEinitialplusTWICEfourrebounds/rawfractionpattern/commonscalesquares andNminusONEincrements. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave67-ray-three-fifths-four-fifths-step.svg",
+      "verificationModule": "scripts/editorial/visual-wave67-models.mjs",
+      "options": [
+        "(3 + (4/5))",
+        "(3 + (3/5))",
+        "4",
+        "3"
+      ],
+      "statement": "Бірлік кесінді бес тең аралыққа бөлінген. A, B, C, D координаталары — тізбектің алғашқы төрт мүшесі; әр келесі мүше бірдей шамаға артады. БЕСІНШІ мүшені таңдаңыз.",
+      "solution": "Бір ұсақ қадам (1/5). A = (3/5), B = (7/5) = (1 + (2/5)), C = (11/5) = (2 + (1/5)), D = 3. Көрші нүктелер арасында төрт қадам бар: өсім (4/5). Келесі мүше 3 + (4/5) = (3 + (4/5)). Бір ұсақ қадам кем санау (3 + (3/5)), бір қадам артық санау 4, D-ны қайталау 3 береді.",
+      "figureDescription": "Координаталық сәуле 0…4, әр бірлік 5 тең аралық. A сол жақтан 3-белгіде; B сол жақтан 7-белгіде; C сол жақтан 11-белгіде; D сол жақтан 15-белгіде.",
+      "figureSha256": "e8cff7fd193fbbf4f4122229ef4f7eb89b097b8badbf09352c56b762916720ef",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(3 + (4/5))",
+        "checks": {
+          "ticks": [
+            3,
+            7,
+            11,
+            15
+          ],
+          "stepTicks": 4,
+          "denominator": 5,
+          "targetTick": 19,
+          "targetIndex": 5,
+          "oneFewerTick": "(3 + (3/5))",
+          "oneExtraTick": "4",
+          "repeatedLast": "3"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave67-bars-half-six-tenths-eighth",
+      "modelId": "visual-wave67-decimal-bar-height-constant-step-nth",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "bars",
+        "firstTenths": 5,
+        "stepTenths": 6,
+        "shown": 4,
+        "target": 8,
+        "maxTenths": 25
+      },
+      "answer": "4,7",
+      "sourceRefs": [
+        {
+          "sourceId": "5a2474bcb53e0db5",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-12-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-12-level2.json#6",
+      "sourceCanonicalSha256": "0ad42e26dd437b316afdd8db164b19edb71b57ce7be8979c300f4baff850326c",
+      "sourceSkill": "Actual.1grid5/11/17/23tenths, step.6;8th4.7=2.3+FOUR×.6, notnext5.3/prev4.1/8×.6=4.8.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.12 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; екі парақтағы 10 бастапқы растр қаралды. Әр дерекке жеке жаңа параметр/нативті SVG жасалды, сан тізбегінің нақты берілген ережесі сақталды.",
+        "Жаңа деректер:кесте0,7/1,4/2,1/2,8→оныншы7;шеңбер2/3…5/6→алтыншы7/8;бестікшкалаA3/5B7/5C11/5D3→3+4/5;баған0,5/1,1/1,7/2,3→сегізінші4,7;шегірткеA3/4шаг3/4мақсат9+3/4→12секіріс;машина0,12×3бесрет→29,16;2мтаспа7жартылайқию→1+63/64м;доп2,4/1,2→бесіншіеденге6,9м;бөлшеккестеn/(n+3)төртінші4/7;шаршылар1,75/2,5/3,25→тоғызыншыP31.",
+        "Тек өз нативті геометрия:тең секторлар/шкала/бағандар/бес нұсқар/толықжолақ/масштабты доғалар/бөлшектер/бір масштабты шаршылар. Бастапқы traced SVG немесе raster қолданылмады. Жауаптары суретте ашылмаған. Сыртқы тәуелсіз тексеріс қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттердегі сандар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/newconditions/official/newsolutions/everyMCQ plus2source/native343sheets. Observeactualtablevalues/sectors/fifths/quarters/bargrid/sixboxesFIVEarrows/tapehalfremaining/ballONEinitialplusTWICEfourrebounds/rawfractionpattern/commonscalesquares andNminusONEincrements. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave67-bars-half-six-tenths-eighth.svg",
+      "verificationModule": "scripts/editorial/visual-wave67-models.mjs",
+      "options": [
+        "5,3",
+        "4,1",
+        "4,7",
+        "4,8"
+      ],
+      "statement": "Бағанның биіктігі — тізбек мүшесінің мәні, астындағы сан — нөмірі. Көршілес мүшелердің өсімі бірдей. Шкала бойынша алғашқы төрт мәнді оқып, СЕГІЗІНШІ мүшені таңдаңыз.",
+      "solution": "Тік шкалада 0 мен 0,5 арасында бес тең аралық бар: бір тор 0,1. Бағандар 0,5; 1,1; 1,7; 2,3. Өсім 1,1 − 0,5 = 0,6. Төртіншіден сегізіншіге дейін төрт өсім: 2,3 + 4 × 0,6 = 2,3 + 2,4 = 4,7. 5,3 — тоғызыншы, 4,1 — жетінші мүше; 8 × 0,6 = 4,8 деп есептеу бастапқы 0,5 мәнін ескермейді.",
+      "figureDescription": "Тік шкала 0…2,5, ұсақ қадам0,1; 1…4 бағанның биіктігі 0,5; 1,1; 1,7; 2,3.",
+      "figureSha256": "19f06bab51ee86fb6e6871e346414b012ff657bc3f29da6120f1a8a68d346bea",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4,7",
+        "checks": {
+          "shownTenths": [
+            5,
+            11,
+            17,
+            23
+          ],
+          "stepTenths": 6,
+          "targetIndex": 8,
+          "increments": 7,
+          "targetTenths": 47,
+          "fromLastShownTenths": 47,
+          "previousTenths": 41,
+          "nextTenths": 53,
+          "wrongIgnoringFirstTenths": 48
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave67-jumps-three-quarters-to-thirty-nine-quarters",
+      "modelId": "visual-wave67-quarter-ray-offset-jump-count",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "jumps",
+        "denominator": 4,
+        "maxTick": 12,
+        "points": [
+          [
+            "A",
+            3
+          ],
+          [
+            "B",
+            6
+          ],
+          [
+            "C",
+            9
+          ]
+        ],
+        "targetTick": 39
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "5db9b895e1d7d19e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-12-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-12-level2.json#10",
+      "sourceCanonicalSha256": "08ba43768507e8516e3c74d0edc18d0862c86cc5f036eaf3232f29c894a148b3",
+      "sourceSkill": "Actualquarterray startsA3/4, eachjump3/4;9¾minusSTART.75=9, then÷.75=12jumps (not13positions).",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.12 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; екі парақтағы 10 бастапқы растр қаралды. Әр дерекке жеке жаңа параметр/нативті SVG жасалды, сан тізбегінің нақты берілген ережесі сақталды.",
+        "Жаңа деректер:кесте0,7/1,4/2,1/2,8→оныншы7;шеңбер2/3…5/6→алтыншы7/8;бестікшкалаA3/5B7/5C11/5D3→3+4/5;баған0,5/1,1/1,7/2,3→сегізінші4,7;шегірткеA3/4шаг3/4мақсат9+3/4→12секіріс;машина0,12×3бесрет→29,16;2мтаспа7жартылайқию→1+63/64м;доп2,4/1,2→бесіншіеденге6,9м;бөлшеккестеn/(n+3)төртінші4/7;шаршылар1,75/2,5/3,25→тоғызыншыP31.",
+        "Тек өз нативті геометрия:тең секторлар/шкала/бағандар/бес нұсқар/толықжолақ/масштабты доғалар/бөлшектер/бір масштабты шаршылар. Бастапқы traced SVG немесе raster қолданылмады. Жауаптары суретте ашылмаған. Сыртқы тәуелсіз тексеріс қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттердегі сандар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/newconditions/official/newsolutions/everyMCQ plus2source/native343sheets. Observeactualtablevalues/sectors/fifths/quarters/bargrid/sixboxesFIVEarrows/tapehalfremaining/ballONEinitialplusTWICEfourrebounds/rawfractionpattern/commonscalesquares andNminusONEincrements. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave67-jumps-three-quarters-to-thirty-nine-quarters.svg",
+      "verificationModule": "scripts/editorial/visual-wave67-models.mjs",
+      "statement": "Сан түзуінің әр бірлігі төрт тең аралыққа бөлінген. Шегіртке A нүктесінен бастап оңға бірдей секіреді; алғашқы екі секіріс көрсетілген. Ол (9 + (3/4)) координатасына неше СЕКІРІСТЕН кейін жетеді? Жауапқа тек санды жазыңыз.",
+      "solution": "Шкаланың кіші қадамы (1/4). A = (3/4), B = (6/4) = (1 + (1/2)), C = (9/4) = (2 + (1/4)). Бір секіріс (6/4) − (3/4) = (3/4). Мақсатқа дейінгі жол (9 + (3/4)) − (3/4) = (36/4) = 9. Секіріс саны 9 ÷ (3/4) = 9 × (4/3) = 12. Тексеру: (3/4) + 12 × (3/4) = (39/4) = (9 + (3/4)). Бастапқы тұрған орын секіріс болып саналмайды.",
+      "figureDescription": "Координаталық сәуле 0…3, әр бірлік 4 тең аралық. A сол жақтан 3-белгіде; B сол жақтан 6-белгіде; C сол жақтан 9-белгіде. A-дан B-ға және B-дан C-ға екі нұсқар.",
+      "figureSha256": "2307525c8d1949f7fe60ccbfeed9fdb15ba52a3df215098f94e18545393dc84a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "ticks": [
+            3,
+            6,
+            9
+          ],
+          "stepTicks": 3,
+          "denominator": 4,
+          "targetTick": 39,
+          "distanceTicks": 36,
+          "jumps": 12,
+          "backTargetTick": 39
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave67-machine-twelve-hundredths-times-three",
+      "modelId": "visual-wave67-multiplicative-machine-five-arrows-sixth",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "machine",
+        "firstHundredths": 12,
+        "factor": 3,
+        "target": 6
+      },
+      "answer": "29,16",
+      "sourceRefs": [
+        {
+          "sourceId": "39e1a72e626957f3",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-12-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-12-level2.json#12",
+      "sourceCanonicalSha256": "c40cc92a4a208bcc867e821061dbfeb0e2a8bdd47c5c3ba6454f991e40ce01f1",
+      "sourceSkill": "Sixindexedboxes/five×3arrows; .12/.36/1.08/3.24/9.72/29.16. Previous9.72/next87.48/additive6×.12=.72 traps.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.12 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; екі парақтағы 10 бастапқы растр қаралды. Әр дерекке жеке жаңа параметр/нативті SVG жасалды, сан тізбегінің нақты берілген ережесі сақталды.",
+        "Жаңа деректер:кесте0,7/1,4/2,1/2,8→оныншы7;шеңбер2/3…5/6→алтыншы7/8;бестікшкалаA3/5B7/5C11/5D3→3+4/5;баған0,5/1,1/1,7/2,3→сегізінші4,7;шегірткеA3/4шаг3/4мақсат9+3/4→12секіріс;машина0,12×3бесрет→29,16;2мтаспа7жартылайқию→1+63/64м;доп2,4/1,2→бесіншіеденге6,9м;бөлшеккестеn/(n+3)төртінші4/7;шаршылар1,75/2,5/3,25→тоғызыншыP31.",
+        "Тек өз нативті геометрия:тең секторлар/шкала/бағандар/бес нұсқар/толықжолақ/масштабты доғалар/бөлшектер/бір масштабты шаршылар. Бастапқы traced SVG немесе raster қолданылмады. Жауаптары суретте ашылмаған. Сыртқы тәуелсіз тексеріс қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттердегі сандар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/newconditions/official/newsolutions/everyMCQ plus2source/native343sheets. Observeactualtablevalues/sectors/fifths/quarters/bargrid/sixboxesFIVEarrows/tapehalfremaining/ballONEinitialplusTWICEfourrebounds/rawfractionpattern/commonscalesquares andNminusONEincrements. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave67-machine-twelve-hundredths-times-three.svg",
+      "verificationModule": "scripts/editorial/visual-wave67-models.mjs",
+      "options": [
+        "9,72",
+        "87,48",
+        "0,72",
+        "29,16"
+      ],
+      "statement": "Машинадағы әр нұсқар көрсетілген бір амалды орындайды. Карточкалардың жанындағы 1–6 сандары — мүшелердің нөмірі. Сары, АЛТЫНШЫ карточкадағы белгісіз санды таңдаңыз.",
+      "solution": "Бірінші сан 0,12. Нұсқарлар ретімен 3-ке көбейтеді: 0,12 → 0,36 → 1,08 → 3,24 → 9,72 → 29,16. Біріншіден алтыншыға дейін БЕС көбейту бар: 0,12 × 3 × 3 × 3 × 3 × 3 = 29,16. 9,72 — бесінші, 87,48 — жетінші мүше. 0,72 = 6 × 0,12 — көбейткішті қайталау орнына 0,12-ні қайталап қосқандағы қате нәтиже.",
+      "figureDescription": "1…6 нөмірлі алты карточка, 1,2,3 жоғарғы қатарда солдан оңға;4,5,6 төменгі қатарда оңнан солға. Бірінші0,12, екінші0,36, алтыншы сары сұрақ белгісі. Бес нұсқардың әрқайсысында ×3.",
+      "figureSha256": "835bb97783af8da1678d2c4151c18587e5abcc0694d567ad42d9c454ec1362e0",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "29,16",
+        "checks": {
+          "termsHundredths": [
+            12,
+            36,
+            108,
+            324,
+            972,
+            2916,
+            8748
+          ],
+          "arrows": 5,
+          "factor": 3,
+          "previousHundredths": 972,
+          "nextHundredths": 8748,
+          "additiveWrongHundredths": 72
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave67-tape-two-metres-seven-halvings",
+      "modelId": "visual-wave67-halving-remainder-complement-total-cut",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "hard",
+      "params": {
+        "scene": "tape",
+        "whole": 2,
+        "cuts": 7,
+        "shownCuts": 3
+      },
+      "answer": "(1 + (63/64))",
+      "sourceRefs": [
+        {
+          "sourceId": "7e8c33a7fd7c8fb9",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-12-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-12-level3.json#5",
+      "sourceCanonicalSha256": "13dd505cf0e456bd7624339f424613ec422caa308c0ac88a2d41f996238d17c0",
+      "sourceSkill": "Newwhole2metres,7HALFremainingcuts; firstthree1/.5/.25andwhite.25. Remaining1/64, removed127/64=1+63/64;6cuts1+31/32/first3cuts1+3/4 traps.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.12 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; екі парақтағы 10 бастапқы растр қаралды. Әр дерекке жеке жаңа параметр/нативті SVG жасалды, сан тізбегінің нақты берілген ережесі сақталды.",
+        "Жаңа деректер:кесте0,7/1,4/2,1/2,8→оныншы7;шеңбер2/3…5/6→алтыншы7/8;бестікшкалаA3/5B7/5C11/5D3→3+4/5;баған0,5/1,1/1,7/2,3→сегізінші4,7;шегірткеA3/4шаг3/4мақсат9+3/4→12секіріс;машина0,12×3бесрет→29,16;2мтаспа7жартылайқию→1+63/64м;доп2,4/1,2→бесіншіеденге6,9м;бөлшеккестеn/(n+3)төртінші4/7;шаршылар1,75/2,5/3,25→тоғызыншыP31.",
+        "Тек өз нативті геометрия:тең секторлар/шкала/бағандар/бес нұсқар/толықжолақ/масштабты доғалар/бөлшектер/бір масштабты шаршылар. Бастапқы traced SVG немесе raster қолданылмады. Жауаптары суретте ашылмаған. Сыртқы тәуелсіз тексеріс қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттердегі сандар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/newconditions/official/newsolutions/everyMCQ plus2source/native343sheets. Observeactualtablevalues/sectors/fifths/quarters/bargrid/sixboxesFIVEarrows/tapehalfremaining/ballONEinitialplusTWICEfourrebounds/rawfractionpattern/commonscalesquares andNminusONEincrements. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave67-tape-two-metres-seven-halvings.svg",
+      "verificationModule": "scripts/editorial/visual-wave67-models.mjs",
+      "options": [
+        "(1/64)",
+        "(1 + (31/32))",
+        "(1 + (3/4))",
+        "(1 + (63/64))"
+      ],
+      "statement": "Дина ұзындығы 2 м таспаның жартысын, содан кейін әр жолы ҚАЛҒАН таспаның жартысын қиып алады. Суретте алғашқы үш қиылған бөлік боялған, қалғаны ақ. Барлығы 7 рет қиғанда ол неше метр таспа қиып алады?",
+      "solution": "Алғашқы үш қиылған ұзындық 1; 0,5; 0,25 м. Әр жолы қалған бөлік екі есе азаяды. Жеті қиюдан кейін қалғаны 2 × (1/128) = (1/64) м. Қиылғаны 2 − (1/64) = (128/64) − (1/64) = (127/64) = (1 + (63/64)) м. Тексеру: ((64 + 32 + 16 + 8 + 4 + 2 + 1)/64) = (127/64). (1 + (31/32)) м — алты қиюдың, (1 + (3/4)) м — тек суреттегі үш қиюдың нәтижесі. (1/64) — алынған емес, қалған ұзындық.",
+      "figureDescription": "Толық 2 м жолақ: алғашқы үш түрлі түсті бөлік толықтың жартысы, ширегі, сегізден бірі; соңғы сегізден бірі ақ.",
+      "figureSha256": "77e5e56c54c23e651fa091a567db88e10296299c551f7b068b79871129edddec",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(1 + (63/64))",
+        "checks": {
+          "whole": 2,
+          "cuts": 7,
+          "denominator": 128,
+          "remainingRaw": [
+            2,
+            128
+          ],
+          "removedRaw": [
+            254,
+            128
+          ],
+          "previousCutRaw": [
+            126,
+            64
+          ],
+          "firstThreeCutRaw": [
+            14,
+            8
+          ],
+          "cutNumeratorsCommonDen": [
+            128,
+            64,
+            32,
+            16,
+            8,
+            4,
+            2
+          ],
+          "backConservationNumerator": 256
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave67-ball-two-four-five-floor-hits",
+      "modelId": "visual-wave67-geometric-rebounds-total-distance-before-fifth-hit",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "hard",
+      "params": {
+        "scene": "ball",
+        "initialTenThousandths": 24000,
+        "firstReboundTenThousandths": 12000,
+        "hits": 5
+      },
+      "answer": "6,9",
+      "sourceRefs": [
+        {
+          "sourceId": "9c8450fc5455eb02",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-12-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-12-level3.json#8",
+      "sourceCanonicalSha256": "7be2f59672a418b20a5af8dbd25bec1a11a461595dea09803e8c5f3ea2c348a3",
+      "sourceSkill": "New2.4m/1.2m exacthalving, BEFORE5thfloorhit initialONCE +fourreboundheightsTWICE;6.9. Upwardonly4.65/doubleinitial9.3/includeFIFTHfullbounce7.05 traps.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.12 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; екі парақтағы 10 бастапқы растр қаралды. Әр дерекке жеке жаңа параметр/нативті SVG жасалды, сан тізбегінің нақты берілген ережесі сақталды.",
+        "Жаңа деректер:кесте0,7/1,4/2,1/2,8→оныншы7;шеңбер2/3…5/6→алтыншы7/8;бестікшкалаA3/5B7/5C11/5D3→3+4/5;баған0,5/1,1/1,7/2,3→сегізінші4,7;шегірткеA3/4шаг3/4мақсат9+3/4→12секіріс;машина0,12×3бесрет→29,16;2мтаспа7жартылайқию→1+63/64м;доп2,4/1,2→бесіншіеденге6,9м;бөлшеккестеn/(n+3)төртінші4/7;шаршылар1,75/2,5/3,25→тоғызыншыP31.",
+        "Тек өз нативті геометрия:тең секторлар/шкала/бағандар/бес нұсқар/толықжолақ/масштабты доғалар/бөлшектер/бір масштабты шаршылар. Бастапқы traced SVG немесе raster қолданылмады. Жауаптары суретте ашылмаған. Сыртқы тәуелсіз тексеріс қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттердегі сандар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/newconditions/official/newsolutions/everyMCQ plus2source/native343sheets. Observeactualtablevalues/sectors/fifths/quarters/bargrid/sixboxesFIVEarrows/tapehalfremaining/ballONEinitialplusTWICEfourrebounds/rawfractionpattern/commonscalesquares andNminusONEincrements. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave67-ball-two-four-five-floor-hits.svg",
+      "verificationModule": "scripts/editorial/visual-wave67-models.mjs",
+      "options": [
+        "6,9",
+        "4,65",
+        "9,3",
+        "7,05"
+      ],
+      "statement": "Доп тек тік бағытта қозғалады; суреттегі доғалар кезекті көтеріліп-түсулерді ажыратады. Ол бастапқы биіктіктен еденге тасталды. Әр соққыдан кейін алдыңғы биіктіктің бірдей бөлігіне көтеріледі; бастапқы және бірінші көтерілу биіктіктері көрсетілген. Еденге БЕСІНШІ рет тиген сәтке дейін доп барлығы неше метр жол жүреді?",
+      "solution": "Суреттен бастапқы биіктік 2,4 м, алғашқы көтерілу 1,2 м. Әр келесі биіктік алдыңғысының жартысы. Бірінші соққыдан кейін бесінші соққыға дейін төрт көтерілу бар: 1,2; 0,6; 0,3; 0,15 м. Олардың қосындысы 2,25 м. Әрқайсысы жоғары және төмен жүргенде екі рет саналады, ал бастапқы құлау бір рет: 2,4 + 2 × 2,25 = 6,9 м. 4,65 = 2,4 + 2,25 тек көтерілулерді қосып, қайта түсулерді ұмытады. 9,3 = 2 × (2,4 + 2,25) бастапқы құлауды да екі рет санайды. 7,05 = 6,9 + 2 × 0,075 бесінші соққыдан КЕЙІНГІ қосымша толық секіруді қосады.",
+      "figureDescription": "Еденге тасталған доптың бастапқы биіктігі 2,4 м, бірінші көтерілуі 1,2 м. Қалған доғалар бірдей масштабта біртіндеп екі есе аласарады.",
+      "figureSha256": "d271a789ce2d7ed3b9cc4e1a720070ed46b18d5d1d9a52749663567ff0d87071",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6,9",
+        "checks": {
+          "initialTenThousandths": 24000,
+          "reboundsTenThousandths": [
+            12000,
+            6000,
+            3000,
+            1500
+          ],
+          "hits": 5,
+          "upwardSumTenThousandths": 22500,
+          "totalTenThousandths": 69000,
+          "wrongUpwardOnly": 46500,
+          "wrongDoubleInitial": 93000,
+          "wrongExtraFifthBounce": 70500,
+          "firstDropCount": 1,
+          "eachReboundCount": 2
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave67-fraction-table-denominator-plus-three",
+      "modelId": "visual-wave67-fraction-table-index-numerator-denominator-offset",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "hard",
+      "params": {
+        "scene": "fraction-table",
+        "denominatorOffset": 3,
+        "shown": 5,
+        "missing": 4
+      },
+      "answer": "(4/7)",
+      "sourceRefs": [
+        {
+          "sourceId": "e3928affd16738fd",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-12-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-12-leveltest.json#2",
+      "sourceCanonicalSha256": "b8e014ad87741770de53215d98a8d176b890f6846e63b1b2abbf7d16d869a641",
+      "sourceSkill": "Readrawfractiontable1/4,2/5,3/6,?,5/8; numeratorindex/denominatorindex+3; fourth4/7;wrongoffset2/num+1/num−1 preserved.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.12 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; екі парақтағы 10 бастапқы растр қаралды. Әр дерекке жеке жаңа параметр/нативті SVG жасалды, сан тізбегінің нақты берілген ережесі сақталды.",
+        "Жаңа деректер:кесте0,7/1,4/2,1/2,8→оныншы7;шеңбер2/3…5/6→алтыншы7/8;бестікшкалаA3/5B7/5C11/5D3→3+4/5;баған0,5/1,1/1,7/2,3→сегізінші4,7;шегірткеA3/4шаг3/4мақсат9+3/4→12секіріс;машина0,12×3бесрет→29,16;2мтаспа7жартылайқию→1+63/64м;доп2,4/1,2→бесіншіеденге6,9м;бөлшеккестеn/(n+3)төртінші4/7;шаршылар1,75/2,5/3,25→тоғызыншыP31.",
+        "Тек өз нативті геометрия:тең секторлар/шкала/бағандар/бес нұсқар/толықжолақ/масштабты доғалар/бөлшектер/бір масштабты шаршылар. Бастапқы traced SVG немесе raster қолданылмады. Жауаптары суретте ашылмаған. Сыртқы тәуелсіз тексеріс қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттердегі сандар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/newconditions/official/newsolutions/everyMCQ plus2source/native343sheets. Observeactualtablevalues/sectors/fifths/quarters/bargrid/sixboxesFIVEarrows/tapehalfremaining/ballONEinitialplusTWICEfourrebounds/rawfractionpattern/commonscalesquares andNminusONEincrements. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave67-fraction-table-denominator-plus-three.svg",
+      "verificationModule": "scripts/editorial/visual-wave67-models.mjs",
+      "options": [
+        "(4/7)",
+        "(4/6)",
+        "(5/7)",
+        "(3/7)"
+      ],
+      "statement": "Кестедегі n — мүшенің нөмірі. Жазылған бөлшектердің алымдары да, бөлімдері де тұрақты қадаммен өседі. Осы заңдылықты анықтап, сары ұяшықтағы ТӨРТІНШІ мүшені таңдаңыз.",
+      "solution": "Кестеде (1/4), (2/5), (3/6), белгісіз, (5/8) жазылған. Әр бөлім өз алымынан 3-ке артық. Төртінші мүшеде алым 4, бөлім 4 + 3 = 7: (4/7). (4/6) бөлімге 3 орнына 2 қосады; (5/7) алымды біреуге артық, (3/7) біреуге кем алады. Берілген (3/6) қысқартылмай көрсетілген, себебі алым мен бөлімнің нөмірмен байланысы салыстырылады.",
+      "figureDescription": "n жолында1…5. Бөлшектер 1 алым, 4 бөлім; 2 алым, 5 бөлім; 3 алым, 6 бөлім; сары сұрақ белгісі; 5 алым, 8 бөлім.",
+      "figureSha256": "db15d0c90505d9a494b2a000d503291c86c6eafca818beb7a5a200226fa123bf",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(4/7)",
+        "checks": {
+          "shownRawFractions": [
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            null,
+            [
+              5,
+              8
+            ]
+          ],
+          "missingIndex": 4,
+          "missingRawFraction": [
+            4,
+            7
+          ],
+          "denominatorOffset": 3
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave67-squares-seven-quarters-three-quarter-step",
+      "modelId": "visual-wave67-metric-growing-squares-nth-perimeter",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "hard",
+      "params": {
+        "scene": "squares",
+        "firstHundredths": 175,
+        "stepHundredths": 75,
+        "shown": 3,
+        "target": 9
+      },
+      "answer": "31",
+      "sourceRefs": [
+        {
+          "sourceId": "06f8759e7c2e1250",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-12-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-12-leveltest.json#5",
+      "sourceCanonicalSha256": "d94ee77fca5decc6b4ce08aa7291d2121c3b4f1b71c1b9cd32022c258ef50a00",
+      "sourceSkill": "Samepixelpercmsquares1.75/2.5/3.25, constant.75; ninthside1.75+EIGHT×.75=7.75, thenFOURsides31.",
+      "adaptationChanges": [
+        "Барлық 10 сақталған 4.12 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; екі парақтағы 10 бастапқы растр қаралды. Әр дерекке жеке жаңа параметр/нативті SVG жасалды, сан тізбегінің нақты берілген ережесі сақталды.",
+        "Жаңа деректер:кесте0,7/1,4/2,1/2,8→оныншы7;шеңбер2/3…5/6→алтыншы7/8;бестікшкалаA3/5B7/5C11/5D3→3+4/5;баған0,5/1,1/1,7/2,3→сегізінші4,7;шегірткеA3/4шаг3/4мақсат9+3/4→12секіріс;машина0,12×3бесрет→29,16;2мтаспа7жартылайқию→1+63/64м;доп2,4/1,2→бесіншіеденге6,9м;бөлшеккестеn/(n+3)төртінші4/7;шаршылар1,75/2,5/3,25→тоғызыншыP31.",
+        "Тек өз нативті геометрия:тең секторлар/шкала/бағандар/бес нұсқар/толықжолақ/масштабты доғалар/бөлшектер/бір масштабты шаршылар. Бастапқы traced SVG немесе raster қолданылмады. Жауаптары суретте ашылмаған. Сыртқы тәуелсіз тексеріс қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттердегі сандар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/newconditions/official/newsolutions/everyMCQ plus2source/native343sheets. Observeactualtablevalues/sectors/fifths/quarters/bargrid/sixboxesFIVEarrows/tapehalfremaining/ballONEinitialplusTWICEfourrebounds/rawfractionpattern/commonscalesquares andNminusONEincrements. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave67-squares-seven-quarters-three-quarter-step.svg",
+      "verificationModule": "scripts/editorial/visual-wave67-models.mjs",
+      "statement": "Өлшемдері сантиметрмен көрсетілген алғашқы үш шаршының қабырғасы әр жолы бірдей шамаға ұзарады. Осы ретпен алынған ТОҒЫЗЫНШЫ шаршының ПЕРИМЕТРІ неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Алғашқы қабырғалар 1,75; 2,5; 3,25 см. Бір өсім 2,5 − 1,75 = 0,75 см. Бірінші шаршыдан тоғызыншыға СЕГІЗ өсім: 1,75 + 8 × 0,75 = 1,75 + 6 = 7,75 см. Шаршының төрт қабырғасы бар: P = 4 × 7,75 = 31 см. Периметрлермен тексеру: алғашқысы 7 см, әр өсімі 4 × 0,75 = 3 см; 7 + 8 × 3 = 31.",
+      "figureDescription": "1,2,3 нөмірлі үш шаршы, қабырғалары 1,75; 2,5; 3,25 см. Барлығы бірдей ұзындық масштабында.",
+      "figureSha256": "64ea52692da9956dd9caf43c8c35899d13cfb639c113ea77b22e1ca0695bd70b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "31",
+        "checks": {
+          "shownSidesHundredths": [
+            175,
+            250,
+            325
+          ],
+          "stepHundredths": 75,
+          "targetIndex": 9,
+          "increments": 8,
+          "targetSideHundredths": 775,
+          "perimeterHundredths": 3100,
+          "perimeterStepHundredths": 300,
+          "backPerimeterHundredths": 3100
+        }
+      }
+    }
+  ]
+}

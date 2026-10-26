@@ -1,0 +1,1056 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All25 individually read saved nonvisual GRADE6topics10.1/10.2, sourceimage tasks excluded. Closed until external independent fullcontenthash review.",
+  "summary": {
+    "editions": 25,
+    "sourceOccurrencesReferenced": 25,
+    "distinctModels": 25,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade6-two-variable-lines-ba453b6b80d18b6d",
+      "modelId": "grade6-two-variable-lines-divide-all-terms-equivalent",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "a": 4,
+        "b": 12,
+        "c": 28,
+        "divisor": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json",
+          "sourceId": "ba453b6b80d18b6d"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "4x + 12y − 28 = 0 теңдеуіне МӘНДЕС теңдеуді таңдаңыз. Барлық нақты шешім жұптары сақталуы керек.",
+      "options": [
+        "x + 12y − 7 = 0",
+        "x + 3y − 7 = 0",
+        "x + 3y − 28 = 0",
+        "4x + 12y + 28 = 0"
+      ],
+      "answer": "x + 3y − 7 = 0",
+      "solution": "Әр қосылғышты 4-ке бөлеміз: (4/4)x + (12/4)y − (28/4) = 0. Нәтиже x + 3y − 7 = 0. Бөлгіш нөлден өзге, кері көбейтіп бастапқы теңдеуді қайта аламыз, сондықтан БАРЛЫҚ шешім сақталады. Бір коэффициентті не тұрақтыны бөлмей қалдыру немесе оның таңбасын ауыстыру басқа шешім жиынын береді.",
+      "calculationVerification": {
+        "answer": "x + 3y − 7 = 0",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-18362c825833d96c",
+      "modelId": "grade6-two-variable-lines-equal-coordinates-solution",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "a": 5,
+        "b": 3,
+        "total": 64
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json",
+          "sourceId": "18362c825833d96c"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "5x + 3y − 64 = 0 теңдеуінде x = y болатын шешім ізделеді. x мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "8",
+      "solution": "y орнына x қоямыз: 5x + 3x = 64. (5 + 3)x = 64, сондықтан 8x = 64, x = 8. y де 8. Тексеру: 5 × 8 + 3 × 8 − 64 = 0. Жұп (8; 8).",
+      "calculationVerification": {
+        "answer": "8",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-af8eddc243c75ed9",
+      "modelId": "grade6-two-variable-lines-move-negative-y-positive",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "a": 4,
+        "b": 7,
+        "c": 9
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json",
+          "sourceId": "af8eddc243c75ed9"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "4x − 7y + 9 = 0 теңдеуінен ТЕК −7y қосылғышын оң жаққа көшірдік. Қай жазу шығады?",
+      "options": [
+        "4x + 9 = −7y",
+        "4x − 9 = 7y",
+        "4x + 9 = 7y",
+        "4x = 7y + 9"
+      ],
+      "answer": "4x + 9 = 7y",
+      "solution": "Екі жаққа 7y қосқанда сол жақта 4x + 9 қалады, оң жақ 7y болады: 4x + 9 = 7y. Орнында қалған +9 таңбасы өзгермейді. −7y екінші жаққа +7y болып өтеді; +9-ні де оңға көшірсек, ол −9 болар еді, бірақ мұнда ол көшірілмейді.",
+      "calculationVerification": {
+        "answer": "4x + 9 = 7y",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-70c9dc5c448f00e2",
+      "modelId": "grade6-two-variable-lines-express-y-opposite-signs",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "a": 5,
+        "c": 12
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json",
+          "sourceId": "70c9dc5c448f00e2"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "5x + y − 12 = 0 теңдеуінен y-ті x арқылы өрнектеңіз.",
+      "options": [
+        "y = 12 − 5x",
+        "y = 5x − 12",
+        "y = −12 − 5x",
+        "y = 12 + 5x"
+      ],
+      "answer": "y = 12 − 5x",
+      "solution": "y жалғыз қалады: +5x оңға −5x, −12 оңға +12 болып өтеді. Сондықтан y = 12 − 5x. Мысалы, x = 1 болса y = 7; 5 × 1 + (7) − 12 = 0. Екі таңба да көшіру ережесіне сай өзгеруі керек.",
+      "calculationVerification": {
+        "answer": "y = 12 − 5x",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-509e590cd7285263",
+      "modelId": "grade6-two-variable-lines-signed-coefficient-triple",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "a": 7,
+        "b": 9,
+        "c": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json",
+          "sourceId": "509e590cd7285263"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "7x − 9y + 4 = 0 теңдеуін ax + by + c = 0 түрімен салыстырыңыз. a, b, c мәндері қандай?",
+      "options": [
+        "a = 7, b = 9, c = 4",
+        "a = 7, b = -9, c = 4",
+        "a = 7, b = -9, c = -4",
+        "a = -9, b = 7, c = 4"
+      ],
+      "answer": "a = 7, b = -9, c = 4",
+      "solution": "x көбейткіші 7: a = 7. −9y = (−9) × y, сондықтан b = −9. Айнымалысы жоқ +4 бос мүше: c = 4. Теріс белгі коэффициентке кіреді; x пен y коэффициенттерінің орындары ауыстырылмайды.",
+      "calculationVerification": {
+        "answer": "a = 7, b = -9, c = 4",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-1b71f7a3b368de07",
+      "modelId": "grade6-two-variable-lines-recover-x-from-second-coordinate",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "a": 4,
+        "y": 17,
+        "c": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json",
+          "sourceId": "1b71f7a3b368de07"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "(x; 17) жұбы 4x − y − 7 = 0 теңдеуінің шешімі. x нешеге тең? Жауапқа тек санды жазыңыз.",
+      "answer": "6",
+      "solution": "Жұптың ЕКІНШІ координатасы y = 17. Қоямыз: 4x − 17 − 7 = 0, сондықтан 4x = 24. x = 24 ÷ 4 = 6. Тексеру: 4 × 6 − 17 − 7 = 0.",
+      "calculationVerification": {
+        "answer": "6",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-dc2025a3335baed5",
+      "modelId": "grade6-two-variable-lines-choose-pair-by-full-sum",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "first": 4,
+        "second": 9
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json",
+          "sourceId": "dc2025a3335baed5"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "Қай реттелген жұп x + y − 13 = 0 теңдеуінің шешімі?",
+      "options": [
+        "(4; -9)",
+        "(9; 3)",
+        "(4; 9)",
+        "(13; 13)"
+      ],
+      "answer": "(4; 9)",
+      "solution": "(4; -9): 4 + (-9) − 13 = -18; (9; 3): 9 + (3) − 13 = -1; (4; 9): 4 + (9) − 13 = 0; (13; 13): 13 + (13) − 13 = 13. Қалдық тек (4; 9) үшін 0. Бірінші сан x, екіншісі y орнына қойылады.",
+      "calculationVerification": {
+        "answer": "(4; 9)",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-0de69e9e818eca06",
+      "modelId": "grade6-two-variable-lines-identify-linear-not-product-square-denominator",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json",
+          "sourceId": "0de69e9e818eca06"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "Екі айнымалысы бар СЫЗЫҚТЫҚ теңдеуді таңдаңыз.",
+      "options": [
+        "6x − 5y + 9 = 0",
+        "xy − 7 = 0",
+        "x² + y − 3 = 0",
+        "(4/x) + y = 5"
+      ],
+      "answer": "6x − 5y + 9 = 0",
+      "solution": "Сызықтық түр ax + by + c = 0, мұнда a мен b бір уақытта нөл болмайды. 6x − 5y + 9 = 0 осы түрге сай. xy айнымалыларды өзара көбейтеді; x² екінші дәреже береді; (4/x) айнымалыны бөлімге енгізеді. Соңғы үшеуі осы сызықтық түр емес.",
+      "calculationVerification": {
+        "answer": "6x − 5y + 9 = 0",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-382541d7a27723c6",
+      "modelId": "grade6-two-variable-lines-recover-y-from-first-coordinate",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "a": 3,
+        "x": 5,
+        "total": 23
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json",
+          "sourceId": "382541d7a27723c6"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "(5; y) жұбы 3x + y − 23 = 0 теңдеуін қанағаттандырады. y мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "8",
+      "solution": "БІРІНШІ координата x = 5. 3 × 5 + y − 23 = 0. Демек y = 23 − 15 = 8. Тексеру: 15 + (8) − 23 = 0. 5 санын y орнына қою координаталарды ауыстырар еді.",
+      "calculationVerification": {
+        "answer": "8",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-172a90258eb4ea3e",
+      "modelId": "grade6-two-variable-lines-choose-equation-for-signed-pair",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "x": 3,
+        "y": -2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json",
+          "sourceId": "172a90258eb4ea3e"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "(3; -2) жұбы қай теңдеудің шешімі болады?",
+      "options": [
+        "4x − 3y − 6 = 0",
+        "x + y + 2 = 0",
+        "3x + 4y − 6 = 0",
+        "4x + 3y − 6 = 0"
+      ],
+      "answer": "4x + 3y − 6 = 0",
+      "solution": "x = 3, y = −2 мәндерін барлық нұсқаға қоямыз. 4 × 3 − 3 × (−2) − 6 = 12; 3 + (−2) + 2 = 3; 3 × 3 + 4 × (−2) − 6 = −5; 4 × 3 + 3 × (−2) − 6 = 0. Тек төртінші теңдік дұрыс. Теріс y-ті азайту мен оған оң коэффициентті көбейту әртүрлі нәтиже береді.",
+      "calculationVerification": {
+        "answer": "4x + 3y − 6 = 0",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-808eee999be7af3a",
+      "modelId": "grade6-two-variable-lines-ordered-pair-versus-swapped",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "x": -4,
+        "y": 5,
+        "b": 3,
+        "c": 11
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json",
+          "sourceId": "808eee999be7af3a"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "(-4; 5) және (5; -4) жұптарын x + 3y − 11 = 0 теңдеуіне бөлек қойыңыз. Қайсысы шешім?",
+      "options": [
+        "Тек (-4; 5)",
+        "Тек (5; -4)",
+        "Екеуі де",
+        "Екеуі де емес"
+      ],
+      "answer": "Тек (-4; 5)",
+      "solution": "(-4; 5): (-4) + 3 × 5 − 11 = 0. (5; -4): 5 + 3 × (-4) − 11 = -18 ≠ 0. Сондықтан Тек (-4; 5). Екі жұпта сандар бірдей болғанымен, x пен y рөлдері ауысқан.",
+      "calculationVerification": {
+        "answer": "Тек (-4; 5)",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-580f87680cb3d0c5",
+      "modelId": "grade6-two-variable-lines-coin-two-values-known-first-count",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "firstValue": 100,
+        "secondValue": 20,
+        "firstCount": 3,
+        "total": 540
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json",
+          "sourceId": "580f87680cb3d0c5"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "Қорапта 100 және 20 теңгелік монеталар бар, жалпы сома 540 теңге. x — 100 теңгеліктердің, y — 20 теңгеліктердің саны. x = 3 болса, y нешеу? Жауапқа тек санды жазыңыз.",
+      "answer": "12",
+      "solution": "Сома теңдеуі 100x + 20y = 540. x = 3 қоямыз: 300 + 20y = 540. 20y = 240, y = 240 ÷ 20 = 12. Тексеру: 3 × 100 + 12 × 20 = 540. Монета саны бүтін және теріс емес.",
+      "calculationVerification": {
+        "answer": "12",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-efe33a0fc8d352bd",
+      "modelId": "grade6-two-variable-lines-recover-coefficient-from-pair",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "x": 4,
+        "y": 3,
+        "b": 3,
+        "total": 29
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json",
+          "sourceId": "efe33a0fc8d352bd"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "(4; 3) жұбы ax + 3y − 29 = 0 теңдеуінің шешімі. a коэффициентін табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "5",
+      "solution": "x = 4, y = 3: 4a + 3 × 3 − 29 = 0. 4a = 29 − 9 = 20; a = 20 ÷ 4 = 5. Тексеру: 5 × 4 + 3 × 3 − 29 = 0. Белгісіз a — коэффициент, оны нүктенің координатасымен шатастырмаймыз.",
+      "calculationVerification": {
+        "answer": "5",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-a06952eaefad922a",
+      "modelId": "grade6-two-variable-lines-zero-x-coefficient-horizontal-all-real-x",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "b": 7,
+        "total": 28
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json",
+          "sourceId": "a06952eaefad922a"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "0 × x + 7y − 28 = 0 теңдеуінің барлық нақты шешімдерінің графигі қандай?",
+      "options": [
+        "(4; 0) арқылы өтетін Oy-ке параллель түзу",
+        "O(0; 0) және (4; 4) арқылы өтетін түзу",
+        "Жалғыз (0; 4) нүктесі",
+        "(0; 4) арқылы өтетін Ox-ке параллель түзу"
+      ],
+      "answer": "(0; 4) арқылы өтетін Ox-ке параллель түзу",
+      "solution": "Теңдеу 7y = 28, яғни y = 4. x кез келген нақты сан: (-2; 4), (0; 4), (5; 4) — бәрі шешім. Сондықтан ординатасы 4 барлық нүктелер Ox-ке параллель горизонталь түзуді береді. y тұрақты болғаны x те 0 дегенді білдірмейді; бір ғана нүкте емес.",
+      "calculationVerification": {
+        "answer": "(0; 4) арқылы өтетін Ox-ке параллель түзу",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-b1258dd3fdec834b",
+      "modelId": "grade6-two-variable-lines-negative-slope-line-quadrants",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "a": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json",
+          "sourceId": "b1258dd3fdec834b"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "2x + y = 0 графигі координаталар басынан басқа қай ширектерден өтеді?",
+      "options": [
+        "II және IV",
+        "I және III",
+        "I және II",
+        "III және IV"
+      ],
+      "answer": "II және IV",
+      "solution": "y = −2x. x > 0 үшін y < 0 — IV, x < 0 үшін y > 0 — II ширек. Мысалы (1; -2) және (-1; 2). O(0; 0) де графикте, бірақ еш ширекке жатпайды. Оң x пен оң y немесе теріс x пен теріс y бірге болмайды.",
+      "calculationVerification": {
+        "answer": "II және IV",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-8a35430f9816d8c7",
+      "modelId": "grade6-two-variable-lines-oy-intercept-x-is-zero",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "a": 5,
+        "total": 17
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json",
+          "sourceId": "8a35430f9816d8c7"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "5x + y = 17 графигі Oy осін (0; b) нүктесінде қияды. b мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "17",
+      "solution": "Oy осінде x = 0. Сондықтан 5 × 0 + y = 17, y = 17. Қиылысу нүктесі (0; 17), b = 17. Мұнда y = 0 қойылмайды: ол басқа, Ox осінің шарты.",
+      "calculationVerification": {
+        "answer": "17",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-973ebd1bce3e6777",
+      "modelId": "grade6-two-variable-lines-identify-straight-graph-not-hyperbola-parabola",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json",
+          "sourceId": "973ebd1bce3e6777"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "Төмендегі теңдеулердің қайсысының барлық нақты шешімдер графигі ТҮЗУ болады?",
+      "options": [
+        "5x − 3y = 7",
+        "xy = 8",
+        "y = (6/x)",
+        "x² + y = 2"
+      ],
+      "answer": "5x − 3y = 7",
+      "solution": "5x − 3y = 7 — екі айнымалысы бар сызықтық теңдеу, коэффициенттері бір уақытта нөл емес, графигі түзу. xy = 8 және y = (6/x) кері тәуелділіктерді береді; x² + y = 2 теңдеуінде квадрат бар, ол парабола. Айнымалының дәрежесі мен бөлімдегі орнын ескереміз.",
+      "calculationVerification": {
+        "answer": "5x − 3y = 7",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-b9ac26785f99c42a",
+      "modelId": "grade6-two-variable-lines-express-y-then-ordinate",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "a": 4,
+        "c": 9,
+        "x": 6
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json",
+          "sourceId": "b9ac26785f99c42a"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "4x − y − 9 = 0 графигіндегі абсциссасы x = 6 нүктенің ординатасын табыңыз. Алдымен y-ті x арқылы өрнектеңіз. Жауапқа тек санды жазыңыз.",
+      "answer": "15",
+      "solution": "−y-ті оңға көшіреміз: 4x − 9 = y. x = 6 үшін y = 4 × 6 − 9 = 15. Нүкте (6; 15). Тексеру: 4 × 6 − (15) − 9 = 0.",
+      "calculationVerification": {
+        "answer": "15",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-6a1220b47eb7fd2b",
+      "modelId": "grade6-two-variable-lines-recover-line-constant-from-point",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "a": 4,
+        "b": 3,
+        "x": 5,
+        "y": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json",
+          "sourceId": "6a1220b47eb7fd2b"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "4x + 3y = c түзуі M(5; 7) нүктесі арқылы өтеді. c мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "41",
+      "solution": "Нүкте теңдеуді қанағаттандырады: c = 4 × 5 + 3 × 7 = 20 + 21 = 41. Демек теңдеу 4x + 3y = 41. x пен y орындарын ауыстырмаймыз.",
+      "calculationVerification": {
+        "answer": "41",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-8555c5da63ad8165",
+      "modelId": "grade6-two-variable-lines-zero-both-coefficients-inconsistent",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "constant": 9
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json",
+          "sourceId": "8555c5da63ad8165"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "0 × x + 0 × y = 9 теңдеуінің нақты шешімдері туралы қай тұжырым дұрыс?",
+      "options": [
+        "Бір ғана жұп шешім",
+        "Екі жұп шешім",
+        "Шешімі жоқ",
+        "Шексіз көп жұп шешім"
+      ],
+      "answer": "Шешімі жоқ",
+      "solution": "Кез келген нақты x, y үшін сол жақ 0. Ал 0 = 9 жалған, сондықтан еш жұп шешім емес, график бос. Оң жақ 0 болған басқа теңдеуде барлық жұп жарар еді; берілген 9 нөл емес.",
+      "calculationVerification": {
+        "answer": "Шешімі жоқ",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-2461df92a266fd7d",
+      "modelId": "grade6-two-variable-lines-vertical-line-ox-intercept",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "a": 4,
+        "total": 36
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json",
+          "sourceId": "2461df92a266fd7d"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "4x − 36 = 0 графигі Ox осімен қиылысады. Сол нүктенің абсциссасын табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "9",
+      "solution": "4x = 36, x = 9. y теңдеуге кірмейді, ол кез келген сан: график Oy-ке параллель тік түзу. Ox осінде y = 0, сондықтан қиылысу (9; 0). Сұралған абсцисса 9.",
+      "calculationVerification": {
+        "answer": "9",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-4986302264a4f2a5",
+      "modelId": "grade6-two-variable-lines-origin-substitution-constant-zero",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json",
+          "sourceId": "4986302264a4f2a5"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "Қай теңдеудің графигінде O(0; 0) координаталар басы бар?",
+      "options": [
+        "7x − 4y = 0",
+        "7x − 4y = 2",
+        "x + y = 5",
+        "y − 6 = 0"
+      ],
+      "answer": "7x − 4y = 0",
+      "solution": "x = 0, y = 0 қоямыз. Біріншіде 0 = 0 — дұрыс. Қалғандары 0 = 2, 0 = 5 және −6 = 0 жалған теңдіктеріне айналады. Сызықтық ax + by = c теңдеуінде координаталар басының тиістілігі c = 0 болуына байланысты.",
+      "calculationVerification": {
+        "answer": "7x − 4y = 0",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-7fe88c98a200512c",
+      "modelId": "grade6-two-variable-lines-ox-intercept-y-is-zero",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "a": 3,
+        "b": 7,
+        "total": 24
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json",
+          "sourceId": "7fe88c98a200512c"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "3x − 7y − 24 = 0 түзуі Ox осін қияды. Қиылысу нүктесінің абсциссасы қандай? Жауапқа тек санды жазыңыз.",
+      "answer": "8",
+      "solution": "Ox осінде y = 0. 3x − 7 × 0 − 24 = 0, сондықтан 3x = 24, x = 8. Нүкте (8; 0). Тексеру 3 × 8 − 24 = 0. x = 0 қойсақ, бұл басқа Oy осіндегі нүктені іздеу болар еді.",
+      "calculationVerification": {
+        "answer": "8",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-33ee3af6fcfb53a2",
+      "modelId": "grade6-two-variable-lines-all-point-options-on-linear-graph",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "a": 5,
+        "b": 2,
+        "x": 5,
+        "y": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json",
+          "sourceId": "33ee3af6fcfb53a2"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "Қай нүкте 5x + 2y = 31 графигінде жатыр?",
+      "options": [
+        "(3; 5)",
+        "(5; 3)",
+        "(5; 4)",
+        "(7; 3)"
+      ],
+      "answer": "(5; 3)",
+      "solution": "(3; 5): 5 × 3 + 2 × 5 = 25; (5; 3): 5 × 5 + 2 × 3 = 31; (5; 4): 5 × 5 + 2 × 4 = 33; (7; 3): 5 × 7 + 2 × 3 = 41. Тек (5; 3) үшін 31 шығады. Бірінші жұп координаталарды ауыстырған; әр нұсқада екі координатаны да тексеру керек.",
+      "calculationVerification": {
+        "answer": "(5; 3)",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-two-variable-lines-ffafbb5efb6115fc",
+      "modelId": "grade6-two-variable-lines-parameter-abscissa-from-known-ordinate",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "a": 3,
+        "y": 5,
+        "rhs": 16
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json",
+          "sourceId": "ffafbb5efb6115fc"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic10.1/10.2 nonvisual adaptation; selfcontained algebra/graph descriptions and ordered-coordinate data, no source raster. Variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық25сақталған визуалсыз10.1/10.2шарт, толық ресми шешім және MCQ жеке оқылды; жаңа сан, белгі, жағдай мен толық шешім берілді.",
+        "Барлық қосылғыштың мәндестігі, жалғыз қосылғышты көшіру, таңбалы коэффициент және реттелген жұп сақталды. Белгісіз координата/коэффициент/бос мүше рөлдері ажыратылды.",
+        "Тік/горизонталь түзудегі барлық нақты шешім, нөлдік коэффициенттердің үйлесімсіздігі және Ox/Oy шарты нақты берілді. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "K(k; 5) нүктесі 3x − y = 16 графигінде жатыр. k абсциссасын табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "7",
+      "solution": "x = k, y = 5: 3k − 5 = 16. 3k = 21, k = 21 ÷ 3 = 7. Нүкте K(7; 5). Тексеру: 3 × 7 − 5 = 16. k нүктенің бірінші координатасы, y емес.",
+      "calculationVerification": {
+        "answer": "7",
+        "checks": [
+          "All25saved nonvisual10.1/10.2 fullconditions/officialsolutions/everyMCQ read individually; equivalentallterms division, movingonlyone term, orderedcoordinates and signed coefficients preserved",
+          "Unknown x/y/coefficient/constant roles and coin integerdomain retained; allpair/equationMCQ substitutions evaluated",
+          "Horizontal/vertical allreal lines notsingleton, zero-both-coefficients inconsistent case, Ox/Oy coordinatezero and linearnonzero-pair definition preserved",
+          "No sourcegraphs/images in these selfcontained conceptual/algebra rows; closed Standard draft until separate fullcontenthash review; numeric/context variants not additional meanings"
+        ]
+      }
+    }
+  ]
+}

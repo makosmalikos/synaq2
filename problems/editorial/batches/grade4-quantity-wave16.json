@@ -1,0 +1,1447 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All30 remaining saved grade-4 nonvisual topic1.9 unit-quantity and reasoning sources; no new source collection.",
+  "summary": {
+    "editions": 30,
+    "models": 28,
+    "skillFamilies": 28,
+    "sourceOccurrencesReferenced": 30,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-quantity-0e91e75e57d73e96",
+      "modelId": "grade4-quantity-cubic-smaller-difference",
+      "skillFamily": "cubic-smaller-difference",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "large": 4,
+        "small": 650,
+        "largeUnit": "см³",
+        "smallUnit": "мм³"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level1.json",
+          "sourceId": "0e91e75e57d73e96"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "4 см³ − 650 мм³ айырмасын мм³ бірлігімен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "3350",
+      "solution": "Көлем бірлігінің әр сызықтық өлшемі 10 есе өзгереді: 10 × 10 × 10 = 1 000. Сондықтан 4 см³ = 4 000 мм³. Айырма 4 000 − 650 = 3 350 мм³. Тексеру: 3 350 + 650 = 4 000.",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "3350",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-78ae92aa650cdc9c",
+      "modelId": "grade4-quantity-hectare-are-difference",
+      "skillFamily": "hectare-are-difference",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "hectares": 3,
+        "ares": 25,
+        "choices": [
+          275,
+          2975,
+          5,
+          325
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level1.json",
+          "sourceId": "78ae92aa650cdc9c"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "3 га − 25 а айырмасына тең ауданды таңдаңыз.",
+      "answer": "275 а",
+      "solution": "1 га = 100 а, сондықтан 3 га = 300 а. Айырма 300 − 25 = 275 а. Гектарды арға ауыстырғанда 10 не 1 000 емес, 100 коэффициентін қолданамыз.",
+      "options": [
+        "275 а",
+        "2 975 а",
+        "5 а",
+        "325 а"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "275 а",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-ce86728c8f1db33a",
+      "modelId": "grade4-quantity-square-metres-plus-ares",
+      "skillFamily": "square-metres-plus-ares",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "m2": 650,
+        "ares": 4,
+        "choices": [
+          654,
+          1050,
+          690,
+          4650
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level1.json",
+          "sourceId": "ce86728c8f1db33a"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "650 м² + 4 а қосындысын шаршы метрмен таңдаңыз.",
+      "answer": "1 050 м²",
+      "solution": "1 а = 100 м², демек 4 а = 400 м². Қосынды 650 + 400 = 1 050 м². Бірлікті ауыстырмай 650 + 4 деп қосуға болмайды.",
+      "options": [
+        "654 м²",
+        "1 050 м²",
+        "690 м²",
+        "4 650 м²"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "1 050 м²",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-863d55ee0e0fcae6",
+      "modelId": "grade4-quantity-cubic-metre-scalar-division",
+      "skillFamily": "cubic-metre-scalar-division",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "m3": 3,
+        "divisor": 24
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level1.json",
+          "sourceId": "863d55ee0e0fcae6"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "3 м³ көлем 24 бірдей бөлікке бөлінді. Әр бөліктің көлемін текше дециметрмен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "125",
+      "solution": "1 м³ = 1 000 дм³, сондықтан 3 м³ = 3 000 дм³. Бір бөлік 3 000 : 24 = 125 дм³. Тексеру: 125 × 24 = 3 000 дм³.",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "125",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-7932c9b2f4adfc6e",
+      "modelId": "grade4-quantity-greatest-square-area",
+      "skillFamily": "greatest-square-area",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          [
+            5,
+            "м²"
+          ],
+          [
+            480,
+            "дм²"
+          ],
+          [
+            49000,
+            "см²"
+          ],
+          [
+            520,
+            "дм²"
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level1.json",
+          "sourceId": "7932c9b2f4adfc6e"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Төмендегі аудандардың ең үлкенін таңдаңыз.",
+      "answer": "520 дм²",
+      "solution": "Барлығын шаршы дециметрмен салыстырамыз: 5 м² = 500 дм²; 480 дм² = 480 дм²; 49 000 см² = 490 дм²; 520 дм² = 520 дм². Ең үлкен мән 520 дм². Жазылған санның үлкен болуы ауданның да үлкен екенін білдірмейді.",
+      "options": [
+        "5 м²",
+        "480 дм²",
+        "49 000 см²",
+        "520 дм²"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "520 дм²",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-5c0ab117e7a49040",
+      "modelId": "grade4-quantity-sotyk-definition",
+      "skillFamily": "sotyk-definition",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          10000,
+          10,
+          100,
+          1000
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level1.json",
+          "sourceId": "5c0ab117e7a49040"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "pedagogicalInvariant": "1 сотық = 100 м² is a unit definition, not an authored numerical novelty.",
+      "statement": "Жер сату хабарландыруында аудан сотықпен көрсетілген. Бір сотықтың шаршы метрмен дұрыс баламасын таңдаңыз.",
+      "answer": "100 м²",
+      "solution": "Бір сотық — бір ар. Оны қабырғасы 10 м шаршының ауданы ретінде есептеуге болады: 10 × 10 = 100 м². Сондықтан 1 сотық = 100 м²; 10 000 м² — бір гектар.",
+      "options": [
+        "10 000 м²",
+        "10 м²",
+        "100 м²",
+        "1 000 м²"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "100 м²",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-f7c25c2096fb8de4",
+      "modelId": "grade4-quantity-incorrect-unit-equality",
+      "skillFamily": "incorrect-unit-equality",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          [
+            [
+              3,
+              "га"
+            ],
+            [
+              300,
+              "а"
+            ]
+          ],
+          [
+            [
+              2,
+              "м²"
+            ],
+            [
+              2000,
+              "дм²"
+            ]
+          ],
+          [
+            [
+              4,
+              "дм³"
+            ],
+            [
+              4000,
+              "см³"
+            ]
+          ],
+          [
+            [
+              2,
+              "км²"
+            ],
+            [
+              2000000,
+              "м²"
+            ]
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level2.json",
+          "sourceId": "f7c25c2096fb8de4"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "intentionalIncorrectExample": true,
+      "statement": "Бір ғана теңдік әдейі қате жазылған. Сол қате түрлендіруді таңдаңыз.",
+      "answer": "2 м² = 2 000 дм²",
+      "solution": "Шаршы бірліктерде көршілес коэффициент 100, ал текше бірліктерде 1 000 болады. Қате нұсқа: 2 м² = 2 000 дм²; дұрысы 2 м² = 200 дм². Қалған түрлендірулер: 3 га = 300 а; 4 дм³ = 4 000 см³; 2 км² = 2 000 000 м² — дұрыс.",
+      "options": [
+        "3 га = 300 а",
+        "2 м² = 2 000 дм²",
+        "4 дм³ = 4 000 см³",
+        "2 км² = 2 000 000 м²"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "2 м² = 2 000 дм²",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-b8ea05ca8a5cce3d",
+      "modelId": "grade4-quantity-future-age-sum",
+      "skillFamily": "future-age-sum",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "ago": 4,
+        "child": 8,
+        "parent": 34,
+        "after": 6
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level2.json",
+          "sourceId": "b8ea05ca8a5cce3d"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "4 жыл бұрын Аяулым 8 жаста, анасы 34 жаста еді. Бүгіннен 6 жыл өткенде екеуінің жастарының қосындысы қанша болады? Жауапқа тек санды жазыңыз.",
+      "answer": "62",
+      "solution": "Берілген кезден сұралған кезге дейін 4 + 6 = 10 жыл өтеді. Сол кезде Аяулым 8 + 10 = 18, анасы 34 + 10 = 44 жаста. Қосынды 18 + 44 = 62. Уақыт екеуінің де жасына қосылады.",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "62",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-9d337d54f0b26f7f",
+      "modelId": "grade4-quantity-mixed-mass-bag-count",
+      "skillFamily": "mixed-mass-bag-count",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "tonnes": 4,
+        "kg": 200,
+        "bagKg": 35
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level2.json",
+          "sourceId": "9d337d54f0b26f7f"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қоймаға 4 т 200 кг күріш жеткізілді. Оның бәрі әрқайсысы 35 кг болатын бірдей қаптарға салынған. Неше қап әкелінген? Жауапқа тек санды жазыңыз.",
+      "answer": "120",
+      "solution": "1 т = 1 000 кг. Жалпы масса 4 × 1 000 + 200 = 4 200 кг. Қап саны 4 200 : 35 = 120. Кері тексеру: 120 × 35 = 4 200 кг.",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "120",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-8c6e874b710198b7",
+      "modelId": "grade4-quantity-square-side-area-hectares",
+      "skillFamily": "square-side-area-hectares",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "sideM": 400
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level2.json",
+          "sourceId": "8c6e874b710198b7"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Шаршы тәжірибе алқабының бір қабырғасы 400 м. Оның ауданын гектармен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "16",
+      "solution": "Шаршы ауданы 400 × 400 = 160 000 м². 1 га = 10 000 м², сондықтан 160 000 : 10 000 = 16 га. Ұзындықты гектарға тікелей айналдырмаймыз, алдымен ауданды есептейміз.",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "16",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-d75ab332300bbf6e",
+      "modelId": "grade4-quantity-bracket-cubic-volume-division",
+      "skillFamily": "bracket-cubic-volume-division",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "m3": 8,
+        "dm3": 800,
+        "divisor": 9
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level2.json",
+          "sourceId": "d75ab332300bbf6e"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "(8 м³ − 800 дм³) : 9 өрнегінің мәнін текше дециметрмен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "800",
+      "solution": "Алдымен 8 м³ = 8 000 дм³. Жақша ішіндегі көлем 8 000 − 800 = 7 200 дм³. Содан кейін 7 200 : 9 = 800 дм³. Тексеру: 800 × 9 + 800 = 8 000.",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "800",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-1f497a7b5079ef74",
+      "modelId": "grade4-quantity-greatest-plot-value",
+      "skillFamily": "greatest-plot-value",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "hectares": 5,
+        "ares": 420,
+        "lengthM": 300,
+        "widthM": 180,
+        "m2": 52000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level2.json",
+          "sourceId": "1f497a7b5079ef74"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Төрт телімнің аудандары: 5 га; 420 а; ұзындығы 300 м, ені 180 м тіктөртбұрыш; 52 000 м². Ең үлкен телімнің ауданын шаршы метрмен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "54000",
+      "solution": "Шаршы метрмен алғашқы телім 5 × 10 000 = 50 000, екіншісі 420 × 100 = 42 000. Тіктөртбұрыш ауданы 300 × 180 = 54 000. Төртінші аудан 52 000. Ең үлкені 54 000 м².",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "54000",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-15a6115693f286c4",
+      "modelId": "grade4-quantity-square-metres-plus-hectares",
+      "skillFamily": "square-metres-plus-hectares",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "m2": 750,
+        "hectares": 4,
+        "choices": [
+          1150,
+          4750,
+          40750,
+          400750
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level2.json",
+          "sourceId": "15a6115693f286c4"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "750 м² + 4 га қосындысына тең ауданды таңдаңыз.",
+      "answer": "40 750 м²",
+      "solution": "1 га = 10 000 м². 4 га = 40 000 м², сондықтан 750 + 40 000 = 40 750 м². Ардың 100 коэффициентін гектарға қолдануға болмайды.",
+      "options": [
+        "1 150 м²",
+        "4 750 м²",
+        "40 750 м²",
+        "400 750 м²"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "40 750 м²",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-5b4d699423008d7c",
+      "modelId": "grade4-quantity-greatest-volume-expression",
+      "skillFamily": "greatest-volume-expression",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "divide": [
+          8000,
+          20
+        ],
+        "add": [
+          320,
+          85000
+        ],
+        "subtract": [
+          480,
+          70000
+        ],
+        "m3divide": [
+          2,
+          5
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level2.json",
+          "sourceId": "5b4d699423008d7c"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай көлем өрнегінің мәні ең үлкен? Барлық нұсқаны бірдей бірлікпен салыстырыңыз.",
+      "answer": "480 дм³ − 70 000 см³",
+      "solution": "Барлығын дм³ бірлігімен есептейміз. Бірінші: 8 000 : 20 = 400. Екінші: 320 + 85 = 405. Үшінші: 480 − 70 = 410. Төртінші: 2 × 1 000 : 5 = 400. Ең үлкені 410 дм³, сондықтан 480 дм³ − 70 000 см³.",
+      "options": [
+        "8 000 дм³ : 20",
+        "320 дм³ + 85 000 см³",
+        "480 дм³ − 70 000 см³",
+        "2 м³ : 5"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "480 дм³ − 70 000 см³",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-4d0f8abb926ce281",
+      "modelId": "grade4-quantity-same-unit-area-gap",
+      "skillFamily": "same-unit-area-gap",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "firstKm2": 3415600,
+        "secondKm2": 2749835
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level2.json",
+          "sourceId": "4d0f8abb926ce281"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Оқу картасындағы Солтүстік аумақтың ауданы 3 415 600 км², Оңтүстік аумақтың ауданы 2 749 835 км² деп берілген. Біріншісі екіншісінен неше шаршы километрге үлкен? Жауапқа тек санды жазыңыз.",
+      "answer": "665765",
+      "solution": "«Неше бірлікке үлкен» сұрағына айырманы табамыз: 3 415 600 − 2 749 835 = 665 765 км². Тексеру: 2 749 835 + 665 765 = 3 415 600 км². Екі аудан да бірдей бірлікте берілген.",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "665765",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-62f37870dc9ca8df",
+      "modelId": "grade4-quantity-sum-mixed-durations",
+      "skillFamily": "sum-mixed-durations",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "hours": 1,
+        "minutes": 35,
+        "otherMinutes": 145,
+        "choices": [
+          [
+            3,
+            40
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            40
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level2.json",
+          "sourceId": "62f37870dc9ca8df"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Меруерт дайындыққа 1 сағ 35 мин, Дамир 145 мин жұмсады. Олардың жұмсаған уақыттарының қосындысын таңдаңыз.",
+      "answer": "4 сағ",
+      "solution": "1 сағ 35 мин = 1 × 60 + 35 = 95 мин. Қосынды 95 + 145 = 240 мин. 240 = 4 × 60, яғни 4 сағ. Сағаттағы 60 минутты 100 минутпен шатастырмаймыз.",
+      "options": [
+        "3 сағ 40 мин",
+        "4 сағ",
+        "3 сағ",
+        "4 сағ 40 мин"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "4 сағ",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-190a1c5f2ae0ea05",
+      "modelId": "grade4-quantity-single-worker-proportion",
+      "skillFamily": "single-worker-proportion",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "hours": 6,
+        "ares": 42,
+        "newHours": 9,
+        "task": "plough",
+        "choices": [
+          63,
+          45,
+          54,
+          378
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level2.json",
+          "sourceId": "190a1c5f2ae0ea05"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ермек 6 сағатта 42 сотық жер жыртты. Ол бірқалыпты қарқынмен 9 сағатта неше сотық жердегі осындай жұмысты бітіреді?",
+      "answer": "63 сотық",
+      "solution": "Бір сағаттағы жұмыс 42 : 6 = 7 сотық. 9 сағатта 7 × 9 = 63 сотық. Уақыт айырмасын жер ауданына қоспаймыз; бір сағаттық өнімділікті пайдаланамыз.",
+      "options": [
+        "63 сотық",
+        "45 сотық",
+        "54 сотық",
+        "378 сотық"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "63 сотық",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-c72d4706da064e7b",
+      "modelId": "grade4-quantity-square-area-perimeter",
+      "skillFamily": "square-area-perimeter",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "hectares": 9
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level3.json",
+          "sourceId": "c72d4706da064e7b"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Шаршы пішінді бақтың ауданы 9 га. Оның шекарасының толық ұзындығын метрмен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "1200",
+      "solution": "9 га = 90 000 м². 300 × 300 = 90 000, сондықтан қабырғасы 300 м. Төрт қабырғаның қосындысы 300 × 4 = 1200 м. Ауданды 4-ке көбейту периметрді бермейді.",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "1200",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-1a721a802ab37471",
+      "modelId": "grade4-quantity-worker-hour-productivity",
+      "skillFamily": "worker-hour-productivity",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "workers": 4,
+        "hours": 3,
+        "ares": 36,
+        "newWorkers": 6,
+        "newHours": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level3.json",
+          "sourceId": "1a721a802ab37471"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "4 бағбан 3 сағатта 36 сотық жерді тазалады. Барлығы бірдей, тұрақты өнімділікпен жұмыс істейді. 6 бағбан 5 сағатта неше сотық жерді тазалайды? Жауапқа тек санды жазыңыз.",
+      "answer": "90",
+      "solution": "Алғашқы жұмыстың көлемі 4 × 3 = 12 адам-сағат. Бір бағбан бір сағатта 36 : 12 = 3 сотық тазалайды. Жаңа жұмыс 6 × 5 = 30 адам-сағат, сондықтан 3 × 30 = 90 сотық. Жұмысшылар саны да, уақыт та ескеріледі.",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "90",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-d747975978204e7c",
+      "modelId": "grade4-quantity-closest-area-ratio",
+      "skillFamily": "closest-area-ratio",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "largeKm2": 7894000,
+        "smallKm2": 1250000,
+        "choices": [
+          4,
+          6,
+          8,
+          10
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level3.json",
+          "sourceId": "d747975978204e7c"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Есеп үшін екі аумақтың аудандары 7 894 000 км² және 1 250 000 км² деп берілген. Үлкен аумақ кішісінен шамамен неше есе үлкен? Ұсынылған сандардың ең жақынын таңдаңыз.",
+      "answer": "6 есе",
+      "solution": "Әр нұсқаны кіші ауданға көбейтеміз: 1 250 000 × 4 = 5 000 000; 1 250 000 × 6 = 7 500 000; 1 250 000 × 8 = 10 000 000; 1 250 000 × 10 = 12 500 000 км². Берілген 7 894 000 км² санынан ауытқулары тиісінше 2 894 000; 394 000; 2 106 000; 4 606 000 км². Ең аз ауытқу 394 000, оған 6 есе сәйкес келеді.",
+      "options": [
+        "4 есе",
+        "6 есе",
+        "8 есе",
+        "10 есе"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "6 есе",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-a3247ae724cf6491",
+      "modelId": "grade4-quantity-equal-area-square-perimeter",
+      "skillFamily": "equal-area-square-perimeter",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "lengthCm": 27,
+        "widthCm": 12
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level3.json",
+          "sourceId": "a3247ae724cf6491"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ұзындығы 27 см, ені 12 см тіктөртбұрыш пен шаршының аудандары бірдей. Шаршының периметрін сантиметрмен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "72",
+      "solution": "Ортақ аудан 27 × 12 = 324 см². 18 × 18 = 324, демек шаршы қабырғасы 18 см. Периметр 18 × 4 = 72 см. Тіктөртбұрыш периметрі 78 см болғанымен, сұралғаны — шаршынікі.",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "72",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-2c1889c963787d89",
+      "modelId": "grade4-quantity-greatest-labelled-plot",
+      "skillFamily": "greatest-labelled-plot",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "hectares": 3,
+        "extraAres": 12,
+        "ares": 309,
+        "lengthM": 225,
+        "widthM": 140,
+        "m2": 31400
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level3.json",
+          "sourceId": "2c1889c963787d89"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Телімдер: А — 3 га 12 а; Б — 309 а; В — 225 м × 140 м тіктөртбұрыш; Г — 31 400 м². Ең үлкен телімнің белгісін таңдаңыз.",
+      "answer": "В",
+      "solution": "Барлығын м² бірлігіне келтіреміз: А = 3 × 10 000 + 12 × 100 = 31 200; Б = 309 × 100 = 30 900; В = 225 × 140 = 31 500; Г = 31 400. Ең үлкені В телімі: 31 500 м².",
+      "options": [
+        "А",
+        "Б",
+        "В",
+        "Г"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "В",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-3fc3be73bb038eba",
+      "modelId": "grade4-quantity-future-age-ratio",
+      "skillFamily": "future-age-ratio",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "parent": 48,
+        "child": 12,
+        "multiple": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level3.json",
+          "sourceId": "3fc3be73bb038eba"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Әкесі қазір 48, баласы 12 жаста. Неше жылдан кейін әкесінің жасы баласының жасынан 3 есе үлкен болады? Жауапқа тек санды жазыңыз.",
+      "answer": "6",
+      "solution": "Жас айырмасы тұрақты: 48 − 12 = 36. Қажетті кезде бұл айырма баланың 3 − 1 = 2 бөлік жасына тең. Бала сол кезде 36 : 2 = 18 жаста, яғни 18 − 12 = 6 жыл керек. Тексеру: әкесі 54, баласы 18; 18 × 3 = 54.",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "6",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-cbf11c20ff4dce77",
+      "modelId": "grade4-quantity-square-land-subdivision",
+      "skillFamily": "square-land-subdivision",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "km2": 9,
+        "smallSideM": 20
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level3.json",
+          "sourceId": "cbf11c20ff4dce77"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ауданы 9 км² шаршы жерді қабырғасы 20 м болатын шағын шаршыларға саңылаусыз бөлді. Барлығы неше шағын телім пайда болды? Жауапқа тек санды жазыңыз.",
+      "answer": "22500",
+      "solution": "9 км² = 9 000 000 м². Үлкен шаршының қабырғасы 3 000 м, өйткені 3 000 × 3 000 = 9 000 000. Бір қатарда 3 000 : 20 = 150 шағын шаршы, қатар саны да 150. Барлығы 150 × 150 = 22 500. Ауданмен тексерсек: 9 000 000 : (20 × 20) = 22 500.",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "22500",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-0e1c42b27ea8b57f",
+      "modelId": "grade4-quantity-scaled-square-sum",
+      "skillFamily": "scaled-square-sum",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "last": 8,
+        "scale": 20,
+        "choices": [
+          81600,
+          4080,
+          408000,
+          1440
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level3.json",
+          "sourceId": "0e1c42b27ea8b57f"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1² + 2² + … + 8² = 204 екені берілген. 20² + 40² + … + 160² қосындысын осы теңдікті пайдаланып табыңыз.",
+      "answer": "81 600",
+      "solution": "Әр жаңа сан бастапқы саннан 20 есе үлкен. Сондықтан оның шаршысы 20 × 20 = 400 есе үлкен: (20 × k)² = 400 × k². Қосынды 204 × 400 = 81 600. Тек 20-ға көбейту квадраттың масштабын ескермейді.",
+      "options": [
+        "81 600",
+        "4 080",
+        "408 000",
+        "1 440"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "81 600",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-e37e558fee43f59c",
+      "modelId": "grade4-quantity-combined-tractor-rate",
+      "skillFamily": "combined-tractor-rate",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "firstAres": 35,
+        "secondAres": 25,
+        "hectares": 9,
+        "choices": [
+          150,
+          36,
+          15,
+          9
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level3.json",
+          "sourceId": "e37e558fee43f59c"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір трактор сағатына 35 сотық, екіншісі 25 сотық жер жыртады. Екеуі бір мезгілде бастап, қайталамай бірге жұмыс істесе, 9 га жерді неше сағатта жыртады?",
+      "answer": "15 сағ",
+      "solution": "1 га = 100 сотық, сондықтан 9 га = 900 сотық. Бірлескен өнімділік 35 + 25 = 60 сотық/сағ. Қажетті уақыт 900 : 60 = 15 сағ. Тексеру: 15 × 60 = 900 сотық.",
+      "options": [
+        "150 сағ",
+        "36 сағ",
+        "15 сағ",
+        "9 сағ"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "15 сағ",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-d2e19776e3e9561f",
+      "modelId": "grade4-quantity-cubic-smaller-difference",
+      "skillFamily": "cubic-smaller-difference",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "large": 2,
+        "small": 350,
+        "largeUnit": "дм³",
+        "smallUnit": "см³",
+        "choices": [
+          2350,
+          19650,
+          1650,
+          450
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-leveltest.json",
+          "sourceId": "d2e19776e3e9561f"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "2 дм³ − 350 см³ айырмасын см³ бірлігімен таңдаңыз.",
+      "answer": "1 650 см³",
+      "solution": "Көлем бірлігінің әр сызықтық өлшемі 10 есе өзгереді: 10 × 10 × 10 = 1 000. Сондықтан 2 дм³ = 2 000 см³. Айырма 2 000 − 350 = 1 650 см³. Тексеру: 1 650 + 350 = 2 000.",
+      "options": [
+        "2 350 см³",
+        "19 650 см³",
+        "1 650 см³",
+        "450 см³"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "1 650 см³",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-d22c3ee9c86899ea",
+      "modelId": "grade4-quantity-single-worker-proportion",
+      "skillFamily": "single-worker-proportion",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "hours": 7,
+        "ares": 35,
+        "newHours": 11,
+        "task": "mow"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-leveltest.json",
+          "sourceId": "d22c3ee9c86899ea"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ермек 7 сағатта 35 сотық жердің шөбін шапты. Ол бірқалыпты қарқынмен 11 сағатта неше сотық жердегі осындай жұмысты бітіреді? Жауапқа тек санды жазыңыз.",
+      "answer": "55",
+      "solution": "Бір сағаттағы жұмыс 35 : 7 = 5 сотық. 11 сағатта 5 × 11 = 55 сотық. Уақыт айырмасын жер ауданына қоспаймыз; бір сағаттық өнімділікті пайдаланамыз.",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "55",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-4ef4bfb61b4b1304",
+      "modelId": "grade4-quantity-constant-age-gap",
+      "skillFamily": "constant-age-gap",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "ago": 3,
+        "child": 8,
+        "grandparent": 67,
+        "after": 7,
+        "choices": [
+          66,
+          59,
+          69,
+          49
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-leveltest.json",
+          "sourceId": "4ef4bfb61b4b1304"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "3 жыл бұрын Саян 8, атасы 67 жаста еді. Бүгіннен 7 жыл өткенде атасы немересінен неше жас үлкен болады?",
+      "answer": "59",
+      "solution": "Екеуінің де жасы бірдей жыл санына өседі, сондықтан айырма сақталады: 67 − 8 = 59. Берілген кезден сұралған кезге 3 + 7 = 10 жыл өтеді: Саян 18, атасы 77 жаста болады. Тексеру: 77 − 18 = 59.",
+      "options": [
+        "66",
+        "59",
+        "69",
+        "49"
+      ],
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "59",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-quantity-feeb41ca39289b71",
+      "modelId": "grade4-quantity-rectangle-area-perimeter",
+      "skillFamily": "rectangle-area-perimeter",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "lengthM": 600,
+        "hectares": 18
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-leveltest.json",
+          "sourceId": "feeb41ca39289b71"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған шарт, барлық жауап нұсқалары, кілт пен толық шешім жеке оқылып, сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен толық шешім жазылды. Квадрат және текше бірліктердің 100/1 000 коэффициенттері, аралас өлшемдер, кері аудан-периметр, өнімділік пен жас қатынастары сақталды.",
+        "Қате түрлендіруді таңдау тапсырмасында әдейі қате мысал айқын белгіленді. 1 сотықтың анықтамасы өзгермейтін математикалық факт ретінде сақталды. Сандық нұсқалар бөлек жаңа математикалық мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.9 quantity/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тіктөртбұрыш бақтың ұзындығы 600 м, ауданы 18 га. Бақ шекарасының толық ұзындығын метрмен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "1800",
+      "solution": "18 га = 180 000 м². Ені 180 000 : 600 = 300 м. Периметр (600 + 300) × 2 = 1 800 м. Тексеру: 600 × 300 = 180 000 м².",
+      "calculationVerification": {
+        "method": "exact_SI_quantity_arithmetic_complete_square_age_and_rate_domains",
+        "answer": "1800",
+        "checks": [
+          "native statement/full solution/options exactly bound to source-specific parameters",
+          "exact SI square/cubic conversion and arithmetic or complete finite domain",
+          "one unambiguous requested quantity and unit; intentional false equality explicitly scoped"
+        ]
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
+import { readWithDeadline } from '../frontend/src/readDeadline.js';
 import React from '../frontend/node_modules/react/index.js';
 import { buildProgressModel, PROGRESS_ATTEMPT_LIMIT } from '../frontend/src/progressModel.js';
 
@@ -18,6 +19,7 @@ const deferred = () => {
 function fixture(overrides = {}) {
   const state = {}, xpLoads = [], listeners = [];
   const context = {
+    AbortController, readWithDeadline: (read, options) => readWithDeadline(read, {...options, timeoutMs: 100}),
     uid: 'kid', console: { error() {} },
     auth: { currentUser: { uid: 'kid' } },
     getAttempts: async (uid, limit) => {
@@ -117,7 +119,7 @@ test('a direct child switch replaces the full screen identity, including an open
   // replace that component on a key change, even while its review is open.
   const accountSource = source.slice(source.indexOf('\nfunction ProgressAccount('));
   assert.match(accountSource, /const \[open, setOpen\] = useState\(null\)/);
-  assert.match(accountSource, /const \[q, setQ\] = useState\(null\)/);
+  assert.match(accountSource, /<MockResults key=\{open\.id \|\| returnToMock\.current\}/);
   assert.match(accountSource, /const \[onlyErrors, setOnlyErrors\] = useState\(false\)/);
   auth.currentUser = { uid: 'second-child' };
   const second = renderBoundary({ onTrainTopic });
@@ -153,4 +155,10 @@ test('progress error and loading guards precede all analytics rendering', () => 
   assert.ok(source.includes('if (loading || !stats || pro === null)'));
   assert.ok(source.includes('setLoadRetry((value) => value + 1)'));
   assert.equal(source.includes('.catch(() => [])'), false);
+});
+
+test('stalled entitlement cannot keep an otherwise loaded progress screen spinning forever', async () => {
+ const f=fixture({readWithDeadline:(read,options)=>readWithDeadline(read,{...options,timeoutMs:5})});
+ const stop=f.mount();await new Promise(resolve=>setTimeout(resolve,20));
+ assert.equal(f.state.LoadError,true);assert.equal(f.state.Loading,false);assert.equal(f.state.Stats,undefined);assert.deepEqual(f.xpLoads,[]);stop();
 });

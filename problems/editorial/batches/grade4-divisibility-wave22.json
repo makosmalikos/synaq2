@@ -1,0 +1,1768 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All38 remaining saved grade-4 nonvisual topic2.3 divisibility/parity sources; no new source collection.",
+  "summary": {
+    "editions": 38,
+    "models": 38,
+    "skillFamilies": 38,
+    "sourceOccurrencesReferenced": 38,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-divisibility-144ceef2689264d6",
+      "modelId": "grade4-divisibility-last-digit-ten",
+      "skillFamily": "last-digit-ten",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 10,
+        "examples": [
+          30,
+          80,
+          470
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level1.json",
+          "sourceId": "144ceef2689264d6"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қалдықсыз 10-ға бөлінетін натурал санның бірліктер разрядында қай цифр тұрады?",
+      "answer": "0",
+      "solution": "30, 80, 470 сандарының соңында 0 тұр. Жалпы сан 10k түрінде жазылса, оның бірліктері 0 болады. 0 немесе 5 — 5-ке бөліну белгісі; кез келген жұп цифр тек 2-ге бөлінуге жеткілікті.",
+      "options": [
+        "Кез келген жұп цифр",
+        "0",
+        "0 немесе 5",
+        "5"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "0",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-c39bcef647f2f1f1",
+      "modelId": "grade4-divisibility-largest-two-digit-five",
+      "skillFamily": "largest-two-digit-five",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "upperExclusive": 90,
+        "divisor": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level1.json",
+          "sourceId": "c39bcef647f2f1f1"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Екі таңбалы, 90 санынан кіші және 5-ке бөлінетін ең үлкен санды табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "85",
+      "solution": "Соңғы цифры 0 немесе 5 болса, сан 5-ке бөлінеді. 90 саны шартқа кірмейді. Ең жақын кіші жарамды сан 85; одан үлкен екі таңбалы кандидаттардың ешқайсысы бір мезгілде шектен кіші әрі 5-ке бөлінбейді. Тексеру: 85 : 5 = 17.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "85",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-46ffbbe02daa86f3",
+      "modelId": "grade4-divisibility-units-wildcard-ten",
+      "skillFamily": "units-wildcard-ten",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "prefix": "68",
+        "divisor": 10,
+        "choices": [
+          5,
+          0,
+          8,
+          3
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level1.json",
+          "sourceId": "46ffbbe02daa86f3"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "68□ саны 10-ға қалдықсыз бөлінуі үшін □ орнына қандай цифр қою керек?",
+      "answer": "0",
+      "solution": "Жасырылған орын — бірліктер разряды. Соңғы цифры 0 болса ғана сан 10-ға бөлінеді. Сондықтан 680 : 10 = 68. Ішкі цифрлар бұл белгіге әсер етпейді.",
+      "options": [
+        "5",
+        "0",
+        "8",
+        "3"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "0",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-48d0199517d29e56",
+      "modelId": "grade4-divisibility-least-subtraction",
+      "skillFamily": "least-subtraction",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 3647,
+        "divisor": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level1.json",
+          "sourceId": "48d0199517d29e56"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "3 647 санынан ең аз қандай теріс емес бүтін санды азайтқанда, нәтиже 5-ке қалдықсыз бөлінеді? Жауапқа тек санды жазыңыз.",
+      "answer": "2",
+      "solution": "3 647 = 729 · 5 + 2. Ең жақын төменгі еселік 3 645. Азайтатынымыз 3 647 − 3 645 = 2. 0, 1 мәндерінің бірін азайтқанда қалдық жойылмайды.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "2",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-04a2f85a9dc219ef",
+      "modelId": "grade4-divisibility-odd-name",
+      "skillFamily": "odd-name",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 2,
+        "remainder": 1,
+        "examples": [
+          13,
+          27,
+          41
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level1.json",
+          "sourceId": "04a2f85a9dc219ef"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір топ затты екіден жұптастырғанда 1 зат артылып қалды. Заттардың жалпы саны қандай сан?",
+      "answer": "Тақ сан",
+      "solution": "13, 27, 41 сандары 2-ге қалдықсыз бөлінбейді: әрқайсысының қалдығы 1. Мұндай сандар тақ деп аталады, соңғы цифрлары 1, 3, 5, 7 немесе 9. Жұп сан екіге бөлінгенде қалдық қалдырмайды.",
+      "options": [
+        "5-ке бөлінетін кез келген сан",
+        "Бір таңбалы сан",
+        "Тақ сан",
+        "Жұп сан"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "Тақ сан",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-b65b4ed823016b8f",
+      "modelId": "grade4-divisibility-sum-strict-multiples",
+      "skillFamily": "sum-strict-multiples",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "low": 41,
+        "high": 64,
+        "divisor": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level1.json",
+          "sourceId": "b65b4ed823016b8f"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "41 санынан үлкен және 64 санынан кіші, 5-ке бөлінетін барлық натурал сандардың қосындысын табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "210",
+      "solution": "Шекаралар кірмейді. Соңғы цифры 0 немесе 5 болса, сан 5-ке бөлінеді. Аралықтағы толық тізім: 45, 50, 55, 60. Қосынды 45 + 50 + 55 + 60 = 210.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "210",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-fb0b906f3f8dcdab",
+      "modelId": "grade4-divisibility-select-ten",
+      "skillFamily": "select-ten",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 10,
+        "choices": [
+          82076,
+          82706,
+          27865,
+          82760
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level1.json",
+          "sourceId": "fb0b906f3f8dcdab"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай сан 10 санына қалдықсыз бөлінеді?",
+      "answer": "82 760",
+      "solution": "Соңғы цифры 0 болса ғана сан 10-ға бөлінеді. Нұсқалардың соңғы цифрлары тиісінше 6, 6, 5, 0. Жалғыз жарамды сан 82 760: 82 760 : 10 = 8 276. Санның басындағы не ортасындағы цифрды белгі орнына қолданбаймыз.",
+      "options": [
+        "82 076",
+        "82 706",
+        "27 865",
+        "82 760"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "82 760",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-6aca6b3bb868ab7b",
+      "modelId": "grade4-divisibility-count-ten-inclusive",
+      "skillFamily": "count-ten-inclusive",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "low": 1,
+        "high": 80,
+        "divisor": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level1.json",
+          "sourceId": "6aca6b3bb868ab7b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1–80 аралығындағы, екі шетін қоса алғанда, 10-ға бөлінетін натурал сандар нешеу? Жауапқа тек санды жазыңыз.",
+      "answer": "8",
+      "solution": "Соңғы цифры 0 болса ғана сан 10-ға бөлінеді. Толық тізім 10, 20, 30, 40, 50, 60, 70, 80. Соңғы 80 саны да есепке кіреді. Барлығы 8.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "8",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-8bab55d2b85bd22b",
+      "modelId": "grade4-divisibility-select-five",
+      "skillFamily": "select-five",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 5,
+        "choices": [
+          5743,
+          3754,
+          7345,
+          7351
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level1.json",
+          "sourceId": "8bab55d2b85bd22b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай сан 5 санына қалдықсыз бөлінеді?",
+      "answer": "7 345",
+      "solution": "Соңғы цифры 0 немесе 5 болса, сан 5-ке бөлінеді. Нұсқалардың соңғы цифрлары тиісінше 3, 4, 5, 1. Жалғыз жарамды сан 7 345: 7 345 : 5 = 1 469. Санның басындағы не ортасындағы цифрды белгі орнына қолданбаймыз.",
+      "options": [
+        "5 743",
+        "3 754",
+        "7 345",
+        "7 351"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "7 345",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-1d9cba595cc34c34",
+      "modelId": "grade4-divisibility-forbidden-units-even",
+      "skillFamily": "forbidden-units-even",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "prefix": "7482",
+        "divisor": 2,
+        "choices": [
+          0,
+          3,
+          8,
+          6
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level1.json",
+          "sourceId": "1d9cba595cc34c34"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "7482□ саны жұп болуы керек. Берілген цифрлардың қайсысын □ орнына қоюға БОЛМАЙДЫ?",
+      "answer": "3",
+      "solution": "Соңғы цифр жұп болуы керек. 0, 8, 6 жарайды, ал 3 тақ: 74823 саны 2-ге бөлінбейді.",
+      "options": [
+        "0",
+        "3",
+        "8",
+        "6"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "3",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-5f1c04fc7702f8a7",
+      "modelId": "grade4-divisibility-select-even",
+      "skillFamily": "select-even",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 2,
+        "choices": [
+          7846,
+          6759,
+          9465,
+          8679
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level1.json",
+          "sourceId": "5f1c04fc7702f8a7"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Берілген төрт санның қайсысын екі тең бөлікке қалдықсыз бөлуге болады?",
+      "answer": "7 846",
+      "solution": "Соңғы цифры 0, 2, 4, 6 немесе 8 болса, сан 2-ге бөлінеді. Нұсқалардың соңғы цифрлары тиісінше 6, 9, 5, 9. Жалғыз жарамды сан 7 846: 7 846 : 2 = 3 923. Санның басындағы не ортасындағы цифрды белгі орнына қолданбаймыз.",
+      "options": [
+        "7 846",
+        "6 759",
+        "9 465",
+        "8 679"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "7 846",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-5ebc1cfbf820ece8",
+      "modelId": "grade4-divisibility-distinct-three-digit-even",
+      "skillFamily": "distinct-three-digit-even",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": [
+          0,
+          2,
+          5,
+          7
+        ],
+        "length": 3,
+        "divisor": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level2.json",
+          "sourceId": "5ebc1cfbf820ece8"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "0, 2, 5, 7 цифрларынан цифрлары қайталанбайтын үш таңбалы жұп сандар құрастырылады. Бірінші цифр 0 болмайды. Осындай неше сан бар? Жауапқа тек санды жазыңыз.",
+      "answer": "10",
+      "solution": "Соңғы цифры 0 болса, қалған үш нөл емес цифрдан екі орын толады: 250, 270, 520, 570, 720, 750 — 6 сан. Соңғы цифры 2 болса, бірінші цифр 0 да, 2 де болмайды: 502, 572, 702, 752 — 4 сан. Барлығы 6 + 4 = 10. Жетекші нөлмен басталған жазу үш таңбалы сан емес.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "10",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-31d5a5a975d0c360",
+      "modelId": "grade4-divisibility-fixed-last-no-wildcard",
+      "skillFamily": "fixed-last-no-wildcard",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "prefix": "62",
+        "last": 9,
+        "divisor": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level2.json",
+          "sourceId": "31d5a5a975d0c360"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "62□9 саны 5-ке қалдықсыз бөлінсін. □ орнына қандай цифр қоюға болады?",
+      "answer": "Ешқандай цифр",
+      "solution": "□ — ондықтар разряды, ал соңғы цифр өзгермейді: 9. Ол 0 да, 5 те емес. Мысалы 6209, 6259, 6299 — ешқайсысы 5-ке бөлінбейді. Барлық 0–9 цифрын ауыстырсақ та соңғы цифр сол күйінде.",
+      "options": [
+        "0",
+        "0 немесе 5",
+        "Ешқандай цифр",
+        "5"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "Ешқандай цифр",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-5cc722f3e62a53e6",
+      "modelId": "grade4-divisibility-universal-implication",
+      "skillFamily": "universal-implication",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "divisors": [
+          2,
+          5,
+          10
+        ],
+        "counterexamples": [
+          30,
+          22,
+          35
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level2.json",
+          "sourceId": "5cc722f3e62a53e6"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай тұжырым барлық натурал сандар үшін дұрыс?",
+      "answer": "10-ға бөлінетін әр натурал сан 5-ке де бөлінеді",
+      "solution": "10-ға бөлінетін сан 10k = 5 · (2k) түрінде жазылады, сондықтан 5-ке де бөлінеді. Қалғандарына қарсы мысалдар: 30 — 5-ке бөлінетін жұп сан; 22 — жұп, бірақ 10-ға бөлінбейді; 35 — 5-ке бөлінеді, 10-ға бөлінбейді.",
+      "options": [
+        "5-ке бөлінетін әр натурал сан тақ болады",
+        "Әр жұп сан 10-ға қалдықсыз бөлінеді",
+        "5-ке қалдықсыз бөлінетін әр натурал сан 10-ға да бөлінеді",
+        "10-ға бөлінетін әр натурал сан 5-ке де бөлінеді"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "10-ға бөлінетін әр натурал сан 5-ке де бөлінеді",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-87de14118784a22e",
+      "modelId": "grade4-divisibility-count-odd-five",
+      "skillFamily": "count-odd-five",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "low": 25,
+        "high": 85,
+        "divisor": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level2.json",
+          "sourceId": "87de14118784a22e"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "25–85 аралығындағы, екі шетін қоса алғанда, 5-ке бөлінетін тақ натурал сандар нешеу? Жауапқа тек санды жазыңыз.",
+      "answer": "7",
+      "solution": "5-ке бөлінетін тақ санның соңғы цифры 5 болады. Аралықтағы толық тізім 25, 35, 45, 55, 65, 75, 85. Барлығы 7. Екі шекара да шартқа сай болса, есепке алынады.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "7",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-2b433f5fa229c349",
+      "modelId": "grade4-divisibility-largest-strict-ten",
+      "skillFamily": "largest-strict-ten",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "upperExclusive": 3000,
+        "divisor": 10,
+        "choices": [
+          2990,
+          2995,
+          3000,
+          2999
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level2.json",
+          "sourceId": "2b433f5fa229c349"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "3 000 санынан қатаң кіші, 10-ға бөлінетін ең үлкен натурал санды таңдаңыз.",
+      "answer": "2 990",
+      "solution": "3 000 саны 10-ға бөлінсе де, шектен кіші емес. Одан алдыңғы еселік 3 000 − 10 = 2 990. 299 · 10 = 2 990, ал бұдан кейінгі еселік шартқа кірмейтін 3 000.",
+      "options": [
+        "2 990",
+        "2 995",
+        "3 000",
+        "2 999"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "2 990",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-41776f64ad6cde25",
+      "modelId": "grade4-divisibility-sum-parity",
+      "skillFamily": "sum-parity",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "terms": [
+          2479,
+          3517
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level2.json",
+          "sourceId": "41776f64ad6cde25"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Толық қоспай анықтаңыз: 2 479 + 3 517 қосындысы туралы қай тұжырым дұрыс?",
+      "answer": "Жұп сан",
+      "solution": "Екі қосылғыш та тақ: тақ + тақ = жұп. Соңғы цифрлардың қосындысы 9 + 7 = 16; жалпы қосындының соңғы цифры 6. Ол 0 да, 5 те емес, сондықтан 5-ке не 10-ға бөлінбейді. Толық тексеру: 2 479 + 3 517 = 5 996.",
+      "options": [
+        "Тақ сан",
+        "5-ке бөлінеді",
+        "10-ға бөлінеді",
+        "Жұп сан"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "Жұп сан",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-96f7e45e5a700b45",
+      "modelId": "grade4-divisibility-odd-product-five",
+      "skillFamily": "odd-product-five",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "factors": [
+          4723,
+          2815,
+          9
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level2.json",
+          "sourceId": "96f7e45e5a700b45"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көбейтуді толық орындамай, 4 723 · 2 815 · 9 көбейтіндісінің қасиетін таңдаңыз.",
+      "answer": "Тақ және 5-ке бөлінеді",
+      "solution": "Үш көбейткіш те тақ, сондықтан олардың көбейтіндісі тақ. 2 815 саны 5-ке бөлінеді, демек көбейтінді де 5-ке бөлінеді. Соңғы цифр 5; тақ көбейтінді 10-ға бөлінбейді.",
+      "options": [
+        "Тақ және 5-ке бөлінеді",
+        "10-ға бөлінеді",
+        "Жұп және 5-ке бөлінеді",
+        "Тақ және 5-ке бөлінбейді"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "Тақ және 5-ке бөлінеді",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-d99409e6f7e0c66d",
+      "modelId": "grade4-divisibility-count-odd-inclusive",
+      "skillFamily": "count-odd-inclusive",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "low": 5,
+        "high": 95
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level2.json",
+          "sourceId": "d99409e6f7e0c66d"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "5–95 аралығында, екі шетін қоса алғанда, неше тақ натурал сан бар? Жауапқа тек санды жазыңыз.",
+      "answer": "46",
+      "solution": "Тізім 5, 7, …, 95; қадам 2. Аралық саны (95 − 5) : 2 = 45. Сан саны одан біреуге көп: 45 + 1 = 46. Екі шеті де тақ және есепке кіреді.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "46",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-309f8d89eab49dfb",
+      "modelId": "grade4-divisibility-internal-wildcard-even",
+      "skillFamily": "internal-wildcard-even",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "prefix": "73",
+        "last": 8,
+        "divisor": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level2.json",
+          "sourceId": "309f8d89eab49dfb"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "73□8 саны 2-ге бөлінсін. □ орнына неше түрлі цифр қоюға болады? Жауапқа тек санды жазыңыз.",
+      "answer": "10",
+      "solution": "Соңғы цифр 8 — жұп. □ ондықтар орнында, оны ауыстыру соңғы цифрды өзгертпейді. 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 цифрларының бәрі жарамды: барлығы 10.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "10",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-ef907139bb7ad1f0",
+      "modelId": "grade4-divisibility-count-five-inclusive",
+      "skillFamily": "count-five-inclusive",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "low": 150,
+        "high": 300,
+        "divisor": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level2.json",
+          "sourceId": "ef907139bb7ad1f0"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "150–300 аралығындағы, екі шетін қоса алғанда, 5-ке бөлінетін натурал сандар нешеу? Жауапқа тек санды жазыңыз.",
+      "answer": "31",
+      "solution": "Бірінші еселік 150, соңғысы 300, қадам 5. Аралық саны (300 − 150) : 5 = 30. Екі шет те кіретіндіктен, сан саны 30 + 1 = 31.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "31",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-d9cc2032d6f0123f",
+      "modelId": "grade4-divisibility-select-even-not-five",
+      "skillFamily": "select-even-not-five",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          4268,
+          4265,
+          4260,
+          4255
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level2.json",
+          "sourceId": "d9cc2032d6f0123f"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай сан 2 санына бөлінеді, бірақ 5 санына бөлінбейді?",
+      "answer": "4 268",
+      "solution": "4 268: 2 бойынша қалдық 0, 5 бойынша қалдық 3; 4 265: 2 бойынша қалдық 1, 5 бойынша қалдық 0; 4 260: 2 бойынша қалдық 0, 5 бойынша қалдық 0; 4 255: 2 бойынша қалдық 1, 5 бойынша қалдық 0. Екі шартқа қатар сай жалғыз сан 4 268. Бір ғана бөлінгіштік белгісін тексеру жеткіліксіз.",
+      "options": [
+        "4 268",
+        "4 265",
+        "4 260",
+        "4 255"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "4 268",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-a7114d04e2c22a23",
+      "modelId": "grade4-divisibility-factorial-trailing-zeros",
+      "skillFamily": "factorial-trailing-zeros",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "lastFactor": 20
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level3.json",
+          "sourceId": "a7114d04e2c22a23"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1 · 2 · 3 · … · 20 көбейтіндісіне 1-ден 20 санына дейінгі барлық натурал сан кіреді. Көбейтінді неше нөлмен аяқталады? Жауапқа тек санды жазыңыз.",
+      "answer": "4",
+      "solution": "Әр соңғы нөл үшін 10 = 2 · 5 көбейткіші керек. 5 көбейткіші 5, 10, 15, 20 сандарынан бір-бірден шығады. 20 саны 25-тен кіші, сондықтан екі 5 көбейткіші бар сан жоқ. 2 көбейткіштері жеткілікті: жұп сандар саны 10. Демек, дәл 4 жұп «2 · 5», яғни 4 соңғы нөл бар.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "4",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-e7b304b422c84ce5",
+      "modelId": "grade4-divisibility-maximum-distinct-odd-five",
+      "skillFamily": "maximum-distinct-odd-five",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "length": 5,
+        "allowed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "choices": [
+          87645,
+          87655,
+          87640,
+          88885
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level3.json",
+          "sourceId": "e7b304b422c84ce5"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тек 0, 1, 2, 3, 4, 5, 6, 7, 8 цифрларын пайдаланып, цифрлары қайталанбайтын бес таңбалы сан құрастырыңыз. Сан 5-ке бөлініп, 10-ға бөлінбесін. Осындай ең үлкен санды таңдаңыз. Бірінші цифр 0 болмайды.",
+      "answer": "87 645",
+      "solution": "Соңғы цифр 5 болуы міндетті. Оны алдын ала бөліп алып, қалған орындарға ең үлкен бос цифрларды кему ретімен орналастырамыз; бірінші орынға 0 қоймаймыз. Нәтиже 87 645. Цифрлары 8, 7, 6, 4, 5 — бәрі әртүрлі және берілген жиыннан. Толық жарамды кандидаттар саны 1470; оларды салыстыру да осы максимумды береді.",
+      "options": [
+        "87 645",
+        "87 655",
+        "87 640",
+        "88 885"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "87 645",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-b53baf9eb875b435",
+      "modelId": "grade4-divisibility-two-wildcards-odd-five",
+      "skillFamily": "two-wildcards-odd-five",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "middle": 7,
+        "length": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level3.json",
+          "sourceId": "b53baf9eb875b435"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "□7□ — үш таңбалы сан. Екі □ орнына цифрлар бір-бірінен тәуелсіз қойылады; бірдей болуы мүмкін. Сан 5-ке бөлініп, 2-ге бөлінбесін. Неше сан шығады? Бірінші цифр 0 болмайды. Жауапқа тек санды жазыңыз.",
+      "answer": "9",
+      "solution": "Соңғы цифр тек 5 болады: 0 жұп сан берер еді. Жүздіктерге 1–9 цифрларының кез келгені қойылады, ондықтар 7 болып қалады. Сандар 175, 275, 375, 475, 575, 675, 775, 875, 975; барлығы 9. □ таңбалары бірдей цифрды міндеттемейді.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "9",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-1207ea51b4aae2dc",
+      "modelId": "grade4-divisibility-odd-sum-impossible",
+      "skillFamily": "odd-sum-impossible",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "count": 7,
+        "claimed": 126,
+        "fakeEvenTerm": 18
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level3.json",
+          "sourceId": "1207ea51b4aae2dc"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Айша 7 тақ натурал санды қосып, 126 алдым дейді. Қай түсіндіру дұрыс?",
+      "answer": "Қате: 7 тақ санның қосындысы тақ болады",
+      "solution": "6 санды 3 жұпқа бөлеміз. Әр жұптағы тақ + тақ = жұп. Қалған бір тақ санды қоссақ, соңғы нәтиже тақ болады. 126 жұп болғандықтан, мұндай қосынды мүмкін емес. 18 — жұп сан, бірінші нұсқадағы мысал шартқа сай емес. Жалпы екі тақ сан 1 + 9 = 10 бере алады, сондықтан үшінші нұсқаның барлық тақ қосындылар туралы тұжырымы да қате.",
+      "options": [
+        "Дұрыс: 18 + 18 + 18 + 18 + 18 + 18 + 18 = 126",
+        "Қате: 7 тақ санның қосындысы тақ болады",
+        "Қате: тақ сандардың кез келген қосындысы 10-ға бөлінбейді",
+        "Дұрыс: тақ сандардың кез келген қосындысы жұп болады"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "Қате: 7 тақ санның қосындысы тақ болады",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-e9ffb8d040d5c6f0",
+      "modelId": "grade4-divisibility-always-odd-expression",
+      "skillFamily": "always-odd-expression",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "oddAdded": 3,
+        "exampleEven": 6,
+        "exampleOdd": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level3.json",
+          "sourceId": "e9ffb8d040d5c6f0"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "M — жұп натурал сан, N — тақ натурал сан. Қай өрнек осы шартқа сай кез келген M, N үшін тақ мән береді?",
+      "answer": "M + N",
+      "solution": "M + N — жұп + тақ, сондықтан әрқашан тақ. Оған 3 тақ санын қоссақ жұп шығады. N + N — жұп, M · N көбейтіндісінің бір көбейткіші жұп болғандықтан ол да жұп. Мысалы M = 6, N = 5: нұсқалардың мәндері 14, 10, 11, 30.",
+      "options": [
+        "M + N + 3",
+        "N + N",
+        "M + N",
+        "M · N"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "M + N",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-3534f1a07ea69202",
+      "modelId": "grade4-divisibility-minimum-distinct-both",
+      "skillFamily": "minimum-distinct-both",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "length": 4,
+        "allowed": [
+          0,
+          2,
+          3,
+          4,
+          6
+        ],
+        "divisors": [
+          2,
+          5
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level3.json",
+          "sourceId": "3534f1a07ea69202"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тек 0, 2, 3, 4, 6 цифрларын пайдаланып, цифрлары қайталанбайтын төрт таңбалы сан құрастырыңыз. Сан 2-ге де, 5-ке де бөлінсін. Осындай ең кіші санды табыңыз. Бірінші цифр 0 болмайды. Жауапқа тек санды жазыңыз.",
+      "answer": "2340",
+      "solution": "Соңғы цифр 0 болуы міндетті. Оны алдын ала бөліп алып, қалған орындарға ең кіші бос цифрларды өсу ретімен орналастырамыз; бірінші орынға 0 қоймаймыз. Нәтиже 2 340. Цифрлары 2, 3, 4, 0 — бәрі әртүрлі және берілген жиыннан. Толық жарамды кандидаттар саны 24; оларды салыстыру да осы минимумды береді.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "2340",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-7cfdbb96173bc1c6",
+      "modelId": "grade4-divisibility-two-remainders-count",
+      "skillFamily": "two-remainders-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "low": 40,
+        "high": 55,
+        "firstDivisor": 2,
+        "firstRemainder": 1,
+        "secondDivisor": 5,
+        "secondRemainder": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level3.json",
+          "sourceId": "7cfdbb96173bc1c6"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Үйірмедегі бала саны 40 санынан көп, 55 санынан аз. 2 баладан жұптастырғанда 1 бала, 5 баладан топтастырғанда 2 бала артылады. Үйірмеде неше бала бар? Жауапқа тек санды жазыңыз.",
+      "answer": "47",
+      "solution": "Екінші шарт бойынша осы ашық аралықтағы кандидаттар 42, 47, 52. Бірінші шартты да қанағаттандыратыны тек 47. Тексеру: 47 = 23 · 2 + 1; 47 = 9 · 5 + 2.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "47",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-3050f4eaa084f203",
+      "modelId": "grade4-divisibility-inclusive-or-count",
+      "skillFamily": "inclusive-or-count",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "low": 1,
+        "high": 150,
+        "firstDivisor": 2,
+        "secondDivisor": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level3.json",
+          "sourceId": "3050f4eaa084f203"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1–150 аралығында, екі шетін қоса алғанда, 2-ге немесе 5-ке бөлінетін натурал сандар нешеу? Кемінде бір шарт орындалса жеткілікті, екі шартқа сай сан бір рет саналады. Жауапқа тек санды жазыңыз.",
+      "answer": "90",
+      "solution": "Жұптар 75, 5-ке бөлінетіндер 30. Екі топқа да кіретін 10-ға бөлінетін 15 сан екі рет саналған. Бір рет алып тастаймыз: 75 + 30 − 15 = 90.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "90",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-e5d9333bde7aab3d",
+      "modelId": "grade4-divisibility-digit-sum-ten",
+      "skillFamily": "digit-sum-ten",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "length": 3,
+        "digitSum": 8,
+        "divisor": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level3.json",
+          "sourceId": "e5d9333bde7aab3d"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Цифрларының қосындысы 8 болатын және 10-ға бөлінетін үш таңбалы натурал сандар нешеу? Жауапқа тек санды жазыңыз.",
+      "answer": "8",
+      "solution": "Соңғы цифр 0. Жүздіктер мен ондықтардың қосындысы 8 болуы керек. Жүздіктер 0 болмайды: 1–8; әрқайсысына жалғыз ондық цифры сәйкес. Толық тізім 170, 260, 350, 440, 530, 620, 710, 800. Барлығы 8.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "8",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-b6257a55c3148c61",
+      "modelId": "grade4-divisibility-select-five-not-ten",
+      "skillFamily": "select-five-not-ten",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          9060,
+          9064,
+          9604,
+          9065
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-leveltest.json",
+          "sourceId": "b6257a55c3148c61"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай сан 5 санына бөлінеді, бірақ 10 санына бөлінбейді?",
+      "answer": "9 065",
+      "solution": "9 060: 5 бойынша қалдық 0, 10 бойынша қалдық 0; 9 064: 5 бойынша қалдық 4, 10 бойынша қалдық 4; 9 604: 5 бойынша қалдық 4, 10 бойынша қалдық 4; 9 065: 5 бойынша қалдық 0, 10 бойынша қалдық 5. Екі шартқа қатар сай жалғыз сан 9 065. Бір ғана бөлінгіштік белгісін тексеру жеткіліксіз.",
+      "options": [
+        "9 060",
+        "9 064",
+        "9 604",
+        "9 065"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "9 065",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-02d90e5e06a15ae0",
+      "modelId": "grade4-divisibility-minimum-four-odd-five",
+      "skillFamily": "minimum-four-odd-five",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "length": 4,
+        "lowerExclusive": 3000,
+        "divisor": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-leveltest.json",
+          "sourceId": "02d90e5e06a15ae0"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "3 000 санынан үлкен, 5-ке бөлінетін ең кіші төрт таңбалы тақ санды табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "3005",
+      "solution": "5-ке бөлінетін тақ сан 5-пен аяқталады. 3 000 шегінен кейінгі осындай ең жақын сан 3 005. 3 001–3 004 аралығында соңғы цифры 5 болатын сан жоқ. Тексеру: 3 005 : 5 = 601; соңғы цифры 5 болғандықтан сан тақ.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "3005",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-f62edf12c5fee1e4",
+      "modelId": "grade4-divisibility-all-even-row",
+      "skillFamily": "all-even-row",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          [
+            24,
+            41,
+            68,
+            92
+          ],
+          [
+            26,
+            35,
+            50,
+            78
+          ],
+          [
+            30,
+            64,
+            71,
+            98
+          ],
+          [
+            24,
+            40,
+            68,
+            92
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-leveltest.json",
+          "sourceId": "f62edf12c5fee1e4"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай қатардағы барлық натурал сан жұп?",
+      "answer": "24, 40, 68, 92",
+      "solution": "Дұрыс қатардың соңғы цифрлары 4, 0, 8, 2 — бәрі жұп. Өзге қатарлардың әрқайсысында тақ сан бар: 41, 35, 71. Бір қатарда бір тақ сан болса да, ол толықтай жұп қатар емес.",
+      "options": [
+        "24, 41, 68, 92",
+        "26, 35, 50, 78",
+        "30, 64, 71, 98",
+        "24, 40, 68, 92"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "24, 40, 68, 92",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-13aa5afc64d85c18",
+      "modelId": "grade4-divisibility-count-ten-strict",
+      "skillFamily": "count-ten-strict",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "low": 300,
+        "high": 420,
+        "divisor": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-leveltest.json",
+          "sourceId": "13aa5afc64d85c18"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "300 санынан үлкен, 420 санынан кіші, 10-ға бөлінетін натурал сандар нешеу? Екі шекара есепке кірмейді. Жауапқа тек санды жазыңыз.",
+      "answer": "11",
+      "solution": "Алғашқы жарамды сан 310, соңғысы 410. Толық тізім 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410. Барлығы 11. Шекарадағы 300 мен 420 10-ға бөлінсе де, шарт бойынша алынбайды.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "11",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-51126ab65db97061",
+      "modelId": "grade4-divisibility-even-times-five",
+      "skillFamily": "even-times-five",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "factors": [
+          326,
+          215
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-leveltest.json",
+          "sourceId": "51126ab65db97061"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көбейтпей анықтаңыз: 326 · 215 көбейтіндісі туралы қай тұжырым дұрыс?",
+      "answer": "10-ға бөлінеді",
+      "solution": "326 — жұп, 215 саны 5-ке бөлінеді. Көбейтіндіде 2 · 5 = 10 көбейткіші бар, сондықтан ол 10-ға бөлінеді әрі жұп. Тексеру: 326 · 215 = 70 090.",
+      "options": [
+        "Тақ сан",
+        "10-ға бөлінеді",
+        "2-ге бөлінбейді",
+        "5-ке бөлінбейді"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "10-ға бөлінеді",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-55123d2d14e0a375",
+      "modelId": "grade4-divisibility-count-even-not-five",
+      "skillFamily": "count-even-not-five",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "low": 30,
+        "high": 89
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-leveltest.json",
+          "sourceId": "55123d2d14e0a375"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "30–89 аралығында, екі шетін қоса алғанда, 2-ге бөлініп, 5-ке бөлінбейтін екі таңбалы натурал сандар нешеу? Жауапқа тек санды жазыңыз.",
+      "answer": "24",
+      "solution": "Бұл аралықта 30 жұп сан бар. Олардың ішінде соңғы цифры 0 болатындары 5-ке де бөлінеді: 30, 40, 50, 60, 70, 80 — 6 сан. Алып тастаймыз: 30 − 6 = 24.",
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "24",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-divisibility-2c6a30598571321b",
+      "modelId": "grade4-divisibility-minimum-distinct-odd-five",
+      "skillFamily": "minimum-distinct-odd-five",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "length": 5,
+        "allowed": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9
+        ],
+        "choices": [
+          20005,
+          20340,
+          20345,
+          23475
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-leveltest.json",
+          "sourceId": "2c6a30598571321b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық38 сақталған шарт, кілт, толық шешім және барлық нұсқалар жеке оқылды. Соңғы цифр, жұптық, ашық және тұйық аралық, цифрлардың әртүрлілігі және екі бөлінгіштік шартының қиылысуы сақталды.",
+        "Шарттар мен толық шешімдер қазақша дербес жазылды. Мүмкін жерде сандар, шекаралар, цифр жиыны мен кейіпкерлер өзгертілді. 2, 5, 10 белгілері мен тақ сан анықтамасы математикалық инвариант ретінде сақталады; олар жаңа ашылым немесе бөлек мағына саны деп саналмайды.",
+        "Нөл бар цифрлардан сан құрастырғанда жетекші нөл тыйымы ашық көрсетілді. Жаңа ең үлкен/ең кіші сан есептерінде рұқсат етілген цифр жиыны және қажетті шекаралар толық берілген. Факториалдық көбейтінді25-тен кіші шекте сақталып, 5 көбейткішін санау дағдысы өзгермеді. Сандық нұсқалар жеке жаңа мағына емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.3 divisibility/parity/digit-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тек 0, 2, 3, 4, 5, 7, 8, 9 цифрларын пайдаланып, цифрлары қайталанбайтын бес таңбалы сан құрастырыңыз. Сан 5-ке бөлініп, 10-ға бөлінбесін. Осындай ең кіші санды таңдаңыз. Бірінші цифр 0 болмайды.",
+      "answer": "20 345",
+      "solution": "Соңғы цифр 5 болуы міндетті. Оны алдын ала бөліп алып, қалған орындарға ең кіші бос цифрларды өсу ретімен орналастырамыз; бірінші орынға 0 қоймаймыз. Нәтиже 20 345. Цифрлары 2, 0, 3, 4, 5 — бәрі әртүрлі және берілген жиыннан. Толық жарамды кандидаттар саны 720; оларды салыстыру да осы минимумды береді.",
+      "options": [
+        "20 005",
+        "20 340",
+        "20 345",
+        "23 475"
+      ],
+      "calculationVerification": {
+        "method": "exact_last_digit_parity_distinct_digit_remainder_interval_domains",
+        "answer": "20 345",
+        "checks": [
+          "native printed last-digit / parity / strict-inclusive endpoint conditions exactly bound to parameters",
+          "full distinct-digit / wildcard / remainder / maximum-minimum domains and unique MCQ",
+          "explicit zero-leading exclusions and 2×5 inclusion-exclusion / trailing-zero argument"
+        ]
+      }
+    }
+  ]
+}

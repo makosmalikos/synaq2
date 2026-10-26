@@ -1,7 +1,7 @@
 const { createHash } = require('node:crypto');
 const { millis, familyPlan, hasFullAccess, dailyTaskLimit } = require('./plans');
 const { schoolGrade, trainingGradeAllowed } = require('./training-grade');
-const { assertQuestionAccess } = require('./question-access');
+const { assertQuestionAccess, isVerifiedAdaptation } = require('./question-access');
 
 const FREE_DAILY_LIMIT = 5;
 const SESSION_TTL = 86400000;
@@ -45,6 +45,22 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
   return async function act(user, body) {
     if (!body || typeof body !== 'object' || Array.isArray(body)) throw error('bad-body');
     const at = now(), dayInfo = learningDay(at);
+    if (body.action === 'figure') {
+      if (Object.keys(body).some(key => !['action','qid'].includes(key))
+        || typeof body.qid !== 'string' || !/^synaq_adapted_[a-z0-9_]{1,180}$/.test(body.qid)) throw error('bad-question');
+      return db.runTransaction(async (tx) => {
+        const { family, gradeCeiling } = await childContext(tx, user);
+        // Only the server registry can associate a paid SVG with a question.
+        // An administrative task carrying a copied image path is not an alias.
+        const question = require('./standard-bank').getStandardBank().find(question => question.id === body.qid);
+        if (!isVerifiedAdaptation(question) || !/^\/figures\/synaq-editions\/[a-z0-9-]+\.svg$/.test(question?.image || '')) throw error('figure-unavailable', 404);
+        assertQuestionAccess(question, familyPlan(family, at));
+        if (!trainingGradeAllowed(question, gradeCeiling)) throw error('figure-unavailable', 404);
+        // Internal handler result only. The HTTP response contains SVG bytes;
+        // this read never creates a session or modifies daily counters.
+        return { image: question.image };
+      });
+    }
     if (body.action === 'topics') {
       const { family, gradeCeiling } = await db.runTransaction((tx) => childContext(tx, user));
       return { topics: await getTrainingTopics({ gradeCeiling, plan: familyPlan(family, at) }) };
@@ -84,7 +100,7 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
           if (session.uid !== user.uid || session.fingerprint !== fingerprint) throw error('request-conflict', 409);
           if (session.expiresAt <= at) throw error('session-expired', 410);
           assertQuestionAccess(session.question, plan);
-          return { id: body.id, question: publicQuestion(session.question), startedAt: session.startedAt, expiresAt: session.expiresAt };
+          return { id: body.id, question: publicQuestion(session.question), startedAt: session.startedAt, expiresAt: session.expiresAt, serverNow: now() };
         }
         if (limit != null && daily.count >= limit) throw error('daily-limit', 429);
         prepared ||= body.mode === 'training' ? { question: await getTrainingQuestion(body.qid), standard: true }
@@ -105,7 +121,7 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
           startedAt: at, expiresAt: at + SESSION_TTL, completed: false };
         tx.create(sessionRef, session);
         tx.set(rateRef, { day: dayInfo.day, starts: starts + 1, updatedAt: new Date(at) });
-        return { id: body.id, question: publicQuestion(session.question), startedAt: at, expiresAt: session.expiresAt };
+        return { id: body.id, question: publicQuestion(session.question), startedAt: at, expiresAt: session.expiresAt, serverNow: now() };
       });
     }
 

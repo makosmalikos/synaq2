@@ -11,7 +11,10 @@ for (const key of Object.keys(env)) {
 }
 const root = fileURLToPath(new URL('../', import.meta.url));
 const children = [
-  spawn(process.execPath, ['backend/server.js'], { cwd: root, env, stdio: 'inherit' }),
+  // Watch explicit application paths. Automatic dependency watching on macOS
+  // also observes emulator log writes and can restart the API repeatedly.
+  // Keep the watch supervisor alive so reloads retain the emulators and data.
+  spawn(process.execPath, ['--watch', '--watch-path=backend', '--watch-path=api', '--watch-path=frontend/src/bank.js', 'backend/server.js'], { cwd: root, env, stdio: 'inherit' }),
   spawn(process.execPath, ['node_modules/vite/bin/vite.js', '--config', 'vite.emulator.config.js'], { cwd: `${root}frontend`, env, stdio: 'inherit' }),
 ];
 console.log('DEMO ONLY: http://127.0.0.1:5175/app — project demo-synaq-tests, ephemeral local accounts.');

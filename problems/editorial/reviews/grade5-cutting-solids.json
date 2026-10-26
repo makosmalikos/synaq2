@@ -1,0 +1,1388 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "root_separate_computational_check_same_author",
+  "batch": "problems/editorial/batches/grade5-cutting-solids.json",
+  "scope": "Separate computational review of 27 printed conditions, source keys and all MCQs.\nThe same root authored this batch; this is NOT a separate human/agent review.\nUses exact lattice geometry, exhaustive nets/tilings and printed givens, without\nimporting the author model/specs or reading params as a mathematical oracle.\n",
+  "summary": {
+    "verified": 27,
+    "findings": 0,
+    "allSavedAndNewConditionsSolutionsMCQsRead": 27,
+    "wrongKeysRejected": 27,
+    "printedGivensOrTargetsCanariesRejected": 27,
+    "allFixedHexominoesEnumerated": 216,
+    "allFoldableCubeNetsChecked": 64,
+    "nativeFractions": 0,
+    "pythonJavaScriptHashesMatched": 27,
+    "separateHumanReviewer": false
+  },
+  "evidence": [
+    {
+      "editionId": "grade5-cutting-solids-1bf20fc472f20d87",
+      "rewritten": {
+        "printedNumbers": [
+          "6",
+          "5"
+        ],
+        "exposed2DEdges": 12,
+        "answer": "72"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "4"
+        ],
+        "exposed2DEdges": 8,
+        "answer": "32"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-bbfd3118433d8fc4",
+      "rewritten": {
+        "printedNumbers": [
+          "12",
+          "3"
+        ],
+        "allRequiredInteriorPlanes": [
+          [
+            "1",
+            "2",
+            "3"
+          ],
+          [
+            "1",
+            "2",
+            "3"
+          ],
+          [
+            "1",
+            "2",
+            "3"
+          ]
+        ],
+        "answer": "9"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "1"
+        ],
+        "allRequiredInteriorPlanes": [
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "2"
+          ]
+        ],
+        "answer": "6"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-955ac6b7866b723f",
+      "rewritten": {
+        "printedNumbers": [
+          "10",
+          "6",
+          "2",
+          "1"
+        ],
+        "actualDisjointTiles": 30,
+        "answer": "30"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "6",
+          "4",
+          "2",
+          "1"
+        ],
+        "actualDisjointTiles": 12,
+        "answer": "12"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-0b84e6dcb3941b9a",
+      "rewritten": {
+        "printedNumbers": [],
+        "netsEnumerated": {
+          "fixedHexominoes": 216,
+          "foldableCubeNets": 64,
+          "allNetBoundaryEdges": 14,
+          "allNetHinges": 5
+        },
+        "answer": "7"
+      },
+      "savedSource": {
+        "printedNumbers": [],
+        "netsEnumerated": {
+          "fixedHexominoes": 216,
+          "foldableCubeNets": 64,
+          "allNetBoundaryEdges": 14,
+          "allNetHinges": 5
+        },
+        "answer": "7"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-b5836e1287c3354c",
+      "rewritten": {
+        "printedNumbers": [
+          "5"
+        ],
+        "exposedVoxelsFaces": 10,
+        "answer": "250"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "2"
+        ],
+        "exposedVoxelsFaces": 10,
+        "answer": "40"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-1c175dbac6a275f9",
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "5"
+        ],
+        "answer": "30"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "4"
+        ],
+        "answer": "20"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-b35e175d44c801df",
+      "rewritten": {
+        "printedNumbers": [
+          "2",
+          "9"
+        ],
+        "answer": "92"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "1",
+          "6"
+        ],
+        "answer": "28"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-0a5b1635f52c9c98",
+      "rewritten": {
+        "printedNumbers": [
+          "3",
+          "40"
+        ],
+        "stripDimensions": [
+          "15",
+          "5"
+        ],
+        "answer": "225"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "24"
+        ],
+        "stripDimensions": [
+          "9",
+          "3"
+        ],
+        "answer": "81"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-8c9bdad9ff4f3765",
+      "rewritten": {
+        "printedNumbers": [
+          "1",
+          "3",
+          "4",
+          "6"
+        ],
+        "actualNewGridPositions": 144,
+        "answer": "144"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "actualNewGridPositions": 40,
+        "answer": "40"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-4f26026f0345d66d",
+      "rewritten": {
+        "printedNumbers": [],
+        "attainableCutVertexPairs": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "answer": "Екі бесбұрыш"
+      },
+      "savedSource": {
+        "printedNumbers": [],
+        "attainableCutVertexPairs": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "answer": "екі бесбұрыш"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-524507b41c685002",
+      "rewritten": {
+        "printedNumbers": [
+          "3",
+          "2",
+          "2"
+        ],
+        "answer": "36"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "2",
+          "3",
+          "1"
+        ],
+        "answer": "24"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-c965ad5e21bd4540",
+      "rewritten": {
+        "printedNumbers": [
+          "6"
+        ],
+        "answer": "288"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "4"
+        ],
+        "answer": "128"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-a61627502000b9c1",
+      "rewritten": {
+        "printedNumbers": [
+          "10",
+          "10",
+          "1",
+          "3"
+        ],
+        "disjointConstructedStrips": 33,
+        "unusedCells": 1,
+        "areaUpperBound": 33,
+        "answer": "33"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "7",
+          "7",
+          "1",
+          "3"
+        ],
+        "disjointConstructedStrips": 16,
+        "unusedCells": 1,
+        "areaUpperBound": 16,
+        "answer": "16"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-db7ad82e0960418a",
+      "rewritten": {
+        "printedNumbers": [
+          "18"
+        ],
+        "allAdmissibleIntegerCutsAndVolumes": [
+          [
+            1,
+            256
+          ],
+          [
+            2,
+            392
+          ],
+          [
+            3,
+            432
+          ],
+          [
+            4,
+            400
+          ],
+          [
+            5,
+            320
+          ],
+          [
+            6,
+            216
+          ],
+          [
+            7,
+            112
+          ],
+          [
+            8,
+            32
+          ]
+        ],
+        "answer": "432"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "12"
+        ],
+        "allAdmissibleIntegerCutsAndVolumes": [
+          [
+            1,
+            100
+          ],
+          [
+            2,
+            128
+          ],
+          [
+            3,
+            108
+          ],
+          [
+            4,
+            64
+          ],
+          [
+            5,
+            20
+          ]
+        ],
+        "answer": "128"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-5b428f1856f0a700",
+      "rewritten": {
+        "printedNumbers": [
+          "1",
+          "18"
+        ],
+        "allFactorTriplesSurfaceAreas": [
+          [
+            [
+              1,
+              1,
+              18
+            ],
+            74
+          ],
+          [
+            [
+              1,
+              2,
+              9
+            ],
+            58
+          ],
+          [
+            [
+              1,
+              3,
+              6
+            ],
+            54
+          ],
+          [
+            [
+              2,
+              3,
+              3
+            ],
+            42
+          ]
+        ],
+        "answer": [
+          2,
+          3,
+          3
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "1",
+          "12"
+        ],
+        "allFactorTriplesSurfaceAreas": [
+          [
+            [
+              1,
+              1,
+              12
+            ],
+            50
+          ],
+          [
+            [
+              1,
+              2,
+              6
+            ],
+            40
+          ],
+          [
+            [
+              1,
+              3,
+              4
+            ],
+            38
+          ],
+          [
+            [
+              2,
+              2,
+              3
+            ],
+            32
+          ]
+        ],
+        "answer": [
+          2,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-5f982f5e46bc99af",
+      "rewritten": {
+        "printedNumbers": [
+          "70",
+          "40",
+          "50"
+        ],
+        "positiveConstructionDimensions": [
+          "10",
+          "10",
+          "15"
+        ],
+        "answer": "10"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "54",
+          "30",
+          "40"
+        ],
+        "positiveConstructionDimensions": [
+          "8",
+          "7",
+          "12"
+        ],
+        "answer": "8"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-358a1a538a5e6b29",
+      "rewritten": {
+        "printedNumbers": [
+          "12",
+          "3"
+        ],
+        "separatedSurface": "3456",
+        "originalSurface": "864",
+        "answer": "4"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "6",
+          "2"
+        ],
+        "separatedSurface": "648",
+        "originalSurface": "216",
+        "answer": "3"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-a172d64190c3d590",
+      "rewritten": {
+        "printedNumbers": [
+          "168"
+        ],
+        "allCubeNets": {
+          "fixedHexominoes": 216,
+          "foldableCubeNets": 64,
+          "allNetBoundaryEdges": 14,
+          "allNetHinges": 5
+        },
+        "answer": "1728"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "84"
+        ],
+        "allCubeNets": {
+          "fixedHexominoes": 216,
+          "foldableCubeNets": 64,
+          "allNetBoundaryEdges": 14,
+          "allNetHinges": 5
+        },
+        "answer": "216"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-2ba03501bbd1d0d2",
+      "rewritten": {
+        "printedNumbers": [
+          "10",
+          "10",
+          "98",
+          "1",
+          "2",
+          "49"
+        ],
+        "remainingColors": [
+          48,
+          50
+        ],
+        "requiredEachColor": "49",
+        "answer": "Жабу мүмкін емес"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "8",
+          "8",
+          "62",
+          "1",
+          "2",
+          "31"
+        ],
+        "remainingColors": [
+          30,
+          32
+        ],
+        "requiredEachColor": "31",
+        "answer": "Болмайды"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-086b7b717c552d6e",
+      "rewritten": {
+        "printedNumbers": [
+          "5"
+        ],
+        "exactGeneralPositionLineWitness": {
+          "slopes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "intercepts": "slope² / 100",
+          "allPairIntersectionsStrictlyInsideUnitCircle": true,
+          "noTripleIntersection": true
+        },
+        "answer": "16"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "4"
+        ],
+        "exactGeneralPositionLineWitness": {
+          "slopes": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "intercepts": "slope² / 100",
+          "allPairIntersectionsStrictlyInsideUnitCircle": true,
+          "noTripleIntersection": true
+        },
+        "answer": "11"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-0b2fcf0d128e528f",
+      "rewritten": {
+        "printedNumbers": [
+          "14"
+        ],
+        "answer": "49"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "8"
+        ],
+        "answer": "16"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-d9f5d7c2262ccb6b",
+      "rewritten": {
+        "printedNumbers": [
+          "8",
+          "3"
+        ],
+        "twoPositiveSolids": [
+          [
+            "8",
+            "8",
+            "3"
+          ],
+          [
+            "8",
+            "8",
+            "5"
+          ]
+        ],
+        "answer": "Екі тікбұрышты параллелепипед"
+      },
+      "savedSource": {
+        "printedNumbers": [],
+        "answer": "2 тікбұрышты параллелепипед"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-67b51ea7a3470835",
+      "rewritten": {
+        "printedNumbers": [
+          "4"
+        ],
+        "answer": "8"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3"
+        ],
+        "answer": "6"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-1eebc31ba6fcb1a8",
+      "rewritten": {
+        "printedNumbers": [
+          "5",
+          "12"
+        ],
+        "allSixFullSideJoins": [
+          {
+            "vertices": [
+              [
+                "0",
+                "12"
+              ],
+              [
+                "5",
+                "0"
+              ],
+              [
+                "0",
+                "-12"
+              ]
+            ],
+            "kind": "triangle"
+          },
+          {
+            "vertices": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "12"
+              ],
+              [
+                "5",
+                "0"
+              ],
+              [
+                "5",
+                "-12"
+              ]
+            ],
+            "kind": "nonrectangle"
+          },
+          {
+            "vertices": [
+              [
+                "5",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "12"
+              ],
+              [
+                "1440/169",
+                "600/169"
+              ]
+            ],
+            "kind": "nonrectangle"
+          },
+          {
+            "vertices": [
+              [
+                "5",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "12"
+              ],
+              [
+                "5",
+                "12"
+              ]
+            ],
+            "kind": "rectangle"
+          },
+          {
+            "vertices": [
+              [
+                "0",
+                "12"
+              ],
+              [
+                "5",
+                "0"
+              ],
+              [
+                "-5",
+                "0"
+              ]
+            ],
+            "kind": "triangle"
+          },
+          {
+            "vertices": [
+              [
+                "0",
+                "12"
+              ],
+              [
+                "5",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ],
+              [
+                "-5",
+                "12"
+              ]
+            ],
+            "kind": "nonrectangle"
+          }
+        ],
+        "answer": "Шаршы"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "4"
+        ],
+        "allSixFullSideJoins": [
+          {
+            "vertices": [
+              [
+                "0",
+                "4"
+              ],
+              [
+                "3",
+                "0"
+              ],
+              [
+                "0",
+                "-4"
+              ]
+            ],
+            "kind": "triangle"
+          },
+          {
+            "vertices": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "4"
+              ],
+              [
+                "3",
+                "0"
+              ],
+              [
+                "3",
+                "-4"
+              ]
+            ],
+            "kind": "nonrectangle"
+          },
+          {
+            "vertices": [
+              [
+                "3",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "4"
+              ],
+              [
+                "96/25",
+                "72/25"
+              ]
+            ],
+            "kind": "nonrectangle"
+          },
+          {
+            "vertices": [
+              [
+                "3",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "4"
+              ],
+              [
+                "3",
+                "4"
+              ]
+            ],
+            "kind": "rectangle"
+          },
+          {
+            "vertices": [
+              [
+                "0",
+                "4"
+              ],
+              [
+                "3",
+                "0"
+              ],
+              [
+                "-3",
+                "0"
+              ]
+            ],
+            "kind": "triangle"
+          },
+          {
+            "vertices": [
+              [
+                "0",
+                "4"
+              ],
+              [
+                "3",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ],
+              [
+                "-3",
+                "4"
+              ]
+            ],
+            "kind": "nonrectangle"
+          }
+        ],
+        "answer": "шаршы"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-8c9c196833ab89c4",
+      "rewritten": {
+        "printedNumbers": [
+          "2",
+          "64",
+          "4",
+          "4",
+          "4"
+        ],
+        "actualBeforeFaces": 96,
+        "actualAfterFaces": 96,
+        "answer": "384"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "1",
+          "27",
+          "3",
+          "3",
+          "3"
+        ],
+        "actualBeforeFaces": 54,
+        "actualAfterFaces": 54,
+        "answer": "54"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-d5bf598e722c16ce",
+      "rewritten": {
+        "printedNumbers": [
+          "2",
+          "2",
+          "9",
+          "180"
+        ],
+        "actualUnequalGridPerimeterCoefficient": "12",
+        "answer": "15"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "9",
+          "9",
+          "120"
+        ],
+        "actualUnequalGridPerimeterCoefficient": "12",
+        "answer": "10"
+      }
+    },
+    {
+      "editionId": "grade5-cutting-solids-20339656aafad325",
+      "rewritten": {
+        "printedNumbers": [
+          "9",
+          "6"
+        ],
+        "actualDiagonalInteriorCells": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            8,
+            5
+          ]
+        ],
+        "answer": "12"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "6",
+          "4"
+        ],
+        "actualDiagonalInteriorCells": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "answer": "8"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "editionId": "grade5-cutting-solids-1bf20fc472f20d87",
+      "sha256": "c3e3d9902735cd0008896a2d068c7952e9a6b8e981f5c3dad882c61d1c65ae4f",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"6\", \"5\"], \"exposed2DEdges\": 12, \"answer\": \"72\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-bbfd3118433d8fc4",
+      "sha256": "51e1bc90ddfbe31920dd5b9c32473d55dc8fc2dbdced23a8882fcff02d68b5e2",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"12\", \"3\"], \"allRequiredInteriorPlanes\": [[\"1\", \"2\", \"3\"], [\"1\", \"2\", \"3\"], [\"1\", \"2\", \"3\"]], \"answer\": \"9\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-955ac6b7866b723f",
+      "sha256": "fa9fd6a4d674ab08eef57f3ba369aa035daa431cab92173a0bc4ee8991892186",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"10\", \"6\", \"2\", \"1\"], \"actualDisjointTiles\": 30, \"answer\": \"30\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-0b84e6dcb3941b9a",
+      "sha256": "5e7ed8e06a291a8c9ce407d81e0fbf45c58c731afe0902f3822a694a704d0d44",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [], \"netsEnumerated\": {\"fixedHexominoes\": 216, \"foldableCubeNets\": 64, \"allNetBoundaryEdges\": 14, \"allNetHinges\": 5}, \"answer\": \"7\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-b5836e1287c3354c",
+      "sha256": "1860827f7ca4c24b542257544ecc8db3c87a1066342da0fbc7d69d20c1dc3f16",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"5\"], \"exposedVoxelsFaces\": 10, \"answer\": \"250\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-1c175dbac6a275f9",
+      "sha256": "eec96623d0aabea84e61e32355c7a4fb241c70bec91d7a1a5eea466fbc7ae52d",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"5\"], \"answer\": \"30\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-b35e175d44c801df",
+      "sha256": "db4ecd6463cb17cb6e1413eebd73e73598a7b484078c06d4749b78d7dce88ae8",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"2\", \"9\"], \"answer\": \"92\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-0a5b1635f52c9c98",
+      "sha256": "65fb70ec0ad4690e8df209a8a5f96eb520af6ef9f95c623b981707628201c974",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"40\"], \"stripDimensions\": [\"15\", \"5\"], \"answer\": \"225\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-8c9bdad9ff4f3765",
+      "sha256": "d0863100ea1789e33cae6904e8611442308e1bfb117703f3f2400a5ff98556e8",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"1\", \"3\", \"4\", \"6\"], \"actualNewGridPositions\": 144, \"answer\": \"144\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-4f26026f0345d66d",
+      "sha256": "785545fe5fc8d02fe313faedc2c1973a23816e2f986e097b12cae64ba74b3cb8",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [], \"attainableCutVertexPairs\": [[3, 3], [3, 4], [3, 5], [4, 4]], \"answer\": \"Екі бесбұрыш\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-524507b41c685002",
+      "sha256": "e041bd1987ea9103d67d20fb5414b42120247786e356eba8c8c914cec488b2e8",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"2\", \"2\"], \"answer\": \"36\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-c965ad5e21bd4540",
+      "sha256": "5293d3623f96947ac136628ba71946a3411777312f2bb19376c803014628bb4e",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"6\"], \"answer\": \"288\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-a61627502000b9c1",
+      "sha256": "731f27698b95ace5ce82db72b0dbc1f8d4a0690df8f03626bb21d94fe07a9f96",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"10\", \"10\", \"1\", \"3\"], \"disjointConstructedStrips\": 33, \"unusedCells\": 1, \"areaUpperBound\": 33, \"answer\": \"33\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-db7ad82e0960418a",
+      "sha256": "93f3f186dcb9b82a36701190e74867df6395b2683015a02c305f043a2a1e25cf",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"18\"], \"allAdmissibleIntegerCutsAndVolumes\": [[1, 256], [2, 392], [3, 432], [4, 400], [5, 320], [6, 216], [7, 112], [8, 32]], \"answer\": \"432\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-5b428f1856f0a700",
+      "sha256": "4d2ea3f9301e71cc865465ebe351f9fa573701593c859296431a89648468321d",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"1\", \"18\"], \"allFactorTriplesSurfaceAreas\": [[[1, 1, 18], 74], [[1, 2, 9], 58], [[1, 3, 6], 54], [[2, 3, 3], 42]], \"answer\": [2, 3, 3]}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-5f982f5e46bc99af",
+      "sha256": "75fe8f5d8e44251c7fdbfc8bcee36402a64c1c98f07828293611ad1a9ece88d5",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"70\", \"40\", \"50\"], \"positiveConstructionDimensions\": [\"10\", \"10\", \"15\"], \"answer\": \"10\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-358a1a538a5e6b29",
+      "sha256": "675454841009b6b7f3c81ad570cda9519839ec25010fbf6d4827f0b54bd93f3c",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"12\", \"3\"], \"separatedSurface\": \"3456\", \"originalSurface\": \"864\", \"answer\": \"4\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-a172d64190c3d590",
+      "sha256": "78353bc063edee2bbb1c5b208b0ed4fb4a60662d2325ac4e8c6b9c4960314620",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"168\"], \"allCubeNets\": {\"fixedHexominoes\": 216, \"foldableCubeNets\": 64, \"allNetBoundaryEdges\": 14, \"allNetHinges\": 5}, \"answer\": \"1728\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-2ba03501bbd1d0d2",
+      "sha256": "3afa9a0bbee19ff4796462752eede5197573ad3b2631dcec71b2063b80c6da70",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"10\", \"10\", \"98\", \"1\", \"2\", \"49\"], \"remainingColors\": [48, 50], \"requiredEachColor\": \"49\", \"answer\": \"Жабу мүмкін емес\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-086b7b717c552d6e",
+      "sha256": "0ee21d709d3565f43578ec3625aa5073f35e3f3e86774c72a08fd329f086fa6d",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"5\"], \"exactGeneralPositionLineWitness\": {\"slopes\": [1, 2, 3, 4, 5], \"intercepts\": \"slope² / 100\", \"allPairIntersectionsStrictlyInsideUnitCircle\": true, \"noTripleIntersection\": true}, \"answer\": \"16\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-0b2fcf0d128e528f",
+      "sha256": "5775622b5ba8fd27de44893e436d81036d508b192cab8de598a01aae7ee93b7c",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"14\"], \"answer\": \"49\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-d9f5d7c2262ccb6b",
+      "sha256": "fe08e15ba2660698e953eb2861dd1f574f99628bf192c292c08b4ed11b7a03b5",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"8\", \"3\"], \"twoPositiveSolids\": [[\"8\", \"8\", \"3\"], [\"8\", \"8\", \"5\"]], \"answer\": \"Екі тікбұрышты параллелепипед\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-67b51ea7a3470835",
+      "sha256": "4169bb180e35d104384e8ab0f48f7d5757644bf5c464bea2f16528b6af85b1c3",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"4\"], \"answer\": \"8\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-1eebc31ba6fcb1a8",
+      "sha256": "ac24f3d0f780f963eebb61e59d18eac1e3e56e854cde1299d5d5ce0151dc4a8a",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"5\", \"12\"], \"allSixFullSideJoins\": [{\"vertices\": [[\"0\", \"12\"], [\"5\", \"0\"], [\"0\", \"-12\"]], \"kind\": \"triangle\"}, {\"vertices\": [[\"0\", \"0\"], [\"0\", \"12\"], [\"5\", \"0\"], [\"5\", \"-12\"]], \"kind\": \"nonrectangle\"}, {\"vertices\": [[\"5\", \"0\"], [\"0\", \"0\"], [\"0\", \"12\"], [\"1440/169\", \"600/169\"]], \"kind\": \"nonrectangle\"}, {\"vertices\": [[\"5\", \"0\"], [\"0\", \"0\"], [\"0\", \"12\"], [\"5\", \"12\"]], \"kind\": \"rectangle\"}, {\"vertices\": [[\"0\", \"12\"], [\"5\", \"0\"], [\"-5\", \"0\"]], \"kind\": \"triangle\"}, {\"vertices\": [[\"0\", \"12\"], [\"5\", \"0\"], [\"0\", \"0\"], [\"-5\", \"12\"]], \"kind\": \"nonrectangle\"}], \"answer\": \"Шаршы\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-8c9c196833ab89c4",
+      "sha256": "19cb3b0c75bb81663effd99f3bf01153df2e1a0abd463d3eddc8f9409a11ea5b",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"2\", \"64\", \"4\", \"4\", \"4\"], \"actualBeforeFaces\": 96, \"actualAfterFaces\": 96, \"answer\": \"384\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-d5bf598e722c16ce",
+      "sha256": "003860924f3bff787342a6cbdc228911984b5538134b697317e285810e51e9ef",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"2\", \"2\", \"9\", \"180\"], \"actualUnequalGridPerimeterCoefficient\": \"12\", \"answer\": \"15\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-cutting-solids-20339656aafad325",
+      "sha256": "0997e313a69b069d751704eef76387064fef0433508aedb6d043b6113266ade1",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full_saved_and_authored_text_read; separate exact Python geometric/lattice enumeration; no author model/params oracle; not a separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"9\", \"6\"], \"actualDiagonalInteriorCells\": [[0, 0], [1, 0], [1, 1], [2, 1], [3, 2], [4, 2], [4, 3], [5, 3], [6, 4], [7, 4], [7, 5], [8, 5]], \"answer\": \"12\"}"
+      ]
+    }
+  ]
+}

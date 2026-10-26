@@ -1,0 +1,2228 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All39 remaining saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning sources; no new source collection.",
+  "summary": {
+    "editions": 39,
+    "models": 35,
+    "skillFamilies": 35,
+    "sourceOccurrencesReferenced": 39,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-rubles-7ce7be5541990758",
+      "modelId": "grade4-rubles-week-borrow-difference",
+      "skillFamily": "week-borrow-difference",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "a": [
+          8,
+          2
+        ],
+        "b": [
+          7,
+          5
+        ],
+        "zeroParentResult": true,
+        "choices": [
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level1.json",
+          "sourceId": "7ce7be5541990758"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "8 апта 2 күн − 7 апта 5 күн айырмасын таңдаңыз.",
+      "answer": "4 күн",
+      "solution": "Бір ірі бірлікті 7 күн етіп айырбастаймыз: 8 апта 2 күн = 7 апта 9 күн. Енді ұсақ бөліктердің айырмасы 9 − 5 = 4, ірі бөліктердікі 7 − 7 = 0. Нәтиже 4 күн. Ұсақ бірлікпен тексеру: 58 − 54 = 4 күн.",
+      "options": [
+        "1 апта 4 күн",
+        "4 күн",
+        "3 күн",
+        "1 апта 3 күн"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "4 күн",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-2be59c8ec6b78016",
+      "modelId": "grade4-rubles-greatest-ruble-amount",
+      "skillFamily": "greatest-ruble-amount",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          [
+            0,
+            705
+          ],
+          [
+            7,
+            45
+          ],
+          [
+            0,
+            760
+          ],
+          [
+            7,
+            5
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level1.json",
+          "sourceId": "2be59c8ec6b78016"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір рубль 100 копейкаға тең. Ең үлкен соманы таңдаңыз.",
+      "answer": "760 копейка",
+      "solution": "Копейкамен: 705 копейка = 705 копейка; 7 рубль 45 копейка = 745 копейка; 760 копейка = 760 копейка; 7 рубль 5 копейка = 705 копейка. Ең үлкені 760 копейка. Әртүрлі жазылуы бір соманы білдіретін нұсқалар болуы мүмкін.",
+      "options": [
+        "705 копейка",
+        "7 рубль 45 копейка",
+        "760 копейка",
+        "7 рубль 5 копейка"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "760 копейка",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-0120684a1d6a3cc2",
+      "modelId": "grade4-rubles-year-month-carry-sum",
+      "skillFamily": "year-month-carry-sum",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "years": 13,
+        "months": 8,
+        "extraMonths": 7,
+        "choices": [
+          [
+            14,
+            3
+          ],
+          [
+            14,
+            5
+          ],
+          [
+            20,
+            8
+          ],
+          [
+            13,
+            3
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level1.json",
+          "sourceId": "0120684a1d6a3cc2"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "13 жыл 8 ай + 7 ай қосындысын таңдаңыз.",
+      "answer": "14 жыл 3 ай",
+      "solution": "Айлар 8 + 7 = 15. 12 ай бір жылға тең, сондықтан бұл 1 жыл 3 ай. Жылдарға қосқанда 14 жыл 3 ай. Тексеру: 13 × 12 + 8 + 7 = 171 ай.",
+      "options": [
+        "14 жыл 3 ай",
+        "14 жыл 5 ай",
+        "20 жыл 8 ай",
+        "13 жыл 3 ай"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "14 жыл 3 ай",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-d60642b818ff5ae4",
+      "modelId": "grade4-rubles-kopecks-to-mixed",
+      "skillFamily": "kopecks-to-mixed",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 7090,
+        "choices": [
+          [
+            70,
+            9
+          ],
+          [
+            70,
+            90
+          ],
+          [
+            709,
+            0
+          ],
+          [
+            7,
+            90
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level1.json",
+          "sourceId": "d60642b818ff5ae4"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "7 090 копейканы рубль және копейкамен дұрыс жазыңыз. Бір рубль 100 копейкаға тең.",
+      "answer": "70 рубль 90 копейка",
+      "solution": "7 090 = 70 × 100 + 90. Бөлінді рубль санын, қалдық копейка санын береді: 70 рубль 90 копейка. Нөлдер мен қалған копейканың разрядын сақтаймыз.",
+      "options": [
+        "70 рубль 9 копейка",
+        "70 рубль 90 копейка",
+        "709 рубль",
+        "7 рубль 90 копейка"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "70 рубль 90 копейка",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-808ee7718dba2233",
+      "modelId": "grade4-rubles-exact-note-sum",
+      "skillFamily": "exact-note-sum",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 2000,
+        "choices": [
+          [
+            1000,
+            1000,
+            100
+          ],
+          [
+            500,
+            500,
+            500,
+            200
+          ],
+          [
+            1000,
+            500,
+            500
+          ],
+          [
+            1000,
+            500,
+            200,
+            200
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level1.json",
+          "sourceId": "808ee7718dba2233"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "2 000 рубльді дәл беретін қағаз ақшалар қосындысын таңдаңыз. Нұсқадағы барлық ақша алынады.",
+      "answer": "1 000 + 500 + 500",
+      "solution": "Нұсқалардың қосындылары: 2 100; 1 700; 2 000; 1 900 рубль. Тек 1 000 + 500 + 500 = 2 000 рубль. Ақшаны ұсақтау соманы өзгертпейді.",
+      "options": [
+        "1 000 + 1 000 + 100",
+        "500 + 500 + 500 + 200",
+        "1 000 + 500 + 500",
+        "1 000 + 500 + 200 + 200"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "1 000 + 500 + 500",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-e4838005510373e4",
+      "modelId": "grade4-rubles-mixed-unit-price",
+      "skillFamily": "mixed-unit-price",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "price": [
+          3,
+          25
+        ],
+        "count": 6,
+        "choices": [
+          [
+            19,
+            50
+          ],
+          [
+            18,
+            50
+          ],
+          [
+            19,
+            5
+          ],
+          [
+            195,
+            0
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level1.json",
+          "sourceId": "e4838005510373e4"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір маркер 3 рубль 25 копейка тұрады. Бірдей 6 маркердің құнын таңдаңыз. Бір рубль 100 копейкаға тең.",
+      "answer": "19 рубль 50 копейка",
+      "solution": "Бір маркер 325 копейка. Барлығы 325 × 6 = 1 950 копейка, яғни 19 рубль 50 копейка. Копейкаларды бөлек жазғанда ондық разрядты жоғалтпаймыз.",
+      "options": [
+        "19 рубль 50 копейка",
+        "18 рубль 50 копейка",
+        "19 рубль 5 копейка",
+        "195 рубль"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "19 рубль 50 копейка",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-42f5ab10ce094daf",
+      "modelId": "grade4-rubles-rubles-to-kopecks",
+      "skillFamily": "rubles-to-kopecks",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "rubles": 14
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level1.json",
+          "sourceId": "42f5ab10ce094daf"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "14 рубльді копейкамен жазыңыз. Бір рубль 100 копейкаға тең. Жауапқа тек санды жазыңыз.",
+      "answer": "1400",
+      "solution": "14 × 100 = 1 400 копейка. Тексеру: 1 400 : 100 = 14 рубль.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "1400",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-9e9aeb81ab3a56ec",
+      "modelId": "grade4-rubles-hour-minute-difference",
+      "skillFamily": "hour-minute-difference",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "a": [
+          12,
+          15
+        ],
+        "b": [
+          4,
+          50
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level1.json",
+          "sourceId": "9e9aeb81ab3a56ec"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "12 сағ 15 мин − 4 сағ 50 мин айырмасын минутпен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "445",
+      "solution": "Бір сағатта 60 минут. Алғашқы уақыт 12 × 60 + 15 = 735 минут, екіншісі 4 × 60 + 50 = 290 минут. Айырма 735 − 290 = 445 минут. Азайтуда бір сағатты 60 минутқа ұсақтауға да болады.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "445",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-16f7d134249a7135",
+      "modelId": "grade4-rubles-ruble-no-borrow-difference",
+      "skillFamily": "ruble-no-borrow-difference",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "a": [
+          13,
+          80
+        ],
+        "b": [
+          9,
+          25
+        ],
+        "choices": [
+          [
+            4,
+            55
+          ],
+          [
+            4,
+            65
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            23,
+            5
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level1.json",
+          "sourceId": "16f7d134249a7135"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "13 рубль 80 копейка − 9 рубль 25 копейка айырмасын таңдаңыз.",
+      "answer": "4 рубль 55 копейка",
+      "solution": "Екі бөлікті жеке азайтамыз: 13 − 9 = 4; 80 − 25 = 55. Нәтиже 4 рубль 55 копейка. Ұсақ бірлікпен тексеру: 1380 − 925 = 455 копейка.",
+      "options": [
+        "4 рубль 55 копейка",
+        "4 рубль 65 копейка",
+        "4 рубль 5 копейка",
+        "23 рубль 5 копейка"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "4 рубль 55 копейка",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-f4dae8615fed2fb2",
+      "modelId": "grade4-rubles-day-hour-carry-sum",
+      "skillFamily": "day-hour-carry-sum",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "a": [
+          5,
+          9
+        ],
+        "b": [
+          3,
+          19
+        ],
+        "choices": [
+          [
+            8,
+            4
+          ],
+          [
+            9,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            9,
+            8
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level1.json",
+          "sourceId": "f4dae8615fed2fb2"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "5 тәулік 9 сағ + 3 тәулік 19 сағ қосындысын таңдаңыз.",
+      "answer": "9 тәулік 4 сағ",
+      "solution": "Сағаттар 9 + 19 = 28, бұл 1 тәулік 4 сағ. Тәуліктерге қосқанда 9 тәулік 4 сағ. Тексеру: 129 + 91 = 220 сағат; бір тәулікте 24 сағат бар.",
+      "options": [
+        "8 тәулік 4 сағ",
+        "9 тәулік 4 сағ",
+        "8 тәулік 8 сағ",
+        "9 тәулік 8 сағ"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "9 тәулік 4 сағ",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-6fe007d5ba3b0a46",
+      "modelId": "grade4-rubles-minutes-seconds-total",
+      "skillFamily": "minutes-seconds-total",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "minutes": 8,
+        "seconds": 36
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level1.json",
+          "sourceId": "6fe007d5ba3b0a46"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Дана әуенді 8 мин 36 с тыңдады. Осы уақытты секундпен жазыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "516",
+      "solution": "1 минутта 60 секунд бар. 8 × 60 + 36 = 516 секунд. Қалған секундтар бөлек қосылады.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "516",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-0be12cdb9d31b778",
+      "modelId": "grade4-rubles-equal-item-cost",
+      "skillFamily": "equal-item-cost",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "price": 68,
+        "count": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level1.json",
+          "sourceId": "0be12cdb9d31b778"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір табақша 68 рубль тұрады. Бірдей 7 табақшаның жалпы құнын рубльмен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "476",
+      "solution": "Құн = бір заттың бағасы × саны. 68 × 7 = 476 рубль. Кері тексеру: 476 : 7 = 68.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "476",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-ecc708d45b7794c0",
+      "modelId": "grade4-rubles-same-price-other-count",
+      "skillFamily": "same-price-other-count",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "oldCount": 8,
+        "paid": [
+          36,
+          80
+        ],
+        "newCount": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level2.json",
+          "sourceId": "ecc708d45b7794c0"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "8 қаламға 36 рубль 80 копейка төленді. Бір қарындаштың бағасы бір қаламмен бірдей. 5 қарындаштың құнын копейкамен табыңыз. Бір рубль 100 копейкаға тең. Жауапқа тек санды жазыңыз.",
+      "answer": "2300",
+      "solution": "Алғашқы құн 3680 копейка. Бір заттың бағасы 3680 : 8 = 460 копейка. 5 қарындаш 460 × 5 = 2300 копейка тұрады. Баға екі сатып алуда да бірдей.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "2300",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-9d30db1e01bbef24",
+      "modelId": "grade4-rubles-two-yarn-colours",
+      "skillFamily": "two-yarn-colours",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "count": 15,
+        "red": 480,
+        "white": 720,
+        "choices": [
+          [
+            6,
+            9
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            7,
+            8
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level2.json",
+          "sourceId": "9d30db1e01bbef24"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бірдей бағадағы 15 шумақ жіп сатып алынды. Қызыл жіпке 480 рубль, ақ жіпке 720 рубль төленді. Әр түстен неше шумақ алынған?",
+      "answer": "6 қызыл, 9 ақ",
+      "solution": "Барлық құн 480 + 720 = 1200 рубль. Бір шумақ 1200 : 15 = 80 рубль. Қызыл 480 : 80 = 6, ақ 720 : 80 = 9 шумақ. Қосынды 6 + 9 = 15.",
+      "options": [
+        "6 қызыл, 9 ақ",
+        "9 қызыл, 6 ақ",
+        "5 қызыл, 10 ақ",
+        "7 қызыл, 8 ақ"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "6 қызыл, 9 ақ",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-d5f8fcd6275da572",
+      "modelId": "grade4-rubles-day-hour-borrow-difference",
+      "skillFamily": "day-hour-borrow-difference",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "a": [
+          9,
+          4
+        ],
+        "b": [
+          4,
+          13
+        ],
+        "choices": [
+          [
+            5,
+            15
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            4,
+            15
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level2.json",
+          "sourceId": "d5f8fcd6275da572"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "9 тәулік 4 сағ − 4 тәулік 13 сағ айырмасын таңдаңыз.",
+      "answer": "4 тәулік 15 сағ",
+      "solution": "Бір ірі бірлікті 24 сағат етіп айырбастаймыз: 9 тәулік 4 сағ = 8 тәулік 28 сағ. Енді ұсақ бөліктердің айырмасы 28 − 13 = 15, ірі бөліктердікі 8 − 4 = 4. Нәтиже 4 тәулік 15 сағ. Ұсақ бірлікпен тексеру: 220 − 109 = 111 сағат.",
+      "options": [
+        "5 тәулік 15 сағ",
+        "4 тәулік 9 сағ",
+        "5 тәулік 9 сағ",
+        "4 тәулік 15 сағ"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "4 тәулік 15 сағ",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-f76850a44ea26361",
+      "modelId": "grade4-rubles-cheaper-ticket-change",
+      "skillFamily": "cheaper-ticket-change",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "train": 92375,
+        "plane": 97640,
+        "note": 10000,
+        "count": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level2.json",
+          "sourceId": "f76850a44ea26361"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Есептегі пойыз билеті 92 375 теңге, ұшақ билеті 97 640 теңге тұрады. Жолаушы арзанырақ билетті алып, 10 000 теңгелік 10 қағаз ақша берді. Қайтарым неше теңге? Жауапқа тек санды жазыңыз.",
+      "answer": "7625",
+      "solution": "Арзаны 92 375 теңге. Берілген ақша 10 000 × 10 = 100 000 теңге. Қайтарым 100 000 − 92 375 = 7 625 теңге. Тексеру: 92 375 + 7 625 = 100 000.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "7625",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-0eb48ee215cf748b",
+      "modelId": "grade4-rubles-days-hours-total",
+      "skillFamily": "days-hours-total",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "days": 4,
+        "hours": 7,
+        "choices": [
+          47,
+          74,
+          407,
+          103
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level2.json",
+          "sourceId": "0eb48ee215cf748b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "4 тәулік 7 сағ неше сағатқа тең?",
+      "answer": "103 сағ",
+      "solution": "Әр тәулікте 24 сағат бар: 4 × 24 + 7 = 103 сағат. Тәулік пен сағат сандарын қатар жазып қою жеткіліксіз.",
+      "options": [
+        "47 сағ",
+        "74 сағ",
+        "407 сағ",
+        "103 сағ"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "103 сағ",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-6eb1272d75c39de6",
+      "modelId": "grade4-rubles-equal-product-pairs",
+      "skillFamily": "equal-product-pairs",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "bread": 55,
+        "milk": 85,
+        "total": 1120
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level2.json",
+          "sourceId": "6eb1272d75c39de6"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Нан 55 рубль, сүттің бір қорабы 85 рубль тұрады. Нан мен сүт бірдей санда сатып алынып, барлығы 1 120 рубль төленді. Неше нан алынды? Жауапқа тек санды жазыңыз.",
+      "answer": "8",
+      "solution": "Бір нан және бір сүттен тұратын жұп 55 + 85 = 140 рубль. Жұп саны 1 120 : 140 = 8. Демек 8 нан және 8 қорап сүт алынды. Барлық заттардың санын емес, тек нанды сұрап тұр.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "8",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-91f302e6222e77f2",
+      "modelId": "grade4-rubles-appliance-budget-remainder",
+      "skillFamily": "appliance-budget-remainder",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "budget": 80000,
+        "items": [
+          [
+            "кір жуғыш машина",
+            41000
+          ],
+          [
+            "шаңсорғыш",
+            9000
+          ],
+          [
+            "микротолқынды пеш",
+            6500
+          ],
+          [
+            "үтік",
+            4500
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level2.json",
+          "sourceId": "91f302e6222e77f2"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Отбасы 80 000 рубль бөлді. Сатып алғандары: кір жуғыш машина — 41 000 рубль; шаңсорғыш — 9 000 рубль; микротолқынды пеш — 6 500 рубль; үтік — 4 500 рубль. Неше рубль қалды? Жауапқа тек санды жазыңыз.",
+      "answer": "19000",
+      "solution": "Жалпы шығын 41 000 + 9 000 + 6 500 + 4 500 = 61 000 рубль. Қалдық 80 000 − 61 000 = 19 000 рубль.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "19000",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-10508b6b3a49f55e",
+      "modelId": "grade4-rubles-budget-enough",
+      "skillFamily": "budget-enough",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "budget": 3000,
+        "costs": [
+          845,
+          976,
+          1083
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level2.json",
+          "sourceId": "10508b6b3a49f55e"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Дүкенге 3000 доллар бөлінді. Үш сатып алудың бағалары 845, 976, 1083 доллар. Барлығын алуға ақша жете ме?",
+      "answer": "Жетеді, 96 доллар қалады",
+      "solution": "Барлық шығын 845 + 976 + 1083 = 2904 доллар. 2904 < 3000, демек ақша жетеді. Қалдық 3000 − 2904 = 96 доллар. Жететін-жетпейтінін де, айырма мөлшерін де тексереміз.",
+      "options": [
+        "Жетеді, 96 доллар қалады",
+        "Жетпейді, 96 доллар жетіспейді",
+        "Жетеді, 196 доллар қалады",
+        "Жетпейді, 104 доллар жетіспейді"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "Жетеді, 96 доллар қалады",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-6533ab2691c927e8",
+      "modelId": "grade4-rubles-price-from-change",
+      "skillFamily": "price-from-change",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "paid": 1000,
+        "change": 84,
+        "count": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level2.json",
+          "sourceId": "6533ab2691c927e8"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бірдей 4 шоколадқа 1000 рубль беріліп, 84 рубль қайтарым алынды. Бір шоколад неше рубль? Жауапқа тек санды жазыңыз.",
+      "answer": "229",
+      "solution": "Шоколадтардың жалпы құны 1000 − 84 = 916 рубль. Біреуінің бағасы 916 : 4 = 229 рубль. Тексеру: 229 × 4 + 84 = 1000.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "229",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-05a5abd0003082d7",
+      "modelId": "grade4-rubles-three-track-duration",
+      "skillFamily": "three-track-duration",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "durations": [
+          [
+            4,
+            50
+          ],
+          [
+            3,
+            45
+          ],
+          [
+            5,
+            35
+          ]
+        ],
+        "choices": [
+          [
+            14,
+            20
+          ],
+          [
+            13,
+            10
+          ],
+          [
+            12,
+            30
+          ],
+          [
+            14,
+            10
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level2.json",
+          "sourceId": "05a5abd0003082d7"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Үш әуеннің ұзақтығы 4 мин 50 с; 3 мин 45 с; 5 мин 35 с. Олар үзіліссіз бірінен соң бірі ойналды. Жалпы ұзақтығын таңдаңыз.",
+      "answer": "14 мин 10 с",
+      "solution": "Секундпен: 290 + 225 + 335 = 850 секунд. 850 = 14 × 60 + 10, сондықтан 14 мин 10 с. 60 секунд жиналған сайын бір минут қосылады.",
+      "options": [
+        "14 мин 20 с",
+        "13 мин 10 с",
+        "12 мин 30 с",
+        "14 мин 10 с"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "14 мин 10 с",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-bce6f831897662f8",
+      "modelId": "grade4-rubles-least-menu-price",
+      "skillFamily": "least-menu-price",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "first": [
+          [
+            "сорпа",
+            410
+          ],
+          [
+            "кеспе",
+            330
+          ],
+          [
+            "көже",
+            260
+          ]
+        ],
+        "second": [
+          [
+            "палау",
+            580
+          ],
+          [
+            "манты",
+            470
+          ]
+        ],
+        "drink": [
+          [
+            "шай",
+            120
+          ],
+          [
+            "айран",
+            180
+          ],
+          [
+            "компот",
+            150
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level2.json",
+          "sourceId": "bce6f831897662f8"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бірінші тағамдар: сорпа 410 теңге, кеспе 330 теңге, көже 260 теңге. Екінші тағамдар: палау 580 теңге, манты 470 теңге. Сусындар: шай 120 теңге, айран 180 теңге, компот 150 теңге. Түскі ас әр топтан дәл бір таңдаудан тұрады. Ең арзан түскі ас неше теңге? Жауапқа тек санды жазыңыз.",
+      "answer": "850",
+      "solution": "Топтар бір-бірінен тәуелсіз. Әр топтың ең арзаны 260, 470, 120 теңге. Қосынды 260 + 470 + 120 = 850 теңге. Кез келген басқа таңдау өз тобындағы минимумнан арзан болмайды.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "850",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-7ea56b2bb0ca43be",
+      "modelId": "grade4-rubles-three-generation-age",
+      "skillFamily": "three-generation-age",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "youngerGap": 16,
+        "olderGap": 27,
+        "total": 113,
+        "choices": [
+          34,
+          37,
+          18,
+          61
+        ],
+        "context": "uncle"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level3.json",
+          "sourceId": "7ea56b2bb0ca43be"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ермек Әселден 16 жас үлкен, өз әкесінен 27 жас кіші. Үшеуінің жастарының қосындысы 113. Ермек неше жаста?",
+      "answer": "34 жас",
+      "solution": "Ортадағы адамның жасын x десек, қалғандары x − 16 және x + 27. Үшеуінің бәрі x жаста болғандағы қосынды 113 + 16 − 27 = 102. Демек x = 102 : 3 = 34. Қалған жастары 18 және 61; 18 + 34 + 61 = 113.",
+      "options": [
+        "34 жас",
+        "37 жас",
+        "18 жас",
+        "61 жас"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "34 жас",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-e3d7c6402a282d41",
+      "modelId": "grade4-rubles-two-purchase-balances",
+      "skillFamily": "two-purchase-balances",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "firstCount": 5,
+        "firstLeft": 310,
+        "secondCount": 9,
+        "secondLeft": 90
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level3.json",
+          "sourceId": "e3d7c6402a282d41"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Самал 5 раушангүл алса, 310 рублі қалады; 9 раушангүл алса, 90 рублі қалады. Бір гүлдің бағасы өзгермейді. Оның бастапқы ақшасы неше рубль? Жауапқа тек санды жазыңыз.",
+      "answer": "585",
+      "solution": "Екінші жағдайда 9 − 5 = 4 гүл артық. Қалдық 310 − 90 = 220 рубльге азаяды, сондықтан бір гүл 220 : 4 = 55 рубль. Бастапқы ақша 5 × 55 + 310 = 585. Тексеру: 585 − 9 × 55 = 90.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "585",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-5ba09949af8aba40",
+      "modelId": "grade4-rubles-maximum-distinct-appliances",
+      "skillFamily": "maximum-distinct-appliances",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "budget": 60000,
+        "items": [
+          [
+            "кір жуғыш машина",
+            39000
+          ],
+          [
+            "микротолқынды пеш",
+            5000
+          ],
+          [
+            "плита",
+            24000
+          ],
+          [
+            "ыдыс жуғыш машина",
+            31000
+          ],
+          [
+            "үтік",
+            4000
+          ],
+          [
+            "тоңазытқыш",
+            52000
+          ],
+          [
+            "шаңсорғыш",
+            7000
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level3.json",
+          "sourceId": "5ba09949af8aba40"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бағалар: кір жуғыш машина — 39 000 рубль; микротолқынды пеш — 5 000 рубль; плита — 24 000 рубль; ыдыс жуғыш машина — 31 000 рубль; үтік — 4 000 рубль; тоңазытқыш — 52 000 рубль; шаңсорғыш — 7 000 рубль. Әр заттан біреу ғана алуға болады. 60 000 рубльге ең көп дегенде неше зат сатып алынады? Жауапқа тек санды жазыңыз.",
+      "answer": "4",
+      "solution": "Арзаннан қымбатқа қарай бағалар: 4 000, 5 000, 7 000, 24 000, 31 000, 39 000, 52 000. Ең арзан 4 зат 40 000 рубльге сыяды. Ең арзан 5 зат 71 000 рубль, бұл бюджеттен артық. Демек кез келген 5 затқа да ақша жетпейді. Ең көбі 4 зат.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "4",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-83e38edfa6ad681a",
+      "modelId": "grade4-rubles-two-note-high-count",
+      "skillFamily": "two-note-high-count",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 1300,
+        "count": 14,
+        "low": 50,
+        "high": 200
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level3.json",
+          "sourceId": "83e38edfa6ad681a"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1300 рубль тек 50 және 200 рубльдік қағаз ақшалардан тұрады. Барлығы 14 қағаз ақша берілді. 200 рубльдік нешеу? Жауапқа тек санды жазыңыз.",
+      "answer": "4",
+      "solution": "Бәрі 50 рубльдік болса, 700 рубль шығар еді. Қосымша 600 рубль қажет. Бір үлкен ақша 150 рубль қосады: 600 : 150 = 4. Тексеру: 4 × 200 + 10 × 50 = 1300.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "4",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-e74676010966f485",
+      "modelId": "grade4-rubles-exact-remaining-appliances",
+      "skillFamily": "exact-remaining-appliances",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "budget": 74000,
+        "firstPrice": 56000,
+        "items": [
+          [
+            "микротолқынды пеш",
+            5000
+          ],
+          [
+            "үтік",
+            4000
+          ],
+          [
+            "шаңсорғыш",
+            9000
+          ],
+          [
+            "плита",
+            27000
+          ]
+        ],
+        "choices": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level3.json",
+          "sourceId": "e74676010966f485"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Отбасында 74 000 рубль бар. Алдымен 56 000 рубльге тоңазытқыш алынды. Қалған ақшаны қалдықсыз жұмсау керек. Қосымша бағалар: микротолқынды пеш — 5 000 рубль; үтік — 4 000 рубль; шаңсорғыш — 9 000 рубль; плита — 27 000 рубль. Әр түрден біреу ғана алынады. Қай жиын дәл келеді?",
+      "answer": "микротолқынды пеш, үтік, шаңсорғыш",
+      "solution": "Қалған ақша 74 000 − 56 000 = 18 000 рубль. Нұсқалардың бағалары 13 000; 18 000; 14 000; 31 000 рубль. Тек микротолқынды пеш, үтік, шаңсорғыш жиыны 18 000 рубльге тең, ақша артылмайды.",
+      "options": [
+        "үтік, шаңсорғыш",
+        "микротолқынды пеш, үтік, шаңсорғыш",
+        "микротолқынды пеш, шаңсорғыш",
+        "плита, үтік"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "микротолқынды пеш, үтік, шаңсорғыш",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-2b11d3636a6d4c34",
+      "modelId": "grade4-rubles-three-yarn-colours",
+      "skillFamily": "three-yarn-colours",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "count": 20,
+        "red": 720,
+        "white": 600,
+        "blue": 1080
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level3.json",
+          "sourceId": "2b11d3636a6d4c34"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бағасы бірдей 20 шумақ жіп алынды: қызылына 720, ағына 600, көгіне 1080 рубль төленді. Ақ жіптен неше шумақ алынды? Жауапқа тек санды жазыңыз.",
+      "answer": "5",
+      "solution": "Барлық құн 720 + 600 + 1080 = 2400 рубль. Бір шумақ 2400 : 20 = 120 рубль. Ақ шумақ саны 600 : 120 = 5. Тексеру: түстер бойынша 6 + 5 + 9 = 20 шумақ.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "5",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-37d95c0b1318fd3f",
+      "modelId": "grade4-rubles-daily-training-total",
+      "skillFamily": "daily-training-total",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "weeks": 2,
+        "days": 5,
+        "hours": 1,
+        "minutes": 25,
+        "choices": [
+          [
+            26,
+            45
+          ],
+          [
+            25,
+            55
+          ],
+          [
+            26,
+            55
+          ],
+          [
+            26,
+            35
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level3.json",
+          "sourceId": "37d95c0b1318fd3f"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Рауан 2 апта 5 күн бойы күн сайын 1 сағ 25 мин жаттықты. Жалпы жаттығу ұзақтығын таңдаңыз.",
+      "answer": "26 сағ 55 мин",
+      "solution": "Күн саны 2 × 7 + 5 = 19. Бір күндегі уақыт 85 минут, барлығы 19 × 85 = 1 615 минут. 1 615 = 26 × 60 + 55, яғни 26 сағ 55 мин.",
+      "options": [
+        "26 сағ 45 мин",
+        "25 сағ 55 мин",
+        "26 сағ 55 мин",
+        "26 сағ 35 мин"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "26 сағ 55 мин",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-1885a335d711433c",
+      "modelId": "grade4-rubles-multi-day-train-arrival",
+      "skillFamily": "multi-day-train-arrival",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "weekday": 1,
+        "hour": 21,
+        "minute": 50,
+        "duration": [
+          2,
+          16,
+          35
+        ],
+        "choices": [
+          [
+            4,
+            14,
+            25
+          ],
+          [
+            3,
+            14,
+            25
+          ],
+          [
+            5,
+            14,
+            25
+          ],
+          [
+            4,
+            13,
+            25
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level3.json",
+          "sourceId": "1885a335d711433c"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Пойыз сейсенбі күні 21 сағ 50 мин уақытында жолға шықты. Жолда 2 тәулік 16 сағ 35 мин жүрді. Жергілікті уақыттың белдеуі өзгермейді. Ол қашан жетеді?",
+      "answer": "Жұма, 14 сағ 25 мин",
+      "solution": "Жол ұзақтығы 2 × 1 440 + 16 × 60 + 35 = 3 875 минут. Шығу күнінің басталуынан 1310 минут өткен. Қосынды 1310 + 3 875 = 5 185 минут. Бұл 3 толық тәулік және 14 сағ 25 мин. Демек Жұма, 14 сағ 25 мин.",
+      "options": [
+        "Жұма, 14 сағ 25 мин",
+        "Бейсенбі, 14 сағ 25 мин",
+        "Сенбі, 14 сағ 25 мин",
+        "Жұма, 13 сағ 25 мин"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "Жұма, 14 сағ 25 мин",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-4badf7bb0249fc16",
+      "modelId": "grade4-rubles-mixed-to-kopecks",
+      "skillFamily": "mixed-to-kopecks",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "rubles": 9,
+        "kopecks": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-leveltest.json",
+          "sourceId": "4badf7bb0249fc16"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "9 рубль 7 копейка неше копейка? Бір рубль 100 копейкаға тең. Жауапқа тек санды жазыңыз.",
+      "answer": "907",
+      "solution": "9 × 100 + 7 = 907 копейка. Бір таңбалы копейканы он есе көбейтпейміз.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "907",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-1885a147275636b9",
+      "modelId": "grade4-rubles-ruble-borrow-difference",
+      "skillFamily": "ruble-borrow-difference",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "a": [
+          15,
+          20
+        ],
+        "b": [
+          6,
+          85
+        ],
+        "choices": [
+          [
+            8,
+            35
+          ],
+          [
+            9,
+            65
+          ],
+          [
+            9,
+            35
+          ],
+          [
+            8,
+            65
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-leveltest.json",
+          "sourceId": "1885a147275636b9"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "15 рубль 20 копейка − 6 рубль 85 копейка айырмасын таңдаңыз.",
+      "answer": "8 рубль 35 копейка",
+      "solution": "Бір ірі бірлікті 100 копейка етіп айырбастаймыз: 15 рубль 20 копейка = 14 рубль 120 копейка. Енді ұсақ бөліктердің айырмасы 120 − 85 = 35, ірі бөліктердікі 14 − 6 = 8. Нәтиже 8 рубль 35 копейка. Ұсақ бірлікпен тексеру: 1520 − 685 = 835 копейка.",
+      "options": [
+        "8 рубль 35 копейка",
+        "9 рубль 65 копейка",
+        "9 рубль 35 копейка",
+        "8 рубль 65 копейка"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "8 рубль 35 копейка",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-2ab6b28bc8550e4a",
+      "modelId": "grade4-rubles-days-hours-total",
+      "skillFamily": "days-hours-total",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "days": 6,
+        "hours": 11
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-leveltest.json",
+          "sourceId": "2ab6b28bc8550e4a"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "6 тәулік 11 сағ неше сағатқа тең? Жауапқа тек санды жазыңыз.",
+      "answer": "155",
+      "solution": "Әр тәулікте 24 сағат бар: 6 × 24 + 11 = 155 сағат. Тәулік пен сағат сандарын қатар жазып қою жеткіліксіз.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "155",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-f24e2f7f1be50617",
+      "modelId": "grade4-rubles-week-borrow-difference",
+      "skillFamily": "week-borrow-difference",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "a": [
+          9,
+          2
+        ],
+        "b": [
+          4,
+          6
+        ],
+        "choices": [
+          [
+            5,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-leveltest.json",
+          "sourceId": "f24e2f7f1be50617"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "9 апта 2 күн − 4 апта 6 күн айырмасын таңдаңыз.",
+      "answer": "4 апта 3 күн",
+      "solution": "Бір ірі бірлікті 7 күн етіп айырбастаймыз: 9 апта 2 күн = 8 апта 9 күн. Енді ұсақ бөліктердің айырмасы 9 − 6 = 3, ірі бөліктердікі 8 − 4 = 4. Нәтиже 4 апта 3 күн. Ұсақ бірлікпен тексеру: 65 − 34 = 31 күн.",
+      "options": [
+        "5 апта 4 күн",
+        "4 апта 4 күн",
+        "4 апта 3 күн",
+        "5 апта 3 күн"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "4 апта 3 күн",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-41631ae17f06523b",
+      "modelId": "grade4-rubles-two-item-price-factor",
+      "skillFamily": "two-item-price-factor",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "plate": 96,
+        "factor": 4,
+        "plates": 3,
+        "cups": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-leveltest.json",
+          "sourceId": "41631ae17f06523b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір табақша 96 рубль. Бір саптаяқ одан 4 есе арзан. 3 табақша мен 7 саптаяқ неше рубль тұрады? Жауапқа тек санды жазыңыз.",
+      "answer": "456",
+      "solution": "Саптаяқ бағасы 96 : 4 = 24 рубль. Табақшалар 3 × 96 = 288, саптаяқтар 7 × 24 = 168 рубль. Жалпы 288 + 168 = 456 рубль. «Есе арзан» дегенде бағаны санға бөлеміз.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "456",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-98985a6d2dcf1f64",
+      "modelId": "grade4-rubles-two-yarn-colours",
+      "skillFamily": "two-yarn-colours",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "count": 14,
+        "red": 360,
+        "white": 480,
+        "choices": [
+          [
+            6,
+            8
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            8,
+            6
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-leveltest.json",
+          "sourceId": "98985a6d2dcf1f64"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бірдей бағадағы 14 шумақ жіп сатып алынды. Қызыл жіпке 360 рубль, ақ жіпке 480 рубль төленді. Әр түстен неше шумақ алынған?",
+      "answer": "6 қызыл, 8 ақ",
+      "solution": "Барлық құн 360 + 480 = 840 рубль. Бір шумақ 840 : 14 = 60 рубль. Қызыл 360 : 60 = 6, ақ 480 : 60 = 8 шумақ. Қосынды 6 + 8 = 14.",
+      "options": [
+        "6 қызыл, 8 ақ",
+        "5 қызыл, 9 ақ",
+        "7 қызыл, 7 ақ",
+        "8 қызыл, 6 ақ"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "6 қызыл, 8 ақ",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-0466e7f57e819069",
+      "modelId": "grade4-rubles-greatest-menu-choice",
+      "skillFamily": "greatest-menu-choice",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "first": [
+          [
+            "сорпа",
+            460
+          ],
+          [
+            "кеспе",
+            350
+          ]
+        ],
+        "second": [
+          [
+            "қуырдақ",
+            390
+          ],
+          [
+            "қазақша ет",
+            540
+          ]
+        ],
+        "drink": [
+          [
+            "қымыз",
+            190
+          ],
+          [
+            "шұбат",
+            240
+          ]
+        ],
+        "choices": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-leveltest.json",
+          "sourceId": "0466e7f57e819069"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бірінші тағамдар: сорпа 460 теңге, кеспе 350 теңге. Екінші тағамдар: қуырдақ 390 теңге, қазақша ет 540 теңге. Сусындар: қымыз 190 теңге, шұбат 240 теңге. Түскі ас әр топтан дәл бір таңдаудан тұрады. Ең қымбат түскі асты таңдаңыз.",
+      "answer": "сорпа, қазақша ет, шұбат",
+      "solution": "Әр топтан ең қымбат таңдауды аламыз: 460 + 540 + 240 = 1240 теңге. Сәйкес жиын сорпа, қазақша ет, шұбат. Басқа нұсқалардың кемінде бір тобы арзанырақ.",
+      "options": [
+        "сорпа, қазақша ет, қымыз",
+        "сорпа, қуырдақ, шұбат",
+        "кеспе, қазақша ет, шұбат",
+        "сорпа, қазақша ет, шұбат"
+      ],
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "сорпа, қазақша ет, шұбат",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rubles-38c76b3c70f1001d",
+      "modelId": "grade4-rubles-three-generation-age",
+      "skillFamily": "three-generation-age",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "youngerGap": 28,
+        "olderGap": 22,
+        "total": 120,
+        "context": "mother"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-leveltest.json",
+          "sourceId": "38c76b3c70f1001d"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, жауап кілттері, толық шешімдер және нұсқалар жеке оқылды. Сұралған зат саны, құн, қайтарым, уақыт пен бастапқы жас ажыратылды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жазылды. Апта, жыл-ай, тәулік, сағат және рубльдің негіздері 7/12/24/60/100 болып сақталып, қарыз алу және тасымалдау талаптары айқын тексерілді.",
+        "Мәзірлер мен техника жиындары толық Cartesian/subset санағымен, екі ақша түрі мен жас бүтін сандар облысымен, қалған ақшаны қалдықсыз жұмсау барлық жиынмен тексерілді. Күн ауысуы, қарыз алғаннан кейін ірі бірліктің нөлге айналуы және дәл қалған сома сақталды. Сандық нұсқалар жеке жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.12 ruble/time/price/menu/reasoning edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Анасы қызынан 28 жас үлкен, ал қыздың әжесінен 22 жас кіші. Үшеуінің жастарының қосындысы 120. Анасы неше жаста? Жауапқа тек санды жазыңыз.",
+      "answer": "42",
+      "solution": "Ортадағы адамның жасын x десек, қалғандары x − 28 және x + 22. Үшеуінің бәрі x жаста болғандағы қосынды 120 + 28 − 22 = 126. Демек x = 126 : 3 = 42. Қалған жастары 14 және 64; 14 + 42 + 64 = 120.",
+      "calculationVerification": {
+        "method": "exact_mixed_radix_price_menu_subset_age_and_denominations_domains",
+        "answer": "42",
+        "checks": [
+          "exact native statement/full solution/options bind to source-specific params",
+          "base7/12/24/60/100 borrow/carry, exact prices and integer ledgers",
+          "complete subset/menu/denomination count and age domains; midnight and inclusive budget boundary explicit"
+        ]
+      }
+    }
+  ]
+}

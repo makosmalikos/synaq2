@@ -1,0 +1,1579 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All31 remaining saved grade-4 nonvisual topic2.5 decimal-power remainder/quotient sources; no new source collection.",
+  "summary": {
+    "editions": 31,
+    "models": 27,
+    "skillFamilies": 27,
+    "sourceOccurrencesReferenced": 31,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-powerrem-daa17b6889c00238",
+      "modelId": "grade4-powerrem-remainder",
+      "skillFamily": "remainder",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 94628,
+        "divisor": 1000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "daa17b6889c00238"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "94 628 санын 1 000 санына қалдықпен бөлгендегі қалдықты табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "628",
+      "solution": "Оң жақтан 3 цифрды бөліп аламыз: 628 — қалдықтың жазылуы. Сан ретінде ол 628; ал қалған бөлігі 94 — толымсыз бөлінді. Тексеру: 94 628 = 94 · 1 000 + 628; 0 ≤ 628 < 1 000.",
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "628",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-2824e103e046c1f7",
+      "modelId": "grade4-powerrem-padded-remainder",
+      "skillFamily": "padded-remainder",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 306007,
+        "divisor": 1000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "2824e103e046c1f7"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "306 007 санын 1 000 санына қалдықпен бөлгендегі қалдықты табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "7",
+      "solution": "Оң жақтан 3 цифрды бөліп аламыз: 007 — қалдықтың жазылуы. Сан ретінде ол 7; ал қалған бөлігі 306 — толымсыз бөлінді. Қалдықтың алдындағы нөлдерді алып тастағанда оның мәні өзгермейді. Тексеру: 306 007 = 306 · 1 000 + 7; 0 ≤ 7 < 1 000.",
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "7",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-cda165d562a1c499",
+      "modelId": "grade4-powerrem-division-result",
+      "skillFamily": "division-result",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 36427,
+        "divisor": 1000,
+        "choices": [
+          [
+            3642,
+            7
+          ],
+          [
+            364,
+            27
+          ],
+          [
+            36,
+            4
+          ],
+          [
+            36,
+            427
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "cda165d562a1c499"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "36 427 : 1 000 қалдықпен бөлуінің дұрыс нәтижесін таңдаңыз.",
+      "answer": "36, қалдық 427",
+      "solution": "Соңғы 3 цифр қалдыққа жатады: 427 → 427. Қалған барлық цифр, ішкі не соңғы нөлдерімен қоса, бөліндіде сақталады: 36. 36 427 = 36 · 1 000 + 427; 0 ≤ 427 < 1 000. Нөлді түсіргенде немесе бөлгішті 10 не 100 деп алмастырғанда басқа, жарамсыз нәтиже шығады.",
+      "options": [
+        "3 642, қалдық 7",
+        "364, қалдық 27",
+        "36, қалдық 4",
+        "36, қалдық 427"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "36, қалдық 427",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-5764c9019c595b1b",
+      "modelId": "grade4-powerrem-quotient",
+      "skillFamily": "quotient",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 4573,
+        "divisor": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "5764c9019c595b1b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "4 573 санын 10 санына қалдықпен бөлгендегі толымсыз бөліндіні табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "457",
+      "solution": "Оң жақтан 1 цифрды бөліп аламыз: 3 — қалдықтың жазылуы. Сан ретінде ол 3; ал қалған бөлігі 457 — толымсыз бөлінді. Тексеру: 4 573 = 457 · 10 + 3; 0 ≤ 3 < 10.",
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "457",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-42f125d7635da66b",
+      "modelId": "grade4-powerrem-greatest-remainder",
+      "skillFamily": "greatest-remainder",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          [
+            80067,
+            100
+          ],
+          [
+            23498,
+            10
+          ],
+          [
+            56089,
+            1000
+          ],
+          [
+            23498,
+            100
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "42f125d7635da66b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Нұсқалардың қайсысында қалдық мәні қалған үш нұсқадан да үлкен?",
+      "answer": "23 498 : 100",
+      "solution": "80 067 : 100: бөлінді 800, қалдық 67; 23 498 : 10: бөлінді 2 349, қалдық 8; 56 089 : 1 000: бөлінді 56, қалдық 89; 23 498 : 100: бөлінді 234, қалдық 98. Сұралған шама — қалдық. Оның ең үлкен мәні 98. Әр жұп үшін бөлінді · бөлгіш + қалдық бастапқы санды береді.",
+      "options": [
+        "80 067 : 100",
+        "23 498 : 10",
+        "56 089 : 1 000",
+        "23 498 : 100"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "23 498 : 100",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-ad81a75fc1771f87",
+      "modelId": "grade4-powerrem-inverse-expression",
+      "skillFamily": "inverse-expression",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 8264,
+        "divisor": 100,
+        "quotient": 82,
+        "remainder": 64
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "ad81a75fc1771f87"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Мерей 8 264 : 100 = 82, қалдық 64 деп есептеді. Қай өрнек бастапқы санға тең болып, осы бөлуді тексереді?",
+      "answer": "82 · 100 + 64",
+      "solution": "Қалдықпен бөлудің тексеруі: бөлінді · бөлгіш + қалдық. Сондықтан 82 · 100 + 64 = 8 264. Қалдықты азайту, бөлгішпен орын алмастыру немесе бәрін бірге көбейту бұл теңдікті сақтамайды.",
+      "options": [
+        "82 · 100 + 64",
+        "82 · 100 − 64",
+        "82 · 64 + 100",
+        "(82 + 64) · 100"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "82 · 100 + 64",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-2a085f2804e2f9a0",
+      "modelId": "grade4-powerrem-zero-remainder",
+      "skillFamily": "zero-remainder",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          [
+            5804,
+            100
+          ],
+          [
+            58400,
+            100
+          ],
+          [
+            58402,
+            10
+          ],
+          [
+            58040,
+            1000
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "2a085f2804e2f9a0"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай бөлуде қалдық нөлге тең?",
+      "answer": "58 400 : 100",
+      "solution": "5 804 : 100: бөлінді 58, қалдық 4; 58 400 : 100: бөлінді 584, қалдық 0; 58 402 : 10: бөлінді 5 840, қалдық 2; 58 040 : 1 000: бөлінді 58, қалдық 40. Сұралған шама — қалдық. Тек көрсетілген нұсқаның қалдығы 0. Әр жұп үшін бөлінді · бөлгіш + қалдық бастапқы санды береді.",
+      "options": [
+        "5 804 : 100",
+        "58 400 : 100",
+        "58 402 : 10",
+        "58 040 : 1 000"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "58 400 : 100",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-acf0030132dd0a29",
+      "modelId": "grade4-powerrem-internal-zero-result",
+      "skillFamily": "internal-zero-result",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 590046,
+        "divisor": 10,
+        "choices": [
+          [
+            59004,
+            6
+          ],
+          [
+            5904,
+            6
+          ],
+          [
+            5900,
+            46
+          ],
+          [
+            590,
+            46
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "acf0030132dd0a29"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "590 046 : 10 қалдықпен бөлуінің дұрыс нәтижесін таңдаңыз.",
+      "answer": "59 004, қалдық 6",
+      "solution": "Соңғы 1 цифр қалдыққа жатады: 6 → 6. Қалған барлық цифр, ішкі не соңғы нөлдерімен қоса, бөліндіде сақталады: 59 004. 590 046 = 59 004 · 10 + 6; 0 ≤ 6 < 10. Нөлді түсіргенде немесе бөлгішті 100 не 1 000 деп алмастырғанда басқа, жарамсыз нәтиже шығады.",
+      "options": [
+        "59 004, қалдық 6",
+        "5 904, қалдық 6",
+        "5 900, қалдық 46",
+        "590, қалдық 46"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "59 004, қалдық 6",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-be85997ad0c74d1a",
+      "modelId": "grade4-powerrem-complete-tenge",
+      "skillFamily": "complete-tenge",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "tiyn": 3685,
+        "factor": 100
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "be85997ad0c74d1a"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1 теңге = 100 тиын. 3 685 тиында неше толық теңге бар? Жауапқа тек санды жазыңыз.",
+      "answer": "36",
+      "solution": "3 685 : 100 = 36, қалдық 85. Толық теңге саны 36; 85 тиын тағы бір теңге жасауға жетпейді. Тексеру: 3 685 = 36 · 100 + 85; 0 ≤ 85 < 100.",
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "36",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-a0ccedf79fb06704",
+      "modelId": "grade4-powerrem-impossible-hundred-remainder",
+      "skillFamily": "impossible-hundred-remainder",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 100,
+        "choices": [
+          62,
+          100,
+          99,
+          0
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "a0ccedf79fb06704"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Натурал санды 100-ге бөлгенде қай берілген сан қалдық БОЛА АЛМАЙДЫ?",
+      "answer": "100",
+      "solution": "Қалдыққа 0–99 мәндері ғана рұқсат. 100 жиналса, одан тағы бір толық жүздік бөлініп, бөлінді біреуге артады. Сондықтан қалдық 100 бола алмайды. 0 қалдығы да жарамды.",
+      "options": [
+        "62",
+        "100",
+        "99",
+        "0"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "100",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-0aba78b2cc23c872",
+      "modelId": "grade4-powerrem-quotient",
+      "skillFamily": "quotient",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 6729,
+        "divisor": 100
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "0aba78b2cc23c872"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "6 729 санын 100 санына қалдықпен бөлгендегі толымсыз бөліндіні табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "67",
+      "solution": "Оң жақтан 2 цифрды бөліп аламыз: 29 — қалдықтың жазылуы. Сан ретінде ол 29; ал қалған бөлігі 67 — толымсыз бөлінді. Тексеру: 6 729 = 67 · 100 + 29; 0 ≤ 29 < 100.",
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "67",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-973e00db2fa42037",
+      "modelId": "grade4-powerrem-remainder",
+      "skillFamily": "remainder",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 8467,
+        "divisor": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "973e00db2fa42037"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "8 467 санын 10 санына қалдықпен бөлгендегі қалдықты табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "7",
+      "solution": "Оң жақтан 1 цифрды бөліп аламыз: 7 — қалдықтың жазылуы. Сан ретінде ол 7; ал қалған бөлігі 846 — толымсыз бөлінді. Тексеру: 8 467 = 846 · 10 + 7; 0 ≤ 7 < 10.",
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "7",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-8840d64e5e46a2b7",
+      "modelId": "grade4-powerrem-restore-padded-remainder",
+      "skillFamily": "restore-padded-remainder",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 100,
+        "quotient": 67,
+        "remainder": 8,
+        "choices": [
+          6780,
+          67008,
+          678,
+          6708
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level2.json",
+          "sourceId": "8840d64e5e46a2b7"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Санды 100 санына бөлгенде толымсыз бөлінді 67, қалдық 8 болды. Бөлінгішті таңдаңыз.",
+      "answer": "6 708",
+      "solution": "Бөлінгіш = бөлінді · бөлгіш + қалдық: 67 · 100 + 8 = 6 708. Соңғы екі орындағы 08 жазуы 8 санын білдіреді; оны 80 деп ауыстырмаймыз. Тексеру: 6 708 = 67 · 100 + 8; 0 ≤ 8 < 100.",
+      "options": [
+        "6 780",
+        "67 008",
+        "678",
+        "6 708"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "6 708",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-51cd57fdbf3dccd5",
+      "modelId": "grade4-powerrem-full-boxes-leftover",
+      "skillFamily": "full-boxes-leftover",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "apples": 4087,
+        "capacity": 100,
+        "choices": [
+          [
+            4,
+            87
+          ],
+          [
+            408,
+            7
+          ],
+          [
+            41,
+            13
+          ],
+          [
+            40,
+            87
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level2.json",
+          "sourceId": "51cd57fdbf3dccd5"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жиналған 4 087 алманы әр толық жәшікке 100 данадан салды. Неше толық жәшік болды және неше алма артылды?",
+      "answer": "40 жәшік, 87 алма",
+      "solution": "Толық жәшік саны 40, артылған алма 87. Бөліндідегі соңғы нөлді сақтаймыз. 4 087 = 40 · 100 + 87; 0 ≤ 87 < 100. Қалдық 100 санынан кіші, сондықтан тағы бір толық жәшік шықпайды.",
+      "options": [
+        "4 жәшік, 87 алма",
+        "408 жәшік, 7 алма",
+        "41 жәшік, 13 алма",
+        "40 жәшік, 87 алма"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "40 жәшік, 87 алма",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-b7a0f175ab1b306b",
+      "modelId": "grade4-powerrem-minimum-shelves",
+      "skillFamily": "minimum-shelves",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "books": 2378,
+        "capacity": 100
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level2.json",
+          "sourceId": "b7a0f175ab1b306b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Кітапханадағы 2 378 кітапты қою керек. Бір сөре ең көп 100 кітап ұстайды. Барлық кітапқа ең аз неше сөре қажет? Жауапқа тек санды жазыңыз.",
+      "answer": "24",
+      "solution": "2 378 : 100 = 23, қалдық 78. 23 сөреге 2300 кітап қана сыяды, қалған 78 кітапқа тағы бір сөре керек. Сондықтан 23 + 1 = 24. 2400 орын жеткілікті.",
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "24",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-4421e13389a6e627",
+      "modelId": "grade4-powerrem-wrong-zero-equality",
+      "skillFamily": "wrong-zero-equality",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          {
+            "number": 9060,
+            "divisor": 1000,
+            "quotient": 9,
+            "remainder": 60
+          },
+          {
+            "number": 9006,
+            "divisor": 100,
+            "quotient": 90,
+            "remainder": 6
+          },
+          {
+            "number": 9060,
+            "divisor": 100,
+            "quotient": 9,
+            "remainder": 60
+          },
+          {
+            "number": 9060,
+            "divisor": 10,
+            "quotient": 906,
+            "remainder": 0
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level2.json",
+          "sourceId": "4421e13389a6e627"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "intentionalIncorrectExample": true,
+      "statement": "Төмендегі нәтижелердің бірінде бөліндідегі нөл әдейі түсірілген. Қате жазылған теңдікті таңдаңыз.",
+      "answer": "9 060 : 100 = 9, қалдық 60",
+      "solution": "Қате нұсқада 9 · 100 + 60 = 960, бұл 9 060 емес. Дұрысы: бөлінді 90, қалдық 60. 9 060 = 90 · 100 + 60; 0 ≤ 60 < 100. Қалған үш нәтиже өздерінің бөлінгішін қалпына келтіреді.",
+      "options": [
+        "9 060 : 1 000 = 9, қалдық 60",
+        "9 006 : 100 = 90, қалдық 6",
+        "9 060 : 100 = 9, қалдық 60",
+        "9 060 : 10 = 906"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "9 060 : 100 = 9, қалдық 60",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-b4f2243f910c432c",
+      "modelId": "grade4-powerrem-kilogram-pack-remainder",
+      "skillFamily": "kilogram-pack-remainder",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "grams": 23067,
+        "kilograms": 1
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level2.json",
+          "sourceId": "b4f2243f910c432c"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "23 067 г ұнды әрқайсысы 1 кг болатын толық пакеттерге салды. Неше грамм ұн артылды? Жауапқа тек санды жазыңыз.",
+      "answer": "67",
+      "solution": "1 кг = 1 000 г. 23 067 : 1 000 = 23, қалдық 67. Соңғы үш цифр 067, оның сандық мәні 67. Демек, 23 толық пакеттен тыс 67 г қалды. 23 067 = 23 · 1 000 + 67; 0 ≤ 67 < 1 000.",
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "67",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-7564f8cf965af5d2",
+      "modelId": "grade4-powerrem-select-specific-remainder",
+      "skillFamily": "select-specific-remainder",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 1000,
+        "remainder": 7,
+        "choices": [
+          46070,
+          4607,
+          46007,
+          46700
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level2.json",
+          "sourceId": "7564f8cf965af5d2"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай санды 1 000 санына бөлгенде қалдық 7 шығады?",
+      "answer": "46 007",
+      "solution": "46 070: қалдық 70; 4 607: қалдық 607; 46 007: қалдық 7; 46 700: қалдық 700. Қажетті соңғы 3 цифр 007; ол 46 007 санында бар.",
+      "options": [
+        "46 070",
+        "4 607",
+        "46 007",
+        "46 700"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "46 007",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-b6587a0feafac179",
+      "modelId": "grade4-powerrem-meters-to-km-m",
+      "skillFamily": "meters-to-km-m",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "meters": 7080,
+        "choices": [
+          [
+            7,
+            8
+          ],
+          [
+            708,
+            0
+          ],
+          [
+            7,
+            80
+          ],
+          [
+            70,
+            80
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level2.json",
+          "sourceId": "b6587a0feafac179"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "7 080 м ұзындықты километр мен метр арқылы дұрыс жазыңыз.",
+      "answer": "7 км 80 м",
+      "solution": "1 км = 1 000 м. Қалдықпен бөлеміз: бөлінді 7, қалдық 80. Демек 7 км 80 м. 7 080 = 7 · 1 000 + 80; 0 ≤ 80 < 1 000. Қалдықтың басындағы нөл оның сандық мәнін көбейтпейді, бөліндідегі нөлдер де сақталады.",
+      "options": [
+        "7 км 8 м",
+        "708 км",
+        "7 км 80 м",
+        "70 км 80 м"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "7 км 80 м",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-77872194813bee82",
+      "modelId": "grade4-powerrem-centimeters-to-m-cm",
+      "skillFamily": "centimeters-to-m-cm",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "centimeters": 3087,
+        "choices": [
+          [
+            308,
+            7
+          ],
+          [
+            3,
+            87
+          ],
+          [
+            30,
+            87
+          ],
+          [
+            30,
+            8
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level2.json",
+          "sourceId": "77872194813bee82"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "3 087 см ұзындықты метр мен сантиметр арқылы дұрыс жазыңыз.",
+      "answer": "30 м 87 см",
+      "solution": "1 м = 100 см. Қалдықпен бөлеміз: бөлінді 30, қалдық 87. Демек 30 м 87 см. 3 087 = 30 · 100 + 87; 0 ≤ 87 < 100. Қалдықтың басындағы нөл оның сандық мәнін көбейтпейді, бөліндідегі нөлдер де сақталады.",
+      "options": [
+        "308 м 7 см",
+        "3 м 87 см",
+        "30 м 87 см",
+        "30 м 8 см"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "30 м 87 см",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-34d541d582cb01c2",
+      "modelId": "grade4-powerrem-greatest-quotient",
+      "skillFamily": "greatest-quotient",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          [
+            5740999,
+            1000
+          ],
+          [
+            95042,
+            100
+          ],
+          [
+            57418,
+            10
+          ],
+          [
+            574180,
+            1000
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level2.json",
+          "sourceId": "34d541d582cb01c2"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Нұсқалардың қайсысында толымсыз бөлінді мәні қалған үш нұсқадан да үлкен?",
+      "answer": "57 418 : 10",
+      "solution": "5 740 999 : 1 000: бөлінді 5 740, қалдық 999; 95 042 : 100: бөлінді 950, қалдық 42; 57 418 : 10: бөлінді 5 741, қалдық 8; 574 180 : 1 000: бөлінді 574, қалдық 180. Сұралған шама — бөлінді. Оның ең үлкен мәні 5 741. Әр жұп үшін бөлінді · бөлгіш + қалдық бастапқы санды береді.",
+      "options": [
+        "5 740 999 : 1 000",
+        "95 042 : 100",
+        "57 418 : 10",
+        "574 180 : 1 000"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "57 418 : 10",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-190809ce7bbda61d",
+      "modelId": "grade4-powerrem-unknown-low-digit-quotient",
+      "skillFamily": "unknown-low-digit-quotient",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "firstDivisor": 10,
+        "quotient": 468,
+        "secondDivisor": 100,
+        "choices": [
+          46,
+          47,
+          4,
+          4680
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level3.json",
+          "sourceId": "190809ce7bbda61d"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Белгісіз натурал санды 10-ға бөлгенде толымсыз бөлінді 468 болды, қалдық айтылмады. Сол бастапқы санды 100-ге бөлгенде толымсыз бөлінді неге тең?",
+      "answer": "46",
+      "solution": "Бастапқы сан 4 680–4 689 аралығында, екі шетін қоса. Соңғы белгісіз цифр қандай болса да, 100-ге бөлгенде соңғы екі цифр қалдыққа кетеді. Барлық он жағдайда бөлінді 46; нақты бастапқы санды білудің қажеті жоқ.",
+      "options": [
+        "46",
+        "47",
+        "4",
+        "4 680"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "46",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-15a603a01ac470ba",
+      "modelId": "grade4-powerrem-least-positive-addition",
+      "skillFamily": "least-positive-addition",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 59684,
+        "divisor": 1000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level3.json",
+          "sourceId": "15a603a01ac470ba"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "59 684 санына қандай ең кіші натурал сан қосқанда, қосынды 1 000 санына қалдықсыз бөлінеді? Жауапқа тек санды жазыңыз.",
+      "answer": "316",
+      "solution": "59 684 = 59 · 1 000 + 684; 0 ≤ 684 < 1 000. Келесі толық еселік 60000. Оған жету үшін 1 000 − 684 = 316 қосамыз. Тексеру: 59 684 + 316 = 60 000.",
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "316",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-637e245558d3eeea",
+      "modelId": "grade4-powerrem-count-given-quotient",
+      "skillFamily": "count-given-quotient",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 100,
+        "quotient": 34,
+        "choices": [
+          100,
+          101,
+          99,
+          10
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level3.json",
+          "sourceId": "637e245558d3eeea"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "100 санына бөлгенде толымсыз бөлінді 34 болатын неше натурал сан бар?",
+      "answer": "100",
+      "solution": "Қалдық 0-ден 99 санына дейін болады. Сондықтан сандар 3 400–3 499 аралығын толық толтырады. Саны 3 499 − 3 400 + 1 = 100. 3 500 келесі бөлінді береді, ал нөлдік қалдықты ұмытпау керек.",
+      "options": [
+        "100",
+        "101",
+        "99",
+        "10"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "100",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-09ad98de4ae2b2a2",
+      "modelId": "grade4-powerrem-remainder",
+      "skillFamily": "remainder",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 8627,
+        "divisor": 100
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-leveltest.json",
+          "sourceId": "09ad98de4ae2b2a2"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "8 627 санын 100 санына қалдықпен бөлгендегі қалдықты табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "27",
+      "solution": "Оң жақтан 2 цифрды бөліп аламыз: 27 — қалдықтың жазылуы. Сан ретінде ол 27; ал қалған бөлігі 86 — толымсыз бөлінді. Тексеру: 8 627 = 86 · 100 + 27; 0 ≤ 27 < 100.",
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "27",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-3bbc69919410c851",
+      "modelId": "grade4-powerrem-zero-separated-result",
+      "skillFamily": "zero-separated-result",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 80504,
+        "divisor": 1000,
+        "choices": [
+          [
+            80,
+            504
+          ],
+          [
+            80,
+            54
+          ],
+          [
+            8050,
+            4
+          ],
+          [
+            805,
+            4
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-leveltest.json",
+          "sourceId": "3bbc69919410c851"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "80 504 : 1 000 қалдықпен бөлуінің дұрыс нәтижесін таңдаңыз.",
+      "answer": "80, қалдық 504",
+      "solution": "Соңғы 3 цифр қалдыққа жатады: 504 → 504. Қалған барлық цифр, ішкі не соңғы нөлдерімен қоса, бөліндіде сақталады: 80. 80 504 = 80 · 1 000 + 504; 0 ≤ 504 < 1 000. Нөлді түсіргенде немесе бөлгішті 10 не 100 деп алмастырғанда басқа, жарамсыз нәтиже шығады.",
+      "options": [
+        "80, қалдық 504",
+        "80, қалдық 54",
+        "8 050, қалдық 4",
+        "805, қалдық 4"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "80, қалдық 504",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-b92ce5957d1cdd4f",
+      "modelId": "grade4-powerrem-restore-dividend",
+      "skillFamily": "restore-dividend",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 10,
+        "quotient": 236,
+        "remainder": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-leveltest.json",
+          "sourceId": "b92ce5957d1cdd4f"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Санды 10 санына бөлгенде толымсыз бөлінді 236, қалдық 8 болды. Бөлінгішті табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "2368",
+      "solution": "Бөлінгіш = бөлінді · бөлгіш + қалдық: 236 · 10 + 8 = 2 368. Тексеру: 2 368 = 236 · 10 + 8; 0 ≤ 8 < 10.",
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "2368",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-43df9fd556d71e0e",
+      "modelId": "grade4-powerrem-centimeters-padded-remainder",
+      "skillFamily": "centimeters-padded-remainder",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "centimeters": 7906,
+        "choices": [
+          [
+            79,
+            6
+          ],
+          [
+            790,
+            6
+          ],
+          [
+            7,
+            90
+          ],
+          [
+            79,
+            60
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-leveltest.json",
+          "sourceId": "43df9fd556d71e0e"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "7 906 см ұзындықты метр мен сантиметр арқылы дұрыс жазыңыз.",
+      "answer": "79 м 6 см",
+      "solution": "1 м = 100 см. Қалдықпен бөлеміз: бөлінді 79, қалдық 6. Демек 79 м 6 см. 7 906 = 79 · 100 + 6; 0 ≤ 6 < 100. Қалдықтың басындағы нөл оның сандық мәнін көбейтпейді, бөліндідегі нөлдер де сақталады.",
+      "options": [
+        "79 м 6 см",
+        "790 м 6 см",
+        "7 м 90 см",
+        "79 м 60 см"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "79 м 6 см",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-54e55fd792eba52a",
+      "modelId": "grade4-powerrem-remainder-over-quotient",
+      "skillFamily": "remainder-over-quotient",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 5087,
+        "divisor": 100
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-leveltest.json",
+          "sourceId": "54e55fd792eba52a"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "5 087 санын 100 санына қалдықпен бөлді. Қалдық толымсыз бөліндіден неше бірлік артық? Жауапқа тек санды жазыңыз.",
+      "answer": "37",
+      "solution": "Бөлінді 50, қалдық 87. Сұралған айырма 87 − 50 = 37. Тексеру: 5 087 = 50 · 100 + 87; 0 ≤ 87 < 100. Бөліндінің не қалдықтың өзін емес, айырмасын жазамыз.",
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "37",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-ff0b3a8625cbfaf5",
+      "modelId": "grade4-powerrem-select-specific-remainder",
+      "skillFamily": "select-specific-remainder",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 100,
+        "remainder": 40,
+        "choices": [
+          8400,
+          8024,
+          8204,
+          8240
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-leveltest.json",
+          "sourceId": "ff0b3a8625cbfaf5"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай санды 100 санына бөлгенде қалдық 40 шығады?",
+      "answer": "8 240",
+      "solution": "8 400: қалдық 0; 8 024: қалдық 24; 8 204: қалдық 4; 8 240: қалдық 40. Қажетті соңғы 2 цифр 40; ол 8 240 санында бар.",
+      "options": [
+        "8 400",
+        "8 024",
+        "8 204",
+        "8 240"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "8 240",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-powerrem-83d4f544e758a737",
+      "modelId": "grade4-powerrem-equal-quotient-remainder",
+      "skillFamily": "equal-quotient-remainder",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "length": 4,
+        "divisor": 1000,
+        "choices": [
+          10,
+          90,
+          1,
+          9
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-leveltest.json",
+          "sourceId": "83d4f544e758a737"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық31 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. 10, 100, 1 000 қалдықтары, толымсыз бөлінді, ішкі/соңғы нөлдер және қалдықтың алдындағы нөлдер ажыратылды.",
+        "Жаңа сандар, есімдер мен дербес қазақша шарттар және толық шешімдер жазылды. Бөлінді · бөлгіш + қалдық теңдігі қалдық шегімен бірге тексерілді. Толық пакет саны, артық қалғаны, қажетті сөренің ең азы мен шамалар айырмасы жеке сұралды.",
+        "Қате мысалда нөлдің әдейі түсірілгені ашық көрсетілді. Белгісіз соңғы цифрдың барлық он мәні тексерілді. Бөліндісі қалдыққа тең сан есебі үш таңбалы/100 орнына төрт таңбалы/1 000 нұсқасымен берілді; жетекші нөл тыйымы мен бір таңбалы бөлінді дағдысы сақталады. Сандық нұсқалар жеке жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.5 power-of-ten Euclidean-remainder/quotient/unit edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Төрт таңбалы натурал санды 1 000-ға бөлгенде толымсыз бөлінді мен қалдық тең болды. Осындай неше төрт таңбалы сан бар?",
+      "answer": "9",
+      "solution": "Бөлінді бірінші цифрға тең: 1–9. Қалдық та сол бір таңбалы сан, бірақ соңғы үш орындағы жазылуында екі бастапқы нөл бар. Толық тізім: 1 001, 2 002, 3 003, 4 004, 5 005, 6 006, 7 007, 8 008, 9 009. Әрқайсысы q · 1 000 + q түрінде. Барлығы 9; 0 бастапқы төрт таңбалы сан бермейді.",
+      "options": [
+        "10",
+        "90",
+        "1",
+        "9"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_power_euclidean_remainder_full_domains",
+        "answer": "9",
+        "checks": [
+          "Euclidean identity and strict remainder bound, padded remainder versus quotient zeros and requested quantity",
+          "complete candidate/unknown-low-digit/equal-part domains and full-pack versus ceiling distinction",
+          "native conditions/full solution/options/answer exactly bound to saved individual source-specific adaptation"
+        ]
+      }
+    }
+  ]
+}

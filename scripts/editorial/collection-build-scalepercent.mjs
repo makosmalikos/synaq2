@@ -1,0 +1,20 @@
+import fs from'node:fs';import path from'node:path';import assert from'node:assert/strict';import{fileURLToPath}from'node:url';
+import{collectionScalePercentSpecs}from'./collection-scalepercent-specs.mjs';import{renderEdition,verifyEdition}from'./collection-scalepercent-models.mjs';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..'),read=f=>JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));
+const coverage=read('problems/editorial/source-coverage.json'),editions=[],norm=s=>String(s).normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim();
+assert.equal(collectionScalePercentSpecs.length,29);assert.equal(new Set(collectionScalePercentSpecs.map(s=>String(s.number))).size,29);
+for(const spec of collectionScalePercentSpecs){
+ const sourceFile='problems/sources/zerek/collections/30b80a71-bb10-436b-99ee-c50f52a271a1.json',capture=read(sourceFile),matches=capture.questions.filter(q=>String(q.number)===String(spec.number));
+ assert.equal(matches.length,1);const source=matches[0];assert.equal(capture.sourceReviewCaptured,true);assert(source.statement&&source.solution);assert(source.sourceAnswer||source.options?.filter(o=>o.correct).length===1||/Дұрыс жауап:/.test(source.openAnswerText||''));assert(!source.images?.length&&!source.svg?.length&&!source.statement.includes('[Image:'));
+ const sourceId=String(spec.number),coverageRow=coverage.records.find(r=>r.sourceFile===sourceFile&&r.sourceId===sourceId);assert(coverageRow&&coverageRow.kind==='collection');assert(!coverageRow.verifiedEditions?.length,'Already covered source');
+ const row={editionId:`collection-scalepercent-30b80a71-${String(spec.number).padStart(2,'0')}`,modelId:`collection-scalepercent-${spec.kind}`,skillFamily:spec.kind,grade:6,topic:spec.number>=16?'percent':'ratio',difficulty:spec.kind.includes('mixed')?'hard':'medium',minimumPlan:'pro',params:structuredClone(spec.params),sourceRefs:[{sourceFile,sourceId}],adaptationChanges:[
+ 'Осы сақталған жинақтағы толық шарт, ресми шешім, кілт және әр жауап нұсқасы жеке оқылды. Ешбір жаңа бастапқы тапсырма жиналмады.',
+ 'Жеке сандар, дербес қазақша шарт пен толық шешім жазылды. Масштабтың өлшем бірлігі, екі сызбадағы нақты ортақ ұзындық және пайыздың бастапқы не қалдық негізі сақталды.',
+ 'Нақты/сызба ұзындығы, толық жол/уақыт, баға өсімі, толық кітап, ұлдардың үлесі, қалған қалдық және реттелген екі жол нысаналары дәл есептелді. 29 жағдай 29 бөлек математикалық мағына дегенді білдірмейді.'
+ ],relationToSource:'Individually read saved NIS scale/percent part1 occurrence. New standalone Kazakh wording and data preserve exact scale units, drawing/actual intermediate, route/time, ordered speed shares, original-vs-remaining percentage base, whole-vs-part/growth and sequential remainder target. Common-cube cancellation explicitly excludes zero; category partition explicitly disjoint. Repeated mechanisms are variants, not new meanings.',editorialStatus:'draft',reviewStatus:'awaiting_independent_review'};
+ Object.assign(row,renderEdition(row));assert.notEqual(norm(row.statement),norm(source.statement));row.calculationVerification={method:'source_specific_exact_scale_unit_conversions_two_drawing_ratios_and_percent_bases',...verifyEdition(row)};editions.push(row);
+}
+const summary={editions:editions.length,models:new Set(editions.map(e=>e.modelId)).size,sourceOccurrencesReferenced:editions.length,collections:1,grade:6,independentlyReviewed:0};
+const batch={schemaVersion:1,status:'draft_awaiting_independent_review',scope:'All29 saved nonvisual occurrences of Масштаб және пайыз part1, individually reworked in closed Standard draft; full official/new solutions and MCQs read. No new capture, no claim29distinct meanings.',summary,editions};
+const target=path.join(root,'problems/editorial/batches/collection-scalepercent-wave5.json'),text=JSON.stringify(batch,null,2)+'\n';if(process.argv.includes('--write'))fs.writeFileSync(target,text);else assert.equal(fs.readFileSync(target,'utf8'),text);
+console.log(JSON.stringify({...summary,status:'author_draft_requires_external_review'}));

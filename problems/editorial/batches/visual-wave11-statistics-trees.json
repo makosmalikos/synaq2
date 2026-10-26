@@ -1,0 +1,724 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All10 saved visual sources grade6chapter8 only; no capture/download or source traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade6topics8.1–8.3",
+    "sourceVisualOccurrences": 10,
+    "addressedNewDrafts": 10,
+    "previousEditionsRetained": [],
+    "priorCurriculumSkillReferences": [
+      {
+        "sourceId": "4ace784e6149e961",
+        "editionId": "core-unique-mode",
+        "note": "The earlier edition trains mode on a written value list. It does not replace this source-specific bar-reading adaptation; source coverage counts the ID once."
+      }
+    ],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "0a9486822af08e24",
+      "1c5db64d9c57926f",
+      "3a46d0e9d4680cfb",
+      "42b740a8fda6167e",
+      "4ace784e6149e961",
+      "5a77976946a8e477",
+      "6ba841921609c55c",
+      "6baf1f2a946d5033",
+      "6be766260fb15586",
+      "7d0d6f9cb3853383"
+    ],
+    "distinctModels": 10,
+    "semantics": "10 source-addressed visual drafts, including an earlier textual-mode skill reference now given an actual native bar adaptation; not10 unrelated mathematical families."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave11-coordinate-arithmetic-mean",
+      "modelId": "visual-wave11-axis-mean",
+      "grade": 6,
+      "topic": "stats",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "first": -8,
+        "second": 4,
+        "min": -9,
+        "max": 5
+      },
+      "answer": "-2",
+      "sourceRefs": [
+        {
+          "sourceId": "7d0d6f9cb3853383",
+          "sourceFile": "problems/sources/zerek/courses/6-math-8-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-8-1-level1.json#0",
+      "sourceCanonicalSha256": "6a80923469b46b269ab46f434aa7bc7ec6fc1d188fffc0952bb0671141c01bde",
+      "sourceSkill": "Reading two opposite-signed plotted coordinates then finding their mean, rejecting the half distance and the unhalved sum",
+      "adaptationChanges": [
+        "Дереккөздің нақты визуал дағдысы сақталды: нүкте координатасын/бағана шкаласын оқу, мәнді жиіліктен ажырату, медиана үшін реттеу не барлық рұқсат етілген жолдарды іріктеу.",
+        "Бақылау мәндері, шкала қадамы, жиіліктер, карточка реті, көпбұрыш төбелерінің саны, ағаш әріптері мен тармақтары және дұрыс жауаптар жаңадан берілді.",
+        "Әр диаграмма мен ағаш жаңа параметрлерден native SVG түрінде салынды. Source raster/traced path қолданылмады. Бұрынғы ортақ дағды сілтемесі толық visual өңдеу деп есептелмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Деректер мен нұсқалар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact axis/grid/bar/dot values, ordered median, actual tree paths, unordered diagonal enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave11-coordinate-arithmetic-mean.svg",
+      "verificationModule": "scripts/editorial/visual-wave11-models.mjs",
+      "options": [
+        "2",
+        "6",
+        "-4",
+        "-2"
+      ],
+      "statement": "Сандық түзуде A және B нүктелері көрсетілген. Олардың координаталарының арифметикалық ортасын таңдаңыз.",
+      "solution": "A(-8), B(4). Координаталардың қосындысы -8 + 4 = -4. Арифметикалық орта -4 : 2 = -2. 6 — жарты арақашықтық, ол координаталардың ортасы емес.",
+      "figureDescription": "Бірлік сандық түзу. A -8, B 4 координатасында.",
+      "figureSha256": "e52fdf84541abbde1a05ff940b1bd9e1b2127cadf4f6a7ec7042ef490fded8f0",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-2",
+        "checks": {
+          "sum": -4,
+          "halfDistance": 6
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave11-scaled-postcard-mean",
+      "modelId": "visual-wave11-scaled-bar-mean",
+      "grade": 6,
+      "topic": "stats",
+      "difficulty": "basic",
+      "params": {
+        "scene": "bars",
+        "categories": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "values": [
+          36,
+          54,
+          42,
+          60
+        ],
+        "step": 6,
+        "labelEvery": 6,
+        "max": 66,
+        "verticalLabel": "Ашықхат",
+        "horizontalLabel": "Күннің реті"
+      },
+      "answer": "48",
+      "sourceRefs": [
+        {
+          "sourceId": "0a9486822af08e24",
+          "sourceFile": "problems/sources/zerek/courses/6-math-8-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-8-1-level1.json#3",
+      "sourceCanonicalSha256": "8423321d8d4940d41e3d5d7b94052ee45c043cab4a08af559b28c9c06c9b02de",
+      "sourceSkill": "Reading a non-unit6-per-grid bar scale before averaging four observations",
+      "adaptationChanges": [
+        "Дереккөздің нақты визуал дағдысы сақталды: нүкте координатасын/бағана шкаласын оқу, мәнді жиіліктен ажырату, медиана үшін реттеу не барлық рұқсат етілген жолдарды іріктеу.",
+        "Бақылау мәндері, шкала қадамы, жиіліктер, карточка реті, көпбұрыш төбелерінің саны, ағаш әріптері мен тармақтары және дұрыс жауаптар жаңадан берілді.",
+        "Әр диаграмма мен ағаш жаңа параметрлерден native SVG түрінде салынды. Source raster/traced path қолданылмады. Бұрынғы ортақ дағды сілтемесі толық visual өңдеу деп есептелмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Деректер мен нұсқалар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact axis/grid/bar/dot values, ordered median, actual tree paths, unordered diagonal enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave11-scaled-postcard-mean.svg",
+      "verificationModule": "scripts/editorial/visual-wave11-models.mjs",
+      "statement": "Үйірме төрт күн бойы ашықхат дайындады. Диаграммадағы бір көлденең жолақ 6 ашықхатқа тең, астындағы сандар — күндер. Бір күнде орта есеппен неше ашықхат дайындалған? Жауапқа тек санды жазыңыз.",
+      "solution": "Бағаналардан 36, 54, 42, 60 мәндерін оқимыз. Қосынды 36 + 54 + 42 + 60 = 192. Бақылау саны 4, сондықтан орта 192 : 4 = 48.",
+      "figureDescription": "Күннің реті: 1 — 36; 2 — 54; 3 — 42; 4 — 60. Тік шкаланың бір тор аралығы 6 Ашықхат.",
+      "figureSha256": "9962f7e3dc172c36202acfde220bd0afb04554a1e471f823473932d365eee82b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "48",
+        "checks": {
+          "sum": 192,
+          "count": 4
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave11-puzzle-count-mean",
+      "modelId": "visual-wave11-unit-bar-mean",
+      "grade": 6,
+      "topic": "stats",
+      "difficulty": "basic",
+      "params": {
+        "scene": "bars",
+        "categories": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "values": [
+          8,
+          5,
+          11,
+          7,
+          9
+        ],
+        "step": 1,
+        "labelEvery": 2,
+        "max": 12,
+        "verticalLabel": "Есеп саны",
+        "horizontalLabel": "Оқушының реті"
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "3a46d0e9d4680cfb",
+          "sourceFile": "problems/sources/zerek/courses/6-math-8-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-8-1-level1.json#9",
+      "sourceCanonicalSha256": "071532723f205dd05acdd9442626a0af469377c74e0dc3ac7f5157300f83dc9a",
+      "sourceSkill": "Reading five unit-scale individual values and dividing their sum by the number of pupils, not by an axis label",
+      "adaptationChanges": [
+        "Дереккөздің нақты визуал дағдысы сақталды: нүкте координатасын/бағана шкаласын оқу, мәнді жиіліктен ажырату, медиана үшін реттеу не барлық рұқсат етілген жолдарды іріктеу.",
+        "Бақылау мәндері, шкала қадамы, жиіліктер, карточка реті, көпбұрыш төбелерінің саны, ағаш әріптері мен тармақтары және дұрыс жауаптар жаңадан берілді.",
+        "Әр диаграмма мен ағаш жаңа параметрлерден native SVG түрінде салынды. Source raster/traced path қолданылмады. Бұрынғы ортақ дағды сілтемесі толық visual өңдеу деп есептелмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Деректер мен нұсқалар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact axis/grid/bar/dot values, ordered median, actual tree paths, unordered diagonal enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave11-puzzle-count-mean.svg",
+      "verificationModule": "scripts/editorial/visual-wave11-models.mjs",
+      "statement": "Бес оқушының бір аптада шешкен есептерінің саны диаграммада берілген. Төмендегі 1–5 — оқушылардың реттік нөмірлері. Бір оқушы орта есеппен неше есеп шешкен? Жауапқа тек санды жазыңыз.",
+      "solution": "Бағаналардан 8, 5, 11, 7, 9 мәндерін оқимыз. Қосынды 8 + 5 + 11 + 7 + 9 = 40. Бақылау саны 5, сондықтан орта 40 : 5 = 8.",
+      "figureDescription": "Оқушының реті: 1 — 8; 2 — 5; 3 — 11; 4 — 7; 5 — 9. Тік шкаланың бір тор аралығы 1 Есеп саны.",
+      "figureSha256": "931e1b27d81ee4cddfd7a794a64eb0687bc10aa36c2b0ebcb719ea07cd259999",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": {
+          "sum": 40,
+          "count": 5
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave11-grade-frequency-mode",
+      "modelId": "visual-wave11-bar-frequency-mode",
+      "grade": 6,
+      "topic": "stats",
+      "difficulty": "basic",
+      "params": {
+        "scene": "bars",
+        "categories": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "frequencies": [
+          2,
+          8,
+          5,
+          6
+        ],
+        "step": 1,
+        "labelEvery": 1,
+        "max": 9,
+        "verticalLabel": "Оқушы саны",
+        "horizontalLabel": "Баға"
+      },
+      "answer": "3",
+      "sourceRefs": [
+        {
+          "sourceId": "4ace784e6149e961",
+          "sourceFile": "problems/sources/zerek/courses/6-math-8-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-8-2-level1.json#1",
+      "sourceCanonicalSha256": "7e66ecd5dd0e336464b446fc68a62afea887d62fce5aa13be3b164daaefc29e8",
+      "sourceSkill": "Reading a frequency bar chart and choosing the category under its highest bar rather than the height or highest possible category",
+      "adaptationChanges": [
+        "Дереккөздің нақты визуал дағдысы сақталды: нүкте координатасын/бағана шкаласын оқу, мәнді жиіліктен ажырату, медиана үшін реттеу не барлық рұқсат етілген жолдарды іріктеу.",
+        "Бақылау мәндері, шкала қадамы, жиіліктер, карточка реті, көпбұрыш төбелерінің саны, ағаш әріптері мен тармақтары және дұрыс жауаптар жаңадан берілді.",
+        "Әр диаграмма мен ағаш жаңа параметрлерден native SVG түрінде салынды. Source raster/traced path қолданылмады. Бұрынғы ортақ дағды сілтемесі толық visual өңдеу деп есептелмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Деректер мен нұсқалар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact axis/grid/bar/dot values, ordered median, actual tree paths, unordered diagonal enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave11-grade-frequency-mode.svg",
+      "verificationModule": "scripts/editorial/visual-wave11-models.mjs",
+      "options": [
+        "8",
+        "5",
+        "4",
+        "3"
+      ],
+      "statement": "Логикалық жұмыс бағаларының жиілік диаграммасы берілген: төменде баға, тігінен сол бағаны алған оқушылар саны. Бағалардың модасы қай сан?",
+      "solution": "Бағалар мен жиіліктері: 2 — 2 оқушы; 3 — 8 оқушы; 4 — 5 оқушы; 5 — 6 оқушы. Ең үлкен жиілік 8, ол 3 бағасына тиесілі. Сондықтан мода 3, жиіліктің өзі емес.",
+      "figureDescription": "Баға: 2 — 2; 3 — 8; 4 — 5; 5 — 6. Тік шкаланың бір тор аралығы 1 Оқушы саны.",
+      "figureSha256": "cb15cda9874fbe6b4275ae099aa1f7b86095b15244feddcfac77c3f7b63722d4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3",
+        "checks": {
+          "maxFrequency": 8,
+          "total": 21
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave11-football-dot-mode",
+      "modelId": "visual-wave11-dot-frequency-mode",
+      "grade": 6,
+      "topic": "stats",
+      "difficulty": "basic",
+      "params": {
+        "scene": "dots",
+        "categories": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "frequencies": [
+          1,
+          3,
+          4,
+          7,
+          2,
+          1,
+          0
+        ]
+      },
+      "answer": "3",
+      "sourceRefs": [
+        {
+          "sourceId": "5a77976946a8e477",
+          "sourceFile": "problems/sources/zerek/courses/6-math-8-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-8-2-level1.json#4",
+      "sourceCanonicalSha256": "3ec87dba5eb60e73196e72ec441a0630936bfae591641603affa17042eca46e3",
+      "sourceSkill": "Counting dot observations including an empty final category and returning the modal goal value rather than its frequency",
+      "adaptationChanges": [
+        "Дереккөздің нақты визуал дағдысы сақталды: нүкте координатасын/бағана шкаласын оқу, мәнді жиіліктен ажырату, медиана үшін реттеу не барлық рұқсат етілген жолдарды іріктеу.",
+        "Бақылау мәндері, шкала қадамы, жиіліктер, карточка реті, көпбұрыш төбелерінің саны, ағаш әріптері мен тармақтары және дұрыс жауаптар жаңадан берілді.",
+        "Әр диаграмма мен ағаш жаңа параметрлерден native SVG түрінде салынды. Source raster/traced path қолданылмады. Бұрынғы ортақ дағды сілтемесі толық visual өңдеу деп есептелмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Деректер мен нұсқалар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact axis/grid/bar/dot values, ordered median, actual tree paths, unordered diagonal enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave11-football-dot-mode.svg",
+      "verificationModule": "scripts/editorial/visual-wave11-models.mjs",
+      "statement": "Нүктелі диаграммада әр нүкте бір футбол ойынын, ал төмендегі сан сол ойында соғылған гол санын білдіреді. Гол санының модасын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Әр гол санының үстіндегі нүктелерді санаймыз: 0 гол — 1 ойын; 1 гол — 3 ойын; 2 гол — 4 ойын; 3 гол — 7 ойын; 4 гол — 2 ойын; 5 гол — 1 ойын; 6 гол — 0 ойын. Ең көп ойын 7, ал сол бағанның гол саны 3. Мода — 3 гол.",
+      "figureDescription": "Әр нүкте бір ойын. Гол саны мен нүкте жиіліктері: 0 — 1; 1 — 3; 2 — 4; 3 — 7; 4 — 2; 5 — 1; 6 — 0.",
+      "figureSha256": "f51cfa7be9a57f695dff46a2999209ffa159d18688bba5c66660a22d180e50c7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3",
+        "checks": {
+          "maxFrequency": 7,
+          "total": 18
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave11-attendance-bar-range",
+      "modelId": "visual-wave11-bar-range",
+      "grade": 6,
+      "topic": "stats",
+      "difficulty": "basic",
+      "params": {
+        "scene": "bars",
+        "categories": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "values": [
+          12,
+          5,
+          17,
+          8,
+          10
+        ],
+        "step": 1,
+        "labelEvery": 3,
+        "max": 18,
+        "verticalLabel": "Бала саны",
+        "horizontalLabel": "Күннің реті"
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "1c5db64d9c57926f",
+          "sourceFile": "problems/sources/zerek/courses/6-math-8-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-8-2-level1.json#9",
+      "sourceCanonicalSha256": "c14403ace8de9b104469a276f646f2ce377fa20cc2f552f538536d8e7df96e94",
+      "sourceSkill": "Reading all plotted daily magnitudes then subtracting the minimum from the maximum, not using the ordinal day indices",
+      "adaptationChanges": [
+        "Дереккөздің нақты визуал дағдысы сақталды: нүкте координатасын/бағана шкаласын оқу, мәнді жиіліктен ажырату, медиана үшін реттеу не барлық рұқсат етілген жолдарды іріктеу.",
+        "Бақылау мәндері, шкала қадамы, жиіліктер, карточка реті, көпбұрыш төбелерінің саны, ағаш әріптері мен тармақтары және дұрыс жауаптар жаңадан берілді.",
+        "Әр диаграмма мен ағаш жаңа параметрлерден native SVG түрінде салынды. Source raster/traced path қолданылмады. Бұрынғы ортақ дағды сілтемесі толық visual өңдеу деп есептелмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Деректер мен нұсқалар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact axis/grid/bar/dot values, ordered median, actual tree paths, unordered diagonal enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave11-attendance-bar-range.svg",
+      "verificationModule": "scripts/editorial/visual-wave11-models.mjs",
+      "statement": "Бес күн ішінде үйірмеге келген балалар саны диаграммада көрсетілген. Бір көлденең аралық 1 балаға тең. Күндік бала сандарының өзгеру құлашы неге тең? Жауапқа тек санды жазыңыз.",
+      "solution": "Күндік мәндер 12, 5, 17, 8, 10. Ең көбі 17, ең азы 5. Өзгеру құлашы 17 − 5 = 12. Күндердің нөмірлері бұл есепте дерек мәндері емес.",
+      "figureDescription": "Күннің реті: 1 — 12; 2 — 5; 3 — 17; 4 — 8; 5 — 10. Тік шкаланың бір тор аралығы 1 Бала саны.",
+      "figureSha256": "cb0cf8673dc03d962192858901dbdfb2ab5c71691b5b8ed5c84fefd5017a95ea",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "min": 5,
+          "max": 17
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave11-unsorted-card-median",
+      "modelId": "visual-wave11-odd-card-median",
+      "grade": 6,
+      "topic": "stats",
+      "difficulty": "basic",
+      "params": {
+        "scene": "cards",
+        "values": [
+          18,
+          7,
+          26,
+          11,
+          23,
+          16,
+          20
+        ]
+      },
+      "answer": "18",
+      "sourceRefs": [
+        {
+          "sourceId": "6baf1f2a946d5033",
+          "sourceFile": "problems/sources/zerek/courses/6-math-8-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-8-2-level1.json#10",
+      "sourceCanonicalSha256": "370122c3544b5cab4e8699fc71b43f90fb83175ab5157f43a12e8d8fd0389d23",
+      "sourceSkill": "Sorting seven displayed observations before choosing the central one; the physically middle card is deliberately not the median",
+      "adaptationChanges": [
+        "Дереккөздің нақты визуал дағдысы сақталды: нүкте координатасын/бағана шкаласын оқу, мәнді жиіліктен ажырату, медиана үшін реттеу не барлық рұқсат етілген жолдарды іріктеу.",
+        "Бақылау мәндері, шкала қадамы, жиіліктер, карточка реті, көпбұрыш төбелерінің саны, ағаш әріптері мен тармақтары және дұрыс жауаптар жаңадан берілді.",
+        "Әр диаграмма мен ағаш жаңа параметрлерден native SVG түрінде салынды. Source raster/traced path қолданылмады. Бұрынғы ортақ дағды сілтемесі толық visual өңдеу деп есептелмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Деректер мен нұсқалар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact axis/grid/bar/dot values, ordered median, actual tree paths, unordered diagonal enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave11-unsorted-card-median.svg",
+      "verificationModule": "scripts/editorial/visual-wave11-models.mjs",
+      "statement": "Карточкаларда жеті сан берілген. Оларды өсу ретімен орналастырып, сандар қатарының медианасын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Өсу реті: 7, 11, 16, 18, 20, 23, 26. Жеті санның дәл ортасы — реттелген қатардың 4-орны, яғни 18. Бастапқы карточкалардың ортаңғы орнындағы 11 санын бірден алуға болмайды.",
+      "figureDescription": "Солдан оңға карточкалар: 18, 7, 26, 11, 23, 16, 20.",
+      "figureSha256": "c3c7d6e1b4c00d54d3701f648548c84ddec8af4821594b7b5ed0f87f6b4429e6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "18",
+        "checks": {
+          "ordered": [
+            7,
+            11,
+            16,
+            18,
+            20,
+            23,
+            26
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave11-hexagon-diagonal-enumeration",
+      "modelId": "visual-wave11-polygon-diagonals",
+      "grade": 6,
+      "topic": "comb",
+      "difficulty": "medium",
+      "params": {
+        "scene": "polygon",
+        "labels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "polygon": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            1,
+            4
+          ]
+        ]
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "6ba841921609c55c",
+          "sourceFile": "problems/sources/zerek/courses/6-math-8-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-8-3-level1.json#1",
+      "sourceCanonicalSha256": "c5051567c382532cdc5c74dc6b0bf35e51e86b9ac0fbf9a7142ec843f30e386c",
+      "sourceSkill": "Enumerating all unordered nonadjacent vertex pairs without counting boundary sides or double-counting reversed pairs",
+      "adaptationChanges": [
+        "Дереккөздің нақты визуал дағдысы сақталды: нүкте координатасын/бағана шкаласын оқу, мәнді жиіліктен ажырату, медиана үшін реттеу не барлық рұқсат етілген жолдарды іріктеу.",
+        "Бақылау мәндері, шкала қадамы, жиіліктер, карточка реті, көпбұрыш төбелерінің саны, ағаш әріптері мен тармақтары және дұрыс жауаптар жаңадан берілді.",
+        "Әр диаграмма мен ағаш жаңа параметрлерден native SVG түрінде салынды. Source raster/traced path қолданылмады. Бұрынғы ортақ дағды сілтемесі толық visual өңдеу деп есептелмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Деректер мен нұсқалар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact axis/grid/bar/dot values, ordered median, actual tree paths, unordered diagonal enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave11-hexagon-diagonal-enumeration.svg",
+      "verificationModule": "scripts/editorial/visual-wave11-models.mjs",
+      "statement": "ABCDEF алтыбұрышы берілген. Көршілес емес екі төбені қосатын кесінді диагональ деп аталады. Алтыбұрышта неше түрлі диагональ бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Жаңа диагональдарды ретімен тіземіз: A-дан AC, AD, AE; B-ден BD, BE, BF; C-ден CE, CF; D-ден DF. Қалғандары осы тізімде бар. Саны 3 + 3 + 2 + 1 = 9. Көршілес төбелер қабырға береді, диагональ емес.",
+      "figureDescription": "A, B, C, D, E, F ретімен қосылған дөңес алтыбұрыш. Тек шекара қабырғалары сызылған; диагональдар салынбаған.",
+      "figureSha256": "f13c92ecda324790a7cf903d59c02d7f78cae01fbe7ee35071c6438c28ce831c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": {
+          "pairs": [
+            "AC",
+            "AD",
+            "AE",
+            "BD",
+            "BE",
+            "BF",
+            "CE",
+            "CF",
+            "DF"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave11-permutation-tree-missing-path",
+      "modelId": "visual-wave11-missing-permutation",
+      "grade": 6,
+      "topic": "comb",
+      "difficulty": "basic",
+      "params": {
+        "scene": "permutation-tree",
+        "tokens": [
+          "P",
+          "Q",
+          "R"
+        ],
+        "paths": [
+          "PQR",
+          "PRQ",
+          "QPR",
+          "RPQ",
+          "RQP"
+        ]
+      },
+      "answer": "QRP",
+      "sourceRefs": [
+        {
+          "sourceId": "6be766260fb15586",
+          "sourceFile": "problems/sources/zerek/courses/6-math-8-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-8-3-level1.json#3",
+      "sourceCanonicalSha256": "c9ac17066585cea29f404e5e7fcb4dccf824226062f525bacb4a5cf68d9d27e6",
+      "sourceSkill": "Completing the one missing root-to-leaf permutation in a three-level tree with each letter used once",
+      "adaptationChanges": [
+        "Дереккөздің нақты визуал дағдысы сақталды: нүкте координатасын/бағана шкаласын оқу, мәнді жиіліктен ажырату, медиана үшін реттеу не барлық рұқсат етілген жолдарды іріктеу.",
+        "Бақылау мәндері, шкала қадамы, жиіліктер, карточка реті, көпбұрыш төбелерінің саны, ағаш әріптері мен тармақтары және дұрыс жауаптар жаңадан берілді.",
+        "Әр диаграмма мен ағаш жаңа параметрлерден native SVG түрінде салынды. Source raster/traced path қолданылмады. Бұрынғы ортақ дағды сілтемесі толық visual өңдеу деп есептелмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Деректер мен нұсқалар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact axis/grid/bar/dot values, ordered median, actual tree paths, unordered diagonal enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave11-permutation-tree-missing-path.svg",
+      "verificationModule": "scripts/editorial/visual-wave11-models.mjs",
+      "options": [
+        "QPR",
+        "RPQ",
+        "QRP",
+        "PRQ"
+      ],
+      "statement": "P, Q, R әріптерінің әрқайсысын бір рет қолданып құрастырылатын барлық үш әріпті нұсқалар ағашқа жазылған, бірақ бір толық жолы түсіп қалған. Әр жолды солдан оңға қарай оқыңыз. Қай нұсқа жетіспейді?",
+      "solution": "Барлық алты нұсқа: PQR, PRQ, QPR, QRP, RPQ, RQP. Ағашта PQR, PRQ, QPR, RPQ, RQP жолдары көрсетілген. Тек QRP жолы жоқ. Әр нұсқада үш әріптің әрқайсысы бір рет қолданылады.",
+      "figureDescription": "Ағаштың солдан оңға оқылатын көрсетілген толық жолдары: PQR, PRQ, QPR, RPQ, RQP.",
+      "figureSha256": "ce5f7e1b75016a86011bb6706fa0fa84f5cad4120a119bef3070d1b2b2de902e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "QRP",
+        "checks": {
+          "all": [
+            "PQR",
+            "PRQ",
+            "QPR",
+            "QRP",
+            "RPQ",
+            "RQP"
+          ],
+          "displayed": [
+            "PQR",
+            "PRQ",
+            "QPR",
+            "RPQ",
+            "RQP"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave11-unequal-meal-tree-count",
+      "modelId": "visual-wave11-unequal-menu-tree",
+      "grade": 6,
+      "topic": "comb",
+      "difficulty": "medium",
+      "params": {
+        "scene": "menu-tree",
+        "branches": [
+          {
+            "label": "P",
+            "leaves": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "label": "Q",
+            "leaves": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "42b740a8fda6167e",
+          "sourceFile": "problems/sources/zerek/courses/6-math-8-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-8-3-level1.json#5",
+      "sourceCanonicalSha256": "fd0a690efaea678681f5f18c7da86be0d3b3cd1c0284259e0692953cd7e8a22d",
+      "sourceSkill": "Counting permitted root-to-leaf menu combinations in an explicitly nonuniform tree instead of multiplying by a maximum branch count",
+      "adaptationChanges": [
+        "Дереккөздің нақты визуал дағдысы сақталды: нүкте координатасын/бағана шкаласын оқу, мәнді жиіліктен ажырату, медиана үшін реттеу не барлық рұқсат етілген жолдарды іріктеу.",
+        "Бақылау мәндері, шкала қадамы, жиіліктер, карточка реті, көпбұрыш төбелерінің саны, ағаш әріптері мен тармақтары және дұрыс жауаптар жаңадан берілді.",
+        "Әр диаграмма мен ағаш жаңа параметрлерден native SVG түрінде салынды. Source raster/traced path қолданылмады. Бұрынғы ортақ дағды сілтемесі толық visual өңдеу деп есептелмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Деректер мен нұсқалар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact axis/grid/bar/dot values, ordered median, actual tree paths, unordered diagonal enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave11-unequal-meal-tree-count.svg",
+      "verificationModule": "scripts/editorial/visual-wave11-models.mjs",
+      "options": [
+        "7",
+        "8",
+        "4",
+        "3"
+      ],
+      "statement": "Түскі асқа P немесе Q сорпасының бірі таңдалады. Әр сорпаға қосуға болатын екінші тағамдар ғана ағашта нөмірлермен берілген. Неше түрлі рұқсат етілген түскі ас жиынтығы бар?",
+      "solution": "P сорпасына 4 екінші тағам, Q сорпасына 3 екінші тағам рұқсат етілген. Әр соңғы бұтақ бір жиынтық береді: 4 + 3 = 7. Екі сорпаға да ең үлкен тармақ санын көбейтуге болмайды: рұқсат етілген нұсқалар саны бірдей емес.",
+      "figureDescription": "Сорпа-тағам ағашы: P сорпасынан 1, 2, 3, 4 тағамдарына бұтақтар шығады; Q сорпасынан 1, 2, 3 тағамдарына бұтақтар шығады.",
+      "figureSha256": "2b8f82cb5cf828440f8f6a112ffc732e9a248a187d4c188f4b3fc403308db9a6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": {
+          "counts": [
+            4,
+            3
+          ]
+        }
+      }
+    }
+  ]
+}

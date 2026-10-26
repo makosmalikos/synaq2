@@ -1,0 +1,2742 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "Saved grade6 rational-number visual sources only; all drawings and data are independently authored, with no downloads or original traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources in grade6 topics2.1,2.3,2.5,2.7–2.12",
+    "sourceVisualOccurrences": 38,
+    "addressedNewDrafts": 37,
+    "previousEditionsRetained": [
+      {
+        "sourceId": "698c58efc5c36cc3",
+        "editionId": "visual-temperature-rise"
+      }
+    ],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "1033360b481ea8d2",
+      "19609b99b1954b4c",
+      "222d5797f67d2305",
+      "2b6d7687ddd09b8b",
+      "2f40cccc9dffd261",
+      "2fdda86cdc3d2984",
+      "3388ac6e2c7ddc7c",
+      "35976852a06eec51",
+      "39068aeb8d28f343",
+      "47e309c038176006",
+      "513927365fbae78f",
+      "546915cc3a56a35a",
+      "5b1a1a7288355eae",
+      "5bbb4ebf1eda763c",
+      "5fb5cbd6281d3f91",
+      "6554f717e951b492",
+      "6f9bc9b6357c3003",
+      "73e29bf14704c201",
+      "7d49fa20115e6f03",
+      "8016c07da37d2bf8",
+      "92e2a4fd06126654",
+      "9f2b5649ebdd5c31",
+      "a1953f8866e8802a",
+      "a494f2ecaa253f41",
+      "a6adfea8cdefb818",
+      "b49b31508b592662",
+      "c090fc0a55cec632",
+      "c10bdd32ad7b8b4e",
+      "c4fe243413201633",
+      "d5b240fb28f61126",
+      "db4098bcaac62b74",
+      "dd3d54534e2aa5e3",
+      "e3495f404ac855cc",
+      "e5f8e1299d755a09",
+      "e69d598606515f98",
+      "f557af3836932b84",
+      "fbb9f5e09817ebfc"
+    ],
+    "distinctModels": 36,
+    "semantics": "37 addressed new editions plus1 retained occurrence exhaust the stated visual topics. Model IDs identify explicit question forms, not a claim that all forms are different mathematical families."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave4-daily-loss",
+      "modelId": "visual-wave4-loss-days",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "bars",
+        "step": 5,
+        "ticks": [
+          4,
+          -2,
+          -3,
+          1,
+          -5
+        ]
+      },
+      "answer": "3",
+      "sourceRefs": [
+        {
+          "sourceId": "db4098bcaac62b74",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-1-level1.json#6",
+      "sourceCanonicalSha256": "2f5a89351e6defee6d5c6bcd3a6935fdb807e850b6da572af9164b0f2b05de96",
+      "sourceSkill": "Counting negative daily bars rather than adding their magnitudes",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-daily-loss.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Шеберхананың бес күндік кірісі мен шығыны диаграммада берілген. Нөлден жоғары бағаналар — пайда, төменгілері — зиян. Неше күннің нәтижесі зиян болды?",
+      "solution": "Күндердің нәтижелері: +20, -10, -15, +5, -25 мың теңге. Нөлден төмен тұрған 3 бағана — зиян күндері.",
+      "figureDescription": "Шеберхананың бес күндік кірісі мен шығыны диаграммада берілген. Нөлден жоғары бағаналар — пайда, төменгілері — зиян. Неше күннің нәтижесі зиян болды? Күндер: +20, -10, -15, +5, -25 мың теңге. ",
+      "figureSha256": "7e12d84e33cd4c2d8247aadb5b70b09b6bf475a26e5656b95645e4e6196282fa",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Only individual below-zero bars are counted",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-negative-thermometer",
+      "modelId": "visual-wave4-thermo-reading",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "thermo",
+        "min": -40,
+        "max": 20,
+        "step": 5,
+        "readings": [
+          {
+            "label": "A",
+            "tick": 3
+          }
+        ],
+        "labelEvery": 2
+      },
+      "answer": "-25",
+      "sourceRefs": [
+        {
+          "sourceId": "2b6d7687ddd09b8b",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-1-level1.json#7",
+      "sourceCanonicalSha256": "7528939f29f4f99987fdc868a8d686de0f9eb1a87785605fb6a27da9bc1eef88",
+      "sourceSkill": "Reading a negative halfway thermometer mark by inferring the five-degree minor step",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-negative-thermometer.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Метеобекеттегі термометрдің бағанасы суреттегідей тұр. Қандай температура көрсетілген? Жауапта санның таңбасын сақтаңдар, өлшем бірлігі — °C.",
+      "solution": "Екі жазылған белгі арасындағы кіші бөліктерді санап, бір бөліктің 5 °C екенін табамыз. Бағананың ұшы -25 °C-қа сәйкес. Таңбасы нөлге қатысты орнына сай алынады.",
+      "figureDescription": "Метеобекеттегі термометрдің бағанасы суреттегідей тұр. Қандай температура көрсетілген? Жауапта санның таңбасын сақтаңдар, өлшем бірлігі — °C. Берілген өлшеулер: A: -25 °C. ",
+      "options": [
+        "-25",
+        "25",
+        "-20",
+        "-30"
+      ],
+      "figureSha256": "9ddba30db700207440fafa1d0a9c193816446a1cc716f2e842f0ab4cb689b942",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-25",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-below-sea-point",
+      "modelId": "visual-wave4-depth-point",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "vertical",
+        "min": -350,
+        "max": 350,
+        "step": 50,
+        "points": [
+          {
+            "label": "A",
+            "tick": 12
+          },
+          {
+            "label": "C",
+            "tick": 8
+          },
+          {
+            "label": "B",
+            "tick": 5
+          },
+          {
+            "label": "D",
+            "tick": 2
+          }
+        ],
+        "labels": [
+          0,
+          50
+        ],
+        "labelEvery": 2,
+        "depth": 250
+      },
+      "answer": "D",
+      "sourceRefs": [
+        {
+          "sourceId": "f557af3836932b84",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-1-level1.json#11",
+      "sourceCanonicalSha256": "d7e05a24dfa715980ae424afec8f39bdc5f59c351898dcd50ac683ee096e6f48",
+      "sourceSkill": "Identifying a labelled point at a specified depth below the zero sea-level reference",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-below-sea-point.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Үзік көлденең сызық — теңіз деңгейі, шкала метрмен берілген. Белгіленген қай нүкте теңіз деңгейінен 250 м төмен орналасқан?",
+      "solution": "Теңізден төмен 250 м — -250 м. Сызбадағы белгілер: A(250), C(50), B(-100), D(-250). Ізделген белгі D нүктесінде.",
+      "figureDescription": "Үзік көлденең сызық — теңіз деңгейі, шкала метрмен берілген. Белгіленген қай нүкте теңіз деңгейінен 250 м төмен орналасқан? Көрсетілген нүктелер: A(250), C(50), B(-100), D(-250). ",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "figureSha256": "d18dc14c319d3c9ea3afe5f810a7d9e3422821155bd0cf7c7b5860b6337cf413",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "D",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-shop-net-result",
+      "modelId": "visual-wave4-net-profit",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "bars",
+        "step": 5,
+        "ticks": [
+          9,
+          -4,
+          6,
+          -3,
+          8,
+          -5
+        ]
+      },
+      "answer": "55",
+      "sourceRefs": [
+        {
+          "sourceId": "3388ac6e2c7ddc7c",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-1-level2.json#8",
+      "sourceCanonicalSha256": "3edb563311da6faed8dd05718d46321b76e1a5950c99e4fd6fd345c97372880d",
+      "sourceSkill": "Reading and combining signed daily gains/losses rather than absolute bar heights",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-shop-net-result.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Диаграмма шағын дүкеннің алты күндегі нәтижесін мың теңгемен көрсетеді. Пайда оң, зиян теріс санмен белгіленген. Алты күннің таза нәтижесі неше мың теңге?",
+      "solution": "Пайда 45 + 30 + 40 = 115 мың. Зиян шамалары 20 + 15 + 25 = 60 мың. Айырмасы 55 мың теңге.",
+      "figureDescription": "Диаграмма шағын дүкеннің алты күндегі нәтижесін мың теңгемен көрсетеді. Пайда оң, зиян теріс санмен белгіленген. Алты күннің таза нәтижесі неше мың теңге? Күндер: +45, -20, +30, -15, +40, -25 мың теңге. ",
+      "figureSha256": "7d3379cf2571ac588bb4c65c83f72bb2b720689ef4942ffd633a699104d40cb2",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "55",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Positive/negative unit tokens are paired and cancelled",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-signed-height-label",
+      "modelId": "visual-wave4-signed-statement",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "vertical",
+        "min": -300,
+        "max": 240,
+        "step": 30,
+        "points": [
+          {
+            "label": "A",
+            "tick": 17
+          },
+          {
+            "label": "B",
+            "tick": 7
+          },
+          {
+            "label": "C",
+            "tick": 13
+          },
+          {
+            "label": "D",
+            "tick": 1
+          }
+        ],
+        "labels": [
+          0,
+          30
+        ],
+        "labelEvery": 2,
+        "candidates": [
+          {
+            "label": "A",
+            "value": 180
+          },
+          {
+            "label": "B",
+            "value": 90
+          },
+          {
+            "label": "C",
+            "value": 90
+          },
+          {
+            "label": "D",
+            "value": 270
+          }
+        ]
+      },
+      "answer": "C: +90 м",
+      "sourceRefs": [
+        {
+          "sourceId": "a1953f8866e8802a",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-1-level2.json#12",
+      "sourceCanonicalSha256": "a0b1b3c1b1f0d60c16d939cda16e9a5c16301cec3f2d52381206da276926465d",
+      "sourceSkill": "Selecting the unique correct signed height after reading unlabeled minor ticks",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-signed-height-label.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Зерттеуші төрт нүктенің теңіз деңгейіне қатысты белгілерін жазып алды. Шкаладағы кіші бөліктерді ескеріп, дұрыс жазылған бір нұсқаны таңдаңдар.",
+      "solution": "Бір кіші бөлік 30 м. Нүктелердің дұрыс координаталары: A(210), B(-90), C(90), D(-270). Ұсынылған жазулардан соған сәйкес келетін бір нұсқаны таңдаймыз.",
+      "figureDescription": "Зерттеуші төрт нүктенің теңіз деңгейіне қатысты белгілерін жазып алды. Шкаладағы кіші бөліктерді ескеріп, дұрыс жазылған бір нұсқаны таңдаңдар. Көрсетілген нүктелер: A(210), B(-90), C(90), D(-270). ",
+      "options": [
+        "A: +180 м",
+        "B: +90 м",
+        "C: +90 м",
+        "D: +270 м"
+      ],
+      "figureSha256": "ffdb7b3e15f9576d48a2d2158446a9452c50087897f477498288326671bce51b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "C: +90 м",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-warming-above-zero",
+      "modelId": "visual-wave4-warm-excess",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "thermo",
+        "min": -18,
+        "max": 18,
+        "step": 3,
+        "readings": [
+          {
+            "label": "A",
+            "tick": 3
+          }
+        ],
+        "labelEvery": 2,
+        "change": 14
+      },
+      "answer": "5",
+      "sourceRefs": [
+        {
+          "sourceId": "dd3d54534e2aa5e3",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-1-level2.json#15",
+      "sourceCanonicalSha256": "1288b838847cf83d8a1e511c55074d259993a1d4516472822dfc800b30141c26",
+      "sourceSkill": "Reading the initial negative temperature and finding only the warming remainder above zero",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-warming-above-zero.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Таңғы температура термометрде берілген. Түске дейін ауа 14 градусқа жылынды. Түсте температура нөлден неше градус жоғары болды?",
+      "solution": "Таңғы көрсеткіш -9 °C. Жылыну оң өзгеріс: -9 + 14 = 5 °C. Бұл нөлден 5 градус жоғары.",
+      "figureDescription": "Таңғы температура термометрде берілген. Түске дейін ауа 14 градусқа жылынды. Түсте температура нөлден неше градус жоғары болды? Берілген өлшеулер: A: -9 °C. ",
+      "figureSha256": "d30aaeb00e15472c3c1b2eeef77f0add20cd1cda93036e09bd8c0625e961a92d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Warming first crosses zero and only the above-zero remainder is requested",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-mine-distance-and-level",
+      "modelId": "visual-wave4-mine-dual",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "vertical",
+        "min": -360,
+        "max": 240,
+        "step": 60,
+        "points": [
+          {
+            "label": "M",
+            "tick": 9
+          },
+          {
+            "label": "N",
+            "tick": 1
+          }
+        ],
+        "labels": [
+          0,
+          60
+        ],
+        "labelEvery": 2,
+        "upper": "M",
+        "lower": "N"
+      },
+      "answer": "480 м; -300 м",
+      "sourceRefs": [
+        {
+          "sourceId": "1033360b481ea8d2",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-1-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-1-level3.json#4",
+      "sourceCanonicalSha256": "e913a18995fd0c5db0251ff8ee08c9c0de3b5144679be00474bf006d3a26f843",
+      "sourceSkill": "Distinguishing vertical travel distance across zero from a signed final mine level",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-mine-distance-and-level.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Тік шахтадағы лифт M деңгейінен N деңгейіне түседі. Үзік сызық теңіз деңгейін білдіреді. Лифт жүрген қашықтық пен төменгі деңгейдің таңбалы биіктігін дұрыс көрсететін жұпты таңдаңдар.",
+      "solution": "Шкаладан M(180), N(-300) оқылады. Жол ұзындығы 180 − (-300) = 480 м. Төменгі деңгейдің координатасы -300 м болып қалады; ол жүрілген жолдың таңбасы емес.",
+      "figureDescription": "Тік шахтадағы лифт M деңгейінен N деңгейіне түседі. Үзік сызық теңіз деңгейін білдіреді. Лифт жүрген қашықтық пен төменгі деңгейдің таңбалы биіктігін дұрыс көрсететін жұпты таңдаңдар. Көрсетілген нүктелер: M(180), N(-300). ",
+      "options": [
+        "480 м; -300 м",
+        "120 м; -300 м",
+        "480 м; +300 м",
+        "300 м; -480 м"
+      ],
+      "figureSha256": "bb465ac0c16e549f987979615f113ce20dd5d9b1f651866853d48d59e44fb625",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "480 м; -300 м",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Travel distance and signed final height are checked as different quantities",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-four-measurement-changes",
+      "modelId": "visual-wave4-variation-total",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "thermo",
+        "min": -12,
+        "max": 12,
+        "step": 2,
+        "readings": [
+          {
+            "label": "1",
+            "tick": 3
+          },
+          {
+            "label": "2",
+            "tick": 10
+          },
+          {
+            "label": "3",
+            "tick": 8
+          },
+          {
+            "label": "4",
+            "tick": 1
+          }
+        ],
+        "labelEvery": 2
+      },
+      "answer": "32",
+      "sourceRefs": [
+        {
+          "sourceId": "222d5797f67d2305",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-1-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-1-level3.json#8",
+      "sourceCanonicalSha256": "9dc5bc512cb61964602b2d034bf9175b4719dfaf47a9c51abff2f93db92ea4b8",
+      "sourceSkill": "Adding the magnitudes of all consecutive temperature changes rather than the net change",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-four-measurement-changes.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Термометрлер тәуліктегі төрт кезекті өлшеуді көрсетеді. Әр көрші екі өлшеу арасындағы өзгерістің шамасын тауып, үшеуін қосыңдар. Температура жоғарыласа да, төмендесе де сол өзгерістің градус саны есептеледі.",
+      "solution": "Өлшеулер -6, +8, +4, -10 °C. Өзгеріс шамалары 14, 4, 14 градус. Қосындысы 14 + 4 + 14 = 32 градус.",
+      "figureDescription": "Термометрлер тәуліктегі төрт кезекті өлшеуді көрсетеді. Әр көрші екі өлшеу арасындағы өзгерістің шамасын тауып, үшеуін қосыңдар. Температура жоғарыласа да, төмендесе де сол өзгерістің градус саны есептеледі. Берілген өлшеулер: 1: -6 °C; 2: +8 °C; 3: +4 °C; 4: -10 °C. ",
+      "figureSha256": "40d3dfcedcb75b705540bebe6669382e8116240d931b22f0bd0af61d32e7e32f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "32",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Every consecutive absolute change is counted rather than just first-to-last change",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-running-loss-days",
+      "modelId": "visual-wave4-cumulative-loss",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "bars",
+        "step": 5,
+        "ticks": [
+          2,
+          -5,
+          1,
+          -2,
+          3,
+          -1,
+          4
+        ]
+      },
+      "answer": "5",
+      "sourceRefs": [
+        {
+          "sourceId": "8016c07da37d2bf8",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-1-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-1-level3.json#10",
+      "sourceCanonicalSha256": "90ff6255c90f5c7f41281e2ebe43b44b0b7c03c9409c16185759c64072e3d060",
+      "sourceSkill": "Counting negative prefix balances after each day, not negative daily bars",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-running-loss-days.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Клуб күн сайын диаграммадағы кірісті не шығынды ортақ есепке қосады. Есеп алғашқы күні нөлден басталады. Неше күннің соңында жиналған жалпы нәтиже теріс болды?",
+      "solution": "Күндер бойынша жиналған нәтижелер: +10, -15, -10, -20, -5, -10, +10 мың теңге. Теріс болғандары 5 күн. Жеке күннің зияны мен жиналған зиянды шатастырмаймыз.",
+      "figureDescription": "Клуб күн сайын диаграммадағы кірісті не шығынды ортақ есепке қосады. Есеп алғашқы күні нөлден басталады. Неше күннің соңында жиналған жалпы нәтиже теріс болды? Күндер: +10, -25, +5, -10, +15, -5, +20 мың теңге. ",
+      "figureSha256": "457dde6d382ede95e83dd6451b61da7e1ccc8083d4da36a08478ec666033a7f1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Every daily prefix balance is tested, not just each daily loss or the final balance",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-opposite-number-cards",
+      "modelId": "visual-wave4-cancellation-cards",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cards",
+        "values": [
+          15,
+          -9,
+          11,
+          -15,
+          9
+        ]
+      },
+      "answer": "11",
+      "sourceRefs": [
+        {
+          "sourceId": "2fdda86cdc3d2984",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-10-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-10-level1.json#4",
+      "sourceCanonicalSha256": "0c3570b194cd5d735cf016e149a0b3a79afdc432184838209b6acc11dee6e742",
+      "sourceSkill": "Reading five cards and grouping opposite addends with cancellation",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-opposite-number-cards.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Бес сан карточкасының барлығының қосындысын табыңдар. Қарама-қарсы сандарды жұптап топтауға болады.",
+      "solution": "Карточкалар +15, -9, +11, -15, +9. 15 + (-15) = 0; -9 + (9) = 0. Қалған сандардың қосындысы 11.",
+      "figureDescription": "Бес сан карточкасының барлығының қосындысын табыңдар. Қарама-қарсы сандарды жұптап топтауға болады. Карточкалар: +15, -9, +11, -15, +9. ",
+      "figureSha256": "6f41e8d75c1a6ab93dcd1ac41d5f227d392ddcf52fc941519e7f6867007a75e3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "11",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Opposite unit tokens cancel in the five explicitly displayed cards",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-opposite-coordinate-sum",
+      "modelId": "visual-wave4-coordinate-cancellation",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -7,
+        "max": 9,
+        "step": 1,
+        "points": [
+          {
+            "label": "A",
+            "tick": 1
+          },
+          {
+            "label": "B",
+            "tick": 4
+          },
+          {
+            "label": "C",
+            "tick": 10
+          },
+          {
+            "label": "D",
+            "tick": 13
+          },
+          {
+            "label": "E",
+            "tick": 15
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ]
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "2f40cccc9dffd261",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-10-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-10-level1.json#13",
+      "sourceCanonicalSha256": "3fc3508e32cb939919dbef354d90e922de562bb65d2d820abadabb3c82063d7c",
+      "sourceSkill": "Reading five point coordinates and identifying two opposite-coordinate pairs before adding",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-opposite-coordinate-sum.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Бес нүктенің координаталарын шкаладан оқып, қосындысын табыңдар. Санақ басынан бірдей қашықтықтағы қарама-қарсы координаталарды пайдаланыңдар.",
+      "solution": "Координаталар A(-6), B(-3), C(3), D(6), E(8). -6 + (6) = 0; -3 + (3) = 0. Қалған сандардың қосындысы 8.",
+      "figureDescription": "Бес нүктенің координаталарын шкаладан оқып, қосындысын табыңдар. Санақ басынан бірдей қашықтықтағы қарама-қарсы координаталарды пайдаланыңдар. Көрсетілген нүктелер: A(-6), B(-3), C(3), D(6), E(8). ",
+      "figureSha256": "600c1400f7e78aa8a69ed087a622659a4d7a6dd4f26876e86b19218102ed7db2",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Coordinates must first be read before their opposite pairs can cancel",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-cross-zero-segment",
+      "modelId": "visual-wave4-distance-crosszero",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "min": -8,
+        "max": 5,
+        "step": 1,
+        "points": [
+          {
+            "label": "A",
+            "tick": 1
+          },
+          {
+            "label": "B",
+            "tick": 12
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "first": "A",
+        "second": "B"
+      },
+      "answer": "11",
+      "sourceRefs": [
+        {
+          "sourceId": "47e309c038176006",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-11-level1.json#5",
+      "sourceCanonicalSha256": "89ef13cbea6f52ff223e52cdf85bb3584d36f1e97b782296b875cc137bbaae0f",
+      "sourceSkill": "Unsigned coordinate-segment length across zero, not the signed endpoint difference in arbitrary order",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-cross-zero-segment.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "A және B санақ басының екі жағында орналасқан. AB кесіндісінің ұзындығы неше бірлік? Жауап — қашықтық, таңбалы координата емес.",
+      "solution": "Бір аралық 1 бірлік. Нүктелер A(-7), B(4). Арақашықтық 4 − (-7) = 11 бірлік. Мұнда бір аралық бір бірлікке тең, сондықтан аралықтарды санау да осы ұзындықты береді.",
+      "figureDescription": "A және B санақ басының екі жағында орналасқан. AB кесіндісінің ұзындығы неше бірлік? Жауап — қашықтық, таңбалы координата емес. Көрсетілген нүктелер: A(-7), B(4). ",
+      "figureSha256": "b9538ce510c547ca700d923a2ce536a2693283d677f913fcca3d9ec68265e0cd",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "11",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Distance is counted in coordinate units, not raw tick gaps and not a signed coordinate",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-left-arrow-subtraction",
+      "modelId": "visual-wave4-subtraction-equality",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -7,
+        "max": 6,
+        "step": 1,
+        "points": [
+          {
+            "label": "A",
+            "tick": 12
+          },
+          {
+            "label": "B",
+            "tick": 1
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "arrows": [
+          {
+            "from": 5,
+            "to": -6,
+            "showDelta": false
+          }
+        ],
+        "startLabel": "A",
+        "endLabel": "B"
+      },
+      "answer": "5 − 11 = -6",
+      "sourceRefs": [
+        {
+          "sourceId": "6554f717e951b492",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-11-level1.json#11",
+      "sourceCanonicalSha256": "944dd9efda942231b21fcf8cbbc279e6fa4f80e83762d94e0c06d71bf09949e8",
+      "sourceSkill": "Matching a leftward movement to subtraction from its actual starting coordinate",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-left-arrow-subtraction.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Солға бағытталған нұсқарды бастапқы координатадан оң санды азайту арқылы көрсететін теңдікті таңдаңдар.",
+      "solution": "Нұсқар 5 нүктесінен солға 11 бірлік жүреді. Азайту теңдігі 5 − 11 = -6.",
+      "figureDescription": "Солға бағытталған нұсқарды бастапқы координатадан оң санды азайту арқылы көрсететін теңдікті таңдаңдар. Көрсетілген нүктелер: A(5), B(-6). ",
+      "options": [
+        "5 + 11 = 16",
+        "-6 − 11 = -17",
+        "-6 − 5 = -11",
+        "5 − 11 = -6"
+      ],
+      "figureSha256": "81f96c97420c5f075784614c10c4b5c81241876d2d9a1f57efc7db2b3cabc7af",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5 − 11 = -6",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "A leftward arrow is expressed as subtraction from its actual starting point",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-two-times-rise",
+      "modelId": "visual-wave4-rise-two-readings",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "thermo",
+        "min": -12,
+        "max": 12,
+        "step": 1,
+        "readings": [
+          {
+            "label": "09:00",
+            "tick": 4
+          },
+          {
+            "label": "15:00",
+            "tick": 18
+          }
+        ],
+        "labelEvery": 4
+      },
+      "answer": "14",
+      "sourceRefs": [
+        {
+          "sourceId": "a6adfea8cdefb818",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-11-level1.json#12",
+      "sourceCanonicalSha256": "15e79d785bafb46ad3501955c354ebd138ee34d108e2558fb833a1156319df1e",
+      "sourceSkill": "Comparing two thermometer readings at different times across zero",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-two-times-rise.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Екі термометр 09:00 және 15:00 уақыттарындағы өлшеулерді көрсетеді. Осы аралықта ауа неше градусқа жылынды?",
+      "solution": "Көрсеткіштер -8 және +6 °C. Жылыну 6 − (-8) = 14 градус.",
+      "figureDescription": "Екі термометр 09:00 және 15:00 уақыттарындағы өлшеулерді көрсетеді. Осы аралықта ауа неше градусқа жылынды? Берілген өлшеулер: 09:00: -8 °C; 15:00: +6 °C. ",
+      "figureSha256": "1f10ea2d78dc019cd7e2552b24d6df0406e1b7635274d8b7bbbf515dcc0c45de",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "14",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-platform-water-gap",
+      "modelId": "visual-wave4-altitude-gap",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "vertical",
+        "min": -40,
+        "max": 60,
+        "step": 5,
+        "points": [
+          {
+            "label": "A",
+            "tick": 17
+          },
+          {
+            "label": "B",
+            "tick": 2
+          }
+        ],
+        "labels": [
+          0,
+          5
+        ],
+        "labelEvery": 4,
+        "upper": "A",
+        "lower": "B"
+      },
+      "answer": "75",
+      "sourceRefs": [
+        {
+          "sourceId": "513927365fbae78f",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-11-level1.json#15",
+      "sourceCanonicalSha256": "6321470f373cd4ecf570ddfd2e0186dc6c7901a79e20d540701812c628d52475",
+      "sourceSkill": "Reading a non-unit vertical height scale before finding the upper-to-lower separation",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-platform-water-gap.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "A — су бетінен жоғары алаңша, B — суасты бақылау нүктесі. A нүктесі B нүктесінен неше метр жоғары орналасқан?",
+      "solution": "Суреттен A(45), B(-30) оқылады. Екі деңгей арасы 45 − (-30) = 75 м.",
+      "figureDescription": "A — су бетінен жоғары алаңша, B — суасты бақылау нүктесі. A нүктесі B нүктесінен неше метр жоғары орналасқан? Көрсетілген нүктелер: A(45), B(-30). ",
+      "figureSha256": "74876650c96a7be0ac2a1b7abbe9e5bc20d4d0e9d9d9c61535c520870ac3040b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "75",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-unit-line-distance",
+      "modelId": "visual-wave4-distance-unit",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "min": -7,
+        "max": 5,
+        "step": 1,
+        "points": [
+          {
+            "label": "A",
+            "tick": 1
+          },
+          {
+            "label": "B",
+            "tick": 11
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "first": "A",
+        "second": "B"
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "e69d598606515f98",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-12-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-12-level1.json#0",
+      "sourceCanonicalSha256": "7e7c56e9fde5257a33bc284c609e017dd02d65c10f04eef3ec33b3a466f31ab0",
+      "sourceSkill": "Coordinate distance on a scale calibrated by zero and one",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-unit-line-distance.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Координаталық түзудегі A мен B нүктелерінің арақашықтығын бірлік кесінділермен табыңдар.",
+      "solution": "Бір аралық 1 бірлік. Нүктелер A(-6), B(4). Арақашықтық 4 − (-6) = 10 бірлік. Мұнда бір аралық бір бірлікке тең, сондықтан аралықтарды санау да осы ұзындықты береді.",
+      "figureDescription": "Координаталық түзудегі A мен B нүктелерінің арақашықтығын бірлік кесінділермен табыңдар. Көрсетілген нүктелер: A(-6), B(4). ",
+      "figureSha256": "ae51bfa16431a3d6ea5f3575db2700cc623719e815f61f4755d3bcfe62852c19",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Distance is counted in coordinate units, not raw tick gaps and not a signed coordinate",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-three-unit-ticks",
+      "modelId": "visual-wave4-distance-scaled",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -15,
+        "max": 12,
+        "step": 3,
+        "points": [
+          {
+            "label": "A",
+            "tick": 2
+          },
+          {
+            "label": "B",
+            "tick": 7
+          }
+        ],
+        "labels": [
+          0,
+          3
+        ],
+        "first": "A",
+        "second": "B"
+      },
+      "answer": "15",
+      "sourceRefs": [
+        {
+          "sourceId": "d5b240fb28f61126",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-12-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-12-level1.json#2",
+      "sourceCanonicalSha256": "7826d25c297757fd36d2a2958be9e27ffb60dc5e675a2eceda0d74cfa253dbc8",
+      "sourceSkill": "Inferring a non-unit tick interval before converting five tick gaps to coordinate units",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-three-unit-ticks.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Түзудегі сызықшалар бірдей аралықта тұр. Белгіленген сандардан бір аралықтың мәнін анықтап, A мен B арақашықтығын табыңдар.",
+      "solution": "Бір аралық 3 бірлік. Нүктелер A(-9), B(6). Арақашықтық 6 − (-9) = 15 бірлік. Тек кіші аралықтардың санын жазу жеткіліксіз: оны 3 санына көбейтеміз.",
+      "figureDescription": "Түзудегі сызықшалар бірдей аралықта тұр. Белгіленген сандардан бір аралықтың мәнін анықтап, A мен B арақашықтығын табыңдар. Көрсетілген нүктелер: A(-9), B(6). ",
+      "figureSha256": "902a753ba349bf243fde619f91dccd518e18eff2952946fba63ff84836f5c63e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "15",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Distance is counted in coordinate units, not raw tick gaps and not a signed coordinate",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-restore-left-coordinate",
+      "modelId": "visual-wave4-restore-coordinate",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -7,
+        "max": 5,
+        "step": 1,
+        "points": [
+          {
+            "label": "M",
+            "tick": 2
+          },
+          {
+            "label": "K",
+            "tick": 10
+          }
+        ],
+        "labels": [
+          3
+        ],
+        "known": "K",
+        "unknown": "M",
+        "distance": 8,
+        "hideTicks": true,
+        "hiddenLabels": [
+          "M"
+        ]
+      },
+      "answer": "-5",
+      "sourceRefs": [
+        {
+          "sourceId": "73e29bf14704c201",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-12-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-12-level1.json#14",
+      "sourceCanonicalSha256": "98625d6df1fd3858adc5a37f6e49cb8423af9854e952d4337c5ee5ba753e58d6",
+      "sourceSkill": "Recovering the coordinate of a left-hand point from a known coordinate and an unsigned distance",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-restore-left-coordinate.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "K нүктесінің координатасы мен MK арақашықтығы берілген. M нүктесі K-дан сол жақта жатыр. M координатасын табыңдар.",
+      "solution": "K координатасы 3, M сол жағында және арасы 8 бірлік. Сондықтан M: 3 − 8 = -5. Айырманың модулі 8 екені тексеріледі.",
+      "figureDescription": "K нүктесінің координатасы мен MK арақашықтығы берілген. M нүктесі K-дан сол жақта жатыр. M координатасын табыңдар. Көрсетілген нүктелер: M — белгісіз координата, K(3). ",
+      "options": [
+        "11",
+        "5",
+        "-5",
+        "-8"
+      ],
+      "figureSha256": "73ca90265e2bea30887e88b4a11988f34ea3bc2288e20dff2d43f91fa1c03af6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-5",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-choose-distance-pair",
+      "modelId": "visual-wave4-pair-distance",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -8,
+        "max": 4,
+        "step": 1,
+        "points": [
+          {
+            "label": "A",
+            "tick": 1
+          },
+          {
+            "label": "B",
+            "tick": 5
+          },
+          {
+            "label": "C",
+            "tick": 8
+          },
+          {
+            "label": "D",
+            "tick": 11
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "goal": 6,
+        "candidates": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "A",
+            "C"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ]
+      },
+      "answer": "B және D",
+      "sourceRefs": [
+        {
+          "sourceId": "a494f2ecaa253f41",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-12-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-12-level1.json#15",
+      "sourceCanonicalSha256": "20297d2bd68a2b54ee114622f6e53e6887bc3b29fc41536c7ef95f7335fbd9ec",
+      "sourceSkill": "Choosing the unique point pair with a specified coordinate distance",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-choose-distance-pair.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Белгіленген төрт нүктенің қай екеуінің арақашықтығы 6 бірлікке тең?",
+      "solution": "Координаталар A(-7), B(-3), C(0), D(3). AB = 4; AC = 7; BD = 6; CD = 3. 6 бірлік беретін жұпты таңдаймыз.",
+      "figureDescription": "Белгіленген төрт нүктенің қай екеуінің арақашықтығы 6 бірлікке тең? Көрсетілген нүктелер: A(-7), B(-3), C(0), D(3). ",
+      "options": [
+        "A және B",
+        "A және C",
+        "B және D",
+        "C және D"
+      ],
+      "figureSha256": "df216767be6a59165bbb42e54f9e070db06b091a801256f570b21571d6cca300",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "B және D",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "All unordered point pairs are tested and the matching pair is unique",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-integer-point-count",
+      "modelId": "visual-wave4-integer-count",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "min": -4,
+        "max": 2,
+        "step": 0.5,
+        "points": [
+          {
+            "label": "A",
+            "tick": 1
+          },
+          {
+            "label": "B",
+            "tick": 4
+          },
+          {
+            "label": "C",
+            "tick": 7
+          },
+          {
+            "label": "D",
+            "tick": 8
+          },
+          {
+            "label": "E",
+            "tick": 11
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ]
+      },
+      "answer": "2",
+      "sourceRefs": [
+        {
+          "sourceId": "5b1a1a7288355eae",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-3-level1.json#7",
+      "sourceCanonicalSha256": "2d52e0577647438f593758783b314c5523e6bacb0c82ffba352d7e3708c07c70",
+      "sourceSkill": "Distinguishing integer and half-integer plotted coordinates, explicitly including zero as an integer",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-integer-point-count.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Сызбада бірлік кесінді екі тең бөлікке бөлінген. Бес белгіленген нүктенің нешеуінің координатасы бүтін сан? Нөлді де ескеріңдер.",
+      "solution": "Нүктелер: A(-3,5), B(-2), C(-0,5), D(0), E(1,5). Бүтін координаталар -2, 0. Барлығы 2 нүкте. Нөл де бүтін сан.",
+      "figureDescription": "Сызбада бірлік кесінді екі тең бөлікке бөлінген. Бес белгіленген нүктенің нешеуінің координатасы бүтін сан? Нөлді де ескеріңдер. Көрсетілген нүктелер: A(-3,5), B(-2), C(-0,5), D(0), E(1,5). ",
+      "figureSha256": "840471c9d6928035177ce93e2b186fd95532e69d060bab50ef9f1abcf13b4d19",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Zero counts as an integer; half-unit ticks do not automatically count as integers",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-negative-integer-region",
+      "modelId": "visual-wave4-number-set-region",
+      "grade": 6,
+      "topic": "sets",
+      "difficulty": "medium",
+      "params": {
+        "scene": "sets",
+        "numerator": -14,
+        "denominator": 1,
+        "regions": {
+          "natural": "C",
+          "integerOther": "A",
+          "rationalOther": "B"
+        }
+      },
+      "answer": "A",
+      "sourceRefs": [
+        {
+          "sourceId": "fbb9f5e09817ebfc",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-3-level1.json#8",
+      "sourceCanonicalSha256": "bdef6c4b3276f88764dd5f800fb42741dbf4e0c6bd36b5e00b18b751c7ca7378",
+      "sourceSkill": "Placing a negative integer in Z outside N within the nested N/Z/Q diagram; region letters are newly authored",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-negative-integer-region.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Сызбада N = {1, 2, 3, ...}, Z — бүтін сандар, Q — рационал сандар жиындары көрсетілген. -14 саны әріппен белгіленген қай бөлікке тиісті? Ең кіші сәйкес аймақтың әрпін таңдаңдар.",
+      "solution": "-14 — теріс бүтін сан, сондықтан Z-ке тиісті, бірақ N-ге кірмейді. Z-тің N-нен тыс бөлігі A әрпімен белгіленген. Q-ге де тиісті болғанымен, сұралған ең кіші тиісті аймақ осы.",
+      "figureDescription": "Сызбада N = {1, 2, 3, ...}, Z — бүтін сандар, Q — рационал сандар жиындары көрсетілген. -14 саны әріппен белгіленген қай бөлікке тиісті? Ең кіші сәйкес аймақтың әрпін таңдаңдар. Ең ішкі N аймағы C, Z ішінде N-нен тыс A, Q ішінде Z-тен тыс B. ",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "Сыртында"
+      ],
+      "figureSha256": "6ddf522c3ad6c395cfad9f149a151a7c8f8f6c55e0d6adf22e8fc2e9f0503e0c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "A",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-negative-neighbours",
+      "modelId": "visual-wave4-neighbor-integers",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -5,
+        "max": 2,
+        "step": 0.5,
+        "points": [
+          {
+            "label": "A",
+            "tick": 3
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "target": "A"
+      },
+      "answer": "-4 және -3",
+      "sourceRefs": [
+        {
+          "sourceId": "c090fc0a55cec632",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-3-level1.json#12",
+      "sourceCanonicalSha256": "6f598128d357b6e67de7a2642c2c91c4001c4f9e03208f4a84c289ed20bd86d5",
+      "sourceSkill": "Finding the two adjacent integers surrounding a negative half-integer point",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-negative-neighbours.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "A нүктесі бірлік кесінділері екіге бөлінген координаталық түзуде тұр. Оның сол және оң жағындағы ең жақын көрші бүтін сандарды таңдаңдар.",
+      "solution": "A координатасы -3,5. Оны қоршаған көрші бүтіндер -4 және -3. Екеуінің айырмасы 1-ге тең.",
+      "figureDescription": "A нүктесі бірлік кесінділері екіге бөлінген координаталық түзуде тұр. Оның сол және оң жағындағы ең жақын көрші бүтін сандарды таңдаңдар. Көрсетілген нүктелер: A(-3,5). ",
+      "options": [
+        "3 және 4",
+        "-3 және -2",
+        "-4 және -3",
+        "-5 және -4"
+      ],
+      "figureSha256": "16f86613123cdd0a6b1369a8027290413a6b560c8b706e2c2e4c5d2a0a8148c7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-4 және -3",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-greatest-negative-point",
+      "modelId": "visual-wave4-greatest-negative",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -4,
+        "max": 3,
+        "step": 0.5,
+        "points": [
+          {
+            "label": "A",
+            "tick": 7
+          },
+          {
+            "label": "B",
+            "tick": 10
+          },
+          {
+            "label": "C",
+            "tick": 2
+          },
+          {
+            "label": "D",
+            "tick": 13
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ]
+      },
+      "answer": "A",
+      "sourceRefs": [
+        {
+          "sourceId": "7d49fa20115e6f03",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-5-level1.json#0",
+      "sourceCanonicalSha256": "c1409cb9695512060b6a839246f9ea218cb479967e595916c85212816480be2e",
+      "sourceSkill": "Selecting the rightmost negative point while excluding positive coordinates",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-greatest-negative-point.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Белгіленген нүктелердің координаталарының ішінде ең үлкен теріс сан қай нүктеге сәйкес келеді? Оң координаталарды бұл салыстыруға қоспаңдар.",
+      "solution": "Координаталар A(-0,5), B(1), C(-3), D(2,5). Нөлден сол жақтағы нүктелердің ең оң жақтағысы ең үлкен теріс санды береді: A.",
+      "figureDescription": "Белгіленген нүктелердің координаталарының ішінде ең үлкен теріс сан қай нүктеге сәйкес келеді? Оң координаталарды бұл салыстыруға қоспаңдар. Көрсетілген нүктелер: A(-0,5), B(1), C(-3), D(2,5). ",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "figureSha256": "e6768200a1b8973b48b89c5b381975bb35137e68947dd82d52ea90b667e4cd40",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "A",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-strict-double-bound",
+      "modelId": "visual-wave4-strict-interval",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -5,
+        "max": 1,
+        "step": 0.5,
+        "points": [
+          {
+            "label": "P",
+            "tick": 1
+          },
+          {
+            "label": "Q",
+            "tick": 7
+          },
+          {
+            "label": "R",
+            "tick": 5
+          },
+          {
+            "label": "S",
+            "tick": 11
+          }
+        ],
+        "labels": [
+          -3,
+          -2,
+          0,
+          1
+        ],
+        "lower": -3,
+        "upper": -2
+      },
+      "answer": "R",
+      "sourceRefs": [
+        {
+          "sourceId": "c4fe243413201633",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-5-level1.json#11",
+      "sourceCanonicalSha256": "55d7a6e91bf75cce68ecffae8d968f8791821b46b8a8eb45880c929c836c9b95",
+      "sourceSkill": "Identifying the one plotted half-integer inside a strict double inequality",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-strict-double-bound.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Қай нүктенің координатасы -3 < x < -2 шартын қанағаттандырады? Екі шекараның өзі аралыққа кірмейді.",
+      "solution": "Координаталар P(-4,5), Q(-1,5), R(-2,5), S(0,5). -3 санынан үлкен әрі -2 санынан кіші координата R(-2,5) нүктесінде ғана.",
+      "figureDescription": "Қай нүктенің координатасы -3 < x < -2 шартын қанағаттандырады? Екі шекараның өзі аралыққа кірмейді. Көрсетілген нүктелер: P(-4,5), Q(-1,5), R(-2,5), S(0,5). ",
+      "options": [
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "figureSha256": "a6eaaf25ca448142a3467403eee9c3ecec5046d4ddda68b6654a20628ca691d5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "R",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Both endpoint inequalities are strict",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-below-strict-threshold",
+      "modelId": "visual-wave4-strict-count",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -8,
+        "max": 3,
+        "step": 1,
+        "points": [
+          {
+            "label": "A",
+            "tick": 1
+          },
+          {
+            "label": "B",
+            "tick": 2
+          },
+          {
+            "label": "C",
+            "tick": 4
+          },
+          {
+            "label": "D",
+            "tick": 5
+          },
+          {
+            "label": "E",
+            "tick": 7
+          },
+          {
+            "label": "F",
+            "tick": 9
+          },
+          {
+            "label": "G",
+            "tick": 10
+          }
+        ],
+        "labels": [
+          -3,
+          0,
+          1
+        ],
+        "bound": -3
+      },
+      "answer": "3",
+      "sourceRefs": [
+        {
+          "sourceId": "35976852a06eec51",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-5-level1.json#12",
+      "sourceCanonicalSha256": "cfbe3aca925db50f20d5370f7e20d603005c972477770cb170f8bc0d5dde72cd",
+      "sourceSkill": "Counting points strictly to the left of a threshold while excluding the point on the threshold",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-below-strict-threshold.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Сызбадағы неше нүктенің координатасы -3 санынан қатаң кіші? Шекарадағы нүктені санамаңдар.",
+      "solution": "Шкаладан A(-7), B(-6), C(-4), D(-3), E(-1), F(1), G(2) оқылады. -3 белгісінен сол жақта 3 нүкте бар. Координатасы -3 нүктенің өзі есептелмейді.",
+      "figureDescription": "Сызбадағы неше нүктенің координатасы -3 санынан қатаң кіші? Шекарадағы нүктені санамаңдар. Көрсетілген нүктелер: A(-7), B(-6), C(-4), D(-3), E(-1), F(1), G(2). ",
+      "figureSha256": "28e60991919a9f9e32a97e5963e03fe65a7081dae8a36a9c70827e33ab012ade",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The point exactly at the threshold is explicitly excluded",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-coldest-city",
+      "modelId": "visual-wave4-coldest-city",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "thermo",
+        "min": -20,
+        "max": 10,
+        "step": 2,
+        "readings": [
+          {
+            "label": "A",
+            "tick": 8
+          },
+          {
+            "label": "B",
+            "tick": 2
+          },
+          {
+            "label": "C",
+            "tick": 13
+          }
+        ],
+        "labelEvery": 5,
+        "names": [
+          "Қарағанды",
+          "Көкшетау",
+          "Тараз"
+        ]
+      },
+      "answer": "Көкшетау",
+      "sourceRefs": [
+        {
+          "sourceId": "6f9bc9b6357c3003",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-5-level1.json#14",
+      "sourceCanonicalSha256": "65e3c03d23d7b5f0d6cb92b530f301fa989cf46e07825263519199d388d831bb",
+      "sourceSkill": "Comparing three signed temperatures and returning the coldest city rather than the largest absolute positive number",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-coldest-city.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Бір мезгілдегі өлшеулер: A — Қарағанды, B — Көкшетау, C — Тараз. Қай қалада ауа ең суық болды?",
+      "solution": "Температуралар Қарағанды: -4 °C; Көкшетау: -16 °C; Тараз: +6 °C. Ең кіші көрсеткіш -16 °C, демек ең суық қала Көкшетау.",
+      "figureDescription": "Бір мезгілдегі өлшеулер: A — Қарағанды, B — Көкшетау, C — Тараз. Қай қалада ауа ең суық болды? Берілген өлшеулер: A: -4 °C; B: -16 °C; C: +6 °C. ",
+      "options": [
+        "Қарағанды",
+        "Көкшетау",
+        "Тараз",
+        "Бәрінде бірдей"
+      ],
+      "figureSha256": "3dd6884d30b6d81324f4491c887a9ae3c9627d9fd2b417b44a1609d1a208e698",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "Көкшетау",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-signed-left-displacement",
+      "modelId": "visual-wave4-arrow-displacement",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -5,
+        "max": 6,
+        "step": 1,
+        "points": [
+          {
+            "label": "A",
+            "tick": 10
+          },
+          {
+            "label": "B",
+            "tick": 2
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "arrows": [
+          {
+            "from": 5,
+            "to": -3,
+            "showDelta": false
+          }
+        ],
+        "startLabel": "A",
+        "endLabel": "B"
+      },
+      "answer": "-8",
+      "sourceRefs": [
+        {
+          "sourceId": "92e2a4fd06126654",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-7-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-7-level1.json#3",
+      "sourceCanonicalSha256": "9cdc4e6e8a8531ab98d6c613e92d13950a9e7c1cf921cc77165581eee200a7c0",
+      "sourceSkill": "Recovering the signed added number from an arrow that crosses zero to the left",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-signed-left-displacement.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Нүкте сызбадағы нұсқар бойымен бастапқы орнынан соңғы орнына көшті. Бастапқы координатаға қандай таңбалы сан қосылған?",
+      "solution": "Бастапқы 5-тен соңғы -3-ке жылжу солға бағытталған. Айырма -3 − (5) = -8.",
+      "figureDescription": "Нүкте сызбадағы нұсқар бойымен бастапқы орнынан соңғы орнына көшті. Бастапқы координатаға қандай таңбалы сан қосылған? Көрсетілген нүктелер: A(5), B(-3). ",
+      "options": [
+        "8",
+        "-8",
+        "2",
+        "-2"
+      ],
+      "figureSha256": "bf43093a226c10a10bcdf3646f38e9ae08450956ee362dbcccda72d9d1186214",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-8",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Direction gives a signed displacement rather than an unsigned distance",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-read-start-then-move",
+      "modelId": "visual-wave4-arrow-endpoint-read",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -7,
+        "max": 6,
+        "step": 1,
+        "points": [
+          {
+            "label": "A",
+            "tick": 2
+          },
+          {
+            "label": "?",
+            "tick": 11
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "arrows": [
+          {
+            "from": -5,
+            "to": 4,
+            "showDelta": true
+          }
+        ],
+        "startLabel": "A",
+        "endLabel": "?",
+        "change": 9,
+        "hiddenLabels": [
+          "?"
+        ]
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "c10bdd32ad7b8b4e",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-7-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-7-level1.json#13",
+      "sourceCanonicalSha256": "3682290d8705946cd68f7fd9f1b67f26733af694195f14a7c569c5280153b75e",
+      "sourceSkill": "Reading an unnamed numeric starting coordinate before applying a given positive change",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-read-start-then-move.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "A нүктесінің координатасын шкаладан оқыңдар. Нұсқардағы +9 өзгерісінен кейінгі нүктенің координатасын табыңдар.",
+      "solution": "Бастапқы координата -5. Өзгеріс +9. (-5) + 9 = 4. Нұсқардың бағыты қосылатын санның таңбасына сай.",
+      "figureDescription": "A нүктесінің координатасын шкаладан оқыңдар. Нұсқардағы +9 өзгерісінен кейінгі нүктенің координатасын табыңдар. Көрсетілген нүктелер: A(-5), ? — белгісіз координата. ",
+      "figureSha256": "662cf996124cccb16f3531673bf13d53208231f01b1af11244bb1c03f8784f7d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The shown arrow endpoint must agree with the directed unit-step walk",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-given-start-then-move",
+      "modelId": "visual-wave4-arrow-endpoint-given",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -6,
+        "max": 8,
+        "step": 1,
+        "points": [
+          {
+            "label": "A",
+            "tick": 2
+          },
+          {
+            "label": "?",
+            "tick": 12
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "arrows": [
+          {
+            "from": -4,
+            "to": 6,
+            "showDelta": true
+          }
+        ],
+        "startLabel": "A",
+        "endLabel": "?",
+        "change": 10,
+        "hiddenLabels": [
+          "?"
+        ]
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "39068aeb8d28f343",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-7-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-7-level1.json#14",
+      "sourceCanonicalSha256": "be975e042e76d01336ee5eed6c3388a3e49a6a397e4e9d886328cfc6b4345bcb",
+      "sourceSkill": "Locating a result from an explicitly supplied negative start and a positive rightward change",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-given-start-then-move.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Нүкте -4 координатасынан басталып, нұсқардағыдай +10 бірлікке жылжыды. Сұрақ белгісінің орнындағы координата қандай?",
+      "solution": "Бастапқы координата -4. Өзгеріс +10. (-4) + 10 = 6. Нұсқардың бағыты қосылатын санның таңбасына сай.",
+      "figureDescription": "Нүкте -4 координатасынан басталып, нұсқардағыдай +10 бірлікке жылжыды. Сұрақ белгісінің орнындағы координата қандай? Көрсетілген нүктелер: A(-4), ? — белгісіз координата. ",
+      "figureSha256": "d2db3ba6dbf2e6789a5aca52ef31ada728616f70a0a8fa4832922818c5f2a837",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The shown arrow endpoint must agree with the directed unit-step walk",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-positive-jump-equation",
+      "modelId": "visual-wave4-arrow-equality",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -5,
+        "max": 7,
+        "step": 1,
+        "points": [
+          {
+            "label": "A",
+            "tick": 2
+          },
+          {
+            "label": "B",
+            "tick": 10
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "arrows": [
+          {
+            "from": -3,
+            "to": 5,
+            "showDelta": true
+          }
+        ],
+        "startLabel": "A",
+        "endLabel": "B"
+      },
+      "answer": "(-3) + 8 = 5",
+      "sourceRefs": [
+        {
+          "sourceId": "19609b99b1954b4c",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-7-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-7-level1.json#15",
+      "sourceCanonicalSha256": "0cee315aa634c4bf87f7b3a6bf0a5704a9bc6ca96451d34de9cbbfd541f18af2",
+      "sourceSkill": "Matching a positive jump across zero to an addition equation with the same start and direction",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-positive-jump-equation.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Сызбадағы бастапқы нүктені, нұсқар бағытын және жылжу шамасын сақтайтын қосу теңдігін таңдаңдар.",
+      "solution": "Нұсқардың бастапқы координатасы -3. Өзгеріс +8 бірлік. Сондықтан (-3) + 8 = 5. Кері бағыттағы теңдік осы суретке сәйкес емес.",
+      "figureDescription": "Сызбадағы бастапқы нүктені, нұсқар бағытын және жылжу шамасын сақтайтын қосу теңдігін таңдаңдар. Көрсетілген нүктелер: A(-3), B(5). ",
+      "options": [
+        "3 + 8 = 11",
+        "(-3) + 8 = 5",
+        "(-3) + (-8) = -11",
+        "5 + (-8) = -3"
+      ],
+      "figureSha256": "4ead3ed1c6282e03c9eedfe99b0677ac2721a46abd62dd6c48f7f324465621ae",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(-3) + 8 = 5",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The equation starts where the arrow starts, not at its endpoint",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-two-left-jumps",
+      "modelId": "visual-wave4-two-negative-equation",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -12,
+        "max": 1,
+        "step": 1,
+        "points": [
+          {
+            "label": "A",
+            "tick": 8
+          },
+          {
+            "label": "B",
+            "tick": 1
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "arrows": [
+          {
+            "from": 0,
+            "to": -4,
+            "showDelta": true
+          },
+          {
+            "from": -4,
+            "to": -11,
+            "showDelta": true
+          }
+        ]
+      },
+      "answer": "(-4) + (-7) = -11",
+      "sourceRefs": [
+        {
+          "sourceId": "546915cc3a56a35a",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-8-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-8-level1.json#1",
+      "sourceCanonicalSha256": "f6c5b0692c795467fb5cd091eff815cc34e0e8644ee6a3575dae4deefa0e0f00",
+      "sourceSkill": "Combining two consecutive leftward movements from zero without mistaking the endpoint for the second addend",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-two-left-jumps.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Санақ басынан A нүктесіне, одан B нүктесіне екі рет солға жылжу орындалған. Бірінші және екінші жылжуды қосу арқылы көрсететін теңдікті таңдаңдар.",
+      "solution": "Бірінші жылжу -4, екіншісі -7. Екеуі де солға, сондықтан модульдер қосылып, минус сақталады: (-4) + (-7) = -11.",
+      "figureDescription": "Санақ басынан A нүктесіне, одан B нүктесіне екі рет солға жылжу орындалған. Бірінші және екінші жылжуды қосу арқылы көрсететін теңдікті таңдаңдар. Көрсетілген нүктелер: A(-4), B(-11). ",
+      "options": [
+        "(-4) + 7 = 3",
+        "(-4) + (-7) = -11",
+        "(-4) + (-11) = -15",
+        "4 + 7 = 11"
+      ],
+      "figureSha256": "f6975a7808072dcabb3af0ef3799577b54ac27b8e23450b11463930c95c80628",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(-4) + (-7) = -11",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-frost-magnitude",
+      "modelId": "visual-wave4-frost-depth",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "thermo",
+        "min": -18,
+        "max": 12,
+        "step": 3,
+        "readings": [
+          {
+            "label": "A",
+            "tick": 3
+          }
+        ],
+        "labelEvery": 2,
+        "drop": 8
+      },
+      "answer": "17",
+      "sourceRefs": [
+        {
+          "sourceId": "5fb5cbd6281d3f91",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-8-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-8-level1.json#10",
+      "sourceCanonicalSha256": "c6b93348ed55aec407ccfbee5c4efce3112fc7d1a83e6760a2a44961406ff3eb",
+      "sourceSkill": "Reading an initial frost and returning the positive below-zero magnitude after a further temperature drop",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-frost-magnitude.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Термометр таңғы ауаны көрсетіп тұр. Кейін температура тағы 8 °C-қа төмендеді. Соңғы аяз нөлден неше градус төмен болды? Жауапта төмендегі градус санын оң санмен көрсетіңдер.",
+      "solution": "Таңертең -9 °C. Төмендеу тағы 8 градус: -9 − 8 = -17 °C. Бұл нөлден 17 градус төмен, сондықтан сұралған аяз шамасы 17.",
+      "figureDescription": "Термометр таңғы ауаны көрсетіп тұр. Кейін температура тағы 8 °C-қа төмендеді. Соңғы аяз нөлден неше градус төмен болды? Жауапта төмендегі градус санын оң санмен көрсетіңдер. Берілген өлшеулер: A: -9 °C. ",
+      "figureSha256": "728b0595f9168b95a8b0063b24966cc6d6b7fa03d671a7ee68bab7b8a3912d73",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "17",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The requested frost magnitude is positive, whereas the final temperature is negative",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-two-negative-coordinates",
+      "modelId": "visual-wave4-negative-coordinate-sum",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -8,
+        "max": 2,
+        "step": 1,
+        "points": [
+          {
+            "label": "M",
+            "tick": 1
+          },
+          {
+            "label": "N",
+            "tick": 5
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ]
+      },
+      "answer": "-10",
+      "sourceRefs": [
+        {
+          "sourceId": "e5f8e1299d755a09",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-8-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-8-level1.json#14",
+      "sourceCanonicalSha256": "9b3659b80d4ad4b7e9fe536c6b3376497d07bbac8d91d29887b782726d7838b0",
+      "sourceSkill": "Reading and adding two negative point coordinates, preserving the common negative sign",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-two-negative-coordinates.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Санақ басының сол жағындағы M және N нүктелерінің координаталарын оқып, екеуін қосыңдар.",
+      "solution": "Координаталар M(-7), N(-3). Теріс сандардың модульдерін қосып, минус қоямыз: (-7) + (-3) = -10.",
+      "figureDescription": "Санақ басының сол жағындағы M және N нүктелерінің координаталарын оқып, екеуін қосыңдар. Көрсетілген нүктелер: M(-7), N(-3). ",
+      "options": [
+        "10",
+        "-10",
+        "-4",
+        "-7"
+      ],
+      "figureSha256": "3fa5ff6b97ba11f52723285e5bae497a3378eba9bc7ff28e93e3c4e79a142786",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-10",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "Both negative magnitudes accumulate; they are not subtracted",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-mixed-left-result",
+      "modelId": "visual-wave4-mixed-arrow-endpoint",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -7,
+        "max": 5,
+        "step": 1,
+        "points": [
+          {
+            "label": "M",
+            "tick": 10
+          },
+          {
+            "label": "?",
+            "tick": 2
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "arrows": [
+          {
+            "from": 3,
+            "to": -5,
+            "showDelta": true
+          }
+        ],
+        "startLabel": "M",
+        "endLabel": "?",
+        "change": -8,
+        "hiddenLabels": [
+          "?"
+        ]
+      },
+      "answer": "-5",
+      "sourceRefs": [
+        {
+          "sourceId": "e3495f404ac855cc",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-9-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-9-level1.json#5",
+      "sourceCanonicalSha256": "1fa3fec9abc7669a593bbc4d7a5d26c7f777ef3c038521eed6a41f4d5fc5e5dc",
+      "sourceSkill": "Reading a positive initial point and applying a larger-magnitude negative jump across zero",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-mixed-left-result.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "M нүктесін шкаладан тауып, көрсетілген -8 секірісін орындаңдар. Соңғы нүктенің координатасын жазыңдар.",
+      "solution": "Бастапқы координата 3. Өзгеріс -8. 3 + (-8) = -5. Нұсқардың бағыты қосылатын санның таңбасына сай.",
+      "figureDescription": "M нүктесін шкаладан тауып, көрсетілген -8 секірісін орындаңдар. Соңғы нүктенің координатасын жазыңдар. Көрсетілген нүктелер: M(3), ? — белгісіз координата. ",
+      "options": [
+        "5",
+        "-5",
+        "-11",
+        "11"
+      ],
+      "figureSha256": "946b951801a10ff9f362550953caffaf05ae278e19b749f82dbb4565f5325138",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-5",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The shown arrow endpoint must agree with the directed unit-step walk",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-mixed-jump-equation",
+      "modelId": "visual-wave4-arrow-equality",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -8,
+        "max": 6,
+        "step": 1,
+        "points": [
+          {
+            "label": "A",
+            "tick": 2
+          },
+          {
+            "label": "B",
+            "tick": 12
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "arrows": [
+          {
+            "from": -6,
+            "to": 4,
+            "showDelta": true
+          }
+        ],
+        "startLabel": "A",
+        "endLabel": "B"
+      },
+      "answer": "(-6) + 10 = 4",
+      "sourceRefs": [
+        {
+          "sourceId": "5bbb4ebf1eda763c",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-9-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-9-level1.json#9",
+      "sourceCanonicalSha256": "facd06e181372a40f96fc2604d5db53ae36ee84d2c2adc6e32887652377e40b9",
+      "sourceSkill": "Matching the displayed negative-to-positive jump rather than its reverse-direction equality",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-mixed-jump-equation.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Сызбадағы бастапқы нүктені, нұсқар бағытын және жылжу шамасын сақтайтын қосу теңдігін таңдаңдар.",
+      "solution": "Нұсқардың бастапқы координатасы -6. Өзгеріс +10 бірлік. Сондықтан (-6) + 10 = 4. Кері бағыттағы теңдік осы суретке сәйкес емес.",
+      "figureDescription": "Сызбадағы бастапқы нүктені, нұсқар бағытын және жылжу шамасын сақтайтын қосу теңдігін таңдаңдар. Көрсетілген нүктелер: A(-6), B(4). ",
+      "options": [
+        "4 + (-10) = -6",
+        "(-6) + 10 = 4",
+        "6 + (-10) = -4",
+        "(-6) + 4 = -2"
+      ],
+      "figureSha256": "5cd06b0f9be199813294ad5920f9087a97bec9426b37bd277394ce19335660eb",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(-6) + 10 = 4",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The equation starts where the arrow starts, not at its endpoint",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-morning-warming",
+      "modelId": "visual-wave4-warming-temperature",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "thermo",
+        "min": -10,
+        "max": 10,
+        "step": 1,
+        "readings": [
+          {
+            "label": "A",
+            "tick": 4
+          }
+        ],
+        "labelEvery": 5,
+        "change": 15
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "b49b31508b592662",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-9-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-9-level1.json#12",
+      "sourceCanonicalSha256": "91d58a909343f3d7cad6d2bd2733ca9661ca30db848816325ec4cedae5ff0fd0",
+      "sourceSkill": "Reading a one-degree initial negative temperature then adding the stated warming",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-morning-warming.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Суреттегі таңғы өлшеуден кейін ауа 15 °C-қа жылынды. Соңғы температураның сандық мәнін жазыңдар.",
+      "solution": "Таңғы көрсеткіш -6 °C. Жылыну оң өзгеріс: -6 + 15 = 9 °C. Соңғы температураның таңбасын сақтаймыз.",
+      "figureDescription": "Суреттегі таңғы өлшеуден кейін ауа 15 °C-қа жылынды. Соңғы температураның сандық мәнін жазыңдар. Берілген өлшеулер: A: -6 °C. ",
+      "figureSha256": "05c4123423f8e845160da7080edc7f24b191956c01092396ca052ce8fa8b88d8",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave4-sensor-descent",
+      "modelId": "visual-wave4-undersea-descent",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "vertical",
+        "min": -15,
+        "max": 10,
+        "step": 1,
+        "points": [
+          {
+            "label": "A",
+            "tick": 22
+          }
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "labelEvery": 5,
+        "target": "A",
+        "drop": 18
+      },
+      "answer": "-11",
+      "sourceRefs": [
+        {
+          "sourceId": "9f2b5649ebdd5c31",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-9-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-9-level1.json#15",
+      "sourceCanonicalSha256": "d1ca6edfad568419704a14ccdd303e5eb28c296de3f4c7162558d4bc82373b27",
+      "sourceSkill": "Reading an above-water starting height and applying a descent that crosses into negative underwater height",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: координата, қашықтық, таңбалы өзгеріс, аяз шамасы және жиналған нәтиже бір-бірімен алмастырылмады.",
+        "Сандар, шкалалар, қала атаулары не белгілер және дұрыс жауап жаңадан таңдалды; N/Z/Q есебінде теріс бүтін санның дағдысы сақталып, аймақ әріптері өзгертілді.",
+        "Барлық сызбалар жаңа tick-index параметрлерінен native SVG ретінде салынды; дайын сурет пен traced path қолданылмады.",
+        "Белгісіз координаталарға арналған сандық жауаптар суреттің жазуына немесе accessible сипаттамасына дайын санмен қосылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Таңбалы шамалар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, exact scale, directed arrows, units, unknown labels and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave4-sensor-descent.svg",
+      "verificationModule": "scripts/editorial/visual-wave4-models.mjs",
+      "statement": "Зерттеу датчигі бастапқыда A деңгейінде тұр. Шкаладағы нөл — су беті. Датчик 18 м төмен түсірілсе, оның жаңа таңбалы биіктігі неше метр болады?",
+      "solution": "Бастапқы биіктік 7 м. Төмен түсу — теріс өзгеріс: 7 − 18 = -11 м. Теріс белгі датчиктің су астына өткенін білдіреді.",
+      "figureDescription": "Зерттеу датчигі бастапқыда A деңгейінде тұр. Шкаладағы нөл — су беті. Датчик 18 м төмен түсірілсе, оның жаңа таңбалы биіктігі неше метр болады? Көрсетілген нүктелер: A(7). ",
+      "options": [
+        "11",
+        "-25",
+        "25",
+        "-11"
+      ],
+      "figureSha256": "2ed2c225d27cc4d898107295d4062cfd06c33ec1e0ca9454febe22ac830dca11",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-11",
+        "checks": [
+          "Every plotted value is reconstructed from its exact tick index and the labelled scale origin/step",
+          "The authored source occurrence, visible givens, answer and native SVG digest remain bound"
+        ]
+      }
+    }
+  ]
+}

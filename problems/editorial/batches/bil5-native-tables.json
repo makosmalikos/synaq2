@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "scope": "Two BIL5nativeaccessibleprogressivetarifftables localStandard+.",
+  "sourceOccurrences": 2,
+  "distinctModels": 2,
+  "editions": [
+    {
+      "editionId": "bil5-native-tables-bil-49",
+      "modelId": "bil5-native-tables-inclusive-threshold-progressive-utility-bill",
+      "grade": 6,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "work": "BIL5",
+        "number": 49
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/collections/77690ed0-6d1e-49d5-b254-07c874bd8690.json",
+          "sourceId": "49"
+        }
+      ],
+      "sourceAnswerAvailability": "captured_correct_option_independently_recomputed",
+      "adaptationChanges": [
+        "Both fullsource/newconditions official/newsolutions andall10source/newchoices read. Freshfamily/months/30m³threshold/52.4and61.6rates/budget2804 replace40m³/46.3and55.2/budget3232. Askedbillatexactinclusivethreshold andinverseprogressivevolume preserved.",
+        "NativeaccessibleMarkdown tables replace capturedTeXarrays. Actualallheaders/thresholdcells/rates read separately, inclusiveboundary andprogressivebillingforward/inverse checkedexactly. Validchangedactualrate/budget recomputed. No sourcebitmap.",
+        "Same root author separate computation notanotherhumanreviewer. LocalStandard+only; numericalvariantsnotclaimednewsemanticstories. FifteenBIL5bitmapconditionsremainseparate."
+      ],
+      "editorialStatus": "awaiting_independent_computational_review",
+      "statement": "Су төлемі сатылы есептеледі: шекке дейінгі көлем бірінші бағамен, тек шектен асқан бөлігі екінші бағамен төленеді.\n\n| Айлық көлемнің бөлігі | 1 м³ бағасы |\n| --- | --- |\n| Алғашқы 30 м³ (30 м³ қоса) | 52.4 теңге |\n| 30 м³-ден асқан әр м³ | 61.6 теңге |\n\nСерікбаевтар отбасы мамырда 30 м³ су пайдаланды. Су үшін неше теңге төлеуі керек?",
+      "answer": "1572 теңге",
+      "solution": "30 м³ бірінші сатыға толық кіреді. Артық көлем жоқ. Төлем 30 × 52.4 = 1572 теңге.",
+      "options": [
+        "1562 теңге",
+        "1372 теңге",
+        "1582 теңге",
+        "1362 теңге",
+        "1572 теңге"
+      ]
+    },
+    {
+      "editionId": "bil5-native-tables-bil-50",
+      "modelId": "bil5-native-tables-inverse-two-tier-progressive-utility-volume",
+      "grade": 6,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "work": "BIL5",
+        "number": 50
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/collections/77690ed0-6d1e-49d5-b254-07c874bd8690.json",
+          "sourceId": "50"
+        }
+      ],
+      "sourceAnswerAvailability": "captured_correct_option_independently_recomputed",
+      "adaptationChanges": [
+        "Both fullsource/newconditions official/newsolutions andall10source/newchoices read. Freshfamily/months/30m³threshold/52.4and61.6rates/budget2804 replace40m³/46.3and55.2/budget3232. Askedbillatexactinclusivethreshold andinverseprogressivevolume preserved.",
+        "NativeaccessibleMarkdown tables replace capturedTeXarrays. Actualallheaders/thresholdcells/rates read separately, inclusiveboundary andprogressivebillingforward/inverse checkedexactly. Validchangedactualrate/budget recomputed. No sourcebitmap.",
+        "Same root author separate computation notanotherhumanreviewer. LocalStandard+only; numericalvariantsnotclaimednewsemanticstories. FifteenBIL5bitmapconditionsremainseparate."
+      ],
+      "editorialStatus": "awaiting_independent_computational_review",
+      "statement": "Су төлемі сатылы есептеледі: шекке дейінгі көлем бірінші бағамен, тек шектен асқан бөлігі екінші бағамен төленеді.\n\n| Айлық көлемнің бөлігі | 1 м³ бағасы |\n| --- | --- |\n| Алғашқы 30 м³ (30 м³ қоса) | 52.4 теңге |\n| 30 м³-ден асқан әр м³ | 61.6 теңге |\n\nСерікбаевтар отбасы қыркүйекте су үшін 2804 теңге төледі. Олар неше м³ су пайдаланған?",
+      "answer": "50 м³",
+      "solution": "Алғашқы 30 м³ құны 30 × 52.4 = 1572 теңге. Қалған 2804 − 1572 = 1232 теңге артық суға төленген. Артық көлем 1232 ÷ 61.6 = 20 м³. Жалпы көлем 30 + 20 = 50 м³.",
+      "options": [
+        "40 м³",
+        "50 м³",
+        "45 м³",
+        "55 м³",
+        "35 м³"
+      ]
+    }
+  ]
+}

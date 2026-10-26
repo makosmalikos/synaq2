@@ -1,0 +1,1172 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "root_independent_of_sector_author",
+  "batch": "problems/editorial/batches/grade5-sectors.json",
+  "scope": "Independent root review: all35 full saved/new conditions, official/authored\nsolutions and EVERY MCQ read. Exact printed arc/angle/percent bases, sequential\nremainders, cyclic interval counts, complete candidate tests and independently\nattained extremal constructions. No author specs/models/params as oracle.\n",
+  "summary": {
+    "verified": 35,
+    "findings": 0,
+    "fullSavedNewOfficialAuthoredSolutionsEveryMCQRead": 35,
+    "wrongKeysRejected": 35,
+    "printedGivensOrMCQCanariesRejected": 35,
+    "exactSequentialRemainderCases": 18810,
+    "nativeFractions": 35,
+    "pythonJavaScriptHashesMatched": 35
+  },
+  "evidence": [
+    {
+      "editionId": "grade5-sectors-32c94abe3c4915c8",
+      "rewritten": {
+        "printedNumbers": [
+          "18"
+        ],
+        "answer": "20"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "12"
+        ],
+        "answer": "30"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-8b96305f4c85b699",
+      "rewritten": {
+        "printedNumbers": [
+          "24"
+        ],
+        "answer": "15"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "45"
+        ],
+        "answer": "8"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-a21f09ef66b884d3",
+      "rewritten": {
+        "printedNumbers": [
+          "20"
+        ],
+        "answer": "9"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "30"
+        ],
+        "answer": "6"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-dea03dd213f84a1b",
+      "rewritten": {
+        "printedNumbers": [],
+        "answer": "Екі радиус, олардың ұштарын қосатын бір доға және ішкі аймақтан тұратын бөлік.",
+        "allMCQSectorDefinitionTruth": [
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "answer": "дөңгелектің екі радиусы мен олардың арасындағы доғамен шектелген бөлігі",
+        "allMCQSectorDefinitionTruth": [
+          false,
+          true,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-sectors-3e10b9868d09aa0c",
+      "rewritten": {
+        "printedNumbers": [],
+        "everyMCQAngleSum": [
+          "360",
+          "180",
+          "330",
+          "370"
+        ],
+        "answer": "128°; 232°"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "everyMCQAngleSum": [
+          "360",
+          "180",
+          "300",
+          "370"
+        ],
+        "answer": "150^\\circ және 210^\\circ"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-4ba981618edc10fc",
+      "rewritten": {
+        "printedNumbers": [],
+        "answer": "Барлық сектор бұрыштарын қосқанда толық 360° шығады.",
+        "unequalSizeCounterexample": [
+          85,
+          125,
+          150
+        ]
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "answer": "секторлар бұрыштарының қосындысы 360^\\circ-қа тең",
+        "unequalSizeCounterexample": [
+          85,
+          125,
+          150
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-sectors-d87bae13d3b5e539",
+      "rewritten": {
+        "printedNumbers": [],
+        "answer": "Екі сектор: 180° және 180°.",
+        "oppositeRadiusSectors": [
+          180,
+          180
+        ]
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "answer": "екі сектор, әрқайсысы 180^\\circ",
+        "oppositeRadiusSectors": [
+          180,
+          180
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-sectors-0a45e730eebaa6b1",
+      "rewritten": {
+        "printedNumbers": [
+          "12",
+          "5"
+        ],
+        "oneSector": "30",
+        "complement": "210",
+        "answer": "150"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "10",
+          "3"
+        ],
+        "oneSector": "36",
+        "complement": "252",
+        "answer": "108"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-7969ae4c02b6fb8b",
+      "rewritten": {
+        "printedNumbers": [
+          "9"
+        ],
+        "answer": "40"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "6"
+        ],
+        "answer": "60"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-ce63ad2399c6d692",
+      "rewritten": {
+        "printedNumbers": [
+          "90",
+          "140"
+        ],
+        "requestedArcNotBoundary": "35",
+        "fractionOfWhole": "7/18",
+        "answer": "35"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "72",
+          "100"
+        ],
+        "requestedArcNotBoundary": "20",
+        "fractionOfWhole": "5/18",
+        "answer": "20"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-c2d703983738ea06",
+      "rewritten": {
+        "printedNumbers": [
+          "74"
+        ],
+        "smallAngle": "143",
+        "answer": "217"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "50"
+        ],
+        "smallAngle": "155",
+        "answer": "205"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-69dcef9c5b8f1c8c",
+      "rewritten": {
+        "printedNumbers": [
+          "5",
+          "12",
+          "34"
+        ],
+        "orderedSectors": [
+          "150",
+          "116",
+          "94"
+        ],
+        "answer": "94"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "3",
+          "8",
+          "40"
+        ],
+        "orderedSectors": [
+          "135",
+          "95",
+          "130"
+        ],
+        "answer": "130"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-27446835f3e7bc11",
+      "rewritten": {
+        "printedNumbers": [],
+        "everyMCQAngleSum": [
+          "370",
+          "350",
+          "350",
+          "360"
+        ],
+        "answer": "85°; 145°; 130°"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "everyMCQAngleSum": [
+          "370",
+          "350",
+          "350",
+          "360"
+        ],
+        "answer": "95^\\circ, 125^\\circ, 140^\\circ"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-852d2c602767c4d5",
+      "rewritten": {
+        "printedNumbers": [
+          "35",
+          "2",
+          "3"
+        ],
+        "firstBase": 360,
+        "secondBase": 180,
+        "orderedSectors": [
+          "126",
+          "120",
+          "114"
+        ],
+        "answer": "114"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "30",
+          "2",
+          "5"
+        ],
+        "firstBase": 360,
+        "secondBase": 180,
+        "orderedSectors": [
+          "108",
+          "72",
+          "180"
+        ],
+        "answer": "180"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-d77e46677579db81",
+      "rewritten": {
+        "printedNumbers": [
+          "26",
+          "26"
+        ],
+        "orderedProgression": [
+          "94",
+          "120",
+          "146"
+        ],
+        "answer": "146"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "20",
+          "20"
+        ],
+        "orderedProgression": [
+          "100",
+          "120",
+          "140"
+        ],
+        "answer": "140"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-62ef29a856217811",
+      "rewritten": {
+        "printedNumbers": [
+          "20"
+        ],
+        "onePercentDegrees": "18/5",
+        "answer": "72"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "15"
+        ],
+        "onePercentDegrees": "18/5",
+        "answer": "54"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-2b25b5a255eeaec8",
+      "rewritten": {
+        "printedNumbers": [
+          "1",
+          "9",
+          "1",
+          "6"
+        ],
+        "sameOriginalBase": 360,
+        "removedAngle": "100",
+        "remainingAngle": "260",
+        "answer": "260"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "1",
+          "6",
+          "1",
+          "4"
+        ],
+        "sameOriginalBase": 360,
+        "removedAngle": "150",
+        "remainingAngle": "210",
+        "answer": "210"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-bbf1fbf4e7d4fa78",
+      "rewritten": {
+        "printedNumbers": [
+          "5"
+        ],
+        "answer": "300"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "4"
+        ],
+        "answer": "288"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-16d553d0a029bfc2",
+      "rewritten": {
+        "printedNumbers": [
+          "72",
+          "19",
+          "19"
+        ],
+        "inclusiveTargetNumber": "19",
+        "actualIntervals": "18",
+        "oneInterval": "5",
+        "answer": "90"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "60",
+          "15",
+          "15"
+        ],
+        "inclusiveTargetNumber": "15",
+        "actualIntervals": "14",
+        "oneInterval": "6",
+        "answer": "84"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-c1e5a4ce44603a5d",
+      "rewritten": {
+        "printedNumbers": [
+          "126"
+        ],
+        "reducedWholeFraction": "7/20",
+        "answer": "35"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "72"
+        ],
+        "reducedWholeFraction": "1/5",
+        "answer": "20"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-be1c6e81768c9309",
+      "rewritten": {
+        "printedNumbers": [
+          "90",
+          "180"
+        ],
+        "strictBounds": [
+          "90",
+          "180"
+        ],
+        "feasibleSectorCounts": [
+          3
+        ],
+        "attainingWitness": [
+          108,
+          116,
+          136
+        ],
+        "answer": "3"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "strictBounds": [
+          "90",
+          "180"
+        ],
+        "feasibleSectorCounts": [
+          3
+        ],
+        "attainingWitness": [
+          120,
+          120,
+          120
+        ],
+        "answer": "3"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-09b0a9214a92b1de",
+      "rewritten": {
+        "printedNumbers": [
+          "246",
+          "268"
+        ],
+        "orderedSectors": [
+          "154",
+          "92",
+          "114"
+        ],
+        "answer": "154"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "230",
+          "250"
+        ],
+        "orderedSectors": [
+          "120",
+          "110",
+          "130"
+        ],
+        "answer": "120"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-cee54b12aaa9fa1a",
+      "rewritten": {
+        "printedNumbers": [
+          "72",
+          "75",
+          "22"
+        ],
+        "arcFirstMethod": true,
+        "orderedArcs": [
+          "15",
+          "22",
+          "35"
+        ],
+        "requestedFinalAngle": "175",
+        "answer": "175"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "54",
+          "80",
+          "18"
+        ],
+        "arcFirstMethod": true,
+        "orderedArcs": [
+          "12",
+          "18",
+          "24"
+        ],
+        "requestedFinalAngle": "160",
+        "answer": "160"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-61ad87d4b36796c9",
+      "rewritten": {
+        "printedNumbers": [
+          "3"
+        ],
+        "orderedSectors": [
+          "9",
+          "27",
+          "81",
+          "243"
+        ],
+        "answer": "243"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "2"
+        ],
+        "orderedSectors": [
+          "24",
+          "48",
+          "96",
+          "192"
+        ],
+        "answer": "192"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-a4fbbf1f56dc3a0d",
+      "rewritten": {
+        "printedNumbers": [
+          "8",
+          "8"
+        ],
+        "allProgressionAngles": [
+          "8",
+          "16",
+          "24",
+          "32",
+          "40",
+          "48",
+          "56",
+          "64",
+          "72"
+        ],
+        "answer": "9"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "10",
+          "10"
+        ],
+        "allProgressionAngles": [
+          "10",
+          "20",
+          "30",
+          "40",
+          "50",
+          "60",
+          "70",
+          "80"
+        ],
+        "answer": "8"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-c4edd4e854ba4a17",
+      "rewritten": {
+        "printedNumbers": [
+          "16",
+          "16",
+          "90"
+        ],
+        "complementNotCounted": 270,
+        "answer": "16"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "12",
+          "12",
+          "90"
+        ],
+        "complementNotCounted": 270,
+        "answer": "12"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-50dde85d2891cf48",
+      "rewritten": {
+        "printedNumbers": [
+          "40",
+          "1",
+          "3"
+        ],
+        "firstBase": 360,
+        "secondBase": "216",
+        "orderedSectors": [
+          "144",
+          "72",
+          "144"
+        ],
+        "answer": "144"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "25",
+          "2",
+          "3"
+        ],
+        "firstBase": 360,
+        "secondBase": "270",
+        "orderedSectors": [
+          "90",
+          "180",
+          "90"
+        ],
+        "answer": "90"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-931fba5a3808d563",
+      "rewritten": {
+        "printedNumbers": [
+          "225"
+        ],
+        "requestedReducedWholeFraction": "5/8"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "240"
+        ],
+        "requestedReducedWholeFraction": "2/3"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-1eed19554b5d7404",
+      "rewritten": {
+        "printedNumbers": [
+          "28"
+        ],
+        "answer": "168"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "20"
+        ],
+        "answer": "120"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-1f5f1e6e3fdf9daa",
+      "rewritten": {
+        "printedNumbers": [
+          "70",
+          "165"
+        ],
+        "traversalThroughB": "235",
+        "requestedSectorExcludesB": "125",
+        "answer": "125"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "100",
+          "150"
+        ],
+        "traversalThroughB": "250",
+        "requestedSectorExcludesB": "110",
+        "answer": "110"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-75010ae6d5eb9eb0",
+      "rewritten": {
+        "printedNumbers": [
+          "9",
+          "4"
+        ],
+        "totalSmallParts": "36",
+        "answer": "10"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "8",
+          "3"
+        ],
+        "totalSmallParts": "24",
+        "answer": "15"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-0de634b257e8c5e7",
+      "rewritten": {
+        "printedNumbers": [
+          "480",
+          "320"
+        ],
+        "requestedDirectedTraversedArcAngle": "240",
+        "wrongAutomaticallyChosenMinorAngle": "120",
+        "answer": "240"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "400",
+          "160"
+        ],
+        "requestedDirectedTraversedArcAngle": "144",
+        "wrongAutomaticallyChosenMinorAngle": "144",
+        "answer": "144"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-af7ccf2b4858b4df",
+      "rewritten": {
+        "printedNumbers": [
+          "3"
+        ],
+        "answer": "135"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "2"
+        ],
+        "answer": "120"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-4c7d36c45e12d5ab",
+      "rewritten": {
+        "printedNumbers": [],
+        "attainingDistinctPositiveIntegerWitness": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          27,
+          33
+        ],
+        "nextCountLowerBound": 378,
+        "answer": "26"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "attainingDistinctPositiveIntegerWitness": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          35
+        ],
+        "nextCountLowerBound": 378,
+        "answer": "26"
+      }
+    },
+    {
+      "editionId": "grade5-sectors-1513ca98c813a696",
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "44"
+        ],
+        "allThreeCompared": [
+          "72",
+          "166",
+          "122"
+        ],
+        "answer": "166"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "3",
+          "30"
+        ],
+        "allThreeCompared": [
+          "90",
+          "150",
+          "120"
+        ],
+        "answer": "150"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "editionId": "grade5-sectors-32c94abe3c4915c8",
+      "sha256": "eb899059ea7ddb0fa47ed8e7508a25b6ab0d0ff59964822a7d29fe75d8785301",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"18\"], \"answer\": \"20\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-8b96305f4c85b699",
+      "sha256": "f3e811c9d8666f5acf316886668807b8d27bcc7148972707ca8c173fc077d7bb",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"24\"], \"answer\": \"15\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-a21f09ef66b884d3",
+      "sha256": "d95e524c2a0327e9ccfd0d440220a06cad223b31e9e90703e398f0ab621207db",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"20\"], \"answer\": \"9\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-dea03dd213f84a1b",
+      "sha256": "882ef200a930fa4f41749bdd961c4f325d05c35740fc383cd9324556c0b11620",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [], \"answer\": \"Екі радиус, олардың ұштарын қосатын бір доға және ішкі аймақтан тұратын бөлік.\", \"allMCQSectorDefinitionTruth\": [true, false, false, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-3e10b9868d09aa0c",
+      "sha256": "da63841d2fa2f815bf7a77a04b93a672cab3b082f2ffa875cb4c87366ad1bd99",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [], \"everyMCQAngleSum\": [\"360\", \"180\", \"330\", \"370\"], \"answer\": \"128°; 232°\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-4ba981618edc10fc",
+      "sha256": "bebd6ce6faa0713249aa311a787688b25027c20270edc0bee97cd9f24b819bbe",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [], \"answer\": \"Барлық сектор бұрыштарын қосқанда толық 360° шығады.\", \"unequalSizeCounterexample\": [85, 125, 150]}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-d87bae13d3b5e539",
+      "sha256": "dc17d68bc4881dd64a919ad374f2991153c0dc0c2fef3564ac6164d17a4471a5",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [], \"answer\": \"Екі сектор: 180° және 180°.\", \"oppositeRadiusSectors\": [180, 180]}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-0a45e730eebaa6b1",
+      "sha256": "1eca02f1ded774398707ee37d8de45007af276b622d42430fcec97360fda7f2e",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"12\", \"5\"], \"oneSector\": \"30\", \"complement\": \"210\", \"answer\": \"150\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-7969ae4c02b6fb8b",
+      "sha256": "cc75bb781a9ba88b2d518e791648d35b63125ae6dd2cc8ea45be80fb81d8f87e",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"9\"], \"answer\": \"40\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-ce63ad2399c6d692",
+      "sha256": "94491bce4ef1dea095131451d600ecfc6a90622913f2b932997097e0bdb4c4c1",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"90\", \"140\"], \"requestedArcNotBoundary\": \"35\", \"fractionOfWhole\": \"7/18\", \"answer\": \"35\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-c2d703983738ea06",
+      "sha256": "e8bbadf8afbaa88079d45973af9d61170947d966f9aa54af72590f4556a706ca",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"74\"], \"smallAngle\": \"143\", \"answer\": \"217\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-69dcef9c5b8f1c8c",
+      "sha256": "9ed17735998e4a086abaf985723a812395343a98b620073ccc0cdfa9681a6d5c",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"5\", \"12\", \"34\"], \"orderedSectors\": [\"150\", \"116\", \"94\"], \"answer\": \"94\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-27446835f3e7bc11",
+      "sha256": "ec699c192087dc8d9027278824e6205c670bd73181d091d61e4bee59ef5748f1",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [], \"everyMCQAngleSum\": [\"370\", \"350\", \"350\", \"360\"], \"answer\": \"85°; 145°; 130°\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-852d2c602767c4d5",
+      "sha256": "7fd0b80686273018bab03a2465100edf2c7c7ce2ad5d9d88c22f09469c915e3f",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"35\", \"2\", \"3\"], \"firstBase\": 360, \"secondBase\": 180, \"orderedSectors\": [\"126\", \"120\", \"114\"], \"answer\": \"114\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-d77e46677579db81",
+      "sha256": "64e65077bd7745e2f13adee26a803d8368dcc2264557c37b1eecb5acb636839f",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"26\", \"26\"], \"orderedProgression\": [\"94\", \"120\", \"146\"], \"answer\": \"146\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-62ef29a856217811",
+      "sha256": "253d8bea9c8720d7d96b104ba91350be56c6e14acf9459789410c2c695d6b34f",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"20\"], \"onePercentDegrees\": \"18/5\", \"answer\": \"72\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-2b25b5a255eeaec8",
+      "sha256": "87643dddaa83a2bbe345bc708d3563d75265ded2fe827ac01a932cbfb074fe3c",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"1\", \"9\", \"1\", \"6\"], \"sameOriginalBase\": 360, \"removedAngle\": \"100\", \"remainingAngle\": \"260\", \"answer\": \"260\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-bbf1fbf4e7d4fa78",
+      "sha256": "b68edba084c962bd3e8afe13ccca6e858342ee6627342c442679dc6cbbbf17c4",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"5\"], \"answer\": \"300\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-16d553d0a029bfc2",
+      "sha256": "331213004a3389795f2282f99c0d2b6771eb2c41df4153c9aebc713b0db77da6",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"72\", \"19\", \"19\"], \"inclusiveTargetNumber\": \"19\", \"actualIntervals\": \"18\", \"oneInterval\": \"5\", \"answer\": \"90\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-c1e5a4ce44603a5d",
+      "sha256": "7e03d3abf9f0d58e163a2db3caf1238e9684b2e868453fdf7d56f295ec7ebc46",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"126\"], \"reducedWholeFraction\": \"7/20\", \"answer\": \"35\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-be1c6e81768c9309",
+      "sha256": "6adec1d01d150706f8e0af41b2d8f016e81270cf88b34181aa5ce6648656265b",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"90\", \"180\"], \"strictBounds\": [\"90\", \"180\"], \"feasibleSectorCounts\": [3], \"attainingWitness\": [108, 116, 136], \"answer\": \"3\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-09b0a9214a92b1de",
+      "sha256": "699d6f27af4ff1296a689b66315ace4ef6e753aaf3777a6ca77d26c1b5465f70",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"246\", \"268\"], \"orderedSectors\": [\"154\", \"92\", \"114\"], \"answer\": \"154\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-cee54b12aaa9fa1a",
+      "sha256": "00122bf2b0cb65fd92fc974c2c048452a68d26d51385432447c14281b0ff2961",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"72\", \"75\", \"22\"], \"arcFirstMethod\": true, \"orderedArcs\": [\"15\", \"22\", \"35\"], \"requestedFinalAngle\": \"175\", \"answer\": \"175\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-61ad87d4b36796c9",
+      "sha256": "13638712f1d3b3141b4f88f676cfd7667114331e02b40910c1932c2bf7ef8e19",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"3\"], \"orderedSectors\": [\"9\", \"27\", \"81\", \"243\"], \"answer\": \"243\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-a4fbbf1f56dc3a0d",
+      "sha256": "dd9abe835ff842df02f7110812e0b802f1c7da161f711d7236d738896d9239b9",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"8\", \"8\"], \"allProgressionAngles\": [\"8\", \"16\", \"24\", \"32\", \"40\", \"48\", \"56\", \"64\", \"72\"], \"answer\": \"9\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-c4edd4e854ba4a17",
+      "sha256": "76f8c2d258e07c4403ec0b570f68c39080e8e816d7518dcce523234713b80063",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"16\", \"16\", \"90\"], \"complementNotCounted\": 270, \"answer\": \"16\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-50dde85d2891cf48",
+      "sha256": "1bc1f998dd9f9eb1b028fc70e8d3a91f88654a3136d8f345eff2d410789f5d5c",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"40\", \"1\", \"3\"], \"firstBase\": 360, \"secondBase\": \"216\", \"orderedSectors\": [\"144\", \"72\", \"144\"], \"answer\": \"144\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-931fba5a3808d563",
+      "sha256": "5176a04c1fec0f413f36b3e90e576f561685059af66cbcbf672d37978d7be4cb",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"225\"], \"requestedReducedWholeFraction\": \"5/8\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-1eed19554b5d7404",
+      "sha256": "527ebe145c7d2aa6aef0464d3218c572ae1ba3c1fd167a46397ff384539bb7f7",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"28\"], \"answer\": \"168\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-1f5f1e6e3fdf9daa",
+      "sha256": "55396f08982a00766f48cc66ffba30a257723f2ad5b199c8f070cbf185c72878",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"70\", \"165\"], \"traversalThroughB\": \"235\", \"requestedSectorExcludesB\": \"125\", \"answer\": \"125\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-75010ae6d5eb9eb0",
+      "sha256": "3c12dc186f8e55b4899daa57a0e9602243b60d707bab3f6e6182ca341ed622e6",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"9\", \"4\"], \"totalSmallParts\": \"36\", \"answer\": \"10\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-0de634b257e8c5e7",
+      "sha256": "4bbe7323ff9b08d20170fa2caecd9ec003a0347ec0544549c22fe1535e9bf6c5",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"480\", \"320\"], \"requestedDirectedTraversedArcAngle\": \"240\", \"wrongAutomaticallyChosenMinorAngle\": \"120\", \"answer\": \"240\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-af7ccf2b4858b4df",
+      "sha256": "9ce860f47baa6eed01f4e507fd9a21f7fe6c7442da9ab18fb414d1aae98a08e1",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"3\"], \"answer\": \"135\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-4c7d36c45e12d5ab",
+      "sha256": "1079d767856cb007de41f97eab3212d4dbff79ae6b233b85170e1926486dfec0",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [], \"attainingDistinctPositiveIntegerWitness\": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27, 33], \"nextCountLowerBound\": 378, \"answer\": \"26\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-sectors-1513ca98c813a696",
+      "sha256": "10a2506f585ea87145af35a8b48d561d2fc51d146f8a924fec13c97605543c87",
+      "verdict": "verified",
+      "method": "independent_root_all_full_saved_new_solutions_every_MCQ_read_exact_printed_sector_arc_percent_base_oracle_cyclic_endpoint_and_attained_extrema",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"44\"], \"allThreeCompared\": [\"72\", \"166\", \"122\"], \"answer\": \"166\"}"
+      ]
+    }
+  ]
+}

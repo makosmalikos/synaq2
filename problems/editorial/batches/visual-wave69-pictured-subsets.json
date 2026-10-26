@@ -1,0 +1,773 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All9savedvisualgrade5topic5.2;8newdrafts plus1previouslyverifiedretained; archived sources only,no capture/download/traces; all9source rasters available.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5 topic5.2 sources",
+    "sourceVisualOccurrences": 9,
+    "addressedNewDrafts": 8,
+    "previousEditionsRetained": [
+      {
+        "editionId": "visual-nested-subsets",
+        "sourceId": "8bbb5b3def4784ea",
+        "sourceFile": "problems/sources/zerek/courses/5-math-5-2-level2.json"
+      }
+    ],
+    "missingSourceIds": [],
+    "unavailableSourceRasters": [],
+    "exactNewSourceIds": [
+      "057a8e97d373f9d3",
+      "5ca4729d4f1bb3aa",
+      "5cbf74e11027e9f8",
+      "9bf4e37a48cb1ff3",
+      "bd09fbf28b0fdf7a",
+      "e5eaa543d7488f96",
+      "e5f4ceca782abc99",
+      "f655ab18d97c246a"
+    ],
+    "distinctModels": 8,
+    "semantics": "Eightnewsource-specificsubsetskills plusonepreviousverifiedall-subsetscountretained; source-complete9withactualnativecirclecontainment/elementregions/exhaustivedomains."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave69-outer-x-ten-including-inner-y",
+      "modelId": "visual-wave69-nested-outer-cardinality-includes-inner",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "easy",
+      "params": {
+        "scene": "nested",
+        "outer": "X",
+        "inner": "Y",
+        "inside": [
+          6,
+          12,
+          18,
+          24
+        ],
+        "ring": [
+          1,
+          4,
+          7,
+          10,
+          13,
+          16
+        ]
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "5ca4729d4f1bb3aa",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-2-level1.json#5",
+      "sourceCanonicalSha256": "d4728b081cd27ee311b656a5745193f8c1a38bcf900c3d552c4e9e66a0f045e8",
+      "sourceSkill": "CountALLouterX6ring+4innerY=10; nestedinnerNOTexcluded.",
+      "adaptationChanges": [
+        "Барлық9сақталған5.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды,9бастапқырастр2парақтақаралды.8жаңаадрестікредакцияжасалды;8bbb5b3def4784ea үшіналдыңғытексерілгенvisual-nested-subsets өзгеріссізсақталдыжәнеқайтақолтаңбаланбады.",
+        "Жаңаэлементтер/жиынатаулары/құрылым:сыртқыX6+4=10;T⊂W;ішкіHсум80;M-ніңішкіжұбы12/36;ортаS18бөлгіштерібүкілтереңT-нықамтиды;A-ның21жұбынанB-ның6жұбыалынады15;міндеттіB5/12қосынды17қосымша1+3+7→28бірегей;бесбосемесжиында6реттелгенқамтуқатынасы. Тікелейжәнетранзитивтікқамту/барлықэлементтітексеру/міндеттіжәнетаңдаулытоптарсақталды.",
+        "Текжаңаnativeшеңберлер/элементтер,көшірілгенtracedpathнемесеrasterжоқ. Барлықсандықжауапсуреттежасырылған;өзгермейтінматематикалықдағдыларжаңасюжетдепсаналмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ішкі жиындардың орналасуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8new/fullsaved officialsolutions/MCQ plus2source/native343sheets;9sourcevisualoccurrences total incl1previouslyverifiedretained. Observeactualnestedcirclecontainment/glyphregions; outerincludesinner/innerexcludesring/middleincludesdeep; everysubsetpairbothmembers; all21unorderedpairs/6innerpairs; all16optionalsetmasks mandatorymembership SUM28; all20ordered distinct five-circlepairs including2transitive. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave69-outer-x-ten-including-inner-y.svg",
+      "verificationModule": "scripts/editorial/visual-wave69-models.mjs",
+      "statement": "Y жиыны түгелдей X жиынының ішінде. Суреттегі X жиынының БАРЛЫҚ элементін, соның ішінде Y-дағы элементтерді де есептеңіз. n(X) мәні қанша? Жауапқа тек санды жазыңыз.",
+      "solution": "Y ішіндегі 6; 12; 18; 24 — 4 элемент. X-тің Y-дан тыс сақинасында 1; 4; 7; 10; 13; 16 — 6 элемент. Y түгел X ішінде болғандықтан, n(X) = 4 + 6 = 10. Тек сақинадағы алты санды санау ішкі төрт элементті жоғалтады.",
+      "figureDescription": "Y түгел X ішінде. Ішкіде 6; 12; 18; 24, сыртқы сақинада 1; 4; 7; 10; 13; 16.",
+      "figureSha256": "787326738afa3ae086ef24f8da040655d2ea314878215eeaf3e759cc71aef70d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": {
+          "inner": [
+            6,
+            12,
+            18,
+            24
+          ],
+          "outerRing": [
+            1,
+            4,
+            7,
+            10,
+            13,
+            16
+          ],
+          "innerCount": 4,
+          "ringCount": 6,
+          "outerCount": 10
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave69-circle-t-contained-in-w",
+      "modelId": "visual-wave69-circle-containment-four-symbol-options",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "easy",
+      "params": {
+        "scene": "four-circles",
+        "outer": "W",
+        "left": "K",
+        "right": "T",
+        "external": "Z"
+      },
+      "answer": "T ⊂ W",
+      "sourceRefs": [
+        {
+          "sourceId": "9bf4e37a48cb1ff3",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-2-level1.json#8",
+      "sourceCanonicalSha256": "61a8bf126630e28e6312a06bdbe0944c4ab5972bb2b4390544afacfe0e28b072",
+      "sourceSkill": "FourNONEMPTYsets, K/TdisjointinsideW, Zoutside. OnlyT⊂WnotT⊂K/orinverse/external.",
+      "adaptationChanges": [
+        "Барлық9сақталған5.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды,9бастапқырастр2парақтақаралды.8жаңаадрестікредакцияжасалды;8bbb5b3def4784ea үшіналдыңғытексерілгенvisual-nested-subsets өзгеріссізсақталдыжәнеқайтақолтаңбаланбады.",
+        "Жаңаэлементтер/жиынатаулары/құрылым:сыртқыX6+4=10;T⊂W;ішкіHсум80;M-ніңішкіжұбы12/36;ортаS18бөлгіштерібүкілтереңT-нықамтиды;A-ның21жұбынанB-ның6жұбыалынады15;міндеттіB5/12қосынды17қосымша1+3+7→28бірегей;бесбосемесжиында6реттелгенқамтуқатынасы. Тікелейжәнетранзитивтікқамту/барлықэлементтітексеру/міндеттіжәнетаңдаулытоптарсақталды.",
+        "Текжаңаnativeшеңберлер/элементтер,көшірілгенtracedpathнемесеrasterжоқ. Барлықсандықжауапсуреттежасырылған;өзгермейтінматематикалықдағдыларжаңасюжетдепсаналмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ішкі жиындардың орналасуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8new/fullsaved officialsolutions/MCQ plus2source/native343sheets;9sourcevisualoccurrences total incl1previouslyverifiedretained. Observeactualnestedcirclecontainment/glyphregions; outerincludesinner/innerexcludesring/middleincludesdeep; everysubsetpairbothmembers; all21unorderedpairs/6innerpairs; all16optionalsetmasks mandatorymembership SUM28; all20ordered distinct five-circlepairs including2transitive. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave69-circle-t-contained-in-w.svg",
+      "verificationModule": "scripts/editorial/visual-wave69-models.mjs",
+      "options": [
+        "Z ⊂ W",
+        "W ⊂ K",
+        "T ⊂ K",
+        "T ⊂ W"
+      ],
+      "statement": "W, K, T, Z жиындарының бәрі бос емес. Бір шеңбер екіншісінің ішінде толық жатса, оның жиыны сол жиынның ішкі жиыны болады. Диаграммаға сай қай ⊂ жазуы ДҰРЫС?",
+      "solution": "K және T шеңберлері W ішінде түгел жатыр; Z сыртында. Сондықтан K ⊂ W және T ⊂ W. Нұсқалардан T ⊂ W дұрыс. Z W-дан бөлек; W өзінің K ішкі шеңберіне сыймайды; T мен K бір-бірінің ішінде емес. Жазудың бағытын ауыстыруға болмайды.",
+      "figureDescription": "W ішінде бөлек K және T шеңберлері. Z сыртында, бәрінен бөлек.",
+      "figureSha256": "bd9f72083be8c76c0691e2a1273eed4a9d87997e7490137c445dc8bea600af1f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "T ⊂ W",
+        "checks": {
+          "trueRelations": [
+            "K ⊂ W",
+            "T ⊂ W"
+          ],
+          "optionTruth": [
+            false,
+            false,
+            false,
+            true
+          ],
+          "nonempty": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave69-inner-h-sum-eighty",
+      "modelId": "visual-wave69-nested-inner-sum-excludes-outer-ring",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "easy",
+      "params": {
+        "scene": "nested",
+        "outer": "G",
+        "inner": "H",
+        "inside": [
+          8,
+          16,
+          24,
+          32
+        ],
+        "ring": [
+          5,
+          11,
+          17,
+          23
+        ]
+      },
+      "answer": "80",
+      "sourceRefs": [
+        {
+          "sourceId": "057a8e97d373f9d3",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-2-level1.json#12",
+      "sourceCanonicalSha256": "d56bff0ce25f4be57ff7f40c2c50f028ecd6ec9a8933f04dc6c6507c90de662c",
+      "sourceSkill": "SumINNERHonly80, outerring56excluded, wrongall136.",
+      "adaptationChanges": [
+        "Барлық9сақталған5.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды,9бастапқырастр2парақтақаралды.8жаңаадрестікредакцияжасалды;8bbb5b3def4784ea үшіналдыңғытексерілгенvisual-nested-subsets өзгеріссізсақталдыжәнеқайтақолтаңбаланбады.",
+        "Жаңаэлементтер/жиынатаулары/құрылым:сыртқыX6+4=10;T⊂W;ішкіHсум80;M-ніңішкіжұбы12/36;ортаS18бөлгіштерібүкілтереңT-нықамтиды;A-ның21жұбынанB-ның6жұбыалынады15;міндеттіB5/12қосынды17қосымша1+3+7→28бірегей;бесбосемесжиында6реттелгенқамтуқатынасы. Тікелейжәнетранзитивтікқамту/барлықэлементтітексеру/міндеттіжәнетаңдаулытоптарсақталды.",
+        "Текжаңаnativeшеңберлер/элементтер,көшірілгенtracedpathнемесеrasterжоқ. Барлықсандықжауапсуреттежасырылған;өзгермейтінматематикалықдағдыларжаңасюжетдепсаналмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ішкі жиындардың орналасуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8new/fullsaved officialsolutions/MCQ plus2source/native343sheets;9sourcevisualoccurrences total incl1previouslyverifiedretained. Observeactualnestedcirclecontainment/glyphregions; outerincludesinner/innerexcludesring/middleincludesdeep; everysubsetpairbothmembers; all21unorderedpairs/6innerpairs; all16optionalsetmasks mandatorymembership SUM28; all20ordered distinct five-circlepairs including2transitive. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave69-inner-h-sum-eighty.svg",
+      "verificationModule": "scripts/editorial/visual-wave69-models.mjs",
+      "statement": "G жиынының ішінде H ішкі жиыны берілген. ТЕК H жиынына тиісті барлық сандардың қосындысын табыңыз. Сыртқы сақинадағы элементтерді қоспаңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "H = {8; 16; 24; 32}. Қосынды 8 + 16 + 24 + 32 = 80. G-ның сақинасындағы 5; 11; 17; 23 H-ға кірмейді. Оларды қоссақ 136 болар еді — бұл G элементтерінің қосындысы, сұралған ішкі H жиыны емес.",
+      "figureDescription": "H түгел G ішінде. Ішкіде 8; 16; 24; 32, сыртқы сақинада 5; 11; 17; 23.",
+      "figureSha256": "9aae2b0e15f19a55a88229b39d1b1d906da2f235c41afc4a44559755bdc053d4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "80",
+        "checks": {
+          "inner": [
+            8,
+            16,
+            24,
+            32
+          ],
+          "outerRing": [
+            5,
+            11,
+            17,
+            23
+          ],
+          "innerSum": 80,
+          "outerRingSum": 56,
+          "wrongOuterSum": 136
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave69-sibling-subset-m-complete-pair",
+      "modelId": "visual-wave69-roster-subset-requires-every-member",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "medium",
+      "params": {
+        "scene": "siblings",
+        "outer": "L",
+        "left": "M",
+        "right": "N",
+        "leftValues": [
+          12,
+          24,
+          36
+        ],
+        "rightValues": [
+          18,
+          30
+        ],
+        "ring": [
+          6,
+          42
+        ]
+      },
+      "answer": "{12; 36}",
+      "sourceRefs": [
+        {
+          "sourceId": "e5f4ceca782abc99",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-2-level2.json#12",
+      "sourceCanonicalSha256": "a70488dcd0355351df33b78c59534a59dbb8b1fef8c38e20808ee11f10c919e1",
+      "sourceSkill": "EVERYofferedpairmembermustlieM;wrongmixedsiblings12/18, ring6/24,unshown24/48.",
+      "adaptationChanges": [
+        "Барлық9сақталған5.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды,9бастапқырастр2парақтақаралды.8жаңаадрестікредакцияжасалды;8bbb5b3def4784ea үшіналдыңғытексерілгенvisual-nested-subsets өзгеріссізсақталдыжәнеқайтақолтаңбаланбады.",
+        "Жаңаэлементтер/жиынатаулары/құрылым:сыртқыX6+4=10;T⊂W;ішкіHсум80;M-ніңішкіжұбы12/36;ортаS18бөлгіштерібүкілтереңT-нықамтиды;A-ның21жұбынанB-ның6жұбыалынады15;міндеттіB5/12қосынды17қосымша1+3+7→28бірегей;бесбосемесжиында6реттелгенқамтуқатынасы. Тікелейжәнетранзитивтікқамту/барлықэлементтітексеру/міндеттіжәнетаңдаулытоптарсақталды.",
+        "Текжаңаnativeшеңберлер/элементтер,көшірілгенtracedpathнемесеrasterжоқ. Барлықсандықжауапсуреттежасырылған;өзгермейтінматематикалықдағдыларжаңасюжетдепсаналмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ішкі жиындардың орналасуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8new/fullsaved officialsolutions/MCQ plus2source/native343sheets;9sourcevisualoccurrences total incl1previouslyverifiedretained. Observeactualnestedcirclecontainment/glyphregions; outerincludesinner/innerexcludesring/middleincludesdeep; everysubsetpairbothmembers; all21unorderedpairs/6innerpairs; all16optionalsetmasks mandatorymembership SUM28; all20ordered distinct five-circlepairs including2transitive. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave69-sibling-subset-m-complete-pair.svg",
+      "verificationModule": "scripts/editorial/visual-wave69-models.mjs",
+      "options": [
+        "{12; 36}",
+        "{12; 18}",
+        "{6; 24}",
+        "{24; 48}"
+      ],
+      "statement": "L жиынының ішіндегі M және N дөңгелектері бөлек орналасқан. Қай ұсынылған ЖИЫННЫҢ ӘР элементі M-ге тиісті, яғни сол жиын M-нің ішкі жиыны болады?",
+      "solution": "M = {12; 24; 36}, N = {18; 30}. Дұрыс {12; 36} жиынындағы 12 де, 36 да M ішінде. {12; 18} ішіндегі 18 басқа N жиынына, {6; 24} ішіндегі 6 тек сыртқы L-ге тиісті. {24; 48} ішіндегі 48 суреттегі L-де мүлде жоқ. Бір элементтің жарауы жеткіліксіз, ЕКЕУІ де M-де болуы керек.",
+      "figureDescription": "L ішінде бөлек M және N. M ішіндегі 12; 24; 36, N ішіндегі 18; 30, тек L сақинасында 6; 42.",
+      "figureSha256": "50719f68bb285d2583da7c46406e9fbc8cc129178932d625eed33e0e9348a476",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "{12; 36}",
+        "checks": {
+          "left": [
+            12,
+            24,
+            36
+          ],
+          "right": [
+            18,
+            30
+          ],
+          "outerOnly": [
+            6,
+            42
+          ],
+          "optionTruth": [
+            true,
+            false,
+            false,
+            false
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave69-triple-middle-s-divisors-eighteen",
+      "modelId": "visual-wave69-nested-middle-divisor-predicate-includes-deep-inner",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "medium",
+      "params": {
+        "scene": "triple",
+        "outer": "R",
+        "middle": "S",
+        "inner": "T",
+        "deep": [
+          1,
+          3
+        ],
+        "middleOnly": [
+          2,
+          6,
+          9,
+          18
+        ],
+        "outerOnly": [
+          4,
+          12,
+          36
+        ],
+        "target": 18,
+        "larger": 36,
+        "smaller": 9
+      },
+      "answer": "18 санының оң бөлгіштері",
+      "sourceRefs": [
+        {
+          "sourceId": "bd09fbf28b0fdf7a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-2-level2.json#15",
+      "sourceCanonicalSha256": "9c1ed7bb63c91ed51c42f8c96395e5d210162db4edf1e66201b62a84247fcdd7",
+      "sourceSkill": "MiddleS=deep1/3 plus2/6/9/18=ALLdivisors18; outeradd4/12/36→divisors36;9divisorlisttooSmall,18multiplesnotdivisors.",
+      "adaptationChanges": [
+        "Барлық9сақталған5.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды,9бастапқырастр2парақтақаралды.8жаңаадрестікредакцияжасалды;8bbb5b3def4784ea үшіналдыңғытексерілгенvisual-nested-subsets өзгеріссізсақталдыжәнеқайтақолтаңбаланбады.",
+        "Жаңаэлементтер/жиынатаулары/құрылым:сыртқыX6+4=10;T⊂W;ішкіHсум80;M-ніңішкіжұбы12/36;ортаS18бөлгіштерібүкілтереңT-нықамтиды;A-ның21жұбынанB-ның6жұбыалынады15;міндеттіB5/12қосынды17қосымша1+3+7→28бірегей;бесбосемесжиында6реттелгенқамтуқатынасы. Тікелейжәнетранзитивтікқамту/барлықэлементтітексеру/міндеттіжәнетаңдаулытоптарсақталды.",
+        "Текжаңаnativeшеңберлер/элементтер,көшірілгенtracedpathнемесеrasterжоқ. Барлықсандықжауапсуреттежасырылған;өзгермейтінматематикалықдағдыларжаңасюжетдепсаналмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ішкі жиындардың орналасуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8new/fullsaved officialsolutions/MCQ plus2source/native343sheets;9sourcevisualoccurrences total incl1previouslyverifiedretained. Observeactualnestedcirclecontainment/glyphregions; outerincludesinner/innerexcludesring/middleincludesdeep; everysubsetpairbothmembers; all21unorderedpairs/6innerpairs; all16optionalsetmasks mandatorymembership SUM28; all20ordered distinct five-circlepairs including2transitive. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave69-triple-middle-s-divisors-eighteen.svg",
+      "verificationModule": "scripts/editorial/visual-wave69-models.mjs",
+      "options": [
+        "36 санының оң бөлгіштері",
+        "9 санының оң бөлгіштері",
+        "18 санының оң бөлгіштері",
+        "18-ге еселік натурал сандар"
+      ],
+      "statement": "Суретте T ⊂ S және S ⊂ R. S жиынына оның өз сақинасы да, ішкі T-дегі элементтер де кіреді. S-ті ДӘЛ анықтайтын қасиетті таңдаңыз.",
+      "solution": "T = {1; 3}. Оған S сақинасындағы 2; 6; 9; 18 қосылады: S = {1; 2; 3; 6; 9; 18}. Бұл 18 санының БАРЛЫҚ оң бөлгіштері: 18 = 1 × 18 = 2 × 9 = 3 × 6. R-дағы қосымша 4; 12; 36 сандары S-ке кірмейді, олармен бірге 36-ның бөлгіштері шығады. 9-дың бөлгіштері 1; 3; 9 ғана. 18-ге еселіктер 18; 36; … болып жалғасады, бұл бөлгіштер жиыны емес.",
+      "figureDescription": "T ішкі шеңбері S ішінде, ол R ішінде. Терең ішкіде 1; 3, орта сақинада 2; 6; 9; 18, сыртқы сақинада 4; 12; 36.",
+      "figureSha256": "fb4ab316b35f4b7556f5080378e9007d49075b2ebcf6bc8b6f1e2ecc01f67501",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "18 санының оң бөлгіштері",
+        "checks": {
+          "deep": [
+            1,
+            3
+          ],
+          "middle": [
+            1,
+            2,
+            3,
+            6,
+            9,
+            18
+          ],
+          "middleCount": 6,
+          "outer": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            9,
+            12,
+            18,
+            36
+          ],
+          "targetDivisors": [
+            1,
+            2,
+            3,
+            6,
+            9,
+            18
+          ],
+          "smallerDivisors": [
+            1,
+            3,
+            9
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave69-pairs-in-a-not-subsets-b",
+      "modelId": "visual-wave69-two-element-subsets-not-contained-in-inner",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "hard",
+      "params": {
+        "scene": "nested",
+        "outer": "A",
+        "inner": "B",
+        "inside": [
+          3,
+          7,
+          11,
+          15
+        ],
+        "ring": [
+          2,
+          6,
+          10
+        ]
+      },
+      "answer": "15",
+      "sourceRefs": [
+        {
+          "sourceId": "e5eaa543d7488f96",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-2-level3.json#1",
+      "sourceCanonicalSha256": "643b18194c8ac74d3a7b38b0656993ad0168051d7d5c6c7963f02ca0e0b6f28c",
+      "sourceSkill": "ALLunorderedpairsin7outerA=21 minus6bothinside4innerB→15; alternate4×3+choose3,2=15.",
+      "adaptationChanges": [
+        "Барлық9сақталған5.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды,9бастапқырастр2парақтақаралды.8жаңаадрестікредакцияжасалды;8bbb5b3def4784ea үшіналдыңғытексерілгенvisual-nested-subsets өзгеріссізсақталдыжәнеқайтақолтаңбаланбады.",
+        "Жаңаэлементтер/жиынатаулары/құрылым:сыртқыX6+4=10;T⊂W;ішкіHсум80;M-ніңішкіжұбы12/36;ортаS18бөлгіштерібүкілтереңT-нықамтиды;A-ның21жұбынанB-ның6жұбыалынады15;міндеттіB5/12қосынды17қосымша1+3+7→28бірегей;бесбосемесжиында6реттелгенқамтуқатынасы. Тікелейжәнетранзитивтікқамту/барлықэлементтітексеру/міндеттіжәнетаңдаулытоптарсақталды.",
+        "Текжаңаnativeшеңберлер/элементтер,көшірілгенtracedpathнемесеrasterжоқ. Барлықсандықжауапсуреттежасырылған;өзгермейтінматематикалықдағдыларжаңасюжетдепсаналмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ішкі жиындардың орналасуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8new/fullsaved officialsolutions/MCQ plus2source/native343sheets;9sourcevisualoccurrences total incl1previouslyverifiedretained. Observeactualnestedcirclecontainment/glyphregions; outerincludesinner/innerexcludesring/middleincludesdeep; everysubsetpairbothmembers; all21unorderedpairs/6innerpairs; all16optionalsetmasks mandatorymembership SUM28; all20ordered distinct five-circlepairs including2transitive. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave69-pairs-in-a-not-subsets-b.svg",
+      "verificationModule": "scripts/editorial/visual-wave69-models.mjs",
+      "statement": "Суреттегі A жиынынан ДӘЛ ЕКІ элементі бар ішкі жиындар құрамыз. Олардың ішінде B жиынына ТОЛЫҚ кірмейтіндері нешеу? Элементтер реті есептелмейді. Жауапқа тек санды жазыңыз.",
+      "solution": "A = {2; 3; 6; 7; 10; 11; 15}, n(A) = 7; B = {3; 7; 11; 15}, n(B) = 4. A-ның ретсіз екілік жиындары 6 + 5 + 4 + 3 + 2 + 1 = 21. Толығымен B-дағылары 3 + 2 + 1 = 6. Қажеттісі 21 − 6 = 15. Басқа тәсіл: B-дан біреу, сыртқы сақинадан біреу алу 4 × 3 = 12; екеуін де сақинадан алу 3 жиын. 12 + 3 = 15. Рет ауысқан жұпты қайта санамаймыз.",
+      "figureDescription": "B түгел A ішінде. Ішкіде 3; 7; 11; 15, сыртқы сақинада 2; 6; 10.",
+      "figureSha256": "31ec24f032ed41725e164a647bc78724cd6d5ed3a77fb9dedf720c990e2f6746",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "15",
+        "checks": {
+          "all": [
+            2,
+            3,
+            6,
+            7,
+            10,
+            11,
+            15
+          ],
+          "inner": [
+            3,
+            7,
+            11,
+            15
+          ],
+          "allPairsCount": 21,
+          "innerPairsCount": 6,
+          "validPairs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              10
+            ],
+            [
+              2,
+              11
+            ],
+            [
+              2,
+              15
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              6,
+              15
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              15
+            ]
+          ],
+          "validCount": 15,
+          "mixedPairs": 12,
+          "outerOnlyPairs": 3
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave69-unique-extension-sum-twenty-eight",
+      "modelId": "visual-wave69-intermediate-subset-fixed-mandatory-and-target-sum",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "hard",
+      "params": {
+        "scene": "nested",
+        "outer": "A",
+        "inner": "B",
+        "inside": [
+          5,
+          12
+        ],
+        "ring": [
+          1,
+          3,
+          7,
+          15
+        ],
+        "target": 28
+      },
+      "answer": "{1; 3; 5; 7; 12}",
+      "sourceRefs": [
+        {
+          "sourceId": "5cbf74e11027e9f8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-2-level3.json#9",
+      "sourceCanonicalSha256": "1c015c0fd97d3bb495eeabef2f81782f55164375eac5ac01e3311a23fd9cb333",
+      "sourceSkill": "Bmandatory5/12sum17, needextras11from1/3/7/15; ALL16subsets unique1+3+7. CorrectproperB⊂X⊂A; wrongoutside11/missing5/outside4 ALLsum28butinvalidmembership.",
+      "adaptationChanges": [
+        "Барлық9сақталған5.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды,9бастапқырастр2парақтақаралды.8жаңаадрестікредакцияжасалды;8bbb5b3def4784ea үшіналдыңғытексерілгенvisual-nested-subsets өзгеріссізсақталдыжәнеқайтақолтаңбаланбады.",
+        "Жаңаэлементтер/жиынатаулары/құрылым:сыртқыX6+4=10;T⊂W;ішкіHсум80;M-ніңішкіжұбы12/36;ортаS18бөлгіштерібүкілтереңT-нықамтиды;A-ның21жұбынанB-ның6жұбыалынады15;міндеттіB5/12қосынды17қосымша1+3+7→28бірегей;бесбосемесжиында6реттелгенқамтуқатынасы. Тікелейжәнетранзитивтікқамту/барлықэлементтітексеру/міндеттіжәнетаңдаулытоптарсақталды.",
+        "Текжаңаnativeшеңберлер/элементтер,көшірілгенtracedpathнемесеrasterжоқ. Барлықсандықжауапсуреттежасырылған;өзгермейтінматематикалықдағдыларжаңасюжетдепсаналмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ішкі жиындардың орналасуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8new/fullsaved officialsolutions/MCQ plus2source/native343sheets;9sourcevisualoccurrences total incl1previouslyverifiedretained. Observeactualnestedcirclecontainment/glyphregions; outerincludesinner/innerexcludesring/middleincludesdeep; everysubsetpairbothmembers; all21unorderedpairs/6innerpairs; all16optionalsetmasks mandatorymembership SUM28; all20ordered distinct five-circlepairs including2transitive. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave69-unique-extension-sum-twenty-eight.svg",
+      "verificationModule": "scripts/editorial/visual-wave69-models.mjs",
+      "options": [
+        "{5; 11; 12}",
+        "{1; 3; 5; 7; 12}",
+        "{1; 12; 15}",
+        "{4; 5; 7; 12}"
+      ],
+      "statement": "X жиыны B-ның БАРЛЫҚ элементін қамтиды және тек A элементтерінен тұрады: B ⊂ X ⊂ A. X элементтерінің қосындысы 28. Шарттардың бәрін орындайтын X жиынын таңдаңыз.",
+      "solution": "X ішінде міндетті 5 және 12 бар, олардың қосындысы 17. Қалғаны 28 − 17 = 11. Қосымша тек 1; 3; 7; 15 ішінен алынады. Барлық 16 қосымша ішкі жиынды тексергенде 11 беретін жалғыз таңдау 1 + 3 + 7. Сондықтан X = {1; 3; 5; 7; 12}. {5; 11; 12} ішіндегі 11 A-да жоқ; {1; 12; 15} B-дағы 5-ті жоғалтады; {4; 5; 7; 12} ішіндегі 4 A-да жоқ. Барлық нұсқаның қосындысы 28 болғанымен, тиістілік шарттары да орындалуы керек.",
+      "figureDescription": "B түгел A ішінде. Ішкіде 5; 12, сыртқы сақинада 1; 3; 7; 15.",
+      "figureSha256": "1aceed7d89f9d470dc7adf8c6478aa9aa8541c88c8dcdb6b961d8d4a38db950d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "{1; 3; 5; 7; 12}",
+        "checks": {
+          "mandatory": [
+            5,
+            12
+          ],
+          "mandatorySum": 17,
+          "optional": [
+            1,
+            3,
+            7,
+            15
+          ],
+          "needed": 11,
+          "allOptionalSubsets": 16,
+          "validExtras": [
+            [
+              1,
+              3,
+              7
+            ]
+          ],
+          "target": 28,
+          "answerSet": [
+            1,
+            3,
+            5,
+            7,
+            12
+          ],
+          "optionTruth": [
+            false,
+            true,
+            false,
+            false
+          ],
+          "optionSums": [
+            28,
+            28,
+            28,
+            28
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave69-five-nonempty-circles-six-containments",
+      "modelId": "visual-wave69-all-ordered-distinct-subset-relations-transitivity",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "hard",
+      "params": {
+        "scene": "five-circles",
+        "outer": "E",
+        "middle": "F",
+        "sibling": "G",
+        "deepLeft": "H",
+        "deepRight": "J"
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "f655ab18d97c246a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-2-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-2-leveltest.json#4",
+      "sourceCanonicalSha256": "28ce6363b877c8ddc85df3f566de01cc90e7b9be3c0622c912b5076c9dd04a5c",
+      "sourceSkill": "NewFIVEsetsEcontainsF/G; FcontainsH/J; H/Jdisjoint. OrderedproperrelationsF→E,G→E,H→F,J→F,H→E,J→E=6. MustincludeBOTHtransitivepaths, noidentity/reversal/disjoints.",
+      "adaptationChanges": [
+        "Барлық9сақталған5.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды,9бастапқырастр2парақтақаралды.8жаңаадрестікредакцияжасалды;8bbb5b3def4784ea үшіналдыңғытексерілгенvisual-nested-subsets өзгеріссізсақталдыжәнеқайтақолтаңбаланбады.",
+        "Жаңаэлементтер/жиынатаулары/құрылым:сыртқыX6+4=10;T⊂W;ішкіHсум80;M-ніңішкіжұбы12/36;ортаS18бөлгіштерібүкілтереңT-нықамтиды;A-ның21жұбынанB-ның6жұбыалынады15;міндеттіB5/12қосынды17қосымша1+3+7→28бірегей;бесбосемесжиында6реттелгенқамтуқатынасы. Тікелейжәнетранзитивтікқамту/барлықэлементтітексеру/міндеттіжәнетаңдаулытоптарсақталды.",
+        "Текжаңаnativeшеңберлер/элементтер,көшірілгенtracedpathнемесеrasterжоқ. Барлықсандықжауапсуреттежасырылған;өзгермейтінматематикалықдағдыларжаңасюжетдепсаналмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ішкі жиындардың орналасуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8new/fullsaved officialsolutions/MCQ plus2source/native343sheets;9sourcevisualoccurrences total incl1previouslyverifiedretained. Observeactualnestedcirclecontainment/glyphregions; outerincludesinner/innerexcludesring/middleincludesdeep; everysubsetpairbothmembers; all21unorderedpairs/6innerpairs; all16optionalsetmasks mandatorymembership SUM28; all20ordered distinct five-circlepairs including2transitive. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave69-five-nonempty-circles-six-containments.svg",
+      "verificationModule": "scripts/editorial/visual-wave69-models.mjs",
+      "statement": "Суреттегі E, F, G, H, J жиындарының бәрі бос емес. ЕКІ ӘРТҮРЛІ жиыннан X ⊂ Y түрінде неше дұрыс жазу құруға болады? Бірнеше шеңбер арқылы да іште қалатын жағдайларды ұмытпаңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Тікелей іште жататындар F ⊂ E, G ⊂ E, H ⊂ F, J ⊂ F. F өзі E ішінде болғандықтан, H ⊂ E және J ⊂ E де дұрыс. Барлығы 4 + 2 = 6 жазу. H пен J бөлек; G F-дан да, оның ішіндегі H пен J-ден де бөлек. Өзіне қатысты X ⊂ X жазуы сұралмайды, өйткені екі жиын әртүрлі болуы керек.",
+      "figureDescription": "E ішінде бөлек F және G. F ішінде өзара бөлек H және J.",
+      "figureSha256": "f833241699e4e59841e4d5bdfffd9faa032770d52083807c666d057e3193305a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "names": [
+            "E",
+            "F",
+            "G",
+            "H",
+            "J"
+          ],
+          "immediate": [
+            [
+              "F",
+              "E"
+            ],
+            [
+              "G",
+              "E"
+            ],
+            [
+              "H",
+              "F"
+            ],
+            [
+              "J",
+              "F"
+            ]
+          ],
+          "allRelations": [
+            "F ⊂ E",
+            "G ⊂ E",
+            "H ⊂ F",
+            "J ⊂ F",
+            "H ⊂ E",
+            "J ⊂ E"
+          ],
+          "total": 6,
+          "transitiveCount": 2
+        }
+      }
+    }
+  ]
+}

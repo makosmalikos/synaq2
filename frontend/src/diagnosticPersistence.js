@@ -1,4 +1,4 @@
-import { diagnosticProgressKey, diagnosticStorageKey, readStoredDiagnostic } from './platformDiagnostic.js';
+import { clearDiagnosticProgress, diagnosticStorageKey, readStoredDiagnostic } from './platformDiagnostic.js';
 
 // A blocked browser store must not also discard a result on SPA navigation.
 // This fallback is deliberately UID-scoped and does not survive a page reload.
@@ -13,24 +13,25 @@ export function diagnosticRecovery(uid) {
 }
 
 export function clearDiagnosticDraft(uid, attemptId, storage) {
-  try {
-    const target = storage || localStorage;
-    const draft = JSON.parse(target.getItem(diagnosticProgressKey(uid)) || 'null');
-    if (draft?.attemptId === attemptId) target.removeItem(diagnosticProgressKey(uid));
-  } catch { /* Keep an unreadable draft instead of deleting another attempt. */ }
+  clearDiagnosticProgress(uid, attemptId, storage);
 }
 
 export function stageDiagnosticResult(uid, result, storage) {
   let durable = false;
+  let newer = pendingResults.get(ownerKey(uid));
   try {
     const target = storage || localStorage;
     const current = JSON.parse(target.getItem(diagnosticStorageKey(uid)) || 'null');
-    if (!current || current.saveId === result.saveId || !(Date.parse(current.completedAt) > Date.parse(result.completedAt))) {
+    if (current && Date.parse(current.completedAt) > Date.parse(newer?.result.completedAt || '')) newer = { result: current, durable: true };
+    if (current && !newer) newer = { result: current, durable: true };
+    if (!(Date.parse(newer?.result.completedAt || '') > Date.parse(result.completedAt))
+      && (!current || current.saveId === result.saveId || !(Date.parse(current.completedAt) > Date.parse(result.completedAt)))) {
       target.setItem(diagnosticStorageKey(uid), JSON.stringify(result));
       durable = true;
     }
   } catch { /* The UI distinguishes an in-memory result from a durable backup. */ }
-  pendingResults.set(ownerKey(uid), { result, durable });
+  pendingResults.set(ownerKey(uid), Date.parse(newer?.result.completedAt || '') > Date.parse(result.completedAt)
+    ? newer : { result, durable });
   // Never delete the draft before the complete result has reached storage.
   if (durable) clearDiagnosticDraft(uid, result.saveId, storage);
   return durable;

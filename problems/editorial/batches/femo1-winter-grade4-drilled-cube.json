@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "scope": "Onefrozen FEMO1winter4question7, coreother8separate, localStandard+.",
+  "sourceOccurrences": 1,
+  "distinctModels": 1,
+  "editions": [
+    {
+      "editionId": "femo1-winter-grade4-drilled-cube-7",
+      "modelId": "femo1-winter-grade4-drilled-cube-axis-parallel-voxel-hole-union",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/collections/938792aa-3b19-4148-b0a6-a727766c6c3b.json",
+          "sourceId": "7"
+        }
+      ],
+      "sourceAnswerAvailability": "not_captured_answer_recomputed_from_full_official_solution_and_archived_raster",
+      "adaptationChanges": [
+        "Fullfrozen question7/officialsolution and original4×4×4sixhole raster read. New5×5×5cube with6holes atdifferent nativefacecellcenters replaces sourceimage; no raster/tracedpath reused. Fulloriginal andnew affectedvoxel unions and alltriple/pair intersections independently enumerated.",
+        "New3DnativeSVG75projected unitface polygons and6plane-affine circular hole markers; actualprojectionframes and everypolygon/center decoded back to integer3Dcellrows. Diameterstrictly smallerthanonecell and centerlinethrough cellcenters madeexplicit, avoiding ambiguity about touching neighboringrows. Sourceactual front/top/right hole observations recorded separately.",
+        "Same root author separate computational check, no separatehumanreviewer. Sourceother8tasks processed in separatecorebatch. Standard+localonly, oneedition notnewsemanticstory."
+      ],
+      "editorialStatus": "awaiting_independent_computational_review",
+      "statement": "Үлкен текше 5 × 5 × 5 кішкентай ағаш текшеден құралған. Суретте алты өтпелі тесіктің кіреберісі көрсетілген. Әр тесік үлкен текшенің қырларына параллель, бір қатардағы кішкентай текшелердің орталары арқылы толық өтеді. Тесіктің диаметрі кішкентай текшенің қырынан кіші. Неше кішкентай текше бүлінбей қалады? Жауапқа тек санды жазыңыз.",
+      "answer": "99",
+      "solution": "Барлығы 5 × 5 × 5 = 125 кішкентай текше бар. Әр тесік бес текшеден өтеді, бастапқы санау 6 × 5 = 30. Бірақ екі кішкентай текшенің әрқайсысында үш тесіктен қиылысады; олар үш реттен саналған. Әрқайсысын бір рет қана санау үшін 2 × 2 = 4 артық санауды аламыз. Бүлінгені 30 − 4 = 26, бүлінбегені 125 − 26 = 99. Басқа қиылысатын қатарлар жоқ.",
+      "image": "/figures/synaq-editions/femo1-winter4-drilled-cube-native.svg",
+      "figureSha256": "d6248d0fc37272ad416135da9d0232f65972f74832152f4ccc317e0430dae69c"
+    }
+  ]
+}

@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All7 saved visual grade6topics10.1–10.2 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade6topics10.1–10.2",
+    "sourceVisualOccurrences": 7,
+    "addressedNewDrafts": 7,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "179baed11513c651",
+      "697669ad77e04c96",
+      "7c089a227f00218d",
+      "7d8ad96c843b1a38",
+      "a5f82696e9e821bb",
+      "d01aa9085cd54333",
+      "e09eb83723afd387"
+    ],
+    "distinctModels": 7,
+    "semantics": "7 source-addressed linear-equation targets preserve the distinct use of a solution table, signed point substitution, balance model, ordered graph point, vertical line, ordinate and two-intercept equation."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave18-complete-equation-table",
+      "modelId": "visual-wave18-equation-table",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "table",
+        "equation": "4x - y = -1",
+        "columns": [
+          [
+            -1,
+            -3
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            5,
+            null
+          ]
+        ]
+      },
+      "answer": "21",
+      "sourceRefs": [
+        {
+          "sourceId": "179baed11513c651",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-1-level1.json#6",
+      "sourceCanonicalSha256": "b49a585be71f993f45381fec51ff2d7f145b638fb55a8cb4646a21e41297752d",
+      "sourceSkill": "Completing one y-cell so every x/y column satisfies an explicitly given two-variable linear equation",
+      "adaptationChanges": [
+        "Дереккөздегі нақты визуалды дағды сақталды: теңдеу кестесі, нүктені қою, таразы немесе графиктің шешімі/ординатасы/теңдеуі.",
+        "Коэффициенттер, координаталар, массалар, нұсқалар және жауаптар дербес жаңадан таңдалды.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеу және график",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, two-variable equation parser, actual printed coordinate options, scale counts, equal-grid SVG metrics and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave18-complete-equation-table.svg",
+      "verificationModule": "scripts/editorial/visual-wave18-models.mjs",
+      "statement": "Кестенің әр бағанында 4x - y = -1 теңдеуінің бір шешімі берілген. Сұрақ белгісінің орнына қандай сан жазылады? Жауапқа тек санды жазыңыз.",
+      "solution": "Белгісіз ұяшықтың бағанында x = 5. 4x - y = -1 теңдеуіне осы x-ті қойғанда y = 21 шығады. Белгілі бағандардың әрқайсысы да теңдеуді қанағаттандырады.",
+      "figureDescription": "Екі жолды кесте. Жолдар x және y. Бағандар: x=-1, y=-3; x=2, y=9; x=5, y=сұрақ белгісі.",
+      "figureSha256": "897b4f116bb5ae05a4bf0ed2f5dc4bc7ab995328755d9d71edf50e98bd10d3bf",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "21",
+        "checks": {
+          "equation": {
+            "a": 4,
+            "b": -1,
+            "c": -1
+          },
+          "unknownX": 5
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave18-point-satisfies-equation",
+      "modelId": "visual-wave18-point-equation",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "points",
+        "equation": "2x - y = -1",
+        "points": [
+          {
+            "label": "A",
+            "xy": [
+              3,
+              6
+            ]
+          },
+          {
+            "label": "B",
+            "xy": [
+              -3,
+              -2
+            ],
+            "labelDx": -16
+          },
+          {
+            "label": "C",
+            "xy": [
+              -2,
+              -3
+            ],
+            "labelDx": -16,
+            "labelDy": 22
+          },
+          {
+            "label": "D",
+            "xy": [
+              2,
+              -4
+            ]
+          }
+        ]
+      },
+      "answer": "C",
+      "sourceRefs": [
+        {
+          "sourceId": "a5f82696e9e821bb",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-1-level1.json#7",
+      "sourceCanonicalSha256": "2a939f8eb25d3db6be2ee89715c7bb71bdc856534fdb4c003a0c941189a16d10",
+      "sourceSkill": "Reading plotted signed coordinates in the correct order and substituting into a two-variable linear equation",
+      "adaptationChanges": [
+        "Дереккөздегі нақты визуалды дағды сақталды: теңдеу кестесі, нүктені қою, таразы немесе графиктің шешімі/ординатасы/теңдеуі.",
+        "Коэффициенттер, координаталар, массалар, нұсқалар және жауаптар дербес жаңадан таңдалды.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеу және график",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, two-variable equation parser, actual printed coordinate options, scale counts, equal-grid SVG metrics and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave18-point-satisfies-equation.svg",
+      "verificationModule": "scripts/editorial/visual-wave18-models.mjs",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "statement": "Координаталық тордағы қай нүкте 2x - y = -1 теңдеуінің шешімін береді? Координаталардың ретін сақтаңыз.",
+      "solution": "C(-2; -3) үшін 2 × (-2) + (-1) × (-3) = -1. Қалған нүктелерді қойғанда сол жақ 0, -4, 8 болады; бұлар -1 санына тең емес.",
+      "figureDescription": "Бірдей бірлік масштабы бар координаталық тор, бір ұсақ аралық 1. A(3; 6); B(-3; -2); C(-2; -3); D(2; -4).",
+      "figureSha256": "b13a4cfea9c6b46387c5292fba7f52813317c9981be673cc714d03bf772e20dd",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "C",
+        "checks": {
+          "residuals": [
+            [
+              "A",
+              1
+            ],
+            [
+              "B",
+              -3
+            ],
+            [
+              "C",
+              0
+            ],
+            [
+              "D",
+              9
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave18-balanced-variable-masses",
+      "modelId": "visual-wave18-balance-two-variables",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "balance",
+        "nx": 3,
+        "ny": 2,
+        "xMass": 7,
+        "total": 41
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "7c089a227f00218d",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-1-level1.json#9",
+      "sourceCanonicalSha256": "f003a63fe71622e2993b6a7284824bac24c2335d73242ab06894f413ce0e11ec",
+      "sourceSkill": "Building an equation from counts of two unknown mass types on a balanced scale, then substituting the known mass",
+      "adaptationChanges": [
+        "Дереккөздегі нақты визуалды дағды сақталды: теңдеу кестесі, нүктені қою, таразы немесе графиктің шешімі/ординатасы/теңдеуі.",
+        "Коэффициенттер, координаталар, массалар, нұсқалар және жауаптар дербес жаңадан таңдалды.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеу және график",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, two-variable equation parser, actual printed coordinate options, scale counts, equal-grid SVG metrics and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave18-balanced-variable-masses.svg",
+      "verificationModule": "scripts/editorial/visual-wave18-models.mjs",
+      "statement": "Таразы тепе-теңдікте. Бірдей x жүктерінің әрқайсысы 7 кг. Бірдей y жүктерінің әрқайсысы неше килограмм? Жауапқа тек санды жазыңыз.",
+      "solution": "Сол табақта 3 дана x және 2 дана y бар. Теңдеу: 3x + 2y = 41. x = 7 болса, x жүктері 21 кг. y жүктерінің жалпы массасы 41 − 21 = 20 кг. Бір y жүгінің массасы 20 : 2 = 10 кг.",
+      "figureDescription": "Тепе-тең таразы: сол табақта 3 x және 2 y жүгі, оң табақта 41 кг. Бірдей әріптер бірдей массаны білдіреді.",
+      "figureSha256": "93e9df5df7fa40225887706dd4a43d984a89b1759a031b9b492ed7a329132669",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": {
+          "knownMass": 21,
+          "remainingMass": 20,
+          "yCount": 2
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave18-solution-on-oblique-line",
+      "modelId": "visual-wave18-graph-solution-pair",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "equation": "3x - y = 2",
+        "samples": [
+          [
+            -1,
+            -5
+          ],
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "answer": "(2; 4)",
+      "sourceRefs": [
+        {
+          "sourceId": "7d8ad96c843b1a38",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-2-level1.json#0",
+      "sourceCanonicalSha256": "5e12b9c19d5c9b5c91fb540f3516437aabf1822820437f345c4ddbda4c7964bf",
+      "sourceSkill": "Identifying the ordered pair lying on the graph, rejecting swapped coordinates and sign errors",
+      "adaptationChanges": [
+        "Дереккөздегі нақты визуалды дағды сақталды: теңдеу кестесі, нүктені қою, таразы немесе графиктің шешімі/ординатасы/теңдеуі.",
+        "Коэффициенттер, координаталар, массалар, нұсқалар және жауаптар дербес жаңадан таңдалды.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеу және график",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, two-variable equation parser, actual printed coordinate options, scale counts, equal-grid SVG metrics and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave18-solution-on-oblique-line.svg",
+      "verificationModule": "scripts/editorial/visual-wave18-models.mjs",
+      "options": [
+        "(4; 2)",
+        "(-1; 5)",
+        "(0; 2)",
+        "(2; 4)"
+      ],
+      "statement": "Суреттегі түзу екі айнымалысы бар теңдеудің графигі. Қай сандар жұбы осы теңдеудің шешімі болады?",
+      "solution": "Графиктегі нүктенің координаталары теңдеудің шешімі болады. (2; 4) нүктесі түзуге тиесілі. Тексеру үшін график (-1; -5) және (2; 4) нүктелерінен өтеді. Координаталардың орындарын ауыстыру басқа нүктені береді.",
+      "figureDescription": "Бірдей бірлік масштабы бар координаталық тор, бір ұсақ аралық 1. Түзу (-1; -5) және (2; 4) нүктелерінен өтеді.",
+      "figureSha256": "ab33544e1f7f7751fc709450d5bb2a143ee0a79de6dccf7e022976832b3a6503",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(2; 4)",
+        "checks": {
+          "equation": {
+            "a": 3,
+            "b": -1,
+            "c": 2
+          },
+          "optionResiduals": [
+            8,
+            -10,
+            -4,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave18-vertical-negative-intercept",
+      "modelId": "visual-wave18-vertical-equation",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "equation": "x + 3 = 0",
+        "samples": [
+          [
+            -3,
+            -4
+          ],
+          [
+            -3,
+            5
+          ]
+        ]
+      },
+      "answer": "x + 3 = 0",
+      "sourceRefs": [
+        {
+          "sourceId": "e09eb83723afd387",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-2-level1.json#2",
+      "sourceCanonicalSha256": "ab1b56cefd154a88d89ba5fe61ed7ecdfe1db540aabeed21d13a469e1aa9e924",
+      "sourceSkill": "Recognizing a vertical line as constant x, including the sign of its x-intercept",
+      "adaptationChanges": [
+        "Дереккөздегі нақты визуалды дағды сақталды: теңдеу кестесі, нүктені қою, таразы немесе графиктің шешімі/ординатасы/теңдеуі.",
+        "Коэффициенттер, координаталар, массалар, нұсқалар және жауаптар дербес жаңадан таңдалды.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеу және график",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, two-variable equation parser, actual printed coordinate options, scale counts, equal-grid SVG metrics and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave18-vertical-negative-intercept.svg",
+      "verificationModule": "scripts/editorial/visual-wave18-models.mjs",
+      "options": [
+        "y + 3 = 0",
+        "x - 3 = 0",
+        "x + 3 = 0",
+        "x + y = -3"
+      ],
+      "statement": "Координаталық жазықтықта тік түзу салынған. Осы түзудің теңдеуін таңдаңыз.",
+      "solution": "Түзудегі барлық нүктенің x координатасы -3, ал y әртүрлі болуы мүмкін. Сондықтан дұрыс теңдеу: x + 3 = 0. Тек бір нүктені емес, осы түзудің барлық нүктелерін сипаттау керек.",
+      "figureDescription": "Бірдей бірлік масштабы бар координаталық тор, бір ұсақ аралық 1. Түзу (-3; -4) және (-3; 5) нүктелерінен өтеді.",
+      "figureSha256": "027e47677f0883a6c9aad5a79fd5fdc2dd62a49509a00b7c93e50df9fa4dc8a4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "x + 3 = 0",
+        "checks": {
+          "samples": [
+            [
+              -3,
+              -4
+            ],
+            [
+              -3,
+              5
+            ]
+          ],
+          "optionSampleFits": [
+            [
+              false,
+              false
+            ],
+            [
+              false,
+              false
+            ],
+            [
+              true,
+              true
+            ],
+            [
+              false,
+              false
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave18-ordinate-from-rational-slope",
+      "modelId": "visual-wave18-graph-ordinate",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "equation": "2x - 3y = 3",
+        "samples": [
+          [
+            0,
+            -1
+          ],
+          [
+            6,
+            3
+          ]
+        ],
+        "queryX": 6
+      },
+      "answer": "3",
+      "sourceRefs": [
+        {
+          "sourceId": "697669ad77e04c96",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-2-level1.json#11",
+      "sourceCanonicalSha256": "9aaf110363030d17dcaf38e0e1ceb0a290e185720b99b73d1d281a59893f82d5",
+      "sourceSkill": "Reading the ordinate at a specified abscissa on a nonunit-slope line with a nonzero intercept",
+      "adaptationChanges": [
+        "Дереккөздегі нақты визуалды дағды сақталды: теңдеу кестесі, нүктені қою, таразы немесе графиктің шешімі/ординатасы/теңдеуі.",
+        "Коэффициенттер, координаталар, массалар, нұсқалар және жауаптар дербес жаңадан таңдалды.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеу және график",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, two-variable equation parser, actual printed coordinate options, scale counts, equal-grid SVG metrics and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave18-ordinate-from-rational-slope.svg",
+      "verificationModule": "scripts/editorial/visual-wave18-models.mjs",
+      "statement": "Түзудің графигінен абсциссасы 6 болатын нүктенің ординатасын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "x = 6 тік тор сызығы берілген түзумен y = 3 деңгейінде қиылысады. Тексеру: (0; -1) және (6; 3) нүктелері бір түзуде жатыр. Ізделген нүкте (6; 3).",
+      "figureDescription": "Бірдей бірлік масштабы бар координаталық тор, бір ұсақ аралық 1. Түзу (0; -1) және (6; 3) нүктелерінен өтеді.",
+      "figureSha256": "c8b500250532ce688c17ef4068d115f1b390012742eab4387fd36451e232522e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3",
+        "checks": {
+          "equation": {
+            "a": 2,
+            "b": -3,
+            "c": 3
+          },
+          "queryX": 6
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave18-equation-from-two-intercepts",
+      "modelId": "visual-wave18-intercept-equation",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "equation": "3x + 4y = 12",
+        "samples": [
+          [
+            4,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      },
+      "answer": "3x + 4y = 12",
+      "sourceRefs": [
+        {
+          "sourceId": "d01aa9085cd54333",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-2-level1.json#12",
+      "sourceCanonicalSha256": "4897ec677f2422412d9afe2abb8bbe5796851816bfb9c0df44df79f5c1aa491c",
+      "sourceSkill": "Selecting the line equation by checking both axis intercepts, not just coefficient order or slope sign",
+      "adaptationChanges": [
+        "Дереккөздегі нақты визуалды дағды сақталды: теңдеу кестесі, нүктені қою, таразы немесе графиктің шешімі/ординатасы/теңдеуі.",
+        "Коэффициенттер, координаталар, массалар, нұсқалар және жауаптар дербес жаңадан таңдалды.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеу және график",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, two-variable equation parser, actual printed coordinate options, scale counts, equal-grid SVG metrics and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave18-equation-from-two-intercepts.svg",
+      "verificationModule": "scripts/editorial/visual-wave18-models.mjs",
+      "options": [
+        "4x + 3y = 12",
+        "3x + 4y = 12",
+        "3x - 4y = 12",
+        "3x + 4y = -12"
+      ],
+      "statement": "Суреттегі көлбеу түзудің теңдеуі қайсы? Екі осьпен қиылысу нүктелерін де ескеріңіз.",
+      "solution": "Түзу (4; 0) және (0; 3) нүктелерінен өтеді. 3x + 4y = 12 теңдеуі осы екі жұп үшін де орындалады. Басқа нұсқалардың әрқайсысы кемінде бір қиылысу нүктесіне сәйкес емес.",
+      "figureDescription": "Бірдей бірлік масштабы бар координаталық тор, бір ұсақ аралық 1. Түзу (4; 0) және (0; 3) нүктелерінен өтеді.",
+      "figureSha256": "6ad6ceffa3f28292139a916f88cbd61ad2b7fc1728c9b0632281005e5bd5ea1e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3x + 4y = 12",
+        "checks": {
+          "samples": [
+            [
+              4,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "optionSampleFits": [
+            [
+              false,
+              false
+            ],
+            [
+              true,
+              true
+            ],
+            [
+              true,
+              false
+            ],
+            [
+              false,
+              false
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

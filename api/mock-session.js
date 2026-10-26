@@ -25,7 +25,7 @@ const sessionRef = (db, uid, id) => db.collection('mockSessions').doc(`${uid}_${
 const resultRef = (db, uid, id) => db.collection('results').doc(uid).collection('mocks').doc(id);
 const publicSession = async (db, session) => ({
   test: publicMock(await restoreMock(db, session)), diagnostic: false, weekKey: session.weekKey || null,
-  startedAt: session.startedAt, deadline: session.deadline, expiresAt: session.expiresAt,
+  startedAt: session.startedAt, deadline: session.deadline, expiresAt: session.expiresAt, serverNow: Date.now(),
 });
 
 module.exports = async function handler(req, res) {
@@ -102,6 +102,7 @@ module.exports = async function handler(req, res) {
         return value;
       });
       if (session.completed) throw error('session-completed', 409);
+      if (session.expiresAt <= Date.now()) throw error('session-expired', 410);
       return res.status(200).json(await publicSession(db, session));
     }
 

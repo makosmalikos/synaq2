@@ -1,0 +1,1196 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "root_independent_of_circle_author",
+  "batch": "problems/editorial/batches/grade5-circle-basics.json",
+  "scope": "Independent root review of all35 full saved/new conditions, official and\nauthored solutions and EVERY MCQ. Printed exact radius/diameter/SI arithmetic,\ncircle location predicates, attained extrema, endpoint enumeration and an\nindependent general-position four-circle witness. Author specs/models/params\nare not imported. Unchanged definitions are not counted as new meanings.\n",
+  "summary": {
+    "verified": 35,
+    "findings": 0,
+    "fullSavedNewOfficialAuthoredSolutionsEveryMCQRead": 35,
+    "wrongKeysRejected": 35,
+    "printedGivensOrMCQCanariesRejected": 35,
+    "exactCircleLocationCases": 29700,
+    "nativeFractions": 12,
+    "pythonJavaScriptHashesMatched": 35
+  },
+  "independentArrangementWitness": {
+    "unitCircleCenters": [
+      [
+        -0.5,
+        0
+      ],
+      [
+        0.5,
+        0
+      ],
+      [
+        0,
+        0.6
+      ],
+      [
+        0.1,
+        -0.4
+      ]
+    ],
+    "distinctPairIntersections": 12,
+    "arcEdges": 24,
+    "connectedPlanarEulerFacesIncludingExterior": 14,
+    "noTripleIntersections": true
+  },
+  "evidence": [
+    {
+      "editionId": "grade5-circle-basics-9b2721b56479cbcf",
+      "rewritten": {
+        "printedNumbers": [
+          "5"
+        ],
+        "centimetresPerDecimetre": 10,
+        "answer": "25"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "3"
+        ],
+        "centimetresPerDecimetre": 10,
+        "answer": "15"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-a6f9cb6cf4297e70",
+      "rewritten": {
+        "printedNumbers": [
+          "9",
+          "13"
+        ],
+        "radius": "9",
+        "distance": "13",
+        "location": "outside_closed_disk",
+        "answer": "Нүкте жабық дөңгелектен тыс жатыр."
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "8",
+          "11"
+        ],
+        "radius": "8",
+        "distance": "11",
+        "location": "outside_closed_disk",
+        "answer": "Дөңгелектің сыртында"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-c321afd0486381c5",
+      "rewritten": {
+        "printedNumbers": [],
+        "allMCQTruth": [
+          true,
+          false,
+          false,
+          false
+        ],
+        "answer": "Дөңгелектің құрамына ішкі аймақ та, оны шектейтін шеңбер де кіреді."
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "allMCQTruth": [
+          true,
+          false,
+          false,
+          false
+        ],
+        "answer": "Дөңгелек өз шеңберін де қамтиды"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-f70ca8f6e6607f9a",
+      "rewritten": {
+        "printedNumbers": [
+          "7"
+        ],
+        "closingIntervalIncluded": true,
+        "answer": "7"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "5"
+        ],
+        "closingIntervalIncluded": true,
+        "answer": "5"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-fb5473e817b2f2e1",
+      "rewritten": {
+        "printedNumbers": [
+          "58"
+        ],
+        "answer": "29"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "46"
+        ],
+        "answer": "23"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-a4bb204faaffdb31",
+      "rewritten": {
+        "printedNumbers": [
+          "10",
+          "12",
+          "7",
+          "10"
+        ],
+        "center": "K",
+        "actualDistances": {
+          "P": "12",
+          "Q": "7",
+          "T": "10"
+        },
+        "answer": "T"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "6",
+          "4",
+          "6",
+          "9"
+        ],
+        "center": "O",
+        "actualDistances": {
+          "A": "4",
+          "B": "6",
+          "C": "9"
+        },
+        "answer": "B"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-90a5fcf8971d0f8a",
+      "rewritten": {
+        "printedNumbers": [
+          "30"
+        ],
+        "answer": "15"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "18"
+        ],
+        "answer": "9"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-aef0e9df3939b3bb",
+      "rewritten": {
+        "printedNumbers": [],
+        "allMCQTruth": [
+          true,
+          false,
+          false,
+          false
+        ],
+        "answer": "радиус"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "allMCQTruth": [
+          false,
+          false,
+          false,
+          true
+        ],
+        "answer": "радиус"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-087f9b0bc58ec9fe",
+      "rewritten": {
+        "printedNumbers": [
+          "7/2"
+        ],
+        "answer": "7"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "5/2"
+        ],
+        "answer": "5"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-a190fb6d34cdb844",
+      "rewritten": {
+        "printedNumbers": [
+          "17",
+          "30"
+        ],
+        "orderedDiameters": [
+          "34",
+          "30"
+        ],
+        "requestedDifference": "4",
+        "wrongUnconvertedDifference": "13",
+        "wrongRadiusDifference": "2",
+        "answer": "Біріншінің диаметрі 4 см артық."
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "15",
+          "28"
+        ],
+        "orderedDiameters": [
+          "30",
+          "28"
+        ],
+        "requestedDifference": "2",
+        "wrongUnconvertedDifference": "13",
+        "wrongRadiusDifference": "1",
+        "answer": "Бірінші шеңбер үлкен: диаметрі 2 см-ге артық"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-3d46e016bda5994a",
+      "rewritten": {
+        "printedNumbers": [
+          "9"
+        ],
+        "closedBoundaryAttainment": [
+          "-9",
+          "9"
+        ],
+        "upperBound": "18",
+        "answer": "18"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "7"
+        ],
+        "closedBoundaryAttainment": [
+          "-7",
+          "7"
+        ],
+        "upperBound": "14",
+        "answer": "14"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-830b6cc74353a137",
+      "rewritten": {
+        "printedNumbers": [
+          "9",
+          "5",
+          "14"
+        ],
+        "location": "external_tangent",
+        "onlyIntersection": [
+          "9",
+          "0"
+        ],
+        "correctStrictTwoIntersectionRange": [
+          "4",
+          "14"
+        ],
+        "answer": "Сырттай жанасады: бір ортақ нүктесі бар."
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "7",
+          "4",
+          "11"
+        ],
+        "location": "external_tangent",
+        "onlyIntersection": [
+          "7",
+          "0"
+        ],
+        "correctStrictTwoIntersectionRange": [
+          "3",
+          "11"
+        ],
+        "answer": "Сырттай жанасады (бір ортақ нүкте)"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-ff225249ef03e7cb",
+      "rewritten": {
+        "printedNumbers": [
+          "1",
+          "80",
+          "450"
+        ],
+        "circumferenceCentimetres": "180",
+        "distanceCentimetres": "45000",
+        "requestedCompleteTurns": "250",
+        "answer": "250"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "1",
+          "50",
+          "300"
+        ],
+        "circumferenceCentimetres": "150",
+        "distanceCentimetres": "30000",
+        "requestedCompleteTurns": "200",
+        "answer": "200"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-131dcedf1ad130b5",
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "9",
+          "6"
+        ],
+        "answer": "Кіші дөңгелектен тыс, үлкен дөңгелектің ішкі аймағында.",
+        "strictlyBetweenBoundaries": true
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "3",
+          "6",
+          "5"
+        ],
+        "answer": "Сақинада: үлкен дөңгелекте, бірақ кіші дөңгелектен тыс",
+        "strictlyBetweenBoundaries": true
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-8d5e93473e14e50d",
+      "rewritten": {
+        "printedNumbers": [
+          "32",
+          "4"
+        ],
+        "intermediateSmallDiameter": "8",
+        "answer": "4"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "18",
+          "3"
+        ],
+        "intermediateSmallDiameter": "6",
+        "answer": "3"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-ef96ecc5a21fd744",
+      "rewritten": {
+        "printedNumbers": [
+          "25"
+        ],
+        "requestedFraction": "5/12",
+        "reconstructedMinutes": "25"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "1",
+          "20"
+        ],
+        "requestedFraction": "1/3",
+        "reconstructedMinutes": "20"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-d94d4b62239d8906",
+      "rewritten": {
+        "printedNumbers": [
+          "82",
+          "46"
+        ],
+        "answer": "18"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "64",
+          "40"
+        ],
+        "answer": "12"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-e0ff83d01e9dd11f",
+      "rewritten": {
+        "printedNumbers": [
+          "1",
+          "12"
+        ],
+        "everyMCQMinorTickGap": [
+          "6",
+          "5",
+          "4",
+          "5"
+        ],
+        "answer": "4 және 10"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "12"
+        ],
+        "everyMCQMinorTickGap": [
+          "6",
+          "3",
+          "5",
+          "5"
+        ],
+        "answer": "2 және 8"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-e5320ad3d301f3c9",
+      "rewritten": {
+        "printedNumbers": [
+          "2",
+          "40",
+          "90",
+          "7"
+        ],
+        "oneTurnMetres": "12/5",
+        "totalTurns": "630",
+        "oneMinuteMetres": "216",
+        "answer": "1512"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "2",
+          "10",
+          "100",
+          "5"
+        ],
+        "oneTurnMetres": "21/10",
+        "totalTurns": "500",
+        "oneMinuteMetres": "210",
+        "answer": "1050"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-d329d6097eb08097",
+      "rewritten": {
+        "printedNumbers": [
+          "7",
+          "8",
+          "5"
+        ],
+        "attainedOrderedXABY": [
+          "-8",
+          "0",
+          "7",
+          "12"
+        ],
+        "upperBound": "20",
+        "answer": "20"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "4",
+          "6",
+          "3"
+        ],
+        "attainedOrderedXABY": [
+          "-6",
+          "0",
+          "4",
+          "7"
+        ],
+        "upperBound": "13",
+        "answer": "13"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-07b94f836198d6fa",
+      "rewritten": {
+        "printedNumbers": [
+          "4"
+        ],
+        "eachNewCircleMaximumRegions": [
+          2,
+          2,
+          4,
+          6
+        ],
+        "needsPairwiseTwoIntersectionsNoTriple": true,
+        "answer": "14"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "eachNewCircleMaximumRegions": [
+          2,
+          2,
+          4
+        ],
+        "needsPairwiseTwoIntersectionsNoTriple": true,
+        "answer": "8"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-0d98c21ce26ec749",
+      "rewritten": {
+        "printedNumbers": [
+          "9"
+        ],
+        "maximumAllowedChord": "18",
+        "answer": "19 см"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "7"
+        ],
+        "maximumAllowedChord": "14",
+        "answer": "15 см"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-216937dc972be9b2",
+      "rewritten": {
+        "printedNumbers": [
+          "36",
+          "24",
+          "2"
+        ],
+        "alignedGridOnly": true,
+        "columns": 9,
+        "rows": 6,
+        "diameter": "4",
+        "answer": "54"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "24",
+          "15",
+          "3/2"
+        ],
+        "alignedGridOnly": true,
+        "columns": 8,
+        "rows": 5,
+        "diameter": "3",
+        "answer": "40"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-3291a1a0ff78d3e0",
+      "rewritten": {
+        "printedNumbers": [
+          "11"
+        ],
+        "allUnorderedPairs": 55,
+        "removedCyclicNeighbors": 11,
+        "answer": "44"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "9"
+        ],
+        "allUnorderedPairs": 36,
+        "removedCyclicNeighbors": 9,
+        "answer": "27"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-1a93978517f532f6",
+      "rewritten": {
+        "printedNumbers": [
+          "13",
+          "5",
+          "8"
+        ],
+        "location": "internal_tangent",
+        "onlyIntersection": [
+          "13",
+          "0"
+        ],
+        "correctStrictTwoIntersectionRange": [
+          "8",
+          "18"
+        ],
+        "answer": "Іштей жанасады: бір ортақ нүктесі бар."
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "9",
+          "4",
+          "5"
+        ],
+        "location": "internal_tangent",
+        "onlyIntersection": [
+          "9",
+          "0"
+        ],
+        "correctStrictTwoIntersectionRange": [
+          "5",
+          "13"
+        ],
+        "answer": "Іштей жанасады (бір ортақ нүкте)"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-1b8f4f0a1109e16e",
+      "rewritten": {
+        "printedNumbers": [
+          "14",
+          "20",
+          "18"
+        ],
+        "orderedPositiveRadii": [
+          "6",
+          "8",
+          "12"
+        ],
+        "answer": "12"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "10",
+          "14",
+          "12"
+        ],
+        "orderedPositiveRadii": [
+          "4",
+          "6",
+          "8"
+        ],
+        "answer": "8"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-91a6b76d90d3e16c",
+      "rewritten": {
+        "printedNumbers": [
+          "8"
+        ],
+        "unorderedEndpointPairs": 28,
+        "bothArcsPerPair": 2,
+        "notOnlyElementaryArcs": 8,
+        "answer": "56"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "6"
+        ],
+        "unorderedEndpointPairs": 15,
+        "bothArcsPerPair": 2,
+        "notOnlyElementaryArcs": 6,
+        "answer": "30"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-3d537dfe52ece347",
+      "rewritten": {
+        "printedNumbers": [],
+        "diameterReflectionIsometry": true,
+        "oneCutNotFourParts": true,
+        "answer": "Бір-бірімен беттесетін екі жарты дөңгелек."
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "diameterReflectionIsometry": true,
+        "oneCutNotFourParts": true,
+        "answer": "Екі тең жарты дөңгелекке"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-0051acc5c257fd0f",
+      "rewritten": {
+        "printedNumbers": [
+          "42"
+        ],
+        "answer": "84"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "35"
+        ],
+        "answer": "70"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-bc5c41abdc6c3603",
+      "rewritten": {
+        "printedNumbers": [
+          "13",
+          "8"
+        ],
+        "firstReach": [
+          "0",
+          "8"
+        ],
+        "secondReach": [
+          "5",
+          "13"
+        ],
+        "requestedIntersection": [
+          "5",
+          "8"
+        ],
+        "answer": "3"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "10",
+          "6"
+        ],
+        "firstReach": [
+          "0",
+          "6"
+        ],
+        "secondReach": [
+          "4",
+          "10"
+        ],
+        "requestedIntersection": [
+          "4",
+          "6"
+        ],
+        "answer": "2"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-3e19ca42dc4e6569",
+      "rewritten": {
+        "printedNumbers": [
+          "39"
+        ],
+        "answer": "26"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "27"
+        ],
+        "answer": "18"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-f3c0bdb71ba31f17",
+      "rewritten": {
+        "printedNumbers": [
+          "14",
+          "14"
+        ],
+        "answer": "7"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "10",
+          "10"
+        ],
+        "answer": "5"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-addaf4aef8da2757",
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "7"
+        ],
+        "containingRadius": "11",
+        "smallCenters": [
+          "-7",
+          "4"
+        ],
+        "smallExternalTouchPoint": "-3",
+        "answer": "11"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "3",
+          "5"
+        ],
+        "containingRadius": "8",
+        "smallCenters": [
+          "-5",
+          "3"
+        ],
+        "smallExternalTouchPoint": "-2",
+        "answer": "8"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-150cfb594850c932",
+      "rewritten": {
+        "printedNumbers": [
+          "8"
+        ],
+        "orderedTriples": 336,
+        "permutationsOfEachTriangle": 6,
+        "noThreeCollinearOnCircle": true,
+        "answer": "56"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "6"
+        ],
+        "orderedTriples": 120,
+        "permutationsOfEachTriangle": 6,
+        "noThreeCollinearOnCircle": true,
+        "answer": "20"
+      }
+    },
+    {
+      "editionId": "grade5-circle-basics-12c644df64c48294",
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "3",
+          "62"
+        ],
+        "inclusiveRadii": [
+          "4",
+          "7",
+          "10",
+          "13",
+          "16",
+          "19",
+          "22",
+          "25",
+          "28",
+          "31"
+        ],
+        "intervalCount": "9",
+        "answer": "10"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "3",
+          "2",
+          "46"
+        ],
+        "inclusiveRadii": [
+          "3",
+          "5",
+          "7",
+          "9",
+          "11",
+          "13",
+          "15",
+          "17",
+          "19",
+          "21",
+          "23"
+        ],
+        "intervalCount": "10",
+        "answer": "11"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "editionId": "grade5-circle-basics-9b2721b56479cbcf",
+      "sha256": "d511457d3c617d2636089cf53bf2ace0b263f40b00343e758728ef3253ebbffd",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"5\"], \"centimetresPerDecimetre\": 10, \"answer\": \"25\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-a6f9cb6cf4297e70",
+      "sha256": "8722d19d3dcd5297e285be05c7c07b2dd43b3a7d0242f8ebd433382c25f10d5b",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"9\", \"13\"], \"radius\": \"9\", \"distance\": \"13\", \"location\": \"outside_closed_disk\", \"answer\": \"Нүкте жабық дөңгелектен тыс жатыр.\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-c321afd0486381c5",
+      "sha256": "651c78fab238fbbb81aec9e31af70ab78cc80a4f0dc186ccb1cf41b7bb7592d0",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [], \"allMCQTruth\": [true, false, false, false], \"answer\": \"Дөңгелектің құрамына ішкі аймақ та, оны шектейтін шеңбер де кіреді.\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-f70ca8f6e6607f9a",
+      "sha256": "04796fa79a185e1a5d901980f62ad64e91f27979dc4b871f5965af759da0e512",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"7\"], \"closingIntervalIncluded\": true, \"answer\": \"7\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-fb5473e817b2f2e1",
+      "sha256": "1787a5d0144165fab06ee14d8dc4cce4b1d6bf6ace2700691a2c131b002b11de",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"58\"], \"answer\": \"29\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-a4bb204faaffdb31",
+      "sha256": "a21841193bbaae95c7c7f8ea8158715f062122537c1e94b6236820a2745e1abb",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"10\", \"12\", \"7\", \"10\"], \"center\": \"K\", \"actualDistances\": {\"P\": \"12\", \"Q\": \"7\", \"T\": \"10\"}, \"answer\": \"T\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-90a5fcf8971d0f8a",
+      "sha256": "2367bad4899369d086a25567f6e97e0215a73027b4010340f3aceed937852fb9",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"30\"], \"answer\": \"15\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-aef0e9df3939b3bb",
+      "sha256": "27a276e3ce1059b90c2157ad691c3b35f8802e77eb3dc829545f217ed09ca3f6",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [], \"allMCQTruth\": [true, false, false, false], \"answer\": \"радиус\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-087f9b0bc58ec9fe",
+      "sha256": "f136de805512d9b3b2db95930b2775f878424c5a64fcc026404e04fdef55c896",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"7/2\"], \"answer\": \"7\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-a190fb6d34cdb844",
+      "sha256": "775112701ded6cba9b9ebff47c38f704e24c1f0516a8e57d960a8170dff0facb",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"17\", \"30\"], \"orderedDiameters\": [\"34\", \"30\"], \"requestedDifference\": \"4\", \"wrongUnconvertedDifference\": \"13\", \"wrongRadiusDifference\": \"2\", \"answer\": \"Біріншінің диаметрі 4 см артық.\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-3d46e016bda5994a",
+      "sha256": "9bc28b0044ab8563e1e4bc26172a387cde491db6f81d3232d98ff848400244e1",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"9\"], \"closedBoundaryAttainment\": [\"-9\", \"9\"], \"upperBound\": \"18\", \"answer\": \"18\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-830b6cc74353a137",
+      "sha256": "fa0a58c7488cc7e9267075f1b575563e4e1d2087f28b2936d49cb9667893548e",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"9\", \"5\", \"14\"], \"location\": \"external_tangent\", \"onlyIntersection\": [\"9\", \"0\"], \"correctStrictTwoIntersectionRange\": [\"4\", \"14\"], \"answer\": \"Сырттай жанасады: бір ортақ нүктесі бар.\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-ff225249ef03e7cb",
+      "sha256": "42f185d097db379c814783df8d73894468ac9668c496e7bbcce36979780589cb",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"1\", \"80\", \"450\"], \"circumferenceCentimetres\": \"180\", \"distanceCentimetres\": \"45000\", \"requestedCompleteTurns\": \"250\", \"answer\": \"250\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-131dcedf1ad130b5",
+      "sha256": "47ca313ae95b23d68de5f08c8ad2a60f5bfa6831d8683284fad5133bd5c13697",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"9\", \"6\"], \"answer\": \"Кіші дөңгелектен тыс, үлкен дөңгелектің ішкі аймағында.\", \"strictlyBetweenBoundaries\": true}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-8d5e93473e14e50d",
+      "sha256": "add24bd0b1cd8290a641d37f12c497e6808ee44c6144367dd1f3989732851fb0",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"32\", \"4\"], \"intermediateSmallDiameter\": \"8\", \"answer\": \"4\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-ef96ecc5a21fd744",
+      "sha256": "869272f5ff33da408701670b3d7950510da92989808d43f794a6f8fe2189e93c",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"25\"], \"requestedFraction\": \"5/12\", \"reconstructedMinutes\": \"25\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-d94d4b62239d8906",
+      "sha256": "53e392a769843e4f957d8f4d8447139db9dd4251519b460f88e7b16d005030e9",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"82\", \"46\"], \"answer\": \"18\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-e0ff83d01e9dd11f",
+      "sha256": "a31bef25789191f8d41b884ebbf9814759e31c59d655a8d5dc24d5b50147ed8b",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"1\", \"12\"], \"everyMCQMinorTickGap\": [\"6\", \"5\", \"4\", \"5\"], \"answer\": \"4 және 10\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-e5320ad3d301f3c9",
+      "sha256": "7151bc2dc19af7087ebde7e7e11b3e64ae2ec1d4ad7c66da58dc172bb397fc75",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"2\", \"40\", \"90\", \"7\"], \"oneTurnMetres\": \"12/5\", \"totalTurns\": \"630\", \"oneMinuteMetres\": \"216\", \"answer\": \"1512\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-d329d6097eb08097",
+      "sha256": "3aa440d007dc633125b0e68a9d3902b83b464841070b404ef7f832bbaa60cc5c",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"7\", \"8\", \"5\"], \"attainedOrderedXABY\": [\"-8\", \"0\", \"7\", \"12\"], \"upperBound\": \"20\", \"answer\": \"20\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-07b94f836198d6fa",
+      "sha256": "eec8148badeb4670a45f58b207898f1f0ef4ef89ff68112cca40b7163cdfccba",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"4\"], \"eachNewCircleMaximumRegions\": [2, 2, 4, 6], \"needsPairwiseTwoIntersectionsNoTriple\": true, \"answer\": \"14\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-0d98c21ce26ec749",
+      "sha256": "b014ee83218f5df6f019cb74e4823e5a453e9a3aa76813420d42f5cf974cf4cf",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"9\"], \"maximumAllowedChord\": \"18\", \"answer\": \"19 см\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-216937dc972be9b2",
+      "sha256": "1f5aca24aa6df8b848cd2b44ccb9f44a823ba1dd06475ad54b5baaea9ed992c5",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"36\", \"24\", \"2\"], \"alignedGridOnly\": true, \"columns\": 9, \"rows\": 6, \"diameter\": \"4\", \"answer\": \"54\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-3291a1a0ff78d3e0",
+      "sha256": "f6ccb5a1e73a2df91421d157b4c04d257afda5cc256ec9f8fe94b3e709b99159",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"11\"], \"allUnorderedPairs\": 55, \"removedCyclicNeighbors\": 11, \"answer\": \"44\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-1a93978517f532f6",
+      "sha256": "422b869b623e8370dd5985dd4bbc78a4784f368c05c7a269495906d194f1b3af",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"13\", \"5\", \"8\"], \"location\": \"internal_tangent\", \"onlyIntersection\": [\"13\", \"0\"], \"correctStrictTwoIntersectionRange\": [\"8\", \"18\"], \"answer\": \"Іштей жанасады: бір ортақ нүктесі бар.\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-1b8f4f0a1109e16e",
+      "sha256": "517574c25d6bbaf219122a304da905b0ad5dfad7cfc00c3c9f70c0f66a29dd85",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"14\", \"20\", \"18\"], \"orderedPositiveRadii\": [\"6\", \"8\", \"12\"], \"answer\": \"12\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-91a6b76d90d3e16c",
+      "sha256": "b19f55620853cd72aa9b7a89fe118c72abb1ac4b3cf7806c5424c9a29d8704f5",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"8\"], \"unorderedEndpointPairs\": 28, \"bothArcsPerPair\": 2, \"notOnlyElementaryArcs\": 8, \"answer\": \"56\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-3d537dfe52ece347",
+      "sha256": "17ca84be3138dfe70cb150fa0a21a599d74c14e00bf3ab91a6441a26ba988dd9",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [], \"diameterReflectionIsometry\": true, \"oneCutNotFourParts\": true, \"answer\": \"Бір-бірімен беттесетін екі жарты дөңгелек.\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-0051acc5c257fd0f",
+      "sha256": "5d7911c78a68f1fa7fd5e3c3f221e6c432840726f98fd7de0243b64d62f52e88",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"42\"], \"answer\": \"84\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-bc5c41abdc6c3603",
+      "sha256": "daa0c90348a137839131d6e9397c23e3d6bae6a8669302df3917c292c2884f11",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"13\", \"8\"], \"firstReach\": [\"0\", \"8\"], \"secondReach\": [\"5\", \"13\"], \"requestedIntersection\": [\"5\", \"8\"], \"answer\": \"3\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-3e19ca42dc4e6569",
+      "sha256": "f75b7469235567d17bd517e901196059ed9351008788a8e5791a75af3450107a",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"39\"], \"answer\": \"26\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-f3c0bdb71ba31f17",
+      "sha256": "9748d559c7afb6a2c7d796c069d1de1cef951f5b227d90e0ee22ef31964c0aaa",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"14\", \"14\"], \"answer\": \"7\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-addaf4aef8da2757",
+      "sha256": "70d739e4b7432852088e2cc07fe57ebd9531a2242bb9a4f388a072ea8d9ce01b",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"7\"], \"containingRadius\": \"11\", \"smallCenters\": [\"-7\", \"4\"], \"smallExternalTouchPoint\": \"-3\", \"answer\": \"11\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-150cfb594850c932",
+      "sha256": "dd2a7f8881a7688290ea1a7b218380cc8c67379b59da18c310348786de247cca",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"8\"], \"orderedTriples\": 336, \"permutationsOfEachTriangle\": 6, \"noThreeCollinearOnCircle\": true, \"answer\": \"56\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-circle-basics-12c644df64c48294",
+      "sha256": "95dc50d162a807c9fa2bec297b854baee9e12c88c7c9f576cbb7a0a8dc9514ad",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_circle_distance_SI_extrema_endpoint_enumeration_and_planar_witness_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"3\", \"62\"], \"inclusiveRadii\": [\"4\", \"7\", \"10\", \"13\", \"16\", \"19\", \"22\", \"25\", \"28\", \"31\"], \"intervalCount\": \"9\", \"answer\": \"10\"}"
+      ]
+    }
+  ]
+}

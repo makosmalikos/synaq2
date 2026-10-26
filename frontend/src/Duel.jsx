@@ -289,7 +289,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
   // ── Гость по ссылке: подключение ──
   if (fromLink && invitePending && (joining || (!duel && !err))) {
     return (
-      <main style={{ textAlign: 'center', paddingTop: 48 }}>
+      <main className="duel-page duel-session" style={{ textAlign: 'center', paddingTop: 48 }}>
         <p className="kicker">{t('nav.duel')}</p>
         <h1>{t('duel.linkJoin')}</h1>
         <p className="muted">{t('duel.linkJoinSub')}</p>
@@ -302,7 +302,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
   if (!duel) {
     if (fromLink && invitePending && err) {
       return (
-        <main>
+        <main className="duel-page duel-session">
           <p className="kicker">{t('nav.duel')}</p>
           <h1>{t('duel.linkFail')}</h1>
           <p style={{ color: 'var(--accent)' }}>{err}</p>
@@ -343,7 +343,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
   // ── Хост ждёт друга ──
   if (duel.status === 'waiting') {
     return (
-      <main>
+      <main className="duel-page duel-session">
         <p className="kicker">{t('nav.duel')}</p>
         <h1>{t('duel.lobby')}</h1>
         <p className="muted">{t('duel.waitFriend')}</p>
@@ -390,7 +390,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
       scores: duel.scores, speedWins: duel.speedWins, role, winner: duel.winner,
     }) : 0;
     return (
-      <main>
+      <main className="duel-page duel-session">
         <p className="kicker">{t('nav.duel')}</p>
         <h1>{draw ? t('duel.draw') : won ? t('duel.win') : t('duel.lose')}</h1>
 
@@ -411,7 +411,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
         {role && xpGain > 0 && (
           <div className="card" style={{ marginTop: 16 }}>
             <p className="kicker" style={{ margin: 0 }}>{t('duel.xpEarned')}</p>
-            <div style={{ font: "700 32px 'Lora',serif", color: 'var(--accent)' }}>+{xpGain} XP</div>
+            <div style={{ font: "700 32px 'Manrope','Golos Text',sans-serif", color: 'var(--accent)' }}>+{xpGain} XP</div>
             <ul className="muted" style={{ fontSize: 13, margin: '10px 0 0', paddingLeft: 18, lineHeight: 1.7 }}>
               <li>{myCorrect} × {XP.DUEL_CORRECT} = {myCorrect * XP.DUEL_CORRECT} XP ({t('duel.xpCorrect')})</li>
               {mySpeed > 0 && <li>{mySpeed} × {XP.DUEL_SPEED} = {mySpeed * XP.DUEL_SPEED} XP ({t('duel.xpSpeed')})</li>}
@@ -432,10 +432,10 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
   // ── Старт: 3-2-1 ──
   if (!gameReady && countdown != null) {
     return (
-      <main style={{ textAlign: 'center', paddingTop: 60 }}>
+      <main className="duel-page duel-session" style={{ textAlign: 'center', paddingTop: 60 }}>
         <p className="kicker">{t('nav.duel')}</p>
         <h1 style={{ fontSize: 22, marginBottom: 8 }}>{t('duel.vs')} {duel.host?.name} ⚔ {duel.guest?.name}</h1>
-        <div style={{ font: "700 72px 'Lora',serif", color: 'var(--accent)', lineHeight: 1 }}>{countdown}</div>
+        <div style={{ font: "700 72px 'Manrope','Golos Text',sans-serif", color: 'var(--accent)', lineHeight: 1 }}>{countdown}</div>
         <p className="muted">{t('duel.getReady')}</p>
       </main>
     );
@@ -446,7 +446,7 @@ export default function Duel({ initialCode = '', playerName = 'Ойыншы', fr
   const lastRound = duel.lastRound;
 
   return (
-    <main>
+    <main className="duel-page duel-session">
       <div className="row">
         <span className="tag">{t('duel.round')} {duel.qIndex + 1}/{duel.questions?.length || DUEL_SIZE}</span>
         <span className={'timer' + (leftSec <= 10 ? ' warn' : '')}>{leftSec}с</span>

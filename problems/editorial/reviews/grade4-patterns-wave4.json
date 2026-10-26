@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "batchFile": "problems/editorial/batches/grade4-patterns-wave4.json",
+  "reviewed": 1,
+  "entries": [
+    {
+      "editionId": "grade4-paired-badge-score",
+      "sha256": "ad42c6ace6dd7964ad7077be8d4c38a433752d53457983956f0a2df3bc17335c",
+      "verdict": "verified",
+      "reviewer": "independent_root_agent",
+      "method": "closed_form_even_and_odd_sums",
+      "expectedAnswer": "12300",
+      "checks": [
+        "source alternating sum and new card-number story read separately",
+        "both inclusive endpoints and the order even minus odd explicitly checked",
+        "separate arithmetic-series formulas instead of author enumeration"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,916 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "24 source-specific saved grade-4 nonvisual division/remainder exercises; no new source collection.",
+  "summary": {
+    "editions": 24,
+    "models": 23,
+    "sourceOccurrencesReferenced": 24,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-remainder-43603ab23a56abd6",
+      "modelId": "grade4-double-neighbour-remainders",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "first": 7,
+        "second": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-2-level3.json",
+          "sourceId": "43603ab23a56abd6"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір натурал санды 7 санына бөлгенде қалдық 6, ал 5 санына бөлгенде қалдық 4 шығады. Осы екі шартқа сай ең кіші санды табыңдар.",
+      "answer": "34",
+      "solution": "Екі қалдық та өз бөлгішінен 1-ге кем. Санға 1 қоссақ, 7 және 5 сандарына қалдықсыз бөлінеді. Олардың ең кіші оң ортақ еселігі 35. Ізделген сан: 35 − 1 = 34.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "34",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "positive common period",
+          "all smaller natural numbers checked"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-a321e617b5895946",
+      "modelId": "grade4-largest-digit-remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "digits": 4,
+        "divisor": 9,
+        "remainder": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-2-level3.json",
+          "sourceId": "a321e617b5895946"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "9 санына бөлгенде қалдық 4 шығатын ең үлкен 4 таңбалы натурал санды табыңдар.",
+      "answer": "9994",
+      "solution": "Жоғарғы шек — 9 999. Шартқа сай ең үлкен сан 9 · 1110 + 4 = 9 994. Одан кейінгі осындай сан 10 003 болады, ол 4 таңбалы сан емес.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "9994",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "complete digit interval enumerated",
+          "next congruent number exceeds the upper bound"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-22edb6cd8ba46091",
+      "modelId": "grade4-shifted-remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "divisor": 11,
+        "remainder": 8,
+        "add": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-2-level3.json",
+          "sourceId": "22edb6cd8ba46091"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Белгісіз санды 11 санына бөлгенде қалдық 8 болды. Осы санға 7 қосып, қайтадан 11 санына бөлсе, қалдық қандай болады?",
+      "answer": "4",
+      "solution": "Бөлгіштің толық еселіктері қалдыққа әсер етпейді. Қалдыққа 7 қосамыз: 8 + 7 = 15. Осы санды 11 санына бөлгендегі қалдық — 4.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "4",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "remainder transformed independently of the unknown quotient"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-436f322d59a8ed27",
+      "modelId": "grade4-reversed-multiply-divide",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "factor": 6,
+        "mistakenQuotient": 125
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-2-level3.json",
+          "sourceId": "436f322d59a8ed27"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Есепте бір санды 6 санына көбейту керек еді. Оқушы оны қателесіп 6 санына бөліп, 125 жауабын алды. Қате орындалған бөлу қалдықсыз болды. Дұрыс көбейтінді қандай?",
+      "answer": "4500",
+      "solution": "Алдымен бастапқы санды қалпына келтіреміз: 125 · 6 = 750. Енді сұралған көбейтуді орындаймыз: 750 · 6 = 4 500.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "4500",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "two different inverse/forward steps; mistaken result is not the original number"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-412cc90047bb5f76",
+      "modelId": "grade4-complete-bundle-top-up",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "total": 5867,
+        "size": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level1.json",
+          "sourceId": "412cc90047bb5f76"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Шеберханада 5 867 төсбелгі бар. Әр бумада дәл 10 төсбелгі болуы үшін жетпегенін ғана қосады. Бәрін толық бумаларға бөлуге ең аз неше төсбелгі қосу керек?",
+      "answer": "3",
+      "solution": "Қазір 5 867 : 10 бөлуінің қалдығы 7. Ең жақын толық бумаға 3 төсбелгі жетпейді. 5 867 + 3 = 5 870, бұл сан 10 санына қалдықсыз бөлінеді.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "3",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "zero additions allowed when already divisible",
+          "all smaller additions tested"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-3360bb554e635b32",
+      "modelId": "grade4-incomplete-quotient-length",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "dividend": 830014,
+        "divisor": 100
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "3360bb554e635b32"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "830 014 санын 100 санына қалдықпен бөлгенде шыққан толымсыз бөліндіде неше цифр болады?",
+      "answer": "4",
+      "solution": "Толымсыз бөлінді 8 300, қалдық 14: 830 014 = 8 300 · 100 + 14. 8 300 саны 4 цифрдан тұрады.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "4",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "quotient digit count distinguished from the dividend and remainder"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-6c15b38977cc6523",
+      "modelId": "grade4-quotient-remainder-total",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "dividend": 6075,
+        "divisor": 100
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level2.json",
+          "sourceId": "6c15b38977cc6523"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "6 075 санын 100 санына қалдықпен бөлгенде шыққан толымсыз бөлінді мен қалдықтың қосындысын табыңдар.",
+      "answer": "135",
+      "solution": "6 075 = 60 · 100 + 75. Толымсыз бөлінді 60, қалдық 75. Сұралған қосынды: 60 + 75 = 135.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "135",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "dividend reconstructed from the quotient and remainder"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-f86123dca3b8be02",
+      "modelId": "grade4-two-division-reconstruction",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "quotient": 647,
+        "lastTwo": 79
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level3.json",
+          "sourceId": "f86123dca3b8be02"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір санды 10 санына бөлгенде толымсыз бөлінді 647 шығады. Сол санды 100 санына бөлгендегі қалдық 79. Бастапқы санды табыңдар.",
+      "answer": "6479",
+      "solution": "Бірінші шарт бойынша сан 6 470 және 6 479 аралығында. Осы аралықта соңғы екі цифры 79 болатын жалғыз сан — 6 479. Тексеру: толымсыз бөлінді 647, ал 100 санына бөлгендегі қалдық 79.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "6479",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "entire ten-number candidate interval checked",
+          "unique intersection of both division constraints"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-0f536f155b2eb42f",
+      "modelId": "grade4-remainder-multiple-of-quotient",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "divisor": 100,
+        "multiplier": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level3.json",
+          "sourceId": "0f536f155b2eb42f"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір натурал санды 100 санына бөлгенде қалдық толымсыз бөліндіден 7 есе үлкен болды. Осы шартқа сай ең үлкен санды табыңдар.",
+      "answer": "1498",
+      "solution": "Қалдық 100 санынан кіші. Толымсыз бөлінді 14 болғанда қалдық 14 · 7 = 98; келесі бөліндіде ол 105 болып, бөлгіштен кем болмай қалады. Ең үлкен сан: 14 · 100 + 98 = 1 498.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "1498",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "remainder bound determines the largest admissible quotient"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-38cb35a81224da9c",
+      "modelId": "grade4-bounded-equal-quotient-remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "lower": 3200,
+        "upper": 9999,
+        "divisor": 100
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level3.json",
+          "sourceId": "38cb35a81224da9c"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Төрт таңбалы сан 3 200 санынан үлкен. Оны 100 санына бөлгенде толымсыз бөлінді мен қалдық бірдей болады. Осындай ең кіші санды табыңдар.",
+      "answer": "3232",
+      "solution": "Бөлінді мен қалдықты q десек, сан 100 · q + q түрінде. q = 32 алғанда сан 3 232, ал q = 31 алғанда 3131 — берілген төменгі шектен аспайды. Қалдық 32 < 100. Сондықтан ең кішісі 3 232.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "3232",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "four-digit and strict lower bounds enforced",
+          "all candidates in the written interval enumerated"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-2555026c0d4254fb",
+      "modelId": "grade4-fixed-thousands-and-remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "thousandsQuotient": 7,
+        "remainder": 64
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level3.json",
+          "sourceId": "2555026c0d4254fb"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Санды 1000 санына бөлгенде толымсыз бөлінді 7, ал 100 санына бөлгенде қалдық 64 болады. Осы шарттарға сай ең үлкен санды табыңдар.",
+      "answer": "7964",
+      "solution": "Бірінші шарт санды 7 000–7 999 аралығына орналастырады. Екінші шарт бойынша соңғы екі цифры 64. Жүздіктер цифрын 9 етіп алсақ, ең үлкен сан 7 964 болады.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "7964",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "full thousand-number interval checked for the maximum"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-e9496d1ab0ad4885",
+      "modelId": "grade4-digit-interval-remainder-count",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "digits": 4,
+        "divisor": 100,
+        "remainder": 24
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level3.json",
+          "sourceId": "e9496d1ab0ad4885"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "100 санына бөлгенде қалдық 24 шығатын 4 таңбалы натурал сандар нешеу?",
+      "answer": "90",
+      "solution": "Ең кішісі 1 024, ең үлкені 9 924. Көршілес осындай сандардың айырмасы 100. Саны: (9 924 − 1 024) : 100 + 1 = 90. Екі шеткі сан да есептеледі.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "90",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "complete digit-length interval enumerated; inclusive endpoints"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-a08569c27ad327ce",
+      "modelId": "grade4-shared-decimal-remainder-minimum",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "remainder": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level3.json",
+          "sourceId": "a08569c27ad327ce"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Төрт таңбалы санды 10, 100 және 1000 сандарына бөлгенде үш жағдайда да қалдық 4 болады. Осындай ең кіші санды табыңдар.",
+      "answer": "1004",
+      "solution": "1000 санына бөлгендегі қалдық 4 болғандықтан, соңғы үш цифр 004. Алғашқы цифрды 1 етіп аламыз: 1 004. Бұл санды 10 және 100 сандарына бөлгенде де қалдық 4.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "1004",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "all three congruences checked over all four-digit numbers"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-acff37ed32a375be",
+      "modelId": "grade4-largest-quotient-remainder-sum",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "divisor": 100,
+        "total": 18
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-leveltest.json",
+          "sourceId": "acff37ed32a375be"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір санды 100 санына бөлгенде толымсыз бөлінді мен қалдықтың қосындысы 18 болады. Қалдық 0 емес. Осы шартқа сай ең үлкен санды табыңдар.",
+      "answer": "1701",
+      "solution": "Қалдық кемінде 1, сондықтан бөлінді ең көбі 17. Ең үлкен сан бөлінді 17, қалдық 1 болғанда шығады: 17 · 100 + 1 = 1 701. Қалған мүмкін жұптардың бәрі кіші сан береді.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "1701",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "every nonzero-remainder pair with the given sum checked"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-42c23f2aab7a24ab",
+      "modelId": "grade4-largest-equal-quotient-remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "divisor": 168
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-10-level3.json",
+          "sourceId": "42c23f2aab7a24ab"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір санды 168 санына бөлгенде толымсыз бөлінді мен қалдық бірдей болады. Осы шартқа сай ең үлкен санды табыңдар.",
+      "answer": "28223",
+      "solution": "Қалдық бөлгіштен кіші, сондықтан ол ең көбі 167. Бөлінді де 167 болады. Ізделген сан: 168 · 167 + 167 = 28 223. Оларды бірге арттырсақ, қалдық бөлгішке тең болып, рұқсат етілген шектен шығады.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "28223",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "the largest legal remainder maximizes both identical components"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-facce289944548bd",
+      "modelId": "grade4-reconstruct-then-new-remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "firstDivisor": 125,
+        "firstQuotient": 48,
+        "firstRemainder": 19,
+        "nextDivisor": 129
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-10-level3.json",
+          "sourceId": "facce289944548bd"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Санды 125 санына бөлгенде толымсыз бөлінді 48, қалдық 19 шығады. Осы санды 129 санына бөлгендегі қалдықты табыңдар.",
+      "answer": "85",
+      "solution": "Бастапқы сан: 125 · 48 + 19 = 6 019. Жаңа бөлу: 6 019 = 129 · 46 + 85. Қалдық 85 < 129.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "85",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "original number uniquely reconstructed before changing the divisor"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-57a6f34c99471d8f",
+      "modelId": "grade4-remainder-under-factor-divisor",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "firstDivisor": 448,
+        "nextDivisor": 64,
+        "remainder": 173
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-10-leveltest.json",
+          "sourceId": "57a6f34c99471d8f"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Белгісіз санды 448 санына бөлгенде қалдық 173 шығады. Сол санды 64 санына бөлгендегі қалдық қандай болады?",
+      "answer": "45",
+      "solution": "448 саны 64 санына қалдықсыз бөлінеді. Демек бастапқы санның 448 еселіктерінен тұратын бөлігі жаңа қалдыққа әсер етпейді. 173 = 64 · 2 + 45. Жаңа қалдық — 45.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "45",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "smaller divisor is a factor of the original divisor; result independent of unknown quotient"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-bf60e84d0d2eafec",
+      "modelId": "grade4-largest-legal-remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "divisor": 248
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-11-level1.json",
+          "sourceId": "bf60e84d0d2eafec"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Санды 248 санына қалдықпен бөлгенде қалдық ең көп дегенде қандай сан болуы мүмкін?",
+      "answer": "247",
+      "solution": "Қалдық 0-ден кем емес және 248 санынан кіші. Сондықтан ең үлкені 247. Мысалы, 495 = 248 · 1 + 247.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "247",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "sharp remainder upper bound attained by an explicit example"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-f7b66a705bd138bb",
+      "modelId": "grade4-count-digit-multiples",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "digits": 5,
+        "divisor": 175
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-11-level3.json",
+          "sourceId": "f7b66a705bd138bb"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Неше 5 таңбалы натурал сан 175 санына қалдықсыз бөлінеді?",
+      "answer": "514",
+      "solution": "Ең кіші осындай сан 175 · 58 = 10 150, ең үлкені 175 · 571 = 99 925. Көбейткіштер 58–571 аралығында, екі шеті де кіреді. Саны: 571 − 58 + 1 = 514.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "514",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "multiple-index bounds agree with exhaustive digit-interval enumeration"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-7a051849db75f766",
+      "modelId": "grade4-smallest-digit-remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "digits": 5,
+        "divisor": 154,
+        "remainder": 39
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-11-leveltest.json",
+          "sourceId": "7a051849db75f766"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "154 санына бөлгенде қалдық 39 шығатын ең кіші 5 таңбалы натурал санды табыңдар.",
+      "answer": "10049",
+      "solution": "Ізделген сан 154 · q + 39 түрінде. q = 64 алғанда 9 895 шығады, оның цифры аз. Келесі мән: 154 · 65 + 39 = 10 049. Бұл 5 таңбалы және шартқа сай.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "10049",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "first congruent number reaches the lower digit bound; predecessor does not"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-c715994a9814c1f6",
+      "modelId": "grade4-divisor-linked-to-quotient",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "dividend": 2352,
+        "ratio": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-6-leveltest.json",
+          "sourceId": "c715994a9814c1f6"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "2 352 саны қалдықсыз бөлінді. Бөлінді бөлгіштен 3 есе үлкен болды. Бөлгішті табыңдар.",
+      "answer": "28",
+      "solution": "Бөлгішті d десек, бөлінді 3 · d, сондықтан d · d = 2 352 : 3 = 784. 28 · 28 = 784. Демек бөлгіш 28. Тексеру: 2 352 : 28 = 84, ал 84 = 3 · 28.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "28",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "positive exact divisor uniquely found; quotient ratio verified"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-75de9e2115334363",
+      "modelId": "grade4-smallest-two-digit-divisor",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "quotient": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-6-level3.json",
+          "sourceId": "75de9e2115334363"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Үш таңбалы санды екі таңбалы санға қалдықсыз бөлгенде бөлінді 8 болды. Бөлгіштің ең кіші мүмкін мәнін табыңдар.",
+      "answer": "13",
+      "solution": "Бөлінгіш 8 · d түрінде және кемінде 100 болуы керек. d = 12 алсақ, 96 — екі таңбалы. d = 13 алсақ, 104 — үш таңбалы. Сондықтан ең кіші бөлгіш 13.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "13",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "all two-digit divisors checked against the three-digit product bounds"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-a874785b31607fba",
+      "modelId": "grade4-hidden-division-digit",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "template": "3?5",
+        "scale": 1000,
+        "divisor": 900,
+        "target": "quotient"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level3.json",
+          "sourceId": "a874785b31607fba"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "3□5 000 санындағы □ таңбасы бір цифрды жасырып тұр. Сан 0-ден басталмайды және 900 санына қалдықсыз бөлінеді. Бөліндіні табыңдар.",
+      "answer": "350",
+      "solution": "Жасырылған орынға 0–9 цифрларын қойып тексереміз. Сан 0-ден басталмайтын және қалдықсыз бөлінетін жалғыз нұсқа — 315 000. Себебі 315 000 : 900 = 350. Жасырылған цифр 1, бөлінді 350. Сұралған жауап — 350.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "350",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "all ten possible hidden digits checked; exactly one valid number",
+          "requested digit and quotient distinguished"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-remainder-1f20a557ff3d73f5",
+      "modelId": "grade4-hidden-division-digit",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "template": "?6",
+        "scale": 1000,
+        "divisor": 900,
+        "target": "digit"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level3.json",
+          "sourceId": "1f20a557ff3d73f5"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы шарт пен ресми шешім толық оқылып, нақты қалдық/бөлінді/разряд шектеуінің дағдысы сақталды.",
+        "Сандық деректер және қазақша шарт осы редакция үшін қайта жазылды; жауап жаңа деректерден есептелді.",
+        "Кіші/үлкен мән не бірмәнділік талаптары толық аралықты тексеру немесе дәл бүтін шекаралармен дәлелденді."
+      ],
+      "relationToSource": "Specific saved grade-4 division/remainder skill reference. A numeric exercise edition is not claimed as a semantically unique story.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "□6 000 санындағы □ таңбасы бір цифрды жасырып тұр. Сан 0-ден басталмайды және 900 санына қалдықсыз бөлінеді. Жасырылған цифрды табыңдар.",
+      "answer": "3",
+      "solution": "Жасырылған орынға 0–9 цифрларын қойып тексереміз. Сан 0-ден басталмайтын және қалдықсыз бөлінетін жалғыз нұсқа — 36 000. Себебі 36 000 : 900 = 40. Жасырылған цифр 3, бөлінді 40. Сұралған жауап — 3.",
+      "calculationVerification": {
+        "method": "exact_constraints_and_finite_candidates",
+        "answer": "3",
+        "checks": [
+          "exact integer/remainder constraints",
+          "statement and solution bound to authored givens",
+          "all ten possible hidden digits checked; exactly one valid number",
+          "requested digit and quotient distinguished"
+        ]
+      }
+    }
+  ]
+}

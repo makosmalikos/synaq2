@@ -24,12 +24,12 @@ function record(overrides = {}) {
 
 test('mock screen uses authenticated server sessions instead of the browser question bank', () => {
   assert.match(component, /mockStart\(\{ id: requestId, school: code, weekKey: weekly\.weekKey, excludeQuestionIds: \[\] \}\)/);
-  assert.match(component, /mockSubmit\(run\.id, run\.answers\)/);
+  assert.match(component, /mockSubmit\(run\.id, snapshot\)/);
   assert.match(component, /mockResume\(record\?\.id \|\| interruptedStart\.id\)/);
   assert.doesNotMatch(component, /from ['"]\.\.\/api\.js['"]/);
-  assert.match(adapter, /Authorization: `Bearer \$\{token\}`/);
-  assert.match(adapter, /fetch\('\/api\/mock-session'/);
-  assert.match(adapter, /fetch\('\/api\/weekly-mock-checkout'/);
+  assert.match(adapter, /import \{ authenticatedRequest \} from '\.\/authenticatedRequest\.js'/);
+  assert.match(adapter, /authenticatedRequest\(auth, '\/api\/mock-session'/);
+  assert.match(adapter, /authenticatedRequest\(auth, '\/api\/weekly-mock-checkout'/);
 });
 
 test('journal stores public questions and restores answers, flags and deadline', () => {

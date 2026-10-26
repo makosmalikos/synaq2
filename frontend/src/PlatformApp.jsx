@@ -1,5 +1,6 @@
 import './platform-fonts.css';
 import './styles.css';
+import './PlatformFoundation.css';
 import React, { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { watchAuth, watchMyProfile, isKid, isAdmin, logout, getXpSummary, ensureFamilyProfile } from './firebase.js';
 import { useLang, LangToggle } from './i18n.jsx';
@@ -80,6 +81,8 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   const [profileOpen, setProfileOpen] = useState(false);
   const [profile, setProfile] = useState({ name: 'Бала', klass: '', school: 'РФМШ', avatar: 'owl' });
   const [profileError, setProfileError] = useState(false);
+  const [profileUid, setProfileUid] = useState(null);
+  const [profileRetry, setProfileRetry] = useState(0);
   const [xp, setXp] = useState(0);
   const [diagnosticSeed, setDiagnosticSeed] = useState(null);
   const [curriculumTopic, setCurriculumTopic] = useState(null);
@@ -113,27 +116,30 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   }, [user?.uid, initialDiagnosticPlan]);
   useEffect(() => {
     setProfileError(false);
+    setProfileUid(null);
     setXp(0);
     if (user && isKid(user)) {
       let active = true;
+      const current = () => active && authUidRef.current === user.uid;
       const stop = watchMyProfile((nextProfile) => {
-        if (!active) return;
+        if (!current()) return;
         setProfile(nextProfile);
+        setProfileUid(user.uid);
         setProfileError(false);
       }, (error) => {
-        if (!active) return;
+        if (!current()) return;
         console.error('profile load failed', error);
         setProfileError(true);
       });
-      getXpSummary(user.uid).then((s) => { if (active) setXp((current) => Math.max(current, s.xp || 0)); }).catch((error) => {
+      getXpSummary(user.uid).then((s) => { if (current()) setXp((previous) => Math.max(previous, s.xp || 0)); }).catch((error) => {
         console.error('progress load failed', error);
-        if (active) setProfileError(true);
+        if (current()) setProfileError(true);
       });
       return () => { active = false; stop(); };
     }
     setProfile({ name: 'Бала', klass: '', school: 'РФМШ', avatar: 'owl', plan: 'free', pro: false });
     setXp(0);
-  }, [user]);
+  }, [user?.uid, profileRetry]);
   // При входе ждём custom-claim; обновления токена перепроверяют роль в фоне.
   useEffect(() => {
     if (!user || isKid(user)) { setAdminUser(false); return; }
@@ -153,7 +159,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
       if (active) setFamilyState({ uid: user.uid, status: 'error' });
     });
     return () => { active = false; };
-  }, [user, adminUser, familyRetry]);
+  }, [user?.uid, adminUser, familyRetry]);
   useEffect(() => {
     if (!profileOpen) return undefined;
     const onPointerDown = (event) => {
@@ -192,7 +198,8 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
         setNavMenu(null);
         (menuReturnRef.current || burgerRef.current)?.focus();
       } else if (event.key === 'Tab') {
-        const buttons = [...(navRef.current?.querySelectorAll('button') || [])];
+        const buttons = [...(navRef.current?.querySelectorAll('button:not(:disabled), a[href]') || [])]
+          .filter(element => element.getClientRects().length > 0);
         const first = buttons[0], last = buttons.at(-1);
         if (!first || !last) return;
         if (event.shiftKey && (document.activeElement === first || !navRef.current.contains(document.activeElement))) {
@@ -244,10 +251,20 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
     );
     return (
       <Suspense fallback={<BrandLoader fullScreen />}>
-        <Parent onExit={exit} />
+        <Parent key={user.uid} onExit={exit} />
       </Suspense>
     );
   }
+
+  // Never render the previous child's profile while the new identity loads.
+  if (profileUid !== user.uid) return profileError ? (
+    <section className="card" role="alert" style={{ maxWidth: 520, margin: '12vh auto', padding: 28 }}>
+      <h1>{lang === 'ru' ? 'Не удалось загрузить профиль' : 'Профиль жүктелмеді'}</h1>
+      <p>{lang === 'ru' ? 'Проверьте соединение и попробуйте ещё раз.' : 'Байланысты тексеріп, қайта көріңіз.'}</p>
+      <button className="btn" type="button" onClick={() => setProfileRetry(value => value + 1)}>{lang === 'ru' ? 'Повторить' : 'Қайталау'}</button>
+      <button className="btn" type="button" onClick={exit}>{t('common.exit')}</button>
+    </section>
+  ) : <BrandLoader fullScreen />;
 
   const school = profile.school;
   const pick = (id) => { setTab(id); setMenuOpen(false); setNavMenu(null); setProfileOpen(false); window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); };
@@ -255,6 +272,8 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   const openSubscription = () => {
     setTabBeforeSubscription(tab === 'subscription' ? 'home' : tab);
     setProfileOpen(false);
+    setMenuOpen(false);
+    setNavMenu(null);
     setTab('subscription');
     window.scrollTo(0, 0);
   };
@@ -266,7 +285,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   );
 
   return (
-    <div className="shell student-shell">
+    <div key={user.uid} className="shell student-shell">
       <aside className={`sidebar sidebar-${tab}`}>
         {/* Верхняя строка сайдбара: логотип + (на телефоне) аватар и бургер */}
         <div className="sbar-top">
@@ -278,7 +297,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
             <div className="header-xp" title={lang === 'ru' ? 'XP — опыт. Не расходуется на награды.' : 'XP — тәжірибе. Сыйлықтарға жұмсалмайды.'}>
               <span className="header-xp-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="m14 2-2 8h8L9 23l2-9H3L14 2Z" fill="currentColor" /></svg></span><b>{xp}</b><small>XP</small>
             </div>
-            <Notifications role="child" onOpenLessons={() => pick('mentor')} />
+            <Notifications role="child" onOpenLessons={() => pick('mentor')} onOpenPlan={openSubscription} />
             <div className="sbar-language"><LangToggle /></div>
             {/* Аватар + бургер — только на телефоне (через CSS) */}
             <div className="sbar-mobile">
@@ -321,6 +340,10 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
               </div>
             );
           })}
+          <div className="nav-account-actions">
+            <button type="button" onClick={openSubscription}><ProfileIcon name="plan" /><span>{t('profile.plan')}</span></button>
+            <a href="https://wa.me/message/HAJDNIM2MPOCM1" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}><ProfileIcon name="support" /><span>{t('profile.support')}</span></a>
+          </div>
           {/* Выход внутри раскрытого меню — удобно на телефоне */}
           <div className="nav-mobile-language"><span>{lang === 'ru' ? 'Язык интерфейса' : 'Интерфейс тілі'}</span><LangToggle /></div>
           <button className="nav-exit" onClick={exit}>{t('common.exit')}</button>

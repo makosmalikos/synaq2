@@ -6,7 +6,7 @@ import { gzipSync } from 'node:zlib';
 
 const dist = fileURLToPath(new URL('../frontend/dist/', import.meta.url));
 const manifest = JSON.parse(fs.readFileSync(path.join(dist, '.vite/manifest.json'), 'utf8'));
-for (const directory of ['zerek', 'zerek-courses']) {
+for (const directory of ['zerek', 'zerek-courses', 'synaq-editions']) {
   assert.equal(fs.existsSync(path.join(dist, 'figures', directory)), false, 'Offline source diagrams must not be deployed');
 }
 const privateEditions = JSON.parse(fs.readFileSync(new URL('../backend/data/synaqAdaptedQuestions.json', import.meta.url)));

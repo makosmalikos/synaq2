@@ -1,18 +1,12 @@
 import { auth } from './firebase.js';
+import { authenticatedRequest } from './authenticatedRequest.js';
+import { displayDate } from './displayDate.js';
 
 // Все действия с уроками идут через сервер: ребёнок и родитель не пишут в базу напрямую.
-export async function lessonsCall(body) {
-  const token = await auth.currentUser?.getIdToken();
-  if (!token) throw Object.assign(new Error('login_required'), { status: 401 });
-  const response = await fetch('/api/lessons', { method: 'POST', body: JSON.stringify(body),
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` } });
-  const data = await response.json().catch(() => ({}));
-  if (!response.ok) throw Object.assign(new Error(data.error || 'failed'), { status: response.status });
-  return data;
-}
+export const lessonsCall = (body) => authenticatedRequest(auth, '/api/lessons', { body, authError: 'login_required', fallback: 'failed' });
 
 const TZ = 'Asia/Almaty';
-export const fmtDay = (ms, lang) => new Intl.DateTimeFormat(lang === 'ru' ? 'ru-RU' : 'kk-KZ', { weekday: 'short', day: 'numeric', month: 'long', timeZone: TZ }).format(ms);
+export const fmtDay = (ms, lang) => displayDate(ms, lang, { weekday: 'short', day: 'numeric', month: 'long', timeZone: TZ });
 export const fmtTime = (ms) => new Intl.DateTimeFormat('ru-RU', { hour: '2-digit', minute: '2-digit', timeZone: TZ }).format(ms);
 export const dayKey = (ms) => new Intl.DateTimeFormat('en-CA', { timeZone: TZ }).format(ms);
 

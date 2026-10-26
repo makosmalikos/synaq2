@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All7savedvisualgrade5topic3.12;archivedsourcesonly,no newcapture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "Allcapturedvisualgrade5topic3.12sources",
+    "sourceVisualOccurrences": 7,
+    "addressedNewDrafts": 7,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "09e76ff45f04f18c",
+      "0e1f818bd84c2bb8",
+      "32ef83021c3ac61e",
+      "35c17bd34bcd1f10",
+      "69feedf8cee80f1d",
+      "876b3c590d6b791b",
+      "de0ba2bfdd1b4b2b"
+    ],
+    "distinctModels": 7,
+    "semantics": "Seven source-specific targets rewritten separately; sharedfamiliesarenot claimednewsemanticmeanings."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave52-five-elevenths-painted-strip-reciprocal",
+      "modelId": "visual-wave52-painted-proper-fraction-reciprocal",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "proper",
+        "share": [
+          5,
+          11
+        ]
+      },
+      "answer": "(11/5)",
+      "sourceRefs": [
+        {
+          "sourceId": "32ef83021c3ac61e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-12-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-12-level1.json#4",
+      "sourceCanonicalSha256": "9c5f36fbbc5cb15637bd5256b7b96983c1bf72b092957e864cf1c874167614d7",
+      "sourceSkill": "Native11equalcells5blue→5/11, invert11/5; source-specific self5/11, complement6/11 and denominator11 traps preserved.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.12 визуалды шарт, толық шешім және MCQ жеке оқылды. Боялған бөлшек/аралас санның кері саны, бірлік және бірліктен өзге жұмыс жылдамдығы, екі бригаданың қосынды жылдамдығы, мақсатты су деңгейі мен екі күндік үлестің айырмасы сақталды.",
+        "Жаңа сандар: 5/11→11/5; 3+2/5→17/5→5/17; бір сағатта1/9→9сағат;1/12бак/сағатпен5/6бак→10сағат;екібригада1/10→1/5→5күн;1/8−1/12→1/24бөлім24;3/8тапсырыс/сағат→8/3сағат→160минут. Сұралған шаманың рөлі, нақты ортақ бөлім, аралас санды бұрыс бөлшекке ауыстыру және минутқа айналдыру жоғалмаған.",
+        "SVG жаңа параметрлерден нативті салынды: тең жолақ ұяшықтары, бірдей радиусты дөңгелек секторлары, тең көлденең су қабаттары және ұзындықтары бірдей екі кітап жолағы. Source raster/traced path қолданылмады. Барлық белгісіз жауап сурет сипаттамасында ашылмайды; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кері сандар мен жұмыс үлестері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions/MCQ plus actual11cells5blue,4equalcircles5sectorseach17blue,9cells1blue,6equalhorizontalbands5bottomblue,10cells1blue/twojointcrews,8and12SAMEwholecells1blueeach,8cells3blue/minuteconversion; inspect every343pxsheet."
+      },
+      "image": "/figures/synaq-editions/visual-wave52-five-elevenths-painted-strip-reciprocal.svg",
+      "verificationModule": "scripts/editorial/visual-wave52-models.mjs",
+      "options": [
+        "(5/11)",
+        "(11/5)",
+        "(6/11)",
+        "11"
+      ],
+      "statement": "Толық жолақ бір бүтінді білдіреді және тең ұяшықтарға бөлінген. Көк бөлікті көрсететін бөлшекке КЕРІ санды таңдаңыз.",
+      "solution": "Жолақ 11 тең бөлікке бөлінген, көгі 5 бөлік. Бұл (5/11). Кері сан үшін алым мен бөлімді ауыстырамыз: (11/5). Тексеру: (5/11) × (11/5) = (55/55) = 1. (5/11) — бастапқы сан; (6/11) — ақ бөлік, ол 1-ге дейін толықтырады, бірақ кері сан емес. 11 — тек бөлімді алу қатесі.",
+      "figureDescription": "Толық жолақ 11 тең ұяшыққа бөлінген, сол жақтағы 5 ұяшық көк.",
+      "figureSha256": "73202516c8548381f26fd0a8354c4f90d70c23e55a5502b229163b126a203dcb",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(11/5)",
+        "checks": {
+          "equalParts": 11,
+          "paintedParts": 5,
+          "originalFraction": [
+            5,
+            11
+          ],
+          "reciprocal": [
+            11,
+            5
+          ],
+          "productNumerator": 55,
+          "productDenominator": 55,
+          "diagnosticSelf": "(5/11)",
+          "diagnosticComplement": "(6/11)",
+          "diagnosticDenominator": "11"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave52-three-whole-two-fifths-reciprocal",
+      "modelId": "visual-wave52-painted-mixed-number-reciprocal",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "mixed",
+        "mixed": [
+          3,
+          2,
+          5
+        ]
+      },
+      "answer": "(5/17)",
+      "sourceRefs": [
+        {
+          "sourceId": "35c17bd34bcd1f10",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-12-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-12-level1.json#12",
+      "sourceCanonicalSha256": "8469c5fa1675efe1b39604a11556cf6041b22aa12a59874e1ea979ba125a0cbe",
+      "sourceSkill": "Fourequalcircles each5sectors,3whole+2/5→17/5→5/17; actualblue17of20sectors; self17/5, wrongwhole+denominator3+5=8→5/8, wholeonlyinverse1/3 traps preserved.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.12 визуалды шарт, толық шешім және MCQ жеке оқылды. Боялған бөлшек/аралас санның кері саны, бірлік және бірліктен өзге жұмыс жылдамдығы, екі бригаданың қосынды жылдамдығы, мақсатты су деңгейі мен екі күндік үлестің айырмасы сақталды.",
+        "Жаңа сандар: 5/11→11/5; 3+2/5→17/5→5/17; бір сағатта1/9→9сағат;1/12бак/сағатпен5/6бак→10сағат;екібригада1/10→1/5→5күн;1/8−1/12→1/24бөлім24;3/8тапсырыс/сағат→8/3сағат→160минут. Сұралған шаманың рөлі, нақты ортақ бөлім, аралас санды бұрыс бөлшекке ауыстыру және минутқа айналдыру жоғалмаған.",
+        "SVG жаңа параметрлерден нативті салынды: тең жолақ ұяшықтары, бірдей радиусты дөңгелек секторлары, тең көлденең су қабаттары және ұзындықтары бірдей екі кітап жолағы. Source raster/traced path қолданылмады. Барлық белгісіз жауап сурет сипаттамасында ашылмайды; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кері сандар мен жұмыс үлестері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions/MCQ plus actual11cells5blue,4equalcircles5sectorseach17blue,9cells1blue,6equalhorizontalbands5bottomblue,10cells1blue/twojointcrews,8and12SAMEwholecells1blueeach,8cells3blue/minuteconversion; inspect every343pxsheet."
+      },
+      "image": "/figures/synaq-editions/visual-wave52-three-whole-two-fifths-reciprocal.svg",
+      "verificationModule": "scripts/editorial/visual-wave52-models.mjs",
+      "options": [
+        "(5/17)",
+        "(17/5)",
+        "(5/8)",
+        "(1/3)"
+      ],
+      "statement": "Бірдей дөңгелектердің әрқайсысы — бір бүтін; олардың бөліктері тең. Көкпен көрсетілген аралас санға КЕРІ санды таңдаңыз.",
+      "solution": "Толық боялған 3 дөңгелек және соңғы дөңгелектің (2/5) бөлігі бар. Аралас сан (3 + (2/5)) = (17/5). Бұрыс бөлшекке кері сан (5/17). Тексеру: (17/5) × (5/17) = 1. (17/5) — санның өзі; (5/8) — бұрыс бөлшектің алымын 3 + 5 деп алу қатесі. (1/3) — тек бүтін бөлікке кері сан.",
+      "figureDescription": "Бірдей 4 дөңгелектің әрқайсысы 5 тең секторға бөлінген. Алғашқы 3 дөңгелек толық көк, соңғысында 2 сектор көк.",
+      "figureSha256": "8847564d58000d472bc5f6d9f64f0e676147952d8070a0cd6583f03ccbca4059",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(5/17)",
+        "checks": {
+          "wholeCircles": 3,
+          "partialNumerator": 2,
+          "sectorsPerCircle": 5,
+          "improper": [
+            17,
+            5
+          ],
+          "reciprocal": [
+            5,
+            17
+          ],
+          "diagnosticSelf": "(17/5)",
+          "diagnosticAddWholeDenominator": "(5/8)",
+          "diagnosticWholeOnly": "(1/3)"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave52-model-one-ninth-hour-rate-whole-time",
+      "modelId": "visual-wave52-unit-hour-work-rate-invert-whole",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "unit-rate",
+        "rate": [
+          1,
+          9
+        ]
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "876b3c590d6b791b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-12-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-12-level1.json#15",
+      "sourceCanonicalSha256": "f81713ce357decd950093d1b9545744c6f5d4908585c4a28498c8450e537c415",
+      "sourceSkill": "Oneof9equalparts perhour→reciprocal9hours; wholework1 and rate/time roles unchanged, new model-building context.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.12 визуалды шарт, толық шешім және MCQ жеке оқылды. Боялған бөлшек/аралас санның кері саны, бірлік және бірліктен өзге жұмыс жылдамдығы, екі бригаданың қосынды жылдамдығы, мақсатты су деңгейі мен екі күндік үлестің айырмасы сақталды.",
+        "Жаңа сандар: 5/11→11/5; 3+2/5→17/5→5/17; бір сағатта1/9→9сағат;1/12бак/сағатпен5/6бак→10сағат;екібригада1/10→1/5→5күн;1/8−1/12→1/24бөлім24;3/8тапсырыс/сағат→8/3сағат→160минут. Сұралған шаманың рөлі, нақты ортақ бөлім, аралас санды бұрыс бөлшекке ауыстыру және минутқа айналдыру жоғалмаған.",
+        "SVG жаңа параметрлерден нативті салынды: тең жолақ ұяшықтары, бірдей радиусты дөңгелек секторлары, тең көлденең су қабаттары және ұзындықтары бірдей екі кітап жолағы. Source raster/traced path қолданылмады. Барлық белгісіз жауап сурет сипаттамасында ашылмайды; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кері сандар мен жұмыс үлестері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions/MCQ plus actual11cells5blue,4equalcircles5sectorseach17blue,9cells1blue,6equalhorizontalbands5bottomblue,10cells1blue/twojointcrews,8and12SAMEwholecells1blueeach,8cells3blue/minuteconversion; inspect every343pxsheet."
+      },
+      "image": "/figures/synaq-editions/visual-wave52-model-one-ninth-hour-rate-whole-time.svg",
+      "verificationModule": "scripts/editorial/visual-wave52-models.mjs",
+      "statement": "Зере көрме макетін әр сағатта бірдей жылдамдықпен жасайды. Толық жолақ — бүкіл макет, көк ұяшық — бір сағатта жасалатын бөлік. Макет толық дайын болуы үшін неше сағат қажет? Жауапқа тек санды жазыңыз.",
+      "solution": "Жолақта 9 тең ұяшық, бір сағатта 1 ұяшық жасалады. Сағаттық үлес (1/9). Толық жұмыс уақыты оған кері сан: 1 ÷ (1/9) = 9 сағат. Тексеру: (1/9) × 9 = 1 макет. Бір сағаттың үлесін толық уақытпен шатастырмаймыз.",
+      "figureDescription": "Толық жолақ 9 тең ұяшық, алғашқы 1 ұяшық көк. Ол бір сағаттағы жұмыс.",
+      "figureSha256": "ec2069063394281ddc07c1daa26193c35447e83616ef8784e1087af6e1297a91",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": {
+          "wholeWork": 1,
+          "hourlyRate": [
+            1,
+            9
+          ],
+          "allParts": 9,
+          "oneHourParts": 1,
+          "totalHours": 9,
+          "reciprocalCheck": 1
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave52-tank-five-sixths-at-one-twelfth",
+      "modelId": "visual-wave52-tank-target-time-from-inverse-rate",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "tank",
+        "rate": [
+          1,
+          12
+        ],
+        "target": [
+          5,
+          6
+        ]
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "de0ba2bfdd1b4b2b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-12-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-12-level2.json#1",
+      "sourceCanonicalSha256": "a5b0d9212642185af03671f7ca13b4a75506115fc0b783b599d513bed7b7752a",
+      "sourceSkill": "Nativeverticaltank6equalbands5bottomblue; rate1/12whole/hour inverted→12wholehours, target5/6×12→10hours; NEVER inverttarget6/5 as time.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.12 визуалды шарт, толық шешім және MCQ жеке оқылды. Боялған бөлшек/аралас санның кері саны, бірлік және бірліктен өзге жұмыс жылдамдығы, екі бригаданың қосынды жылдамдығы, мақсатты су деңгейі мен екі күндік үлестің айырмасы сақталды.",
+        "Жаңа сандар: 5/11→11/5; 3+2/5→17/5→5/17; бір сағатта1/9→9сағат;1/12бак/сағатпен5/6бак→10сағат;екібригада1/10→1/5→5күн;1/8−1/12→1/24бөлім24;3/8тапсырыс/сағат→8/3сағат→160минут. Сұралған шаманың рөлі, нақты ортақ бөлім, аралас санды бұрыс бөлшекке ауыстыру және минутқа айналдыру жоғалмаған.",
+        "SVG жаңа параметрлерден нативті салынды: тең жолақ ұяшықтары, бірдей радиусты дөңгелек секторлары, тең көлденең су қабаттары және ұзындықтары бірдей екі кітап жолағы. Source raster/traced path қолданылмады. Барлық белгісіз жауап сурет сипаттамасында ашылмайды; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кері сандар мен жұмыс үлестері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions/MCQ plus actual11cells5blue,4equalcircles5sectorseach17blue,9cells1blue,6equalhorizontalbands5bottomblue,10cells1blue/twojointcrews,8and12SAMEwholecells1blueeach,8cells3blue/minuteconversion; inspect every343pxsheet."
+      },
+      "image": "/figures/synaq-editions/visual-wave52-tank-five-sixths-at-one-twelfth.svg",
+      "verificationModule": "scripts/editorial/visual-wave52-models.mjs",
+      "statement": "Сорғы бастапқыда бос бакты тұрақты жылдамдықпен толтырады: әр сағатта толық сыйымдылықтың (1/12) бөлігі құйылады. Бактағы тең жолақтардың көк деңгейіне жетуге неше сағат керек? Жауапқа тек санды жазыңыз.",
+      "solution": "Бак 6 тең жолаққа бөлінген, төменгі 5 бөлік көк: (5/6). Сағатына (1/12) бак толатындықтан, толық бакқа кері сан 12 сағат керек. Мақсатты деңгейге 12 × (5/6) = 10 сағат. Тексеру: (1/12) × 10 = (5/6), суреттегі үлеспен бірдей. Деңгей (5/6) бөлшегін бірден кері аударып алынған (6/5) — қажетті уақыт емес.",
+      "figureDescription": "Тіктөртбұрышты бак 6 тең көлденең жолаққа бөлінген. Төменгі 5 жолақ көк, жоғарғысы бос. Бастапқыда бак бос, сорғы сағатына толық бактың (1/12) бөлігін құяды.",
+      "figureSha256": "6272b389ef2ef9c632ad60e8576a7cb730bf20f5f860a7faff9077bd813d8d2e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": {
+          "hourlyRate": [
+            1,
+            12
+          ],
+          "equalTankBands": 6,
+          "paintedBands": 5,
+          "targetShare": [
+            5,
+            6
+          ],
+          "wholeTankHours": 12,
+          "targetHours": 10,
+          "reverseFilledShare": [
+            5,
+            6
+          ],
+          "notReciprocalOfTarget": "(6/5)"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave52-two-crews-one-tenth-each",
+      "modelId": "visual-wave52-two-equal-crews-combine-then-invert",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "crews",
+        "rate": [
+          1,
+          10
+        ],
+        "crews": 2
+      },
+      "answer": "5",
+      "sourceRefs": [
+        {
+          "sourceId": "09e76ff45f04f18c",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-12-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-12-level2.json#14",
+      "sourceCanonicalSha256": "a8605d2fa612ff35886b8ee9afbc3e437dd59a6bac0209c1b2657d822c0d9563",
+      "sourceSkill": "Onecrew1of10equalparts/day; two identical concurrent crews ondisjointparts→2/10=1/5dayrate→5days; source two-stage combineTHENinvert preserved.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.12 визуалды шарт, толық шешім және MCQ жеке оқылды. Боялған бөлшек/аралас санның кері саны, бірлік және бірліктен өзге жұмыс жылдамдығы, екі бригаданың қосынды жылдамдығы, мақсатты су деңгейі мен екі күндік үлестің айырмасы сақталды.",
+        "Жаңа сандар: 5/11→11/5; 3+2/5→17/5→5/17; бір сағатта1/9→9сағат;1/12бак/сағатпен5/6бак→10сағат;екібригада1/10→1/5→5күн;1/8−1/12→1/24бөлім24;3/8тапсырыс/сағат→8/3сағат→160минут. Сұралған шаманың рөлі, нақты ортақ бөлім, аралас санды бұрыс бөлшекке ауыстыру және минутқа айналдыру жоғалмаған.",
+        "SVG жаңа параметрлерден нативті салынды: тең жолақ ұяшықтары, бірдей радиусты дөңгелек секторлары, тең көлденең су қабаттары және ұзындықтары бірдей екі кітап жолағы. Source raster/traced path қолданылмады. Барлық белгісіз жауап сурет сипаттамасында ашылмайды; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кері сандар мен жұмыс үлестері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions/MCQ plus actual11cells5blue,4equalcircles5sectorseach17blue,9cells1blue,6equalhorizontalbands5bottomblue,10cells1blue/twojointcrews,8and12SAMEwholecells1blueeach,8cells3blue/minuteconversion; inspect every343pxsheet."
+      },
+      "image": "/figures/synaq-editions/visual-wave52-two-crews-one-tenth-each.svg",
+      "verificationModule": "scripts/editorial/visual-wave52-models.mjs",
+      "statement": "Толық жолақ — саябақтағы бүкіл веложол; көк ұяшық — бір бригаданың бір күнде жөндейтін бөлігі. Осындай екі бригада бір уақытта жолдың бөлек жерлерін жөндейді, әрқайсысының жылдамдығы тұрақты. Екеуі бүкіл жолды неше күнде аяқтайды? Жауапқа тек санды жазыңыз.",
+      "solution": "Бір бригада күніне (1/10) жолды жөндейді. Екі бригаданың жұмыстары қосылады: (1/10) + (1/10) = (2/10) = (1/5). Толық уақыт осы бірлескен жылдамдыққа кері: 1 ÷ (1/5) = 5 күн. Тексеру: (1/5) × 5 = 1. Бір бригада 10 күн жұмсар еді, екі бірдей бригада екі есе тез аяқтайды.",
+      "figureDescription": "Толық жолақ 10 тең ұяшық, алғашқы 1 ұяшық көк. Ол бір бригаданың бір күндік жұмысы.",
+      "figureSha256": "7cfb124e9c7ceddf88b462828cf6fe2534f8977bfada4f3a5e4a09d0d3fc0e0f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5",
+        "checks": {
+          "singleDailyRate": [
+            1,
+            10
+          ],
+          "identicalCrews": 2,
+          "jointDailyRate": [
+            1,
+            5
+          ],
+          "totalDays": 5,
+          "oneCrewDays": 10,
+          "jointCheckNumerator": 10,
+          "jointCheckDenominator": 10
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave52-daily-book-eighth-twelfth-gap-denominator",
+      "modelId": "visual-wave52-daily-reading-unit-rate-difference-denominator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "books",
+        "days": [
+          8,
+          12
+        ]
+      },
+      "answer": "24",
+      "sourceRefs": [
+        {
+          "sourceId": "69feedf8cee80f1d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-12-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-12-leveltest.json#3",
+      "sourceCanonicalSha256": "a2c694d4dc96abeeeccf4109cb84c2be9faba08e0b20823963760bc46184d07e",
+      "sourceSkill": "SAMEwidthwholebooks8and12equalcells1blue each→1/8−1/12=3/24−2/24=1/24; noncoprimeLCD4cancellation retained; request nDENOMINATORnotdaygap4.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.12 визуалды шарт, толық шешім және MCQ жеке оқылды. Боялған бөлшек/аралас санның кері саны, бірлік және бірліктен өзге жұмыс жылдамдығы, екі бригаданың қосынды жылдамдығы, мақсатты су деңгейі мен екі күндік үлестің айырмасы сақталды.",
+        "Жаңа сандар: 5/11→11/5; 3+2/5→17/5→5/17; бір сағатта1/9→9сағат;1/12бак/сағатпен5/6бак→10сағат;екібригада1/10→1/5→5күн;1/8−1/12→1/24бөлім24;3/8тапсырыс/сағат→8/3сағат→160минут. Сұралған шаманың рөлі, нақты ортақ бөлім, аралас санды бұрыс бөлшекке ауыстыру және минутқа айналдыру жоғалмаған.",
+        "SVG жаңа параметрлерден нативті салынды: тең жолақ ұяшықтары, бірдей радиусты дөңгелек секторлары, тең көлденең су қабаттары және ұзындықтары бірдей екі кітап жолағы. Source raster/traced path қолданылмады. Барлық белгісіз жауап сурет сипаттамасында ашылмайды; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кері сандар мен жұмыс үлестері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions/MCQ plus actual11cells5blue,4equalcircles5sectorseach17blue,9cells1blue,6equalhorizontalbands5bottomblue,10cells1blue/twojointcrews,8and12SAMEwholecells1blueeach,8cells3blue/minuteconversion; inspect every343pxsheet."
+      },
+      "image": "/figures/synaq-editions/visual-wave52-daily-book-eighth-twelfth-gap-denominator.svg",
+      "verificationModule": "scripts/editorial/visual-wave52-models.mjs",
+      "statement": "Аружан (A) мен Мерей (M) бірдей кітаптарды күн сайын тұрақты жылдамдықпен оқиды. Әр толық жолақ — бір кітап, көк ұяшық — сол оқушының бір күнде оқитын бөлігі. Аружан күніне кітаптың қандай бөлігін артық оқиды? Айырма (1/n) түрінде жазылғанда n неге тең? Жауапқа тек санды жазыңыз.",
+      "solution": "A жолағында 8 тең ұяшықтың 1-еуі, M жолағында 12 тең ұяшықтың 1-еуі көк. Күндік үлестер (1/8) және (1/12). Ортақ ең кіші бөлім 24: (1/8) = (3/24), (1/12) = (2/24). Айырма (3/24) − (2/24) = (1/24). Сұралғаны (1/n) бөлшегінің БӨЛІМІ, сондықтан n = 24. 12 − 8 = 4 — күндер санының айырмасы; ол күндік үлестердің айырмасы емес.",
+      "figureDescription": "A және M жолақтарының ұзындықтары бірдей, әрқайсысы бір кітап. A жолағында 8, M жолағында 12 тең ұяшық бар; әрқайсысының алғашқы 1 ұяшығы көк.",
+      "figureSha256": "749cc9272d651103ede5f9c885c980c441516edd62e04f3f45fe3b048c206b90",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "24",
+        "checks": {
+          "daysForEqualBooks": [
+            8,
+            12
+          ],
+          "dailyRates": [
+            [
+              1,
+              8
+            ],
+            [
+              1,
+              12
+            ]
+          ],
+          "commonDenominator": 24,
+          "commonNumerators": [
+            3,
+            2
+          ],
+          "difference": [
+            1,
+            24
+          ],
+          "requestedRole": "denominator n of unit fraction 1/n",
+          "diagnosticDayGap": 4
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave52-work-three-eighths-hour-to-minutes",
+      "modelId": "visual-wave52-nonunit-hourly-work-reciprocal-to-minutes",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "minutes",
+        "rate": [
+          3,
+          8
+        ]
+      },
+      "answer": "160",
+      "sourceRefs": [
+        {
+          "sourceId": "0e1f818bd84c2bb8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-12-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-12-leveltest.json#6",
+      "sourceCanonicalSha256": "789ed7ca7bca177f1804152a6a8f175900e244adbc04c00e8dc4092c76b99186",
+      "sourceSkill": "NonUNIT3of8parts/hour→inverse8/3=2+2/3hours→160min; integer60/3=20minutes/unitpart givesseparate8×20check; mixedtimeandSI60 preserved.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.12 визуалды шарт, толық шешім және MCQ жеке оқылды. Боялған бөлшек/аралас санның кері саны, бірлік және бірліктен өзге жұмыс жылдамдығы, екі бригаданың қосынды жылдамдығы, мақсатты су деңгейі мен екі күндік үлестің айырмасы сақталды.",
+        "Жаңа сандар: 5/11→11/5; 3+2/5→17/5→5/17; бір сағатта1/9→9сағат;1/12бак/сағатпен5/6бак→10сағат;екібригада1/10→1/5→5күн;1/8−1/12→1/24бөлім24;3/8тапсырыс/сағат→8/3сағат→160минут. Сұралған шаманың рөлі, нақты ортақ бөлім, аралас санды бұрыс бөлшекке ауыстыру және минутқа айналдыру жоғалмаған.",
+        "SVG жаңа параметрлерден нативті салынды: тең жолақ ұяшықтары, бірдей радиусты дөңгелек секторлары, тең көлденең су қабаттары және ұзындықтары бірдей екі кітап жолағы. Source raster/traced path қолданылмады. Барлық белгісіз жауап сурет сипаттамасында ашылмайды; өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кері сандар мен жұмыс үлестері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions/MCQ plus actual11cells5blue,4equalcircles5sectorseach17blue,9cells1blue,6equalhorizontalbands5bottomblue,10cells1blue/twojointcrews,8and12SAMEwholecells1blueeach,8cells3blue/minuteconversion; inspect every343pxsheet."
+      },
+      "image": "/figures/synaq-editions/visual-wave52-work-three-eighths-hour-to-minutes.svg",
+      "verificationModule": "scripts/editorial/visual-wave52-models.mjs",
+      "statement": "Шебер жиһаз жиынтығын тұрақты жылдамдықпен құрастырады. Толық жолақ — бір тапсырыс, көк ұяшықтар — оның бір сағатта орындайтын бөлігі. Толық тапсырысты неше МИНУТТА аяқтайды? Жауапқа тек санды жазыңыз.",
+      "solution": "Барлығы 8 тең ұяшықтың 3 бөлігі бір сағатта орындалады: жылдамдық (3/8) тапсырыс/сағат. Толық уақыт (3/8) бөлшегіне кері: (8/3) = (2 + (2/3)) сағат. Минутпен: (8/3) × 60 = 160 минут. Бөлек тексеру: 3 ұяшыққа 60 минут керек, бір ұяшыққа 60 ÷ 3 = 20 минут. Барлық 8 ұяшыққа 20 × 8 = 160 минут.",
+      "figureDescription": "Бір тапсырысқа тең толық жолақ 8 тең ұяшыққа бөлінген, сол жақтағы 3 ұяшығы көк. Көк бөлік бір сағатта орындалады.",
+      "figureSha256": "e992dd3851c7f3456a2c375596d8c058349b83e87ec6ab9e4c02a5dbb145ac9c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "160",
+        "checks": {
+          "hourlyRate": [
+            3,
+            8
+          ],
+          "totalHours": [
+            8,
+            3
+          ],
+          "totalMixedHours": "(2 + (2/3))",
+          "minuteFactor": 60,
+          "totalMinutes": 160,
+          "minutesPerSingleEqualPart": 20,
+          "reverseMinuteLedger": 160
+        }
+      }
+    }
+  ]
+}

@@ -1,5 +1,15 @@
 {
-  "indexes": [],
+  "indexes": [
+    { "collectionGroup": "lessons", "queryScope": "COLLECTION", "fields": [
+      { "fieldPath": "childUid", "order": "ASCENDING" }, { "fieldPath": "startAt", "order": "DESCENDING" }
+    ] },
+    { "collectionGroup": "lessons", "queryScope": "COLLECTION", "fields": [
+      { "fieldPath": "parentUid", "order": "ASCENDING" }, { "fieldPath": "startAt", "order": "DESCENDING" }
+    ] },
+    { "collectionGroup": "lessonSlots", "queryScope": "COLLECTION", "fields": [
+      { "fieldPath": "mentorId", "order": "ASCENDING" }, { "fieldPath": "startAt", "order": "ASCENDING" }
+    ] }
+  ],
   "fieldOverrides": [
     {
       "collectionGroup": "children",

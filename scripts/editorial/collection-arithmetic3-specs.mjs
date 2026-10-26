@@ -1,0 +1,26 @@
+// Full22 nonvisual savedpart3 conditions/officialsolutions/everyMCQ individually read.
+export const collection='4ad17858-4f6a-4717-9132-5a524670edbe';
+export const arithmetic3Specs=[
+ [1,'mixed-cross-product-subtracted-main-numerator',{expression:'((11,48 − (6 + (3/4)) × (4/9))/(2,3 + 1,7))'},'2,12'],
+ [2,'negative-distribution-close-decimal-coefficients',{equation:'-4 × (2,3x - 5) - 5,2 = 1,5 × (-6x + 0,8)'},'68'],
+ [4,'two-parentheses-negative-three-fraction-sum',{expression:'(0,68 − (−0,32)) − ((7/48) − (19/40) − (−13/30))'},'(43/48)'],
+ [5,'decimal-product-mixed-quotient-left-to-right',{expression:'2,4 × 0,3 − (3 + (3/8)) : (7 + (1/2)) + 0,84'},'1,11'],
+ [6,'proportion-unknown-dividend-then-factor',{leftTenths:48,rightTenths:624,coefficientDenominator:6,divisorNumerator:5,divisorDenominator:8},'(15/52)'],
+ [7,'positive-y-decimal-two-brackets',{equation:'1,1 × (5y - 3) = 0,6 × (4y - 5) + 9'},'3'],
+ [9,'fraction-sum-before-negative-thousandths-division',{expression:'((−9/20) − (13/24) − (−(1 + (7/24)))) : (−0,012) + 22,5'},'-2,5'],
+ [10,'decimal-product-minus-mixed-difference-division',{expression:'28 × 1,3 − 35,5 : ((6 + (7/18)) − (4 + (5/12)))'},'18,4'],
+ [11,'subtract-both-negative-variable-brackets',{equation:'1,1 × (6 - x) - 1,3 × (x + 5) = -4,7'},'2'],
+ [13,'whole-negative-one-collapse-before-mixed-product',{expression:'(1,8 − (2 + (2/9)) − (26/45)) × (−(4 + (1/5))) + (−1,35)'},'2,85'],
+ [14,'mixed-difference-reciprocal-then-decimal-subtraction',{expression:'1,8 × 6 − 6,45 : ((3 + (5/18)) − (2 + (1/12)))'},'5,4'],
+ [15,'unknown-fractional-divisor-positive-domain',{dividend:3,coefficientNumerator:5,coefficientDenominator:12,rightNumeratorWhole:2,rightNumerator:2,rightNumeratorDenominator:7,rightDenominatorWhole:6,rightDenominatorNumerator:6,rightDenominator:7},'21,6'],
+ [16,'negative-root-two-left-decimal-brackets',{equation:'1,6 × (4 - x) - 1,1 × (x + 3) = 8,5'},'-2'],
+ [18,'mixednegative-plus-decimal-small-fraction-product',{expression:'−(6 + (1/4)) + 7,2 × ((53/72) − (2 + (19/48)) − (−1,75))'},'-5,6'],
+ [19,'same-denominator-whole-parts-and-residual',{wholeParts:[4,6,3],numerators:[5,7,2],subtractNumerator:13,denominator:31},'(13 + (1/31))'],
+ [20,'integer-variable-sides-negative-root',{equation:'-5x - 6 = 3x + 18'},'-3'],
+ [22,'cross-proportion-unknown-numerator-addend',{leftNumerator:7,leftDenominator:9,shiftTenths:8,divisorTenths:36},'2'],
+ [23,'two-negative-main-parts-over-negative-product',{expression:'((−(4 + (4/9)) × (3 + (3/16)) + (−(4 + (1/5))) : (1 + (2/5)))/((−12/25) × (6 + (1/4))))'},'(103/18)'],
+ [24,'five-layer-subtractive-continued-fraction',{expression:'(1/(59 − (41/(1 − (1/(4 − (1/(4 − (1/4)))))))))'},'(1/3)'],
+ [25,'inverse-mixed-dividend-addend-and-variable-divisor',{dividendTenths:108,addWhole:4,addNumerator:7,addDenominator:12,divisorWhole:5,divisorNumerator:5,divisorDenominator:12,rightWhole:1,rightNumerator:2,rightDenominator:5},'3,6'],
+ [26,'three-nested-subtractions-whole-negative-mixed',{expression:'−3,1 − (5,4 − (2,2 + (−(3 + (1/4)) + (1 + (3/8)))))'},'-8,175'],
+ [27,'mixed-minus-three-unit-fraction-sum',{expression:'(2 + (1/3)) − ((1/4) + (1/5) + (1/20))'},'(11/6)'],
+].map(([number,kind,params,handExpected])=>({number,kind,params,handExpected}));

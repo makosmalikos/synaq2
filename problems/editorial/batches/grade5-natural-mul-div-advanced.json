@@ -1,0 +1,850 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All20 individually read saved nonvisual GRADE5topic1.5 levels3/test ONLY, earlier28 levels1+2 in separate batch, sourceimage tasks excluded. Closed until external independent fullcontenthash review.",
+  "summary": {
+    "editions": 20,
+    "sourceOccurrencesReferenced": 20,
+    "distinctModels": 20,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade5-natural-mul-div-advanced-879478602b26c628",
+      "modelId": "grade5-natural-mul-div-advanced-unequal-dividend-divisor-scaling",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "quotient": 18,
+        "numeratorScale": 5,
+        "denominatorScale": 15
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level3.json",
+          "sourceId": "879478602b26c628"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "a, b — оң натурал сандар; a : b = 18. (a × 5) : (b × 15) бөліндісін табыңыз.",
+      "options": [
+        "18",
+        "270",
+        "6",
+        "90"
+      ],
+      "answer": "6",
+      "solution": "Бөлгіштің өзгерісі 15 = 5 × 3. Екі мүшені бірдей 5-ке көбейту бөліндіні сақтайды, бірақ бөлгіш тағы 3 есе артқан. Сондықтан жаңа бөлінді 18 : 3 = 6. Жалпы дәлел: a = 18b; (18b × 5) : (b × 15) = 6. Тек бөлінгіш өзгерісін есепке алу 90 деген қате береді.",
+      "calculationVerification": {
+        "answer": "6",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-bd296ce958067dcf",
+      "modelId": "grade5-natural-mul-div-advanced-reciprocal-factor-changes-invariant",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scale": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level3.json",
+          "sourceId": "bd296ce958067dcf"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "Көбейткіштер оң натурал сандар. Екінші көбейткіш 4 санына қалдықсыз бөлінеді. Біріншісін 4 есе арттырып, екіншісін 4 есе кемітті. Көбейтінді қалай өзгереді?",
+      "options": [
+        "16 есе артады",
+        "16 есе кемиді",
+        "8 есе артады",
+        "Өзгермейді"
+      ],
+      "answer": "Өзгермейді",
+      "solution": "Екінші көбейткіш b = 4c болсын. Бастапқы көбейтінді a × (4c), жаңасы (4a) × c. Екеуі де 4ac, сондықтан өзгермейді. Бірінші өсім мен екінші кему бір-бірін өтейді. Қалдықсыз бөліну шарты жаңа көбейткіштің де натурал болуын қамтамасыз етеді.",
+      "calculationVerification": {
+        "answer": "Өзгермейді",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-6534fe31670c66bc",
+      "modelId": "grade5-natural-mul-div-advanced-bus-capacity-minimum-ceiling",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "oldBuses": 4,
+        "oldCapacity": 48,
+        "newCapacity": 42
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level3.json",
+          "sourceId": "6534fe31670c66bc"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "Оқушылар әрқайсысы 48 орынды 4 автобусқа отырып, барлық орынды толтырды. Енді сол оқушыларды 42 орынды автобустарға отырғызады. Бәріне орын жетуі үшін ЕҢ КЕМІ неше автобус қажет?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "192"
+      ],
+      "answer": "5",
+      "solution": "Оқушылар саны 48 × 4 = 192. 4 автобуста 42 × 4 = 168 орын, бұл 192-дан аз. 5 автобуста 42 × 5 = 210 орын, бәріне жетеді. Сондықтан ең кемі 5. Соңғы автобуста 24 оқушы, қалған орындар бос болуы мүмкін. Толық емес бөлуді төмен қарай дөңгелектеу оқушыны орынсыз қалдырады.",
+      "calculationVerification": {
+        "answer": "5",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-8901eb57403d34c5",
+      "modelId": "grade5-natural-mul-div-advanced-product-possible-digit-counts",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "firstDigits": 3,
+        "secondDigits": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level3.json",
+          "sourceId": "8901eb57403d34c5"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "3 таңбалы және 3 таңбалы екі оң натурал санды көбейтеді. Көбейтіндінің цифр саны қандай болуы мүмкін?",
+      "options": [
+        "5 немесе 6 таңбалы",
+        "Тек 6 таңбалы",
+        "Тек 5 таңбалы",
+        "6 немесе 7 таңбалы"
+      ],
+      "answer": "5 немесе 6 таңбалы",
+      "solution": "Ең кіші көбейтінді 100 × 100 = 10000, ол 5 таңбалы. Ең үлкені 999 × 999 = 998001, ол 6 таңбалы. Барлық көбейтінді осы шекараларда, сондықтан басқа цифр саны болмайды. Екі шеткі мысалдың өзі екі мүмкіндіктің де алынатынын дәлелдейді.",
+      "calculationVerification": {
+        "answer": "5 немесе 6 таңбалы",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-b43ea68c1a26b3dd",
+      "modelId": "grade5-natural-mul-div-advanced-known-product-opposite-factor-scaling",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "product": 96,
+        "up": 7,
+        "down": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level3.json",
+          "sourceId": "b43ea68c1a26b3dd"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "x, y — оң натурал сандар, x × y = 96. y саны 4 санына қалдықсыз бөлінеді. (x × 7) × (y : 4) көбейтіндісін табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "168",
+      "solution": "Бірінші көбейткіш 7 есе артқанда көбейтінді 96 × 7 = 672. Екіншісі 4 есе кемігенде нәтиже 672 : 4 = 168. Жалпы теңдік: (x × 7) × (y : 4) = (x × y) × 7 : 4. y қалдықсыз бөлінетіні берілген. Куә мысал x = 24, y = 4: (24 × 7) × (4 : 4) = 168.",
+      "calculationVerification": {
+        "answer": "168",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-c1659c388e9938e9",
+      "modelId": "grade5-natural-mul-div-advanced-three-digit-times-thousand-one",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "a": 482
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level3.json",
+          "sourceId": "c1659c388e9938e9"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "482 × 1001 мәнін бағанмен көбейтпей табыңыз.",
+      "options": [
+        "482001",
+        "482482",
+        "48682",
+        "4820482"
+      ],
+      "answer": "482482",
+      "solution": "1001 = 1000 + 1. Сондықтан 482 × 1001 = 482 × 1000 + 482 = 482000 + 482 = 482482. Үш таңбалы санға оңнан тағы сол үш цифр тіркеледі: олар мыңдықтардан төменгі үш разрядқа келеді. 1001-ді 101 немесе 10001 деп алмастыру нөл санын өзгертеді.",
+      "calculationVerification": {
+        "answer": "482482",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-a90c49e90fa885ac",
+      "modelId": "grade5-natural-mul-div-advanced-undo-multiply-add-divide",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "factor": 15,
+        "add": 45,
+        "divisor": 9,
+        "result": 40
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level3.json",
+          "sourceId": "a90c49e90fa885ac"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "Нұрлан бір оң натурал санды 15 санына көбейтті, оған 45 қосты, нәтижені 9 санына бөлгенде 40 шықты. Бастапқы санды табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "21",
+      "solution": "Соңынан кері жүреміз: бөлінгіш 40 × 9 = 360. Қосуға дейін 360 − 45 = 315. Көбейтуге дейін 315 : 15 = 21. Тексеру: (21 × 15 + 45) : 9 = 40. Амалдардың кері реті де, әрқайсысының кері амалы да сақталды.",
+      "calculationVerification": {
+        "answer": "21",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-403e3c2d2711c362",
+      "modelId": "grade5-natural-mul-div-advanced-least-digit-count-multiple",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "digits": 4,
+        "divisor": 44
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level3.json",
+          "sourceId": "403e3c2d2711c362"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "44 санына қалдықсыз бөлінетін ЕҢ КІШІ 4 таңбалы санды табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "1012",
+      "solution": "4 таңбалы сан кемі 1000 болуы керек. Көрші еселіктер: 44 × 22 = 968 < 1000; 44 × 23 = 1012 ≥ 1000. Сондықтан ең кішісі 1012. Алдыңғы еселік шекарадан кіші, одан кейінгілері бұдан үлкен. Тексеру: 1012 : 44 = 23.",
+      "calculationVerification": {
+        "answer": "1012",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-a466579a68e7a240",
+      "modelId": "grade5-natural-mul-div-advanced-page-number-digit-budget",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "digitBudget": 429
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level3.json",
+          "sourceId": "a466579a68e7a240"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "Кітаптың беттері 1-ден бастап қатарынан нөмірленді, нөмірі жазылмаған не өткізіліп кеткен бет жоқ. Барлық бет нөміріне 429 цифр кетті. Соңғы бет нөмірі қандай? Жауапқа тек санды жазыңыз.",
+      "answer": "179",
+      "solution": "1–9 нөмірлеріне 9 × 1 = 9 цифр. 10–99 аралығында 90 бет, оларға 90 × 2 = 180 цифр. Алғашқы 99 бетке 9 + 180 = 189 цифр кетеді. Қалған 429 − 189 = 240 цифр үш таңбалы нөмірлерге тиесілі: 240 : 3 = 80 бет. Соңғы нөмір 99 + 80 = 179. Тексеру: 9 + 180 + 80 × 3 = 429.",
+      "calculationVerification": {
+        "answer": "179",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-0cc7927aea4624c8",
+      "modelId": "grade5-natural-mul-div-advanced-inverse-changed-product",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "changed": 1800,
+        "up": 8,
+        "down": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level3.json",
+          "sourceId": "0cc7927aea4624c8"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "Екі оң натурал сан көбейтілді. Бірінші көбейткіш 8 есе артты, екінші 2 есе кеміді (ол 2 санына қалдықсыз бөлінеді). Жаңа көбейтінді 1800. БАСТАПҚЫ көбейтінді қандай? Жауапқа тек санды жазыңыз.",
+      "answer": "450",
+      "solution": "Жалпы көбейткіш 8 : 2 = 4. Жаңа көбейтінді бастапқыдан 4 есе үлкен, сондықтан бастапқысы 1800 : 4 = 450. Куә мысал: бастапқы сандар 225 және 2; жаңалары 1800 және 1. Олардың көбейтіндісі 1800 = 1800. Қалдықсыз бөлу мен оңдық шарттары орындалады.",
+      "calculationVerification": {
+        "answer": "450",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-3227cbcb786bad4a",
+      "modelId": "grade5-natural-mul-div-advanced-mass-equalize-books-request-album",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "books": 3,
+        "albums": 2,
+        "firstMass": 2050,
+        "secondBooks": 6,
+        "secondAlbums": 1,
+        "secondMass": 3050
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level3.json",
+          "sourceId": "3227cbcb786bad4a"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "3 бірдей кітап пен 2 бірдей альбомның массасы 2050 г. 6 осындай кітап пен 1 альбомның массасы 3050 г. Бір АЛЬБОМ неше грамм? Жауапқа тек санды жазыңыз.",
+      "answer": "350",
+      "solution": "Бірінші жиынды 2 есе көбейтеміз: 6 кітап және 4 альбом, барлығы 4100 г. Екінші жиыннан кітап саны бірдей; айырма 4 − 1 = 3 альбом. Олардың массасы 4100 − 3050 = 1050 г, бір альбом 350 г. Бір кітап (2050 − 2 × 350) : 3 = 450 г. Тексеру: 6 × 450 + 1 × 350 = 3050. Сұралғаны кітап емес, альбом.",
+      "calculationVerification": {
+        "answer": "350",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-36885794910d5a19",
+      "modelId": "grade5-natural-mul-div-advanced-column-division",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "dividend": 6561,
+        "divisor": 27
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-leveltest.json",
+          "sourceId": "36885794910d5a19"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "6561 : 27 бөлуді орындаңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "243",
+      "solution": "65 ішінде 27 саны 2 рет: 27 × 2 = 54, қалдық 65 − 54 = 11. 116 ішінде 27 саны 4 рет: 27 × 4 = 108, қалдық 116 − 108 = 8. 81 ішінде 27 саны 3 рет: 27 × 3 = 81, қалдық 81 − 81 = 0. Бөлінді 243. Тексеру: 243 × 27 = 6561.",
+      "calculationVerification": {
+        "answer": "243",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-23ae37aad4a5d12c",
+      "modelId": "grade5-natural-mul-div-advanced-middle-zero-product",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "a": 72,
+        "b": 18
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-leveltest.json",
+          "sourceId": "23ae37aad4a5d12c"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "72 × 0 × 18 көбейтіндісінің мәнін таңдаңыз.",
+      "options": [
+        "0",
+        "1296",
+        "90",
+        "72"
+      ],
+      "answer": "0",
+      "solution": "Көбейткіштердің бірі 0: 72 × 0 = 0, әрі 0 × 18 = 0. 1296 нөлді тастап кетуден, 90 көбейтуді қосумен ауыстырудан шығады. Көбейткіштердің орындары нәтиже нөл болуын өзгертпейді.",
+      "calculationVerification": {
+        "answer": "0",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-5c8b10d699b991ce",
+      "modelId": "grade5-natural-mul-div-advanced-column-product-interior-zero",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "a": 607,
+        "b": 39
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-leveltest.json",
+          "sourceId": "5c8b10d699b991ce"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "607 × 39 көбейтіндісін разрядтық бөліктерге бөліп есептеңіз. Жауапқа тек санды жазыңыз.",
+      "answer": "23673",
+      "solution": "607 × 9 = 5463; 607 × 30 = 18210. Бөліктер қосындысы 5463 + 18210 = 23673. Көбейткіштегі әр ондықтың разрядтық мәні сақталды; 607 ішіндегі 0 цифрын алып тастауға болмайды. Тексеру: 23673 : 39 = 607.",
+      "calculationVerification": {
+        "answer": "23673",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-d7c15c1dd29cbe36",
+      "modelId": "grade5-natural-mul-div-advanced-choose-round-divisor-multiplier",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "dividend": 8100,
+        "divisor": 45,
+        "choices": [
+          5,
+          3,
+          2,
+          7
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-leveltest.json",
+          "sourceId": "d7c15c1dd29cbe36"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "8100 : 45 бөліндісін жеңіл есептеу үшін екі мүшені БІРДЕЙ санға көбейтеді. Берілген нұсқалардың қайсысы бөлгіштің соңғы цифрын 0 етеді?",
+      "options": [
+        "5",
+        "3",
+        "2",
+        "7"
+      ],
+      "answer": "2",
+      "solution": "45 × 5 = 225; 45 × 3 = 135; 45 × 2 = 90; 45 × 7 = 315. Тек 2 көбейткіші 0-мен аяқталатын бөлгіш береді. Екі мүшені де өзгертеміз: 16200 : 90 = 180. Тексеру: 180 × 45 = 8100. Ыңғайлылық өлшемі сұрақта нақты берілген.",
+      "calculationVerification": {
+        "answer": "2",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-a4f4a70c15e65118",
+      "modelId": "grade5-natural-mul-div-advanced-nonzero-second-factor-product-zero",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "factor": 72,
+        "shift": 16
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-leveltest.json",
+          "sourceId": "a4f4a70c15e65118"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "x — натурал сан, x ≥ 16. (x − 16) × 72 = 0. x мәнін таңдаңыз.",
+      "options": [
+        "72",
+        "0",
+        "16",
+        "88"
+      ],
+      "answer": "16",
+      "solution": "72 ≠ 0, сондықтан бірінші көбейткіш 0: x − 16 = 0. Демек x = 16. Тексеру: (16 − 16) × 72 = 0. 0 берілген облысқа кірмейді; 88 көбейткішті азайтудың орнына қосады.",
+      "calculationVerification": {
+        "answer": "16",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-602e58ec8e7853b0",
+      "modelId": "grade5-natural-mul-div-advanced-boxes-mass-to-bag-count",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "boxes": 16,
+        "mass": 21,
+        "perBag": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-leveltest.json",
+          "sourceId": "602e58ec8e7853b0"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "Асханаға әрқайсысы 21 кг болатын 16 жәшік картоп келді. Бәрін 7 кг-нан бірдей пакеттерге толық бөлді. Неше пакет шықты? Жауапқа тек санды жазыңыз.",
+      "answer": "48",
+      "solution": "Жалпы масса 21 × 16 = 336 кг. Пакет саны 336 : 7 = 48. Тексеру: 48 × 7 = 336. Жәшіктердің санын емес, барлық массадан шығатын пакеттер санын іздейміз.",
+      "calculationVerification": {
+        "answer": "48",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-694f73743fa2cf02",
+      "modelId": "grade5-natural-mul-div-advanced-prefix-number-quotient-digit-count",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "prefix": 6,
+        "digits": 5,
+        "divisor": 78
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-leveltest.json",
+          "sourceId": "694f73743fa2cf02"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "6 цифрынан басталатын 5 таңбалы сан 78 санына ҚАЛДЫҚСЫЗ бөлінеді. Оның бөліндісінде неше цифр болады?",
+      "options": [
+        "3 цифр",
+        "4 цифр",
+        "2 цифр",
+        "1 цифр"
+      ],
+      "answer": "3 цифр",
+      "solution": "Бірінші цифр 6 < 78, сондықтан бір цифр жеткіліксіз. Алғашқы 2 цифрдан құралған сан 60–69 аралығында; бұл сандар 78 санынан кіші. Алғашқы 3 цифр 600–699 аралығында, түгел бөлгіштен кем емес. Бірінші толымсыз бөлінгіш осы 3 цифрдан құралады. Бөліндінің алғашқы цифры жүздіктер разрядына түседі, сондықтан бөлінді 3 цифрдан тұрады. Қосымша шекаралық тексеру: берілген сан 60000 мен 69999 арасында. Осы аралықтағы 78 санына еселі ең кіші сан 60060, ең үлкені 69966. Бөлінділер: 60060 : 78 = 770, 69966 : 78 = 897. Барлық мүмкін бөлінді 770 мен 897 аралығында, екеуі де 3 таңбалы разряд аралығында. Сондықтан жауап 3 цифр.",
+      "calculationVerification": {
+        "answer": "3 цифр",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-88b4994a14a5463d",
+      "modelId": "grade5-natural-mul-div-advanced-undo-multiply-subtract-divide",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "factor": 9,
+        "subtract": 27,
+        "divisor": 6,
+        "result": 33
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-leveltest.json",
+          "sourceId": "88b4994a14a5463d"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "Айша бір оң натурал санды 9 санына көбейтті, шыққан саннан 27 азайтты, нәтижені 6 санына бөлгенде 33 алды. Бастапқы сан қандай? Жауапқа тек санды жазыңыз.",
+      "answer": "25",
+      "solution": "Кері есептейміз: бөлінгіш 33 × 6 = 198. Азайтуға дейін 198 + 27 = 225. Көбейтуге дейін 225 : 9 = 25. Тексеру: (25 × 9 − 27) : 6 = 33. Азайтуды кері қайтарғанда қосамыз.",
+      "calculationVerification": {
+        "answer": "25",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-natural-mul-div-advanced-65ddde443c4bb387",
+      "modelId": "grade5-natural-mul-div-advanced-count-positive-multiples-upperbound",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "limit": 250,
+        "divisor": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-leveltest.json",
+          "sourceId": "65ddde443c4bb387"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade5topic1.5 nonvisual adaptation; longdivision/product/scaling/inverse/components/prefixbounds/targetskills retained. Variants not new semantic increments.",
+      "adaptationChanges": [
+        "Барлық20сақталған визуалсыз1.5шарт, толық ресми шешім және MCQ жеке оқылды. Жаңа сандар, жағдайлар және толық шешім берілді.",
+        "Көбейту мен бөлудің компоненттері, бұрышпен бөлу, нөл мен оң бөлгіш, екі мүшені бірдей өзгерту және толық сан аралықтары сақталды.",
+        "Көбейту мен бөлудің толық қадамдары, разрядтар мен кері амалдар анық берілді, түпнұсқа TeX/скан жоқ. Standard жабық draft, сыртқы тәуелсіз толық hash review қажет."
+      ],
+      "statement": "1-ден 250 санына дейін, шекараларды қоса алғанда, 8 санына ҚАЛДЫҚСЫЗ бөлінетін неше оң натурал сан бар?",
+      "options": [
+        "32",
+        "30",
+        "33",
+        "31"
+      ],
+      "answer": "31",
+      "solution": "Олар 8 × 1, 8 × 2, … түрінде. 8 × 31 = 248 ≤ 250, ал келесі 8 × 32 = 256 > 250. Демек 1-ден 31-ге дейінгі көбейткіштер бар, саны 31. 0 бұл аралыққа кірмейді, ал соңғы толық емес бөлік жаңа еселік қоспайды.",
+      "calculationVerification": {
+        "answer": "31",
+        "checks": [
+          "All20savednonvisual1.5levels3/testFULLconditions/officialsolutions/everyMCQ individually read",
+          "Completeproductdigitsbounds/ceiling/floor/prefixdomains, positiveexactdivisibilityinvariance, inversetargets and requested units preserved",
+          "Page-numberdigitbudget and physicalequalmasscancelledbookcounts verified, variants not new semantic meanings",
+          "No sourceTeX/scans; closedStandard until independentfullcontenthashreview"
+        ]
+      }
+    }
+  ]
+}

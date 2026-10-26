@@ -1,0 +1,1711 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "Only saved visual rational-number sources; no collection or downloading, no original traced paths.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources in grade6 topics2.2,2.4,2.13–2.15,2.17–2.18",
+    "sourceVisualOccurrences": 26,
+    "addressedNewDrafts": 25,
+    "previousEditionsRetained": [
+      {
+        "sourceId": "e6db1123d5557018",
+        "editionId": "geometry-park-coordinate-walk"
+      }
+    ],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "09b98f083c21b883",
+      "0a90c6314708c851",
+      "3189f640178f9d2b",
+      "38c66880933c5246",
+      "3d08b34753f6e26d",
+      "4faa8940a8203ee9",
+      "5abaf7a10362bfe3",
+      "64ab4b91b9b476b2",
+      "87e1df75a32e5951",
+      "89f8f85104dd6c0b",
+      "9edafd5e160e3424",
+      "a575c57fbbe41faf",
+      "a8684eeff1b39ec1",
+      "b3a0444b2a831e4f",
+      "b3d2a22a51d4b36f",
+      "b402d97b1556f731",
+      "b617010feb6317eb",
+      "bfc92b20978bc535",
+      "c00472c6df58a577",
+      "c9f6f219101d9ba9",
+      "d0f06e3290a45e15",
+      "d72637103a243c6c",
+      "deb929b3b35930b2",
+      "e53ac7130956e007",
+      "e8900039a18bc875"
+    ],
+    "distinctModels": 25,
+    "semantics": "25 individually addressed drafts plus1 retained verified edition cover all26 visual source occurrences. Explicit model forms do not imply25 unrelated mathematical families."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave5-equal-left-jumps",
+      "modelId": "visual-wave5-jump-product",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "E",
+            "tick": -12
+          }
+        ],
+        "minTick": -14,
+        "maxTick": 2,
+        "denominator": 1,
+        "tickEvery": 1,
+        "labels": [
+          0,
+          1
+        ],
+        "jumpStart": 0,
+        "delta": -3,
+        "jumpCount": 4,
+        "finalLabel": "E"
+      },
+      "answer": "(-3) · 4 = -12",
+      "sourceRefs": [
+        {
+          "sourceId": "b3d2a22a51d4b36f",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-13-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-13-level1.json#0",
+      "sourceCanonicalSha256": "7f7517282383b5d77118d519347a96dcca04dd0a38780f9aac09099794c31394",
+      "sourceSkill": "Reading repeated negative jump size and count in their actual factor order",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-equal-left-jumps.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "(-3) · 4 = -12",
+        "(-4) · 3 = -12",
+        "3 · 4 = 12",
+        "(-3) · 3 = -9"
+      ],
+      "statement": "Сандық түзудегі қозғалыс 0 нүктесінен басталады. Бір доға — бір секіру. Әр секірудегі таңбалы өзгеріс пен секіру санына сәйкес көбейтіндіні таңдаңыз.",
+      "solution": "Әр доға солға 3 бірлікке жылжытады: таңбалы өзгеріс -3. Доғалар саны 4. Сондықтан (-3) · 4 = -12. Көбейткіштердің орындарын ауыстыру сол мәнді берсе де, секіру ұзындығы мен санының ретін өзгертеді.\nЖауап: (-3) · 4 = -12.",
+      "figureDescription": "Сандық түзудегі қозғалыс 0 нүктесінен басталады. Бір доға — бір секіру. Әр секірудегі таңбалы өзгеріс пен секіру санына сәйкес көбейтіндіні таңдаңыз. Нүктелер: E(-12). 4 бірдей солға бағытталған доға. ",
+      "figureSha256": "3ddfcafdee145e889c6c169470588965d42aa13195573e6343e8e0c255f9ba7a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(-3) · 4 = -12",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Jump length and number of jumps stay in the shown order even if a reversed factor pair has the same product",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-coordinate-product",
+      "modelId": "visual-wave5-coordinate-product",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "A",
+            "tick": -5
+          },
+          {
+            "label": "B",
+            "tick": 4
+          }
+        ],
+        "minTick": -7,
+        "maxTick": 6,
+        "denominator": 1,
+        "tickEvery": 1,
+        "labels": [
+          0,
+          1
+        ],
+        "first": "A",
+        "second": "B"
+      },
+      "answer": "-20",
+      "sourceRefs": [
+        {
+          "sourceId": "b617010feb6317eb",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-13-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-13-level1.json#14",
+      "sourceCanonicalSha256": "12c766b084e32b7eefd28863b0dc9015da053f2afcc3e8dfc63053e1ad654166",
+      "sourceSkill": "Reading opposite-signed coordinates before multiplying, rather than adding or subtracting",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-coordinate-product.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "-20",
+        "20",
+        "-1",
+        "-9"
+      ],
+      "statement": "Сызбадағы A және B нүктелерінің координаталарын оқыңыз. Осы екі координатаның көбейтіндісі неге тең?",
+      "solution": "A(-5), B(4). Таңбалары әртүрлі, сондықтан көбейтінді теріс: (-5) · 4 = -20.\nЖауап: -20.",
+      "figureDescription": "Сызбадағы A және B нүктелерінің координаталарын оқыңыз. Осы екі координатаның көбейтіндісі неге тең? Нүктелер: A(-5), B(4). ",
+      "figureSha256": "be3b9875a6dff76665eed23ad2022ce33a559d3b80f56f4583e8923bc1ef9070",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-20",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-row-column-mosaic",
+      "modelId": "visual-wave5-commutation-grid",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "grid",
+        "rows": 3,
+        "cols": 7
+      },
+      "answer": "3 · 7 = 7 · 3",
+      "sourceRefs": [
+        {
+          "sourceId": "87e1df75a32e5951",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-14-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-14-level1.json#3",
+      "sourceCanonicalSha256": "25a864f0aadca0aed09e0420c264a9d2430b1d19b4864af58367d2e0b3b61f38",
+      "sourceSkill": "Matching commutativity to the exact row/column counts of the pictured grid",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-row-column-mosaic.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "3 + 7 = 7 + 3",
+        "3 · 6 = 6 · 3",
+        "4 · 7 = 7 · 4",
+        "3 · 7 = 7 · 3"
+      ],
+      "statement": "Мозаиканың шаршыларын жолдар бойынша және бағандар бойынша санаңыз. Дәл осы мозаика үшін көбейтудің ауыстырымдылық қасиетін қай теңдік көрсетеді?",
+      "solution": "Сызбада 3 жол, әр жолда 7 шаршы бар. Басқа бағытпен санағанда 7 баған, әрқайсысында 3 шаршы. Екі тәсіл де 21 шаршы береді: 3 · 7 = 7 · 3.\nЖауап: 3 · 7 = 7 · 3.",
+      "figureDescription": "Мозаиканың шаршыларын жолдар бойынша және бағандар бойынша санаңыз. Дәл осы мозаика үшін көбейтудің ауыстырымдылық қасиетін қай теңдік көрсетеді? 3 жол және 7 баған шаршы. ",
+      "figureSha256": "cb94df5521d570da4b3e5f3b35fa5405235459e3bbcf043f4747a1560cf7accf",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3 · 7 = 7 · 3",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-round-product-pair",
+      "modelId": "visual-wave5-round-pair",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cards",
+        "values": [
+          -125,
+          3,
+          6,
+          -8
+        ],
+        "roundTarget": 1000
+      },
+      "answer": "-125 және -8",
+      "sourceRefs": [
+        {
+          "sourceId": "b3a0444b2a831e4f",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-14-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-14-level1.json#4",
+      "sourceCanonicalSha256": "91ce09a2fee716c4da12751c154408d78f6fd89352589740c4c9137c6c1ec3f5",
+      "sourceSkill": "Using associativity/commutativity to group the unique negative pair making a power of ten",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-round-product-pair.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "3 және 6",
+        "-125 және -8",
+        "-125 және 3",
+        "6 және -8"
+      ],
+      "statement": "Карточкалардағы барлық сан көбейтіледі. Есептеуді ыңғайлау үшін алдымен көбейтіндісі 1000 болатын екі көбейткішті таңдаңыз.",
+      "solution": "Берілген сандар: (-125) · 3 · 6 · (-8). -125 және -8 сандарын топтастырсақ, олардың көбейтіндісі 1000 болады. Көбейткіштерді ауыстыру мен топтастыру көбейтіндінің мәнін өзгертпейді.\nЖауап: -125 және -8.",
+      "figureDescription": "Карточкалардағы барлық сан көбейтіледі. Есептеуді ыңғайлау үшін алдымен көбейтіндісі 1000 болатын екі көбейткішті таңдаңыз. Карточкалардағы сандар: -125, 3, 6, -8. ",
+      "figureSha256": "0b0a62d9b68c31296dcb0e33f264b649c705a74a3b2ead69a456d2e446941f5b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-125 және -8",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-three-factor-cards",
+      "modelId": "visual-wave5-card-product",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cards",
+        "values": [
+          -20,
+          9,
+          -5
+        ]
+      },
+      "answer": "900",
+      "sourceRefs": [
+        {
+          "sourceId": "64ab4b91b9b476b2",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-14-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-14-level1.json#11",
+      "sourceCanonicalSha256": "df5b95a59a27dabed7a741f12e63980b29821aa977926a5553de3e11cb436779",
+      "sourceSkill": "Reading three factors and efficiently grouping two negative factors before multiplying",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-three-factor-cards.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "statement": "Үш карточкадағы сандардың көбейтіндісін табыңыз. Алдымен дөңгелек сан беретін көбейткіштерді топтастыруға болады. Жауапқа тек санды жазыңыз.",
+      "solution": "Карточкалар: -20, 9, -5. Шеткі екі теріс санды топтастырамыз: (-20) · (-5) = 100. Оны 9 санына көбейтеміз: 100 · 9 = 900.\nЖауап: 900.",
+      "figureDescription": "Үш карточкадағы сандардың көбейтіндісін табыңыз. Алдымен дөңгелек сан беретін көбейткіштерді топтастыруға болады. Жауапқа тек санды жазыңыз. Карточкалардағы сандар: -20, 9, -5. ",
+      "figureSha256": "fa93b74c2b22faaa0e3f59ea8c6ac160c887fd41803d284c1e5001bcfc66670b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "900",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-uniform-hourly-cooling",
+      "modelId": "visual-wave5-cooling-rate",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "thermo",
+        "reading": -28,
+        "min": -40,
+        "max": 10,
+        "step": 2,
+        "labelEvery": 5,
+        "hours": 7
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "b402d97b1556f731",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-15-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-15-level1.json#2",
+      "sourceCanonicalSha256": "e36ab2f2bf0f6f955b432a7e451c9130a8890141611a7fb4055c35a515601888",
+      "sourceSkill": "Reading a negative final thermometer and dividing its cooling magnitude by elapsed hours",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-uniform-hourly-cooling.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "statement": "Салқындатқыштағы температура 0 °C-тан бастап 7 сағат бойы бірқалыпты төмендеді. Термометр соңғы температураны көрсетеді. Әр сағатта температура неше градусқа төмендеген? Жауапқа тек санды жазыңыз.",
+      "solution": "Шкала бойынша соңғы температура -28 °C. Таңбалы өзгеріс -28 °C, ал төмендеу шамасы 28 градус. 28 : 7 = 4 градус/сағ. Таңбалы сағаттық өзгеріс -4 °C/сағ болады.\nЖауап: 4.",
+      "figureDescription": "Салқындатқыштағы температура 0 °C-тан бастап 7 сағат бойы бірқалыпты төмендеді. Термометр соңғы температураны көрсетеді. Әр сағатта температура неше градусқа төмендеген? Жауапқа тек санды жазыңыз. Берілген температура -28 °C; кіші бөлік 2 °C. ",
+      "figureSha256": "654ab1b0e3c2a4ab96a9286d9f550f377b68033e13e9d483976b13da18cde517",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "The requested amount of cooling is positive, unlike the signed hourly change",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-first-equal-left-part",
+      "modelId": "visual-wave5-equal-parts-coordinate",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "A",
+            "tick": -24
+          },
+          {
+            "label": "B",
+            "tick": -4
+          }
+        ],
+        "minTick": -28,
+        "maxTick": 4,
+        "denominator": 1,
+        "tickEvery": 4,
+        "labels": [
+          -24,
+          0
+        ],
+        "jumpStart": 0,
+        "delta": -4,
+        "jumpCount": 6,
+        "finalLabel": "A",
+        "target": "B",
+        "hiddenLabels": [
+          "B"
+        ]
+      },
+      "answer": "-4",
+      "sourceRefs": [
+        {
+          "sourceId": "09b98f083c21b883",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-15-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-15-level1.json#5",
+      "sourceCanonicalSha256": "73587a679cf89c1beba59433d9e550043a7105ab1495e7726849932ddfaccb30",
+      "sourceSkill": "Dividing a labelled negative endpoint into pictured equal parts to recover the first left subdivision",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-first-equal-left-part.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "4",
+        "-4",
+        "-6",
+        "-20"
+      ],
+      "statement": "0 мен A арасындағы кесінді сызбадағы доғалармен тең бөліктерге бөлінген. B — 0-ден солға қарай бірінші бөлу нүктесі. Оның координатасын табыңыз.",
+      "solution": "A(-24). Барлығы 6 тең бөлік. Бір бөліктегі таңбалы өзгеріс: (-24) : 6 = -4. B нүктесі 0-ден бірінші сол жақ бөлу нүктесінде: B(-4).\nЖауап: -4.",
+      "figureDescription": "0 мен A арасындағы кесінді сызбадағы доғалармен тең бөліктерге бөлінген. B — 0-ден солға қарай бірінші бөлу нүктесі. Оның координатасын табыңыз. Нүктелер: A(-24), B — белгісіз координата. 6 бірдей солға бағытталған доға. ",
+      "figureSha256": "1e32e374b48c467728d548b88d4a31b1703eb6c3c63824c6aaf510dae47da1a5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-4",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Divide the whole negative endpoint by equal parts, rather than returning the part count",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-ordered-coordinate-quotient",
+      "modelId": "visual-wave5-coordinate-quotient",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "A",
+            "tick": -12
+          },
+          {
+            "label": "B",
+            "tick": 3
+          }
+        ],
+        "minTick": -14,
+        "maxTick": 6,
+        "denominator": 1,
+        "tickEvery": 1,
+        "labels": [
+          0,
+          1
+        ],
+        "first": "A",
+        "second": "B"
+      },
+      "answer": "-4",
+      "sourceRefs": [
+        {
+          "sourceId": "a575c57fbbe41faf",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-15-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-15-level1.json#15",
+      "sourceCanonicalSha256": "a32977a86fcfbe9e79b12b741cef65d0038355f66d917167ef0ce993140c9288",
+      "sourceSkill": "Dividing A by B after reading both signed coordinates, preserving operand order",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-ordered-coordinate-quotient.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "-4",
+        "4",
+        "-1/4",
+        "-9"
+      ],
+      "statement": "Түзуден A және B нүктелерінің координаталарын оқыңыз. A координатасын B координатасына бөліңіз.",
+      "solution": "A(-12), B(3). Сұралған ретпен бөлеміз: (-12) : 3 = -4. Кері ретпен бөлу басқа нәтиже береді.\nЖауап: -4.",
+      "figureDescription": "Түзуден A және B нүктелерінің координаталарын оқыңыз. A координатасын B координатасына бөліңіз. Нүктелер: A(-12), B(3). ",
+      "figureSha256": "32462ae9c9feb8700702ede4de0c2720652519e35ac73c531d4c3c4ba747fdb5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-4",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Divide the first named point by the second in the requested order",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-remainder-period-length",
+      "modelId": "visual-wave5-period-length",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "division",
+        "numerator": 3,
+        "denominator": 11,
+        "trace": [
+          [
+            3,
+            2,
+            8
+          ],
+          [
+            8,
+            7,
+            3
+          ]
+        ]
+      },
+      "answer": "2",
+      "sourceRefs": [
+        {
+          "sourceId": "3d08b34753f6e26d",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-17-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-17-level1.json#9",
+      "sourceCanonicalSha256": "4c837cd2783526777ccc4c1a642f0dcb60cd3f3f7c97ba2de78325a735fd00d6",
+      "sourceSkill": "Finding the length of a repeating decimal by returning to the initial long-division remainder",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-remainder-period-length.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "statement": "Бөлу қадамдарының кестесінде бастапқы қалдық қайталанғанға дейінгі барлық қадам көрсетілген. Алынатын ондық бөлшектің периодында неше цифр бар? Жауапқа тек санды жазыңыз.",
+      "solution": "3 : 11 бөлуінде қалдықтар 3 → 8 → 3. Бастапқы қалдық қайта шықты. Цифрлар: 2, 7. Сондықтан 3/11 = 0,(27); период ұзындығы 2.\nЖауап: 2.",
+      "figureDescription": "Бөлу қадамдарының кестесінде бастапқы қалдық қайталанғанға дейінгі барлық қадам көрсетілген. Алынатын ондық бөлшектің периодында неше цифр бар? Жауапқа тек санды жазыңыз. Берілген бөлу 3 : 11. Қадамдар [қалдық; цифр; жаңа қалдық]: 3; 2; 8 | 8; 7; 3. ",
+      "figureSha256": "9839cd0457779cdf7448d678876f58ac9b0718d0fda7f0c944c2a2061b3a873f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-remainder-period-notation",
+      "modelId": "visual-wave5-period-notation",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "division",
+        "numerator": 3,
+        "denominator": 7,
+        "trace": [
+          [
+            3,
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            6
+          ],
+          [
+            6,
+            8,
+            4
+          ],
+          [
+            4,
+            5,
+            5
+          ],
+          [
+            5,
+            7,
+            1
+          ],
+          [
+            1,
+            1,
+            3
+          ]
+        ]
+      },
+      "answer": "0,(428571)",
+      "sourceRefs": [
+        {
+          "sourceId": "3189f640178f9d2b",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-17-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-17-level1.json#14",
+      "sourceCanonicalSha256": "1c58b47f16a47d695909f98e40c1baa9b82f3b13041ca3104949966f048ab513",
+      "sourceSkill": "Writing the full repeating digit block in its original order from verified long-division steps",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-remainder-period-notation.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "0,(428571)",
+        "0,4(28571)",
+        "0,(142857)",
+        "0,(42857)"
+      ],
+      "statement": "Кестеде 3 санын 7 санына бөлудің қадамдары берілген. Қалдық қайта пайда болғанда цифрлар да қайталанады. Нәтиженің дұрыс периодты жазылуын таңдаңыз.",
+      "solution": "3 : 7 бөлуінде қалдықтар 3 → 2 → 6 → 4 → 5 → 1 → 3. Бастапқы қалдық қайта шықты. Цифрлар: 4, 2, 8, 5, 7, 1. Сондықтан 3/7 = 0,(428571); период ұзындығы 6.\nЖауап: 0,(428571).",
+      "figureDescription": "Кестеде 3 санын 7 санына бөлудің қадамдары берілген. Қалдық қайта пайда болғанда цифрлар да қайталанады. Нәтиженің дұрыс периодты жазылуын таңдаңыз. Берілген бөлу 3 : 7. Қадамдар [қалдық; цифр; жаңа қалдық]: 3; 4; 2 | 2; 2; 6 | 6; 8; 4 | 4; 5; 5 | 5; 7; 1 | 1; 1; 3. ",
+      "figureSha256": "3e80ad212bcae2e4b14027d104576707419522b3ce5c29779dc9955c8b3c8b6f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,(428571)",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-repeat-on-ninths",
+      "modelId": "visual-wave5-repeat-axis",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "K",
+            "tick": 2
+          },
+          {
+            "label": "L",
+            "tick": 4
+          },
+          {
+            "label": "M",
+            "tick": 6
+          },
+          {
+            "label": "N",
+            "tick": 7
+          }
+        ],
+        "minTick": 0,
+        "maxTick": 9,
+        "denominator": 9,
+        "tickEvery": 1,
+        "labels": [
+          0,
+          9
+        ],
+        "repeatDigit": 7
+      },
+      "answer": "N",
+      "sourceRefs": [
+        {
+          "sourceId": "c9f6f219101d9ba9",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-18-level1.json#4",
+      "sourceCanonicalSha256": "7308c1653adc91464459fab5ed349ac6dd602878ffc117d44adfc1aacb55e2c4",
+      "sourceSkill": "Converting a one-digit repeating decimal to ninths and locating its point on a subdivided unit line",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-repeat-on-ninths.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "K",
+        "L",
+        "M",
+        "N"
+      ],
+      "statement": "0 мен 1 аралығындағы сызбаға қараңыз. Координатасы 0,(7) периодты бөлшегіне тең нүктені таңдаңыз.",
+      "solution": "0,(7) = 7/9. 0 мен 1 арасында 9 тең бөлік бар. 0-ден 7-бөлікке сәйкес нүкте — N.\nЖауап: N.",
+      "figureDescription": "0 мен 1 аралығындағы сызбаға қараңыз. Координатасы 0,(7) периодты бөлшегіне тең нүктені таңдаңыз. Нүктелер: K(2/9), L(4/9), M(2/3), N(7/9). ",
+      "figureSha256": "cc5ee75585365884d37a8229fbb45a5dc5c3b6ce9e073b03452aadc142214aee",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "N",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-repeat-sector-remainder",
+      "modelId": "visual-wave5-repeat-sector",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "sectors",
+        "parts": 9,
+        "repeatDigit": 8,
+        "colored": 3
+      },
+      "answer": "5",
+      "sourceRefs": [
+        {
+          "sourceId": "e53ac7130956e007",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-18-level1.json#6",
+      "sourceCanonicalSha256": "fa89bea8b83ed4ca1acf53ffb9152bafa38b248b1143a1eeed364bd888dea0d4",
+      "sourceSkill": "Converting a recurring decimal to the required number of equal sectors and subtracting already colored sectors",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-repeat-sector-remainder.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "statement": "Дана төсбелгінің 0,(8) бөлігін көк түспен белгілеуі керек. Төсбелгі тең секторларға бөлінген; қазір көк түспен белгіленген секторлар сызбада берілген. Ол тағы неше секторды бояуы керек? Жауапқа тек санды жазыңыз.",
+      "solution": "0,(8) = 8/9, демек 9 сектордың 8 секторы көк болуы керек. Қазір 3 сектор көк. Қалғаны: 8 − 3 = 5 сектор.\nЖауап: 5.",
+      "figureDescription": "Дана төсбелгінің 0,(8) бөлігін көк түспен белгілеуі керек. Төсбелгі тең секторларға бөлінген; қазір көк түспен белгіленген секторлар сызбада берілген. Ол тағы неше секторды бояуы керек? Жауапқа тек санды жазыңыз. Тең секторлар саны 9, көк секторлар саны 3. ",
+      "figureSha256": "207e4fefe4ada31d23266546a2bd050fdf92f5c3274767bb9117e25609d9e76b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-read-negative-integer",
+      "modelId": "visual-wave5-integer-coordinate",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "A",
+            "tick": -5
+          }
+        ],
+        "minTick": -7,
+        "maxTick": 3,
+        "denominator": 1,
+        "tickEvery": 1,
+        "labels": [
+          0,
+          1
+        ],
+        "target": "A"
+      },
+      "answer": "-5",
+      "sourceRefs": [
+        {
+          "sourceId": "4faa8940a8203ee9",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-2-level1.json#1",
+      "sourceCanonicalSha256": "8bb11fae44a102c43378197d6c70416df87fcc74a149d69f03b9406f2e46e360",
+      "sourceSkill": "Reading a negative integer coordinate from a unit scale",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-read-negative-integer.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "-5",
+        "5",
+        "-4",
+        "-6"
+      ],
+      "statement": "Шкаланың 0 және 1 белгілерін пайдаланып, A нүктесінің координатасын анықтаңыз.",
+      "solution": "0 мен 1 арасы 1 тең бөлік. A нүктесі 0-ден солға 5 кіші аралықта жатыр. Координатасы -5.\nЖауап: -5.",
+      "figureDescription": "Шкаланың 0 және 1 белгілерін пайдаланып, A нүктесінің координатасын анықтаңыз. Нүктелер: A(-5). ",
+      "figureSha256": "ac22fa04bdfd8d15445c5c0e543058c8d6c4baa968da264aeae0ef756cf8e98a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-5",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-read-negative-half",
+      "modelId": "visual-wave5-half-coordinate",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "B",
+            "tick": -7
+          }
+        ],
+        "minTick": -10,
+        "maxTick": 4,
+        "denominator": 2,
+        "tickEvery": 1,
+        "labels": [
+          0,
+          2
+        ],
+        "target": "B"
+      },
+      "answer": "-3,5",
+      "sourceRefs": [
+        {
+          "sourceId": "c00472c6df58a577",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-2-level1.json#5",
+      "sourceCanonicalSha256": "0f43a72cb8835bf0df758e7a9d3462687f93523b642a6f1203f354b0124fcb2e",
+      "sourceSkill": "Reading a negative half-integer using the two subdivisions of each unit",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-read-negative-half.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "-3,5",
+        "3,5",
+        "-2,5",
+        "-4,5"
+      ],
+      "statement": "Шкаланың 0 және 1 белгілерін пайдаланып, B нүктесінің координатасын анықтаңыз.",
+      "solution": "0 мен 1 арасы 2 тең бөлік. B нүктесі 0-ден солға 7 кіші аралықта жатыр. Координатасы -7/2 = -3,5.\nЖауап: -3,5.",
+      "figureDescription": "Шкаланың 0 және 1 белгілерін пайдаланып, B нүктесінің координатасын анықтаңыз. Нүктелер: B(-7/2). ",
+      "figureSha256": "bf11a9d377638b89b6431967e283464f027c23fed22dbfacba0fa0b6620718cd",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-3,5",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-opposite-of-point",
+      "modelId": "visual-wave5-opposite-number",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "K",
+            "tick": -9
+          }
+        ],
+        "minTick": -11,
+        "maxTick": 3,
+        "denominator": 1,
+        "tickEvery": 1,
+        "labels": [
+          0,
+          1
+        ],
+        "target": "K"
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "89f8f85104dd6c0b",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-2-level1.json#7",
+      "sourceCanonicalSha256": "28a37e14cb87942556df9250d23b74e49e124dba36b4dedfb02455206014653d",
+      "sourceSkill": "Reading a negative coordinate and then changing its sign to find the opposite number",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-opposite-of-point.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "statement": "Сызбадағы K нүктесінің координатасына қарама-қарсы санды жазыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "K(-9). Қарама-қарсы санның модулі бірдей, таңбасы кері: 9.\nЖауап: 9.",
+      "figureDescription": "Сызбадағы K нүктесінің координатасына қарама-қарсы санды жазыңыз. Жауапқа тек санды жазыңыз. Нүктелер: K(-9). ",
+      "figureSha256": "b8f424eca158d46b1ab10990cd69624ade7ba1d4779c386c175a83b9c68769e4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-count-unit-intervals",
+      "modelId": "visual-wave5-unit-length",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "M",
+            "tick": -4
+          },
+          {
+            "label": "N",
+            "tick": 3
+          }
+        ],
+        "minTick": -6,
+        "maxTick": 5,
+        "denominator": 1,
+        "tickEvery": 1,
+        "labels": [
+          0,
+          1
+        ],
+        "first": "M",
+        "second": "N"
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "0a90c6314708c851",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-2-level1.json#12",
+      "sourceCanonicalSha256": "6ef32b86bf2de8df6ae0bceb477e950cc2b60b0dceee1005e612e7bd989bcd38",
+      "sourceSkill": "Counting unit intervals across zero rather than counting the endpoint marks",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-count-unit-intervals.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "statement": "M пен N арасында ұзындығы бір бірлікке тең неше кесінді бар? Нүктелердің өздерін емес, аралықтарды санаңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "M(-4), N(3). Санақ басына дейін 4 және одан кейін 3 бірлік: 4 + 3 = 7. Ұштарын қоса сызықша санасақ, біреуі артық болады.\nЖауап: 7.",
+      "figureDescription": "M пен N арасында ұзындығы бір бірлікке тең неше кесінді бар? Нүктелердің өздерін емес, аралықтарды санаңыз. Жауапқа тек санды жазыңыз. Нүктелер: M(-4), N(3). ",
+      "figureSha256": "2d216ee151aee59d044965871a1fc4fccf503be89c1a696de430c7d0d94004b6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-find-opposite-pair",
+      "modelId": "visual-wave5-opposite-pair",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "P",
+            "tick": -6
+          },
+          {
+            "label": "Q",
+            "tick": -2
+          },
+          {
+            "label": "R",
+            "tick": 6
+          },
+          {
+            "label": "S",
+            "tick": 5
+          }
+        ],
+        "minTick": -8,
+        "maxTick": 8,
+        "denominator": 1,
+        "tickEvery": 1,
+        "labels": [
+          0,
+          1
+        ]
+      },
+      "answer": "P және R",
+      "sourceRefs": [
+        {
+          "sourceId": "5abaf7a10362bfe3",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-2-level2.json#0",
+      "sourceCanonicalSha256": "c0735819c9b7d7fcd9f8e58c84b78606b00ffcbb8ac7c1795af737cc2aef8ddc",
+      "sourceSkill": "Selecting the unique pair symmetric about zero among four signed points",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-find-opposite-pair.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "P және R",
+        "P және S",
+        "Q және R",
+        "Q және S"
+      ],
+      "statement": "Қай екі нүктенің координаталары қарама-қарсы сандар? Олардың санақ басының екі жағында бірдей қашықтықта жататынын тексеріңіз.",
+      "solution": "P(-6), Q(-2), R(6), S(5). Қосындысы нөл болатын жалғыз жұп — P және R. Олардың 0-ден қашықтықтары тең.\nЖауап: P және R.",
+      "figureDescription": "Қай екі нүктенің координаталары қарама-қарсы сандар? Олардың санақ басының екі жағында бірдей қашықтықта жататынын тексеріңіз. Нүктелер: P(-6), Q(-2), R(6), S(5). ",
+      "figureSha256": "fbc4f72e693f8d1af4a50176fbca18dc47f0183350a4407d6c953620529ed0b0",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "P және R",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-count-quarter-gaps",
+      "modelId": "visual-wave5-minor-gap-count",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "M",
+            "tick": -5
+          },
+          {
+            "label": "N",
+            "tick": 3
+          }
+        ],
+        "minTick": -8,
+        "maxTick": 8,
+        "denominator": 4,
+        "tickEvery": 1,
+        "labels": [
+          0,
+          4
+        ],
+        "first": "M",
+        "second": "N"
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "bfc92b20978bc535",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-2-level2.json#1",
+      "sourceCanonicalSha256": "914e274f670710ddddd0ae17af808f268125ee640915cbe9a9e55c73b642166d",
+      "sourceSkill": "Distinguishing a count of quarter-unit gaps from their length in full units",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-count-quarter-gaps.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "statement": "0 мен 1 аралығы тең кіші бөліктерге бөлінген. M пен N арасында осындай неше кіші бөлік бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Бірлік 4 тең кіші бөлікке бөлінген. M нүктесіне дейін солға 5 бөлік, N нүктесіне дейін оңға 3 бөлік бар. Барлығы 5 + 3 = 8 кіші аралық. Толық бірлікпен қашықтық 8/4 болады.\nЖауап: 8.",
+      "figureDescription": "0 мен 1 аралығы тең кіші бөліктерге бөлінген. M пен N арасында осындай неше кіші бөлік бар? Жауапқа тек санды жазыңыз. Нүктелер: M(-5/4), N(3/4). ",
+      "figureSha256": "3b504913a6ce611f505d70100c11537589d2eab9b252389568b918828e98e690",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Count small gaps, not full coordinate units or endpoint marks",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-calibrate-from-two-labels",
+      "modelId": "visual-wave5-two-label-calibration",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "A",
+            "tick": -4
+          },
+          {
+            "label": "B",
+            "tick": 4
+          },
+          {
+            "label": "C",
+            "tick": 10
+          }
+        ],
+        "minTick": -8,
+        "maxTick": 14,
+        "denominator": 1,
+        "tickEvery": 2,
+        "labels": [
+          -4,
+          4
+        ],
+        "target": "C",
+        "calibration": [
+          {
+            "label": "A",
+            "value": -4
+          },
+          {
+            "label": "B",
+            "value": 4
+          }
+        ],
+        "hiddenLabels": [
+          "C"
+        ]
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "9edafd5e160e3424",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-2-level2.json#4",
+      "sourceCanonicalSha256": "d3eb9f82018448520a84c3f3bb6edb8636ca39e92bf185f875fa56d0df28b736",
+      "sourceSkill": "Inferring the two-unit tick scale from two nonzero labelled points before recovering a third",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-calibrate-from-two-labels.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "statement": "Түзудегі көрші сызықшалар бірдей аралықта орналасқан. Тек A және B координаталары берілген. C нүктесінің координатасын анықтаңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "A(-4), B(4); олардың арасында 4 бірдей аралық бар. Бір аралық: (4 − (-4)) : 4 = 2. C нүктесі B-дан оңға 3 аралықта: 4 + 3 · 2 = 10.\nЖауап: 10.",
+      "figureDescription": "Түзудегі көрші сызықшалар бірдей аралықта орналасқан. Тек A және B координаталары берілген. C нүктесінің координатасын анықтаңыз. Жауапқа тек санды жазыңыз. Нүктелер: A(-4), B(4), C — белгісіз координата. A мен B арасында 4 тең аралық; C нүктесі B нүктесінен оңға 3 сондай аралықта. ",
+      "figureSha256": "0c27d08a9041c0c8245705d13a558612afdae3acfeacaa555c72db7ef62ed479",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-thermometer-modulus",
+      "modelId": "visual-wave5-thermo-absolute",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "thermo",
+        "reading": -18,
+        "min": -30,
+        "max": 20,
+        "step": 2,
+        "labelEvery": 5
+      },
+      "answer": "18",
+      "sourceRefs": [
+        {
+          "sourceId": "e8900039a18bc875",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-4-level1.json#3",
+      "sourceCanonicalSha256": "50ab1b6468afebaa617078a8819b2e30dd2a9f9ceeb0f84fa658110cc70a6aa1",
+      "sourceSkill": "Reading a negative fine thermometer scale and returning the nonnegative absolute value",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-thermometer-modulus.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "statement": "Көкшетаудағы таңғы температура термометрде көрсетілген. Осы температураны білдіретін санның модулін табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Термометрдегі кіші бөлік 2 °C. Бағана -18 °C-қа жеткен. Теріс температураның модулі — оның 0-ден қашықтығы: |-18| = 18.\nЖауап: 18.",
+      "figureDescription": "Көкшетаудағы таңғы температура термометрде көрсетілген. Осы температураны білдіретін санның модулін табыңыз. Жауапқа тек санды жазыңыз. Берілген температура -18 °C; кіші бөлік 2 °C. ",
+      "figureSha256": "29fe8146586e0a4e078f4ba17843e9f05fb6fa9abf065a30f14e9ed8682dc8ee",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "18",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-whole-mixed-modulus",
+      "modelId": "visual-wave5-mixed-absolute",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "scene": "mixed",
+        "whole": 2,
+        "numerator": 3,
+        "denominator": 5
+      },
+      "answer": "(2 + (3/5))",
+      "sourceRefs": [
+        {
+          "sourceId": "deb929b3b35930b2",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-4-level1.json#5",
+      "sourceCanonicalSha256": "545da6315d007085516d389eb9a0b946aea9bf2fc146841ea9a52cfcfd6251df",
+      "sourceSkill": "Taking the absolute value of the entire negative mixed numeral without losing its whole part",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-whole-mixed-modulus.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "(2 + (3/5))",
+        "-(2 + (3/5))",
+        "(3/5)",
+        "(2 + (2/5))"
+      ],
+      "statement": "Тақтада модуль белгісінің ішінде теріс аралас сан жазылған. Осы өрнектің мәнін таңдаңыз.",
+      "solution": "Модуль ішіндегі сан толықтай теріс: -(2 + (3/5)). Оның модулі бүтін бөлігі мен бөлшек бөлігін өзгертпей, оң сан береді: (2 + (3/5)). Бұл 13/5 санына тең.\nЖауап: (2 + (3/5)).",
+      "figureDescription": "Тақтада модуль белгісінің ішінде теріс аралас сан жазылған. Осы өрнектің мәнін таңдаңыз. Модуль ішіндегі берілген сан -(2 + (3/5)). ",
+      "figureSha256": "b0a0d7f453aca0a916297b0e9bc48017a538a4c0bc8addb55ca2d56d8cd53785",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(2 + (3/5))",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "The minus sign applies to the complete mixed number, not just its whole part",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-negative-from-origin-gap",
+      "modelId": "visual-wave5-bracket-negative",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "M",
+            "tick": -4
+          }
+        ],
+        "minTick": -6,
+        "maxTick": 2,
+        "denominator": 1,
+        "tickEvery": 1,
+        "labels": [
+          0
+        ],
+        "target": "M",
+        "bracket": 4,
+        "hideTicks": true,
+        "hiddenLabels": [
+          "M"
+        ]
+      },
+      "answer": "-4",
+      "sourceRefs": [
+        {
+          "sourceId": "a8684eeff1b39ec1",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-4-level1.json#7",
+      "sourceCanonicalSha256": "ef7c95f42ffdd2c8b624aceb8ab355615ba829e095ed962e303b09f1279a99a5",
+      "sourceSkill": "Combining unsigned distance from zero with the pictured left-hand position to choose one signed coordinate",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-negative-from-origin-gap.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "4",
+        "-4",
+        "-4 немесе 4",
+        "-3"
+      ],
+      "statement": "Сызбада M нүктесінің санақ басынан қашықтығы көрсетілген. Нүктенің қай жақта жатқанын ескеріп, оның координатасын табыңыз.",
+      "solution": "M нүктесі 0-ден 4 бірлік қашықтықта, сол жақта жатыр. Сондықтан модулі 4, ал координатасы -4.\nЖауап: -4.",
+      "figureDescription": "Сызбада M нүктесінің санақ басынан қашықтығы көрсетілген. Нүктенің қай жақта жатқанын ескеріп, оның координатасын табыңыз. Нүктелер: M — белгісіз координата. 0-ден M-ге дейінгі қашықтық 4. M санақ басының сол жағында. ",
+      "figureSha256": "4247c3580e455223f56242f66a6c8953e79d37b491095c9cdeecc8833a918332",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-4",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-point-coordinate-modulus",
+      "modelId": "visual-wave5-coordinate-absolute",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "A",
+            "tick": -7
+          }
+        ],
+        "minTick": -9,
+        "maxTick": 3,
+        "denominator": 1,
+        "tickEvery": 1,
+        "labels": [
+          0,
+          1
+        ],
+        "target": "A"
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "d0f06e3290a45e15",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-4-level1.json#9",
+      "sourceCanonicalSha256": "9abd4f36feb76dcbbecca48e81550843f8396c7c3827c66a9a63f42c59b750d9",
+      "sourceSkill": "Reading a negative point and measuring its distance from the coordinate origin",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-point-coordinate-modulus.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "statement": "A нүктесінің координатасын оқып, оның модулін жазыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "A(-7). Модуль — санақ басынан қашықтық: |-7| = 7.\nЖауап: 7.",
+      "figureDescription": "A нүктесінің координатасын оқып, оның модулін жазыңыз. Жауапқа тек санды жазыңыз. Нүктелер: A(-7). ",
+      "figureSha256": "bc83f743165106ce15ef2e22aa14696faf0536335123e62ec2d0d4c55d92c59c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-sum-opposite-moduli",
+      "modelId": "visual-wave5-opposite-absolutes-sum",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "P",
+            "tick": -5
+          },
+          {
+            "label": "Q",
+            "tick": 5
+          }
+        ],
+        "minTick": -7,
+        "maxTick": 7,
+        "denominator": 1,
+        "tickEvery": 1,
+        "labels": [
+          0,
+          1
+        ],
+        "first": "P",
+        "second": "Q"
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "38c66880933c5246",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-4-level1.json#14",
+      "sourceCanonicalSha256": "422339bbc991971ca5c62ff3b7153f145f2a0931e5a654ab61314ec72a5eb5ae",
+      "sourceSkill": "Adding magnitudes of opposite signed coordinates rather than cancelling the original signed values",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-sum-opposite-moduli.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "statement": "Сызбадағы P және Q координаталарының модульдерін қосыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "P(-5), Q(5). Олардың модульдері 5 және 5. Қосындысы 10. Координаталардың өздерін қоссақ нөл болады, бірақ модульдер қосылады.\nЖауап: 10.",
+      "figureDescription": "Сызбадағы P және Q координаталарының модульдерін қосыңыз. Жауапқа тек санды жазыңыз. Нүктелер: P(-5), Q(5). ",
+      "figureSha256": "38f4764866dc103e98b2adb1d4c8cab006de42851fe061a64243acc34af608f4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave5-farthest-point-modulus",
+      "modelId": "visual-wave5-greatest-absolute",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "A",
+            "tick": -4
+          },
+          {
+            "label": "B",
+            "tick": -7
+          },
+          {
+            "label": "C",
+            "tick": 1
+          },
+          {
+            "label": "D",
+            "tick": 6
+          }
+        ],
+        "minTick": -9,
+        "maxTick": 8,
+        "denominator": 1,
+        "tickEvery": 1,
+        "labels": [
+          0,
+          1
+        ]
+      },
+      "answer": "B",
+      "sourceRefs": [
+        {
+          "sourceId": "d72637103a243c6c",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-4-level1.json#15",
+      "sourceCanonicalSha256": "88674cd66dce75440c10fc6c8282562ff408f27979b71d1ff4e14638634a058a",
+      "sourceSkill": "Comparing distances from zero rather than comparing signed order alone",
+      "adaptationChanges": [
+        "Дереккөздің нақты дағдысы сақталып, сандар, бөлшектің бөліктері, көбейткіштер, координаталар, белгілер және жауап жаңадан таңдалды.",
+        "Теріс таңбаның, модульдің, көбейту реттілігінің және периодтағы цифрлар блогының мағынасы жеке тексерілді.",
+        "Барлық сурет жаңа бүтін tick numerator, ұяшық, доға немесе қалдық параметрлерінен native SVG ретінде салынды; түпнұсқа raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сандар мен үлестер зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, exact rational geometry, remainder arithmetic and 343px native visual review"
+      },
+      "image": "/figures/synaq-editions/visual-wave5-farthest-point-modulus.svg",
+      "verificationModule": "scripts/editorial/visual-wave5-models.mjs",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "statement": "Қай белгіленген нүктенің координатасының модулі ең үлкен?",
+      "solution": "A: |-4| = 4; B: |-7| = 7; C: |1| = 1; D: |6| = 6. Ең алыс нүкте — B.\nЖауап: B.",
+      "figureDescription": "Қай белгіленген нүктенің координатасының модулі ең үлкен? Нүктелер: A(-4), B(-7), C(1), D(6). ",
+      "figureSha256": "0587ed08edec4a192f6ae2dcf110efbee53fcc688fa4fd6d27b7a27b070d7484",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "B",
+        "checks": [
+          "Native point positions use exact integer numerators or explicitly verified elementary cells/remainders",
+          "Native SVG, given data, solution, accessible description and canonical answer are exactly bound"
+        ]
+      }
+    }
+  ]
+}

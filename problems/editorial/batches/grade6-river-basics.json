@@ -1,0 +1,474 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All11 individually read saved nonvisual grade6topic2.6 level1 sources. Closed author draft until independent full-content hash review.",
+  "summary": {
+    "editions": 11,
+    "sourceOccurrencesReferenced": 11,
+    "distinctModels": 11,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade6-river-basics-7981031bd8571053",
+      "modelId": "grade6-river-basics-lake-from-own-speed",
+      "grade": 6,
+      "topic": "word",
+      "difficulty": "basic",
+      "params": {
+        "own": 17,
+        "current": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json",
+          "sourceId": "7981031bd8571053"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.6 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық11сақталған визуалсыз шарт,толықшешім жәнеMCQ жекеоқылды. Көл/меншікті,жаға/су санақжүйесі,2ағысайырма,орташа/жартыайырма,ондықуақытжол,салданағыс жәнеқарсыуақытдағдылары сақталды.",
+        "Сандар,қазақшашарттар,таңдаунұсқалары жаңарды. Ағысқақарсыжылдамдықоң,меншікті жылдамдықтұрақты жәнеқайшама/өлшембірліксұралатыны нақты берілді.",
+        "Ондықдеректер бүтін ондықүлестермен дәл есептелді. Текжаңартылғанмәтін,scan/TeX/жаңажинау жоқ. Сандық/контекстікварианттар бөлекмағына есебіне кірмейді; сыртқы толық hashreview дейін draftжабық."
+      ],
+      "statement": "Моторлы қайықтың меншікті жылдамдығы 17 км/сағ. Ол ағысы 3 км/сағ өзеннен ағыссыз көлге өтті. Қозғалтқыштың жұмысы өзгермесе, көлдегі жылдамдығы неше км/сағ?",
+      "options": [
+        "20",
+        "14",
+        "17",
+        "34"
+      ],
+      "answer": "17",
+      "solution": "Ағыссыз көлде суға қатысты жылдамдық пен жағаға қатысты жылдамдық бірдей. Сондықтан 17 + 0 = 17 км/сағ. 20 және 14 мәндері өзенде ағыспен және ағысқа қарсы қозғалысқа тән; көлде ағыс қосылмайды.",
+      "calculationVerification": {
+        "answer": "17",
+        "checks": [
+          "Individual saved shore-frame/lake/raft/relative speed role retained",
+          "Positive upstream speed and unchanged own speed specified",
+          "Speed gap twice current; mean own, halfgap current",
+          "Decimal arithmetic based on exact integer tenths/hundredths; independent full-content hash review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-river-basics-f13245e98772a4e4",
+      "modelId": "grade6-river-basics-current-to-speed-gap",
+      "grade": 6,
+      "topic": "word",
+      "difficulty": "basic",
+      "params": {
+        "currentTenths": 35
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json",
+          "sourceId": "f13245e98772a4e4"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.6 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық11сақталған визуалсыз шарт,толықшешім жәнеMCQ жекеоқылды. Көл/меншікті,жаға/су санақжүйесі,2ағысайырма,орташа/жартыайырма,ондықуақытжол,салданағыс жәнеқарсыуақытдағдылары сақталды.",
+        "Сандар,қазақшашарттар,таңдаунұсқалары жаңарды. Ағысқақарсыжылдамдықоң,меншікті жылдамдықтұрақты жәнеқайшама/өлшембірліксұралатыны нақты берілді.",
+        "Ондықдеректер бүтін ондықүлестермен дәл есептелді. Текжаңартылғанмәтін,scan/TeX/жаңажинау жоқ. Сандық/контекстікварианттар бөлекмағына есебіне кірмейді; сыртқы толық hashreview дейін draftжабық."
+      ],
+      "statement": "Өзен ағысы 3,5 км/сағ. Катер екі бағытта бірдей меншікті жылдамдықпен жүріп, ағысқа қарсы да алға жылжи алады. Ағыспен жылдамдығы ағысқа қарсы жылдамдығынан неше км/сағ артық? Жауапқа тек санды жазыңыз.",
+      "answer": "7",
+      "solution": "Меншікті жылдамдықты v десек, бағыттардағы жылдамдықтар v + 3,5 және v − 3,5. Айырмасы (v + 3,5) − (v − 3,5) = 3,5 + 3,5 = 7 км/сағ. Меншікті жылдамдық қысқарады, ағыс екі рет есепке алынады.",
+      "calculationVerification": {
+        "answer": "7",
+        "checks": [
+          "Individual saved shore-frame/lake/raft/relative speed role retained",
+          "Positive upstream speed and unchanged own speed specified",
+          "Speed gap twice current; mean own, halfgap current",
+          "Decimal arithmetic based on exact integer tenths/hundredths; independent full-content hash review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-river-basics-6907fa557e9a73e4",
+      "modelId": "grade6-river-basics-upstream-from-own-current",
+      "grade": 6,
+      "topic": "word",
+      "difficulty": "basic",
+      "params": {
+        "own": 31,
+        "current": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json",
+          "sourceId": "6907fa557e9a73e4"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.6 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық11сақталған визуалсыз шарт,толықшешім жәнеMCQ жекеоқылды. Көл/меншікті,жаға/су санақжүйесі,2ағысайырма,орташа/жартыайырма,ондықуақытжол,салданағыс жәнеқарсыуақытдағдылары сақталды.",
+        "Сандар,қазақшашарттар,таңдаунұсқалары жаңарды. Ағысқақарсыжылдамдықоң,меншікті жылдамдықтұрақты жәнеқайшама/өлшембірліксұралатыны нақты берілді.",
+        "Ондықдеректер бүтін ондықүлестермен дәл есептелді. Текжаңартылғанмәтін,scan/TeX/жаңажинау жоқ. Сандық/контекстікварианттар бөлекмағына есебіне кірмейді; сыртқы толық hashreview дейін draftжабық."
+      ],
+      "statement": "Катердің меншікті жылдамдығы 31 км/сағ, өзен ағысы 4 км/сағ. Ағысқа қарсы жағаға қатысты жылдамдығын км/сағ-пен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "27",
+      "solution": "Ағыс қарсы әсер етеді, сондықтан 31 − 4 = 27 км/сағ. Тексеру: осы жылдамдыққа ағысты қосқанда 27 + 4 = 31, яғни меншікті жылдамдық қалпына келеді.",
+      "calculationVerification": {
+        "answer": "27",
+        "checks": [
+          "Individual saved shore-frame/lake/raft/relative speed role retained",
+          "Positive upstream speed and unchanged own speed specified",
+          "Speed gap twice current; mean own, halfgap current",
+          "Decimal arithmetic based on exact integer tenths/hundredths; independent full-content hash review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-river-basics-b536a9cea598dbce",
+      "modelId": "grade6-river-basics-universal-speed-identity",
+      "grade": 6,
+      "topic": "word",
+      "difficulty": "basic",
+      "params": {
+        "exampleOwn": 23,
+        "exampleCurrent": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json",
+          "sourceId": "b536a9cea598dbce"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.6 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық11сақталған визуалсыз шарт,толықшешім жәнеMCQ жекеоқылды. Көл/меншікті,жаға/су санақжүйесі,2ағысайырма,орташа/жартыайырма,ондықуақытжол,салданағыс жәнеқарсыуақытдағдылары сақталды.",
+        "Сандар,қазақшашарттар,таңдаунұсқалары жаңарды. Ағысқақарсыжылдамдықоң,меншікті жылдамдықтұрақты жәнеқайшама/өлшембірліксұралатыны нақты берілді.",
+        "Ондықдеректер бүтін ондықүлестермен дәл есептелді. Текжаңартылғанмәтін,scan/TeX/жаңажинау жоқ. Сандық/контекстікварианттар бөлекмағына есебіне кірмейді; сыртқы толық hashreview дейін draftжабық."
+      ],
+      "statement": "Катер екі бағытта бірдей меншікті жылдамдықпен жүреді және ол ағыстан жылдам. Ағыс жылдамдығы оң. Қай тұжырым әрқашан дұрыс?",
+      "options": [
+        "Ағыссыз көлде катердің жылдамдығына өзен ағысы қосылады",
+        "Екі бағыттағы жылдамдық айырмасы ағыс жылдамдығының екі есесіне тең",
+        "Меншікті жылдамдықты табу үшін ағыспен жылдамдыққа ағысты қосамыз",
+        "Ағысқа қарсы жылдамдық меншікті жылдамдық пен ағыстың қосындысы"
+      ],
+      "answer": "Екі бағыттағы жылдамдық айырмасы ағыс жылдамдығының екі есесіне тең",
+      "solution": "Меншікті жылдамдық v, ағыс u болсын. Жағаға қатысты жылдамдықтар v + u және v − u. Айырма (v + u) − (v − u) = 2 × u. Ағыссыз көлде u = 0; меншікті жылдамдық ағыспен жылдамдықтан u-ды азайтқанда табылады; ағысқа қарсы жылдамдыққа u қосылмайды, азайтылады.",
+      "calculationVerification": {
+        "answer": "Екі бағыттағы жылдамдық айырмасы ағыс жылдамдығының екі есесіне тең",
+        "checks": [
+          "Individual saved shore-frame/lake/raft/relative speed role retained",
+          "Positive upstream speed and unchanged own speed specified",
+          "Speed gap twice current; mean own, halfgap current",
+          "Decimal arithmetic based on exact integer tenths/hundredths; independent full-content hash review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-river-basics-2de6dca954981d9a",
+      "modelId": "grade6-river-basics-own-from-two-shore-speeds",
+      "grade": 6,
+      "topic": "word",
+      "difficulty": "basic",
+      "params": {
+        "down": 37,
+        "up": 29
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json",
+          "sourceId": "2de6dca954981d9a"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.6 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық11сақталған визуалсыз шарт,толықшешім жәнеMCQ жекеоқылды. Көл/меншікті,жаға/су санақжүйесі,2ағысайырма,орташа/жартыайырма,ондықуақытжол,салданағыс жәнеқарсыуақытдағдылары сақталды.",
+        "Сандар,қазақшашарттар,таңдаунұсқалары жаңарды. Ағысқақарсыжылдамдықоң,меншікті жылдамдықтұрақты жәнеқайшама/өлшембірліксұралатыны нақты берілді.",
+        "Ондықдеректер бүтін ондықүлестермен дәл есептелді. Текжаңартылғанмәтін,scan/TeX/жаңажинау жоқ. Сандық/контекстікварианттар бөлекмағына есебіне кірмейді; сыртқы толық hashreview дейін draftжабық."
+      ],
+      "statement": "Катер жағаға қатысты ағыспен 37 км/сағ, ағысқа қарсы 29 км/сағ жүреді. Қозғалыс бірқалыпты, катердің суға қатысты меншікті жылдамдығы өзгермейді. Меншікті жылдамдығын км/сағ-пен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "33",
+      "solution": "Ағыспен жылдамдыққа ағыс қосылады, қарсы бағытта дәл сол ағыс азаяды. Қосындыда ағыс жойылады: (37 + 29) : 2 = 33 км/сағ. Ағыс 4 км/сағ: 33 + 4 = 37, 33 − 4 = 29.",
+      "calculationVerification": {
+        "answer": "33",
+        "checks": [
+          "Individual saved shore-frame/lake/raft/relative speed role retained",
+          "Positive upstream speed and unchanged own speed specified",
+          "Speed gap twice current; mean own, halfgap current",
+          "Decimal arithmetic based on exact integer tenths/hundredths; independent full-content hash review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-river-basics-2445a568711fe102",
+      "modelId": "grade6-river-basics-decimal-upstream-distance",
+      "grade": 6,
+      "topic": "word",
+      "difficulty": "basic",
+      "params": {
+        "ownTenths": 125,
+        "currentTenths": 25,
+        "hoursTenths": 35
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json",
+          "sourceId": "2445a568711fe102"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.6 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық11сақталған визуалсыз шарт,толықшешім жәнеMCQ жекеоқылды. Көл/меншікті,жаға/су санақжүйесі,2ағысайырма,орташа/жартыайырма,ондықуақытжол,салданағыс жәнеқарсыуақытдағдылары сақталды.",
+        "Сандар,қазақшашарттар,таңдаунұсқалары жаңарды. Ағысқақарсыжылдамдықоң,меншікті жылдамдықтұрақты жәнеқайшама/өлшембірліксұралатыны нақты берілді.",
+        "Ондықдеректер бүтін ондықүлестермен дәл есептелді. Текжаңартылғанмәтін,scan/TeX/жаңажинау жоқ. Сандық/контекстікварианттар бөлекмағына есебіне кірмейді; сыртқы толық hashreview дейін draftжабық."
+      ],
+      "statement": "Қайықтың меншікті жылдамдығы 12,5 км/сағ, ағыс 2,5 км/сағ. Ол ағысқа қарсы 3,5 сағат жүзіп өтті. Қозғалыс бірқалыпты, катердің суға қатысты меншікті жылдамдығы өзгермейді. Жүрген жолы неше км?",
+      "options": [
+        "52,5",
+        "43,75",
+        "35",
+        "10"
+      ],
+      "answer": "35",
+      "solution": "Алдымен ағысқа қарсы жылдамдықты табамыз: 12,5 − 2,5 = 10 км/сағ. Жол жылдамдық пен уақыттың көбейтіндісі: 10 × 3,5 = 35 км. Ағысты қосу не елемеу басқа жол береді; тек жылдамдықты жауапқа жазу да жеткіліксіз.",
+      "calculationVerification": {
+        "answer": "35",
+        "checks": [
+          "Individual saved shore-frame/lake/raft/relative speed role retained",
+          "Positive upstream speed and unchanged own speed specified",
+          "Speed gap twice current; mean own, halfgap current",
+          "Decimal arithmetic based on exact integer tenths/hundredths; independent full-content hash review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-river-basics-d250de0a9d491d35",
+      "modelId": "grade6-river-basics-down-from-up-current",
+      "grade": 6,
+      "topic": "word",
+      "difficulty": "basic",
+      "params": {
+        "up": 16,
+        "current": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json",
+          "sourceId": "d250de0a9d491d35"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.6 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық11сақталған визуалсыз шарт,толықшешім жәнеMCQ жекеоқылды. Көл/меншікті,жаға/су санақжүйесі,2ағысайырма,орташа/жартыайырма,ондықуақытжол,салданағыс жәнеқарсыуақытдағдылары сақталды.",
+        "Сандар,қазақшашарттар,таңдаунұсқалары жаңарды. Ағысқақарсыжылдамдықоң,меншікті жылдамдықтұрақты жәнеқайшама/өлшембірліксұралатыны нақты берілді.",
+        "Ондықдеректер бүтін ондықүлестермен дәл есептелді. Текжаңартылғанмәтін,scan/TeX/жаңажинау жоқ. Сандық/контекстікварианттар бөлекмағына есебіне кірмейді; сыртқы толық hashreview дейін draftжабық."
+      ],
+      "statement": "Катер ағысқа қарсы 16 км/сағ жүреді, ағыс 4 км/сағ. Екі бағытта да меншікті жылдамдығы бірдей. Ағыспен жағаға қатысты жылдамдығы неше км/сағ?",
+      "options": [
+        "20",
+        "12",
+        "32",
+        "24"
+      ],
+      "answer": "24",
+      "solution": "Алдымен меншікті жылдамдық: 16 + 4 = 20 км/сағ. Ағыспен тағы ағыс қосылады: 20 + 4 = 24 км/сағ. Бірден 16 + 2 × 4 = 24. Ағысты бір-ақ рет қосу меншікті жылдамдықты ғана береді.",
+      "calculationVerification": {
+        "answer": "24",
+        "checks": [
+          "Individual saved shore-frame/lake/raft/relative speed role retained",
+          "Positive upstream speed and unchanged own speed specified",
+          "Speed gap twice current; mean own, halfgap current",
+          "Decimal arithmetic based on exact integer tenths/hundredths; independent full-content hash review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-river-basics-fc8f89ff6dc24f66",
+      "modelId": "grade6-river-basics-raft-shore-frame",
+      "grade": 6,
+      "topic": "word",
+      "difficulty": "basic",
+      "params": {
+        "current": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json",
+          "sourceId": "fc8f89ff6dc24f66"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.6 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық11сақталған визуалсыз шарт,толықшешім жәнеMCQ жекеоқылды. Көл/меншікті,жаға/су санақжүйесі,2ағысайырма,орташа/жартыайырма,ондықуақытжол,салданағыс жәнеқарсыуақытдағдылары сақталды.",
+        "Сандар,қазақшашарттар,таңдаунұсқалары жаңарды. Ағысқақарсыжылдамдықоң,меншікті жылдамдықтұрақты жәнеқайшама/өлшембірліксұралатыны нақты берілді.",
+        "Ондықдеректер бүтін ондықүлестермен дәл есептелді. Текжаңартылғанмәтін,scan/TeX/жаңажинау жоқ. Сандық/контекстікварианттар бөлекмағына есебіне кірмейді; сыртқы толық hashreview дейін draftжабық."
+      ],
+      "statement": "Өзен ағысы 4 км/сағ. Моторы да, ескегі де жоқ салды ағыс алып барады. Сал ЖАҒАҒА қатысты неше км/сағ жылдамдықпен қозғалады?",
+      "options": [
+        "4",
+        "0",
+        "8",
+        "2"
+      ],
+      "answer": "4",
+      "solution": "Салдың суға қатысты меншікті жылдамдығы 0, бірақ жағаға қатысты ол ағыспен бірге жылжиды. 0 + 4 = 4 км/сағ. Нөл деп жауап беру санақ жүйелерін шатастырады.",
+      "calculationVerification": {
+        "answer": "4",
+        "checks": [
+          "Individual saved shore-frame/lake/raft/relative speed role retained",
+          "Positive upstream speed and unchanged own speed specified",
+          "Speed gap twice current; mean own, halfgap current",
+          "Decimal arithmetic based on exact integer tenths/hundredths; independent full-content hash review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-river-basics-240f7358acde121e",
+      "modelId": "grade6-river-basics-raft-data-to-motor-down",
+      "grade": 6,
+      "topic": "word",
+      "difficulty": "basic",
+      "params": {
+        "raftKm": 28,
+        "raftHours": 7,
+        "own": 19
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json",
+          "sourceId": "240f7358acde121e"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.6 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық11сақталған визуалсыз шарт,толықшешім жәнеMCQ жекеоқылды. Көл/меншікті,жаға/су санақжүйесі,2ағысайырма,орташа/жартыайырма,ондықуақытжол,салданағыс жәнеқарсыуақытдағдылары сақталды.",
+        "Сандар,қазақшашарттар,таңдаунұсқалары жаңарды. Ағысқақарсыжылдамдықоң,меншікті жылдамдықтұрақты жәнеқайшама/өлшембірліксұралатыны нақты берілді.",
+        "Ондықдеректер бүтін ондықүлестермен дәл есептелді. Текжаңартылғанмәтін,scan/TeX/жаңажинау жоқ. Сандық/контекстікварианттар бөлекмағына есебіне кірмейді; сыртқы толық hashreview дейін draftжабық."
+      ],
+      "statement": "Ескексіз сал осы өзенде 7 сағатта 28 км жылжыды. Меншікті жылдамдығы 19 км/сағ катердің ағыспен жылдамдығы неше км/сағ? Өзен ағысы өзгермейді.",
+      "options": [
+        "19",
+        "15",
+        "28",
+        "23"
+      ],
+      "answer": "23",
+      "solution": "Сал ағыспен бірдей жылдамдықта қозғалады: 28 : 7 = 4 км/сағ. Катер ағыспен 19 + 4 = 23 км/сағ жүреді. Сал жүрген жолды катердің жылдамдығы деп алуға болмайды.",
+      "calculationVerification": {
+        "answer": "23",
+        "checks": [
+          "Individual saved shore-frame/lake/raft/relative speed role retained",
+          "Positive upstream speed and unchanged own speed specified",
+          "Speed gap twice current; mean own, halfgap current",
+          "Decimal arithmetic based on exact integer tenths/hundredths; independent full-content hash review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-river-basics-24f9e29ce85ba4c0",
+      "modelId": "grade6-river-basics-upstream-duration",
+      "grade": 6,
+      "topic": "word",
+      "difficulty": "basic",
+      "params": {
+        "own": 25,
+        "current": 4,
+        "km": 126
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json",
+          "sourceId": "24f9e29ce85ba4c0"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.6 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық11сақталған визуалсыз шарт,толықшешім жәнеMCQ жекеоқылды. Көл/меншікті,жаға/су санақжүйесі,2ағысайырма,орташа/жартыайырма,ондықуақытжол,салданағыс жәнеқарсыуақытдағдылары сақталды.",
+        "Сандар,қазақшашарттар,таңдаунұсқалары жаңарды. Ағысқақарсыжылдамдықоң,меншікті жылдамдықтұрақты жәнеқайшама/өлшембірліксұралатыны нақты берілді.",
+        "Ондықдеректер бүтін ондықүлестермен дәл есептелді. Текжаңартылғанмәтін,scan/TeX/жаңажинау жоқ. Сандық/контекстікварианттар бөлекмағына есебіне кірмейді; сыртқы толық hashreview дейін draftжабық."
+      ],
+      "statement": "Катердің меншікті жылдамдығы 25 км/сағ, ағыс 4 км/сағ. Ағысқа қарсы 126 км қашықтыққа неше сағат жұмсалады? Қозғалыс бірқалыпты, катердің суға қатысты меншікті жылдамдығы өзгермейді. Жауапқа тек санды жазыңыз.",
+      "answer": "6",
+      "solution": "Ағысқа қарсы жылдамдық 25 − 4 = 21 км/сағ. Уақыт: 126 : 21 = 6 сағат. Тексеру: 21 × 6 = 126 км. Ағысқа қарсы есепте жылдамдықтарды қосу дұрыс емес.",
+      "calculationVerification": {
+        "answer": "6",
+        "checks": [
+          "Individual saved shore-frame/lake/raft/relative speed role retained",
+          "Positive upstream speed and unchanged own speed specified",
+          "Speed gap twice current; mean own, halfgap current",
+          "Decimal arithmetic based on exact integer tenths/hundredths; independent full-content hash review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-river-basics-7907d0eec185c6c6",
+      "modelId": "grade6-river-basics-current-from-two-shore-speeds",
+      "grade": 6,
+      "topic": "word",
+      "difficulty": "basic",
+      "params": {
+        "down": 34,
+        "up": 24
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json",
+          "sourceId": "7907d0eec185c6c6"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.6 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық11сақталған визуалсыз шарт,толықшешім жәнеMCQ жекеоқылды. Көл/меншікті,жаға/су санақжүйесі,2ағысайырма,орташа/жартыайырма,ондықуақытжол,салданағыс жәнеқарсыуақытдағдылары сақталды.",
+        "Сандар,қазақшашарттар,таңдаунұсқалары жаңарды. Ағысқақарсыжылдамдықоң,меншікті жылдамдықтұрақты жәнеқайшама/өлшембірліксұралатыны нақты берілді.",
+        "Ондықдеректер бүтін ондықүлестермен дәл есептелді. Текжаңартылғанмәтін,scan/TeX/жаңажинау жоқ. Сандық/контекстікварианттар бөлекмағына есебіне кірмейді; сыртқы толық hashreview дейін draftжабық."
+      ],
+      "statement": "Катер жағаға қатысты ағыспен 34 км/сағ, ағысқа қарсы 24 км/сағ жүреді. Қозғалыс бірқалыпты, катердің суға қатысты меншікті жылдамдығы өзгермейді. Өзен ағысының жылдамдығын км/сағ-пен табыңыз.",
+      "options": [
+        "10",
+        "5",
+        "29",
+        "58"
+      ],
+      "answer": "5",
+      "solution": "Айырмада ағыс екі рет қалады: 34 − 24 = 10. Бір ағыс жылдамдығы 10 : 2 = 5 км/сағ. Меншікті жылдамдық 29 км/сағ екенін тексереміз: 29 + 5 = 34, 29 − 5 = 24.",
+      "calculationVerification": {
+        "answer": "5",
+        "checks": [
+          "Individual saved shore-frame/lake/raft/relative speed role retained",
+          "Positive upstream speed and unchanged own speed specified",
+          "Speed gap twice current; mean own, halfgap current",
+          "Decimal arithmetic based on exact integer tenths/hundredths; independent full-content hash review required"
+        ]
+      }
+    }
+  ]
+}

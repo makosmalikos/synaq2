@@ -1,0 +1,481 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All8 saved visual grade5topic1.2 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade5topic1.2",
+    "sourceVisualOccurrences": 8,
+    "addressedNewDrafts": 8,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "04268744a8282df6",
+      "08d87ee0f6f4e782",
+      "10d21eb28237dbf9",
+      "8f8e1f756fb782e8",
+      "94091e0afbb34c5a",
+      "cfad522cade364b4",
+      "d2cde0747efcf51c",
+      "e6dd94911cd59aca"
+    ],
+    "distinctModels": 8,
+    "semantics": "8 source-addressed ray targets distinguish unit distance, nonunit coordinate, physical cells, inferred step, route scale, fixed-endpoint rescaling, alternating landing progressions and clock offset."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave21-distance-between-unlabelled-unit-points",
+      "modelId": "visual-wave21-unit-distance-between-points",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "distance",
+        "maxTick": 20,
+        "a": 4,
+        "b": 16
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "94091e0afbb34c5a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-2-level1.json#0",
+      "sourceCanonicalSha256": "7ca245bb3b2079d3ad352230c8e4f31028f062325bf8f7c6d13de2a36c51d7ed",
+      "sourceSkill": "Counting unit intervals between two points read from a sparsely labelled natural-number ray",
+      "adaptationChanges": [
+        "Дереккөздегі әр сәуле дағдысы сақталды: аралық пен штрих, масштаб пен торкөз, белгілі нүкте, өлшем бірлігі, қайта масштабтау және секіру қатары.",
+        "Нүктелер, масштабтар, торкөз бірлігі, секіру ұзындығы және уақыт деректері жаңадан берілді.",
+        "Native SVG барлық штрихты бірдей пиксель аралығымен салады; нүкте мен секіру ұштары жаңа нақты tick-позицияларға байланысқан. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталық сәуле",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, tick spacing and point pixels, unit/cell conservation, alternating progression membership and minute conversion,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave21-distance-between-unlabelled-unit-points.svg",
+      "verificationModule": "scripts/editorial/visual-wave21-models.mjs",
+      "statement": "Сәуледегі әр ұсақ аралық бір бірлікке тең. A және B нүктелерінің арасындағы кесіндіде неше бірлік бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Бірлік шкаладан A(4) және B(16) деп оқимыз. AB = 16 − 4 = 12 бірлік. Аралықтар саналады, екі шеткі штрихты қосып санауға болмайды.",
+      "figureDescription": "Бірдей аралықты сәуле. A штрихы 4, B штрихы 16.",
+      "figureSha256": "4373a787ae3af48a5bced4540dac3b3e827c902e2a4b14d62bba8a2abd1a2e9a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "a": 4,
+          "b": 16,
+          "unit": 1
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave21-read-four-unit-tick-scale",
+      "modelId": "visual-wave21-nonunit-scale-coordinate",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "step",
+        "maxTick": 8,
+        "step": 4,
+        "targetTick": 6
+      },
+      "answer": "24",
+      "sourceRefs": [
+        {
+          "sourceId": "04268744a8282df6",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-2-level1.json#14",
+      "sourceCanonicalSha256": "d1e611d06633727263b5ae2a0585a9d00d64785624110209174e74774857a059",
+      "sourceSkill": "Reading a coordinate when each adjacent tick advances four units rather than one",
+      "adaptationChanges": [
+        "Дереккөздегі әр сәуле дағдысы сақталды: аралық пен штрих, масштаб пен торкөз, белгілі нүкте, өлшем бірлігі, қайта масштабтау және секіру қатары.",
+        "Нүктелер, масштабтар, торкөз бірлігі, секіру ұзындығы және уақыт деректері жаңадан берілді.",
+        "Native SVG барлық штрихты бірдей пиксель аралығымен салады; нүкте мен секіру ұштары жаңа нақты tick-позицияларға байланысқан. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталық сәуле",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, tick spacing and point pixels, unit/cell conservation, alternating progression membership and minute conversion,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave21-read-four-unit-tick-scale.svg",
+      "verificationModule": "scripts/editorial/visual-wave21-models.mjs",
+      "options": [
+        "6",
+        "10",
+        "24",
+        "28"
+      ],
+      "statement": "Шкаланың штрихтары бірдей аралықпен орналасқан. P нүктесінің координатасын таңдаңыз. Штрих санын емес, шкала мәнін ескеріңіз.",
+      "solution": "Алғашқы жазулардан бір аралық 4 бірлікке тең. P нүктесіне дейін 6 аралық бар, сондықтан координата 6 × 4 = 24.",
+      "figureDescription": "Бірдей аралықты сәуле. Алғашқы жазулар0, 4, 8; P штрихының орны 6.",
+      "figureSha256": "1f7e1ec83e3193e35a1389cf308d5a69a4b9c99fd2e0003c18dd29fa4381cca5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "24",
+        "checks": {
+          "tick": 6,
+          "step": 4
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave21-coordinate-four-to-sixteen-grid-cells",
+      "modelId": "visual-wave21-coordinate-to-grid-cells",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cells",
+        "maxTick": 20,
+        "coordinate": 4,
+        "cellsPerUnit": 4
+      },
+      "answer": "16",
+      "sourceRefs": [
+        {
+          "sourceId": "10d21eb28237dbf9",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-2-level1.json#15",
+      "sourceCanonicalSha256": "a8cdf8db00cf7b161c280ec49d83598d6cd4639f430e765c57b80fba1b71ffd6",
+      "sourceSkill": "Distinguishing coordinate units from physical notebook cells with four cells in one unit",
+      "adaptationChanges": [
+        "Дереккөздегі әр сәуле дағдысы сақталды: аралық пен штрих, масштаб пен торкөз, белгілі нүкте, өлшем бірлігі, қайта масштабтау және секіру қатары.",
+        "Нүктелер, масштабтар, торкөз бірлігі, секіру ұзындығы және уақыт деректері жаңадан берілді.",
+        "Native SVG барлық штрихты бірдей пиксель аралығымен салады; нүкте мен секіру ұштары жаңа нақты tick-позицияларға байланысқан. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталық сәуле",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, tick spacing and point pixels, unit/cell conservation, alternating progression membership and minute conversion,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave21-coordinate-four-to-sixteen-grid-cells.svg",
+      "verificationModule": "scripts/editorial/visual-wave21-models.mjs",
+      "statement": "Көршілес ұсақ штрихтардың арасы — бір торкөз. A(4) нүктесі санақ басынан неше торкөз қашықтықта? Бірлік кесіндінің неше торкөз екенін суреттен оқыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "0 мен 1 арасы 4 торкөз. A нүктесі 4 бірлік қашықтықта, сондықтан 4 × 4 = 16 торкөз.",
+      "figureDescription": "Бір ұсақ аралық бір торкөз. 0 мен1арасы 4 торкөз, A(4) 16 ұсақ аралықта белгіленген.",
+      "figureSha256": "5d13595a7cc7ab8dc2db6e92ecff8689b6db7f2edf89b3665e5ccb4dff5603e1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "16",
+        "checks": {
+          "coordinate": 4,
+          "cellsPerUnit": 4
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave21-infer-seven-unit-scale",
+      "modelId": "visual-wave21-infer-step-from-labelled-point",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "infer",
+        "maxTick": 11,
+        "knownTick": 4,
+        "knownCoordinate": 28,
+        "targetTick": 9
+      },
+      "answer": "63",
+      "sourceRefs": [
+        {
+          "sourceId": "08d87ee0f6f4e782",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-2-level2.json#11",
+      "sourceCanonicalSha256": "6c6164711532462abc4ce2d307c7e5a28a0ec01765f28436a97b3544bcff54a9",
+      "sourceSkill": "Deriving one-tick value from a known nonzero coordinate then applying it at another point",
+      "adaptationChanges": [
+        "Дереккөздегі әр сәуле дағдысы сақталды: аралық пен штрих, масштаб пен торкөз, белгілі нүкте, өлшем бірлігі, қайта масштабтау және секіру қатары.",
+        "Нүктелер, масштабтар, торкөз бірлігі, секіру ұзындығы және уақыт деректері жаңадан берілді.",
+        "Native SVG барлық штрихты бірдей пиксель аралығымен салады; нүкте мен секіру ұштары жаңа нақты tick-позицияларға байланысқан. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталық сәуле",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, tick spacing and point pixels, unit/cell conservation, alternating progression membership and minute conversion,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave21-infer-seven-unit-scale.svg",
+      "verificationModule": "scripts/editorial/visual-wave21-models.mjs",
+      "options": [
+        "37",
+        "63",
+        "252",
+        "9"
+      ],
+      "statement": "Шкаланың штрихтары бірдей аралықпен орналасқан. A нүктесінің координатасы 28. B нүктесінің координатасын таңдаңыз.",
+      "solution": "0-ден A-ға дейін 4 аралық. Бір аралық 28 : 4 = 7. B нүктесі 9 аралықта, сондықтан 9 × 7 = 63.",
+      "figureDescription": "Бірдей аралықты сәуле. 0-ден кейінгі 4-штрих A(28), 9-штрих B.",
+      "figureSha256": "d395c46dce45e27c684d1921721af85e6824e2ff9fe9c1979e2995cbea0ddab6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "63",
+        "checks": {
+          "known": 28,
+          "knownTick": 4,
+          "step": 7,
+          "targetTick": 9
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave21-route-eight-scaled-intervals",
+      "modelId": "visual-wave21-route-scaled-distance",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "route",
+        "maxTick": 10,
+        "kmPerUnit": 25,
+        "targetTick": 8
+      },
+      "answer": "200",
+      "sourceRefs": [
+        {
+          "sourceId": "cfad522cade364b4",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-2-level2.json#12",
+      "sourceCanonicalSha256": "bf8b2e2e799ed37a2bee773559292fa8cd75946a023937fadcf0e360e17d8085",
+      "sourceSkill": "Converting a route ray coordinate to kilometres using the physically indicated one-unit scale",
+      "adaptationChanges": [
+        "Дереккөздегі әр сәуле дағдысы сақталды: аралық пен штрих, масштаб пен торкөз, белгілі нүкте, өлшем бірлігі, қайта масштабтау және секіру қатары.",
+        "Нүктелер, масштабтар, торкөз бірлігі, секіру ұзындығы және уақыт деректері жаңадан берілді.",
+        "Native SVG барлық штрихты бірдей пиксель аралығымен салады; нүкте мен секіру ұштары жаңа нақты tick-позицияларға байланысқан. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталық сәуле",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, tick spacing and point pixels, unit/cell conservation, alternating progression membership and minute conversion,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave21-route-eight-scaled-intervals.svg",
+      "verificationModule": "scripts/editorial/visual-wave21-models.mjs",
+      "statement": "Саяхат бағыты шартты координаталық сәулемен көрсетілген. Бір бірлік кесіндінің ұзындығы суретте берілген. Бастау O нүктесінен K нүктесіне дейін неше километр? Жауапқа тек санды жазыңыз.",
+      "solution": "O-дан K-ға дейін 8 бірлік кесінді бар. Әрқайсысы 25 км: 8 × 25 = 200 км. Километрді координатадағы аралық санымен шатастырмаймыз.",
+      "figureDescription": "Бірдей аралықты сәуле. Бір аралық 25 км, K 8-штрихта.",
+      "figureSha256": "3fb7aedc7bbfd793cf1556107c67d60f154116ce64ed25f3b88fa1e0e894eec4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "200",
+        "checks": {
+          "units": 8,
+          "kmPerUnit": 25
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave21-fixed-point-new-three-cell-unit",
+      "modelId": "visual-wave21-rescale-fixed-point",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rescale",
+        "maxTick": 28,
+        "oldCoordinate": 6,
+        "oldCellsPerUnit": 4,
+        "newCellsPerUnit": 3
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "e6dd94911cd59aca",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-2-level3.json#3",
+      "sourceCanonicalSha256": "04278678f22f995f9be78acc32cf37930a792991a26086d90451be87a8876f7c",
+      "sourceSkill": "Keeping origin and endpoint fixed while changing the unit length, preserving grid-cell distance",
+      "adaptationChanges": [
+        "Дереккөздегі әр сәуле дағдысы сақталды: аралық пен штрих, масштаб пен торкөз, белгілі нүкте, өлшем бірлігі, қайта масштабтау және секіру қатары.",
+        "Нүктелер, масштабтар, торкөз бірлігі, секіру ұзындығы және уақыт деректері жаңадан берілді.",
+        "Native SVG барлық штрихты бірдей пиксель аралығымен салады; нүкте мен секіру ұштары жаңа нақты tick-позицияларға байланысқан. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталық сәуле",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, tick spacing and point pixels, unit/cell conservation, alternating progression membership and minute conversion,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave21-fixed-point-new-three-cell-unit.svg",
+      "verificationModule": "scripts/editorial/visual-wave21-models.mjs",
+      "options": [
+        "6",
+        "8",
+        "18",
+        "24"
+      ],
+      "statement": "Суреттегі көршілес ұсақ штрихтардың арасы — бір торкөз. Санақ басы мен K нүктесін орнында қалдырып, жаңа бірлік кесіндіні 3 торкөз деп алды. K нүктесінің жаңа координатасын таңдаңыз.",
+      "solution": "Ескі бірлік 4 торкөз, K-ның ескі координатасы 6. Сондықтан OK = 6 × 4 = 24 торкөз. Нүкте қозғалмайды. Жаңа координата 24 : 3 = 8.",
+      "figureDescription": "Бір ұсақ аралық бір торкөз, ескі0–1арасы 4 торкөз; K нүктесі 24 торкөзде. Жаңа бірлік 3 торкөз.",
+      "figureSha256": "a79acc9bdfe07a7415afcd0026fc0d087785c5f5ee3ab63aca77b400253c256e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": {
+          "fixedGridCells": 24,
+          "newCellsPerUnit": 3
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave21-alternating-five-right-two-left",
+      "modelId": "visual-wave21-alternating-jumps-unreachable",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "jumps",
+        "maxTick": 14,
+        "start": 3,
+        "right": 5,
+        "left": 2
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "d2cde0747efcf51c",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-2-level3.json#11",
+      "sourceCanonicalSha256": "bcfdf3c1614f193f360d8d214bd2bc85260a62dece1f1a80f04eb94457c490fb",
+      "sourceSkill": "Identifying a coordinate outside both alternating-jump landing progressions rather than treating all intermediate traversed points as landings",
+      "adaptationChanges": [
+        "Дереккөздегі әр сәуле дағдысы сақталды: аралық пен штрих, масштаб пен торкөз, белгілі нүкте, өлшем бірлігі, қайта масштабтау және секіру қатары.",
+        "Нүктелер, масштабтар, торкөз бірлігі, секіру ұзындығы және уақыт деректері жаңадан берілді.",
+        "Native SVG барлық штрихты бірдей пиксель аралығымен салады; нүкте мен секіру ұштары жаңа нақты tick-позицияларға байланысқан. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталық сәуле",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, tick spacing and point pixels, unit/cell conservation, alternating progression membership and minute conversion,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave21-alternating-five-right-two-left.svg",
+      "verificationModule": "scripts/editorial/visual-wave21-models.mjs",
+      "options": [
+        "10",
+        "8",
+        "9",
+        "11"
+      ],
+      "statement": "Шегіртке A нүктесінен бастап суреттегі екі секіруді қайталайды: алдымен оңға, кейін солға. Екі бағыттағы секіру ұзындықтары өзгермейді. Қай координатаға шегіртке ешқашан түспейді?",
+      "solution": "Алғашқы секірулер 3 → 8 → 6. Әр екі секіруде 5 − 2 = 3 бірлік оңға жылжиды. Қону нүктелері 3 + 3n және 8 + 3n түрінде (n = 0, 1, 2, ...). 10 бұл екі қатарға да кірмейді.",
+      "figureDescription": "Бірлік сәуледе A(3), алғашқы оң секіру 8 нүктесіне, одан сол секіру 6 нүктесіне бағытталған.",
+      "figureSha256": "c0fd8d1c3b01e14297e5676e6eba907ce55a6e3757f89e9206facc01c9de9d21",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": {
+          "netStep": 3,
+          "evenBase": 3,
+          "oddBase": 8,
+          "optionReachability": [
+            [
+              "10",
+              false
+            ],
+            [
+              "8",
+              true
+            ],
+            [
+              "9",
+              true
+            ],
+            [
+              "11",
+              true
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave21-twenty-minute-interval-clock",
+      "modelId": "visual-wave21-clock-on-scaled-ray",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "clock",
+        "maxTick": 8,
+        "startMinutes": 490,
+        "minutesPerUnit": 20,
+        "targetTick": 5
+      },
+      "answer": "9:50",
+      "sourceRefs": [
+        {
+          "sourceId": "8f8e1f756fb782e8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-2-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-2-leveltest.json#6",
+      "sourceCanonicalSha256": "f7a1783d2a14c3da7fac2a41298b11f28cc1e8ed7af9f8f61519a53d99144667",
+      "sourceSkill": "Converting interval count to elapsed minutes then adding to an initial clock time with a nonzero minute component",
+      "adaptationChanges": [
+        "Дереккөздегі әр сәуле дағдысы сақталды: аралық пен штрих, масштаб пен торкөз, белгілі нүкте, өлшем бірлігі, қайта масштабтау және секіру қатары.",
+        "Нүктелер, масштабтар, торкөз бірлігі, секіру ұзындығы және уақыт деректері жаңадан берілді.",
+        "Native SVG барлық штрихты бірдей пиксель аралығымен салады; нүкте мен секіру ұштары жаңа нақты tick-позицияларға байланысқан. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталық сәуле",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, tick spacing and point pixels, unit/cell conservation, alternating progression membership and minute conversion,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave21-twenty-minute-interval-clock.svg",
+      "verificationModule": "scripts/editorial/visual-wave21-models.mjs",
+      "options": [
+        "8:15",
+        "9:10",
+        "9:50",
+        "10:10"
+      ],
+      "statement": "Уақыт сәулесінің басталуы мен бір аралыққа сәйкес минут саны суретте берілген. U нүктесіндегі үзіліс сағат нешеде басталады?",
+      "solution": "U нүктесіне дейін 5 аралық, әрқайсысы 20 минут. Өткен уақыт 5 × 20 = 100 минут. 8:10 уақытына осы уақытты қосқанда 9:50 болады.",
+      "figureDescription": "Бірдей аралықты сәуле. Бастапқы уақыт 8:10, бір аралық 20 мин; U 5-штрихта.",
+      "figureSha256": "f2e954c0a3ee7594668fed20b44b192e3551f4a4831e9aaf47ab361ecf205601",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9:50",
+        "checks": {
+          "start": 490,
+          "elapsed": 100,
+          "absoluteMinutes": 590
+        }
+      }
+    }
+  ]
+}

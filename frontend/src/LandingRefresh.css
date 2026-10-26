@@ -220,7 +220,7 @@
   html:has(.lp-root){scroll-behavior:auto}
 }
 
-/* A light, manually scrollable portrait ribbon; no autoplay or carousel library. */
+/* Seamless mobile portrait loop; the desktop keeps its five-card layout. */
 .lp-root .sx-hero.sx-hero-ribbon{grid-template-columns:minmax(0,1fr);gap:20px;padding-top:26px;min-height:0}
 .sx-hero-ribbon .sx-hero-copy{text-align:center;max-width:800px;margin:auto}
 .lp-root .sx-hero-ribbon h1{font-size:52px;margin:14px 0}
@@ -230,10 +230,11 @@
 .sx-hero-ribbon .sx-hero-actions,.sx-hero-ribbon .sx-schools>div{justify-content:center}
 .lp-root .sx-hero-ribbon .sx-hero-note{margin-bottom:18px}
 .sx-student-ribbon{order:-1;min-width:0;width:100%}
-.sx-student-rail{display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding-inline:0;overscroll-behavior-x:contain;scrollbar-width:none;border-radius:26px;padding:8px 0 0;-webkit-overflow-scrolling:touch}
-.sx-student-rail::-webkit-scrollbar{display:none}
+.sx-student-rail{display:flex;overflow:hidden;border-radius:26px;padding:8px 0 0}
 .sx-student-rail:focus-visible{outline:3px solid #2854df;outline-offset:5px}
-.sx-student-tile{position:relative;isolation:isolate;flex:0 0 calc((100% - 56px)/5);height:285px;scroll-snap-align:start;overflow:hidden;border-radius:24px}
+.sx-student-group{display:flex;gap:14px;flex:0 0 100%;min-width:0;box-sizing:border-box}
+.sx-student-group[aria-hidden="true"]{display:none}
+.sx-student-tile{position:relative;isolation:isolate;flex:0 0 calc((100% - 56px)/5);height:285px;overflow:hidden;border-radius:24px}
 .sx-student-backdrop{position:absolute;inset:30px 0 0;background:#d9e5ff;border-radius:70px 24px 24px 24px;z-index:-1;overflow:hidden}
 .sx-student-backdrop:after{content:'';position:absolute;inset:-18% -35%;background:url('/brands/synaq-mark-320.webp') center/82% auto no-repeat;opacity:.1;transform:rotate(-24deg)}
 .sx-student-tile-2 .sx-student-backdrop{background:#bdece5;border-radius:24px 70px 24px 24px}
@@ -245,7 +246,7 @@
 .sx-ribbon-footer>span{font:650 11px 'Manrope',sans-serif;color:#6b7c94;letter-spacing:.02em}
 .sx-ribbon-controls{display:none;gap:7px}
 .sx-ribbon-controls button{width:44px;height:44px;border:1px solid #dbe5f4;background:#fff;color:#2453cf;border-radius:50%;font-size:22px;cursor:pointer}
-.sx-ribbon-controls button:disabled{opacity:.35;cursor:default}
+.sx-ribbon-controls button{display:grid;place-items:center}
 .sx-ribbon-controls button:focus-visible{outline:3px solid #2453cf;outline-offset:2px}
 @media(max-width:1100px) and (min-width:761px){.sx-student-tile{height:255px}}
 @media(max-width:760px){
@@ -257,12 +258,21 @@
  .lp-root .sx-hero-ribbon .sx-hero-intro{font-size:14px;line-height:1.6;margin-bottom:14px}
  .sx-hero-ribbon .sx-hero-actions{justify-content:flex-start;gap:2px}
  .sx-hero-ribbon .sx-schools>div{justify-content:flex-start}
- .sx-student-rail{gap:10px;border-radius:20px}
- .sx-student-tile{flex-basis:43%;height:210px;border-radius:20px}
+ .sx-student-rail{border-radius:20px}
+ .sx-student-group{flex-basis:calc(215% + 50px);gap:10px;padding-right:10px;animation:sx-student-loop 25s linear infinite}
+ .sx-student-group[aria-hidden="true"]{display:flex}
+ .sx-student-tile{flex-basis:calc((100% - 40px)/5);height:210px;border-radius:20px}
+ .sx-student-ribbon[data-paused="true"] .sx-student-group,.sx-student-rail:focus-visible .sx-student-group{animation-play-state:paused}
  .sx-student-backdrop{top:22px;border-radius:48px 20px 20px 20px}
  .sx-ribbon-controls{display:flex}
  .sx-ribbon-footer{padding-top:6px;min-height:50px}
  .lp-root .sx-hero-ribbon .sx-hero-note{margin:4px 0 12px!important}
+}
+@keyframes sx-student-loop{to{transform:translateX(-100%)}}
+@media(max-width:760px) and (prefers-reduced-motion:reduce){
+ .sx-student-rail{overflow-x:auto;overscroll-behavior-x:contain}
+ .sx-student-group{animation:none}
+ .sx-student-group[aria-hidden="true"],.sx-ribbon-controls{display:none}
 }
 @media(max-width:370px){.sx-student-tile{height:180px}.sx-hero-ribbon .sx-eyebrow{font-size:8px}.sx-ribbon-footer>span{font-size:10px}}
 

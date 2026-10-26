@@ -1,0 +1,36 @@
+// All31 remaining canonical nonvisual1.1 sources, including full solutions, read individually.
+// This is source-occurrence coverage; repeated numerical families are not new meanings.
+const s=(id,kind,params)=>({id,kind,params});
+export const REVISION_SPECS=[
+ s('fdb5ee77bbafbaa7','map-distance',{kilometresPerCm:6,kilometres:54}),
+ s('c3515c627ce0f697','mass-compare',{centners:4,kilograms:7,right:470}),
+ s('603e59cecf1a3e99','order-three-digits',{numbers:[690,906,960,609]}),
+ s('6c9d35402b3e80fa','number-extreme',{numbers:[60704,67040,67400,67004],direction:'maximum'}),
+ s('7f77e6611d074f8e','hours-to-minutes',{hours:3,minutes:25}),
+ s('3718ef612fd9056e','equal-total-groups',{first:105,second:75,groups:15}),
+ s('0a876567bb5759b7','longest-period',{centuries:3,nearYears:299,mixedCenturies:2,mixedYears:95,otherYears:290}),
+ s('12586f7e76f7c9b0','distribute-product',{first:63,second:27,factor:4}),
+ s('85d3a44104302ebf','unoccupied-seats',{capacity:1000,first:425,second:365}),
+ s('7ca90615ce523573','repartition-groups',{classes:5,each:36,groupSize:18}),
+ s('923830af510bed88','length-difference',{firstMetres:9,firstCm:35,lastMetres:4,lastCm:58}),
+ s('6262c836b1f7d3ec','duration-difference',{hours:7,minutes:40,subtractMinutes:85,choices:[[5,15],[6,45],[6,15],[6,55]]}),
+ s('e4fff8794de08b9e','strict-interval',{lower:430000,upper:450000,numbers:[439999,450001,429999,4390000]}),
+ s('321db1c1fb70e847','parenthesis-target',{numbers:[84,28,56,4],target:28}),
+ s('a59ec5e28251cfb1','heaviest-mass',{firstCentners:9,firstKg:6,directKg:960,secondCentners:9,secondKg:16,otherKg:690}),
+ s('f548de2def69a2bf','age-chain',{firstAge:12,younger:4,older:5}),
+ s('ffc3130f4ee8383e','cheaper-unit-price',{initialCount:6,initialTotal:90000,cheaper:3200,want:9}),
+ s('84a8e0b6eed55998','digit-extremes-difference',{digits:[4,0,8,6]}),
+ s('93bbb24ef4b55806','unknown-child-tickets',{adultPrice:1700,childPrice:800,adults:4,total:14000}),
+ s('67858f8b158334ee','three-ages-total',{total:36,firstSecond:27,secondThird:20}),
+ s('5b8354ae42ed9faa','future-age-ratio',{parent:44,child:10,ratio:3,choices:[14,5,7,34]}),
+ s('7e9882c6feb729ee','reverse-two-operations',{factor:6,subtract:48,result:372,choices:[70,78,54,62]}),
+ s('855648d9fe55a92a','three-loads',{firstCentners:2,firstKg:15,extraKg:46,lighterCentners:2,choices:[[7,52],[6,52],[9,52],[7,2]]}),
+ s('236a7e8fb7c1b59f','parenthesis-maximum',{numbers:[72,3,2,9]}),
+ s('c9ab9d60a8a3768b','missing-comparison-digit',{pattern:'68?09',right:68609,choices:[4,6,3,2]}),
+ s('72645d8eeb7eadc0','even-sum-pairing',{last:48}),
+ s('77aedbc4ba899d35','number-extreme',{numbers:[80080,88000,80008,80800],direction:'minimum'}),
+ s('c3d689f1d907bcc7','centners-to-kilograms',{centners:6,kilograms:9}),
+ s('5bb93f4eddda3d9c','time-comparison-choice',{hours:4,minutes:20,rightMinutes:280}),
+ s('533cc0bd297b9683','proportional-tickets',{count:8,total:14400,want:12,choices:[115200,18000,21600,172800]}),
+ s('4f2b93849c37ce1b','three-pair-ages',{firstSecond:26,secondThird:29,firstThird:31})
+];

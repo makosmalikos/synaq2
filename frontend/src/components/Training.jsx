@@ -6,7 +6,7 @@ import { useLang } from '../i18n.jsx';
 import { translateQuestions } from '../translateQuestions.js';
 import { auth, startLearningSession, saveAttempt, getSolved, setFlag, getFlags, watchPro, todayCount,
   getTrainingTopics, getTrainingQuestions } from '../firebase.js';
-import { readPendingTraining, writePendingTraining, clearPendingTraining, trainingDayKey, trainingQuestion } from '../trainingPersistence.js';
+import { readPendingTraining, writePendingTraining, clearPendingTraining, trainingDayKey, trainingQuestion, trainingElapsed } from '../trainingPersistence.js';
 import Explain from './Explain.jsx';
 import UnclearButton from './UnclearButton.jsx';
 import AiTutor from './AiTutor.jsx';
@@ -129,6 +129,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
   const [sessionState, setSessionState] = useState('idle');
   const [sessionNotice, setSessionNotice] = useState('');
   const [serverResult, setServerResult] = useState(null);
+  const [questionTranslation, setQuestionTranslation] = useState(null);
   const [loadError, setLoadError] = useState(false);
   const [loadErrorCode, setLoadErrorCode] = useState('');
   const [loading, setLoading] = useState(true);
@@ -145,6 +146,8 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
   const onXpRef = useRef(onXp);
   onXpRef.current = onXp;
   const uid = auth.currentUser?.uid;
+  const activeQuestion = items[i];
+  const translationReady = checked || sessionState === 'ready';
   const questionKey = topic && items[i]?.id ? `${uid}:${topic.id}:${i}:${items[i].id}` : null;
   currentQuestion.current = questionKey;
   useEffect(() => {
@@ -249,9 +252,9 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
       // болса (сырттан "осы тақырыпты жаттық" сілтемесі бойынша бірден
       // кіргенде), тұйықталған solved әрқашан бос жиын болып қалатын еді —
       // сол кезде бұрын шығарылған есептер қайта көрсетілер еді.
-      const list = await translateQuestions(await getTrainingQuestions(uid, {
+      const list = await getTrainingQuestions(uid, {
         topicId: tp.id, excludeIds: solvedRef.current, limit: 60,
-      }), lang);
+      });
       if (!alive || !mounted.current || request !== topicRequest.current || pendingAttempt.current || auth.currentUser?.uid !== uid) return;
       start(tp, list);
       onTopicOpened?.();
@@ -272,9 +275,34 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
   }, [questionKey, checked, loading, opening, pro, locked]);
 
   useEffect(() => {
+    if (!questionKey || !translationReady) return;
+    let alive = true;
+    // Keep the server original in items so switching back never translates an
+    // already translated condition. Language changes do not restart the session.
+    translateQuestions([activeQuestion], lang).then(([question]) => {
+      if (!alive || !mounted.current || currentQuestion.current !== questionKey || auth.currentUser?.uid !== uid) return;
+      setQuestionTranslation({ source: activeQuestion, lang, uid, question });
+    }, () => {});
+    return () => { alive = false; };
+  }, [activeQuestion, lang, questionKey, translationReady, uid]);
+
+  useEffect(() => {
     if (!items.length || checked || sessionState !== 'ready') return;
-    timer.current = setInterval(() => setSecs((s) => s + 1), 1000);
-    return () => clearInterval(timer.current);
+    const scope = questionSession.current;
+    const update = () => {
+      if (!scope || questionSession.current !== scope || currentQuestion.current !== scope.key
+        || !mounted.current || auth.currentUser?.uid !== scope.uid) return;
+      setSecs(trainingElapsed(scope));
+    };
+    update();
+    timer.current = setInterval(update, 1000);
+    window.addEventListener('focus', update);
+    document.addEventListener('visibilitychange', update);
+    return () => {
+      clearInterval(timer.current);
+      window.removeEventListener('focus', update);
+      document.removeEventListener('visibilitychange', update);
+    };
   }, [items, i, checked, sessionState]);
 
   // сколько задач темы уже решено
@@ -295,7 +323,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
     const owner = auth.currentUser?.uid;
     setOpening(true);
     try {
-      const list = await translateQuestions(await getQuestions(), lang);
+      const list = await getQuestions();
       if (!mounted.current || request !== topicRequest.current || auth.currentUser?.uid !== owner || pendingAttempt.current) return;
       start(tp, list);
     } catch (error) { if (mounted.current && request === topicRequest.current) {
@@ -362,12 +390,10 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
       if (result.id !== scope.id || result.question?.id !== scope.qid) throw new Error('invalid_session_response');
       scope.ready = true;
       scope.startedAt = result.startedAt; scope.expiresAt = result.expiresAt;
+      scope.clockOffsetMs = Number.isFinite(result.serverNow) ? result.serverNow - Date.now() : 0;
       setItems((current) => current.map((item, index) => index === i && item.id === scope.qid
-        ? { ...trainingQuestion(result.question),
-          // Translation changes only visible prose, never submitted option values.
-          ...(item.lang && item.lang !== lang ? { statement: item.statement, needsTranslation: item.needsTranslation } : {}) }
-        : item));
-      setSecs(Number.isFinite(result.startedAt) ? Math.max(0, Math.floor((Date.now() - result.startedAt) / 1000)) : 0);
+        ? trainingQuestion(result.question) : item));
+      setSecs(trainingElapsed(scope));
       setSessionState('ready');
     } catch (error) {
       if (isCurrent() && !terminalLearningError(error)) setSessionState('error');
@@ -451,9 +477,9 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
     if (auth.currentUser) setFlag(auth.currentUser.uid, q.id, on).catch(() => {});
   }
 
-  if (loadError && !checked) return <main><p role="alert">{trainingLoadErrorText(loadErrorCode, ru)}</p>
+  if (loadError && !checked) return <main className="training-session"><p role="alert">{trainingLoadErrorText(loadErrorCode, ru)}</p>
     <button className="btn" onClick={() => setLoadRetry((value) => value + 1)}>{ru ? 'Повторить' : 'Қайталау'}</button></main>;
-  if ((loading || opening || pro === null) && !checked) return <main><BrandLoader /></main>;
+  if ((loading || opening || pro === null) && !checked) return <main className="training-session"><BrandLoader /></main>;
 
   // ── список тем ──
   if (!topic) return <TrainingCatalog topics={topics} solvedIn={solvedIn} pro={pro} freeTopicId={b0}
@@ -461,7 +487,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
 
   // ── тегін тариф лимиті ──
   if (topic && (sessionState === 'limited' || sessionState === 'locked' || showTrainingLimit(pro, done, checked, FREE_DAY))) return (
-    <main>
+    <main className="training-session">
       <button className="link" onClick={leaveTopic}>{t('ui.6')}</button>
       <div className="card" style={{ marginTop: 16 }}>
         <h2 style={{ margin: '0 0 8px' }}>{sessionState === 'locked' ? (ru ? 'Эта тема пока недоступна' : 'Бұл тақырып әзірге қолжетімсіз') : (ru ? 'Лимит на сегодня закончился' : 'Бүгінгі лимит бітті')}</h2>
@@ -475,9 +501,11 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
   );
 
   // ── задача ──
-  const q = items[i] && { ...trainingQuestion(items[i]), ...(serverResult ? { answer: serverResult.answer, solution: serverResult.solution } : {}) };
+  const visibleQuestion = questionTranslation && questionTranslation.source === activeQuestion && questionTranslation.lang === lang && questionTranslation.uid === uid
+    ? questionTranslation.question : activeQuestion;
+  const q = visibleQuestion && { ...trainingQuestion(visibleQuestion), ...(serverResult ? { answer: serverResult.answer, solution: serverResult.solution } : {}) };
   if (!q) return (
-    <main>
+    <main className="training-session">
       <button className="link" onClick={leaveTopic}>{t('ui.6')}</button>
       <p className="muted" style={{ marginTop: 14 }}>{t('ui.7')}</p>
     </main>
@@ -485,14 +513,15 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
   const ok = serverResult?.correct === true;
 
   return (
-    <main>
+    <main className="training-session">
       <div className="exam-top">
-        <span className="ttl">{topicName(topic)}</span>
+        <h1 className="ttl">{topicName(topic)}</h1>
         <span className="clock">{fmt(secs)}</span>
       </div>
-      {sessionState === 'starting' && <p role="status" className="muted">{ru ? 'Открываем защищённую сессию задачи…' : 'Есептің қорғалған сессиясы ашылуда…'}</p>}
+      {sessionState === 'starting' && <p role="status" className="muted">{ru ? 'Подготавливаем задачу…' : 'Есеп дайындалуда…'}</p>}
       {sessionState === 'error' && <p role="alert">{ru ? 'Не удалось открыть задачу на сервере. Проверь соединение и повтори.' : 'Есепті серверде ашу мүмкін болмады. Байланысты тексеріп, қайтала.'} <button type="button" className="link" onClick={() => beginQuestion()}>{ru ? 'Повторить' : 'Қайталау'}</button></p>}
       {sessionState === 'expired' && <p role="alert">{ru ? 'Сессия задачи закончилась. Этот ответ не засчитан. Начни задачу заново, чтобы продолжить.' : 'Есеп сессиясының мерзімі бітті. Бұл жауап есептелмеді. Жалғастыру үшін есепті қайта баста.'} <button type="button" className="link" onClick={() => beginQuestion({ fresh: true })}>{ru ? 'Начать заново' : 'Қайта бастау'}</button></p>}
+      <section className="training-question-panel" aria-label={ru ? 'Текущее задание' : 'Ағымдағы тапсырма'}>
       <div className="qhead">
         <span className="qnum-chip">{i + 1}/{items.length}</span>
         {q.needsTranslation && <span style={{ ...chip, color: '#9A9384' }} title={ru ? 'Перевод временно недоступен. Показан оригинал задания.' : 'Аударма уақытша қолжетімсіз. Есеп түпнұсқада көрсетілген.'}>{q.lang === 'kk' ? 'ҚАЗ' : q.lang === 'ru' ? 'РУС' : q.lang?.toUpperCase()}</span>}
@@ -507,7 +536,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
       ) : (
         <>
           <Stmt text={q.statement} />
-          {mainFigureSrc(q) && <QuestionFigure src={mainFigureSrc(q)} />}
+          {mainFigureSrc(q) && <QuestionFigure src={mainFigureSrc(q)} questionId={q.id} />}
 
           {!checked ? (
             q.options ? (
@@ -536,6 +565,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
         </>
       )}
 
+      </section>
       <AiTutor q={q} checked={checked} given={checked && !ok ? answer : null} />
       {checked && <UnclearButton q={q} />}
 

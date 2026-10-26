@@ -1,0 +1,1243 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "Complete saved visual topics6.4–6.6 only; no capture/download or source traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources in grade6 topics6.4–6.6",
+    "sourceVisualOccurrences": 17,
+    "addressedNewDrafts": 15,
+    "previousEditionsRetained": [
+      {
+        "sourceId": "81166b251336aa5f",
+        "editionId": "visual-mirror-cells"
+      },
+      {
+        "sourceId": "825b17c2bd93989d",
+        "editionId": "visual-mirror-point"
+      }
+    ],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "04c55295559b52c6",
+      "187e894f01712a28",
+      "18d44318a9288000",
+      "31028edc76aee596",
+      "3141338681de74ab",
+      "4f190ebd5b4d257a",
+      "75d619e0876fa4f1",
+      "81b6aa87f834e41b",
+      "95e48bac6ae7cbb4",
+      "af1e81edf33bb812",
+      "b9ea7082a34e960a",
+      "e552f60927bc573f",
+      "e6c0b12a8d5a56a3",
+      "ec0f784c5902b174",
+      "f8d92862cc0fa14c"
+    ],
+    "distinctModels": 15,
+    "semantics": "15 individually addressed drafts plus2 retained sources cover all17 visual occurrences; source-specific model forms are not15 unrelated families."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave8-read-ordinate",
+      "modelId": "visual-wave8-ordinate",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "points": [
+          {
+            "label": "B",
+            "x": -3,
+            "y": 4
+          },
+          {
+            "label": "M",
+            "x": 4,
+            "y": -3
+          }
+        ],
+        "target": "B",
+        "guides": [
+          "B"
+        ]
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "18d44318a9288000",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-4-level1.json#0",
+      "sourceCanonicalSha256": "d10ed47ce7e21bae9230ed5a3d7ff05655d1d88a72daa4ba6bc7446a9391f725",
+      "sourceSkill": "Reading only the ordinate of one point while distinguishing the swapped-coordinate distractor point",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-read-ordinate.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "statement": "Жазықтықтағы B және M нүктелеріне қараңыз. B нүктесінің ординатасы қандай сан? Жауапқа тек санды жазыңыз.",
+      "solution": "B(-3; 4). Ордината — екінші координата, сондықтан 4. M(4; -3) нүктесінің абсциссасымен шатастырмау керек.\nЖауап: 4.",
+      "figureDescription": "Жазықтықтағы B және M нүктелеріне қараңыз. B нүктесінің ординатасы қандай сан? Жауапқа тек санды жазыңыз. Бірлік координаталар: B(-3; 4), M(4; -3). ",
+      "figureSha256": "712211fb844bc81c9ec273c05b32bf82917ba3fd4fa18e5359f0c87bdf8a3a75",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-points-on-axes",
+      "modelId": "visual-wave8-axes-count",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "points": [
+          {
+            "label": "A",
+            "x": 4,
+            "y": 0
+          },
+          {
+            "label": "B",
+            "x": 0,
+            "y": 3
+          },
+          {
+            "label": "C",
+            "x": 0,
+            "y": -4
+          },
+          {
+            "label": "D",
+            "x": -3,
+            "y": 0
+          },
+          {
+            "label": "E",
+            "x": -4,
+            "y": 2
+          },
+          {
+            "label": "F",
+            "x": -2,
+            "y": -3
+          },
+          {
+            "label": "K",
+            "x": 3,
+            "y": 2
+          }
+        ]
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "95e48bac6ae7cbb4",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-4-level1.json#2",
+      "sourceCanonicalSha256": "b349f9352997ed8cada4b3b25ae4bcd69a3f1389ce5f31713743140824b59ec5",
+      "sourceSkill": "Counting points on either coordinate axis from zero coordinates, separately from quadrant membership",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-points-on-axes.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "statement": "Координаталық жазықтықта жеті нүкте берілген. Олардың нешеуі координаталар осьтерінің бірінде жатыр? Жауапқа тек санды жазыңыз.",
+      "solution": "Осьте жатқан нүктеде x = 0 немесе y = 0 болады. Шартқа сай нүктелер: A(4; 0), B(0; 3), C(0; -4), D(-3; 0). Саны 4.\nЖауап: 4.",
+      "figureDescription": "Координаталық жазықтықта жеті нүкте берілген. Олардың нешеуі координаталар осьтерінің бірінде жатыр? Жауапқа тек санды жазыңыз. Бірлік координаталар: A(4; 0), B(0; 3), C(0; -4), D(-3; 0), E(-4; 2), F(-2; -3), K(3; 2). ",
+      "figureSha256": "b337ef0e008373df51b9081d915ca58e03397cdd9f04e95d22cb1521676a741f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-negative-y-axis-point",
+      "modelId": "visual-wave8-axis-coordinate",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "points": [
+          {
+            "label": "C",
+            "x": 0,
+            "y": -5
+          }
+        ],
+        "target": "C"
+      },
+      "answer": "(0; -5)",
+      "sourceRefs": [
+        {
+          "sourceId": "e6c0b12a8d5a56a3",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-4-level1.json#5",
+      "sourceCanonicalSha256": "5b86cb5fbf21999e734a5b519d2626eafdc4db67a83d0193e701d7565c2e1b67",
+      "sourceSkill": "Reading an ordinate-axis point with zero abscissa and negative ordinate",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-negative-y-axis-point.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "options": [
+        "(-5; 0)",
+        "(0; 5)",
+        "(5; 0)",
+        "(0; -5)"
+      ],
+      "statement": "C нүктесі белгіленген. Оның координаталарын (абсцисса; ордината) ретімен таңдаңыз.",
+      "solution": "C нүктесі Oy осінде, сондықтан абсциссасы 0. Ординатасы -5. Координаталар жұбы (0; -5).\nЖауап: (0; -5).",
+      "figureDescription": "C нүктесі белгіленген. Оның координаталарын (абсцисса; ордината) ретімен таңдаңыз. Бірлік координаталар: C(0; -5). ",
+      "figureSha256": "504c1f50dd07a352535db82c5a757693f82bb7ac088cd6a07f5599fedc163575",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(0; -5)",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-second-quadrant-members",
+      "modelId": "visual-wave8-quadrant-two-count",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "points": [
+          {
+            "label": "A",
+            "x": -4,
+            "y": 2
+          },
+          {
+            "label": "B",
+            "x": -2,
+            "y": 4
+          },
+          {
+            "label": "C",
+            "x": 3,
+            "y": 3
+          },
+          {
+            "label": "D",
+            "x": -3,
+            "y": -2
+          },
+          {
+            "label": "E",
+            "x": 4,
+            "y": -1
+          },
+          {
+            "label": "F",
+            "x": 0,
+            "y": 3
+          },
+          {
+            "label": "G",
+            "x": 2,
+            "y": -4
+          }
+        ]
+      },
+      "answer": "2",
+      "sourceRefs": [
+        {
+          "sourceId": "af1e81edf33bb812",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-4-level1.json#6",
+      "sourceCanonicalSha256": "0de345eba43079d7d7395f7a6268e94af221eef8bbf9a6e53dd72810acce6a45",
+      "sourceSkill": "Counting only points with negative x and positive y, excluding a point on the y axis",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-second-quadrant-members.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "statement": "Белгіленген жеті нүктенің нешеуі II ширектің ішінде жатыр? Осьте жатқан нүкте ширекке кірмейді. Жауапқа тек санды жазыңыз.",
+      "solution": "II ширекте x < 0 және y > 0. Осы екі шартты да қанағаттандыратындар A(-4; 2), B(-2; 4). Саны 2. Бір координатасы 0 болса, нүкте осьте жатады.\nЖауап: 2.",
+      "figureDescription": "Белгіленген жеті нүктенің нешеуі II ширектің ішінде жатыр? Осьте жатқан нүкте ширекке кірмейді. Жауапқа тек санды жазыңыз. Бірлік координаталар: A(-4; 2), B(-2; 4), C(3; 3), D(-3; -2), E(4; -1), F(0; 3), G(2; -4). ",
+      "figureSha256": "fc34fd3a72c42bbd897f0597c5bda8f8bea43009dc35df82dcd455e7da42ecce",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "Axis points are excluded from the quadrant",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-horizontal-grid-length",
+      "modelId": "visual-wave8-horizontal-length",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "points": [
+          {
+            "label": "A",
+            "x": -4,
+            "y": 3
+          },
+          {
+            "label": "B",
+            "x": 5,
+            "y": 3
+          }
+        ],
+        "first": "A",
+        "second": "B",
+        "segment": [
+          "A",
+          "B"
+        ]
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "3141338681de74ab",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-4-level1.json#9",
+      "sourceCanonicalSha256": "432f01cc0d0d60ae2ad89c50d64ba4f380fb3fe4057c58b7d2d9f8f8030b7c59",
+      "sourceSkill": "Reading equal ordinates and counting horizontal unit gaps across zero",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-horizontal-grid-length.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "statement": "Бірлік тордағы A және B нүктелерін қосатын көлденең кесіндінің ұзындығы неше бірлік? Жауапқа тек санды жазыңыз.",
+      "solution": "A(-4; 3), B(5; 3). Ординаталары бірдей. Көлденең ұзындық 5 − (-4) = 9 бірлік.\nЖауап: 9.",
+      "figureDescription": "Бірлік тордағы A және B нүктелерін қосатын көлденең кесіндінің ұзындығы неше бірлік? Жауапқа тек санды жазыңыз. Бірлік координаталар: A(-4; 3), B(5; 3). ",
+      "figureSha256": "698d7c4e51c7ce63751069080ba893d083f57065f38c6586f0ba56fcc87ab0c3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-ordered-coordinate-pair",
+      "modelId": "visual-wave8-point-coordinate",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "points": [
+          {
+            "label": "A",
+            "x": -4,
+            "y": 3
+          }
+        ],
+        "target": "A",
+        "guides": [
+          "A"
+        ]
+      },
+      "answer": "(-4; 3)",
+      "sourceRefs": [
+        {
+          "sourceId": "b9ea7082a34e960a",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-4-level1.json#11",
+      "sourceCanonicalSha256": "6ba691509eb5968dc99249f9654b3e5de2fd2049f626d7bb76660f8a209fd2d3",
+      "sourceSkill": "Reading x before y with separate coordinate-order and sign distractors",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-ordered-coordinate-pair.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "options": [
+        "(-4; 3)",
+        "(3; -4)",
+        "(4; 3)",
+        "(-4; -3)"
+      ],
+      "statement": "Түзулер мен бірлік белгілерді пайдаланып, A нүктесінің координаталарын дұрыс ретпен таңдаңыз.",
+      "solution": "A нүктесінен Ox бағыты бойынша -4, Oy бағыты бойынша 3 оқылады. Алдымен абсцисса, сосын ордината: (-4; 3).\nЖауап: (-4; 3).",
+      "figureDescription": "Түзулер мен бірлік белгілерді пайдаланып, A нүктесінің координаталарын дұрыс ретпен таңдаңыз. Бірлік координаталар: A(-4; 3). ",
+      "figureSha256": "a0f194ace9b3715fe0273c6890bcf0d9b18dc3049f765b63e7a4e70527ab45e3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(-4; 3)",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-find-given-coordinate",
+      "modelId": "visual-wave8-coordinate-choice",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "points": [
+          {
+            "label": "K",
+            "x": -4,
+            "y": 3
+          },
+          {
+            "label": "L",
+            "x": 4,
+            "y": -3
+          },
+          {
+            "label": "M",
+            "x": 3,
+            "y": -4
+          },
+          {
+            "label": "N",
+            "x": -3,
+            "y": 4
+          }
+        ],
+        "requested": [
+          3,
+          -4
+        ]
+      },
+      "answer": "M",
+      "sourceRefs": [
+        {
+          "sourceId": "75d619e0876fa4f1",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-4-level1.json#13",
+      "sourceCanonicalSha256": "214a628f319aac7698000442ec87173462730b1e3d739cc17b22297bbceb8f6b",
+      "sourceSkill": "Finding one coordinate-pair point among swapped and sign-changed alternatives",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-find-given-coordinate.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "options": [
+        "K",
+        "L",
+        "M",
+        "N"
+      ],
+      "statement": "Қай белгіленген нүктенің координаталары (3; -4) жұбына тең?",
+      "solution": "Нүктелер: K(-4; 3), L(4; -3), M(3; -4), N(-3; 4). Сұралған жұпқа тек M нүктесі сәйкес.\nЖауап: M.",
+      "figureDescription": "Қай белгіленген нүктенің координаталары (3; -4) жұбына тең? Бірлік координаталар: K(-4; 3), L(4; -3), M(3; -4), N(-3; 4). ",
+      "figureSha256": "c4e25642b29e3eb4a300c1fcb20da1be6f424906a9ca80bcef0f2efbdf4fab64",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "M",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-reflection-axis-gallery",
+      "modelId": "visual-wave8-axis-symmetry-count",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "gallery",
+        "polygons": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              0,
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              0,
+              4
+            ]
+          ],
+          [
+            [
+              3,
+              0
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        ]
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "e552f60927bc573f",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-5-level1.json#0",
+      "sourceCanonicalSha256": "be666f4b92a68526372b6e66b153c665806351d7ab8f4b12853d5a206677de97",
+      "sourceSkill": "Classifying reflection symmetry among convex and concave grid polygons, including an asymmetric parallelogram and scalene right triangle",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-reflection-axis-gallery.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "statement": "Торкөздерде алты фигура берілген. Олардың нешеуінде кемінде бір симметрия осі бар? Ось бойымен бүктегенде екі бөлік толық беттесуі керек. Жауапқа тек санды жазыңыз.",
+      "solution": "1-фигурада 1 ось бар; 2-фигурада 0 ось бар; 3-фигурада 1 ось бар; 4-фигурада 0 ось бар; 5-фигурада 2 ось бар; 6-фигурада 1 ось бар. Осьтік симметриясы барлары 1, 3, 5, 6. Барлығы 4. Қиғаш параллелограмм мен қабырғалары әртүрлі тік үшбұрыш үшін бүктелген бөліктер беттеспейді.\nЖауап: 4.",
+      "figureDescription": "Торкөздерде алты фигура берілген. Олардың нешеуінде кемінде бір симметрия осі бар? Ось бойымен бүктегенде екі бөлік толық беттесуі керек. Жауапқа тек санды жазыңыз. Әр фигураның жергілікті торындағы (баған; қатар) төбелері, шекара бойымен: 1: (0; 0), (6; 0), (5; 4), (1; 4) | 2: (0; 0), (5; 0), (7; 3), (2; 3) | 3: (0; 0), (6; 0), (6; 4), (3; 2), (0; 4) | 4: (0; 0), (6; 0), (0; 4) | 5: (3; 0), (6; 2), (3; 4), (0; 2) | 6: (0; 0), (6; 0), (6; 2), (4; 2), (4; 6), (2; 6), (2; 2), (0; 2). ",
+      "figureSha256": "dcb449420c7199fe35afabec857a4025c104e9504ef07db6f585ad993a0d50d7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "Every candidate reflection maps the full vertex set and all boundary edges, using exact rational-centroid arithmetic",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-reflection-bisects-angle",
+      "modelId": "visual-wave8-bisector-angle",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "angle",
+        "half": 42
+      },
+      "answer": "84",
+      "sourceRefs": [
+        {
+          "sourceId": "4f190ebd5b4d257a",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-5-level1.json#11",
+      "sourceCanonicalSha256": "a49c62bd9194eb1a09342e3d05a35189c91b29443f117533ce849a09840481ff",
+      "sourceSkill": "Using the reflection axis of an angle as its bisector to double the given half angle",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-reflection-bisects-angle.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "statement": "k түзуі — ABC бұрышының симметрия осі, D нүктесі осы түзуде жатыр. Берілген жарты бұрышты пайдаланып, ABC бұрышының градустық өлшемін табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "k бойымен шағылдырғанда BA сәулесі BC сәулесіне көшеді. Екі жарты бұрыш тең: ABD = DBC = 42°. Сондықтан ABC = 42 + 42 = 84°.\nЖауап: 84.",
+      "figureDescription": "k түзуі — ABC бұрышының симметрия осі, D нүктесі осы түзуде жатыр. Берілген жарты бұрышты пайдаланып, ABC бұрышының градустық өлшемін табыңыз. Жауапқа тек санды жазыңыз. BA және BC сәулелері k түзуінің екі жағында; D осы осьте. ABD = 42°. Төменгі жарты бұрыштың өлшемі берілмеген. ",
+      "figureSha256": "d0466ba67af937b271ccf469750bd4512d1ba14626f9898dd2579eb884a52a05",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "84",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "A reflection axis through the angle vertex halves the angle",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-vertical-mirror-candidate",
+      "modelId": "visual-wave8-mirror-choice",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "points": [
+          {
+            "label": "A",
+            "x": -4,
+            "y": 1
+          },
+          {
+            "label": "P",
+            "x": 4,
+            "y": 2
+          },
+          {
+            "label": "Q",
+            "x": 3,
+            "y": 1
+          },
+          {
+            "label": "R",
+            "x": 4,
+            "y": 1
+          },
+          {
+            "label": "S",
+            "x": -4,
+            "y": -1
+          }
+        ],
+        "axes": false,
+        "mirrorX": 0,
+        "target": "A"
+      },
+      "answer": "R",
+      "sourceRefs": [
+        {
+          "sourceId": "f8d92862cc0fa14c",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-5-level1.json#12",
+      "sourceCanonicalSha256": "7587076fca1254f7778edfcc666bfd9d79c005e4e01eb3f404c4b9b6b1e8a638",
+      "sourceSkill": "Requiring both equal perpendicular mirror distance and an unchanged parallel row",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-vertical-mirror-candidate.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "options": [
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "statement": "k тік түзуіне қатысты A нүктесіне симметриялы болатын нүктені таңдаңыз. Бір көлденең жол мен оське дейінгі қашықтықты бірге ескеріңіз.",
+      "solution": "A нүктесі k-дан солға 4 торкөзде. Бейне сол көлденең жолда, k-дан оңға 4 торкөзде жатуы тиіс. Екі шартқа тек R нүктесі сай.\nЖауап: R.",
+      "figureDescription": "k тік түзуіне қатысты A нүктесіне симметриялы болатын нүктені таңдаңыз. Бір көлденең жол мен оське дейінгі қашықтықты бірге ескеріңіз. k — тік түзу. A: k-дан 4 тор солға, A жолынан жылжымаған; P: k-дан 4 тор оңға, A жолынан 1 тор жоғары; Q: k-дан 3 тор оңға, A жолынан жылжымаған; R: k-дан 4 тор оңға, A жолынан жылжымаған; S: k-дан 4 тор солға, A жолынан 2 тор төмен. ",
+      "figureSha256": "a26920665e9270e92e0394c6790c8579722a5151c06960f0ef1f7cdcfd82005e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "R",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-full-mirror-distance",
+      "modelId": "visual-wave8-mirror-separation",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "points": [
+          {
+            "label": "A",
+            "x": -5,
+            "y": 2
+          }
+        ],
+        "axes": false,
+        "mirrorX": 0,
+        "target": "A"
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "04c55295559b52c6",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-5-level1.json#15",
+      "sourceCanonicalSha256": "6d2ed08abca3a07f4807e422d9683960bfbdeae9ecb7427c85a93adf948e6a9c",
+      "sourceSkill": "Doubling the original point-to-axis distance to obtain point-to-image separation in centimetres",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-full-mirror-distance.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "statement": "Торкөз қабырғасы 1 см. k түзуіне қатысты A нүктесінің A₁ бейнесі салынса, AA₁ кесіндісінің толық ұзындығы неше сантиметр болады? Жауапқа тек санды жазыңыз.",
+      "solution": "A нүктесі k-дан 5 торкөз, яғни 5 см солда. Оның бейнесі дәл сондай қашықтықта оңда. AA₁ = 5 + 5 = 10 см.\nЖауап: 10.",
+      "figureDescription": "Торкөз қабырғасы 1 см. k түзуіне қатысты A нүктесінің A₁ бейнесі салынса, AA₁ кесіндісінің толық ұзындығы неше сантиметр болады? Жауапқа тек санды жазыңыз. k — тік түзу. A: k-дан 5 тор солға, A жолынан жылжымаған. ",
+      "figureSha256": "5a2d5a3fc571464518e5f6d6920a035372a4e373469f393e73663af5b43ae51d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "The full point-to-image distance doubles the perpendicular distance to the mirror",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-half-turn-gallery",
+      "modelId": "visual-wave8-central-figure-choice",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "gallery",
+        "polygons": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          [
+            [
+              3,
+              0
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        ]
+      },
+      "answer": "3",
+      "sourceRefs": [
+        {
+          "sourceId": "81b6aa87f834e41b",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-6-level1.json#1",
+      "sourceCanonicalSha256": "04f67daf3db8683e8730dbc34e8cd7dbb6fdc29a0f71a52c330e795f0c5db2d7",
+      "sourceSkill": "Testing a half-turn rather than axial symmetry among a triangle, trapezoid, oblique parallelogram and kite",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-half-turn-gallery.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "statement": "Төрт фигураның қайсысы бір нүкте төңірегінде 180° бұрылғанда өзімен толық беттеседі? Фигураның нөмірін таңдаңыз.",
+      "solution": "Әр фигураны 180° бұрып тексереміз. 3-фигурада қарама-қарсы төбелер бір орта нүктеге қатысты жұптасады; қабырғалары да беттеседі. Қалған үш фигурада кемінде бір төбе не қабырға өз орнына көшпейді. Сондықтан дұрыс нөмір 3.\nЖауап: 3.",
+      "figureDescription": "Төрт фигураның қайсысы бір нүкте төңірегінде 180° бұрылғанда өзімен толық беттеседі? Фигураның нөмірін таңдаңыз. Әр фигураның жергілікті торындағы (баған; қатар) төбелері, шекара бойымен: 1: (0; 0), (5; 0), (2; 4) | 2: (0; 0), (6; 0), (5; 3), (1; 3) | 3: (0; 0), (5; 0), (7; 3), (2; 3) | 4: (3; 0), (6; 2), (3; 6), (0; 2). ",
+      "figureSha256": "921ff41aead726ada494b6ca83769cb5811bade61e957dc3ec730a0f69aed1a4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "Half-turn symmetry is tested independently from reflection-axis symmetry",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-origin-half-turn-point",
+      "modelId": "visual-wave8-origin-central-point",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "points": [
+          {
+            "label": "A",
+            "x": -4,
+            "y": 3
+          },
+          {
+            "label": "B",
+            "x": 4,
+            "y": 3
+          },
+          {
+            "label": "C",
+            "x": -4,
+            "y": -3
+          },
+          {
+            "label": "D",
+            "x": 3,
+            "y": -4
+          },
+          {
+            "label": "E",
+            "x": 4,
+            "y": -3
+          }
+        ],
+        "target": "A"
+      },
+      "answer": "E",
+      "sourceRefs": [
+        {
+          "sourceId": "187e894f01712a28",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-6-level1.json#4",
+      "sourceCanonicalSha256": "027abcb7abb325162af3b8109d875cff36f3e109fce57bb78821b2530f7299fb",
+      "sourceSkill": "Negating both coordinates about the origin, excluding one-axis reflections and swapped-coordinate distractors",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-origin-half-turn-point.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "options": [
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "statement": "Координаталар басы O нүктесіне қатысты A нүктесінің центрлік симметриялы бейнесі қай белгіленген нүкте болады?",
+      "solution": "A(-4; 3). O центріне қатысты бейненің екі координатасының да таңбасы ауысады: (4; -3). Бұл — E нүктесі.\nЖауап: E.",
+      "figureDescription": "Координаталар басы O нүктесіне қатысты A нүктесінің центрлік симметриялы бейнесі қай белгіленген нүкте болады? Бірлік координаталар: A(-4; 3), B(4; 3), C(-4; -3), D(3; -4), E(4; -3). ",
+      "figureSha256": "afe90b1175c22e154cfbe999a9b7b225eae0abe016ad46df6d51a67788c39ebb",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "E",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-line-midpoint-image",
+      "modelId": "visual-wave8-line-central-image",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "min": -6,
+        "max": 4,
+        "points": [
+          {
+            "label": "A",
+            "x": -4,
+            "y": 0
+          },
+          {
+            "label": "P",
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "target": "A",
+        "center": "P"
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "ec0f784c5902b174",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-6-level1.json#7",
+      "sourceCanonicalSha256": "065fbe2641be01a325c6d7a177dff082a74a2b28cf0b81e9fe4ea711da37b492",
+      "sourceSkill": "Reflecting a coordinate about a nonzero centre by continuing the equal directed distance past that centre",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-line-midpoint-image.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "statement": "Сандық түзуде P нүктесі симметрия центрі болсын. A нүктесінің осы центрге қатысты A₁ бейнесінің координатасын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "A(-4), P(1). AP қашықтығы 1 − (-4) = 5. P-дан сол бағытпен тағы 5 бірлік жүрсек, 1 + 5 = 6. Тексеру: (-4 + 6) : 2 = 1.\nЖауап: 6.",
+      "figureDescription": "Сандық түзуде P нүктесі симметрия центрі болсын. A нүктесінің осы центрге қатысты A₁ бейнесінің координатасын табыңыз. Жауапқа тек санды жазыңыз. Белгіленген координаталар: A(-4), P(1). A₁ берілмеген. ",
+      "figureSha256": "2ae3847aa58e891ab50638e91325c57e87eea7f07e2c741083dea29bfa7f5879",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave8-half-turn-triangle-area",
+      "modelId": "visual-wave8-central-triangle-area",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "plane",
+        "points": [
+          {
+            "label": "A",
+            "x": -4,
+            "y": -3
+          },
+          {
+            "label": "B",
+            "x": 1,
+            "y": -3
+          },
+          {
+            "label": "C",
+            "x": -4,
+            "y": 1
+          },
+          {
+            "label": "O",
+            "x": 3,
+            "y": 2
+          }
+        ],
+        "axes": false,
+        "triangle": [
+          "A",
+          "B",
+          "C"
+        ],
+        "center": "O"
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "31028edc76aee596",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-6-level1.json#15",
+      "sourceCanonicalSha256": "0b90eaeb3355e36fe0dba9e857c6317d060bbfca9e1d3c6a7ffe4b7a3522af64",
+      "sourceSkill": "Using equal area under central symmetry after reading a right triangle base and height from unit grid cells",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: ордината, толық координата, ось/ширек, көлденең ұзындық, осьтік не центрлік симметрия, бұрыш немесе аудан.",
+        "Координаталар, тор өлшемдері, фигура төбелері, белгілер, бұрыш пен дұрыс жауап жаңадан таңдалды; ойыс фигураларды тану бөлігі сақталды.",
+        "Барлық сурет жаңа нақты тор координаталарынан, толық polygon vertex/edge құрылымынан не берілген бұрыштан native SVG түрінде салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Координаталар және симметрия",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-skill, coordinate order, grid metric, reflection/half-turn geometry, concave polygon boundaries and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave8-half-turn-triangle-area.svg",
+      "verificationModule": "scripts/editorial/visual-wave8-models.mjs",
+      "statement": "Бірлік торда ABC үшбұрышы мен O нүктесі берілген. O центріне қатысты осы үшбұрыштың бейнесі салынды. Бейненің ауданы неше бірлік шаршыға тең? Жауапқа тек санды жазыңыз.",
+      "solution": "AB көлденең 5 торкөз, AC тік 4 торкөз. Тік үшбұрыш ауданы 5 · 4 : 2 = 10 бірлік шаршы. Центрлік симметрия фигураны 180° бұрады және ауданын сақтайды, сондықтан бейне ауданы да 10.\nЖауап: 10.",
+      "figureDescription": "Бірлік торда ABC үшбұрышы мен O нүктесі берілген. O центріне қатысты осы үшбұрыштың бейнесі салынды. Бейненің ауданы неше бірлік шаршыға тең? Жауапқа тек санды жазыңыз. AB көлденең 5 тор, AC тік 4 тор; A бұрышы тік. O үшбұрыштан оң жақта және жоғарыда. ",
+      "figureSha256": "47a6fe524c5f7d33c2cdb48a5f4ecc81fc16c988e335d43f55192c5726fff1fd",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": [
+          "Every plotted coordinate is an exact grid position, with x/y order and axes membership checked separately",
+          "The reflected triangle is constructed by equal midpoint vectors; its area is recomputed by a separate shoelace traversal",
+          "Source-specific skill, exact geometry, coordinate order, answer, solution and native SVG are bound"
+        ]
+      }
+    }
+  ]
+}

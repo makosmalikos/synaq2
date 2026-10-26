@@ -9,7 +9,7 @@ const topics = [
 ];
 const now = new Date('2026-10-21T12:00:00Z');
 const daily = { day: '2026-10-21', count: 3, limit: 5 };
-const attempt = (topic, correct, at = now) => ({ topic, correct, at });
+const attempt = (topic, correct, at = now) => ({ topic, correct, at, verified: true });
 const result = (completedAt = '2026-10-20T10:00:00Z') => ({ completedAt, topics: [{ trainingTopicId: 'num', pct: 30, total: 3 }, { trainingTopicId: 'frac', pct: 80, total: 3 }] });
 const build = (input = {}) => homeModel({ topics, now, ...input });
 
@@ -64,8 +64,8 @@ test('accuracy uses a bounded recent sample, ignores ungraded records and accept
   assert.equal(data.answerCount, HOME_ATTEMPT_LIMIT);
   assert.equal(data.accuracy, 0);
   assert.equal(data.progressTopics[0].pct, 0);
-  const timestamp = { toMillis: () => +now + 1000 };
-  assert.equal(build({ attempts: [attempt('num', false), attempt('frac', true, timestamp)] }).next.topic.id, 'frac');
+  const timestamp = { toMillis: () => +now };
+  assert.equal(build({ attempts: [attempt('num', false, new Date(+now - 1000)), attempt('frac', true, timestamp)] }).next.topic.id, 'frac');
   assert.equal(records.length, 150);
 });
 test('wallet balance, not lifetime XP, determines reward progress and pending requests', () => {
@@ -113,4 +113,10 @@ test('timed out data can be retried and late results do not overwrite the retry'
   await new Promise((resolve) => setImmediate(resolve));
   assert.deepEqual(seen.map((item) => item.status), ['error', 'ready']);
   assert.equal(seen.at(-1).value.count, 3);
+});
+
+test('home accuracy and recommendations ignore unverified, malformed and future practice', () => {
+ const good=attempt('frac',true);
+ const data=build({attempts:[good,{...attempt('num',false),verified:false},attempt('num',false,new Date(+now+1000)),attempt('num',false,{toMillis(){throw Error('bad');}})]});
+ assert.equal(data.answerCount,1);assert.equal(data.accuracy,100);assert.equal(data.next.topic.id,'frac');
 });

@@ -1,23 +1,20 @@
 import useScreenStart from '../useScreenStart.js';
-import QuestionFigure from './QuestionFigure.jsx';
-import MathText from './MathText.jsx';
-import FigureOption, { hasFigureOptions, mainFigureSrc } from './FigureOption.jsx';
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useLang } from '../i18n.jsx';
-import { translateQuestions } from '../translateQuestions.js';
 import { mockCatalog, mockResume, mockStart, mockSubmit, weeklyMockCheckout } from '../mockApi.js';
 import { loadTopicCatalog } from '../topicCatalog.js';
 import { auth, watchPro } from '../firebase.js';
 import { buildDiagnosis } from '../diagnosis.js';
-import { mockDisplayScore } from '../analytics.js';
-import Explain from './Explain.jsx';
 import BrandLoader from './BrandLoader.jsx';
 import DiagnosisReport from './DiagnosisReport.jsx';
-import { Kolhar } from './Training.jsx';
+import MockQuestionNavigator from './MockQuestionNavigator.jsx';
+import MockTask from './MockTask.jsx';
+import MockResults from './MockResults.jsx';
+import MockCatalog from './MockCatalog.jsx';
+import { hasMockAnswer, mockSubjectLabel } from '../mockReviewModel.js';
+import './MockExperience.css';
 import { readMockSession, writeMockSession, clearMockSession, discardMockSession, mockRemaining,
-  readMockStart, writeMockStart, clearMockStart } from '../mockPersistence.js';
-
-const LT = ['A', 'B', 'C', 'D', 'E'];
+  readMockStart, writeMockStart, clearMockStart, mockClockOffset } from '../mockPersistence.js';
 
 function formatExamTimer(totalSec, lang) {
   const s = Math.max(0, totalSec);
@@ -31,14 +28,6 @@ function formatExamTimer(totalSec, lang) {
   if (h > 0) return `${h}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
   return `${m}:${String(sec).padStart(2, '0')}`;
 }
-
-const Stmt = ({ text }) => (
-  <>
-    {String(text || '').split(/\n{2,}/).map((p, i) => (
-      <p className="stmt" key={i} style={i ? { marginTop: 14 } : undefined}><MathText text={p} /></p>
-    ))}
-  </>
-);
 
 export default function Mock({ onTrainTopic, onGoProgress }) {
   const { t, lang } = useLang();
@@ -58,9 +47,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   const [i, setI] = useState(0);
   const [left, setLeft] = useState(0);
   const [hideTimer, setHideTimer] = useState(false);
-  const [navOpen, setNavOpen] = useState(false);
   const [result, setResult] = useState(null);
-  const [open_, setOpen] = useState(null);
   const [isDiagnosticRun, setIsDiagnosticRun] = useState(false);
   const [startError, setStartError] = useState('');
   const [starting, setStarting] = useState(false);
@@ -99,6 +86,13 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     return () => { mounted.current = false; };
   }, []);
 
+  useEffect(() => {
+    if (recoveryAvailable || !test || result) return;
+    const warn = event => { event.preventDefault(); event.returnValue = ''; };
+    window.addEventListener('beforeunload', warn);
+    return () => window.removeEventListener('beforeunload', warn);
+  }, [recoveryAvailable, test, result]);
+
   function applyRun(record) {
     runRef.current = record;
     attemptId.current = record.id;
@@ -109,7 +103,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     setSchool(record.school); setTest(record.test); setMeta(record.meta);
     setAnswers(record.answers); setFlags(record.flags); setI(record.index);
     setPause(record.pausedAt !== null); setLeft(mockRemaining(record));
-    setHideTimer(!!record.hideTimer); setNavOpen(!!record.navOpen);
+    setHideTimer(!!record.hideTimer);
     setIsDiagnosticRun(record.isDiagnosticRun); setResult(record.result);
   }
 
@@ -142,29 +136,30 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     (async () => {
       try {
         const resumed = await mockResume(record?.id || interruptedStart.id);
+        if (!alive || !isCurrent()) return;
         if (!record && !resumed.completed) {
-          const questions = await translateQuestions(resumed.test.questions, lang);
           record = { uid, id: interruptedStart.id, school: interruptedStart.school,
-            test: { ...resumed.test, questions }, meta: { school: interruptedStart.school,
+            test: resumed.test, meta: { school: interruptedStart.school,
               sections: resumed.test.sections, diagnostic: resumed.diagnostic },
             isDiagnosticRun: resumed.diagnostic, answers: {}, flags: {}, index: 0,
             startedAt: resumed.startedAt, deadline: resumed.deadline, pausedAt: null, pausedMs: 0,
+            clockOffsetMs: mockClockOffset(resumed),
             hideTimer: false, navOpen: false, result: null, pending: null };
           setRecoveryAvailable(writeMockSession(record));
           clearMockStart(uid, interruptedStart.id);
         }
         if (resumed.completed) {
           if (!record) throw new Error('completed_start_without_journal');
-          record = { ...record, result: resumed.result, pending: null };
+          record = { ...record, result: resumed.result, pausedAt: null, pending: null };
         } else {
-          const questions = await translateQuestions(resumed.test.questions, lang);
-          record = { ...record, test: { ...resumed.test, questions },
+          record = { ...record, test: resumed.test,
             isDiagnosticRun: resumed.diagnostic, startedAt: resumed.startedAt,
-            deadline: resumed.deadline, pending: null };
+            deadline: resumed.deadline, clockOffsetMs: mockClockOffset(resumed), pausedAt: null, pausedMs: 0, pending: null };
         }
         if (!alive || !isCurrent()) return;
         applyRun(record);
-        setSaveState(record.result ? 'saved' : 'idle');
+        setSaveState(record.result ? 'saved' : record.submission ? 'error' : 'idle');
+        if (record.submission && !record.result) setStartError(ru ? 'Ответы зафиксированы. Повтори завершение, чтобы получить результат.' : 'Жауаптар бекітілді. Нәтижені алу үшін аяқтауды қайтала.');
       } catch (error) {
         if (interruptedStart && error?.status === 404) clearMockStart(uid, interruptedStart.id);
         else if (alive && isCurrent()) setRecoveryError('restore');
@@ -173,7 +168,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
       }
     })();
     return () => { alive = false; };
-  }, [uid, recoveryRetry, lang]);
+  }, [uid, recoveryRetry]);
 
   useEffect(() => {
     let alive = true;
@@ -205,7 +200,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   });
 
   useEffect(() => {
-    if (!sessionReady || !test || result || pause || deadlineRef.current == null) return;
+    if (!sessionReady || !test || result || pause || runRef.current?.submission || deadlineRef.current == null) return;
     const tickFn = () => {
       if (!isCurrent()) return;
       const remain = mockRemaining(runRef.current);
@@ -233,19 +228,23 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     const active = () => isCurrent() && generationRef.current === generation;
     try {
     const reserved = readMockStart(uid);
+    if (reserved && reserved.school !== code) {
+      setRecoveryRetry(value => value + 1);
+      return;
+    }
     const requestId = reserved?.school === code ? reserved.id : crypto.randomUUID();
     if (!reserved && !writeMockStart({ uid, id: requestId, school: code })) setRecoveryAvailable(false);
     const started = await mockStart({ id: requestId, school: code, weekKey: weekly.weekKey, excludeQuestionIds: [] });
     const v = started.test;
     if (!v) throw new Error('empty_exam');
-    const qs = await translateQuestions(v.questions, lang);
     if (!active()) return;
     const startedNow = started.startedAt;
     const record = {
-      uid, id: requestId, school: code, test: { ...v, questions: qs },
+      uid, id: requestId, school: code, test: v,
       meta: { school: code, sections: v.sections, diagnostic: false, weekKey: started.weekKey }, isDiagnosticRun: false,
       answers: {}, flags: {}, index: 0, startedAt: startedNow,
       deadline: started.deadline, pausedAt: null, pausedMs: 0,
+      clockOffsetMs: mockClockOffset(started),
       hideTimer: false, navOpen: false, result: null, pending: null,
     };
     setRecoveryAvailable(writeMockSession(record));
@@ -271,20 +270,25 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     // защита от двойной отправки (и задвоенной записи в истории результатов).
     const run = runRef.current;
     if (!isCurrent() || !run || run.uid !== uid || run.result || submittingRef.current) return;
+    if (!run.submission) {
+      const frozen = changeRun({ submission: { answers: { ...run.answers } } });
+      if (!frozen) return;
+    }
+    const snapshot = runRef.current.submission.answers;
     submittingRef.current = true;
+    setSaveState('saving');
     clearInterval(tick.current);
     let r;
     try {
-      r = await mockSubmit(run.id, run.answers);
+      r = await mockSubmit(run.id, snapshot);
       if (!r) throw new Error('missing_exam');
     } catch {
       submittingRef.current = false;
-      if (isCurrent()) setStartError(ru ? 'Не удалось проверить тест. Повтори завершение.' : 'Сынақ тексерілмеді. Аяқтауды қайтала.');
+      if (isCurrent()) { setSaveState('error'); setStartError(ru ? 'Не удалось проверить тест. Повтори завершение.' : 'Сынақ тексерілмеді. Аяқтауды қайтала.'); }
       return;
     }
     if (!isCurrent() || runRef.current?.id !== run.id) return;
     changeRun({ result: r, pending: null, pausedAt: null });
-    if (!clearMockSession(uid, run.id)) setRecoveryAvailable(false);
     pendingSave.current = null;
     setSaveState('saved');
   }
@@ -296,14 +300,12 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     changeRun({ pausedAt: null, pausedMs: run.pausedMs + duration, deadline: run.deadline + duration });
   }
 
-  useScreenStart(`${school}:${!!test}:${i}:${pause}:${!!result}`);
+  useScreenStart(`${school}:${!!test}:${i}:${pause}:${!!result}`, test && !result && !pause ? '.mock-question-panel' : undefined);
 
   function goToQuestion(index) {
     const run = runRef.current;
     if (!run || run.result || mockRemaining(run) <= 0 || index < 0 || index >= run.test.questions.length) return;
-    const cur = run.test.questions[run.index]?.section;
-    const nxt = run.test.questions[index]?.section;
-    changeRun({ index, navOpen: false, pausedAt: index > run.index && nxt && cur && nxt !== cur ? Date.now() : null });
+    changeRun({ index });
   }
 
   const formatLabel = (value) => `${value.count} ${ru ? 'заданий' : 'тапсырма'} · ${value.timeLimitMin} ${ru ? 'мин' : 'мин'}`;
@@ -313,6 +315,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
 
   const back = () => {
     if (!isCurrent() || pendingSave.current || saveState !== 'saved') return;
+    if (!clearMockSession(uid, runRef.current?.id)) setRecoveryAvailable(false);
     runRef.current = null;
     setTest(null); setResult(null); setMeta(null); setSchool(null);
     setPause(false); setIsDiagnosticRun(false);
@@ -347,44 +350,8 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     <button className="btn" onClick={() => setLoadRetry((value) => value + 1)}>{ru ? 'Повторить' : 'Қайталау'}</button></main>;
   if (!school && (loading || pro === null || weekly === null)) return <main><BrandLoader /></main>;
 
-  if (!school && !weekly.access) return (
-    <main>
-      {startNotice}
-      <p className="kicker">{ru ? 'ПРОБНИК НЕДЕЛИ' : 'АПТАЛЫҚ СЫНАҚ'}</p>
-      <h1>{ru ? 'Новый пробный тест каждую неделю' : 'Әр апта сайын жаңа сынақ тесті'}</h1>
-      <div className="card" style={{ marginTop: 18, borderColor: 'var(--accent)' }}>
-        <p style={{ margin: '0 0 8px', fontSize: 17, fontWeight: 800 }}>{ru ? 'Доступ ко всем трём вариантам' : 'Үш нұсқаның барлығына қолжетімділік'}</p>
-        <p className="muted" style={{ margin: '0 0 16px', lineHeight: 1.6 }}>
-          {ru ? 'БИЛ, НИШ и РФМШ. Вопросы одинаковы всю неделю и автоматически обновятся в следующий понедельник.' : 'БИЛ, НИШ және РФМШ. Сұрақтар апта бойы өзгермейді және келесі дүйсенбіде автоматты түрде жаңарады.'}
-        </p>
-        <div style={{ fontSize: 28, fontWeight: 850, marginBottom: 14 }}>{weekly.priceKzt?.toLocaleString('ru-RU')} ₸</div>
-        <button type="button" className="btn accent" disabled={paying} onClick={buyWeeklyAccess}>
-          {paying ? (ru ? 'Открываем оплату…' : 'Төлем ашылуда…') : (ru ? 'Купить пробник недели' : 'Апталық сынақты сатып алу')}
-        </button>
-        <button type="button" className="btn" style={{ marginLeft: 8 }} onClick={() => setLoadRetry((value) => value + 1)}>{ru ? 'Уже оплатили? Проверить доступ' : 'Төледіңіз бе? Қолжетімділікті тексеру'}</button>
-        <p className="muted" style={{ margin: '12px 0 0', fontSize: 13 }}>{ru ? 'Для Pro доступ уже включён в подписку.' : 'Pro жазылымында қолжетімділік қосылған.'}</p>
-      </div>
-    </main>
-  );
-
-  if (!school) return (
-    <main>
-      {startNotice}
-      <p className="kicker">{ru ? 'ПРОБНИК НЕДЕЛИ' : 'АПТАЛЫҚ СЫНАҚ'} · {weekly.weekKey}</p>
-      <h1>{ru ? 'Выберите школу' : 'Мектепті таңдаңыз'}</h1>
-      <p className="muted" style={{ marginTop: 6 }}>{weekly.pro ? (ru ? 'Включено в Standard и Pro. Новые вопросы появятся в понедельник.' : 'Standard және Pro құрамына кіреді. Жаңа сұрақтар дүйсенбіде шығады.') : (ru ? 'Оплачено на текущую неделю.' : 'Ағымдағы аптаға төленді.')}</p>
-      <div className="list" style={{ marginTop: 16 }}>
-        {schools.map((s) => (
-          <button type="button" className="row-item mock-school-option" key={s.code} disabled={!s.ready || starting}
-            onClick={() => s.ready && !starting && startExam(s.code)}
-            style={{ opacity: s.ready ? 1 : 0.5, cursor: s.ready ? 'pointer' : 'default' }}>
-            <div style={{ flex: 1 }}><b>{s.code}</b><p className="muted">{formatLabel(s)}</p>{s.code === 'БИЛ' && <small>{ru ? 'Оценка: +4 за верный, −1 за неверный, 0 за пропуск' : 'Бағалау: дұрыс +4, қате −1, жауапсыз 0'}</small>}{s.code === 'РФМШ' && <small>{ru ? 'Здесь — число верных; официальный балл зависит от уровней A/B/C' : 'Мұнда — дұрыс жауап саны; ресми ұпай A/B/C деңгейлеріне тәуелді'}</small>}{s.code === 'НИШ' && <small>{ru ? 'Здесь — число верных; официальный результат НИШ рассчитывается отдельно' : 'Мұнда — дұрыс жауап саны; НЗМ ресми нәтижесі бөлек есептеледі'}</small>}{s.shortened && <small>{shortenedLabel} ({s.count}/{s.targetCount})</small>}</div>
-            <span className="rt">{s.ready ? '→' : t('ui.60')}</span>
-          </button>
-        ))}
-      </div>
-    </main>
-  );
+  if (!school) return <MockCatalog schools={schools} weekly={weekly} lang={lang} starting={starting} paying={paying}
+    onStart={startExam} onBuy={buyWeeklyAccess} onRefresh={() => setLoadRetry((value) => value + 1)} notice={startNotice} />;
 
   if (test && pause) return (
     <main style={{ textAlign: 'center', paddingTop: 60 }}>
@@ -397,143 +364,36 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     </main>
   );
 
-  if (result) return (
-    <main>
-      {recoveryNotice}
-      {test.shortened && <p className="muted">{shortenedLabel} ({test.questions.length}/{test.targetCount})</p>}
-      <p className="kicker">{t('diag.result')} · {meta.school}</p>
-      <div className="hero-card" style={{ marginBottom: 18 }}>
-        {result.scoring === 'bil' ? (
-          <>
-            <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
-              {mockDisplayScore(result).score}<span style={{ fontSize: 20, color: '#9A9384' }}> / {mockDisplayScore(result).max}</span>
-            </div>
-            <p style={{ margin: '10px 0 0', fontSize: 14 }}>
-              {result.score} {t('diag.correctShort')}, {result.wrong} {t('diag.wrong')}, {result.unanswered ?? result.gradable - result.score - result.wrong} {ru ? 'без ответа' : 'жауапсыз'}
-            </p>
-            <p className="muted" style={{ margin: '6px 0 0', fontSize: 13 }}>{ru ? 'БИЛ: правильный +4, неправильный −1, пропуск 0' : 'БИЛ: дұрыс +4, қате −1, жауапсыз 0'}</p>
-          </>
-        ) : (
-          <>
-            <div style={{ font: "700 44px 'Lora',serif", lineHeight: 1 }}>
-              {result.score}<span style={{ fontSize: 20, color: '#9A9384' }}> / {result.gradable}</span>
-            </div>
-            <p style={{ margin: '10px 0 0' }}>{ru ? 'верных ответов · сохранено в прогресс' : 'дұрыс жауап · прогреске сақталды'}</p>
-          </>
-        )}
-      </div>
-
-      {diagnosis && (
-        <DiagnosisReport
-          diagnosis={diagnosis}
-          pro={!!weekly?.access}
-          onUnlock={proUnlockHint}
-          onTrainTopic={weekly?.access ? onTrainTopic : undefined}
-        />
-      )}
-
-      {weekly?.access && (
-        <>
-          <p className="kicker" style={{ marginTop: 22 }}>{t('ui.19')}</p>
-          <div className="list">
-            {result.review.map((r) => {
-              const on = open_ === r.num;
-              return (
-                <div key={r.num} style={{ borderBottom: '1px solid var(--line)' }}>
-                  <div onClick={() => setOpen(on ? null : r.num)}
-                    style={{ display: 'flex', gap: 10, alignItems: 'baseline', padding: '14px 0', cursor: 'pointer' }}>
-                    <span style={{ font: "600 13px 'IBM Plex Mono',monospace", color: r.correct ? '#4C7A4E' : '#B0342B' }}>
-                      {r.correct ? '✓' : '✗'} №{r.num}
-                    </span>
-                    <span className="muted" style={{ fontSize: 13, flex: 1, minWidth: 0 }}>
-                      «<MathText text={r.your ?? '—'} />» · «<MathText text={r.answer ?? '?'} />»
-                    </span>
-                    <span className="muted" style={{ fontSize: 13 }}>{on ? '▲' : '▼'}</span>
-                  </div>
-                  {on && (
-                    <div style={{ padding: '0 0 16px' }}>
-                      <p style={{ margin: 0, fontSize: 14, lineHeight: 1.5 }}><MathText text={r.statement} /></p>
-                      {r.image && <QuestionFigure src={r.image} />}
-                      {r.solution && <p className="muted" style={{ margin: '10px 0 0', fontSize: 13.5, lineHeight: 1.55 }}><MathText text={r.solution} /></p>}
-                      <Explain q={r} given={r.correct ? null : r.your} />
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </>
-      )}
-
-      <button type="button" className="btn ghost" disabled={saveState === 'saving' || saveState === 'error'} style={{ marginTop: 16 }} onClick={back}>{t('ui.21')}</button>
-    </main>
-  );
+  if (result) return <MockResults key={runRef.current?.id} result={result} test={test} school={school} lang={lang} onBack={back}>
+    {recoveryNotice}
+    {diagnosis && <DiagnosisReport diagnosis={diagnosis} pro onUnlock={proUnlockHint} onTrainTopic={onTrainTopic} />}
+  </MockResults>;
 
   const q = test.questions[i];
   const toggleFlag = () => changeRun({ flags: { ...runRef.current.flags, [q.num]: !runRef.current.flags[q.num] } });
-  const pick = (val) => { if (mockRemaining(runRef.current) > 0) changeRun({ answers: { ...runRef.current.answers, [q.num]: val } }); };
-  const answered = (n) => answers[n] != null && answers[n] !== '';
+  const pick = value => {
+    const run = runRef.current;
+    if (run && !run.submission && mockRemaining(run) > 0) changeRun({ answers: { ...run.answers, [q.num]: value } });
+  };
+  const answeredCount = test.questions.filter(question => hasMockAnswer(answers[question.num])).length;
+  const unavailable = left <= 0 || !!runRef.current?.submission || saveState === 'saving';
 
-  return (
-    <main>
-      {startNotice}
-      {left <= 0 && <button type="button" className="btn accent" onClick={submit}>{ru ? 'Завершить и сохранить результат' : 'Аяқтау және нәтижені сақтау'}</button>}
-      {test.shortened && <p className="muted">{shortenedLabel} · {formatLabel(test)}</p>}
-      <div className="exam-top">
-        <span className="ttl">{meta.title || meta.school}</span>
-        <span className="clock" onClick={() => changeRun({ hideTimer: !hideTimer })} style={{ cursor: 'pointer' }}>
-          {hideTimer ? '⏱' : formatExamTimer(left, lang)}
-        </span>
-      </div>
-
-      {isDiagnosticRun && !pro && (
-        <p className="pill" style={{ marginBottom: 12 }}>{t('diag.freeMockBadge')}</p>
-      )}
-
-      <div className="qhead">
-        <span className="qnum-chip">{q.num}</span>
-        <button type="button" className={'flagbtn' + (flags[q.num] ? ' on' : '')} onClick={toggleFlag}>
-          <span className="fl">⚑</span> {t('diag.flag')}
-        </button>
-      </div>
-
-      {q.subject === 'kolzar' ? (
-        <Kolhar q={q} answer={answers[q.num]} onPick={pick} disabled={left <= 0} correct={null} />
-      ) : (
-        <>
-          <Stmt text={q.statement} />
-          {mainFigureSrc(q) && <QuestionFigure src={mainFigureSrc(q)} />}
-          {q.options ? (
-            <div className={`opts${hasFigureOptions(q) ? ' figure-options' : ''}`}>
-              {q.options.map((o, k) => (
-                <button type="button" key={k} disabled={left <= 0} className={'opt' + (answers[q.num] === o ? ' sel' : '')} onClick={() => pick(o)}>
-                  <span className="lt">{LT[k]}</span><FigureOption question={q} value={o} />
-                </button>
-              ))}
-            </div>
-          ) : (
-            <input disabled={left <= 0} value={answers[q.num] || ''} onChange={(e) => pick(e.target.value)} placeholder={t('ui.24')} />
-          )}
-        </>
-      )}
-
-      {navOpen && (
-        <div className="qgrid" style={{ marginTop: 18 }}>
-          {test.questions.map((qq, k) => (
-            <button type="button" key={qq.num} aria-current={k === i ? 'step' : undefined} aria-label={`${ru ? 'Задание' : 'Тапсырма'} ${qq.num}`}
-              className={'qcell' + (answered(qq.num) ? ' done' : '') + (k === i ? ' cur' : '') + (flags[qq.num] ? ' flag' : '')}
-              onClick={() => goToQuestion(k)}>{qq.num}</button>
-          ))}
-        </div>
-      )}
-
-      <div className="navbar">
-        <button type="button" className="btn ghost" disabled={i === 0 || left <= 0} onClick={() => goToQuestion(i - 1)}>{t('ui.22')}</button>
-        <button type="button" className="navpill" onClick={() => changeRun({ navOpen: !navOpen })}>{i + 1} / {test.questions.length} ▲</button>
-        {i + 1 < test.questions.length
-          ? <button type="button" className="btn" disabled={left <= 0} onClick={() => goToQuestion(i + 1)}>{t('ui.9')}</button>
-          : <button type="button" className="btn accent" onClick={submit}>{t('ui.23')}</button>}
-      </div>
-    </main>
-  );
+  return <main className="mock-experience mock-exam-page">
+    {startNotice}
+    <div className="mock-page-heading"><div><span className="mock-eyebrow">SYNAQ · {ru ? 'ПРОБНЫЙ ТЕСТ' : 'СЫНАҚ ТЕСТІ'}</span><h1>{meta.school}</h1><p>{ru ? 'Решай в удобном порядке. Ответы сохраняются в этой вкладке.' : 'Өзіңе ыңғайлы ретпен шеш. Жауаптар осы қойындыда сақталады.'}</p></div>
+      <div className="mock-exam-title-actions"><button type="button" className="clock" aria-label={ru ? 'Показать или скрыть таймер' : 'Таймерді көрсету немесе жасыру'} onClick={() => changeRun({ hideTimer: !hideTimer })}>{hideTimer ? (ru ? 'Показать время' : 'Уақытты көрсету') : formatExamTimer(left, lang)}</button><button type="button" className="btn" disabled={saveState === 'saving'} onClick={submit}>{saveState === 'saving' ? (ru ? 'Сохраняем…' : 'Сақталуда…') : (ru ? 'Завершить тест' : 'Сынақты аяқтау')}</button></div>
+    </div>
+    {test.shortened && <p className="mock-empty-note">{shortenedLabel} · {formatLabel(test)}</p>}
+    {left <= 0 && <p className="mock-empty-note" role="status">{ru ? 'Время закончилось. Заверши тест, чтобы сохранить и разобрать ответы.' : 'Уақыт аяқталды. Жауаптарды сақтап, талдау үшін сынақты аяқта.'}</p>}
+    <div className="mock-exam-progress"><span>{ru ? 'Твой прогресс' : 'Сенің прогресің'}</span><strong>{answeredCount} / {test.questions.length} {ru ? 'ответов' : 'жауап'}</strong></div>
+    <div className="mock-exam-progress-bar" style={{ marginBottom: 22 }}><i style={{ width: `${answeredCount / test.questions.length * 100}%` }} /></div>
+    <div className="mock-workspace">
+      <MockQuestionNavigator questions={test.questions} selectedIndex={i} onSelect={goToQuestion} lang={lang} disabled={unavailable} flags={flags} statusFor={question => hasMockAnswer(answers[question.num]) ? 'answered' : 'unanswered'} />
+      <section className="mock-question-panel">
+        <div className="mock-question-heading"><div><span>{mockSubjectLabel(q.subject || 'math', lang)}</span><h2>{ru ? 'Задание' : 'Тапсырма'} {q.num}</h2></div><button type="button" disabled={unavailable} className={'flagbtn' + (flags[q.num] ? ' on' : '')} onClick={toggleFlag}><span aria-hidden="true">⚑</span> {ru ? 'Отметить' : 'Белгілеу'}</button></div>
+        <MockTask question={q} lang={lang} value={answers[q.num] || ''} onPick={pick} disabled={unavailable} />
+        <div className="mock-question-footer"><button type="button" className="btn ghost" disabled={i === 0 || unavailable} onClick={() => goToQuestion(i - 1)}>← {ru ? 'Назад' : 'Артқа'}</button><span>{i + 1} / {test.questions.length}</span>{i + 1 < test.questions.length ? <button type="button" className="btn" disabled={unavailable} onClick={() => goToQuestion(i + 1)}>{ru ? 'Далее' : 'Келесі'} →</button> : <button type="button" className="btn" disabled={saveState === 'saving'} onClick={submit}>{ru ? 'Завершить' : 'Аяқтау'}</button>}</div>
+      </section>
+    </div>
+  </main>;
 }

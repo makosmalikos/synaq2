@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All6 saved visual grade5topic2.5; sourcearchiveonly, no capture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5topic2.5sources",
+    "sourceVisualOccurrences": 6,
+    "addressedNewDrafts": 6,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "0b0aea297f251cdd",
+      "0d8b16ef6a24c600",
+      "3e9ea96893c54715",
+      "a72d8f95d3e3ae7f",
+      "a9cd2c4458d20e43",
+      "e1944b3cc7dd64bc"
+    ],
+    "distinctModels": 6,
+    "semantics": "Allsixsource targets individuallyrewritten; variant/modelcounts are not claims ofnew semanticmeanings."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave35-five-three-divisible-number-cards",
+      "modelId": "visual-wave35-count-three-divisible-cards",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "number-cards",
+        "numbers": [
+          126,
+          248,
+          447,
+          590,
+          912,
+          1035,
+          2046
+        ]
+      },
+      "answer": "5",
+      "sourceRefs": [
+        {
+          "sourceId": "0b0aea297f251cdd",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-5-level1.json#10",
+      "sourceCanonicalSha256": "e452fae9ad6e0a932fb4dddd56130c816560d48822b19cdc5fda9504aebf902f",
+      "sourceSkill": "Computing every pictured number digit-sum to count exact divisibility-by3",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: әр санды 3-ке тексеру, есепшот разрядтары, тең массалар, цифр орындарын ауыстыру, бағалардың қосындысы және бір цифрды тастау.",
+        "Карточка сандары/цифрлары, барлық моншақ саны, үш қаптың бөліктері мен массалары, тауар бағалары/қарындаш саны және мүмкін төлемдер өзгертілді. 0 карточкасы бар мысалда үш таңбалы болу шегі нақты айтылды.",
+        "Қаптың бір бөлігінің бүтін килограмм болуы ашық жазылды. Сатып алудың қажетті бөлінгіштігімен шектелмей, екі белгісіз тауар санының толық шектеулі облысы және нақты мүмкін сатып алу тексерілді. Native SVG source raster/traced paths қолданбай жасалды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Цифрлар қосындысы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6source/newfullsolution/MCQ review; exact7numbercards/18abacusbeads/place labels, equalmassparts2+3+4,0/4/8cardroles, all3namedunitprices and5digitcards, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave35-five-three-divisible-number-cards.svg",
+      "verificationModule": "scripts/editorial/visual-wave35-models.mjs",
+      "statement": "Карточкалардағы әр санның 3 санына бөлінетінін тексеріңіз. Осындай карточкалар барлығы нешеу? Жауапқа тек санды жазыңыз.",
+      "solution": "3 санына бөліну белгісі: цифрлар қосындысы 3 санына бөлінуі керек. Тексерулер 126 → 9 — бөлінеді; 248 → 14 — бөлінбейді; 447 → 15 — бөлінеді; 590 → 14 — бөлінбейді; 912 → 12 — бөлінеді; 1035 → 9 — бөлінеді; 2046 → 12 — бөлінеді. Жарамды сандар 126, 447, 912, 1035, 2046, барлығы 5 карточка. 3 санына бөлінуді тек соңғы цифр арқылы анықтай алмаймыз.",
+      "figureDescription": "Екі қатар карточкада 126, 248, 447, 590, 912, 1035, 2046 сандары берілген.",
+      "figureSha256": "3396ab90c50f8abda9efb7a5146dafb388998eff84a659f345f0c5dec81deada",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5",
+        "checks": {
+          "digitSums": [
+            9,
+            14,
+            15,
+            14,
+            12,
+            9,
+            12
+          ],
+          "selected": [
+            126,
+            447,
+            912,
+            1035,
+            2046
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave35-abacus-five-six-three-four",
+      "modelId": "visual-wave35-abacus-digit-sum",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "abacus",
+        "digits": [
+          5,
+          6,
+          3,
+          4
+        ]
+      },
+      "answer": "18",
+      "sourceRefs": [
+        {
+          "sourceId": "0d8b16ef6a24c600",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-5-level1.json#11",
+      "sourceCanonicalSha256": "eb7bc009b4604648cef6e4f39403082bcf9ad2ce83765e03fae8f78bc3088ff3",
+      "sourceSkill": "Reading exact place-value bead counts, asking their sum and checking the derived3-divisibility",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: әр санды 3-ке тексеру, есепшот разрядтары, тең массалар, цифр орындарын ауыстыру, бағалардың қосындысы және бір цифрды тастау.",
+        "Карточка сандары/цифрлары, барлық моншақ саны, үш қаптың бөліктері мен массалары, тауар бағалары/қарындаш саны және мүмкін төлемдер өзгертілді. 0 карточкасы бар мысалда үш таңбалы болу шегі нақты айтылды.",
+        "Қаптың бір бөлігінің бүтін килограмм болуы ашық жазылды. Сатып алудың қажетті бөлінгіштігімен шектелмей, екі белгісіз тауар санының толық шектеулі облысы және нақты мүмкін сатып алу тексерілді. Native SVG source raster/traced paths қолданбай жасалды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Цифрлар қосындысы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6source/newfullsolution/MCQ review; exact7numbercards/18abacusbeads/place labels, equalmassparts2+3+4,0/4/8cardroles, all3namedunitprices and5digitcards, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave35-abacus-five-six-three-four.svg",
+      "verificationModule": "scripts/editorial/visual-wave35-models.mjs",
+      "statement": "Есепшоттың әр тік сымындағы моншақ саны — төменде жазылған разрядтың цифры. Санды оқып, цифрларының қосындысы арқылы 3 санына бөлінетінін тексеріңіз. Есептің сандық жауабы — ЦИФРЛАР ҚОСЫНДЫСЫ. Жауапқа тек санды жазыңыз.",
+      "solution": "Мыңдық, жүздік, ондық, бірлік сымдарында тиісінше 5, 6, 3, 4 моншақ. Жазылған сан 5634. Цифрлар қосындысы 5 + 6 + 3 + 4 = 18. 18 саны 3 санына бөлінеді, сондықтан бастапқы сан да бөлінеді. Сұралғаны бастапқы сан не оның бөліндісі емес, цифрлар қосындысы. Әр разрядтағы моншақтардың жалпы саны да 18.",
+      "figureDescription": "Төменгі белгілер солдан оңға 1000, 100, 10, 1. Олардың сымдарында тиісінше 5, 6, 3, 4 моншақ бар.",
+      "figureSha256": "ff1a373394bf9c2aa2b268e381d5ca120ac669b7547fa74b247621bc800e7b85",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "18",
+        "checks": {
+          "number": 5634,
+          "divisibleByThree": true,
+          "beads": 18
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave35-two-three-four-potato-parts",
+      "modelId": "visual-wave35-three-equal-unit-mass-total",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "bag-parts",
+        "parts": [
+          2,
+          3,
+          4
+        ]
+      },
+      "answer": "486 кг",
+      "sourceRefs": [
+        {
+          "sourceId": "3e9ea96893c54715",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-5-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-5-level2.json#1",
+      "sourceCanonicalSha256": "5d64a7a6fe6da9b85bb0647743373e99145047fd25a674c3311e83c2a262794a",
+      "sourceSkill": "Counting9equalmassunits and requiring a natural-kilogram unit for feasible totaldivisibility",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: әр санды 3-ке тексеру, есепшот разрядтары, тең массалар, цифр орындарын ауыстыру, бағалардың қосындысы және бір цифрды тастау.",
+        "Карточка сандары/цифрлары, барлық моншақ саны, үш қаптың бөліктері мен массалары, тауар бағалары/қарындаш саны және мүмкін төлемдер өзгертілді. 0 карточкасы бар мысалда үш таңбалы болу шегі нақты айтылды.",
+        "Қаптың бір бөлігінің бүтін килограмм болуы ашық жазылды. Сатып алудың қажетті бөлінгіштігімен шектелмей, екі белгісіз тауар санының толық шектеулі облысы және нақты мүмкін сатып алу тексерілді. Native SVG source raster/traced paths қолданбай жасалды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Цифрлар қосындысы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6source/newfullsolution/MCQ review; exact7numbercards/18abacusbeads/place labels, equalmassparts2+3+4,0/4/8cardroles, all3namedunitprices and5digitcards, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave35-two-three-four-potato-parts.svg",
+      "verificationModule": "scripts/editorial/visual-wave35-models.mjs",
+      "options": [
+        "365 кг",
+        "452 кг",
+        "486 кг",
+        "524 кг"
+      ],
+      "statement": "Үш қаптағы картоп массалары бірдей бөліктермен берілген; сол жақтағы 1, 2, 3 — қап нөмірлері. Бір кішкентай бөлікке килограммен оң натурал масса сәйкес келеді. Үш қаптың бірге алғандағы массасы қай нұсқа болуы мүмкін?",
+      "solution": "Қаптарда тиісінше 2, 3, 4 бірдей бөлік бар. Барлығы 2 + 3 + 4 = 9 бөлік. Бір бөліктің массасы бүтін килограмм болғандықтан, жалпы масса 9 санына бөлінеді. Нұсқалардың цифрлар қосындылары 365 кг → 14; 452 кг → 11; 486 кг → 18; 524 кг → 11. Тек 486 кг жарайды. Бір бөлік 54 кг, қаптардағы массалар 108, 162, 216 кг; қосындысы 486 кг.",
+      "figureDescription": "1, 2, 3 нөмірлі жолақтарда тиісінше 2, 3, 4 бірдей тікбұрышты бөлік. Жалпы масса белгісіз.",
+      "figureSha256": "50e3fc50bff463bd541c5d7b053f42f830aac01070fa5a4837ed95ca780d251e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "486 кг",
+        "checks": {
+          "units": 9,
+          "unit": 54,
+          "masses": [
+            108,
+            162,
+            216
+          ],
+          "optionDigitSums": [
+            14,
+            11,
+            18,
+            11
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave35-zero-four-eight-three-digit-numbers",
+      "modelId": "visual-wave35-zero-card-three-digit-permutations",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "three-cards",
+        "digits": [
+          0,
+          4,
+          8
+        ]
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "e1944b3cc7dd64bc",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-5-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-5-level2.json#7",
+      "sourceCanonicalSha256": "4c656edd5dc8cde09536cb83148ca1a1fbb5746368fa9967005d160f572aa01e",
+      "sourceSkill": "Digit-sum permutation invariance with each digit used once; explicitly exclude leadingzero as notthree-digit",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: әр санды 3-ке тексеру, есепшот разрядтары, тең массалар, цифр орындарын ауыстыру, бағалардың қосындысы және бір цифрды тастау.",
+        "Карточка сандары/цифрлары, барлық моншақ саны, үш қаптың бөліктері мен массалары, тауар бағалары/қарындаш саны және мүмкін төлемдер өзгертілді. 0 карточкасы бар мысалда үш таңбалы болу шегі нақты айтылды.",
+        "Қаптың бір бөлігінің бүтін килограмм болуы ашық жазылды. Сатып алудың қажетті бөлінгіштігімен шектелмей, екі белгісіз тауар санының толық шектеулі облысы және нақты мүмкін сатып алу тексерілді. Native SVG source raster/traced paths қолданбай жасалды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Цифрлар қосындысы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6source/newfullsolution/MCQ review; exact7numbercards/18abacusbeads/place labels, equalmassparts2+3+4,0/4/8cardroles, all3namedunitprices and5digitcards, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave35-zero-four-eight-three-digit-numbers.svg",
+      "verificationModule": "scripts/editorial/visual-wave35-models.mjs",
+      "statement": "Суреттегі үш цифр карточкасының әрқайсысын дәл бір рет қолданып, мүмкін болатын барлық ҮШ ТАҢБАЛЫ сандар жасалады. Бірінші цифр 0 болмайды. Олардың нешеуі 3 санына бөлінеді? Жауапқа тек санды жазыңыз.",
+      "solution": "Цифрлардың қосындысы 0 + 4 + 8 = 12, сондықтан олардан жасалған әр жарамды сан 3 санына бөлінеді. Барлық орын ауыстырулар 048, 084, 408, 480, 804, 840. Нөлден басталған жазулар үш таңбалы сан болмайды, олар алынады. Жарамды үш таңбалы сандар 408, 480, 804, 840. Талапқа сай 4 сан. Цифрларды қайта қолданбаймыз және нөлді басына жазбаймыз.",
+      "figureDescription": "Бөлек цифр карточкалары: 0, 4, 8. Әр цифр бір рет берілген.",
+      "figureSha256": "ad3df44afdb4940bb1aa17ae02fea0e3f286ede9f01e692f42cab7a012d95699",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": {
+          "digitSum": 12,
+          "allPermutations": [
+            "048",
+            "084",
+            "408",
+            "480",
+            "804",
+            "840"
+          ],
+          "eligible": [
+            408,
+            480,
+            804,
+            840
+          ],
+          "valid": [
+            408,
+            480,
+            804,
+            840
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave35-five-pencils-feasible-purchase",
+      "modelId": "visual-wave35-feasible-nine-divisible-purchase",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "prices",
+        "fixedPencils": 5,
+        "pencil": 36,
+        "notebook": 45,
+        "eraser": 63,
+        "minimumEach": 2
+      },
+      "answer": "1503 тг",
+      "sourceRefs": [
+        {
+          "sourceId": "a72d8f95d3e3ae7f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-5-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-5-level3.json#3",
+      "sourceCanonicalSha256": "7e9ebfa384fb0b3483e602497ce9d8345c8836842cc97a3829da64e7375b0199",
+      "sourceSkill": "Applying necessary9-divisibility then proving actual purchase feasibility under both minimum-item constraints",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: әр санды 3-ке тексеру, есепшот разрядтары, тең массалар, цифр орындарын ауыстыру, бағалардың қосындысы және бір цифрды тастау.",
+        "Карточка сандары/цифрлары, барлық моншақ саны, үш қаптың бөліктері мен массалары, тауар бағалары/қарындаш саны және мүмкін төлемдер өзгертілді. 0 карточкасы бар мысалда үш таңбалы болу шегі нақты айтылды.",
+        "Қаптың бір бөлігінің бүтін килограмм болуы ашық жазылды. Сатып алудың қажетті бөлінгіштігімен шектелмей, екі белгісіз тауар санының толық шектеулі облысы және нақты мүмкін сатып алу тексерілді. Native SVG source raster/traced paths қолданбай жасалды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Цифрлар қосындысы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6source/newfullsolution/MCQ review; exact7numbercards/18abacusbeads/place labels, equalmassparts2+3+4,0/4/8cardroles, all3namedunitprices and5digitcards, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave35-five-pencils-feasible-purchase.svg",
+      "verificationModule": "scripts/editorial/visual-wave35-models.mjs",
+      "options": [
+        "1503 тг",
+        "1426 тг",
+        "1536 тг",
+        "1604 тг"
+      ],
+      "statement": "Әсет 5 қарындаш, кемінде 2 дәптер және кемінде 2 өшіргіш сатып алды. Әр тауардың бір данасының бағасы суретте берілген, жеңілдік жоқ. Төлеген сомасы қай нұсқадағы сан болуы мүмкін?",
+      "solution": "Бағалар 36, 45, 63 теңге — үшеуі де 9 санына бөлінеді. Әр тауар құны да, барлық сома да 9 санына бөлінуі тиіс. Нұсқалардың цифрлар қосындылары 1503 тг → 9; 1426 тг → 13; 1536 тг → 15; 1604 тг → 11. 1503 тг осы белгіден өтеді. Жеткілікті екенін нақты сатып алумен тексереміз: 5 × 36 + 7 × 45 + 16 × 63 = 1503. Мұнда 7 дәптер мен 16 өшіргіш кемінде 2 талабын орындайды. Басқа нұсқалар 9 санына бөлінбейді; тек қажетті белгімен шектелмей, мүмкін сатып алуды да құрдық.",
+      "figureDescription": "Бір қарындаш 36 тг, бір дәптер 45 тг, бір өшіргіш 63 тг. Әрқайсысының жеке суреті мен атауы берілген.",
+      "figureSha256": "a9452c4d466b162f3027bdc5e15054a89aab75c99333481dfb5832ed412ee8d6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "1503 тг",
+        "checks": {
+          "fixedCost": 180,
+          "optionDigitSums": [
+            9,
+            13,
+            15,
+            11
+          ],
+          "allWays": [
+            [
+              {
+                "notebooks": 7,
+                "erasers": 16
+              },
+              {
+                "notebooks": 14,
+                "erasers": 11
+              },
+              {
+                "notebooks": 21,
+                "erasers": 6
+              }
+            ],
+            [],
+            [],
+            []
+          ],
+          "example": {
+            "notebooks": 7,
+            "erasers": 16
+          }
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave35-omit-six-from-five-digit-cards",
+      "modelId": "visual-wave35-omit-digit-three-divisibility",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "five-cards",
+        "digits": [
+          1,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "a9cd2c4458d20e43",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-5-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-5-leveltest.json#2",
+      "sourceCanonicalSha256": "27ba810a37268259938971b71de5b79627733ebedf3d53151b90826b289cb179",
+      "sourceSkill": "Removing exactly one digit to make the four retained digits sumdivisibleby3 and constructing a validfour-digitwitness",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: әр санды 3-ке тексеру, есепшот разрядтары, тең массалар, цифр орындарын ауыстыру, бағалардың қосындысы және бір цифрды тастау.",
+        "Карточка сандары/цифрлары, барлық моншақ саны, үш қаптың бөліктері мен массалары, тауар бағалары/қарындаш саны және мүмкін төлемдер өзгертілді. 0 карточкасы бар мысалда үш таңбалы болу шегі нақты айтылды.",
+        "Қаптың бір бөлігінің бүтін килограмм болуы ашық жазылды. Сатып алудың қажетті бөлінгіштігімен шектелмей, екі белгісіз тауар санының толық шектеулі облысы және нақты мүмкін сатып алу тексерілді. Native SVG source raster/traced paths қолданбай жасалды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Цифрлар қосындысы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6source/newfullsolution/MCQ review; exact7numbercards/18abacusbeads/place labels, equalmassparts2+3+4,0/4/8cardroles, all3namedunitprices and5digitcards, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave35-omit-six-from-five-digit-cards.svg",
+      "verificationModule": "scripts/editorial/visual-wave35-models.mjs",
+      "statement": "Бес карточканың тек төртеуін пайдаланып төрт таңбалы сан жасау керек. Әр карточка бір реттен қолданылады. Сан 3 санына бөлінуі үшін қай цифр карточкасын пайдаланбай қалдыру керек? Жауапқа тек санды жазыңыз.",
+      "solution": "Бес цифрдың қосындысы 1 + 5 + 6 + 7 + 8 = 27. Біреуін алып тастағанда қосындылар алынған цифр 1 → 26; алынған цифр 5 → 22; алынған цифр 6 → 21; алынған цифр 7 → 20; алынған цифр 8 → 19. Тек 6 цифрын алып тастағанда қалған қосынды 3 санына бөлінеді. Мысалы, қалған цифрлардан 1578 санын жасауға болады: 1578 : 3 = 526. Қалған цифрлардың орындары қосындыны өзгертпейді.",
+      "figureDescription": "Бөлек цифр карточкалары: 1, 5, 6, 7, 8. Әр цифр бір рет берілген.",
+      "figureSha256": "ba1816ea2ea42ef05b998fc3175b3a85a1e7a41ed70d0c7f1cb6b3ad9629daa3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "allSum": 27,
+          "remainingSums": [
+            26,
+            22,
+            21,
+            20,
+            19
+          ],
+          "remaining": [
+            1,
+            5,
+            7,
+            8
+          ],
+          "witness": 1578
+        }
+      }
+    }
+  ]
+}

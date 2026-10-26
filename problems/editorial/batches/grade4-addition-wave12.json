@@ -1,0 +1,1253 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All24 remaining saved grade-4 nonvisual topic1.5 addition/subtraction/reasoning sources; no new source collection.",
+  "summary": {
+    "editions": 24,
+    "models": 23,
+    "skillFamilies": 24,
+    "sourceOccurrencesReferenced": 24,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-addition-9b73d8b2e573d20d",
+      "modelId": "grade4-addition-compare-after-thousand",
+      "skillFamily": "compare-after-thousand",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "start": 472386,
+        "increment": 1000,
+        "right": 473286
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level1.json",
+          "sourceId": "9b73d8b2e573d20d"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "472 386 + 1 000 □ 473 286. Бос орынға қойылатын белгіні таңдаңдар.",
+      "answer": ">",
+      "solution": "Алдымен 472 386 + 1 000 = 473 386. Жоғары үш разряд бірдей, сондықтан жүздіктерден бастап салыстырамыз: 473 386 > 473 286.",
+      "options": [
+        "салыстыру мүмкін емес",
+        ">",
+        "<",
+        "="
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": ">",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-29a61397a98acb0e",
+      "modelId": "grade4-addition-zero-chain-complement",
+      "skillFamily": "zero-chain-complement",
+      "grade": 4,
+      "topic": "eq",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 10000,
+        "known": 6387,
+        "choices": [
+          4613,
+          3613,
+          16387,
+          3623
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level1.json",
+          "sourceId": "29a61397a98acb0e"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "□ + 6 387 = 10 000. Белгісіз қосылғыштың мәнін таңдаңдар.",
+      "answer": "3 613",
+      "solution": "Белгісіз қосылғыш 10 000 − 6 387 айырмасына тең. Нөлдер арқылы разрядтан аламыз: 10 000 = 9 000 + 900 + 90 + 10. Оңнан солға қарай: 10 − 7 = 3; 9 − 8 = 1; 9 − 3 = 6; 9 − 6 = 3. Нәтиже 3 613. Тексеру: 3 613 + 6 387 = 10 000.",
+      "options": [
+        "4 613",
+        "3 613",
+        "16 387",
+        "3 623"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "3 613",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-14149e03eba6d636",
+      "modelId": "grade4-addition-column-carry",
+      "skillFamily": "column-carry",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "first": 9,
+        "second": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level1.json",
+          "sourceId": "14149e03eba6d636"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бағанмен қосқанда бірліктерде 9 + 8 = 17 алынды. Бірліктер мен ондықтар разрядында не істеу керек?",
+      "answer": "Бірліктерге 7 жазып, ондықтарға 1 тасымалдаймыз",
+      "solution": "17 — 1 ондық және 7 бірлік. Бірліктер орнына 7 жазылады, 1 ондық келесі разрядқа қосылады. Тасымал ескерілмесе, қосынды 10 шамасына кемиді.",
+      "options": [
+        "Бірліктерге 7 жазып, ондықтарға 1 тасымалдаймыз",
+        "Бірліктерге 7 жазып, тасымал жасамаймыз",
+        "Бірліктерге 1 жазып, ондықтарға 7 тасымалдаймыз",
+        "Бірліктерге 17 жазып, тасымал жасамаймыз"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "Бірліктерге 7 жазып, ондықтарға 1 тасымалдаймыз",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-7eedd60ac4f31365",
+      "modelId": "grade4-addition-inverse-subtraction-check",
+      "skillFamily": "inverse-subtraction-check",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "minuend": 9736,
+        "subtrahend": 4289
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level1.json",
+          "sourceId": "7eedd60ac4f31365"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жанар 9 736 − 4 289 = 5 447 деп есептеді. Нәтижені кері амалмен тексеретін өрнекті таңдаңдар.",
+      "answer": "5 447 + 4 289",
+      "solution": "Азайтуды қосу арқылы тексереміз: айырмаға азайтқышты қосқанда азайғыш шығуы керек. 5 447 + 4 289 = 9 736. Қалған қосу нұсқалары басқа сандар береді, ал айырмадан тағы азайту тексеру амалы емес.",
+      "options": [
+        "9 736 + 4 289",
+        "5 447 + 4 289",
+        "9 736 + 5 447",
+        "5 447 − 4 289"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "5 447 + 4 289",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-34736db0044e333c",
+      "modelId": "grade4-addition-round-trip-change",
+      "skillFamily": "round-trip-change",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "budget": 18400,
+        "ticket": 7950
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level2.json",
+          "sourceId": "34736db0044e333c"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Саяхатшының 18 400 теңгесі бар. Бару билеті 7 950 теңге, кері қайту билеті де дәл сонша. Екі билетті алған соң қанша теңге қалады? Жауапқа тек сан енгізіңдер.",
+      "answer": "2500",
+      "solution": "Екі билет 7 950 + 7 950 = 15 900 теңге. Қалған ақша 18 400 − 15 900 = 2 500 теңге. Тексеру: 2 500 + 15 900 = 18 400.",
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "2500",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-e8db660a7b611480",
+      "modelId": "grade4-addition-tonne-delivery-remainder",
+      "skillFamily": "tonne-delivery-remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "targetTonnes": 140,
+        "firstKg": 46750,
+        "secondKg": 53800,
+        "choices": [
+          [
+            39,
+            450
+          ],
+          [
+            40,
+            450
+          ],
+          [
+            39,
+            45
+          ],
+          [
+            3,
+            945
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level2.json",
+          "sourceId": "e8db660a7b611480"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Кептіру орталығына 140 т бидай жеткізу керек. Алғашқы күні 46 750 кг, келесі күні 53 800 кг келді. Жоспарды толтыру үшін қанша бидай жетіспейді?",
+      "answer": "39 т 450 кг",
+      "solution": "1 т = 1 000 кг, сондықтан жоспар 140 000 кг. Жеткізілгені 46 750 + 53 800 = 100 550 кг. Қалғаны 140 000 − 100 550 = 39 450 кг. Бұл 39 т 450 кг; килограммен қалған бөліктің нөлін түсірмейміз.",
+      "options": [
+        "39 т 450 кг",
+        "40 т 450 кг",
+        "39 т 45 кг",
+        "3 т 945 кг"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "39 т 450 кг",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-1982d4298e3e2042",
+      "modelId": "grade4-addition-supplied-digit-extremes",
+      "skillFamily": "supplied-digit-extremes-5",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": [
+          2,
+          9,
+          0,
+          7,
+          4
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level2.json",
+          "sourceId": "1982d4298e3e2042"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "2, 9, 0, 7, 4 цифрларының әрқайсысын бір рет қолданып, ең үлкен және ең кіші 5 таңбалы сандарды құрыңдар. Олардың айырмасын табыңдар. Жауапқа тек сан енгізіңдер.",
+      "answer": "76941",
+      "solution": "Кему ретімен ең үлкен сан 97 420. Ең кіші сан нөлден басталмайды: алдына ең кіші нөлден өзге цифр, содан кейін қалғандары өсу ретімен жазылады — 20 479. Айырмасы 97 420 − 20 479 = 76 941.",
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "76941",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-74744396176a5c80",
+      "modelId": "grade4-addition-compare-through-round-boundary",
+      "skillFamily": "compare-through-round-boundary",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "start": 800000,
+        "subtract": 1001,
+        "rightBase": 799000,
+        "add": 1
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level2.json",
+          "sourceId": "74744396176a5c80"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "(800 000 − 1 001) □ (799 000 + 1). Қай белгі дұрыс?",
+      "answer": "<",
+      "solution": "Сол жақта алдымен 1 000, сосын тағы 1 азайтамыз: 800 000 − 1 000 = 799 000; 799 000 − 1 = 798 999. Оң жақ 799 000 + 1 = 799 001. Сондықтан 798 999 < 799 001.",
+      "options": [
+        "=",
+        ">",
+        "салыстыру мүмкін емес",
+        "<"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "<",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-db663bb9481a27ec",
+      "modelId": "grade4-addition-spoken-monthly-total",
+      "skillFamily": "spoken-monthly-total",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "counts": [
+          14807,
+          11096,
+          16250
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level2.json",
+          "sourceId": "db663bb9481a27ec"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Кітап көрмесіне сәуірде он төрт мың сегіз жүз жеті, мамырда он бір мың тоқсан алты, маусымда он алты мың екі жүз елу адам келді. Үш ай бойынша келушілер санының қосындысы қанша? Жауапқа тек сан енгізіңдер.",
+      "answer": "42153",
+      "solution": "Сөзбен берілген сандарды жазамыз: 14 807; 11 096; 16 250. Алғашқы екеуін қосамыз: 14 807 + 11 096 = 25 903. Оған үшінші айды қосамыз: 25 903 + 16 250 = 42 153.",
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "42153",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-c83b6abe23281348",
+      "modelId": "grade4-addition-sum-class-descriptions",
+      "skillFamily": "sum-class-descriptions",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "firstThousands": 63,
+        "firstUnits": 234,
+        "secondMillions": 4,
+        "secondUnits": 60,
+        "choices": [
+          463294,
+          67294,
+          4006329,
+          4063294
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level2.json",
+          "sourceId": "c83b6abe23281348"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бірінші сан мыңдар класының 63 бірлігінен және 234 бірліктен тұрады. Екінші сан миллиондар класының 4 бірлігінен және 60 бірліктен тұрады. Екі санның қосындысын таңдаңдар.",
+      "answer": "4 063 294",
+      "solution": "Бірінші сан 63 234. Екінші сан 4 000 060: мыңдар класы 000, ал бірліктер класында 060 жазылады. Қосынды 4 000 060 + 63 234 = 4 063 294.",
+      "options": [
+        "463 294",
+        "67 294",
+        "4 006 329",
+        "4 063 294"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "4 063 294",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-6da7bd5b537fda56",
+      "modelId": "grade4-addition-common-added-variable",
+      "skillFamily": "common-added-variable",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "left": 273604,
+        "right": 276304
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level2.json",
+          "sourceId": "6da7bd5b537fda56"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "n — кез келген натурал сан. 273 604 + n □ n + 276 304 жазуында қай белгі барлық n үшін дұрыс?",
+      "answer": "<",
+      "solution": "Қосудың ауыстырымдылығынан екі жақта да бірдей n қосылады. Бірдей қосылғыш салыстыруды өзгертпейді. 273 604 < 276 304, сондықтан 273 604 + n < n + 276 304. Белгі n мәніне тәуелді емес.",
+      "options": [
+        "n мәніне байланысты",
+        "=",
+        "<",
+        ">"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "<",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-c376b43e213d20bf",
+      "modelId": "grade4-addition-find-incorrect-calculation",
+      "skillFamily": "find-incorrect-calculation",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "calculations": [
+          [
+            73402,
+            "−",
+            28767,
+            44645
+          ],
+          [
+            58607,
+            "+",
+            9684,
+            68291
+          ],
+          [
+            80000,
+            "−",
+            27483,
+            52517
+          ],
+          [
+            49058,
+            "+",
+            36787,
+            85845
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level2.json",
+          "sourceId": "c376b43e213d20bf"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "intentionalIncorrectExample": true,
+      "statement": "Төмендегі төрт есептеудің біреуі әдейі қате жазылған. Кері амалмен тексеріп, қате теңдікті таңдаңдар.",
+      "answer": "73 402 − 28 767 = 44 645",
+      "solution": "Қате нұсқаны қосумен тексерсек: 44 645 + 28 767 = 73 412 ≠ 73 402. Дұрыс айырма 44 635. Қалған тексерулер: 68 291 − 9 684 = 58 607; 52 517 + 27 483 = 80 000; 85 845 − 36 787 = 49 058. Олар бастапқы азайғышты не қосылғышты дұрыс қайтарады.",
+      "options": [
+        "73 402 − 28 767 = 44 645",
+        "58 607 + 9 684 = 68 291",
+        "80 000 − 27 483 = 52 517",
+        "49 058 + 36 787 = 85 845"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "73 402 − 28 767 = 44 645",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-02cc0bdcc1c92b65",
+      "modelId": "grade4-addition-unit-fraction-combined-total",
+      "skillFamily": "unit-fraction-combined-total",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "first": 1620,
+        "divisor": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level2.json",
+          "sourceId": "02cc0bdcc1c92b65"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Кітапхананың бірінші бөлімінде 1 620 кітап бар. Екінші бөлімдегі кітап саны бірінші бөлімдегі кітап санының үштен біріне тең. Екі бөлімде барлығы неше кітап бар? Жауапқа тек сан енгізіңдер.",
+      "answer": "2160",
+      "solution": "Екінші бөлімдегі кітап саны 1 620 : 3 = 540. Екі бөлімде 1 620 + 540 = 2 160 кітап бар.",
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "2160",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-c184d6b1c68ddfe7",
+      "modelId": "grade4-addition-parity-distinct-extremes",
+      "skillFamily": "parity-distinct-extremes",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level3.json",
+          "sourceId": "c184d6b1c68ddfe7"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Цифрлары әртүрлі ең үлкен 5 таңбалы жұп сан мен цифрлары әртүрлі ең кіші 5 таңбалы тақ санның айырмасын табыңдар. Жауапқа тек сан енгізіңдер.",
+      "answer": "88529",
+      "solution": "Ең үлкен жұп сан 98 764: цифрлары әртүрлі, соңғы цифры жұп және жоғары разрядтар мүмкіндігінше үлкен. Ең кіші тақ сан 10 235: басында 0 жоқ, цифрлары қайталанбайды, соңғы цифры тақ. Айырмасы 98 764 − 10 235 = 88 529.",
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "88529",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-9721522512e77eeb",
+      "modelId": "grade4-addition-two-misread-place-values",
+      "skillFamily": "two-misread-place-values",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "actualUnits": 8,
+        "readUnits": 2,
+        "actualTens": 4,
+        "readTens": 9,
+        "observed": 63652,
+        "choices": [
+          63696,
+          63658,
+          63608,
+          63602
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level3.json",
+          "sourceId": "9721522512e77eeb"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Нұрасыл екі санды қосқанда бір қосылғыштың бірліктеріндегі 8 цифрын 2 деп, ондықтарындағы 4 цифрын 9 деп көшірді. Қате қосынды 63 652 болды. Дұрыс қосындыны таңдаңдар.",
+      "answer": "63 608",
+      "solution": "Бірліктер қатесі қосылғышты 6 шамасына кемітеді. Ондықтар қатесі оны 50 шамасына арттырады. Қате қосынды дұрысынан 50 − 6 = 44 артық. Сондықтан дұрысы 63 652 − 44 = 63 608. Екі разрядтағы қатені бірге түзетеміз.",
+      "options": [
+        "63 696",
+        "63 658",
+        "63 608",
+        "63 602"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "63 608",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-9c024cd6b68676b6",
+      "modelId": "grade4-addition-subtract-instead-of-add",
+      "skillFamily": "subtract-instead-of-add",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "delta": 5736,
+        "observed": 48257
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level3.json",
+          "sourceId": "9c024cd6b68676b6"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Әсет бір санға 5 736 қосуы керек еді. Ол қосудың орнына 5 736 санын азайтып, 48 257 алды. Дұрыс қосқанда қандай нәтиже шығар еді? Жауапқа тек сан енгізіңдер.",
+      "answer": "59729",
+      "solution": "Алдымен бастапқы санды қайтарамыз: 48 257 + 5 736 = 53 993. Дұрыс амалды орындаймыз: 53 993 + 5 736 = 59 729. Қосу мен азайтудың айырмасы бір емес, екі рет алынған 5 736 санына тең.",
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "59729",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-7d19851ca5f731b7",
+      "modelId": "grade4-addition-maximum-two-three-digit-sum",
+      "skillFamily": "maximum-two-three-digit-sum",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": [
+          1,
+          2,
+          4,
+          6,
+          7,
+          9
+        ],
+        "choices": [
+          1685,
+          1397,
+          1613,
+          1703
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level3.json",
+          "sourceId": "7d19851ca5f731b7"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1, 2, 4, 6, 7, 9 цифрларының әрқайсысын бір рет қолданып, екі үш таңбалы сан құрыңдар. Олардың ең үлкен мүмкін қосындысының мәнін таңдаңдар.",
+      "answer": "1 703",
+      "solution": "Ең үлкен 9 және 7 цифрларын жүздіктерге береміз: (9 + 7) × 100 = 1 600. Келесі 6, 4 ондықтарға 100, қалған 2, 1 бірліктерге 3 береді. Ең үлкен қосынды 1 600 + 100 + 3 = 1 703. Мысалы, 962 + 741 = 1 703. Үлкен цифр төменгі разрядта тұрса, жоғары разрядтағы кіші цифрмен ауыстыру қосындыны арттырады.",
+      "options": [
+        "1 685",
+        "1 397",
+        "1 613",
+        "1 703"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "1 703",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-97e8b9a8aa736c83",
+      "modelId": "grade4-addition-three-digit-rearrangement-steps",
+      "skillFamily": "three-digit-rearrangement-steps",
+      "grade": 4,
+      "topic": "seq",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": [
+          2,
+          9,
+          5,
+          3
+        ],
+        "steps": 3,
+        "choices": [
+          7173,
+          3087,
+          6354,
+          6174
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level3.json",
+          "sourceId": "97e8b9a8aa736c83"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бастапқы цифрлар 2, 9, 5, 3. Әр қадамда сол төрт цифрдан ең үлкен және ең кіші төрт таңбалы сандарды құрап, кішісін үлкенінен азайтамыз. Кейін шыққан айырманың барлық цифрын, қайталанса да, келесі қадамға аламыз. Үшінші азайтудың нәтижесін таңдаңдар.",
+      "answer": "3 087",
+      "solution": "1-қадам: 9 532 − 2 359 = 7 173; 2-қадам: 7 731 − 1 377 = 6 354; 3-қадам: 6 543 − 3 456 = 3 087. Үшінші қадамның нәтижесі сұралған.",
+      "options": [
+        "7 173",
+        "3 087",
+        "6 354",
+        "6 174"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "3 087",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-07e9ece4b1a00fe7",
+      "modelId": "grade4-addition-global-distinct-extreme-gap",
+      "skillFamily": "global-distinct-extreme-gap",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": 6
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level3.json",
+          "sourceId": "07e9ece4b1a00fe7"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Цифрлары қайталанбайтын ең үлкен 6 таңбалы сан мен цифрлары қайталанбайтын ең кіші 6 таңбалы санның айырмасын табыңдар. Жауапқа тек сан енгізіңдер.",
+      "answer": "885309",
+      "solution": "Үлкен сан үшін ең үлкен 6 цифрды кему ретімен жазамыз: 987 654. Кіші сан 0 цифрынан басталмайды, сондықтан 1, кейін 0 және қолданылмаған ең кіші цифрлар келеді: 102 345. Айырмасы 987 654 − 102 345 = 885 309.",
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "885309",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-67ac174f4a4bcffa",
+      "modelId": "grade4-addition-sum-and-gap-larger",
+      "skillFamily": "sum-and-gap-larger",
+      "grade": 4,
+      "topic": "eq",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 62000,
+        "gap": 9740,
+        "choices": [
+          52260,
+          26130,
+          31000,
+          35870
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level3.json",
+          "sourceId": "67ac174f4a4bcffa"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Екі санның қосындысы 62 000, ал үлкені кішісінен 9 740 артық. Үлкен санды табыңдар.",
+      "answer": "35 870",
+      "solution": "Қосындыдан үлкен санның артық бөлігін алсақ, кіші санның екі еселенген мәні қалады: 62 000 − 9 740 = 52 260. Кішісі 52 260 : 2 = 26 130. Үлкені 26 130 + 9 740 = 35 870. Тексеру: 35 870 + 26 130 = 62 000; 35 870 − 26 130 = 9 740.",
+      "options": [
+        "52 260",
+        "26 130",
+        "31 000",
+        "35 870"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "35 870",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-8b49c5c1d14cb833",
+      "modelId": "grade4-addition-three-object-assignment",
+      "skillFamily": "three-object-assignment",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "names": [
+          "Айым",
+          "Дана",
+          "Ерасыл"
+        ],
+        "items": [
+          "сызғыш",
+          "қылқалам",
+          "қайшы"
+        ],
+        "exclusions": [
+          [
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          []
+        ],
+        "options": [
+          [
+            2,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            2,
+            1
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level3.json",
+          "sourceId": "8b49c5c1d14cb833"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Айым, Дана, Ерасыл үш түрлі құрал алды: сызғыш, қылқалам, қайшы. Әр оқушыда бір құрал, әр құралды бір ғана оқушы алған. Дана алған құрал мына екеуінің ешқайсысы емес: сызғыш, қайшы. Айым алған құрал қайшы емес. Дұрыс сәйкестікті таңдаңдар.",
+      "answer": "Айым — сызғыш; Дана — қылқалам; Ерасыл — қайшы",
+      "solution": "Дана үшін екі құрал алынып тасталды, демек ол қылқалам алған. Айым үшін қайшы тыйым салынған, ал қылқалам бос емес; сондықтан оның құралы сызғыш. Қалған құралдың иесі — Ерасыл. Дұрыс сәйкестік: Айым — сызғыш; Дана — қылқалам; Ерасыл — қайшы.",
+      "options": [
+        "Айым — қайшы; Дана — қылқалам; Ерасыл — сызғыш",
+        "Айым — қылқалам; Дана — сызғыш; Ерасыл — қайшы",
+        "Айым — сызғыш; Дана — қылқалам; Ерасыл — қайшы",
+        "Айым — сызғыш; Дана — қайшы; Ерасыл — қылқалам"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "Айым — сызғыш; Дана — қылқалам; Ерасыл — қайшы",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-ba79013c7409dc2f",
+      "modelId": "grade4-addition-compare-minus-near-thousand",
+      "skillFamily": "compare-minus-near-thousand",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "start": 917000,
+        "subtract": 999,
+        "right": 916000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-leveltest.json",
+          "sourceId": "ba79013c7409dc2f"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "917 000 − 999 □ 916 000. Қай белгі дұрыс?",
+      "answer": ">",
+      "solution": "999 = 1 000 − 1. Сондықтан 917 000 − 999 = 917 000 − 1 000 + 1 = 916 001. Бұл 916 000 санынан 1 артық, сондықтан белгі >.",
+      "options": [
+        "=",
+        ">",
+        "<",
+        "салыстыру мүмкін емес"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": ">",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-fb4f33815afe2c23",
+      "modelId": "grade4-addition-supplied-digit-extremes",
+      "skillFamily": "supplied-digit-extremes-4",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": [
+          8,
+          0,
+          3,
+          6
+        ],
+        "choices": [
+          8262,
+          5662,
+          5462,
+          5562
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-leveltest.json",
+          "sourceId": "fb4f33815afe2c23"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "8, 0, 3, 6 цифрларының әрқайсысын бір рет қолданып, ең үлкен және ең кіші 4 таңбалы сандарды құрыңдар. Олардың айырмасын табыңдар.",
+      "answer": "5 562",
+      "solution": "Кему ретімен ең үлкен сан 8 630. Ең кіші сан нөлден басталмайды: алдына ең кіші нөлден өзге цифр, содан кейін қалғандары өсу ретімен жазылады — 3 068. Айырмасы 8 630 − 3 068 = 5 562.",
+      "options": [
+        "8 262",
+        "5 662",
+        "5 462",
+        "5 562"
+      ],
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "5 562",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-addition-7c680c5a9b22b8a4",
+      "modelId": "grade4-addition-family-ticket-change",
+      "skillFamily": "family-ticket-change",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "adult": 10760,
+        "child": 5380,
+        "adults": 2,
+        "children": 1,
+        "paid": 35000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-leveltest.json",
+          "sourceId": "7c680c5a9b22b8a4"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр нақты бастапқы шарт, кілт, нұсқалар және толық ресми шешім жеке оқылды. Нөлдер арқылы қарыз алу, тасымал, кері амал, қате цифрды түзету, сөзбен сан оқу және цифрлық не логикалық шектеу сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. 10 000, 999 = 1 000 − 1 немесе үштен бір бөлік сияқты әдісті анықтайтын педагогикалық тұрақтылар тиісті жерде сақталды.",
+        "Ең кіші сан нөлден басталмайды; ойын цифрлары қайталанса да толық қолданылады; үлкен қосындыда разряд салмағы сақталады; «бір қате есептеу» тапсырмасы әдейі қате теңдікті таңдауды сұрайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 addition/subtraction edition. Numerical variants are source coverage, not newly distinct meanings.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ғылым фестиваліне 2 ересек пен 1 бала барады. Ересек билеті 10 760 теңге, бала билеті 5 380 теңге. Кассаға 35 000 теңге берілсе, қайтарым қанша болады? Жауапқа тек сан енгізіңдер.",
+      "answer": "8100",
+      "solution": "Екі ересекке 10 760 + 10 760 = 21 520 теңге. Баламен бірге 21 520 + 5 380 = 26 900 теңге. Қайтарым 35 000 − 26 900 = 8 100 теңге.",
+      "calculationVerification": {
+        "method": "exact_place_value_arithmetic_and_full_finite_constraints",
+        "answer": "8100",
+        "checks": [
+          "source-specific borrowing carry inverse/error and ordering skills retained",
+          "exact arithmetic or full finite assignment/permutation domain",
+          "Kazakh written quantities and native statement solution choices bound",
+          "one intentionally incorrect equality selected only when the task explicitly asks for it",
+          "independent editorial review pending"
+        ]
+      }
+    }
+  ]
+}

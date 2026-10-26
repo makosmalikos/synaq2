@@ -1,0 +1,2143 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "root_separate_computational_check_same_author",
+  "batch": "problems/editorial/batches/collection-bil9-nonvisual.json",
+  "scope": "49 saved BIL9 sources and rewritten conditions/full solutions/all MCQs read.\nSame root authored conditions and this separate exact computation; no separate\nhuman or agent reviewer. Answers computed from printed inputs, not JS specs or\nparams. Source sequence/font/lift ambiguity documented rather than concealed.\n",
+  "summary": {
+    "verified": 49,
+    "allSourceNewConditionsSolutionsMCQsRead": 49,
+    "wrongKeysRejected": 49,
+    "printedSemanticCanariesRejected": 49,
+    "newSolutionEqualitiesVerified": 37,
+    "pythonJavaScriptHashesMatched": 49,
+    "nativeRendering": {
+      "text": 760,
+      "table": 2,
+      "fraction": 136,
+      "overline": 4,
+      "mixed": 9
+    },
+    "originalFigures": 1,
+    "geometryCanaryRejected": true,
+    "separateHumanReviewer": false,
+    "resolvedSourceAmbiguities": [
+      8,
+      37,
+      45,
+      48
+    ]
+  },
+  "evidence": [
+    {
+      "editionId": "collection-bil9-nonvisual-01",
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "6",
+          "12",
+          "24",
+          "96"
+        ],
+        "answer": "48",
+        "exactResult": "48"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "5",
+          "10",
+          "20",
+          "40",
+          "160"
+        ],
+        "answer": "80",
+        "exactResult": "80"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-02",
+      "savedSource": {
+        "printedNumbers": [
+          "4",
+          "7",
+          "5",
+          "6",
+          "2",
+          "9",
+          "3",
+          "4",
+          "3",
+          "6",
+          "7",
+          "3",
+          "5",
+          "8",
+          "2",
+          "9"
+        ],
+        "filledUnknowns": {
+          "a": "8",
+          "b": "5"
+        },
+        "answer": "13",
+        "exactResult": "13"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "6",
+          "9",
+          "5",
+          "6",
+          "3",
+          "8",
+          "7",
+          "5",
+          "4",
+          "7",
+          "9",
+          "6",
+          "8",
+          "6",
+          "5",
+          "9"
+        ],
+        "filledUnknowns": {
+          "a": "11",
+          "b": "6"
+        },
+        "answer": "17",
+        "exactResult": "17"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-03",
+      "savedSource": {
+        "printedNumbers": [
+          "40",
+          "2/25"
+        ],
+        "restoredWhole": "1/5",
+        "answer": "0,4",
+        "exactResult": "2/5"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "25",
+          "3/20"
+        ],
+        "restoredWhole": "3/5",
+        "answer": "1,2",
+        "exactResult": "6/5"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-05",
+      "savedSource": {
+        "printedNumbers": [
+          "9",
+          "0",
+          "106",
+          "120"
+        ],
+        "answer": "53 км",
+        "exactResult": "53"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "10",
+          "0",
+          "92",
+          "10",
+          "15",
+          "108"
+        ],
+        "answer": "23 км",
+        "exactResult": "23"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-06",
+      "savedSource": {
+        "printedNumbers": [
+          "9",
+          "0",
+          "106",
+          "120",
+          "17"
+        ],
+        "answer": "14:30",
+        "positions": [
+          "583",
+          "600"
+        ]
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "10",
+          "0",
+          "92",
+          "10",
+          "15",
+          "108",
+          "9"
+        ],
+        "answer": "12:15",
+        "positions": [
+          "207",
+          "216"
+        ]
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-07",
+      "savedSource": {
+        "printedNumbers": [
+          "6",
+          "128"
+        ],
+        "allDigitSolutions": [
+          [
+            5,
+            9
+          ]
+        ],
+        "answer": "36",
+        "exactResult": "36"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "7",
+          "146"
+        ],
+        "allDigitSolutions": [
+          [
+            6,
+            8
+          ]
+        ],
+        "answer": "18",
+        "exactResult": "18"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-08",
+      "savedSource": {
+        "printedNumbers": [
+          "11",
+          "18",
+          "16",
+          "22",
+          "21",
+          "26",
+          "24",
+          "30",
+          "28",
+          "34"
+        ],
+        "answer": "21",
+        "finding": "Official solution checks18→16,22→20,etc but does not constrain first11. Two-full-AP interpretation has more than one error. Rewritten condition explicitly defines both APs and a single error; not treated as fully verified original rule."
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "13",
+          "20",
+          "17",
+          "24",
+          "22",
+          "28",
+          "25",
+          "32",
+          "29",
+          "36"
+        ],
+        "uniqueCorrection": {
+          "index": 5,
+          "replaceWith": "21"
+        },
+        "answer": "22",
+        "exactResult": "22"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-09",
+      "savedSource": {
+        "printedNumbers": [],
+        "allMCQValues": [
+          "9/200",
+          "63/125",
+          "27/500",
+          "9/20",
+          "81/200"
+        ],
+        "answer": "0,045",
+        "exactResult": "9/200"
+      },
+      "rewritten": {
+        "printedNumbers": [],
+        "allMCQValues": [
+          "9/250",
+          "603/1000",
+          "63/1000",
+          "9/25",
+          "153/500"
+        ],
+        "answer": "0,036",
+        "exactResult": "9/250"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-10",
+      "savedSource": {
+        "printedNumbers": [
+          "11",
+          "14100",
+          "9",
+          "2100"
+        ],
+        "cashLedger": [
+          "75000",
+          "89100",
+          "72900"
+        ],
+        "answer": "8100 тг",
+        "exactResult": "8100"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "13",
+          "18000",
+          "10",
+          "3000"
+        ],
+        "cashLedger": [
+          "73000",
+          "91000",
+          "70000"
+        ],
+        "answer": "7000 тг",
+        "exactResult": "7000"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-11",
+      "savedSource": {
+        "printedNumbers": [
+          "7",
+          "6",
+          "42",
+          "2"
+        ],
+        "substitutionBothSides": "-1",
+        "answer": "42",
+        "exactResult": "42"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "8",
+          "5",
+          "40",
+          "3"
+        ],
+        "substitutionBothSides": "-9/4",
+        "answer": "30",
+        "exactResult": "30"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-12",
+      "savedSource": {
+        "printedNumbers": [
+          "-5",
+          "3",
+          "4",
+          "2"
+        ],
+        "answer": "$(-17;\\ 11)$",
+        "openBoundaries": [
+          "-17",
+          "11"
+        ]
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "-4",
+          "5",
+          "3",
+          "3"
+        ],
+        "answer": "(−7; 14)",
+        "openBoundaries": [
+          "-7",
+          "14"
+        ]
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-13",
+      "savedSource": {
+        "printedNumbers": [
+          "11",
+          "620000"
+        ],
+        "paidPriceDistractor": "551800",
+        "answer": "68200 тг",
+        "exactResult": "68200"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "540000",
+          "14"
+        ],
+        "paidPriceDistractor": "464400",
+        "answer": "75600 тг",
+        "exactResult": "75600"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-14",
+      "savedSource": {
+        "printedNumbers": [
+          "18",
+          "30",
+          "3",
+          "5"
+        ],
+        "commonTime": "5/12",
+        "answer": "2,5 км",
+        "exactResult": "5/2"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "12",
+          "20",
+          "4",
+          "6"
+        ],
+        "commonTime": "3/4",
+        "answer": "2,25 км",
+        "exactResult": "9/4"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-15",
+      "savedSource": {
+        "printedNumbers": [
+          "4",
+          "3",
+          "3",
+          "2",
+          "5",
+          "6",
+          "5",
+          "1",
+          "2"
+        ],
+        "substitutionBothSides": "13/2",
+        "answer": "4",
+        "exactResult": "4"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "5",
+          "4",
+          "4",
+          "3",
+          "7",
+          "8",
+          "6",
+          "1",
+          "2"
+        ],
+        "substitutionBothSides": "8",
+        "answer": "5",
+        "exactResult": "5"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-16",
+      "savedSource": {
+        "printedNumbers": [
+          "40",
+          "28",
+          "11"
+        ],
+        "completeBoundedDivisorSets": [
+          [
+            1,
+            2,
+            4,
+            5,
+            8,
+            10
+          ],
+          [
+            1,
+            2,
+            4,
+            7
+          ]
+        ],
+        "answer": "16",
+        "exactResult": "16"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "54",
+          "13",
+          "42",
+          "13"
+        ],
+        "completeBoundedDivisorSets": [
+          [
+            1,
+            2,
+            3,
+            6,
+            9
+          ],
+          [
+            1,
+            2,
+            3,
+            6,
+            7
+          ]
+        ],
+        "answer": "2",
+        "exactResult": "2"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-17",
+      "savedSource": {
+        "printedNumbers": [
+          "48",
+          "2",
+          "4",
+          "4"
+        ],
+        "answer": "−2,5; 2,5",
+        "allRealRoots": [
+          "-5/2",
+          "5/2"
+        ]
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "60",
+          "3",
+          "5",
+          "4"
+        ],
+        "answer": "−2,4; 2,4",
+        "allRealRoots": [
+          "-12/5",
+          "12/5"
+        ]
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-18",
+      "savedSource": {
+        "printedNumbers": [
+          "243/10",
+          "9",
+          "11",
+          "9/2",
+          "1",
+          "1",
+          "9",
+          "5681/100",
+          "23/10",
+          "26"
+        ],
+        "printedExpression": "\\dfrac{24{,}3 : \\dfrac{9}{11} - 4{,}5 \\cdot 1\\dfrac{1}{9}}{56{,}81 : 2{,}3 - 26}",
+        "answer": "-19",
+        "exactResult": "-19"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "27",
+          "9",
+          "10",
+          "9/2",
+          "1",
+          "1",
+          "3",
+          "264/5",
+          "11/5",
+          "26"
+        ],
+        "printedExpression": "((27 ÷ (9/10) − 4,5 × (1 + (1/3)))/(52,8 ÷ 2,2 − 26))",
+        "answer": "−12",
+        "exactResult": "-12"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-19",
+      "savedSource": {
+        "printedNumbers": [
+          "90",
+          "45",
+          "30"
+        ],
+        "answer": "90 км/сағ",
+        "exactResult": "90"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "120",
+          "48",
+          "45"
+        ],
+        "answer": "80 км/сағ",
+        "exactResult": "80"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-20",
+      "savedSource": {
+        "printedNumbers": [
+          "647/10",
+          "411/5",
+          "199/25"
+        ],
+        "roundedOperands": [
+          65,
+          82,
+          8
+        ],
+        "printedExpression": "64{,}7 + 82{,}2 \\times 7{,}96",
+        "answer": "721",
+        "exactResult": "721"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "368/5",
+          "913/10",
+          "349/50"
+        ],
+        "roundedOperands": [
+          74,
+          91,
+          7
+        ],
+        "printedExpression": "73,6 + 91,3 × 6,98",
+        "answer": "711",
+        "exactResult": "711"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-21",
+      "savedSource": {
+        "printedNumbers": [
+          "2",
+          "3"
+        ],
+        "answer": "$\\dfrac{3}{5}$",
+        "allExactDistances": [
+          "1/15",
+          "1/6",
+          "1/9",
+          "1/6",
+          "2/21"
+        ]
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "3",
+          "4"
+        ],
+        "answer": "(5/7)",
+        "allExactDistances": [
+          "1/8",
+          "1/8",
+          "1/20",
+          "1/12",
+          "1/28"
+        ]
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-22",
+      "savedSource": {
+        "printedNumbers": [
+          "23/50",
+          "30"
+        ],
+        "printedExpression": "0{,}46 \\times 30",
+        "answer": "13,8",
+        "exactResult": "69/5"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "19/50",
+          "40"
+        ],
+        "printedExpression": "0,38 × 40",
+        "answer": "15,2",
+        "exactResult": "76/5"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-23",
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "5",
+          "3",
+          "5"
+        ],
+        "printedExpression": "\\dfrac{3}{5} + \\dfrac{3}{5}",
+        "answer": "$\\dfrac{6}{5}$",
+        "exactResult": "6/5"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "7",
+          "4",
+          "7"
+        ],
+        "printedExpression": "(4/7) + (4/7)",
+        "answer": "(8/7)",
+        "exactResult": "8/7"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-24",
+      "savedSource": {
+        "printedNumbers": [
+          "72",
+          "12",
+          "4"
+        ],
+        "answer": "24",
+        "exactResult": "24"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "96",
+          "16",
+          "3"
+        ],
+        "answer": "18",
+        "exactResult": "18"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-25",
+      "savedSource": {
+        "printedNumbers": [
+          "4"
+        ],
+        "answer": "2 см",
+        "exactResult": "2"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "9",
+          "16"
+        ],
+        "answer": "3 см",
+        "exactResult": "3"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-26",
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "8",
+          "2",
+          "5",
+          "1",
+          "10",
+          "1",
+          "6",
+          "2",
+          "3"
+        ],
+        "printedExpression": "\\dfrac{3}{8} + \\dfrac{2}{5} - \\dfrac{1}{10} : \\left(\\dfrac{1}{6} + \\dfrac{2}{3}\\right)",
+        "answer": "$\\dfrac{131}{200}$",
+        "exactResult": "131/200"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "5",
+          "12",
+          "3",
+          "7",
+          "1",
+          "10",
+          "1",
+          "4",
+          "1",
+          "2"
+        ],
+        "printedExpression": "(5/12) + (3/7) − (1/10) ÷ ((1/4) + (1/2))",
+        "answer": "(299/420)",
+        "exactResult": "299/420"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-27",
+      "savedSource": {
+        "printedNumbers": [
+          "6",
+          "8",
+          "4",
+          "2"
+        ],
+        "minimalityAndSufficiencyByAllCountTriples": true,
+        "answer": "16",
+        "exactResult": "16"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "7",
+          "9",
+          "5",
+          "3"
+        ],
+        "minimalityAndSufficiencyByAllCountTriples": true,
+        "answer": "19",
+        "exactResult": "19"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-28",
+      "savedSource": {
+        "printedNumbers": [
+          "625",
+          "60"
+        ],
+        "answer": "375 мл",
+        "exactResult": "375"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "750",
+          "44"
+        ],
+        "answer": "330 мл",
+        "exactResult": "330"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-29",
+      "savedSource": {
+        "printedNumbers": [
+          "50",
+          "30"
+        ],
+        "answer": "$\\dfrac{2}{5}$",
+        "exactResult": "2/5"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "80",
+          "50"
+        ],
+        "answer": "(3/8)",
+        "exactResult": "3/8"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-30",
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "4",
+          "2",
+          "5",
+          "6"
+        ],
+        "printedExpression": "4x + 2 - \\dfrac{5x}{6}",
+        "answer": "$11\\dfrac{1}{2}$",
+        "exactResult": "23/2"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "5",
+          "3",
+          "7",
+          "8"
+        ],
+        "printedExpression": "5x + 3 − (7x/8)",
+        "answer": "(19 + (1/2))",
+        "exactResult": "39/2"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-31",
+      "savedSource": {
+        "printedNumbers": [
+          "6"
+        ],
+        "answer": "216 см²",
+        "exactResult": "216"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "7"
+        ],
+        "answer": "294 см²",
+        "exactResult": "294"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-32",
+      "savedSource": {
+        "printedNumbers": [
+          "438"
+        ],
+        "minimizingPair": [
+          99,
+          339
+        ],
+        "answer": "240",
+        "exactResult": "240"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "512"
+        ],
+        "minimizingPair": [
+          99,
+          413
+        ],
+        "answer": "314",
+        "exactResult": "314"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-33",
+      "savedSource": {
+        "printedNumbers": [
+          "7",
+          "5",
+          "2",
+          "3",
+          "5",
+          "6"
+        ],
+        "answer": "$\\dfrac{2}{3};\\ \\dfrac{5}{6};\\ \\dfrac{7}{5}$",
+        "orderedExactValues": [
+          "2/3",
+          "5/6",
+          "7/5"
+        ]
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "9",
+          "7",
+          "3",
+          "5",
+          "7",
+          "10"
+        ],
+        "answer": "(3/5); (7/10); (9/7)",
+        "orderedExactValues": [
+          "3/5",
+          "7/10",
+          "9/7"
+        ]
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-34",
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "4",
+          "2",
+          "5",
+          "4",
+          "1",
+          "6"
+        ],
+        "answer": "Шешімі жоқ",
+        "incompatibleBounds": [
+          [
+            ">",
+            "7"
+          ],
+          [
+            "≤",
+            "2/3"
+          ]
+        ]
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "3",
+          "3",
+          "2",
+          "3",
+          "2",
+          "7"
+        ],
+        "answer": "Шешімі жоқ",
+        "incompatibleBounds": [
+          [
+            ">",
+            "10"
+          ],
+          [
+            "≤",
+            "1/2"
+          ]
+        ]
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-35",
+      "savedSource": {
+        "printedNumbers": [
+          "18",
+          "826",
+          "3",
+          "5",
+          "1",
+          "4",
+          "2",
+          "3",
+          "5",
+          "1",
+          "4",
+          "2",
+          "3",
+          "5",
+          "1",
+          "4",
+          "2",
+          "3",
+          "5",
+          "1"
+        ],
+        "answer": "3",
+        "exactResult": "3"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "1",
+          "6",
+          "2",
+          "5",
+          "943"
+        ],
+        "answer": "6",
+        "exactResult": "6"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-36",
+      "savedSource": {
+        "printedNumbers": [
+          "-271/10",
+          "92/5"
+        ],
+        "allStrictInteriorIntegers": [
+          -27,
+          -26,
+          -25,
+          -24,
+          -23,
+          -22,
+          -21,
+          -20,
+          -19,
+          -18,
+          -17,
+          -16,
+          -15,
+          -14,
+          -13,
+          -12,
+          -11,
+          -10,
+          -9,
+          -8,
+          -7,
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "answer": "46",
+        "exactResult": "46"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "-157/5",
+          "108/5"
+        ],
+        "allStrictInteriorIntegers": [
+          -31,
+          -30,
+          -29,
+          -28,
+          -27,
+          -26,
+          -25,
+          -24,
+          -23,
+          -22,
+          -21,
+          -20,
+          -19,
+          -18,
+          -17,
+          -16,
+          -15,
+          -14,
+          -13,
+          -12,
+          -11,
+          -10,
+          -9,
+          -8,
+          -7,
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "answer": "53",
+        "exactResult": "53"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-37",
+      "savedSource": {
+        "printedNumbers": [],
+        "sourceQualification": "Official answer assumes ideal block glyphs; exact font outlines absent. Rewritten glyph paths explicitly define the geometry.",
+        "answer": "5",
+        "exactResult": "5"
+      },
+      "rewritten": {
+        "printedNumbers": [],
+        "count": 4,
+        "actualGeometryAxes": {
+          "A": "vertical",
+          "T": "vertical",
+          "V": "vertical",
+          "O": "vertical and horizontal",
+          "S": "none; both exhaustive endpoint-axis candidates rejected"
+        },
+        "sha256": "0ea5e7125ad42b8719bfa569d540c6ff24cf34efd2ea128c285c5df5e033bd86",
+        "answer": "4",
+        "exactResult": "4"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-38",
+      "savedSource": {
+        "printedNumbers": [
+          "65343",
+          "3",
+          "5"
+        ],
+        "all10DigitsChecked": true,
+        "answer": "0",
+        "exactResult": "0"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "73453",
+          "3",
+          "5"
+        ],
+        "all10DigitsChecked": true,
+        "answer": "5",
+        "exactResult": "5"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-39",
+      "savedSource": {
+        "printedNumbers": [
+          "1",
+          "6",
+          "26",
+          "106"
+        ],
+        "affineRule": [
+          "4",
+          "2"
+        ],
+        "answer": "426",
+        "exactResult": "426"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "2",
+          "10",
+          "34",
+          "106"
+        ],
+        "affineRule": [
+          "3",
+          "4"
+        ],
+        "answer": "322",
+        "exactResult": "322"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-40",
+      "savedSource": {
+        "printedNumbers": [
+          "80",
+          "56",
+          "35"
+        ],
+        "answer": "24,5",
+        "exactResult": "49/2"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "90",
+          "63",
+          "45"
+        ],
+        "answer": "31,5",
+        "exactResult": "63/2"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-41",
+      "savedSource": {
+        "printedNumbers": [],
+        "answer": "$0{,}2 - 1$",
+        "allExactValues": [
+          "-4/5",
+          "-7/4",
+          "-549/200",
+          "-7489/2000",
+          "-94889/20000"
+        ]
+      },
+      "rewritten": {
+        "printedNumbers": [],
+        "answer": "0,3 − 1",
+        "allExactValues": [
+          "-7/10",
+          "-33/20",
+          "-529/200",
+          "-7289/2000",
+          "-92889/20000"
+        ]
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-42",
+      "savedSource": {
+        "printedNumbers": [
+          "2025",
+          "2005",
+          "15",
+          "12",
+          "2005",
+          "15",
+          "12",
+          "2025"
+        ],
+        "printedExpression": "\\bigl(2025 - (2005 - (15 - 12))\\bigr) - \\bigl(2005 - (15 - (12 - 2025))\\bigr)",
+        "answer": "46",
+        "exactResult": "46"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "2031",
+          "2009",
+          "18",
+          "13",
+          "2009",
+          "18",
+          "13",
+          "2031"
+        ],
+        "printedExpression": "(2031 − (2009 − (18 − 13))) − (2009 − (18 − (13 − 2031)))",
+        "answer": "54",
+        "exactResult": "54"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-43",
+      "savedSource": {
+        "printedNumbers": [
+          "12",
+          "9",
+          "3"
+        ],
+        "answer": "24; 2",
+        "currentAges": [
+          "24",
+          "2"
+        ]
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "9",
+          "9",
+          "3"
+        ],
+        "answer": "27; 3",
+        "currentAges": [
+          "27",
+          "3"
+        ]
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-44",
+      "savedSource": {
+        "printedNumbers": [
+          "1",
+          "6",
+          "1",
+          "10",
+          "1",
+          "2"
+        ],
+        "answer": "720",
+        "exactResult": "720"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "1",
+          "8",
+          "1",
+          "6",
+          "1",
+          "3"
+        ],
+        "answer": "600",
+        "exactResult": "600"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-45",
+      "savedSource": {
+        "printedNumbers": [
+          "888888883",
+          "26"
+        ],
+        "answer": "2",
+        "division": {
+          "quotient": 34188033,
+          "remainder": 25,
+          "digits": [
+            "0",
+            "1",
+            "3",
+            "4",
+            "8"
+          ]
+        },
+        "longDivisionSteps": [
+          [
+            8,
+            0,
+            8
+          ],
+          [
+            88,
+            3,
+            10
+          ],
+          [
+            108,
+            4,
+            4
+          ],
+          [
+            48,
+            1,
+            22
+          ],
+          [
+            228,
+            8,
+            20
+          ],
+          [
+            208,
+            8,
+            0
+          ],
+          [
+            8,
+            0,
+            8
+          ],
+          [
+            88,
+            3,
+            10
+          ],
+          [
+            103,
+            3,
+            25
+          ]
+        ]
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "536270381",
+          "31"
+        ],
+        "answer": "3",
+        "division": {
+          "quotient": 17299044,
+          "remainder": 17,
+          "digits": [
+            "0",
+            "1",
+            "2",
+            "4",
+            "7",
+            "9"
+          ]
+        },
+        "longDivisionSteps": [
+          [
+            5,
+            0,
+            5
+          ],
+          [
+            53,
+            1,
+            22
+          ],
+          [
+            226,
+            7,
+            9
+          ],
+          [
+            92,
+            2,
+            30
+          ],
+          [
+            307,
+            9,
+            28
+          ],
+          [
+            280,
+            9,
+            1
+          ],
+          [
+            13,
+            0,
+            13
+          ],
+          [
+            138,
+            4,
+            14
+          ],
+          [
+            141,
+            4,
+            17
+          ]
+        ]
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-46",
+      "savedSource": {
+        "printedNumbers": [
+          "37",
+          "6",
+          "10"
+        ],
+        "sideLengths": [
+          "7",
+          "13",
+          "17"
+        ],
+        "answer": "17 см",
+        "exactResult": "17"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "49",
+          "8",
+          "11"
+        ],
+        "sideLengths": [
+          "10",
+          "18",
+          "21"
+        ],
+        "answer": "21 см",
+        "exactResult": "21"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-47",
+      "savedSource": {
+        "printedNumbers": [
+          "30"
+        ],
+        "allPossibleCountsChecked": 30,
+        "answer": "1",
+        "exactResult": "1"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "42"
+        ],
+        "allPossibleCountsChecked": 42,
+        "answer": "1",
+        "exactResult": "1"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-48",
+      "savedSource": {
+        "printedNumbers": [
+          "2",
+          "3",
+          "11"
+        ],
+        "sourceQualification": "Official solution assumes constant speed fromfloor1 and ignores all stops/door overhead; those assumptions explicit in rewrite.",
+        "answer": "5",
+        "exactResult": "5"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "1",
+          "5",
+          "17"
+        ],
+        "answer": "4",
+        "exactResult": "4"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-49",
+      "savedSource": {
+        "printedNumbers": [
+          "45",
+          "38",
+          "60",
+          "70"
+        ],
+        "cohortLedger": [
+          "45",
+          "65",
+          "38",
+          "39",
+          "77"
+        ],
+        "answer": "110",
+        "exactResult": "110"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "54",
+          "42",
+          "50",
+          "60"
+        ],
+        "cohortLedger": [
+          "54",
+          "96",
+          "42",
+          "48",
+          "90"
+        ],
+        "answer": "150",
+        "exactResult": "150"
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-50",
+      "savedSource": {
+        "printedNumbers": [
+          "4",
+          "12",
+          "11/5"
+        ],
+        "massLedger": [
+          "2200",
+          "2112",
+          "2400",
+          "200"
+        ],
+        "answer": "200 кг",
+        "exactResult": "200"
+      },
+      "rewritten": {
+        "printedNumbers": [
+          "43/10",
+          "6",
+          "14"
+        ],
+        "massLedger": [
+          "4300",
+          "4042",
+          "4700",
+          "400"
+        ],
+        "answer": "400 кг",
+        "exactResult": "400"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "editionId": "collection-bil9-nonvisual-01",
+      "sha256": "f45ae743c9c61e85de1a0bbbc5392f321d1f865c787a9908651f9791627e00e9",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"5\", \"10\", \"20\", \"40\", \"160\"], \"answer\": \"80\", \"exactResult\": \"80\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-02",
+      "sha256": "d3007c12a1cf620f136ed8cd57718bf95494f1881cdb7266f1885ecb1467f9c3",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"6\", \"9\", \"5\", \"6\", \"3\", \"8\", \"7\", \"5\", \"4\", \"7\", \"9\", \"6\", \"8\", \"6\", \"5\", \"9\"], \"filledUnknowns\": {\"a\": \"11\", \"b\": \"6\"}, \"answer\": \"17\", \"exactResult\": \"17\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-03",
+      "sha256": "212c7ab0ef099b9013d9600e0dd17600433aed8900591359b493376589dd2467",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"25\", \"3/20\"], \"restoredWhole\": \"3/5\", \"answer\": \"1,2\", \"exactResult\": \"6/5\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-05",
+      "sha256": "42f6c1541e4200492bd1327c9b808289317b7e4d11bf96c75c6cb3bbc3b4433a",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"10\", \"0\", \"92\", \"10\", \"15\", \"108\"], \"answer\": \"23 км\", \"exactResult\": \"23\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-06",
+      "sha256": "2eac286eb552d591c755965892cc320db0a316a55368569f869c74d87b7693ce",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"10\", \"0\", \"92\", \"10\", \"15\", \"108\", \"9\"], \"answer\": \"12:15\", \"positions\": [\"207\", \"216\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-07",
+      "sha256": "0ac99d8eb391d3c06b5f8b1d5cb4f570db4af023d0238d15ce9ea0462c814881",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"7\", \"146\"], \"allDigitSolutions\": [[6, 8]], \"answer\": \"18\", \"exactResult\": \"18\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-08",
+      "sha256": "30c911c3a665ff767b3691dba3c8d9275488053c9dab617ab5c36d3df14cb3df",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"13\", \"20\", \"17\", \"24\", \"22\", \"28\", \"25\", \"32\", \"29\", \"36\"], \"uniqueCorrection\": {\"index\": 5, \"replaceWith\": \"21\"}, \"answer\": \"22\", \"exactResult\": \"22\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-09",
+      "sha256": "b298026f843bf6155dae341dffa231e4c025f312af8f59bb8a6fca75315e0b9b",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [], \"allMCQValues\": [\"9/250\", \"603/1000\", \"63/1000\", \"9/25\", \"153/500\"], \"answer\": \"0,036\", \"exactResult\": \"9/250\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-10",
+      "sha256": "e023331a97063b3c3c730b6c74f1874715e0c3e1aca26ce9df7165f11eb3b6cc",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"13\", \"18000\", \"10\", \"3000\"], \"cashLedger\": [\"73000\", \"91000\", \"70000\"], \"answer\": \"7000 тг\", \"exactResult\": \"7000\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-11",
+      "sha256": "279d7d4123b9d766d978018d0c568476858f159d18e33b6e3dfe267e8b479100",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"8\", \"5\", \"40\", \"3\"], \"substitutionBothSides\": \"-9/4\", \"answer\": \"30\", \"exactResult\": \"30\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-12",
+      "sha256": "2c98ee4b7c24219818a8a5002e9997cc3cb3380f935050707d7c49d0222b2390",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"-4\", \"5\", \"3\", \"3\"], \"answer\": \"(−7; 14)\", \"openBoundaries\": [\"-7\", \"14\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-13",
+      "sha256": "229bbf5f34e24951858ccb9c1ba72ea90e184da8bd2b86ffd3308993c8df1806",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"540000\", \"14\"], \"paidPriceDistractor\": \"464400\", \"answer\": \"75600 тг\", \"exactResult\": \"75600\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-14",
+      "sha256": "f87079d9610bb0f7eddb71687893d529bf38ce59e600eafb00d032b4fef9b07c",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"12\", \"20\", \"4\", \"6\"], \"commonTime\": \"3/4\", \"answer\": \"2,25 км\", \"exactResult\": \"9/4\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-15",
+      "sha256": "6aa2339e5128649195e1a3938e5bde31bbfaf02455fe6a5d3fb8a06d9e133362",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"5\", \"4\", \"4\", \"3\", \"7\", \"8\", \"6\", \"1\", \"2\"], \"substitutionBothSides\": \"8\", \"answer\": \"5\", \"exactResult\": \"5\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-16",
+      "sha256": "6e60fa994b5190de9980628184ab5e0a94290e5a8b80fd573372dc53e3036749",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"54\", \"13\", \"42\", \"13\"], \"completeBoundedDivisorSets\": [[1, 2, 3, 6, 9], [1, 2, 3, 6, 7]], \"answer\": \"2\", \"exactResult\": \"2\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-17",
+      "sha256": "a422fed5892a5e0e809c2e761fd56bf155158b4a70b5afdf58a03b7de5a157a7",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"60\", \"3\", \"5\", \"4\"], \"answer\": \"−2,4; 2,4\", \"allRealRoots\": [\"-12/5\", \"12/5\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-18",
+      "sha256": "cd36b47298353fdfe19e6778fdeac1ea5d648a98bcd4ab8373c36076a1931ba6",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"27\", \"9\", \"10\", \"9/2\", \"1\", \"1\", \"3\", \"264/5\", \"11/5\", \"26\"], \"printedExpression\": \"((27 ÷ (9/10) − 4,5 × (1 + (1/3)))/(52,8 ÷ 2,2 − 26))\", \"answer\": \"−12\", \"exactResult\": \"-12\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-19",
+      "sha256": "562c61b7dc5953cc3470ce9dc2e35a0fe91429ad5a2a4105f60822fdd48f6f69",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"120\", \"48\", \"45\"], \"answer\": \"80 км/сағ\", \"exactResult\": \"80\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-20",
+      "sha256": "71f34dda5f376509a8e87fb4def648ead37bb06ed70d13f1d0b617a34e18682d",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"368/5\", \"913/10\", \"349/50\"], \"roundedOperands\": [74, 91, 7], \"printedExpression\": \"73,6 + 91,3 × 6,98\", \"answer\": \"711\", \"exactResult\": \"711\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-21",
+      "sha256": "38d0876d713a2347bae60fed29e74b4d9d37523221f18b5711d60fd3b7f492d6",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"4\"], \"answer\": \"(5/7)\", \"allExactDistances\": [\"1/8\", \"1/8\", \"1/20\", \"1/12\", \"1/28\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-22",
+      "sha256": "601d8c066a0e7710a57bec1933ce4949e5d34e8f4a97c345976da4482c7e371f",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"19/50\", \"40\"], \"printedExpression\": \"0,38 × 40\", \"answer\": \"15,2\", \"exactResult\": \"76/5\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-23",
+      "sha256": "066c01e0fa5e2017b3ba635502914a018e5558ad9b57ee490433f10486f3686a",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"7\", \"4\", \"7\"], \"printedExpression\": \"(4/7) + (4/7)\", \"answer\": \"(8/7)\", \"exactResult\": \"8/7\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-24",
+      "sha256": "5d6d1b2bb6d852f58f273f99f31756fe959708bdf3c7f7979441796d529a9bc9",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"96\", \"16\", \"3\"], \"answer\": \"18\", \"exactResult\": \"18\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-25",
+      "sha256": "c4740542641b468c4dbf96a85facd008661315eeeb670702f48bbe30eadd4260",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"9\", \"16\"], \"answer\": \"3 см\", \"exactResult\": \"3\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-26",
+      "sha256": "6a654c8052100ffaa12db12f955a792187261d4a735dfd1a86d58733b02c9c08",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"5\", \"12\", \"3\", \"7\", \"1\", \"10\", \"1\", \"4\", \"1\", \"2\"], \"printedExpression\": \"(5/12) + (3/7) − (1/10) ÷ ((1/4) + (1/2))\", \"answer\": \"(299/420)\", \"exactResult\": \"299/420\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-27",
+      "sha256": "fae2b3f13a23194ddf9157c74e8ad9446f51252387dc60abd8af2a30e581ed96",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"7\", \"9\", \"5\", \"3\"], \"minimalityAndSufficiencyByAllCountTriples\": true, \"answer\": \"19\", \"exactResult\": \"19\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-28",
+      "sha256": "bbf639cf06864d1006b57c44e70462934f05802bbf8f01e71eeca38247b3f5bf",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"750\", \"44\"], \"answer\": \"330 мл\", \"exactResult\": \"330\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-29",
+      "sha256": "e5860cd7b288ee2d5b712c82db055e6190f6d6f2f9dc136164dfcef342ad57c2",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"80\", \"50\"], \"answer\": \"(3/8)\", \"exactResult\": \"3/8\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-30",
+      "sha256": "8d4987b4cbccfcc6dd7fee04c8f818f04744696a200579c25be8362402027f69",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"5\", \"3\", \"7\", \"8\"], \"printedExpression\": \"5x + 3 − (7x/8)\", \"answer\": \"(19 + (1/2))\", \"exactResult\": \"39/2\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-31",
+      "sha256": "156587f5046f4a01d061ee23e2890f06d9535d3bdfa5e1b0b9a5054942cc5640",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"7\"], \"answer\": \"294 см²\", \"exactResult\": \"294\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-32",
+      "sha256": "f0e5881668d22731c9c7ddf20f93ba8a3ae3bd0342608bf25b5abcb60973fbb0",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"512\"], \"minimizingPair\": [99, 413], \"answer\": \"314\", \"exactResult\": \"314\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-33",
+      "sha256": "b967385e369dbf021d1378053651867e0e00ef1fe1b9cbdba015e5949be2da49",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"9\", \"7\", \"3\", \"5\", \"7\", \"10\"], \"answer\": \"(3/5); (7/10); (9/7)\", \"orderedExactValues\": [\"3/5\", \"7/10\", \"9/7\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-34",
+      "sha256": "babdca7abe28c70f291cd19b7e839877f5a4fbf0f441da01123c74f8ebacc426",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"3\", \"3\", \"2\", \"3\", \"2\", \"7\"], \"answer\": \"Шешімі жоқ\", \"incompatibleBounds\": [[\">\", \"10\"], [\"≤\", \"1/2\"]]}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-35",
+      "sha256": "8328b05efc2c3263c08da470c576e817fa57f094d37534665cfa47c38aa04ab2",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"1\", \"6\", \"2\", \"5\", \"943\"], \"answer\": \"6\", \"exactResult\": \"6\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-36",
+      "sha256": "5e84058161ff68c36ead06a06d78a3eeec1c4c3c1e127ad2024164a2a72c06e1",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"-157/5\", \"108/5\"], \"allStrictInteriorIntegers\": [-31, -30, -29, -28, -27, -26, -25, -24, -23, -22, -21, -20, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], \"answer\": \"53\", \"exactResult\": \"53\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-37",
+      "sha256": "90d649640a78f9a35b146677a9e49cbf5db379af9f3dc8800a82aa42d292dce5",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [], \"count\": 4, \"actualGeometryAxes\": {\"A\": \"vertical\", \"T\": \"vertical\", \"V\": \"vertical\", \"O\": \"vertical and horizontal\", \"S\": \"none; both exhaustive endpoint-axis candidates rejected\"}, \"sha256\": \"0ea5e7125ad42b8719bfa569d540c6ff24cf34efd2ea128c285c5df5e033bd86\", \"answer\": \"4\", \"exactResult\": \"4\"}"
+      ],
+      "figureReview": {
+        "status": "verified",
+        "sha256": "0ea5e7125ad42b8719bfa569d540c6ff24cf34efd2ea128c285c5df5e033bd86",
+        "method": "Actual SVG polylines/ellipse reflected in exact Fraction coordinates; all4 positive glyph axes and both exhaustive endpoint-based possible S axes checked. Native343px visual inspected."
+      }
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-38",
+      "sha256": "9f857014e668802b39f668000fcec60092d2df32c9135fc7fdd7b07ca95f520f",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"73453\", \"3\", \"5\"], \"all10DigitsChecked\": true, \"answer\": \"5\", \"exactResult\": \"5\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-39",
+      "sha256": "b391f3c8e3951a083f593300328558ab0db14ab8d17f488902efc5522a2f9876",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"2\", \"10\", \"34\", \"106\"], \"affineRule\": [\"3\", \"4\"], \"answer\": \"322\", \"exactResult\": \"322\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-40",
+      "sha256": "07498908a9bb5a68016bc99e9cb80483f753aaf4396cc571a30002ec30786270",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"90\", \"63\", \"45\"], \"answer\": \"31,5\", \"exactResult\": \"63/2\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-41",
+      "sha256": "8de639efa0d056e7833619166f386e81188c3955ccb16fcf39217c28683882ef",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [], \"answer\": \"0,3 − 1\", \"allExactValues\": [\"-7/10\", \"-33/20\", \"-529/200\", \"-7289/2000\", \"-92889/20000\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-42",
+      "sha256": "aade031bc976a2e4367f9d973549d61513d5a7e9e45b2f4c7cdf6f416beacb9e",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"2031\", \"2009\", \"18\", \"13\", \"2009\", \"18\", \"13\", \"2031\"], \"printedExpression\": \"(2031 − (2009 − (18 − 13))) − (2009 − (18 − (13 − 2031)))\", \"answer\": \"54\", \"exactResult\": \"54\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-43",
+      "sha256": "bd98745ac5bd08f102a484bda1fb281b02b913ff92d0126c994c74ed98d8eaac",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"9\", \"9\", \"3\"], \"answer\": \"27; 3\", \"currentAges\": [\"27\", \"3\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-44",
+      "sha256": "fe7b8e6f2868011014721fe788413102fcfd0256e33a89ab54fa3d0c38987098",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"1\", \"8\", \"1\", \"6\", \"1\", \"3\"], \"answer\": \"600\", \"exactResult\": \"600\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-45",
+      "sha256": "47fc24b6e24f8d0aa65a6de118deb24a95bc1b3ad87d864702cbbd5389e865a0",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"536270381\", \"31\"], \"answer\": \"3\", \"division\": {\"quotient\": 17299044, \"remainder\": 17, \"digits\": [\"0\", \"1\", \"2\", \"4\", \"7\", \"9\"]}, \"longDivisionSteps\": [[5, 0, 5], [53, 1, 22], [226, 7, 9], [92, 2, 30], [307, 9, 28], [280, 9, 1], [13, 0, 13], [138, 4, 14], [141, 4, 17]]}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-46",
+      "sha256": "9129311fd2e4d50f6adfe1276fd6db15f8a87d13d085f669a88982f55ffcf515",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"49\", \"8\", \"11\"], \"sideLengths\": [\"10\", \"18\", \"21\"], \"answer\": \"21 см\", \"exactResult\": \"21\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-47",
+      "sha256": "ae8e994f33782fa834a7140f4a178439e9ed93524949fef4febd9b46891b98c0",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"42\"], \"allPossibleCountsChecked\": 42, \"answer\": \"1\", \"exactResult\": \"1\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-48",
+      "sha256": "a5930077a95647c09ba60d8eef66e92548bfc3f428157acd071328f420e89f75",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"1\", \"5\", \"17\"], \"answer\": \"4\", \"exactResult\": \"4\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-49",
+      "sha256": "c9e0109f8e670a82e17051e096e667589e5b5020ae2b755793c8d87aa7cdfa27",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"54\", \"42\", \"50\", \"60\"], \"cohortLedger\": [\"54\", \"96\", \"42\", \"48\", \"90\"], \"answer\": \"150\", \"exactResult\": \"150\"}"
+      ]
+    },
+    {
+      "editionId": "collection-bil9-nonvisual-50",
+      "sha256": "af2c9df6a6d6fc59e0b19c125c10fd382632946160455e5480514a3fa506c14f",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new conditions/solutions/all5MCQs; exact Fraction rational arithmetic, exhaustive digit/divisor/count/interval enumeration, exact geometry, units and ledgers; same root, no separate human reviewer",
+      "notes": [
+        "{\"printedNumbers\": [\"43/10\", \"6\", \"14\"], \"massLedger\": [\"4300\", \"4042\", \"4700\", \"400\"], \"answer\": \"400 кг\", \"exactResult\": \"400\"}"
+      ]
+    }
+  ]
+}

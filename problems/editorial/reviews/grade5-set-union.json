@@ -1,0 +1,916 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/batches/grade5-set-union.json",
+  "reviewedAt": "2026-10-24",
+  "manualFindings": [],
+  "resolvedFindings": [],
+  "scope": "All40source-addressedgrade5topic5.3nonvisualsetunion/intersection;36sets+3word+1convexgeo",
+  "geometryWitnesses": {
+    "5": {
+      "first": [
+        [
+          "-2",
+          "-2"
+        ],
+        [
+          "2",
+          "-2"
+        ],
+        [
+          "2",
+          "2"
+        ],
+        [
+          "-2",
+          "2"
+        ]
+      ],
+      "second": [
+        [
+          "-10",
+          "0"
+        ],
+        [
+          "0",
+          "-10"
+        ],
+        [
+          "13/2",
+          "-7/2"
+        ],
+        [
+          "-7/2",
+          "13/2"
+        ]
+      ],
+      "intersection": [
+        [
+          "-2",
+          "-2"
+        ],
+        [
+          "2",
+          "-2"
+        ],
+        [
+          "2",
+          "1"
+        ],
+        [
+          "1",
+          "2"
+        ],
+        [
+          "-2",
+          "2"
+        ]
+      ],
+      "area": "31/2",
+      "supportingEdges": [
+        0,
+        1,
+        6,
+        2,
+        3
+      ]
+    },
+    "6": {
+      "first": [
+        [
+          "-2",
+          "-2"
+        ],
+        [
+          "2",
+          "-2"
+        ],
+        [
+          "2",
+          "2"
+        ],
+        [
+          "-2",
+          "2"
+        ]
+      ],
+      "second": [
+        [
+          "-13/2",
+          "7/2"
+        ],
+        [
+          "7/2",
+          "-13/2"
+        ],
+        [
+          "13/2",
+          "-7/2"
+        ],
+        [
+          "-7/2",
+          "13/2"
+        ]
+      ],
+      "intersection": [
+        [
+          "-2",
+          "-1"
+        ],
+        [
+          "-1",
+          "-2"
+        ],
+        [
+          "2",
+          "-2"
+        ],
+        [
+          "2",
+          "1"
+        ],
+        [
+          "1",
+          "2"
+        ],
+        [
+          "-2",
+          "2"
+        ]
+      ],
+      "area": "15",
+      "supportingEdges": [
+        4,
+        0,
+        1,
+        6,
+        2,
+        3
+      ]
+    },
+    "8": {
+      "first": [
+        [
+          "-2",
+          "-2"
+        ],
+        [
+          "2",
+          "-2"
+        ],
+        [
+          "2",
+          "2"
+        ],
+        [
+          "-2",
+          "2"
+        ]
+      ],
+      "second": [
+        [
+          "0",
+          "-3"
+        ],
+        [
+          "3",
+          "0"
+        ],
+        [
+          "0",
+          "3"
+        ],
+        [
+          "-3",
+          "0"
+        ]
+      ],
+      "intersection": [
+        [
+          "-2",
+          "-1"
+        ],
+        [
+          "-1",
+          "-2"
+        ],
+        [
+          "1",
+          "-2"
+        ],
+        [
+          "2",
+          "-1"
+        ],
+        [
+          "2",
+          "1"
+        ],
+        [
+          "1",
+          "2"
+        ],
+        [
+          "-1",
+          "2"
+        ],
+        [
+          "-2",
+          "1"
+        ]
+      ],
+      "area": "14",
+      "supportingEdges": [
+        7,
+        0,
+        4,
+        1,
+        5,
+        2,
+        6,
+        3
+      ]
+    }
+  },
+  "entries": [
+    {
+      "editionId": "grade5-set-union-cdb28102c73444c5",
+      "sha256": "ff5b203fb2cb9ff152000e0cc8f7febaf8a8c01d30a1a2339d3873a0e76bca75",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "82db3c044b6ec718bdebe8a9d31bf37c8f486f0b3bcf90b973d24b5db58ecdde",
+      "notes": "ACTUALcompleteAfrozenset({9, 3, 12, 6}),Bfrozenset({8, 9, 6, 14}), Ifrozenset({9, 6}),Ufrozenset({3, 6, 8, 9, 12, 14}); targetexplicit-intersection-list evaluatedwithoutmultiplicity, SUMvsCARDINALITYbound. EveryactualMCQchecked; canonicalduplicateonlyfalseunderEXPLICITeachonceformat, stillsameMATHEMATICALset.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-3442ee5f2d2133c4",
+      "sha256": "5fa2e0d788a047ce4af1701cf5ce01e26ea9225b5ebf77d6203190e51c5b2df9",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "92969c5a79170bfd882655abbb718d3bf099b998379711f7429f9963391df415",
+      "notes": "ALLfouractualintegercandidates modulo4AND5, truths[True, False, False, False]; bothrequired, inclusiveORisnotintersection.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-1c7a1ea0c01b5317",
+      "sha256": "b8f8dfe6a619ee70e40c1a5ad4e5f37dc96d581828bc1b26eca002c5abca9417",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "014c617360209a95d39c555b6ae5c90befce29d47f772010c95795c6a2cee85e",
+      "notes": "ALL4arbitraryelementmembershipstates evaluatedforall4actualwordedpredicates; inclusiveORallowsBOTH, conjunction/exclusiveleft/neitherfalseasdefinition.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-c437b3db80c230fb",
+      "sha256": "f64d99861a46d2322400b482fea6dccd0cf049392cde9f21ee773ddee5011e93",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "b06a1a87ae6ce4ac862cd264d714ccc6794fda6eaaf07a033efc13930429fcd2",
+      "notes": "ACTUALfinitecardinalitiesa9,b7, fullsharedDOMAIN0…7, targetdisjoint-union-cardinality; allchoices/orderedroleschecked. ConstructedDISJOINToutsideatoms witnessEVERYfeasibleintersection, soattainabilityanduniversalboundsbothproven.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-69d908fe30c7fb1e",
+      "sha256": "c9e7aaa271c891178a2dce4d61a120f9dd5e77f8923b3a71269ca7b6cdc1db5e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "7d6cb0abdb3dc66c5645063c1e0957d186e7bfab5313e50999e45f3879244c9c",
+      "notes": "ACTUALcompleteAfrozenset({16, 10, 4, 22}),Bfrozenset({10, 28, 34}), Ifrozenset({10}),Ufrozenset({16, 34, 4, 22, 10, 28}); targetunion-elements-SUM evaluatedwithoutmultiplicity, SUMvsCARDINALITYbound. EveryactualMCQchecked; canonicalduplicateonlyfalseunderEXPLICITeachonceformat, stillsameMATHEMATICALset.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-5f8db8f16fc3c9ae",
+      "sha256": "3f12c4ecd6727565565a8e256b8fa6e20312d2002676c71b393119c9fb75386c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "bb0c10022f38f665841c83e7a17fccfe260075dc821f0c0bd00b6d5444a8e3ae",
+      "notes": "ACTUALcompleteAfrozenset({2, 6, 10, 14, 18}),Bfrozenset({6, 14, 22, 26, 30}), Ifrozenset({6, 14}),Ufrozenset({2, 6, 10, 14, 18, 22, 26, 30}); targetexplicit-union-cardinality evaluatedwithoutmultiplicity, SUMvsCARDINALITYbound. EveryactualMCQchecked; canonicalduplicateonlyfalseunderEXPLICITeachonceformat, stillsameMATHEMATICALset.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-bb9092abb081d142",
+      "sha256": "5b4d873beda75f0e7b81418bb0b5c2a810b45082baadd874b6dd802a669767e2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "2a0ddb3d410ef9eaba34dc3166d88629c78870adf25db1c2d41bfadba9866939",
+      "notes": "ACTUALphysicalcarddigitsA{8, 1, 2},B{8, 9, 2}; common{8, 2}sum10, notuniontotal/count.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-ccf4f42ec1fb1752",
+      "sha256": "4e8359ca63ec2526c7f5b565e2598e13dd8772c586039069d2dbd5625ac1602a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "5001cf8cddc9bd255522206d943d1d3765927193dbfc3408aef3a6340c141ee6",
+      "notes": "ACTUALcompleteAfrozenset({8, 2, 10, 4}),Bfrozenset({1, 3, 9, 7}), Ifrozenset(),Ufrozenset({1, 2, 3, 4, 7, 8, 9, 10}); targetdisjoint-intersection-empty evaluatedwithoutmultiplicity, SUMvsCARDINALITYbound. EveryactualMCQchecked; canonicalduplicateonlyfalseunderEXPLICITeachonceformat, stillsameMATHEMATICALset.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-b7ff404a8615d2d5",
+      "sha256": "86e8158ec81d7920d2f6c8d1a5795edb18e1df90f8b197a894cff5c886d3bf1e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "becb6b3606c567e77e7babcc737bb5372f26435b50dacfe2a771e79b7cbaee5f",
+      "notes": "ALLactualUnicodelettersТҮРКІСТАН/ТАРАЗdedupedwithoutК/Қ/Іmerging; A{'К', 'Т', 'Н', 'Р', 'І', 'С', 'А', 'Ү'},B{'Р', 'А', 'Т', 'З'}, union9, shared3, repeatedТinwordnotnewatom.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-2135a446fcd48294",
+      "sha256": "4281dc92c1f11305df6f591e03d49de83db7d3f66410ae12f2962c21ab2e0b92",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "6e779d47de95a95e079087785083a7606501587ad06cf98c12fafd650d20b70c",
+      "notes": "ALLpositiveDIVISORSactual30:{1, 2, 3, 5, 6, 10, 15, 30},42:{1, 2, 3, 6, 7, 42, 14, 21}, common{1, 2, 3, 6}; requestedLISTvsSUMindependent. 1included, maxgcdNOTsum, eachwrongrosterchecked.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-37b3db52f120409f",
+      "sha256": "db6402b60ae329e6af5014ae7c92474ffc2d57442aa6f9a61bef9be7be3ba5ac",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "52ae8a2d7c79851803ade1a6140845898fcee84b665d727d931378ccee2d5612",
+      "notes": "ActualbothmemberspredicateANDconstructsNEWsetP∩Q, unionORdifferent and⊆/∈truth-valuedRELATIONSnotsetoperations. Everyofferedexpressiontyped.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-07e56035a3a4b865",
+      "sha256": "a2b27020be0b9a2e69f2e3d477d5e5cf05d418bdfce6d4e7320b7768b659f6c5",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "838027cae7e7eb854e6dffe854b7613915ce681fe1d7221edf78d0dbae66951a",
+      "notes": "ACTUALnumberSPELLINGS60728/4826, digitsets{0, 2, 6, 7, 8}/{8, 2, 4, 6}, union{0, 2, 4, 6, 7, 8}; 0retainedandduplicatesdeduped. ALLactualsetMCQscheckedwherepresent.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-1e1068a9c1e9dc6c",
+      "sha256": "126f3c972bf420afafe8552db4a3b5073b83d53d93bc41200ee3deab7eceba4c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "779a86842da01b1d7cd46ff8b577d52a83e630597c03a9bd96074f8ab9a9b249",
+      "notes": "COMPLETEstrict1…15, odd{1, 3, 5, 7, 9, 11, 13, 15}/prime{2, 3, 5, 7, 11, 13}, union9; 1oddNOTprime, 2primeNOToDD, nofiniteprimalityguess.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-edd7c831c3927b15",
+      "sha256": "ba78ee7ff12b94b213c41a1564a3c1eaadd316960bfc3829695a4a22096634ed",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "e442ff5371a8a6ea51006c3adfc65795c8f2df2e7bda6f9141bd8dd45df43016",
+      "notes": "All4actualdescribedpairs, explicitsharedWITNESSES36,2,1disprovefirst3emptyclaims; parityresidues0/1DISJOINTuniversally. Relativelyprimes14/25stillsharedivisor1.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-9510c184890f078c",
+      "sha256": "35357fff8d68b37070e0ebf688fd355ffbf542523474ac875162a87cda083db6",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "cd9bfda5fde13c53f6df8c060876179fef85748a0cc03032b4df713eeee03e36",
+      "notes": "COMPLETE2^6=64possibleB⊆actualunionUfrozenset({2, 6, 10, 14, 18, 22}), uniquefrozenset({6, 10, 14, 18, 22}). UniversalmembershipoutsideUforbidden, Aonlyfrozenset({2})excluded, intersectionfrozenset({10, 6})/UminusAfrozenset({18, 14, 22})forced; all4choicesbacksubstituted.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-0d36a86de1467d1f",
+      "sha256": "c045a2937ff9a5c60d6f441e9d56383bd758c68f1f7e294c519318c42c4a8ec7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "5bd7e9d4dc1541ced0ac45c83215eea28b9234e4969d3d39716b817333a656e7",
+      "notes": "COMPLETEBOTHINCLUSIVEintegerintervals12…31/25…46, overlap7andunion35; metriclengthnotcount, bothendpointsincluded.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-2a670667ac2650bf",
+      "sha256": "92946a3be64e6d3362d2f8bb80f86aaf1308bb78bccbf080deafe65acd2ad0ef",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "cbf6a5f81e09839ef5df87611f5a4dc44ba30c99ad2812c2480cb16bfc27c49f",
+      "notes": "COMPLETEactualdomain1…35(35items), A[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34],B[5, 10, 15, 20, 25, 30, 35], targetboard-even-or-multiple-count=[2, 4, 5, 6, 8, 10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 26, 28, 30, 32, 34, 35]; everystrict/inclusive/zero-lastdigit99boundary checked, noasymptotic/floorroundingguess.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-43ee218f89ddf25b",
+      "sha256": "601c592a75e3e7477d1295f47fe8266d75e0af3e59aa889d85e823db2c5d9e34",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "b7e2f7e4de474e1c74b77de9662e567b5ca6a47461ded10c42a696b28e5a70a4",
+      "notes": "ACTUALnumberSPELLINGS4901732/8265049, digitsets{0, 1, 2, 3, 4, 7, 9}/{0, 2, 4, 5, 6, 8, 9}, union{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; 0retainedandduplicatesdeduped. ALLactualsetMCQscheckedwherepresent.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-af776cb573a21f5d",
+      "sha256": "9e66dbe467fcc77f83e2c22bd5144d04abaaa409cf7c18e9b73b5a0589b44c27",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "81dffeda3b8aa4e3631d3725953435e9e34f2c3aaa5589d8f32e8c29d57f9281",
+      "notes": "COMPLETEactualdomain1…42(42items), A[7, 14, 21, 28, 35, 42],B[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42], targetinclusive-multiple-even-intersection-list=[14, 28, 42]; everystrict/inclusive/zero-lastdigit99boundary checked, noasymptotic/floorroundingguess.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-a9185d4a8b375025",
+      "sha256": "c9ae6797ed850e5b06be0ee6e7998657ba025398aea430bc4f599bb2e5836d03",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "116254b9fb2f17d11b3360a000d8350992cbda1fa4f60118ea7e29e7cd028483",
+      "notes": "ACTUALfinitecardinalitiesa12,b14, fullsharedDOMAIN0…12, targetintersection-count-from-union-cardinalities; allchoices/orderedroleschecked. ConstructedDISJOINToutsideatoms witnessEVERYfeasibleintersection, soattainabilityanduniversalboundsbothproven.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-4d47582402a1f6ea",
+      "sha256": "7d471065ce48ab130371309c27f43bfca68da4b0aaf6f878f73ce748b93a80ef",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "8f5362927af1ff312e607ba8153e3213907a1c5fc9f54742fdfaca9a77109584",
+      "notes": "COMPLETEactualdomain1…31(31items), A[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31],B[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], targetinclusive-prime-strict-odd-intersection-count=[3, 5, 7, 11, 13, 17, 19, 23, 29]; everystrict/inclusive/zero-lastdigit99boundary checked, noasymptotic/floorroundingguess.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-cd58359ca36b3f3a",
+      "sha256": "769ed09267661b088f51f8137b0162779607111751b6dae8698d7a591cbd9d33",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "8688d14ad4bdf58c27f0dc3127f2ea99ce4cb3b1862c56e9bec57a7c011347de",
+      "notes": "ACTUALfinitecardinalitiesa15,b11, fullsharedDOMAIN0…11, targetunion-count-from-overlap-cardinalities; allchoices/orderedroleschecked. ConstructedDISJOINToutsideatoms witnessEVERYfeasibleintersection, soattainabilityanduniversalboundsbothproven.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-13ee6020c3a1d896",
+      "sha256": "3aec42e3cc0c2833bc80269b736527f042baa49a0622a27f9759a621de59ae4a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "916ec3724740c852112890520e06a86f46b9f516d10bd8ce71d6bc7f8d628199",
+      "notes": "ALLactualNAMESA{'Медина', 'Айым', 'Расул', 'Еркебұлан'},B{'Айша', 'Расул', 'Медина', 'Дәулет', 'Інжу'}, sharedtwo anddistinctunion7; orderedregistrationnotdifferentpeople, allnamedsolutionunionread.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-4259dd9cb18c0702",
+      "sha256": "81c96aaae2cb0490174d47fb75ba99f4b26a09419d0c10111c8775ec5b5a850a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "3b11039a1c944e7f2be4554498f29dc6947f307c30d793187ce461468f9c6ed9",
+      "notes": "ALLpositiveDIVISORSactual36:{1, 2, 3, 4, 36, 6, 9, 12, 18},54:{1, 2, 3, 6, 9, 18, 54, 27}, common{1, 2, 3, 6, 9, 18}; requestedLISTvsSUMindependent. 1included, maxgcdNOTsum, eachwrongrosterchecked.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-cadf7b40fb897a45",
+      "sha256": "0fbbf5da0928518c07cb41865f28316842bc8885800cae55247161fca5fa4f1e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "6ceb5beac3f36b175a8aa144b177706bc408c86f2d507f37ccf209b261df427c",
+      "notes": "ArbitraryelementALL4membershiptruthstates formal(AND⇒OR), includesempty. ActualcountermodelC{4,8},D{8,12}rejectsreverseinclusion/countsum/intersection=C; finitecardinalityrestrictionexplicit.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-4a2014849b11f640",
+      "sha256": "f78822a0209d23523d9e01c73e35796521b4b980ebbcad971946ac5df8d8a852",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "20c050165edb65342b72a2b64dd2bc0b0950e11ff65abe8cfc0dd2e5cf2b77fe",
+      "notes": "Universalbound8: intersectionofconvexsetsconvex; eachoriginaledge∩otherpolygonisONEinterval, soeachof8supportingedgescontributesatmostONEmergedboundaryside. IndependentEXACTFractionSutherlandHodgmanphysical4vertexpolygonwitnesses5/6/8, everypositivearea/strictconvexity/actualedge-supportandcollinearmergechecked. WitnesscoordinatesinthegeometryWitnessesreport; authorgeometrynotused.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-3437fda7e0a0f0ea",
+      "sha256": "1286a672d26d6c03b63583bee6446abcd51bbc0531ace5ba2053f83c62b013d7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "af91975df5fac6e596ad45d87d28945b1687ba959b090d69d83a63fb95402c05",
+      "notes": "COMPLETEactualdomain10…99(90items), A[16, 26, 36, 46, 56, 66, 76, 86, 96],B[17, 26, 35, 44, 53, 62, 71, 80], targetlast-digit-or-digit-sum-union-count=[16, 17, 26, 35, 36, 44, 46, 53, 56, 62, 66, 71, 76, 80, 86, 96]; everystrict/inclusive/zero-lastdigit99boundary checked, noasymptotic/floorroundingguess.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-be9bc05200decd88",
+      "sha256": "8e3ace92921d748b90cf155e82d7ce7ea3745d43f4cd130d3e5bca2688527413",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "5140286c0fc9a978ef79522085173ca3747092f3023982e7dd26ee2b1d8733fc",
+      "notes": "ACTUALtypedwhole34,A20,B17,common8,neither5; nonnegativedisjointledger[12, 8, 9, 5]sumswhole. Askedtwo-clubs-intersection-from-neither=8, NOTunion/exactlyboth/exactlyoneconfusion.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-6242f5dbb4a6b2bf",
+      "sha256": "63111f8335a44161b63ad4db092940b248797052522987ff0f54f87168cd93fc",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "191c550ea5ba4f8ea9f6218475c32ae92682ca8eac4db4e1abdf510d2e552121",
+      "notes": "ACTUALtypedwhole27,A19,B14,common6,neither0; nonnegativedisjointledger[13, 6, 8, 0]sumswhole. Askedexactly-one-language-count=21, NOTunion/exactlyboth/exactlyoneconfusion.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-5a656df6a3fe05d0",
+      "sha256": "33e38c725d70d9f862050b47e729005305f518d6fcbebfd4e817c6a6f0a83717",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "ff86ac336335f2949d1b1ddbbc44863196bdadf345bfad40ab5a95e25e8339e6",
+      "notes": "COMPLETEALL64actualB⊆U, exactly16satisfyA∪B=U; forcedUminusA10/12 plusALL16optionalAparts, emptyoptional/fullbothincluded. NooutsideUelementcanqualifyuniversally.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-d2a566442b56c039",
+      "sha256": "85145a306faff8d729e98dd071ac36c58c0a86fdfe260a57935130d32fb46675",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "9a2396bf508b2b245d5020da98fd1a323dc2f29656efbb94b95710b78ec6e265",
+      "notes": "ACTUALfinitecardinalitiesa14,b9, fullsharedDOMAIN0…9, targetunion-cardinality-ordered-max-min; allchoices/orderedroleschecked. ConstructedDISJOINToutsideatoms witnessEVERYfeasibleintersection, soattainabilityanduniversalboundsbothproven.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-e1ae54088df066b7",
+      "sha256": "28f07e0a4788bd93947c929e5c2883ccd93bb09ffa0b2a0c286ef9cb3223872e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "83063eb3561eccaf119bb7d883ef145e278ef8ea3824dd5fe7e6f26633753072",
+      "notes": "COMPLETEactualdomain1…90(90items), A[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90],B[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90], targetneither-divisor-count-in-universe=[1, 3, 7, 9, 11, 13, 17, 19, 21, 23, 27, 29, 31, 33, 37, 39, 41, 43, 47, 49, 51, 53, 57, 59, 61, 63, 67, 69, 71, 73, 77, 79, 81, 83, 87, 89]; everystrict/inclusive/zero-lastdigit99boundary checked, noasymptotic/floorroundingguess.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-52b760022c5521b0",
+      "sha256": "ed6f700afb980fcd6fe2b7f34a1dba8764415ca74e9892bc831c7c172bad71e4",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "e1d7e45d3d60b02ef0bb6a4dc6567d4e685148cb9c63775badf00577f20b50c2",
+      "notes": "Arbitraryelement∀membershipidentity(EAND F)=E IFF E⇒F, exactuniversalincludingempty. ActualE{3},F{3,9}countermodelrejectsother3necessityclaims; equalinclusive⊆notstrict.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-a0a7b89e9fa9965d",
+      "sha256": "341deffe63d44e23247f0aa90eefe2c5733554075097e2ffd08410ee900ac6e2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "3ff4e8bcfbfb670c2c5ce0e53c13fe7fc83ce587bb0b9815f3c48b1218ae0d26",
+      "notes": "ACTUALcompleteAfrozenset({'j', 'h', 'f', 'g'}),Bfrozenset({'l', 'j', 'h', 'k'}), Ifrozenset({'j', 'h'}),Ufrozenset({'h', 'g', 'k', 'j', 'f', 'l'}); targetcanonical-letter-union-list evaluatedwithoutmultiplicity, SUMvsCARDINALITYbound. EveryactualMCQchecked; canonicalduplicateonlyfalseunderEXPLICITeachonceformat, stillsameMATHEMATICALset.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-0ab6bbf9847e9a71",
+      "sha256": "0985b7857f108e8af5370de04130f9e7d5504a97c704c384864e8a5eea23d4cd",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "0fe4c1d6ca2f99eda831416bfd8e10331c287fa0ef144d25000da814cf8233d1",
+      "notes": "ACTUALcompleteAfrozenset({36, 12, 48, 24, 60}),Bfrozenset({24, 48, 72, 84}), Ifrozenset({24, 48}),Ufrozenset({36, 72, 12, 48, 84, 24, 60}); targetsum-intersection-union-CARDINALITIES evaluatedwithoutmultiplicity, SUMvsCARDINALITYbound. EveryactualMCQchecked; canonicalduplicateonlyfalseunderEXPLICITeachonceformat, stillsameMATHEMATICALset.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-a0291d903201fd2a",
+      "sha256": "cae1974c5bce2a151be716581e042afc04e8a5e3e41dff5c4e8814d1b788295d",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "25e31ae70b71e8f07c32827ab2c23732771f58417fd854061f290df59a4b2360",
+      "notes": "UniversalANYa-multiplex=10t=5(2t), soA⊆B forINFINITEpositivemultiples; 5∈BnotAprovesproper, 10commonprovesnonempty. All4actualidentitychoicescompared.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-f7785ca28f8c1ce2",
+      "sha256": "19c5febecd7bf247a78b9f6e26e16002e718c008eb82dd09bbe9c38fe4c6bd84",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "ff8c3a93de0069e15bd8d56e1842b220044645761caf4ebbeb97d99ac1aa8c0c",
+      "notes": "ACTUALtypedwhole31,A18,B15,common7,neither5; nonnegativedisjointledger[11, 7, 8, 5]sumswhole. Askedtwo-outings-neither-from-overlap=5, NOTunion/exactlyboth/exactlyoneconfusion.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-8d603bb88c7124cf",
+      "sha256": "ecc54a74209b450ebc99fd79ea06f902ce1cb6f1996dffab123155cf9d1e10e0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "c69cc81f44ecbb397b8224201e80df0c059f6d6cf00d1185e6351876c42ec6cc",
+      "notes": "COMPLETEactualdomain10…99(90items), A[11, 22, 33, 44, 55, 66, 77, 88, 99],B[70, 71, 72, 73, 74, 75, 76, 77, 78, 79], targettwo-digit-multiple-or-tens-digit-count=[11, 22, 33, 44, 55, 66, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 88, 99]; everystrict/inclusive/zero-lastdigit99boundary checked, noasymptotic/floorroundingguess.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-c972926d8ad3b99e",
+      "sha256": "5bc1f9841b68d3292898bef9aaa6def5043546f97a0ac37b7afbf9e165a42478",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "1cfee4fc1c8f9da40076a44d0928a6d23b44f71be9c3c4f9a65fc46ab0be4349",
+      "notes": "ACTUALfinitecardinalitiesa13,b8, fullsharedDOMAIN0…8, targetimpossible-intersection-cardinality; allchoices/orderedroleschecked. ConstructedDISJOINToutsideatoms witnessEVERYfeasibleintersection, soattainabilityanduniversalboundsbothproven.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    },
+    {
+      "editionId": "grade5-set-union-90612e2c2189ed8f",
+      "sha256": "c8108e238d2a494d57eed5bafff3d3e801c0f23a76eeae8b5bc777986516c98c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All40saved/newfullconditions/official+newsolutions/everyMCQread; ownACTUALprintedset/fullfinite-domain/divisor/powerset/ledgeroracle plusindependentexactconvexpolygonphysicalwitnesses; noauthorcalculator/spec/params/geometry",
+      "sourceCanonicalSha256": "7b3811995767eb4a0e8d0db033e6946d1bff47ab05e010a665c0c750edace3c9",
+      "notes": "COMPLETEactualdomain1…130(130items), A[6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, 96, 102, 108, 114, 120, 126],B[8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128], targetinclusive-divisible-by-either-count=[6, 8, 12, 16, 18, 24, 30, 32, 36, 40, 42, 48, 54, 56, 60, 64, 66, 72, 78, 80, 84, 88, 90, 96, 102, 104, 108, 112, 114, 120, 126, 128]; everystrict/inclusive/zero-lastdigit99boundary checked, noasymptotic/floorroundingguess.",
+      "checks": [
+        "All40saved/newfullconditions/official+newsolutions/everyMCQmanuallyread",
+        "AllactualMCQs includingmathematicallyequalduplicateroosterwithEXPLICITcanonicalformat",
+        "COMPLETEfiniteinteger/90two-digit/divisor/Unicodeletter/powersetdomains andrequestedSUMvsCARDINALITY",
+        "ArbitraryelementuniversalAND/OR/inclusion/infinite-multipleproofs; finitecardinalityboundsANDallattainablewitnesses",
+        "Convexquadrilateraluniversal8-sideboundplusindependentexactphysical5/6/8intersectionwitnesses",
+        "All40keys/wrongkeys/fullcanonicalhashes/nativefractionschecked"
+      ]
+    }
+  ]
+}

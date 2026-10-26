@@ -1,0 +1,4707 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "Saved grade-4 nonvisual sets/intersections/unions: full source-specific draft coverage of currently unreviewed references in topics2.6 and3.3. No network/source collection.",
+  "summary": {
+    "editions": 80,
+    "models": 30,
+    "skillFamilies": 66,
+    "sourceOccurrencesReferenced": 80,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-set-5873cb6986e0b0d9",
+      "modelId": "grade4-set-subset-choice",
+      "skillFamily": "concrete-subset-selection",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "A": [
+            3,
+            7,
+            11,
+            15
+          ]
+        },
+        "candidates": [
+          [
+            7,
+            15
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            3,
+            7,
+            20
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "5873cb6986e0b0d9"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {3; 7; 11; 15}. A жиынына ішкі жиын болатын нұсқаны таңдаңдар.",
+      "answer": "{7; 15}",
+      "solution": "Ішкі жиынның әр элементі A жиынында болуы керек. Жарамды элементтер: {3; 7; 11; 15}. {7; 15} нұсқасының барлық элементі осы тізімде бар. Қалған әр нұсқада бұл тізімге кірмейтін элемент бар.",
+      "options": [
+        "{7; 15}",
+        "{7; 19}",
+        "{3; 7; 20}",
+        "{1; 3}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{7; 15}",
+        "checks": [
+          "all candidate memberships checked",
+          "no order-only distractors"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-81072ffec35d54f2",
+      "modelId": "grade4-set-equality-choice",
+      "skillFamily": "equality-order-invariance",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "elements": [
+          4,
+          9,
+          14
+        ],
+        "candidates": [
+          [
+            14,
+            4,
+            9
+          ],
+          [
+            4,
+            9,
+            15
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            4,
+            9,
+            14,
+            19
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "81072ffec35d54f2"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {4; 9; 14}. A жиынына тең жиынды таңдаңдар.",
+      "answer": "{14; 4; 9}",
+      "solution": "Жиында элементтердің реті маңызды емес. {14; 4; 9} жиынының құрамы A жиынымен бірдей. Қалған нұсқаларда элемент жетіспейді, артық элемент бар немесе бір элемент басқасына ауысқан.",
+      "options": [
+        "{14; 4; 9}",
+        "{4; 9; 15}",
+        "{4; 14}",
+        "{4; 9; 14; 19}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{14; 4; 9}",
+        "checks": [
+          "semantic set equality; order ignored"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-a31e4bdc363b437a",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "A-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "A": [
+            3,
+            6,
+            9,
+            12,
+            15,
+            18,
+            21
+          ]
+        },
+        "expression": "A",
+        "ask": "count"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "a31e4bdc363b437a"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {3; 6; 9; 12; 15; 18; 21} жиыны берілген. A жиынында неше элемент бар?",
+      "answer": "7",
+      "solution": "Жиынның әр элементін бір рет санаймыз. Бұл жиында 7 элемент бар.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "7",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-dc63ac646cb93416",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "intersect-sum",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "A": [
+            6,
+            12,
+            18,
+            24,
+            30,
+            36
+          ],
+          "B": [
+            9,
+            18,
+            27,
+            36
+          ]
+        },
+        "expression": [
+          "intersect",
+          "A",
+          "B"
+        ],
+        "ask": "sum"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "dc63ac646cb93416"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {6; 12; 18; 24; 30; 36}, B = {9; 18; 27; 36} жиындары берілген. (A ∩ B) жиынының элементтерінің қосындысын табыңдар.",
+      "answer": "54",
+      "solution": "Қиылысуға екі жиында да бар элементтер кіреді. (A ∩ B) = {18; 36}. 18 + 36 = 54.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "54",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-2f1e93639c9e90e8",
+      "modelId": "grade4-set-valid-claim",
+      "skillFamily": "concrete-set-notation-validity",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {},
+        "claims": [
+          {
+            "left": {
+              "literal": [
+                3,
+                8
+              ]
+            },
+            "relation": "subset",
+            "right": {
+              "literal": [
+                1,
+                3,
+                5,
+                8,
+                10
+              ]
+            }
+          },
+          {
+            "left": {
+              "literal": [
+                2,
+                6,
+                9
+              ]
+            },
+            "relation": "equal",
+            "right": {
+              "literal": [
+                2,
+                6,
+                11
+              ]
+            }
+          },
+          {
+            "left": [
+              "intersect",
+              {
+                "literal": [
+                  2,
+                  5
+                ]
+              },
+              {
+                "literal": [
+                  5,
+                  8
+                ]
+              }
+            ],
+            "relation": "equal",
+            "right": {
+              "literal": [
+                2,
+                5,
+                8
+              ]
+            }
+          },
+          {
+            "left": {
+              "literal": [
+                3,
+                12
+              ]
+            },
+            "relation": "subset",
+            "right": {
+              "literal": [
+                1,
+                3,
+                5,
+                8,
+                10
+              ]
+            }
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "2f1e93639c9e90e8"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Дұрыс жазуды таңдаңдар. Мұнда ⊆ белгісі «ішкі жиын» дегенді білдіреді.",
+      "answer": "{3; 8} ⊆ {1; 3; 5; 8; 10}",
+      "solution": "({2; 5} ∩ {5; 8}) = {5}. Әр жазуды оның элементтері бойынша тексереміз. {3; 8} ⊆ {1; 3; 5; 8; 10} — дұрыс. ⊆ үшін сол жақтағы барлық элемент оң жақта болуы керек. = үшін екі жақтың құрамы бірдей болуы керек; ∩ тек ортақ элементтерді алады.",
+      "options": [
+        "{3; 8} ⊆ {1; 3; 5; 8; 10}",
+        "{2; 6; 9} = {2; 6; 11}",
+        "({2; 5} ∩ {5; 8}) = {2; 5; 8}",
+        "{3; 12} ⊆ {1; 3; 5; 8; 10}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{3; 8} ⊆ {1; 3; 5; 8; 10}",
+        "checks": [
+          "all claims evaluated from concrete sets",
+          "subset includes equality explicitly"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-7e47a86c0df71446",
+      "modelId": "grade4-set-disjoint-context",
+      "skillFamily": "disjoint-object-classification",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "first": 17,
+        "second": 12
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "7e47a86c0df71446"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көрмеге 29 белгі жасалды: 17 белгі тек көк түспен, 12 белгі тек жасыл түспен боялған. Әр белгі бір ғана түспен боялған. Көк белгілер жиыны мен жасыл белгілер жиынының байланысын таңдаңдар.",
+      "answer": "Қиылыспайды",
+      "solution": "Бір белгінің екі жиынға қатар кіруі мүмкін емес, өйткені әр белгі бір ғана түспен боялған. Ортақ элементі жоқ жиындар қиылыспайды. Екі топ та бос емес, сондықтан біреуі екіншісінің ішкі жиыны да, теңі де болмайды.",
+      "options": [
+        "Қиылыспайды",
+        "Бір-біріне тең",
+        "Көк белгілер жасыл белгілердің ішкі жиыны",
+        "Ортақ элементі бар"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "Қиылыспайды",
+        "checks": [
+          "disjoint partition; both parts nonempty"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-1017efaa90999a0f",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "difference-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "A": [
+            3,
+            6,
+            9,
+            12
+          ],
+          "B": [
+            1,
+            3,
+            5,
+            6,
+            7,
+            9,
+            11,
+            12
+          ]
+        },
+        "expression": [
+          "difference",
+          "B",
+          "A"
+        ],
+        "ask": "count"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "1017efaa90999a0f"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {3; 6; 9; 12}, B = {1; 3; 5; 6; 7; 9; 11; 12} жиындары берілген. (B ∖ A) — B жиынына тиісті, ал A жиынына тиісті емес элементтер жиыны. (B ∖ A) жиынында неше элемент бар?",
+      "answer": "4",
+      "solution": "Бірінші жиыннан екінші жиында бар элементтерді алып тастаймыз. (B ∖ A) = {1; 5; 7; 11}. Бұл жиында 4 элемент бар.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "4",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-0d406e444a5772b3",
+      "modelId": "grade4-set-disjoint-pair",
+      "skillFamily": "disjoint-pair-recognition",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "pairs": [
+          [
+            [
+              2,
+              5,
+              8
+            ],
+            [
+              8,
+              11,
+              14
+            ]
+          ],
+          [
+            [
+              3,
+              6
+            ],
+            [
+              6,
+              12
+            ]
+          ],
+          [
+            [
+              7,
+              14
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          [
+            [
+              2,
+              6,
+              10
+            ],
+            [
+              3,
+              7,
+              11
+            ]
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "0d406e444a5772b3"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ортақ элементі жоқ екі жиын көрсетілген нұсқаны таңдаңдар.",
+      "answer": "{2; 6; 10} және {3; 7; 11}",
+      "solution": "Қиылыспайтын жиындардың ортақ элементі болмайды. {2; 6; 10} және {3; 7; 11} жұбында ортақ элемент жоқ; қалған әр жұптың кемінде бір ортақ элементі бар.",
+      "options": [
+        "{2; 5; 8} және {8; 11; 14}",
+        "{3; 6} және {6; 12}",
+        "{7; 14} және {14; 21}",
+        "{2; 6; 10} және {3; 7; 11}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{2; 6; 10} және {3; 7; 11}",
+        "checks": [
+          "every offered pair intersection checked"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-fc765d81a9b706b1",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "intersect-set",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "A": [
+            7,
+            14,
+            21,
+            28
+          ],
+          "B": [
+            14,
+            28,
+            42
+          ]
+        },
+        "expression": [
+          "intersect",
+          "A",
+          "B"
+        ],
+        "ask": "set",
+        "optionSets": [
+          [
+            14,
+            28
+          ],
+          [
+            7,
+            14,
+            21,
+            28,
+            42
+          ],
+          [
+            7,
+            21
+          ],
+          [
+            42
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "fc765d81a9b706b1"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {7; 14; 21; 28}, B = {14; 28; 42} жиындары берілген. (A ∩ B) жиынын дұрыс көрсеткен нұсқаны таңдаңдар.",
+      "answer": "{14; 28}",
+      "solution": "Қиылысуға екі жиында да бар элементтер кіреді. (A ∩ B) = {14; 28}. Сондықтан дұрыс нұсқа: {14; 28}.",
+      "options": [
+        "{14; 28}",
+        "{7; 14; 21; 28; 42}",
+        "{7; 21}",
+        "{42}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{14; 28}",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-5ff094210e65e8fd",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "intersect-member",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "A": [
+            5,
+            10,
+            15,
+            20
+          ],
+          "B": [
+            6,
+            12,
+            18,
+            20
+          ]
+        },
+        "expression": [
+          "intersect",
+          "A",
+          "B"
+        ],
+        "ask": "member",
+        "options": [
+          12,
+          15,
+          18,
+          20
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "5ff094210e65e8fd"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {5; 10; 15; 20}, B = {6; 12; 18; 20} жиындары берілген. Екі жиынға да тиісті жалғыз санды таңдаңдар.",
+      "answer": "20",
+      "solution": "Қиылысуға екі жиында да бар элементтер кіреді. (A ∩ B) = {20}. Екі тізімде де бар жалғыз сан — 20.",
+      "options": [
+        "12",
+        "15",
+        "18",
+        "20"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "20",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-e760a6441bf90e1a",
+      "modelId": "grade4-set-filter",
+      "skillFamily": "single-digit-odd-subset-cardinality",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "ask": "count",
+        "low": 1,
+        "high": 9,
+        "first": "odd"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "e760a6441bf90e1a"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1–9 аралығындағы натурал сандар қарастырылады; екі шеті де кіреді. A — осы аралықтағы тақ сандар жиыны. A жиынында неше элемент бар?",
+      "answer": "5",
+      "solution": "A = {1; 3; 5; 7; 9}. Элемент саны — 5.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "5",
+        "checks": [
+          "all integers in the stated inclusive interval enumerated"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-fd761ef29a03f0a8",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "intersect-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "A": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14
+          ],
+          "B": [
+            8,
+            10,
+            12,
+            14,
+            16,
+            18
+          ]
+        },
+        "expression": [
+          "intersect",
+          "A",
+          "B"
+        ],
+        "ask": "count"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "fd761ef29a03f0a8"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {2; 4; 6; 8; 10; 12; 14}, B = {8; 10; 12; 14; 16; 18} жиындары берілген. (A ∩ B) жиынында неше элемент бар?",
+      "answer": "4",
+      "solution": "Қиылысуға екі жиында да бар элементтер кіреді. (A ∩ B) = {8; 10; 12; 14}. Бұл жиында 4 элемент бар.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "4",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-a3bce21814d460bc",
+      "modelId": "grade4-set-equal-labelled-pair",
+      "skillFamily": "letter-set-equality-pair",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "M": [
+            "Т",
+            "О",
+            "Р"
+          ],
+          "N": [
+            "Р",
+            "Т",
+            "О"
+          ],
+          "P": [
+            "Т",
+            "О",
+            "Й",
+            "Р"
+          ],
+          "R": [
+            "Т",
+            "Р"
+          ]
+        },
+        "candidates": [
+          [
+            "N",
+            "R"
+          ],
+          [
+            "M",
+            "N"
+          ],
+          [
+            "P",
+            "R"
+          ],
+          [
+            "M",
+            "P"
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "a3bce21814d460bc"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "M = {Т; О; Р}, N = {Р; Т; О}, P = {Т; О; Й; Р}, R = {Т; Р} жиындары жазылды. Қай екі жиын тең?",
+      "answer": "M = N",
+      "solution": "Әр жұптың элементтерін салыстырамыз. M = N: екі жиынның құрамы бірдей, тек жазылу реті өзгеше. Басқа ұсынылған жұптардың құрамында кемінде бір айырмашылық бар.",
+      "options": [
+        "N = R",
+        "M = N",
+        "P = R",
+        "M = P"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "M = N",
+        "checks": [
+          "each labelled pair compared by membership"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-7bf401391e258573",
+      "modelId": "grade4-set-filter",
+      "skillFamily": "bounded-common-multiples-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "ask": "count",
+        "low": 1,
+        "high": 99,
+        "first": "divisible",
+        "firstParams": {
+          "divisor": 6
+        },
+        "second": "divisible",
+        "secondParams": {
+          "divisor": 9
+        },
+        "operation": "intersect"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level2.json",
+          "sourceId": "7bf401391e258573"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1–99 аралығындағы натурал сандар қарастырылады; екі шеті де кіреді. A — осы аралықтағы 6 санына қалдықсыз бөлінетін сандар жиыны. B — осы аралықтағы 9 санына қалдықсыз бөлінетін сандар жиыны. A ∩ B жиынында неше элемент бар?",
+      "answer": "5",
+      "solution": "A = {6; 12; 18; 24; 30; 36; 42; 48; 54; 60; 66; 72; 78; 84; 90; 96}. B = {9; 18; 27; 36; 45; 54; 63; 72; 81; 90; 99}. Шартқа сай нәтиже: A ∩ B = {18; 36; 54; 72; 90}. Элемент саны — 5.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "5",
+        "checks": [
+          "all integers in the stated inclusive interval enumerated"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-225cf70d67b0a4d4",
+      "modelId": "grade4-set-neither-multiple-count",
+      "skillFamily": "single-digit-neither-divisor-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "low": 1,
+        "high": 9,
+        "divisors": [
+          2,
+          5
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level2.json",
+          "sourceId": "225cf70d67b0a4d4"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1–9 аралығындағы натурал сандардың ішінде 2 және 5 сандарының ешқайсысына қалдықсыз бөлінбейтін сандар нешеу? Екі шеткі сан да қарастырылады.",
+      "answer": "4",
+      "solution": "Әр бөлгішке бөлінетін сандарды алып тастаймыз. Қалғандары: 1, 3, 7, 9. Барлығы 4 сан.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "4",
+        "checks": [
+          "neither means not divisible by every listed divisor separately"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-2fda9cff45f8dac7",
+      "modelId": "grade4-set-two-counts",
+      "skillFamily": "symmetric-difference-cardinalities",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "query": "exclusive",
+        "a": 17,
+        "b": 13,
+        "overlap": 6
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level2.json",
+          "sourceId": "2fda9cff45f8dac7"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A жиынында 17, B жиынында 13 элемент бар. Екі жиынға ортақ 6 элемент бар. Осы жиындардың дәл біреуіне ғана тиісті неше элемент бар?",
+      "answer": "18",
+      "solution": "Тек A жиынында 17 − 6 = 11, тек B жиынында 13 − 6 = 7 элемент. Қосындысы: 11 + 7 = 18.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "18",
+        "checks": [
+          "two-set region counts nonnegative; union/intersection interpretation checked"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-e278733d0b6e021e",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "difference-set",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "sets": {
+          "A": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12
+          ],
+          "B": [
+            4,
+            8,
+            12,
+            16,
+            20
+          ]
+        },
+        "expression": [
+          "difference",
+          "A",
+          "B"
+        ],
+        "ask": "set",
+        "optionSets": [
+          [
+            16,
+            20
+          ],
+          [
+            2,
+            6,
+            10
+          ],
+          [
+            2,
+            6,
+            10,
+            16,
+            20
+          ],
+          [
+            4,
+            8,
+            12
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level2.json",
+          "sourceId": "e278733d0b6e021e"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {2; 4; 6; 8; 10; 12}, B = {4; 8; 12; 16; 20} жиындары берілген. (A ∖ B) — A жиынына тиісті, ал B жиынына тиісті емес элементтер жиыны. (A ∖ B) жиынын дұрыс көрсеткен нұсқаны таңдаңдар.",
+      "answer": "{2; 6; 10}",
+      "solution": "Бірінші жиыннан екінші жиында бар элементтерді алып тастаймыз. (A ∖ B) = {2; 6; 10}. Сондықтан дұрыс нұсқа: {2; 6; 10}.",
+      "options": [
+        "{16; 20}",
+        "{2; 6; 10}",
+        "{2; 6; 10; 16; 20}",
+        "{4; 8; 12}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{2; 6; 10}",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-6a3e8a643c749ec3",
+      "modelId": "grade4-set-subset-choice",
+      "skillFamily": "common-subset-selection",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "sets": {
+          "A": [
+            3,
+            6,
+            9,
+            12
+          ],
+          "B": [
+            1,
+            6,
+            9,
+            12,
+            15
+          ]
+        },
+        "common": true,
+        "candidates": [
+          [
+            1,
+            15
+          ],
+          [
+            6,
+            9,
+            15
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            6,
+            12
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level2.json",
+          "sourceId": "6a3e8a643c749ec3"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {3; 6; 9; 12}, B = {1; 6; 9; 12; 15}. A және B жиындарының екеуіне де ішкі жиын болатын нұсқаны таңдаңдар.",
+      "answer": "{6; 12}",
+      "solution": "Ішкі жиынның әр элементі екі берілген жиында да болуы керек. Жарамды элементтер: {6; 9; 12}. {6; 12} нұсқасының барлық элементі осы тізімде бар. Қалған әр нұсқада бұл тізімге кірмейтін элемент бар.",
+      "options": [
+        "{1; 15}",
+        "{6; 9; 15}",
+        "{3; 6}",
+        "{6; 12}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{6; 12}",
+        "checks": [
+          "all candidate memberships checked",
+          "no order-only distractors"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-2d67a378ec34d463",
+      "modelId": "grade4-set-described-equality",
+      "skillFamily": "described-versus-listed-set-equality",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "oddUpper": 12,
+        "B": [
+          11,
+          9,
+          7,
+          5,
+          3,
+          1
+        ],
+        "divisor": 4,
+        "D": [
+          4,
+          8,
+          12
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level2.json",
+          "sourceId": "2d67a378ec34d463"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A — 12 санынан кіші тақ натурал сандар жиыны, B = {11; 9; 7; 5; 3; 1}, C — 4 санына еселік бір таңбалы натурал сандар жиыны, D = {4; 8; 12}. Қай екі жиын тең?",
+      "answer": "A = B",
+      "solution": "A = {1; 3; 5; 7; 9; 11}, B = {11; 9; 7; 5; 3; 1}, C = {4; 8}, D = {4; 8; 12}. Элементтердің реті маңызды емес. A = B жиындарының барлық элементі бірдей. C жиынына екі таңбалы сан кірмейді, сондықтан C және D тең емес.",
+      "options": [
+        "A = B",
+        "C = D",
+        "A = C",
+        "B = D"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "A = B",
+        "checks": [
+          "description expanded completely; digit bound enforced before set equality"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-b2e29fb342aa4b34",
+      "modelId": "grade4-set-words-operation",
+      "skillFamily": "word-letter-intersection",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "words": [
+          "ҚАЛАМ",
+          "БАЛА"
+        ],
+        "operation": "intersect",
+        "ask": "set",
+        "optionSets": [
+          [
+            "А",
+            "Л"
+          ],
+          [
+            "Қ",
+            "А",
+            "Л",
+            "М",
+            "Б"
+          ],
+          [
+            "Қ",
+            "Б",
+            "М"
+          ],
+          [
+            "А"
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level2.json",
+          "sourceId": "b2e29fb342aa4b34"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A, B — сәйкесінше «ҚАЛАМ», «БАЛА» сөздеріндегі әріптер жиындары. Қайталанған әріп бір рет алынады. (A ∩ B) жиынын таңдаңдар.",
+      "answer": "{А; Л}",
+      "solution": "A = {А; Қ; Л; М}, B = {А; Б; Л}. (A ∩ B) = {А; Л}. Элементтердің реті нәтижені өзгертпейді.",
+      "options": [
+        "{А; Л}",
+        "{Қ; А; Л; М; Б}",
+        "{Қ; Б; М}",
+        "{А}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{А; Л}",
+        "checks": [
+          "Unicode Kazakh letters kept distinct",
+          "word repetitions removed before set operations"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-5f28812f8a07de16",
+      "modelId": "grade4-set-filter",
+      "skillFamily": "intersection-of-two-digit-predicates",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "ask": "set",
+        "low": 1,
+        "high": 9,
+        "first": "even",
+        "second": "greater",
+        "secondParams": {
+          "bound": 3
+        },
+        "operation": "intersect",
+        "optionSets": [
+          [
+            8
+          ],
+          [
+            2,
+            4,
+            6,
+            7,
+            8,
+            9
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          [
+            4,
+            6,
+            8
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level2.json",
+          "sourceId": "5f28812f8a07de16"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1–9 аралығындағы натурал сандар қарастырылады; екі шеті де кіреді. A — осы аралықтағы жұп сандар жиыны. B — осы аралықтағы 3 санынан үлкен сандар жиыны. A ∩ B жиынын таңдаңдар.",
+      "answer": "{4; 6; 8}",
+      "solution": "A = {2; 4; 6; 8}. B = {4; 5; 6; 7; 8; 9}. Шартқа сай нәтиже: A ∩ B = {4; 6; 8}. Жиында әр элемент бір рет жазылады.",
+      "options": [
+        "{8}",
+        "{2; 4; 6; 7; 8; 9}",
+        "{4; 5; 6; 7; 8; 9}",
+        "{4; 6; 8}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{4; 6; 8}",
+        "checks": [
+          "all integers in the stated inclusive interval enumerated"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-3b222561b8b111b8",
+      "modelId": "grade4-set-valid-claim",
+      "skillFamily": "concrete-intersection-equality-check",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "sets": {
+          "A": [
+            3,
+            6,
+            9,
+            12,
+            15,
+            18
+          ],
+          "B": [
+            6,
+            12,
+            18,
+            24
+          ],
+          "C": [
+            12,
+            18,
+            30
+          ]
+        },
+        "claims": [
+          {
+            "left": [
+              "intersect",
+              "A",
+              "C"
+            ],
+            "relation": "equal",
+            "right": {
+              "literal": [
+                12,
+                18,
+                30
+              ]
+            }
+          },
+          {
+            "left": [
+              "intersect",
+              "B",
+              "C"
+            ],
+            "relation": "equal",
+            "right": {
+              "literal": [
+                12
+              ]
+            }
+          },
+          {
+            "left": [
+              "intersect",
+              "A",
+              "B"
+            ],
+            "relation": "equal",
+            "right": {
+              "literal": [
+                6,
+                12,
+                18
+              ]
+            }
+          },
+          {
+            "left": [
+              "intersect",
+              "A",
+              "B"
+            ],
+            "relation": "equal",
+            "right": {
+              "literal": [
+                3,
+                6,
+                12,
+                18
+              ]
+            }
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level2.json",
+          "sourceId": "3b222561b8b111b8"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {3; 6; 9; 12; 15; 18}, B = {6; 12; 18; 24}, C = {12; 18; 30}. Дұрыс жазуды таңдаңдар.",
+      "answer": "(A ∩ B) = {6; 12; 18}",
+      "solution": "(A ∩ C) = {12; 18}. (B ∩ C) = {12; 18}. (A ∩ B) = {6; 12; 18}. Әр жазуды оның элементтері бойынша тексереміз. (A ∩ B) = {6; 12; 18} — дұрыс. = үшін екі жақтың құрамы бірдей болуы керек; ∩ тек ортақ элементтерді алады.",
+      "options": [
+        "(A ∩ C) = {12; 18; 30}",
+        "(B ∩ C) = {12}",
+        "(A ∩ B) = {6; 12; 18}",
+        "(A ∩ B) = {3; 6; 12; 18}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "(A ∩ B) = {6; 12; 18}",
+        "checks": [
+          "all claims evaluated from concrete sets",
+          "subset includes equality explicitly"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-1f39898b19722ff8",
+      "modelId": "grade4-set-common-multiple-description",
+      "skillFamily": "infinite-common-multiples-characterization",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "a": 2,
+        "b": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level2.json",
+          "sourceId": "1f39898b19722ff8"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A — 2 санына еселік натурал сандар жиыны, B — 7 санына еселік натурал сандар жиыны. A ∩ B жиынын толық сипаттайтын нұсқаны таңдаңдар.",
+      "answer": "14 санына еселік натурал сандар",
+      "solution": "Ортақ сандар 2 және 7 сандарына да қалдықсыз бөлінеді. Олардың ең кіші ортақ еселігі 14; сондықтан ортақ сандар 14, 28, 42, ... түрінде.",
+      "options": [
+        "14 санына еселік натурал сандар",
+        "2 санына еселік натурал сандар",
+        "7 санына еселік натурал сандар",
+        "9 санына еселік натурал сандар"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "14 санына еселік натурал сандар",
+        "checks": [
+          "LCM characterizes all positive common multiples, not just sampled examples"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-b6f1112b1449e941",
+      "modelId": "grade4-set-subset-implication",
+      "skillFamily": "intersection-equals-operand-implication",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level3.json",
+          "sourceId": "b6f1112b1449e941"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A ∩ B = A екені берілген. Осы шарттан міндетті түрде шығатын тұжырымды таңдаңдар.",
+      "answer": "A — B жиынының ішкі жиыны",
+      "solution": "Қиылысу A жиынын толық қайталаса, A жиынының әр элементі B жиынында да бар. Бұл — A жиыны B жиынының ішкі жиыны деген анықтама. Бірақ B жиынында қосымша элементтер болуы мүмкін, сондықтан кері тұжырым мен теңдік міндетті емес.",
+      "options": [
+        "A — B жиынының ішкі жиыны",
+        "B — A жиынының ішкі жиыны",
+        "A және B міндетті түрде тең",
+        "A және B міндетті түрде қиылыспайды"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "A — B жиынының ішкі жиыны",
+        "checks": [
+          "all finite two-set models over three atoms used as counterexamples to invalid implications"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-36d8d0b303582e72",
+      "modelId": "grade4-set-subset-count",
+      "skillFamily": "fixed-size-unordered-subsets",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "elements": [
+          2,
+          5,
+          8,
+          11,
+          14
+        ],
+        "size": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level3.json",
+          "sourceId": "36d8d0b303582e72"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {2; 5; 8; 11; 14} жиынының дәл 2 элементі бар ішкі жиындары нешеу? Элементтердің реті есепке алынбайды.",
+      "answer": "10",
+      "solution": "Қажетті ішкі жиындар: {2; 5}, {2; 8}, {5; 8}, {2; 11}, {5; 11}, {8; 11}, {2; 14}, {5; 14}, {8; 14}, {11; 14}. Барлығы 10 ішкі жиын.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "10",
+        "checks": [
+          "all distinct subsets enumerated; empty/self inclusion explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-6157e9cb12a4fba7",
+      "modelId": "grade4-set-overlap-bounds",
+      "skillFamily": "mandatory-pigeonhole-overlap-claim",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "total": 50,
+        "a": 31,
+        "b": 27,
+        "query": "mandatory-claim"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level3.json",
+          "sourceId": "6157e9cb12a4fba7"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Сауалнамаға 50 оқушы қатысты. Шахматты 31, робот құрастыруды 27 оқушы таңдады. Бір оқушы екі бағытты да таңдауы мүмкін; ешқайсысын таңдамағандар да болуы мүмкін. Қай тұжырым міндетті түрде дұрыс?",
+      "answer": "Екеуін де кемінде 8 оқушы таңдаған",
+      "solution": "Қосқанда 31 + 27 = 58. Оқушы саны 50, сондықтан кемінде 8 оқушы екі рет саналған. Ортақ топ 8 ғана емес, 27 санына дейін болуы мүмкін. Демек «дәл 8» міндетті емес, ал 13 төменгі шегі тым үлкен.",
+      "options": [
+        "Екеуін де кемінде 8 оқушы таңдаған",
+        "Екеуін де дәл 8 оқушы таңдаған",
+        "Екеуін де кемінде 13 оқушы таңдаған",
+        "Екеуін қатар таңдаған оқушы жоқ"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "Екеуін де кемінде 8 оқушы таңдаған",
+        "checks": [
+          "all feasible overlap integers enumerated; bound witnessed by nonnegative regions"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-9c6ce811348dc948",
+      "modelId": "grade4-set-subset-count",
+      "skillFamily": "all-subsets-including-empty-and-self",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "elements": [
+          3,
+          6,
+          9,
+          12
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level3.json",
+          "sourceId": "9c6ce811348dc948"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {3; 6; 9; 12} жиынының барлық ішкі жиындары нешеу? Бос жиынды және A жиынының өзін де санаңдар.",
+      "answer": "16",
+      "solution": "Элемент саны бойынша топтаймыз: 0 элементті — 1 жиын; 1 элементті — 4 жиын; 2 элементті — 6 жиын; 3 элементті — 4 жиын; 4 элементті — 1 жиын. Барлығы 1 + 4 + 6 + 4 + 1 = 16.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "16",
+        "checks": [
+          "all distinct subsets enumerated; empty/self inclusion explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-a5fd03707b5a866e",
+      "modelId": "grade4-set-filter",
+      "skillFamily": "bounded-multiples-minus-evens",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "ask": "count",
+        "low": 1,
+        "high": 79,
+        "first": "divisible",
+        "firstParams": {
+          "divisor": 5
+        },
+        "second": "even",
+        "operation": "difference"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level3.json",
+          "sourceId": "a5fd03707b5a866e"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1–79 аралығындағы натурал сандар қарастырылады; екі шеті де кіреді. A — осы аралықтағы 5 санына қалдықсыз бөлінетін сандар жиыны. B — осы аралықтағы жұп сандар жиыны. A ∖ B — A жиынына тиісті, бірақ B жиынына тиісті емес элементтер. A ∖ B жиынында неше элемент бар?",
+      "answer": "8",
+      "solution": "A = {5; 10; 15; 20; 25; 30; 35; 40; 45; 50; 55; 60; 65; 70; 75}. B = {2; 4; 6; 8; 10; 12; 14; 16; ...; 78}. Шартқа сай нәтиже: A ∖ B = {5; 15; 25; 35; 45; 55; 65; 75}. A жиынының 15 элементінен ортақ 7 элементті аламыз: 15 − 7 = 8.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "8",
+        "checks": [
+          "all integers in the stated inclusive interval enumerated"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-425208ba31f990f3",
+      "modelId": "grade4-set-two-counts",
+      "skillFamily": "one-set-only-exhaustive-union",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "query": "first-only-all",
+        "total": 28,
+        "a": 19,
+        "b": 16
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level3.json",
+          "sourceId": "425208ba31f990f3"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жобаға қатысқан 28 баланың әрқайсысы музыка немесе сурет үйірмесінің кемінде біреуіне барады. Музыкаға 19, суретке 16 бала барады. Тек музыка үйірмесіне неше бала барады?",
+      "answer": "12",
+      "solution": "Суретке бармайтындардың бәрі музыкаға барады. Суретке бармайтындар: 28 − 16 = 12. Ортақ топта 7 бала, тек суретте 9 бала; үш топтың қосындысы 28.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "12",
+        "checks": [
+          "two-set region counts nonnegative; union/intersection interpretation checked"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-77bf4f5ca84063bf",
+      "modelId": "grade4-set-filter",
+      "skillFamily": "inclusive-divisor-union-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "ask": "count",
+        "low": 1,
+        "high": 120,
+        "first": "divisible",
+        "firstParams": {
+          "divisor": 3
+        },
+        "second": "divisible",
+        "secondParams": {
+          "divisor": 5
+        },
+        "operation": "union"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level3.json",
+          "sourceId": "77bf4f5ca84063bf"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1–120 аралығындағы натурал сандар қарастырылады; екі шеті де кіреді. A — осы аралықтағы 3 санына қалдықсыз бөлінетін сандар жиыны. B — осы аралықтағы 5 санына қалдықсыз бөлінетін сандар жиыны. A ∪ B жиынында неше элемент бар?",
+      "answer": "56",
+      "solution": "A = {3; 6; 9; 12; 15; 18; 21; 24; ...; 120}. B = {5; 10; 15; 20; 25; 30; 35; 40; 45; 50; 55; 60; 65; 70; 75; 80; 85; 90; 95; 100; 105; 110; 115; 120}. Шартқа сай нәтиже: A ∪ B = {3; 5; 6; 9; 10; 12; 15; 18; ...; 120}. A жиынында 40, B жиынында 24, ортақ бөлікте 8 элемент бар. Бірігудегі саны: 40 + 24 − 8 = 56.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "56",
+        "checks": [
+          "all integers in the stated inclusive interval enumerated"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-fa5c275d565c67fc",
+      "modelId": "grade4-set-filter",
+      "skillFamily": "two-digit-exclusive-multiples",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "ask": "count",
+        "low": 10,
+        "high": 99,
+        "first": "divisible",
+        "firstParams": {
+          "divisor": 4
+        },
+        "second": "divisible",
+        "secondParams": {
+          "divisor": 6
+        },
+        "operation": "xor"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level3.json",
+          "sourceId": "fa5c275d565c67fc"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "10–99 аралығындағы натурал сандар қарастырылады; екі шеті де кіреді. A — осы аралықтағы 4 санына қалдықсыз бөлінетін сандар жиыны. B — осы аралықтағы 6 санына қалдықсыз бөлінетін сандар жиыны. A және B жиындарының дәл біреуіне ғана тиісті неше сан бар?",
+      "answer": "21",
+      "solution": "A = {12; 16; 20; 24; 28; 32; 36; 40; 44; 48; 52; 56; 60; 64; 68; 72; 76; 80; 84; 88; 92; 96}. B = {12; 18; 24; 30; 36; 42; 48; 54; 60; 66; 72; 78; 84; 90; 96}. Шартқа сай дәл бір жиынға кіретін элементтер = {16; 18; 20; 28; 30; 32; 40; 42; 44; 52; 54; 56; 64; 66; 68; 76; 78; 80; 88; 90; 92}. Ортақ 8 элементті екі топтан да аламыз. Тек A жиынында 14, тек B жиынында 7 сан бар. 14 + 7 = 21.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "21",
+        "checks": [
+          "all integers in the stated inclusive interval enumerated"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-f33df4f9fb823e45",
+      "modelId": "grade4-set-max-intersection",
+      "skillFamily": "max-intersection-smaller-set",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "a": 12,
+        "b": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level3.json",
+          "sourceId": "f33df4f9fb823e45"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A жиынында 12, B жиынында 8 элемент бар. A ∩ B жиынында ең көп дегенде неше элемент болуы мүмкін?",
+      "answer": "8",
+      "solution": "Ортақ элементтер екі жиынның әрқайсысында болуы керек. Сондықтан олардың саны кіші жиынның 8 элементінен артық болмайды. Кіші жиынды үлкенінің ішкі жиыны етіп алсақ, 8 ортақ элементке қол жеткіземіз.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "8",
+        "checks": [
+          "maximum bounded by smaller cardinality and explicitly attainable"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-d3d07435b52e9f10",
+      "modelId": "grade4-set-filter",
+      "skillFamily": "digit-sum-and-even-intersection",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "ask": "count",
+        "low": 100,
+        "high": 999,
+        "first": "digit-sum",
+        "firstParams": {
+          "digitSum": 5
+        },
+        "second": "even",
+        "operation": "intersect"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level3.json",
+          "sourceId": "d3d07435b52e9f10"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "100–999 аралығындағы натурал сандар қарастырылады; екі шеті де кіреді. A — осы аралықтағы цифрларының қосындысы 5 болатын сандар жиыны. B — осы аралықтағы жұп сандар жиыны. A ∩ B жиынында неше элемент бар?",
+      "answer": "9",
+      "solution": "A = {104; 113; 122; 131; 140; 203; 212; 221; 230; 302; 311; 320; 401; 410; 500}. B = {100; 102; 104; 106; 108; 110; 112; 114; ...; 998}. Шартқа сай нәтиже: A ∩ B = {104; 122; 140; 212; 230; 302; 320; 410; 500}. Элемент саны — 9.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "9",
+        "checks": [
+          "all integers in the stated inclusive interval enumerated"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-2a8135b0ad7f3387",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "intersect-sum",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "sets": {
+          "A": [
+            14,
+            18,
+            22,
+            26
+          ],
+          "B": [
+            18,
+            26,
+            30
+          ]
+        },
+        "expression": [
+          "intersect",
+          "A",
+          "B"
+        ],
+        "ask": "sum"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-leveltest.json",
+          "sourceId": "2a8135b0ad7f3387"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {14; 18; 22; 26}, B = {18; 26; 30} жиындары берілген. (A ∩ B) жиынының элементтерінің қосындысын табыңдар.",
+      "answer": "44",
+      "solution": "Қиылысуға екі жиында да бар элементтер кіреді. (A ∩ B) = {18; 26}. 18 + 26 = 44.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "44",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-38c1177677b1b042",
+      "modelId": "grade4-set-equality-choice",
+      "skillFamily": "Kazakh-distinct-letter-set-equality",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "elements": [
+          "Қ",
+          "А",
+          "С"
+        ],
+        "candidates": [
+          [
+            "С",
+            "Қ",
+            "А"
+          ],
+          [
+            "К",
+            "А",
+            "С"
+          ],
+          [
+            "Қ",
+            "С"
+          ],
+          [
+            "Қ",
+            "А",
+            "С",
+            "Ы"
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-leveltest.json",
+          "sourceId": "38c1177677b1b042"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {Қ; А; С}. A жиынына тең жиынды таңдаңдар.",
+      "answer": "{С; Қ; А}",
+      "solution": "Жиында элементтердің реті маңызды емес. {С; Қ; А} жиынының құрамы A жиынымен бірдей. Қалған нұсқаларда элемент жетіспейді, артық элемент бар немесе бір элемент басқасына ауысқан.",
+      "options": [
+        "{С; Қ; А}",
+        "{К; А; С}",
+        "{Қ; С}",
+        "{Қ; А; С; Ы}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{С; Қ; А}",
+        "checks": [
+          "semantic set equality; order ignored"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-5182045baebc87b8",
+      "modelId": "grade4-set-filter",
+      "skillFamily": "single-digit-odd-common-multiple",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "ask": "count",
+        "low": 1,
+        "high": 9,
+        "first": "odd",
+        "second": "divisible",
+        "secondParams": {
+          "divisor": 5
+        },
+        "operation": "intersect"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-leveltest.json",
+          "sourceId": "5182045baebc87b8"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1–9 аралығындағы натурал сандар қарастырылады; екі шеті де кіреді. A — осы аралықтағы тақ сандар жиыны. B — осы аралықтағы 5 санына қалдықсыз бөлінетін сандар жиыны. A ∩ B жиынында неше элемент бар?",
+      "answer": "1",
+      "solution": "A = {1; 3; 5; 7; 9}. B = {5}. Шартқа сай нәтиже: A ∩ B = {5}. Элемент саны — 1.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "1",
+        "checks": [
+          "all integers in the stated inclusive interval enumerated"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-22b7199150eb18e4",
+      "modelId": "grade4-set-subset-choice",
+      "skillFamily": "concrete-subset-selection",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "sets": {
+          "A": [
+            6,
+            12,
+            18,
+            24,
+            30
+          ]
+        },
+        "candidates": [
+          [
+            18,
+            24,
+            42
+          ],
+          [
+            12,
+            30
+          ],
+          [
+            6,
+            36
+          ],
+          [
+            2,
+            6
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-leveltest.json",
+          "sourceId": "22b7199150eb18e4"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {6; 12; 18; 24; 30}. A жиынына ішкі жиын болатын нұсқаны таңдаңдар.",
+      "answer": "{12; 30}",
+      "solution": "Ішкі жиынның әр элементі A жиынында болуы керек. Жарамды элементтер: {6; 12; 18; 24; 30}. {12; 30} нұсқасының барлық элементі осы тізімде бар. Қалған әр нұсқада бұл тізімге кірмейтін элемент бар.",
+      "options": [
+        "{18; 24; 42}",
+        "{12; 30}",
+        "{6; 36}",
+        "{2; 6}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{12; 30}",
+        "checks": [
+          "all candidate memberships checked",
+          "no order-only distractors"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-f9846aa2e055400e",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "difference-set",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "sets": {
+          "A": [
+            4,
+            8,
+            12,
+            16,
+            20
+          ],
+          "B": [
+            7,
+            14,
+            20,
+            28
+          ]
+        },
+        "expression": [
+          "difference",
+          "B",
+          "A"
+        ],
+        "ask": "set",
+        "optionSets": [
+          [
+            4,
+            8,
+            12,
+            16
+          ],
+          [
+            7,
+            14,
+            28
+          ],
+          [
+            20
+          ],
+          [
+            4,
+            7,
+            8,
+            12,
+            14,
+            16,
+            28
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-leveltest.json",
+          "sourceId": "f9846aa2e055400e"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {4; 8; 12; 16; 20}, B = {7; 14; 20; 28} жиындары берілген. (B ∖ A) — B жиынына тиісті, ал A жиынына тиісті емес элементтер жиыны. (B ∖ A) жиынын дұрыс көрсеткен нұсқаны таңдаңдар.",
+      "answer": "{7; 14; 28}",
+      "solution": "Бірінші жиыннан екінші жиында бар элементтерді алып тастаймыз. (B ∖ A) = {7; 14; 28}. Сондықтан дұрыс нұсқа: {7; 14; 28}.",
+      "options": [
+        "{4; 8; 12; 16}",
+        "{7; 14; 28}",
+        "{20}",
+        "{4; 7; 8; 12; 14; 16; 28}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{7; 14; 28}",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-6d337245fab477e5",
+      "modelId": "grade4-set-neither-multiple-count",
+      "skillFamily": "bounded-neither-divisor-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "low": 1,
+        "high": 35,
+        "divisors": [
+          2,
+          7
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-leveltest.json",
+          "sourceId": "6d337245fab477e5"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1–35 аралығындағы натурал сандардың ішінде 2 және 7 сандарының ешқайсысына қалдықсыз бөлінбейтін сандар нешеу? Екі шеткі сан да қарастырылады.",
+      "answer": "15",
+      "solution": "Әр бөлгішке бөлінетін сандарды алып тастаймыз. Қалғандары: 1, 3, 5, 9, 11, 13, 15, 17, 19, 23, 25, 27, 29, 31, 33. Барлығы 15 сан.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "15",
+        "checks": [
+          "neither means not divisible by every listed divisor separately"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-545f19fafa9ed182",
+      "modelId": "grade4-set-subset-count",
+      "skillFamily": "subsets-containing-specified-element",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "elements": [
+          2,
+          4,
+          6,
+          8,
+          10
+        ],
+        "contains": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-leveltest.json",
+          "sourceId": "545f19fafa9ed182"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {2; 4; 6; 8; 10} жиынының 2 саны міндетті түрде кіретін ішкі жиындары нешеу? A жиынының өзін де санаңдар.",
+      "answer": "16",
+      "solution": "Элемент саны бойынша топтаймыз: 1 элементті — 1 жиын; 2 элементті — 4 жиын; 3 элементті — 6 жиын; 4 элементті — 4 жиын; 5 элементті — 1 жиын. Барлығы 1 + 4 + 6 + 4 + 1 = 16.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "16",
+        "checks": [
+          "all distinct subsets enumerated; empty/self inclusion explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-a97c12a94769c3e2",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "intersect-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "A": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12
+          ],
+          "B": [
+            4,
+            8,
+            12,
+            16,
+            20
+          ],
+          "C": [
+            4,
+            12,
+            20,
+            28
+          ]
+        },
+        "expression": [
+          "intersect",
+          [
+            "intersect",
+            "A",
+            "B"
+          ],
+          "C"
+        ],
+        "ask": "count"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "a97c12a94769c3e2"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {2; 4; 6; 8; 10; 12}, B = {4; 8; 12; 16; 20}, C = {4; 12; 20; 28} жиындары берілген. ((A ∩ B) ∩ C) жиынында неше элемент бар?",
+      "answer": "2",
+      "solution": "Қиылысуға екі жиында да бар элементтер кіреді. (A ∩ B) = {4; 8; 12}. ((A ∩ B) ∩ C) = {4; 12}. Бұл жиында 2 элемент бар.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "2",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-5e360a6831097660",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "union-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "A": [
+            3,
+            6,
+            9,
+            12,
+            15
+          ],
+          "B": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        "expression": [
+          "union",
+          "A",
+          "B"
+        ],
+        "ask": "count"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "5e360a6831097660"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {3; 6; 9; 12; 15}, B = {8; 9; 10; 11; 12} жиындары берілген. (A ∪ B) жиынында неше элемент бар?",
+      "answer": "8",
+      "solution": "Бірігуге кемінде бір жиында бар элементтер кіреді; ортақ элементтер бір рет алынады. (A ∪ B) = {3; 6; 8; 9; 10; 11; 12; 15}. Бұл жиында 8 элемент бар.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "8",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-6f5cc00048328aca",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "union-set",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "A": [
+            2,
+            6,
+            10,
+            14
+          ],
+          "B": [
+            6,
+            8,
+            10,
+            12
+          ]
+        },
+        "expression": [
+          "union",
+          "A",
+          "B"
+        ],
+        "ask": "set",
+        "optionSets": [
+          [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14
+          ],
+          [
+            2,
+            8,
+            12,
+            14
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            2,
+            14
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "6f5cc00048328aca"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {2; 6; 10; 14}, B = {6; 8; 10; 12} жиындары берілген. (A ∪ B) жиынын дұрыс көрсеткен нұсқаны таңдаңдар.",
+      "answer": "{2; 6; 8; 10; 12; 14}",
+      "solution": "Бірігуге кемінде бір жиында бар элементтер кіреді; ортақ элементтер бір рет алынады. (A ∪ B) = {2; 6; 8; 10; 12; 14}. Сондықтан дұрыс нұсқа: {2; 6; 8; 10; 12; 14}.",
+      "options": [
+        "{2; 6; 8; 10; 12; 14}",
+        "{2; 8; 12; 14}",
+        "{6; 10}",
+        "{2; 14}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{2; 6; 8; 10; 12; 14}",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-36f5491a85b15035",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "union-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "A": [
+            2,
+            4
+          ],
+          "B": [
+            4,
+            6
+          ],
+          "C": [
+            6,
+            8,
+            10,
+            12
+          ]
+        },
+        "expression": [
+          "union",
+          [
+            "union",
+            "A",
+            "B"
+          ],
+          "C"
+        ],
+        "ask": "count"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "36f5491a85b15035"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {2; 4}, B = {4; 6}, C = {6; 8; 10; 12} жиындары берілген. ((A ∪ B) ∪ C) жиынында неше элемент бар?",
+      "answer": "6",
+      "solution": "Бірігуге кемінде бір жиында бар элементтер кіреді; ортақ элементтер бір рет алынады. (A ∪ B) = {2; 4; 6}. ((A ∪ B) ∪ C) = {2; 4; 6; 8; 10; 12}. Бұл жиында 6 элемент бар.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "6",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-f7661c4d268960b8",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "union-sum",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "A": [
+            2,
+            4,
+            6
+          ],
+          "B": [
+            4,
+            6,
+            8,
+            10
+          ]
+        },
+        "expression": [
+          "union",
+          "A",
+          "B"
+        ],
+        "ask": "sum"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "f7661c4d268960b8"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {2; 4; 6}, B = {4; 6; 8; 10} жиындары берілген. (A ∪ B) жиынының элементтерінің қосындысын табыңдар.",
+      "answer": "30",
+      "solution": "Бірігуге кемінде бір жиында бар элементтер кіреді; ортақ элементтер бір рет алынады. (A ∪ B) = {2; 4; 6; 8; 10}. 2 + 4 + 6 + 8 + 10 = 30.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "30",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-d2fb2569bae73b43",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "union-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "sets": {
+          "A": [
+            7,
+            14,
+            21,
+            28,
+            35,
+            42,
+            49
+          ],
+          "B": [
+            14,
+            28,
+            42
+          ]
+        },
+        "expression": [
+          "union",
+          "A",
+          "B"
+        ],
+        "ask": "count",
+        "explainContainedSubset": true
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "d2fb2569bae73b43"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {7; 14; 21; 28; 35; 42; 49}, B = {14; 28; 42} жиындары берілген. (A ∪ B) жиынында неше элемент бар?",
+      "answer": "7",
+      "solution": "Бірігуге кемінде бір жиында бар элементтер кіреді; ортақ элементтер бір рет алынады. B жиынының барлық элементі A жиынында бар, яғни B ⊆ A. Сондықтан бірігу жаңа элемент қоспайды: A ∪ B = A. (A ∪ B) = {7; 14; 21; 28; 35; 42; 49}. Бұл жиында 7 элемент бар.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "7",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-8415d0524094cf3f",
+      "modelId": "grade4-set-predicate-choice",
+      "skillFamily": "union-versus-intersection-verbal-description",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "high": 28,
+        "divisor": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "8415d0524094cf3f"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1–28 аралығында, екі шетін қоса, A — жұп сандар жиыны, B — 5 санына қалдықсыз бөлінетін сандар жиыны. A ∪ B жиынының анықтамасын таңдаңдар.",
+      "answer": "жұп немесе 5 санына бөлінетін сандар",
+      "solution": "Бірігуге A немесе B жиынының кемінде біреуіне тиесілі элемент кіреді. Екі шартқа да сай сандар да кіреді. Сондықтан дұрыс сипаттама: жұп немесе 5 санына бөлінетін сандар.",
+      "options": [
+        "жұп немесе 5 санына бөлінетін сандар",
+        "жұп әрі 5 санына бөлінетін сандар",
+        "жұп, бірақ 5 санына бөлінбейтін сандар",
+        "тақ әрі 5 санына бөлінбейтін сандар"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "жұп немесе 5 санына бөлінетін сандар",
+        "checks": [
+          "each verbal predicate compared over the complete stated universe"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-8a39f076f9edff66",
+      "modelId": "grade4-set-given-union-swap",
+      "skillFamily": "given-union-commutativity",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "elements": [
+          2,
+          5,
+          8,
+          11,
+          14,
+          17
+        ],
+        "candidates": [
+          [
+            2,
+            5,
+            8,
+            11,
+            14,
+            17
+          ],
+          [
+            2,
+            8,
+            14
+          ],
+          [
+            5,
+            11,
+            17
+          ],
+          [
+            2,
+            5,
+            8,
+            11,
+            14,
+            17,
+            20
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "8a39f076f9edff66"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A ∪ B = {2; 5; 8; 11; 14; 17} екені белгілі. B ∪ A жиынын таңдаңдар.",
+      "answer": "{2; 5; 8; 11; 14; 17}",
+      "solution": "Бірігудің ауыстырымдылық қасиеті бойынша B ∪ A = A ∪ B. Сондықтан нәтиже {2; 5; 8; 11; 14; 17}. A және B жиындарын бөлек білу қажет емес.",
+      "options": [
+        "{2; 5; 8; 11; 14; 17}",
+        "{2; 8; 14}",
+        "{5; 11; 17}",
+        "{2; 5; 8; 11; 14; 17; 20}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{2; 5; 8; 11; 14; 17}",
+        "checks": [
+          "universal commutativity with a concrete given union"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-d69622c03e810fa7",
+      "modelId": "grade4-set-commutativity-identity",
+      "skillFamily": "universal-union-commutativity",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "claims": [
+          [
+            [
+              "union",
+              "A",
+              "B"
+            ],
+            [
+              "union",
+              "B",
+              "A"
+            ]
+          ],
+          [
+            [
+              "intersect",
+              "A",
+              "B"
+            ],
+            "A"
+          ],
+          [
+            [
+              "union",
+              "A",
+              "B"
+            ],
+            [
+              "intersect",
+              "A",
+              "B"
+            ]
+          ],
+          [
+            [
+              "union",
+              "A",
+              "B"
+            ],
+            "B"
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "d69622c03e810fa7"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Кез келген A және B жиындары үшін міндетті түрде дұрыс болатын теңдікті таңдаңдар.",
+      "answer": "(A ∪ B) = (B ∪ A)",
+      "solution": "Бірігуде екі жиынның кемінде біреуіне кіретін элементтер алынады. Ретін ауыстырсақ, бұл талап өзгермейді: (A ∪ B) = (B ∪ A). Басқа теңдіктерге A = {2}, B = {7} мысалы қарсы болады.",
+      "options": [
+        "(A ∪ B) = (B ∪ A)",
+        "(A ∩ B) = A",
+        "(A ∪ B) = (A ∩ B)",
+        "(A ∪ B) = B"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "(A ∪ B) = (B ∪ A)",
+        "checks": [
+          "universal identities checked by boolean membership truth tables"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-b96aed8341c4c2b3",
+      "modelId": "grade4-set-only-one-member",
+      "skillFamily": "choice-in-union-outside-intersection",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "A": [
+          4,
+          8,
+          12,
+          16
+        ],
+        "B": [
+          5,
+          10,
+          16
+        ],
+        "candidates": [
+          16,
+          3,
+          9,
+          10
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "b96aed8341c4c2b3"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {4; 8; 12; 16}, B = {5; 10; 16}. Қай сан A ∪ B жиынына тиісті, бірақ A ∩ B жиынына тиісті емес?",
+      "answer": "10",
+      "solution": "Бірігу {4; 5; 8; 10; 12; 16}, қиылысу {16}. 10 саны жиындардың біреуінде ғана бар, сондықтан шартқа сай. Басқа ұсынылған сандар не екі жиында қатар бар, не екеуінде де жоқ.",
+      "options": [
+        "16",
+        "3",
+        "9",
+        "10"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "10",
+        "checks": [
+          "each numeric choice tested against both union and intersection"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-3fcca92c697eb6fb",
+      "modelId": "grade4-set-unknown-union-choice",
+      "skillFamily": "candidate-B-from-known-union",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "A": [
+          2,
+          4,
+          6
+        ],
+        "union": [
+          2,
+          4,
+          6,
+          8,
+          10
+        ],
+        "candidates": [
+          [
+            8,
+            10,
+            12
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            2,
+            4,
+            6
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "3fcca92c697eb6fb"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {2; 4; 6}. Қай B жиыны үшін A ∪ B = {2; 4; 6; 8; 10} болады? Берілген нұсқалардың ішінен таңдаңдар.",
+      "answer": "{8; 10}",
+      "solution": "Әр нұсқаны A жиынымен біріктіреміз. B = {8; 10} болғанда барлық қажетті элементтер бар және артық элемент қосылмайды. Өзге ұсынылған нұсқаларда қажетті элемент жетіспейді немесе артық элемент бар.",
+      "options": [
+        "{8; 10; 12}",
+        "{6; 8}",
+        "{8; 10}",
+        "{2; 4; 6}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{8; 10}",
+        "checks": [
+          "unknown B selected only among stated candidates; no false global uniqueness claim"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-16eece451a9f4f93",
+      "modelId": "grade4-set-universal-property",
+      "skillFamily": "universal-union-rebracketing",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "target": [
+          "union",
+          [
+            "union",
+            "A",
+            "B"
+          ],
+          "C"
+        ],
+        "candidates": [
+          [
+            "intersect",
+            "A",
+            [
+              "union",
+              "B",
+              "C"
+            ]
+          ],
+          [
+            "union",
+            [
+              "intersect",
+              "A",
+              "B"
+            ],
+            "C"
+          ],
+          [
+            "union",
+            "A",
+            [
+              "union",
+              "B",
+              "C"
+            ]
+          ],
+          [
+            "intersect",
+            [
+              "union",
+              "A",
+              "B"
+            ],
+            "C"
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "16eece451a9f4f93"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "((A ∪ B) ∪ C) өрнегіне кез келген A, B, C жиындары үшін әрқашан тең болатын өрнекті таңдаңдар.",
+      "answer": "(A ∪ (B ∪ C))",
+      "solution": "Бірігуге кемінде бір жиынға тиісті элемент кіреді. Жиындардың топталуын немесе ретімен жазылуын өзгерту бұл шартты өзгертпейді. Сондықтан ((A ∪ B) ∪ C) = (A ∪ (B ∪ C)). ∩ белгісі бар өзге нұсқалар элементке қосымша талап қояды және барлық жиындар үшін тең емес.",
+      "options": [
+        "(A ∩ (B ∪ C))",
+        "((A ∩ B) ∪ C)",
+        "(A ∪ (B ∪ C))",
+        "((A ∪ B) ∩ C)"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "(A ∪ (B ∪ C))",
+        "checks": [
+          "all eight possible A/B/C membership states checked"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-e9b2c69b4e502b98",
+      "modelId": "grade4-set-filter",
+      "skillFamily": "strict-upper-bound-multiple-union",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "params": {
+        "ask": "count",
+        "low": 1,
+        "high": 35,
+        "upperExclusive": true,
+        "upperBound": 36,
+        "first": "divisible",
+        "firstParams": {
+          "divisor": 6
+        },
+        "second": "divisible",
+        "secondParams": {
+          "divisor": 8
+        },
+        "operation": "union"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "e9b2c69b4e502b98"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1 санынан кем емес және 36 санынан кіші натурал сандар қарастырылады. 36 саны алынбайды. A — осы аралықтағы 6 санына қалдықсыз бөлінетін сандар жиыны. B — осы аралықтағы 8 санына қалдықсыз бөлінетін сандар жиыны. A ∪ B жиынында неше элемент бар?",
+      "answer": "8",
+      "solution": "A = {6; 12; 18; 24; 30}. B = {8; 16; 24; 32}. Шартқа сай нәтиже: A ∪ B = {6; 8; 12; 16; 18; 24; 30; 32}. A жиынында 5, B жиынында 4, ортақ бөлікте 1 элемент бар. Бірігудегі саны: 5 + 4 − 1 = 8.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "8",
+        "checks": [
+          "all integers below the explicitly excluded upper bound enumerated"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-8b1159239b72b44c",
+      "modelId": "grade4-set-filter",
+      "skillFamily": "inclusive-divisor-union-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "ask": "count",
+        "low": 1,
+        "high": 48,
+        "first": "divisible",
+        "firstParams": {
+          "divisor": 4
+        },
+        "second": "divisible",
+        "secondParams": {
+          "divisor": 6
+        },
+        "operation": "union"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level2.json",
+          "sourceId": "8b1159239b72b44c"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1–48 аралығындағы натурал сандар қарастырылады; екі шеті де кіреді. A — осы аралықтағы 4 санына қалдықсыз бөлінетін сандар жиыны. B — осы аралықтағы 6 санына қалдықсыз бөлінетін сандар жиыны. A ∪ B жиынында неше элемент бар?",
+      "answer": "16",
+      "solution": "A = {4; 8; 12; 16; 20; 24; 28; 32; 36; 40; 44; 48}. B = {6; 12; 18; 24; 30; 36; 42; 48}. Шартқа сай нәтиже: A ∪ B = {4; 6; 8; 12; 16; 18; 20; 24; 28; 30; 32; 36; 40; 42; 44; 48}. A жиынында 12, B жиынында 8, ортақ бөлікте 4 элемент бар. Бірігудегі саны: 12 + 8 − 4 = 16.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "16",
+        "checks": [
+          "all integers in the stated inclusive interval enumerated"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-47f728694322547c",
+      "modelId": "grade4-set-odd-expression",
+      "skillFamily": "odd-expression-under-universal-equivalence",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "candidates": [
+          [
+            "union",
+            "C",
+            [
+              "union",
+              "B",
+              "A"
+            ]
+          ],
+          [
+            "union",
+            "A",
+            [
+              "union",
+              "C",
+              "B"
+            ]
+          ],
+          [
+            "union",
+            [
+              "union",
+              "A",
+              "B"
+            ],
+            "C"
+          ],
+          [
+            "union",
+            [
+              "intersect",
+              "A",
+              "B"
+            ],
+            "C"
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level2.json",
+          "sourceId": "47f728694322547c"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Үш өрнек кез келген A, B, C жиындары үшін бірдей нәтиже береді. Қай өрнек қалған үшеуіне тепе-тең емес?",
+      "answer": "((A ∩ B) ∪ C)",
+      "solution": "Бірігу үшін жиындардың реті мен жақшалардың орны маңызды емес. Үш өрнекте A, B, C жиындарының бірігуі алынады. ((A ∩ B) ∪ C) өрнегіндегі қиылысу басқа шарт қояды; мысалы A = {2}, B = {5}, C = {9} болса, нәтижелер әртүрлі.",
+      "options": [
+        "(C ∪ (B ∪ A))",
+        "(A ∪ (C ∪ B))",
+        "((A ∪ B) ∪ C)",
+        "((A ∩ B) ∪ C)"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "((A ∩ B) ∪ C)",
+        "checks": [
+          "truth signatures split into exactly one triple and one singleton"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-64129f4fb42f4b9d",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "xor-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "sets": {
+          "A": [
+            3,
+            6,
+            9,
+            12,
+            15,
+            18
+          ],
+          "B": [
+            4,
+            8,
+            12,
+            16,
+            20
+          ]
+        },
+        "expression": [
+          "xor",
+          "A",
+          "B"
+        ],
+        "ask": "count"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level2.json",
+          "sourceId": "64129f4fb42f4b9d"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {3; 6; 9; 12; 15; 18}, B = {4; 8; 12; 16; 20} жиындары берілген. A және B жиындарының дәл біреуіне ғана тиісті неше элемент бар?",
+      "answer": "9",
+      "solution": "Екі жиынға қатар кіретін ортақ элементтер бұл жолы саналмайды. Тек A жиынында {3; 6; 9; 15; 18}, тек B жиынында {4; 8; 16; 20} элементтері бар. Бұл жиында 9 элемент бар.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "9",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-e94de8eaaee5e753",
+      "modelId": "grade4-set-given-intersection-rebracket",
+      "skillFamily": "given-intersection-associativity",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "pair": [
+          8,
+          14
+        ],
+        "triple": [
+          14
+        ],
+        "candidates": [
+          [
+            14
+          ],
+          [
+            8
+          ],
+          [
+            8,
+            14
+          ],
+          []
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level2.json",
+          "sourceId": "e94de8eaaee5e753"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A ∩ B = {8; 14} және (A ∩ B) ∩ C = {14}. A ∩ (B ∩ C) жиынын таңдаңдар.",
+      "answer": "{14}",
+      "solution": "Қиылысудың терімділік қасиеті: A ∩ (B ∩ C) = (A ∩ B) ∩ C. Оң жақ шарт бойынша {14} жиынына тең.",
+      "options": [
+        "{14}",
+        "{8}",
+        "{8; 14}",
+        "∅"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{14}",
+        "checks": [
+          "intersection associativity verified by all eight membership truth states"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-beff907bd41c9f8b",
+      "modelId": "grade4-set-words-operation",
+      "skillFamily": "word-union-distinct-letter-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "words": [
+          "ҚАЛАМ",
+          "КІТАП"
+        ],
+        "operation": "union",
+        "ask": "count"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level2.json",
+          "sourceId": "beff907bd41c9f8b"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A, B — сәйкесінше «ҚАЛАМ», «КІТАП» сөздеріндегі әріптер жиындары. Қайталанған әріп бір рет алынады. (A ∪ B) жиынында неше әріп бар?",
+      "answer": "8",
+      "solution": "A = {А; Қ; Л; М}, B = {А; К; П; Т; І}. (A ∪ B) = {А; К; Қ; Л; М; П; Т; І}. Барлығы 8 әріп.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "8",
+        "checks": [
+          "Unicode Kazakh letters kept distinct",
+          "word repetitions removed before set operations"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-13fff604307cbe41",
+      "modelId": "grade4-set-two-counts",
+      "skillFamily": "intersection-from-union-cardinality",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "query": "intersection",
+        "a": 9,
+        "b": 8,
+        "union": 13
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level2.json",
+          "sourceId": "13fff604307cbe41"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A жиынында 9, B жиынында 8 элемент бар. A ∪ B жиынында 13 элемент бар. A ∩ B жиынында неше элемент бар?",
+      "answer": "4",
+      "solution": "9 + 8 = 17 қосындысында ортақ элементтер екі рет саналады. Бірігуде әр элемент бір рет: 17 − 13 = 4.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "4",
+        "checks": [
+          "two-set region counts nonnegative; union/intersection interpretation checked"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-99fda6024d02bf65",
+      "modelId": "grade4-set-two-counts",
+      "skillFamily": "distinct-type-catalog-union",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "query": "catalog-union",
+        "a": 14,
+        "b": 11,
+        "overlap": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level2.json",
+          "sourceId": "99fda6024d02bf65"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Екі оқушы саяхат орындарының ашықхаттарын жинайды. Біріншісінде 14, екіншісінде 11 түрлі ашықхат бар. Екеуінде де кездесетін 5 түр бар. Әр түрді бір рет қана санасақ, екі жинақта барлығы неше түрлі ашықхат бар?",
+      "answer": "20",
+      "solution": "Алдымен 14 + 11 = 25. Екі рет саналған ортақ 5 түрді бір рет алып тастаймыз: 25 − 5 = 20.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "20",
+        "checks": [
+          "two-set region counts nonnegative; union/intersection interpretation checked"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-6f7f9ca935c7e958",
+      "modelId": "grade4-set-words-operation",
+      "skillFamily": "word-union-set-with-repetitions",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "words": [
+          "ҚАРАҒАЙ",
+          "БАЛАЛАР"
+        ],
+        "operation": "union",
+        "ask": "set",
+        "optionSets": [
+          [
+            "Қ",
+            "А",
+            "Р",
+            "Ғ",
+            "Й",
+            "Б",
+            "Л"
+          ],
+          [
+            "А",
+            "Р"
+          ],
+          [
+            "Қ",
+            "Ғ",
+            "Й",
+            "Б",
+            "Л"
+          ],
+          [
+            "Қ",
+            "А",
+            "Р",
+            "Й",
+            "Б",
+            "Л"
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level2.json",
+          "sourceId": "6f7f9ca935c7e958"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A, B — сәйкесінше «ҚАРАҒАЙ», «БАЛАЛАР» сөздеріндегі әріптер жиындары. Қайталанған әріп бір рет алынады. (A ∪ B) жиынын таңдаңдар.",
+      "answer": "{Қ; А; Р; Ғ; Й; Б; Л}",
+      "solution": "A = {А; Ғ; Й; Қ; Р}, B = {А; Б; Л; Р}. (A ∪ B) = {А; Б; Ғ; Й; Қ; Л; Р}. Элементтердің реті нәтижені өзгертпейді.",
+      "options": [
+        "{Қ; А; Р; Ғ; Й; Б; Л}",
+        "{А; Р}",
+        "{Қ; Ғ; Й; Б; Л}",
+        "{Қ; А; Р; Й; Б; Л}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{Қ; А; Р; Ғ; Й; Б; Л}",
+        "checks": [
+          "Unicode Kazakh letters kept distinct",
+          "word repetitions removed before set operations"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-6ce97e3b11d1d034",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "union-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "sets": {
+          "A": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16
+          ],
+          "B": [
+            4,
+            8,
+            12,
+            16,
+            20,
+            24
+          ],
+          "C": [
+            6,
+            12,
+            18,
+            24
+          ]
+        },
+        "expression": [
+          "union",
+          [
+            "union",
+            "A",
+            "B"
+          ],
+          "C"
+        ],
+        "ask": "count"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level2.json",
+          "sourceId": "6ce97e3b11d1d034"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {2; 4; 6; 8; 10; 12; 14; 16}, B = {4; 8; 12; 16; 20; 24}, C = {6; 12; 18; 24} жиындары берілген. ((A ∪ B) ∪ C) жиынында неше элемент бар?",
+      "answer": "11",
+      "solution": "Бірігуге кемінде бір жиында бар элементтер кіреді; ортақ элементтер бір рет алынады. (A ∪ B) = {2; 4; 6; 8; 10; 12; 14; 16; 20; 24}. ((A ∪ B) ∪ C) = {2; 4; 6; 8; 10; 12; 14; 16; 18; 20; 24}. Бұл жиында 11 элемент бар.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "11",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-e47918ab18c890a9",
+      "modelId": "grade4-set-unknown-both",
+      "skillFamily": "B-from-both-union-and-intersection",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "A": [
+          2,
+          4,
+          6,
+          8
+        ],
+        "union": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ],
+        "intersection": [
+          6,
+          8
+        ],
+        "candidates": [
+          [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14
+          ],
+          [
+            10,
+            12,
+            14
+          ],
+          [
+            6,
+            8,
+            10,
+            12,
+            14
+          ],
+          [
+            6,
+            8
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level2.json",
+          "sourceId": "e47918ab18c890a9"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {2; 4; 6; 8}, A ∪ B = {2; 4; 6; 8; 10; 12; 14}, A ∩ B = {6; 8}. B жиынын таңдаңдар.",
+      "answer": "{6; 8; 10; 12; 14}",
+      "solution": "B жиынына ортақ {6; 8} элементтері міндетті түрде кіреді. Бірігуде бар, A жиынында жоқ элементтер де B жиынынан алынған: {10; 12; 14}. Оларды біріктірсек, B = {6; 8; 10; 12; 14}. Қалған A элементтері B жиынына кірмейді.",
+      "options": [
+        "{2; 4; 6; 8; 10; 12; 14}",
+        "{10; 12; 14}",
+        "{6; 8; 10; 12; 14}",
+        "{6; 8}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{6; 8; 10; 12; 14}",
+        "checks": [
+          "all subsets of the stated union checked; unique B satisfies both constraints"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-41156c39227fcfe4",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "intersect-set",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "sets": {
+          "A": [
+            2,
+            4,
+            6
+          ],
+          "B": [
+            6,
+            8,
+            10
+          ],
+          "C": [
+            4,
+            8,
+            12
+          ]
+        },
+        "expression": [
+          "intersect",
+          [
+            "union",
+            "A",
+            "B"
+          ],
+          "C"
+        ],
+        "ask": "set",
+        "optionSets": [
+          [
+            4,
+            8,
+            12
+          ],
+          [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            6,
+            8
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level2.json",
+          "sourceId": "41156c39227fcfe4"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {2; 4; 6}, B = {6; 8; 10}, C = {4; 8; 12} жиындары берілген. ((A ∪ B) ∩ C) жиынын дұрыс көрсеткен нұсқаны таңдаңдар.",
+      "answer": "{4; 8}",
+      "solution": "Қиылысуға екі жиында да бар элементтер кіреді. Бірігуге кемінде бір жиында бар элементтер кіреді; ортақ элементтер бір рет алынады. (A ∪ B) = {2; 4; 6; 8; 10}. ((A ∪ B) ∩ C) = {4; 8}. Сондықтан дұрыс нұсқа: {4; 8}.",
+      "options": [
+        "{4; 8; 12}",
+        "{2; 4; 6; 8; 10; 12}",
+        "{4; 8}",
+        "{4; 6; 8}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{4; 8}",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-785e6b2d90903903",
+      "modelId": "grade4-set-proper-subset-union",
+      "skillFamily": "union-under-strict-containment",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level2.json",
+          "sourceId": "785e6b2d90903903"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A және B — бос емес жиындар. A жиынының әр элементі B жиынында бар. B жиынында A жиынына кірмейтін кемінде бір қосымша элемент те бар. A ∪ B өрнегінің мәнін таңдаңдар.",
+      "answer": "B",
+      "solution": "A жиынының элементтері B жиынында бұрыннан бар. Бірігу A жиынынан жаңа элемент қоспайды, сондықтан A ∪ B = B. Қосымша элемент бар болғандықтан B жиыны A жиынына тең емес.",
+      "options": [
+        "A",
+        "B",
+        "A ∩ B",
+        "B ∖ A"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "B",
+        "checks": [
+          "strict containment and nonempty A exclude ambiguous B-difference equality"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-af6f9b3bb1234693",
+      "modelId": "grade4-set-overlap-bounds",
+      "skillFamily": "entire-feasible-overlap-interval",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "total": 32,
+        "a": 18,
+        "b": 20,
+        "query": "interval"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level3.json",
+          "sourceId": "af6f9b3bb1234693"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Сауалнамаға 32 оқушы қатысты. Шахматты 18, робот құрастыруды 20 оқушы таңдады. Бір оқушы екі бағытты да таңдауы мүмкін; ешқайсысын таңдамағандар да болуы мүмкін. Екі бағытты да таңдағандар санының барлық мүмкін мәндерін көрсетіңдер.",
+      "answer": "6–18 аралығындағы кез келген бүтін сан",
+      "solution": "Төменгі шек 18 + 20 − 32 = 6. Жоғарғы шек кіші топтың санына тең: 18. Ортақ топ r болғанда тек бірінші топта 18 − r, тек екіншісінде 20 − r, ешқайсысында 32 − (18 + 20 − r) оқушы болады. 6–18 аралығындағы әр бүтін r үшін бұл сандар теріс емес.",
+      "options": [
+        "6–18 аралығындағы кез келген бүтін сан",
+        "тек 6",
+        "0–18 аралығындағы кез келген бүтін сан",
+        "6–20 аралығындағы кез келген бүтін сан"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "6–18 аралығындағы кез келген бүтін сан",
+        "checks": [
+          "all feasible overlap integers enumerated; bound witnessed by nonnegative regions"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-cb009ffdaf572b3a",
+      "modelId": "grade4-set-three-counts",
+      "skillFamily": "three-set-exactly-two-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "regions": [
+          8,
+          6,
+          7,
+          4,
+          5,
+          4,
+          2
+        ],
+        "total": 43,
+        "query": "exactly-two"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level3.json",
+          "sourceId": "cb009ffdaf572b3a"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "43 оқушыға үш бағыт ұсынылды: музыка (A), робот құрастыру (B), сурет (C). A бағытын 19, B бағытын 16, C бағытын 18 оқушы таңдады. A мен B бағыттарын 6, A мен C бағыттарын 7, B мен C бағыттарын 6 оқушы таңдаған. Әр жұптың санына үш бағытты да таңдағандар кіреді. Үшеуін де 2 оқушы таңдады. Дәл екі бағытты таңдағандар нешеу?",
+      "answer": "13",
+      "solution": "Әр жұптан үш бағытты таңдаған 2 оқушыны алып тастаймыз: 6 − 2 = 4; 7 − 2 = 5; 6 − 2 = 4. Дәл екі бағыт: 4 + 5 + 4 = 13.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "13",
+        "checks": [
+          "seven nonnegative Venn regions witness feasibility",
+          "pair intersections explicitly include the triple group"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-bc7029a1873fe9a7",
+      "modelId": "grade4-set-three-counts",
+      "skillFamily": "three-set-exactly-one-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "regions": [
+          7,
+          9,
+          6,
+          4,
+          3,
+          5,
+          2
+        ],
+        "query": "exactly-one"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level3.json",
+          "sourceId": "bc7029a1873fe9a7"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "36 оқушыға үш бағыт ұсынылды: музыка (A), робот құрастыру (B), сурет (C). A бағытын 16, B бағытын 20, C бағытын 16 оқушы таңдады. Әр оқушы кемінде бір бағытты таңдаған. A мен B бағыттарын 6, A мен C бағыттарын 5, B мен C бағыттарын 7 оқушы таңдаған; бұл жұптарға үш бағытты таңдағандар да кіреді. Үшеуін де 2 оқушы таңдады. Дәл бір бағытты таңдағандар нешеу?",
+      "answer": "22",
+      "solution": "Дәл екі бағытты таңдағандар: (6 − 2) + (5 − 2) + (7 − 2) = 12. Бір ғана бағыт: 36 − 12 − 2 = 22. Тек A — 7, тек B — 9, тек C — 6; қосындысы 22.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "22",
+        "checks": [
+          "seven nonnegative Venn regions witness feasibility",
+          "pair intersections explicitly include the triple group"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-e0cfe38077a9a247",
+      "modelId": "grade4-set-three-divisor-union",
+      "skillFamily": "inclusive-three-divisor-union",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "low": 1,
+        "high": 42,
+        "divisors": [
+          2,
+          3,
+          7
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level3.json",
+          "sourceId": "e0cfe38077a9a247"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1–42 аралығындағы натурал сандардың нешеуі 2, 3, 7 сандарының кемінде біреуіне қалдықсыз бөлінеді? Екі шеті де кіреді.",
+      "answer": "30",
+      "solution": "Ешқайсысына бөлінбейтіндер: 1, 5, 11, 13, 17, 19, 23, 25, 29, 31, 37, 41 — 12 сан. Аралықта барлығы 42 сан. Сондықтан сұралған сан: 42 − 12 = 30.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "30",
+        "checks": [
+          "three-predicate inclusive union checked by complementary enumeration"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-215ead04aa031584",
+      "modelId": "grade4-set-words-operation",
+      "skillFamily": "three-letter-sets-exactly-one-membership",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "words": [
+          "ДАЛА",
+          "ҚАЛА",
+          "БАЛА"
+        ],
+        "operation": "union",
+        "exactlyOne": true,
+        "ask": "count"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level3.json",
+          "sourceId": "215ead04aa031584"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A, B, C — сәйкесінше «ДАЛА», «ҚАЛА», «БАЛА» сөздеріндегі әріптер жиындары. Қайталанған әріп бір рет алынады. Осы жиындардың дәл біреуіне ғана тиісті неше әріп бар?",
+      "answer": "3",
+      "solution": "A = {А; Д; Л}, B = {А; Қ; Л}, C = {А; Б; Л}. Бір ғана сөздің жиынында кездесетін әріптер: {Б; Д; Қ}. Барлығы 3 әріп.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "3",
+        "checks": [
+          "Unicode Kazakh letters kept distinct",
+          "word repetitions removed before set operations"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-1279fc3500f9f041",
+      "modelId": "grade4-set-three-counts",
+      "skillFamily": "three-set-triple-from-excess-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "regions": [
+          6,
+          5,
+          7,
+          4,
+          3,
+          5,
+          4
+        ],
+        "query": "all-three"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level3.json",
+          "sourceId": "1279fc3500f9f041"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "34 оқушыға үш бағыт ұсынылды: музыка (A), робот құрастыру (B), сурет (C). A бағытын 17, B бағытын 18, C бағытын 19 оқушы таңдады. Әр оқушы кемінде бір бағытты таңдаған. Дәл екі бағытты таңдаған 12 оқушы бар. Үш бағытты да таңдағандар нешеу?",
+      "answer": "4",
+      "solution": "Үш топтағы сандарды қосамыз: 17 + 18 + 19 = 54. Әр оқушыны бір рет санасақ, 34. Артық санау: 54 − 34 = 20. Екі бағытты таңдағандар 12 артық санақ береді. Қалғаны: 20 − 12 = 8. Үш бағытты таңдаған әр оқушы екі рет артық саналады: 8 : 2 = 4.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "4",
+        "checks": [
+          "seven nonnegative Venn regions witness feasibility",
+          "pair intersections explicitly include the triple group"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-f78168332a9d38e5",
+      "modelId": "grade4-set-overlap-bounds",
+      "skillFamily": "minimum-overlap-with-attainability",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "params": {
+        "total": 42,
+        "a": 25,
+        "b": 29,
+        "query": "minimum"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level3.json",
+          "sourceId": "f78168332a9d38e5"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Сауалнамаға 42 оқушы қатысты. Шахматты 25, робот құрастыруды 29 оқушы таңдады. Бір оқушы екі бағытты да таңдауы мүмкін; ешқайсысын таңдамағандар да болуы мүмкін. Екеуін де таңдағандар ең аз дегенде нешеу болуы мүмкін?",
+      "answer": "12",
+      "solution": "Екі топтың санының қосындысы 54. Барлық оқушы саны 42, сондықтан ортақ топ кемінде 12. Бұл шек орындалады: тек шахмат 13, тек робот 17, екеуі 12, ешқайсысы 0.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "12",
+        "checks": [
+          "all feasible overlap integers enumerated; bound witnessed by nonnegative regions"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-558270b61f0a286d",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "union-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "sets": {
+          "A": [
+            4,
+            7,
+            10,
+            13,
+            16
+          ],
+          "B": [
+            10,
+            11,
+            13,
+            14
+          ]
+        },
+        "expression": [
+          "union",
+          "A",
+          "B"
+        ],
+        "ask": "count"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-leveltest.json",
+          "sourceId": "558270b61f0a286d"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {4; 7; 10; 13; 16}, B = {10; 11; 13; 14} жиындары берілген. (A ∪ B) жиынында неше элемент бар?",
+      "answer": "7",
+      "solution": "Бірігуге кемінде бір жиында бар элементтер кіреді; ортақ элементтер бір рет алынады. (A ∪ B) = {4; 7; 10; 11; 13; 14; 16}. Бұл жиында 7 элемент бар.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "7",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-a098e29e14c328cd",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "union-set",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "sets": {
+          "A": [
+            0,
+            3,
+            6
+          ],
+          "B": [
+            6,
+            8
+          ]
+        },
+        "expression": [
+          "union",
+          "A",
+          "B"
+        ],
+        "ask": "set",
+        "optionSets": [
+          [
+            3,
+            6,
+            8
+          ],
+          [
+            0,
+            3,
+            6,
+            8
+          ],
+          [
+            0,
+            3,
+            8
+          ],
+          [
+            6
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-leveltest.json",
+          "sourceId": "a098e29e14c328cd"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {0; 3; 6}, B = {6; 8} жиындары берілген. (A ∪ B) жиынын дұрыс көрсеткен нұсқаны таңдаңдар.",
+      "answer": "{0; 3; 6; 8}",
+      "solution": "Бірігуге кемінде бір жиында бар элементтер кіреді; ортақ элементтер бір рет алынады. (A ∪ B) = {0; 3; 6; 8}. Сондықтан дұрыс нұсқа: {0; 3; 6; 8}.",
+      "options": [
+        "{3; 6; 8}",
+        "{0; 3; 6; 8}",
+        "{0; 3; 8}",
+        "{6}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{0; 3; 6; 8}",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-1c483827f421e4b3",
+      "modelId": "grade4-set-associativity-recognition",
+      "skillFamily": "classify-union-associativity-versus-other-laws",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-leveltest.json",
+          "sourceId": "1c483827f421e4b3"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай теңдік дәл бірігудің терімділік қасиетін көрсетеді?",
+      "answer": "(A ∪ B) ∪ C = A ∪ (B ∪ C)",
+      "solution": "Терімділік қасиеті үш жиындағы бірдей амалды орындағанда жақшалардың орнын өзгертеді. Бірігу белгісі ∪ сақталуы керек. Сондықтан (A ∪ B) ∪ C = A ∪ (B ∪ C). Қиылысудың терімділік қасиеті мен бірігудің ауыстырымдылық қасиеті басқа тұжырымдар.",
+      "options": [
+        "(A ∪ B) ∪ C = A ∪ (B ∪ C)",
+        "(A ∩ B) ∩ C = A ∩ (B ∩ C)",
+        "A ∪ B = B ∪ A",
+        "(A ∪ B) ∩ C = A ∪ (B ∩ C)"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "(A ∪ B) ∪ C = A ∪ (B ∪ C)",
+        "checks": [
+          "property classification distinguishes valid but different intersection/commutativity identities"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-cf17fab9eb4430df",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "union-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "sets": {
+          "A": [
+            2,
+            4,
+            6,
+            8
+          ],
+          "B": [
+            6,
+            8,
+            10,
+            12
+          ],
+          "C": [
+            12,
+            14,
+            16
+          ]
+        },
+        "expression": [
+          "union",
+          [
+            "union",
+            "A",
+            "B"
+          ],
+          "C"
+        ],
+        "ask": "count"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-leveltest.json",
+          "sourceId": "cf17fab9eb4430df"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {2; 4; 6; 8}, B = {6; 8; 10; 12}, C = {12; 14; 16} жиындары берілген. ((A ∪ B) ∪ C) жиынында неше элемент бар?",
+      "answer": "8",
+      "solution": "Бірігуге кемінде бір жиында бар элементтер кіреді; ортақ элементтер бір рет алынады. (A ∪ B) = {2; 4; 6; 8; 10; 12}. ((A ∪ B) ∪ C) = {2; 4; 6; 8; 10; 12; 14; 16}. Бұл жиында 8 элемент бар.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "8",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-d2ba8dd6b4049666",
+      "modelId": "grade4-set-words-operation",
+      "skillFamily": "three-word-common-letter-intersection",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "words": [
+          "ЖАР",
+          "ЖОЛ",
+          "ЖҮК"
+        ],
+        "operation": "intersect",
+        "ask": "set",
+        "optionSets": [
+          [
+            "Ж"
+          ],
+          [
+            "А",
+            "Р"
+          ],
+          [
+            "А",
+            "О",
+            "Ү"
+          ],
+          [
+            "Ж",
+            "А",
+            "Р",
+            "О",
+            "Л",
+            "Ү",
+            "К"
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-leveltest.json",
+          "sourceId": "d2ba8dd6b4049666"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A, B, C — сәйкесінше «ЖАР», «ЖОЛ», «ЖҮК» сөздеріндегі әріптер жиындары. Қайталанған әріп бір рет алынады. ((A ∩ B) ∩ C) жиынын таңдаңдар.",
+      "answer": "{Ж}",
+      "solution": "A = {А; Ж; Р}, B = {Ж; Л; О}, C = {Ж; К; Ү}. ((A ∩ B) ∩ C) = {Ж}. Элементтердің реті нәтижені өзгертпейді.",
+      "options": [
+        "{Ж}",
+        "{А; Р}",
+        "{А; О; Ү}",
+        "{Ж; А; Р; О; Л; Ү; К}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{Ж}",
+        "checks": [
+          "Unicode Kazakh letters kept distinct",
+          "word repetitions removed before set operations"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-0b7e3d72a196fe11",
+      "modelId": "grade4-set-two-counts",
+      "skillFamily": "intersection-from-union-cardinality",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "query": "intersection",
+        "a": 12,
+        "b": 10,
+        "union": 17
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-leveltest.json",
+          "sourceId": "0b7e3d72a196fe11"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A жиынында 12, B жиынында 10 элемент бар. A ∪ B жиынында 17 элемент бар. A ∩ B жиынында неше элемент бар?",
+      "answer": "5",
+      "solution": "12 + 10 = 22 қосындысында ортақ элементтер екі рет саналады. Бірігуде әр элемент бір рет: 22 − 17 = 5.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "5",
+        "checks": [
+          "two-set region counts nonnegative; union/intersection interpretation checked"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-46fb8c2eb00a0814",
+      "modelId": "grade4-set-evaluate",
+      "skillFamily": "intersect-set",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "sets": {
+          "A": [
+            4,
+            6
+          ],
+          "B": [
+            6,
+            10,
+            14
+          ],
+          "C": [
+            2,
+            6,
+            10,
+            18
+          ]
+        },
+        "expression": [
+          "intersect",
+          [
+            "union",
+            "A",
+            "B"
+          ],
+          "C"
+        ],
+        "ask": "set",
+        "optionSets": [
+          [
+            4,
+            6,
+            10,
+            14
+          ],
+          [
+            2,
+            4,
+            6,
+            10,
+            14,
+            18
+          ],
+          [
+            6
+          ],
+          [
+            6,
+            10
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-leveltest.json",
+          "sourceId": "46fb8c2eb00a0814"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "A = {4; 6}, B = {6; 10; 14}, C = {2; 6; 10; 18} жиындары берілген. ((A ∪ B) ∩ C) жиынын дұрыс көрсеткен нұсқаны таңдаңдар.",
+      "answer": "{6; 10}",
+      "solution": "Қиылысуға екі жиында да бар элементтер кіреді. Бірігуге кемінде бір жиында бар элементтер кіреді; ортақ элементтер бір рет алынады. (A ∪ B) = {4; 6; 10; 14}. ((A ∪ B) ∩ C) = {6; 10}. Сондықтан дұрыс нұсқа: {6; 10}.",
+      "options": [
+        "{4; 6; 10; 14}",
+        "{2; 4; 6; 10; 14; 18}",
+        "{6}",
+        "{6; 10}"
+      ],
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "{6; 10}",
+        "checks": [
+          "finite membership checked element by element",
+          "set choices semantically unique"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-set-7b653e2009a1914a",
+      "modelId": "grade4-set-overlap-bounds",
+      "skillFamily": "maximum-complement-of-union",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "params": {
+        "total": 45,
+        "a": 24,
+        "b": 29,
+        "query": "max-neither"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-leveltest.json",
+          "sourceId": "7b653e2009a1914a"
+        }
+      ],
+      "adaptationChanges": [
+        "Бастапқы нақты шарт, жауап кілті және ресми шешім толық оқылды; жиынға тиістілік, санау, амал немесе қасиетті тану дағдысы жеке сақталды.",
+        "Деректер мен өз қазақша шарты қайта жазылды. Жиын элементтерінің реті жауапты өзгертпейді; жауап нұсқалары тек жазылу ретімен ажыратылмайды.",
+        "Шекаралар, бос жиын, өз жиыны, «дәл бір», «кемінде бір» және үш топтың жұп қиылысуларына ортақ топтың кіруі қажет жерде анық айтылды."
+      ],
+      "relationToSource": "A source-specific saved grade-4 set exercise edition. Repeated numerical models are retained, not counted as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Сауалнамаға 45 оқушы қатысты. Шахматты 24, робот құрастыруды 29 оқушы таңдады. Бір оқушы екі бағытты да таңдауы мүмкін; ешқайсысын таңдамағандар да болуы мүмкін. Ешқайсысын таңдамағандар ең көп дегенде нешеу болуы мүмкін?",
+      "answer": "16",
+      "solution": "Ешқайсысын таңдамағандар көп болуы үшін екі топтың бірігуі ең аз болуы керек. Кіші топты үлкен топтың ішіне орналастырсақ, бірігу 29 болады. Ешқайсысын таңдамағандар: 45 − 29 = 16.",
+      "calculationVerification": {
+        "method": "finite_membership_constraints_and_truth_tables",
+        "answer": "16",
+        "checks": [
+          "all feasible overlap integers enumerated; bound witnessed by nonnegative regions"
+        ]
+      }
+    }
+  ]
+}

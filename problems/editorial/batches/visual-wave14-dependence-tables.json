@@ -1,0 +1,843 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All10 saved visual sources grade6topics9.1–9.2 only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade6topics9.1–9.2",
+    "sourceVisualOccurrences": 10,
+    "addressedNewDrafts": 10,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "0982a2d0315067f4",
+      "43b9bbfd265d3783",
+      "4635e73ae4028a2c",
+      "6ec12c243376cdd7",
+      "9390e2e71162d117",
+      "abb22cf0ad251b8c",
+      "b088a0e8dfb288ff",
+      "c76383d5c09714fe",
+      "d05e3e369ef31df9",
+      "e9c4954d3356f390"
+    ],
+    "distinctModels": 10,
+    "semantics": "10 source-addressed models preserve input/output, independent/dependent, inverse lookup and formula checking distinctions; not generic replacement exercises."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave14-shuffled-arrow-dependence",
+      "modelId": "visual-wave14-shuffled-arrow-formula",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "mapping",
+        "xs": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "ys": [
+          7,
+          11,
+          15,
+          19
+        ],
+        "displayY": [
+          15,
+          7,
+          19,
+          11
+        ]
+      },
+      "answer": "y = 4x + 3",
+      "sourceRefs": [
+        {
+          "sourceId": "e9c4954d3356f390",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-1-level1.json#1",
+      "sourceCanonicalSha256": "eacfdce67c845e6f6c837ec5ecc42acb3747b87bc31841d7452fef2725544dd7",
+      "sourceSkill": "Following each actual arrow through a shuffled output column before selecting a formula that fits every pair",
+      "adaptationChanges": [
+        "Дереккөздің нақты тәуелділік дағдысы сақталды: нұсқар бағытын оқу, әр кірістің жалғыз шығысы, формула құру, кесте бағанын кері оқу, тәуелсіз қадам немесе қате баған.",
+        "Барлық сан, шкала емес кесте жолдары, формула коэффициенттері, берілген мәндер, шығыс реттері және дұрыс жауаптар жаңадан таңдалды.",
+        "Жаңа параметрлерден native SVG кестелері, нұсқарлар мен теңдік белгілері салынды. Source raster/traced path көшірілмеді; формула нұсқаларының өз мәтіні дәл рационал арифметикамен тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тәуелділік сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, actual shuffled arrow links and outdegree, exact printed table pair/formula checks, equality marks and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave14-shuffled-arrow-dependence.svg",
+      "verificationModule": "scripts/editorial/visual-wave14-models.mjs",
+      "options": [
+        "y = x + 6",
+        "y = 4x + 3",
+        "y = 5x + 2",
+        "y = 7x"
+      ],
+      "statement": "Әр x санына y саны нұсқар арқылы сәйкестендірілген. Оң жақтағы сандардың жазылу ретіне емес, нұсқарлардың ұштарына қараңыз. Барлық сәйкестікті қай формула береді?",
+      "solution": "Нұсқарларды оқимыз: 1 → 7, 2 → 11, 3 → 15, 4 → 19. y = 4x + 3 әр жұпқа сай келеді: x = 1 үшін y = 7; x = 2 үшін y = 11; x = 3 үшін y = 15; x = 4 үшін y = 19. Басқа нұсқалар бірінші жұпқа сай болғанымен, келесі жұптарда бұзылады.",
+      "figureDescription": "Сол жақта x мәндері 1, 2, 3, 4, оң жақта y сандары жоғарыдан төмен 15, 7, 19, 11. Нұсқарлар 1 → 7; 2 → 11; 3 → 15; 4 → 19.",
+      "figureSha256": "4d422a31a3365126b5f077d537fbfd0916edb6f9f73cbb0752242fee2acbaef9",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "y = 4x + 3",
+        "checks": {
+          "pairs": [
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              11
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              4,
+              19
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave14-rectangle-area-dependence",
+      "modelId": "visual-wave14-variable-rectangle-area",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "fixed": 6,
+        "value": 8
+      },
+      "answer": "48",
+      "sourceRefs": [
+        {
+          "sourceId": "9390e2e71162d117",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-1-level1.json#3",
+      "sourceCanonicalSha256": "d858fb53e7a2cc46aebf1ef4ad0414130522ac2229e744e88b6a295cbe3dbf5c",
+      "sourceSkill": "Deriving area as a function of the variable side and substituting its specified value",
+      "adaptationChanges": [
+        "Дереккөздің нақты тәуелділік дағдысы сақталды: нұсқар бағытын оқу, әр кірістің жалғыз шығысы, формула құру, кесте бағанын кері оқу, тәуелсіз қадам немесе қате баған.",
+        "Барлық сан, шкала емес кесте жолдары, формула коэффициенттері, берілген мәндер, шығыс реттері және дұрыс жауаптар жаңадан таңдалды.",
+        "Жаңа параметрлерден native SVG кестелері, нұсқарлар мен теңдік белгілері салынды. Source raster/traced path көшірілмеді; формула нұсқаларының өз мәтіні дәл рационал арифметикамен тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тәуелділік сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, actual shuffled arrow links and outdegree, exact printed table pair/formula checks, equality marks and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave14-rectangle-area-dependence.svg",
+      "verificationModule": "scripts/editorial/visual-wave14-models.mjs",
+      "statement": "Тіктөртбұрыштың ауданын a қабырғасына тәуелді формуламен өрнектеңіз. a = 8 см болғандағы ауданын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Аудан екі қабырғаның көбейтіндісі: S = 6a. a = 8 болса, S = 6 × 8 = 48 см². a — тәуелсіз, S — тәуелді айнымалы.",
+      "figureDescription": "Тіктөртбұрыштың көлденең қабырғасы a см, тік қабырғасы 6 см.",
+      "figureSha256": "d77aa708fca623553473c6c460bd0a24cdc345a4b26904234de53f75a40e06c4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "48",
+        "checks": {
+          "formula": "S = 6a",
+          "value": 8
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave14-single-valued-arrow-gallery",
+      "modelId": "visual-wave14-single-valued-gallery",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "function-gallery",
+        "panels": [
+          {
+            "xs": [
+              1,
+              2,
+              3
+            ],
+            "ys": [
+              4,
+              6,
+              8
+            ],
+            "links": [
+              [
+                1,
+                4
+              ],
+              [
+                1,
+                6
+              ],
+              [
+                3,
+                8
+              ]
+            ]
+          },
+          {
+            "xs": [
+              1,
+              2,
+              3
+            ],
+            "ys": [
+              4,
+              6,
+              8
+            ],
+            "links": [
+              [
+                1,
+                4
+              ],
+              [
+                2,
+                6
+              ]
+            ]
+          },
+          {
+            "xs": [
+              1,
+              2,
+              3
+            ],
+            "ys": [
+              4,
+              6,
+              8
+            ],
+            "links": [
+              [
+                1,
+                8
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                3,
+                4
+              ]
+            ]
+          },
+          {
+            "xs": [
+              1,
+              2,
+              3
+            ],
+            "ys": [
+              4,
+              6,
+              8
+            ],
+            "links": [
+              [
+                1,
+                4
+              ],
+              [
+                2,
+                6
+              ],
+              [
+                2,
+                8
+              ],
+              [
+                3,
+                8
+              ]
+            ]
+          }
+        ]
+      },
+      "answer": "3",
+      "sourceRefs": [
+        {
+          "sourceId": "d05e3e369ef31df9",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-1-level1.json#6",
+      "sourceCanonicalSha256": "b2f958d9bf848586f706b2559e4e5837838db4fc1f6cb78eaf67c9dbabbbdf49",
+      "sourceSkill": "Checking exactly one outgoing arrow for every input, allowing repeated output values but rejecting zero or two outputs",
+      "adaptationChanges": [
+        "Дереккөздің нақты тәуелділік дағдысы сақталды: нұсқар бағытын оқу, әр кірістің жалғыз шығысы, формула құру, кесте бағанын кері оқу, тәуелсіз қадам немесе қате баған.",
+        "Барлық сан, шкала емес кесте жолдары, формула коэффициенттері, берілген мәндер, шығыс реттері және дұрыс жауаптар жаңадан таңдалды.",
+        "Жаңа параметрлерден native SVG кестелері, нұсқарлар мен теңдік белгілері салынды. Source raster/traced path көшірілмеді; формула нұсқаларының өз мәтіні дәл рационал арифметикамен тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тәуелділік сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, actual shuffled arrow links and outdegree, exact printed table pair/formula checks, equality marks and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave14-single-valued-arrow-gallery.svg",
+      "verificationModule": "scripts/editorial/visual-wave14-models.mjs",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "statement": "Қай сызбада x-тің әр мәнінен y-тің дәл бір мәніне нұсқар шығады? Әртүрлі x сандарына бірдей y сәйкес келуі мүмкін.",
+      "solution": "Сызбаларда әр x-тен шығатын нұсқар сандары ретімен: 1: 2, 0, 1; 2: 1, 1, 0; 3: 1, 1, 1; 4: 1, 2, 1. Тек 3-сызбада әрқайсысы 1. Екі әртүрлі x-тің бір y-ке келуі рұқсат етілген, себебі әр x-тің өз шығысы жалғыз.",
+      "figureDescription": "Төрт сызба. 1-сызба: x = 1, 2, 3, y = 4, 6, 8, нұсқарлар 1 → 4; 1 → 6; 3 → 8. 2-сызба: x = 1, 2, 3, y = 4, 6, 8, нұсқарлар 1 → 4; 2 → 6. 3-сызба: x = 1, 2, 3, y = 4, 6, 8, нұсқарлар 1 → 8; 2 → 4; 3 → 4. 4-сызба: x = 1, 2, 3, y = 4, 6, 8, нұсқарлар 1 → 4; 2 → 6; 2 → 8; 3 → 8.",
+      "figureSha256": "bbb1d663a53e3796605b8ea03cbf2e59c23516fd6983b13015cb2fd3001e7ce5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3",
+        "checks": {
+          "outDegrees": [
+            [
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave14-equal-marks-perimeter-rule",
+      "modelId": "visual-wave14-equal-mark-perimeter",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "equilateral",
+        "equalMarks": 3,
+        "value": 11
+      },
+      "answer": "33",
+      "sourceRefs": [
+        {
+          "sourceId": "43b9bbfd265d3783",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-1-level1.json#12",
+      "sourceCanonicalSha256": "f509abf0d39c01f1d61cac6e4ebd1dca618615d4ccf023cb81de9961fccb45ba",
+      "sourceSkill": "Reading equality tick marks on all three sides before deriving and using the equilateral perimeter dependence",
+      "adaptationChanges": [
+        "Дереккөздің нақты тәуелділік дағдысы сақталды: нұсқар бағытын оқу, әр кірістің жалғыз шығысы, формула құру, кесте бағанын кері оқу, тәуелсіз қадам немесе қате баған.",
+        "Барлық сан, шкала емес кесте жолдары, формула коэффициенттері, берілген мәндер, шығыс реттері және дұрыс жауаптар жаңадан таңдалды.",
+        "Жаңа параметрлерден native SVG кестелері, нұсқарлар мен теңдік белгілері салынды. Source raster/traced path көшірілмеді; формула нұсқаларының өз мәтіні дәл рационал арифметикамен тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тәуелділік сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, actual shuffled arrow links and outdegree, exact printed table pair/formula checks, equality marks and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave14-equal-marks-perimeter-rule.svg",
+      "verificationModule": "scripts/editorial/visual-wave14-models.mjs",
+      "statement": "Үшбұрыштың қабырғаларындағы бірдей сызықшалар олардың тең екенін білдіреді. P-ның a-ға тәуелділік формуласын қолданып, a = 11 см болғанда периметрдің сандық мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Үш қабырғаның теңдік белгілері бірдей, сондықтан әрқайсысы a см. P = a + a + a = 3a. a = 11 кезінде P = 3 × 11 = 33 см.",
+      "figureDescription": "Үшбұрыштың әр қабырғасында бірдей бір сызықша бар. Төменгі қабырға a см деп жазылған.",
+      "figureSha256": "3cd5d16f6b9aeced423c66c010a6419c28d95d31e542a5cf906e54575b606193",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "33",
+        "checks": {
+          "formula": "P = 3a",
+          "equalSides": 3
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave14-maximum-temperature-time",
+      "modelId": "visual-wave14-temperature-time-max",
+      "grade": 6,
+      "topic": "stats",
+      "difficulty": "medium",
+      "params": {
+        "scene": "table",
+        "labels": [
+          "t (сағ)",
+          "T (°C)"
+        ],
+        "xs": [
+          6,
+          9,
+          12,
+          15,
+          18,
+          21
+        ],
+        "ys": [
+          8,
+          15,
+          22,
+          19,
+          13,
+          9
+        ]
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "4635e73ae4028a2c",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-2-level1.json#0",
+      "sourceCanonicalSha256": "99514271a1f3097696128cba33346bbb1fc82a5e7bdeea7b1bfa68ec4a2d424a",
+      "sourceSkill": "Finding the greatest dependent temperature then returning its corresponding independent time, not either row maximum alone",
+      "adaptationChanges": [
+        "Дереккөздің нақты тәуелділік дағдысы сақталды: нұсқар бағытын оқу, әр кірістің жалғыз шығысы, формула құру, кесте бағанын кері оқу, тәуелсіз қадам немесе қате баған.",
+        "Барлық сан, шкала емес кесте жолдары, формула коэффициенттері, берілген мәндер, шығыс реттері және дұрыс жауаптар жаңадан таңдалды.",
+        "Жаңа параметрлерден native SVG кестелері, нұсқарлар мен теңдік белгілері салынды. Source raster/traced path көшірілмеді; формула нұсқаларының өз мәтіні дәл рационал арифметикамен тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тәуелділік сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, actual shuffled arrow links and outdegree, exact printed table pair/formula checks, equality marks and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave14-maximum-temperature-time.svg",
+      "verificationModule": "scripts/editorial/visual-wave14-models.mjs",
+      "statement": "Кестеде күн бойы өлшенген ауа температурасы берілген. Кестедегі қай сағатта температура ең жоғары болды? Жауапқа тек санды жазыңыз.",
+      "solution": "Температуралар 8, 15, 22, 19, 13, 9. Ең үлкені 22°C. Сол бағандағы уақыт 12 сағат. Температураны уақытпен шатастырмау керек.",
+      "figureDescription": "Екі жолды кесте. t (сағ): 6, 9, 12, 15, 18, 21. T (°C): 8, 15, 22, 19, 13, 9. Бір бағанда тұрғандар өзара сәйкес.",
+      "figureSha256": "870505f78a63d77556efe7b94d0b27dd01c6facbc1a5126b546ad7d27ae0f0ea",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "maxTemperature": 22
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave14-proportional-table-formula",
+      "modelId": "visual-wave14-proportional-table-formula",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "table",
+        "labels": [
+          "x",
+          "y"
+        ],
+        "xs": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "ys": [
+          9,
+          18,
+          27,
+          36,
+          45
+        ]
+      },
+      "answer": "y = 9x",
+      "sourceRefs": [
+        {
+          "sourceId": "0982a2d0315067f4",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-2-level1.json#1",
+      "sourceCanonicalSha256": "90392171c638d1c7a55ca2d03b24eebc8aa979ee8bc8321c96f0ecf06535a94d",
+      "sourceSkill": "Testing a direct proportionality formula against every table column and rejecting formulas fitting only the first pair",
+      "adaptationChanges": [
+        "Дереккөздің нақты тәуелділік дағдысы сақталды: нұсқар бағытын оқу, әр кірістің жалғыз шығысы, формула құру, кесте бағанын кері оқу, тәуелсіз қадам немесе қате баған.",
+        "Барлық сан, шкала емес кесте жолдары, формула коэффициенттері, берілген мәндер, шығыс реттері және дұрыс жауаптар жаңадан таңдалды.",
+        "Жаңа параметрлерден native SVG кестелері, нұсқарлар мен теңдік белгілері салынды. Source raster/traced path көшірілмеді; формула нұсқаларының өз мәтіні дәл рационал арифметикамен тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тәуелділік сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, actual shuffled arrow links and outdegree, exact printed table pair/formula checks, equality marks and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave14-proportional-table-formula.svg",
+      "verificationModule": "scripts/editorial/visual-wave14-models.mjs",
+      "options": [
+        "y = x + 8",
+        "y = 8x + 1",
+        "y = 10 - x",
+        "y = 9x"
+      ],
+      "statement": "Кестенің әр бағанында x пен y мәндері берілген. Барлық бағанға сәйкес келетін формуланы таңдаңыз.",
+      "solution": "Әр бағанда y : x = 9 : 1 = 18 : 2 = 27 : 3 = 36 : 4 = 45 : 5 = 9. Демек, y = 9x. Бір бағанға ғана сәйкес келу жеткіліксіз: барлық жұп тексеріледі.",
+      "figureDescription": "Екі жолды кесте. x: 1, 2, 3, 4, 5. y: 9, 18, 27, 36, 45. Бір бағанда тұрғандар өзара сәйкес.",
+      "figureSha256": "a72ca1f540eaa70af264d80654985c17d7774bbf303e494ff2de23e0af71a2b5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "y = 9x",
+        "checks": {
+          "pairs": [
+            [
+              1,
+              9
+            ],
+            [
+              2,
+              18
+            ],
+            [
+              3,
+              27
+            ],
+            [
+              4,
+              36
+            ],
+            [
+              5,
+              45
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave14-fare-table-inverse-lookup",
+      "modelId": "visual-wave14-fare-inverse-table",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "table",
+        "labels": [
+          "n",
+          "S (₸)"
+        ],
+        "xs": [
+          4,
+          8,
+          12,
+          16,
+          20
+        ],
+        "ys": [
+          1000,
+          2000,
+          3000,
+          4000,
+          5000
+        ],
+        "fare": 250,
+        "requested": 4000
+      },
+      "answer": "16",
+      "sourceRefs": [
+        {
+          "sourceId": "abb22cf0ad251b8c",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-2-level1.json#2",
+      "sourceCanonicalSha256": "6d46cd81de41995b99c7f05fde9b0c8fe2687dd50d209bc0af0b884c4be24790",
+      "sourceSkill": "Inverse dependent-revenue to independent-count table lookup with constant fare as a verification",
+      "adaptationChanges": [
+        "Дереккөздің нақты тәуелділік дағдысы сақталды: нұсқар бағытын оқу, әр кірістің жалғыз шығысы, формула құру, кесте бағанын кері оқу, тәуелсіз қадам немесе қате баған.",
+        "Барлық сан, шкала емес кесте жолдары, формула коэффициенттері, берілген мәндер, шығыс реттері және дұрыс жауаптар жаңадан таңдалды.",
+        "Жаңа параметрлерден native SVG кестелері, нұсқарлар мен теңдік белгілері салынды. Source raster/traced path көшірілмеді; формула нұсқаларының өз мәтіні дәл рационал арифметикамен тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тәуелділік сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, actual shuffled arrow links and outdegree, exact printed table pair/formula checks, equality marks and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave14-fare-table-inverse-lookup.svg",
+      "verificationModule": "scripts/editorial/visual-wave14-models.mjs",
+      "statement": "Кестеде бірдей бағамен сатылған билеттерден түскен S теңгенің билет саны n-ге тәуелділігі берілген. Түсім 4000 теңге болса, неше билет сатылған? Жауапқа тек санды жазыңыз.",
+      "solution": "Кестенің түсім жолынан 4000 санын табамыз. Оның үстіндегі билет саны 16. Тексеру: бір билет 250 теңге, 16 × 250 = 4000 теңге.",
+      "figureDescription": "Екі жолды кесте. n: 4, 8, 12, 16, 20. S (₸): 1000, 2000, 3000, 4000, 5000. Бір бағанда тұрғандар өзара сәйкес.",
+      "figureSha256": "fbaa8b217df235393ff2c10c5206e33d44976f92525e801565576901b5c5a8ef",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "16",
+        "checks": {
+          "fare": 250,
+          "requestedRevenue": 4000
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave14-independent-time-table-step",
+      "modelId": "visual-wave14-independent-table-step",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "table",
+        "labels": [
+          "t (сағ)",
+          "s (км)"
+        ],
+        "xs": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ],
+        "ys": [
+          0,
+          14,
+          28,
+          42,
+          56,
+          70
+        ]
+      },
+      "answer": "2",
+      "sourceRefs": [
+        {
+          "sourceId": "b088a0e8dfb288ff",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-2-level1.json#3",
+      "sourceCanonicalSha256": "0826cef65aa19c4fb28827b5dcfa133ca5cb0e74f5c54a7d0d512a006a975cd1",
+      "sourceSkill": "Reading the independent variable step from the top row, not the dependent distance increment or final time",
+      "adaptationChanges": [
+        "Дереккөздің нақты тәуелділік дағдысы сақталды: нұсқар бағытын оқу, әр кірістің жалғыз шығысы, формула құру, кесте бағанын кері оқу, тәуелсіз қадам немесе қате баған.",
+        "Барлық сан, шкала емес кесте жолдары, формула коэффициенттері, берілген мәндер, шығыс реттері және дұрыс жауаптар жаңадан таңдалды.",
+        "Жаңа параметрлерден native SVG кестелері, нұсқарлар мен теңдік белгілері салынды. Source raster/traced path көшірілмеді; формула нұсқаларының өз мәтіні дәл рационал арифметикамен тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тәуелділік сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, actual shuffled arrow links and outdegree, exact printed table pair/formula checks, equality marks and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave14-independent-time-table-step.svg",
+      "verificationModule": "scripts/editorial/visual-wave14-models.mjs",
+      "options": [
+        "2",
+        "14",
+        "1",
+        "10"
+      ],
+      "statement": "Кестеде қозғалыс уақыты t және жүрген жол s берілген. Тәуелсіз айнымалы t бойынша кестенің қадамы неше сағат?",
+      "solution": "Уақыт жолы 0, 2, 4, 6, 8, 10. Көршілес уақыттардың айырмасы үнемі 2 сағат. Жолдың әр өзгерісі 14 км, бірақ ол тәуелді айнымалының қадамы; сұралғаны t қадамы.",
+      "figureDescription": "Екі жолды кесте. t (сағ): 0, 2, 4, 6, 8, 10. s (км): 0, 14, 28, 42, 56, 70. Бір бағанда тұрғандар өзара сәйкес.",
+      "figureSha256": "af415dd865585684ef1f86c032bf0794b037c842f7b04d51cc02271b67f41841",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2",
+        "checks": {
+          "independentSteps": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "dependentSteps": [
+            14,
+            14,
+            14,
+            14,
+            14
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave14-one-wrong-formula-column",
+      "modelId": "visual-wave14-formula-table-error",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "table",
+        "labels": [
+          "x",
+          "y"
+        ],
+        "formula": "y = 5x - 2",
+        "xs": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "ys": [
+          3,
+          8,
+          12,
+          18,
+          23
+        ]
+      },
+      "answer": "x = 3",
+      "sourceRefs": [
+        {
+          "sourceId": "6ec12c243376cdd7",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-2-level1.json#5",
+      "sourceCanonicalSha256": "8a9a1b702707d7105cca6db6315686e46e916438a99622feebfce3957eb2c1f8",
+      "sourceSkill": "Substituting each input in a displayed affine formula and identifying the sole inconsistent output column",
+      "adaptationChanges": [
+        "Дереккөздің нақты тәуелділік дағдысы сақталды: нұсқар бағытын оқу, әр кірістің жалғыз шығысы, формула құру, кесте бағанын кері оқу, тәуелсіз қадам немесе қате баған.",
+        "Барлық сан, шкала емес кесте жолдары, формула коэффициенттері, берілген мәндер, шығыс реттері және дұрыс жауаптар жаңадан таңдалды.",
+        "Жаңа параметрлерден native SVG кестелері, нұсқарлар мен теңдік белгілері салынды. Source raster/traced path көшірілмеді; формула нұсқаларының өз мәтіні дәл рационал арифметикамен тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тәуелділік сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, actual shuffled arrow links and outdegree, exact printed table pair/formula checks, equality marks and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave14-one-wrong-formula-column.svg",
+      "verificationModule": "scripts/editorial/visual-wave14-models.mjs",
+      "options": [
+        "x = 5",
+        "x = 2",
+        "x = 1",
+        "x = 3"
+      ],
+      "statement": "Оқушы y = 5x - 2 формуласы бойынша кесте толтырғанда бір бағандағы y мәнін қате жазған. Қате қай x мәнінің бағанында?",
+      "solution": "Формуладан шығатын дұрыс y мәндері 3, 8, 13, 18, 23. Кестедегілер 3, 8, 12, 18, 23. Айырмашылық тек x = 3 бағанында. Қалған бағандар формулаға сай.",
+      "figureDescription": "Екі жолды кесте. x: 1, 2, 3, 4, 5. y: 3, 8, 12, 18, 23. Бір бағанда тұрғандар өзара сәйкес.",
+      "figureSha256": "fd84478a9488e1eeeb4fc83b739592ac7eb819caf2d6472c1da0748c0d445a6a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "x = 3",
+        "checks": {
+          "expected": [
+            3,
+            8,
+            13,
+            18,
+            23
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave14-candle-hourly-decrease",
+      "modelId": "visual-wave14-candle-hourly-loss",
+      "grade": 6,
+      "topic": "speed",
+      "difficulty": "medium",
+      "params": {
+        "scene": "table",
+        "labels": [
+          "t (сағ)",
+          "h (см)"
+        ],
+        "xs": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "ys": [
+          30,
+          26,
+          22,
+          18,
+          14
+        ]
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "c76383d5c09714fe",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-2-level1.json#9",
+      "sourceCanonicalSha256": "5c0ddfaeec817da5e5ce7c44b412e93ca70d0a603be303481de0fe0d36dffe7d",
+      "sourceSkill": "Reading a positive loss rate from successive decreasing heights and corresponding time increments",
+      "adaptationChanges": [
+        "Дереккөздің нақты тәуелділік дағдысы сақталды: нұсқар бағытын оқу, әр кірістің жалғыз шығысы, формула құру, кесте бағанын кері оқу, тәуелсіз қадам немесе қате баған.",
+        "Барлық сан, шкала емес кесте жолдары, формула коэффициенттері, берілген мәндер, шығыс реттері және дұрыс жауаптар жаңадан таңдалды.",
+        "Жаңа параметрлерден native SVG кестелері, нұсқарлар мен теңдік белгілері салынды. Source raster/traced path көшірілмеді; формула нұсқаларының өз мәтіні дәл рационал арифметикамен тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тәуелділік сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, actual shuffled arrow links and outdegree, exact printed table pair/formula checks, equality marks and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave14-candle-hourly-decrease.svg",
+      "verificationModule": "scripts/editorial/visual-wave14-models.mjs",
+      "statement": "Шамның жану уақыты t мен қалған биіктігі h кестеде көрсетілген. Шам әр сағатта неше сантиметрге қысқарады? Жауапқа тек санды жазыңыз.",
+      "solution": "Биіктіктер 30, 26, 22, 18, 14 см. Көршілес уақыттар 1 сағатқа өзгереді. Әр аралықта шам 4 см қысқарады; бір сағатта 4 : 1 = 4 см.",
+      "figureDescription": "Екі жолды кесте. t (сағ): 0, 1, 2, 3, 4. h (см): 30, 26, 22, 18, 14. Бір бағанда тұрғандар өзара сәйкес.",
+      "figureSha256": "05d0e51501217d54c66204734cda043e6a409dfc697f4f2cd5ca995734d5067f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": {
+          "hourlyRates": [
+            4,
+            4,
+            4,
+            4
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1046 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All14savedvisualgrade5topic5.4; archived sources only, no capture/download/traces; all14source rasters available.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5 topic5.4 sources",
+    "sourceVisualOccurrences": 14,
+    "addressedNewDrafts": 14,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "unavailableSourceRasters": [],
+    "exactNewSourceIds": [
+      "0291d199eb1543a4",
+      "3da17100a3a0bac1",
+      "503570e0d9d881d8",
+      "516bb1ed26039da2",
+      "590b7da4931d6b09",
+      "7157895fc6aa3f57",
+      "7e44f6bf17ceb09f",
+      "7feb04b4232949ad",
+      "89511ead33a20c60",
+      "939ccbaefce3b1d6",
+      "ad2c28df2f8135cd",
+      "be980238673df341",
+      "bf30c71fc87702de",
+      "cfde24cbc35a635a"
+    ],
+    "distinctModels": 14,
+    "semantics": "Fourteen source-specific count-diagram targets, countsNOTelementvalues; allsevenBooleanregions, exact/atleastcounts, inverse totals andpair-onlydoublemultiplicity preserved."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave71-count-m-in-two-regions",
+      "modelId": "visual-wave71-two-region-single-set-count",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "easy",
+      "params": {
+        "scene": "two",
+        "names": [
+          "M",
+          "N"
+        ],
+        "counts": {
+          "A": 9,
+          "AB": 6,
+          "B": 8
+        },
+        "totals": {},
+        "frame": false
+      },
+      "answer": "15",
+      "sourceRefs": [
+        {
+          "sourceId": "3da17100a3a0bac1",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-level1.json#0",
+      "sourceCanonicalSha256": "5bcae2ee5882b6fb9d93eece0763bc7c46c358bacc030ebee7149c40b562f7ec",
+      "sourceSkill": "CountWHOLEM9+6=15 notexclusive9/union23/common6.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-count-m-in-two-regions.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "options": [
+        "15",
+        "9",
+        "23",
+        "6"
+      ],
+      "statement": "M және N диаграммасының әр бөлігіндегі сан — сол аймақтың ЭЛЕМЕНТТЕР САНЫ. M жиынының барлық элемент саны n(M) неге тең?",
+      "solution": "M дөңгелегіне тек M-дегі 9 және ортақ 6 элемент кіреді: n(M) = 9 + 6 = 15. 9 ортақ бөлікті ұмытады, 23 барлық бірігуді санайды, 6 тек қиылысуды береді. Аймақтағы сан жеке элементтің атауы емес, сол бөліктің элемент саны.",
+      "figureDescription": "M, N жиындарының диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек M = 9; тек M және N = 6; тек N = 8.",
+      "figureSha256": "f5bc4f70deb360e328ceaa5055487a01b1e816adfc14e02cf4c540478d7bb9fc",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "15",
+        "checks": {
+          "left": 9,
+          "common": 6,
+          "right": 8,
+          "requestedSet": 15,
+          "union": 23
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave71-inverse-common-from-three-totals",
+      "modelId": "visual-wave71-intersection-count-from-two-totals-and-union",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "easy",
+      "params": {
+        "scene": "two",
+        "names": [
+          "K",
+          "L"
+        ],
+        "counts": {
+          "A": null,
+          "AB": null,
+          "B": null
+        },
+        "totals": {
+          "A": 18,
+          "B": 14,
+          "union": 25
+        },
+        "frame": false
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "939ccbaefce3b1d6",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-level1.json#2",
+      "sourceCanonicalSha256": "cb081dad75f623df57f084e632521c6b492c57402f40ab08393210286894b84f",
+      "sourceSkill": "Intersection=18+14−25=7, withdisplayednK/nL/union,unknownshared; allsum32/sumplusunion57/B14traps.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-inverse-common-from-three-totals.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "options": [
+        "32",
+        "57",
+        "7",
+        "14"
+      ],
+      "statement": "Суретте K және L жиындарының толық элемент саны және K ∪ L бірігуінің элемент саны жазылған. Ортақ бөліктегі «?» орнына n(K ∩ L) мәнін таңдаңыз.",
+      "solution": "Толық жиындар сандарының қосындысы 18 + 14 = 32. Ортақ элементтер мұнда екі рет, бірігуде бір рет саналған. Сондықтан n(K ∩ L) = 32 − 25 = 7. Тексеру: 18 + 14 − 7 = 25. Тек K: 18 − 7 = 11, тек L: 14 − 7 = 7. 57 — үш берілген санды жай қосу, 14 — бүкіл L жиыны; бұлар қиылысу емес.",
+      "figureDescription": "K, L жиындарының диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек K = белгісіз; тек K және L = белгісіз; тек L = белгісіз. K толық саны 18; L толық саны 14; бірігу толық саны 25.",
+      "figureSha256": "c37af9a8680d5dd075975643e46b2d45fcc7e178202e3eb64635d2e1525f09d1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": {
+          "leftTotal": 18,
+          "rightTotal": 14,
+          "union": 25,
+          "common": 7,
+          "leftOnly": 11,
+          "rightOnly": 7,
+          "sum": 32,
+          "wrongAllThree": 57
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave71-four-regions-of-p",
+      "modelId": "visual-wave71-triple-one-set-all-four-regions-count",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "easy",
+      "params": {
+        "scene": "three",
+        "names": [
+          "P",
+          "Q",
+          "R"
+        ],
+        "counts": {
+          "A": 7,
+          "B": 8,
+          "C": 9,
+          "AB": 3,
+          "AC": 4,
+          "BC": 5,
+          "ABC": 2
+        },
+        "totals": {}
+      },
+      "answer": "16",
+      "sourceRefs": [
+        {
+          "sourceId": "590b7da4931d6b09",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-level1.json#4",
+      "sourceCanonicalSha256": "29d7f369709591a2f25b045245eec2d1549e3641978e5666f8b85aa5563d2379",
+      "sourceSkill": "ALLfourPregions7+3+4+2=16;7only/14tripleforgotten/11onlyPplusAC. Sourcewrongexplanation8notcopied.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-four-regions-of-p.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "options": [
+        "16",
+        "7",
+        "14",
+        "11"
+      ],
+      "statement": "P, Q, R диаграммасындағы сандар — әр бөлек аймақтың элемент саны. P жиынына тиісті БАРЛЫҚ элементтің санын таңдаңыз. Үш жиынға ортақ аймақ та P ішінде.",
+      "solution": "P дөңгелегіндегі төрт бөлік: тек P — 7, тек P мен Q — 3, тек P мен R — 4, үштік орта — 2. Барлығы 7 + 3 + 4 + 2 = 16. 7 тек бір аймақты, 14 үштік ортаны алып тастаған санақты, 11 тек P мен P–R аймақтарының 7 + 4 қосындысын береді. Үшінші жиынға да кіретін 2 элемент P құрамынан шықпайды.",
+      "figureDescription": "P, Q, R жиындарының диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек P = 7; тек Q = 8; тек R = 9; тек P және Q = 3; тек P және R = 4; тек Q және R = 5; үшеуіне де ортақ = 2.",
+      "figureSha256": "e00370d7a0327fa109bfaca3f7bb9c3043833406de3888ffff84017e8dfeceab",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "16",
+        "checks": {
+          "only": 7,
+          "pairOnly": [
+            3,
+            4
+          ],
+          "triple": 2,
+          "requestedSet": 16,
+          "wrongNoTriple": 14,
+          "wrongOnlyAndAC": 11
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave71-whole-studio-universe",
+      "modelId": "visual-wave71-framed-universe-all-four-disjoint-counts",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "easy",
+      "params": {
+        "scene": "two",
+        "names": [
+          "A",
+          "B"
+        ],
+        "counts": {
+          "A": 6,
+          "AB": 4,
+          "B": 5,
+          "OUT": 7
+        },
+        "totals": {},
+        "frame": true
+      },
+      "answer": "22",
+      "sourceRefs": [
+        {
+          "sourceId": "7e44f6bf17ceb09f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-level1.json#6",
+      "sourceCanonicalSha256": "1182af5545de058dbabd74627be1a4c715f85bc711abb2c80ef16bcf2458e1cc",
+      "sourceSkill": "Universe6+4+5+7=22, outsideincluded;15union/18skipcommon/26commoncounttwice.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-whole-studio-universe.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "options": [
+        "15",
+        "18",
+        "26",
+        "22"
+      ],
+      "statement": "Тіктөртбұрыш — студиядағы барлық бала. A — сурет сабағына, B — кодтау үйірмесіне қатысатындар. Әр аймақта сол бөліктегі балалар САНЫ жазылған. Студияда барлығы неше бала бар?",
+      "solution": "Топ — бүкіл тіктөртбұрыш: тек A-да 6, ортақта 4, тек B-де 5, ешқайсысына қатыспайтын 7 бала. Қосынды 6 + 4 + 5 + 7 = 22. 15 сырттағы 7 баланы ұмытады. 18 ортақ 4 баланы қоспайды; 26 оларды екі рет қосады. Әр бала төрт бөлек аймақтың тек біреуінде тұрады.",
+      "figureDescription": "A, B жиындарының тіктөртбұрыш ішіндегі диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек A = 6; тек A және B = 4; тек B = 5; екі дөңгелектен де тыс = 7.",
+      "figureSha256": "18413ea6660bf57d2d9f61d2f97199b0409758b95bb1237492b1cb936232611c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "22",
+        "checks": {
+          "regions": {
+            "A": 6,
+            "AB": 4,
+            "B": 5,
+            "OUT": 7
+          },
+          "total": 22,
+          "union": 15,
+          "wrongNoCommon": 18,
+          "wrongDoubleCommon": 26
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave71-not-in-n-includes-outside",
+      "modelId": "visual-wave71-complement-of-right-set-two-regions",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "easy",
+      "params": {
+        "scene": "two",
+        "names": [
+          "M",
+          "N"
+        ],
+        "counts": {
+          "A": 11,
+          "AB": 4,
+          "B": 7,
+          "OUT": 6
+        },
+        "totals": {},
+        "frame": true
+      },
+      "answer": "17",
+      "sourceRefs": [
+        {
+          "sourceId": "89511ead33a20c60",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-level1.json#9",
+      "sourceCanonicalSha256": "0381b57dd0f2df5886094189a7c74756deeffaeef2cbb91fb7129b5a7096c930",
+      "sourceSkill": "ComplementofN=Aonly11+outside6=17, shared4EXCLUDED;outsideonly6/leftonly11/21wrongaddcommon.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-not-in-n-includes-outside.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "options": [
+        "6",
+        "17",
+        "11",
+        "21"
+      ],
+      "statement": "Тіктөртбұрыштың әр аймағындағы сан — сол бөліктің элемент саны. N жиынына КІРМЕЙТІН элементтерді санаңыз. Тіктөртбұрыш ішіндегі, бірақ екі дөңгелектен де тыс аймақты ұмытпаңыз.",
+      "solution": "N сыртында тек M-дегі 11 және екі шеңберден де тыс 6 элемент бар. Сондықтан 11 + 6 = 17. Ортақ 4 элемент N ішінде, оларды қосу 21 деген қате нәтиже береді. Тек сырттағы 6-ны немесе тек M-дегі 11-ді алу толық жауап емес. Тексеру: N-дегі 4 + 7 = 11 элемент пен N сыртындағы 17 элемент бүкіл 28 элементті береді.",
+      "figureDescription": "M, N жиындарының тіктөртбұрыш ішіндегі диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек M = 11; тек M және N = 4; тек N = 7; екі дөңгелектен де тыс = 6.",
+      "figureSha256": "fc52cd1f1f3646f553de768740e90eb7af5bf2d0d5d08204d1abdd51b790f827",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "17",
+        "checks": {
+          "leftOnly": 11,
+          "outside": 6,
+          "commonExcluded": 4,
+          "rightTotal": 11,
+          "complement": 17,
+          "universe": 28
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave71-atleast-one-of-three-clubs",
+      "modelId": "visual-wave71-three-set-union-all-seven-regions",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "easy",
+      "params": {
+        "scene": "three",
+        "names": [
+          "D",
+          "S",
+          "R"
+        ],
+        "counts": {
+          "A": 9,
+          "B": 6,
+          "C": 7,
+          "AB": 4,
+          "AC": 2,
+          "BC": 3,
+          "ABC": 3
+        },
+        "totals": {}
+      },
+      "answer": "34",
+      "sourceRefs": [
+        {
+          "sourceId": "be980238673df341",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-level1.json#12",
+      "sourceCanonicalSha256": "d81418036f19bb568ac73327d8b1e682c5978ec8d64b7c88982a7bd292c97855",
+      "sourceSkill": "ThreeclubsunionALL7disjointregions sum34, eachpupilONCE includingtriple3.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-atleast-one-of-three-clubs.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "statement": "D — домбыра, S — шахмат, R — робототехника үйірмелеріне қатысатындар жиыны. Әр аймақта оқушылар САНЫ жазылған. КЕМІНДЕ БІР үйірмеге қатысатын неше оқушы бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Кемінде бір үйірме — үш дөңгелектің бірігуі. Жеті бөлек аймақтағы сандарды бір реттен қосамыз: 9 + 6 + 7 + 4 + 2 + 3 + 3 = 34. Бір үйірмеге ғана қатысатындар 9 + 6 + 7 = 22, дәл екеуіне қатысатындар 4 + 2 + 3 = 9, үшеуіне қатысатындар 3. Тексеру: 22 + 9 + 3 = 34. Үштік ортадағы балалар да бір рет саналады.",
+      "figureDescription": "D, S, R жиындарының диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек D = 9; тек S = 6; тек R = 7; тек D және S = 4; тек D және R = 2; тек S және R = 3; үшеуіне де ортақ = 3.",
+      "figureSha256": "cf42a1b68ddcc4f59240086fc5071957f7113491299691a5f7010809322ed3ec",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "34",
+        "checks": {
+          "allSeven": [
+            9,
+            6,
+            7,
+            4,
+            2,
+            3,
+            3
+          ],
+          "union": 34,
+          "onlyOne": 22,
+          "exactTwo": 9,
+          "triple": 3
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave71-exactly-one-of-three-choices",
+      "modelId": "visual-wave71-three-set-exactly-one-singleton-regions",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "medium",
+      "params": {
+        "scene": "three",
+        "names": [
+          "K",
+          "L",
+          "M"
+        ],
+        "counts": {
+          "A": 8,
+          "B": 11,
+          "C": 6,
+          "AB": 4,
+          "AC": 2,
+          "BC": 3,
+          "ABC": 2
+        },
+        "totals": {}
+      },
+      "answer": "25",
+      "sourceRefs": [
+        {
+          "sourceId": "7feb04b4232949ad",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-level2.json#6",
+      "sourceCanonicalSha256": "506155b039aeb3364b60aa43ef13942867ecb0e4ffeda5a98a31961b3bb534f5",
+      "sourceSkill": "ExactlyONE8+11+6=25, excludesALLEVERsharedregions; union36notasked.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-exactly-one-of-three-choices.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "statement": "K, L, M — үш түрлі ғылыми подкастты тыңдайтын адамдар жиыны. Диаграммадағы әр сан — сол аймақтағы адамдар САНЫ. Осы үшеуінің ДӘЛ БІРЕУІН ғана тыңдайтын неше адам бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Дәл біреуін тыңдайтындар үш шеткі жеке аймақта: тек K — 8, тек L — 11, тек M — 6. Қажетті сан 8 + 11 + 6 = 25. 4; 2; 3 ортақ аймақтарда екі подкастты тыңдайтындар, ортасындағы 2 адам үшеуін де тыңдайды. Бүкіл жеті аймақты қосу 36 береді, бірақ ол кемінде біреуін тыңдайтындар саны.",
+      "figureDescription": "K, L, M жиындарының диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек K = 8; тек L = 11; тек M = 6; тек K және L = 4; тек K және M = 2; тек L және M = 3; үшеуіне де ортақ = 2.",
+      "figureSha256": "c773e9d7d7902e3241507be79ab51abe74e366033cc34ee35cb4fb2e74b9c927",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "25",
+        "checks": {
+          "singletons": [
+            8,
+            11,
+            6
+          ],
+          "exactOne": 25,
+          "excluded": [
+            4,
+            2,
+            3,
+            2
+          ],
+          "union": 36
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave71-exactly-two-without-third",
+      "modelId": "visual-wave71-three-set-exactly-two-pair-only-regions",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "medium",
+      "params": {
+        "scene": "three",
+        "names": [
+          "A",
+          "B",
+          "C"
+        ],
+        "counts": {
+          "A": 6,
+          "B": 9,
+          "C": 10,
+          "AB": 5,
+          "AC": 3,
+          "BC": 4,
+          "ABC": 3
+        },
+        "totals": {}
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "516bb1ed26039da2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-level2.json#8",
+      "sourceCanonicalSha256": "d14093e4796fcebc7a79cd74d6cc8ea3420d96924fdbf70f0e22719a7713e0a1",
+      "sourceSkill": "ExactlyTWO5+3+4=12;15addsTRIPLE3,25onlyone,17WHOLEA.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-exactly-two-without-third.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "options": [
+        "15",
+        "25",
+        "17",
+        "12"
+      ],
+      "statement": "Диаграммадағы әр сан — сол аймақтың элемент саны. A, B, C жиындарының ДӘЛ ЕКЕУІНЕ кіретін, үшіншісіне КІРМЕЙТІН элементтер санын таңдаңыз.",
+      "solution": "Екі жиынның ғана ортақ аймақтары 5; 3; 4, сондықтан 5 + 3 + 4 = 12. Үштік ортаның 3 элементі ДӘЛ ЕКІ емес, үшеуіне де кіреді: оны қоссақ 15 шығады. 25 — тек бір жиынға кіретін 6 + 9 + 10 элемент, 17 — бүкіл A жиынының 6 + 5 + 3 + 3 саны. Бөліктерді тексеру: 25 + 12 + 3 = 40.",
+      "figureDescription": "A, B, C жиындарының диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек A = 6; тек B = 9; тек C = 10; тек A және B = 5; тек A және C = 3; тек B және C = 4; үшеуіне де ортақ = 3.",
+      "figureSha256": "3353f0957ab8a26e51fb8803b87ba20cdac49cd8bed5fd62a5b89d69e725296d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "pairOnly": [
+            5,
+            3,
+            4
+          ],
+          "exactTwo": 12,
+          "tripleExcluded": 3,
+          "wrongAtLeastTwo": 15,
+          "wrongOne": 25,
+          "wholeA": 17
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave71-inverse-common-then-l-count",
+      "modelId": "visual-wave71-unknown-right-count-from-left-total-and-exclusives",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "medium",
+      "params": {
+        "scene": "two",
+        "names": [
+          "K",
+          "L"
+        ],
+        "counts": {
+          "A": 11,
+          "AB": null,
+          "B": 13
+        },
+        "totals": {
+          "A": 19,
+          "B": null
+        },
+        "frame": false
+      },
+      "answer": "21",
+      "sourceRefs": [
+        {
+          "sourceId": "503570e0d9d881d8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-level2.json#9",
+      "sourceCanonicalSha256": "e51ebe921e70a3f36b8325f13a60c0f4c16b6cbe7734bf2ec548cb3fb7022b9b",
+      "sourceSkill": "Recovercommon19−11=8 thennL8+13=21; notright-only13, fullunion32crosscheck.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-inverse-common-then-l-count.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "statement": "n(K) — бүкіл K дөңгелегінің элемент саны. Аймақтарда тек K мен тек L элементтерінің сандары көрсетілген, ортақ бөлік «?» деп белгіленген. Толық L жиынында неше элемент бар? Жауапқа тек санды жазыңыз.",
+      "solution": "K дөңгелегінде 19 элемент, оның тек K аймағында 11 элемент бар. Ортақ бөлік 19 − 11 = 8. Толық L жиынына осы 8 және тек L-дегі 13 кіреді: n(L) = 8 + 13 = 21. Тексеру: бірігу 11 + 8 + 13 = 32; толық сандармен 19 + 21 − 8 = 32. 13 тек L аймағын ғана берер еді.",
+      "figureDescription": "K, L жиындарының диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек K = 11; тек K және L = белгісіз; тек L = 13. K толық саны 19; L толық саны белгісіз.",
+      "figureSha256": "4997620a4c53e6258efcec7034ac0ecba96ea9aa5239d1ead512bae91dd2095b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "21",
+        "checks": {
+          "leftTotal": 19,
+          "leftOnly": 11,
+          "common": 8,
+          "rightOnly": 13,
+          "rightTotal": 21,
+          "union": 32
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave71-neither-in-forty-three",
+      "modelId": "visual-wave71-neither-from-universe-two-totals-and-intersection",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "medium",
+      "params": {
+        "scene": "two",
+        "names": [
+          "K",
+          "L"
+        ],
+        "counts": {
+          "A": null,
+          "AB": 7,
+          "B": null,
+          "OUT": null
+        },
+        "totals": {
+          "A": 24,
+          "B": 18,
+          "universe": 43
+        },
+        "frame": true
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "ad2c28df2f8135cd",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-level2.json#13",
+      "sourceCanonicalSha256": "8ee456b84c316a8267e158f041995b75ead1407e2aecc3c053bbbc69995986be",
+      "sourceSkill": "nUnion24+18−7=35, neither43−35=8; exclusive17/11 andcommon7, allsum43.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-neither-in-forty-three.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "statement": "Тіктөртбұрыштағы U — оқу тобындағы барлық бала, K мен L — екі сайысқа қатысқандар. n(K), n(L) толық дөңгелектерді, ортадағы сан екі сайысқа да қатысқандарды білдіреді. Екі сайыстың ЕШҚАЙСЫСЫНА қатыспаған неше бала бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Кемінде бір сайысқа қатысқандар 24 + 18 − 7 = 35: ортақ 7 баланы екі рет қалдырмаймыз. Ешқайсысына қатыспағандар 43 − 35 = 8. Толық бөлінуі: тек K 24 − 7 = 17, ортақ 7, тек L 18 − 7 = 11, тыс 8. Тексеру: 17 + 7 + 11 + 8 = 43. 43 − 24 − 18 = 1 десек, ортақ 7 бала екі рет алынған болады.",
+      "figureDescription": "K, L жиындарының тіктөртбұрыш ішіндегі диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек K = белгісіз; тек K және L = 7; тек L = белгісіз; екі дөңгелектен де тыс = белгісіз. K толық саны 24; L толық саны 18; барлық U толық саны 43.",
+      "figureSha256": "7e3d8be2be72836fd7514b3c3f9707ba8681553b26141aacf808f925d5553392",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": {
+          "leftTotal": 24,
+          "rightTotal": 18,
+          "common": 7,
+          "union": 35,
+          "universe": 43,
+          "neither": 8,
+          "leftOnly": 17,
+          "rightOnly": 11,
+          "wrongNoCorrection": 1
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave71-three-unknown-singletons-union",
+      "modelId": "visual-wave71-three-totals-known-pair-only-and-triple-union",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "hard",
+      "params": {
+        "scene": "three",
+        "names": [
+          "M",
+          "N",
+          "P"
+        ],
+        "counts": {
+          "A": null,
+          "B": null,
+          "C": null,
+          "AB": 4,
+          "AC": 3,
+          "BC": 5,
+          "ABC": 2
+        },
+        "totals": {
+          "A": 20,
+          "B": 18,
+          "C": 16
+        }
+      },
+      "answer": "38",
+      "sourceRefs": [
+        {
+          "sourceId": "bf30c71fc87702de",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-level3.json#11",
+      "sourceCanonicalSha256": "f9c3462de7411d300b4b7612601dcc365bd0c2fc06d3607986c898d0b1a3d482",
+      "sourceSkill": "RecoverALLthreeonlyregions11/7/6 from20/18/16 beforeunion38; pairintersectionincludestriple, inclusion-exclusioncrosscheck.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-three-unknown-singletons-union.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "statement": "n(M), n(N), n(P) — толық жиындардың элемент сандары. Ортақ аймақтарда тек сол бөліктердің саны берілген, бір ғана жиынға кіретін үш аймақ белгісіз. M ∪ N ∪ P бірігуінде неше элемент бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Әр толық дөңгелектен ортақ бөліктерді алып, жеке бөліктерін табамыз. Тек M: 20 − 4 − 3 − 2 = 11. Тек N: 18 − 4 − 5 − 2 = 7. Тек P: 16 − 3 − 5 − 2 = 6. Жеті аймақтың қосындысы 11 + 7 + 6 + 4 + 3 + 5 + 2 = 38. Тексеру: n(M ∩ N) = 4 + 2 = 6, n(M ∩ P) = 3 + 2 = 5, n(N ∩ P) = 5 + 2 = 7. Толық қосу-алу 20 + 18 + 16 − 6 − 5 − 7 + 2 = 38; үштік бөлік соңында бір рет қалады.",
+      "figureDescription": "M, N, P жиындарының диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек M = белгісіз; тек N = белгісіз; тек P = белгісіз; тек M және N = 4; тек M және P = 3; тек N және P = 5; үшеуіне де ортақ = 2. M толық саны 20; N толық саны 18; P толық саны 16.",
+      "figureSha256": "b4dec1948c3a953f937789bc2e039a051013083c19135d244cd2ec6e4044c6de",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "38",
+        "checks": {
+          "totals": {
+            "A": 20,
+            "B": 18,
+            "C": 16
+          },
+          "onlyA": 11,
+          "onlyB": 7,
+          "onlyC": 6,
+          "pairOnly": [
+            4,
+            3,
+            5
+          ],
+          "triple": 2,
+          "union": 38,
+          "inclusionExclusion": 38
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave71-only-one-of-m-or-n",
+      "modelId": "visual-wave71-two-set-symmetric-difference-count",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "hard",
+      "params": {
+        "scene": "two",
+        "names": [
+          "M",
+          "N"
+        ],
+        "counts": {
+          "A": 13,
+          "AB": 5,
+          "B": 9
+        },
+        "totals": {},
+        "frame": false
+      },
+      "answer": "22",
+      "sourceRefs": [
+        {
+          "sourceId": "cfde24cbc35a635a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-leveltest.json#0",
+      "sourceCanonicalSha256": "034ae206ce765a7252afbbfe98180f97c8846425569c8e9692a12d98bbe9c6bd",
+      "sourceSkill": "Exactlyoneoftwo13+9=22, excludescommon5;union27/common5/WHOLEM18traps.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-only-one-of-m-or-n.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "options": [
+        "22",
+        "27",
+        "5",
+        "18"
+      ],
+      "statement": "Әр аймақта элементтер САНЫ жазылған. M-ге немесе N-ге кіретін, бірақ екеуіне БІРДЕЙ кірмейтін элементтер санын таңдаңыз.",
+      "solution": "Екеуіне бірдей кіретін ортақ 5 элементті алмаймыз. Тек M-дегі 13 пен тек N-дегі 9 қалады: 13 + 9 = 22. 27 — ортақ бөлік те қосылған бірігу, 5 — тек қиылысу, 18 = 13 + 5 — тек толық M жиыны. Екі шеткі аймақтың екеуі де қажет.",
+      "figureDescription": "M, N жиындарының диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек M = 13; тек M және N = 5; тек N = 9.",
+      "figureSha256": "d7a83988be0b4e90f3e138143a345b7f332a3f01f691578ee3c86878e26eabf3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "22",
+        "checks": {
+          "leftOnly": 13,
+          "rightOnly": 9,
+          "commonExcluded": 5,
+          "xor": 22,
+          "union": 27,
+          "leftTotal": 18
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave71-p-q-common-including-third",
+      "modelId": "visual-wave71-two-set-intersection-count-with-triple-region",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "hard",
+      "params": {
+        "scene": "three",
+        "names": [
+          "P",
+          "Q",
+          "R"
+        ],
+        "counts": {
+          "A": 6,
+          "B": 8,
+          "C": 7,
+          "AB": 4,
+          "AC": 5,
+          "BC": 2,
+          "ABC": 3
+        },
+        "totals": {}
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "7157895fc6aa3f57",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-leveltest.json#4",
+      "sourceCanonicalSha256": "d909c4c26ca2920c6455d26ec1a88c23b7d939c7695a23e1966598f41ab77e6e",
+      "sourceSkill": "P∩Q=ABonly4+triple3=7;4skiptriple/12addsAConly5/3tripleonly.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-p-q-common-including-third.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "options": [
+        "4",
+        "7",
+        "12",
+        "3"
+      ],
+      "statement": "Үш жиынның әр аймағында элементтер САНЫ көрсетілген. P-ға ДА, Q-ға ДА тиісті n(P ∩ Q) элементтер санын таңдаңыз. Элементтің R-ге де кіруіне тыйым салынбайды.",
+      "solution": "P мен Q-ның екеуінде де екі аймақ бар: тек P–Q ортағындағы 4 және үштік ортасындағы 3. n(P ∩ Q) = 4 + 3 = 7. 4 ортаны ұмытады; 3 тек ортаны алады. 12 = 4 + 3 + 5 P–R ғана аймағын қате қосады: ондағы 5 элемент Q-ға кірмейді. R ішінде болу ортақ 3 элементтің P және Q ішінде болуын өзгертпейді.",
+      "figureDescription": "P, Q, R жиындарының диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек P = 6; тек Q = 8; тек R = 7; тек P және Q = 4; тек P және R = 5; тек Q және R = 2; үшеуіне де ортақ = 3.",
+      "figureSha256": "eaea99a826e75fea2b73b13e5db80984d6c2c9db40b07b3a816219a34d948a19",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": {
+          "pairOnly": 4,
+          "triple": 3,
+          "intersection": 7,
+          "wrongAddAC": 12
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave71-unknown-three-pair-only-union",
+      "modelId": "visual-wave71-three-totals-known-singletons-and-triple-double-pair-count",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "hard",
+      "params": {
+        "scene": "three",
+        "names": [
+          "K",
+          "L",
+          "M"
+        ],
+        "counts": {
+          "A": 6,
+          "B": 8,
+          "C": 7,
+          "AB": null,
+          "AC": null,
+          "BC": null,
+          "ABC": 2
+        },
+        "totals": {
+          "A": 16,
+          "B": 20,
+          "C": 17
+        }
+      },
+      "answer": "36",
+      "sourceRefs": [
+        {
+          "sourceId": "0291d199eb1543a4",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-4-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-4-leveltest.json#9",
+      "sourceCanonicalSha256": "717d2766b23173e0f63a0398d226a084b82934cf9de3f84a89611b4b03703f32",
+      "sourceSkill": "Pair-onlysums8/10/8 doubleeachpair→13, actual5/3/5 check; union6+8+7+2+13=36, noassumptionallpairregionssame.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.4визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/сан/контекст/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жиындағытолықсанменжекеаймақсаныажыратылды:екіаймақ15,керіқиылысу7,төртаймақ16,барлықU22,N-нентыс17,үштікбірігу34,дәлбіреу25,дәлекеу12,керіоңжиын21,ешқайсысы8,үшбелгісізжекеаймақбірігу38,екіайрықшабөлік22,үштікортанықосқанқиылысу7,үшжұптықбелгісіздіңекіретсаналуыменбірігу36.",
+        "Жаңаnativeшеңбер/мөлдіртүстер/аймақсаны/толықnжиыны/«?»белгісіздері, tracedpath/rasterкопияжоқ. Қиылысудыбірретсанау/үштікортанышығармау/«дәл»және«кемінде»айырмасы/универсумсыртыналу/қосындырөлдері сақталды. ТүпнұсқадағыүштікAтуралы8қатеатауыкөшірілмеді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Диаграммадағы элементтер саны",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. ActualeverycountcenterBooleanmembership, typedcount-vs-element labels, allgiven/unknown fulltotals, inverseconservation, exactone/exacttwo/tripleexclusion, pair-onlydouble-countdivision2. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave71-unknown-three-pair-only-union.svg",
+      "verificationModule": "scripts/editorial/visual-wave71-models.mjs",
+      "statement": "n(K), n(L), n(M) — толық жиындардың элемент сандары. Бір ғана жиынға тиісті аймақтар мен үштік ортадағы сандар белгілі. Дәл екі жиынға тиісті үш аймақ «?» деп белгіленген. K ∪ L ∪ M бірігуінде неше элемент бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Тек K–L, K–M, L–M аймақтарының сандарын x, y, z дейік. K бойынша x + y = 16 − 6 − 2 = 8; L бойынша x + z = 20 − 8 − 2 = 10; M бойынша y + z = 17 − 7 − 2 = 8. Үшеуін қоссақ әр белгісіз екі рет кіреді: 2 × (x + y + z) = 8 + 10 + 8 = 26. Демек үш аймақтың қосындысы 26 ÷ 2 = 13. Бірігу 6 + 8 + 7 + 2 + 13 = 36. Тексеру: x = 5, y = 3, z = 5; 5 + 3 = 8, 5 + 5 = 10, 3 + 5 = 8. Әр белгісізді бөлек шешпей де олардың қосындысы жеткілікті.",
+      "figureDescription": "K, L, M жиындарының диаграммасы. Әр аймақтағы сан сол бөліктің элементтер САНЫ. Аймақтар: тек K = 6; тек L = 8; тек M = 7; тек K және L = белгісіз; тек K және M = белгісіз; тек L және M = белгісіз; үшеуіне де ортақ = 2. K толық саны 16; L толық саны 20; M толық саны 17.",
+      "figureSha256": "a960fbd99377144a17c24040e74a7ff092245b31e927fee516396b10a2b5e1e6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "36",
+        "checks": {
+          "totals": {
+            "A": 16,
+            "B": 20,
+            "C": 17
+          },
+          "singletons": [
+            6,
+            8,
+            7
+          ],
+          "triple": 2,
+          "residuals": [
+            8,
+            10,
+            8
+          ],
+          "doublePairSum": 26,
+          "sumPairs": 13,
+          "pairOnly": [
+            5,
+            3,
+            5
+          ],
+          "union": 36
+        }
+      }
+    }
+  ]
+}

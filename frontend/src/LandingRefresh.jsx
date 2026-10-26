@@ -5,40 +5,25 @@ import './LandingRefresh.css';
 const schools = [['bil', 'БИЛ'], ['nis', 'НИШ'], ['rfmsh', 'РФМШ']];
 
 function StudentRibbon({ ru }) {
-  const rail = React.useRef(null);
-  const [edges, setEdges] = React.useState({ start: true, end: false });
-  React.useEffect(() => {
-    const node = rail.current;
-    const update = () => {
-      const start = node.scrollLeft <= 2;
-      const end = node.scrollLeft + node.clientWidth >= node.scrollWidth - 2;
-      setEdges(previous => previous.start === start && previous.end === end ? previous : { start, end });
-    };
-    update();
-    node.addEventListener('scroll', update, { passive: true });
-    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(update);
-    observer?.observe(node);
-    return () => { node.removeEventListener('scroll', update); observer?.disconnect(); };
-  }, []);
-  const move = (direction) => {
-    const node = rail.current;
-    node.scrollBy({ left: direction * node.clientWidth * .8, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
-  };
+  const [paused, setPaused] = React.useState(false);
   const descriptions = ru
     ? ['Ученица с тетрадью', 'Ученик с рюкзаком', 'Ученик SYNAQ', 'Ученик с планшетом', 'Ученица с рюкзаком']
     : ['Дәптер ұстаған оқушы қыз', 'Рюкзак ұстаған оқушы бала', 'SYNAQ оқушысы', 'Планшет ұстаған оқушы бала', 'Рюкзак ұстаған оқушы қыз'];
-  return <div className="sx-student-ribbon">
-    <div ref={rail} id="sx-student-rail" className="sx-student-rail" role="region" aria-label={ru ? 'Фотографии учеников — листайте' : 'Оқушылар суреттері — сырғытыңыз'} tabIndex={0}>
-      {[1, 2, 3, 4, 5].map((id, index) => <div className={`sx-student-tile sx-student-tile-${id}`} key={id}>
-        <div className="sx-student-backdrop" aria-hidden="true" />
-        <img src={`/landing/mobile/student-${id}-600.webp`} srcSet={`/landing/mobile/student-${id}-360.webp 360w, /landing/mobile/student-${id}-600.webp 600w`} sizes="(max-width: 760px) 190px, 250px" width="600" height="900" decoding="async" loading={index < 2 ? 'eager' : 'lazy'} fetchpriority={index < 2 ? 'high' : 'auto'} alt={descriptions[index]} draggable="false" />
+  return <div className="sx-student-ribbon" data-paused={paused}>
+    <div id="sx-student-rail" className="sx-student-rail" role="region" aria-label={ru ? 'Фотографии учеников' : 'Оқушылар суреттері'} tabIndex={0}>
+      {[0, 1].map(copy => <div className="sx-student-group" key={copy} aria-hidden={copy === 1 ? true : undefined}>
+        {[1, 2, 3, 4, 5].map((id, index) => <div className={`sx-student-tile sx-student-tile-${id}`} key={id}>
+          <div className="sx-student-backdrop" aria-hidden="true" />
+          <img src={`/landing/mobile/student-${id}-600.webp`} srcSet={`/landing/mobile/student-${id}-360.webp 360w, /landing/mobile/student-${id}-600.webp 600w`} sizes="(max-width: 760px) 310px, 250px" width="600" height="900" decoding="async" loading="eager" fetchpriority={copy === 0 && index < 2 ? 'high' : 'auto'} alt={copy === 0 ? descriptions[index] : ''} draggable="false" />
+        </div>)}
       </div>)}
     </div>
     <div className="sx-ribbon-footer">
       <span>{ru ? 'Учиться. Идти вперёд.' : 'Үйрен. Алға ұмтыл.'}</span>
       <div className="sx-ribbon-controls">
-        <button type="button" aria-controls="sx-student-rail" aria-label={ru ? 'Предыдущие фотографии' : 'Алдыңғы суреттер'} disabled={edges.start} onClick={() => move(-1)}>←</button>
-        <button type="button" aria-controls="sx-student-rail" aria-label={ru ? 'Следующие фотографии' : 'Келесі суреттер'} disabled={edges.end} onClick={() => move(1)}>→</button>
+        <button type="button" aria-controls="sx-student-rail" aria-label={ru ? (paused ? 'Продолжить прокрутку фотографий' : 'Приостановить прокрутку фотографий') : (paused ? 'Суреттерді айналдыруды жалғастыру' : 'Суреттерді айналдыруды тоқтату')} onClick={() => setPaused(value => !value)}>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true">{paused ? <path d="M5 3 15 9 5 15Z" /> : <><rect x="4" y="3" width="3" height="12" rx="1" /><rect x="11" y="3" width="3" height="12" rx="1" /></>}</svg>
+        </button>
       </div>
     </div>
   </div>;

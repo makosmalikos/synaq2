@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All11 individually read saved nonvisual grade6topic6.1. Closed author draft pending independent full-content hash review.",
+  "summary": {
+    "editions": 11,
+    "sourceOccurrencesReferenced": 11,
+    "distinctModels": 11,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade6-intersections-80bd37dc57216d01",
+      "modelId": "grade6-intersections-distinct-intersecting-lines-one-point",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json",
+          "sourceId": "80bd37dc57216d01"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.1 nonvisual adaptation; 90/180/360degree facts and categorical definitions deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық11визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Қиылысқан/беттескен түзулер, әртүрлі нүктелер, бір түзуде жатпайтын үш нүкте нақты ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Вертикаль/сыбайлас бұрыш, үш бұрыштың реті, сүйір/доғал және тек көрші секторларды санау рөлі сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Жазықтықтағы p және q — екі бөлек түзу. Олар бір-бірімен қиылысады. Екі түзуге де тиесілі нүктелердің санын таңдаңыз.",
+      "options": [
+        "0",
+        "2",
+        "1",
+        "Шексіз көп"
+      ],
+      "answer": "1",
+      "solution": "Қиылысу нүктесі екі түзуге де тиесілі. Екі ортақ нүкте болса, сол екі нүкте арқылы өтетін түзу жалғыз болғандықтан p мен q беттесер еді. Шартта түзулер бөлек делінген, сондықтан ортақ нүкте дәл біреу. Шексіз көп ортақ нүкте тек беттескен түзулерде болады.",
+      "calculationVerification": {
+        "answer": "1",
+        "checks": [
+          "All11 saved nonvisual6.1 fullconditions/full official solutions/every choice individually read",
+          "Distinct lines and distinct points, noncollinear plane points, vertical versus adjacent angle roles explicitly retained",
+          "Cyclic order, obtuse-to-acute complement, right-angle/full-turn invariants and neighbor-only sector count checked",
+          "All new wording/numbers or honest unchanged mathematical facts; no source raster, rawTeX or new collection; closed draft until separate independent full-content hash review"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-intersections-46c2c65d2d5559aa",
+      "modelId": "grade6-intersections-remaining-three-angles-cyclic-order",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "angle": 53
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json",
+          "sourceId": "46c2c65d2d5559aa"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.1 nonvisual adaptation; 90/180/360degree facts and categorical definitions deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық11визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Қиылысқан/беттескен түзулер, әртүрлі нүктелер, бір түзуде жатпайтын үш нүкте нақты ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Вертикаль/сыбайлас бұрыш, үш бұрыштың реті, сүйір/доғал және тек көрші секторларды санау рөлі сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Екі бөлек түзу қиылысқанда бір бұрыш 53° болды. Осы бұрыштан бастап шеңбер бойымен бір бағытта жүргенде, одан КЕЙІН кездесетін қалған үш бұрышты ретімен көрсетіңіз.",
+      "options": [
+        "37°; 53°; 37°",
+        "127°; 127°; 127°",
+        "127°; 53°; 127°",
+        "53°; 53°; 53°"
+      ],
+      "answer": "127°; 53°; 127°",
+      "solution": "Алғашқы бұрышқа сыбайлас бұрыш 180° - 53° = 127°. Одан кейінгі, бастапқыға вертикаль бұрыш 53°. Үшінші бұрыш та бастапқыға сыбайлас, сондықтан 127°. Сұралған рет 127°; 53°; 127°. Тексеру: 53 + 127 + 53 + 127 = 360. 90°-тан азайтуға негіз жоқ: бастапқы екі түзу перпендикуляр емес.",
+      "calculationVerification": {
+        "answer": "127°; 53°; 127°",
+        "checks": [
+          "All11 saved nonvisual6.1 fullconditions/full official solutions/every choice individually read",
+          "Distinct lines and distinct points, noncollinear plane points, vertical versus adjacent angle roles explicitly retained",
+          "Cyclic order, obtuse-to-acute complement, right-angle/full-turn invariants and neighbor-only sector count checked",
+          "All new wording/numbers or honest unchanged mathematical facts; no source raster, rawTeX or new collection; closed draft until separate independent full-content hash review"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-intersections-e78c0f3d4f0704c3",
+      "modelId": "grade6-intersections-crossed-rigid-bars-opposite-opening",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "angle": 63
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json",
+          "sourceId": "e78c0f3d4f0704c3"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.1 nonvisual adaptation; 90/180/360degree facts and categorical definitions deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық11визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Қиылысқан/беттескен түзулер, әртүрлі нүктелер, бір түзуде жатпайтын үш нүкте нақты ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Вертикаль/сыбайлас бұрыш, үш бұрыштың реті, сүйір/доғал және тек көрші секторларды санау рөлі сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Құрастырғыштың екі түзу таяқшасы ортақ топсада қиылысады. Әр таяқшаның екі ұшы топсадан қарама-қарсы бағытта созылған. Сол жақтағы екі ұш арасындағы бұрыш 63°. Оған қарама-қарсы оң жақтағы екі ұш арасындағы бұрыш неше градус? Жауапқа тек санды жазыңыз.",
+      "answer": "63",
+      "solution": "Әр таяқшаның ұштары бір түзудің бойында жатқандықтан оң жақтағы екі сәуле сол жақтағы екі сәуленің созындылары болады. Бұрыштар вертикаль, демек тең: 63°. 180° - 63° = 117° мәні жанындағы бұрышқа тиесілі, сұралған қарама-қарсы бұрышқа емес.",
+      "calculationVerification": {
+        "answer": "63",
+        "checks": [
+          "All11 saved nonvisual6.1 fullconditions/full official solutions/every choice individually read",
+          "Distinct lines and distinct points, noncollinear plane points, vertical versus adjacent angle roles explicitly retained",
+          "Cyclic order, obtuse-to-acute complement, right-angle/full-turn invariants and neighbor-only sector count checked",
+          "All new wording/numbers or honest unchanged mathematical facts; no source raster, rawTeX or new collection; closed draft until separate independent full-content hash review"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-intersections-ca9c9a55f0b7ce04",
+      "modelId": "grade6-intersections-flat-part-versus-curved-and-linear-model",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json",
+          "sourceId": "ca9c9a55f0b7ce04"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.1 nonvisual adaptation; 90/180/360degree facts and categorical definitions deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық11визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Қиылысқан/беттескен түзулер, әртүрлі нүктелер, бір түзуде жатпайтын үш нүкте нақты ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Вертикаль/сыбайлас бұрыш, үш бұрыштың реті, сүйір/доғал және тек көрші секторларды санау рөлі сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Заттардың пішінін идеалдандырып қарастырғанда, қайсысы ЖАЗЫҚТЫҚТЫҢ БІР БӨЛІГІНЕ модель болады?",
+      "options": [
+        "Домалақ доптың сыртқы беті",
+        "Тегіс үстелдің беті",
+        "Тартылып тұрған жіңішке жіп",
+        "Иілген құбырдың сыртқы беті"
+      ],
+      "answer": "Тегіс үстелдің беті",
+      "solution": "Тегіс үстелдің беті жазық, сондықтан оны жазықтықтың шектелген бөлігі ретінде қарастырамыз. Жазықтықтың өзі шексіз, ал үстел бетінің шеті бар. Доп пен иілген құбырдың беті қисық; тартылған жіңішке жіп түзуге модель болады.",
+      "calculationVerification": {
+        "answer": "Тегіс үстелдің беті",
+        "checks": [
+          "All11 saved nonvisual6.1 fullconditions/full official solutions/every choice individually read",
+          "Distinct lines and distinct points, noncollinear plane points, vertical versus adjacent angle roles explicitly retained",
+          "Cyclic order, obtuse-to-acute complement, right-angle/full-turn invariants and neighbor-only sector count checked",
+          "All new wording/numbers or honest unchanged mathematical facts; no source raster, rawTeX or new collection; closed draft until separate independent full-content hash review"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-intersections-a5c89f80a988bf5c",
+      "modelId": "grade6-intersections-plane-through-noncollinear-labelled-points",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json",
+          "sourceId": "a5c89f80a988bf5c"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.1 nonvisual adaptation; 90/180/360degree facts and categorical definitions deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық11визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Қиылысқан/беттескен түзулер, әртүрлі нүктелер, бір түзуде жатпайтын үш нүкте нақты ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Вертикаль/сыбайлас бұрыш, үш бұрыштың реті, сүйір/доғал және тек көрші секторларды санау рөлі сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "P, Q және R бір түзуде жатпайтын үш нүкте. Осы үшеуі арқылы өтетін ЖАЗЫҚТЫҚТЫ белгілейтін нұсқаны таңдаңыз.",
+      "options": [
+        "∠PQR",
+        "[PR]",
+        "PQ",
+        "(PQR)"
+      ],
+      "answer": "(PQR)",
+      "solution": "Бір түзуде жатпайтын үш нүкте бір ғана жазықтықты анықтайды. Оның белгісі — жақша ішіндегі үш бас әріп: (PQR). ∠PQR — төбесі Q болатын бұрыш, [PR] — кесінді, ал PQ бұл жерде екі нүкте арқылы берілген түзудің белгісі.",
+      "calculationVerification": {
+        "answer": "(PQR)",
+        "checks": [
+          "All11 saved nonvisual6.1 fullconditions/full official solutions/every choice individually read",
+          "Distinct lines and distinct points, noncollinear plane points, vertical versus adjacent angle roles explicitly retained",
+          "Cyclic order, obtuse-to-acute complement, right-angle/full-turn invariants and neighbor-only sector count checked",
+          "All new wording/numbers or honest unchanged mathematical facts; no source raster, rawTeX or new collection; closed draft until separate independent full-content hash review"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-intersections-0185102da61c7207",
+      "modelId": "grade6-intersections-orthogonal-remaining-three-angle-sum",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json",
+          "sourceId": "0185102da61c7207"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.1 nonvisual adaptation; 90/180/360degree facts and categorical definitions deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық11визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Қиылысқан/беттескен түзулер, әртүрлі нүктелер, бір түзуде жатпайтын үш нүкте нақты ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Вертикаль/сыбайлас бұрыш, үш бұрыштың реті, сүйір/доғал және тек көрші секторларды санау рөлі сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Екі түзу тік бұрыш жасап қиылысты. Пайда болған төрт бұрыштың БІРЕУІ есепке алынбайды. Қалған үш бұрыштың қосындысы неше градус? Жауапқа тек санды жазыңыз.",
+      "answer": "270",
+      "solution": "Бір бұрыш 90° болса, оның вертикаль бұрышы да 90°. Екі сыбайлас бұрыштың әрқайсысы 180° - 90° = 90°. Қалған үш бұрыш: 90° + 90° + 90° = 270°. Толық айналыммен тексеру: 360° - 90° = 270°. 90° пен 360° — осы дағдыдағы өзгермейтін геометриялық шамалар.",
+      "calculationVerification": {
+        "answer": "270",
+        "checks": [
+          "All11 saved nonvisual6.1 fullconditions/full official solutions/every choice individually read",
+          "Distinct lines and distinct points, noncollinear plane points, vertical versus adjacent angle roles explicitly retained",
+          "Cyclic order, obtuse-to-acute complement, right-angle/full-turn invariants and neighbor-only sector count checked",
+          "All new wording/numbers or honest unchanged mathematical facts; no source raster, rawTeX or new collection; closed draft until separate independent full-content hash review"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-intersections-dcd7f0f44b0680c0",
+      "modelId": "grade6-intersections-given-obtuse-find-acute",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "obtuse": 143
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json",
+          "sourceId": "dcd7f0f44b0680c0"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.1 nonvisual adaptation; 90/180/360degree facts and categorical definitions deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық11визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Қиылысқан/беттескен түзулер, әртүрлі нүктелер, бір түзуде жатпайтын үш нүкте нақты ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Вертикаль/сыбайлас бұрыш, үш бұрыштың реті, сүйір/доғал және тек көрші секторларды санау рөлі сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Екі түзу қиылысқанда пайда болған доғал бұрыш 143°. Сол қиылысудағы сүйір бұрыштың шамасы неше градус? Жауапқа тек санды жазыңыз.",
+      "answer": "37",
+      "solution": "Сүйір бұрыш берілген доғал бұрышқа сыбайлас. Сондықтан олардың қосындысы 180°: 180° - 143° = 37°. Тексеру: 0° < 37° < 90°, яғни нәтиже шынымен сүйір; 143° + 37° = 180°. Қарама-қарсы жатқан екі доғал бұрышты өзара қосудың қажеті жоқ.",
+      "calculationVerification": {
+        "answer": "37",
+        "checks": [
+          "All11 saved nonvisual6.1 fullconditions/full official solutions/every choice individually read",
+          "Distinct lines and distinct points, noncollinear plane points, vertical versus adjacent angle roles explicitly retained",
+          "Cyclic order, obtuse-to-acute complement, right-angle/full-turn invariants and neighbor-only sector count checked",
+          "All new wording/numbers or honest unchanged mathematical facts; no source raster, rawTeX or new collection; closed draft until separate independent full-content hash review"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-intersections-07f1a8b278a3af96",
+      "modelId": "grade6-intersections-all-four-crossing-angle-turn",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json",
+          "sourceId": "07f1a8b278a3af96"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.1 nonvisual adaptation; 90/180/360degree facts and categorical definitions deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық11визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Қиылысқан/беттескен түзулер, әртүрлі нүктелер, бір түзуде жатпайтын үш нүкте нақты ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Вертикаль/сыбайлас бұрыш, үш бұрыштың реті, сүйір/доғал және тек көрші секторларды санау рөлі сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Екі бөлек түзу қиылысу нүктесінің айналасын төрт көршілес бұрышқа бөлді. Осы ТӨРТ бұрыштың барлығын бір реттен қоссақ, неше градус шығады? Жауапқа тек санды жазыңыз.",
+      "answer": "360",
+      "solution": "Бір түзудің бір жағындағы екі көрші бұрыш 180° құрайды. Екінші жағындағы екеуі де 180°. Төрт бұрыштың қосындысы 180° + 180° = 360° — бір толық айналым. Ешбір бұрышты қайталап санамаймыз. Түзулерді басқа еңіске бұру толық қосындыны өзгертпейді.",
+      "calculationVerification": {
+        "answer": "360",
+        "checks": [
+          "All11 saved nonvisual6.1 fullconditions/full official solutions/every choice individually read",
+          "Distinct lines and distinct points, noncollinear plane points, vertical versus adjacent angle roles explicitly retained",
+          "Cyclic order, obtuse-to-acute complement, right-angle/full-turn invariants and neighbor-only sector count checked",
+          "All new wording/numbers or honest unchanged mathematical facts; no source raster, rawTeX or new collection; closed draft until separate independent full-content hash review"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-intersections-807ed3106e19b9ef",
+      "modelId": "grade6-intersections-concurrent-distinct-lines-neighbor-sectors",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "lines": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json",
+          "sourceId": "807ed3106e19b9ef"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.1 nonvisual adaptation; 90/180/360degree facts and categorical definitions deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық11визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Қиылысқан/беттескен түзулер, әртүрлі нүктелер, бір түзуде жатпайтын үш нүкте нақты ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Вертикаль/сыбайлас бұрыш, үш бұрыштың реті, сүйір/доғал және тек көрші секторларды санау рөлі сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Жазықтықта 5 БІР-БІРІМЕН БЕТТЕСПЕЙТІН түзу бір ортақ нүкте арқылы өтеді. Тек айнала орналасқан КӨРШІ екі сәуле арасындағы секторларды санаймыз, бірнеше секторды біріктірген бұрыштар алынбайды. Осылай неше сектор пайда болады? Жауапқа тек санды жазыңыз.",
+      "answer": "10",
+      "solution": "Әр түзу ортақ нүктеден қарама-қарсы екі сәуле береді. Түзулер беттеспейтіндіктен 5 × 2 = 10 бөлек сәуле бар. Оларды нүкте айналасында реттегенде көрші сәулелер арасындағы сектор саны да 10. Соңғы сәуле мен бірінші сәуле арасындағы секторды да қосамыз; сондықтан 9 емес, 10.",
+      "calculationVerification": {
+        "answer": "10",
+        "checks": [
+          "All11 saved nonvisual6.1 fullconditions/full official solutions/every choice individually read",
+          "Distinct lines and distinct points, noncollinear plane points, vertical versus adjacent angle roles explicitly retained",
+          "Cyclic order, obtuse-to-acute complement, right-angle/full-turn invariants and neighbor-only sector count checked",
+          "All new wording/numbers or honest unchanged mathematical facts; no source raster, rawTeX or new collection; closed draft until separate independent full-content hash review"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-intersections-e14a030f600f3948",
+      "modelId": "grade6-intersections-two-distinct-points-unique-line",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json",
+          "sourceId": "e14a030f600f3948"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.1 nonvisual adaptation; 90/180/360degree facts and categorical definitions deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық11визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Қиылысқан/беттескен түзулер, әртүрлі нүктелер, бір түзуде жатпайтын үш нүкте нақты ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Вертикаль/сыбайлас бұрыш, үш бұрыштың реті, сүйір/доғал және тек көрші секторларды санау рөлі сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Жазықтықтағы U және V нүктелері ӘРТҮРЛІ орындарда жатыр. Екеуінен де өтетін түзулер саны қанша?",
+      "options": [
+        "Шексіз көп",
+        "Екеу",
+        "Біреу",
+        "Бірде-бір"
+      ],
+      "answer": "Біреу",
+      "solution": "Екі әртүрлі нүкте арқылы бір ғана түзу өтеді; оны UV деп белгілейміз. Осы екі нүктеден өтетін тағы бір түзу жүргізсек, ол алғашқымен беттеседі. Бір ғана нүкте арқылы шексіз көп түзу жүргізуге болады, бірақ мұнда екі әртүрлі нүкте берілген.",
+      "calculationVerification": {
+        "answer": "Біреу",
+        "checks": [
+          "All11 saved nonvisual6.1 fullconditions/full official solutions/every choice individually read",
+          "Distinct lines and distinct points, noncollinear plane points, vertical versus adjacent angle roles explicitly retained",
+          "Cyclic order, obtuse-to-acute complement, right-angle/full-turn invariants and neighbor-only sector count checked",
+          "All new wording/numbers or honest unchanged mathematical facts; no source raster, rawTeX or new collection; closed draft until separate independent full-content hash review"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-intersections-d672047f74b3cec1",
+      "modelId": "grade6-intersections-vertical-angle-universal-not-special-case",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "counterexample": 57
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json",
+          "sourceId": "d672047f74b3cec1"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.1 nonvisual adaptation; 90/180/360degree facts and categorical definitions deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық11визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Қиылысқан/беттескен түзулер, әртүрлі нүктелер, бір түзуде жатпайтын үш нүкте нақты ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Вертикаль/сыбайлас бұрыш, үш бұрыштың реті, сүйір/доғал және тек көрші секторларды санау рөлі сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Қиылысқан екі түзудегі ВЕРТИКАЛЬ бұрыштардың кез келген жұбы үшін қай қасиет ӘРҚАШАН орындалады?",
+      "options": [
+        "Екеуінің қосындысы міндетті түрде 180°",
+        "Екеуі міндетті түрде тік",
+        "Бірі сүйір болса, екіншісі доғал",
+        "Олардың градустық шамалары тең"
+      ],
+      "answer": "Олардың градустық шамалары тең",
+      "solution": "Вертикаль бұрыштардың шамалары әрқашан тең. Мысалы, біреуі 57° болса, екіншісі де 57°, ал қосындысы 114°: ол 180° емес. Бұл мысалда екі бұрыш та сүйір, сондықтан «екеуі міндетті түрде тік» те, «бірі сүйір, екіншісі доғал» да жалпы қасиет емес. Тік бұрыштарда қосынды 180° болуы мүмкін, бірақ бұл жеке жағдай ғана.",
+      "calculationVerification": {
+        "answer": "Олардың градустық шамалары тең",
+        "checks": [
+          "All11 saved nonvisual6.1 fullconditions/full official solutions/every choice individually read",
+          "Distinct lines and distinct points, noncollinear plane points, vertical versus adjacent angle roles explicitly retained",
+          "Cyclic order, obtuse-to-acute complement, right-angle/full-turn invariants and neighbor-only sector count checked",
+          "All new wording/numbers or honest unchanged mathematical facts; no source raster, rawTeX or new collection; closed draft until separate independent full-content hash review"
+        ]
+      }
+    }
+  ]
+}

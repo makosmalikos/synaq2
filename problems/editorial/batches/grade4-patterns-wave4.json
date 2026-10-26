@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "summary": {
+    "editions": 1,
+    "sourceOccurrencesReferenced": 1,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-paired-badge-score",
+      "modelId": "grade4-paired-alternating-sum",
+      "grade": 4,
+      "topic": "seq",
+      "difficulty": "hard",
+      "params": {
+        "top": 24600
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-4-level3.json",
+          "sourceId": "4c2e5ff259f1ad26"
+        }
+      ],
+      "adaptationChanges": [
+        "Ұзын кезектескен қосынды жұп және тақ карточкалардың нөмірлерін салыстыру туралы жаңа шартпен берілді.",
+        "Жоғарғы шекара өзгертіліп, екі шеткі нөмірдің кіретіні анық жазылды.",
+        "Шешім жұптау арқылы табылып, тақ пен жұп сандарды бөлек толық қосу арқылы тексерілді."
+      ],
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Curriculum reference for pairing terms in a long alternating sum; an authored exercise, not a literal transcription.",
+      "answer": "12300",
+      "statement": "Математикалық ойынның карточкалары 1-ден 24 600-ге дейін ретімен нөмірленген, екі шеткі нөмір де кіреді. Барлық жұп нөмірдің қосындысынан барлық тақ нөмірдің қосындысын азайтыңдар. Нәтиже қандай?",
+      "solution": "Әр жұп нөмірді оның алдындағы тақ нөмірмен жұптаймыз: 2 − 1 = 1, 4 − 3 = 1, …, 24 600 − 24 599 = 1. Барлығы 24 600 : 2 = 12 300 жұп бар. Әр жұп 1 береді, сондықтан айырма 12 300.",
+      "calculationVerification": {
+        "method": "pairing_with_exhaustive_integer_oracle",
+        "answer": "12300",
+        "checks": [
+          "explicit inclusive interval",
+          "even upper endpoint",
+          "pair count",
+          "independent exhaustive BigInt sum of odd and even labels"
+        ]
+      }
+    }
+  ]
+}

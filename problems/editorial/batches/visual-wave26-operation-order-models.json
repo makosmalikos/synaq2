@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All7 saved visual grade5topic1.7 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade5topic1.7",
+    "sourceVisualOccurrences": 7,
+    "addressedNewDrafts": 7,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "1c215bf60e5db998",
+      "372f6755ae5a79f9",
+      "4ed922d8b04e684c",
+      "59ae50c112f208e2",
+      "711144e2d0f9ae49",
+      "7811574f64651ce9",
+      "ac06821087a7d3b2"
+    ],
+    "distinctModels": 7,
+    "semantics": "7 source-addressed operation-order targets preserve repeated grouped rows, product differences, explicit binary-flow operands, grouped mass and cost operations, retaining before sharing, and adding one separate tree group."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave26-parentheses-for-three-colored-rows",
+      "modelId": "visual-wave26-parenthesized-two-color-rows",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "colors",
+        "rows": 3,
+        "blue": 2,
+        "yellow": 5
+      },
+      "answer": "(2 + 5) × 3",
+      "sourceRefs": [
+        {
+          "sourceId": "711144e2d0f9ae49",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-7-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-7-level1.json#0",
+      "sourceCanonicalSha256": "7ba39308a0bc0c43dd1b67db78328615dd121f5d50431520d644f6073220956b",
+      "sourceSkill": "Grouping the complete two-color count of each repeated row before multiplication",
+      "adaptationChanges": [
+        "Бастапқы әр тапсырманың амал реті сақталды: қайталанатын қатар, екі көбейтіндінің айырмасы, екі тармақты амал сызбасы, сатылған массаны азайту, бүкіл сатып алу құны және қалдықты тең бөлу.",
+        "Қатарлар, тор өлшемдері, сызбадағы сандар, қап массалары, бағалар, кітап/сынып сандары және ағаш топтары жаңадан берілді.",
+        "Native SVG жаңа параметрлерден салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Амалдардың орындалу реті",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual array and shelf counts, equal grid-cell size, directed operand ordering, mass and price labels, grouping semantics, and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave26-parentheses-for-three-colored-rows.svg",
+      "verificationModule": "scripts/editorial/visual-wave26-models.mjs",
+      "options": [
+        "2 + (5 × 3)",
+        "(2 + 5) × 3",
+        "2 + 5 × 3",
+        "2 × (5 + 3)"
+      ],
+      "statement": "Көк және сары дөңгелектер бірдей қатарларға орналасқан. Барлық дөңгелек санын дұрыс көрсететін өрнекті таңдаңыз. Амалдардың орындалу ретін ескеріңіз.",
+      "solution": "Әр қатарда 2 көк және 5 сары, яғни 7 дөңгелек. Қатар саны 3. Дұрыс өрнек (2 + 5) × 3 = 21. Алдымен бір қатардың қосындысы жақшада есептеліп, содан кейін қатар санына көбейтіледі. Нұсқалардың мәндері 17, 21, 17, 16.",
+      "figureDescription": "3 бірдей қатар, әрқайсысында 2 көк және 5 сары дөңгелек.",
+      "figureSha256": "5556901e16d2026d582c938c4e81f0255d91183bdddb288c085d3c94f187431d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(2 + 5) × 3",
+        "checks": {
+          "perRow": 7,
+          "total": 21,
+          "optionValues": [
+            17,
+            21,
+            17,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave26-difference-of-two-grid-products",
+      "modelId": "visual-wave26-two-grid-area-difference",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "grids",
+        "aRows": 6,
+        "aColumns": 9,
+        "bRows": 5,
+        "bColumns": 10
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "59ae50c112f208e2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-7-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-7-level1.json#2",
+      "sourceCanonicalSha256": "3c6ff637b8fc2bb36db307469d6e5b285bd8559b45616e61b0e31c8ce84dee03",
+      "sourceSkill": "Counting two cell arrays by products before subtracting their totals",
+      "adaptationChanges": [
+        "Бастапқы әр тапсырманың амал реті сақталды: қайталанатын қатар, екі көбейтіндінің айырмасы, екі тармақты амал сызбасы, сатылған массаны азайту, бүкіл сатып алу құны және қалдықты тең бөлу.",
+        "Қатарлар, тор өлшемдері, сызбадағы сандар, қап массалары, бағалар, кітап/сынып сандары және ағаш топтары жаңадан берілді.",
+        "Native SVG жаңа параметрлерден салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Амалдардың орындалу реті",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual array and shelf counts, equal grid-cell size, directed operand ordering, mass and price labels, grouping semantics, and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave26-difference-of-two-grid-products.svg",
+      "verificationModule": "scripts/editorial/visual-wave26-models.mjs",
+      "statement": "A және B тіктөртбұрыштары бірдей торкөздерден тұрады. A-дағы торкөздер саны B-дағыдан нешеуге артық? Алдымен әр тордың санын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "A торы 6 × 9 = 54 торкөз, B торы 5 × 10 = 50 торкөз. Айырма 6 × 9 − 5 × 10 = 54 − 50 = 4. Көбейту азайтудан бұрын орындалады.",
+      "figureDescription": "Бірдей ұсақ торкөздерден тұратын A торы 6 қатар 9 баған, B торы 5 қатар 10 баған.",
+      "figureSha256": "4e6a0a2e21afd79e20a69d31455314ea3386be98e4e2ee8abde2ff8baaecd776",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": {
+          "a": 54,
+          "b": 50
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave26-two-quotients-flow",
+      "modelId": "visual-wave26-flow-sum-divide-minus-quotient",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "flow",
+        "a": 172,
+        "b": 44,
+        "divisor": 8,
+        "numerator": 126,
+        "denominator": 14
+      },
+      "answer": "18",
+      "sourceRefs": [
+        {
+          "sourceId": "7811574f64651ce9",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-7-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-7-level2.json#7",
+      "sourceCanonicalSha256": "d40b0ea36ac6426b1e71f71df8268ff8edbda678d0bd85228c6629a74c551416",
+      "sourceSkill": "Translating a directed arithmetic tree to a bracketed sum quotient minus a separate quotient with explicit operand ordering",
+      "adaptationChanges": [
+        "Бастапқы әр тапсырманың амал реті сақталды: қайталанатын қатар, екі көбейтіндінің айырмасы, екі тармақты амал сызбасы, сатылған массаны азайту, бүкіл сатып алу құны және қалдықты тең бөлу.",
+        "Қатарлар, тор өлшемдері, сызбадағы сандар, қап массалары, бағалар, кітап/сынып сандары және ағаш топтары жаңадан берілді.",
+        "Native SVG жаңа параметрлерден салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Амалдардың орындалу реті",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual array and shelf counts, equal grid-cell size, directed operand ordering, mass and price labels, grouping semantics, and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave26-two-quotients-flow.svg",
+      "verificationModule": "scripts/editorial/visual-wave26-models.mjs",
+      "statement": "Жоғарғы сандардан бастап, нұсқарлар бойымен шеңберлердегі амалдарды орындаңыз. Әр амалға сол жақтан келген сан — бірінші, оң жақтан келген сан — екінші сан. Соңғы ұяшыққа қандай сан жазылады? Жауапқа тек санды жазыңыз.",
+      "solution": "Сол тармақ: (172 + 44) : 8 = 216 : 8 = 27. Оң тармақ: 126 : 14 = 9. Соңғы азайту 27 − 9 = 18. Толық өрнек (172 + 44) : 8 − 126 : 14.",
+      "figureDescription": "172 және 44 плюс амалына; оның нәтижесі солдан, 8 оңнан бөлуге келеді. 126 солдан, 14 оңнан екінші бөлуге келеді. Соңында сол бөліндіден оң бөлінді азайтылады.",
+      "figureSha256": "4bcb56f9209d67faa6a085c4317a90a69894aac112a4b7efa13822bfe1f65097",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "18",
+        "checks": {
+          "sum": 216,
+          "left": 27,
+          "right": 9
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave26-two-mass-bag-arrays",
+      "modelId": "visual-wave26-two-bag-types-less-sold",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "bags",
+        "groups": [
+          {
+            "rows": 2,
+            "columns": 5,
+            "mass": 45
+          },
+          {
+            "rows": 2,
+            "columns": 3,
+            "mass": 30
+          }
+        ],
+        "sold": 275
+      },
+      "answer": "355",
+      "sourceRefs": [
+        {
+          "sourceId": "4ed922d8b04e684c",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-7-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-7-level2.json#8",
+      "sourceCanonicalSha256": "3d59ceed55d3d543affa6aa13805adc71a6e19e823596908fcbe66e11822478c",
+      "sourceSkill": "Multiplying counts of each bag type by its mass, then summing and subtracting the sold mass",
+      "adaptationChanges": [
+        "Бастапқы әр тапсырманың амал реті сақталды: қайталанатын қатар, екі көбейтіндінің айырмасы, екі тармақты амал сызбасы, сатылған массаны азайту, бүкіл сатып алу құны және қалдықты тең бөлу.",
+        "Қатарлар, тор өлшемдері, сызбадағы сандар, қап массалары, бағалар, кітап/сынып сандары және ағаш топтары жаңадан берілді.",
+        "Native SVG жаңа параметрлерден салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Амалдардың орындалу реті",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual array and shelf counts, equal grid-cell size, directed operand ordering, mass and price labels, grouping semantics, and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave26-two-mass-bag-arrays.svg",
+      "verificationModule": "scripts/editorial/visual-wave26-models.mjs",
+      "statement": "Дүкенге суреттегі ұн қаптары келді. Әр қаптағы сан — оның килограммен массасы. 275 кг ұн сатылғаннан кейін неше килограмм қалады? Жауапқа тек санды жазыңыз.",
+      "solution": "2 × 5 = 10 қап, массасы 45 × 10 = 450 кг; 2 × 3 = 6 қап, массасы 30 × 6 = 180 кг. Барлығы 450 + 180 = 630 кг. Қалғаны 630 − 275 = 355 кг. Әуелі көбейтулер, кейін қосу мен азайту орындалады.",
+      "figureDescription": "2 қатар 5 қап, әрқайсысы 45 кг; 2 қатар 3 қап, әрқайсысы 30 кг.",
+      "figureSha256": "f0cea14e76e788ef86f7d6a1b2bea42c628da0cb3d14db994f559c9f9a3ce4d0",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "355",
+        "checks": {
+          "masses": [
+            450,
+            180
+          ],
+          "total": 630
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave26-four-notebooks-change",
+      "modelId": "visual-wave26-purchase-change-bracket",
+      "grade": 5,
+      "topic": "word",
+      "difficulty": "medium",
+      "params": {
+        "scene": "shopping",
+        "noteCount": 4,
+        "notePrice": 245,
+        "penPrice": 230,
+        "tendered": 1500
+      },
+      "answer": "290",
+      "sourceRefs": [
+        {
+          "sourceId": "372f6755ae5a79f9",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-7-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-7-level2.json#14",
+      "sourceCanonicalSha256": "56cda716613e53ae09b02adf18ee7e4c5261990b708aa14db06e92c651de3480",
+      "sourceSkill": "Subtracting the entire grouped cost of repeated notebooks and one pen from money tendered",
+      "adaptationChanges": [
+        "Бастапқы әр тапсырманың амал реті сақталды: қайталанатын қатар, екі көбейтіндінің айырмасы, екі тармақты амал сызбасы, сатылған массаны азайту, бүкіл сатып алу құны және қалдықты тең бөлу.",
+        "Қатарлар, тор өлшемдері, сызбадағы сандар, қап массалары, бағалар, кітап/сынып сандары және ағаш топтары жаңадан берілді.",
+        "Native SVG жаңа параметрлерден салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Амалдардың орындалу реті",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual array and shelf counts, equal grid-cell size, directed operand ordering, mass and price labels, grouping semantics, and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave26-four-notebooks-change.svg",
+      "verificationModule": "scripts/editorial/visual-wave26-models.mjs",
+      "statement": "Сатып алынған дәптерлер мен қалам суретте көрсетілген, әр заттың бағасы жазылған. Сатып алушы 1500 теңге берді. Қайтарым неше теңге? Жауапқа тек санды жазыңыз.",
+      "solution": "Дәптерлер 4 × 245 = 980 теңге. Қаламмен бірге 980 + 230 = 1210 теңге. Қайтарым 1500 − (4 × 245 + 230) = 290 теңге. Жақша барлық сатып алудың құнын біріктіреді.",
+      "figureDescription": "4 дәптер, әрқайсысы 245 теңге; бір қалам 230 теңге.",
+      "figureSha256": "a49bd67fcfeb7863149c8bff62002597859a3602a7716406f7846f3c548bb8cf",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "290",
+        "checks": {
+          "notebooks": 980,
+          "cost": 1210
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave26-shelves-retain-and-distribute",
+      "modelId": "visual-wave26-books-retain-before-sharing",
+      "grade": 5,
+      "topic": "word",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cabinets",
+        "cabinets": [
+          {
+            "shelves": 7,
+            "books": 42
+          },
+          {
+            "shelves": 5,
+            "books": 36
+          }
+        ],
+        "retained": 6,
+        "classes": 9
+      },
+      "answer": "52",
+      "sourceRefs": [
+        {
+          "sourceId": "ac06821087a7d3b2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-7-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-7-level3.json#7",
+      "sourceCanonicalSha256": "daa0ffde1fdccd485c02da3ed50367fc0a9f28850e2430fc4e17eaee91793eb3",
+      "sourceSkill": "Combining two repeated shelf counts, removing retained books, and only then dividing the remainder among classes",
+      "adaptationChanges": [
+        "Бастапқы әр тапсырманың амал реті сақталды: қайталанатын қатар, екі көбейтіндінің айырмасы, екі тармақты амал сызбасы, сатылған массаны азайту, бүкіл сатып алу құны және қалдықты тең бөлу.",
+        "Қатарлар, тор өлшемдері, сызбадағы сандар, қап массалары, бағалар, кітап/сынып сандары және ағаш топтары жаңадан берілді.",
+        "Native SVG жаңа параметрлерден салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Амалдардың орындалу реті",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual array and shelf counts, equal grid-cell size, directed operand ordering, mass and price labels, grouping semantics, and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave26-shelves-retain-and-distribute.svg",
+      "verificationModule": "scripts/editorial/visual-wave26-models.mjs",
+      "statement": "Екі шкафтың әр сөресінде суретте жазылғандай кітап бар. Кітапханашы 6 кітапты қалдырып, қалғанын 9 сыныпқа тең бөлді. Бір сынып неше кітап алады? Жауапқа тек санды жазыңыз.",
+      "solution": "Шкафтардағы кітаптар: 7 × 42 = 294; 5 × 36 = 180. Барлығы 474. Қалдырылған 6 кітапты алып тастағанда 468 кітап таратылады. 468 : 9 = 52 кітап әр сыныпқа. Тексеру: 52 × 9 + 6 = 474.",
+      "figureDescription": "7 сөре, әр сөреде 42 кітап; 5 сөре, әр сөреде 36 кітап.",
+      "figureSha256": "16d8fdc31e69bd50ec9f1182aab68ecf06898783723c95fb4f46d35d9a323530",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "52",
+        "checks": {
+          "totals": [
+            294,
+            180
+          ],
+          "all": 474,
+          "distributed": 468
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave26-orchard-array-and-one-yellow-group",
+      "modelId": "visual-wave26-orchard-array-plus-separate-group",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "orchard",
+        "appleRows": 6,
+        "appleColumns": 9,
+        "apricotRows": 4,
+        "apricotColumns": 4
+      },
+      "answer": "6 × 9 + 16",
+      "sourceRefs": [
+        {
+          "sourceId": "1c215bf60e5db998",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-7-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-7-leveltest.json#4",
+      "sourceCanonicalSha256": "22462795fd772d8f2e799c89836935c7685989ca6ff00f31a5b23efcc82dd70b",
+      "sourceSkill": "Distinguishing the product for one tree array plus one separate group from erroneously repeating that group in every row",
+      "adaptationChanges": [
+        "Бастапқы әр тапсырманың амал реті сақталды: қайталанатын қатар, екі көбейтіндінің айырмасы, екі тармақты амал сызбасы, сатылған массаны азайту, бүкіл сатып алу құны және қалдықты тең бөлу.",
+        "Қатарлар, тор өлшемдері, сызбадағы сандар, қап массалары, бағалар, кітап/сынып сандары және ағаш топтары жаңадан берілді.",
+        "Native SVG жаңа параметрлерден салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Амалдардың орындалу реті",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual array and shelf counts, equal grid-cell size, directed operand ordering, mass and price labels, grouping semantics, and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave26-orchard-array-and-one-yellow-group.svg",
+      "verificationModule": "scripts/editorial/visual-wave26-models.mjs",
+      "options": [
+        "(6 + 9) × 16",
+        "6 × (9 + 16)",
+        "6 + 9 + 16",
+        "6 × 9 + 16"
+      ],
+      "statement": "Жасыл дөңгелектер — алма, сары дөңгелектер — өрік ағаштары. Бақтағы барлық ағаш санын беретін өрнекті таңдаңыз.",
+      "solution": "Алма ағаштары 6 қатарда 9 данадан, барлығы 54. Өрік ағаштары 4 × 4 = 16. Дұрыс өрнек 6 × 9 + 16 = 70. Көбейту қосудан бұрын орындалады; сары топ бір рет қана қосылады.",
+      "figureDescription": "Жасыл алма тобы 6 қатар 9 баған; бөлек сары өрік тобы 4 қатар 4 баған.",
+      "figureSha256": "8b98cad4a27176ea578934f608d184d3b54f5612f98d573ce3f947529a24721e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6 × 9 + 16",
+        "checks": {
+          "apples": 54,
+          "apricots": 16,
+          "total": 70,
+          "optionValues": [
+            240,
+            150,
+            31,
+            70
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All6 saved visual grade5topic2.4 sources only; no capture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5topic2.4sources",
+    "sourceVisualOccurrences": 6,
+    "addressedNewDrafts": 6,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "69e6bdf8fbdcd404",
+      "714d3ff904abf9f9",
+      "75876081049d47d3",
+      "9714ff07318e09b6",
+      "aff24c9dabc788e1",
+      "da84b31f94ed033d"
+    ],
+    "distinctModels": 6,
+    "semantics": "Six individually source-addressed tasks; repeated categorical parity outcome is not a new semantic meaning."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave34-six-balls-divisible-by-five",
+      "modelId": "visual-wave34-count-ending-zero-or-five",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "balls",
+        "numbers": [
+          175,
+          420,
+          314,
+          605,
+          782,
+          930,
+          1205,
+          4000
+        ]
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "aff24c9dabc788e1",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-4-level1.json#0",
+      "sourceCanonicalSha256": "5cae2ef2624d66deed24f8077809272644c4291b71f02e5b748b8e8c196943e8",
+      "sourceSkill": "Applying the last-digit0or5criterion to every pictured number, including four-digit examples",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: 5-ке бөлінуді санау, жұп карточкалар, өшкен соңғы цифр, тең бөліктердің жалпы саны, жасырын номинал және тақ көбейтіндінің қалдығы.",
+        "Сандар жиыны, чек префиксі/баға, көшет түрлері/бөлік қатынасы, тиын саны/сомасы және қораптағы фломастер деректері өзгертілді. Тақ көбейтіндінің жалғыз қалдығы 1 болып қалуы математикалық қасиет, жаңа мағына деп есептелмейді.",
+        "Жаңа native SVG-де әр карточка/шар/тиын/қорап жеке берілді; тең бөліктер бірдей енмен, чектегі жалғыз жасырын цифр анық таңбамен салынды. Бастапқы raster/traced SVG қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Соңғы цифр мен жұп-тақтық",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6source/newfullsolution/MCQ review; actual8ball/card labels, receipt singlemasked digit, equal3+2parts,13maskedcoins/47total and9boxes, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave34-six-balls-divisible-by-five.svg",
+      "verificationModule": "scripts/editorial/visual-wave34-models.mjs",
+      "statement": "Шарлардың әрқайсысына бір сан жазылған. Суреттегі сандардың нешеуі 5 санына қалдықсыз бөлінеді? Жауапқа тек санды жазыңыз.",
+      "solution": "5 санына соңғы цифры 0 немесе 5 болатын сандар бөлінеді. Шарлардағы соңғы цифрлар 5, 0, 4, 5, 2, 0, 5, 0. Талапқа сай сандар: 175, 420, 605, 930, 1 205, 4 000. Олардың саны 6. Басқа цифрмен аяқталған сандарды есепке қоспаймыз.",
+      "figureDescription": "Екі қатардағы шарларға 175, 420, 314, 605, 782, 930, 1 205, 4 000 сандары жазылған.",
+      "figureSha256": "99982f07f353538181389cdcf87568d9445045bab364a555a16c8060d73eb4f8",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "selected": [
+            175,
+            420,
+            605,
+            930,
+            1205,
+            4000
+          ],
+          "lastDigits": [
+            5,
+            0,
+            4,
+            5,
+            2,
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave34-five-even-number-cards",
+      "modelId": "visual-wave34-count-even-number-cards",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "cards",
+        "numbers": [
+          86,
+          93,
+          214,
+          481,
+          750,
+          867,
+          2012,
+          6740
+        ]
+      },
+      "answer": "5",
+      "sourceRefs": [
+        {
+          "sourceId": "da84b31f94ed033d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-4-level1.json#14",
+      "sourceCanonicalSha256": "b2dedeb216c7fd662cf59be246bfc851250ccad10f814feb75d7b7ce6eb4ebfa",
+      "sourceSkill": "Classifying each multi-digit card by its last digit, including zero-ending even numbers",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: 5-ке бөлінуді санау, жұп карточкалар, өшкен соңғы цифр, тең бөліктердің жалпы саны, жасырын номинал және тақ көбейтіндінің қалдығы.",
+        "Сандар жиыны, чек префиксі/баға, көшет түрлері/бөлік қатынасы, тиын саны/сомасы және қораптағы фломастер деректері өзгертілді. Тақ көбейтіндінің жалғыз қалдығы 1 болып қалуы математикалық қасиет, жаңа мағына деп есептелмейді.",
+        "Жаңа native SVG-де әр карточка/шар/тиын/қорап жеке берілді; тең бөліктер бірдей енмен, чектегі жалғыз жасырын цифр анық таңбамен салынды. Бастапқы raster/traced SVG қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Соңғы цифр мен жұп-тақтық",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6source/newfullsolution/MCQ review; actual8ball/card labels, receipt singlemasked digit, equal3+2parts,13maskedcoins/47total and9boxes, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave34-five-even-number-cards.svg",
+      "verificationModule": "scripts/editorial/visual-wave34-models.mjs",
+      "statement": "Әр карточкадағы санды тексеріңіз. Суретте жұп сан жазылған карточкалар нешеу? Жауапқа тек санды жазыңыз.",
+      "solution": "Жұп санның соңғы цифры 0, 2, 4, 6 немесе 8 болады. Карточкалардан 86, 214, 750, 2 012, 6 740 сандарын таңдаймыз. Барлығы 5 карточка. 0-мен аяқталған сан да жұп; алдыңғы цифрлары оның жұп-тақтығына әсер етпейді.",
+      "figureDescription": "Екі қатардағы карточкаларда 86, 93, 214, 481, 750, 867, 2 012, 6 740 сандары бар.",
+      "figureSha256": "362e7743227ae91b4435d9840252d22848137cec99a64426fc8ece9bae75c593",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5",
+        "checks": {
+          "selected": [
+            86,
+            214,
+            750,
+            2012,
+            6740
+          ],
+          "lastDigits": [
+            6,
+            3,
+            4,
+            1,
+            0,
+            7,
+            2,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave34-ten-albums-missing-receipt-digit",
+      "modelId": "visual-wave34-receipt-last-digit-unit-price",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "receipt",
+        "quantity": 10,
+        "prefix": 368
+      },
+      "answer": "368",
+      "sourceRefs": [
+        {
+          "sourceId": "714d3ff904abf9f9",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-4-level2.json#7",
+      "sourceCanonicalSha256": "9a52529d8498c910abc7f0422f0399497ea5f0a487b1854076a7c9a0ffa7cbb5",
+      "sourceSkill": "Reconstructing a single missing final total digit by divisibility-by10, then finding the integer unit price",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: 5-ке бөлінуді санау, жұп карточкалар, өшкен соңғы цифр, тең бөліктердің жалпы саны, жасырын номинал және тақ көбейтіндінің қалдығы.",
+        "Сандар жиыны, чек префиксі/баға, көшет түрлері/бөлік қатынасы, тиын саны/сомасы және қораптағы фломастер деректері өзгертілді. Тақ көбейтіндінің жалғыз қалдығы 1 болып қалуы математикалық қасиет, жаңа мағына деп есептелмейді.",
+        "Жаңа native SVG-де әр карточка/шар/тиын/қорап жеке берілді; тең бөліктер бірдей енмен, чектегі жалғыз жасырын цифр анық таңбамен салынды. Бастапқы raster/traced SVG қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Соңғы цифр мен жұп-тақтық",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6source/newfullsolution/MCQ review; actual8ball/card labels, receipt singlemasked digit, equal3+2parts,13maskedcoins/47total and9boxes, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave34-ten-albums-missing-receipt-digit.svg",
+      "verificationModule": "scripts/editorial/visual-wave34-models.mjs",
+      "statement": "Бірдей бағалы альбомдар сатып алынды. Саны мен жалпы төлемі чекте көрсетілген. Жалпы соманың соңғы цифры ғана өшкен, ол □ таңбасымен берілген. Бір альбомның бағасы бүтін теңге болса, бағасы неше теңге? Жауапқа тек санды жазыңыз.",
+      "solution": "Жалпы төлем 10 × бір альбомның бағасына тең. Баға бүтін болғандықтан, сома 10 санына бөлінеді, яғни соңғы цифры 0. Чектегі сан 368□ орнына 3680 болады. Бір альбом 3680 : 10 = 368 теңге. Тексеру: 368 × 10 = 3680. Өшкен цифрды баға деп емес, алдымен жалпы соманың соңғы орны деп қараймыз.",
+      "figureDescription": "Чекте 10 альбом, біреуінің бағасы белгісіз; жалпы сома 368□ тг. □ тек бір соңғы цифрдың орнында тұр.",
+      "figureSha256": "613cccde535166b1a088b1e434a3afcda604ed6433220a7a79153f58134c3243",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "368",
+        "checks": {
+          "validTotals": [
+            3680
+          ],
+          "missingDigit": 0
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave34-three-maple-two-birch-parts",
+      "modelId": "visual-wave34-equal-part-total-choice",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "ratio",
+        "firstParts": 3,
+        "secondParts": 2
+      },
+      "answer": "265",
+      "sourceRefs": [
+        {
+          "sourceId": "75876081049d47d3",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-4-level2.json#9",
+      "sourceCanonicalSha256": "751e6d4d04a5a0c117afcccef15a15c4d5ccb494948a225085312dff25a92102",
+      "sourceSkill": "Reading equal-sized parts and selecting a feasible positive whole total by its divisibility",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: 5-ке бөлінуді санау, жұп карточкалар, өшкен соңғы цифр, тең бөліктердің жалпы саны, жасырын номинал және тақ көбейтіндінің қалдығы.",
+        "Сандар жиыны, чек префиксі/баға, көшет түрлері/бөлік қатынасы, тиын саны/сомасы және қораптағы фломастер деректері өзгертілді. Тақ көбейтіндінің жалғыз қалдығы 1 болып қалуы математикалық қасиет, жаңа мағына деп есептелмейді.",
+        "Жаңа native SVG-де әр карточка/шар/тиын/қорап жеке берілді; тең бөліктер бірдей енмен, чектегі жалғыз жасырын цифр анық таңбамен салынды. Бастапқы raster/traced SVG қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Соңғы цифр мен жұп-тақтық",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6source/newfullsolution/MCQ review; actual8ball/card labels, receipt singlemasked digit, equal3+2parts,13maskedcoins/47total and9boxes, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave34-three-maple-two-birch-parts.svg",
+      "verificationModule": "scripts/editorial/visual-wave34-models.mjs",
+      "options": [
+        "236",
+        "278",
+        "265",
+        "312"
+      ],
+      "statement": "Көк жолақ үйеңкі көшеттерін, сары жолақ қайың көшеттерін білдіреді. Барлық кішкентай бөлік тең, бір бөлікке көшеттердің оң натурал саны сәйкес келеді. Барлық көшет саны қай нұсқадағы сан болуы мүмкін?",
+      "solution": "Көк жолақ 3, сары жолақ 2 тең бөліктен тұрады. Бір бөліктегі көшет саны x болса, барлығы (3 + 2) × x = 5 × x. Сондықтан толық сан 5 санына бөлінуі тиіс. Нұсқалардың қалдықтары 236 → 1; 278 → 3; 265 → 0; 312 → 2. Тек 265 жарайды. Бір бөлік 53 көшет: үйеңкі 159, қайың 106; қосынды 265.",
+      "figureDescription": "Көк жолақ 3, сары жолақ 2 бірдей тікбұрышты бөліктен тұрады. Әр бөліктің ені бірдей. Жалпы сан белгісіз.",
+      "figureSha256": "82080d2398da29528aa12ee43b09837ce3aeb317eefdbfab76eaaab2a21d2903",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "265",
+        "checks": {
+          "parts": 5,
+          "unit": 53,
+          "first": 159,
+          "second": 106,
+          "optionRemainders": [
+            1,
+            3,
+            0,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave34-thirteen-masked-coins",
+      "modelId": "visual-wave34-two-denomination-coin-count",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "coins",
+        "coins": 13,
+        "low": 2,
+        "high": 5,
+        "total": 47
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "9714ff07318e09b6",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-4-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-4-level3.json#5",
+      "sourceCanonicalSha256": "17ca19b16aa2067b7f721e4bc6af89e68ae1a4478d423bed13e8f35cc3b1fe68",
+      "sourceSkill": "Combining the full pictured coin count with the total value for two denominations, checking parity as well as count",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: 5-ке бөлінуді санау, жұп карточкалар, өшкен соңғы цифр, тең бөліктердің жалпы саны, жасырын номинал және тақ көбейтіндінің қалдығы.",
+        "Сандар жиыны, чек префиксі/баға, көшет түрлері/бөлік қатынасы, тиын саны/сомасы және қораптағы фломастер деректері өзгертілді. Тақ көбейтіндінің жалғыз қалдығы 1 болып қалуы математикалық қасиет, жаңа мағына деп есептелмейді.",
+        "Жаңа native SVG-де әр карточка/шар/тиын/қорап жеке берілді; тең бөліктер бірдей енмен, чектегі жалғыз жасырын цифр анық таңбамен салынды. Бастапқы raster/traced SVG қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Соңғы цифр мен жұп-тақтық",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6source/newfullsolution/MCQ review; actual8ball/card labels, receipt singlemasked digit, equal3+2parts,13maskedcoins/47total and9boxes, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave34-thirteen-masked-coins.svg",
+      "verificationModule": "scripts/editorial/visual-wave34-models.mjs",
+      "statement": "Суретте төлеуге берілген барлық тиын бар, номиналдары жасырылған. Тек 2 теңгелік және 5 теңгелік тиындар қолданылған; төлемнің толық сомасы үстінде жазылған. 5 теңгелік тиын нешеу? Жауапқа тек санды жазыңыз.",
+      "solution": "Суретте 13 тиын бар. Барлығы 2 теңгелік болса 13 × 2 = 26 теңге болар еді. Әр 5 теңгелік тиын төменгі номиналдан 3 теңгеге артық. Айырма 47 − 26 = 21, сондықтан жоғары номинал саны 21 : 3 = 7. Қалған 6 тиын — 2 теңгелік. Тексеру: 7 + 6 = 13; 35 + 12 = 47. Жұп-тақтық та сәйкес: төменгі номинал сомасы жұп, жалпы сома тақ, сондықтан 5 теңгеліктер саны тақ.",
+      "figureDescription": "Екі қатарда 13 тиын: бірінші қатарда 7, екіншісінде 6. Барлық тиында сұрақ белгісі, үстіндегі жалпы сома 47 тг. Номиналдар ашылмаған.",
+      "figureSha256": "68ad859144b145f1d85d8c155875763bf7aead944d125c8b452ea9f3434d3f70",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": {
+          "lowCount": 6,
+          "allTotalCandidates": [
+            26,
+            29,
+            32,
+            35,
+            38,
+            41,
+            44,
+            47,
+            50,
+            53,
+            56,
+            59,
+            62,
+            65
+          ],
+          "highValue": 35,
+          "lowValue": 12
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave34-nine-twenty-seven-marker-boxes",
+      "modelId": "visual-wave34-odd-product-unpaired-item",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "boxes",
+        "boxes": 9,
+        "perBox": 27
+      },
+      "answer": "1",
+      "sourceRefs": [
+        {
+          "sourceId": "69e6bdf8fbdcd404",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-4-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-4-leveltest.json#1",
+      "sourceCanonicalSha256": "a871be48a143e7dbaa0e7eda970dda30dd44b10ec30b316e01a3cc69dbec62d5",
+      "sourceSkill": "Deriving product parity from two odd factors and the single unpaired item, without claiming a new semantic family",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: 5-ке бөлінуді санау, жұп карточкалар, өшкен соңғы цифр, тең бөліктердің жалпы саны, жасырын номинал және тақ көбейтіндінің қалдығы.",
+        "Сандар жиыны, чек префиксі/баға, көшет түрлері/бөлік қатынасы, тиын саны/сомасы және қораптағы фломастер деректері өзгертілді. Тақ көбейтіндінің жалғыз қалдығы 1 болып қалуы математикалық қасиет, жаңа мағына деп есептелмейді.",
+        "Жаңа native SVG-де әр карточка/шар/тиын/қорап жеке берілді; тең бөліктер бірдей енмен, чектегі жалғыз жасырын цифр анық таңбамен салынды. Бастапқы raster/traced SVG қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Соңғы цифр мен жұп-тақтық",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6source/newfullsolution/MCQ review; actual8ball/card labels, receipt singlemasked digit, equal3+2parts,13maskedcoins/47total and9boxes, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave34-nine-twenty-seven-marker-boxes.svg",
+      "verificationModule": "scripts/editorial/visual-wave34-models.mjs",
+      "statement": "Қораптардың бәрі суретте көрсетілген, әр қораптың ішіндегі фломастер саны үстінде жазылған. Барлық фломастерді екі-екіден буып шыққанда, нешеуі жұпсыз қалады? Жауапқа тек санды жазыңыз.",
+      "solution": "Суретте 9 қорап, әрқайсысында 27 фломастер. Екі көбейткіш те тақ, сондықтан көбейтінді де тақ: тақ топты тақ рет қосқанда жалпы сан тақ болады. Тақ саннан екі-екіден жұп жасағанда бір зат қалады. Тексеру: 9 × 27 = 243 = 2 × 121 + 1. Жауап 1.",
+      "figureDescription": "Үш қатарда 9 қорап, әрқайсысының үстінде 27 фломастер деп көрсетілген.",
+      "figureSha256": "89d563d74139117939c93d0df95a29d9b59a7b1602ed63df924b2858a962d751",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "1",
+        "checks": {
+          "total": 243,
+          "pairs": 121,
+          "factorParities": [
+            1,
+            1
+          ]
+        }
+      }
+    }
+  ]
+}

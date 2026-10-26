@@ -1,0 +1,725 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All10savedvisualgrade5topic3.5;archivedsourcesonly,nocapture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "Allcapturedvisualgrade5topic3.5sources",
+    "sourceVisualOccurrences": 10,
+    "addressedNewDrafts": 10,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "078be3aacfb2cd19",
+      "3026f84fb6f01ae6",
+      "35486782bf247ce0",
+      "41d4951c4d6fa34d",
+      "8670bec18ba418dc",
+      "8746a63be8b02afd",
+      "89a5899411663dc7",
+      "b50c17376440a1b5",
+      "eb624f925aad939a",
+      "fa84cd0cf0f2c922"
+    ],
+    "distinctModels": 10,
+    "semantics": "Tensource-specifictargetsindividuallyrewritten;edition/modelcountsarenotnewsemanticmeaningclaims."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave45-seventeen-sixths-coordinate-numerator",
+      "modelId": "visual-wave45-improper-coordinate-fixed-numerator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "unit": 6,
+        "maxTicks": 18,
+        "points": [
+          [
+            "C",
+            17
+          ]
+        ]
+      },
+      "answer": "17",
+      "sourceRefs": [
+        {
+          "sourceId": "eb624f925aad939a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-5-level1.json#6",
+      "sourceCanonicalSha256": "bed81e5ba4563ba4c250d563fcf504db31675f558fb5d0cc4d684317b4ceb540",
+      "sourceSkill": "Read point beyondwholeunits and express at EXACT denominator, output RAWimpropernumerator",
+      "adaptationChanges": [
+        "Барлық10сақталғанвизуалды3.5бастапқышарт,толықшешімменнұсқаларжекеоқылды.Нақтысәуленіоқу,берілгенбөлім,бұрыс/араласбөлшек,нақтықысқарту,белгісізбірлік,ортанүктежәнекеріорта,ішкінүктелер/аралықтар,қайтамасштабтаужәнетордағышектеудағдыларыжекесақталды.",
+        "Жаңакескіндер:17/6;7/10;12/5нүктесіC;24/10→2⅖;2/5белгісі6торкөз→бірлік15;0.4және3ортасы1.7;2–3арасындағы5нүкте/6аралық;A8/12,C17/12→B26/12;22/8жаңа12торкөзбірлік→33;10торкөзгедәлкелмейтін2/3.",
+        "Барлықсәулеөзпараметріненсызылады:бірдейқадам,ірібүтінбелгілер,есепкесәйкесоқылатынәріптер.Белгісізбірлікесебінде1саны/1орныныңұзынбелгісі,ортаесептеріндежасырынC/Bкөрсетілмейді.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшек координаталар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview;actualprintedunit/pointpositions,real4/10reduction,known2/5at6cellswithNO1marker,midpointandhiddenBrawdenominator12,5interiorpointsSIXgaps,22/8→11/4newunit12,all4gridoptions;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave45-seventeen-sixths-coordinate-numerator.svg",
+      "verificationModule": "scripts/editorial/visual-wave45-models.mjs",
+      "statement": "Сәуледегі C нүктесінің координатасын бөлімі ДӘЛ 6 болатын (a/6) бұрыс бөлшегімен жазыңыз. a алымы неше? Жауапқа тек санды жазыңыз.",
+      "solution": "0 мен 1 арасында 6 тең аралық бар. C-ге дейін 2 толық бірлік және тағы 5 аралық: 2 × 6 + 5 = 17. Әр аралық (1/6), сондықтан координата (17/6). Берілген бөліммен жазылған алым 17. Тек соңғы бірліктегі бөліктерді санау бүтін бөліктерді жоғалтады.",
+      "figureDescription": "Координаталық сәуледе әр бірлік 6 тең аралыққа бөлінген. C нүктесі O-дан 17 ұсақ аралықта.",
+      "figureSha256": "9c98ddb12a2d8bb38281e02300da0d8d8b4b6aff1668fc4e4243474c03370f0b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "17",
+        "checks": {
+          "unitParts": 6,
+          "pointIndex": 17,
+          "mixed": "(2 + (5/6))",
+          "rawImproper": "17/6",
+          "requestedNumerator": 17
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave45-seven-tenths-point-a",
+      "modelId": "visual-wave45-proper-coordinate-read",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "unit": 10,
+        "maxTicks": 12,
+        "points": [
+          [
+            "A",
+            7
+          ]
+        ]
+      },
+      "answer": "(7/10)",
+      "sourceRefs": [
+        {
+          "sourceId": "b50c17376440a1b5",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-5-level1.json#8",
+      "sourceCanonicalSha256": "5fac7e17d2eacb91f53f8f447c03dceeada96cac2a6283046693ff670b14216c",
+      "sourceSkill": "Count unitintervals and origin-to-pointintervals, preserve numerator/denominator order",
+      "adaptationChanges": [
+        "Барлық10сақталғанвизуалды3.5бастапқышарт,толықшешімменнұсқаларжекеоқылды.Нақтысәуленіоқу,берілгенбөлім,бұрыс/араласбөлшек,нақтықысқарту,белгісізбірлік,ортанүктежәнекеріорта,ішкінүктелер/аралықтар,қайтамасштабтаужәнетордағышектеудағдыларыжекесақталды.",
+        "Жаңакескіндер:17/6;7/10;12/5нүктесіC;24/10→2⅖;2/5белгісі6торкөз→бірлік15;0.4және3ортасы1.7;2–3арасындағы5нүкте/6аралық;A8/12,C17/12→B26/12;22/8жаңа12торкөзбірлік→33;10торкөзгедәлкелмейтін2/3.",
+        "Барлықсәулеөзпараметріненсызылады:бірдейқадам,ірібүтінбелгілер,есепкесәйкесоқылатынәріптер.Белгісізбірлікесебінде1саны/1орныныңұзынбелгісі,ортаесептеріндежасырынC/Bкөрсетілмейді.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшек координаталар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview;actualprintedunit/pointpositions,real4/10reduction,known2/5at6cellswithNO1marker,midpointandhiddenBrawdenominator12,5interiorpointsSIXgaps,22/8→11/4newunit12,all4gridoptions;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave45-seven-tenths-point-a.svg",
+      "verificationModule": "scripts/editorial/visual-wave45-models.mjs",
+      "options": [
+        "(7/10)",
+        "(10/7)",
+        "(1/10)",
+        "7"
+      ],
+      "statement": "Сәуледегі көршілес сызықшалар тең аралықпен орналасқан. A нүктесінің координатасын таңдаңыз.",
+      "solution": "Бірлік кесінді 10 тең аралыққа бөлінген, сондықтан бір аралық (1/10). O-дан A-ға дейін 7 аралық саналады. Координата (7/10). Сызықшалардың өз санын емес, олардың арасындағы бөліктерді санаймыз; алым мен бөлімнің орнын ауыстырмаймыз.",
+      "figureDescription": "Координаталық сәуледе әр бірлік 10 тең аралыққа бөлінген. A нүктесі O-дан 7 ұсақ аралықта.",
+      "figureSha256": "a17f8d6b8a0568d79159903a5be59efd7c4f6a5a1fc8b575d1f49d98926ff8e8",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(7/10)",
+        "checks": {
+          "unitParts": 10,
+          "originToPointParts": 7,
+          "coordinate": "(7/10)"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave45-twelve-fifths-point-c",
+      "modelId": "visual-wave45-locate-improper-fraction-label",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "unit": 5,
+        "maxTicks": 20,
+        "points": [
+          [
+            "A",
+            4
+          ],
+          [
+            "B",
+            9
+          ],
+          [
+            "C",
+            12
+          ],
+          [
+            "D",
+            17
+          ]
+        ],
+        "target": [
+          12,
+          5
+        ]
+      },
+      "answer": "C",
+      "sourceRefs": [
+        {
+          "sourceId": "89a5899411663dc7",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-5-level1.json#10",
+      "sourceCanonicalSha256": "b1b865da9324902222729dbbb680092c0a9306fc6191ff9682646cc3d47b469c",
+      "sourceSkill": "Locate an improper fraction among four actualnamedpoints, keep the wholeoffset",
+      "adaptationChanges": [
+        "Барлық10сақталғанвизуалды3.5бастапқышарт,толықшешімменнұсқаларжекеоқылды.Нақтысәуленіоқу,берілгенбөлім,бұрыс/араласбөлшек,нақтықысқарту,белгісізбірлік,ортанүктежәнекеріорта,ішкінүктелер/аралықтар,қайтамасштабтаужәнетордағышектеудағдыларыжекесақталды.",
+        "Жаңакескіндер:17/6;7/10;12/5нүктесіC;24/10→2⅖;2/5белгісі6торкөз→бірлік15;0.4және3ортасы1.7;2–3арасындағы5нүкте/6аралық;A8/12,C17/12→B26/12;22/8жаңа12торкөзбірлік→33;10торкөзгедәлкелмейтін2/3.",
+        "Барлықсәулеөзпараметріненсызылады:бірдейқадам,ірібүтінбелгілер,есепкесәйкесоқылатынәріптер.Белгісізбірлікесебінде1саны/1орныныңұзынбелгісі,ортаесептеріндежасырынC/Bкөрсетілмейді.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшек координаталар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview;actualprintedunit/pointpositions,real4/10reduction,known2/5at6cellswithNO1marker,midpointandhiddenBrawdenominator12,5interiorpointsSIXgaps,22/8→11/4newunit12,all4gridoptions;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave45-twelve-fifths-point-c.svg",
+      "verificationModule": "scripts/editorial/visual-wave45-models.mjs",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "statement": "A, B, C, D нүктелерінің қайсысы (12/5) санына сәйкес келеді? Әр бірлік тең бөліктерге бөлінген.",
+      "solution": "(12/5) = (2 + (2/5)). Бір бірлікте 5 тең бөлік бар. Суреттегі координаталар: A = (4/5); B = (1 + (4/5)); C = (2 + (2/5)); D = (3 + (2/5)). Берілген сан C нүктесіне сәйкес. Бүтін бөлікті алып тастау басқа нүктеге әкеледі.",
+      "figureDescription": "Координаталық сәуледе әр бірлік 5 тең аралыққа бөлінген. A нүктесі O-дан 4 ұсақ аралықта; B нүктесі O-дан 9 ұсақ аралықта; C нүктесі O-дан 12 ұсақ аралықта; D нүктесі O-дан 17 ұсақ аралықта.",
+      "figureSha256": "f5d6d12a86627d6d3a87e463feb26f31a22e6dd0d6a81a5fe830d0e0396085a5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "C",
+        "checks": {
+          "target": "(12/5)",
+          "unitParts": 5,
+          "allPointCoordinates": [
+            [
+              "A",
+              "(4/5)"
+            ],
+            [
+              "B",
+              "(9/5)"
+            ],
+            [
+              "C",
+              "(12/5)"
+            ],
+            [
+              "D",
+              "(17/5)"
+            ]
+          ],
+          "selectedLabel": "C"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave45-twenty-four-tenths-reduced-mixed",
+      "modelId": "visual-wave45-mixed-coordinate-reduce-fractional-part",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "unit": 10,
+        "maxTicks": 30,
+        "points": [
+          [
+            "K",
+            24
+          ]
+        ]
+      },
+      "answer": "(2 + (2/5))",
+      "sourceRefs": [
+        {
+          "sourceId": "41d4951c4d6fa34d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-5-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-5-level2.json#0",
+      "sourceCanonicalSha256": "a631a5fbb898393535afdc859f0258b66c86604d9cecbd7b83ee2f7cb98bab48",
+      "sourceSkill": "Read wholeunits and4/10fractionalpart then genuinely reduce gcd2",
+      "adaptationChanges": [
+        "Барлық10сақталғанвизуалды3.5бастапқышарт,толықшешімменнұсқаларжекеоқылды.Нақтысәуленіоқу,берілгенбөлім,бұрыс/араласбөлшек,нақтықысқарту,белгісізбірлік,ортанүктежәнекеріорта,ішкінүктелер/аралықтар,қайтамасштабтаужәнетордағышектеудағдыларыжекесақталды.",
+        "Жаңакескіндер:17/6;7/10;12/5нүктесіC;24/10→2⅖;2/5белгісі6торкөз→бірлік15;0.4және3ортасы1.7;2–3арасындағы5нүкте/6аралық;A8/12,C17/12→B26/12;22/8жаңа12торкөзбірлік→33;10торкөзгедәлкелмейтін2/3.",
+        "Барлықсәулеөзпараметріненсызылады:бірдейқадам,ірібүтінбелгілер,есепкесәйкесоқылатынәріптер.Белгісізбірлікесебінде1саны/1орныныңұзынбелгісі,ортаесептеріндежасырынC/Bкөрсетілмейді.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшек координаталар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview;actualprintedunit/pointpositions,real4/10reduction,known2/5at6cellswithNO1marker,midpointandhiddenBrawdenominator12,5interiorpointsSIXgaps,22/8→11/4newunit12,all4gridoptions;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave45-twenty-four-tenths-reduced-mixed.svg",
+      "verificationModule": "scripts/editorial/visual-wave45-models.mjs",
+      "options": [
+        "(2 + (2/5))",
+        "(2 + (4/5))",
+        "(3 + (2/5))",
+        "(2 + (1/10))"
+      ],
+      "statement": "K нүктесінің координатасын аралас сан түрінде таңдаңыз. Бөлшек бөлігі ҚЫСҚАРТЫЛМАЙТЫН болуы керек. Ұзын сызықшалар бүтін сандарды көрсетеді.",
+      "solution": "Бірлік 10 тең бөлік. K-ға дейін 24 бөлік: 24 = 10 × 2 + 4. Сондықтан K = 2 + (4/10). Бөлшек алымы мен бөлімін 2 санына қысқартамыз: (4/10) = (2/5). Қысқартылған аралас сан (2 + (2/5)). Бірлік санын не бөлшек бөлікті өзгертіп жібермейміз.",
+      "figureDescription": "Координаталық сәуледе әр бірлік 10 тең аралыққа бөлінген. K нүктесі O-дан 24 ұсақ аралықта.",
+      "figureSha256": "9594f3e2577d01bbaca1d7b332aadd98f74a577af4bb61b00e939c9c43a18068",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(2 + (2/5))",
+        "checks": {
+          "pointIndex": 24,
+          "unitParts": 10,
+          "wholePart": 2,
+          "rawFractional": "4/10",
+          "reductionGCD": 2,
+          "canonicalMixed": "(2 + (2/5))"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave45-two-fifths-six-cells-unit",
+      "modelId": "visual-wave45-recover-unit-cells-from-known-fraction",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "unit": 15,
+        "maxTicks": 18,
+        "points": [],
+        "known": [
+          2,
+          5
+        ],
+        "knownTicks": 6,
+        "grid": true
+      },
+      "answer": "15",
+      "sourceRefs": [
+        {
+          "sourceId": "8746a63be8b02afd",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-5-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-5-level2.json#5",
+      "sourceCanonicalSha256": "068301f44cd4fc1e7c61dc6529d607114b288db550e2ef11723404d6eed9211d",
+      "sourceSkill": "Infer hidden wholeunit length from only printed0 and2/5 at6cells, no hidden1marker",
+      "adaptationChanges": [
+        "Барлық10сақталғанвизуалды3.5бастапқышарт,толықшешімменнұсқаларжекеоқылды.Нақтысәуленіоқу,берілгенбөлім,бұрыс/араласбөлшек,нақтықысқарту,белгісізбірлік,ортанүктежәнекеріорта,ішкінүктелер/аралықтар,қайтамасштабтаужәнетордағышектеудағдыларыжекесақталды.",
+        "Жаңакескіндер:17/6;7/10;12/5нүктесіC;24/10→2⅖;2/5белгісі6торкөз→бірлік15;0.4және3ортасы1.7;2–3арасындағы5нүкте/6аралық;A8/12,C17/12→B26/12;22/8жаңа12торкөзбірлік→33;10торкөзгедәлкелмейтін2/3.",
+        "Барлықсәулеөзпараметріненсызылады:бірдейқадам,ірібүтінбелгілер,есепкесәйкесоқылатынәріптер.Белгісізбірлікесебінде1саны/1орныныңұзынбелгісі,ортаесептеріндежасырынC/Bкөрсетілмейді.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшек координаталар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview;actualprintedunit/pointpositions,real4/10reduction,known2/5at6cellswithNO1marker,midpointandhiddenBrawdenominator12,5interiorpointsSIXgaps,22/8→11/4newunit12,all4gridoptions;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave45-two-fifths-six-cells-unit.svg",
+      "verificationModule": "scripts/editorial/visual-wave45-models.mjs",
+      "statement": "Сәуле торкөзге сызылған: әр қысқа сызықша — бір торкөз шекарасы. Тек 0 мен (2/5) координаталары жазылған. Бірлік кесіндінің толық ұзындығы неше торкөз болады? Жауапқа тек санды жазыңыз.",
+      "solution": "0-ден (2/5) белгісіне дейін 6 торкөз бар. Бұл бірліктің 2 бірдей үлесі. Бір (1/5) үлес 6 : 2 = 3 торкөз болады. Бүтін бірлік 5 × 3 = 15 торкөз. Тексеру: 15 : 5 × 2 = 6. Берілген бөлшек тұрған жерді 1 координатасы деп қабылдамаймыз.",
+      "figureDescription": "Біркелкі торкөз сызықшалары бар сәуле. O нөлінен кейінгі 6-аралықтың соңында (2/5) жазылған. Басқа сан жазылмаған, 1 белгісі көрсетілмеген.",
+      "figureSha256": "d4c60f898209c225eacc41484100bf318f365c62949253ed9eaf1f2b1a0e05bf",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "15",
+        "checks": {
+          "knownFraction": "(2/5)",
+          "knownCells": 6,
+          "oneFractionPartCells": 3,
+          "unitCells": 15,
+          "onlyPrintedLabels": [
+            "0",
+            "(2/5)"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave45-four-tenths-and-three-midpoint",
+      "modelId": "visual-wave45-midpoint-coordinate-from-ray",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "unit": 10,
+        "maxTicks": 32,
+        "points": [
+          [
+            "A",
+            4
+          ],
+          [
+            "B",
+            30
+          ]
+        ]
+      },
+      "answer": "(1 + (7/10))",
+      "sourceRefs": [
+        {
+          "sourceId": "078be3aacfb2cd19",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-5-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-5-level2.json#14",
+      "sourceCanonicalSha256": "cc0ba5de23aa4cc5a891df4becdbb1dd42dfd037f5144120b5c18c62b5614f91",
+      "sourceSkill": "Read both endpoints, half actual26intervaldistance, add from A ratherthan unitmidpoint",
+      "adaptationChanges": [
+        "Барлық10сақталғанвизуалды3.5бастапқышарт,толықшешімменнұсқаларжекеоқылды.Нақтысәуленіоқу,берілгенбөлім,бұрыс/араласбөлшек,нақтықысқарту,белгісізбірлік,ортанүктежәнекеріорта,ішкінүктелер/аралықтар,қайтамасштабтаужәнетордағышектеудағдыларыжекесақталды.",
+        "Жаңакескіндер:17/6;7/10;12/5нүктесіC;24/10→2⅖;2/5белгісі6торкөз→бірлік15;0.4және3ортасы1.7;2–3арасындағы5нүкте/6аралық;A8/12,C17/12→B26/12;22/8жаңа12торкөзбірлік→33;10торкөзгедәлкелмейтін2/3.",
+        "Барлықсәулеөзпараметріненсызылады:бірдейқадам,ірібүтінбелгілер,есепкесәйкесоқылатынәріптер.Белгісізбірлікесебінде1саны/1орныныңұзынбелгісі,ортаесептеріндежасырынC/Bкөрсетілмейді.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшек координаталар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview;actualprintedunit/pointpositions,real4/10reduction,known2/5at6cellswithNO1marker,midpointandhiddenBrawdenominator12,5interiorpointsSIXgaps,22/8→11/4newunit12,all4gridoptions;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave45-four-tenths-and-three-midpoint.svg",
+      "verificationModule": "scripts/editorial/visual-wave45-models.mjs",
+      "options": [
+        "(1 + (7/10))",
+        "(1 + (1/2))",
+        "(1 + (3/10))",
+        "(3 + (2/5))"
+      ],
+      "statement": "Суретте A және B нүктелері белгіленген. C нүктесі — AB кесіндісінің дәл ортасы, ол әзірге көрсетілмеген. C координатасын қысқартылған аралас санмен таңдаңыз.",
+      "solution": "Бірлік 10 бөлік. A координатасы (4/10) = (2/5), B координатасы 3. AB аралығы 30 − 4 = 26 ұсақ бөлік. Жартысы 26 : 2 = 13 бөлік. A-дан оңға сонша жылжысақ, C нүктесі O-дан 4 + 13 = 17 бөлік қашықтықта болады. Координата (17/10) = (1 + (7/10)). AC пен CB-де бірдей 13 бөлік бар.",
+      "figureDescription": "Координаталық сәуледе әр бірлік 10 тең аралыққа бөлінген. A нүктесі O-дан 4 ұсақ аралықта; B нүктесі O-дан 30 ұсақ аралықта. C нүктесі көрсетілмеген.",
+      "figureSha256": "f36e10d9129792af64eb6712ff2b1fd21fa9f8d66bcbea9c3d33c41747dc73bf",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(1 + (7/10))",
+        "checks": {
+          "aIndex": 4,
+          "bIndex": 30,
+          "allABParts": 26,
+          "halfABParts": 13,
+          "midpointIndex": 17,
+          "coordinate": "(1 + (7/10))"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave45-five-interior-points-ask-s",
+      "modelId": "visual-wave45-interior-points-plus-one-coordinate",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "unit": 6,
+        "maxTicks": 18,
+        "points": [
+          [
+            "P",
+            13
+          ],
+          [
+            "Q",
+            14
+          ],
+          [
+            "R",
+            15
+          ],
+          [
+            "S",
+            16
+          ],
+          [
+            "T",
+            17
+          ]
+        ],
+        "startWhole": 2,
+        "ask": "S"
+      },
+      "answer": "(2 + (2/3))",
+      "sourceRefs": [
+        {
+          "sourceId": "35486782bf247ce0",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-5-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-5-level3.json#2",
+      "sourceCanonicalSha256": "1f222d2e1c500e0fc0b5c131383d002c072483cee36a8a59e0191d1a44e46e33",
+      "sourceSkill": "Five interiorpoints meanSIXintervals; shiftfrom2, selectSfourthoffset, reduce4/6",
+      "adaptationChanges": [
+        "Барлық10сақталғанвизуалды3.5бастапқышарт,толықшешімменнұсқаларжекеоқылды.Нақтысәуленіоқу,берілгенбөлім,бұрыс/араласбөлшек,нақтықысқарту,белгісізбірлік,ортанүктежәнекеріорта,ішкінүктелер/аралықтар,қайтамасштабтаужәнетордағышектеудағдыларыжекесақталды.",
+        "Жаңакескіндер:17/6;7/10;12/5нүктесіC;24/10→2⅖;2/5белгісі6торкөз→бірлік15;0.4және3ортасы1.7;2–3арасындағы5нүкте/6аралық;A8/12,C17/12→B26/12;22/8жаңа12торкөзбірлік→33;10торкөзгедәлкелмейтін2/3.",
+        "Барлықсәулеөзпараметріненсызылады:бірдейқадам,ірібүтінбелгілер,есепкесәйкесоқылатынәріптер.Белгісізбірлікесебінде1саны/1орныныңұзынбелгісі,ортаесептеріндежасырынC/Bкөрсетілмейді.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшек координаталар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview;actualprintedunit/pointpositions,real4/10reduction,known2/5at6cellswithNO1marker,midpointandhiddenBrawdenominator12,5interiorpointsSIXgaps,22/8→11/4newunit12,all4gridoptions;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave45-five-interior-points-ask-s.svg",
+      "verificationModule": "scripts/editorial/visual-wave45-models.mjs",
+      "options": [
+        "(2 + (4/5))",
+        "(2 + (1/2))",
+        "(4/6)",
+        "(2 + (2/3))"
+      ],
+      "statement": "2 және 3 координаталарының арасында P, Q, R, S, T нүктелері орналасқан. Олар осы кесіндіні ТЕҢ аралықтарға бөледі. S нүктесінің координатасын қысқартылған аралас санмен таңдаңыз.",
+      "solution": "Екі шет арасындағы 5 ішкі нүкте 5 + 1 = 6 тең аралық жасайды. 3 − 2 = 1, яғни бір бірлік. Сондықтан бір аралық (1/6). S сол жақтан 4 аралықта: 2 + (4/6) = (2 + (2/3)). Ішкі нүктелер саны аралықтар санына тең емес. Бүтін 2 координатасын да сақтаймыз.",
+      "figureDescription": "Сәуледегі бүтін сандар 0, 1, 2, 3. 2 және 3 координаталарының арасында P, Q, R, S, T нүктелері бірдей аралықпен орналасқан. Олардың арасында қосымша қысқа сызықша жоқ.",
+      "figureSha256": "75c6a7d393a64da33cceaabb6cca808d21cc4f0ea69d559c2febc862ea88fb53",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(2 + (2/3))",
+        "checks": {
+          "leftWhole": 2,
+          "rightWhole": 3,
+          "interiorPoints": 5,
+          "equalIntervals": 6,
+          "requestedLabel": "S",
+          "offsetInUnit": 4,
+          "coordinate": "(2 + (2/3))"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave45-hidden-b-twenty-six-twelfths",
+      "modelId": "visual-wave45-hidden-endpoint-fixed-mixed-numerator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "unit": 12,
+        "maxTicks": 30,
+        "points": [
+          [
+            "A",
+            8
+          ],
+          [
+            "C",
+            17
+          ]
+        ],
+        "targetWhole": 2
+      },
+      "answer": "2",
+      "sourceRefs": [
+        {
+          "sourceId": "fa84cd0cf0f2c922",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-5-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-5-level3.json#11",
+      "sourceCanonicalSha256": "9ed5eb3741014a825b51d0e8f87402bad2af3c2c3efef0b550c23a63ef45f151",
+      "sourceSkill": "Reflect A about midpoint C to hidden B, request RAWnumerator atfixed12 even though2/12reduces",
+      "adaptationChanges": [
+        "Барлық10сақталғанвизуалды3.5бастапқышарт,толықшешімменнұсқаларжекеоқылды.Нақтысәуленіоқу,берілгенбөлім,бұрыс/араласбөлшек,нақтықысқарту,белгісізбірлік,ортанүктежәнекеріорта,ішкінүктелер/аралықтар,қайтамасштабтаужәнетордағышектеудағдыларыжекесақталды.",
+        "Жаңакескіндер:17/6;7/10;12/5нүктесіC;24/10→2⅖;2/5белгісі6торкөз→бірлік15;0.4және3ортасы1.7;2–3арасындағы5нүкте/6аралық;A8/12,C17/12→B26/12;22/8жаңа12торкөзбірлік→33;10торкөзгедәлкелмейтін2/3.",
+        "Барлықсәулеөзпараметріненсызылады:бірдейқадам,ірібүтінбелгілер,есепкесәйкесоқылатынәріптер.Белгісізбірлікесебінде1саны/1орныныңұзынбелгісі,ортаесептеріндежасырынC/Bкөрсетілмейді.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшек координаталар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview;actualprintedunit/pointpositions,real4/10reduction,known2/5at6cellswithNO1marker,midpointandhiddenBrawdenominator12,5interiorpointsSIXgaps,22/8→11/4newunit12,all4gridoptions;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave45-hidden-b-twenty-six-twelfths.svg",
+      "verificationModule": "scripts/editorial/visual-wave45-models.mjs",
+      "statement": "A және C нүктелері көрсетілген. C — AB кесіндісінің ортасы, ал B суретте белгіленбеген. B координатасы (2 + (x/12)) түрінде жазылады. Берілген 12 бөлімі өзгермесе, x алымы неше? Жауапқа тек санды жазыңыз.",
+      "solution": "Бірлік 12 ұсақ бөлік. O-дан A-ға дейін 8, C-ге дейін 17 ұсақ бөлік саналады. AC = 17 − 8 = 9 бөлік. C орта болғандықтан CB де 9 бөлік. Көрсетілмеген B нүктесі O-дан 17 + 9 = 26 бөлік қашықтықта. 26 = 12 × 2 + 2, демек B = (2 + (2/12)). Бөлім дәл 12 болып қалуы керек, сондықтан енгізілетіні 2 алымы. Толық мән (2 + (1/6)) болғанымен, қысқартылған алымды бастапқы бос орынға көшірмейміз.",
+      "figureDescription": "Координаталық сәуледе әр бірлік 12 тең аралыққа бөлінген. A нүктесі O-дан 8 ұсақ аралықта; C нүктесі O-дан 17 ұсақ аралықта. B нүктесі көрсетілмеген.",
+      "figureSha256": "74c9f13f0c6664cec9b95de168fc3e7dcfff98057316f364b209f1cc43906e6b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2",
+        "checks": {
+          "aIndex": 8,
+          "cIndex": 17,
+          "ACParts": 9,
+          "CBParts": 9,
+          "hiddenBIndex": 26,
+          "wholePart": 2,
+          "requiredRawDenominator": 12,
+          "requiredRawNumerator": 2,
+          "canonicalValue": "(2 + (1/6))"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave45-twenty-two-eighths-new-twelve-cell-unit",
+      "modelId": "visual-wave45-same-coordinate-new-unit-cell-distance",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "unit": 8,
+        "maxTicks": 26,
+        "points": [
+          [
+            "K",
+            22
+          ]
+        ],
+        "newUnit": 12,
+        "grid": true
+      },
+      "answer": "33",
+      "sourceRefs": [
+        {
+          "sourceId": "8670bec18ba418dc",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-5-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-5-leveltest.json#3",
+      "sourceCanonicalSha256": "fff6169c57ec409691186a17a5becf8e16b01a7ed06760f88141152317544dda",
+      "sourceSkill": "Read OLD8cellunit/22cells, reduce6/8, preserve samecoordinate onNEW12cellunit",
+      "adaptationChanges": [
+        "Барлық10сақталғанвизуалды3.5бастапқышарт,толықшешімменнұсқаларжекеоқылды.Нақтысәуленіоқу,берілгенбөлім,бұрыс/араласбөлшек,нақтықысқарту,белгісізбірлік,ортанүктежәнекеріорта,ішкінүктелер/аралықтар,қайтамасштабтаужәнетордағышектеудағдыларыжекесақталды.",
+        "Жаңакескіндер:17/6;7/10;12/5нүктесіC;24/10→2⅖;2/5белгісі6торкөз→бірлік15;0.4және3ортасы1.7;2–3арасындағы5нүкте/6аралық;A8/12,C17/12→B26/12;22/8жаңа12торкөзбірлік→33;10торкөзгедәлкелмейтін2/3.",
+        "Барлықсәулеөзпараметріненсызылады:бірдейқадам,ірібүтінбелгілер,есепкесәйкесоқылатынәріптер.Белгісізбірлікесебінде1саны/1орныныңұзынбелгісі,ортаесептеріндежасырынC/Bкөрсетілмейді.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшек координаталар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview;actualprintedunit/pointpositions,real4/10reduction,known2/5at6cellswithNO1marker,midpointandhiddenBrawdenominator12,5interiorpointsSIXgaps,22/8→11/4newunit12,all4gridoptions;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave45-twenty-two-eighths-new-twelve-cell-unit.svg",
+      "verificationModule": "scripts/editorial/visual-wave45-models.mjs",
+      "statement": "Суреттегі әр сызықша бір торкөз шекарасын білдіреді. Сәулені қайта сызғанда бірлік кесінді 12 торкөзге тең болады. Жаңа сәуледе K нүктесінің СОЛ координатасына сәйкес нүкте O-дан неше торкөз қашықтықта орналасады? Жауапқа тек санды жазыңыз.",
+      "solution": "Ескі суретте бірлік 8 торкөз, K-ға дейін 22 торкөз. Координата (22/8) = (2 + (3/4)). Бөлшек бөлік (6/8) = (3/4). Жаңа бірлік 12 торкөз, сондықтан сол координатаға дейінгі қашықтық (22/8) × 12 = 33 торкөз. Санның мәні сақталады, тек торкөзбен өлшенген кескін ұзындығы өзгереді.",
+      "figureDescription": "Координаталық сәуледе әр бірлік 8 тең аралыққа бөлінген. K нүктесі O-дан 22 ұсақ аралықта.",
+      "figureSha256": "b3aad8b0a3ef81cf659f911bd2214fcf250bed6d77e30ad8482efab529e311c5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "33",
+        "checks": {
+          "oldUnitCells": 8,
+          "oldOriginPointCells": 22,
+          "coordinate": "(2 + (3/4))",
+          "reducedFractional": "(3/4)",
+          "newUnitCells": 12,
+          "newOriginPointCells": 33
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave45-ten-cell-grid-not-two-thirds",
+      "modelId": "visual-wave45-unrepresentable-on-fixed-grid",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "unit": 10,
+        "maxTicks": 18,
+        "points": [],
+        "grid": true
+      },
+      "answer": "(2/3)",
+      "sourceRefs": [
+        {
+          "sourceId": "3026f84fb6f01ae6",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-5-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-5-leveltest.json#5",
+      "sourceCanonicalSha256": "c8ee0dabc2786c7cd70c9b2d7f80cd84e8f67cc30ac01744f59124a81344a1db",
+      "sourceSkill": "Exactgrid representability needs integercoordinate×unit; check everyactualoption includingmixednumber",
+      "adaptationChanges": [
+        "Барлық10сақталғанвизуалды3.5бастапқышарт,толықшешімменнұсқаларжекеоқылды.Нақтысәуленіоқу,берілгенбөлім,бұрыс/араласбөлшек,нақтықысқарту,белгісізбірлік,ортанүктежәнекеріорта,ішкінүктелер/аралықтар,қайтамасштабтаужәнетордағышектеудағдыларыжекесақталды.",
+        "Жаңакескіндер:17/6;7/10;12/5нүктесіC;24/10→2⅖;2/5белгісі6торкөз→бірлік15;0.4және3ортасы1.7;2–3арасындағы5нүкте/6аралық;A8/12,C17/12→B26/12;22/8жаңа12торкөзбірлік→33;10торкөзгедәлкелмейтін2/3.",
+        "Барлықсәулеөзпараметріненсызылады:бірдейқадам,ірібүтінбелгілер,есепкесәйкесоқылатынәріптер.Белгісізбірлікесебінде1саны/1орныныңұзынбелгісі,ортаесептеріндежасырынC/Bкөрсетілмейді.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшек координаталар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview;actualprintedunit/pointpositions,real4/10reduction,known2/5at6cellswithNO1marker,midpointandhiddenBrawdenominator12,5interiorpointsSIXgaps,22/8→11/4newunit12,all4gridoptions;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave45-ten-cell-grid-not-two-thirds.svg",
+      "verificationModule": "scripts/editorial/visual-wave45-models.mjs",
+      "options": [
+        "(7/10)",
+        "(3/5)",
+        "(2/3)",
+        "(1 + (1/2))"
+      ],
+      "statement": "Сәуле торкөзге сызылған, нүктелерді тек сызықшаларға қоюға болады. Көршілес сызықшалар бір торкөзге сәйкес. Қай санды осы сәуледе ДӘЛ белгілеу мүмкін емес?",
+      "solution": "Суретте 0 мен 1 арасында 10 торкөз бар. Әр санды 10 санына көбейткенде бүтін торкөз саны шығуы керек. (7/10) × 10 = (7/1) — бүтін, болады; (3/5) × 10 = (6/1) — бүтін, болады; (2/3) × 10 = (20/3) — бүтін емес, болмайды; (1 + (1/2)) × 10 = (15/1) — бүтін, болады. Демек (2/3) саны сызықшалардың арасына түседі. Қысқартылған бөлімді ескереміз; жуық тұрған сызықшаны дәл нүкте деп алмаймыз.",
+      "figureDescription": "Координаталық сәуледе әр бірлік 10 тең аралыққа бөлінген. 0 және 1 сандары жазылған, басқа нүктелер жоқ.",
+      "figureSha256": "069ad0aa1b25ec074bf3673a37ff1639ad410dc2e81017d7c3bd48c4e27344a7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(2/3)",
+        "checks": {
+          "unitCells": 10,
+          "everyOption": [
+            {
+              "option": "(7/10)",
+              "numerator": 7,
+              "denominator": 10,
+              "cellNumerator": 70,
+              "exact": true
+            },
+            {
+              "option": "(3/5)",
+              "numerator": 3,
+              "denominator": 5,
+              "cellNumerator": 30,
+              "exact": true
+            },
+            {
+              "option": "(2/3)",
+              "numerator": 2,
+              "denominator": 3,
+              "cellNumerator": 20,
+              "exact": false
+            },
+            {
+              "option": "(1 + (1/2))",
+              "numerator": 3,
+              "denominator": 2,
+              "cellNumerator": 30,
+              "exact": true
+            }
+          ],
+          "unrepresentable": "(2/3)"
+        }
+      }
+    }
+  ]
+}

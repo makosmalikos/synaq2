@@ -1,0 +1,906 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/batches/grade5-decimal-natural-products.json",
+  "reviewedAt": "2026-10-24",
+  "manualFindings": [],
+  "resolvedFindings": [
+    {
+      "sourceId": "70c03cb00fedee5a",
+      "finding": "Initial0.6h×5days erased source fractional-TOTAL-hour to minute conversion",
+      "resolution": "Author changed only row19 to7days→4.2h→252min; explicit .2h×60=12min, not20min, final full row reread and other43 unchanged."
+    }
+  ],
+  "scope": "All44 source-addressed grade5topic4.5 nonvisual decimal-natural products; independent printed exact and column-ledger review",
+  "columnAudit": {
+    "blocks": 29,
+    "perPlaceEquations": 32,
+    "partialProducts": 38,
+    "carryEvents": [
+      {
+        "editionId": "grade5-decimal-natural-products-9a63dedc5879a323",
+        "place": 0,
+        "carry": 2
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-46e2903a5420717c",
+        "place": 0,
+        "carry": 3
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-46e2903a5420717c",
+        "place": 1,
+        "carry": 1
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-dbc18f56fabc31b4",
+        "place": 0,
+        "carry": 2
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-dbc18f56fabc31b4",
+        "place": 2,
+        "carry": 1
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-452165068b904c6a",
+        "place": 0,
+        "carry": 3
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-452165068b904c6a",
+        "place": 1,
+        "carry": 1
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-452165068b904c6a",
+        "place": 2,
+        "carry": 2
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-320a22416f049fbf",
+        "place": 0,
+        "carry": 5
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-4ade1cf32fe3ac4a",
+        "place": 0,
+        "carry": 4
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-4ade1cf32fe3ac4a",
+        "place": 1,
+        "carry": 2
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-f1552dd57dd2590b",
+        "place": 0,
+        "carry": 4
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-f1552dd57dd2590b",
+        "place": 1,
+        "carry": 6
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-f1552dd57dd2590b",
+        "place": 2,
+        "carry": 1
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-609be80190dd33d2",
+        "place": 0,
+        "carry": 1
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-609be80190dd33d2",
+        "place": 2,
+        "carry": 1
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-609be80190dd33d2",
+        "place": 1,
+        "carry": 2
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-609be80190dd33d2",
+        "place": 2,
+        "carry": 1
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-70c03cb00fedee5a",
+        "place": 0,
+        "carry": 4
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-b00326ac9a515c63",
+        "place": 0,
+        "carry": 3
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-b00326ac9a515c63",
+        "place": 1,
+        "carry": 4
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-b00326ac9a515c63",
+        "place": 2,
+        "carry": 3
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-15ee28294b9339ed",
+        "place": 0,
+        "carry": 4
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-15ee28294b9339ed",
+        "place": 1,
+        "carry": 6
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-15ee28294b9339ed",
+        "place": 2,
+        "carry": 2
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-415d84b64c54b2a6",
+        "place": 0,
+        "carry": 3
+      },
+      {
+        "editionId": "grade5-decimal-natural-products-415d84b64c54b2a6",
+        "place": 2,
+        "carry": 1
+      }
+    ]
+  },
+  "entries": [
+    {
+      "editionId": "grade5-decimal-natural-products-9a63dedc5879a323",
+      "sha256": "d43ce121b5d81de5575bd32198f0294c90cc077ff96ae54cfacef39721aefad2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Printed0,004×6, rawdigits0004×6, exact result3/125; fixed decimalplaces3, leading/internal zeros and only trailing resultzeros handled by independent digit ledger. Independently checked 1 written multiplication blocks/1 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "ca4e6bf0a06cf18fd587f1c872af01b2083ef5c2bf0205b3218423a4cbf76acf",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-46e2903a5420717c",
+      "sha256": "cdb1c7b6c8a0aeedb05c8e4f4c421a3b253a3d929f058f850006bcf601c48ea3",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Printedconstant speed25/2km/h ×actual6hours=75km; inverse distance/time exactlyrecoversgiven speed. Independently checked 1 written multiplication blocks/3 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "43455e52c4bd4d48c44a446cf99854d1220673e855d4134c84d26dcee81cf02a",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-aa2446c716f7d121",
+      "sha256": "6bb6dc1992aa1eb9e0fabb75835a21eb7f9b6a8292b849a33e846f58d05cf800",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Printed0,375×16, rawdigits0375×16, exact result6; fixed decimalplaces3, leading/internal zeros and only trailing resultzeros handled by independent digit ledger. Independently checked 1 written multiplication blocks/0 per-place equations/2 partialproducts.",
+      "sourceCanonicalSha256": "a7386f4531e3c44345d9994acb0ff57bc10c2183248824170e7c72815c739a57",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-845877212e76f0b1",
+      "sha256": "fa3ea79ea059d7c3a32478f4214fee06ee8dfa6b857106d02082840f400cd82e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Printed0,65×20, rawdigits065×20, exact result13; fixed decimalplaces2, leading/internal zeros and only trailing resultzeros handled by independent digit ledger. Independently checked 1 written multiplication blocks/0 per-place equations/2 partialproducts.",
+      "sourceCanonicalSha256": "4ef84818b22cc1957c0ed4d08ad7431ef0f0846b4620c5d59ca85d53ae55733b",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-a4d6dfb7b3166cb0",
+      "sha256": "d70e604496a195cdcf3d635355e7b3590ff66b66370ccf3f57ac35cebb78a8b2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "ALL actual expressionvalues['12/25', '24/5', '4', '9/2'], unique expression equals printedtarget24/5; answerEXPRESSIONnotvalue. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "fc594bed0c689dfd62c88a9136e65b8c32e58f629f89ff76c5b23f10e3a63db9",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-dbc18f56fabc31b4",
+      "sha256": "235c80204d09457cb3e202595d9cb967fe2906e253d586c79c21e6106d45cd9e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Printed4,28×3, rawdigits428×3, exact result321/25; fixed decimalplaces2, leading/internal zeros and only trailing resultzeros handled by independent digit ledger. Independently checked 1 written multiplication blocks/3 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "5d886bd79f9188d96aa47d5c1e8b5ed3e21c24433cec4d729a99956be61a1b24",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-452165068b904c6a",
+      "sha256": "fc32ba472d7594fe680e4ddd8566f8e3f8774c9b1393019be3348e3f2508f10e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Actualprovidedintegeridentity426×6=2556 independentlyverified; decimalfirstfactor4,26 scales product by10^2, exact639/25; ALLcomma-shiftMCQs evaluated. Independently checked 1 written multiplication blocks/3 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "90e3400b955dc1dfabb86b419117f432d21ef4688b601592325706b5f2ad67f0",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-6497fbfd8fb6aca3",
+      "sha256": "343b0d69ad7ff6caf27ff8bbb04bfce1bcd92d4e35ab4591e134373f657e184b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "ENTIREprinted AST1,25 × 8 + 0,75 × 8 independently16; allfactorsretained, actualcompatiblepairs/commonfactorchecked, distributive sum agrees with separate products. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "d963e8914a2cea96e5f1746d5c0520e72753c9f814fa02c4fb279fe3c49b06b8",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-320a22416f049fbf",
+      "sha256": "c0697b6fe35b37a6482b25793253aafe4c158ef24e24353ce977c6e0efa3522c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "PrintedNATURAL-first9×0,6, commutativityand exactproduct27/5; ALLactualoptions including concatenated9,6 checked. Independently checked 1 written multiplication blocks/1 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "3f91d6c8614291d5c4841a2886e43c5fc84ce3b8d11b0b362936f4cd71d1c743",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-65af6cedcc7e6417",
+      "sha256": "5dd765fef1d01eb742a56feb214d91fde6751a55a022730ffdcb869ab096650b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Printed25equalunits×size4/5=20; no count−1shortcut, gap/packaging assumptions explicit, reverse divisionrecoversoneunit. Independently checked 1 written multiplication blocks/0 per-place equations/2 partialproducts.",
+      "sourceCanonicalSha256": "b79a0ff8d83df74d450f70896ba681ac7e634ca80a1bf7c05843bbefd1153aa7",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-80a3c46a25714974",
+      "sha256": "3d01c7865e394c651225317221e9c77a2fd9249139d017710352a0b12f7a35be",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Printed35equalunits×size2/5=14; no count−1shortcut, gap/packaging assumptions explicit, reverse divisionrecoversoneunit. Independently checked 1 written multiplication blocks/0 per-place equations/2 partialproducts.",
+      "sourceCanonicalSha256": "b735458af054f45c490790e23a4195802dbb685e9394f6372568f7fdecc095e7",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-4ade1cf32fe3ac4a",
+      "sha256": "fdb3b9729cf1515ce392f5b42b64804771622b16ab11b2aa90b63ee4b8d05974",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Printed3,5×8, rawdigits35×8, exact result28; fixed decimalplaces1, leading/internal zeros and only trailing resultzeros handled by independent digit ledger. Independently checked 1 written multiplication blocks/2 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "9d564c80ea613efc9644977e2d91ddff835810af61a00602ed719796340f4f97",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-f1552dd57dd2590b",
+      "sha256": "cee39cb43106a326d0eb4b97921f84f8f1ce5508d3969c57f4b878693b79ee40",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Actualx8 substituted into fullprintedAST1,85 × x + 0,6→77/5; priorityBEFOREaddition, ALLearlyaddition/misalignedaddend/finalshift traps exactlychecked. Independently checked 1 written multiplication blocks/3 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "ebba1a44f3c2d551e6936157dd126b23ed09b481b7342eca9ceea81b03d87dfe",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-e7a6230755412c29",
+      "sha256": "8459e24ee3ed85a1f5887e87132acb9292dca519189454210f4523a30c2931d1",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "ENTIREprinted AST4,8 × 7 + 5,2 × 7 independently70; allfactorsretained, actualcompatiblepairs/commonfactorchecked, distributive sum agrees with separate products. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "f19d4f3624f90c2a68414054b10e6103208f8d4f64d537f1826124c564795be7",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-0e3f21274fad6d4b",
+      "sha256": "9c3e120719e01cc8b9b34117d6420547f3645b81073f66373c66f8ee7ed7504c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Actualdecimal reducedexactly12/5; COMPLETEpositive1…5search givesfirstintegralproductonlyat5. Coprimenumeratorprovesallsolutionsmultiplesofden, so no larger omitted candidate beatsminimum. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "707fb0684aff23b4ae13d35f0dac20a1b7f0f2daaa2438f1c9599aa3b87ca16b",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-b219a56e662a8edd",
+      "sha256": "ac18e5755bc4aa81e36296384eed5642bf858b0580766dac5051634c19f121d3",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "BOTHprinted independent inflows73/5,47/5×same7minutes→168; positiveindividualcontributionsandvolumeconservationchecked. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "8a4a5e488f9e70435c9391ce0b4c5e2927c87c7f80e4ef5cf80910e7e077d434",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-e89f90f0fff73b94",
+      "sha256": "34525922e6bd8dae86277a327dae9160d29ecd3236cb9aea360f8be48fc723d4",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Actual5/2kg×560tg/kg cost1400, tender2000, requestedCHANGE600; kgfractionkept, exactcashconservation. Independently checked 1 written multiplication blocks/0 per-place equations/3 partialproducts.",
+      "sourceCanonicalSha256": "63d798f61362d4fdcc6a79671c815f51d6d12db7aedb0099289bcb959a38980d",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-07fc93d296da8e89",
+      "sha256": "b878ca5f85fd955d72967bfed3c745ccbd6f24bacb39e43ff7b04f523fffd902",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "PrintedORIGINAL4800×fraction1/4discount1200, NEWremaining3600; actualdiscount-only/adddiscount/subtractfractionas25tgMCQsexactfalse. Independently checked 1 written multiplication blocks/0 per-place equations/4 partialproducts.",
+      "sourceCanonicalSha256": "98b4475244404bb7192f570a68514d44bca7c9a3582008779fbb29baa0899047",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-609be80190dd33d2",
+      "sha256": "ee6439ef825b451729f1d87f7c7d93634d14d1deec2529eb3317027f2f38395e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "ACTUALorderedstages2h×647/10+3h×291/5=304; eachrateboundtoitsownphase, weighted sumnot(rateSum×timeSum). Independently checked 2 written multiplication blocks/6 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "a149fc9b7bdb7599126df987e667298ed1d44735314fd2607de04c2873b12a77",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-70c03cb00fedee5a",
+      "sha256": "92341905f0a11f7134b63e44752b6608aac3e1c16e8bdb81557806b45f88cc20",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Actual3/5h/day×7days=21/5hNONINTEGER; SI60→252min. Wholehours4+fraction1/5h→12min, distinctfromhundredthhourreading20; dailyminutes×days agrees. Independently checked 1 written multiplication blocks/1 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "ba41410b8e0d311d71b693db88b4d53fc18518ab90761b4dafa50fb49f321593",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-2166b3c7de1fbcf1",
+      "sha256": "4b408a1ce875448cf73b477ec049aaae829a280c11b804ce5df12849e213f763",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Printedconstant speed137/2km/h ×actual18hours=1233km; inverse distance/time exactlyrecoversgiven speed. Independently checked 1 written multiplication blocks/0 per-place equations/2 partialproducts.",
+      "sourceCanonicalSha256": "e66e424f9a25eb26620c8598d4099216abf2036e98f069cb77be1286f00704b1",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-b00326ac9a515c63",
+      "sha256": "049e7f3d8403a54e63e3215507f0db17faa4caf16ac253f459b28a77ca7c3c7e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "COMPLETEactualprintedAST(3,6 + 2,15) × 6→69/2, parentheses/orderand integertermsretained; alignedinnerdecimaloperationthenactualrawproductcolumns independentlyverified. Independently checked 1 written multiplication blocks/3 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "46abebfa06806cd014734f083b881c146671dbbc2fb6d33329c89a4d3e7b3919",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-15ee28294b9339ed",
+      "sha256": "efe1d4cd9835d734d3e27872fa6116e67ef4025e40e0de8a99332bd8a8f2942b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Actualtypedboxes8×11/4kg and12×5/4kg, BOTH exactmasses sum37; no counts/masses exchanged. Independently checked 2 written multiplication blocks/3 per-place equations/2 partialproducts.",
+      "sourceCanonicalSha256": "22e1ebbc1b178064e71ed366fa71b62390e2f89e20cc50e9b9504321ce8be14b",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-844a225414608135",
+      "sha256": "18deba220569439784bf2cf472ca75bde262d19af84db7c09897fb02f2776d96",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "COMPLETEactualprintedAST6,04 × 15 − 3,2 × 12→261/5, parentheses/orderand integertermsretained; alignedinnerdecimaloperationthenactualrawproductcolumns independentlyverified. Independently checked 2 written multiplication blocks/0 per-place equations/4 partialproducts.",
+      "sourceCanonicalSha256": "671208e86f296a5b6bba920c5b99c85f2a762d6453f5f8b7853d7f01a38a3358",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-3e92769cb6b600cd",
+      "sha256": "d57cddc0489b0231a5094d3d05feeeea910feebd13210c69703faaab0342e11c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Actualoneway180, explicitSAMEreturn→total360km ×3/50L/km=108/5; one-wayactualtrapexactlyhalf. Independently checked 1 written multiplication blocks/0 per-place equations/3 partialproducts.",
+      "sourceCanonicalSha256": "cc1595accf5cab7edf9c350464706e1650bf131efaee1bf5c979a117f007da7b",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-81060b1e1604094f",
+      "sha256": "887a85aa46828c283c23a9715c682f6099ecbd437b37595549cc4989f0ab5cf7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "COMPLETE900fractionalresidues of EXACT3places/lastNONZERO times16; exactminimal10^p denominator test yields[0, 1, 2, 3]. AnywholepartaddsINTEGER16×whole, so this finitefractiondomaincoversALLnumbers, no>3possible. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "dd25702c83cf4a1426bfc8822c244071b6c3b5117c40eeb1b2180e15edad8754",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-3e99bf3b1068d064",
+      "sha256": "0fe6b8c2688606842560ed31fa6ac8f44106b6b333792f00b38af3e0533617c4",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "ENTIREprinted AST0,125 × 43 × 24 + 0,25 × 57 × 12 independently300; allfactorsretained, actualcompatiblepairs/commonfactorchecked, distributive sum agrees with separate products. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "10848b9139c6ccafb97ee3651ed1c111cb1e06aa3d6fb619a0cbe6f70707b079",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-3eb2e22ff8c96857",
+      "sha256": "fca44a9978233ed7bb2f5d20843e25ddecdcc6113c626756d974cc3b86a89aaa",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Actualbudget7000−5/2×1680cost4200→2800; COMPLETE0…floor+1wholebottlechecks, max6cost2700, next3150unaffordable; exactremainingcashledger. Independently checked 1 written multiplication blocks/0 per-place equations/4 partialproducts.",
+      "sourceCanonicalSha256": "a5db0478e5255eb45ecf131aad0cb369414028b908d280ef345df1bca22c52e9",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-bd244cbce8d66c8c",
+      "sha256": "4751fe86c8a3a21ce4aed0c313db12087e7a43373dcf15650c31671079448d39",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Actualdecimal reducedexactly73/20; COMPLETEpositive1…20search givesfirstintegralproductonlyat20. Coprimenumeratorprovesallsolutionsmultiplesofden, so no larger omitted candidate beatsminimum. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "8aa17a4899ee8a0d26a30bd4235e29ebb3c8a40104912015aa2990f1959a1991",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-9c4698e430386b49",
+      "sha256": "34c693d3747820cb42f2ae77b7b2013462777a53378f05b12393d2ad9d92f65d",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "ACTUALfirstcutbase6000→3750; SECONDincreasebaseisNEW3750, neveroriginal; exactfactors5/8×8/5, final6000. Both cashchangesconserved. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "8fa5951ce6fdafa018cba959692ecef3492c8cc732f12d3839202163154efa82",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-bbebe7303b3de372",
+      "sha256": "00ff8f56bb21b2b7eb1ef98e297097e1300f018d120edf32b7afcd7144cc4f29",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Printedown92/5,current23/10, downstream5h/upstream3h withpositiveupstreamspeed; orderedweightedpaths exact759/5; ALLignorecurrent/swaptimes/addcurrentBOTH actualMCQsfalse. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "89f6e01f8c49b8066b188971e87af1ebcad12d0f074474758c093101085f5645",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-e446836c82f15adb",
+      "sha256": "e9009507b5cd6eca614492679b8a0024b307133d10fb38f88c3088c66fbb820a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "ActualFULLlinearequation coefficient118/25−43/25=3, known2/5×6; uniqueROOT93/10, exactsubstitution; 3y/addinsteadsubtract/divideagainMCQsfalse. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "603c33172934cd1441a8039568bb9db2c2212f8fcfbf68de9b37d0566d948037",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-38c30d36d28ad0c2",
+      "sha256": "62ba9ec0fb721bd9df0e314654a9c2de8b03fa41fcf3344fbcab5b5b7a6f597e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "ALLactualproductexpressions exactvalues[Fraction(201, 25), Fraction(161, 20), Fraction(801, 100), Fraction(801, 100)], uniqueMAX161/20butanswerEXPRESSION1,61 × 5; near-equalhundredthsnotlargestfactorheuristic. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "dc2b6d266cfdf510f74e06f2f3c26eaa8ac3c729d9a8b25fe07d0d54710f2e58",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-1d8bb21b20a770cf",
+      "sha256": "9f0c2c00b690bc22dc04b5661158c4d744787acc4ca486aeaca2d9a54a20550c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "ALLprintedseeds[Fraction(7, 25), Fraction(14, 25), Fraction(21, 25), Fraction(28, 25)]giveconstantstep7/25, ACTUAL1-basedindex34→VALUE238/25; previous/next/finalshift actualtrapsfalse. Independently checked 1 written multiplication blocks/0 per-place equations/2 partialproducts.",
+      "sourceCanonicalSha256": "fee2abeb591da3c80ac30362415a8f9ef2f3c62966b8847c629252e91592329f",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-55e05e08445efaf4",
+      "sha256": "0e6aef50782f2feca84e8cff13c1db55af6fe107bb65f8d4f20d08240ae9e9e0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Actualrawresult3157, CORRECTdecimalproduct3157/100, multiplier7; uniquefirstfactor451/100 byexactdivision/substitution; allshiftedcandidateproductsfail. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "c04ad4ff3d1455e04b423bbf63831a9f727b8f5ec259e37f0c035570661b65f5",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-e26a7aa10ecac0f6",
+      "sha256": "2be7da6d771672ce192105b2645d473a9d204f4fb485babaf7e05f10dd2ff907",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "EveryactualMCQfullproduct/result equality exactchecked, truthflags[False, False, True, False]; deliberatelyfalseequalitiestreatedasoptions, notrules. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "666a92777dbb34ec7e2bad61f8cf8f3031725a9a1553dad4bcee02f636972ae4",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-d5a704e76dd4093a",
+      "sha256": "a654d5f5a62940623426a7c1beb18a7fbc505ca82310e6185f04d6f5c15448a0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Printed35equalunits×size18/5=126; no count−1shortcut, gap/packaging assumptions explicit, reverse divisionrecoversoneunit. Independently checked 1 written multiplication blocks/0 per-place equations/2 partialproducts.",
+      "sourceCanonicalSha256": "2d31ca5c853ac2a9dc0e42e906eff36a984ce3d82ba2c79e639b60cceb78b36e",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-415d84b64c54b2a6",
+      "sha256": "6d47986d932f0d94730b8c80bc68b7afba509f8b31cffbafa82a58ae6b409316",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Printed3,06×5, rawdigits306×5, exact result153/10; fixed decimalplaces2, leading/internal zeros and only trailing resultzeros handled by independent digit ledger. Independently checked 1 written multiplication blocks/3 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "5ded74237517f645d2905c2d37c32001e5650c7b71ba97d55c5618b478b60b06",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-d886fd6005ce7326",
+      "sha256": "05e672c99b323db38fc495a7f7f2dc8c9ea2a1012a3137a21a92733e8d61af8f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "Actual5WORKdays/week×4weeks×29/2kg/day=290; Saturday/Sundaynotautomaticallyincluded, not7-dayshortcut. Independently checked 1 written multiplication blocks/0 per-place equations/2 partialproducts.",
+      "sourceCanonicalSha256": "f3b521d5c467ade6a35fdbcbcfad1501947b9e370a7b79194eb3a5ee3f7c963d",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-742ef6f14796f05d",
+      "sha256": "22230f65ffc45e2f36cb321ee78227425f3960c9883ff2756960d1ba9d7dc218",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "COMPLETEactualprintedAST(8,4 − 3,16) × 15→393/5, parentheses/orderand integertermsretained; alignedinnerdecimaloperationthenactualrawproductcolumns independentlyverified. Independently checked 1 written multiplication blocks/0 per-place equations/2 partialproducts.",
+      "sourceCanonicalSha256": "1c29355360704b9e176c8607019b92bfb6b536fe4e271027cd42c0106c6e1368",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-9a006a5f5a1125e5",
+      "sha256": "6155bd1406f8679546d01a29f40733198fcc1127923ff8afe0eabfc1fc6703b7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "SAMEstart/time straightOPPOSITE motion, printedpositive speeds27/5,73/5×4h; separationsSUM80, notpursuitdifference; bothpathsconserved. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "63c7ea0669a8b8154b7a7ccadf30ab93b47b431215583f72c079318683cb37f4",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-4789b5028e7eb145",
+      "sha256": "817348305e3cb2a27625a671852556c37495a22fb2ba40fada5abf2d29fb9a60",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "ActualINCREASEaboveoriginal175/2, factor7/2; (factor−1)n=gainuniqueNATURAL35; fullsubstitutionandbecame-resulttrapfalse. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "85aba964db35f89f4db2df904e2bc4e9c44a15a3462a98cf53f49456e511fdbe",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-cbf810492088f6f9",
+      "sha256": "b75c8f1dbdd6fbd83480d254edd55268512e17f2febacbe5f8108407724c0e20",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "PrintedZerex,Madi3/2x,AiymMADI−8/5; total152/5→uniquex8, positiveothermasses12,52/5; referencebaseandfullmassledgerchecked. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "8b91cc360fd260b4517b347e4b4d0f6b22fde12335c0f2f562d88a040557eac5",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-products-dff1b120aa0cedf1",
+      "sha256": "c1373cbad5869829467ae065aa3d29d5f3f7860864c7d29f1703195fe4b4890c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All44 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, multiplication digit-carry and partial-product ledger, complete finite domains; no author solver/spec/params",
+      "notes": "PrintedBOTHrates18/5,12/5×joint5days thenFIRSTalone2days; repaired186/5, requestedREMAINDER74/5; ALLdone/omitphase/drop1dayMCQsactualfalse, exactroadconservation. Independently checked 0 written multiplication blocks/0 per-place equations/0 partialproducts.",
+      "sourceCanonicalSha256": "9ec9dc8e0f7dd1fe03f427a9489d6a15891ec1d1dfb732f631c8f65123d64e94",
+      "checks": [
+        "All44 source/new full solutions/everyMCQ manually read",
+        "Actual printed integer ratios and full expression AST; no binary floats or author params",
+        "Every written raw product/carry/partialproduct/commaplacement/trailingzero independently checked",
+        "Complete positive minimum-multiplier/900fractional-residue/whole-bottle domains",
+        "Named price bases, kg/L/cm/km/hour/minute and stage-specific conservation",
+        "Fractional TOTAL-hour conversion preserved after precise author review fix"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {renderEdition,verifyEdition} from './grade4-addition-models.mjs';
+const rows=JSON.parse(fs.readFileSync(new URL('../../problems/editorial/batches/grade4-addition-wave12.json',import.meta.url),'utf8')).editions;
+const expected=['>','3 613','Бірліктерге 7 жазып, ондықтарға 1 тасымалдаймыз','5 447 + 4 289','2500','39 т 450 кг','76941','<','42153','4 063 294','<','73 402 − 28 767 = 44 645','2160','88529','63 608','59729','1 703','3 087','885309','35 870','Айым — сызғыш; Дана — қылқалам; Ерасыл — қайшы','>','5 562','8100'];
+assert.equal(rows.length,expected.length);let mutations=0;
+for(const[i,row]of rows.entries()){
+ assert.equal(row.answer,expected[i],row.editionId);assert.equal(verifyEdition(row).answer,row.answer);assert.equal(row.grade,4);assert.equal(row.minimumPlan,'pro');assert.equal(row.editorialStatus,'draft');
+ if(!row.options)assert.match(row.statement,/Жауапқа тек сан/);
+ for(const field of ['statement','answer','solution']){const bad=structuredClone(row);bad[field]+=' өзгеріс';assert.throws(()=>verifyEdition(bad));mutations++;}
+ if(row.options){const bad=structuredClone(row);bad.options[0]+=' өзгеріс';assert.throws(()=>verifyEdition(bad));mutations++;}
+ const bad=structuredClone(row);function mutate(value){for(const key of Object.keys(value)){if(typeof value[key]==='number'){value[key]++;return true;}if(value[key]&&typeof value[key]==='object'&&mutate(value[key]))return true;}return false;}assert(mutate(bad.params));assert.throws(()=>verifyEdition(bad));mutations++;
+}
+const find=kind=>rows.find(r=>r.modelId===`grade4-addition-${kind}`),plain=row=>Number(row.answer.replaceAll(' ',''));
+// Read Kazakh cardinal words from the printed condition rather than calling the author's word renderer.
+const lex={'бір':1,'екі':2,'үш':3,'төрт':4,'бес':5,'алты':6,'жеті':7,'сегіз':8,'тоғыз':9,'он':10,'жиырма':20,'отыз':30,'қырық':40,'елу':50,'алпыс':60,'жетпіс':70,'сексен':80,'тоқсан':90};
+function readWords(s){let total=0,part=0;for(const w of s.split(' ')){if(w==='мың'){total+=part*1000;part=0;}else if(w==='жүз')part*=100;else{assert(w in lex,w);part+=lex[w];}}return total+part;}
+const spoken=find('spoken-monthly-total'),phrases=[...spoken.statement.matchAll(/(?:сәуірде |мамырда |маусымда )([^,.]+)(?=,| адам)/g)].map(m=>m[1]);assert.equal(phrases.length,3);const counts=phrases.map(readWords);assert.deepEqual(counts,[14807,11096,16250]);assert.equal(counts.reduce((a,b)=>a+b),plain(spoken));
+// Integer enumeration is independent of the renderer's permutation recursion.
+function available(n,digits){const ds=String(n).split('').map(Number);return ds.length===digits.length&&new Set(ds).size===ds.length&&ds.every(d=>digits.includes(d));}
+for(const row of rows.filter(r=>r.modelId.endsWith('supplied-digit-extremes'))){const accepted=[];for(let n=10**(row.params.digits.length-1);n<10**row.params.digits.length;n++)if(available(n,row.params.digits))accepted.push(n);assert.equal(accepted.at(-1)-accepted[0],plain(row));}
+const evens=[],odds=[];for(let n=10000;n<100000;n++)if(new Set(String(n)).size===5)(n%2?odds:evens).push(n);assert.equal(evens.at(-1),98764);assert.equal(odds[0],10235);assert.equal(evens.at(-1)-odds[0],plain(find('parity-distinct-extremes')));
+const global=[];for(let n=100000;n<1000000;n++)if(new Set(String(n)).size===6)global.push(n);assert.equal(global.at(-1)-global[0],plain(find('global-distinct-extreme-gap')));
+const card=find('maximum-two-three-digit-sum'),allowed=card.params.digits,numbers=[];for(let n=100;n<1000;n++){const ds=String(n).split('').map(Number);if(new Set(ds).size===3&&ds.every(d=>allowed.includes(d)))numbers.push(n);}const possible=[];for(const a of numbers)for(const b of numbers)if(new Set(String(a)+b).size===6)possible.push(a+b);assert.equal(possible.length,720);assert.equal(Math.max(...possible),plain(card));assert(card.params.choices.every(n=>possible.includes(n)));
+let digits='2953',trace=[];for(let i=0;i<3;i++){const descending=Number([...digits].sort().reverse().join('')),ascending=Number([...digits].sort().join(''));assert(ascending>=1000);trace.push(descending-ascending);digits=String(trace.at(-1));}assert.deepEqual(trace,[7173,6354,3087]);assert.equal(trace.at(-1),plain(find('three-digit-rearrangement-steps')));
+const assignment=find('three-object-assignment'),solutions=[];for(let a=0;a<3;a++)for(let b=0;b<3;b++)for(let c=0;c<3;c++)if(new Set([a,b,c]).size===3&&b!==0&&b!==2&&a!==2)solutions.push([a,b,c]);assert.deepEqual(solutions,[[0,1,2]]);assert.equal(assignment.answer,'Айым — сызғыш; Дана — қылқалам; Ерасыл — қайшы');
+const incorrect=find('find-incorrect-calculation'),valid=incorrect.params.calculations.map(([a,op,b,c])=>(op==='+'?a+b:a-b)===c);assert.deepEqual(valid,[false,true,true,true]);assert.equal(73402-28767,44635);assert.equal(incorrect.intentionalIncorrectExample,true);const noFlag=structuredClone(incorrect);delete noFlag.intentionalIncorrectExample;assert.throws(()=>verifyEdition(noFlag));mutations++;
+const sumGap=[];for(let small=0;small<=62000;small++){const large=62000-small;if(large-small===9740)sumGap.push(large);}assert.deepEqual(sumGap,[plain(find('sum-and-gap-larger'))]);
+assert.equal(6387+3613,10000);assert.equal(9736-4289,5447);assert.equal(18400-2*7950,2500);assert.equal(140000-46750-53800,39450);assert.equal(63234+4000060,4063294);assert.equal(1620*4/3,2160);assert.equal(63652-(92-48),63608);assert.equal(48257+2*5736,59729);assert.equal(35000-2*10760-5380,8100);
+const invalid=[['compare-after-thousand',{increment:1001}],['zero-chain-complement',{known:6307}],['column-carry',{first:1}],['compare-through-round-boundary',{subtract:1000}],['unit-fraction-combined-total',{divisor:6}],['parity-distinct-extremes',{digits:6}],['two-misread-place-values',{readUnits:9}],['maximum-two-three-digit-sum',{digits:[1,1,4,6,7,9]}],['three-digit-rearrangement-steps',{steps:2}],['global-distinct-extreme-gap',{digits:10}],['sum-and-gap-larger',{total:62001}],['three-object-assignment',{exclusions:[[0,1,2],[0,2],[]]}],['compare-minus-near-thousand',{subtract:998}],['family-ticket-change',{adults:3}]];
+for(const[kind,patch]of invalid){const bad=structuredClone(find(kind));Object.assign(bad.params,patch);assert.throws(()=>renderEdition(bad),kind);}
+console.log(JSON.stringify({editions:rows.length,fixtureAnswers:expected.length,independentWrittenNumberParser:3,finiteOrderingAssignmentDomains:8,rejectedMutations:mutations,rejectedInvalidDomains:invalid.length,status:'passed',independentEditorialReview:'pending'}));

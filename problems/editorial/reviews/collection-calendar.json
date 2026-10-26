@@ -1,0 +1,808 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "root_separate_computational_check_same_author",
+  "scope": "22frozen nonvisual calendar/clock occurrences. Full saved and new conditions,\nfull official and new solutions and every MCQ read. Exact independent printed-input\ncomputation by same root author; no separate human/agent reviewer claimed.\nWeekday steps/month enumeration/date objects/time tick timelines/Fraction clock\nrates used, not author JS specs/params as answer oracle. Numerical variants not\nsemantic uniqueness. Source18/19/23 images are handled in the separate figure batch.\n",
+  "summary": {
+    "verified": 22,
+    "sourceKeysNotCaptured": 5,
+    "allSourceNewConditionsFullSolutionsEveryMCQRead": 22,
+    "targetSpecificModels": 13,
+    "wrongKeysRejected": 22,
+    "printedSemanticCanariesRejected": 22,
+    "printedSolutionEqualitiesVerified": 38,
+    "pythonJavaScriptHashesMatched": 22,
+    "separateHumanReviewer": false
+  },
+  "evidence": [
+    {
+      "editionId": "collection-calendar-01",
+      "savedSource": {
+        "walkedCalendarDays": 17,
+        "answer": "Сәрсенбі"
+      },
+      "rewritten": {
+        "walkedCalendarDays": 19,
+        "answer": "Сенбі"
+      }
+    },
+    {
+      "editionId": "collection-calendar-02",
+      "savedSource": {
+        "walkedCalendarDays": 23,
+        "answer": "Сейсенбі"
+      },
+      "rewritten": {
+        "walkedCalendarDays": 31,
+        "answer": "Жексенбі"
+      }
+    },
+    {
+      "editionId": "collection-calendar-03",
+      "savedSource": {
+        "elapsedNotInclusiveDateDifference": 10,
+        "answer": "Жексенбі"
+      },
+      "rewritten": {
+        "elapsedNotInclusiveDateDifference": 17,
+        "answer": "Жұма"
+      }
+    },
+    {
+      "editionId": "collection-calendar-04",
+      "savedSource": {
+        "elapsedNotInclusiveDateDifference": 25,
+        "answer": "Сәрсенбі"
+      },
+      "rewritten": {
+        "elapsedNotInclusiveDateDifference": 22,
+        "answer": "Сейсенбі"
+      }
+    },
+    {
+      "editionId": "collection-calendar-05",
+      "savedSource": {
+        "allCommonDaysThroughProductBound": [
+          18,
+          36,
+          54
+        ],
+        "answer": "18"
+      },
+      "rewritten": {
+        "allCommonDaysThroughProductBound": [
+          24,
+          48,
+          72,
+          96
+        ],
+        "answer": "24"
+      }
+    },
+    {
+      "editionId": "collection-calendar-06",
+      "savedSource": {
+        "allCommonDaysThroughProductBound": [
+          30
+        ],
+        "answer": "30"
+      },
+      "rewritten": {
+        "allCommonDaysThroughProductBound": [
+          63
+        ],
+        "answer": "63"
+      }
+    },
+    {
+      "editionId": "collection-calendar-07",
+      "savedSource": {
+        "everyLessonAndBetweenLessonBreak": [
+          [
+            "lesson",
+            1,
+            "13:30",
+            "14:15"
+          ],
+          [
+            "break",
+            1,
+            "14:15",
+            "14:30"
+          ],
+          [
+            "lesson",
+            2,
+            "14:30",
+            "15:15"
+          ],
+          [
+            "break",
+            2,
+            "15:15",
+            "15:30"
+          ],
+          [
+            "lesson",
+            3,
+            "15:30",
+            "16:15"
+          ],
+          [
+            "break",
+            3,
+            "16:15",
+            "16:30"
+          ],
+          [
+            "lesson",
+            4,
+            "16:30",
+            "17:15"
+          ]
+        ],
+        "answer": "17:15"
+      },
+      "rewritten": {
+        "everyLessonAndBetweenLessonBreak": [
+          [
+            "lesson",
+            1,
+            "09:20",
+            "10:00"
+          ],
+          [
+            "break",
+            1,
+            "10:00",
+            "10:10"
+          ],
+          [
+            "lesson",
+            2,
+            "10:10",
+            "10:50"
+          ],
+          [
+            "break",
+            2,
+            "10:50",
+            "11:00"
+          ],
+          [
+            "lesson",
+            3,
+            "11:00",
+            "11:40"
+          ],
+          [
+            "break",
+            3,
+            "11:40",
+            "11:50"
+          ],
+          [
+            "lesson",
+            4,
+            "11:50",
+            "12:30"
+          ],
+          [
+            "break",
+            4,
+            "12:30",
+            "12:40"
+          ],
+          [
+            "lesson",
+            5,
+            "12:40",
+            "13:20"
+          ]
+        ],
+        "answer": "13:20"
+      }
+    },
+    {
+      "editionId": "collection-calendar-08",
+      "savedSource": {
+        "everyLessonAndBetweenLessonBreak": [
+          [
+            "lesson",
+            1,
+            "13:30",
+            "14:10"
+          ],
+          [
+            "break",
+            1,
+            "14:10",
+            "14:20"
+          ],
+          [
+            "lesson",
+            2,
+            "14:20",
+            "15:00"
+          ],
+          [
+            "break",
+            2,
+            "15:00",
+            "15:10"
+          ],
+          [
+            "lesson",
+            3,
+            "15:10",
+            "15:50"
+          ]
+        ],
+        "answer": "15:50"
+      },
+      "rewritten": {
+        "everyLessonAndBetweenLessonBreak": [
+          [
+            "lesson",
+            1,
+            "11:15",
+            "11:50"
+          ],
+          [
+            "break",
+            1,
+            "11:50",
+            "12:05"
+          ],
+          [
+            "lesson",
+            2,
+            "12:05",
+            "12:40"
+          ],
+          [
+            "break",
+            2,
+            "12:40",
+            "12:55"
+          ],
+          [
+            "lesson",
+            3,
+            "12:55",
+            "13:30"
+          ],
+          [
+            "break",
+            3,
+            "13:30",
+            "13:45"
+          ],
+          [
+            "lesson",
+            4,
+            "13:45",
+            "14:20"
+          ]
+        ],
+        "answer": "14:20"
+      }
+    },
+    {
+      "editionId": "collection-calendar-09",
+      "savedSource": {
+        "datetimeElapsedMinutes": "690",
+        "answer": "690"
+      },
+      "rewritten": {
+        "datetimeElapsedMinutes": "700",
+        "answer": "700"
+      }
+    },
+    {
+      "editionId": "collection-calendar-10",
+      "savedSource": {
+        "datetimeElapsedMinutes": "730",
+        "answer": "730"
+      },
+      "rewritten": {
+        "datetimeElapsedMinutes": "510",
+        "answer": "510"
+      }
+    },
+    {
+      "editionId": "collection-calendar-11",
+      "savedSource": {
+        "walkedCalendarDays": -124,
+        "answer": "Жұма"
+      },
+      "rewritten": {
+        "walkedCalendarDays": -158,
+        "answer": "Дүйсенбі"
+      }
+    },
+    {
+      "editionId": "collection-calendar-12",
+      "savedSource": {
+        "parsedRelativeDaySteps": {
+          "back": 2,
+          "forward": 0
+        },
+        "answer": "Бейсенбі"
+      },
+      "rewritten": {
+        "parsedRelativeDaySteps": {
+          "back": 2,
+          "forward": 0
+        },
+        "answer": "Жексенбі"
+      }
+    },
+    {
+      "editionId": "collection-calendar-13",
+      "savedSource": {
+        "parsedRelativeDaySteps": {
+          "back": 1,
+          "forward": 2
+        },
+        "answer": "Бейсенбі"
+      },
+      "rewritten": {
+        "parsedRelativeDaySteps": {
+          "back": 1,
+          "forward": 2
+        },
+        "answer": "Сенбі"
+      }
+    },
+    {
+      "editionId": "collection-calendar-14",
+      "savedSource": {
+        "allDutyOffsets": [
+          0,
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28
+        ],
+        "answer": "Сәрсенбі"
+      },
+      "rewritten": {
+        "allDutyOffsets": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25
+        ],
+        "answer": "Сәрсенбі"
+      }
+    },
+    {
+      "editionId": "collection-calendar-15",
+      "savedSource": {
+        "actualElapsedMinutes": 540,
+        "exactShownMinutes": "1005",
+        "ratePerTrueMinute": "13/12",
+        "sourceQualification": "Official solution interprets each hour as one true hour; rewrite explicitly defines per60actualminutes.",
+        "answer": "16:45"
+      },
+      "rewritten": {
+        "actualElapsedMinutes": 600,
+        "exactShownMinutes": "1110",
+        "ratePerTrueMinute": "21/20",
+        "answer": "18:30"
+      }
+    },
+    {
+      "editionId": "collection-calendar-16",
+      "savedSource": {
+        "actualElapsedMinutes": 360,
+        "exactShownMinutes": "750",
+        "ratePerTrueMinute": "11/12",
+        "sourceQualification": "Official solution interprets each hour as one true hour; rewrite explicitly defines per60actualminutes.",
+        "answer": "12:30"
+      },
+      "rewritten": {
+        "actualElapsedMinutes": 480,
+        "exactShownMinutes": "808",
+        "ratePerTrueMinute": "14/15",
+        "answer": "13:28"
+      }
+    },
+    {
+      "editionId": "collection-calendar-17",
+      "savedSource": {
+        "exactFullCircleTurns": {
+          "minute": "1/2",
+          "hour": "11/24",
+          "smallerDifference": "1/24"
+        },
+        "answer": "15"
+      },
+      "rewritten": {
+        "exactFullCircleTurns": {
+          "minute": "1/3",
+          "hour": "11/18",
+          "smallerDifference": "5/18"
+        },
+        "answer": "100"
+      }
+    },
+    {
+      "editionId": "collection-calendar-20",
+      "savedSource": {
+        "sameInstantLocalTimeline": {
+          "Adepart": "09:30",
+          "Bdepart": "07:30",
+          "Barrival": "15:00",
+          "flightMinutes": 450
+        },
+        "answer": "15:00"
+      },
+      "rewritten": {
+        "sameInstantLocalTimeline": {
+          "Adepart": "08:40",
+          "Bdepart": "05:40",
+          "Barrival": "12:30",
+          "flightMinutes": 410
+        },
+        "answer": "12:30"
+      }
+    },
+    {
+      "editionId": "collection-calendar-21",
+      "savedSource": {
+        "all28MonthConfigurationsChecked": true,
+        "allCompatibleMonthConfigurations": [
+          {
+            "monthLength": 30,
+            "firstWeekday": 1,
+            "specifiedWeekdayDates": [
+              2,
+              9,
+              16,
+              23,
+              30
+            ],
+            "targetWeekday": "Дүйсенбі"
+          },
+          {
+            "monthLength": 31,
+            "firstWeekday": 1,
+            "specifiedWeekdayDates": [
+              2,
+              9,
+              16,
+              23,
+              30
+            ],
+            "targetWeekday": "Дүйсенбі"
+          }
+        ],
+        "answer": "Дүйсенбі"
+      },
+      "rewritten": {
+        "all28MonthConfigurationsChecked": true,
+        "allCompatibleMonthConfigurations": [
+          {
+            "monthLength": 30,
+            "firstWeekday": 2,
+            "specifiedWeekdayDates": [
+              2,
+              9,
+              16,
+              23,
+              30
+            ],
+            "targetWeekday": "Дүйсенбі"
+          },
+          {
+            "monthLength": 31,
+            "firstWeekday": 2,
+            "specifiedWeekdayDates": [
+              2,
+              9,
+              16,
+              23,
+              30
+            ],
+            "targetWeekday": "Дүйсенбі"
+          }
+        ],
+        "answer": "Дүйсенбі"
+      }
+    },
+    {
+      "editionId": "collection-calendar-22",
+      "savedSource": {
+        "onlySameDayExactClockRateSolution": {
+          "actualElapsedMinutes": 600,
+          "shownElapsedMinutes": 650,
+          "ratePerRealMinute": "13/12"
+        },
+        "sourceQualification": "Official solution assumes first same-day reading; no date or wrap count in source. Rewrite explicitly says same day evening.",
+        "answer": "19:00"
+      },
+      "rewritten": {
+        "onlySameDayExactClockRateSolution": {
+          "actualElapsedMinutes": 660,
+          "shownElapsedMinutes": 704,
+          "ratePerRealMinute": "16/15"
+        },
+        "answer": "18:00"
+      }
+    },
+    {
+      "editionId": "collection-calendar-24",
+      "savedSource": {
+        "wholeGregorianYearWitness": {
+          "year": 2020,
+          "leap": true,
+          "elapsedDays": 365,
+          "first": "Сәрсенбі",
+          "last": "Бейсенбі"
+        },
+        "answer": "Бейсенбі"
+      },
+      "rewritten": {
+        "wholeGregorianYearWitness": {
+          "year": 2024,
+          "leap": true,
+          "elapsedDays": 365,
+          "first": "Дүйсенбі",
+          "last": "Сейсенбі"
+        },
+        "answer": "Сейсенбі"
+      }
+    },
+    {
+      "editionId": "collection-calendar-25",
+      "savedSource": {
+        "wholeGregorianYearWitness": {
+          "year": 2002,
+          "leap": false,
+          "elapsedDays": 364,
+          "first": "Сейсенбі",
+          "last": "Сейсенбі"
+        },
+        "answer": "Сейсенбі"
+      },
+      "rewritten": {
+        "wholeGregorianYearWitness": {
+          "year": 2005,
+          "leap": false,
+          "elapsedDays": 364,
+          "first": "Сенбі",
+          "last": "Сенбі"
+        },
+        "answer": "Сенбі"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "editionId": "collection-calendar-01",
+      "sha256": "fc9511753cbf85a77e55befce2edded804c152514daebd68a535374d295385ac",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"walkedCalendarDays\": 19, \"answer\": \"Сенбі\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-02",
+      "sha256": "fc69e3b15f0f0b3a09b710392207c6a5bc93fad7cffc3a56d3b53ffcefc05a2a",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"walkedCalendarDays\": 31, \"answer\": \"Жексенбі\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-03",
+      "sha256": "5e4646fe82e79e7845231066e537e88035210913dff13940df1e08628edb91a3",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"elapsedNotInclusiveDateDifference\": 17, \"answer\": \"Жұма\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-04",
+      "sha256": "9545f9cbb528bf588183f42d53e6c19ca77ea8056ae552aa7eaa3218ab6f4c32",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"elapsedNotInclusiveDateDifference\": 22, \"answer\": \"Сейсенбі\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-05",
+      "sha256": "d5c1bf5fb140c914e60e43dd2bde6b0932f66c188d553f55b295dc9414eb1c47",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"allCommonDaysThroughProductBound\": [24, 48, 72, 96], \"answer\": \"24\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-06",
+      "sha256": "bc0e4179dce4472e2876466b6d14628216a9303182965d60440def158a09e24a",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"allCommonDaysThroughProductBound\": [63], \"answer\": \"63\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-07",
+      "sha256": "d34ec3681fb9c5c01cc589ccb2e0506ebbb65ad64379a336ba1a265a3542805a",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"everyLessonAndBetweenLessonBreak\": [[\"lesson\", 1, \"09:20\", \"10:00\"], [\"break\", 1, \"10:00\", \"10:10\"], [\"lesson\", 2, \"10:10\", \"10:50\"], [\"break\", 2, \"10:50\", \"11:00\"], [\"lesson\", 3, \"11:00\", \"11:40\"], [\"break\", 3, \"11:40\", \"11:50\"], [\"lesson\", 4, \"11:50\", \"12:30\"], [\"break\", 4, \"12:30\", \"12:40\"], [\"lesson\", 5, \"12:40\", \"13:20\"]], \"answer\": \"13:20\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-08",
+      "sha256": "5a1b07ca231886568ca25e0125615250165c11026d8cb4543ebf2bd2508dd4f1",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"everyLessonAndBetweenLessonBreak\": [[\"lesson\", 1, \"11:15\", \"11:50\"], [\"break\", 1, \"11:50\", \"12:05\"], [\"lesson\", 2, \"12:05\", \"12:40\"], [\"break\", 2, \"12:40\", \"12:55\"], [\"lesson\", 3, \"12:55\", \"13:30\"], [\"break\", 3, \"13:30\", \"13:45\"], [\"lesson\", 4, \"13:45\", \"14:20\"]], \"answer\": \"14:20\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-09",
+      "sha256": "7cf0580ee470f4a23944e98f0734fca6060f8866f343e728a2749aa9dd6be75a",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"datetimeElapsedMinutes\": \"700\", \"answer\": \"700\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-10",
+      "sha256": "d5f3e592e2d2d5f49f3cb07cebed0db0ae363c17162c21c9ddf160cfeb5f9fb8",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"datetimeElapsedMinutes\": \"510\", \"answer\": \"510\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-11",
+      "sha256": "4a7e44b9b6809af68770dc0b991fa45a273f64467e6ee89eecfe4c3c5b1c0f14",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"walkedCalendarDays\": -158, \"answer\": \"Дүйсенбі\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-12",
+      "sha256": "17f57749489e1e592965a1e15340272bcdab004c77ce54eb8d456dbce0f46f7c",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"parsedRelativeDaySteps\": {\"back\": 2, \"forward\": 0}, \"answer\": \"Жексенбі\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-13",
+      "sha256": "351201fa70c836afc3250320f8e0865005bff0dee42f7e554cd54b098332d746",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"parsedRelativeDaySteps\": {\"back\": 1, \"forward\": 2}, \"answer\": \"Сенбі\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-14",
+      "sha256": "80225603996da7afd547e483babfb6dfd08fbff759920f08395226d70c3c5371",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"allDutyOffsets\": [0, 5, 10, 15, 20, 25], \"answer\": \"Сәрсенбі\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-15",
+      "sha256": "d07e92af995634921e4c0d6fa046fe554b42d0c9366240b8e787997171c96f6d",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"actualElapsedMinutes\": 600, \"exactShownMinutes\": \"1110\", \"ratePerTrueMinute\": \"21/20\", \"answer\": \"18:30\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-16",
+      "sha256": "9fee6298f84814eb077e824bd51b957a4c97c79a1cbdef6165655540c02b88d9",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"actualElapsedMinutes\": 480, \"exactShownMinutes\": \"808\", \"ratePerTrueMinute\": \"14/15\", \"answer\": \"13:28\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-17",
+      "sha256": "fe6bece9839a52f62fd1ecf026c1c5320737be43d3826b86c4a688b577a55dbf",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"exactFullCircleTurns\": {\"minute\": \"1/3\", \"hour\": \"11/18\", \"smallerDifference\": \"5/18\"}, \"answer\": \"100\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-20",
+      "sha256": "f60ee425ba7e552c06ba0350c58b6d4f88490f1d76e32a23784582c1cdbbdde3",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"sameInstantLocalTimeline\": {\"Adepart\": \"08:40\", \"Bdepart\": \"05:40\", \"Barrival\": \"12:30\", \"flightMinutes\": 410}, \"answer\": \"12:30\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-21",
+      "sha256": "7b2beb3e40195b1b25884ac38de5692f8c6b8d2456771e01a50671aac2e740c5",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"all28MonthConfigurationsChecked\": true, \"allCompatibleMonthConfigurations\": [{\"monthLength\": 30, \"firstWeekday\": 2, \"specifiedWeekdayDates\": [2, 9, 16, 23, 30], \"targetWeekday\": \"Дүйсенбі\"}, {\"monthLength\": 31, \"firstWeekday\": 2, \"specifiedWeekdayDates\": [2, 9, 16, 23, 30], \"targetWeekday\": \"Дүйсенбі\"}], \"answer\": \"Дүйсенбі\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-22",
+      "sha256": "37e8022e1a6c3d8b03f5eb73c3848bf5336b1996f87f124ef3207ce754501a82",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"onlySameDayExactClockRateSolution\": {\"actualElapsedMinutes\": 660, \"shownElapsedMinutes\": 704, \"ratePerRealMinute\": \"16/15\"}, \"answer\": \"18:00\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-24",
+      "sha256": "4cd5bac8b2a8f8f757ac89887a09445e8eca0351bfb8d6481713152a7a07b6ac",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"wholeGregorianYearWitness\": {\"year\": 2024, \"leap\": true, \"elapsedDays\": 365, \"first\": \"Дүйсенбі\", \"last\": \"Сейсенбі\"}, \"answer\": \"Сейсенбі\"}"
+      ]
+    },
+    {
+      "editionId": "collection-calendar-25",
+      "sha256": "d22f79e2d3af950bd80e2d015b7164fe56ce39e9cc71955cab6203e5a44510b1",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "read complete source/new conditions, full solutions and allMCQs; exact day walks, date differences, full duty/lesson/break timelines, datetime overnight and Gregorian-year witnesses, exhaustive all28month configurations, Fraction real-time clock ticks/inverse uniqueness and exact circle turns; same author, no separate human review",
+      "notes": [
+        "{\"wholeGregorianYearWitness\": {\"year\": 2005, \"leap\": false, \"elapsedDays\": 364, \"first\": \"Сенбі\", \"last\": \"Сенбі\"}, \"answer\": \"Сенбі\"}"
+      ]
+    }
+  ]
+}

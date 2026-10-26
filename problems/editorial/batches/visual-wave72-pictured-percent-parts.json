@@ -1,0 +1,1180 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All13savedvisualgrade5topic6.1,12newdrafts+1previousverifiedretained; archived sources only, no capture/download/traces; all13source rasters available.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5 topic6.1 sources",
+    "sourceVisualOccurrences": 13,
+    "addressedNewDrafts": 12,
+    "previousEditionsRetained": [
+      {
+        "editionId": "geometry-light-grid-percent",
+        "sourceId": "74176f720bd29355",
+        "sourceFile": "problems/sources/zerek/courses/5-math-6-1-level1.json",
+        "batch": "problems/editorial/synaq-standard-geometry.json"
+      }
+    ],
+    "missingSourceIds": [],
+    "unavailableSourceRasters": [],
+    "exactNewSourceIds": [
+      "12e3b5b20f54af00",
+      "201b86ffb10a4959",
+      "238b7ecd41ff7c5f",
+      "2a82425a37f80864",
+      "453dd678896f55e4",
+      "485f30cd5d02a06d",
+      "5e09ccb47d8364ec",
+      "668ed74cb436f7ef",
+      "6bdc9e9c7c3c45dc",
+      "6d0adf17e5e4cf14",
+      "78773a3ab7f91632",
+      "9b540a39745c41cf"
+    ],
+    "distinctModels": 12,
+    "semantics": "Twelveaddressedpicturedpercentmodels+oneoldverifiedretained; equalarea/count/interval/overlap/compositearea andexplicitWHOLEbase, noungraded/tracedreplacement."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave72-four-tenths-of-circle",
+      "modelId": "visual-wave72-equal-circle-sectors-shaded-percent",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "easy",
+      "params": {
+        "scene": "circle",
+        "sectors": 10,
+        "blue": [
+          0,
+          2,
+          3,
+          7
+        ]
+      },
+      "answer": "40",
+      "sourceRefs": [
+        {
+          "sourceId": "5e09ccb47d8364ec",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-1-level1.json#3",
+      "sourceCanonicalSha256": "03e7df511c982fac153ac376e559e2b4e03cb368a50c1f0646d893c743adf0d1",
+      "sourceSkill": "Actualcircle4/10=2/5=40%, equalangle/area sectors,countall10notjustblue4.",
+      "adaptationChanges": [
+        "Барлық13сақталған5сынып6.1визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;13бастапқырастр3парақтақаралды. Бұрынтексерілгенgeometry-light-grid-percentөзгермейді;қалған12-геадрестікжаңапараметр/өзnativeSVGжасалды, rawөзгермейді.",
+        "Теңсекторлардыңауданы/ақтолықтауыш/20және40торды100-геайналдыру/бір100тордағытолықжол+қалдық/екі100торнеекідөңгелекүшінбірбүтіннегізі/ішкікесіндіұзындығы/қабаттасудоғалары/екіүшбұрыш+орташаршыауданы/сарыныкөкпенсалыстыру/төртбұрыштықақүшбұрыштыалу сақталды. Пайыздыңнегізі,секторларсаны,нүктеаралықсаны,көрсетілгенсұралғантүсі анық.",
+        "Жаңаnativecell/sector/arc/tick/polygonгеометрия, tracedpath/rasterкопияжоқ. Әртеңбөлікнақтыкөрінеді;жоғары100%бірбүтінгесалыстырылды,екісуреттіортақбүтінетуге болмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөліктерді пайызбен салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved+12new/fullofficial/newsolutions/everyMCQ plus3source/2native343sheets. Actualeverycellcolor+equal-sectorangle/arcendpoints, ONEwholevsTWOpictures, whitecomplementandBLUEdenominator, 26ticks25intervals, all3nativepolygonareas and5×5fourcorner2×3righttriangles. PriorverifiedretainedrowNOTresigned. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave72-four-tenths-of-circle.svg",
+      "verificationModule": "scripts/editorial/visual-wave72-models.mjs",
+      "statement": "Дөңгелек тең секторларға бөлінген. Көк боялған бөліктің ауданы бүкіл дөңгелек ауданының неше пайызын құрайды? Жауапқа тек санды жазыңыз.",
+      "solution": "Дөңгелекте 10 тең сектор, оның 4-еуі көк. Боялған бөлік (4/10) = (2/5). Пайызы (2/5) × 100% = 40%. Тексеру: көк 40% және ақ 60% бірге 100%. Жеке секторлар саны 4 пайыздың өзі емес; олардың бүкіл дөңгелектің қандай бөлігін алатыны қажет.",
+      "figureDescription": "Бүкіл дөңгелек — 100%. Ол 10 тең секторға бөлінген. Жоғарғы сәуледен сағат тілімен 0-ден бастап санағанда, көк секторлардың орындары: 0; 2; 3; 7. Қалған секторлар ақ.",
+      "figureSha256": "87d3b6e150d5c8f429f7c3a3b1bba4e49944eb994071472b3cea212a4f67553c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "40",
+        "checks": {
+          "sectors": 10,
+          "shaded": 4,
+          "reduced": [
+            2,
+            5
+          ],
+          "percent": "40"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave72-nine-of-twenty-grid",
+      "modelId": "visual-wave72-twenty-grid-shaded-percent-versus-complement-count",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "easy",
+      "params": {
+        "scene": "grid",
+        "rows": 4,
+        "cols": 5,
+        "blue": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          14,
+          17,
+          18
+        ],
+        "yellow": []
+      },
+      "answer": "45%",
+      "sourceRefs": [
+        {
+          "sourceId": "78773a3ab7f91632",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-1-level1.json#6",
+      "sourceCanonicalSha256": "0d123983a852c6f002d19e7123b6c8461be558581e732fc17ef24bab13712995",
+      "sourceSkill": "Actual4×5twentycells9blue→45%, not9%/20%/55%unpainted.",
+      "adaptationChanges": [
+        "Барлық13сақталған5сынып6.1визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;13бастапқырастр3парақтақаралды. Бұрынтексерілгенgeometry-light-grid-percentөзгермейді;қалған12-геадрестікжаңапараметр/өзnativeSVGжасалды, rawөзгермейді.",
+        "Теңсекторлардыңауданы/ақтолықтауыш/20және40торды100-геайналдыру/бір100тордағытолықжол+қалдық/екі100торнеекідөңгелекүшінбірбүтіннегізі/ішкікесіндіұзындығы/қабаттасудоғалары/екіүшбұрыш+орташаршыауданы/сарыныкөкпенсалыстыру/төртбұрыштықақүшбұрыштыалу сақталды. Пайыздыңнегізі,секторларсаны,нүктеаралықсаны,көрсетілгенсұралғантүсі анық.",
+        "Жаңаnativecell/sector/arc/tick/polygonгеометрия, tracedpath/rasterкопияжоқ. Әртеңбөлікнақтыкөрінеді;жоғары100%бірбүтінгесалыстырылды,екісуреттіортақбүтінетуге болмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөліктерді пайызбен салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved+12new/fullofficial/newsolutions/everyMCQ plus3source/2native343sheets. Actualeverycellcolor+equal-sectorangle/arcendpoints, ONEwholevsTWOpictures, whitecomplementandBLUEdenominator, 26ticks25intervals, all3nativepolygonareas and5×5fourcorner2×3righttriangles. PriorverifiedretainedrowNOTresigned. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave72-nine-of-twenty-grid.svg",
+      "verificationModule": "scripts/editorial/visual-wave72-models.mjs",
+      "options": [
+        "9%",
+        "45%",
+        "20%",
+        "55%"
+      ],
+      "statement": "Тіктөртбұрыш бірдей шаршы торкөздерден тұрады. Барлық торкөзді және көк торкөздерді санап, КӨК бөліктің пайызын таңдаңыз.",
+      "solution": "Торкөз саны 4 × 5 = 20. Көк торкөздер жол бойынша 3 + 2 + 2 + 2 = 9. Боялған бөлік (9/20) = (45/100) = 45%. 9% — тек көк торкөздер саны, 20% — барлық торкөз саны, 55% — ақ бөлік. Тексеру: 45% + 55% = 100%.",
+      "figureDescription": "4 жол, 5 баған бірдей торкөз бар. Жолдар жоғарыдан төмен, бағандар солдан оңға саналады. 1-жолдағы көк бағандар: 1; 3; 5. 2-жолдағы көк бағандар: 2; 4. 3-жолдағы көк бағандар: 1; 5. 4-жолдағы көк бағандар: 3; 4. Қалған торкөздер ақ.",
+      "figureSha256": "117200f0e7da615d98b8ca2c0071eeb4a89558b43f126ca025aaf44171fe322e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "45%",
+        "checks": {
+          "rows": 4,
+          "cols": 5,
+          "total": 20,
+          "shaded": 9,
+          "rowCounts": [
+            3,
+            2,
+            2,
+            2
+          ],
+          "unpainted": 11,
+          "reduced": [
+            9,
+            20
+          ],
+          "percent": "45"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave72-hundred-grid-fifty-eight",
+      "modelId": "visual-wave72-hundred-grid-full-rows-plus-tail-percent",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "easy",
+      "params": {
+        "scene": "grid",
+        "rows": 10,
+        "cols": 10,
+        "blue": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ],
+        "yellow": []
+      },
+      "answer": "58",
+      "sourceRefs": [
+        {
+          "sourceId": "6d0adf17e5e4cf14",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-1-level1.json#10",
+      "sourceCanonicalSha256": "53071c3c8b335440817adbe1e7a3be346d510a1ef532acf5a712984ee9397fbc",
+      "sourceSkill": "100equalcells5fullrows+8=58cells→58%, actualgriddenominator100.",
+      "adaptationChanges": [
+        "Барлық13сақталған5сынып6.1визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;13бастапқырастр3парақтақаралды. Бұрынтексерілгенgeometry-light-grid-percentөзгермейді;қалған12-геадрестікжаңапараметр/өзnativeSVGжасалды, rawөзгермейді.",
+        "Теңсекторлардыңауданы/ақтолықтауыш/20және40торды100-геайналдыру/бір100тордағытолықжол+қалдық/екі100торнеекідөңгелекүшінбірбүтіннегізі/ішкікесіндіұзындығы/қабаттасудоғалары/екіүшбұрыш+орташаршыауданы/сарыныкөкпенсалыстыру/төртбұрыштықақүшбұрыштыалу сақталды. Пайыздыңнегізі,секторларсаны,нүктеаралықсаны,көрсетілгенсұралғантүсі анық.",
+        "Жаңаnativecell/sector/arc/tick/polygonгеометрия, tracedpath/rasterкопияжоқ. Әртеңбөлікнақтыкөрінеді;жоғары100%бірбүтінгесалыстырылды,екісуреттіортақбүтінетуге болмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөліктерді пайызбен салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved+12new/fullofficial/newsolutions/everyMCQ plus3source/2native343sheets. Actualeverycellcolor+equal-sectorangle/arcendpoints, ONEwholevsTWOpictures, whitecomplementandBLUEdenominator, 26ticks25intervals, all3nativepolygonareas and5×5fourcorner2×3righttriangles. PriorverifiedretainedrowNOTresigned. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave72-hundred-grid-fifty-eight.svg",
+      "verificationModule": "scripts/editorial/visual-wave72-models.mjs",
+      "statement": "Бір шаршы 100 тең торкөзге бөлінген. Оның КӨК боялған бөлігі неше пайыз? Толық жолдар мен соңғы жолдағы боялған торкөздерді есептеңіз. Жауапқа тек санды жазыңыз.",
+      "solution": "100 тең торкөз болғандықтан әрқайсысы бір бүтіннің 1%-ы. Бес толық көк жолда 5 × 10 = 50 торкөз, келесі жолда тағы 8 бар: 50 + 8 = 58. Сондықтан көк аудан (58/100) = 58%. Тексеру: ақ 42 торкөзбен бірге 100 торкөз шығады.",
+      "figureDescription": "10 жол, 10 баған бірдей торкөз бар. Жолдар жоғарыдан төмен, бағандар солдан оңға саналады. 1-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 2-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 3-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 4-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 5-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 6-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8. Қалған торкөздер ақ.",
+      "figureSha256": "def6f686b162573176f0fe16428a273800278bc49c2d8549818747741965f561",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "58",
+        "checks": {
+          "rows": 10,
+          "cols": 10,
+          "total": 100,
+          "shaded": 58,
+          "rowCounts": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            8,
+            0,
+            0,
+            0,
+            0
+          ],
+          "unpainted": 42,
+          "reduced": [
+            29,
+            50
+          ],
+          "percent": "58"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave72-irregular-forty-grid-twenty-two",
+      "modelId": "visual-wave72-forty-grid-row-count-reduce-and-percent",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "grid",
+        "rows": 5,
+        "cols": 8,
+        "blue": [
+          0,
+          2,
+          3,
+          5,
+          7,
+          9,
+          11,
+          12,
+          14,
+          16,
+          17,
+          19,
+          21,
+          23,
+          25,
+          26,
+          28,
+          30,
+          32,
+          34,
+          37,
+          39
+        ],
+        "yellow": []
+      },
+      "answer": "55%",
+      "sourceRefs": [
+        {
+          "sourceId": "485f30cd5d02a06d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-1-level2.json#0",
+      "sourceCanonicalSha256": "e810ce78f282fca07d7e87ebc0adbcbb5909f8fb2964b76f4a4a43ee939db618",
+      "sourceSkill": "40cells rowcounts5/4/5/4/4→22/40=11/20=55%; count22/complement45/total40traps.",
+      "adaptationChanges": [
+        "Барлық13сақталған5сынып6.1визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;13бастапқырастр3парақтақаралды. Бұрынтексерілгенgeometry-light-grid-percentөзгермейді;қалған12-геадрестікжаңапараметр/өзnativeSVGжасалды, rawөзгермейді.",
+        "Теңсекторлардыңауданы/ақтолықтауыш/20және40торды100-геайналдыру/бір100тордағытолықжол+қалдық/екі100торнеекідөңгелекүшінбірбүтіннегізі/ішкікесіндіұзындығы/қабаттасудоғалары/екіүшбұрыш+орташаршыауданы/сарыныкөкпенсалыстыру/төртбұрыштықақүшбұрыштыалу сақталды. Пайыздыңнегізі,секторларсаны,нүктеаралықсаны,көрсетілгенсұралғантүсі анық.",
+        "Жаңаnativecell/sector/arc/tick/polygonгеометрия, tracedpath/rasterкопияжоқ. Әртеңбөлікнақтыкөрінеді;жоғары100%бірбүтінгесалыстырылды,екісуреттіортақбүтінетуге болмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөліктерді пайызбен салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved+12new/fullofficial/newsolutions/everyMCQ plus3source/2native343sheets. Actualeverycellcolor+equal-sectorangle/arcendpoints, ONEwholevsTWOpictures, whitecomplementandBLUEdenominator, 26ticks25intervals, all3nativepolygonareas and5×5fourcorner2×3righttriangles. PriorverifiedretainedrowNOTresigned. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave72-irregular-forty-grid-twenty-two.svg",
+      "verificationModule": "scripts/editorial/visual-wave72-models.mjs",
+      "options": [
+        "22%",
+        "45%",
+        "40%",
+        "55%"
+      ],
+      "statement": "Тіктөртбұрыш бірдей шаршыларға бөлінген. Жолдардағы боялған шаршылар санын қосып, бүкіл тіктөртбұрыштың неше пайызы КӨК екенін таңдаңыз.",
+      "solution": "Бүкіл тор 5 × 8 = 40 шаршы. Жолдардағы көктер: 5 + 4 + 5 + 4 + 4 = 22. Қатынас (22/40) = (11/20) = (55/100) = 55%. 22% — көк шаршылар санының өзін пайыз деп алу, 40% — барлық шаршылар саны; 45% — боялмаған аудан. Көк 55% пен ақ 45% бірге 100%.",
+      "figureDescription": "5 жол, 8 баған бірдей торкөз бар. Жолдар жоғарыдан төмен, бағандар солдан оңға саналады. 1-жолдағы көк бағандар: 1; 3; 4; 6; 8. 2-жолдағы көк бағандар: 2; 4; 5; 7. 3-жолдағы көк бағандар: 1; 2; 4; 6; 8. 4-жолдағы көк бағандар: 2; 3; 5; 7. 5-жолдағы көк бағандар: 1; 3; 6; 8. Қалған торкөздер ақ.",
+      "figureSha256": "af8f71918758408aaff7c19cbf366b3306499738aed903d41ce3be42f597cce0",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "55%",
+        "checks": {
+          "rows": 5,
+          "cols": 8,
+          "total": 40,
+          "shaded": 22,
+          "rowCounts": [
+            5,
+            4,
+            5,
+            4,
+            4
+          ],
+          "unpainted": 18,
+          "reduced": [
+            11,
+            20
+          ],
+          "percent": "55"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave72-one-whole-plus-forty-seven",
+      "modelId": "visual-wave72-two-hundred-grids-one-whole-normalization",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "double-grid",
+        "rows": 10,
+        "cols": 10,
+        "blue": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+          ]
+        ]
+      },
+      "answer": "147",
+      "sourceRefs": [
+        {
+          "sourceId": "6bdc9e9c7c3c45dc",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-1-level2.json#3",
+      "sourceCanonicalSha256": "ee15e09db7cf2e884bc3b44e45eb332bef2950c5634b57c54e52414a1ce91dec",
+      "sourceSkill": "EachsquareONEwhole100%; full100+4rows40+7=147%, not147/200=73.5%.",
+      "adaptationChanges": [
+        "Барлық13сақталған5сынып6.1визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;13бастапқырастр3парақтақаралды. Бұрынтексерілгенgeometry-light-grid-percentөзгермейді;қалған12-геадрестікжаңапараметр/өзnativeSVGжасалды, rawөзгермейді.",
+        "Теңсекторлардыңауданы/ақтолықтауыш/20және40торды100-геайналдыру/бір100тордағытолықжол+қалдық/екі100торнеекідөңгелекүшінбірбүтіннегізі/ішкікесіндіұзындығы/қабаттасудоғалары/екіүшбұрыш+орташаршыауданы/сарыныкөкпенсалыстыру/төртбұрыштықақүшбұрыштыалу сақталды. Пайыздыңнегізі,секторларсаны,нүктеаралықсаны,көрсетілгенсұралғантүсі анық.",
+        "Жаңаnativecell/sector/arc/tick/polygonгеометрия, tracedpath/rasterкопияжоқ. Әртеңбөлікнақтыкөрінеді;жоғары100%бірбүтінгесалыстырылды,екісуреттіортақбүтінетуге болмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөліктерді пайызбен салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved+12new/fullofficial/newsolutions/everyMCQ plus3source/2native343sheets. Actualeverycellcolor+equal-sectorangle/arcendpoints, ONEwholevsTWOpictures, whitecomplementandBLUEdenominator, 26ticks25intervals, all3nativepolygonareas and5×5fourcorner2×3righttriangles. PriorverifiedretainedrowNOTresigned. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave72-one-whole-plus-forty-seven.svg",
+      "verificationModule": "scripts/editorial/visual-wave72-models.mjs",
+      "statement": "Суреттегі әр шаршы 100 тең торкөзден тұрады. БІР ғана шаршы — бір бүтін, яғни 100%. Екі шаршыдағы барлық көк торкөздер бірге осы БІР бүтіннің неше пайызын құрайды? Жауапқа тек санды жазыңыз.",
+      "solution": "Бірінші шаршының 100 торкөзі толық көк: 100%. Екіншіде төрт толық жол 40 және тағы 7 торкөз: 47%. Бір шаршыны бүтін деп алғанда барлығы 100% + 47% = 147%. Бұл (1 + (47/100)) = 1,47 бүтін. Екі шаршының 200 торкөзін ортақ бүтін деп бөлуге болмайды: есепте БІР шаршы 100% деп берілген.",
+      "figureDescription": "Әр шаршыда 100 тең торкөз бар. БІР шаршы — 100%. Сол шаршы толық көк, оң шаршының 4 толық жолы мен келесі жолдағы алғашқы 7 торкөзі көк.",
+      "figureSha256": "a1d8052b53ea858053490abbd9a86607a546e8547e9f91d511eccd76ec294b99",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "147",
+        "checks": {
+          "oneWhole": 100,
+          "first": 100,
+          "second": 47,
+          "shaded": 147,
+          "wrongBothWholes": 73.5,
+          "percent": "147"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave72-one-whole-five-eighths",
+      "modelId": "visual-wave72-two-circle-percent-one-whole-more-than-hundred",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "double-circle",
+        "sectors": 8,
+        "blue": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            0,
+            1,
+            3,
+            5,
+            6
+          ]
+        ]
+      },
+      "answer": "162,5%",
+      "sourceRefs": [
+        {
+          "sourceId": "238b7ecd41ff7c5f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-1-level2.json#9",
+      "sourceCanonicalSha256": "e50a8763f43838c618ba89c1f558fcc68f0cf8a8dcd8f2b594711e57603b2301",
+      "sourceSkill": "ONEcircle100%, first8/8+second5/8=13/8=162.5%;62.5ignorefull/81.25bothwholebase/13piececount.",
+      "adaptationChanges": [
+        "Барлық13сақталған5сынып6.1визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;13бастапқырастр3парақтақаралды. Бұрынтексерілгенgeometry-light-grid-percentөзгермейді;қалған12-геадрестікжаңапараметр/өзnativeSVGжасалды, rawөзгермейді.",
+        "Теңсекторлардыңауданы/ақтолықтауыш/20және40торды100-геайналдыру/бір100тордағытолықжол+қалдық/екі100торнеекідөңгелекүшінбірбүтіннегізі/ішкікесіндіұзындығы/қабаттасудоғалары/екіүшбұрыш+орташаршыауданы/сарыныкөкпенсалыстыру/төртбұрыштықақүшбұрыштыалу сақталды. Пайыздыңнегізі,секторларсаны,нүктеаралықсаны,көрсетілгенсұралғантүсі анық.",
+        "Жаңаnativecell/sector/arc/tick/polygonгеометрия, tracedpath/rasterкопияжоқ. Әртеңбөлікнақтыкөрінеді;жоғары100%бірбүтінгесалыстырылды,екісуреттіортақбүтінетуге болмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөліктерді пайызбен салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved+12new/fullofficial/newsolutions/everyMCQ plus3source/2native343sheets. Actualeverycellcolor+equal-sectorangle/arcendpoints, ONEwholevsTWOpictures, whitecomplementandBLUEdenominator, 26ticks25intervals, all3nativepolygonareas and5×5fourcorner2×3righttriangles. PriorverifiedretainedrowNOTresigned. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave72-one-whole-five-eighths.svg",
+      "verificationModule": "scripts/editorial/visual-wave72-models.mjs",
+      "options": [
+        "162,5%",
+        "62,5%",
+        "81,25%",
+        "13%"
+      ],
+      "statement": "Әр дөңгелек БӨЛЕК бір бүтін, яғни 100%. Екеуі де тең секторларға бөлінген. Суреттегі барлық көк бөліктер бірге БІР дөңгелек ауданының неше пайызын құрайды?",
+      "solution": "Бірінші дөңгелек толық көк: 100%. Екіншінің 8 тең секторының 5-еуі көк: (5/8) = 0,625 = 62,5%. Барлығы (1 + (5/8)) = (13/8), яғни 100% + 62,5% = 162,5%. 62,5% бірінші бүтінді ұмытады; 81,25% боялған 13 секторды екі дөңгелектің 16 секторының бөлігі деп алады. 13% сектор санының өзін пайызға теңейді. Мұнда салыстыру негізі екі дөңгелек емес, бір дөңгелек.",
+      "figureDescription": "Әр дөңгелек өз алдына бір бүтін, яғни 100%; әрқайсысында 8 тең сектор бар. Жоғарғы сәуледен сағат тілімен 0-ден санағанда солдағы көк секторлар: 0; 1; 2; 3; 4; 5; 6; 7, оңдағы көк секторлар: 0; 1; 3; 5; 6.",
+      "figureSha256": "967ccd3b8872882544726c82cfee775fb577230d80ce7e037e3e69565b9cff77",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "162,5%",
+        "checks": {
+          "oneWhole": 8,
+          "first": 8,
+          "second": 5,
+          "shaded": 13,
+          "wrongBothWholes": 81.25,
+          "fractionalOnly": 62.5,
+          "percent": "162,5"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave72-cd-fifteen-of-twenty-five",
+      "modelId": "visual-wave72-unit-segment-internal-length-percent",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "segment",
+        "parts": 25,
+        "c": 6,
+        "d": 21
+      },
+      "answer": "60",
+      "sourceRefs": [
+        {
+          "sourceId": "9b540a39745c41cf",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-1-level2.json#11",
+      "sourceCanonicalSha256": "ef1c36dfb26333b0916cb68a17dc49169562ed6eae2ea1bd1e6a5080ae1e4080",
+      "sourceSkill": "Actual26ticks25intervals, CD21−6=15, ratio15/25=3/5=60%, AC24+CD60+DB16=100.",
+      "adaptationChanges": [
+        "Барлық13сақталған5сынып6.1визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;13бастапқырастр3парақтақаралды. Бұрынтексерілгенgeometry-light-grid-percentөзгермейді;қалған12-геадрестікжаңапараметр/өзnativeSVGжасалды, rawөзгермейді.",
+        "Теңсекторлардыңауданы/ақтолықтауыш/20және40торды100-геайналдыру/бір100тордағытолықжол+қалдық/екі100торнеекідөңгелекүшінбірбүтіннегізі/ішкікесіндіұзындығы/қабаттасудоғалары/екіүшбұрыш+орташаршыауданы/сарыныкөкпенсалыстыру/төртбұрыштықақүшбұрыштыалу сақталды. Пайыздыңнегізі,секторларсаны,нүктеаралықсаны,көрсетілгенсұралғантүсі анық.",
+        "Жаңаnativecell/sector/arc/tick/polygonгеометрия, tracedpath/rasterкопияжоқ. Әртеңбөлікнақтыкөрінеді;жоғары100%бірбүтінгесалыстырылды,екісуреттіортақбүтінетуге болмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөліктерді пайызбен салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved+12new/fullofficial/newsolutions/everyMCQ plus3source/2native343sheets. Actualeverycellcolor+equal-sectorangle/arcendpoints, ONEwholevsTWOpictures, whitecomplementandBLUEdenominator, 26ticks25intervals, all3nativepolygonareas and5×5fourcorner2×3righttriangles. PriorverifiedretainedrowNOTresigned. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave72-cd-fifteen-of-twenty-five.svg",
+      "verificationModule": "scripts/editorial/visual-wave72-models.mjs",
+      "statement": "AB кесіндісі тең аралықтарға бөлінген; C мен D — сол бөліктердің шекаралары. CD ұзындығы AB ұзындығының неше пайызы? Нүктелерді емес, олардың арасындағы бірдей аралықтарды санаңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Шеткі екі нүктені қоса 26 белгі көрінеді, олардың арасында 25 тең аралық бар. A-дан C-ге 6, A-дан D-ге 21 аралық. Сондықтан CD = 21 − 6 = 15 аралық. Қатынас (15/25) = (3/5) = (60/100), пайыз 60%. Тексеру: AC 24%, CD 60%, DB 16%; 24% + 60% + 16% = 100%. Белгілер санын ұзындық орнына алуға болмайды.",
+      "figureDescription": "AB тең аралықтарға бөлінген. A бастапқы орында; C оған қарағанда 6 аралықтан кейін, D 21 аралықтан кейін, B 25 аралықтан кейін орналасқан. AB — 100%. Суретте әріптер ғана жазылған, аралықтар бірдей белгілермен берілген.",
+      "figureSha256": "88a97a82fdebea2fd6e4d14da754a45dadd0400e43e7eb41ddff665e47270d0f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "60",
+        "checks": {
+          "parts": 25,
+          "c": 6,
+          "d": 21,
+          "cd": 15,
+          "left": 6,
+          "right": 4,
+          "reduced": [
+            3,
+            5
+          ],
+          "percent": "60"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave72-overlap-seventy-two-sixty-four",
+      "modelId": "visual-wave72-overlapping-interval-percent-from-two-arc-lengths",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "hard",
+      "params": {
+        "scene": "overlap",
+        "adPercent": 72,
+        "cbPercent": 64
+      },
+      "answer": "36%",
+      "sourceRefs": [
+        {
+          "sourceId": "201b86ffb10a4959",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-1-level3.json#2",
+      "sourceCanonicalSha256": "160f18dfaf806a125ed4393bc6df967a9fb6239d2fb085957f9690052e5e5e3b",
+      "sourceSkill": "AD72%andCB64%coverAB100%; overlap36%, actualAC36/DB28, difference8/sum136/righttail28traps.",
+      "adaptationChanges": [
+        "Барлық13сақталған5сынып6.1визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;13бастапқырастр3парақтақаралды. Бұрынтексерілгенgeometry-light-grid-percentөзгермейді;қалған12-геадрестікжаңапараметр/өзnativeSVGжасалды, rawөзгермейді.",
+        "Теңсекторлардыңауданы/ақтолықтауыш/20және40торды100-геайналдыру/бір100тордағытолықжол+қалдық/екі100торнеекідөңгелекүшінбірбүтіннегізі/ішкікесіндіұзындығы/қабаттасудоғалары/екіүшбұрыш+орташаршыауданы/сарыныкөкпенсалыстыру/төртбұрыштықақүшбұрыштыалу сақталды. Пайыздыңнегізі,секторларсаны,нүктеаралықсаны,көрсетілгенсұралғантүсі анық.",
+        "Жаңаnativecell/sector/arc/tick/polygonгеометрия, tracedpath/rasterкопияжоқ. Әртеңбөлікнақтыкөрінеді;жоғары100%бірбүтінгесалыстырылды,екісуреттіортақбүтінетуге болмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөліктерді пайызбен салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved+12new/fullofficial/newsolutions/everyMCQ plus3source/2native343sheets. Actualeverycellcolor+equal-sectorangle/arcendpoints, ONEwholevsTWOpictures, whitecomplementandBLUEdenominator, 26ticks25intervals, all3nativepolygonareas and5×5fourcorner2×3righttriangles. PriorverifiedretainedrowNOTresigned. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave72-overlap-seventy-two-sixty-four.svg",
+      "verificationModule": "scripts/editorial/visual-wave72-models.mjs",
+      "options": [
+        "8%",
+        "28%",
+        "136%",
+        "36%"
+      ],
+      "statement": "A, C, D, B нүктелері осы ретпен бір кесіндіде жатыр. Жоғарғы доға AD-ны, төменгі доға CB-ны көрсетеді; жазылған пайыздар AB ұзындығымен салыстырылған. CD ұзындығы AB-ның неше пайызын құрайды?",
+      "solution": "AD = 72%, CB = 64%; олар бүкіл AB = 100%-ды жабады, CD ортағы екеуінде де бар. Сондықтан CD = 72% + 64% − 100% = 36%. Тексеру: AC = 100% − 64% = 36%, DB = 100% − 72% = 28%; 36% + 36% + 28% = 100%. 136% бүтін 100%-ды алып тастамайды, 8% екі доғаны жай азайтады, 28% тек DB қалдығын береді.",
+      "figureDescription": "AB — 100%; A, C, D, B осы ретпен орналасқан. Жоғарғы доға A-дан D-ға дейін: 72%. Төменгі доға C-ден B-ға дейін: 64%.",
+      "figureSha256": "e3f1970303e1db05b17357314e6e4fd48b85a350dd27b9ccf7f39ae49b7305ec",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "36%",
+        "checks": {
+          "ad": 72,
+          "cb": 64,
+          "ac": 36,
+          "db": 28,
+          "cd": 36,
+          "wrongSum": 136,
+          "wrongDifference": 8,
+          "percent": "36"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave72-three-disjoint-grid-shapes",
+      "modelId": "visual-wave72-composite-two-triangles-square-area-percent",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "hard",
+      "params": {
+        "scene": "composite",
+        "cols": 12,
+        "rows": 5,
+        "polygons": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              5
+            ]
+          ],
+          [
+            [
+              6,
+              1
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              9,
+              4
+            ],
+            [
+              6,
+              4
+            ]
+          ],
+          [
+            [
+              12,
+              0
+            ],
+            [
+              12,
+              5
+            ],
+            [
+              10,
+              5
+            ]
+          ]
+        ]
+      },
+      "answer": "40",
+      "sourceRefs": [
+        {
+          "sourceId": "668ed74cb436f7ef",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-1-level3.json#10",
+      "sourceCanonicalSha256": "1bb81f5040ccb65c26a15c46588d279e80795b1eaa7a57aed9ac9f7b023244d0",
+      "sourceSkill": "Nativewhole12×5=60, left4×5/2=10,middleSQUARE3²=9,right2×5/2=5, disjoint24/60=40%.",
+      "adaptationChanges": [
+        "Барлық13сақталған5сынып6.1визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;13бастапқырастр3парақтақаралды. Бұрынтексерілгенgeometry-light-grid-percentөзгермейді;қалған12-геадрестікжаңапараметр/өзnativeSVGжасалды, rawөзгермейді.",
+        "Теңсекторлардыңауданы/ақтолықтауыш/20және40торды100-геайналдыру/бір100тордағытолықжол+қалдық/екі100торнеекідөңгелекүшінбірбүтіннегізі/ішкікесіндіұзындығы/қабаттасудоғалары/екіүшбұрыш+орташаршыауданы/сарыныкөкпенсалыстыру/төртбұрыштықақүшбұрыштыалу сақталды. Пайыздыңнегізі,секторларсаны,нүктеаралықсаны,көрсетілгенсұралғантүсі анық.",
+        "Жаңаnativecell/sector/arc/tick/polygonгеометрия, tracedpath/rasterкопияжоқ. Әртеңбөлікнақтыкөрінеді;жоғары100%бірбүтінгесалыстырылды,екісуреттіортақбүтінетуге болмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөліктерді пайызбен салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved+12new/fullofficial/newsolutions/everyMCQ plus3source/2native343sheets. Actualeverycellcolor+equal-sectorangle/arcendpoints, ONEwholevsTWOpictures, whitecomplementandBLUEdenominator, 26ticks25intervals, all3nativepolygonareas and5×5fourcorner2×3righttriangles. PriorverifiedretainedrowNOTresigned. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave72-three-disjoint-grid-shapes.svg",
+      "verificationModule": "scripts/editorial/visual-wave72-models.mjs",
+      "statement": "Бүкіл тіктөртбұрыш бірдей шаршы торкөздерге бөлінген. Көк екі тікбұрышты үшбұрыш пен ортадағы көк ШАРШЫ бір-бірімен қабаттаспайды; төбелері тор түйіндерінде. Барлық көк аудан бүкіл тіктөртбұрыш ауданының неше пайызы? Жауапқа тек санды жазыңыз.",
+      "solution": "Тіктөртбұрыштың ауданы 12 × 5 = 60 торкөз. Сол үшбұрыштың катеттері 4 пен 5: ауданы 4 × 5 ÷ 2 = 10. Ортадағы шаршы 3 × 3 = 9. Оң үшбұрыштың катеттері 2 мен 5: ауданы 2 × 5 ÷ 2 = 5. Фигуралар қабаттаспайды, сондықтан көк аудан 10 + 9 + 5 = 24. Қатынас (24/60) = (2/5) = (40/100), яғни 40%. Тексеру: ақ аудан 60 − 24 = 36, ол 60%; бірге 100%.",
+      "figureDescription": "12×5 шаршы тор. Үстіңгі сол бұрышты бастапқы нүкте деп, оңға және төмен санағанда, сол көк үшбұрыштың төбелері (0; 0), (4; 5), (0; 5); ортадағы шаршының төбелері (6; 1), (9; 1), (9; 4), (6; 4); оң үшбұрыштың төбелері (12; 0), (12; 5), (10; 5).",
+      "figureSha256": "6a493742def786b5b088f4240e736d70249e0a5c7cb55330ab24ce1d9302b99f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "40",
+        "checks": {
+          "rows": 5,
+          "cols": 12,
+          "total": 60,
+          "areas": [
+            10,
+            9,
+            5
+          ],
+          "shaded": 24,
+          "reduced": [
+            2,
+            5
+          ],
+          "percent": "40"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave72-eleven-of-twenty-unpainted",
+      "modelId": "visual-wave72-equal-sector-unpainted-complement-percent",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "hard",
+      "params": {
+        "scene": "circle",
+        "sectors": 20,
+        "blue": [
+          0,
+          1,
+          3,
+          4,
+          6,
+          9,
+          12,
+          16,
+          18
+        ]
+      },
+      "answer": "55",
+      "sourceRefs": [
+        {
+          "sourceId": "453dd678896f55e4",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-1-leveltest.json#1",
+      "sourceCanonicalSha256": "98570a4c1266b1004a09ea2f8ff2d2d4d38377942cfe615f0710e118cd529200",
+      "sourceSkill": "20equalactualsectors9blue/11white, requestedUNPAINTED11/20=55%, complement45+55=100.",
+      "adaptationChanges": [
+        "Барлық13сақталған5сынып6.1визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;13бастапқырастр3парақтақаралды. Бұрынтексерілгенgeometry-light-grid-percentөзгермейді;қалған12-геадрестікжаңапараметр/өзnativeSVGжасалды, rawөзгермейді.",
+        "Теңсекторлардыңауданы/ақтолықтауыш/20және40торды100-геайналдыру/бір100тордағытолықжол+қалдық/екі100торнеекідөңгелекүшінбірбүтіннегізі/ішкікесіндіұзындығы/қабаттасудоғалары/екіүшбұрыш+орташаршыауданы/сарыныкөкпенсалыстыру/төртбұрыштықақүшбұрыштыалу сақталды. Пайыздыңнегізі,секторларсаны,нүктеаралықсаны,көрсетілгенсұралғантүсі анық.",
+        "Жаңаnativecell/sector/arc/tick/polygonгеометрия, tracedpath/rasterкопияжоқ. Әртеңбөлікнақтыкөрінеді;жоғары100%бірбүтінгесалыстырылды,екісуреттіортақбүтінетуге болмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөліктерді пайызбен салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved+12new/fullofficial/newsolutions/everyMCQ plus3source/2native343sheets. Actualeverycellcolor+equal-sectorangle/arcendpoints, ONEwholevsTWOpictures, whitecomplementandBLUEdenominator, 26ticks25intervals, all3nativepolygonareas and5×5fourcorner2×3righttriangles. PriorverifiedretainedrowNOTresigned. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave72-eleven-of-twenty-unpainted.svg",
+      "verificationModule": "scripts/editorial/visual-wave72-models.mjs",
+      "statement": "Дөңгелек тең секторларға бөлінген. БОЯЛМАҒАН ақ бөліктің ауданы бүкіл дөңгелек ауданының неше пайызын құрайды? Жауапқа тек санды жазыңыз.",
+      "solution": "Барлығы 20 тең сектор, көгі 9. Ақ секторлар 20 − 9 = 11. Ақ аудан (11/20) = (55/100), сондықтан 55%. Көк аудан (9/20) = 45%; 45% + 55% = 100%. Сұрақ көк емес, боялмаған бөлікті сұрайды.",
+      "figureDescription": "Бүкіл дөңгелек — 100%. Ол 20 тең секторға бөлінген. Жоғарғы сәуледен сағат тілімен 0-ден бастап санағанда, көк секторлардың орындары: 0; 1; 3; 4; 6; 9; 12; 16; 18. Қалған секторлар ақ.",
+      "figureSha256": "996a83f008d076186d56746418ba1508db39b448980ee7a59a328f1211d1788a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "55",
+        "checks": {
+          "total": 20,
+          "shaded": 9,
+          "unpainted": 11,
+          "reduced": [
+            11,
+            20
+          ],
+          "percent": "55"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave72-yellow-relative-to-blue",
+      "modelId": "visual-wave72-yellow-count-percent-of-blue-not-total-grid",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "hard",
+      "params": {
+        "scene": "grid",
+        "rows": 10,
+        "cols": 10,
+        "blue": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "yellow": [
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73
+        ]
+      },
+      "answer": "75%",
+      "sourceRefs": [
+        {
+          "sourceId": "12e3b5b20f54af00",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-1-leveltest.json#5",
+      "sourceCanonicalSha256": "cbf920b20f0017daae526cdc4095e8e578a78d615cf680120132e6fa85d09b2e",
+      "sourceSkill": "RequestedbaseBLUE32NOTwhole100; yellow24/32=3/4=75%, whole24/allcolored56/difference8traps.",
+      "adaptationChanges": [
+        "Барлық13сақталған5сынып6.1визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;13бастапқырастр3парақтақаралды. Бұрынтексерілгенgeometry-light-grid-percentөзгермейді;қалған12-геадрестікжаңапараметр/өзnativeSVGжасалды, rawөзгермейді.",
+        "Теңсекторлардыңауданы/ақтолықтауыш/20және40торды100-геайналдыру/бір100тордағытолықжол+қалдық/екі100торнеекідөңгелекүшінбірбүтіннегізі/ішкікесіндіұзындығы/қабаттасудоғалары/екіүшбұрыш+орташаршыауданы/сарыныкөкпенсалыстыру/төртбұрыштықақүшбұрыштыалу сақталды. Пайыздыңнегізі,секторларсаны,нүктеаралықсаны,көрсетілгенсұралғантүсі анық.",
+        "Жаңаnativecell/sector/arc/tick/polygonгеометрия, tracedpath/rasterкопияжоқ. Әртеңбөлікнақтыкөрінеді;жоғары100%бірбүтінгесалыстырылды,екісуреттіортақбүтінетуге болмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөліктерді пайызбен салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved+12new/fullofficial/newsolutions/everyMCQ plus3source/2native343sheets. Actualeverycellcolor+equal-sectorangle/arcendpoints, ONEwholevsTWOpictures, whitecomplementandBLUEdenominator, 26ticks25intervals, all3nativepolygonareas and5×5fourcorner2×3righttriangles. PriorverifiedretainedrowNOTresigned. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave72-yellow-relative-to-blue.svg",
+      "verificationModule": "scripts/editorial/visual-wave72-models.mjs",
+      "options": [
+        "24%",
+        "75%",
+        "56%",
+        "8%"
+      ],
+      "statement": "Шаршы 100 тең торкөзге бөлінген. САРЫ торкөздер саны КӨК торкөздер санының неше пайызын құрайды? Бұл жолы салыстыру негізі — бүкіл шаршы емес, көк торкөздер саны.",
+      "solution": "Көк торкөздер: үш толық жол 30 және тағы 2, барлығы 32. Сары торкөздер: екі толық жол 20 және тағы 4, барлығы 24. Сарыны КӨКПЕН салыстырамыз: (24/32) = (3/4) = (75/100) = 75%. 24% сарыны бүкіл 100 торкөзбен салыстырады, 56% барлық боялғандарды санайды, 8% екі санның айырмасын алады. Негіз 32 көк торкөз болуы керек.",
+      "figureDescription": "10 жол, 10 баған бірдей торкөз бар. Жолдар жоғарыдан төмен, бағандар солдан оңға саналады. 1-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 2-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 3-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 4-жолдағы көк бағандар: 1; 2. 6-жолдағы сары бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 7-жолдағы сары бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 8-жолдағы сары бағандар: 1; 2; 3; 4. Қалған торкөздер ақ.",
+      "figureSha256": "b9e578927bfe3b42baf11ec4fc928134d6671b758489945a28fc01e2ef65629a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "75%",
+        "checks": {
+          "oneWhole": 100,
+          "yellow": 24,
+          "blue": 32,
+          "allColored": 56,
+          "reduced": [
+            3,
+            4
+          ],
+          "wrongWhole": 24,
+          "wrongAllColored": 56,
+          "wrongDifference": 8,
+          "percent": "75"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave72-five-grid-corner-triangles",
+      "modelId": "visual-wave72-tilted-grid-square-area-percent-by-four-corners",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "hard",
+      "params": {
+        "scene": "corner",
+        "side": 5,
+        "vertices": [
+          [
+            2,
+            0
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      },
+      "answer": "52%",
+      "sourceRefs": [
+        {
+          "sourceId": "2a82425a37f80864",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-1-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-1-leveltest.json#9",
+      "sourceCanonicalSha256": "a554e24c73aa8ddd777066eb64f9090d607635051c86033a776f7e0a4d5647f5",
+      "sourceSkill": "Whole5²=25, fourcornerRIGHTtriangles legs2/3area3each, shade25−12=13→52%;50half/60threefifths/48complement.",
+      "adaptationChanges": [
+        "Барлық13сақталған5сынып6.1визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;13бастапқырастр3парақтақаралды. Бұрынтексерілгенgeometry-light-grid-percentөзгермейді;қалған12-геадрестікжаңапараметр/өзnativeSVGжасалды, rawөзгермейді.",
+        "Теңсекторлардыңауданы/ақтолықтауыш/20және40торды100-геайналдыру/бір100тордағытолықжол+қалдық/екі100торнеекідөңгелекүшінбірбүтіннегізі/ішкікесіндіұзындығы/қабаттасудоғалары/екіүшбұрыш+орташаршыауданы/сарыныкөкпенсалыстыру/төртбұрыштықақүшбұрыштыалу сақталды. Пайыздыңнегізі,секторларсаны,нүктеаралықсаны,көрсетілгенсұралғантүсі анық.",
+        "Жаңаnativecell/sector/arc/tick/polygonгеометрия, tracedpath/rasterкопияжоқ. Әртеңбөлікнақтыкөрінеді;жоғары100%бірбүтінгесалыстырылды,екісуреттіортақбүтінетуге болмайды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөліктерді пайызбен салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved+12new/fullofficial/newsolutions/everyMCQ plus3source/2native343sheets. Actualeverycellcolor+equal-sectorangle/arcendpoints, ONEwholevsTWOpictures, whitecomplementandBLUEdenominator, 26ticks25intervals, all3nativepolygonareas and5×5fourcorner2×3righttriangles. PriorverifiedretainedrowNOTresigned. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave72-five-grid-corner-triangles.svg",
+      "verificationModule": "scripts/editorial/visual-wave72-models.mjs",
+      "options": [
+        "50%",
+        "60%",
+        "52%",
+        "48%"
+      ],
+      "statement": "Үлкен шаршы бірдей шаршы торкөздерге бөлінген. Көк төртбұрыштың төбелері тор түйіндерінде жатыр. Оның ауданы үлкен шаршы ауданының неше пайызын құрайды? Қаласаңыз, бұрыштардағы ақ үшбұрыштарды алып тастаңыз.",
+      "solution": "Үлкен шаршы 5 × 5 = 25 торкөз. Бұрыштардағы төрт ақ тікбұрышты үшбұрыштың әрқайсысында катеттері 2 және 3: ауданы 2 × 3 ÷ 2 = 3. Ақ аудан 4 × 3 = 12. Көк аудан 25 − 12 = 13. Қатынас (13/25) = (52/100), яғни 52%. 48% — ақ бөліктің пайызы, 50% — дәлелсіз жартыға теңеу, 60% ауданды емес бір өлшемді қатынасты қолдану. Тексеру: 52% + 48% = 100%.",
+      "figureDescription": "Үлкен шаршыда 5×5 торкөз бар. Үстіңгі сол бұрыштан оңға және төмен саналған көк төртбұрыш төбелері: (2; 0), (5; 2), (3; 5), (0; 3). Бұрыштардағы қалған бөліктер ақ.",
+      "figureSha256": "ec65c6902fc5f9119944a419233526f7c7ed15d3f5b834cac4a70132756cf4b5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "52%",
+        "checks": {
+          "outerSide": 5,
+          "total": 25,
+          "shaded": 13,
+          "cornersTotal": 12,
+          "perCorner": 3,
+          "reduced": [
+            13,
+            25
+          ],
+          "percent": "52"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,593 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All9 saved visual grade6topics10.3–10.5 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade6topics10.3–10.5",
+    "sourceVisualOccurrences": 9,
+    "addressedNewDrafts": 9,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "29dfec033ad4355e",
+      "3b9d0bbda8709407",
+      "3c117213ee1c804b",
+      "3f58c783f47b5258",
+      "4bae36b0b93adb65",
+      "5c8449d180694463",
+      "b732af8095594f01",
+      "caa7d1d2f917ea6e",
+      "d88d635ce396f0ec"
+    ],
+    "distinctModels": 9,
+    "semantics": "9 source-addressed system targets preserve graph intersection membership/count/coordinate queries, strip substitution, two-balance substitution, coefficient cancellation and purchase subtraction."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave19-common-point-of-two-lines",
+      "modelId": "visual-wave19-intersection-point-label",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "equations": [
+          "x + y = 1",
+          "2x - y = -7"
+        ],
+        "points": [
+          {
+            "label": "A",
+            "xy": [
+              1,
+              0
+            ],
+            "labelDy": 25
+          },
+          {
+            "label": "B",
+            "xy": [
+              -1,
+              5
+            ],
+            "labelDx": -18
+          },
+          {
+            "label": "C",
+            "xy": [
+              3,
+              -4
+            ]
+          },
+          {
+            "label": "D",
+            "xy": [
+              -2,
+              3
+            ],
+            "labelDx": -18
+          }
+        ]
+      },
+      "answer": "D",
+      "sourceRefs": [
+        {
+          "sourceId": "3f58c783f47b5258",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-3-level1.json#1",
+      "sourceCanonicalSha256": "fdca7cc52d872645ad341d5a15c6fef597d8b5e001394b6fc1c36683cd7a5522",
+      "sourceSkill": "Finding the sole labelled point belonging to both system graphs, rejecting a point on one graph alone",
+      "adaptationChanges": [
+        "Дереккөздегі нақты жүйе дағдысы сақталды: графиктердің ортақ нүктесі/шешім саны, алмастыру моделі немесе теңдеулерді қосу/азайту.",
+        "Координаталар, сандар, масса/баға, таңбалар мен нұсқалар дербес жаңадан таңдалды; жүйе шешімі бөлек есептелді.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеулер жүйесі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, determinant/rank classification, actual printed equation sums/options, shape counts, signed intersection and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave19-common-point-of-two-lines.svg",
+      "verificationModule": "scripts/editorial/visual-wave19-models.mjs",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "statement": "m және n түзулері жүйедегі екі теңдеудің графиктері. Белгіленген қай нүкте жүйенің шешіміне сәйкес келеді?",
+      "solution": "Жүйенің шешімі екі графикке де тиесілі болуы керек. D(-2; 3) нүктесі m және n түзулерінің қиылысуында жатыр. Бір ғана түзуге тиесілі нүкте екі теңдеуді бірдей қанағаттандырмайды.",
+      "figureDescription": "Бірлік тордағы екі түзу: m: x + y = 1; n: 2x - y = -7. A(1; 0); B(-1; 5); C(3; -4); D(-2; 3)",
+      "figureSha256": "3f031f309b3f15442124612e8b516c91efd84ddfb23147dd6b765893a8e66eb8",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "D",
+        "checks": {
+          "intersection": [
+            -2,
+            3
+          ],
+          "pointMembership": [
+            {
+              "label": "A",
+              "fits": [
+                true,
+                false
+              ]
+            },
+            {
+              "label": "B",
+              "fits": [
+                false,
+                true
+              ]
+            },
+            {
+              "label": "C",
+              "fits": [
+                false,
+                false
+              ]
+            },
+            {
+              "label": "D",
+              "fits": [
+                true,
+                true
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave19-parallel-lines-zero-solutions",
+      "modelId": "visual-wave19-parallel-solution-count",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "equations": [
+          "2x - y = 4",
+          "4x - 2y = -6"
+        ]
+      },
+      "answer": "0",
+      "sourceRefs": [
+        {
+          "sourceId": "4bae36b0b93adb65",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-3-level1.json#3",
+      "sourceCanonicalSha256": "ce744d4dd720eb3801f462f5a556184aa13adafea22427775249a0e38d469ef8",
+      "sourceSkill": "Distinguishing two distinct parallel system graphs from one intersection or coincident lines",
+      "adaptationChanges": [
+        "Дереккөздегі нақты жүйе дағдысы сақталды: графиктердің ортақ нүктесі/шешім саны, алмастыру моделі немесе теңдеулерді қосу/азайту.",
+        "Координаталар, сандар, масса/баға, таңбалар мен нұсқалар дербес жаңадан таңдалды; жүйе шешімі бөлек есептелді.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеулер жүйесі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, determinant/rank classification, actual printed equation sums/options, shape counts, signed intersection and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave19-parallel-lines-zero-solutions.svg",
+      "verificationModule": "scripts/editorial/visual-wave19-models.mjs",
+      "statement": "Суреттегі m және n түзулері екі сызықтық теңдеудің графиктері. Жүйенің неше шешімі бар? Жауапқа тек санды жазыңыз.",
+      "solution": "m және n — әртүрлі параллель түзулер. Олардың ортақ нүктесі жоқ, сондықтан жүйенің шешімдерінің саны 0. Екі түзу болуы екі шешім бар дегенді білдірмейді.",
+      "figureDescription": "Бірлік тордағы екі түзу: m: 2x - y = 4; n: 4x - 2y = -6. ",
+      "figureSha256": "94c45151611f82617ee1c055cb4203705532e63f4922ba31ded63f3b08d9b8af",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0",
+        "checks": {
+          "classification": "none"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave19-intersection-signed-coordinate-sum",
+      "modelId": "visual-wave19-intersection-coordinate-sum",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "equations": [
+          "x + y = 2",
+          "2x - y = -8"
+        ]
+      },
+      "answer": "2",
+      "sourceRefs": [
+        {
+          "sourceId": "5c8449d180694463",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-3-level1.json#5",
+      "sourceCanonicalSha256": "28ecdb11b638b746dfcfac2a152040767f4d129c070dd7e5888624342bc9bfe6",
+      "sourceSkill": "Reading a negative-x positive-y intersection and summing the signed coordinates rather than returning the pair",
+      "adaptationChanges": [
+        "Дереккөздегі нақты жүйе дағдысы сақталды: графиктердің ортақ нүктесі/шешім саны, алмастыру моделі немесе теңдеулерді қосу/азайту.",
+        "Координаталар, сандар, масса/баға, таңбалар мен нұсқалар дербес жаңадан таңдалды; жүйе шешімі бөлек есептелді.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеулер жүйесі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, determinant/rank classification, actual printed equation sums/options, shape counts, signed intersection and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave19-intersection-signed-coordinate-sum.svg",
+      "verificationModule": "scripts/editorial/visual-wave19-models.mjs",
+      "statement": "Екі түзудің қиылысу нүктесі (x; y) болсын. x + y қосындысын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Қиылысу нүктесі (-2; 4). Сондықтан x + y = (-2) + (4) = 2. Координаталардың таңбалары сақталады.",
+      "figureDescription": "Бірлік тордағы екі түзу: m: x + y = 2; n: 2x - y = -8. ",
+      "figureSha256": "757a278768223c08bfe288b5da0df94c9b7894cf4a98a39d991a2b96107e1acd",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2",
+        "checks": {
+          "intersection": [
+            -2,
+            4
+          ],
+          "det": -3
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave19-intersection-negative-ordinate",
+      "modelId": "visual-wave19-intersection-ordinate",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "equations": [
+          "x + y = 1",
+          "2x + y = 4"
+        ]
+      },
+      "answer": "-2",
+      "sourceRefs": [
+        {
+          "sourceId": "b732af8095594f01",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-3-level1.json#6",
+      "sourceCanonicalSha256": "df0daea1d1ebcabb6a472e2f9fd9142873340a9939795d883e52fbcaab6e4761",
+      "sourceSkill": "Extracting specifically y from the intersection, preserving its negative sign and ordered-pair position",
+      "adaptationChanges": [
+        "Дереккөздегі нақты жүйе дағдысы сақталды: графиктердің ортақ нүктесі/шешім саны, алмастыру моделі немесе теңдеулерді қосу/азайту.",
+        "Координаталар, сандар, масса/баға, таңбалар мен нұсқалар дербес жаңадан таңдалды; жүйе шешімі бөлек есептелді.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеулер жүйесі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, determinant/rank classification, actual printed equation sums/options, shape counts, signed intersection and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave19-intersection-negative-ordinate.svg",
+      "verificationModule": "scripts/editorial/visual-wave19-models.mjs",
+      "statement": "Екі түзудің қиылысу нүктесі жүйенің шешімін береді. Осы шешімнің y координатасын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Түзулер (3; -2) нүктесінде қиылысады. Жұпта бірінші x, екінші y жазылады; сұралған ордината y = -2.",
+      "figureDescription": "Бірлік тордағы екі түзу: m: x + y = 1; n: 2x + y = 4. ",
+      "figureSha256": "43f9523065a6eedd79e7ee8457830e7327ca18f6aa7289c3c25bd2d7e6eec1a7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-2",
+        "checks": {
+          "intersection": [
+            3,
+            -2
+          ],
+          "det": -1
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave19-signed-pair-from-intersection",
+      "modelId": "visual-wave19-signed-system-pair",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "equations": [
+          "x + y = -1",
+          "2x - y = -8"
+        ]
+      },
+      "answer": "(-3; 2)",
+      "sourceRefs": [
+        {
+          "sourceId": "caa7d1d2f917ea6e",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-3-level1.json#14",
+      "sourceCanonicalSha256": "387ac7ee02e6a720fd18a3ceee12c888c097ad4c3cc4ac600d2a40159c1e28dd",
+      "sourceSkill": "Selecting the correct signed ordered intersection pair instead of swapping coordinates or dropping signs",
+      "adaptationChanges": [
+        "Дереккөздегі нақты жүйе дағдысы сақталды: графиктердің ортақ нүктесі/шешім саны, алмастыру моделі немесе теңдеулерді қосу/азайту.",
+        "Координаталар, сандар, масса/баға, таңбалар мен нұсқалар дербес жаңадан таңдалды; жүйе шешімі бөлек есептелді.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеулер жүйесі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, determinant/rank classification, actual printed equation sums/options, shape counts, signed intersection and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave19-signed-pair-from-intersection.svg",
+      "verificationModule": "scripts/editorial/visual-wave19-models.mjs",
+      "options": [
+        "(2; -3)",
+        "(3; 2)",
+        "(-3; 2)",
+        "(-3; -2)"
+      ],
+      "statement": "Суреттегі екі түзудің қиылысу нүктесінің координаталарын (x; y) ретімен таңдаңыз.",
+      "solution": "Ортақ нүктенің абсциссасы -3, ординатасы 2. Демек, шешім (-3; 2). Координаталарды алмастыруға не таңбаны түсіріп қалдыруға болмайды.",
+      "figureDescription": "Бірлік тордағы екі түзу: m: x + y = -1; n: 2x - y = -8. ",
+      "figureSha256": "585b26e3e189e7b3d0a3b87768e59b9c529c71c64f0c9bfb9e161dcf7fe91dc7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(-3; 2)",
+        "checks": {
+          "intersection": [
+            -3,
+            2
+          ],
+          "det": -3
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave19-bar-model-substitution",
+      "modelId": "visual-wave19-bar-sum-difference",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "bars",
+        "sum": 58,
+        "difference": 12
+      },
+      "answer": "35",
+      "sourceRefs": [
+        {
+          "sourceId": "29dfec033ad4355e",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-4-level1.json#6",
+      "sourceCanonicalSha256": "2596bf03cf68976047aeef4fbadb85d494dba5f01480c3bae4843e67871078f4",
+      "sourceSkill": "Translating sum-and-difference strip lengths into two equations and solving by substitution",
+      "adaptationChanges": [
+        "Дереккөздегі нақты жүйе дағдысы сақталды: графиктердің ортақ нүктесі/шешім саны, алмастыру моделі немесе теңдеулерді қосу/азайту.",
+        "Координаталар, сандар, масса/баға, таңбалар мен нұсқалар дербес жаңадан таңдалды; жүйе шешімі бөлек есептелді.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеулер жүйесі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, determinant/rank classification, actual printed equation sums/options, shape counts, signed intersection and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave19-bar-model-substitution.svg",
+      "verificationModule": "scripts/editorial/visual-wave19-models.mjs",
+      "statement": "Жолақтар Әлидің x және Нұрдың y жапсырма санын көрсетеді. Оң жақтағы жақша жалпы санын, ал боялған бөлік айырмасын білдіреді. Әлиде неше жапсырма бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Суреттен x = y + 12 және x + y = 58. Орнына қоямыз: (y + 12) + y = 58. Сонда 2y = 46, y = 23. Әлиде x = 23 + 12 = 35 жапсырма. Тексеру: 35 + 23 = 58.",
+      "figureDescription": "Жоғарғы x жолағы төменгі y жолағынан 12 бірлікке ұзын; екеуінің қосындысы 58.",
+      "figureSha256": "800a8480cc5b1b1745563f64787c765ac3f4d8d447f9bb8cb63df709d23c8fac",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "35",
+        "checks": {
+          "x": 35,
+          "y": 23,
+          "sum": 58,
+          "difference": 12
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave19-two-balanced-scales-substitution",
+      "modelId": "visual-wave19-two-scale-substitution",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "scales",
+        "sum": 18,
+        "difference": 6
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "d88d635ce396f0ec",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-4-level1.json#11",
+      "sourceCanonicalSha256": "c08b58755fc9d7410be0a8300451c25e2d7c9b985048c7bd88a8417dce6a5cdc",
+      "sourceSkill": "Reading two simultaneous balances where cube equals sphere plus a mass and substituting into the combined mass",
+      "adaptationChanges": [
+        "Дереккөздегі нақты жүйе дағдысы сақталды: графиктердің ортақ нүктесі/шешім саны, алмастыру моделі немесе теңдеулерді қосу/азайту.",
+        "Координаталар, сандар, масса/баға, таңбалар мен нұсқалар дербес жаңадан таңдалды; жүйе шешімі бөлек есептелді.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеулер жүйесі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, determinant/rank classification, actual printed equation sums/options, shape counts, signed intersection and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave19-two-balanced-scales-substitution.svg",
+      "verificationModule": "scripts/editorial/visual-wave19-models.mjs",
+      "statement": "Екі таразы да тепе-теңдікте. Әр көк текшенің массасы x кг, әр күлгін шардың массасы y кг. Кір тастардың массалары килограммен берілген. Бір текше неше килограмм? Жауапқа тек санды жазыңыз.",
+      "solution": "Бірінші таразыдан x + y = 18, екіншісінен x = y + 6. Алмастырамыз: (y + 6) + y = 18. Осыдан y = 6, x = 12 кг. Тексеру: 12 + 6 = 18 және 12 = 6 + 6.",
+      "figureDescription": "1-таразы: текше мен шар 18 кг-мен теңеседі. 2-таразы: текше шар мен 6 кг-мен теңеседі.",
+      "figureSha256": "37b23a54ee5d830b3e191d7c04e177b79b84ff57b79a22bb9cd2ed34537599b6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "cube": 12,
+          "sphere": 6
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave19-add-opposite-y-coefficients",
+      "modelId": "visual-wave19-addition-eliminates-variable",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "addition",
+        "equations": [
+          "4x + 3y = 22",
+          "5x - 3y = 14"
+        ]
+      },
+      "answer": "9x = 36",
+      "sourceRefs": [
+        {
+          "sourceId": "3c117213ee1c804b",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-5-level1.json#7",
+      "sourceCanonicalSha256": "4d8e1e78e24d7d8b48be8814022c5382bcedcfa308a603cbe619fd1169e00c58",
+      "sourceSkill": "Adding actual equation sides so opposite y coefficients cancel; distinguishing addition from subtraction and sign loss",
+      "adaptationChanges": [
+        "Дереккөздегі нақты жүйе дағдысы сақталды: графиктердің ортақ нүктесі/шешім саны, алмастыру моделі немесе теңдеулерді қосу/азайту.",
+        "Координаталар, сандар, масса/баға, таңбалар мен нұсқалар дербес жаңадан таңдалды; жүйе шешімі бөлек есептелді.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеулер жүйесі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, determinant/rank classification, actual printed equation sums/options, shape counts, signed intersection and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave19-add-opposite-y-coefficients.svg",
+      "verificationModule": "scripts/editorial/visual-wave19-models.mjs",
+      "options": [
+        "9x = 36",
+        "9x = 8",
+        "-x = 8",
+        "9x + 6y = 36"
+      ],
+      "statement": "Теңдеулер мүшелеп қосылады. Сызықтың астындағы бос орынға қай теңдеу жазылуы тиіс? Нәтижені ықшамдаңыз, бірақ екі жағын санға бөлмеңіз.",
+      "solution": "x коэффициенттері 4 + 5 = 9. y коэффициенттері 3 + (-3) = 0, сондықтан y мүшелері жойылады. Оң жақтар 22 + 14 = 36. Қосу нәтижесі: 9x = 36.",
+      "figureDescription": "Қосу белгісімен бірінің астына бірі жазылған теңдеулер: 4x + 3y = 22; 5x - 3y = 14. Қосу сызығының астында сұрақ белгісі.",
+      "figureSha256": "e4bebe822ece7b96ae9ce9173040c369e3aac3ccdda1d1a281b40fba90443243",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9x = 36",
+        "checks": {
+          "coefficientSums": {
+            "a": 9,
+            "b": 0,
+            "c": 36
+          },
+          "originalSolution": {
+            "type": "one",
+            "point": [
+              4,
+              2
+            ],
+            "det": -27
+          }
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave19-subtract-purchase-pictures",
+      "modelId": "visual-wave19-purchase-elimination",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "purchases",
+        "rows": [
+          {
+            "circles": 2,
+            "squares": 3,
+            "total": 930
+          },
+          {
+            "circles": 2,
+            "squares": 1,
+            "total": 490
+          }
+        ]
+      },
+      "answer": "220",
+      "sourceRefs": [
+        {
+          "sourceId": "3b9d0bbda8709407",
+          "sourceFile": "problems/sources/zerek/courses/6-math-10-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-10-5-level1.json#11",
+      "sourceCanonicalSha256": "e292f241d6db2bfa59bbcce50d60507813abc998eba8136f9b7ef89b12cb948d",
+      "sourceSkill": "Subtracting two shape-coded purchase totals with equal notebook counts to isolate the price of two pens",
+      "adaptationChanges": [
+        "Дереккөздегі нақты жүйе дағдысы сақталды: графиктердің ортақ нүктесі/шешім саны, алмастыру моделі немесе теңдеулерді қосу/азайту.",
+        "Координаталар, сандар, масса/баға, таңбалар мен нұсқалар дербес жаңадан таңдалды; жүйе шешімі бөлек есептелді.",
+        "Native SVG жаңа координаталар мен жүк сандарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Теңдеулер жүйесі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target review, determinant/rank classification, actual printed equation sums/options, shape counts, signed intersection and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave19-subtract-purchase-pictures.svg",
+      "verificationModule": "scripts/editorial/visual-wave19-models.mjs",
+      "statement": "Көк дөңгелек бір дәптердің, сары шаршы бір қаламның бағасын білдіреді. Екі сатып алудың жалпы бағасы теңгемен берілген. Бір қалам неше теңге? Жауапқа тек санды жазыңыз.",
+      "solution": "Екі сатып алуда дәптер саны бірдей. Бірінші бағадан екіншісін азайтқанда дәптерлер жойылып, 2 қалам қалады. Олардың бағасы 930 − 490 = 440 теңге. Бір қалам 440 : 2 = 220 теңге. Тексеру үшін бір дәптер 135 теңге.",
+      "figureDescription": "1-жол: 2 көк дөңгелек пен 3 сары шаршының бағасы 930 теңге; 2-жол: 2 көк дөңгелек пен 1 сары шаршының бағасы 490 теңге.",
+      "figureSha256": "8c8530933f7eaca1a3b28b67e6e14acc02f07a56d002ee38bab70835687dee9f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "220",
+        "checks": {
+          "pen": 220,
+          "notebook": 135,
+          "subtractedTotals": 440,
+          "remainingPens": 2
+        }
+      }
+    }
+  ]
+}

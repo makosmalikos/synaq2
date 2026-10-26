@@ -1,0 +1,1336 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All14savedvisualgrade5topic5.3; archived sources only, no capture/download/traces; all14source rasters available.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5 topic5.3 sources",
+    "sourceVisualOccurrences": 14,
+    "addressedNewDrafts": 14,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "unavailableSourceRasters": [],
+    "exactNewSourceIds": [
+      "011e6f52dd8138f2",
+      "18d62e44fed4ae05",
+      "2daa2da205eb7a76",
+      "3b6763e8c8c7e5a8",
+      "533e0bc7fa7d5c16",
+      "64ebe18332979c89",
+      "7482f19e7c03a2a9",
+      "92f054e532c5ae78",
+      "989c7fb831f2fb8e",
+      "9a86f116ea01b2c5",
+      "d35ba7a6b69b33e3",
+      "dbf11f385e1de810",
+      "df0da85224612535",
+      "f8d43f200856b3cd"
+    ],
+    "distinctModels": 14,
+    "semantics": "Fourteen source-specific union/intersection skills; exactcircle/closedsegment/gridgeometry and Booleanmembership, triplesdedup/groupedoperation/metriclengthvsdiscretecount."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave70-nested-union-p-q-nine",
+      "modelId": "visual-wave70-nested-union-equals-outer-no-double-count",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "easy",
+      "params": {
+        "scene": "nested",
+        "names": [
+          "P",
+          "Q"
+        ],
+        "inner": [
+          7,
+          14,
+          28,
+          35
+        ],
+        "ring": [
+          2,
+          9,
+          16,
+          23,
+          30
+        ]
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "df0da85224612535",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-level1.json#5",
+      "sourceCanonicalSha256": "e4a15fe807e1e47a6a2143603f4d5812dbae3744c67891620994088eb0f47fa9",
+      "sourceSkill": "NestedQ⊂P unionP nineelements5ring+4inner,not13bydoubleinner.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-nested-union-p-q-nine.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "statement": "Q дөңгелегі P дөңгелегінің ішінде түгел жатыр. P ∪ Q БІРІГУІНДЕ неше элемент бар? Әр сан бір элемент ретінде есептеледі. Жауапқа тек санды жазыңыз.",
+      "solution": "Q = {7; 14; 28; 35}, P сақинасында 2; 9; 16; 23; 30. Q ⊂ P болғандықтан P ∪ Q = P = {2; 7; 9; 14; 16; 23; 28; 30; 35}. Элементтер саны 4 + 5 = 9. Ішкі төрт сан P-да бұрыннан бар, оларды тағы қосу 13 деген қате санақ береді.",
+      "figureDescription": "Q түгел P ішінде; ішкіде 7; 14; 28; 35, сақинада 2; 9; 16; 23; 30.",
+      "figureSha256": "a7f056c0087eecfe99a174bdc7c7a4afb33b1d6c341ca357487c92e3b4397e96",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": {
+          "outer": [
+            2,
+            7,
+            9,
+            14,
+            16,
+            23,
+            28,
+            30,
+            35
+          ],
+          "inner": [
+            7,
+            14,
+            28,
+            35
+          ],
+          "union": [
+            2,
+            7,
+            9,
+            14,
+            16,
+            23,
+            28,
+            30,
+            35
+          ],
+          "count": 9,
+          "wrongDoubleCount": 13
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave70-intersection-c-d-three-members",
+      "modelId": "visual-wave70-two-circle-intersection-roster",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "easy",
+      "params": {
+        "scene": "two",
+        "names": [
+          "C",
+          "D"
+        ],
+        "left": [
+          4,
+          11,
+          18
+        ],
+        "common": [
+          7,
+          21,
+          28
+        ],
+        "right": [
+          6,
+          13
+        ],
+        "outside": []
+      },
+      "answer": "{7; 21; 28}",
+      "sourceRefs": [
+        {
+          "sourceId": "92f054e532c5ae78",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-level1.json#8",
+      "sourceCanonicalSha256": "8c58059473b87bb7669b48fbcbe48916796e6254e4976c18ff06594fb3a4b36c",
+      "sourceSkill": "SharedTHREEelements notleft/right/union; everypointmustbelongBOTHcircles.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-intersection-c-d-three-members.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "options": [
+        "{7; 21; 28}",
+        "{4; 11; 18}",
+        "{6; 13}",
+        "{4; 6; 7; 11; 13; 18; 21; 28}"
+      ],
+      "statement": "Суреттегі C және D жиындарының ҚИЫЛЫСУЫН, яғни екі жиынға да тиісті элементтердің толық тізімін таңдаңыз: C ∩ D.",
+      "solution": "Тек C бөлігінде 4; 11; 18, тек D бөлігінде 6; 13. Екеуінің ортақ бөлігінде 7; 21; 28: C ∩ D = {7; 21; 28}. Бір ғана шеңбердегі сандар қиылысуға кірмейді, ал барлық сандардың тізімі бірігу болар еді.",
+      "figureDescription": "C/D шеңберлері:тек солда 4; 11; 18, ортақта 7; 21; 28, тек оңда 6; 13. ",
+      "figureSha256": "3187026576a544bd451565ff49937edeae92a3b445962813c84b7713d0d5a6ed",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "{7; 21; 28}",
+        "checks": {
+          "sets": {
+            "C": [
+              4,
+              7,
+              11,
+              18,
+              21,
+              28
+            ],
+            "D": [
+              6,
+              7,
+              13,
+              21,
+              28
+            ]
+          },
+          "intersection": [
+            7,
+            21,
+            28
+          ],
+          "first": "C",
+          "second": "D",
+          "tripleIncluded": []
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave70-ray-three-twelve-eight-sixteen-intersection",
+      "modelId": "visual-wave70-closed-segment-intersection-length",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ray",
+        "max": 18,
+        "ends": [
+          3,
+          12,
+          8,
+          16
+        ],
+        "target": "intersection"
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "18d62e44fed4ae05",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-level1.json#9",
+      "sourceCanonicalSha256": "71bfcb47ba175bc695aa32ebb6ca22ceb663f6a91a1a2ba333bc49fb7fcc686e",
+      "sourceSkill": "Actualunitray[3,12]∩[8,16]=[8,12],metriclength4notcount5points.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-ray-three-twelve-eight-sixteen-intersection.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "statement": "Координаталық сәуледе ұштары қоса алынған AB және CD кесінділері берілген. AB ∩ CD ортақ кесіндісінің ҰЗЫНДЫҒЫ неше бірлік? Бірлік шкаланы оқыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Шкалада әр екі көршілес бүтіннің арасы 1 бірлік. A(3), B(12), C(8), D(16). Екі кесіндіге де ортақ нүктелер 8-ден 12-ге дейін: қиылысу CB. Оның ұзындығы 12 − 8 = 4. Ұштарымен бес бүтін нүкте көрінгенімен, ұзындық бес емес, төрт бірлік аралық.",
+      "figureDescription": "0…18 сан сәулесі, ұсақ қадам1, жұп сандар жазылған. A координатасы 3; B координатасы 12; C координатасы 8; D координатасы 16. Ұштар жабық.",
+      "figureSha256": "eb15a617663893f11fc9f816c1c6816db57d4a1492e0250b55d1e38e06d13cb0",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": {
+          "ends": [
+            3,
+            12,
+            8,
+            16
+          ],
+          "intersectionEndpoints": [
+            8,
+            12
+          ],
+          "intersectionLength": 4,
+          "intersectionNonempty": true,
+          "unionEndpoints": [
+            3,
+            16
+          ],
+          "unionLength": 13,
+          "individualLengths": [
+            9,
+            8
+          ],
+          "backUnionLength": 13
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave70-shaded-two-circle-union",
+      "modelId": "visual-wave70-identify-entire-two-circle-shaded-union",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "easy",
+      "params": {
+        "scene": "shaded-two",
+        "names": [
+          "M",
+          "N"
+        ]
+      },
+      "answer": "M ∪ N",
+      "sourceRefs": [
+        {
+          "sourceId": "011e6f52dd8138f2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-level1.json#12",
+      "sourceCanonicalSha256": "2cab6bee884055d9c04910c5d8090cfc747854a957039a65ce0e8aff8a2ab04d",
+      "sourceSkill": "Bothwholecirclesshadedinclcommon⇒UNION,notintersection/singlecircle; ownnativegeometry/labels.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-shaded-two-circle-union.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "options": [
+        "M ∩ N",
+        "M ∪ N",
+        "M",
+        "N"
+      ],
+      "statement": "M және N шеңберлеріндегі КӨК БОЯЛҒАН нүктелердің бәрін сипаттайтын жиынды таңдаңыз. Ақ бөліктер боялған жиынға кірмейді.",
+      "solution": "Тек M-дегі бөлік те, тек N-дегі бөлік те және олардың ортақ бөлігі де көк. Демек кемінде бір шеңберге кіретін нүктелердің бәрі боялған: M ∪ N. M ∩ N тек ортақ бөлікті, ал M не N жалғыз бір дөңгелекті ғана берер еді.",
+      "figureDescription": "Екі қиылысқан M/N шеңбері, екеуінің де бүкіл ішкі бөлігі көк.",
+      "figureSha256": "0d75f7cf63a5a354538bed6093d7b031ac6daf982619846a727dc390b5c13377",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "M ∪ N",
+        "checks": {
+          "booleanRegionMasks": [
+            1,
+            2,
+            3
+          ],
+          "outsideUnshaded": true,
+          "onlyA": true,
+          "onlyB": true,
+          "intersection": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave70-grid-six-five-five-four-union",
+      "modelId": "visual-wave70-rectangular-grid-union-area-subtract-overlap",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "grid",
+        "names": [
+          "K",
+          "L"
+        ],
+        "gridWidth": 11,
+        "gridHeight": 8,
+        "rects": [
+          [
+            1,
+            1,
+            6,
+            5
+          ],
+          [
+            5,
+            3,
+            5,
+            4
+          ]
+        ]
+      },
+      "answer": "44",
+      "sourceRefs": [
+        {
+          "sourceId": "dbf11f385e1de810",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-level2.json#1",
+      "sourceCanonicalSha256": "74e575903b54afd5a6303a8db01b9497ddb01bbc71e1016cf36944d76d594231",
+      "sourceSkill": "ActualK6×5=30,L5×4=20,overlap2×3=6, union44; everygridcell1squareunit.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-grid-six-five-five-four-union.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "statement": "Әр кіші шаршының ауданы 1 шаршы бірлік. Тордағы K және L тіктөртбұрыштарының БІРІГУІ K ∪ L жабатын аудан неше шаршы бірлік? Қабаттасқан бөлікті бір рет қана есептеңіз. Жауапқа тек санды жазыңыз.",
+      "solution": "Тордан K өлшемдері 6 × 5: ауданы 30. L өлшемдері 5 × 4: ауданы 20. Ортақ тіктөртбұрыш 2 × 3 = 6 шаршы бірлік. Бірігу ауданы 30 + 20 − 6 = 44. Жай қосу 50 береді, өйткені алты ортақ шаршыны екі рет санайды. Барлық жабылған жеке торкөзді бір реттен санау да 44 береді.",
+      "figureDescription": "11×8 шаршы тор, әр кіші шаршы1аудан. K солдан1/жоғарыдан1тордан6×5, L солдан5/жоғарыдан3тордан5×4торкөзді жабады.",
+      "figureSha256": "547439c18790ded6166ca8b004d09ddfe10c67a98cda46e279b47475054a1cf5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "44",
+        "checks": {
+          "rectangles": [
+            [
+              1,
+              1,
+              6,
+              5
+            ],
+            [
+              5,
+              3,
+              5,
+              4
+            ]
+          ],
+          "individualAreas": [
+            30,
+            20
+          ],
+          "commonCells": [
+            "5,3",
+            "6,3",
+            "5,4",
+            "6,4",
+            "5,5",
+            "6,5"
+          ],
+          "commonArea": 6,
+          "unionArea": 44,
+          "backArea": 44
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave70-three-circle-k-m-both-with-triple",
+      "modelId": "visual-wave70-two-set-intersection-includes-triple-membership",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "medium",
+      "params": {
+        "scene": "three",
+        "names": [
+          "K",
+          "L",
+          "M"
+        ],
+        "regions": {
+          "A": [
+            4,
+            9
+          ],
+          "B": [
+            15
+          ],
+          "C": [
+            33
+          ],
+          "AB": [
+            12
+          ],
+          "AC": [
+            18
+          ],
+          "BC": [
+            27
+          ],
+          "ABC": [
+            24
+          ]
+        }
+      },
+      "answer": "{18; 24}",
+      "sourceRefs": [
+        {
+          "sourceId": "989c7fb831f2fb8e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-level2.json#3",
+      "sourceCanonicalSha256": "a2d42aa31d630f3d36276d055933451b2428edf8b7f684c0e9d50b3228f0f60f",
+      "sourceSkill": "K∩MincludesAConly18ANDtriple24; Lmembershipirrelevant. Uniontrap excludesL-only15.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-three-circle-k-m-both-with-triple.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "options": [
+        "{18}",
+        "{24}",
+        "{4; 9; 12; 18; 24; 27; 33}",
+        "{18; 24}"
+      ],
+      "statement": "Суретте K, L, M жиындарының барлық элементі берілген. K-ға ДА, M-ге ДЕ кіретін сандарды таңдаңыз: K ∩ M. L жиынына да кіру олардың ортақ элемент болуын өзгертпейді.",
+      "solution": "K = {4; 9; 12; 18; 24}, M = {18; 24; 27; 33}. Екеуінде де {18; 24} бар. 18 тек K мен M-нің ортағында, 24 үш жиынның да ішінде. 24-тің L-ге де кіруі оны K ∩ M-нен шығармайды. Тек 18 не тек 24 алу бір ортақ элементті жоғалтады.",
+      "figureDescription": "K/L/M үш шеңбері, орындары: A аймағында 4; 9. B аймағында 15. C аймағында 33. AB аймағында 12. AC аймағында 18. BC аймағында 27. ABC аймағында 24. A/B/C орындары тиісінше K, L, M.",
+      "figureSha256": "b919fd5c01363f8d18f9e870e3ba61b4c09f51052fde9697364eba35d8e9ab64",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "{18; 24}",
+        "checks": {
+          "sets": {
+            "K": [
+              4,
+              9,
+              12,
+              18,
+              24
+            ],
+            "L": [
+              12,
+              15,
+              24,
+              27
+            ],
+            "M": [
+              18,
+              24,
+              27,
+              33
+            ]
+          },
+          "intersection": [
+            18,
+            24
+          ],
+          "first": "K",
+          "second": "M",
+          "tripleIncluded": [
+            24
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave70-ray-touch-nine-single-point",
+      "modelId": "visual-wave70-closed-segments-touch-intersection-one-point",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "medium",
+      "params": {
+        "scene": "ray",
+        "max": 18,
+        "ends": [
+          2,
+          9,
+          9,
+          15
+        ],
+        "target": "touch"
+      },
+      "answer": "Нүкте",
+      "sourceRefs": [
+        {
+          "sourceId": "3b6763e8c8c7e5a8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-level2.json#6",
+      "sourceCanonicalSha256": "df1f50b598ace43554f7f510e0b07659ab98fe2b3cb5c22342aa75ae5b6cfee5",
+      "sourceSkill": "[2,9]and[9,15]shareEXACTendpoint9,notempty/positive-lengthsegment/ray.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-ray-touch-nine-single-point.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "options": [
+        "Кесінді",
+        "Нүкте",
+        "Бос жиын",
+        "Сәуле"
+      ],
+      "statement": "Сәуледегі AB және CD кесінділерінің ұштары өздеріне кіреді. Олардың AB ∩ CD қиылысуы ҚАНДАЙ фигура болады?",
+      "solution": "Сәуледен A(2), B(9), C(9), D(15) оқылады. AB 9-да аяқталып, CD дәл сол 9-дан басталады. 9 ұшы екеуіне де кіреді, басқа ортақ нүкте жоқ. Сондықтан қиылысу — нүкте. Бұл бос жиын емес; оң ұзындықты кесінді не шексіз сәуле де емес.",
+      "figureDescription": "0…18 сан сәулесі, ұсақ қадам1, жұп сандар жазылған. A координатасы 2; B координатасы 9; C координатасы 9; D координатасы 15. Ұштар жабық.",
+      "figureSha256": "40c21dcb26fc561bb0bd5a820a6aed5d249631d91752109ad4307b27cf4c6d4b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "Нүкте",
+        "checks": {
+          "ends": [
+            2,
+            9,
+            9,
+            15
+          ],
+          "intersectionEndpoints": [
+            9,
+            9
+          ],
+          "intersectionLength": 0,
+          "intersectionNonempty": true,
+          "unionEndpoints": [
+            2,
+            15
+          ],
+          "unionLength": 13,
+          "individualLengths": [
+            7,
+            6
+          ],
+          "backUnionLength": 13
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave70-membership-nine-common-m-n",
+      "modelId": "visual-wave70-membership-with-intersection-union-four-claims",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "medium",
+      "params": {
+        "scene": "two",
+        "names": [
+          "M",
+          "N"
+        ],
+        "left": [
+          5,
+          14
+        ],
+        "common": [
+          9,
+          18
+        ],
+        "right": [
+          3,
+          7,
+          25
+        ],
+        "outside": []
+      },
+      "answer": "9 ∈ M ∩ N",
+      "sourceRefs": [
+        {
+          "sourceId": "64ebe18332979c89",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-level2.json#14",
+      "sourceCanonicalSha256": "678838489c94cf7bd0bef37c402401d27a7521d9e62afba98139c335e2ff2ec0",
+      "sourceSkill": "ALL4claims:14leftnotshared;7rightnotM;9sharedtrue;25rightisinunionsonot∉.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-membership-nine-common-m-n.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "options": [
+        "14 ∈ M ∩ N",
+        "7 ∈ M",
+        "9 ∈ M ∩ N",
+        "25 ∉ M ∪ N"
+      ],
+      "statement": "M және N диаграммасындағы элементтердің орнын тексеріңіз. ∩ — қиылысу, ∪ — бірігу. Төмендегі төрт тиістілік жазудың қайсысы ДҰРЫС?",
+      "solution": "M = {5; 9; 14; 18}, N = {3; 7; 9; 18; 25}. Қиылысу {9; 18}, бірігу {3; 5; 7; 9; 14; 18; 25}. 14 тек M-де; 7 тек N-де. 9 ортақ, сондықтан 9 ∈ M ∩ N дұрыс. 25 N-де тұрғандықтан бірігуге де тиісті, 25 ∉ M ∪ N — жалған.",
+      "figureDescription": "M/N шеңберлері:тек солда 5; 14, ортақта 9; 18, тек оңда 3; 7; 25. ",
+      "figureSha256": "7dc2134c97e4b7438f7e3e6b029c03f9f58ad2c07275d2a365f1d81918db5889",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9 ∈ M ∩ N",
+        "checks": {
+          "sets": {
+            "M": [
+              5,
+              9,
+              14,
+              18
+            ],
+            "N": [
+              3,
+              7,
+              9,
+              18,
+              25
+            ]
+          },
+          "intersection": [
+            9,
+            18
+          ],
+          "union": [
+            3,
+            5,
+            7,
+            9,
+            14,
+            18,
+            25
+          ],
+          "optionTruth": [
+            false,
+            false,
+            true,
+            false
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave70-exclusive-five-three-multiples",
+      "modelId": "visual-wave70-union-minus-intersection-roster-both-exclusive-regions",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "hard",
+      "params": {
+        "scene": "two",
+        "names": [
+          "A",
+          "B"
+        ],
+        "left": [
+          10,
+          20,
+          35
+        ],
+        "common": [
+          15,
+          30
+        ],
+        "right": [
+          3,
+          18,
+          24
+        ],
+        "outside": []
+      },
+      "answer": "{3; 10; 18; 20; 24; 35}",
+      "sourceRefs": [
+        {
+          "sourceId": "d35ba7a6b69b33e3",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-level3.json#1",
+      "sourceCanonicalSha256": "02a01673bb6f8025b25f968fc2284012b0c098092df6473bd75c4d514f282020",
+      "sourceSkill": "A5multiples/B3multiples/shared15multiples; unionminusintersection keepsBOTHexclusive regions,notonlyA.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-exclusive-five-three-multiples.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "options": [
+        "{15; 30}",
+        "{3; 10; 15; 18; 20; 24; 30; 35}",
+        "{3; 10; 18; 20; 24; 35}",
+        "{10; 20; 35}"
+      ],
+      "statement": "A ∪ B жиынына кіретін, бірақ A ∩ B жиынына КІРМЕЙТІН элементтердің толық тізімін таңдаңыз. Екі шеңбердің тек біреуінде тұрған сандар қажет.",
+      "solution": "Бірігу {3; 10; 15; 18; 20; 24; 30; 35}, қиылысу {15; 30}. Ортақ 15 пен 30-ды бірігуден алып тастасақ {3; 10; 18; 20; 24; 35} қалады. Бұлар тек A-дағы 10; 20; 35 және тек B-дағы 3; 18; 24. Бір жақты ғана алу екінші айрықша бөлікті жоғалтады.",
+      "figureDescription": "A/B шеңберлері:тек солда 10; 20; 35, ортақта 15; 30, тек оңда 3; 18; 24. ",
+      "figureSha256": "d00a9e6bb31b29aae5ecd547c4c8385968bb4cd4890defc77fd109a5c9cdd0cb",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "{3; 10; 18; 20; 24; 35}",
+        "checks": {
+          "sets": {
+            "A": [
+              10,
+              15,
+              20,
+              30,
+              35
+            ],
+            "B": [
+              3,
+              15,
+              18,
+              24,
+              30
+            ]
+          },
+          "union": [
+            3,
+            10,
+            15,
+            18,
+            20,
+            24,
+            30,
+            35
+          ],
+          "common": [
+            15,
+            30
+          ],
+          "result": [
+            3,
+            10,
+            18,
+            20,
+            24,
+            35
+          ],
+          "includesLeftAndRight": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave70-grouped-p-q-intersection-union-r",
+      "modelId": "visual-wave70-grouped-intersection-then-union-third-sum",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "hard",
+      "params": {
+        "scene": "three",
+        "names": [
+          "P",
+          "Q",
+          "R"
+        ],
+        "regions": {
+          "A": [
+            3,
+            7
+          ],
+          "B": [
+            17
+          ],
+          "C": [
+            29,
+            31
+          ],
+          "AB": [
+            11
+          ],
+          "AC": [
+            13
+          ],
+          "BC": [
+            19,
+            23
+          ],
+          "ABC": [
+            5
+          ]
+        }
+      },
+      "answer": "131",
+      "sourceRefs": [
+        {
+          "sourceId": "f8d43f200856b3cd",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-level3.json#6",
+      "sourceCanonicalSha256": "6f6df372189bace2d30671859653399cd0f34a3f7edee58cea34c83c3c992cc1",
+      "sourceSkill": "(P∩Q)∪R addsABonly11toALLR5/13/19/23/29/31; distinctsum131, ABC5once,notP∩(Q∪R).",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-grouped-p-q-intersection-union-r.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "statement": "Сурет бойынша (P ∩ Q) ∪ R жиынының барлық элементтерінің ҚОСЫНДЫСЫН табыңыз. Алдымен жақшадағы амал орындалады, тең элемент бір рет саналады. Жауапқа тек санды жазыңыз.",
+      "solution": "Алдымен P ∩ Q = {5; 11}. R = {5; 13; 19; 23; 29; 31}. Біріктірсек {5; 11; 13; 19; 23; 29; 31}; 5 екі жерде кездессе де, соңғы жиында бір рет қалады. Қосынды 5 + 11 + 13 + 19 + 23 + 29 + 31 = 131. P ∩ (Q ∪ R) деп жақшаны ауыстырсақ {5; 11; 13} шығып, қосындысы 29 болар еді — бұл басқа өрнек.",
+      "figureDescription": "P/Q/R үш шеңбері, орындары: A аймағында 3; 7. B аймағында 17. C аймағында 29; 31. AB аймағында 11. AC аймағында 13. BC аймағында 19; 23. ABC аймағында 5. A/B/C орындары тиісінше P, Q, R.",
+      "figureSha256": "ed15986691f3392caecaa636f0ff7c21cf7e65a0245caf2016a6b2b78744b9bd",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "131",
+        "checks": {
+          "sets": {
+            "P": [
+              3,
+              5,
+              7,
+              11,
+              13
+            ],
+            "Q": [
+              5,
+              11,
+              17,
+              19,
+              23
+            ],
+            "R": [
+              5,
+              13,
+              19,
+              23,
+              29,
+              31
+            ]
+          },
+          "firstIntersection": [
+            5,
+            11
+          ],
+          "result": [
+            5,
+            11,
+            13,
+            19,
+            23,
+            29,
+            31
+          ],
+          "sum": 131,
+          "wrongReparenthesized": [
+            5,
+            11,
+            13
+          ],
+          "wrongSum": 29,
+          "commonDuplicateCountedOnce": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave70-shaded-union-intersect-third",
+      "modelId": "visual-wave70-identify-union-then-third-clipped-region",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "hard",
+      "params": {
+        "scene": "shaded-three",
+        "names": [
+          "U",
+          "V",
+          "W"
+        ]
+      },
+      "answer": "(U ∪ V) ∩ W",
+      "sourceRefs": [
+        {
+          "sourceId": "9a86f116ea01b2c5",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-level3.json#8",
+      "sourceCanonicalSha256": "70c09629caf63028de94c6c41a976b4a47c6fa7fff9bc8268fb12090bcd83846",
+      "sourceSkill": "ONLYWpointsinUorVshaded: AC/BC/ABC, W-onlynotshaded; independentnativeclipgeometry, preserveparentheses.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-shaded-union-intersect-third.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "options": [
+        "(U ∪ V) ∩ W",
+        "U ∩ V ∩ W",
+        "(U ∩ V) ∪ W",
+        "U ∪ V ∪ W"
+      ],
+      "statement": "U, V, W шеңберлеріндегі КӨК бөлікке сәйкес келетін өрнекті таңдаңыз. Ақ бөліктер есепке кірмейді. Жақшалардың мағынасына назар аударыңыз.",
+      "solution": "Көк бөліктің әр нүктесі W ішінде және U не V шеңберінің кемінде біреуінде жатыр. W-ның екеуіне де кірмейтін төменгі бөлігі ақ. Сондықтан (U ∪ V) ∩ W. U ∩ V ∩ W тек үштік ортаны берер еді. (U ∩ V) ∪ W бүкіл W-ны, сонымен қатар W-дан тыс ортақ бөлікті де қосады; ал үштік бірігу тым кең.",
+      "figureDescription": "U/V/W шеңберлері; соңғысының алғашқы екеуінің ішінде жататын бөліктері көк, қалған нүктелер ақ.",
+      "figureSha256": "9847777499fa65962bbcbf324db280f7cb92e3b4d0ddb9935f0595c980385e74",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(U ∪ V) ∩ W",
+        "checks": {
+          "booleanRegionMasks": [
+            5,
+            6,
+            7
+          ],
+          "thirdOnlyUnshaded": true,
+          "ABonlyUnshaded": true,
+          "tripleIncluded": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave70-ray-two-nine-six-seventeen-union",
+      "modelId": "visual-wave70-overlapping-closed-segment-union-length",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "ray",
+        "max": 18,
+        "ends": [
+          2,
+          9,
+          6,
+          17
+        ],
+        "target": "union"
+      },
+      "answer": "15",
+      "sourceRefs": [
+        {
+          "sourceId": "2daa2da205eb7a76",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-leveltest.json#1",
+      "sourceCanonicalSha256": "8a50a98325f9c84baf21fb19426cc385e242ed66438fa3b1cf59b7453bf7d75d",
+      "sourceSkill": "[2,9]∪[6,17]=[2,17],length15; individual7+11=18overcounts3overlap.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-ray-two-nine-six-seventeen-union.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "statement": "Сәуледе AB және CD кесінділері ұштарымен қоса алынған. Олардың AB ∪ CD бірігуі бір кесінді құрайды. Осы БІРІККЕН кесіндінің ұзындығын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "A(2), B(9), C(6), D(17). Кесінділер 6…9 аралығында қабаттасады, сондықтан бірігу 2…17 аралығындағы AD кесіндісі. Ұзындығы 17 − 2 = 15. Жеке ұзындықтар 9 − 2 = 7 және 17 − 6 = 11; ортақ 9 − 6 = 3 бірлік екі рет саналған: 7 + 11 − 3 = 15.",
+      "figureDescription": "0…18 сан сәулесі, ұсақ қадам1, жұп сандар жазылған. A координатасы 2; B координатасы 9; C координатасы 6; D координатасы 17. Ұштар жабық.",
+      "figureSha256": "de7636e9ee91eda3547d1d45cc779186fc601e941f64a9d803a9469e3e73cd92",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "15",
+        "checks": {
+          "ends": [
+            2,
+            9,
+            6,
+            17
+          ],
+          "intersectionEndpoints": [
+            6,
+            9
+          ],
+          "intersectionLength": 3,
+          "intersectionNonempty": true,
+          "unionEndpoints": [
+            2,
+            17
+          ],
+          "unionLength": 15,
+          "individualLengths": [
+            7,
+            11
+          ],
+          "backUnionLength": 15
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave70-universe-outside-both-three-members",
+      "modelId": "visual-wave70-universe-complement-of-two-set-union",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "hard",
+      "params": {
+        "scene": "framed-two",
+        "names": [
+          "M",
+          "N"
+        ],
+        "left": [
+          4,
+          10
+        ],
+        "common": [
+          8
+        ],
+        "right": [
+          15,
+          21
+        ],
+        "outside": [
+          7,
+          19,
+          23
+        ]
+      },
+      "answer": "{7; 19; 23}",
+      "sourceRefs": [
+        {
+          "sourceId": "533e0bc7fa7d5c16",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-leveltest.json#4",
+      "sourceCanonicalSha256": "b6e26a9b7da4d0cbe1f2bb58897b50d5acf9b81b4d4f647299b491fd901ca86e",
+      "sourceSkill": "UframeoutsideM∪N:7neartopjoinbutoutsideBOTH,19/23lowercorners; shared8/exclusives/unionNOTcomplement.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-universe-outside-both-three-members.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "options": [
+        "{8}",
+        "{4; 10; 15; 21}",
+        "{7; 19; 23}",
+        "{4; 8; 10; 15; 21}"
+      ],
+      "statement": "Тіктөртбұрыш ішіндегі барлық сандар — қарастырылатын элементтер. Олардың ішінен M ∪ N БІРІГУІНЕ КІРМЕЙТІН сандарды таңдаңыз. Дөңгелекке жақын тұру оның ішінде болу дегенді білдірмейді.",
+      "solution": "M ∪ N = {4; 8; 10; 15; 21}. Тіктөртбұрышта бұларға кірмейтін {7; 19; 23} бар: үшеуі де екі шеңбердің сыртында. 7 қиылысатын жердің үстіне жақын, бірақ еш дөңгелектің шекарасынан ішке өтпейді. {8} — қиылысу; {4; 10; 15; 21} — тек бір шеңбердегілер, олар бірігуге кіреді.",
+      "figureDescription": "M/N шеңберлері:тек солда 4; 10, ортақта 8, тек оңда 15; 21. Тіктөртбұрыш ішінде, екі шеңбердің сыртында 7; 19; 23.",
+      "figureSha256": "9ad21a9f4273e9cb64e20b04c269a69affa80e8d83b3908dce781c2970ab2c9d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "{7; 19; 23}",
+        "checks": {
+          "sets": {
+            "M": [
+              4,
+              8,
+              10
+            ],
+            "N": [
+              8,
+              15,
+              21
+            ]
+          },
+          "union": [
+            4,
+            8,
+            10,
+            15,
+            21
+          ],
+          "outside": [
+            7,
+            19,
+            23
+          ],
+          "universe": [
+            4,
+            7,
+            8,
+            10,
+            15,
+            19,
+            21,
+            23
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave70-atleast-two-circles-sum-forty-one",
+      "modelId": "visual-wave70-union-all-pair-intersections-sum-triple-once",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "hard",
+      "params": {
+        "scene": "three",
+        "names": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "regions": {
+          "A": [
+            4
+          ],
+          "B": [
+            8
+          ],
+          "C": [
+            14
+          ],
+          "AB": [
+            3,
+            10
+          ],
+          "AC": [
+            7
+          ],
+          "BC": [
+            12
+          ],
+          "ABC": [
+            9
+          ]
+        }
+      },
+      "answer": "41",
+      "sourceRefs": [
+        {
+          "sourceId": "7482f19e7c03a2a9",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-3-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-3-leveltest.json#8",
+      "sourceCanonicalSha256": "1c61722ad8fe5068f3c42ec597c21dd7396a63686e6b78044a8ae0a66d7b9d8b",
+      "sourceSkill": "PairintersectionUNION includesAB3/10,AC7,BC12,TRIPLE9ONCE; total41not59doubleexcess9twice.",
+      "adaptationChanges": [
+        "Барлық14сақталған5.3визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;14бастапқырастр3парақтақаралды.14адрестікжаңапараметр/элемент/орын/өзnativeSVGжасалды, rawөзгермейді.",
+        "Жаңаішкібірігу9;екіқиылысуростері7/21/28;[3,12]∩[8,16]ұзындық4;M/Nтолықбірігукөгі;тор6×5+5×4−2×3=44;K∩M18/24үштік24қалуы;[2,9]∩[9,15]бірнүкте;9∈M∩N;5/3еселіктерайрықшаростері;P/QқиылысуыменRбірігуқосынды131;W-ныңUнеV-дебарқиылысукөгі;[2,9]∪[6,17]ұзындық15;frameсыртқылары7/19/23;екілікқиылыстарбірігуіндеүштік9біррет→41.",
+        "Жаңаnativeшеңбер/clipPath/тор/жабықнүкте/ұзындықшкаласы;tracedpath/rasterкопияжоқ. Ортақбөліктіекіретсанамау/үштікэлементтішығармау/жақшаорны/endpointбарболуы/бірлікұзындықпеннүктесаныайырмасысақталды. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жиындардың бірігуі мен қиылысуы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all14saved/new/fullofficial/newsolutions/everyMCQ plus3source/native343sheets. Actualglyph+dotcirclemembership, shadeunionandcliptruth, all19unitrayticks/closedendpoints, ALL88gridcells union44, triplemembersincludedONCE, groupedexpressiontree distinctfromreparenthesized, nearjoin7outsideBOTHwithinuniverseframe. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave70-atleast-two-circles-sum-forty-one.svg",
+      "verificationModule": "scripts/editorial/visual-wave70-models.mjs",
+      "statement": "Суреттегі (X ∩ Y) ∪ (Y ∩ Z) ∪ (X ∩ Z) жиынының элементтерін біріктіріп, ҚОСЫНДЫСЫН табыңыз. Бір сан бірнеше қиылысуда кездессе де, соңғы жиында бір рет қана есептеледі. Жауапқа тек санды жазыңыз.",
+      "solution": "X ∩ Y = {3; 9; 10}, Y ∩ Z = {9; 12}, X ∩ Z = {7; 9}. Үшеуін біріктірсек {3; 7; 9; 10; 12}. Ортадағы 9 үш қиылысуда бар, бірақ жиында бір рет саналады. Қосынды 3 + 7 + 9 + 10 + 12 = 41. 9-ды үш рет қосу 59 деген қате нәтиже береді. Бір ғана шеңбердегі 4; 8; 14 алынбайды.",
+      "figureDescription": "X/Y/Z үш шеңбері, орындары: A аймағында 4. B аймағында 8. C аймағында 14. AB аймағында 3; 10. AC аймағында 7. BC аймағында 12. ABC аймағында 9. A/B/C орындары тиісінше X, Y, Z.",
+      "figureSha256": "55dfdd128198ff80b3954e68a22a8f0cffc832f6e4ac2312448d4ce42e907bc1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "41",
+        "checks": {
+          "sets": {
+            "X": [
+              3,
+              4,
+              7,
+              9,
+              10
+            ],
+            "Y": [
+              3,
+              8,
+              9,
+              10,
+              12
+            ],
+            "Z": [
+              7,
+              9,
+              12,
+              14
+            ]
+          },
+          "pairIntersections": [
+            [
+              3,
+              9,
+              10
+            ],
+            [
+              9,
+              12
+            ],
+            [
+              7,
+              9
+            ]
+          ],
+          "result": [
+            3,
+            7,
+            9,
+            10,
+            12
+          ],
+          "sum": 41,
+          "triple": [
+            9
+          ],
+          "wrongTripleOvercount": 59
+        }
+      }
+    }
+  ]
+}

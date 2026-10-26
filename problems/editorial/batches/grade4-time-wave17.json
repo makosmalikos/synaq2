@@ -1,0 +1,1313 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All24 remaining saved grade-4 nonvisual topic1.10 time/fraction/calendar sources; no new source collection.",
+  "summary": {
+    "editions": 24,
+    "models": 23,
+    "skillFamilies": 23,
+    "sourceOccurrencesReferenced": 24,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-time-fac63e35c3987993",
+      "modelId": "grade4-time-minutes-to-hours",
+      "skillFamily": "minutes-to-hours",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 311,
+        "choices": [
+          [
+            3,
+            11
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            5,
+            21
+          ],
+          [
+            31,
+            1
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level1.json",
+          "sourceId": "fac63e35c3987993"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "311 минутты сағат және минутпен дұрыс көрсеткен нұсқаны таңдаңыз.",
+      "answer": "5 сағ 11 мин",
+      "solution": "Бір сағатта 60 минут бар. 311 = 5 × 60 + 11, мұнда қалдық 11 минут 60-тан кіші. Сондықтан 311 мин = 5 сағ 11 мин. Санды жүздік пен қалған цифрларға бөлуге болмайды.",
+      "options": [
+        "3 сағ 11 мин",
+        "5 сағ 11 мин",
+        "5 сағ 21 мин",
+        "31 сағ 1 мин"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "5 сағ 11 мин",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-32feb8eb854a7dfb",
+      "modelId": "grade4-time-spoken-time-before",
+      "skillFamily": "spoken-time-before",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "nextHour": 9,
+        "before": 20,
+        "choices": [
+          [
+            8,
+            40
+          ],
+          [
+            9,
+            40
+          ],
+          [
+            8,
+            20
+          ],
+          [
+            9,
+            20
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level1.json",
+          "sourceId": "32feb8eb854a7dfb"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Таңертең сағат «жиырма минутсыз тоғыз» болды. Уақыттың дұрыс жазылуын таңдаңыз.",
+      "answer": "8 сағ 40 мин",
+      "solution": "Бұл 9:00 уақытына дейін 20 минут қалды деген сөз. Алдыңғы сағаттың 40 минуты өтті: 60 − 20 = 40. Сондықтан 8 сағ 40 мин. «Минутсыз» сөзі келесі сағаттан кейінгі уақытты білдірмейді.",
+      "options": [
+        "8 сағ 40 мин",
+        "9 сағ 40 мин",
+        "8 сағ 20 мин",
+        "9 сағ 20 мин"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "8 сағ 40 мин",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-c9eae2203a8596e4",
+      "modelId": "grade4-time-greatest-duration",
+      "skillFamily": "greatest-duration",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          [
+            "fraction-hour",
+            2
+          ],
+          [
+            "seconds",
+            1980
+          ],
+          [
+            "minutes",
+            35
+          ],
+          [
+            "fraction-hour",
+            3
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level1.json",
+          "sourceId": "c9eae2203a8596e4"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Берілген уақыт аралықтарының ең ұзағын таңдаңыз.",
+      "answer": "35 мин",
+      "solution": "Барлығын минутпен салыстырамыз: сағаттың жартысы = 30 мин; 1 980 с = 33 мин; 35 мин = 35 мин; сағаттың үштен бірі = 20 мин. Ең үлкені 35 минут, яғни 35 мин. Бірліктері әртүрлі сандардың өзін салыстыру жеткіліксіз.",
+      "options": [
+        "сағаттың жартысы",
+        "1 980 с",
+        "35 мин",
+        "сағаттың үштен бірі"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "35 мин",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-31aecf3b2509fd77",
+      "modelId": "grade4-time-seconds-to-minutes",
+      "skillFamily": "seconds-to-minutes",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 1375,
+        "choices": [
+          [
+            22,
+            5
+          ],
+          [
+            13,
+            55
+          ],
+          [
+            137,
+            5
+          ],
+          [
+            22,
+            55
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level1.json",
+          "sourceId": "31aecf3b2509fd77"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1 375 секундты минут және секундпен дұрыс жазыңыз.",
+      "answer": "22 мин 55 с",
+      "solution": "1 минут = 60 секунд. 1 375 = 22 × 60 + 55. Қалдық 55 секунд 60-тан кіші, сондықтан 22 мин 55 с. Тексеру: 22 × 60 + 55 = 1 375.",
+      "options": [
+        "22 мин 5 с",
+        "13 мин 55 с",
+        "137 мин 5 с",
+        "22 мин 55 с"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "22 мин 55 с",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-9f3487add97fd929",
+      "modelId": "grade4-time-correct-fraction-equality",
+      "skillFamily": "correct-fraction-equality",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          [
+            "day-hour",
+            3,
+            8
+          ],
+          [
+            "year-month",
+            4,
+            4
+          ],
+          [
+            "hour-minute",
+            5,
+            20
+          ],
+          [
+            "century-year",
+            4,
+            400
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level2.json",
+          "sourceId": "9f3487add97fd929"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Уақыт бірлігінің үлесі дұрыс есептелген теңдікті таңдаңыз.",
+      "answer": "тәуліктің үштен бірі = 8 сағ",
+      "solution": "Тәулікте 24 сағат, жылда 12 ай, сағатта 60 минут, ғасырда 100 жыл бар. Дұрыс мәндер: тәуліктің үштен бірі = 24 : 3 = 8 сағ; жылдың төрттен бірі = 12 : 4 = 3 ай; сағаттың бестен бірі = 60 : 5 = 12 мин; ғасырдың төрттен бірі = 100 : 4 = 25 жыл. Ұсынылған төрт теңдіктің тек біреуі осы мәнге сәйкес.",
+      "options": [
+        "тәуліктің үштен бірі = 8 сағ",
+        "жылдың төрттен бірі = 4 ай",
+        "сағаттың бестен бірі = 20 мин",
+        "ғасырдың төрттен бірі = 400 жыл"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "тәуліктің үштен бірі = 8 сағ",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-6f19de16e841512b",
+      "modelId": "grade4-time-fraction-complement",
+      "skillFamily": "fraction-complement",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 840,
+        "denominator": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level2.json",
+          "sourceId": "6f19de16e841512b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Мектептегі 840 оқушының төрттен бірі көрмеге барды. Көрмеге бармаған оқушылар санын табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "630",
+      "solution": "Көрмеге барғаны 840 : 4 = 210 оқушы. Бармағаны 840 − 210 = 630. Тексеру: 210 + 630 = 840. Сұрақта үлестің өзі емес, қалған бөлік сұралған.",
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "630",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-27f9a0368d386ccf",
+      "modelId": "grade4-time-reduce-by-fraction",
+      "skillFamily": "reduce-by-fraction",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 360,
+        "denominator": 4,
+        "choices": [
+          90,
+          356,
+          270,
+          180
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level2.json",
+          "sourceId": "27f9a0368d386ccf"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "360 санын өзінің төрттен біріне кемітіңіз. Шыққан санды таңдаңыз.",
+      "answer": "270",
+      "solution": "Санның алынатын үлесі 360 : 4 = 90. Оны бастапқы саннан азайтамыз: 360 − 90 = 270. 90 — үлестің өзі, ал сұралғаны одан кейін қалған сан.",
+      "options": [
+        "90",
+        "356",
+        "270",
+        "180"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "270",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-2f6b4e0339bb4348",
+      "modelId": "grade4-time-weekly-session-duration",
+      "skillFamily": "weekly-session-duration",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "sessions": 3,
+        "hours": 1,
+        "minutes": 20
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level2.json",
+          "sourceId": "2f6b4e0339bb4348"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Айбек аптасына 3 рет жаттығады. Әр жаттығу 1 сағ 20 мин созылады. Бір аптадағы жаттығулардың жалпы ұзақтығын минутпен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "240",
+      "solution": "Бір жаттығу 1 × 60 + 20 = 80 минут. Апталық уақыт 80 × 3 = 240 минут. Тексеру: 3 × 1 сағаттық бөлікті және әр жаттығудың қосымша минуттарын бөлек қоссақ та осы нәтиже шығады.",
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "240",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-601bafa8651d54b3",
+      "modelId": "grade4-time-spoken-lesson-finish",
+      "skillFamily": "spoken-lesson-finish",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "nextHour": 10,
+        "before": 15,
+        "duration": 50,
+        "choices": [
+          [
+            10,
+            35
+          ],
+          [
+            10,
+            50
+          ],
+          [
+            9,
+            35
+          ],
+          [
+            11,
+            35
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level2.json",
+          "sourceId": "601bafa8651d54b3"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Сабақ таңертең «он бес минутсыз он» уақытында басталды. Сабақ 50 минут жүрді. Ол қашан аяқталды?",
+      "answer": "10 сағ 35 мин",
+      "solution": "Басталу уақыты 9 сағ 45 мин. Минуттарды қосамыз: 45 + 50 = 95 минут. Бұл 1 сағат 35 минут, сондықтан аяқталуы 10 сағ 35 мин. Басталуды 10:00 деп алу қате.",
+      "options": [
+        "10 сағ 35 мин",
+        "10 сағ 50 мин",
+        "9 сағ 35 мин",
+        "11 сағ 35 мин"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "10 сағ 35 мин",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-b7e2cbb9da1bc7f0",
+      "modelId": "grade4-time-days-to-weeks",
+      "skillFamily": "days-to-weeks",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "days": 123,
+        "choices": [
+          [
+            17,
+            4
+          ],
+          [
+            17,
+            3
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            18,
+            4
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level2.json",
+          "sourceId": "b7e2cbb9da1bc7f0"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "123 тәулікті толық апталар мен қалған тәуліктерге бөліп көрсетіңіз.",
+      "answer": "17 апта 4 тәулік",
+      "solution": "Бір аптада 7 тәулік. 123 = 17 × 7 + 4. Демек 17 апта 4 тәулік; қалған 4 тәулік толық аптаға жетпейді.",
+      "options": [
+        "17 апта 4 тәулік",
+        "17 апта 3 тәулік",
+        "12 апта 3 тәулік",
+        "18 апта 4 тәулік"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "17 апта 4 тәулік",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-04a043a376789641",
+      "modelId": "grade4-time-age-century-inverse",
+      "skillFamily": "age-century-inverse",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "denominator": 5,
+        "multiplier": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level3.json",
+          "sourceId": "04a043a376789641"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Кітапханашы: «Жасымның 4 есесіне ғасырдың бестен бірін қоссақ, бір ғасыр шығады», — деді. Ол неше жаста? Жауапқа тек санды жазыңыз.",
+      "answer": "20",
+      "solution": "Бір ғасыр — 100 жыл, оның бестен бірі: 100 : 5 = 20 жыл. Жастың 4 есесі 100 − 20 = 80. Сондықтан жас 80 : 4 = 20. Тексеру: 20 × 4 + 20 = 100.",
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "20",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-7061206a038614b6",
+      "modelId": "grade4-time-age-sum-century-fraction",
+      "skillFamily": "age-sum-century-fraction",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "denominator": 5,
+        "sumMultiplier": 4,
+        "grandRatio": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level3.json",
+          "sourceId": "7061206a038614b6"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ата мен немеренің жастарының қосындысы ғасырдың бестен бірінен 4 есе үлкен. Атасының жасы немересінің жасынан 3 есе үлкен. Немере неше жаста? Жауапқа тек санды жазыңыз.",
+      "answer": "20",
+      "solution": "Ғасырдың бестен бірі: 100 : 5 = 20 жыл. Қосынды 20 × 4 = 80. Немере — 1 бөлік, ата — 3 бөлік, барлығы 4 бөлік. Немере 80 : 4 = 20 жаста. Тексеру: ата 60, 60 + 20 = 80.",
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "20",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-57d5705b0983f2bf",
+      "modelId": "grade4-time-large-seconds-interval",
+      "skillFamily": "large-seconds-interval",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "seconds": 1500000,
+        "choices": [
+          [
+            17,
+            18,
+            "day"
+          ],
+          [
+            17,
+            18,
+            "hour"
+          ],
+          [
+            1,
+            2,
+            "day"
+          ],
+          [
+            1,
+            2,
+            "week"
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level3.json",
+          "sourceId": "57d5705b0983f2bf"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1 500 000 секунд қай уақыт аралығына жатады?",
+      "answer": "17 мен 18 тәуліктің арасында",
+      "solution": "Бір тәулікте 24 × 60 × 60 = 86 400 секунд бар. Шекараларды салыстырамыз: 17 × 86 400 = 1 468 800 және 18 × 86 400 = 1 555 200 секунд. 1 468 800 < 1 500 000 < 1 555 200, демек 17 мен 18 тәуліктің арасында. Сағат пен аптаны тәулікпен шатастырмаймыз.",
+      "options": [
+        "17 мен 18 тәуліктің арасында",
+        "17 мен 18 сағаттың арасында",
+        "1 мен 2 тәуліктің арасында",
+        "1 мен 2 аптаның арасында"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "17 мен 18 тәуліктің арасында",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-e73eed412505f1a0",
+      "modelId": "grade4-time-elapsed-remaining-fraction",
+      "skillFamily": "elapsed-remaining-fraction",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "denominator": 3,
+        "choices": [
+          6,
+          8,
+          18,
+          12
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level3.json",
+          "sourceId": "e73eed412505f1a0"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Түн ортасынан бері өткен уақыт тәуліктің қалған уақытының үштен біріне тең. Қазір сағат неше? Уақыт 24 сағаттық пішіммен берілген.",
+      "answer": "6:00",
+      "solution": "Өткен уақытты 1 бөлік десек, қалғаны 3 бөлік. Барлығы 1 + 3 = 4 бөлік 24 сағатқа тең. Өткені 24 : 4 = 6 сағат. Қалғаны 18 сағат, оның 3-ке бөліндісі 6; сағат 6:00.",
+      "options": [
+        "6:00",
+        "8:00",
+        "18:00",
+        "12:00"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "6:00",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-3bc44c27efc72782",
+      "modelId": "grade4-time-concert-with-intermissions",
+      "skillFamily": "concert-with-intermissions",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "firstCount": 7,
+        "firstMinutes": 3,
+        "secondCount": 3,
+        "secondMinutes": 6,
+        "songs": 2,
+        "choirDenominator": 4,
+        "gapMinutes": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level3.json",
+          "sourceId": "3bc44c27efc72782"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Концертте 7 күйдің әрқайсысы 3 минуттан, тағы 3 күйдің әрқайсысы 6 минуттан орындалды. Бұдан бөлек хор 2 ән айтты; осы әндердің орындалу уақыттарының қосындысы сағаттың төрттен бірі. Әрбір көрші екі шығарманың арасында 3 минут үзіліс болды. Концерт басындағы және соңындағы қосымша үзіліс есептелмейді. Барлық концерт неше минут созылды? Жауапқа тек санды жазыңыз.",
+      "answer": "87",
+      "solution": "Күйлердің уақыты 7 × 3 + 3 × 6 = 39 минут. Хордың барлық әні бірге 60 : 4 = 15 минут. Шығарма саны 7 + 3 + 2 = 12, сондықтан тек араларындағы үзіліс 12 − 1 = 11. Үзілістер 11 × 3 = 33 минут. Барлығы 39 + 15 + 33 = 87 минут.",
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "87",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-0e569804237d5e32",
+      "modelId": "grade4-time-maximum-weekday-count",
+      "skillFamily": "maximum-weekday-count",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "days": 366,
+        "weekday": 1
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level3.json",
+          "sourceId": "0e569804237d5e32"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ұзақтығы 366 тәулік болатын жылда сейсенбі күндерінің саны ең көп дегенде қанша болуы мүмкін? Жауапқа тек санды жазыңыз.",
+      "answer": "53",
+      "solution": "366 = 52 × 7 + 2. Әр толық аптада бір сейсенбі бар, сондықтан 52 рет міндетті кездеседі. Қалған 2 күннің арасында сейсенбі болса, тағы біреу қосылады. Оған жету үшін жыл басын сол күнге сәйкестендіруге болады. Ең көбі 52 + 1 = 53.",
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "53",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-aa718b9905069318",
+      "modelId": "grade4-time-overnight-spoken-duration",
+      "skillFamily": "overnight-spoken-duration",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "nextHour": 9,
+        "before": 20,
+        "finishHour": 3,
+        "finishMinute": 30,
+        "choices": [
+          [
+            6,
+            50
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            5,
+            50
+          ],
+          [
+            6,
+            10
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level3.json",
+          "sourceId": "aa718b9905069318"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Кешкі іс-шара «жиырма минутсыз тоғыз» уақытында басталып, келесі түнгі «үш жарымда» аяқталды. Оның ұзақтығын таңдаңыз.",
+      "answer": "6 сағ 50 мин",
+      "solution": "Кешкі басталу 20 сағ 40 мин, аяқталу келесі күнгі 3 сағ 30 мин. Түн ортасына дейін 200 минут, одан кейін 210 минут. Қосынды 200 + 210 = 410 минут, яғни 6 сағ 50 мин.",
+      "options": [
+        "6 сағ 50 мин",
+        "7 сағ 10 мин",
+        "5 сағ 50 мин",
+        "6 сағ 10 мин"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "6 сағ 50 мин",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-ef1562e1d7551995",
+      "modelId": "grade4-time-slow-clock-delay",
+      "skillFamily": "slow-clock-delay",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "periodHours": 12,
+        "lossMinutes": 1,
+        "targetDenominator": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level3.json",
+          "sourceId": "ef1562e1d7551995"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Сағат әр 12 сағат өткенде 1 минутқа қалып отырады. Оны бастапқыда дәл қойды. Неше тәуліктен кейін ол жарты сағатқа қалып қояды? Жауапқа тек санды жазыңыз.",
+      "answer": "15",
+      "solution": "Қажетті кешігу 60 : 2 = 30 минут. Ол үшін 30 : 1 = 30 кезең керек. Бір кезең 12 сағат, барлығы 30 × 12 = 360 сағат. 360 : 24 = 15 тәулік. Тексеру: тәуліктегі кешігу 24 : 12 × 1 = 2 минут.",
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "15",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-f178c04680eff43f",
+      "modelId": "grade4-time-last-day-weekday",
+      "skillFamily": "last-day-weekday",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "days": 366,
+        "firstWeekday": 3,
+        "choices": [
+          3,
+          4,
+          5,
+          2
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level3.json",
+          "sourceId": "f178c04680eff43f"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "366 тәуліктен тұратын жылдың 1 қаңтары — бейсенбі. Сол жылдың 31 желтоқсаны аптаның қай күні?",
+      "answer": "жұма",
+      "solution": "31 желтоқсан — жылдың 366-күнінің өзі. 1 қаңтардан оған дейін 366 − 1 = 365 күн өтеді. 365 = 52 × 7 + 1, сондықтан бастапқы күннен 1 күн ілгері жылжимыз: жұма. 366 күнге жылжыту бастапқы күнді екі рет санаған болар еді.",
+      "options": [
+        "бейсенбі",
+        "жұма",
+        "сенбі",
+        "сәрсенбі"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "жұма",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-0a4212ae73f1c581",
+      "modelId": "grade4-time-greatest-clock-interval",
+      "skillFamily": "greatest-clock-interval",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          {
+            "type": "numeric-overnight",
+            "start": [
+              23,
+              10
+            ],
+            "end": [
+              2,
+              5
+            ]
+          },
+          {
+            "type": "spoken-before-half",
+            "nextHour": 10,
+            "before": 15,
+            "endHour": 12
+          },
+          {
+            "type": "spoken-quarter-before",
+            "startHour": 8,
+            "nextHour": 11,
+            "before": 15
+          },
+          {
+            "type": "numeric-day",
+            "start": [
+              7,
+              35
+            ],
+            "end": [
+              10,
+              25
+            ]
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level3.json",
+          "sourceId": "0a4212ae73f1c581"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Төрт аралықтың ең ұзағын таңдаңыз. Күндізгі аралықтардың басы мен соңы бір күнге тиесілі; түн ортасынан өтетін нұсқада келесі күн ашық көрсетілген.",
+      "answer": "23 сағ 10 мин уақытынан келесі күнгі 2 сағ 5 мин уақытына дейін",
+      "solution": "Ұзақтықтарды минутпен салыстырамыз. 1-нұсқа: 1565 − 1390 = 175 минут; 2-нұсқа: 750 − 585 = 165 минут; 3-нұсқа: 645 − 495 = 150 минут; 4-нұсқа: 625 − 455 = 170 минут. Түн ортасынан кейінгі аяқталуға 24 × 60 = 1 440 минут қосылды. Ең ұзақ аралық 175 минут.",
+      "options": [
+        "23 сағ 10 мин уақытынан келесі күнгі 2 сағ 5 мин уақытына дейін",
+        "«он бес минутсыз он» уақытынан «он екі жарымға» дейін",
+        "сағат 8-ден ширек өткен кезден «он бес минутсыз он бір» уақытына дейін",
+        "7 сағ 35 мин уақытынан 10 сағ 25 мин уақытына дейін"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "23 сағ 10 мин уақытынан келесі күнгі 2 сағ 5 мин уақытына дейін",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-ae04d9a9c07b228b",
+      "modelId": "grade4-time-seconds-to-minutes",
+      "skillFamily": "seconds-to-minutes",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 1420,
+        "choices": [
+          [
+            23,
+            40
+          ],
+          [
+            14,
+            20
+          ],
+          [
+            23,
+            4
+          ],
+          [
+            24,
+            40
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-leveltest.json",
+          "sourceId": "ae04d9a9c07b228b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1 420 секундты минут және секундпен дұрыс жазыңыз.",
+      "answer": "23 мин 40 с",
+      "solution": "1 минут = 60 секунд. 1 420 = 23 × 60 + 40. Қалдық 40 секунд 60-тан кіші, сондықтан 23 мин 40 с. Тексеру: 23 × 60 + 40 = 1 420.",
+      "options": [
+        "23 мин 40 с",
+        "14 мин 20 с",
+        "23 мин 4 с",
+        "24 мин 40 с"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "23 мин 40 с",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-a3adc469b6c4d409",
+      "modelId": "grade4-time-spoken-evening-finish",
+      "skillFamily": "spoken-evening-finish",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "nextHour": 8,
+        "before": 15,
+        "hours": 2,
+        "minutes": 35,
+        "choices": [
+          [
+            22,
+            20
+          ],
+          [
+            21,
+            20
+          ],
+          [
+            23,
+            20
+          ],
+          [
+            22,
+            35
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-leveltest.json",
+          "sourceId": "a3adc469b6c4d409"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қойылым кешкі «он бес минутсыз сегіз» уақытында басталды да, 2 сағ 35 мин созылды. 24 сағаттық пішіммен оның аяқталуын таңдаңыз.",
+      "answer": "22 сағ 20 мин",
+      "solution": "Кешкі басталу 19 сағ 45 мин. Ұзақтығы 2 × 60 + 35 = 155 минут. Басталуынан түн ортасына дейінгі аралықтан аспайды: 1185 + 155 = 1340 минут. 1340 = 22 × 60 + 20, сондықтан 22 сағ 20 мин.",
+      "options": [
+        "22 сағ 20 мин",
+        "21 сағ 20 мин",
+        "23 сағ 20 мин",
+        "22 сағ 35 мин"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "22 сағ 20 мин",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-8e3359e6e048185e",
+      "modelId": "grade4-time-age-half-plus-century",
+      "skillFamily": "age-half-plus-century",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "denominator": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-leveltest.json",
+          "sourceId": "8e3359e6e048185e"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Шебер: «Жасымның жартысына ғасырдың бестен бірін қоссақ, өз жасым шығады», — деді. Ол неше жаста? Жауапқа тек санды жазыңыз.",
+      "answer": "40",
+      "solution": "Ғасырдың бестен бірі: 100 : 5 = 20 жыл. Жастың бір жартысына 20 қоссақ, толық жас шығады, демек екінші жартысы 20. Барлық жас 20 × 2 = 40. Тексеру: 40 : 2 + 20 = 40.",
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "40",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-time-7bbbf60cb049d3e5",
+      "modelId": "grade4-time-first-march-weekday",
+      "skillFamily": "first-march-weekday",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "yearDays": 365,
+        "februaryDays": 28,
+        "firstWeekday": 4,
+        "choices": [
+          6,
+          4,
+          0,
+          1
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-leveltest.json",
+          "sourceId": "7bbbf60cb049d3e5"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық сақталған шарттар, кілттер, толық шешімдер және жауап нұсқалары жеке оқылды; бірліктер мен сұралған шаманың мағынасы сақталды.",
+        "Жаңа сандармен дербес қазақша шарт пен шешім жазылды. Сағаттағы 60 минут, тәуліктегі 24 сағат, аптадағы 7 күн, ғасырдағы 100 жыл анықтамалары сақталды.",
+        "Түн ортасынан өту, жылдағы соңғы күнге n−1 қадам, 1 наурызға 31+28 күн, ең көп апта күні, үлестің толықтауышы мен көрші шығармалар арасындағы N−1 үзіліс бөлек тексеріледі. Сандық нұсқалар жаңа математикалық мағына саны деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual time/fraction/calendar edition. Numerical variants are source coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бұл жылы 365 тәулік, ақпанда 28 күн бар. 1 қаңтар — жұма. Сол жылдың 1 наурызы аптаның қай күні болады?",
+      "answer": "дүйсенбі",
+      "solution": "1 қаңтардан 1 наурызға дейін қаңтардың 31 және ақпанның 28 күні өтеді: 31 + 28 = 59. 59 = 8 × 7 + 3, демек апта күні 3 күнге өзгереді. Жұма күнінен 3 күн кейін — дүйсенбі. Бастапқы күннің өзін артық қоспаймыз.",
+      "options": [
+        "жексенбі",
+        "жұма",
+        "дүйсенбі",
+        "сейсенбі"
+      ],
+      "calculationVerification": {
+        "method": "exact_base60_base24_calendar_and_finite_age_time_domains",
+        "answer": "дүйсенбі",
+        "checks": [
+          "exact native condition/full solution/options binding",
+          "base60/base24/calendar offset or exhaustive age/day/fraction domain",
+          "unit fraction and requested complement/elapsed/remaining/maximum distinction preserved"
+        ]
+      }
+    }
+  ]
+}

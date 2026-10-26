@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All4savedvisualgrade5topic3.3;archivedsourcesonly,nocapture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "Allcapturedvisualgrade5topic3.3sources",
+    "sourceVisualOccurrences": 4,
+    "addressedNewDrafts": 4,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "1443ab687b18dc8d",
+      "14d8f9ec323e4989",
+      "6b132fa0214c1c27",
+      "86e9136f5daedd06"
+    ],
+    "distinctModels": 4,
+    "semantics": "Foursource-specifictargetsindividuallyrewritten;edition/modelcountsarenotnewsemanticmeaningclaims."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave43-eleven-metres-six-equal-ribbons",
+      "modelId": "visual-wave43-equal-ribbon-improper-length",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ribbon",
+        "totalMetres": 11,
+        "parts": 6
+      },
+      "answer": "Бұрыс бөлшек, 1 м-ден артық",
+      "sourceRefs": [
+        {
+          "sourceId": "86e9136f5daedd06",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-3-level1.json#11",
+      "sourceCanonicalSha256": "a508ec73b60cfb5f32a00b2609bb2754386c363c215261ac776e8a1056ee48b9",
+      "sourceSkill": "Classify an improper fraction for ONE equally shared length and compare it with one physical metre",
+      "adaptationChanges": [
+        "Барлық4сақталғанвизуалды3.3дағдыжекесақталды:теңбөлінгентаспадабұрысбөлшекті1метрменсалыстыру;бүтіншаршылардыберілгенбөлімменжазу;грамдықаналогшкала→қысқарғанкилограмм;алымменбөлімніңқосындысы/айырмасынанбөлшек.",
+        "Деректержаңарды:11метр/6бөлік,5бүтінәрқайсысы6ұяшық,850г/50гқадам,қосынды22айырма4.Әржауапталапетілгеншамағақатыстыжекеесептелді.",
+        "Таспаның6теңаралығы,5шаршының30теңұяшығы,21белгісібарграмдықшкалажәнемасштабсызекіжолақnativeSVGпараметрлеріненжасалды.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтін және бөлшек",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all4saved/new/fullsolutions/MCQreview;6equalribbonsegmentsacross11m,5wholes×6equalcells,analogue850gneedleand50g/100g/200gscale,22sum4difference;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave43-eleven-metres-six-equal-ribbons.svg",
+      "verificationModule": "scripts/editorial/visual-wave43-models.mjs",
+      "options": [
+        "Дұрыс бөлшек, 1 м-ден кем",
+        "Бұрыс бөлшек, 1 м-ге тең",
+        "Бұрыс бөлшек, 1 м-ден артық",
+        "Дұрыс бөлшек, 1 м-ден артық"
+      ],
+      "statement": "Ұзындығы 11 м сәндік таспа суреттегідей 6 тең бөлікке бөлінді. Бір бөліктің ұзындығы (11/6) м. Бұл қандай бөлшек және бір бөліктің ұзындығы 1 м-мен қалай салысады?",
+      "solution": "Таспа 6 тең бөлікке бөлінгендіктен, әр бөліктің ұзындығы 11 : 6 = (11/6) м. Алымы 11, бөлімі 6. 11 > 6 болғандықтан, бұл бұрыс бөлшек. (11/6) > (6/6) = 1. Демек бір бөлік 1 м-ден ұзын. Таспаның толық 11 м ұзындығын бір бөліктің ұзындығымен шатастырмаймыз.",
+      "figureDescription": "0-ден 11 метрге дейінгі сызғыштың үстіндегі бір таспа 6 тең бөлікке бөлінген. Көршілес бөліктердің түсі көк және күлгін болып алмасады. Сызғыштың әр аралығы 1 метр.",
+      "figureSha256": "a2724394cecb03f09d25f7bbc2529dcc78524c4b456e43f5dbe5984b5ebc7983",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "Бұрыс бөлшек, 1 м-ден артық",
+        "checks": {
+          "totalMetres": 11,
+          "equalParts": 6,
+          "each": "(11/6)",
+          "classification": "improper",
+          "comparedWithOne": "greater"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave43-five-wholes-in-sixths",
+      "modelId": "visual-wave43-whole-squares-fixed-denominator-numerator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "squares",
+        "wholes": 5,
+        "rows": 2,
+        "columns": 3
+      },
+      "answer": "30",
+      "sourceRefs": [
+        {
+          "sourceId": "14d8f9ec323e4989",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-3-level1.json#12",
+      "sourceCanonicalSha256": "51ff1831559e84ac5cf71506bb539f87868f76a5a0ca6ccae83794cdc9067745",
+      "sourceSkill": "Represent a displayed positive whole number with an EXACT specified denominator, count all equal subparts",
+      "adaptationChanges": [
+        "Барлық4сақталғанвизуалды3.3дағдыжекесақталды:теңбөлінгентаспадабұрысбөлшекті1метрменсалыстыру;бүтіншаршылардыберілгенбөлімменжазу;грамдықаналогшкала→қысқарғанкилограмм;алымменбөлімніңқосындысы/айырмасынанбөлшек.",
+        "Деректержаңарды:11метр/6бөлік,5бүтінәрқайсысы6ұяшық,850г/50гқадам,қосынды22айырма4.Әржауапталапетілгеншамағақатыстыжекеесептелді.",
+        "Таспаның6теңаралығы,5шаршының30теңұяшығы,21белгісібарграмдықшкалажәнемасштабсызекіжолақnativeSVGпараметрлеріненжасалды.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтін және бөлшек",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all4saved/new/fullsolutions/MCQreview;6equalribbonsegmentsacross11m,5wholes×6equalcells,analogue850gneedleand50g/100g/200gscale,22sum4difference;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave43-five-wholes-in-sixths.svg",
+      "verificationModule": "scripts/editorial/visual-wave43-models.mjs",
+      "statement": "Әр үлкен шаршы — бір бүтін. Оның барлық кішкентай бөліктері өзара тең. Суреттегі 5 бүтінді бөлімі ДӘЛ 6 болатын бөлшекпен жазсақ, алымы неше болады? Жауапқа тек санды жазыңыз.",
+      "solution": "Әр шаршыда 2 қатар және 3 баған: 2 × 3 = 6 тең бөлік бар. 5 бүтін шаршыда 5 × 6 = 30 кішкентай бөлік болады. Сондықтан 5 = (30/6). Сұралған алым 30; берілген бөлім 6 өзгермейді.",
+      "figureDescription": "5 бірдей үлкен шаршы. Әр шаршы 2 қатар мен 3 бағанға, яғни 6 тең кішкентай бөлікке бөлінген. Барлық бөліктер көк.",
+      "figureSha256": "c43f27db659fa1423aea8f9649831e68ab372a70cfb14101f7b4604b62e87e21",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "30",
+        "checks": {
+          "unitSquares": 5,
+          "equalPartsPerWhole": 6,
+          "allSmallParts": 30,
+          "fixedDenominator": 6,
+          "wholeValue": 5
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave43-eight-fifty-grams-analogue-scale",
+      "modelId": "visual-wave43-analogue-scale-reduced-kilograms",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "scale",
+        "maximum": 1000,
+        "minor": 50,
+        "major": 100,
+        "labelEvery": 200,
+        "grams": 850
+      },
+      "answer": "(17/20)",
+      "sourceRefs": [
+        {
+          "sourceId": "6b132fa0214c1c27",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-3-level2.json#11",
+      "sourceCanonicalSha256": "04a3ed1e4eda2ce9f717befce1bcf63c79e31483855923b13ee737482fef21f7",
+      "sourceSkill": "Read an analogue minor scale, convert grams to kilograms by1000 and reduce the fraction",
+      "adaptationChanges": [
+        "Барлық4сақталғанвизуалды3.3дағдыжекесақталды:теңбөлінгентаспадабұрысбөлшекті1метрменсалыстыру;бүтіншаршылардыберілгенбөлімменжазу;грамдықаналогшкала→қысқарғанкилограмм;алымменбөлімніңқосындысы/айырмасынанбөлшек.",
+        "Деректержаңарды:11метр/6бөлік,5бүтінәрқайсысы6ұяшық,850г/50гқадам,қосынды22айырма4.Әржауапталапетілгеншамағақатыстыжекеесептелді.",
+        "Таспаның6теңаралығы,5шаршының30теңұяшығы,21белгісібарграмдықшкалажәнемасштабсызекіжолақnativeSVGпараметрлеріненжасалды.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтін және бөлшек",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all4saved/new/fullsolutions/MCQreview;6equalribbonsegmentsacross11m,5wholes×6equalcells,analogue850gneedleand50g/100g/200gscale,22sum4difference;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave43-eight-fifty-grams-analogue-scale.svg",
+      "verificationModule": "scripts/editorial/visual-wave43-models.mjs",
+      "options": [
+        "(20/17)",
+        "(17/2)",
+        "(17/20)",
+        "(17/200)"
+      ],
+      "statement": "Таразы жидектің массасын граммен көрсетіп тұр. Ыдыстың массасы алдын ала нөлге теңестірілген. Шкаланың бір кіші аралығы 50 г. Жидек массасын килограммен көрсететін ҚЫСҚАРТЫЛМАЙТЫН бөлшекті таңдаңыз.",
+      "solution": "Көрсеткіш 800 г мен 900 г белгілерінің дәл ортасындағы қысқа белгіге түседі. Бір кіші аралық 50 г, сондықтан масса 850 г. 1 кг = 1000 г: килограммен (850/1000). Алым мен бөлімді 50 санына қысқартсақ (17/20) кг шығады. Грамды килограмға айналдырғанда 100 не 10 санына емес, 1000-ға бөлеміз.",
+      "figureDescription": "Жарты шеңберлі таразының шкаласы 0-ден 1000 грамға дейін. Белгілер әр 50 грамда, олардың әр 100 грамдағысы ұзын. Сандар әр 200 грамда жазылған. Көрсеткіш 850 грамдық белгіде.",
+      "figureSha256": "ffe2542bc13c7009c9afddcf2c5a6094b787e97279fcb88c0bb3822cdca9db15",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(17/20)",
+        "checks": {
+          "scaleGrams": 850,
+          "smallStep": 50,
+          "gramsPerKilogram": 1000,
+          "gcd": 50,
+          "reducedKilograms": "(17/20)",
+          "needle": [
+            379.8880242975738,
+            191.72349154089113
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave43-twenty-two-sum-four-difference",
+      "modelId": "visual-wave43-sum-difference-improper-fraction",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "sumdiff",
+        "sum": 44,
+        "difference": 8
+      },
+      "answer": "(13/9)",
+      "sourceRefs": [
+        {
+          "sourceId": "1443ab687b18dc8d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-3-level3.json#1",
+      "sourceCanonicalSha256": "f67d73ac89813d8cc9414ebd8aa08486e205feeb2f1fc34623990d94e9ce1ad4",
+      "sourceSkill": "Recover numerator and denominator from shown sum and difference, retain their order and reduce improper fraction",
+      "adaptationChanges": [
+        "Барлық4сақталғанвизуалды3.3дағдыжекесақталды:теңбөлінгентаспадабұрысбөлшекті1метрменсалыстыру;бүтіншаршылардыберілгенбөлімменжазу;грамдықаналогшкала→қысқарғанкилограмм;алымменбөлімніңқосындысы/айырмасынанбөлшек.",
+        "Деректержаңарды:11метр/6бөлік,5бүтінәрқайсысы6ұяшық,850г/50гқадам,қосынды44айырма8.Әржауапталапетілгеншамағақатыстыжекеесептелді.",
+        "Таспаның6теңаралығы,5шаршының30теңұяшығы,21белгісібарграмдықшкалажәнемасштабсызекіжолақnativeSVGпараметрлеріненжасалды.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтін және бөлшек",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all4saved/new/fullsolutions/MCQreview;6equalribbonsegmentsacross11m,5wholes×6equalcells,analogue850gneedleand50g/100g/200gscale,44sum8difference with26/18gcd2reduction;343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave43-twenty-two-sum-four-difference.svg",
+      "verificationModule": "scripts/editorial/visual-wave43-models.mjs",
+      "options": [
+        "(13/9)",
+        "(9/13)",
+        "(11/2)",
+        "(13/22)"
+      ],
+      "statement": "Жолақтарда a алымы мен b бөлімі көрсетілген: a саны b санынан үлкен, екеуінің айырмасы 8. Екеуінің қосындысы оң жақтағы жақшада берілген. Сызба масштабсыз. (a/b) бөлшегін толық қысқартып таңдаңыз.",
+      "solution": "Қосындыдан айырманы алсақ, екі b қалады: 44 − 8 = 36. Сондықтан b = 36 : 2 = 18. a = 18 + 8 = 26. Тексеру: 26 + 18 = 44 және 26 − 18 = 8. Бөлшек (26/18). ЕҮОБ(26, 18) = 2, сондықтан алым мен бөлімді 2 санына қысқартамыз: 26 : 2 = 13, 18 : 2 = 9. Толық қысқартылғаны (13/9). a бөлімге, b алымға ауысып кетпеуі керек. Масштабсыз жолақтарды өлшеудің қажеті жоқ.",
+      "figureDescription": "Екі жолақ a және b. a жолағындағы артық бөлік 8 деп белгіленген. Оң жақтағы ортақ жақша 44 қосындысын білдіреді. a және b мәндері жазылмаған. Сызба масштабсыз.",
+      "figureSha256": "cf45805327372cb382af145da57723e713457d4d5f2cfea0243632f7f19ce7c9",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(13/9)",
+        "checks": {
+          "rawNumerator": 26,
+          "rawDenominator": 18,
+          "termSum": 44,
+          "termDifference": 8,
+          "gcd": 2,
+          "reduced": "(13/9)",
+          "improper": true
+        }
+      }
+    }
+  ]
+}

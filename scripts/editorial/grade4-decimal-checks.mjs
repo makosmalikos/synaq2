@@ -1,0 +1,42 @@
+/** Author checks from printed givens, integer inverse ledgers and all printed
+ * alternatives. NOT an independent review or an editorial publication signature. */
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {renderEdition,verifyEdition} from './grade4-decimal-models.mjs';
+const rows=JSON.parse(fs.readFileSync(new URL('../../problems/editorial/batches/grade4-decimal-wave23.json',import.meta.url))).editions;
+const keys=['800','480','36000','=','90','1 000','83','4 м','80 · 100','37 рубль','70000','<','5','380 000','10000','260','7 000','750 · 40 = 30 000','67','700','3 070','54000','<','2 000'];
+const num=s=>Number(s.replaceAll(' ','')),take=(re,s)=>{const m=re.exec(s);assert(m,[re,s]);return m;},zero=n=>/0*$/.exec(String(n))[0].length,sign=(a,b)=>a<b?'<':a>b?'>':'=';
+function expr(s){const [a,op,b]=take(/^(\d[\d ]*) ([·:]) (\d[\d ]*)$/,s).slice(1);return op==='·'?num(a)*num(b):num(a)/num(b);}
+let domains=0,sourceZeroStructures=0,fullInverseCases=0,fullScaleCases=0;
+for(let i=0;i<rows.length;i++){
+ const r=rows[i],s=r.statement,k=r.modelId.replace('grade4-decimal-','');verifyEdition(r);assert.equal(r.answer,keys[i]);
+ switch(k){
+ case 'meters-to-centimeters':{const m=+take(/Ұзындығы (\d+) м/,s)[1];assert.equal(m*100,+r.answer);break;}
+ case 'divide-ten':case 'divide-hundred':case 'cancel-shared-zeros':{const [n,d]=take(/^(\d[\d ]*) : (\d+)/,s).slice(1).map(num);assert.equal(n%d,0);assert.deepEqual(r.options.filter(o=>num(o)*d===n),[r.answer]);const expected=k==='divide-ten'?[2,1,1]:k==='divide-hundred'?[4,2,2]:[3,2,1];assert.deepEqual([zero(n),zero(d),zero(n/d)],expected);sourceZeroStructures++;break;}
+ case 'multiply-thousand':case 'round-product':{const [n,m]=take(/(?:есептеңіз|табыңыз): (\d[\d ]*) · (\d[\d ]*)\./,s).slice(1).map(num);assert.equal(n*m,+r.answer);assert.deepEqual([zero(n),zero(m),zero(n*m)],k==='multiply-thousand'?[0,3,3]:[2,1,3]);sourceZeroStructures++;break;}
+ case 'equal-divisions':{const [a,d,b,e]=take(/^(\d[\d ]*) : (\d+) □ (\d[\d ]*) : (\d+)\./,s).slice(1).map(num);assert.equal(a*e,b*d);assert.equal(r.answer,'=');assert.deepEqual([zero(a),zero(d),zero(b),zero(e)],[2,2,1,1]);sourceZeroStructures++;break;}
+ case 'unknown-thousand-factor':{const [n,p]=take(/^(\d+) · □ = (\d[\d ]*)\./,s).slice(1).map(num);assert.deepEqual(r.options.filter(o=>n*num(o)===p),[r.answer]);assert.equal(p/n,1000);break;}
+ case 'reverse-power-chain':{const [a,b,result]=take(/алдымен (\d+) санына, шыққан нәтижені (\d+) санына көбейтті\. Соңында (\d[\d ]*) шықты/,s).slice(1).map(num);const good=[];for(let n=1;n<=result;n++){fullInverseCases++;if(n*a*b===result)good.push(n);}assert.deepEqual(good,[+r.answer]);break;}
+ case 'largest-mixed-length':{const cm={м:100,дм:10,см:1,мм:0.1},vals=r.options.map(o=>{const m=take(/^(\d[\d ]*) (м|дм|см|мм)$/,o);return num(m[1])*cm[m[2]];}),max=Math.max(...vals);assert.deepEqual(r.options.filter((_,j)=>vals[j]===max),[r.answer]);assert.equal(vals[0],vals[1]);assert(vals[2]>vals[1]&&vals[2]<max);break;}
+ case 'select-target-expression':{const target=num(take(/мәні (\d[\d ]*) санына/,s)[1]);assert.deepEqual(r.options.filter(o=>expr(o)===target),[r.answer]);assert.equal(expr(r.options[0]),expr(r.options[1]));break;}
+ case 'kopecks-to-rubles':{const total=num(take(/Әмияндағы (\d[\d ]*) копейканы/,s)[1]),good=r.options.filter(o=>{const m=take(/^(\d[\d ]*) рубль(?: (\d+) копейка)?$/,o);return num(m[1])*100+Number(m[2]||0)===total;});assert.deepEqual(good,[r.answer]);assert.equal(zero(total),2);sourceZeroStructures++;break;}
+ case 'thousand-item-cost':{const [n,p]=take(/Мектеп (\d[\d ]*) жұмыс дәптерін алды\. Әрқайсысы (\d+)/,s).slice(1).map(num);assert.equal(n*p,+r.answer);assert.deepEqual([zero(n),zero(p),zero(n*p)],[3,1,4]);sourceZeroStructures++;break;}
+ case 'unequal-power-products':{const [a,b,c,d]=take(/^(\d+) · (\d[\d ]*) □ (\d[\d ]*) · (\d+)\./,s).slice(1).map(num);assert.equal(sign(a*b,c*d),r.answer);assert.equal(c*d/(a*b),10);assert.deepEqual([zero(a),zero(b),zero(c),zero(d)],[0,3,2,2]);sourceZeroStructures++;break;}
+ case 'extra-coefficient-zero':{const terms=take(/^(.+?) көбейтіндісі/,s)[1].split(' · ').map(Number),product=terms.reduce((a,b)=>a*BigInt(b),1n);assert.equal(zero(product),num(r.answer));const initial=terms.reduce((n,v)=>n+zero(v),0);assert.equal(initial,4);assert.equal(zero(product)-initial,1);assert.deepEqual(terms.map(zero),[2,1,1]);sourceZeroStructures++;break;}
+ case 'wrong-division-instead-multiplication':{const [factor,factor2,q]=take(/санды (\d+)-ге көбейтудің орнына (\d+)-ге бөліп, (\d+)/,s).slice(1).map(Number);assert.equal(factor,factor2);assert.equal(q*factor2*factor,num(r.answer));assert.deepEqual(r.options.filter(o=>num(o)===q*factor2*factor),[r.answer]);break;}
+ case 'two-factor-growth':{const [a,b]=take(/бірінші көбейткіш (\d+) есе, екіншісі (\d[\d ]*) есе/,s).slice(1).map(num);for(let x=1;x<=20;x++)for(let y=1;y<=20;y++){fullScaleCases++;assert.equal((x*a)*(y*b)/(x*y),+r.answer);}break;}
+ case 'multiplication-digit-length':{const [a,b,c,d]=take(/санды (\d+) санына көбейткенде (\d+) таңбалы, ал (\d+) санына көбейткенде (\d+) таңбалы/,s).slice(1).map(Number);assert.deepEqual(r.options.filter(o=>{const n=num(o);return 10**(b-1)<=n*a&&n*a<10**b&&10**(d-1)<=n*c&&n*c<10**d;}),[r.answer]);assert.equal(zero(num(r.answer)),1);sourceZeroStructures++;break;}
+ case 'exact-trailing-zero-candidate':{const [factor,z]=take(/^a · (\d[\d ]*) көбейтіндісінің соңында дәл (\d+)/,s).slice(1).map(num);assert.deepEqual(r.options.filter(o=>zero(BigInt(num(o))*BigInt(factor))===z),[r.answer]);assert(r.options.some(o=>num(o)===7070&&zero(num(o)*factor)===4));sourceZeroStructures++;break;}
+ case 'correct-zero-equality':{const good=r.options.filter(o=>{const [left,right]=o.split(' = ');return expr(left)===num(right);});assert.deepEqual(good,[r.answer]);const [a,b]=take(/^(\d[\d ]*) · (\d+)/,r.answer).slice(1).map(num);assert.deepEqual([zero(a),zero(b),zero((a/10)*(b/10))],[1,1,2]);sourceZeroStructures++;break;}
+ case 'recover-and-redivide':{const [d,q,e]=take(/санды (\d+) санына бөлгенде (\d[\d ]*) шықты[\s\S]*?санды (\d[\d ]*) санына/,s).slice(1).map(num),n=d*q;assert.equal(n%e,0);assert.equal(n/e,+r.answer);assert.deepEqual([zero(q),zero(n),zero(n/e)],[2,3,0]);sourceZeroStructures++;break;}
+ case 'unknown-dividend-zero':{const [d,q]=take(/^□ : (\d+) = (\d+)/,s).slice(1).map(Number);assert.deepEqual(r.options.filter(o=>num(o)===d*q),[r.answer]);assert.equal(String(q)[1],'0');assert.equal(String(d*q)[1],'0');sourceZeroStructures++;break;}
+ case 'mixed-length-zero-place':{const [m,c,right]=take(/^(\d+) м (\d+) см □ (\d+) см/,s).slice(1).map(Number);assert.equal(sign(m*100+c,right),r.answer);assert.equal(right,m*100+c*10);assert.equal(String(m*100+c)[1],'0');sourceZeroStructures++;break;}
+ case 'division-gap':{const [d,e,gap]=take(/санды (\d[\d ]*) санына бөлгенде, оны (\d+) санына бөлгендегіден (\d+)/,s).slice(1).map(num);const good=r.options.filter(o=>{const n=num(o);return n%d===0&&n%e===0&&n/e-n/d===gap;});assert.deepEqual(good,[r.answer]);const a=BigInt(gap)*BigInt(e)*BigInt(d),b=BigInt(d-e);assert.equal(a%b,0n);assert.equal(a/b,BigInt(num(r.answer)));assert(s.includes('Екі бөлу де қалдықсыз'));break;}
+ default:assert.fail(k);
+ }domains++;
+}
+let rejected=0,invalid=0;
+function find(v,path=[]){if(typeof v==='number')return path;if(Array.isArray(v)){for(let i=0;i<v.length;i++){const p=find(v[i],[...path,i]);if(p)return p;}}else if(v&&typeof v==='object'){for(const k of Object.keys(v)){const p=find(v[k],[...path,k]);if(p)return p;}}return null;}
+function mutate(row,path,value){const r=structuredClone(row);let p=r.params;for(let i=0;i<path.length-1;i++)p=p[path[i]];p[path.at(-1)]=value;return r;}
+for(const r of rows){for(const key of ['answer','statement','solution','options']){if(key==='options'&&!r.options)continue;const bad=structuredClone(r);bad[key]=key==='options'?[...r.options].reverse():r[key]+' altered';assert.throws(()=>verifyEdition(bad));rejected++;}const path=find(r.params);if(path){let n=r.params;for(const k of path)n=n[k];assert.throws(()=>verifyEdition(mutate(r,path,n+1)));rejected++;const inv=mutate(r,path,-1);assert.throws(()=>{Object.assign(inv,renderEdition(inv));verifyEdition(inv);});invalid++;}}
+console.log(JSON.stringify({fixtures:24,printedGivenDomains:domains,preservedSourceZeroStructures:sourceZeroStructures,fullInverseCases,fullScaleCases,tamperRejected:rejected,invalidParametersRejected:invalid,status:'passed'}));

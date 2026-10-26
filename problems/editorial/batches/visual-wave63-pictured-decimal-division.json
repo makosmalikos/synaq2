@@ -1,0 +1,751 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All11savedvisualgrade5topic4.8; archived sources only, no new capture/download/traces; all11source rasters available.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5 topic4.8 sources",
+    "sourceVisualOccurrences": 11,
+    "addressedNewDrafts": 11,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "unavailableSourceRasters": [],
+    "exactNewSourceIds": [
+      "1984bb0e12311ff9",
+      "272010552df2a5a0",
+      "31cb72ff4b9c9da5",
+      "435fcb4ebe3fa73f",
+      "47d6b1585fe8ab4f",
+      "9183a9c12179079f",
+      "b4f60139cd2b27de",
+      "cac346fa34eee6b0",
+      "dcbf0fb2672cc440",
+      "f484289591d4a3af",
+      "fd91c61f8d5eef8d"
+    ],
+    "distinctModels": 11,
+    "semantics": "Eleven source-specific pictured decimal-divisor targets; exact both-member shifts and ratio/side/perimeter/part-count/whole requested roles preserved."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave63-scaled-division-seventy-eight-four-by-fourteen",
+      "modelId": "visual-wave63-recover-original-decimal-division-expression",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "division",
+        "dividend": "78,4",
+        "divisor": "14",
+        "quotient": "5,6",
+        "steps": [
+          [
+            "70",
+            0,
+            true
+          ],
+          [
+            "84",
+            1,
+            false
+          ],
+          [
+            "84",
+            1,
+            true
+          ],
+          [
+            "0",
+            2,
+            false
+          ]
+        ]
+      },
+      "answer": "7,84 ÷ 1,4",
+      "sourceRefs": [
+        {
+          "sourceId": "272010552df2a5a0",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-8-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-8-level1.json#2",
+      "sourceCanonicalSha256": "b8d6f1477351a4a16e59d4400869a643f9ad27c2b9587574a54d6eaadbf6ceb0",
+      "sourceSkill": "NativeTRANSFORMED78,4÷14=5,6;amongfouroriginalsONLY7,84÷1,4scalesBOTHby10toit;notjustsameintegerdigits.",
+      "adaptationChanges": [
+        "Барлық 11 сақталған 4.8 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы парақтағы барлық 11 растр қаралды. Екі мүшедегі бірдей үтір жылжыту, жетпеген нөлді толықтыру, тек бөлгішті өзгерту қатесі, OA/OB/AB ұзындықтарының сұралған қатынасы, ауданнан белгісіз қабырға және периметр, көп бөліктің соңғы нөлді саны, тақтаның бекітілген бағыты және берілген бөлік бойынша бүтін сақталды.",
+        "Жаңа деректер:78,4÷14=5,6жаңаөрнек→бастапқы7,84÷1,4;3,60÷0,45=360÷45→8;A0,5/B4→OB/OA8;S1,68см²/0,7см→2,4см;3,52÷0,8қатежазба0,44→4,4;A0,7/B4,9→AB/OA6;S12,48м²/4,8м→P14,8м;18,40÷0,46→40бөлік;8,4×4,8еден1,2×0,8тақта→42;528÷16=33бойынша5,28÷1,6=3,3;10бөліктің7сі12,6км→толық18км.",
+        "Барлық SVG жаңа параметрден нативті жасалды. Қате бөлу оқушы жазбасы деп анық аталады. Көп нүкте нақты бір ұзын бөлік емес, әрі қарайғы тең бөліктердің шартты белгісі; плитаның бағытын ауыстырғанда еден ұзындығына бүтін саны сыймайды. Сәуленің кіші қадамы нақты 0,1. Source raster/traced path жоқ, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық бөлгішпен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullsolutions/everyMCQ plus two source/native343pxsheets. Observe actualdivisiondigits and paired×100padding, wrongonly-divisorshift, rayOA/OB/ABcoordinates, metricarea inverse/perimeter, repeatedpieceellipsis+quotientlast0, orientedtilerowcounts+swappednonintegercase, raw-equalityallMCQs, known7of10parttoWHOLE. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave63-scaled-division-seventy-eight-four-by-fourteen.svg",
+      "verificationModule": "scripts/editorial/visual-wave63-models.mjs",
+      "options": [
+        "7,84 ÷ 1,4",
+        "78,4 ÷ 0,14",
+        "0,784 ÷ 1,4",
+        "7,84 ÷ 0,14"
+      ],
+      "statement": "Оқушы екі сандағы үтірді БІРДЕЙ орынға жылжытып, суреттегі натурал бөлгішпен бөлуді орындады. Ол қай БАСТАПҚЫ өрнектің мәнін тапты?",
+      "solution": "Жаңа жазба 78,4 ÷ 14 = 5,6. 7,84 ÷ 1,4 өрнегінде екі санды да 10-ға көбейтсек дәл осы 78,4 ÷ 14 шығады. Басқа нұсқалар жаңа бөлінгішті де басқа мәнге әкеледі. Кері тексеру: 5,6 × 1,4 = 7,84. Жауапқа 5,6 мәні емес, бастапқы 7,84 ÷ 1,4 өрнегі алынады.",
+      "figureDescription": "Бұрышпен 78,4 саны 14 санына бөлінген. Оң жақта 5,6. Төменгі жолдар азайту 70; қалдық/түсіру 84; азайту 84; қалдық/түсіру 0.",
+      "figureSha256": "b1efee28d10994df94246ab4afb027880fb0c01d31abb5ba1a54ff33c6a7973e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7,84 ÷ 1,4",
+        "checks": {
+          "prefix": 78,
+          "firstQuotientDigit": 5,
+          "firstProduct": 70,
+          "firstRemainder": 8,
+          "remainingDigit": 4,
+          "nextCurrent": 84,
+          "nextQuotientDigit": 6,
+          "nextProduct": 84,
+          "finalRemainder": 0,
+          "shownQuotient": "5,6",
+          "transformedDividend": "78,4",
+          "transformedDivisor": "14",
+          "original": "7,84 ÷ 1,4",
+          "exactBothMemberShift": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave63-paired-hundredfold-shift-three-six-zero",
+      "modelId": "visual-wave63-paired-decimal-shift-appended-zero-value",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "shift",
+        "dividend": "3,60",
+        "divisor": "0,45",
+        "factor": 100
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "9183a9c12179079f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-8-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-8-level1.json#7",
+      "sourceCanonicalSha256": "b71085b321e63b2509ce3218bf2bf6ea45d9d7360c19ad061cc1b62eba7cfe96",
+      "sourceSkill": "3,6mustpad3,60, BOTH×100→360÷45=8;not36÷45=.8, shiftedonlyonce.",
+      "adaptationChanges": [
+        "Барлық 11 сақталған 4.8 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы парақтағы барлық 11 растр қаралды. Екі мүшедегі бірдей үтір жылжыту, жетпеген нөлді толықтыру, тек бөлгішті өзгерту қатесі, OA/OB/AB ұзындықтарының сұралған қатынасы, ауданнан белгісіз қабырға және периметр, көп бөліктің соңғы нөлді саны, тақтаның бекітілген бағыты және берілген бөлік бойынша бүтін сақталды.",
+        "Жаңа деректер:78,4÷14=5,6жаңаөрнек→бастапқы7,84÷1,4;3,60÷0,45=360÷45→8;A0,5/B4→OB/OA8;S1,68см²/0,7см→2,4см;3,52÷0,8қатежазба0,44→4,4;A0,7/B4,9→AB/OA6;S12,48м²/4,8м→P14,8м;18,40÷0,46→40бөлік;8,4×4,8еден1,2×0,8тақта→42;528÷16=33бойынша5,28÷1,6=3,3;10бөліктің7сі12,6км→толық18км.",
+        "Барлық SVG жаңа параметрден нативті жасалды. Қате бөлу оқушы жазбасы деп анық аталады. Көп нүкте нақты бір ұзын бөлік емес, әрі қарайғы тең бөліктердің шартты белгісі; плитаның бағытын ауыстырғанда еден ұзындығына бүтін саны сыймайды. Сәуленің кіші қадамы нақты 0,1. Source raster/traced path жоқ, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық бөлгішпен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullsolutions/everyMCQ plus two source/native343pxsheets. Observe actualdivisiondigits and paired×100padding, wrongonly-divisorshift, rayOA/OB/ABcoordinates, metricarea inverse/perimeter, repeatedpieceellipsis+quotientlast0, orientedtilerowcounts+swappednonintegercase, raw-equalityallMCQs, known7of10parttoWHOLE. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave63-paired-hundredfold-shift-three-six-zero.svg",
+      "verificationModule": "scripts/editorial/visual-wave63-models.mjs",
+      "options": [
+        "8",
+        "0,8",
+        "80",
+        "0,08"
+      ],
+      "statement": "Сызбадағы екі нұсқар да бірдей көбейткішті көрсетеді. Бастапқы бөлінгішке жетпеген нөл толықтырылған. Осы бөліндінің МӘНІН таңдаңыз.",
+      "solution": "Нөлді толықтырған бөлінгіш 3,60, бөлгіш 0,45. Екеуі де 100 есе артса, қатынас өзгермейді: 3,60 ÷ 0,45 = 360 ÷ 45 = 8. 3,6 санын 100-ге көбейтсек 360 шығады, 36 емес. Тексеру: 8 × 0,45 = 3,6.",
+      "figureDescription": "Жоғарыда 3,60 ÷ 0,45, бөлінгіштегі соңғы толықтыру нөлі ерекшеленген. Әр санға бірдей ×100 нұсқары түседі. Төменде 360 ÷ 45.",
+      "figureSha256": "b2e83efdd46200e77bce2f24dd53c4560e2cfd8968c6ade155cc2e95ee12284f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": {
+          "paddedDividend": "3,60",
+          "originalDivisor": "0,45",
+          "factor": 100,
+          "naturalDividend": 360,
+          "naturalDivisor": 45,
+          "quotient": 8,
+          "appendedZeroRequired": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave63-ray-half-to-four-segment-fit",
+      "modelId": "visual-wave63-ray-origin-length-how-many-fit",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ray",
+        "aTick": 5,
+        "bTick": 40,
+        "maxTick": 45,
+        "target": "OB/OA"
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "fd91c61f8d5eef8d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-8-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-8-level1.json#8",
+      "sourceCanonicalSha256": "22673dd18a3fa8b5a5dc8e3fe33bcda826cd56cac6d267a27798fae7da1358db",
+      "sourceSkill": "ActualA.5B4on.1ticks,OB/OA4÷.5=8wholefits,notAB/OA7.",
+      "adaptationChanges": [
+        "Барлық 11 сақталған 4.8 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы парақтағы барлық 11 растр қаралды. Екі мүшедегі бірдей үтір жылжыту, жетпеген нөлді толықтыру, тек бөлгішті өзгерту қатесі, OA/OB/AB ұзындықтарының сұралған қатынасы, ауданнан белгісіз қабырға және периметр, көп бөліктің соңғы нөлді саны, тақтаның бекітілген бағыты және берілген бөлік бойынша бүтін сақталды.",
+        "Жаңа деректер:78,4÷14=5,6жаңаөрнек→бастапқы7,84÷1,4;3,60÷0,45=360÷45→8;A0,5/B4→OB/OA8;S1,68см²/0,7см→2,4см;3,52÷0,8қатежазба0,44→4,4;A0,7/B4,9→AB/OA6;S12,48м²/4,8м→P14,8м;18,40÷0,46→40бөлік;8,4×4,8еден1,2×0,8тақта→42;528÷16=33бойынша5,28÷1,6=3,3;10бөліктің7сі12,6км→толық18км.",
+        "Барлық SVG жаңа параметрден нативті жасалды. Қате бөлу оқушы жазбасы деп анық аталады. Көп нүкте нақты бір ұзын бөлік емес, әрі қарайғы тең бөліктердің шартты белгісі; плитаның бағытын ауыстырғанда еден ұзындығына бүтін саны сыймайды. Сәуленің кіші қадамы нақты 0,1. Source raster/traced path жоқ, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық бөлгішпен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullsolutions/everyMCQ plus two source/native343pxsheets. Observe actualdivisiondigits and paired×100padding, wrongonly-divisorshift, rayOA/OB/ABcoordinates, metricarea inverse/perimeter, repeatedpieceellipsis+quotientlast0, orientedtilerowcounts+swappednonintegercase, raw-equalityallMCQs, known7of10parttoWHOLE. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave63-ray-half-to-four-segment-fit.svg",
+      "verificationModule": "scripts/editorial/visual-wave63-models.mjs",
+      "statement": "Сәуледен A және B координаталарын оқыңыз. OB ұзындығы бойына OA ұзындығы неше рет толық сыяды? Жауапқа тек санды жазыңыз.",
+      "solution": "Бір кіші қадам 0,1. A(0,5), B(4); OA = 0,5, OB = 4, AB = 3,5. OB бойына OA неше рет сыятынын табамыз: 4 ÷ 0,5 = 40 ÷ 5 = 8. AB ұзындығын алу басқа сұраққа жауап береді.",
+      "figureDescription": "Координаталық сәуле 0-ден басталады, әр бірлік он тең қадам. A нүктесі 0-ден 5-қадамда, B 40-қадамда.",
+      "figureSha256": "1adebc76122ef35a6c91197216e821671a3cb3873e8cc7c358dde2c393c22c04",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": {
+          "oaTenths": 5,
+          "obTenths": 40,
+          "abTenths": 35,
+          "numeratorTenths": 40,
+          "denominatorTenths": 5,
+          "target": "OB/OA",
+          "multiple": 8
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave63-rectangle-area-one-sixty-eight-width-seven-tenths",
+      "modelId": "visual-wave63-area-divided-subunit-side-unknown-length",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "easy",
+      "params": {
+        "scene": "rectangle",
+        "areaTenThousandths": 16800,
+        "knownHundredths": 70,
+        "target": "side"
+      },
+      "answer": "2,4",
+      "sourceRefs": [
+        {
+          "sourceId": "435fcb4ebe3fa73f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-8-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-8-level1.json#10",
+      "sourceCanonicalSha256": "b80a764116ad6d32cf71ec5f2a59bd594f3fea1b5282ea94429c63d0ce3b03fa",
+      "sourceSkill": "S1,68cm²/known.7cm→unknown2,4cm; BOTH×10→16,8÷7, positiveDIVISOR<1 increasesquotientvsarea.",
+      "adaptationChanges": [
+        "Барлық 11 сақталған 4.8 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы парақтағы барлық 11 растр қаралды. Екі мүшедегі бірдей үтір жылжыту, жетпеген нөлді толықтыру, тек бөлгішті өзгерту қатесі, OA/OB/AB ұзындықтарының сұралған қатынасы, ауданнан белгісіз қабырға және периметр, көп бөліктің соңғы нөлді саны, тақтаның бекітілген бағыты және берілген бөлік бойынша бүтін сақталды.",
+        "Жаңа деректер:78,4÷14=5,6жаңаөрнек→бастапқы7,84÷1,4;3,60÷0,45=360÷45→8;A0,5/B4→OB/OA8;S1,68см²/0,7см→2,4см;3,52÷0,8қатежазба0,44→4,4;A0,7/B4,9→AB/OA6;S12,48м²/4,8м→P14,8м;18,40÷0,46→40бөлік;8,4×4,8еден1,2×0,8тақта→42;528÷16=33бойынша5,28÷1,6=3,3;10бөліктің7сі12,6км→толық18км.",
+        "Барлық SVG жаңа параметрден нативті жасалды. Қате бөлу оқушы жазбасы деп анық аталады. Көп нүкте нақты бір ұзын бөлік емес, әрі қарайғы тең бөліктердің шартты белгісі; плитаның бағытын ауыстырғанда еден ұзындығына бүтін саны сыймайды. Сәуленің кіші қадамы нақты 0,1. Source raster/traced path жоқ, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық бөлгішпен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullsolutions/everyMCQ plus two source/native343pxsheets. Observe actualdivisiondigits and paired×100padding, wrongonly-divisorshift, rayOA/OB/ABcoordinates, metricarea inverse/perimeter, repeatedpieceellipsis+quotientlast0, orientedtilerowcounts+swappednonintegercase, raw-equalityallMCQs, known7of10parttoWHOLE. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave63-rectangle-area-one-sixty-eight-width-seven-tenths.svg",
+      "verificationModule": "scripts/editorial/visual-wave63-models.mjs",
+      "statement": "Тіктөртбұрыштың S ауданы см²-мен, белгілі қабырғасы сантиметрмен берілген. Сұрақ белгісі тұрған ЕКІНШІ қабырғасы неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Аудан = екі қабырғаның көбейтіндісі. Белгісіз қабырға 1,68 ÷ 0,7 = 16,8 ÷ 7 = 2,4 см. Екі санның үтірі бірдей бір орынға жылжыды. Тексеру: 2,4 × 0,7 = 1,68 см². Белгілі қабырға 1-ден кіші болғандықтан нәтиже ауданның сандық мәнінен үлкен.",
+      "figureDescription": "Тіктөртбұрыш ішіндегі S = 1,68 см². Белгілі қабырға 0,7 см, екінші қабырға сұрақ белгісі.",
+      "figureSha256": "565ea17a48f105efbc5dfe65e722f2b8b51de447ec7c4c3e4cece36cd14d72fa",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2,4",
+        "checks": {
+          "areaTenThousandths": 16800,
+          "knownSideHundredths": 70,
+          "unknownSideHundredths": 240,
+          "perimeterHundredths": 620,
+          "backArea": 16800
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave63-wrong-only-divisor-shift-three-fifty-two",
+      "modelId": "visual-wave63-student-shifts-only-decimal-divisor",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "division",
+        "dividend": "3,52",
+        "divisor": "8",
+        "quotient": "0,44",
+        "originalDivisor": "0,8",
+        "steps": [
+          [
+            "32",
+            0,
+            true
+          ],
+          [
+            "32",
+            1,
+            false
+          ],
+          [
+            "32",
+            1,
+            true
+          ],
+          [
+            "0",
+            2,
+            false
+          ]
+        ]
+      },
+      "answer": "4,4",
+      "sourceRefs": [
+        {
+          "sourceId": "f484289591d4a3af",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-8-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-8-level2.json#0",
+      "sourceCanonicalSha256": "a8025378f1b4148adadcd79c17e7423f61fc3a72e165d53a1ec49ce8c2b5ee71",
+      "sourceSkill": "StudentWRONG3,52÷.8computed3,52÷8=.44; correctBOTH×10→35,2÷8=4,4,subunitdivisorrequiresresult>3,52.",
+      "adaptationChanges": [
+        "Барлық 11 сақталған 4.8 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы парақтағы барлық 11 растр қаралды. Екі мүшедегі бірдей үтір жылжыту, жетпеген нөлді толықтыру, тек бөлгішті өзгерту қатесі, OA/OB/AB ұзындықтарының сұралған қатынасы, ауданнан белгісіз қабырға және периметр, көп бөліктің соңғы нөлді саны, тақтаның бекітілген бағыты және берілген бөлік бойынша бүтін сақталды.",
+        "Жаңа деректер:78,4÷14=5,6жаңаөрнек→бастапқы7,84÷1,4;3,60÷0,45=360÷45→8;A0,5/B4→OB/OA8;S1,68см²/0,7см→2,4см;3,52÷0,8қатежазба0,44→4,4;A0,7/B4,9→AB/OA6;S12,48м²/4,8м→P14,8м;18,40÷0,46→40бөлік;8,4×4,8еден1,2×0,8тақта→42;528÷16=33бойынша5,28÷1,6=3,3;10бөліктің7сі12,6км→толық18км.",
+        "Барлық SVG жаңа параметрден нативті жасалды. Қате бөлу оқушы жазбасы деп анық аталады. Көп нүкте нақты бір ұзын бөлік емес, әрі қарайғы тең бөліктердің шартты белгісі; плитаның бағытын ауыстырғанда еден ұзындығына бүтін саны сыймайды. Сәуленің кіші қадамы нақты 0,1. Source raster/traced path жоқ, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық бөлгішпен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullsolutions/everyMCQ plus two source/native343pxsheets. Observe actualdivisiondigits and paired×100padding, wrongonly-divisorshift, rayOA/OB/ABcoordinates, metricarea inverse/perimeter, repeatedpieceellipsis+quotientlast0, orientedtilerowcounts+swappednonintegercase, raw-equalityallMCQs, known7of10parttoWHOLE. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave63-wrong-only-divisor-shift-three-fifty-two.svg",
+      "verificationModule": "scripts/editorial/visual-wave63-models.mjs",
+      "options": [
+        "4,4",
+        "0,44",
+        "44",
+        "0,044"
+      ],
+      "statement": "Оқушы 3,52 ÷ 0,8 есептегенде суреттегі жазбаны алған. Ол тек бөлгіштің үтірін жылжытқан. Бастапқы амалдың ДҰРЫС мәнін таңдаңыз.",
+      "solution": "Оқушы 3,52 ÷ 8 = 0,44 тапқан. Бірақ бастапқы бөлгіш 0,8 еді. Бөлгішті 10-ға көбейтсек, бөлінгіш те 10-ға көбейтіледі: 3,52 ÷ 0,8 = 35,2 ÷ 8 = 4,4. Тексеру: 4,4 × 0,8 = 3,52. Тек бөлгішті өзгерткен 0,44 жауабы 10 есе кіші. Бөлгіш 0,8 < 1 болғандықтан дұрыс нәтиже 3,52 санынан үлкен.",
+      "figureDescription": "Бұрышпен 3,52 саны 8 санына бөлінген. Оң жақта 0,44. Төменгі жолдар азайту 32; қалдық/түсіру 32; азайту 32; қалдық/түсіру 0.",
+      "figureSha256": "408acb09d4116d98ddda2a2510fa319840dfaac97d606db8f7fa5c1fd99cd4bf",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4,4",
+        "checks": {
+          "prefix": 35,
+          "firstQuotientDigit": 4,
+          "firstProduct": 32,
+          "firstRemainder": 3,
+          "remainingDigit": 2,
+          "nextCurrent": 32,
+          "nextQuotientDigit": 4,
+          "nextProduct": 32,
+          "finalRemainder": 0,
+          "shownQuotient": "0,44",
+          "studentChangedOnlyDivisor": "8",
+          "originalDivisor": "0,8",
+          "correctTransformedDividend": "35,2",
+          "correctQuotient": "4,4",
+          "wrongQuotient": "0,44",
+          "quotientFactor": 10
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave63-ray-seven-tenths-to-four-nine-ratio",
+      "modelId": "visual-wave63-ray-inner-segment-versus-origin-length",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "ray",
+        "aTick": 7,
+        "bTick": 49,
+        "maxTick": 50,
+        "target": "AB/OA"
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "b4f60139cd2b27de",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-8-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-8-level2.json#4",
+      "sourceCanonicalSha256": "bcd2d4408d95970370fb50bb18ef41de1e5d8873de70da9b23a137b6bc1b65a3",
+      "sourceSkill": "A.7B4.9 actualticks;AB4.2notOB4.9, AB/OA4.2÷.7=6, notOB/OA7.",
+      "adaptationChanges": [
+        "Барлық 11 сақталған 4.8 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы парақтағы барлық 11 растр қаралды. Екі мүшедегі бірдей үтір жылжыту, жетпеген нөлді толықтыру, тек бөлгішті өзгерту қатесі, OA/OB/AB ұзындықтарының сұралған қатынасы, ауданнан белгісіз қабырға және периметр, көп бөліктің соңғы нөлді саны, тақтаның бекітілген бағыты және берілген бөлік бойынша бүтін сақталды.",
+        "Жаңа деректер:78,4÷14=5,6жаңаөрнек→бастапқы7,84÷1,4;3,60÷0,45=360÷45→8;A0,5/B4→OB/OA8;S1,68см²/0,7см→2,4см;3,52÷0,8қатежазба0,44→4,4;A0,7/B4,9→AB/OA6;S12,48м²/4,8м→P14,8м;18,40÷0,46→40бөлік;8,4×4,8еден1,2×0,8тақта→42;528÷16=33бойынша5,28÷1,6=3,3;10бөліктің7сі12,6км→толық18км.",
+        "Барлық SVG жаңа параметрден нативті жасалды. Қате бөлу оқушы жазбасы деп анық аталады. Көп нүкте нақты бір ұзын бөлік емес, әрі қарайғы тең бөліктердің шартты белгісі; плитаның бағытын ауыстырғанда еден ұзындығына бүтін саны сыймайды. Сәуленің кіші қадамы нақты 0,1. Source raster/traced path жоқ, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық бөлгішпен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullsolutions/everyMCQ plus two source/native343pxsheets. Observe actualdivisiondigits and paired×100padding, wrongonly-divisorshift, rayOA/OB/ABcoordinates, metricarea inverse/perimeter, repeatedpieceellipsis+quotientlast0, orientedtilerowcounts+swappednonintegercase, raw-equalityallMCQs, known7of10parttoWHOLE. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave63-ray-seven-tenths-to-four-nine-ratio.svg",
+      "verificationModule": "scripts/editorial/visual-wave63-models.mjs",
+      "statement": "A және B координаталарын сәуледен оқыңыз. AB ұзындығы OA ұзындығынан неше ЕСЕ үлкен? OB емес, A-дан B-ға дейінгі аралық сұралған. Жауапқа тек санды жазыңыз.",
+      "solution": "Бір кіші қадам 0,1. A(0,7), B(4,9); OA = 0,7, OB = 4,9, AB = 4,2. Алдымен A-дан B-ға дейінгі AB ұзындығы алынады: 4,2 ÷ 0,7 = 42 ÷ 7 = 6. OB ÷ OA = 7 — O-ден санау, ал сұралғаны AB.",
+      "figureDescription": "Координаталық сәуле 0-ден басталады, әр бірлік он тең қадам. A нүктесі 0-ден 7-қадамда, B 49-қадамда.",
+      "figureSha256": "2b75a5a854104d3fb7b59d97eec2bdcab9bf8da19af6b9d4e778297309cd4b35",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "oaTenths": 7,
+          "obTenths": 49,
+          "abTenths": 42,
+          "numeratorTenths": 42,
+          "denominatorTenths": 7,
+          "target": "AB/OA",
+          "multiple": 6
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave63-garden-area-twelve-forty-eight-length-four-eight",
+      "modelId": "visual-wave63-decimal-area-side-then-perimeter",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "areaTenThousandths": 124800,
+        "knownHundredths": 480,
+        "target": "perimeter"
+      },
+      "answer": "14,8 м",
+      "sourceRefs": [
+        {
+          "sourceId": "31cb72ff4b9c9da5",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-8-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-8-level2.json#5",
+      "sourceCanonicalSha256": "72fb2ba99bef9d5690c9cdf112dc0fc3aa5e6ef706ca81c5a828c37554f8fde8",
+      "sourceSkill": "S12,48m²/4,8m=2,6m then2(4,8+2,6)=14,8;half7,4/wrongonlydivisorwidth.26→10,12/shift148.",
+      "adaptationChanges": [
+        "Барлық 11 сақталған 4.8 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы парақтағы барлық 11 растр қаралды. Екі мүшедегі бірдей үтір жылжыту, жетпеген нөлді толықтыру, тек бөлгішті өзгерту қатесі, OA/OB/AB ұзындықтарының сұралған қатынасы, ауданнан белгісіз қабырға және периметр, көп бөліктің соңғы нөлді саны, тақтаның бекітілген бағыты және берілген бөлік бойынша бүтін сақталды.",
+        "Жаңа деректер:78,4÷14=5,6жаңаөрнек→бастапқы7,84÷1,4;3,60÷0,45=360÷45→8;A0,5/B4→OB/OA8;S1,68см²/0,7см→2,4см;3,52÷0,8қатежазба0,44→4,4;A0,7/B4,9→AB/OA6;S12,48м²/4,8м→P14,8м;18,40÷0,46→40бөлік;8,4×4,8еден1,2×0,8тақта→42;528÷16=33бойынша5,28÷1,6=3,3;10бөліктің7сі12,6км→толық18км.",
+        "Барлық SVG жаңа параметрден нативті жасалды. Қате бөлу оқушы жазбасы деп анық аталады. Көп нүкте нақты бір ұзын бөлік емес, әрі қарайғы тең бөліктердің шартты белгісі; плитаның бағытын ауыстырғанда еден ұзындығына бүтін саны сыймайды. Сәуленің кіші қадамы нақты 0,1. Source raster/traced path жоқ, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық бөлгішпен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullsolutions/everyMCQ plus two source/native343pxsheets. Observe actualdivisiondigits and paired×100padding, wrongonly-divisorshift, rayOA/OB/ABcoordinates, metricarea inverse/perimeter, repeatedpieceellipsis+quotientlast0, orientedtilerowcounts+swappednonintegercase, raw-equalityallMCQs, known7of10parttoWHOLE. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave63-garden-area-twelve-forty-eight-length-four-eight.svg",
+      "verificationModule": "scripts/editorial/visual-wave63-models.mjs",
+      "options": [
+        "7,4 м",
+        "10,12 м",
+        "14,8 м",
+        "148 м"
+      ],
+      "statement": "Тіктөртбұрышты бақшаның S ауданы м²-мен және бір қабырғасы метрмен берілген. Бақшаның ПЕРИМЕТРІН таңдаңыз.",
+      "solution": "Екінші қабырға 12,48 ÷ 4,8 = 2,6 м. Периметр 2 × (4,8 + 2,6) = 14,8 м. 7,4 м — жарты периметр. Тек бөлгіштің үтірін жылжытсақ ені 0,26 м болып қате табылады, одан 10,12 м деген қате периметр шығады. Тексеру: 4,8 × 2,6 = 12,48 м².",
+      "figureDescription": "Тіктөртбұрыш ішіндегі S = 12,48 м². Белгілі қабырға 4,8 м, екінші қабырға сұрақ белгісі.",
+      "figureSha256": "4a270d9aa0d139b211a79ca6f5528e9f4e72327b1d0a32af1a350cadc087e9f7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "14,8 м",
+        "checks": {
+          "areaTenThousandths": 124800,
+          "knownSideHundredths": 480,
+          "unknownSideHundredths": 260,
+          "perimeterHundredths": 1480,
+          "backArea": 124800
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave63-tape-eighteen-four-pieces-forty-six-hundredths",
+      "modelId": "visual-wave63-whole-tape-decimal-unit-count-final-zero",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "tape",
+        "totalHundredths": 1840,
+        "pieceHundredths": 46
+      },
+      "answer": "40",
+      "sourceRefs": [
+        {
+          "sourceId": "47d6b1585fe8ab4f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-8-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-8-level2.json#7",
+      "sourceCanonicalSha256": "8a77cdd8a910fbdb5a9c8ad8f34111f0723ce2094b31e2977cdb0ab54e940f0f",
+      "sourceSkill": "18,4÷.46 needs18,40→1840÷46=40 inclFINAL0;forgotpad184÷46=4wrong. Threevisiblepiecesplusellipsisnotfalse40piecegeometry.",
+      "adaptationChanges": [
+        "Барлық 11 сақталған 4.8 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы парақтағы барлық 11 растр қаралды. Екі мүшедегі бірдей үтір жылжыту, жетпеген нөлді толықтыру, тек бөлгішті өзгерту қатесі, OA/OB/AB ұзындықтарының сұралған қатынасы, ауданнан белгісіз қабырға және периметр, көп бөліктің соңғы нөлді саны, тақтаның бекітілген бағыты және берілген бөлік бойынша бүтін сақталды.",
+        "Жаңа деректер:78,4÷14=5,6жаңаөрнек→бастапқы7,84÷1,4;3,60÷0,45=360÷45→8;A0,5/B4→OB/OA8;S1,68см²/0,7см→2,4см;3,52÷0,8қатежазба0,44→4,4;A0,7/B4,9→AB/OA6;S12,48м²/4,8м→P14,8м;18,40÷0,46→40бөлік;8,4×4,8еден1,2×0,8тақта→42;528÷16=33бойынша5,28÷1,6=3,3;10бөліктің7сі12,6км→толық18км.",
+        "Барлық SVG жаңа параметрден нативті жасалды. Қате бөлу оқушы жазбасы деп анық аталады. Көп нүкте нақты бір ұзын бөлік емес, әрі қарайғы тең бөліктердің шартты белгісі; плитаның бағытын ауыстырғанда еден ұзындығына бүтін саны сыймайды. Сәуленің кіші қадамы нақты 0,1. Source raster/traced path жоқ, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық бөлгішпен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullsolutions/everyMCQ plus two source/native343pxsheets. Observe actualdivisiondigits and paired×100padding, wrongonly-divisorshift, rayOA/OB/ABcoordinates, metricarea inverse/perimeter, repeatedpieceellipsis+quotientlast0, orientedtilerowcounts+swappednonintegercase, raw-equalityallMCQs, known7of10parttoWHOLE. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave63-tape-eighteen-four-pieces-forty-six-hundredths.svg",
+      "verificationModule": "scripts/editorial/visual-wave63-models.mjs",
+      "statement": "Таспаның жалпы және әр бөлігінің ұзындығы метрмен берілген. Көп нүкте — әрі қарай жалғасатын дәл сондай бөліктердің шартты белгісі. Қалдықсыз кескенде БАРЛЫҒЫ неше бөлік шығады? Жауапқа тек санды жазыңыз.",
+      "solution": "Толық 18,4 м, бір бөлік 0,46 м. Бөлгіште екі ондық орын бар: 18,40 ÷ 0,46 = 1840 ÷ 46 = 40. Алдымен 184 ÷ 46 = 4, одан кейін бөлінгіштегі соңғы 0 бөліндіге де 0 береді: 40. Тексеру: 40 × 0,46 = 18,4. Толықтыру нөлін тастап 184 ÷ 46 есептеу бөліктер санын 10 есе азайтады.",
+      "figureDescription": "Таспаның толық ұзындығы 18,4 м. Алғашқы үш бірдей бөлікте 0,46 м, кейін көп нүкте сол бөліктердің жалғасатынын көрсетеді; соңғы кең ұяшық бір бөлік ретінде ұсынылмайды.",
+      "figureSha256": "cffc4dfa63c7a3d7155e777b224a427f0dc4aa9f0e8b44c8a8baf2febae76dd8",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "40",
+        "checks": {
+          "totalHundredthsMetres": 1840,
+          "pieceHundredthsMetres": 46,
+          "paddedDividend": "18,40",
+          "naturalDividend": 1840,
+          "naturalDivisor": 46,
+          "count": 40,
+          "finalZeroRequired": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave63-floor-eight-four-four-eight-tile-one-two-eight-tenths",
+      "modelId": "visual-wave63-oriented-rectangle-tile-row-count",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "tiles",
+        "length": 840,
+        "width": 480,
+        "tileLength": 120,
+        "tileWidth": 80
+      },
+      "answer": "42",
+      "sourceRefs": [
+        {
+          "sourceId": "cac346fa34eee6b0",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-8-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-8-level3.json#1",
+      "sourceCanonicalSha256": "d7c023538244934c901ea658806533e77aa50c2328a0a905f5123411623f1b0c",
+      "sourceSkill": "8,4×4,8floor tiled1,2×.8 SAMEshownorientation→7columns6rows42. Swapping gives8.4/.8=10.5noninteger,soorientationtrappreserved; area40.32/.96=42.",
+      "adaptationChanges": [
+        "Барлық 11 сақталған 4.8 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы парақтағы барлық 11 растр қаралды. Екі мүшедегі бірдей үтір жылжыту, жетпеген нөлді толықтыру, тек бөлгішті өзгерту қатесі, OA/OB/AB ұзындықтарының сұралған қатынасы, ауданнан белгісіз қабырға және периметр, көп бөліктің соңғы нөлді саны, тақтаның бекітілген бағыты және берілген бөлік бойынша бүтін сақталды.",
+        "Жаңа деректер:78,4÷14=5,6жаңаөрнек→бастапқы7,84÷1,4;3,60÷0,45=360÷45→8;A0,5/B4→OB/OA8;S1,68см²/0,7см→2,4см;3,52÷0,8қатежазба0,44→4,4;A0,7/B4,9→AB/OA6;S12,48м²/4,8м→P14,8м;18,40÷0,46→40бөлік;8,4×4,8еден1,2×0,8тақта→42;528÷16=33бойынша5,28÷1,6=3,3;10бөліктің7сі12,6км→толық18км.",
+        "Барлық SVG жаңа параметрден нативті жасалды. Қате бөлу оқушы жазбасы деп анық аталады. Көп нүкте нақты бір ұзын бөлік емес, әрі қарайғы тең бөліктердің шартты белгісі; плитаның бағытын ауыстырғанда еден ұзындығына бүтін саны сыймайды. Сәуленің кіші қадамы нақты 0,1. Source raster/traced path жоқ, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық бөлгішпен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullsolutions/everyMCQ plus two source/native343pxsheets. Observe actualdivisiondigits and paired×100padding, wrongonly-divisorshift, rayOA/OB/ABcoordinates, metricarea inverse/perimeter, repeatedpieceellipsis+quotientlast0, orientedtilerowcounts+swappednonintegercase, raw-equalityallMCQs, known7of10parttoWHOLE. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave63-floor-eight-four-four-eight-tile-one-two-eight-tenths.svg",
+      "verificationModule": "scripts/editorial/visual-wave63-models.mjs",
+      "statement": "Үлкен тік төртбұрыш — еден, бұрыштағы көк бөлік — бір тақта. Барлық өлшем метрмен берілген. Тақталар бос орынсыз және ДӘЛ СУРЕТТЕГІ бағытпен қатарланады. Еденге неше тақта керек? Жауапқа тек санды жазыңыз.",
+      "solution": "Бір қатарда 8,4 ÷ 1,2 = 7 тақта. Қатар саны 4,8 ÷ 0,8 = 6. Барлығы 7 × 6 = 42. Бағытты ауыстырсақ 8,4 ÷ 0,8 = 10,5 бүтін емес, сондықтан берілген қатарлау орындалмайды. Ауданмен тексеру: 40,32 ÷ 0,96 = 42.",
+      "figureDescription": "Еден 8,4×4,8 м. Жоғарғы сол жақ бір тақта 1,2×0,8 м, ұзын жағы еденнің 8,4 м жағына параллель.",
+      "figureSha256": "ef5fbca7afe709dbd8814087602e4f5b88e7189cd6abc64b8133ab48d4198b79",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "42",
+        "checks": {
+          "columns": 7,
+          "rows": 6,
+          "totalTiles": 42,
+          "floorAreaTenThousandths": 403200,
+          "tileAreaTenThousandths": 9600,
+          "orientationSwapDoesNotFit": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave63-raw-integer-division-five-twenty-eight-sixteen",
+      "modelId": "visual-wave63-raw-division-identify-correct-decimal-equality",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "division",
+        "dividend": "528",
+        "divisor": "16",
+        "quotient": "33",
+        "steps": [
+          [
+            "48",
+            0,
+            true
+          ],
+          [
+            "48",
+            1,
+            false
+          ],
+          [
+            "48",
+            1,
+            true
+          ],
+          [
+            "0",
+            2,
+            false
+          ]
+        ]
+      },
+      "answer": "5,28 ÷ 1,6 = 3,3",
+      "sourceRefs": [
+        {
+          "sourceId": "1984bb0e12311ff9",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-8-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-8-level3.json#9",
+      "sourceCanonicalSha256": "25b76df011cd99b8f4991f14b3c9c13543339bbb67c50989c6c18b736cae6c4d",
+      "sourceSkill": "Raw528÷16=33; fullMCQequality5,28/1,6=3,3true,othersfactor10false (330vs33/.33vs3.3/3300vs330).",
+      "adaptationChanges": [
+        "Барлық 11 сақталған 4.8 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы парақтағы барлық 11 растр қаралды. Екі мүшедегі бірдей үтір жылжыту, жетпеген нөлді толықтыру, тек бөлгішті өзгерту қатесі, OA/OB/AB ұзындықтарының сұралған қатынасы, ауданнан белгісіз қабырға және периметр, көп бөліктің соңғы нөлді саны, тақтаның бекітілген бағыты және берілген бөлік бойынша бүтін сақталды.",
+        "Жаңа деректер:78,4÷14=5,6жаңаөрнек→бастапқы7,84÷1,4;3,60÷0,45=360÷45→8;A0,5/B4→OB/OA8;S1,68см²/0,7см→2,4см;3,52÷0,8қатежазба0,44→4,4;A0,7/B4,9→AB/OA6;S12,48м²/4,8м→P14,8м;18,40÷0,46→40бөлік;8,4×4,8еден1,2×0,8тақта→42;528÷16=33бойынша5,28÷1,6=3,3;10бөліктің7сі12,6км→толық18км.",
+        "Барлық SVG жаңа параметрден нативті жасалды. Қате бөлу оқушы жазбасы деп анық аталады. Көп нүкте нақты бір ұзын бөлік емес, әрі қарайғы тең бөліктердің шартты белгісі; плитаның бағытын ауыстырғанда еден ұзындығына бүтін саны сыймайды. Сәуленің кіші қадамы нақты 0,1. Source raster/traced path жоқ, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық бөлгішпен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullsolutions/everyMCQ plus two source/native343pxsheets. Observe actualdivisiondigits and paired×100padding, wrongonly-divisorshift, rayOA/OB/ABcoordinates, metricarea inverse/perimeter, repeatedpieceellipsis+quotientlast0, orientedtilerowcounts+swappednonintegercase, raw-equalityallMCQs, known7of10parttoWHOLE. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave63-raw-integer-division-five-twenty-eight-sixteen.svg",
+      "verificationModule": "scripts/editorial/visual-wave63-models.mjs",
+      "options": [
+        "52,8 ÷ 0,16 = 33",
+        "5,28 ÷ 1,6 = 3,3",
+        "0,528 ÷ 1,6 = 3,3",
+        "528 ÷ 0,16 = 330"
+      ],
+      "statement": "Бұрышпен бөлуде бүтін цифрлар дұрыс есептелген. Осы қатынасқа сүйеніп, үтірлері бар ДҰРЫС толық теңдікті таңдаңыз. Қалған теңдіктер әдейі қате берілген.",
+      "solution": "Суретте 528 ÷ 16 = 33. Әр нұсқаны екі санның үтірін бірдей жылжытып тексереміз: 52,8 ÷ 0,16 = 5280 ÷ 16 = 330; 5,28 ÷ 1,6 = 52,8 ÷ 16 = 3,3; 0,528 ÷ 1,6 = 5,28 ÷ 16 = 0,33; 528 ÷ 0,16 = 52800 ÷ 16 = 3300. Сондықтан тек 5,28 ÷ 1,6 = 3,3 тура. 3,3 × 1,6 = 5,28 кері тексеруі де орындалады.",
+      "figureDescription": "Бұрышпен 528 саны 16 санына бөлінген. Оң жақта 33. Төменгі жолдар азайту 48; қалдық/түсіру 48; азайту 48; қалдық/түсіру 0.",
+      "figureSha256": "4e629e7c8160261dc6758c59a00b8f823b017110ed75f1e22e7a9d905225f8f8",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5,28 ÷ 1,6 = 3,3",
+        "checks": {
+          "prefix": 52,
+          "firstQuotientDigit": 3,
+          "firstProduct": 48,
+          "firstRemainder": 4,
+          "remainingDigit": 8,
+          "nextCurrent": 48,
+          "nextQuotientDigit": 3,
+          "nextProduct": 48,
+          "finalRemainder": 0,
+          "shownQuotient": "33",
+          "rawDividend": "528",
+          "rawDivisor": "16",
+          "rawQuotient": "33",
+          "uniqueTrueEquality": "5,28 ÷ 1,6 = 3,3",
+          "allMCQsChecked": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave63-seven-tenths-road-known-twelve-six",
+      "modelId": "visual-wave63-part-model-known-part-to-whole-road",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "known-part",
+        "parts": 10,
+        "colored": 7,
+        "knownHundredths": 1260
+      },
+      "answer": "18",
+      "sourceRefs": [
+        {
+          "sourceId": "dcbf0fb2672cc440",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-8-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-8-leveltest.json#5",
+      "sourceCanonicalSha256": "eca759a6105b5d9a712be046d855c4ef8211618e53b94e8da5351b8a5a456af6",
+      "sourceSkill": "7of10equalpartsknown12,6km=.7WHOLE→12,6÷.7=18km,notpart×.7; independentonepart1,8×10conserves.",
+      "adaptationChanges": [
+        "Барлық 11 сақталған 4.8 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, екі бастапқы парақтағы барлық 11 растр қаралды. Екі мүшедегі бірдей үтір жылжыту, жетпеген нөлді толықтыру, тек бөлгішті өзгерту қатесі, OA/OB/AB ұзындықтарының сұралған қатынасы, ауданнан белгісіз қабырға және периметр, көп бөліктің соңғы нөлді саны, тақтаның бекітілген бағыты және берілген бөлік бойынша бүтін сақталды.",
+        "Жаңа деректер:78,4÷14=5,6жаңаөрнек→бастапқы7,84÷1,4;3,60÷0,45=360÷45→8;A0,5/B4→OB/OA8;S1,68см²/0,7см→2,4см;3,52÷0,8қатежазба0,44→4,4;A0,7/B4,9→AB/OA6;S12,48м²/4,8м→P14,8м;18,40÷0,46→40бөлік;8,4×4,8еден1,2×0,8тақта→42;528÷16=33бойынша5,28÷1,6=3,3;10бөліктің7сі12,6км→толық18км.",
+        "Барлық SVG жаңа параметрден нативті жасалды. Қате бөлу оқушы жазбасы деп анық аталады. Көп нүкте нақты бір ұзын бөлік емес, әрі қарайғы тең бөліктердің шартты белгісі; плитаның бағытын ауыстырғанда еден ұзындығына бүтін саны сыймайды. Сәуленің кіші қадамы нақты 0,1. Source raster/traced path жоқ, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық бөлгішпен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullsolutions/everyMCQ plus two source/native343pxsheets. Observe actualdivisiondigits and paired×100padding, wrongonly-divisorshift, rayOA/OB/ABcoordinates, metricarea inverse/perimeter, repeatedpieceellipsis+quotientlast0, orientedtilerowcounts+swappednonintegercase, raw-equalityallMCQs, known7of10parttoWHOLE. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave63-seven-tenths-road-known-twelve-six.svg",
+      "verificationModule": "scripts/editorial/visual-wave63-models.mjs",
+      "statement": "Барлық жол тең бөліктерге бөлінген. Көк бөліктің БАРЛЫҚ ұзындығы километрмен жазылған. Көк пен ақты қоса алғандағы ТОЛЫҚ жол неше километр? Жауапқа тек санды жазыңыз.",
+      "solution": "Көк 7 бөлік барлық 10 бөліктің (7/10) = 0,7 үлесі. Белгілі бөлік 12,6 км, сондықтан бүтін 12,6 ÷ 0,7 = 18 км. Бір бөліктен тексеру: 12,6 ÷ 7 = 1,8 км; 1,8 × 10 = 18. Бөлікке тағы көбейту бүтінді емес, одан да кіші шаманы береді.",
+      "figureDescription": "10 бірдей жол бөлігі, солдан 7 бөлігі көк. Тек көк бөліктерді қамтитын жақшада 12,6 км.",
+      "figureSha256": "9a7a724b6c1c081422738d61c0542161f7ffd3162b2426973253319680876baa",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "18",
+        "checks": {
+          "equalParts": 10,
+          "coloredParts": 7,
+          "knownPartHundredthsKm": 1260,
+          "onePartHundredthsKm": 180,
+          "wholeHundredthsKm": 1800,
+          "partFraction": [
+            7,
+            10
+          ],
+          "backConservation": true
+        }
+      }
+    }
+  ]
+}

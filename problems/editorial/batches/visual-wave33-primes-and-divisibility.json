@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All10 saved visual grade5topics2.2/2.3; source archive only, no capture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade5topics2.2and2.3",
+    "sourceVisualOccurrences": 10,
+    "addressedNewDrafts": 10,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "1e60d866133915ec",
+      "1e90e70a58a8bc7a",
+      "25fa96dff983822f",
+      "48e49db6234879fc",
+      "52f06ecf051bb86e",
+      "725169c483449812",
+      "9323eba59a504c4e",
+      "cb6bca35a630c501",
+      "e9253f5d7d6a130e",
+      "f27c9e87ca5875f1"
+    ],
+    "distinctModels": 10,
+    "semantics": "Every saved source target addressed separately;10model IDs do not assert10new semantic meanings."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave33-sieve-after-two-and-three",
+      "modelId": "visual-wave33-next-prime-sieve-step",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "sieve",
+        "limit": 42,
+        "rows": 6,
+        "columns": 7,
+        "processed": [
+          2,
+          3
+        ]
+      },
+      "answer": "5",
+      "sourceRefs": [
+        {
+          "sourceId": "1e60d866133915ec",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-2-level1.json#5",
+      "sourceCanonicalSha256": "09433bbb4f8ba9b601c2ec0aed99d59459ab6d337484effa5e1e6e2fcc6df10e",
+      "sourceSkill": "Reading a partially completed Eratosthenes sieve and selecting the next uncrossed prime",
+      "adaptationChanges": [
+        "Барлық 10 визуалды бастапқы дағды бөлек сақталды: елек қадамы, жай санды топтау, көбейтінді/қосынды/айырманың бөлінгіштігі, екі қалдықты біріктіру, тізбектегі қалдық және өзгермеген қалдықтың айырмасы.",
+        "Електің аяқталған қадамдары, кәмпит саны, барлық қорап/жәшік саны мен ішіндегісі, себет/үйірме/цистерна деректері, қалдықтар, тізбек және кітап бумалары жаңа сандармен құрастырылды.",
+        "Native SVG толық объектілерді немесе мағынасы ашық көп нүктені қолданады; кесінділер нақты бірлік масштабына сәйкес. Сызылып қойған сандар, көрсетілген топтар мен бос бірліктер кодта бөлек байланыстырылды. Source raster/traced paths қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай сандар мен бөлінгіштік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10source/newfullsolution/MCQ review; actual sieve crossouts/processed cells, all pictured candies/boxes, metric bar partitions, residue dots, sequence coordinates and book stacks, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave33-sieve-after-two-and-three.svg",
+      "verificationModule": "scripts/editorial/visual-wave33-models.mjs",
+      "options": [
+        "4",
+        "5",
+        "7",
+        "9"
+      ],
+      "statement": "Эратосфен елегінің бірнеше қадамы суретте көрсетілген. Көк ұяшықтар — еселіктері тексеріліп болған жай сандар; қызыл сызық түскен сандар алынып тасталған. Енді сызылмаған келесі жай санды таңдап, оның өзінен басқа еселіктерін сызамыз. Қай санның кезегі келді?",
+      "solution": "Көкпен 2 және 3 жай сандары белгіленген. Олардың өздерінен басқа еселіктері сызылған, 1 де жай сан болмағандықтан алынып тасталған. 3 санынан кейінгі сызылмаған ең кіші сан 5. Оның 1 мен өзінен басқа бөлгіші жоқ. Енді осы 5 санының өзінен басқа еселіктерін сызамыз; сызылып қойған құрамаларға қайта қадам бастамаймыз.",
+      "figureDescription": "1-ден 42-ге дейін 6 қатар 7 баған кесте. 2, 3 ұяшықтары көк. 1 және олардың өздерінен басқа еселіктері қызыл сызықпен сызылған; қалған сандар сызылмаған.",
+      "figureSha256": "b51f745b8b2182ed74ddf95f6f3544d9b2ed1b395542f8f27133ea801a2ebc28",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5",
+        "checks": {
+          "crossed": [
+            1,
+            4,
+            6,
+            8,
+            9,
+            10,
+            12,
+            14,
+            15,
+            16,
+            18,
+            20,
+            21,
+            22,
+            24,
+            26,
+            27,
+            28,
+            30,
+            32,
+            33,
+            34,
+            36,
+            38,
+            39,
+            40,
+            42
+          ],
+          "next": 5
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave33-thirty-seven-candies",
+      "modelId": "visual-wave33-prime-candy-grouping",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "candies",
+        "rowCounts": [
+          9,
+          9,
+          9,
+          9,
+          1
+        ]
+      },
+      "answer": "Жоқ, 37 — жай сан",
+      "sourceRefs": [
+        {
+          "sourceId": "1e90e70a58a8bc7a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-2-level2.json#10",
+      "sourceCanonicalSha256": "f66333f665d43f1b2af3732a1467d4d5cbc85c76c01b7d3e76b1d7600c2f347d",
+      "sourceSkill": "Counting pictured objects and excluding every factorization with both factors greater than one",
+      "adaptationChanges": [
+        "Барлық 10 визуалды бастапқы дағды бөлек сақталды: елек қадамы, жай санды топтау, көбейтінді/қосынды/айырманың бөлінгіштігі, екі қалдықты біріктіру, тізбектегі қалдық және өзгермеген қалдықтың айырмасы.",
+        "Електің аяқталған қадамдары, кәмпит саны, барлық қорап/жәшік саны мен ішіндегісі, себет/үйірме/цистерна деректері, қалдықтар, тізбек және кітап бумалары жаңа сандармен құрастырылды.",
+        "Native SVG толық объектілерді немесе мағынасы ашық көп нүктені қолданады; кесінділер нақты бірлік масштабына сәйкес. Сызылып қойған сандар, көрсетілген топтар мен бос бірліктер кодта бөлек байланыстырылды. Source raster/traced paths қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай сандар мен бөлінгіштік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10source/newfullsolution/MCQ review; actual sieve crossouts/processed cells, all pictured candies/boxes, metric bar partitions, residue dots, sequence coordinates and book stacks, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave33-thirty-seven-candies.svg",
+      "verificationModule": "scripts/editorial/visual-wave33-models.mjs",
+      "options": [
+        "Иә, 3 қорапқа",
+        "Иә, 4 қорапқа",
+        "Жоқ, 37 — жай сан",
+        "Иә, 37 қорапқа"
+      ],
+      "statement": "Суреттегі кәмпиттердің бәрін қалдықсыз, бірдей мөлшерден қораптарға салу керек. Қорап саны бірден көп, әр қораптағы кәмпит саны да бірден көп болсын. Осындай бөлу мүмкін бе? Дұрыс тұжырымды таңдаңыз.",
+      "solution": "Қатарлардағы кәмпит сандары 9 + 9 + 9 + 9 + 1 = 37. Тең бөлу үшін қорап саны 37 санының бөлгіші болуы керек. Толық бөлгіштер тізімі 1, 37: бұл жай сан. Бір қорап алуға болмайды; 37 қорапқа бөлсек әрқайсысында бір кәмпит қалады, ол да шартқа сай емес. Екі көбейткіші де бірден үлкен жұп жоқ. Сондықтан бөлу мүмкін емес.",
+      "figureDescription": "Қатарлардағы кәмпит саны: 9, 9, 9, 9, 1. Әр кәмпит жеке салынған.",
+      "figureSha256": "0f78beee2ad9cb7e03fa6e4655c071eea17d61996f82e1d186c14fdaadf0ffc3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "Жоқ, 37 — жай сан",
+        "checks": {
+          "total": 37,
+          "divisors": [
+            1,
+            37
+          ],
+          "nontrivialPairs": []
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave33-six-eighteen-pen-boxes",
+      "modelId": "visual-wave33-divide-box-product",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "pen-boxes",
+        "boxes": 6,
+        "perBox": 18,
+        "children": 9
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "48e49db6234879fc",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-3-level1.json#2",
+      "sourceCanonicalSha256": "f82955cc14a96e033182475a53f3b7557318d24df5ba6804261485b6e105b368",
+      "sourceSkill": "Dividing a product by dividing exactly one divisible factor and checking the pictured box count",
+      "adaptationChanges": [
+        "Барлық 10 визуалды бастапқы дағды бөлек сақталды: елек қадамы, жай санды топтау, көбейтінді/қосынды/айырманың бөлінгіштігі, екі қалдықты біріктіру, тізбектегі қалдық және өзгермеген қалдықтың айырмасы.",
+        "Електің аяқталған қадамдары, кәмпит саны, барлық қорап/жәшік саны мен ішіндегісі, себет/үйірме/цистерна деректері, қалдықтар, тізбек және кітап бумалары жаңа сандармен құрастырылды.",
+        "Native SVG толық объектілерді немесе мағынасы ашық көп нүктені қолданады; кесінділер нақты бірлік масштабына сәйкес. Сызылып қойған сандар, көрсетілген топтар мен бос бірліктер кодта бөлек байланыстырылды. Source raster/traced paths қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай сандар мен бөлінгіштік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10source/newfullsolution/MCQ review; actual sieve crossouts/processed cells, all pictured candies/boxes, metric bar partitions, residue dots, sequence coordinates and book stacks, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave33-six-eighteen-pen-boxes.svg",
+      "verificationModule": "scripts/editorial/visual-wave33-models.mjs",
+      "statement": "Барлық қалам қорабы суретте берілген, әрқайсысының ішіндегі қалам саны үстіне жазылған. Қаламдарды 9 оқушыға тең бөліп берсе, әр оқушы неше қалам алады? Жауапқа тек санды жазыңыз.",
+      "solution": "Суретте 6 қорап, әрқайсысында 18 қалам. (6 × 18) : 9 = 6 × (18 : 9) = 6 × 2 = 12. Бір көбейткішті бөлгенде жеткілікті, екі көбейткішті қатар бөлмейміз. Тексеру: 108 : 9 = 12.",
+      "figureDescription": "6 жабық қалам қорабы, әрқайсысының үстінде 18 саны бар.",
+      "figureSha256": "a6e01055a325cf952a8cf7d40c269808a0188b20b9543cbf4995a8b3858629ae",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "factorQuotient": 2,
+          "total": 108
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave33-two-apple-baskets-sevens",
+      "modelId": "visual-wave33-divide-split-sum",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "sum-bar",
+        "amounts": [
+          56,
+          42
+        ],
+        "perPacket": 7
+      },
+      "answer": "14",
+      "sourceRefs": [
+        {
+          "sourceId": "e9253f5d7d6a130e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-3-level1.json#6",
+      "sourceCanonicalSha256": "627883981ee6af4e72a00b59b94fe7e5dd6b62b7f2c9f5f308778e3cefe7a272",
+      "sourceSkill": "Dividing a sum of two individually divisible parts, with actual proportional coloured bar lengths",
+      "adaptationChanges": [
+        "Барлық 10 визуалды бастапқы дағды бөлек сақталды: елек қадамы, жай санды топтау, көбейтінді/қосынды/айырманың бөлінгіштігі, екі қалдықты біріктіру, тізбектегі қалдық және өзгермеген қалдықтың айырмасы.",
+        "Електің аяқталған қадамдары, кәмпит саны, барлық қорап/жәшік саны мен ішіндегісі, себет/үйірме/цистерна деректері, қалдықтар, тізбек және кітап бумалары жаңа сандармен құрастырылды.",
+        "Native SVG толық объектілерді немесе мағынасы ашық көп нүктені қолданады; кесінділер нақты бірлік масштабына сәйкес. Сызылып қойған сандар, көрсетілген топтар мен бос бірліктер кодта бөлек байланыстырылды. Source raster/traced paths қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай сандар мен бөлінгіштік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10source/newfullsolution/MCQ review; actual sieve crossouts/processed cells, all pictured candies/boxes, metric bar partitions, residue dots, sequence coordinates and book stacks, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave33-two-apple-baskets-sevens.svg",
+      "verificationModule": "scripts/editorial/visual-wave33-models.mjs",
+      "statement": "Көк бөлік — бірінші себеттегі, сары бөлік — екінші себеттегі алма саны. Барлық алманы 7 алмадан пакеттерге салды. Неше толық пакет шықты? Жауапқа тек санды жазыңыз.",
+      "solution": "Себеттерде 56 және 42 алма. Қосындыны бөлек бөлеміз: (56 + 42) : 7 = 56 : 7 + 42 : 7 = 8 + 6 = 14. Екі қосылғыш та 7 санына бөлінеді. Тексеру: 98 : 7 = 14.",
+      "figureDescription": "Бірінші көк бөлікте 56, екінші сары бөлікте 42 алма жазылған. Ортақ толық саны берілмеген.",
+      "figureSha256": "897a6b6ea069935482e03a73001b9af6417a2c0738a3dcf8756e9b265388d15f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "14",
+        "checks": {
+          "portions": [
+            8,
+            6
+          ],
+          "total": 98
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave33-six-forty-five-four-thirty-eggs",
+      "modelId": "visual-wave33-divide-two-box-products",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "egg-boxes",
+        "groups": [
+          [
+            6,
+            45
+          ],
+          [
+            4,
+            30
+          ]
+        ],
+        "perPacket": 15
+      },
+      "answer": "26",
+      "sourceRefs": [
+        {
+          "sourceId": "f27c9e87ca5875f1",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-3-level2.json#1",
+      "sourceCanonicalSha256": "e1b8bbd5adfdc782373641892d4ce772ac5cdc02225141e23802e4e3513badfe",
+      "sourceSkill": "Distributing division across a sum of two products, keeping crate counts as multipliers",
+      "adaptationChanges": [
+        "Барлық 10 визуалды бастапқы дағды бөлек сақталды: елек қадамы, жай санды топтау, көбейтінді/қосынды/айырманың бөлінгіштігі, екі қалдықты біріктіру, тізбектегі қалдық және өзгермеген қалдықтың айырмасы.",
+        "Електің аяқталған қадамдары, кәмпит саны, барлық қорап/жәшік саны мен ішіндегісі, себет/үйірме/цистерна деректері, қалдықтар, тізбек және кітап бумалары жаңа сандармен құрастырылды.",
+        "Native SVG толық объектілерді немесе мағынасы ашық көп нүктені қолданады; кесінділер нақты бірлік масштабына сәйкес. Сызылып қойған сандар, көрсетілген топтар мен бос бірліктер кодта бөлек байланыстырылды. Source raster/traced paths қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай сандар мен бөлінгіштік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10source/newfullsolution/MCQ review; actual sieve crossouts/processed cells, all pictured candies/boxes, metric bar partitions, residue dots, sequence coordinates and book stacks, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave33-six-forty-five-four-thirty-eggs.svg",
+      "verificationModule": "scripts/editorial/visual-wave33-models.mjs",
+      "statement": "Суреттегі жәшіктердің бәрінде жұмыртқа бар. Әр жәшіктегі саны үстінде жазылған. Барлық жұмыртқаны 15 жұмыртқадан шағын қораптарға салды. Неше қорап толды? Жауапқа тек санды жазыңыз.",
+      "solution": "Бірінші қатарда 6 жәшік, әрқайсысы 45 жұмыртқадан; екіншісінде 4 жәшік, әрқайсысы 30 жұмыртқадан. (6 × 45 + 4 × 30) : 15 = 6 × (45 : 15) + 4 × (30 : 15) = 18 + 8 = 26. Тексеру: барлығы 390 жұмыртқа; 390 : 15 = 26.",
+      "figureDescription": "6 жәшік, әрқайсысының үстінде 45 саны; 4 жәшік, әрқайсысының үстінде 30 саны.",
+      "figureSha256": "0a6b097f4e6bc58460dcf600bdb1bc13cfaccfd14f2d3b5c4bbfc4d308725313",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "26",
+        "checks": {
+          "parts": [
+            18,
+            8
+          ],
+          "total": 390
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave33-ninety-club-members",
+      "modelId": "visual-wave33-divide-complement-difference",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "club-bar",
+        "total": 90,
+        "known": 30,
+        "groups": 10
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "cb6bca35a630c501",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-3-level2.json#4",
+      "sourceCanonicalSha256": "89d49538409948c159144b9a9e52de63d9b48db912d0e38c140f87c061badbf2",
+      "sourceSkill": "Reading a disjoint whole/known/complement bar and dividing a difference into equal groups",
+      "adaptationChanges": [
+        "Барлық 10 визуалды бастапқы дағды бөлек сақталды: елек қадамы, жай санды топтау, көбейтінді/қосынды/айырманың бөлінгіштігі, екі қалдықты біріктіру, тізбектегі қалдық және өзгермеген қалдықтың айырмасы.",
+        "Електің аяқталған қадамдары, кәмпит саны, барлық қорап/жәшік саны мен ішіндегісі, себет/үйірме/цистерна деректері, қалдықтар, тізбек және кітап бумалары жаңа сандармен құрастырылды.",
+        "Native SVG толық объектілерді немесе мағынасы ашық көп нүктені қолданады; кесінділер нақты бірлік масштабына сәйкес. Сызылып қойған сандар, көрсетілген топтар мен бос бірліктер кодта бөлек байланыстырылды. Source raster/traced paths қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай сандар мен бөлінгіштік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10source/newfullsolution/MCQ review; actual sieve crossouts/processed cells, all pictured candies/boxes, metric bar partitions, residue dots, sequence coordinates and book stacks, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave33-ninety-club-members.svg",
+      "verificationModule": "scripts/editorial/visual-wave33-models.mjs",
+      "statement": "Сызбадағы барлық оқушы екі үйірмеге бөлінген, әр бала тек біреуіне қатысады. Көк бөлік — хор, сары бөлік — би. Би үйірмесін 10 тең топқа бөлсе, әр топта неше оқушы болады? Жауапқа тек санды жазыңыз.",
+      "solution": "Барлығы 90 оқушы, хорда 30, сондықтан биде 90 − 30 = 60. Айырманы бөлу қасиеті: (90 − 30) : 10 = 90 : 10 − 30 : 10 = 9 − 3 = 6. Тексеру: 10 × 6 = 60.",
+      "figureDescription": "Бүтін кесінді 90 оқушы; көк бөлікте 30 оқушы, сары бөлікте сұрақ белгісі. Бөліктер бір-бірін қайталамайды.",
+      "figureSha256": "827c785e87961141a16e07da9b71c6fc5c5f787ec54d5757ef0490eefd7b1c8d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "wholeQuotient": 9,
+          "knownQuotient": 3,
+          "complement": 60
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave33-three-milk-withdrawals",
+      "modelId": "visual-wave33-divide-repeated-withdrawal",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "milk-bar",
+        "total": 1200,
+        "withdrawals": 3,
+        "each": 180,
+        "canister": 30
+      },
+      "answer": "22",
+      "sourceRefs": [
+        {
+          "sourceId": "725169c483449812",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-3-level2.json#5",
+      "sourceCanonicalSha256": "e0b5b98429e7d8d6cb548849b7a61423ffe8ab04ab9755725027dc5b6e946327",
+      "sourceSkill": "Dividing a whole minus repeated withdrawals; applying division to a single factor rather than both",
+      "adaptationChanges": [
+        "Барлық 10 визуалды бастапқы дағды бөлек сақталды: елек қадамы, жай санды топтау, көбейтінді/қосынды/айырманың бөлінгіштігі, екі қалдықты біріктіру, тізбектегі қалдық және өзгермеген қалдықтың айырмасы.",
+        "Електің аяқталған қадамдары, кәмпит саны, барлық қорап/жәшік саны мен ішіндегісі, себет/үйірме/цистерна деректері, қалдықтар, тізбек және кітап бумалары жаңа сандармен құрастырылды.",
+        "Native SVG толық объектілерді немесе мағынасы ашық көп нүктені қолданады; кесінділер нақты бірлік масштабына сәйкес. Сызылып қойған сандар, көрсетілген топтар мен бос бірліктер кодта бөлек байланыстырылды. Source raster/traced paths қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай сандар мен бөлінгіштік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10source/newfullsolution/MCQ review; actual sieve crossouts/processed cells, all pictured candies/boxes, metric bar partitions, residue dots, sequence coordinates and book stacks, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave33-three-milk-withdrawals.svg",
+      "verificationModule": "scripts/editorial/visual-wave33-models.mjs",
+      "statement": "Цистернадағы бастапқы сүт көлемі сызбаның үстінде берілген. Әр көк бөлік — бір рет құйып алынған сүт. Қалғанын 30 литрлік бидондарға толық құйғанда, неше бидон толады? Жауапқа тек санды жазыңыз.",
+      "solution": "Сызбада 3 көк бөлік, әрқайсысы 180 л. Алынғаны 3 × 180 = 540 л. Қалғаны 1200 − 540 = 660 л. Бидон саны (1200 − 3 × 180) : 30 = 40 − 18 = 22. Көбейтіндіні бөлгенде 180 : 30 жеткілікті; алу саны 3 қайта бөлінбейді.",
+      "figureDescription": "Бүтін кесінді 1200 л; 3 көк бөліктің әрқайсысында 180 л жазылған. Қалған бөлікте сұрақ белгісі.",
+      "figureSha256": "d14d0277b3ab14a827612bacc8e89804de115b335d33a8ee223db0a29730ad83",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "22",
+        "checks": {
+          "taken": 540,
+          "remaining": 660,
+          "totalCanisters": 40,
+          "takenCanisters": 18
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave33-two-remainders-five-seven",
+      "modelId": "visual-wave33-sum-two-residue-diagrams",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "residue-groups",
+        "divisor": 8,
+        "remainders": [
+          5,
+          7
+        ]
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "9323eba59a504c4e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-3-level3.json#1",
+      "sourceCanonicalSha256": "73c7a40194ebfc5d987d6e2485eeea61341498ec5d5506a5df66235e0b95fa31",
+      "sourceSkill": "Combining two pictured remainders and extracting one more complete divisor-sized group",
+      "adaptationChanges": [
+        "Барлық 10 визуалды бастапқы дағды бөлек сақталды: елек қадамы, жай санды топтау, көбейтінді/қосынды/айырманың бөлінгіштігі, екі қалдықты біріктіру, тізбектегі қалдық және өзгермеген қалдықтың айырмасы.",
+        "Електің аяқталған қадамдары, кәмпит саны, барлық қорап/жәшік саны мен ішіндегісі, себет/үйірме/цистерна деректері, қалдықтар, тізбек және кітап бумалары жаңа сандармен құрастырылды.",
+        "Native SVG толық объектілерді немесе мағынасы ашық көп нүктені қолданады; кесінділер нақты бірлік масштабына сәйкес. Сызылып қойған сандар, көрсетілген топтар мен бос бірліктер кодта бөлек байланыстырылды. Source raster/traced paths қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай сандар мен бөлінгіштік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10source/newfullsolution/MCQ review; actual sieve crossouts/processed cells, all pictured candies/boxes, metric bar partitions, residue dots, sequence coordinates and book stacks, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave33-two-remainders-five-seven.svg",
+      "verificationModule": "scripts/editorial/visual-wave33-models.mjs",
+      "statement": "Әр көк тіктөртбұрыш 8 бірліктен құралған толық топты білдіреді, көп нүкте осындай топтардың жалғасын көрсетеді. Қызыл дөңгелектің әрқайсысы — бір қалған бірлік. Суреттегі a + b қосындысын 8 санына бөлгендегі қалдықты табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Суреттегі толық топтар 8 санына бөлінеді. Қалған бірліктер a үшін 5, b үшін 7. Олардың қосындысы 5 + 7 = 12. 12 = 8 × 1 + 4, сондықтан қалдық 4. Ол 0 мен 7 аралығында. 12 санын сол күйі қалдық деуге болмайды: одан тағы толық топ құралады.",
+      "figureDescription": "a және b жолдарында 8 бірліктен толық көк топтар мен жалғасуды білдіретін көп нүкте бар; соңында тиісінше 5 және 7 қызыл жеке дөңгелек.",
+      "figureSha256": "bc06d5ebfa9dd6600f90cafee9deff7e0c40b7572661e25b2d32b81f41e8aa31",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": {
+          "residueSum": 12,
+          "extraGroups": 1,
+          "validRange": [
+            0,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave33-eightieth-term-mod-nine",
+      "modelId": "visual-wave33-sequence-residue-invariant",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "sequence-ray",
+        "first": 6,
+        "step": 9,
+        "query": 80,
+        "divisor": 9
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "25fa96dff983822f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-3-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-3-leveltest.json#6",
+      "sourceCanonicalSha256": "8105a21e8099d7353e40d5814f25ad7d6e24051507c9f77a396be80f97d59970",
+      "sourceSkill": "Reading an equally spaced arithmetic sequence and proving its remainder invariant for a distant term",
+      "adaptationChanges": [
+        "Барлық 10 визуалды бастапқы дағды бөлек сақталды: елек қадамы, жай санды топтау, көбейтінді/қосынды/айырманың бөлінгіштігі, екі қалдықты біріктіру, тізбектегі қалдық және өзгермеген қалдықтың айырмасы.",
+        "Електің аяқталған қадамдары, кәмпит саны, барлық қорап/жәшік саны мен ішіндегісі, себет/үйірме/цистерна деректері, қалдықтар, тізбек және кітап бумалары жаңа сандармен құрастырылды.",
+        "Native SVG толық объектілерді немесе мағынасы ашық көп нүктені қолданады; кесінділер нақты бірлік масштабына сәйкес. Сызылып қойған сандар, көрсетілген топтар мен бос бірліктер кодта бөлек байланыстырылды. Source raster/traced paths қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай сандар мен бөлінгіштік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10source/newfullsolution/MCQ review; actual sieve crossouts/processed cells, all pictured candies/boxes, metric bar partitions, residue dots, sequence coordinates and book stacks, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave33-eightieth-term-mod-nine.svg",
+      "verificationModule": "scripts/editorial/visual-wave33-models.mjs",
+      "statement": "Координаталық сәуледе тізбектің алғашқы төрт мүшесі белгіленген. Әр келесі мүше алдыңғысынан 9 санына артық. Осы ережемен 80-мүшені 9 санына бөлгенде қандай қалдық шығады? Жауапқа тек санды жазыңыз.",
+      "solution": "Көрсетілген мүшелер 6, 15, 24, 33. 80-мүшеге дейін 79 өсім бар: 6 + 9 × 79 = 717. 9 саны 9 санына бөлінетіндіктен, өсімдер қалдықты өзгертпейді. Бірінші мүшенің қалдығы 6 : 9 амалында 6, демек сұралған қалдық 6. Тексеру: 717 = 9 × 79 + 6.",
+      "figureDescription": "Координаталық сәуледе 0 нүктесі және 6, 15, 24, 33 тізбек мүшелері бар; көрші мүшелердің үстінде +9 қадамдары жазылған.",
+      "figureSha256": "52f327dd728e23ca34363c9635afa3abd965a2a2ac2b9868d6dd366de74eff40",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "known": [
+            6,
+            15,
+            24,
+            33
+          ],
+          "term": 717,
+          "increments": 79,
+          "invariant": 6
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave33-eleven-book-bundles-new-books",
+      "modelId": "visual-wave33-same-remainder-new-books",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "books",
+        "bundle": 11,
+        "remainder": 4
+      },
+      "answer": "77",
+      "sourceRefs": [
+        {
+          "sourceId": "52f06ecf051bb86e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-3-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-3-leveltest.json#9",
+      "sourceCanonicalSha256": "8534ec874da1717432ac9d37515cb0058bd7d3f68f07e9e780e40b722e0a97f3",
+      "sourceSkill": "Using equal before/after remainders to infer divisibility of the difference, not of either total",
+      "adaptationChanges": [
+        "Барлық 10 визуалды бастапқы дағды бөлек сақталды: елек қадамы, жай санды топтау, көбейтінді/қосынды/айырманың бөлінгіштігі, екі қалдықты біріктіру, тізбектегі қалдық және өзгермеген қалдықтың айырмасы.",
+        "Електің аяқталған қадамдары, кәмпит саны, барлық қорап/жәшік саны мен ішіндегісі, себет/үйірме/цистерна деректері, қалдықтар, тізбек және кітап бумалары жаңа сандармен құрастырылды.",
+        "Native SVG толық объектілерді немесе мағынасы ашық көп нүктені қолданады; кесінділер нақты бірлік масштабына сәйкес. Сызылып қойған сандар, көрсетілген топтар мен бос бірліктер кодта бөлек байланыстырылды. Source raster/traced paths қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай сандар мен бөлінгіштік",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10source/newfullsolution/MCQ review; actual sieve crossouts/processed cells, all pictured candies/boxes, metric bar partitions, residue dots, sequence coordinates and book stacks, native343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave33-eleven-book-bundles-new-books.svg",
+      "verificationModule": "scripts/editorial/visual-wave33-models.mjs",
+      "options": [
+        "48",
+        "59",
+        "77",
+        "70"
+      ],
+      "statement": "Суретте кітаптарды бірдей бумаларға бөлудің бастапқы нәтижесі берілген. Әр буманың кітап саны үстінде жазылған; көп нүкте басқа осындай бумаларды білдіреді. Келесі күні жаңа кітаптар қосылған соң бәрін қайтадан 11 кітаптан бумаға бөлгенде, тағы да дәл 4 кітап артылды. Жаңа әкелінген кітап саны қай нұсқа болуы мүмкін?",
+      "solution": "Бастапқыда да, кейін де 4 кітап артық. Екі жалпы саннан осы қалдықты алып тастасақ, екеуі де 11 санына бөлінеді. Сондықтан олардың айырмасы, яғни жаңа кітап саны 11 санына еселік болуы керек. Нұсқалардың қалдықтары: 48 → 4; 59 → 4; 77 → 0; 70 → 4. Тек 77 = 11 × 7 жарайды. Мысалы, бастапқы сан 70 болса, кейін 147; екеуін 11 санына бөлгенде де қалдық 4.",
+      "figureDescription": "Әрқайсысы 11 кітаптан үш көрсетілген бума, арада басқа бумаларды білдіретін көп нүкте; соңында 4 жеке кітап бар.",
+      "figureSha256": "f573777a3b2a48eec0bd1850297283da12aed77325112e848ec262d73ddf47e1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "77",
+        "checks": {
+          "choiceRemainders": [
+            4,
+            4,
+            0,
+            4
+          ],
+          "witnessBefore": 70,
+          "witnessAfter": 147
+        }
+      }
+    }
+  ]
+}

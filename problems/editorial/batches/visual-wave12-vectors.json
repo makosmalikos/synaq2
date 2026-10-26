@@ -1,0 +1,799 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All10 saved grade6topic7.2 inventory entries;7 have source images,3 are complete text-only statements with empty images/svg arrays. No capture or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured grade6topic7.2 entries assigned by the existing visual inventory",
+    "sourceVisualOccurrences": 10,
+    "actualSourceImageOccurrences": 7,
+    "textOnlySourcesWithinInventory": [
+      "57bc2f66f4a5fe40",
+      "18ad8e9e68d4dba3",
+      "89be0e1d8596b212"
+    ],
+    "addressedNewDrafts": 10,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "09505c776af558dc",
+      "18ad8e9e68d4dba3",
+      "31b836e74aa72beb",
+      "57bc2f66f4a5fe40",
+      "87a56e4bec3f4046",
+      "89be0e1d8596b212",
+      "a2bffcd6fb6ba51d",
+      "e2ba41d5aa662c35",
+      "ebaee2c6603b1734",
+      "f6794428ff850b78"
+    ],
+    "distinctModels": 10,
+    "semantics": "10 source-addressed drafts, of which3 source conditions contain no actual image and are fully determined by saved text. They are not missing rasters; do not claim original visual comparison for those3."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave12-nonzero-origin-speed",
+      "modelId": "visual-wave12-scaled-speed",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "ray-scale",
+        "start": 3,
+        "end": 10,
+        "min": 0,
+        "max": 11,
+        "unitScale": 3
+      },
+      "answer": "21",
+      "sourceRefs": [
+        {
+          "sourceId": "ebaee2c6603b1734",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-2-level1.json#0",
+      "sourceCanonicalSha256": "97c6fc4cd619332a4bb9915cf1b61fb5107ee3136545323deaeec651d3af5f42",
+      "sourceSkill": "Measuring arrow magnitude from both nonzero tail and head tick positions, then applying a speed scale",
+      "adaptationChanges": [
+        "Бастапқы нақты вектор дағдысы сақталды: басы/ұшы, модуль/бағыт, масштаб, абсцисса, координаталар айырмасы немесе сәуле бағыты.",
+        "Ұштардың координаталары, масштаб, ұзындықтар, бағыттар және белгілер жаңадан беріліп, дұрыс жауаптар қайта есептелді. Қарама-қарсы векторлардың тең модуль инварианты бұзылмайды.",
+        "Барлық нұсқар жаңа дәл координаталардан native SVG түрінде салынды; source raster/traced path қолданылмады. Суреті жоқ үш дереккөзге мәтінге сай дербес түсіндірме сызба қосылды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бағытталған кесінділер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, actual arrowhead/tail coordinates, identical grid metrics, scaled magnitudes, negative input and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave12-nonzero-origin-speed.svg",
+      "verificationModule": "scripts/editorial/visual-wave12-models.mjs",
+      "statement": "Сызбада самокатшының жылдамдық векторы берілген. Бірлік кесінді 3 км/сағ-қа сәйкес келеді. Самокатшының жылдамдығы неше км/сағ? Жауапқа тек санды жазыңыз.",
+      "solution": "Вектор 3 белгісінен 10 белгісіне дейін барады, сондықтан ұзындығы 10 − 3 = 7 бірлік. Жылдамдық 7 × 3 = 21 км/сағ. Ұшының белгісін ғана масштабқа көбейтпейміз.",
+      "figureDescription": "Бірдей аралықты сандық сәуле 0–11 белгілерімен берілген. Жылдамдық векторы 3 белгісінен 10 белгісіне бағытталған. Бір аралық 3 км/сағ.",
+      "figureSha256": "3f8deba23951a9d728ef3d31db9fbb09980287ba1f1bb973af8554a4642dece6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "21",
+        "checks": {
+          "gaps": 7,
+          "unitScale": 3
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave12-opposite-arrow-comparison",
+      "modelId": "visual-wave12-opposite-vectors",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "opposite",
+        "vectors": [
+          {
+            "label": "PQ",
+            "start": [
+              0,
+              0
+            ],
+            "end": [
+              6,
+              1
+            ],
+            "startLabel": "P",
+            "endLabel": "Q"
+          },
+          {
+            "label": "QP",
+            "start": [
+              6,
+              1
+            ],
+            "end": [
+              0,
+              0
+            ],
+            "startLabel": "Q",
+            "endLabel": "P"
+          }
+        ]
+      },
+      "answer": "Модульдері тең, бағыттары қарама-қарсы",
+      "sourceRefs": [
+        {
+          "sourceId": "57bc2f66f4a5fe40",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-2-level1.json#1",
+      "sourceCanonicalSha256": "b340979806ec56eebb3c97ef520acb58959ce4c76a7dbf1cfcc93c2ec4e8919d",
+      "sourceSkill": "Separating equal magnitude from opposite direction on the same two endpoints",
+      "adaptationChanges": [
+        "Бастапқы нақты вектор дағдысы сақталды: басы/ұшы, модуль/бағыт, масштаб, абсцисса, координаталар айырмасы немесе сәуле бағыты.",
+        "Ұштардың координаталары, масштаб, ұзындықтар, бағыттар және белгілер жаңадан беріліп, дұрыс жауаптар қайта есептелді. Қарама-қарсы векторлардың тең модуль инварианты бұзылмайды.",
+        "Барлық нұсқар жаңа дәл координаталардан native SVG түрінде салынды; source raster/traced path қолданылмады. Суреті жоқ үш дереккөзге мәтінге сай дербес түсіндірме сызба қосылды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бағытталған кесінділер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, actual arrowhead/tail coordinates, identical grid metrics, scaled magnitudes, negative input and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave12-opposite-arrow-comparison.svg",
+      "verificationModule": "scripts/editorial/visual-wave12-models.mjs",
+      "options": [
+        "Бұлар бағыты да, модулі де бірдей бір вектор",
+        "Бағыттары бірдей, модульдері әртүрлі",
+        "Модульдері де, бағыттары да әртүрлі",
+        "Модульдері тең, бағыттары қарама-қарсы"
+      ],
+      "statement": "Сызбалардағы PQ және QP бағытталған кесінділерінің модульдері мен бағыттарын салыстырыңыз. Қай тұжырым дұрыс?",
+      "solution": "Екі бағытталған кесіндінің ұштары бірдей екі нүктеде, сондықтан модульдері тең. Бірі P-дан Q-ға, екіншісі Q-дан P-ға бағытталған. Демек, бағыттары қарама-қарсы, бірақ ұзындықтары бірдей.",
+      "figureDescription": "Екі панельде бірдей P(0; 0) және Q(6; 1) нүктелері. Бірінші нұсқар P-дан Q-ға, екіншісі Q-дан P-ға.",
+      "figureSha256": "2468d8ac2371126006169f222e2c842bdf123598e419e7a7749bac7dfa61ec48",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "Модульдері тең, бағыттары қарама-қарсы",
+        "checks": {
+          "squaredLengths": [
+            37,
+            37
+          ],
+          "directions": [
+            [
+              6,
+              1
+            ],
+            [
+              -6,
+              -1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave12-equal-vector-magnitudes",
+      "modelId": "visual-wave12-equal-length-count",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "gallery",
+        "targetLength": 6,
+        "vectors": [
+          {
+            "label": "a",
+            "start": [
+              -3,
+              1
+            ],
+            "end": [
+              3,
+              1
+            ]
+          },
+          {
+            "label": "b",
+            "start": [
+              2,
+              -2
+            ],
+            "end": [
+              2,
+              2
+            ]
+          },
+          {
+            "label": "c",
+            "start": [
+              1,
+              1
+            ],
+            "end": [
+              -2,
+              1
+            ]
+          },
+          {
+            "label": "d",
+            "start": [
+              -1,
+              -2
+            ],
+            "end": [
+              -1,
+              3
+            ]
+          },
+          {
+            "label": "e",
+            "start": [
+              3,
+              -1
+            ],
+            "end": [
+              -3,
+              -1
+            ]
+          },
+          {
+            "label": "f",
+            "start": [
+              -1,
+              1
+            ],
+            "end": [
+              -1,
+              -1
+            ]
+          }
+        ]
+      },
+      "answer": "2",
+      "sourceRefs": [
+        {
+          "sourceId": "87a56e4bec3f4046",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-2-level1.json#3",
+      "sourceCanonicalSha256": "4cfcaf6736d82b037fa5b33a7f784232da5b820510266b50fec4bed574eff97c",
+      "sourceSkill": "Counting fixed-length horizontal/vertical vectors regardless of reversal, while preserving equal grid metrics across all panels",
+      "adaptationChanges": [
+        "Бастапқы нақты вектор дағдысы сақталды: басы/ұшы, модуль/бағыт, масштаб, абсцисса, координаталар айырмасы немесе сәуле бағыты.",
+        "Ұштардың координаталары, масштаб, ұзындықтар, бағыттар және белгілер жаңадан беріліп, дұрыс жауаптар қайта есептелді. Қарама-қарсы векторлардың тең модуль инварианты бұзылмайды.",
+        "Барлық нұсқар жаңа дәл координаталардан native SVG түрінде салынды; source raster/traced path қолданылмады. Суреті жоқ үш дереккөзге мәтінге сай дербес түсіндірме сызба қосылды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бағытталған кесінділер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, actual arrowhead/tail coordinates, identical grid metrics, scaled magnitudes, negative input and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave12-equal-vector-magnitudes.svg",
+      "verificationModule": "scripts/editorial/visual-wave12-models.mjs",
+      "statement": "Бірдей шаршы торларда a, b, c, d, e, f векторлары салынған. Неше вектордың ұзындығы дәл 6 торкөзге тең? Бағытты ұзындықпен шатастырмаңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Векторлардың ұзындықтары a-дан f-ке дейін ретімен 6, 4, 3, 5, 6, 2. 6 бірлікке теңдері a, e, барлығы 2. Басқа бағытта тұру модульді өзгертпейді.",
+      "figureDescription": "Әр панельде бірдей шаршы тор. Бағытталған кесінділер: a: (-3; 1) басынан (3; 1) ұшына; b: (2; -2) басынан (2; 2) ұшына; c: (1; 1) басынан (-2; 1) ұшына; d: (-1; -2) басынан (-1; 3) ұшына; e: (3; -1) басынан (-3; -1) ұшына; f: (-1; 1) басынан (-1; -1) ұшына.",
+      "figureSha256": "9291d5805d4c2d13ca7e4b8cae30dbc0f28a9f374d256b3551329e1548ce850e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2",
+        "checks": {
+          "lengths": [
+            6,
+            4,
+            3,
+            5,
+            6,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave12-compass-arrow-direction",
+      "modelId": "visual-wave12-compass-direction",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "compass",
+        "vector": {
+          "label": "v",
+          "start": [
+            4,
+            -2
+          ],
+          "end": [
+            -2,
+            3
+          ]
+        }
+      },
+      "answer": "солтүстік-батысқа",
+      "sourceRefs": [
+        {
+          "sourceId": "31b836e74aa72beb",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-2-level1.json#5",
+      "sourceCanonicalSha256": "c8a601e3f062951c5e629e576a820517051994c61d7402434292ef37e002d447",
+      "sourceSkill": "Reading arrowhead rather than tail on a north/east oriented map grid",
+      "adaptationChanges": [
+        "Бастапқы нақты вектор дағдысы сақталды: басы/ұшы, модуль/бағыт, масштаб, абсцисса, координаталар айырмасы немесе сәуле бағыты.",
+        "Ұштардың координаталары, масштаб, ұзындықтар, бағыттар және белгілер жаңадан беріліп, дұрыс жауаптар қайта есептелді. Қарама-қарсы векторлардың тең модуль инварианты бұзылмайды.",
+        "Барлық нұсқар жаңа дәл координаталардан native SVG түрінде салынды; source raster/traced path қолданылмады. Суреті жоқ үш дереккөзге мәтінге сай дербес түсіндірме сызба қосылды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бағытталған кесінділер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, actual arrowhead/tail coordinates, identical grid metrics, scaled magnitudes, negative input and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave12-compass-arrow-direction.svg",
+      "verificationModule": "scripts/editorial/visual-wave12-models.mjs",
+      "options": [
+        "солтүстік-батысқа",
+        "оңтүстік-шығысқа",
+        "солтүстік-шығысқа",
+        "оңтүстік-батысқа"
+      ],
+      "statement": "Тордың жоғары жағы — солтүстік, оң жағы — шығыс. Дронның қозғалысы нұсқармен көрсетілген. Дрон қай бағытқа ұшады?",
+      "solution": "Нұсқар басынан ұшына қарай 6 торкөз солға және 5 торкөз жоғары бағытталған. Солға — батыс, жоғары — солтүстік: солтүстік-батысқа. Нұсқардың бағытын кері оқуға болмайды.",
+      "figureDescription": "Тордың жоғарысы солтүстік, оң жағы шығыс. Басы(4; -2) нүктесінен ұшы(-2; 3) нүктесіне нұсқар жүргізілген.",
+      "figureSha256": "88e4f64a76ae86378d361e00a7e06f70585c312fa6a469f417f4db7b997e4aa4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "солтүстік-батысқа",
+        "checks": {
+          "dx": -6,
+          "dy": 5
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave12-arrowhead-abscissa",
+      "modelId": "visual-wave12-endpoint-abscissa",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "vector": {
+          "label": "p",
+          "start": [
+            3,
+            4
+          ],
+          "end": [
+            -4,
+            2
+          ]
+        }
+      },
+      "answer": "-4",
+      "sourceRefs": [
+        {
+          "sourceId": "e2ba41d5aa662c35",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-2-level1.json#6",
+      "sourceCanonicalSha256": "ca95fd2380472319b13d346e73ed79ae155cc84e4ad37087805d71333ba4841a",
+      "sourceSkill": "Selecting the endpoint abscissa, independently from the tail abscissa and the endpoint ordinate",
+      "adaptationChanges": [
+        "Бастапқы нақты вектор дағдысы сақталды: басы/ұшы, модуль/бағыт, масштаб, абсцисса, координаталар айырмасы немесе сәуле бағыты.",
+        "Ұштардың координаталары, масштаб, ұзындықтар, бағыттар және белгілер жаңадан беріліп, дұрыс жауаптар қайта есептелді. Қарама-қарсы векторлардың тең модуль инварианты бұзылмайды.",
+        "Барлық нұсқар жаңа дәл координаталардан native SVG түрінде салынды; source raster/traced path қолданылмады. Суреті жоқ үш дереккөзге мәтінге сай дербес түсіндірме сызба қосылды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бағытталған кесінділер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, actual arrowhead/tail coordinates, identical grid metrics, scaled magnitudes, negative input and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave12-arrowhead-abscissa.svg",
+      "verificationModule": "scripts/editorial/visual-wave12-models.mjs",
+      "statement": "Координаталық жазықтықта p векторы берілген. Нұсқар орналасқан ұшының абсциссасын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Басы (3; 4), ұшы (-4; 2). Абсцисса — бірінші координата, сондықтан -4. Басының координатасын немесе ұшының ординатасын алмау керек.",
+      "figureDescription": "Бірлік тор. Басы(3; 4) нүктесінен ұшы(-4; 2) нүктесіне нұсқар жүргізілген.",
+      "figureSha256": "c5db711abd578058afc6901ae85863e892793d893e7f301a5edf9b80d0a94823",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-4",
+        "checks": {
+          "tail": [
+            3,
+            4
+          ],
+          "head": [
+            -4,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave12-horizontal-vector-length",
+      "modelId": "visual-wave12-horizontal-length",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "vector": {
+          "label": "AB",
+          "start": [
+            -5,
+            -2
+          ],
+          "end": [
+            3,
+            -2
+          ],
+          "startLabel": "A",
+          "endLabel": "B",
+          "startLabelOffset": [
+            0,
+            24
+          ],
+          "endLabelOffset": [
+            14,
+            20
+          ]
+        }
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "f6794428ff850b78",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-2-level1.json#7",
+      "sourceCanonicalSha256": "178c475de7cc2df255631effa4dc46a57471a5d133292f7a4b0705f6ee693f37",
+      "sourceSkill": "Using the difference of opposite-signed abscissas for a horizontal vector with equal ordinates",
+      "adaptationChanges": [
+        "Бастапқы нақты вектор дағдысы сақталды: басы/ұшы, модуль/бағыт, масштаб, абсцисса, координаталар айырмасы немесе сәуле бағыты.",
+        "Ұштардың координаталары, масштаб, ұзындықтар, бағыттар және белгілер жаңадан беріліп, дұрыс жауаптар қайта есептелді. Қарама-қарсы векторлардың тең модуль инварианты бұзылмайды.",
+        "Барлық нұсқар жаңа дәл координаталардан native SVG түрінде салынды; source raster/traced path қолданылмады. Суреті жоқ үш дереккөзге мәтінге сай дербес түсіндірме сызба қосылды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бағытталған кесінділер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, actual arrowhead/tail coordinates, identical grid metrics, scaled magnitudes, negative input and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave12-horizontal-vector-length.svg",
+      "verificationModule": "scripts/editorial/visual-wave12-models.mjs",
+      "statement": "Бірлік координаталық тордағы AB векторының ұзындығы неше бірлік? Жауапқа тек санды жазыңыз.",
+      "solution": "A(-5; -2), B(3; -2). Ординаталары тең. Ұзындық — абсциссалар айырмасының модулі: |3 − (-5)| = 8.",
+      "figureDescription": "Бірлік тор. A(-5; -2) нүктесінен B(3; -2) нүктесіне нұсқар жүргізілген.",
+      "figureSha256": "efcd675d7432e81184448b76ebd59615447817fa923aef3f0c9e5e439b8358b8",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": {
+          "signedDisplacement": [
+            8,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave12-tail-first-vector-notation",
+      "modelId": "visual-wave12-vector-name",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plain",
+        "vector": {
+          "label": "PQ",
+          "start": [
+            3,
+            -3
+          ],
+          "end": [
+            -3,
+            2
+          ],
+          "startLabel": "P",
+          "endLabel": "Q"
+        }
+      },
+      "answer": "vector(PQ)",
+      "sourceRefs": [
+        {
+          "sourceId": "09505c776af558dc",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-2-level1.json#8",
+      "sourceCanonicalSha256": "35e793d3ffb7dbb7c7784d7e50842af15ddc3a81f767170619b9783b9c858cf1",
+      "sourceSkill": "Writing the actual tail label first and arrowhead label second; reverse notation is a different direction",
+      "adaptationChanges": [
+        "Бастапқы нақты вектор дағдысы сақталды: басы/ұшы, модуль/бағыт, масштаб, абсцисса, координаталар айырмасы немесе сәуле бағыты.",
+        "Ұштардың координаталары, масштаб, ұзындықтар, бағыттар және белгілер жаңадан беріліп, дұрыс жауаптар қайта есептелді. Қарама-қарсы векторлардың тең модуль инварианты бұзылмайды.",
+        "Барлық нұсқар жаңа дәл координаталардан native SVG түрінде салынды; source raster/traced path қолданылмады. Суреті жоқ үш дереккөзге мәтінге сай дербес түсіндірме сызба қосылды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бағытталған кесінділер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, actual arrowhead/tail coordinates, identical grid metrics, scaled magnitudes, negative input and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave12-tail-first-vector-notation.svg",
+      "verificationModule": "scripts/editorial/visual-wave12-models.mjs",
+      "options": [
+        "vector(QP)",
+        "vector(PQ)",
+        "PQ және QP бағыттары бірдей",
+        "vector(p)"
+      ],
+      "statement": "Суреттегі бағытталған кесіндінің белгіленуін таңдаңыз: алдымен басы, одан кейін ұшы жазылады.",
+      "solution": "Басы P нүктесінде, ал нұсқар Q нүктесіне қарайды. Векторда басының әрпі бірінші: vector(PQ). Кері QP бағыты басқа вектор береді.",
+      "figureDescription": "Бірлік тор. P(3; -3) нүктесінен Q(-3; 2) нүктесіне нұсқар жүргізілген.",
+      "figureSha256": "8ed773c8182c13d6f4a9d70c94c5968101130ad0b5ac8d7972e8c52cfacb45f5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "vector(PQ)",
+        "checks": {
+          "tail": "P",
+          "head": "Q"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave12-vertical-vector-length",
+      "modelId": "visual-wave12-vertical-length",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "vector": {
+          "label": "MN",
+          "start": [
+            -3,
+            -4
+          ],
+          "end": [
+            -3,
+            3
+          ],
+          "startLabel": "M",
+          "endLabel": "N"
+        }
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "18ad8e9e68d4dba3",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-2-level1.json#11",
+      "sourceCanonicalSha256": "0126b9276da54b8ce64a9ec18f7d00ed027beddd2b8ae37898f7fe767117bcb5",
+      "sourceSkill": "Computing a positive vertical magnitude across zero from equal abscissas and opposite-signed ordinates",
+      "adaptationChanges": [
+        "Бастапқы нақты вектор дағдысы сақталды: басы/ұшы, модуль/бағыт, масштаб, абсцисса, координаталар айырмасы немесе сәуле бағыты.",
+        "Ұштардың координаталары, масштаб, ұзындықтар, бағыттар және белгілер жаңадан беріліп, дұрыс жауаптар қайта есептелді. Қарама-қарсы векторлардың тең модуль инварианты бұзылмайды.",
+        "Барлық нұсқар жаңа дәл координаталардан native SVG түрінде салынды; source raster/traced path қолданылмады. Суреті жоқ үш дереккөзге мәтінге сай дербес түсіндірме сызба қосылды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бағытталған кесінділер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, actual arrowhead/tail coordinates, identical grid metrics, scaled magnitudes, negative input and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave12-vertical-vector-length.svg",
+      "verificationModule": "scripts/editorial/visual-wave12-models.mjs",
+      "statement": "Бірлік координаталық торда M және N нүктелері көрсетілген. MN векторының ұзындығын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "M(-3; -4), N(-3; 3). Абсциссалары тең. Ұзындық |3 − (-4)| = 7. Минус таңбаларын сақтау керек; ұзындық теріс болмайды.",
+      "figureDescription": "Бірлік тор. M(-3; -4) нүктесінен N(-3; 3) нүктесіне нұсқар жүргізілген.",
+      "figureSha256": "13307bf138acbddd6897ea795d2a2742100eba738fc84788fdf7cd80cecf987a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": {
+          "signedDisplacement": [
+            0,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave12-largest-vector-magnitude",
+      "modelId": "visual-wave12-longest-vector",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "gallery",
+        "gridExtent": 4,
+        "vectors": [
+          {
+            "label": "a",
+            "start": [
+              -2,
+              1
+            ],
+            "end": [
+              3,
+              1
+            ]
+          },
+          {
+            "label": "b",
+            "start": [
+              0,
+              2
+            ],
+            "end": [
+              0,
+              -1
+            ]
+          },
+          {
+            "label": "c",
+            "start": [
+              -3,
+              -1
+            ],
+            "end": [
+              4,
+              -1
+            ]
+          },
+          {
+            "label": "d",
+            "start": [
+              1,
+              -2
+            ],
+            "end": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      "answer": "vector(c)",
+      "sourceRefs": [
+        {
+          "sourceId": "a2bffcd6fb6ba51d",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-2-level1.json#13",
+      "sourceCanonicalSha256": "a37f9c77b53d20229d99353daa99f7cfab412f4e4e81efbee280d14d0da4d1d8",
+      "sourceSkill": "Comparing horizontal/vertical magnitudes on identical scales without treating direction or vertical placement as size",
+      "adaptationChanges": [
+        "Бастапқы нақты вектор дағдысы сақталды: басы/ұшы, модуль/бағыт, масштаб, абсцисса, координаталар айырмасы немесе сәуле бағыты.",
+        "Ұштардың координаталары, масштаб, ұзындықтар, бағыттар және белгілер жаңадан беріліп, дұрыс жауаптар қайта есептелді. Қарама-қарсы векторлардың тең модуль инварианты бұзылмайды.",
+        "Барлық нұсқар жаңа дәл координаталардан native SVG түрінде салынды; source raster/traced path қолданылмады. Суреті жоқ үш дереккөзге мәтінге сай дербес түсіндірме сызба қосылды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бағытталған кесінділер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, actual arrowhead/tail coordinates, identical grid metrics, scaled magnitudes, negative input and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave12-largest-vector-magnitude.svg",
+      "verificationModule": "scripts/editorial/visual-wave12-models.mjs",
+      "options": [
+        "vector(a)",
+        "vector(b)",
+        "vector(c)",
+        "vector(d)"
+      ],
+      "statement": "Төрт вектор бірдей шаршы торларда салынған. Қай вектордың модулі ең үлкен?",
+      "solution": "a, b, c, d ұзындықтары ретімен 5, 3, 7, 4 бірлік. Ең үлкені c векторында: 7 бірлік. Сондықтан vector(c).",
+      "figureDescription": "Әр панельде бірдей шаршы тор. Бағытталған кесінділер: a: (-2; 1) басынан (3; 1) ұшына; b: (0; 2) басынан (0; -1) ұшына; c: (-3; -1) басынан (4; -1) ұшына; d: (1; -2) басынан (1; 2) ұшына.",
+      "figureSha256": "6131c59aa514d503add29760f0187acd1256a887d027a4581ab2d82f166a2be5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "vector(c)",
+        "checks": {
+          "squaredLengths": [
+            25,
+            9,
+            49,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave12-ray-matches-vector-direction",
+      "modelId": "visual-wave12-ray-direction",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plain",
+        "vector": {
+          "label": "PQ",
+          "start": [
+            -4,
+            -2
+          ],
+          "end": [
+            3,
+            3
+          ],
+          "startLabel": "P",
+          "endLabel": "Q"
+        }
+      },
+      "answer": "P басынан Q нүктесі арқылы өтетін сәулеге",
+      "sourceRefs": [
+        {
+          "sourceId": "89be0e1d8596b212",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-2-level1.json#15",
+      "sourceCanonicalSha256": "59fa0f94c1987ff809b483067e9d260f035ccaa34b33470fe3c15fc9db9224a0",
+      "sourceSkill": "Matching a directed segment with the same ordered ray, rejecting reverse ray and an unoriented line",
+      "adaptationChanges": [
+        "Бастапқы нақты вектор дағдысы сақталды: басы/ұшы, модуль/бағыт, масштаб, абсцисса, координаталар айырмасы немесе сәуле бағыты.",
+        "Ұштардың координаталары, масштаб, ұзындықтар, бағыттар және белгілер жаңадан беріліп, дұрыс жауаптар қайта есептелді. Қарама-қарсы векторлардың тең модуль инварианты бұзылмайды.",
+        "Барлық нұсқар жаңа дәл координаталардан native SVG түрінде салынды; source raster/traced path қолданылмады. Суреті жоқ үш дереккөзге мәтінге сай дербес түсіндірме сызба қосылды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бағытталған кесінділер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, actual arrowhead/tail coordinates, identical grid metrics, scaled magnitudes, negative input and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave12-ray-matches-vector-direction.svg",
+      "verificationModule": "scripts/editorial/visual-wave12-models.mjs",
+      "options": [
+        "Q басынан P нүктесі арқылы өтетін сәулеге",
+        "PQ түзуінің екі бағытына бірдей",
+        "P басынан Q нүктесі арқылы өтетін сәулеге",
+        "Вектордың бағыты болмайды"
+      ],
+      "statement": "Сызбадағы PQ векторының бағыты қай сәуленің бағытына сәйкес келеді?",
+      "solution": "PQ векторы P-дан басталып, Q-ға бағытталған. P басынан Q арқылы өтетін сәуле де сол бағытпен жалғасады. Q басынан P-ға өтетін сәуленің бағыты кері, ал түзуге бір ғана бағыт бекітілмейді.",
+      "figureDescription": "Бірлік тор. P(-4; -2) нүктесінен Q(3; 3) нүктесіне нұсқар жүргізілген.",
+      "figureSha256": "01361c668776d39c90447a93cd33385cae100c680d1131ec8ed433a5a8147273",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "P басынан Q нүктесі арқылы өтетін сәулеге",
+        "checks": {
+          "tail": [
+            -4,
+            -2
+          ],
+          "head": [
+            3,
+            3
+          ]
+        }
+      }
+    }
+  ]
+}

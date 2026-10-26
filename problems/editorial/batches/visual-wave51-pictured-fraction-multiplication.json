@@ -1,0 +1,627 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All8savedvisualgrade5topic3.11;archivedsourcesonly,no newcapture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "Allcapturedvisualgrade5topic3.11sources",
+    "sourceVisualOccurrences": 8,
+    "addressedNewDrafts": 8,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "09e12fa328d52405",
+      "43c88dcd5bee80c0",
+      "52d7ad2d9fc03e7c",
+      "79767f2e8ad8b123",
+      "975e61abfd8ec942",
+      "d2f6f2cf77f9a8e8",
+      "dec221036e0c64c2",
+      "e13bd8533c990a57"
+    ],
+    "distinctModels": 8,
+    "semantics": "Eight source-specific targets rewritten separately; samefamiliesarenot claimednewsemanticmeanings."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave51-square-two-quarter-decimetre-perimeter",
+      "modelId": "visual-wave51-square-mixed-edge-four-equal-sides",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "easy",
+      "params": {
+        "scene": "square",
+        "edge": [
+          2,
+          1,
+          4
+        ]
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "43c88dcd5bee80c0",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-11-level1.json#1",
+      "sourceCanonicalSha256": "e46cb2f11a84f8e1ed62be17b19b268860a10ddd3f71718602e2ab95cb520bcc",
+      "sourceSkill": "Readmixedsquareedge2+1/4dm, convert9/4andmultiply4equaledges,cancelden4→9dm; distributive8+1check",
+      "adaptationChanges": [
+        "Барлық8сақталғанвизуалды3.11шарт,толықшешімжәнебарлықMCQоқылды.Квадраттыңараласқырын4-ке,салмақтыбағаға,ауданөлшемдерінөзара,бақауданынүлеске,қалғанныңқалдығын,аралассағаттыүлеске/минутқа,кубтың3қырынкөбейтусақталды.",
+        "Жаңадеректер2+1/4дм→9;630теңге×3/5→378;6×7gridblue5×3→15/42→5/14;3+2/5−9/10width5/2→area8+1/2;31+1/2×29+1/3=924,fiveof12→385;84000first1/4then2/3REMAINDER→21000;1+2/3h×3/10→1/2h30min;cube5/6→125/216.Айқышқысқарту/нақтыborrow/source-specificқатенұсқаларсақталған.",
+        "БарлықSVGжаңапараметрден:теңклеткалар/жолақтар,көкауданcontiguousrectangle,ақшаныңкезектібазаларыннақтыатау,160×160frontfaceжәнепараллель3hiddenedgeбарcube.Sourceraster/tracedpathжоқ,салмақ/ақша/ұзындықпропорцияларыдәл,белгісіздертаңбаланған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі бөлшектерді көбейту",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent8saved/new/fullsolutions/MCQ;actualsquareedge/cancel4,5priceparts3blue,6×7unitgrid15blue/reduction3,rectangleborrowandcross5,12gardenstrips5blue/doublecross/integerarea,successivebases84000/1/4then2/3remainder,10homeworkparts3blue/doublecross/hourminute,actual160squarecubefront+3hiddenparallel edges;all343pxreadable"
+      },
+      "image": "/figures/synaq-editions/visual-wave51-square-two-quarter-decimetre-perimeter.svg",
+      "verificationModule": "scripts/editorial/visual-wave51-models.mjs",
+      "statement": "Шаршының бір қабырғасы суретте дециметрмен көрсетілген. Оның периметрі неше дециметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Шаршының 4 қабырғасы тең. Қабырға (2 + (1/4)) = (9/4) дм. Периметр (9/4) × 4 = (36/4) = 9 дм. 4 көбейткіші бөлшектің 4 бөлімімен қысқарады. Бөлек тексеру: 2 × 4 + (1/4) × 4 = 8 + 1 = 9.",
+      "figureDescription": "Шаршының бір қабырғасы (2 + (1/4)) дм деп берілген, барлық қабырғалары тең.",
+      "figureSha256": "5533ec6a91fd68d7a0313b989ee378614f123bb983279a01852293d8b5f70924",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": {
+          "equalSquareSides": 4,
+          "edgeMixed": [
+            2,
+            1,
+            4
+          ],
+          "improperEdge": [
+            9,
+            4
+          ],
+          "perimeter": 9,
+          "crossCancelDenominator4": true,
+          "distributiveWhole": 8,
+          "distributiveFraction": 1
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave51-pear-price-three-fifths-six-thirty",
+      "modelId": "visual-wave51-fractional-mass-unit-price-painted-strip",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "price",
+        "price": 630,
+        "mass": [
+          3,
+          5
+        ]
+      },
+      "answer": "378",
+      "sourceRefs": [
+        {
+          "sourceId": "79767f2e8ad8b123",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-11-level1.json#11",
+      "sourceCanonicalSha256": "56a8183bc6e2a1df9b3611700233e5ff4f6e66dd94fc52550f7444fc99766370",
+      "sourceSkill": "Read1kg630tengewhole5equalpriceparts3blue;630×3/5,realcrosscancel5→126×3=378,unitpriceandmassrolesretained",
+      "adaptationChanges": [
+        "Барлық8сақталғанвизуалды3.11шарт,толықшешімжәнебарлықMCQоқылды.Квадраттыңараласқырын4-ке,салмақтыбағаға,ауданөлшемдерінөзара,бақауданынүлеске,қалғанныңқалдығын,аралассағаттыүлеске/минутқа,кубтың3қырынкөбейтусақталды.",
+        "Жаңадеректер2+1/4дм→9;630теңге×3/5→378;6×7gridblue5×3→15/42→5/14;3+2/5−9/10width5/2→area8+1/2;31+1/2×29+1/3=924,fiveof12→385;84000first1/4then2/3REMAINDER→21000;1+2/3h×3/10→1/2h30min;cube5/6→125/216.Айқышқысқарту/нақтыborrow/source-specificқатенұсқаларсақталған.",
+        "БарлықSVGжаңапараметрден:теңклеткалар/жолақтар,көкауданcontiguousrectangle,ақшаныңкезектібазаларыннақтыатау,160×160frontfaceжәнепараллель3hiddenedgeбарcube.Sourceraster/tracedpathжоқ,салмақ/ақша/ұзындықпропорцияларыдәл,белгісіздертаңбаланған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі бөлшектерді көбейту",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent8saved/new/fullsolutions/MCQ;actualsquareedge/cancel4,5priceparts3blue,6×7unitgrid15blue/reduction3,rectangleborrowandcross5,12gardenstrips5blue/doublecross/integerarea,successivebases84000/1/4then2/3remainder,10homeworkparts3blue/doublecross/hourminute,actual160squarecubefront+3hiddenparallel edges;all343pxreadable"
+      },
+      "image": "/figures/synaq-editions/visual-wave51-pear-price-three-fifths-six-thirty.svg",
+      "verificationModule": "scripts/editorial/visual-wave51-models.mjs",
+      "statement": "Толық жолақ — 1 кг алмұрттың бағасы. Ол 5 тең бөлікке бөлінген, көк 3 бөлік (3/5) кг алмұрттың құнын білдіреді. Осы массаның бағасы неше теңге? Жауапқа тек санды жазыңыз.",
+      "solution": "1 кг алмұрт 630 теңге, (3/5) кг үшін 630 × (3/5) есептеледі. 5 тең бөліктің біреуінің бағасы 630 : 5 = 126 теңге. Көк 3 бөлік 126 × 3 = 378 теңге. Қысқарту арқылы да (1890/5) = 378 шығады.",
+      "figureDescription": "1 кг алмұрт бағасы 630 теңге болатын толық жолақ 5 тең ұяшыққа бөлінген; алғашқы 3 бөлік көк, олардың бағасы белгісіз.",
+      "figureSha256": "163c944297fb5a9c90217826236b8ba38ef5ca93ac985359dc80fb615dc3e338",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "378",
+        "checks": {
+          "wholePricePerKg": 630,
+          "mass": [
+            3,
+            5
+          ],
+          "equalParts": 5,
+          "paintedParts": 3,
+          "priceOnePart": 126,
+          "cost": 378
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave51-unit-square-six-by-seven-painted-area",
+      "modelId": "visual-wave51-unit-square-grid-rectangle-fractional-area",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "easy",
+      "params": {
+        "scene": "grid",
+        "grid": [
+          6,
+          7
+        ],
+        "painted": [
+          5,
+          3
+        ]
+      },
+      "answer": "(5/14)",
+      "sourceRefs": [
+        {
+          "sourceId": "975e61abfd8ec942",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-11-level1.json#12",
+      "sourceCanonicalSha256": "b59c6bb3c13cacf4d5fdcc25b0ed1327a8d14b6b3b97c7dbda0aaeafecc42e0e",
+      "sourceSkill": "Unit1m²square6columns7rows,blue5cols3rows=15/42reducesby3→5/14;bothreadsidefractionsirreducible,productnontrivialcancel;sum/perimeter/complementtraps",
+      "adaptationChanges": [
+        "Барлық8сақталғанвизуалды3.11шарт,толықшешімжәнебарлықMCQоқылды.Квадраттыңараласқырын4-ке,салмақтыбағаға,ауданөлшемдерінөзара,бақауданынүлеске,қалғанныңқалдығын,аралассағаттыүлеске/минутқа,кубтың3қырынкөбейтусақталды.",
+        "Жаңадеректер2+1/4дм→9;630теңге×3/5→378;6×7gridblue5×3→15/42→5/14;3+2/5−9/10width5/2→area8+1/2;31+1/2×29+1/3=924,fiveof12→385;84000first1/4then2/3REMAINDER→21000;1+2/3h×3/10→1/2h30min;cube5/6→125/216.Айқышқысқарту/нақтыborrow/source-specificқатенұсқаларсақталған.",
+        "БарлықSVGжаңапараметрден:теңклеткалар/жолақтар,көкауданcontiguousrectangle,ақшаныңкезектібазаларыннақтыатау,160×160frontfaceжәнепараллель3hiddenedgeбарcube.Sourceraster/tracedpathжоқ,салмақ/ақша/ұзындықпропорцияларыдәл,белгісіздертаңбаланған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі бөлшектерді көбейту",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent8saved/new/fullsolutions/MCQ;actualsquareedge/cancel4,5priceparts3blue,6×7unitgrid15blue/reduction3,rectangleborrowandcross5,12gardenstrips5blue/doublecross/integerarea,successivebases84000/1/4then2/3remainder,10homeworkparts3blue/doublecross/hourminute,actual160squarecubefront+3hiddenparallel edges;all343pxreadable"
+      },
+      "image": "/figures/synaq-editions/visual-wave51-unit-square-six-by-seven-painted-area.svg",
+      "verificationModule": "scripts/editorial/visual-wave51-models.mjs",
+      "options": [
+        "(1 + (11/42))",
+        "(2 + (11/21))",
+        "(5/14)",
+        "(9/14)"
+      ],
+      "statement": "Қабырғасы 1 м шаршы бірдей тіктөртбұрыш ұяшықтарға бөлінген. Көк ұяшықтар тіктөртбұрышты мозаика орнын құрайды. Оның ауданын шаршы метрмен таңдаңыз.",
+      "solution": "Шаршының әр қабырғасы 1 м. Көк тіктөртбұрыш 6 бағанның 5 бағанын, 7 қатардың 3 қатарын алады. Өлшемдері (5/6) м және (3/7) м. Ауданы (5/6) × (3/7) = (15/42) = (5/14) м². Алым мен бөлім 3 санына қысқарады. Ұяшықпен тексеру: барлығы 42, көк 15, сондықтан сол үлес. (1 + (11/42)) — екі өлшемнің қосындысы, (2 + (11/21)) — периметр, (9/14) — ақ үлес; бұлар көк аудан емес.",
+      "figureDescription": "Қабырғасы 1 м шаршы 6 бағанға және 7 қатарға бөлінген. Төменгі 3 қатардың сол жақтағы 5 бағаны көк тіктөртбұрыш түзеді.",
+      "figureSha256": "1bff30a14cc347fda31c785c4ebf127b65d09818947de3a8883ac68470cbf12b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(5/14)",
+        "checks": {
+          "wholeSquareSideMetres": 1,
+          "grid": [
+            6,
+            7
+          ],
+          "paintedRectangle": [
+            5,
+            3
+          ],
+          "rawArea": [
+            15,
+            42
+          ],
+          "reductionFactor": 3,
+          "reducedArea": [
+            5,
+            14
+          ],
+          "lengthFraction": [
+            5,
+            6
+          ],
+          "widthFraction": [
+            3,
+            7
+          ],
+          "diagnosticSum": "(1 + (11/42))",
+          "diagnosticPerimeter": "(2 + (11/21))",
+          "diagnosticComplement": "(9/14)"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave51-rectangle-three-two-fifths-shorter-nine-tenths",
+      "modelId": "visual-wave51-rectangle-shorter-fraction-width-then-mixed-area",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "length": [
+          3,
+          2,
+          5
+        ],
+        "shorter": [
+          9,
+          10
+        ]
+      },
+      "answer": "(8 + (1/2))",
+      "sourceRefs": [
+        {
+          "sourceId": "52d7ad2d9fc03e7c",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-11-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-11-level2.json#3",
+      "sourceCanonicalSha256": "bbeb1f36f727442239a80daea204c385f338a631c8a9de31894fd72d5051cf71",
+      "sourceSkill": "REALborrowwidth17/5−9/10=5/2;areaproduct17/5×5/2hasrealcross5→17/2=8+1/2;wrongwidthonly/perimeter/L×differenceallretained",
+      "adaptationChanges": [
+        "Барлық8сақталғанвизуалды3.11шарт,толықшешімжәнебарлықMCQоқылды.Квадраттыңараласқырын4-ке,салмақтыбағаға,ауданөлшемдерінөзара,бақауданынүлеске,қалғанныңқалдығын,аралассағаттыүлеске/минутқа,кубтың3қырынкөбейтусақталды.",
+        "Жаңадеректер2+1/4дм→9;630теңге×3/5→378;6×7gridblue5×3→15/42→5/14;3+2/5−9/10width5/2→area8+1/2;31+1/2×29+1/3=924,fiveof12→385;84000first1/4then2/3REMAINDER→21000;1+2/3h×3/10→1/2h30min;cube5/6→125/216.Айқышқысқарту/нақтыborrow/source-specificқатенұсқаларсақталған.",
+        "БарлықSVGжаңапараметрден:теңклеткалар/жолақтар,көкауданcontiguousrectangle,ақшаныңкезектібазаларыннақтыатау,160×160frontfaceжәнепараллель3hiddenedgeбарcube.Sourceraster/tracedpathжоқ,салмақ/ақша/ұзындықпропорцияларыдәл,белгісіздертаңбаланған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі бөлшектерді көбейту",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent8saved/new/fullsolutions/MCQ;actualsquareedge/cancel4,5priceparts3blue,6×7unitgrid15blue/reduction3,rectangleborrowandcross5,12gardenstrips5blue/doublecross/integerarea,successivebases84000/1/4then2/3remainder,10homeworkparts3blue/doublecross/hourminute,actual160squarecubefront+3hiddenparallel edges;all343pxreadable"
+      },
+      "image": "/figures/synaq-editions/visual-wave51-rectangle-three-two-fifths-shorter-nine-tenths.svg",
+      "verificationModule": "scripts/editorial/visual-wave51-models.mjs",
+      "options": [
+        "(2 + (1/2))",
+        "(11 + (4/5))",
+        "(3 + (3/50))",
+        "(8 + (1/2))"
+      ],
+      "statement": "Тіктөртбұрыштың ұзындығы суретте метрмен берілген. Ені ұзындығынан (9/10) м қысқа. Ауданын шаршы метрмен таңдаңыз; сызба масштабсыз.",
+      "solution": "Ұзындық (3 + (2/5)) = (17/5) м. Ені (3 + (2/5)) − (9/10) = (2 + (1/2)) = (5/2) м; бөлшек бөліктерді азайту үшін 1 бүтіннен үлес алынады. Енді (17/5) × (5/2) = (17/2) = (8 + (1/2)) м². Айқыш қысқартуда 5 ортақ көбейткіші жойылады. (2 + (1/2)) — тек ені, (11 + (4/5)) — периметр, (3 + (3/50)) — ұзындықты енге емес, қысқарту мөлшеріне көбейту қатесі.",
+      "figureDescription": "Масштабсыз тіктөртбұрыш: ұзындығы (3 + (2/5)) метр, ені «?».",
+      "figureSha256": "8b7a9e96ef200efa1aaa56104e64cbd94977b5bbc46f1ca365ac6f1e5c8c734c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(8 + (1/2))",
+        "checks": {
+          "length": [
+            3,
+            2,
+            5
+          ],
+          "shorterBy": [
+            9,
+            10
+          ],
+          "borrowRequired": true,
+          "width": "(2 + (1/2))",
+          "widthFraction": [
+            5,
+            2
+          ],
+          "area": "(8 + (1/2))",
+          "areaFraction": [
+            17,
+            2
+          ],
+          "crossCancellationFactor": 5,
+          "diagnosticWidthOnly": "(2 + (1/2))",
+          "diagnosticPerimeter": "(11 + (4/5))",
+          "diagnosticMultiplyDifference": "(3 + (3/50))"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave51-garden-thirty-one-half-twenty-nine-third",
+      "modelId": "visual-wave51-mixed-garden-area-painted-equal-strips",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "garden",
+        "length": [
+          31,
+          1,
+          2
+        ],
+        "width": [
+          29,
+          1,
+          3
+        ],
+        "share": [
+          5,
+          12
+        ]
+      },
+      "answer": "385",
+      "sourceRefs": [
+        {
+          "sourceId": "d2f6f2cf77f9a8e8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-11-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-11-level3.json#8",
+      "sourceCanonicalSha256": "6a82803ce92c8b582f79b451c1400394b25e451a848a693be0fc75f21177e06e",
+      "sourceSkill": "Twoirreduciblemixedsidessourcedoublecrosscancel63/2×88/3→924m²,12equalverticalstrips5blue→385m²;newSinteger,fullphysicalpartitionandsquareunits",
+      "adaptationChanges": [
+        "Барлық8сақталғанвизуалды3.11шарт,толықшешімжәнебарлықMCQоқылды.Квадраттыңараласқырын4-ке,салмақтыбағаға,ауданөлшемдерінөзара,бақауданынүлеске,қалғанныңқалдығын,аралассағаттыүлеске/минутқа,кубтың3қырынкөбейтусақталды.",
+        "Жаңадеректер2+1/4дм→9;630теңге×3/5→378;6×7gridblue5×3→15/42→5/14;3+2/5−9/10width5/2→area8+1/2;31+1/2×29+1/3=924,fiveof12→385;84000first1/4then2/3REMAINDER→21000;1+2/3h×3/10→1/2h30min;cube5/6→125/216.Айқышқысқарту/нақтыborrow/source-specificқатенұсқаларсақталған.",
+        "БарлықSVGжаңапараметрден:теңклеткалар/жолақтар,көкауданcontiguousrectangle,ақшаныңкезектібазаларыннақтыатау,160×160frontfaceжәнепараллель3hiddenedgeбарcube.Sourceraster/tracedpathжоқ,салмақ/ақша/ұзындықпропорцияларыдәл,белгісіздертаңбаланған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі бөлшектерді көбейту",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent8saved/new/fullsolutions/MCQ;actualsquareedge/cancel4,5priceparts3blue,6×7unitgrid15blue/reduction3,rectangleborrowandcross5,12gardenstrips5blue/doublecross/integerarea,successivebases84000/1/4then2/3remainder,10homeworkparts3blue/doublecross/hourminute,actual160squarecubefront+3hiddenparallel edges;all343pxreadable"
+      },
+      "image": "/figures/synaq-editions/visual-wave51-garden-thirty-one-half-twenty-nine-third.svg",
+      "verificationModule": "scripts/editorial/visual-wave51-models.mjs",
+      "statement": "Бақтың ұзындығы мен ені суретте метрмен көрсетілген. Тең ауданды жолақтардың көк бөліктеріне жидек бұталары отырғызылды. Сол көк бөліктің ауданы неше шаршы метр? Жауапқа тек санды жазыңыз.",
+      "solution": "Алдымен толық аудан: (31 + (1/2)) = (63/2) м, (29 + (1/3)) = (88/3) м. (63/2) × (88/3) = 924 м²; екі айқыш жұп 3 және 2 сандарына қысқарады. Барлығы 12 тең жолақтың 5 жолақшасы көк. Біреуінің ауданы 924 : 12 = 77 м², көк аудан 77 × 5 = 385 м². Бірден 924 × (5/12) = 385 деп те тексеріледі.",
+      "figureDescription": "Бақтың өлшемдері (31 + (1/2)) және (29 + (1/3)) метр. 12 тең тік жолақтың сол жақтағы 5 бөлігі көк.",
+      "figureSha256": "e81e24be495db7740e6f0a31013fe01e3ed2a51650645881f84bfae2b948af98",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "385",
+        "checks": {
+          "length": [
+            31,
+            1,
+            2
+          ],
+          "width": [
+            29,
+            1,
+            3
+          ],
+          "improperDimensions": [
+            [
+              63,
+              2
+            ],
+            [
+              88,
+              3
+            ]
+          ],
+          "crossCancellationFactors": [
+            3,
+            2
+          ],
+          "wholeArea": 924,
+          "equalStripCount": 12,
+          "paintedStripCount": 5,
+          "oneStripArea": 77,
+          "paintedArea": 385
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave51-eighty-four-thousand-successive-spending",
+      "modelId": "visual-wave51-two-successive-spending-fractions-of-remainder",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "money",
+        "total": 84000,
+        "first": [
+          1,
+          4
+        ],
+        "second": [
+          2,
+          3
+        ]
+      },
+      "answer": "21000",
+      "sourceRefs": [
+        {
+          "sourceId": "09e12fa328d52405",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-11-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-11-level3.json#9",
+      "sourceCanonicalSha256": "c56df1c1c7e0bd4a3bafdb2f905efbc33f226c7a6a573e801db1f701cc8c65a5",
+      "sourceSkill": "First1/4ORIGINAL,then2/3ofREMAINDER,notbothoriginal;left3/4×1/3=1/4realcross3,84000→21000book+42000bag+21000remaining",
+      "adaptationChanges": [
+        "Барлық8сақталғанвизуалды3.11шарт,толықшешімжәнебарлықMCQоқылды.Квадраттыңараласқырын4-ке,салмақтыбағаға,ауданөлшемдерінөзара,бақауданынүлеске,қалғанныңқалдығын,аралассағаттыүлеске/минутқа,кубтың3қырынкөбейтусақталды.",
+        "Жаңадеректер2+1/4дм→9;630теңге×3/5→378;6×7gridblue5×3→15/42→5/14;3+2/5−9/10width5/2→area8+1/2;31+1/2×29+1/3=924,fiveof12→385;84000first1/4then2/3REMAINDER→21000;1+2/3h×3/10→1/2h30min;cube5/6→125/216.Айқышқысқарту/нақтыborrow/source-specificқатенұсқаларсақталған.",
+        "БарлықSVGжаңапараметрден:теңклеткалар/жолақтар,көкауданcontiguousrectangle,ақшаныңкезектібазаларыннақтыатау,160×160frontfaceжәнепараллель3hiddenedgeбарcube.Sourceraster/tracedpathжоқ,салмақ/ақша/ұзындықпропорцияларыдәл,белгісіздертаңбаланған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі бөлшектерді көбейту",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent8saved/new/fullsolutions/MCQ;actualsquareedge/cancel4,5priceparts3blue,6×7unitgrid15blue/reduction3,rectangleborrowandcross5,12gardenstrips5blue/doublecross/integerarea,successivebases84000/1/4then2/3remainder,10homeworkparts3blue/doublecross/hourminute,actual160squarecubefront+3hiddenparallel edges;all343pxreadable"
+      },
+      "image": "/figures/synaq-editions/visual-wave51-eighty-four-thousand-successive-spending.svg",
+      "verificationModule": "scripts/editorial/visual-wave51-models.mjs",
+      "statement": "Айбек бастапқы ақшасының (1/4) бөлігін кітапқа жұмсады. Одан ҚАЛҒАН ақшаның (2/3) бөлігіне сөмке алды. Бастапқы сома суретте берілген; көк — кітап, сары — сөмке, ақ — қалған ақша. Айбекте неше теңге қалды? Жауапқа тек санды жазыңыз.",
+      "solution": "Кітаптан кейін бастапқы ақшаның 1 − (1/4) = (3/4) бөлігі қалады. Сөмкеден кейін сол ҚАЛДЫҚТЫҢ 1 − (2/3) бөлігі сақталады. Сондықтан бастапқы сомаға қатысты қалған үлес (3/4) × (1/3) = (1/4). Қалған ақша 84000 × (1/4) = 21000 теңге. Тексеру: кітапқа 21000, сөмкеге 42000, қалғаны 21000; 21000 + 42000 + 21000 = 84000. Екінші бөлшек бастапқы сомадан емес, бірінші сатып алудан қалған сомадан алынған.",
+      "figureDescription": "Бастапқы ақша 84000 теңге. Көк — кітапқа бастапқының (1/4) үлесі; сары — ҚАЛҒАН ақшаның (2/3) үлесі; ақ бөлікте «?».",
+      "figureSha256": "d63775833dcc8523408982f4d8e0ee64ea650a985f422983b7d289cd1d7ed8da",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "21000",
+        "checks": {
+          "originalTotal": 84000,
+          "firstFractionOfORIGINAL": [
+            1,
+            4
+          ],
+          "secondFractionOfREMAINDER": [
+            2,
+            3
+          ],
+          "afterFirstShare": [
+            3,
+            4
+          ],
+          "finalShare": [
+            1,
+            4
+          ],
+          "firstCost": 21000,
+          "secondCost": 42000,
+          "finalMoney": 21000,
+          "noOriginalShareAddition": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave51-homework-one-two-thirds-three-tenths",
+      "modelId": "visual-wave51-mixed-homework-time-part-then-minutes",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "homework",
+        "hours": [
+          1,
+          2,
+          3
+        ],
+        "share": [
+          3,
+          10
+        ]
+      },
+      "answer": "30",
+      "sourceRefs": [
+        {
+          "sourceId": "dec221036e0c64c2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-11-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-11-leveltest.json#1",
+      "sourceCanonicalSha256": "8dde8d40af2feab1b8f1dffabf9cac7ed55ff65b7d9f5d46949135bff02fd7d7",
+      "sourceSkill": "Readwhole1+2/3h,3of10blue;5/3×3/10doublecross5and3→1/2h→30minutes;whole100minexactandreverseratelogic",
+      "adaptationChanges": [
+        "Барлық8сақталғанвизуалды3.11шарт,толықшешімжәнебарлықMCQоқылды.Квадраттыңараласқырын4-ке,салмақтыбағаға,ауданөлшемдерінөзара,бақауданынүлеске,қалғанныңқалдығын,аралассағаттыүлеске/минутқа,кубтың3қырынкөбейтусақталды.",
+        "Жаңадеректер2+1/4дм→9;630теңге×3/5→378;6×7gridblue5×3→15/42→5/14;3+2/5−9/10width5/2→area8+1/2;31+1/2×29+1/3=924,fiveof12→385;84000first1/4then2/3REMAINDER→21000;1+2/3h×3/10→1/2h30min;cube5/6→125/216.Айқышқысқарту/нақтыborrow/source-specificқатенұсқаларсақталған.",
+        "БарлықSVGжаңапараметрден:теңклеткалар/жолақтар,көкауданcontiguousrectangle,ақшаныңкезектібазаларыннақтыатау,160×160frontfaceжәнепараллель3hiddenedgeбарcube.Sourceraster/tracedpathжоқ,салмақ/ақша/ұзындықпропорцияларыдәл,белгісіздертаңбаланған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі бөлшектерді көбейту",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent8saved/new/fullsolutions/MCQ;actualsquareedge/cancel4,5priceparts3blue,6×7unitgrid15blue/reduction3,rectangleborrowandcross5,12gardenstrips5blue/doublecross/integerarea,successivebases84000/1/4then2/3remainder,10homeworkparts3blue/doublecross/hourminute,actual160squarecubefront+3hiddenparallel edges;all343pxreadable"
+      },
+      "image": "/figures/synaq-editions/visual-wave51-homework-one-two-thirds-three-tenths.svg",
+      "verificationModule": "scripts/editorial/visual-wave51-models.mjs",
+      "statement": "Суретте Ләззаттың үй тапсырмасына жұмсаған толық уақыты сағатпен берілген. Тең бөліктердің көгі — математика уақыты. Ол математикаға неше минут жұмсады? Жауапқа тек санды жазыңыз.",
+      "solution": "Толық уақыт (1 + (2/3)) = (5/3) сағат. Жолақ 10 тең бөлік, көгі 3 бөлік: (3/10). Математика уақыты (5/3) × (3/10) = (1/2) сағат; екі айқыш қысқарту 5 және 3 сандарына жасалады. 1 сағат = 60 минут: 60 × (1/2) = 30 минут. Бөлек тексеру: барлық уақыт 100 минут, 100 × (3/10) = 30. Сағат үлесін минут деп бірден жазбаймыз.",
+      "figureDescription": "Толық уақыт (1 + (2/3)) сағат. 10 тең бөлікке бөлінген жолақтың сол жақтағы 3 ұяшығы көк.",
+      "figureSha256": "7336d53f12ce32b856098bf94c3d1e439c31ecac5580a91c056f35e21e606359",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "30",
+        "checks": {
+          "wholeHours": [
+            1,
+            2,
+            3
+          ],
+          "wholeImproper": [
+            5,
+            3
+          ],
+          "paintedTimeShare": [
+            3,
+            10
+          ],
+          "crossCancellationFactors": [
+            5,
+            3
+          ],
+          "targetHours": [
+            1,
+            2
+          ],
+          "targetMinutes": 30,
+          "wholeMinutes": 100,
+          "reverseMinuteLedger": 30
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave51-cube-five-sixths-decimetre-volume",
+      "modelId": "visual-wave51-cube-proper-fraction-edge-volume-not-face",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "cube",
+        "edge": [
+          5,
+          6
+        ]
+      },
+      "answer": "(125/216)",
+      "sourceRefs": [
+        {
+          "sourceId": "e13bd8533c990a57",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-11-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-11-leveltest.json#4",
+      "sourceCanonicalSha256": "4c27cf7a824b52d0ad80f2b508c75b48ed45351d572d8404db6cdf8ed7a05ff3",
+      "sourceSkill": "Full3Dcubeedge5/6dm,volume125/216dm³irreducible;facearea25/36,squareNUMcubeDEN25/216,tripleedge2+1/2diagnosespreserved;true160×160frontandparallelhidden3edges",
+      "adaptationChanges": [
+        "Барлық8сақталғанвизуалды3.11шарт,толықшешімжәнебарлықMCQоқылды.Квадраттыңараласқырын4-ке,салмақтыбағаға,ауданөлшемдерінөзара,бақауданынүлеске,қалғанныңқалдығын,аралассағаттыүлеске/минутқа,кубтың3қырынкөбейтусақталды.",
+        "Жаңадеректер2+1/4дм→9;630теңге×3/5→378;6×7gridblue5×3→15/42→5/14;3+2/5−9/10width5/2→area8+1/2;31+1/2×29+1/3=924,fiveof12→385;84000first1/4then2/3REMAINDER→21000;1+2/3h×3/10→1/2h30min;cube5/6→125/216.Айқышқысқарту/нақтыborrow/source-specificқатенұсқаларсақталған.",
+        "БарлықSVGжаңапараметрден:теңклеткалар/жолақтар,көкауданcontiguousrectangle,ақшаныңкезектібазаларыннақтыатау,160×160frontfaceжәнепараллель3hiddenedgeбарcube.Sourceraster/tracedpathжоқ,салмақ/ақша/ұзындықпропорцияларыдәл,белгісіздертаңбаланған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі бөлшектерді көбейту",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent8saved/new/fullsolutions/MCQ;actualsquareedge/cancel4,5priceparts3blue,6×7unitgrid15blue/reduction3,rectangleborrowandcross5,12gardenstrips5blue/doublecross/integerarea,successivebases84000/1/4then2/3remainder,10homeworkparts3blue/doublecross/hourminute,actual160squarecubefront+3hiddenparallel edges;all343pxreadable"
+      },
+      "image": "/figures/synaq-editions/visual-wave51-cube-five-sixths-decimetre-volume.svg",
+      "verificationModule": "scripts/editorial/visual-wave51-models.mjs",
+      "options": [
+        "(25/36)",
+        "(125/216)",
+        "(25/216)",
+        "(2 + (1/2))"
+      ],
+      "statement": "Кубтың қыры суретте дециметрмен көрсетілген. Кубтың КӨЛЕМІН текше дециметрмен таңдаңыз.",
+      "solution": "Көлем үшін қыр үш рет көбейтіледі: (5/6) × (5/6) × (5/6) = (125/216) дм³. 5³ = 125, 6³ = 216, бөлшек қысқартылмайды. (25/36) — тек бір жақтың ауданы, (25/216) — алымды квадраттап, бөлімді кубтау қатесі. (2 + (1/2)) — қырды 3-ке көбейту; ол көлем емес.",
+      "figureDescription": "Үш жағы көрінетін куб, алдыңғы төменгі қыры (5/6) дм. Көрінбейтін үш қыр үзік сызықпен белгіленген.",
+      "figureSha256": "9c6147ba60ac6d8558da23ebeb2b0ce55dff51eead006f88b45f9521100d1cad",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(125/216)",
+        "checks": {
+          "edgeDm": [
+            5,
+            6
+          ],
+          "volumeDmCubed": [
+            125,
+            216
+          ],
+          "allThreeDimensionsUsed": true,
+          "diagnosticFaceArea": "(25/36)",
+          "diagnosticSquareNumeratorCubeDenominator": "(25/216)",
+          "diagnosticThreeEdges": "(2 + (1/2))"
+        }
+      }
+    }
+  ]
+}

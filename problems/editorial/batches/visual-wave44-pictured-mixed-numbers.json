@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All6savedvisualgrade5topic3.4;archivedsourcesonly,nocapture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "Allcapturedvisualgrade5topic3.4sources",
+    "sourceVisualOccurrences": 6,
+    "addressedNewDrafts": 6,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "034c538b9c2564d7",
+      "5da08d0c9a6b7ae5",
+      "8bd9b91f40c804da",
+      "8f6fd51033fea943",
+      "928a68f432fc26c3",
+      "bd48650a46624681"
+    ],
+    "distinctModels": 6,
+    "semantics": "Sixsource-specifictargetsindividuallyrewritten;edition/modelcountsarenotnewsemanticmeaningclaims."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave44-six-circles-one-in-sixths",
+      "modelId": "visual-wave44-regroup-one-whole-at-fixed-denominator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "circles",
+        "wholes": 6,
+        "denominator": 6
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "5da08d0c9a6b7ae5",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-4-level1.json#9",
+      "sourceCanonicalSha256": "a660022179abc9ccb4ffe1c8161c0e1c8e47a4673534e185d80d98037fbbc9e0",
+      "sourceSkill": "Regroup exactly ONEwhole at the required denominator, do not incorrectly call denominator/denominator a proper mixedfraction",
+      "adaptationChanges": [
+        "Барлық6сақталғанвизуалды3.4бастапқышарт,толықшешімменнұсқаларжекеоқылды.Қайтаданбүтіндібөлшектеу,таразыныңбарлықгірінқосу,сызбаданараласұзындық,барлықтоқаштытеңбөлу,аудан/ұзындықбойыншаені,алғашқыкилометрденбарлықағаштысанаудағдыларысақталды.",
+        "Жаңадеректер:6=5+6/6;2кг+500г+250г;2⅞км;23тоқаш/6дос;70м²/12м;5⅚кмжәнеалғашқы1км6аралық.Өлшем,нақтықысқарту,алым/бөлімніңрөліжәнешеткіекіағашашықтексеріледі.",
+        "Барлық6SVGөзпараметріненжасалған:теңрадиусты6дөңгелек/6сектор,көлденеңтаразы/3оқылатынгір,бірдейкилометрлікжолақ/8бөлік,23жекетоқаш,масштабсызтіктөртбұрыш,7ағаш/6аралық.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview;native343px6equalcircles/6sectors,2kg500g250glabels,route2whole+7of8,23actualbuns,area70length12withgcd2,7trees6gapsinFIRST1km;hiddenanswersnoleak"
+      },
+      "image": "/figures/synaq-editions/visual-wave44-six-circles-one-in-sixths.svg",
+      "verificationModule": "scripts/editorial/visual-wave44-models.mjs",
+      "statement": "Бірдей дөңгелектердің әрқайсысы бір бүтінді білдіреді. Соңғы күлгін дөңгелек тең бөліктерге бөлінген. 6 = 5 + (□/6) теңдігі дұрыс болуы үшін □ орнына неше жазылады? Жауапқа тек санды жазыңыз.",
+      "solution": "Барлығы 6 дөңгелек. Оның 5 дөңгелегін бүтін күйінде қалдырамыз, соңғы бір бүтінді 6 тең бөлікке бөлшектейміз. Бір бүтін (6/6) болғандықтан 6 = 5 + (6/6). Демек □ = 6. Бұл жазуда (6/6) дұрыс бөлшек емес; бұл — бүтінді қайта жазу, аралас сан емес.",
+      "figureDescription": "6 бірдей дөңгелек. Алғашқы 5 дөңгелек көк, соңғы күлгін дөңгелек 6 тең секторға бөлінген.",
+      "figureSha256": "e55a06010975beb888e0da78d00cfd60bca57752f823299becf1799627442f3f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "allWholeCircles": 6,
+          "unsplitCircles": 5,
+          "splitWhole": 1,
+          "smallPartsOfLastWhole": 6,
+          "equality": "6 = 5 + 6/6"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave44-two-kilo-five-hundred-two-fifty-balance",
+      "modelId": "visual-wave44-balanced-weights-canonical-mixed-kilograms",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "balance",
+        "kg": 2,
+        "weightsGrams": [
+          500,
+          250
+        ]
+      },
+      "answer": "(2 + (3/4))",
+      "sourceRefs": [
+        {
+          "sourceId": "bd48650a46624681",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-4-level1.json#12",
+      "sourceCanonicalSha256": "4636e555b5e95aa53c79cc2ee7440eb714bb3ff1b93376429c9dfaa29545c074",
+      "sourceSkill": "Read ALLweights of a balanced scale, retain wholekg, convert1000g/kg, reduce the fractionalpart",
+      "adaptationChanges": [
+        "Барлық6сақталғанвизуалды3.4бастапқышарт,толықшешімменнұсқаларжекеоқылды.Қайтаданбүтіндібөлшектеу,таразыныңбарлықгірінқосу,сызбаданараласұзындық,барлықтоқаштытеңбөлу,аудан/ұзындықбойыншаені,алғашқыкилометрденбарлықағаштысанаудағдыларысақталды.",
+        "Жаңадеректер:6=5+6/6;2кг+500г+250г;2⅞км;23тоқаш/6дос;70м²/12м;5⅚кмжәнеалғашқы1км6аралық.Өлшем,нақтықысқарту,алым/бөлімніңрөліжәнешеткіекіағашашықтексеріледі.",
+        "Барлық6SVGөзпараметріненжасалған:теңрадиусты6дөңгелек/6сектор,көлденеңтаразы/3оқылатынгір,бірдейкилометрлікжолақ/8бөлік,23жекетоқаш,масштабсызтіктөртбұрыш,7ағаш/6аралық.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview;native343px6equalcircles/6sectors,2kg500g250glabels,route2whole+7of8,23actualbuns,area70length12withgcd2,7trees6gapsinFIRST1km;hiddenanswersnoleak"
+      },
+      "image": "/figures/synaq-editions/visual-wave44-two-kilo-five-hundred-two-fifty-balance.svg",
+      "verificationModule": "scripts/editorial/visual-wave44-models.mjs",
+      "options": [
+        "(2 + (3/4))",
+        "(2 + (3/40))",
+        "(2 + (4/3))",
+        "(11/4)"
+      ],
+      "statement": "Таразы тепе-тең тұр. Сол жақтағы асқабақтың массасы оң жақтағы барлық гірдің массасына тең. Асқабақ массасын килограммен, бөлшек бөлігі ҚЫСҚАРТЫЛМАЙТЫН аралас санмен көрсетіңіз.",
+      "solution": "Көлденең таразыдағы массалар тең. Гірлер 2 кг және 500 г, 250 г. Грамдық гірлердің қосындысы 500 + 250 = 750 г. 1 кг = 1000 г, сондықтан 750 г = (750/1000) кг = (3/4) кг. Екі мүшені 250 санына қысқарттық. Асқабақтың массасы (2 + (3/4)) кг. 2 бүтін килограммды тастауға не 1000 орнына 100 санын алуға болмайды.",
+      "figureDescription": "Таразының иіні көлденең. Сол табақшада асқабақ, оң табақшада 2 кг, 500 г, 250 г деп жазылған үш гір. Гірлердің массалары бірге алынады.",
+      "figureSha256": "c665e8cb5d74b9da64b131b79e7a39b58a43e6bcb8d69dad7e003f928df0bb9b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(2 + (3/4))",
+        "checks": {
+          "wholeKilogramWeight": 2,
+          "gramWeights": [
+            500,
+            250
+          ],
+          "extraGrams": 750,
+          "totalGrams": 2750,
+          "gramsPerKilogram": 1000,
+          "extraReduced": "(3/4)",
+          "gcd": 250,
+          "mixed": "(2 + (3/4))"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave44-two-and-seven-eighths-route",
+      "modelId": "visual-wave44-whole-and-fraction-route-to-metres",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "route",
+        "wholeKm": 2,
+        "parts": 8,
+        "blueParts": 7
+      },
+      "answer": "2875",
+      "sourceRefs": [
+        {
+          "sourceId": "928a68f432fc26c3",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-4-level2.json#0",
+      "sourceCanonicalSha256": "6c8933d9094c2fbe167d757476bc476f15e6e05ed937d518c84d6cdd8d265141",
+      "sourceSkill": "Read wholeunitsegments and shaded fractional endpoint, then convert kilometres to metres",
+      "adaptationChanges": [
+        "Барлық6сақталғанвизуалды3.4бастапқышарт,толықшешімменнұсқаларжекеоқылды.Қайтаданбүтіндібөлшектеу,таразыныңбарлықгірінқосу,сызбаданараласұзындық,барлықтоқаштытеңбөлу,аудан/ұзындықбойыншаені,алғашқыкилометрденбарлықағаштысанаудағдыларысақталды.",
+        "Жаңадеректер:6=5+6/6;2кг+500г+250г;2⅞км;23тоқаш/6дос;70м²/12м;5⅚кмжәнеалғашқы1км6аралық.Өлшем,нақтықысқарту,алым/бөлімніңрөліжәнешеткіекіағашашықтексеріледі.",
+        "Барлық6SVGөзпараметріненжасалған:теңрадиусты6дөңгелек/6сектор,көлденеңтаразы/3оқылатынгір,бірдейкилометрлікжолақ/8бөлік,23жекетоқаш,масштабсызтіктөртбұрыш,7ағаш/6аралық.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview;native343px6equalcircles/6sectors,2kg500g250glabels,route2whole+7of8,23actualbuns,area70length12withgcd2,7trees6gapsinFIRST1km;hiddenanswersnoleak"
+      },
+      "image": "/figures/synaq-editions/visual-wave44-two-and-seven-eighths-route.svg",
+      "verificationModule": "scripts/editorial/visual-wave44-models.mjs",
+      "statement": "O аялдамасынан S саябағына дейінгі жол көк түспен белгіленген. Әр «1 км» бөлігі бірдей ұзындықта. Соңғы километр 8 тең бөлікке бөлінген. O-дан S-ке дейін неше МЕТР? Жауапқа тек санды жазыңыз.",
+      "solution": "Көк жолда 2 толық километр және соңғы километрдің 7 тең бөлігі бар. Сол километр 8 бөлікке бөлінген, бір бөлік 1000 : 8 = 125 м. Толық километрлер 2 × 1000 = 2000 м, қалған бөлік 7 × 125 = 875 м. Барлығы 2000 + 875 = 2875 м. Үзік ақ бөлік S нүктесінен кейін жатыр және жол ұзындығына кірмейді.",
+      "figureDescription": "O-дан бастап 2 толық 1 км бөлік көк. Келесі 1 км 8 тең ұяшыққа бөлінген, алғашқы 7 ұяшығы көк, соңғысы ақ үзік жиекті. S көк жолдың дәл соңында.",
+      "figureSha256": "b05c9b51e8057109ca1f88b58bef89cb543700d18736e5883a6daba94e4a20b7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2875",
+        "checks": {
+          "wholeKilometres": 2,
+          "partialKilometres": "(7/8)",
+          "metresPerSmallPart": 125,
+          "totalSmallParts": 23,
+          "totalMetres": 2875
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave44-twenty-three-buns-six-friends",
+      "modelId": "visual-wave44-count-buns-equal-sharing-mixed-amount",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "buns",
+        "buns": 23,
+        "children": 6
+      },
+      "answer": "(3 + (5/6))",
+      "sourceRefs": [
+        {
+          "sourceId": "034c538b9c2564d7",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-4-level2.json#1",
+      "sourceCanonicalSha256": "9b054d44e65b60db43b08df14e66b4225dee2b71176c9bbef475dac160a660ca",
+      "sourceSkill": "Count EVERYpicturedwhole and equally divide including leftovers, express improper result as reduced mixednumber",
+      "adaptationChanges": [
+        "Барлық6сақталғанвизуалды3.4бастапқышарт,толықшешімменнұсқаларжекеоқылды.Қайтаданбүтіндібөлшектеу,таразыныңбарлықгірінқосу,сызбаданараласұзындық,барлықтоқаштытеңбөлу,аудан/ұзындықбойыншаені,алғашқыкилометрденбарлықағаштысанаудағдыларысақталды.",
+        "Жаңадеректер:6=5+6/6;2кг+500г+250г;2⅞км;23тоқаш/6дос;70м²/12м;5⅚кмжәнеалғашқы1км6аралық.Өлшем,нақтықысқарту,алым/бөлімніңрөліжәнешеткіекіағашашықтексеріледі.",
+        "Барлық6SVGөзпараметріненжасалған:теңрадиусты6дөңгелек/6сектор,көлденеңтаразы/3оқылатынгір,бірдейкилометрлікжолақ/8бөлік,23жекетоқаш,масштабсызтіктөртбұрыш,7ағаш/6аралық.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview;native343px6equalcircles/6sectors,2kg500g250glabels,route2whole+7of8,23actualbuns,area70length12withgcd2,7trees6gapsinFIRST1km;hiddenanswersnoleak"
+      },
+      "image": "/figures/synaq-editions/visual-wave44-twenty-three-buns-six-friends.svg",
+      "verificationModule": "scripts/editorial/visual-wave44-models.mjs",
+      "options": [
+        "(3 + (5/6))",
+        "(3 + (1/23))",
+        "(3 + (1/6))",
+        "(6/23)"
+      ],
+      "statement": "Суреттегі дөңгелек тоқаштардың БАРЛЫҒЫН 6 дос тең бөлісті. Артылған бүтін тоқаштарды да бірдей үлестерге бөлді. Әр дос алған мөлшерді қысқартылған аралас санмен таңдаңыз.",
+      "solution": "Тоқаштарды қатарымен санаймыз: 6 + 6 + 6 + 5 = 23. 23 = 6 × 3 + 5. Бүтін бөлік 3, қалдық 5. Әр досқа 3 бүтін тоқаштан тиеді. Қалған 5 тоқашты 6 досқа тең бөлсек, әрқайсысына (5/6) тоқаштан қосылады. Нәтиже (3 + (5/6)). Тексеру: 3 × 6 + 5 = 23.",
+      "figureDescription": "Төрт қатардағы дөңгелек тоқаштар саны 6, 6, 6, 5. Әр тоқаш бүтін күйінде көрсетілген.",
+      "figureSha256": "1011460747fc6a92e4a6dae85806eecf81ff15a94cfd2c7f0d705ca7621b8096",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(3 + (5/6))",
+        "checks": {
+          "allShownBuns": 23,
+          "recipients": 6,
+          "wholeEach": 3,
+          "wholeBunsLeft": 5,
+          "eachLeftShare": "(5/6)",
+          "mixed": "(3 + (5/6))"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave44-seventy-square-metres-length-twelve",
+      "modelId": "visual-wave44-area-over-length-reduced-mixed-width",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "area": 70,
+        "length": 12
+      },
+      "answer": "(5 + (5/6))",
+      "sourceRefs": [
+        {
+          "sourceId": "8bd9b91f40c804da",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-4-level2.json#13",
+      "sourceCanonicalSha256": "73384fd8b9d5d5a7d0385081440f69364b731d231ff924b3b0d19c5622283fd7",
+      "sourceSkill": "Read area/length, recover width bydivision, keep nontrivial reductionGCD2 and convert improperfraction to mixednumber",
+      "adaptationChanges": [
+        "Барлық6сақталғанвизуалды3.4бастапқышарт,толықшешімменнұсқаларжекеоқылды.Қайтаданбүтіндібөлшектеу,таразыныңбарлықгірінқосу,сызбаданараласұзындық,барлықтоқаштытеңбөлу,аудан/ұзындықбойыншаені,алғашқыкилометрденбарлықағаштысанаудағдыларысақталды.",
+        "Жаңадеректер:6=5+6/6;2кг+500г+250г;2⅞км;23тоқаш/6дос;70м²/12м;5⅚кмжәнеалғашқы1км6аралық.Өлшем,нақтықысқарту,алым/бөлімніңрөліжәнешеткіекіағашашықтексеріледі.",
+        "Барлық6SVGөзпараметріненжасалған:теңрадиусты6дөңгелек/6сектор,көлденеңтаразы/3оқылатынгір,бірдейкилометрлікжолақ/8бөлік,23жекетоқаш,масштабсызтіктөртбұрыш,7ағаш/6аралық.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview;native343px6equalcircles/6sectors,2kg500g250glabels,route2whole+7of8,23actualbuns,area70length12withgcd2,7trees6gapsinFIRST1km;hiddenanswersnoleak"
+      },
+      "image": "/figures/synaq-editions/visual-wave44-seventy-square-metres-length-twelve.svg",
+      "verificationModule": "scripts/editorial/visual-wave44-models.mjs",
+      "options": [
+        "(5 + (5/6))",
+        "(5 + (1/6))",
+        "(6 + (5/6))",
+        "(5 + (5/12))"
+      ],
+      "statement": "Тік төртбұрыш пішінді көкөніс алаңының ауданы мен ұзындығы суретте берілген. Сызба масштабсыз. Алаңның енін метрмен, бөлшек бөлігі ҚЫСҚАРТЫЛМАЙТЫН аралас санмен таңдаңыз.",
+      "solution": "Тік төртбұрыштың ауданы ұзындығы мен енінің көбейтіндісі, сондықтан енін табу үшін ауданды ұзындығына бөлеміз: 70 : 12 = (70/12) м. Алым мен бөлімді 2 санына қысқартсақ (35/6) шығады. 70 = 12 × 5 + 10, сондықтан (70/12) = 5 + (10/12) = (5 + (5/6)). Бөлшек бөлікті де толық қысқарттық. Масштабсыз суретті сызғышпен өлшеудің қажеті жоқ.",
+      "figureDescription": "Тік төртбұрыштың ішінде аудан S = 70 м², астында 12 м ұзындық жазылған. Оң жақта ені сұрақ белгісімен белгіленген. Сызба масштабсыз.",
+      "figureSha256": "eaa7b896a4162bca1476fb60598855e51a493f2dfcba432e7bc863915370b554",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(5 + (5/6))",
+        "checks": {
+          "areaSquareMetres": 70,
+          "givenLengthMetres": 12,
+          "rawWidth": "70/12",
+          "reductionGCD": 2,
+          "reducedImproper": "(35/6)",
+          "wholeWidth": 5,
+          "mixedWidth": "(5 + (5/6))"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave44-five-and-five-sixths-km-tree-row",
+      "modelId": "visual-wave44-first-kilometre-spacing-full-route-tree-count",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "trees",
+        "wholeKm": 5,
+        "numerator": 2,
+        "denominator": 3,
+        "parts": 6
+      },
+      "answer": "35",
+      "sourceRefs": [
+        {
+          "sourceId": "8f6fd51033fea943",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-4-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-4-level3.json#5",
+      "sourceCanonicalSha256": "28da0e16560df385200ad703fcd1147ae9703082864621317463782cdbafe3d9",
+      "sourceSkill": "Count displayed FIRSTunitintervals, extend mixed fullroute, include both endpoints with gaps+1",
+      "adaptationChanges": [
+        "Барлық6сақталғанвизуалды3.4бастапқышарт,толықшешімменнұсқаларжекеоқылды.Қайтаданбүтіндібөлшектеу,таразыныңбарлықгірінқосу,сызбаданараласұзындық,барлықтоқаштытеңбөлу,аудан/ұзындықбойыншаені,алғашқыкилометрденбарлықағаштысанаудағдыларысақталды.",
+        "Жаңадеректер:6=5+6/6;2кг+500г+250г;2⅞км;23тоқаш/6дос;70м²/12м;5⅔кмжәнеалғашқы1км6аралық;17/3=34/6түрінекелтіру.Өлшем,нақтықысқарту,алым/бөлімніңрөліжәнешеткіекіағашашықтексеріледі.",
+        "Барлық6SVGөзпараметріненжасалған:теңрадиусты6дөңгелек/6сектор,көлденеңтаразы/3оқылатынгір,бірдейкилометрлікжолақ/8бөлік,23жекетоқаш,масштабсызтіктөртбұрыш,7ағаш/6аралық.Sourceraster/tracedpathқолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview;native343px6equalcircles/6sectors,2kg500g250glabels,route2whole+7of8,23actualbuns,area70length12withgcd2,7trees6gapsinFIRST1km;hiddenanswersnoleak"
+      },
+      "image": "/figures/synaq-editions/visual-wave44-five-and-five-sixths-km-tree-row.svg",
+      "verificationModule": "scripts/editorial/visual-wave44-models.mjs",
+      "statement": "Ұзындығы (5 + (2/3)) км жаяу жолдың бір жағына ағаштар тең аралықпен отырғызылған. Суретте тек алғашқы 1 км көрсетілген. Жолдың басында да, толық жолдың соңында да ағаш бар. БАРЛЫҚ жолда неше ағаш бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Алғашқы 1 км-де 7 ағаш және олардың арасында 6 тең аралық бар. Бір аралық (1/6) км. Толық ұзындық (5 + (2/3)) = (17/3) км. Бірлік бөліктің бөлімі 6 болу үшін алым мен бөлімді 2 санына көбейтеміз: (17/3) = (34/6) км. Әр (1/6) км бір аралық болғандықтан, толық жолда 34 аралық бар. Екі шетте де ағаш болғандықтан ағаш саны аралық санынан біреуге артық: 34 + 1 = 35. Сурет тек алғашқы километрді көрсетеді; суреттегі ағаштар санымен тоқтамаймыз.",
+      "figureDescription": "0-ден 1 км-ге дейін 7 ағаш бар, олардың арасында 6 тең аралық. Оң жақтағы үзік сызық жолдың одан әрі жалғасатынын білдіреді; толық жолдың соңы көрсетілмеген.",
+      "figureSha256": "06c8ce336ff465f8bc3dff6450c5c62dbef9d8aac92dd1764be06bb5cf864fae",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "35",
+        "checks": {
+          "shownFirstKilometreGaps": 6,
+          "shownTrees": 7,
+          "oneGapKm": "(1/6)",
+          "fullLengthKm": "(5 + (2/3))",
+          "scaledLengthAtSpacingDenominator": "34/6",
+          "denominatorExpansionFactor": 2,
+          "fullRouteGaps": 34,
+          "fullRouteTrees": 35,
+          "bothEndpoints": true
+        }
+      }
+    }
+  ]
+}

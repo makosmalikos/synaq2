@@ -1,0 +1,495 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All7savedvisualgrade5topic3.13;archivedsourcesonly,no newcapture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "Allcapturedvisualgrade5topic3.13sources",
+    "sourceVisualOccurrences": 7,
+    "addressedNewDrafts": 7,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "01065699346476d8",
+      "322ebb8a05602ec8",
+      "6d9d74ce4082e3c0",
+      "9ecbdb9cbd9406d2",
+      "b2c0b598106dbe4a",
+      "bf2fbc4991f495e8",
+      "e544a1317e5ac133"
+    ],
+    "distinctModels": 7,
+    "semantics": "Seven source-specific targets rewritten separately; samefamily/invariant2quotientarenot claimednewsemanticmeanings."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave53-nuts-five-sixths-twelfth-packets",
+      "modelId": "visual-wave53-pictured-mass-divide-by-unit-packet",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "packets",
+        "mass": [
+          5,
+          6
+        ],
+        "packet": [
+          1,
+          12
+        ]
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "6d9d74ce4082e3c0",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-13-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-13-level1.json#9",
+      "sourceCanonicalSha256": "6d494b4b3de77d5f8ff73e43ade5f549cc74ec00e4a542b1f1e9d3f45a594ea0",
+      "sourceSkill": "Read5of6equalmassparts→5/6kg,divideby1/12kgpackets→10; eachcoarse1/6refinesintotwo1/12packets, physicalintegerandreverseledger.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.13 визуалды шарт пен толық шешім жеке оқылды; бұл 7 бастапқы тапсырмада MCQ жоқ. Бөлшек массадан қапшық санын, натурал ұзындықтан бөлшек кесінді санын, бір масштабтағы екі бөлшектің қатынасын, аралас аудан мен ен арқылы ұзындықты, белгілі үлестен бүтінді және жартыдан артық бет айырмасын табу сақталды.",
+        "Жаңа параметрлер:5/6кг÷1/12кг→10қапшық;12м÷3/4м→16кесінді;5/6÷5/12→2;18+3/4м²÷2+1/12м→9м;5/8кітап95бет→152бет;7/12−1/2үлес21бет→252бет;5/8қыздар,ақ3/8ұлдар15→барлығы40. Бір масштабтағы2қатынас — бастапқы дағдының инварианты, жаңа мағына деп саналмайды.",
+        "Барлық SVG нативті жаңа сандармен салынды: тең массалық/кітап/топ ұяшықтары, ірі және кіші бөліктерге бөлінген екі масштабтас жолақ, өлшемдеріне пропорционал тіктөртбұрыш және дәл ортадағы жарты сызық. Таспа қалдығында жауапты санауға мүмкіндік беретін жеке кесу сызықтары жоқ. Source raster/traced path қолданылмады; сыртқы review күтіледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша бөлшектерді бөлу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions, actual6cells5blue,12mwhole3/4piecewidth24.75,noanswergrid;12fine6coarsegroupsblue10yellow5same33scale;S75/4,width25/12,twocrosscancel/nativeaspect;8cells5blueknown95;7/12blue231/half198/excess33known21;8cells5blue3whiteknown15. Inspectall343pxsheets."
+      },
+      "image": "/figures/synaq-editions/visual-wave53-nuts-five-sixths-twelfth-packets.svg",
+      "verificationModule": "scripts/editorial/visual-wave53-models.mjs",
+      "statement": "Толық жолақ — 1 кг жаңғақ. Көк бөліктегі жаңғақты әрқайсысына (1/12) кг-нан салып, бірдей қапшықтарға бөлді. Неше толы қапшық шықты? Жауапқа тек санды жазыңыз.",
+      "solution": "1 кг жолағы 6 тең бөлік, көгі 5 бөлік: (5/6) кг. Бір қапшықта (1/12) кг. Қапшық саны (5/6) ÷ (1/12) = (5/6) × (12/1) = 10. Әр (1/6) кг үлкен бөлікте 2 қапшық бар. Тексеру: 10 × (1/12) = (5/6) кг.",
+      "figureDescription": "1 кг толық жолақ 6 тең бөлікке бөлінген; сол жақтағы 5 бөлік көк.",
+      "figureSha256": "569651b3f84a8bf8693c729df9ccb5be753316462809c626d35970cc7bbef9e7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": {
+          "wholeKg": 1,
+          "equalWholeParts": 6,
+          "paintedParts": 5,
+          "massKg": [
+            5,
+            6
+          ],
+          "onePacketKg": [
+            1,
+            12
+          ],
+          "refinementFactor": 2,
+          "packetCount": 10,
+          "reverseMass": [
+            5,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave53-twelve-metre-three-quarter-cuts",
+      "modelId": "visual-wave53-natural-wire-length-divide-by-fraction-piece",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "wire",
+        "total": 12,
+        "piece": [
+          3,
+          4
+        ]
+      },
+      "answer": "16",
+      "sourceRefs": [
+        {
+          "sourceId": "322ebb8a05602ec8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-13-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-13-level1.json#12",
+      "sourceCanonicalSha256": "423a45307f1ded0f997181b62709e1890518c25122b2184f4b501163c27438bf",
+      "sourceSkill": "12metres÷3/4metrepiece→16pieces, real12vs3cancel; paintedpieceexact24.75of396whole. Remaininguncutwhiteomitsanswer-countcutlines, unknowncountmustcompute.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.13 визуалды шарт пен толық шешім жеке оқылды; бұл 7 бастапқы тапсырмада MCQ жоқ. Бөлшек массадан қапшық санын, натурал ұзындықтан бөлшек кесінді санын, бір масштабтағы екі бөлшектің қатынасын, аралас аудан мен ен арқылы ұзындықты, белгілі үлестен бүтінді және жартыдан артық бет айырмасын табу сақталды.",
+        "Жаңа параметрлер:5/6кг÷1/12кг→10қапшық;12м÷3/4м→16кесінді;5/6÷5/12→2;18+3/4м²÷2+1/12м→9м;5/8кітап95бет→152бет;7/12−1/2үлес21бет→252бет;5/8қыздар,ақ3/8ұлдар15→барлығы40. Бір масштабтағы2қатынас — бастапқы дағдының инварианты, жаңа мағына деп саналмайды.",
+        "Барлық SVG нативті жаңа сандармен салынды: тең массалық/кітап/топ ұяшықтары, ірі және кіші бөліктерге бөлінген екі масштабтас жолақ, өлшемдеріне пропорционал тіктөртбұрыш және дәл ортадағы жарты сызық. Таспа қалдығында жауапты санауға мүмкіндік беретін жеке кесу сызықтары жоқ. Source raster/traced path қолданылмады; сыртқы review күтіледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша бөлшектерді бөлу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions, actual6cells5blue,12mwhole3/4piecewidth24.75,noanswergrid;12fine6coarsegroupsblue10yellow5same33scale;S75/4,width25/12,twocrosscancel/nativeaspect;8cells5blueknown95;7/12blue231/half198/excess33known21;8cells5blue3whiteknown15. Inspectall343pxsheets."
+      },
+      "image": "/figures/synaq-editions/visual-wave53-twelve-metre-three-quarter-cuts.svg",
+      "verificationModule": "scripts/editorial/visual-wave53-models.mjs",
+      "statement": "Суретте таспаның толық ұзындығы және бір кесіндінің ұзындығы метрмен берілген. Таспаның бәрін дәл осындай тең кесінділерге бөлді, қалдық жоқ. Барлығы неше кесінді шықты? Жауапқа тек санды жазыңыз.",
+      "solution": "Барлық 12 метрде (3/4) м кесінді неше рет бар екенін табамыз. 12 ÷ (3/4) = 12 × (4/3) = 16. 12 және 3 сандары 3 санына қысқарады. Тексеру: 16 × (3/4) = 12 м. Көк кесінді толық таспа емес.",
+      "figureDescription": "Толық таспа 12 м. Сол жақтағы бір көк кесіндінің ұзындығы (3/4) м, қалған таспа ақ. Қалған бөлікте жеке кесу сызықтары салынбаған.",
+      "figureSha256": "5d82cf8a2b0031d6c0264dac1ef9e6c9bcca1a6bb966c15cc3ad1720cbf7a4b0",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "16",
+        "checks": {
+          "wholeMetres": 12,
+          "pieceMetres": [
+            3,
+            4
+          ],
+          "crossCancelFactor": 3,
+          "pieceCount": 16,
+          "onePaintedPieceRelativeWidth": 0.0625,
+          "reverseTotalMetres": 12
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave53-two-scale-five-sixths-by-five-twelfths",
+      "modelId": "visual-wave53-two-scale-fraction-strips-divide",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "division",
+        "dividend": [
+          5,
+          6
+        ],
+        "divisor": [
+          5,
+          12
+        ]
+      },
+      "answer": "2",
+      "sourceRefs": [
+        {
+          "sourceId": "9ecbdb9cbd9406d2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-13-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-13-level1.json#14",
+      "sourceCanonicalSha256": "17e1b32f1f33449c46ed85d792671cb80f7377102296c06ad3fbd2a601c95e81",
+      "sourceSkill": "Whole12finecells,6coarse2-cellgroups;5coarseblue=10fine→5/6, yellow5fine=5/12;divide2 withactualcrosscancels5and6. Sameunit33pxperfinecell, integercount2invariantsourcediagramratio.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.13 визуалды шарт пен толық шешім жеке оқылды; бұл 7 бастапқы тапсырмада MCQ жоқ. Бөлшек массадан қапшық санын, натурал ұзындықтан бөлшек кесінді санын, бір масштабтағы екі бөлшектің қатынасын, аралас аудан мен ен арқылы ұзындықты, белгілі үлестен бүтінді және жартыдан артық бет айырмасын табу сақталды.",
+        "Жаңа параметрлер:5/6кг÷1/12кг→10қапшық;12м÷3/4м→16кесінді;5/6÷5/12→2;18+3/4м²÷2+1/12м→9м;5/8кітап95бет→152бет;7/12−1/2үлес21бет→252бет;5/8қыздар,ақ3/8ұлдар15→барлығы40. Бір масштабтағы2қатынас — бастапқы дағдының инварианты, жаңа мағына деп саналмайды.",
+        "Барлық SVG нативті жаңа сандармен салынды: тең массалық/кітап/топ ұяшықтары, ірі және кіші бөліктерге бөлінген екі масштабтас жолақ, өлшемдеріне пропорционал тіктөртбұрыш және дәл ортадағы жарты сызық. Таспа қалдығында жауапты санауға мүмкіндік беретін жеке кесу сызықтары жоқ. Source raster/traced path қолданылмады; сыртқы review күтіледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша бөлшектерді бөлу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions, actual6cells5blue,12mwhole3/4piecewidth24.75,noanswergrid;12fine6coarsegroupsblue10yellow5same33scale;S75/4,width25/12,twocrosscancel/nativeaspect;8cells5blueknown95;7/12blue231/half198/excess33known21;8cells5blue3whiteknown15. Inspectall343pxsheets."
+      },
+      "image": "/figures/synaq-editions/visual-wave53-two-scale-five-sixths-by-five-twelfths.svg",
+      "verificationModule": "scripts/editorial/visual-wave53-models.mjs",
+      "statement": "Үстіңгі толық жолақ — 1 бүтін. Жуан сызықтар оны ірі тең бөліктерге, жіңішке сызықтар кіші тең бөліктерге бөледі. Көк бөлік — бөлінгіш, сары кесінді — бөлгіш; екеуі бір масштабта. Көк бөлікті сары кесіндіге бөлгендегі мән неге тең? Жауапқа тек санды жазыңыз.",
+      "solution": "Толық жолақта 6 ірі бөлік бар, көк 5 бөлік: (5/6). Кіші бөліктер 12, сары 5 бөлік: (5/12). Бөлгішті кері аударып көбейтеміз: (5/6) ÷ (5/12) = (5/6) × (12/5) = 2. Айқыш жұптар 5 және 6 сандарына қысқарады. Сызбада 10 кіші көк бөлікте 5 кіші бөліктен тұратын сары кесінді 2 рет орналасады. Тексеру: 2 × (5/12) = (5/6).",
+      "figureDescription": "Толық үстіңгі жолақ 12 кіші ұяшыққа, әр екі ұяшықтан тұратын 6 ірі топқа бөлінген. Алғашқы 5 ірі топ көк. Астыңғы сары жолақ 5 кіші ұяшық, масштаб бірдей.",
+      "figureSha256": "0d277a89e992bb67cfc4f1ed12843e1dfc262c5e5141a21a50c6caa26edabbac",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2",
+        "checks": {
+          "fineWholeParts": 12,
+          "coarseWholeParts": 6,
+          "finePartsPerCoarse": 2,
+          "blueCoarseParts": 5,
+          "blueFineParts": 10,
+          "yellowFineParts": 5,
+          "dividend": [
+            5,
+            6
+          ],
+          "divisor": [
+            5,
+            12
+          ],
+          "crossCancelFactors": [
+            5,
+            6
+          ],
+          "quotient": 2
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave53-mixed-eighteen-three-quarter-area-width",
+      "modelId": "visual-wave53-mixed-rectangle-area-divide-by-mixed-width",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "area": [
+          18,
+          3,
+          4
+        ],
+        "width": [
+          2,
+          1,
+          12
+        ]
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "bf2fbc4991f495e8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-13-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-13-level2.json#4",
+      "sourceCanonicalSha256": "440614433d24f8dbc8ace916a8d45c82ec8438c72399ca513a77fb5f09479673",
+      "sourceSkill": "NewS18+3/4=75/4m²,width2+1/12=25/12m,divide9m, REALtwo-crosscancels25and4; actualrectangle300×(300×25/12÷9)metricproportion, noanswerleak.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.13 визуалды шарт пен толық шешім жеке оқылды; бұл 7 бастапқы тапсырмада MCQ жоқ. Бөлшек массадан қапшық санын, натурал ұзындықтан бөлшек кесінді санын, бір масштабтағы екі бөлшектің қатынасын, аралас аудан мен ен арқылы ұзындықты, белгілі үлестен бүтінді және жартыдан артық бет айырмасын табу сақталды.",
+        "Жаңа параметрлер:5/6кг÷1/12кг→10қапшық;12м÷3/4м→16кесінді;5/6÷5/12→2;18+3/4м²÷2+1/12м→9м;5/8кітап95бет→152бет;7/12−1/2үлес21бет→252бет;5/8қыздар,ақ3/8ұлдар15→барлығы40. Бір масштабтағы2қатынас — бастапқы дағдының инварианты, жаңа мағына деп саналмайды.",
+        "Барлық SVG нативті жаңа сандармен салынды: тең массалық/кітап/топ ұяшықтары, ірі және кіші бөліктерге бөлінген екі масштабтас жолақ, өлшемдеріне пропорционал тіктөртбұрыш және дәл ортадағы жарты сызық. Таспа қалдығында жауапты санауға мүмкіндік беретін жеке кесу сызықтары жоқ. Source raster/traced path қолданылмады; сыртқы review күтіледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша бөлшектерді бөлу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions, actual6cells5blue,12mwhole3/4piecewidth24.75,noanswergrid;12fine6coarsegroupsblue10yellow5same33scale;S75/4,width25/12,twocrosscancel/nativeaspect;8cells5blueknown95;7/12blue231/half198/excess33known21;8cells5blue3whiteknown15. Inspectall343pxsheets."
+      },
+      "image": "/figures/synaq-editions/visual-wave53-mixed-eighteen-three-quarter-area-width.svg",
+      "verificationModule": "scripts/editorial/visual-wave53-models.mjs",
+      "statement": "Тіктөртбұрышты көрме алаңының ауданы мен ені суретте көрсетілген. Оның ұзындығы неше метр? Жауапқа тек санды жазыңыз.",
+      "solution": "Тіктөртбұрыш үшін S = a × b, сондықтан a = S ÷ b. Аудан (18 + (3/4)) = (75/4) м², ені (2 + (1/12)) = (25/12) м. Ұзындығы (75/4) ÷ (25/12) = (75/4) × (12/25) = 9 м. Екі айқыш жұп 25 және 4 сандарына қысқарады. Тексеру: 9 × (25/12) = (75/4) = (18 + (3/4)) м².",
+      "figureDescription": "Тіктөртбұрыштың ауданы (18 + (3/4)) м², ені (2 + (1/12)) м. Төменгі ұзындық нұсқарының үстінде «?».",
+      "figureSha256": "b47172129d922c09a938563a96e5c934b3026f9cb85f237d8ea006858ae4f418",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": {
+          "areaMixed": [
+            18,
+            3,
+            4
+          ],
+          "widthMixed": [
+            2,
+            1,
+            12
+          ],
+          "areaImproper": [
+            75,
+            4
+          ],
+          "widthImproper": [
+            25,
+            12
+          ],
+          "crossCancelFactors": [
+            25,
+            4
+          ],
+          "lengthMetres": 9,
+          "reverseArea": [
+            75,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave53-ninety-five-pages-five-eighths",
+      "modelId": "visual-wave53-known-painted-page-part-inverse-whole",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "pages",
+        "share": [
+          5,
+          8
+        ],
+        "pages": 95
+      },
+      "answer": "152",
+      "sourceRefs": [
+        {
+          "sourceId": "01065699346476d8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-13-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-13-level2.json#8",
+      "sourceCanonicalSha256": "cd538c3fa58b729dc291d6d3616bc4db9f23f3a782f7fcdcff96b8013061d59c",
+      "sourceSkill": "Eight equalbookcells5blueknown95pages; onecell19, full152; divideknownPARTby5/8 andexactintegercounts, bluebracketactual247.5width.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.13 визуалды шарт пен толық шешім жеке оқылды; бұл 7 бастапқы тапсырмада MCQ жоқ. Бөлшек массадан қапшық санын, натурал ұзындықтан бөлшек кесінді санын, бір масштабтағы екі бөлшектің қатынасын, аралас аудан мен ен арқылы ұзындықты, белгілі үлестен бүтінді және жартыдан артық бет айырмасын табу сақталды.",
+        "Жаңа параметрлер:5/6кг÷1/12кг→10қапшық;12м÷3/4м→16кесінді;5/6÷5/12→2;18+3/4м²÷2+1/12м→9м;5/8кітап95бет→152бет;7/12−1/2үлес21бет→252бет;5/8қыздар,ақ3/8ұлдар15→барлығы40. Бір масштабтағы2қатынас — бастапқы дағдының инварианты, жаңа мағына деп саналмайды.",
+        "Барлық SVG нативті жаңа сандармен салынды: тең массалық/кітап/топ ұяшықтары, ірі және кіші бөліктерге бөлінген екі масштабтас жолақ, өлшемдеріне пропорционал тіктөртбұрыш және дәл ортадағы жарты сызық. Таспа қалдығында жауапты санауға мүмкіндік беретін жеке кесу сызықтары жоқ. Source raster/traced path қолданылмады; сыртқы review күтіледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша бөлшектерді бөлу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions, actual6cells5blue,12mwhole3/4piecewidth24.75,noanswergrid;12fine6coarsegroupsblue10yellow5same33scale;S75/4,width25/12,twocrosscancel/nativeaspect;8cells5blueknown95;7/12blue231/half198/excess33known21;8cells5blue3whiteknown15. Inspectall343pxsheets."
+      },
+      "image": "/figures/synaq-editions/visual-wave53-ninety-five-pages-five-eighths.svg",
+      "verificationModule": "scripts/editorial/visual-wave53-models.mjs",
+      "statement": "Нұрайдың оқу журналындағы толық жолақ — бүкіл кітап, көк ұяшықтар — оқылған беттер. Көк бөліктің үстіндегі сан оқылған бет санын білдіреді. Кітапта барлығы неше бет бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Көк 5 ұяшық бүкіл 8 ұяшықтың (5/8) бөлігіне тең және 95 бетті білдіреді. Бір үлес 95 ÷ 5 = 19 бет. Бүкіл кітап 19 × 8 = 152 бет. Бөлу арқылы да 95 ÷ (5/8) = 95 × (8/5) = 152. Тексеру: 152 × (5/8) = 95.",
+      "figureDescription": "Кітап жолағы 8 тең ұяшық, сол жақтағы 5 ұяшық көк. Көк бөлікті қамтитын нұсқарда 95 бет деп жазылған.",
+      "figureSha256": "a3af49ea152c0fe8c4cb25fbc49a7964f764483e1fb7d831cb1c19f84d2a00bc",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "152",
+        "checks": {
+          "paintedShare": [
+            5,
+            8
+          ],
+          "knownPaintedPages": 95,
+          "pagesPerEqualPart": 19,
+          "wholeParts": 8,
+          "wholePages": 152,
+          "reverseReadPages": 95
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave53-seven-twelfths-twenty-one-over-half",
+      "modelId": "visual-wave53-painted-share-exceeds-half-known-page-gap",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "halfgap",
+        "share": [
+          7,
+          12
+        ],
+        "gap": 21
+      },
+      "answer": "252",
+      "sourceRefs": [
+        {
+          "sourceId": "e544a1317e5ac133",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-13-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-13-level3.json#6",
+      "sourceCanonicalSha256": "d2cfd4d12c7e821545c80ce943c6b6c34d390c54fb65ee7815b71c85ef081014",
+      "sourceSkill": "Explicitblue7/12minusredHALF=1/12known21pages→252; actualhalf198of396/blue231, gap33exact. Sourceambiguousnonscalewasreplacedwithprecisemetricnative, gaptag21NEVERwholeblue.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.13 визуалды шарт пен толық шешім жеке оқылды; бұл 7 бастапқы тапсырмада MCQ жоқ. Бөлшек массадан қапшық санын, натурал ұзындықтан бөлшек кесінді санын, бір масштабтағы екі бөлшектің қатынасын, аралас аудан мен ен арқылы ұзындықты, белгілі үлестен бүтінді және жартыдан артық бет айырмасын табу сақталды.",
+        "Жаңа параметрлер:5/6кг÷1/12кг→10қапшық;12м÷3/4м→16кесінді;5/6÷5/12→2;18+3/4м²÷2+1/12м→9м;5/8кітап95бет→152бет;7/12−1/2үлес21бет→252бет;5/8қыздар,ақ3/8ұлдар15→барлығы40. Бір масштабтағы2қатынас — бастапқы дағдының инварианты, жаңа мағына деп саналмайды.",
+        "Барлық SVG нативті жаңа сандармен салынды: тең массалық/кітап/топ ұяшықтары, ірі және кіші бөліктерге бөлінген екі масштабтас жолақ, өлшемдеріне пропорционал тіктөртбұрыш және дәл ортадағы жарты сызық. Таспа қалдығында жауапты санауға мүмкіндік беретін жеке кесу сызықтары жоқ. Source raster/traced path қолданылмады; сыртқы review күтіледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша бөлшектерді бөлу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions, actual6cells5blue,12mwhole3/4piecewidth24.75,noanswergrid;12fine6coarsegroupsblue10yellow5same33scale;S75/4,width25/12,twocrosscancel/nativeaspect;8cells5blueknown95;7/12blue231/half198/excess33known21;8cells5blue3whiteknown15. Inspectall343pxsheets."
+      },
+      "image": "/figures/synaq-editions/visual-wave53-seven-twelfths-twenty-one-over-half.svg",
+      "verificationModule": "scripts/editorial/visual-wave53-models.mjs",
+      "statement": "Көк бөлік — Ернар оқыған кітап үлесі, қызыл үзік сызық — кітаптың дәл жартысы. Кішкентай нұсқардың үстіндегі сан жартысынан артық оқылған БЕТТЕР санын көрсетеді. Кітапта барлығы неше бет бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Көк үлес (7/12), ал қызыл сызық (1/2). Олардың айырмасы (7/12) − (1/2) = (1/12), осы үлес 21 бетке тең. Кітаптың бәрі 21 ÷ (1/12) = 252 бет. Тексеру: 252 × (7/12) = 147 бет оқылған, жартысы 126; 147 − 126 = 21. 21 — көк бөліктің бәрі емес, тек жартысынан артық бөлік.",
+      "figureDescription": "Оқылған көк үлес (7/12). Толық жолақтың дәл ортасындағы қызыл үзік сызық — жартысы. Сол сызықтан көк бөліктің шетіне дейінгі қысқа нұсқар 21 бет деп белгіленген.",
+      "figureSha256": "9c218550d9599a223dfcfdf3c9083254ab64fd26c263a38bcd647b9482e08a40",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "252",
+        "checks": {
+          "readShare": [
+            7,
+            12
+          ],
+          "half": [
+            1,
+            2
+          ],
+          "differenceShare": [
+            1,
+            12
+          ],
+          "knownGapPages": 21,
+          "wholePages": 252,
+          "readPages": 147,
+          "halfPages": 126,
+          "reverseGap": 21
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave53-white-fifteen-boys-blue-five-eighths",
+      "modelId": "visual-wave53-known-white-class-category-inverse-complement",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "class",
+        "girls": [
+          5,
+          8
+        ],
+        "boys": 15
+      },
+      "answer": "40",
+      "sourceRefs": [
+        {
+          "sourceId": "b2c0b598106dbe4a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-13-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-13-leveltest.json#5",
+      "sourceCanonicalSha256": "7fdb210bca90fdede3b5f9444d1260855e27a3686cb425fb8964c00e7317a486",
+      "sourceSkill": "Native8equalclassparts5bluegirls3whiteboys, WHITEknown15→15÷3/8=40; girls25, physicalintegerrolescomplementFIRST retained.",
+      "adaptationChanges": [
+        "Барлық 7 сақталған 3.13 визуалды шарт пен толық шешім жеке оқылды; бұл 7 бастапқы тапсырмада MCQ жоқ. Бөлшек массадан қапшық санын, натурал ұзындықтан бөлшек кесінді санын, бір масштабтағы екі бөлшектің қатынасын, аралас аудан мен ен арқылы ұзындықты, белгілі үлестен бүтінді және жартыдан артық бет айырмасын табу сақталды.",
+        "Жаңа параметрлер:5/6кг÷1/12кг→10қапшық;12м÷3/4м→16кесінді;5/6÷5/12→2;18+3/4м²÷2+1/12м→9м;5/8кітап95бет→152бет;7/12−1/2үлес21бет→252бет;5/8қыздар,ақ3/8ұлдар15→барлығы40. Бір масштабтағы2қатынас — бастапқы дағдының инварианты, жаңа мағына деп саналмайды.",
+        "Барлық SVG нативті жаңа сандармен салынды: тең массалық/кітап/топ ұяшықтары, ірі және кіші бөліктерге бөлінген екі масштабтас жолақ, өлшемдеріне пропорционал тіктөртбұрыш және дәл ортадағы жарты сызық. Таспа қалдығында жауапты санауға мүмкіндік беретін жеке кесу сызықтары жоқ. Source raster/traced path қолданылмады; сыртқы review күтіледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Сурет бойынша бөлшектерді бөлу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent7fullsaved/new/solutions, actual6cells5blue,12mwhole3/4piecewidth24.75,noanswergrid;12fine6coarsegroupsblue10yellow5same33scale;S75/4,width25/12,twocrosscancel/nativeaspect;8cells5blueknown95;7/12blue231/half198/excess33known21;8cells5blue3whiteknown15. Inspectall343pxsheets."
+      },
+      "image": "/figures/synaq-editions/visual-wave53-white-fifteen-boys-blue-five-eighths.svg",
+      "verificationModule": "scripts/editorial/visual-wave53-models.mjs",
+      "statement": "Толық жолақ — үйірмедегі барлық бала; көк ұяшықтар — қыздар, ақ ұяшықтар — ұлдар. Ақ бөліктің үстіндегі сан ұлдар санын білдіреді. Үйірмеде барлығы неше бала бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Көк ұяшықтар барлық баланың (5/8) бөлігі, ақ үлес 1 − (5/8) = (3/8). Ақ үлестегі 15 ұл арқылы барлық баланы табамыз: 15 ÷ (3/8) = 15 × (8/3) = 40. Тексеру: қыздар 25, ұлдар 15; 25 + 15 = 40. Белгілі санды көк қыздар үлесіне емес, ақ ұлдар үлесіне сәйкестендіреміз.",
+      "figureDescription": "Тең 8 ұяшықтың сол жақтағы 5 бөлігі көк — қыздар. Қалған ақ ұяшықтарды қамтитын нұсқарда 15 ұл деп жазылған.",
+      "figureSha256": "3725f358cfd7fa5afef642e6d074ee371ddf48b522e931716d63a96a6ecbbb61",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "40",
+        "checks": {
+          "blueGirlsShare": [
+            5,
+            8
+          ],
+          "whiteBoysShare": [
+            3,
+            8
+          ],
+          "knownBoys": 15,
+          "wholeClass": 40,
+          "girls": 25,
+          "reverseBoys": 15
+        }
+      }
+    }
+  ]
+}

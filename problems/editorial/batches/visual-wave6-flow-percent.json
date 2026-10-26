@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "Saved visuals only; two explicitly delimited topics river-motion2.6(5) and percentage2.16(4), no capture/download or source trace.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources in grade6 topics2.6 and2.16",
+    "sourceVisualOccurrences": 9,
+    "addressedNewDrafts": 9,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "1919714d4ce39914",
+      "4b1ec0906f346c7b",
+      "98cc6f15baff63c3",
+      "9e3726238e9d893a",
+      "a1a5572ba14b4e72",
+      "d83753e0c61298cb",
+      "f4d52f362b38d3c9",
+      "f64a303c5567ce74",
+      "f82d1b9fa7fa3f01"
+    ],
+    "distinctModels": 9,
+    "semantics": "9 individually addressed models in2 source-topic blocks; no claim that these9 forms represent9 unrelated families."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave6-downstream-travel-time",
+      "modelId": "visual-wave6-boat-time",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "river",
+        "currentDirection": 1,
+        "boatDirection": 1,
+        "boatSpeed": 14,
+        "current": 4,
+        "distance": 90
+      },
+      "answer": "5",
+      "sourceRefs": [
+        {
+          "sourceId": "1919714d4ce39914",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-6-level1.json#3",
+      "sourceCanonicalSha256": "7315719f9e4e21ab530a08f885fe32aac11f028e4653f5913bb157b14c2d9e20",
+      "sourceSkill": "Reading distance and two aligned velocity arrows before finding downstream travel time",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: уақыт, жол, ағыс, бағыт, су массасы, соңғы баға, күрделі өсім немесе өзгерген аудан.",
+        "Қашықтықтар, жылдамдықтар, уақыттар, массалар, бағалар, пайыздар мен дұрыс жауаптар жаңадан таңдалды.",
+        "Сызбалар өзеннің бағытталған векторларынан, жаңа деректердің native карточкаларынан не нақты масштабтағы тік төртбұрыштардан жаңадан салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Қозғалыс пен өзгерістер сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent complete source-skill, motion arrows, units, changing percent bases, new rectangle geometry and343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave6-downstream-travel-time.svg",
+      "verificationModule": "scripts/editorial/visual-wave6-models.mjs",
+      "statement": "Сызбадағы A және B айлақтарының арақашықтығы мен екі жылдамдықты оқыңыз. Қайық көрсетілген бағытпен A-дан B-ға неше сағатта жетеді? Жауапқа тек санды жазыңыз.",
+      "solution": "Қайық та, ағыс та A-дан B-ға бағытталған. Жағаға қатысты жылдамдық: 14 + 4 = 18 км/сағ. Уақыт: 90 : 18 = 5 сағ.\nЖауап: 5.",
+      "figureDescription": "Сызбадағы A және B айлақтарының арақашықтығы мен екі жылдамдықты оқыңыз. Қайық көрсетілген бағытпен A-дан B-ға неше сағатта жетеді? Жауапқа тек санды жазыңыз. A солда, B оңда; AB = 90 км. Ағыс оңға бағытталған, жылдамдығы 4 км/сағ. Қайық оңға бағытталған; меншікті жылдамдығы 14 км/сағ. ",
+      "figureSha256": "ccb382bc126ff44a137c434ef19c97c8ea5c141a3324d3360eb30ee398827dce",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5",
+        "checks": [
+          "Directed motion, percent bases and all diagram quantities are checked with exact arithmetic",
+          "Condition, units, diagram directions, hidden unknown quantities, worked solution and SVG digest are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave6-drifting-raft-time",
+      "modelId": "visual-wave6-raft-time",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "basic",
+      "params": {
+        "scene": "river",
+        "currentDirection": 1,
+        "boatDirection": 1,
+        "raft": true,
+        "boatSpeed": 0,
+        "current": 5,
+        "distance": 50
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "a1a5572ba14b4e72",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-6-level1.json#8",
+      "sourceCanonicalSha256": "a752ef585fd73b3c7d43636f7ea24144fca71ec74bd4ebefb45b1f3c86b36ddc",
+      "sourceSkill": "A passive raft travels at the current speed, with no invented own speed",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: уақыт, жол, ағыс, бағыт, су массасы, соңғы баға, күрделі өсім немесе өзгерген аудан.",
+        "Қашықтықтар, жылдамдықтар, уақыттар, массалар, бағалар, пайыздар мен дұрыс жауаптар жаңадан таңдалды.",
+        "Сызбалар өзеннің бағытталған векторларынан, жаңа деректердің native карточкаларынан не нақты масштабтағы тік төртбұрыштардан жаңадан салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Қозғалыс пен өзгерістер сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent complete source-skill, motion arrows, units, changing percent bases, new rectangle geometry and343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave6-drifting-raft-time.svg",
+      "verificationModule": "scripts/editorial/visual-wave6-models.mjs",
+      "statement": "Сал A айлағынан ағыспен қозғалып, B айлағына барады. Қашықтық пен ағыс жылдамдығы сызбада берілген. Сал жолға неше сағат жұмсайды? Жауапқа тек санды жазыңыз.",
+      "solution": "Салдың меншікті жылдамдығы жоқ; ол ағыс жылдамдығымен қозғалады: 5 км/сағ. Уақыт: 50 : 5 = 10 сағ.\nЖауап: 10.",
+      "figureDescription": "Сал A айлағынан ағыспен қозғалып, B айлағына барады. Қашықтық пен ағыс жылдамдығы сызбада берілген. Сал жолға неше сағат жұмсайды? Жауапқа тек санды жазыңыз. A солда, B оңда; AB = 50 км. Ағыс оңға бағытталған, жылдамдығы 5 км/сағ. Сал ағыспен қозғалады. ",
+      "figureSha256": "e321fc32e9931aa594a9a5d2fd42a4ce89b4674a8367d157ac6ca323448c69c7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": [
+          "Directed motion, percent bases and all diagram quantities are checked with exact arithmetic",
+          "A raft has no own propulsion: only current speed is used",
+          "Condition, units, diagram directions, hidden unknown quantities, worked solution and SVG digest are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave6-downstream-distance",
+      "modelId": "visual-wave6-boat-distance",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "river",
+        "currentDirection": 1,
+        "boatDirection": 1,
+        "boatSpeed": 17,
+        "current": 3,
+        "hours": 4
+      },
+      "answer": "80",
+      "sourceRefs": [
+        {
+          "sourceId": "9e3726238e9d893a",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-6-level1.json#11",
+      "sourceCanonicalSha256": "092e261f3c39357bcb0319e482c44ad814093b01f7c6d976a67302055055391b",
+      "sourceSkill": "Reading both arrow directions and adding the aligned speeds before finding distance from time",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: уақыт, жол, ағыс, бағыт, су массасы, соңғы баға, күрделі өсім немесе өзгерген аудан.",
+        "Қашықтықтар, жылдамдықтар, уақыттар, массалар, бағалар, пайыздар мен дұрыс жауаптар жаңадан таңдалды.",
+        "Сызбалар өзеннің бағытталған векторларынан, жаңа деректердің native карточкаларынан не нақты масштабтағы тік төртбұрыштардан жаңадан салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Қозғалыс пен өзгерістер сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent complete source-skill, motion arrows, units, changing percent bases, new rectangle geometry and343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave6-downstream-distance.svg",
+      "verificationModule": "scripts/editorial/visual-wave6-models.mjs",
+      "statement": "Катер сызбадағы бағытпен 4 сағат жүзді. Екі жылдамдық та км/сағ бірлігімен берілген. Катер осы уақытта неше километр жүреді? Жауапқа тек санды жазыңыз.",
+      "solution": "Нұсқарлар бір бағытта: жылдамдық 17 + 3 = 20 км/сағ. Жол: 20 · 4 = 80 км.\nЖауап: 80.",
+      "figureDescription": "Катер сызбадағы бағытпен 4 сағат жүзді. Екі жылдамдық та км/сағ бірлігімен берілген. Катер осы уақытта неше километр жүреді? Жауапқа тек санды жазыңыз. Ағыс оңға бағытталған, жылдамдығы 3 км/сағ. Қайық оңға бағытталған; меншікті жылдамдығы 17 км/сағ. ",
+      "figureSha256": "f28b7c4bb6910f06b39e840845f1aa8bda90d704485ebbcbf38218592e89e252",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "80",
+        "checks": [
+          "Directed motion, percent bases and all diagram quantities are checked with exact arithmetic",
+          "Condition, units, diagram directions, hidden unknown quantities, worked solution and SVG digest are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave6-upstream-bank-speed",
+      "modelId": "visual-wave6-upstream-direction-speed",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "river",
+        "currentDirection": 1,
+        "boatDirection": -1,
+        "boatSpeed": 18,
+        "current": 5
+      },
+      "answer": "Ағысқа қарсы, 13 км/сағ",
+      "sourceRefs": [
+        {
+          "sourceId": "f82d1b9fa7fa3f01",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-6-level1.json#13",
+      "sourceCanonicalSha256": "dd875bced1ebfde0dcc8ae0ba91dc42450941a743c7acdfb4d1c278105b2ae25",
+      "sourceSkill": "Choosing both relative flow direction and ground speed from opposed labelled velocity arrows",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: уақыт, жол, ағыс, бағыт, су массасы, соңғы баға, күрделі өсім немесе өзгерген аудан.",
+        "Қашықтықтар, жылдамдықтар, уақыттар, массалар, бағалар, пайыздар мен дұрыс жауаптар жаңадан таңдалды.",
+        "Сызбалар өзеннің бағытталған векторларынан, жаңа деректердің native карточкаларынан не нақты масштабтағы тік төртбұрыштардан жаңадан салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Қозғалыс пен өзгерістер сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent complete source-skill, motion arrows, units, changing percent bases, new rectangle geometry and343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave6-upstream-bank-speed.svg",
+      "verificationModule": "scripts/editorial/visual-wave6-models.mjs",
+      "options": [
+        "Ағысқа қарсы, 13 км/сағ",
+        "Ағыспен, 23 км/сағ",
+        "Ағысқа қарсы, 23 км/сағ",
+        "Ағыспен, 13 км/сағ"
+      ],
+      "statement": "Қайық пен ағыс нұсқарларының бағыттарын салыстырыңыз. Қайық ағыспен бе, әлде ағысқа қарсы ма қозғалып барады? Оның жағаға қатысты жылдамдығын таңдаңыз.",
+      "solution": "Қайық солға, ал ағыс оңға бағытталған. Демек, қайық ағысқа қарсы жүзеді. Жағаға қатысты жылдамдық: 18 − 5 = 13 км/сағ. Ағыс жылдамдығын қосу бұл жағдайда дұрыс емес.\nЖауап: Ағысқа қарсы, 13 км/сағ.",
+      "figureDescription": "Қайық пен ағыс нұсқарларының бағыттарын салыстырыңыз. Қайық ағыспен бе, әлде ағысқа қарсы ма қозғалып барады? Оның жағаға қатысты жылдамдығын таңдаңыз. Ағыс оңға бағытталған, жылдамдығы 5 км/сағ. Қайық солға бағытталған; меншікті жылдамдығы 18 км/сағ. ",
+      "figureSha256": "d0477df39cfd382e0ac4f389e8fe1f49f6520eaad2dc6790006f0cd72c9c89f6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "Ағысқа қарсы, 13 км/сағ",
+        "checks": [
+          "Directed motion, percent bases and all diagram quantities are checked with exact arithmetic",
+          "Boat and current arrows oppose; their speed magnitudes must be subtracted",
+          "Condition, units, diagram directions, hidden unknown quantities, worked solution and SVG digest are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave6-infer-raft-current",
+      "modelId": "visual-wave6-raft-current",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "basic",
+      "params": {
+        "scene": "river",
+        "currentDirection": 1,
+        "boatDirection": 1,
+        "raft": true,
+        "boatSpeed": 0,
+        "current": null,
+        "distance": 42,
+        "hours": 7
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "98cc6f15baff63c3",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-6-level1.json#15",
+      "sourceCanonicalSha256": "694cea8fe08e5dc218ec79e14177a093803f62f6f014c7f3d64280f477e6b43c",
+      "sourceSkill": "Recovering current speed from a passive raft journey with distance only on the drawing",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: уақыт, жол, ағыс, бағыт, су массасы, соңғы баға, күрделі өсім немесе өзгерген аудан.",
+        "Қашықтықтар, жылдамдықтар, уақыттар, массалар, бағалар, пайыздар мен дұрыс жауаптар жаңадан таңдалды.",
+        "Сызбалар өзеннің бағытталған векторларынан, жаңа деректердің native карточкаларынан не нақты масштабтағы тік төртбұрыштардан жаңадан салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Қозғалыс пен өзгерістер сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent complete source-skill, motion arrows, units, changing percent bases, new rectangle geometry and343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave6-infer-raft-current.svg",
+      "verificationModule": "scripts/editorial/visual-wave6-models.mjs",
+      "statement": "A-дан жіберілген сал сызбадағы қашықтықты 7 сағатта өтті. Өзеннің ағыс жылдамдығын км/сағ бірлігімен табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Салдың жылдамдығы ағыс жылдамдығына тең. 42 км жолды 7 сағатта жүрді: 42 : 7 = 6 км/сағ.\nЖауап: 6.",
+      "figureDescription": "A-дан жіберілген сал сызбадағы қашықтықты 7 сағатта өтті. Өзеннің ағыс жылдамдығын км/сағ бірлігімен табыңыз. Жауапқа тек санды жазыңыз. A солда, B оңда; AB = 42 км. Ағыс оңға бағытталған, жылдамдығы белгісіз. Сал ағыспен қозғалады. ",
+      "figureSha256": "f5b7c74016f52bde48da37e0ae9c783bb5800cb7616e4fa1b56c64da9941c289",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": [
+          "Directed motion, percent bases and all diagram quantities are checked with exact arithmetic",
+          "Condition, units, diagram directions, hidden unknown quantities, worked solution and SVG digest are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave6-water-complement-mass",
+      "modelId": "visual-wave6-water-mass",
+      "grade": 6,
+      "topic": "pct",
+      "difficulty": "medium",
+      "params": {
+        "scene": "mixture",
+        "mass": 450,
+        "saltPercent": 14
+      },
+      "answer": "387",
+      "sourceRefs": [
+        {
+          "sourceId": "f4d52f362b38d3c9",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-16-level1.json#0",
+      "sourceCanonicalSha256": "0c29595e5f25aa8c22880b4b178ce9873b48b7ebd58f91e3181068f06f29c70a",
+      "sourceSkill": "Using the complement of a salt mass percentage in a two-component solution",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: уақыт, жол, ағыс, бағыт, су массасы, соңғы баға, күрделі өсім немесе өзгерген аудан.",
+        "Қашықтықтар, жылдамдықтар, уақыттар, массалар, бағалар, пайыздар мен дұрыс жауаптар жаңадан таңдалды.",
+        "Сызбалар өзеннің бағытталған векторларынан, жаңа деректердің native карточкаларынан не нақты масштабтағы тік төртбұрыштардан жаңадан салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Қозғалыс пен өзгерістер сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent complete source-skill, motion arrows, units, changing percent bases, new rectangle geometry and343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave6-water-complement-mass.svg",
+      "verificationModule": "scripts/editorial/visual-wave6-models.mjs",
+      "statement": "Ыдыстағы ерітінді тек тұз бен судан тұрады. Сызбада ерітіндінің толық массасы және тұздың массалық үлесі берілген. Ыдыста неше грамм су бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Тұз массасы: 450 · 14/100 = 63 г. Су массасы: 450 − 63 = 387 г. Тексеру: 387 + 63 = 450 г.\nЖауап: 387.",
+      "figureDescription": "Ыдыстағы ерітінді тек тұз бен судан тұрады. Сызбада ерітіндінің толық массасы және тұздың массалық үлесі берілген. Ыдыста неше грамм су бар? Жауапқа тек санды жазыңыз. Ерітінді массасы 450 г; тұздың массалық үлесі 14%. ",
+      "figureSha256": "dd97cc0912adc2b0674cba26a3f7fd2555ce44ae5016cd145fb7653a5484728f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "387",
+        "checks": [
+          "Directed motion, percent bases and all diagram quantities are checked with exact arithmetic",
+          "Water is the complement of the salt mass percentage; total solution mass is conserved",
+          "Condition, units, diagram directions, hidden unknown quantities, worked solution and SVG digest are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave6-two-price-changes",
+      "modelId": "visual-wave6-successive-price",
+      "grade": 6,
+      "topic": "pct",
+      "difficulty": "medium",
+      "params": {
+        "scene": "price",
+        "initial": 12000,
+        "discount": 20,
+        "increase": 15
+      },
+      "answer": "11040",
+      "sourceRefs": [
+        {
+          "sourceId": "4b1ec0906f346c7b",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-16-level1.json#1",
+      "sourceCanonicalSha256": "2cf0de419336690c69df3b9603139c931b3603dc0c3405aa44503a940a4417b6",
+      "sourceSkill": "Applying a discount then an increase to two different bases in the pictured order",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: уақыт, жол, ағыс, бағыт, су массасы, соңғы баға, күрделі өсім немесе өзгерген аудан.",
+        "Қашықтықтар, жылдамдықтар, уақыттар, массалар, бағалар, пайыздар мен дұрыс жауаптар жаңадан таңдалды.",
+        "Сызбалар өзеннің бағытталған векторларынан, жаңа деректердің native карточкаларынан не нақты масштабтағы тік төртбұрыштардан жаңадан салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Қозғалыс пен өзгерістер сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent complete source-skill, motion arrows, units, changing percent bases, new rectangle geometry and343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave6-two-price-changes.svg",
+      "verificationModule": "scripts/editorial/visual-wave6-models.mjs",
+      "statement": "Жейденің бағасы сызбадағы ретпен екі рет өзгерді. Екінші пайыздық өзгеріс сол кездегі жаңа бағадан есептеледі. Соңғы баға неше теңге болады? Жауапқа тек санды жазыңыз.",
+      "solution": "Бірінші өзгеріс: 12000 · 20/100 = 2400 теңге жеңілдік. Жаңа баға 12000 − 2400 = 9600 теңге. Екінші өсім осы сомадан: 9600 · 15/100 = 1440 теңге. Соңғы баға: 9600 + 1440 = 11040 теңге. Пайыздарды бірден қосып-азайтуға болмайды: есептеу негіздері әртүрлі.\nЖауап: 11040.",
+      "figureDescription": "Жейденің бағасы сызбадағы ретпен екі рет өзгерді. Екінші пайыздық өзгеріс сол кездегі жаңа бағадан есептеледі. Соңғы баға неше теңге болады? Жауапқа тек санды жазыңыз. Бастапқы баға 12000 теңге; алдымен -20%, одан кейін +15%. Аралық және соңғы сомалар белгісіз. ",
+      "figureSha256": "637ba208f880376ea2e887104f428633314727ebbcf66cdf24e11cdaa3f59e2c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "11040",
+        "checks": [
+          "Directed motion, percent bases and all diagram quantities are checked with exact arithmetic",
+          "The increase is applied to the discounted price, not to the original base",
+          "Condition, units, diagram directions, hidden unknown quantities, worked solution and SVG digest are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave6-infer-compound-growth",
+      "modelId": "visual-wave6-compound-second-year",
+      "grade": 6,
+      "topic": "pct",
+      "difficulty": "hard",
+      "params": {
+        "scene": "interest",
+        "initial": 64000,
+        "afterOne": 72000
+      },
+      "answer": "81000",
+      "sourceRefs": [
+        {
+          "sourceId": "f64a303c5567ce74",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-16-level1.json#4",
+      "sourceCanonicalSha256": "6b73f588f2663f139737d7e46f2946dac190ad08e75789e3cb734ee5fe925b8d",
+      "sourceSkill": "Inferring an unstated annual multiplicative rate from two given sums and applying it to the next year",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: уақыт, жол, ағыс, бағыт, су массасы, соңғы баға, күрделі өсім немесе өзгерген аудан.",
+        "Қашықтықтар, жылдамдықтар, уақыттар, массалар, бағалар, пайыздар мен дұрыс жауаптар жаңадан таңдалды.",
+        "Сызбалар өзеннің бағытталған векторларынан, жаңа деректердің native карточкаларынан не нақты масштабтағы тік төртбұрыштардан жаңадан салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Қозғалыс пен өзгерістер сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent complete source-skill, motion arrows, units, changing percent bases, new rectangle geometry and343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave6-infer-compound-growth.svg",
+      "verificationModule": "scripts/editorial/visual-wave6-models.mjs",
+      "statement": "Салымға әр жылдың соңында бірдей пайызбен күрделі өсім қосылады. Сызбада бастапқы сома мен бір жылдан кейінгі сома берілген. Екі жылдан кейін салым неше теңге болады? Жауапқа тек санды жазыңыз.",
+      "solution": "Бірінші жылғы өсім: 72000 − 64000 = 8000 теңге. Жылдық үлесі 8000/64000 = 0,125 = 12,5%. Екінші жылы өсім жаңа сомадан есептеледі: 72000 · 0,125 = 9000 теңге. Сондықтан 72000 + 9000 = 81000 теңге. Жыл сайын бастапқы өсімді ғана қосу күрделі өсімді есептемейді.\nЖауап: 81000.",
+      "figureDescription": "Салымға әр жылдың соңында бірдей пайызбен күрделі өсім қосылады. Сызбада бастапқы сома мен бір жылдан кейінгі сома берілген. Екі жылдан кейін салым неше теңге болады? Жауапқа тек санды жазыңыз. Бастапқы сома 64000 теңге; 1 жылдан кейін 72000 теңге; 2 жылдан кейінгі сома белгісіз. ",
+      "figureSha256": "b5c3a66f9bd76bffbca746e142ad51a8abb9ba817f95d16809182494936a557d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "81000",
+        "checks": [
+          "Directed motion, percent bases and all diagram quantities are checked with exact arithmetic",
+          "The same multiplicative ratio applies to each year, not the same additive amount",
+          "Condition, units, diagram directions, hidden unknown quantities, worked solution and SVG digest are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave6-two-dimension-percent-area",
+      "modelId": "visual-wave6-expanded-rectangle-area",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "length": 8,
+        "width": 5,
+        "lengthPercent": 25,
+        "widthPercent": 40
+      },
+      "answer": "70",
+      "sourceRefs": [
+        {
+          "sourceId": "d83753e0c61298cb",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-16-level1.json#6",
+      "sourceCanonicalSha256": "26fc68a0994485ed64b0737814fd253f7071a6191049f0025455cc2d6a40c1b4",
+      "sourceSkill": "Deriving both expanded rectangle dimensions separately and then finding area, rather than adding percent increases",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты сұрағы жеке сақталды: уақыт, жол, ағыс, бағыт, су массасы, соңғы баға, күрделі өсім немесе өзгерген аудан.",
+        "Қашықтықтар, жылдамдықтар, уақыттар, массалар, бағалар, пайыздар мен дұрыс жауаптар жаңадан таңдалды.",
+        "Сызбалар өзеннің бағытталған векторларынан, жаңа деректердің native карточкаларынан не нақты масштабтағы тік төртбұрыштардан жаңадан салынды; source raster/traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Қозғалыс пен өзгерістер сызбасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent complete source-skill, motion arrows, units, changing percent bases, new rectangle geometry and343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave6-two-dimension-percent-area.svg",
+      "verificationModule": "scripts/editorial/visual-wave6-models.mjs",
+      "statement": "Көк тік төртбұрыштың өлшемдері сантиметрмен берілген. Оның ұзындығы мен ені көрсетілген пайыздарға артты; жаңа шекарасы үзік сызықпен салынған. Жаңа аудан неше см² болады? Жауапқа тек санды жазыңыз.",
+      "solution": "Ұзындық: 8 · 125/100 = 10 см. Ені: 5 · 140/100 = 7 см. Жаңа аудан: 10 · 7 = 70 см². Әр өлшемнің өзгерісі бөлек қолданылады; ауданға пайыздарды жай қосу дұрыс емес.\nЖауап: 70.",
+      "figureDescription": "Көк тік төртбұрыштың өлшемдері сантиметрмен берілген. Оның ұзындығы мен ені көрсетілген пайыздарға артты; жаңа шекарасы үзік сызықпен салынған. Жаңа аудан неше см² болады? Жауапқа тек санды жазыңыз. Бастапқы өлшемдер 8 см және 5 см; ұзындығы +25%, ені +40%. Сызбалардың төменгі сол жақ төбелері ортақ. Жаңа өлшемдер санмен берілмеген. ",
+      "figureSha256": "0e65110b7043af1c5e39a1ff66155077054d3aaa209b2e9f54d9012d23157a17",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "70",
+        "checks": [
+          "Directed motion, percent bases and all diagram quantities are checked with exact arithmetic",
+          "New dimensions are derived separately; unit-square enumeration verifies their area and prevents adding the two percentage increases",
+          "Condition, units, diagram directions, hidden unknown quantities, worked solution and SVG digest are bound"
+        ]
+      }
+    }
+  ]
+}

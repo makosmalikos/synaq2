@@ -1,0 +1,2638 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "Saved grade-4 nonvisual numeration/place-value sources in topics1.2 and remaining nonrounding1.3; no new source collection.",
+  "summary": {
+    "editions": 54,
+    "models": 39,
+    "skillFamilies": 54,
+    "sourceOccurrencesReferenced": 54,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-numeration-838c1f5ed7fdaaa5",
+      "modelId": "grade4-numeration-position-digit",
+      "skillFamily": "identify_digit_in_named_place",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 724538,
+        "position": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level1.json",
+          "sourceId": "838c1f5ed7fdaaa5"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Құрылғының нөмірі 724 538. Осы жазуда ондық мыңдар разрядында тұрған цифрды табыңдар.",
+      "answer": "2",
+      "solution": "Разрядтарды оңнан солға қарай санаймыз. 724 538 = 700 000 + 20 000 + 4 000 + 500 + 30 + 8. Ондық мыңдар разрядының қосылғышы 20 000, сондықтан ізделген цифр — 2.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "2",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-267db2e10fb9b68b",
+      "modelId": "grade4-numeration-word-number",
+      "skillFamily": "write_thousands_with_zero_hundreds_and_tens",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 72006
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level1.json",
+          "sourceId": "267db2e10fb9b68b"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тіркеу журналындағы «жетпіс екі мың алты» санын цифрлармен жазыңдар.",
+      "answer": "72006",
+      "solution": "Мыңдар класы — 72, бірліктер класы — 006. Соңғы класс үш орынмен жазылады: 72 | 006. Нәтиже: 72 006.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "72006",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-5737a9e953b58c18",
+      "modelId": "grade4-numeration-number-word",
+      "skillFamily": "read_internal_zeros_in_two_classes",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 406023,
+        "choices": [
+          460023,
+          406023,
+          406203,
+          46023
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level1.json",
+          "sourceId": "5737a9e953b58c18"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Экранда 406 023 саны көрсетілген. Оның дұрыс оқылуын таңдаңдар.",
+      "answer": "төрт жүз алты мың жиырма үш",
+      "options": [
+        "төрт жүз алпыс мың жиырма үш",
+        "төрт жүз алты мың жиырма үш",
+        "төрт жүз алты мың екі жүз үш",
+        "қырық алты мың жиырма үш"
+      ],
+      "solution": "Санды үш цифрдан кластарға бөлеміз: 406 | 023. Әр нөл емес класс өз атауымен оқылады; нөлдер жеке айтылмайды. Дұрыс оқылуы: «төрт жүз алты мың жиырма үш».",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "төрт жүз алты мың жиырма үш",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-197b4968c695adf6",
+      "modelId": "grade4-numeration-order",
+      "skillFamily": "order_same_length_numbers_by_multiple_positions",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "numbers": [
+          430032,
+          403320,
+          433003,
+          403032
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level1.json",
+          "sourceId": "197b4968c695adf6"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай қатар 430 032; 403 320; 433 003; 403 032 сандарын кішісінен үлкеніне қарай орналастырады?",
+      "answer": "403 032; 403 320; 430 032; 433 003",
+      "options": [
+        "403 032; 430 032; 403 320; 433 003",
+        "433 003; 430 032; 403 320; 403 032",
+        "403 320; 403 032; 430 032; 433 003",
+        "403 032; 403 320; 430 032; 433 003"
+      ],
+      "solution": "Алдымен цифрлар санын, ол бірдей болса, сол жақтан алғашқы өзгеше разрядты салыстырамыз. 403 032 < 403 320 < 430 032 < 433 003. Демек, өсу реті: 403 032; 403 320; 430 032; 433 003.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "403 032; 403 320; 430 032; 433 003",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-36cbc4f816b0787c",
+      "modelId": "grade4-numeration-min-length",
+      "skillFamily": "smallest_number_of_given_digit_length",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level1.json",
+          "sourceId": "36cbc4f816b0787c"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Дәл 5 цифрмен жазылатын ең кіші натурал санды жазыңдар. Бірінші орынға нөл жазылмайды.",
+      "answer": "10000",
+      "solution": "Бірінші цифрдың ең кіші мүмкін мәні — 1. Қалған 4 орынға 0 қоямыз: 10 000. Одан 1-ге кіші 9 999 саны 4 цифрмен жазылады.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "10000",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-d9460ea1931680d2",
+      "modelId": "grade4-numeration-relation-choice",
+      "skillFamily": "compare_different_digit_lengths",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          {
+            "a": 72000,
+            "b": 720000,
+            "relation": "<"
+          },
+          {
+            "a": 432,
+            "b": 64125,
+            "relation": ">"
+          },
+          {
+            "a": 99999,
+            "b": 100000,
+            "relation": ">"
+          },
+          {
+            "a": 45000,
+            "b": 200077,
+            "relation": ">"
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level1.json",
+          "sourceId": "d9460ea1931680d2"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Төрт салыстырудың тек біреуі дұрыс. Сол теңсіздікті таңдаңдар.",
+      "answer": "72 000 < 720 000",
+      "options": [
+        "72 000 < 720 000",
+        "432 > 64 125",
+        "99 999 > 100 000",
+        "45 000 > 200 077"
+      ],
+      "solution": "72 000 санында 5, ал 720 000 санында 6 цифр бар; дұрыс салыстыру: 72 000 < 720 000. 432 санында 3, ал 64 125 санында 5 цифр бар; дұрыс салыстыру: 432 < 64 125. 99 999 санында 5, ал 100 000 санында 6 цифр бар; дұрыс салыстыру: 99 999 < 100 000. 45 000 санында 5, ал 200 077 санында 6 цифр бар; дұрыс салыстыру: 45 000 < 200 077. Сондықтан дұрыс нұсқа: 72 000 < 720 000.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "72 000 < 720 000",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-19c6fd9b4c3a2ab9",
+      "modelId": "grade4-numeration-extreme-choice",
+      "skillFamily": "maximum_across_digit_length_boundary",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "numbers": [
+          100003,
+          100002,
+          99980,
+          97999
+        ],
+        "direction": "maximum"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level1.json",
+          "sourceId": "19c6fd9b4c3a2ab9"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Нөмірлерді салыстырып, ең үлкенін таңдаңдар.",
+      "answer": "100 003",
+      "solution": "Таңба саны көп сан үлкен болады. Таңба саны бірдей болса, жоғары разрядтан бастап салыстырамыз: 97 999 < 99 980 < 100 002 < 100 003. Ізделген нөмір — 100 003.",
+      "options": [
+        "100 003",
+        "100 002",
+        "99 980",
+        "97 999"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "100 003",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-1b4d373e2cb20603",
+      "modelId": "grade4-numeration-compose-classes",
+      "skillFamily": "compose_thousands_and_two_digit_units_class",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "millions": 0,
+        "thousands": 507,
+        "units": 60
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level1.json",
+          "sourceId": "1b4d373e2cb20603"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Код 2 кластан тұрады: мыңдар класында 507, бірліктер класында 60 жазылған. Кодты цифрлармен жазыңдар.",
+      "answer": "507060",
+      "solution": "Кластарды ретімен жазып, бірінші кластан кейінгі әр класқа үш орын береміз: 507 | 060. Сондықтан код — 507 060.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "507060",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-a75d7d553363ed75",
+      "modelId": "grade4-numeration-class-value",
+      "skillFamily": "extract_thousands_class",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 806135,
+        "classIndex": 1
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level1.json",
+          "sourceId": "a75d7d553363ed75"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "806 135 санын кластарға бөліңдер. Мыңдар класында қандай сан жазылған?",
+      "answer": "806",
+      "solution": "Оң жақтан үш цифрдан топтастырсақ: 806 | 135. Мыңдар класындағы сан — 806.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "806",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-385d942be2b469a4",
+      "modelId": "grade4-numeration-expanded-choice",
+      "skillFamily": "recognise_nonzero_place_addends",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 50709,
+        "choices": [
+          [
+            500000,
+            700,
+            9
+          ],
+          [
+            5000,
+            700,
+            9
+          ],
+          [
+            50000,
+            70,
+            9
+          ],
+          [
+            50000,
+            700,
+            9
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level1.json",
+          "sourceId": "385d942be2b469a4"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "50 709 санының нөл емес разрядтық қосылғыштарын дұрыс көрсеткен өрнекті таңдаңдар.",
+      "answer": "50 000 + 700 + 9",
+      "options": [
+        "500 000 + 700 + 9",
+        "5 000 + 700 + 9",
+        "50 000 + 70 + 9",
+        "50 000 + 700 + 9"
+      ],
+      "solution": "Әр цифрды разрядтық мәніне көбейтеміз: 50 709 = 50 000 + 700 + 9. Нөл тұрған разрядтар қосындыға енгізілмейді. Дұрыс өрнек: 50 000 + 700 + 9.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "50 000 + 700 + 9",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-efaa3c5e67c91122",
+      "modelId": "grade4-numeration-digit-place",
+      "skillFamily": "name_units_of_thousands_position",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 749283,
+        "digit": 9,
+        "positions": [
+          0,
+          4,
+          2,
+          3
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level1.json",
+          "sourceId": "efaa3c5e67c91122"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "749 283 нөміріндегі 9 цифры қай разрядты білдіреді?",
+      "answer": "бірлік мыңдар разряды",
+      "options": [
+        "бірліктер разряды",
+        "ондық мыңдар разряды",
+        "жүздіктер разряды",
+        "бірлік мыңдар разряды"
+      ],
+      "solution": "749 283 = 700 000 + 40 000 + 9 000 + 200 + 80 + 3. Мұндағы 9 цифры 9 000 мәнін береді. Бұл — бірлік мыңдар разряды.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "бірлік мыңдар разряды",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-26b03fa1904c0f7d",
+      "modelId": "grade4-numeration-class-multiple",
+      "skillFamily": "compose_after_multiplying_class_values_with_internal_zero",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "thousands": 76,
+        "multiplier": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level2.json",
+          "sourceId": "26b03fa1904c0f7d"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Санның мыңдар класында 76 жазылған. Бірліктер класындағы сан мыңдар класындағы саннан 8 есе үлкен. Екі кластан құралған санды жазыңдар.",
+      "answer": "76608",
+      "solution": "Бірліктер класындағы сан: 76 × 8 = 608. Екі класты біріктіреміз: 76 | 608 = 76 608. Нөл ондықтар разрядының орнын сақтайды.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "76608",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-6df6c218830db195",
+      "modelId": "grade4-numeration-neighbors",
+      "skillFamily": "predecessor_successor_with_carry",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 67069
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level2.json",
+          "sourceId": "6df6c218830db195"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Санақта 67 069 санының дәл алдында және дәл артында қандай сандар тұрады? Алдымен алдыңғы сан көрсетілген нұсқаны таңдаңдар.",
+      "answer": "67 068 және 67 070",
+      "options": [
+        "66 069 және 68 069",
+        "67 068 және 67 070",
+        "67 068 және 67 080",
+        "67 060 және 67 070"
+      ],
+      "solution": "Алдыңғы санды табу үшін 1 азайтамыз: 67 069 − 1 = 67 068. Келесі сан үшін 1 қосамыз: 67 069 + 1 = 67 070. Жұп: 67 068 және 67 070.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "67 068 және 67 070",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-1a8229f744418604",
+      "modelId": "grade4-numeration-compose-places",
+      "skillFamily": "compose_given_places_with_zero_gaps",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": 6,
+        "entries": [
+          {
+            "position": 5,
+            "digit": 6
+          },
+          {
+            "position": 3,
+            "digit": 8
+          },
+          {
+            "position": 1,
+            "digit": 3
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level2.json",
+          "sourceId": "1a8229f744418604"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "6 таңбалы нөмірде жүздік мыңдар разрядында 6, бірлік мыңдар разрядында 8, ондықтар разрядында 3 тұр. Аталмаған разрядтарға нөл жазылған. Нөмірді жазыңдар.",
+      "answer": "608030",
+      "solution": "Әр берілген цифр өз орнына қойылады: 600 000 + 8 000 + 30 = 608 030. Бос орындарды нөлмен толықтырсақ, 608 030 шығады.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "608030",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-28e622a903b18144",
+      "modelId": "grade4-numeration-compose-places",
+      "skillFamily": "recognise_given_place_values_not_concatenated_digits",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": 6,
+        "entries": [
+          {
+            "position": 5,
+            "digit": 7
+          },
+          {
+            "position": 3,
+            "digit": 2
+          },
+          {
+            "position": 0,
+            "digit": 9
+          }
+        ],
+        "choices": [
+          720009,
+          702090,
+          702009,
+          729
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level2.json",
+          "sourceId": "28e622a903b18144"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "6 таңбалы нөмірде жүздік мыңдар разрядында 7, бірлік мыңдар разрядында 2, бірліктер разрядында 9 тұр. Аталмаған разрядтарға нөл жазылған. Нөмірді таңдаңдар.",
+      "answer": "702 009",
+      "solution": "Әр берілген цифр өз орнына қойылады: 700 000 + 2 000 + 9 = 702 009. Бос орындарды нөлмен толықтырсақ, 702 009 шығады.",
+      "options": [
+        "720 009",
+        "702 090",
+        "702 009",
+        "729"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "702 009",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-b0c1f4295d5d9ffc",
+      "modelId": "grade4-numeration-compose-classes",
+      "skillFamily": "recognise_zero_padding_of_one_digit_units_class",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "millions": 0,
+        "thousands": 604,
+        "units": 7,
+        "choices": [
+          640007,
+          604700,
+          6047,
+          604007
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level2.json",
+          "sourceId": "b0c1f4295d5d9ffc"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Код 2 кластан тұрады: мыңдар класында 604, бірліктер класында 7 жазылған. Кодты цифрлармен жазған дұрыс нұсқаны таңдаңдар.",
+      "answer": "604 007",
+      "solution": "Кластарды ретімен жазып, бірінші кластан кейінгі әр класқа үш орын береміз: 604 | 007. Сондықтан код — 604 007.",
+      "options": [
+        "640 007",
+        "604 700",
+        "6 047",
+        "604 007"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "604 007",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-e087d63f38529624",
+      "modelId": "grade4-numeration-shift-thousand",
+      "skillFamily": "thousands_addition_with_two_place_carry",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 499734
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level2.json",
+          "sourceId": "e087d63f38529624"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Электронды есептегіш 499 734 көрсетіп тұр. Оған 1 000 қосқанда қай сан шығады?",
+      "answer": "500 734",
+      "solution": "Бірліктер класы өзгермейді. Мыңдар класында 499 + 1 = 500 болады. Сондықтан 499 734 + 1 000 = 500 734.",
+      "options": [
+        "490 734",
+        "599 734",
+        "500 734",
+        "499 834"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "500 734",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-329e029b219a3517",
+      "modelId": "grade4-numeration-length-difference",
+      "skillFamily": "greatest_minus_smallest_fixed_length",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level2.json",
+          "sourceId": "329e029b219a3517"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Дәл 5 цифрдан тұратын ең үлкен сан мен ең кіші санның айырмасын табыңдар.",
+      "answer": "89999",
+      "solution": "Ең үлкені — 99 999, ең кішісі — 10 000. Айырмасы: 99 999 − 10 000 = 89 999.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "89999",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-18175564737e016a",
+      "modelId": "grade4-numeration-interval-choice",
+      "skillFamily": "strict_between_two_place_value_bounds",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "lower": 700000,
+        "upper": 710000,
+        "numbers": [
+          709999,
+          699999,
+          710001,
+          71000
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level2.json",
+          "sourceId": "18175564737e016a"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Код үшін екі шарт бар: ол 700 000 санынан үлкен және 710 000 санынан кіші. Қай нөмір екі шартқа да сай?",
+      "answer": "709 999",
+      "solution": "700 000 < 709 999 < 710 000. Басқа нұсқалар: 699 999 ≤ 700 000; 710 001 ≥ 710 000; 71 000 ≤ 700 000. Шекаралардың өзі алынбайды.",
+      "options": [
+        "709 999",
+        "699 999",
+        "710 001",
+        "71 000"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "709 999",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-8bc3faa459c0468c",
+      "modelId": "grade4-numeration-word-subtract-story",
+      "skillFamily": "read_word_total_then_subtract_ten_thousands",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 48706,
+        "allocated": 20000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level2.json",
+          "sourceId": "8bc3faa459c0468c"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Фестивальге қырық сегіз мың жеті жүз алты билет дайындалды. Оның 20 000 билеті аудан мектептеріне берілді. Қалалық мектептерге қалған билеттердің бәрі берілсе, олар неше билет алды?",
+      "answer": "28706",
+      "solution": "Сөзбен жазылған жалпы сан: қырық сегіз мың жеті жүз алты = 48 706. Қалғаны: 48 706 − 20 000 = 28 706 билет. Тексеру: 28 706 + 20 000 = 48 706.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "28706",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-58e5330979b0cce0",
+      "modelId": "grade4-numeration-min-distinct",
+      "skillFamily": "minimum_distinct_digits_and_forbidden_leading_zero",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level2.json",
+          "sourceId": "58e5330979b0cce0"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Цифрлары қайталанбайтын ең кіші 5 таңбалы санды таңдаңдар. Нөл бірінші цифр бола алмайды.",
+      "answer": "10 234",
+      "solution": "Алғашқы орынға ең кіші нөл емес цифр 1 жазылады. Одан кейін 0, ал қалған орындарға қолданылмаған ең кіші цифрлар өсу ретімен қойылады. Нәтиже: 10 234. Нөлден басталған жазу 5 таңбалы сан болмайды.",
+      "options": [
+        "12 345",
+        "10 000",
+        "10 234",
+        "01234"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "10 234",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-720136512aa6396f",
+      "modelId": "grade4-numeration-word-compare",
+      "skillFamily": "compare_word_number_with_zero_positions",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "left": 500050,
+        "right": 500500
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level2.json",
+          "sourceId": "720136512aa6396f"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "«бес жүз мың елу» саны мен 500 500 санының арасына қандай белгі қойылады?",
+      "answer": "<",
+      "options": [
+        "=",
+        "<",
+        "салыстыру мүмкін емес",
+        ">"
+      ],
+      "solution": "«бес жүз мың елу» цифрмен 500 050 болады. Екі санның мыңдар класы бірдей; бірліктер кластарын салыстырамыз: 50 < 500. Сондықтан 500 050 < 500 500.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "<",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-c6440e7625c07497",
+      "modelId": "grade4-numeration-min-permutation",
+      "skillFamily": "minimum_from_given_digits_including_zero",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": [
+          0,
+          6,
+          3,
+          9,
+          4
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level2.json",
+          "sourceId": "c6440e7625c07497"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "0, 6, 3, 9, 4 цифрларының әрқайсысын бір реттен пайдаланып, ең кіші бес таңбалы сан құрастырыңдар.",
+      "answer": "30469",
+      "solution": "Алдымен нөл емес ең кіші цифрды қоямыз: 3. Қалған цифрларды өсу ретімен орналастырамыз. Бірінші орынға нөл келмейді, ал алынған жазу — 30 469.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "30469",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-cfe768eff2e36893",
+      "modelId": "grade4-numeration-repeated-class-riddle",
+      "skillFamily": "unique_repdigit_classes_with_ratio_and_digit_sum",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "multiplier": 3,
+        "digitSum": 36,
+        "choices": [
+          666222,
+          999333,
+          333999,
+          999999
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level3.json",
+          "sourceId": "cfe768eff2e36893"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Құпия алты таңбалы нөмірдің әр класында үш бірдей цифр жазылған. Мыңдар класындағы сан бірліктер класындағы саннан 3 есе үлкен. Барлық алты цифрдың қосындысы 36. Құпия нөмір қайсы?",
+      "answer": "999 333",
+      "solution": "Бірліктер класында 111, 222, … болуы мүмкін. 3 еселегенде мыңдар класында да үш бірдей цифр қалатын нөмірлер: 333 111; 666 222; 999 333. Олардың цифрлар қосындылары: 12, 24, 36. Тек 999 333 үшін қосынды 36; тексеру: 333 × 3 = 999.",
+      "options": [
+        "666 222",
+        "999 333",
+        "333 999",
+        "999 999"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "999 333",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-dd5a4266e416d5d7",
+      "modelId": "grade4-numeration-middle-code",
+      "skillFamily": "translate_three_person_order_to_middle_number",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "numbers": [
+          607280,
+          670028,
+          608702
+        ],
+        "choices": [
+          670028,
+          608702,
+          "анықтау мүмкін емес",
+          607280
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level3.json",
+          "sourceId": "dd5a4266e416d5d7"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Айым, Дана және Мұратқа 607 280, 670 028, 608 702 кодтары бір-бірден берілді. Айымның коды Дананың кодынан үлкен, бірақ Мұраттың кодынан кіші. Айымның кодын табыңдар.",
+      "answer": "608 702",
+      "solution": "Шарт бойынша Дана < Айым < Мұрат. Кодтарды салыстырсақ: 607 280 < 608 702 < 670 028. Ортадағы 608 702 коды Айымға тиесілі.",
+      "options": [
+        "670 028",
+        "608 702",
+        "анықтау мүмкін емес",
+        "607 280"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "608 702",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-ca6d5361735896bd",
+      "modelId": "grade4-numeration-max-distinct-odd",
+      "skillFamily": "maximum_distinct_odd_with_bound_and_unused_last_digit",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": 6,
+        "exclusiveUpper": 800000,
+        "choices": [
+          798653,
+          799999,
+          798651,
+          798654
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level3.json",
+          "sourceId": "ca6d5361735896bd"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "800 000 санынан кіші, цифрлары әртүрлі ең үлкен 6 таңбалы тақ санды таңдаңдар.",
+      "answer": "798 653",
+      "solution": "Алғашқы цифр 7 болады; одан кейін жоғары разрядтарға мүмкін болған ең үлкен әртүрлі цифрларды қоямыз: 7, 9, 8, 6, 5. Соңғы орынға қолданылмаған тақ цифр қажет. Қалған тақ цифрлар 1, 3; ең үлкені 3. Ізделген сан — 798 653.",
+      "options": [
+        "798 653",
+        "799 999",
+        "798 651",
+        "798 654"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "798 653",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-62302e55a19e7d0f",
+      "modelId": "grade4-numeration-min-digit-sum",
+      "skillFamily": "minimum_number_given_length_and_high_digit_sum",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": 5,
+        "digitSum": 41
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level3.json",
+          "sourceId": "62302e55a19e7d0f"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Цифрларының қосындысы 41 болатын ең кіші 5 таңбалы санды табыңдар.",
+      "answer": "59999",
+      "solution": "Сол жақтағы цифрларды мүмкіндігінше аз етеміз. Соңғы 4 цифрдың қосындысы 36 санынан аспайды. Сондықтан алғашқы цифр кемінде 5 болады. Қалған қосындыны оң жақтағы орындарға мүмкіндігінше жинасақ, 59 999 шығады. Тексеру: 5 + 9 + 9 + 9 + 9 = 41.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "59999",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-7ee567b74a018224",
+      "modelId": "grade4-numeration-equal-classes-difference",
+      "skillFamily": "greatest_minus_smallest_repeated_three_digit_classes",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "classCount": 3,
+        "exampleBlock": 234
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level3.json",
+          "sourceId": "7ee567b74a018224"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "9 таңбалы кодтың барлық кластарында бірдей үш таңбалы сан жазылған. Мысалы, 234 234 234. Осындай ең үлкен код ең кіші кодтан қаншаға артық?",
+      "answer": "899899899",
+      "solution": "Әр кластағы сан үш таңбалы: ең кішісі 100, ең үлкені 999. Сондықтан ең кіші код 100 100 100, ең үлкен код 999 999 999. Айырмасы: 999 999 999 − 100 100 100 = 899 899 899.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "899899899",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-2f15754ff6097edf",
+      "modelId": "grade4-numeration-binary-digit-count",
+      "skillFamily": "count_fixed_length_binary_digit_numbers_without_leading_zero",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "nonzero": 7,
+        "digits": 5,
+        "choices": [
+          16,
+          8,
+          15,
+          32
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level3.json",
+          "sourceId": "2f15754ff6097edf"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тек 0 және 7 цифрларын қолданып, неше 5 таңбалы сан жазуға болады? Цифрлар қайталана алады.",
+      "answer": "16",
+      "solution": "Алғашқы цифр міндетті түрде 7, себебі нөлден басталмайды. Қалған 4 орынның әрқайсысында екі таңдау бар. Сондықтан 2 × 2 × 2 × 2 = 16. Сандар: 70 000; 70 007; 70 070; 70 077; 70 700; 70 707; 70 770; 70 777; 77 000; 77 007; 77 070; 77 077; 77 700; 77 707; 77 770; 77 777.",
+      "options": [
+        "16",
+        "8",
+        "15",
+        "32"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "16",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-fcb6fdb250dfc6d8",
+      "modelId": "grade4-numeration-written-digit-count",
+      "skillFamily": "total_digits_across_decimal_length_boundaries",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "end": 1200
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level3.json",
+          "sourceId": "fcb6fdb250dfc6d8"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Оқушы 1–1 200 аралығындағы барлық натурал сандарды ретімен жазды; екі шеті де кіреді. Бос орындар мен бөлгіштерді есептемегенде, барлығы неше цифр жазылды?",
+      "answer": "3693",
+      "solution": "1–9 аралығында 9 сан бар, әрқайсысы 1 цифрдан: 9 × 1 = 9 цифр. 10–99 аралығында 90 сан бар, әрқайсысы 2 цифрдан: 90 × 2 = 180 цифр. 100–999 аралығында 900 сан бар, әрқайсысы 3 цифрдан: 900 × 3 = 2 700 цифр. 1 000–1 200 аралығында 201 сан бар, әрқайсысы 4 цифрдан: 201 × 4 = 804 цифр. Барлығы: 9 + 180 + 2 700 + 804 = 3 693.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "3693",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-2d0ae3f05c9e2224",
+      "modelId": "grade4-numeration-append-cycle",
+      "skillFamily": "infer_two_digit_append_cycle_in_base_ten",
+      "grade": 4,
+      "topic": "seq",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "firstDigit": 7,
+        "cycle": [
+          0,
+          7
+        ],
+        "shown": 5,
+        "choices": [
+          77077,
+          707077,
+          707070,
+          700707
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level3.json",
+          "sourceId": "2d0ae3f05c9e2224"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Әр келесі сан алдыңғы санның оң жағына бір цифр тіркеу арқылы жасалады. Тіркелетін цифрлар ұзындығы 2 болатын бір блокты қайталайды. Қатар: 7; 70; 707; 7 070; 70 707; … Келесі санды табыңдар.",
+      "answer": "707 070",
+      "solution": "Кезекпен тіркелген цифрлар 0, 7 болып қайталанады. 70 707 санынан кейін 0 цифрын тіркейміз: 707 070.",
+      "options": [
+        "77 077",
+        "707 077",
+        "707 070",
+        "700 707"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "707 070",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-a8f533e5f496a70e",
+      "modelId": "grade4-numeration-word-number",
+      "skillFamily": "write_two_classes_with_internal_and_final_zeros",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 405700
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-leveltest.json",
+          "sourceId": "a8f533e5f496a70e"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тіркеу журналындағы «төрт жүз бес мың жеті жүз» санын цифрлармен жазыңдар.",
+      "answer": "405700",
+      "solution": "Мыңдар класы — 405, бірліктер класы — 700. Соңғы класс үш орынмен жазылады: 405 | 700. Нәтиже: 405 700.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "405700",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-d69f481cb2b3a1df",
+      "modelId": "grade4-numeration-digit-place",
+      "skillFamily": "name_hundreds_of_thousands_position",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 680509,
+        "digit": 6,
+        "positions": [
+          4,
+          5,
+          2,
+          3
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-leveltest.json",
+          "sourceId": "d69f481cb2b3a1df"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "680 509 нөміріндегі 6 цифры қай разрядты білдіреді?",
+      "answer": "жүздік мыңдар разряды",
+      "options": [
+        "ондық мыңдар разряды",
+        "жүздік мыңдар разряды",
+        "жүздіктер разряды",
+        "бірлік мыңдар разряды"
+      ],
+      "solution": "680 509 = 600 000 + 80 000 + 500 + 9. Мұндағы 6 цифры 600 000 мәнін береді. Бұл — жүздік мыңдар разряды.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "жүздік мыңдар разряды",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-7f556b1af2542519",
+      "modelId": "grade4-numeration-expanded-sum",
+      "skillFamily": "assemble_nonconsecutive_place_addends",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "addends": [
+          500000,
+          8000,
+          60,
+          3
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-leveltest.json",
+          "sourceId": "7f556b1af2542519"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қойма коды 500 000 + 8 000 + 60 + 3 қосындысына тең. Кодты бір санмен жазыңдар.",
+      "answer": "508063",
+      "solution": "Қосылғыштар өз разрядтарына орналастырылады: 500 000 + 8 000 + 60 + 3 = 508 063. Аталмаған разрядтарға нөл жазылады.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "508063",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-860012e5fe152d70",
+      "modelId": "grade4-numeration-extreme-choice",
+      "skillFamily": "minimum_among_same_length_near_permutations",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "numbers": [
+          604507,
+          640705,
+          604570,
+          640057
+        ],
+        "direction": "minimum"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-leveltest.json",
+          "sourceId": "860012e5fe152d70"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Нөмірлерді салыстырып, ең кішісін таңдаңдар.",
+      "answer": "604 507",
+      "solution": "Таңба саны көп сан үлкен болады. Таңба саны бірдей болса, жоғары разрядтан бастап салыстырамыз: 604 507 < 604 570 < 640 057 < 640 705. Ізделген нөмір — 604 507.",
+      "options": [
+        "604 507",
+        "640 705",
+        "604 570",
+        "640 057"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "604 507",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-2366714ca10becf8",
+      "modelId": "grade4-numeration-class-carry",
+      "skillFamily": "compose_classes_then_carry_exactly_to_next_thousand",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "thousands": 64,
+        "units": 8,
+        "increase": 992
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-leveltest.json",
+          "sourceId": "2366714ca10becf8"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жинақтағы заттар санының мыңдар класында 64, бірліктер класында 8 жазылған. Оған 992 зат қосылды. Жаңа жалпы санды жазыңдар.",
+      "answer": "65000",
+      "solution": "Бастапқы сан 64 008. Бірліктер класында 8 + 992 = 1 000, яғни бір мың пайда болады. Сондықтан 64 008 + 992 = 65 000.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "65000",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-133e86df2cfec519",
+      "modelId": "grade4-numeration-word-carry-story",
+      "skillFamily": "read_word_quantity_then_carry_units_class",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "initial": 7090,
+        "increase": 910
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-leveltest.json",
+          "sourceId": "133e86df2cfec519"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Шеберханада жеті мың тоқсан бөлшек дайын еді. Тағы 910 бөлшек шығарылды. Барлығы неше бөлшек болды?",
+      "answer": "8000",
+      "solution": "«жеті мың тоқсан» — 7 090. Бірліктер класын қосамыз: 90 + 910 = 1 000. Сондықтан 7 090 + 910 = 8 000 бөлшек.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "8000",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-d3f2e02fa276e64a",
+      "modelId": "grade4-numeration-order",
+      "skillFamily": "order_internal_zero_permutations",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "numbers": [
+          540065,
+          504650,
+          545006,
+          504056
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-leveltest.json",
+          "sourceId": "d3f2e02fa276e64a"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай қатар 540 065; 504 650; 545 006; 504 056 сандарын кішісінен үлкеніне қарай орналастырады?",
+      "answer": "504 056; 504 650; 540 065; 545 006",
+      "options": [
+        "504 056; 540 065; 504 650; 545 006",
+        "545 006; 540 065; 504 650; 504 056",
+        "504 650; 504 056; 540 065; 545 006",
+        "504 056; 504 650; 540 065; 545 006"
+      ],
+      "solution": "Алдымен цифрлар санын, ол бірдей болса, сол жақтан алғашқы өзгеше разрядты салыстырамыз. 504 056 < 504 650 < 540 065 < 545 006. Демек, өсу реті: 504 056; 504 650; 540 065; 545 006.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "504 056; 504 650; 540 065; 545 006",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-f64faaeee103ba80",
+      "modelId": "grade4-numeration-max-even-unique",
+      "skillFamily": "maximum_using_all_even_digits_with_bound",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "digits": 5,
+        "exclusiveUpper": 80000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-leveltest.json",
+          "sourceId": "f64faaeee103ba80"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "80 000 санынан кіші ең үлкен бес таңбалы санды табыңдар. Оның барлық цифрлары жұп әрі әртүрлі болуы керек.",
+      "answer": "68420",
+      "solution": "Жұп цифрлар — 0, 2, 4, 6, 8; бес орынға олардың бәрі қажет. Шекке сай бірінші цифрдың ең үлкен мүмкін мәні 6. Қалған цифрларды кему ретімен қойсақ, 68 420 шығады. Нөл соңында тұр, сондықтан сан бес таңбалы.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "68420",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-2280ebb5739f97df",
+      "modelId": "grade4-numeration-extreme-choice",
+      "skillFamily": "maximum_across_eight_and_nine_digit_classes",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "numbers": [
+          87654321,
+          200880000,
+          99999999,
+          203000000
+        ],
+        "direction": "maximum"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level1.json",
+          "sourceId": "2280ebb5739f97df"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Нөмірлерді салыстырып, ең үлкенін таңдаңдар.",
+      "answer": "203 000 000",
+      "solution": "Таңба саны көп сан үлкен болады. Таңба саны бірдей болса, жоғары разрядтан бастап салыстырамыз: 87 654 321 < 99 999 999 < 200 880 000 < 203 000 000. Ізделген нөмір — 203 000 000.",
+      "options": [
+        "87 654 321",
+        "200 880 000",
+        "99 999 999",
+        "203 000 000"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "203 000 000",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-6b13e229e7e646ea",
+      "modelId": "grade4-numeration-thousands-quantity",
+      "skillFamily": "form_millions_from_thousands_units",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "thousands": 4000,
+        "choices": [
+          4000000000,
+          40000000,
+          400000,
+          4000000
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level1.json",
+          "sourceId": "6b13e229e7e646ea"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "4 000 мыңдық бірліктен тұратын санды таңдаңдар.",
+      "answer": "4 000 000",
+      "solution": "Бір мыңдық бірлік 1 000 бірлікке тең. Сондықтан 4 000 × 1 000 = 4 000 000. Үш разрядқа солға жылжығанда миллиондар класы пайда болады.",
+      "options": [
+        "4 000 000 000",
+        "40 000 000",
+        "400 000",
+        "4 000 000"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "4 000 000",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-908996db06f0538a",
+      "modelId": "grade4-numeration-compose-classes",
+      "skillFamily": "compose_millions_small_thousands_and_empty_units",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "millions": 7,
+        "thousands": 6,
+        "units": 0,
+        "choices": [
+          7006000,
+          76000,
+          7000006,
+          7600000
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level1.json",
+          "sourceId": "908996db06f0538a"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Код 3 кластан тұрады: миллиондар класында 7, мыңдар класында 6, бірліктер класында 0 жазылған. Кодты цифрлармен жазған дұрыс нұсқаны таңдаңдар.",
+      "answer": "7 006 000",
+      "solution": "Кластарды ретімен жазып, бірінші кластан кейінгі әр класқа үш орын береміз: 7 | 006 | 000. Сондықтан код — 7 006 000.",
+      "options": [
+        "7 006 000",
+        "76 000",
+        "7 000 006",
+        "7 600 000"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "7 006 000",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-56d54c6234df6bbc",
+      "modelId": "grade4-numeration-class-value",
+      "skillFamily": "extract_millions_class",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 58407236,
+        "classIndex": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level1.json",
+          "sourceId": "56d54c6234df6bbc"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "58 407 236 санын кластарға бөліңдер. Миллиондар класында қандай сан жазылған?",
+      "answer": "58",
+      "solution": "Оң жақтан үш цифрдан топтастырсақ: 58 | 407 | 236. Миллиондар класындағы сан — 58.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "58",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-bb881ed0e3387a2e",
+      "modelId": "grade4-numeration-zero-count",
+      "skillFamily": "count_zero_digits_in_worded_hundreds_of_millions",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 900000000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level1.json",
+          "sourceId": "bb881ed0e3387a2e"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "«тоғыз жүз миллион» санын цифрлармен жазғанда неше нөл қолданылады?",
+      "answer": "8",
+      "solution": "Санның жазылуы: 900 000 000. Кластар: 900 | 000 | 000. Осы жазудағы нөлдерді санасақ, 8 нөл шығады.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "8",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-12b7b00e0e1f5ea9",
+      "modelId": "grade4-numeration-number-word",
+      "skillFamily": "read_three_classes_with_zero_place_holders",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 8070600,
+        "choices": [
+          8007600,
+          80070600,
+          8070600,
+          807600
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level1.json",
+          "sourceId": "12b7b00e0e1f5ea9"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Экранда 8 070 600 саны көрсетілген. Оның дұрыс оқылуын таңдаңдар.",
+      "answer": "сегіз миллион жетпіс мың алты жүз",
+      "options": [
+        "сегіз миллион жеті мың алты жүз",
+        "сексен миллион жетпіс мың алты жүз",
+        "сегіз миллион жетпіс мың алты жүз",
+        "сегіз жүз жеті мың алты жүз"
+      ],
+      "solution": "Санды үш цифрдан кластарға бөлеміз: 8 | 070 | 600. Әр нөл емес класс өз атауымен оқылады; нөлдер жеке айтылмайды. Дұрыс оқылуы: «сегіз миллион жетпіс мың алты жүз».",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "сегіз миллион жетпіс мың алты жүз",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-99c98fb007f31a75",
+      "modelId": "grade4-numeration-order",
+      "skillFamily": "order_different_digit_lengths_through_millions",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "numbers": [
+          7650,
+          76500,
+          706500,
+          7065000
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level2.json",
+          "sourceId": "99c98fb007f31a75"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай қатар 7 650; 76 500; 706 500; 7 065 000 сандарын кішісінен үлкеніне қарай орналастырады?",
+      "answer": "7 650; 76 500; 706 500; 7 065 000",
+      "options": [
+        "7 650; 706 500; 76 500; 7 065 000",
+        "7 065 000; 706 500; 76 500; 7 650",
+        "76 500; 7 650; 706 500; 7 065 000",
+        "7 650; 76 500; 706 500; 7 065 000"
+      ],
+      "solution": "Алдымен цифрлар санын, ол бірдей болса, сол жақтан алғашқы өзгеше разрядты салыстырамыз. 7 650 < 76 500 < 706 500 < 7 065 000. Демек, өсу реті: 7 650; 76 500; 706 500; 7 065 000.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "7 650; 76 500; 706 500; 7 065 000",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-a751dfeade088b7d",
+      "modelId": "grade4-numeration-near-power-equivalent",
+      "skillFamily": "recognise_distributive_times_nine_rewrite",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "factor": 48,
+        "power": 10,
+        "choices": [
+          {
+            "a": 480,
+            "b": 9,
+            "operation": "subtract"
+          },
+          {
+            "a": 510,
+            "b": 48,
+            "operation": "subtract"
+          },
+          {
+            "a": 480,
+            "b": 48,
+            "operation": "add"
+          },
+          {
+            "a": 480,
+            "b": 48,
+            "operation": "subtract"
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level2.json",
+          "sourceId": "a751dfeade088b7d"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "48 × 9 көбейтіндісін ондыққа сүйеніп есептеуге қай өрнек көмектеседі?",
+      "answer": "480 − 48",
+      "options": [
+        "480 − 9",
+        "510 − 48",
+        "480 + 48",
+        "480 − 48"
+      ],
+      "solution": "9 = 10 − 1, сондықтан 48 × 9 = 48 × 10 − 48 = 480 − 48 = 432. Нұсқалардың мәндері ретімен 471, 462, 528, 432; тек 480 − 48 сәйкес келеді.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "480 − 48",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-bdbd59284c911f9b",
+      "modelId": "grade4-numeration-total-place-units",
+      "skillFamily": "distinguish_total_ten_thousands_from_place_digit",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 8070000,
+        "position": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level2.json",
+          "sourceId": "bdbd59284c911f9b"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "8 070 000 санында барлығы неше ондық мың бар? Разрядтағы бір цифрды емес, толық бірліктер санын жазыңдар.",
+      "answer": "807",
+      "solution": "8 070 000 = 807 × 10 000. Қалдық 10 000 санынан кіші. Демек, толық ондық мыңдар саны — 807.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "807",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-a220ad351ac88113",
+      "modelId": "grade4-numeration-boundary-difference",
+      "skillFamily": "difference_after_predecessor_and_successor_of_powers_ten",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "largerBoundary": 10000000,
+        "smallerBoundary": 1000000,
+        "before": 1,
+        "after": 1
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level2.json",
+          "sourceId": "a220ad351ac88113"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бірінші сан 10 000 000 санынан 1 бірлік кем, ал екінші сан 1 000 000 санынан 1 бірлік артық. Бірінші саннан екіншісін азайтыңдар.",
+      "answer": "8999998",
+      "solution": "Бірінші сан: 10 000 000 − 1 = 9 999 999. Екінші сан: 1 000 000 + 1 = 1 000 001. Ізделген айырма: 9 999 999 − 1 000 001 = 8 999 998.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "8999998",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-b1260d2e2128e54d",
+      "modelId": "grade4-numeration-compose-classes",
+      "skillFamily": "compose_three_classes_preserving_two_kinds_of_zero_padding",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "millions": 24,
+        "thousands": 60,
+        "units": 9,
+        "choices": [
+          24060900,
+          24060009,
+          24600009,
+          2460009
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level2.json",
+          "sourceId": "b1260d2e2128e54d"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Код 3 кластан тұрады: миллиондар класында 24, мыңдар класында 60, бірліктер класында 9 жазылған. Кодты цифрлармен жазған дұрыс нұсқаны таңдаңдар.",
+      "answer": "24 060 009",
+      "solution": "Кластарды ретімен жазып, бірінші кластан кейінгі әр класқа үш орын береміз: 24 | 060 | 009. Сондықтан код — 24 060 009.",
+      "options": [
+        "24 060 900",
+        "24 060 009",
+        "24 600 009",
+        "2 460 009"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "24 060 009",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-a597f42b9f46c6f2",
+      "modelId": "grade4-numeration-near-power-product",
+      "skillFamily": "multiply_by_999_using_1000_minus_one",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "factor": 68,
+        "power": 1000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level3.json",
+          "sourceId": "a597f42b9f46c6f2"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көбейтіндіні 1000 санына сүйенетін тиімді тәсілмен есептеңдер: 68 × 999.",
+      "answer": "67932",
+      "solution": "999 = 1 000 − 1. Сондықтан 68 × 999 = 68 × 1 000 − 68 = 68 000 − 68 = 67 932. Тексеру: 67 932 + 68 = 68 000.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "67932",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-9ef5b15a3ab2b264",
+      "modelId": "grade4-numeration-compose-classes",
+      "skillFamily": "compose_empty_middle_class",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "millions": 27,
+        "thousands": 0,
+        "units": 8,
+        "choices": [
+          27008000,
+          2700008,
+          27000008,
+          27000800
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-leveltest.json",
+          "sourceId": "9ef5b15a3ab2b264"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Код 3 кластан тұрады: миллиондар класында 27, мыңдар класында 0, бірліктер класында 8 жазылған. Кодты цифрлармен жазған дұрыс нұсқаны таңдаңдар.",
+      "answer": "27 000 008",
+      "solution": "Кластарды ретімен жазып, бірінші кластан кейінгі әр класқа үш орын береміз: 27 | 000 | 008. Сондықтан код — 27 000 008.",
+      "options": [
+        "27 008 000",
+        "2 700 008",
+        "27 000 008",
+        "27 000 800"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "27 000 008",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-c8bc5a7a9d3f59da",
+      "modelId": "grade4-numeration-total-place-units",
+      "skillFamily": "count_complete_thousands_with_remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 809430,
+        "position": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-leveltest.json",
+          "sourceId": "c8bc5a7a9d3f59da"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "809 430 санында барлығы неше мың бар? Разрядтағы бір цифрды емес, толық бірліктер санын жазыңдар.",
+      "answer": "809",
+      "solution": "809 430 = 809 × 1 000 + 430. Қалдық 1 000 санынан кіші. Демек, толық мыңдар саны — 809.",
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "809",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-numeration-d4b6d1915aea6774",
+      "modelId": "grade4-numeration-near-power-product",
+      "skillFamily": "multiply_by_nine_using_ten_minus_one",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "factor": 74,
+        "power": 10,
+        "choiceOffsets": [
+          74,
+          10,
+          0,
+          -10
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-leveltest.json",
+          "sourceId": "d4b6d1915aea6774"
+        }
+      ],
+      "adaptationChanges": [
+        "Сақталған нақты бастапқы шарт, жауап нұсқалары, кілт және толық ресми шешім оқылды; жеке разрядтық, класстық, цифрлық шектеу немесе тиімді есептеу дағдысы сақталды.",
+        "Деректер мен қазақша тұжырым қайта жазылды. Қажет жерде жаңа анық шек берілді; бастапқы нөл, толық разряд бірліктері, бос класс және цифрлардың қайталанбауы жеке тексеріледі.",
+        "Көбейту 9 = 10 − 1 және 999 = 1 000 − 1 арқылы берілгенде сол тиімді түрлендіру шешімде көрсетіледі. Қатардың екі цифрлы тіркеу ережесі бірмәнді анықталған."
+      ],
+      "relationToSource": "A source-specific saved grade-4 edition. Different numerical variants are retained and are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көбейтіндіні 10 санына сүйенетін тиімді тәсілмен есептеңдер: 74 × 9.",
+      "answer": "666",
+      "solution": "9 = 10 − 1. Сондықтан 74 × 9 = 74 × 10 − 74 = 740 − 74 = 666. Тексеру: 666 + 74 = 740.",
+      "options": [
+        "740",
+        "676",
+        "666",
+        "656"
+      ],
+      "calculationVerification": {
+        "method": "exact_decimal_classes_and_finite_digit_constraints",
+        "answer": "666",
+        "checks": [
+          "source_specific_skill_model",
+          "exact_integer_place_value_or_finite_constraint_calculation",
+          "condition_solution_and_options_bound_to_parameters",
+          "unique_MCq_key_where_present",
+          "native_text_not_raster_or_TeX"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1887 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "root_separate_computational_check_same_author",
+  "batch": "problems/editorial/batches/grade5-equations.json",
+  "scope": "Full saved/new conditions, official/authored solutions and all MCQs reviewed.\nExact rational-polynomial roots, denominator exclusions and explicit domains;\nindependent word ledgers. Same root authored both: separate computational\nreview only, not a separate human/agent review. No author JS/specs/params oracle.\n",
+  "summary": {
+    "verified": 47,
+    "newlyCoveredSourceOccurrences": 46,
+    "previouslyDifferentSkillReferenceCorrected": 1,
+    "findings": 0,
+    "allSourceNewConditionsSolutionsMCQsRead": 47,
+    "wrongKeysRejected": 47,
+    "printedGivensOrTargetsCanariesRejected": 47,
+    "newSolutionNumericEqualitiesVerified": 88,
+    "exactPolynomialRootsAndDenominatorExclusions": true,
+    "pythonJavaScriptHashesMatched": 47,
+    "nativeFractions": 0,
+    "separateHumanReviewer": false
+  },
+  "resolvedSourceFindings": [
+    {
+      "sourceId": "4aad7a8c53b157a9",
+      "issue": "The previous linked edition core-balance-two-sides has variables on both sides, unlike the saved single unknown multiplier 14x=98.",
+      "resolution": "Added single-unknown-multiplier, retaining the old different-skill edition as additional material. This is 47 editions but only 46 newly covered occurrences."
+    }
+  ],
+  "evidence": [
+    {
+      "editionId": "grade5-equations-5f36b87daa3ddd68",
+      "rewritten": {
+        "printedNumbers": [
+          "59",
+          "32"
+        ],
+        "printedOrIndependentlyConstructedEquation": "z − 59 = 32",
+        "admissibleRoots": [
+          "91"
+        ],
+        "answer": "91"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "48",
+          "27"
+        ],
+        "printedOrIndependentlyConstructedEquation": "x - 48 = 27",
+        "admissibleRoots": [
+          "75"
+        ],
+        "answer": "75"
+      }
+    },
+    {
+      "editionId": "grade5-equations-c5829e7b1cac4e86",
+      "rewritten": {
+        "printedNumbers": [
+          "84",
+          "7"
+        ],
+        "answer": "Бөлінгішті бөліндіге бөлеміз",
+        "exampleRoot": "12"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "56",
+          "8"
+        ],
+        "answer": "Бөлінгішті бөліндіге бөлу керек",
+        "exampleRoot": "7"
+      }
+    },
+    {
+      "editionId": "grade5-equations-32f4018b5309929a",
+      "rewritten": {
+        "printedNumbers": [
+          "27",
+          "27"
+        ],
+        "printedOrIndependentlyConstructedEquation": "t + 27 = 27",
+        "admissibleRoots": [
+          "0"
+        ],
+        "answer": "0"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "19",
+          "19"
+        ],
+        "printedOrIndependentlyConstructedEquation": "x + 19 = 19",
+        "admissibleRoots": [
+          "0"
+        ],
+        "answer": "0"
+      }
+    },
+    {
+      "editionId": "grade5-equations-2e3a9554fe989ca0",
+      "rewritten": {
+        "printedNumbers": [
+          "18",
+          "47",
+          "29"
+        ],
+        "printedOrIndependentlyConstructedEquation": "r − 18 = 47",
+        "admissibleRoots": [
+          "65"
+        ],
+        "answer": "Қате, түбірі 65",
+        "rejectedProposed": "29"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "15",
+          "40",
+          "25"
+        ],
+        "printedOrIndependentlyConstructedEquation": "x - 15 = 40",
+        "admissibleRoots": [
+          "55"
+        ],
+        "answer": "Қате, түбірі $55$",
+        "rejectedProposed": "25"
+      }
+    },
+    {
+      "editionId": "grade5-equations-55d2e89d55239d52",
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "13",
+          "75"
+        ],
+        "printedOrIndependentlyConstructedEquation": "4 × y − 13 = 75",
+        "admissibleRoots": [
+          "22"
+        ],
+        "answer": "22"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "11",
+          "40"
+        ],
+        "printedOrIndependentlyConstructedEquation": "3x - 11 = 40",
+        "admissibleRoots": [
+          "17"
+        ],
+        "answer": "17"
+      }
+    },
+    {
+      "editionId": "grade5-equations-2d87ecc8a4d9fe6c",
+      "rewritten": {
+        "printedNumbers": [],
+        "answer": "z + 9 = 22"
+      },
+      "savedSource": {
+        "printedNumbers": [],
+        "answer": "$x + 7 = 15$"
+      }
+    },
+    {
+      "editionId": "grade5-equations-3c9231282618be0a",
+      "rewritten": {
+        "printedNumbers": [
+          "8"
+        ],
+        "answer": "4 × z = 32",
+        "everyMCQSubstitution": [
+          {
+            "equation": "z − 8 = 2",
+            "holds": false,
+            "left": "0",
+            "right": "2"
+          },
+          {
+            "equation": "40 ÷ z = 6",
+            "holds": false,
+            "left": "5",
+            "right": "6"
+          },
+          {
+            "equation": "z + 8 = 18",
+            "holds": false,
+            "left": "16",
+            "right": "18"
+          },
+          {
+            "equation": "4 × z = 32",
+            "holds": true,
+            "left": "32",
+            "right": "32"
+          }
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "6"
+        ],
+        "answer": "$3x = 18$",
+        "everyMCQSubstitution": [
+          {
+            "equation": "$x + 6 = 10$",
+            "holds": false,
+            "left": "12",
+            "right": "10"
+          },
+          {
+            "equation": "$3x = 18$",
+            "holds": true,
+            "left": "18",
+            "right": "18"
+          },
+          {
+            "equation": "$x - 6 = 1$",
+            "holds": false,
+            "left": "0",
+            "right": "1"
+          },
+          {
+            "equation": "$20 : x = 4$",
+            "holds": false,
+            "left": "10/3",
+            "right": "4"
+          }
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-equations-4d541e6a74843083",
+      "rewritten": {
+        "printedNumbers": [
+          "16",
+          "29"
+        ],
+        "answer": "Айырма мен азайтқышты қосамыз",
+        "exampleRoot": "45"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "12",
+          "30"
+        ],
+        "answer": "Айырмаға азайтқышты қосу керек",
+        "exampleRoot": "42"
+      }
+    },
+    {
+      "editionId": "grade5-equations-e5da4eaf160c6040",
+      "rewritten": {
+        "printedNumbers": [
+          "124",
+          "79"
+        ],
+        "printedOrIndependentlyConstructedEquation": "124 − p = 79",
+        "admissibleRoots": [
+          "45"
+        ],
+        "answer": "45"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "93",
+          "58"
+        ],
+        "printedOrIndependentlyConstructedEquation": "93 - x = 58",
+        "admissibleRoots": [
+          "35"
+        ],
+        "answer": "35"
+      }
+    },
+    {
+      "editionId": "grade5-equations-63cc9997beba48f3",
+      "rewritten": {
+        "printedNumbers": [
+          "14",
+          "16"
+        ],
+        "printedOrIndependentlyConstructedEquation": "n ÷ 14 = 16",
+        "admissibleRoots": [
+          "224"
+        ],
+        "answer": "224"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "12",
+          "15"
+        ],
+        "printedOrIndependentlyConstructedEquation": "x : 12 = 15",
+        "admissibleRoots": [
+          "180"
+        ],
+        "answer": "180"
+      }
+    },
+    {
+      "editionId": "grade5-equations-c0ff86dd60f12441",
+      "rewritten": {
+        "printedNumbers": [
+          "15"
+        ],
+        "answer": "75 ÷ x = 5",
+        "everyMCQSubstitution": [
+          {
+            "equation": "75 ÷ x = 5",
+            "holds": true,
+            "left": "5",
+            "right": "5"
+          },
+          {
+            "equation": "4 × x = 15",
+            "holds": false,
+            "left": "60",
+            "right": "15"
+          },
+          {
+            "equation": "x + 15 = 40",
+            "holds": false,
+            "left": "30",
+            "right": "40"
+          },
+          {
+            "equation": "x − 6 = 15",
+            "holds": false,
+            "left": "9",
+            "right": "15"
+          }
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "12"
+        ],
+        "answer": "$48 : x = 4$",
+        "everyMCQSubstitution": [
+          {
+            "equation": "$x + 12 = 30$",
+            "holds": false,
+            "left": "24",
+            "right": "30"
+          },
+          {
+            "equation": "$x - 4 = 12$",
+            "holds": false,
+            "left": "8",
+            "right": "12"
+          },
+          {
+            "equation": "$48 : x = 4$",
+            "holds": true,
+            "left": "4",
+            "right": "4"
+          },
+          {
+            "equation": "$3x = 12$",
+            "holds": false,
+            "left": "36",
+            "right": "12"
+          }
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-equations-f6b16084b59dd493",
+      "rewritten": {
+        "printedNumbers": [
+          "308",
+          "14"
+        ],
+        "printedOrIndependentlyConstructedEquation": "308 ÷ x = 14",
+        "admissibleRoots": [
+          "22"
+        ],
+        "answer": "22"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "216",
+          "9"
+        ],
+        "printedOrIndependentlyConstructedEquation": "216 : x = 9",
+        "admissibleRoots": [
+          "24"
+        ],
+        "answer": "24"
+      }
+    },
+    {
+      "editionId": "grade5-equations-c3c93cdc752f836b",
+      "rewritten": {
+        "printedNumbers": [
+          "21",
+          "7",
+          "112"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x − 21) × 7 = 112",
+        "admissibleRoots": [
+          "37"
+        ],
+        "answer": "37"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "17",
+          "6",
+          "84"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x - 17) \\cdot 6 = 84",
+        "admissibleRoots": [
+          "31"
+        ],
+        "answer": "31"
+      }
+    },
+    {
+      "editionId": "grade5-equations-aab4202161215a2c",
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "60",
+          "348"
+        ],
+        "printedOrIndependentlyConstructedEquation": "4*x+60=348",
+        "admissibleRoots": [
+          "72"
+        ],
+        "answer": "72"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "45",
+          "255",
+          "3"
+        ],
+        "printedOrIndependentlyConstructedEquation": "3*x+45=255",
+        "admissibleRoots": [
+          "70"
+        ],
+        "answer": "70"
+      }
+    },
+    {
+      "editionId": "grade5-equations-c08a82ce0fee1efe",
+      "rewritten": {
+        "printedNumbers": [
+          "6"
+        ],
+        "answer": "(x + 9) × 4 = 60",
+        "everyMCQSubstitution": [
+          {
+            "equation": "(x + 12) ÷ 6 = 2",
+            "holds": false,
+            "left": "3",
+            "right": "2"
+          },
+          {
+            "equation": "(x + 9) × 4 = 60",
+            "holds": true,
+            "left": "60",
+            "right": "60"
+          },
+          {
+            "equation": "(x − 3) × 5 = 20",
+            "holds": false,
+            "left": "15",
+            "right": "20"
+          },
+          {
+            "equation": "54 ÷ (x + 3) = 5",
+            "holds": false,
+            "left": "6",
+            "right": "5"
+          }
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "5"
+        ],
+        "answer": "$(x + 7) \\cdot 3 = 36$",
+        "everyMCQSubstitution": [
+          {
+            "equation": "$(x - 2) \\cdot 4 = 16$",
+            "holds": false,
+            "left": "12",
+            "right": "16"
+          },
+          {
+            "equation": "$40 : (x + 3) = 4$",
+            "holds": false,
+            "left": "5",
+            "right": "4"
+          },
+          {
+            "equation": "$(x + 10) : 5 = 2$",
+            "holds": false,
+            "left": "3",
+            "right": "2"
+          },
+          {
+            "equation": "$(x + 7) \\cdot 3 = 36$",
+            "holds": true,
+            "left": "36",
+            "right": "36"
+          }
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-equations-35998181efa5a69b",
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "680",
+          "3880"
+        ],
+        "answer": "4 × x + 680 = 3880",
+        "costEquation": "4*x+680=3880"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "450",
+          "2850"
+        ],
+        "answer": "$3x + 450 = 2\\,850$",
+        "costEquation": "3*x+450=2850"
+      }
+    },
+    {
+      "editionId": "grade5-equations-73dc7f951fba6d55",
+      "rewritten": {
+        "printedNumbers": [
+          "18",
+          "7",
+          "4",
+          "352"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(18 × y − 7 × y) × 4 = 352",
+        "admissibleRoots": [
+          "8"
+        ],
+        "answer": "8"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "15",
+          "6",
+          "5",
+          "405"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(15y - 6y) \\cdot 5 = 405",
+        "admissibleRoots": [
+          "9"
+        ],
+        "answer": "9"
+      }
+    },
+    {
+      "editionId": "grade5-equations-60fafabf5e92edf8",
+      "rewritten": {
+        "printedNumbers": [
+          "11",
+          "5",
+          "55"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x + 11) × 5 = 55",
+        "admissibleRoots": [
+          "0"
+        ],
+        "answer": "0"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "9",
+          "4",
+          "36"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x + 9) \\cdot 4 = 36",
+        "admissibleRoots": [
+          "0"
+        ],
+        "answer": "0"
+      }
+    },
+    {
+      "editionId": "grade5-equations-e04403953499bc97",
+      "rewritten": {
+        "printedNumbers": [
+          "7",
+          "31",
+          "60"
+        ],
+        "printedOrIndependentlyConstructedEquation": "7*x-31=60",
+        "admissibleRoots": [
+          "13"
+        ],
+        "answer": "13"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "6",
+          "25",
+          "47"
+        ],
+        "printedOrIndependentlyConstructedEquation": "6*x-25=47",
+        "admissibleRoots": [
+          "12"
+        ],
+        "answer": "12"
+      }
+    },
+    {
+      "editionId": "grade5-equations-8813f43149a4a0c2",
+      "rewritten": {
+        "printedNumbers": [
+          "5",
+          "2",
+          "31"
+        ],
+        "answer": [
+          "11",
+          "16"
+        ],
+        "futureAges": [
+          "13",
+          "18"
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "4",
+          "3",
+          "30"
+        ],
+        "answer": [
+          "10",
+          "14"
+        ],
+        "futureAges": [
+          "13",
+          "17"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-equations-4fa67f6d60352b98",
+      "rewritten": {
+        "printedNumbers": [
+          "18",
+          "11"
+        ],
+        "printedOrIndependentlyConstructedEquation": "z + 18 = 11",
+        "admissibleRoots": [],
+        "answer": "Нөл және оң натурал сандар жиынында түбірі жоқ"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "15",
+          "9"
+        ],
+        "printedOrIndependentlyConstructedEquation": "x + 15 = 9",
+        "admissibleRoots": [],
+        "answer": "Натурал сандар мен нөлдің арасында түбірі жоқ"
+      }
+    },
+    {
+      "editionId": "grade5-equations-30068363fb49ce54",
+      "rewritten": {
+        "printedNumbers": [
+          "8",
+          "5",
+          "208"
+        ],
+        "printedOrIndependentlyConstructedEquation": "8 × x + 5 × x = 208",
+        "admissibleRoots": [
+          "16"
+        ],
+        "answer": "16"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "7",
+          "4",
+          "154"
+        ],
+        "printedOrIndependentlyConstructedEquation": "7x + 4x = 154",
+        "admissibleRoots": [
+          "14"
+        ],
+        "answer": "14"
+      }
+    },
+    {
+      "editionId": "grade5-equations-56cf192cb64b05b2",
+      "rewritten": {
+        "printedNumbers": [
+          "9",
+          "5",
+          "7",
+          "1",
+          "9",
+          "7",
+          "5",
+          "2",
+          "9",
+          "35",
+          "3",
+          "35",
+          "9",
+          "4",
+          "26"
+        ],
+        "answer": "3-қадамда",
+        "stepEquivalence": [
+          true,
+          true,
+          false,
+          false
+        ],
+        "correctRoot": "44"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "8",
+          "4",
+          "6",
+          "1",
+          "8",
+          "6",
+          "4",
+          "2",
+          "8",
+          "24",
+          "3",
+          "24",
+          "8",
+          "4",
+          "16"
+        ],
+        "answer": "3-қадамда",
+        "stepEquivalence": [
+          true,
+          true,
+          false,
+          false
+        ],
+        "correctRoot": "32"
+      }
+    },
+    {
+      "editionId": "grade5-equations-318ce4462db409f0",
+      "rewritten": {
+        "printedNumbers": [
+          "35",
+          "8",
+          "9"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x + 35) ÷ 8 = 9",
+        "admissibleRoots": [
+          "37"
+        ],
+        "answer": "37"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "28",
+          "9",
+          "7"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x + 28) : 9 = 7",
+        "admissibleRoots": [
+          "35"
+        ],
+        "answer": "35"
+      }
+    },
+    {
+      "editionId": "grade5-equations-0dde1e072d649339",
+      "rewritten": {
+        "printedNumbers": [
+          "240",
+          "7",
+          "15"
+        ],
+        "printedOrIndependentlyConstructedEquation": "240 ÷ (x − 7) = 15",
+        "admissibleRoots": [
+          "23"
+        ],
+        "answer": "23"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "180",
+          "6",
+          "12"
+        ],
+        "printedOrIndependentlyConstructedEquation": "180 : (x - 6) = 12",
+        "admissibleRoots": [
+          "21"
+        ],
+        "answer": "21"
+      }
+    },
+    {
+      "editionId": "grade5-equations-3dff6661d2a5d6f1",
+      "rewritten": {
+        "printedNumbers": [
+          "58",
+          "7",
+          "26"
+        ],
+        "printedOrIndependentlyConstructedEquation": "x-58=7*26",
+        "admissibleRoots": [
+          "240"
+        ],
+        "answer": "240"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "45",
+          "6",
+          "24"
+        ],
+        "printedOrIndependentlyConstructedEquation": "x-45=6*24",
+        "admissibleRoots": [
+          "189"
+        ],
+        "answer": "189"
+      }
+    },
+    {
+      "editionId": "grade5-equations-2ae6051f3913d489",
+      "rewritten": {
+        "printedNumbers": [],
+        "answer": "15 − z = 19",
+        "allMCQRoots": [
+          [
+            "9"
+          ],
+          [
+            "0"
+          ],
+          [
+            "0"
+          ],
+          []
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [],
+        "answer": "$12 - x = 15$",
+        "allMCQRoots": [
+          [
+            "0"
+          ],
+          [],
+          [
+            "7"
+          ],
+          [
+            "0"
+          ]
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-equations-53c444c373c1bd8b",
+      "rewritten": {
+        "printedNumbers": [
+          "3",
+          "1",
+          "2",
+          "14600",
+          "4",
+          "200"
+        ],
+        "priceLedger": {
+          "basePen": "1000",
+          "notebook": "800",
+          "requestedAlbumOrBook": "4000",
+          "verifiedTotal": "14600"
+        },
+        "answer": "4000"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "2",
+          "1",
+          "3",
+          "11700",
+          "5",
+          "300"
+        ],
+        "priceLedger": {
+          "basePen": "900",
+          "notebook": "600",
+          "requestedAlbumOrBook": "4500",
+          "verifiedTotal": "11700"
+        },
+        "answer": "4500"
+      }
+    },
+    {
+      "editionId": "grade5-equations-13f962f9e60b8946",
+      "rewritten": {
+        "printedNumbers": [
+          "38",
+          "10",
+          "3"
+        ],
+        "futureAges": [
+          "42",
+          "14"
+        ],
+        "answer": "4"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "34",
+          "8",
+          "3"
+        ],
+        "futureAges": [
+          "39",
+          "13"
+        ],
+        "answer": "5"
+      }
+    },
+    {
+      "editionId": "grade5-equations-40d79160487240a4",
+      "rewritten": {
+        "printedNumbers": [
+          "132",
+          "8",
+          "6",
+          "2"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(132 − 8 × x) ÷ a = 6",
+        "admissibleRoots": [
+          "15"
+        ],
+        "answer": "15"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "84",
+          "6",
+          "4",
+          "3"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(84 - 6x) : a = 4",
+        "admissibleRoots": [
+          "12"
+        ],
+        "answer": "12"
+      }
+    },
+    {
+      "editionId": "grade5-equations-1b828f51de170c0e",
+      "rewritten": {
+        "printedNumbers": [
+          "77",
+          "12"
+        ],
+        "yearMonthLedger": {
+          "childYears": "7",
+          "childMonthsAndGrandparentYears": "84",
+          "differenceYears": "77"
+        },
+        "answer": "7"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "66"
+        ],
+        "yearMonthLedger": {
+          "childYears": "6",
+          "childMonthsAndGrandparentYears": "72",
+          "differenceYears": "66"
+        },
+        "answer": "6"
+      }
+    },
+    {
+      "editionId": "grade5-equations-5a754017fc4ec2c1",
+      "rewritten": {
+        "printedNumbers": [
+          "96",
+          "8",
+          "3"
+        ],
+        "transferLedger": {
+          "initialFirst": "32",
+          "initialSecond": "64",
+          "finalFirst": "24",
+          "finalSecond": "72"
+        },
+        "answer": "32"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "72",
+          "9",
+          "2"
+        ],
+        "transferLedger": {
+          "initialFirst": "33",
+          "initialSecond": "39",
+          "finalFirst": "24",
+          "finalSecond": "48"
+        },
+        "answer": "33"
+      }
+    },
+    {
+      "editionId": "grade5-equations-316555335f843f2a",
+      "rewritten": {
+        "printedNumbers": [
+          "0",
+          "9",
+          "9"
+        ],
+        "printedOrIndependentlyConstructedEquation": "z × 0 + 9 = 9",
+        "admissibleRoots": "all",
+        "answer": "Кез келген нөл немесе оң натурал сан — түбір"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "0",
+          "5",
+          "5"
+        ],
+        "printedOrIndependentlyConstructedEquation": "x \\cdot 0 + 5 = 5",
+        "admissibleRoots": "all",
+        "answer": "Кез келген сан түбір болады"
+      }
+    },
+    {
+      "editionId": "grade5-equations-d8a0cfa09b713993",
+      "rewritten": {
+        "printedNumbers": [
+          "9",
+          "16"
+        ],
+        "queueCounts": [
+          "8",
+          "1",
+          "15"
+        ],
+        "answer": "24"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "8",
+          "13"
+        ],
+        "queueCounts": [
+          "7",
+          "1",
+          "12"
+        ],
+        "answer": "20"
+      }
+    },
+    {
+      "editionId": "grade5-equations-55bf82687d799bf4",
+      "rewritten": {
+        "printedNumbers": [
+          "28",
+          "109"
+        ],
+        "printedOrIndependentlyConstructedEquation": "z × z + 28 = 109",
+        "admissibleRoots": [
+          "9"
+        ],
+        "answer": "9"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "21",
+          "70"
+        ],
+        "printedOrIndependentlyConstructedEquation": "x \\cdot x + 21 = 70",
+        "admissibleRoots": [
+          "7"
+        ],
+        "answer": "7"
+      }
+    },
+    {
+      "editionId": "grade5-equations-0760f5a22ca7f4a7",
+      "rewritten": {
+        "printedNumbers": [
+          "9",
+          "6",
+          "54",
+          "0"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x+9)*6-54=0",
+        "admissibleRoots": [
+          "0"
+        ],
+        "answer": "0"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "7",
+          "5",
+          "35",
+          "0"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x+7)*5-35=0",
+        "admissibleRoots": [
+          "0"
+        ],
+        "answer": "0"
+      }
+    },
+    {
+      "editionId": "grade5-equations-78b98be6bcecc5ae",
+      "rewritten": {
+        "printedNumbers": [
+          "310",
+          "4",
+          "14"
+        ],
+        "answer": [
+          "36",
+          "144",
+          "130"
+        ],
+        "orderedPopulationLedger": {
+          "total": "310",
+          "ratio": "4",
+          "less": "14"
+        }
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "225",
+          "3",
+          "20"
+        ],
+        "answer": [
+          "35",
+          "105",
+          "85"
+        ],
+        "orderedPopulationLedger": {
+          "total": "225",
+          "ratio": "3",
+          "less": "20"
+        }
+      }
+    },
+    {
+      "editionId": "grade5-equations-146b6450eb36c06f",
+      "rewritten": {
+        "printedNumbers": [],
+        "answer": "Белгісіздің орнына қойғанда екі жақты тең ететін мәнін"
+      },
+      "savedSource": {
+        "printedNumbers": [],
+        "answer": "Әріптің теңдеуді тура теңдікке айналдыратын мәні"
+      }
+    },
+    {
+      "editionId": "grade5-equations-c9693b15503bdd9a",
+      "rewritten": {
+        "printedNumbers": [
+          "187",
+          "500"
+        ],
+        "printedOrIndependentlyConstructedEquation": "x + 187 = 500",
+        "admissibleRoots": [
+          "313"
+        ],
+        "answer": "313"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "156",
+          "400"
+        ],
+        "printedOrIndependentlyConstructedEquation": "x + 156 = 400",
+        "admissibleRoots": [
+          "244"
+        ],
+        "answer": "244"
+      }
+    },
+    {
+      "editionId": "grade5-equations-8143e321f9952867",
+      "rewritten": {
+        "printedNumbers": [
+          "360",
+          "15"
+        ],
+        "printedOrIndependentlyConstructedEquation": "360 ÷ x = 15",
+        "admissibleRoots": [
+          "24"
+        ],
+        "answer": "24"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "252",
+          "14"
+        ],
+        "printedOrIndependentlyConstructedEquation": "252 : x = 14",
+        "admissibleRoots": [
+          "18"
+        ],
+        "answer": "18"
+      }
+    },
+    {
+      "editionId": "grade5-equations-3c027603acccc9a5",
+      "rewritten": {
+        "printedNumbers": [
+          "29",
+          "7",
+          "16"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x − 29) ÷ 7 = 16",
+        "admissibleRoots": [
+          "141"
+        ],
+        "answer": "141"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "24",
+          "8",
+          "13"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x - 24) : 8 = 13",
+        "admissibleRoots": [
+          "128"
+        ],
+        "answer": "128"
+      }
+    },
+    {
+      "editionId": "grade5-equations-2e6e48c0778bc540",
+      "rewritten": {
+        "printedNumbers": [
+          "35",
+          "8",
+          "280"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x + 35) × 8 = 280",
+        "admissibleRoots": [
+          "0"
+        ],
+        "answer": "0"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "40",
+          "6",
+          "240"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x + 40) \\cdot 6 = 240",
+        "admissibleRoots": [
+          "0"
+        ],
+        "answer": "0"
+      }
+    },
+    {
+      "editionId": "grade5-equations-3fddd95a04995a76",
+      "rewritten": {
+        "printedNumbers": [
+          "5",
+          "384"
+        ],
+        "animalGroups": [
+          "64",
+          "320"
+        ],
+        "answer": "64"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "4",
+          "315"
+        ],
+        "animalGroups": [
+          "63",
+          "252"
+        ],
+        "answer": "63"
+      }
+    },
+    {
+      "editionId": "grade5-equations-f8cea8f95fefc8dc",
+      "rewritten": {
+        "printedNumbers": [
+          "140",
+          "10",
+          "3"
+        ],
+        "classTreeLedger": [
+          "26",
+          "36",
+          "78"
+        ],
+        "answer": "78"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "102",
+          "5",
+          "5",
+          "6",
+          "5",
+          "5",
+          "2",
+          "5"
+        ],
+        "classTreeLedger": [
+          "24",
+          "30",
+          "48"
+        ],
+        "answer": "48"
+      }
+    },
+    {
+      "editionId": "grade5-equations-e892cca787a1498b",
+      "rewritten": {
+        "printedNumbers": [
+          "84",
+          "10"
+        ],
+        "answer": [
+          "52",
+          "32"
+        ],
+        "equalAfter": "42"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "60",
+          "8"
+        ],
+        "answer": [
+          "38",
+          "22"
+        ],
+        "equalAfter": "30"
+      }
+    },
+    {
+      "editionId": "grade5-equations-635dd008d4ced61f",
+      "rewritten": {
+        "printedNumbers": [
+          "17",
+          "3",
+          "27"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x × x + 17) ÷ 3 = 27",
+        "admissibleRoots": [
+          "8"
+        ],
+        "answer": "8"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "11",
+          "5",
+          "12"
+        ],
+        "printedOrIndependentlyConstructedEquation": "(x \\cdot x + 11) : 5 = 12",
+        "admissibleRoots": [
+          "7"
+        ],
+        "answer": "7"
+      }
+    },
+    {
+      "editionId": "grade5-equations-4aad7a8c53b157a9",
+      "rewritten": {
+        "printedNumbers": [
+          "13",
+          "156"
+        ],
+        "printedOrIndependentlyConstructedEquation": "13 × w = 156",
+        "admissibleRoots": [
+          "12"
+        ],
+        "answer": "12"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "14",
+          "98"
+        ],
+        "printedOrIndependentlyConstructedEquation": "14x = 98",
+        "admissibleRoots": [
+          "7"
+        ],
+        "answer": "7"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "editionId": "grade5-equations-5f36b87daa3ddd68",
+      "sha256": "37b15e34fc512898b7f256589bd83b8ba5fecc4cd3955073e160a1f9b7ce88e3",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"59\", \"32\"], \"printedOrIndependentlyConstructedEquation\": \"z − 59 = 32\", \"admissibleRoots\": [\"91\"], \"answer\": \"91\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-c5829e7b1cac4e86",
+      "sha256": "dc38336a83e3b9b75d4b8d818af888d7ce99e36f709bd68275b9afb081e263aa",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"84\", \"7\"], \"answer\": \"Бөлінгішті бөліндіге бөлеміз\", \"exampleRoot\": \"12\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-32f4018b5309929a",
+      "sha256": "d57732a362a0d77aa187c063c51fc974a7c59596a65840357d7e40e6b42a3003",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"27\", \"27\"], \"printedOrIndependentlyConstructedEquation\": \"t + 27 = 27\", \"admissibleRoots\": [\"0\"], \"answer\": \"0\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-2e3a9554fe989ca0",
+      "sha256": "98b58d7861b7f177c4890f26c158d868b29f41a10b261f4cd705ba7098034910",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"18\", \"47\", \"29\"], \"printedOrIndependentlyConstructedEquation\": \"r − 18 = 47\", \"admissibleRoots\": [\"65\"], \"answer\": \"Қате, түбірі 65\", \"rejectedProposed\": \"29\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-55d2e89d55239d52",
+      "sha256": "e7a9d0a78a88ce1d3573ff733b6596c0a7aaa4955b791d4dc4b22ff8781fab0a",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"13\", \"75\"], \"printedOrIndependentlyConstructedEquation\": \"4 × y − 13 = 75\", \"admissibleRoots\": [\"22\"], \"answer\": \"22\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-2d87ecc8a4d9fe6c",
+      "sha256": "f8f1a7467e8b1b2fdfbedcffb032bab48a4aa9a3315f8e5a510e7f4c04324ea9",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [], \"answer\": \"z + 9 = 22\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-3c9231282618be0a",
+      "sha256": "3e4a757736b29c0c13ea2730f490a6cae72bb4bbb1f0d610d2bbf9f975ab094b",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"8\"], \"answer\": \"4 × z = 32\", \"everyMCQSubstitution\": [{\"equation\": \"z − 8 = 2\", \"holds\": false, \"left\": \"0\", \"right\": \"2\"}, {\"equation\": \"40 ÷ z = 6\", \"holds\": false, \"left\": \"5\", \"right\": \"6\"}, {\"equation\": \"z + 8 = 18\", \"holds\": false, \"left\": \"16\", \"right\": \"18\"}, {\"equation\": \"4 × z = 32\", \"holds\": true, \"left\": \"32\", \"right\": \"32\"}]}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-4d541e6a74843083",
+      "sha256": "3bda325b7d6a06cefcb8ff82026c5628c4992595a3469034cdfc8873955254c2",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"16\", \"29\"], \"answer\": \"Айырма мен азайтқышты қосамыз\", \"exampleRoot\": \"45\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-e5da4eaf160c6040",
+      "sha256": "8f13b1fe249e1b8f86edb8e964c03a355f753b1192fa3c6a3921fb82003937c2",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"124\", \"79\"], \"printedOrIndependentlyConstructedEquation\": \"124 − p = 79\", \"admissibleRoots\": [\"45\"], \"answer\": \"45\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-63cc9997beba48f3",
+      "sha256": "759ec1c5f6b431a777fe1115fd186dea2e9398d18c6c2022f92e4d056bfad825",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"14\", \"16\"], \"printedOrIndependentlyConstructedEquation\": \"n ÷ 14 = 16\", \"admissibleRoots\": [\"224\"], \"answer\": \"224\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-c0ff86dd60f12441",
+      "sha256": "ffa512264ea4f15d867030ce7b11e1f5bb1ecb5cddf8c13716ee44e4aa6d4990",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"15\"], \"answer\": \"75 ÷ x = 5\", \"everyMCQSubstitution\": [{\"equation\": \"75 ÷ x = 5\", \"holds\": true, \"left\": \"5\", \"right\": \"5\"}, {\"equation\": \"4 × x = 15\", \"holds\": false, \"left\": \"60\", \"right\": \"15\"}, {\"equation\": \"x + 15 = 40\", \"holds\": false, \"left\": \"30\", \"right\": \"40\"}, {\"equation\": \"x − 6 = 15\", \"holds\": false, \"left\": \"9\", \"right\": \"15\"}]}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-f6b16084b59dd493",
+      "sha256": "b7300631fa1dc6591cd37790dad07cb5de40bcf5ef230805cbbb4893998180b0",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"308\", \"14\"], \"printedOrIndependentlyConstructedEquation\": \"308 ÷ x = 14\", \"admissibleRoots\": [\"22\"], \"answer\": \"22\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-c3c93cdc752f836b",
+      "sha256": "cc2f5eb0fb86a7ae4ac4ee206b62d5a3a7bfd3dc0344fc208cab54f4c282f8d3",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"21\", \"7\", \"112\"], \"printedOrIndependentlyConstructedEquation\": \"(x − 21) × 7 = 112\", \"admissibleRoots\": [\"37\"], \"answer\": \"37\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-aab4202161215a2c",
+      "sha256": "0a10a636676303019e6552389099e739fd193c6ed331abd9a1a26ceb228a49ce",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"60\", \"348\"], \"printedOrIndependentlyConstructedEquation\": \"4*x+60=348\", \"admissibleRoots\": [\"72\"], \"answer\": \"72\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-c08a82ce0fee1efe",
+      "sha256": "0f4c17764d895427a4d0887ed05bca3d6d8e7c6e395dcb929777dfad61d93ec5",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"6\"], \"answer\": \"(x + 9) × 4 = 60\", \"everyMCQSubstitution\": [{\"equation\": \"(x + 12) ÷ 6 = 2\", \"holds\": false, \"left\": \"3\", \"right\": \"2\"}, {\"equation\": \"(x + 9) × 4 = 60\", \"holds\": true, \"left\": \"60\", \"right\": \"60\"}, {\"equation\": \"(x − 3) × 5 = 20\", \"holds\": false, \"left\": \"15\", \"right\": \"20\"}, {\"equation\": \"54 ÷ (x + 3) = 5\", \"holds\": false, \"left\": \"6\", \"right\": \"5\"}]}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-35998181efa5a69b",
+      "sha256": "d648a817731065364b40bb97a4be3a359fa297ba720565903d3fed387a0c04e5",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"680\", \"3880\"], \"answer\": \"4 × x + 680 = 3880\", \"costEquation\": \"4*x+680=3880\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-73dc7f951fba6d55",
+      "sha256": "65b02efe0955552009f69a389d2fc69f3088601cd6416497e6ed9b236a4e7749",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"18\", \"7\", \"4\", \"352\"], \"printedOrIndependentlyConstructedEquation\": \"(18 × y − 7 × y) × 4 = 352\", \"admissibleRoots\": [\"8\"], \"answer\": \"8\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-60fafabf5e92edf8",
+      "sha256": "17e63a4714af11b93a865de50cbf9446c2345f5d9d76af5025d010713a32655b",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"11\", \"5\", \"55\"], \"printedOrIndependentlyConstructedEquation\": \"(x + 11) × 5 = 55\", \"admissibleRoots\": [\"0\"], \"answer\": \"0\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-e04403953499bc97",
+      "sha256": "6eefac8db4a641d682652953828a76bfd8ab9d430cbf991071a8819742cdad9e",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"7\", \"31\", \"60\"], \"printedOrIndependentlyConstructedEquation\": \"7*x-31=60\", \"admissibleRoots\": [\"13\"], \"answer\": \"13\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-8813f43149a4a0c2",
+      "sha256": "7566881e975be763d18fe38c9ca58632e064d4348f1e7295468fb665dabe01fc",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"5\", \"2\", \"31\"], \"answer\": [\"11\", \"16\"], \"futureAges\": [\"13\", \"18\"]}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-4fa67f6d60352b98",
+      "sha256": "a328d621d1a2dc00a75d5a596f8ced131272de9086a1250da3e0a1b2f1c884db",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"18\", \"11\"], \"printedOrIndependentlyConstructedEquation\": \"z + 18 = 11\", \"admissibleRoots\": [], \"answer\": \"Нөл және оң натурал сандар жиынында түбірі жоқ\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-30068363fb49ce54",
+      "sha256": "57f286ed82d5856adc9cba1b376c3b8dc75ab350ca4354f210ed68aa0d63b664",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"8\", \"5\", \"208\"], \"printedOrIndependentlyConstructedEquation\": \"8 × x + 5 × x = 208\", \"admissibleRoots\": [\"16\"], \"answer\": \"16\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-56cf192cb64b05b2",
+      "sha256": "f9f02444693abfcb09ce457cb1d4c9e467e7b7cfc7d43ab80986cc7c7f99421a",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"9\", \"5\", \"7\", \"1\", \"9\", \"7\", \"5\", \"2\", \"9\", \"35\", \"3\", \"35\", \"9\", \"4\", \"26\"], \"answer\": \"3-қадамда\", \"stepEquivalence\": [true, true, false, false], \"correctRoot\": \"44\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-318ce4462db409f0",
+      "sha256": "ee0d4b1fcd834f28f75b448a8a897de9a3cc4e4b67eb0d5ad4509f45f0bc1bf6",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"35\", \"8\", \"9\"], \"printedOrIndependentlyConstructedEquation\": \"(x + 35) ÷ 8 = 9\", \"admissibleRoots\": [\"37\"], \"answer\": \"37\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-0dde1e072d649339",
+      "sha256": "2d44775eac292501c588e6e48edd974a6c2179414610717181511f88c7fde63c",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"240\", \"7\", \"15\"], \"printedOrIndependentlyConstructedEquation\": \"240 ÷ (x − 7) = 15\", \"admissibleRoots\": [\"23\"], \"answer\": \"23\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-3dff6661d2a5d6f1",
+      "sha256": "09ff8a01d22b3a6f111438fb7901953c227426a8e21b2e7327b51d3ac0290850",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"58\", \"7\", \"26\"], \"printedOrIndependentlyConstructedEquation\": \"x-58=7*26\", \"admissibleRoots\": [\"240\"], \"answer\": \"240\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-2ae6051f3913d489",
+      "sha256": "152c34597c837f448aab50e874d4787c98c3dcb32ae45031e92d399ad7078a59",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [], \"answer\": \"15 − z = 19\", \"allMCQRoots\": [[\"9\"], [\"0\"], [\"0\"], []]}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-53c444c373c1bd8b",
+      "sha256": "67b43e619888428933d040a9368320fd2ac474ecc3cc81855ec727607e6f14e4",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"1\", \"2\", \"14600\", \"4\", \"200\"], \"priceLedger\": {\"basePen\": \"1000\", \"notebook\": \"800\", \"requestedAlbumOrBook\": \"4000\", \"verifiedTotal\": \"14600\"}, \"answer\": \"4000\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-13f962f9e60b8946",
+      "sha256": "0b4c3c431e39cd06e359829b22609a84ef2c821112d2a407f317de6f64d9b7b7",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"38\", \"10\", \"3\"], \"futureAges\": [\"42\", \"14\"], \"answer\": \"4\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-40d79160487240a4",
+      "sha256": "556927cb93c816d3b1c5c4d90c7c6f8a0e554100448bc9eab9b2aeb00ae54806",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"132\", \"8\", \"6\", \"2\"], \"printedOrIndependentlyConstructedEquation\": \"(132 − 8 × x) ÷ a = 6\", \"admissibleRoots\": [\"15\"], \"answer\": \"15\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-1b828f51de170c0e",
+      "sha256": "1d15a1df67c25f7032ef731a24de9113ad6954055f1a6616bffea6fd51c728d6",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"77\", \"12\"], \"yearMonthLedger\": {\"childYears\": \"7\", \"childMonthsAndGrandparentYears\": \"84\", \"differenceYears\": \"77\"}, \"answer\": \"7\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-5a754017fc4ec2c1",
+      "sha256": "601711054bab27c8abc52323cbebbd11fddd28ec64312ee4b4a57f3ab825ed84",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"96\", \"8\", \"3\"], \"transferLedger\": {\"initialFirst\": \"32\", \"initialSecond\": \"64\", \"finalFirst\": \"24\", \"finalSecond\": \"72\"}, \"answer\": \"32\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-316555335f843f2a",
+      "sha256": "3092fcbc1e78cb8f569bce9899bd5b0b7009ee026e1cfc0638b72c9bef1cbd90",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"0\", \"9\", \"9\"], \"printedOrIndependentlyConstructedEquation\": \"z × 0 + 9 = 9\", \"admissibleRoots\": \"all\", \"answer\": \"Кез келген нөл немесе оң натурал сан — түбір\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-d8a0cfa09b713993",
+      "sha256": "5c0ceb85ba938ebfd948aaefac3e7ae750c91f350c909f72bd4518317c0953b5",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"9\", \"16\"], \"queueCounts\": [\"8\", \"1\", \"15\"], \"answer\": \"24\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-55bf82687d799bf4",
+      "sha256": "8f1fdd133bed27cc236784a9580131c448cd7071d0d7d069450a48e8d766c7cd",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"28\", \"109\"], \"printedOrIndependentlyConstructedEquation\": \"z × z + 28 = 109\", \"admissibleRoots\": [\"9\"], \"answer\": \"9\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-0760f5a22ca7f4a7",
+      "sha256": "a93281aa4cdea91814dfb0a09274dfa87ad1942dde7c4a2fbd62646dcc604618",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"9\", \"6\", \"54\", \"0\"], \"printedOrIndependentlyConstructedEquation\": \"(x+9)*6-54=0\", \"admissibleRoots\": [\"0\"], \"answer\": \"0\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-78b98be6bcecc5ae",
+      "sha256": "8239e936fc11b95484d188e5bc26098944e3deadd893b83382e8cfc0a043b121",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"310\", \"4\", \"14\"], \"answer\": [\"36\", \"144\", \"130\"], \"orderedPopulationLedger\": {\"total\": \"310\", \"ratio\": \"4\", \"less\": \"14\"}}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-146b6450eb36c06f",
+      "sha256": "9d5722d0a2f9eac9194a94b6ca4a541fce6f4395c0e2cb7713ebc53d9bd1b4c5",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [], \"answer\": \"Белгісіздің орнына қойғанда екі жақты тең ететін мәнін\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-c9693b15503bdd9a",
+      "sha256": "9e4fa4e025c721a974d6d8fb784e81b1e4cc7e472b5359717eec4ab75c9f2338",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"187\", \"500\"], \"printedOrIndependentlyConstructedEquation\": \"x + 187 = 500\", \"admissibleRoots\": [\"313\"], \"answer\": \"313\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-8143e321f9952867",
+      "sha256": "4673e93ae8d7d3db15b4884bb608faeb9f1d7f1fd95aa199a04b86706edcc095",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"360\", \"15\"], \"printedOrIndependentlyConstructedEquation\": \"360 ÷ x = 15\", \"admissibleRoots\": [\"24\"], \"answer\": \"24\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-3c027603acccc9a5",
+      "sha256": "9cb6e1e84eabab9e9bbac8672a3dcc8f7377eaa1d3250e27f40364eaa6a9bcb2",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"29\", \"7\", \"16\"], \"printedOrIndependentlyConstructedEquation\": \"(x − 29) ÷ 7 = 16\", \"admissibleRoots\": [\"141\"], \"answer\": \"141\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-2e6e48c0778bc540",
+      "sha256": "db5479f728783a46cb27768af7e8e456467df23c4be3a87d1a61625484bd405e",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"35\", \"8\", \"280\"], \"printedOrIndependentlyConstructedEquation\": \"(x + 35) × 8 = 280\", \"admissibleRoots\": [\"0\"], \"answer\": \"0\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-3fddd95a04995a76",
+      "sha256": "51b9e349c58028add88d98fc0acd5fce39d174b5cc6e3b99d94070fa9ac253af",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"5\", \"384\"], \"animalGroups\": [\"64\", \"320\"], \"answer\": \"64\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-f8cea8f95fefc8dc",
+      "sha256": "09e7e9cf711e85e0b0302fd26e05581b27004c2edd984ac695195df5a270fd0b",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"140\", \"10\", \"3\"], \"classTreeLedger\": [\"26\", \"36\", \"78\"], \"answer\": \"78\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-e892cca787a1498b",
+      "sha256": "90584f854d8943c4f25bf7f4fbde3f5d1330b149258bcd5ac7d49325f943d2b1",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"84\", \"10\"], \"answer\": [\"52\", \"32\"], \"equalAfter\": \"42\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-635dd008d4ced61f",
+      "sha256": "ae6fc8ae613b55642346fbe0109d84d972ccef539dab0baa821ae7c2dbd3ccdb",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"17\", \"3\", \"27\"], \"printedOrIndependentlyConstructedEquation\": \"(x × x + 17) ÷ 3 = 27\", \"admissibleRoots\": [\"8\"], \"answer\": \"8\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-equations-4aad7a8c53b157a9",
+      "sha256": "e479c60def693131c5652194f16c318c9a9c526414feb93b4f683b4716b792da",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text, official/authored solutions and all MCQs; exact rational polynomial roots with original denominator checks and domains, independent printed word ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"13\", \"156\"], \"printedOrIndependentlyConstructedEquation\": \"13 × w = 156\", \"admissibleRoots\": [\"12\"], \"answer\": \"12\"}"
+      ]
+    }
+  ]
+}

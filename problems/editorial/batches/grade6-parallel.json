@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All10 individually read saved nonvisual grade6topic6.3. Closed author draft pending independent full-content hash review.",
+  "summary": {
+    "editions": 10,
+    "sourceOccurrencesReferenced": 10,
+    "distinctModels": 10,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade6-parallel-183a3f703f4b6694",
+      "modelId": "grade6-parallel-coplanar-distinct-nonintersecting-definition",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json",
+          "sourceId": "183a3f703f4b6694"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.3 nonvisual adaptation; Parallel lines, plane geometry and uniqueness facts deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Бір жазықтықтағы бөлек түзулер, бағыт/ұзындық, сызық саны/аралық саны жеке ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Түзуден тыс нүктеден жалғыз параллель, ортақ перпендикуляр/параллель арқылы қатынас және түзулер арасындағы қосынды сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Екі БӨЛЕК түзудің параллель болуын қай сипаттама дәл анықтайды?",
+      "options": [
+        "Бір нүктеде қиылысып, тік бұрыш жасайды",
+        "Бір жазықтықта жатады және ортақ нүктелері жоқ",
+        "Олардың белгіленген екі кесіндісі бірдей ұзындықта",
+        "Дәл бір ортақ нүктесі бар"
+      ],
+      "answer": "Бір жазықтықта жатады және ортақ нүктелері жоқ",
+      "solution": "Параллель түзулер бір жазықтықта жатады және қиылыспайды, яғни ортақ нүктесі жоқ. Тік бұрыш жасап қиылысу — перпендикулярлық. Бір ортақ нүкте — жай қиылысу. Түзулердегі жекелеген кесінділердің ұзындықтарының теңдігі түзулердің бағыттары туралы қорытынды бермейді.",
+      "calculationVerification": {
+        "answer": "Бір жазықтықта жатады және ортақ нүктелері жоқ",
+        "checks": [
+          "All10saved nonvisual6.3 fullconditions/full officialsolutions/everyMCQ individually read",
+          "Coplanar/distinct requirements, common perpendicular and parallel transitivity, off-line uniqueness explicit",
+          "Parallel direction independent of segment length, true unordered opposite side versus diagonal, gaps not linecount",
+          "Rectangle perpendicular separations and between-lines ADD target preserved; no scans/newcapture; categorical facts honest, closed until external fullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-parallel-7bea3dab92a750a0",
+      "modelId": "grade6-parallel-two-distinct-perpendiculars-common-line",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json",
+          "sourceId": "7bea3dab92a750a0"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.3 nonvisual adaptation; Parallel lines, plane geometry and uniqueness facts deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Бір жазықтықтағы бөлек түзулер, бағыт/ұзындық, сызық саны/аралық саны жеке ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Түзуден тыс нүктеден жалғыз параллель, ортақ перпендикуляр/параллель арқылы қатынас және түзулер арасындағы қосынды сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Жазықтықтағы u, v және r түзулері берілген. u мен v — БӨЛЕК түзулер, u ⟂ r және v ⟂ r. u мен v арасындағы қатынасты таңдаңыз.",
+      "options": [
+        "u ⟂ v",
+        "u мен v міндетті түрде r бойында қиылысады",
+        "u ∥ r және v ∥ r",
+        "u ∥ v"
+      ],
+      "answer": "u ∥ v",
+      "solution": "Бір жазықтықтағы бір түзуге перпендикуляр екі бөлек түзу өзара параллель. Сондықтан u ∥ v. u мен v қиылысса, бір нүкте арқылы r-ге екі бөлек перпендикуляр өтер еді, бұл мүмкін емес. Екеуі де r-ді қияды, сондықтан r-ге параллель емес.",
+      "calculationVerification": {
+        "answer": "u ∥ v",
+        "checks": [
+          "All10saved nonvisual6.3 fullconditions/full officialsolutions/everyMCQ individually read",
+          "Coplanar/distinct requirements, common perpendicular and parallel transitivity, off-line uniqueness explicit",
+          "Parallel direction independent of segment length, true unordered opposite side versus diagonal, gaps not linecount",
+          "Rectangle perpendicular separations and between-lines ADD target preserved; no scans/newcapture; categorical facts honest, closed until external fullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-parallel-bc2c82d86e4e0dfd",
+      "modelId": "grade6-parallel-nonparallel-model-shared-center",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json",
+          "sourceId": "bc2c82d86e4e0dfd"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.3 nonvisual adaptation; Parallel lines, plane geometry and uniqueness facts deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Бір жазықтықтағы бөлек түзулер, бағыт/ұзындық, сызық саны/аралық саны жеке ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Түзуден тыс нүктеден жалғыз параллель, ортақ перпендикуляр/параллель арқылы қатынас және түзулер арасындағы қосынды сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Түзу сызықтармен идеалдандырып қарастырғанда, қай мысалда берілген екі кесінді ПАРАЛЛЕЛЬ ЕМЕС?",
+      "options": [
+        "Тіктөртбұрыш пішінді баспалдақтың екі бүйір таянышы",
+        "Тіктөртбұрыш терезенің оң және сол жақтауы",
+        "Сағаттың 2:00 кезіндегі ортақ осьтен шығатын екі тілі",
+        "Тіктөртбұрыш парақтың жоғарғы және төменгі жиегі"
+      ],
+      "answer": "Сағаттың 2:00 кезіндегі ортақ осьтен шығатын екі тілі",
+      "solution": "2:00 кезінде екі тіл бір ортақ нүктеден шығып, әртүрлі бағытта жатыр. Олардың бойындағы түзулер сол осьте қиылысады, сондықтан параллель емес. Басқа үш мысалда кесінділер бөлек параллель түзулердің бойында орналасады. Кесінділерді созғанда да қиылыспауын ескеру керек.",
+      "calculationVerification": {
+        "answer": "Сағаттың 2:00 кезіндегі ортақ осьтен шығатын екі тілі",
+        "checks": [
+          "All10saved nonvisual6.3 fullconditions/full officialsolutions/everyMCQ individually read",
+          "Coplanar/distinct requirements, common perpendicular and parallel transitivity, off-line uniqueness explicit",
+          "Parallel direction independent of segment length, true unordered opposite side versus diagonal, gaps not linecount",
+          "Rectangle perpendicular separations and between-lines ADD target preserved; no scans/newcapture; categorical facts honest, closed until external fullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-parallel-27c0cc728d58348e",
+      "modelId": "grade6-parallel-two-rectangle-separations-to-perimeter",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "width": 7,
+        "height": 13
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json",
+          "sourceId": "27c0cc728d58348e"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.3 nonvisual adaptation; Parallel lines, plane geometry and uniqueness facts deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Бір жазықтықтағы бөлек түзулер, бағыт/ұзындық, сызық саны/аралық саны жеке ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Түзуден тыс нүктеден жалғыз параллель, ортақ перпендикуляр/параллель арқылы қатынас және түзулер арасындағы қосынды сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Тіктөртбұрыштың қарама-қарсы қабырғаларының бір жұбының арақашықтығы 7 см, екінші жұбыныкі 13 см. Оның ПЕРИМЕТРІ неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "answer": "40",
+      "solution": "Параллель қабырғалар арасындағы перпендикуляр арақашықтық оларға іргелес қабырғаның ұзындығына тең. Сондықтан тіктөртбұрыштың екі өлшемі 7 см және 13 см. Периметр 2 × (7 + 13) = 40 см. 20 см — жарты периметр; 91 см² — басқа шама, аудан.",
+      "calculationVerification": {
+        "answer": "40",
+        "checks": [
+          "All10saved nonvisual6.3 fullconditions/full officialsolutions/everyMCQ individually read",
+          "Coplanar/distinct requirements, common perpendicular and parallel transitivity, off-line uniqueness explicit",
+          "Parallel direction independent of segment length, true unordered opposite side versus diagonal, gaps not linecount",
+          "Rectangle perpendicular separations and between-lines ADD target preserved; no scans/newcapture; categorical facts honest, closed until external fullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-parallel-663415844930dbdc",
+      "modelId": "grade6-parallel-parallel-length-independent-equal-or-unequal",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "short": 3,
+        "long": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json",
+          "sourceId": "663415844930dbdc"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.3 nonvisual adaptation; Parallel lines, plane geometry and uniqueness facts deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Бір жазықтықтағы бөлек түзулер, бағыт/ұзындық, сызық саны/аралық саны жеке ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Түзуден тыс нүктеден жалғыз параллель, ортақ перпендикуляр/параллель арқылы қатынас және түзулер арасындағы қосынды сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Екі кесінді параллель түзулердің бойында жатыр. Олардың ҰЗЫНДЫҚТАРЫ туралы қандай қорытынды міндетті түрде дұрыс?",
+      "options": [
+        "Ұзындықтары міндетті түрде тең",
+        "Олар ешқашан тең болмайды",
+        "Тең болуы да, әртүрлі болуы да мүмкін",
+        "Тек квадратта ғана тең бола алады"
+      ],
+      "answer": "Тең болуы да, әртүрлі болуы да мүмкін",
+      "solution": "Параллельдік бағытқа байланысты, ұзындыққа шектеу қоймайды. Екі параллель түзуден 3 см және 8 см кесінді алсақ, олар параллель, бірақ тең емес. Екі түзуден де 3 см алсақ, тең параллель кесінділер шығады. Бұл үшін квадрат болуы міндетті емес.",
+      "calculationVerification": {
+        "answer": "Тең болуы да, әртүрлі болуы да мүмкін",
+        "checks": [
+          "All10saved nonvisual6.3 fullconditions/full officialsolutions/everyMCQ individually read",
+          "Coplanar/distinct requirements, common perpendicular and parallel transitivity, off-line uniqueness explicit",
+          "Parallel direction independent of segment length, true unordered opposite side versus diagonal, gaps not linecount",
+          "Rectangle perpendicular separations and between-lines ADD target preserved; no scans/newcapture; categorical facts honest, closed until external fullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-parallel-9944645d60b9d891",
+      "modelId": "grade6-parallel-off-line-point-unique-parallel",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json",
+          "sourceId": "9944645d60b9d891"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.3 nonvisual adaptation; Parallel lines, plane geometry and uniqueness facts deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Бір жазықтықтағы бөлек түзулер, бағыт/ұзындық, сызық саны/аралық саны жеке ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Түзуден тыс нүктеден жалғыз параллель, ортақ перпендикуляр/параллель арқылы қатынас және түзулер арасындағы қосынды сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Евклид жазықтығындағы Q нүктесі s түзуінде ЖАТПАЙДЫ. Q арқылы s-ке параллель неше ӘРТҮРЛІ түзу өтеді?",
+      "options": [
+        "Екі",
+        "Бірде-бір",
+        "Шексіз көп",
+        "Дәл бір"
+      ],
+      "answer": "Дәл бір",
+      "solution": "Түзуде жатпайтын нүкте арқылы оған параллель дәл бір түзу өтеді. Q арқылы өтетін басқа бағыттағы кез келген түзу s-пен қиылысады. Q-дың s бойында жатпайтыны маңызды: берілген түзуге беттескен түзуді бөлек параллель түзу деп санамаймыз.",
+      "calculationVerification": {
+        "answer": "Дәл бір",
+        "checks": [
+          "All10saved nonvisual6.3 fullconditions/full officialsolutions/everyMCQ individually read",
+          "Coplanar/distinct requirements, common perpendicular and parallel transitivity, off-line uniqueness explicit",
+          "Parallel direction independent of segment length, true unordered opposite side versus diagonal, gaps not linecount",
+          "Rectangle perpendicular separations and between-lines ADD target preserved; no scans/newcapture; categorical facts honest, closed until external fullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-parallel-9089692f4621155d",
+      "modelId": "grade6-parallel-coplanar-distinct-parallel-transitivity",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json",
+          "sourceId": "9089692f4621155d"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.3 nonvisual adaptation; Parallel lines, plane geometry and uniqueness facts deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Бір жазықтықтағы бөлек түзулер, бағыт/ұзындық, сызық саны/аралық саны жеке ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Түзуден тыс нүктеден жалғыз параллель, ортақ перпендикуляр/параллель арқылы қатынас және түзулер арасындағы қосынды сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Бір жазықтықтағы p, q, r — үшеуі де БӨЛЕК түзулер. p ∥ q және q ∥ r. Қандай қорытынды шығады?",
+      "options": [
+        "p мен r бір нүктеде қиылысады",
+        "Қатынасын анықтау мүмкін емес",
+        "p ⟂ r",
+        "p ∥ r"
+      ],
+      "answer": "p ∥ r",
+      "solution": "Үшінші түзуге параллель екі бөлек түзу өзара параллель. p мен r қиылысады десек, сол нүкте арқылы q-ға параллель екі бөлек түзу өтер еді. Бір нүктеден берілген түзуге жалғыз параллель өтетіндіктен, мұндай қиылысу мүмкін емес. Демек p ∥ r.",
+      "calculationVerification": {
+        "answer": "p ∥ r",
+        "checks": [
+          "All10saved nonvisual6.3 fullconditions/full officialsolutions/everyMCQ individually read",
+          "Coplanar/distinct requirements, common perpendicular and parallel transitivity, off-line uniqueness explicit",
+          "Parallel direction independent of segment length, true unordered opposite side versus diagonal, gaps not linecount",
+          "Rectangle perpendicular separations and between-lines ADD target preserved; no scans/newcapture; categorical facts honest, closed until external fullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-parallel-c761397f0b67a529",
+      "modelId": "grade6-parallel-equal-gap-lines-endpoint-indices",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "spacing": 9,
+        "start": 2,
+        "end": 9
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json",
+          "sourceId": "c761397f0b67a529"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.3 nonvisual adaptation; Parallel lines, plane geometry and uniqueness facts deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Бір жазықтықтағы бөлек түзулер, бағыт/ұзындық, сызық саны/аралық саны жеке ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Түзуден тыс нүктеден жалғыз параллель, ортақ перпендикуляр/параллель арқылы қатынас және түзулер арасындағы қосынды сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Парақта аралары бірдей параллель жолақ сызықтары жоғарыдан төмен қарай нөмірленген. Көрші екі сызықтың перпендикуляр арақашықтығы 9 мм. 2-сызықтан 9-сызыққа дейінгі арақашықтық неше миллиметр? Жауапқа тек санды жазыңыз.",
+      "answer": "63",
+      "solution": "Аралық саны шеткі нөмірлердің айырмасы: 9 - 2 = 7. Әр аралық 9 мм, сондықтан 7 × 9 = 63 мм. Сызықтардың өздерін екі шетін қоса санағанда 8 шығады; оны аралық саны деп алу қате. Арақашықтық сызықтарға перпендикуляр бағытта өлшенеді.",
+      "calculationVerification": {
+        "answer": "63",
+        "checks": [
+          "All10saved nonvisual6.3 fullconditions/full officialsolutions/everyMCQ individually read",
+          "Coplanar/distinct requirements, common perpendicular and parallel transitivity, off-line uniqueness explicit",
+          "Parallel direction independent of segment length, true unordered opposite side versus diagonal, gaps not linecount",
+          "Rectangle perpendicular separations and between-lines ADD target preserved; no scans/newcapture; categorical facts honest, closed until external fullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-parallel-c63a89529ad0320c",
+      "modelId": "grade6-parallel-square-opposite-side-not-diagonal",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json",
+          "sourceId": "c63a89529ad0320c"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.3 nonvisual adaptation; Parallel lines, plane geometry and uniqueness facts deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Бір жазықтықтағы бөлек түзулер, бағыт/ұзындық, сызық саны/аралық саны жеке ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Түзуден тыс нүктеден жалғыз параллель, ортақ перпендикуляр/параллель арқылы қатынас және түзулер арасындағы қосынды сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "K, L, M, N — квадраттың төбелері, шекара бойымен осы ретпен орналасқан. KN қабырғасына параллель БАСҚА ҚАБЫРҒАНЫ таңдаңыз.",
+      "options": [
+        "KL",
+        "MN",
+        "KM",
+        "LM"
+      ],
+      "answer": "LM",
+      "solution": "KN-ге қарама-қарсы қабырға LM, сондықтан LM ∥ KN. KL мен MN — KN-мен тиісінше K және N төбелерінде қиылысатын көршілес қабырғалар. KM — диагональ, ол сұралған басқа қабырға емес.",
+      "calculationVerification": {
+        "answer": "LM",
+        "checks": [
+          "All10saved nonvisual6.3 fullconditions/full officialsolutions/everyMCQ individually read",
+          "Coplanar/distinct requirements, common perpendicular and parallel transitivity, off-line uniqueness explicit",
+          "Parallel direction independent of segment length, true unordered opposite side versus diagonal, gaps not linecount",
+          "Rectangle perpendicular separations and between-lines ADD target preserved; no scans/newcapture; categorical facts honest, closed until external fullcontenthashreview"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-parallel-7e9f355be9235a74",
+      "modelId": "grade6-parallel-interior-point-parallel-distances-add",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "first": 7,
+        "second": 11
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json",
+          "sourceId": "7e9f355be9235a74"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic6.3 nonvisual adaptation; Parallel lines, plane geometry and uniqueness facts deliberately unchanged, not new semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10визуалсыз бастапқы шарт, толық шешім және MCQ жеке оқылды. Бір жазықтықтағы бөлек түзулер, бағыт/ұзындық, сызық саны/аралық саны жеке ажыратылды.",
+        "Жаңа мәтін, таңбалар мен сандық шамалар қолданылды. Түзуден тыс нүктеден жалғыз параллель, ортақ перпендикуляр/параллель арқылы қатынас және түзулер арасындағы қосынды сақталды.",
+        "90°, 180°, 360° және негізгі геометриялық қасиеттер өзгертілмейді; бұлар жаңа мағына саны ретінде көрсетілмейді. Скан/TeX жоқ; сыртқы hash review дейін жабық draft."
+      ],
+      "statement": "Бөлек параллель a және b түзулерінің АРАСЫНДА T нүктесі жатыр. T-дан a-ға дейінгі перпендикуляр қашықтық 7 см, ал b-ға дейінгісі 11 см. Екі түзудің арақашықтығы неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "answer": "18",
+      "solution": "T арқылы түзулерге перпендикуляр жүргіземіз. Ол a мен b-ны H және J нүктелерінде қисын. T екі түзудің арасында болғандықтан H–T–J реті орындалады. Сондықтан HJ = HT + TJ = 7 + 11 = 18 см. Қашықтықтарды азайту T екі түзудің бір жағында жатқан басқа жағдайға тиесілі.",
+      "calculationVerification": {
+        "answer": "18",
+        "checks": [
+          "All10saved nonvisual6.3 fullconditions/full officialsolutions/everyMCQ individually read",
+          "Coplanar/distinct requirements, common perpendicular and parallel transitivity, off-line uniqueness explicit",
+          "Parallel direction independent of segment length, true unordered opposite side versus diagonal, gaps not linecount",
+          "Rectangle perpendicular separations and between-lines ADD target preserved; no scans/newcapture; categorical facts honest, closed until external fullcontenthashreview"
+        ]
+      }
+    }
+  ]
+}

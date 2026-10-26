@@ -1,34 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import fs from 'node:fs/promises';
-import path from 'node:path';
-
-// These offline reference diagrams are kept for editorial checks, not deployment.
-// Vite otherwise copies every public/ file even when no screen imports it.
-function omitSourceArchive() {
-  let outDir, publicDir;
-  return {
-    name: 'omit-offline-source-archive', apply: 'build',
-    configResolved(config) {
-      outDir = path.resolve(config.root, config.build.outDir);
-      publicDir = config.publicDir;
-    },
-    async closeBundle() {
-      if (!publicDir) return;
-      await fs.cp(publicDir, outDir, {
-        recursive: true,
-        filter(source) {
-          const relative = path.relative(publicDir, source).split(path.sep).join('/');
-          return !/^(?:figures\/zerek|figures\/zerek-courses)(?:\/|$)/.test(relative);
-        },
-      });
-    },
-  };
-}
+import { privateContentBoundary } from './privateContent.js';
 
 // Фронтенд обращается к бэкенду по /api (проксируется на :4000).
 export default defineConfig({
-  plugins: [react(), omitSourceArchive()],
+  plugins: [react(), privateContentBoundary()],
   resolve: { dedupe: ['firebase', '@firebase/app', '@firebase/auth', '@firebase/firestore', 'react', 'react-dom'] },
   build: {
     // Copy through the filtered plugin instead of first duplicating the archive.

@@ -1,0 +1,813 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/batches/grade5-decimal-addition.json",
+  "reviewedAt": "2026-10-24",
+  "manualFindings": [],
+  "resolvedFindings": [
+    {
+      "sourceId": "58b96cd3bbaf7d05",
+      "finding": "Solution called numeric sum7,768 the answer although target asks PLACECOUNT3",
+      "resolution": "Author changed only «Жауаптың өзі» to «Қосындының өзі»; final complete row reread and snapshot other40 unchanged."
+    }
+  ],
+  "scope": "All41 source-addressed grade5topic4.4 nonvisual decimal addition/subtraction adaptations; independent printed exact and digit-ledger review",
+  "columnAudit": {
+    "blocks": 30,
+    "perPlaceEquations": 96,
+    "borrowOperations": [
+      {
+        "operation": "1,56−0,09",
+        "borrowHops": [
+          1
+        ]
+      },
+      {
+        "operation": "9,60−4,38",
+        "borrowHops": [
+          1
+        ]
+      },
+      {
+        "operation": "20,00−0,01",
+        "borrowHops": [
+          3
+        ]
+      },
+      {
+        "operation": "15,0−6,7",
+        "borrowHops": [
+          1,
+          1
+        ]
+      },
+      {
+        "operation": "17,80−3,45",
+        "borrowHops": [
+          1
+        ]
+      },
+      {
+        "operation": "7,25−2,60",
+        "borrowHops": [
+          1
+        ]
+      },
+      {
+        "operation": "4,900−4,089",
+        "borrowHops": [
+          2
+        ]
+      },
+      {
+        "operation": "5,35−2,95",
+        "borrowHops": [
+          1
+        ]
+      },
+      {
+        "operation": "15,00−4,85",
+        "borrowHops": [
+          2
+        ]
+      },
+      {
+        "operation": "10,15−5,70",
+        "borrowHops": [
+          2
+        ]
+      },
+      {
+        "operation": "9,73−0,58",
+        "borrowHops": [
+          1
+        ]
+      },
+      {
+        "operation": "9,52−2,59",
+        "borrowHops": [
+          1,
+          1
+        ]
+      },
+      {
+        "operation": "1,57−0,08",
+        "borrowHops": [
+          1
+        ]
+      },
+      {
+        "operation": "9,40−4,65",
+        "borrowHops": [
+          1,
+          1
+        ]
+      },
+      {
+        "operation": "9,10−3,27",
+        "borrowHops": [
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "entries": [
+    {
+      "editionId": "grade5-decimal-addition-688f4c7272cdd98d",
+      "sha256": "3489fbb4da819d6d2d93e027bb49ccc589b4992d5216b275c0f5c554f5b29af2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Entire ACTUAL expression 6,8 + 3,5 exact integer AST=103/10; all MCQs exact compared, signs/grouping/alignment retained; dedicated independent per-digit ledger validates written carry/borrow blocks. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "91180e989ba3c97de02f51e41b69eaf9251cd01d106729d19e18efbf4a9ccd6b",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-546a96c64a493904",
+      "sha256": "b776a8055508de933117bef9b935a7caae88c0c8d8b98858373486b94db0edb1",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual positive height 39/25m MINUS shorter difference 9/100; result 1,47 м. Opposite addition and difference×10 actual traps checked, nonnegative physical height. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "42dbfddea40d960fa25a1d16c8ab65ee0a1fa687251d5a766f22a602fb3d27ce",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-58b96cd3bbaf7d05",
+      "sha256": "cd6886b639bee49d3ac144d48c81dfcd40664c56ecd6c623d8914bc36d462795",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual sum 671/125+12/5=971/125; first power of10 clearing reduced denominator gives MINIMAL 3 decimal places. Requested PLACECOUNT, not numeric sum; final wording fix explicitly calls 7,768 the SUM. Independently validated 1 written column blocks/4 actual per-place equations.",
+      "sourceCanonicalSha256": "3c568dabf33054d6449996349a38bc214b24558b1f848e5247abfe6b2e08cc81",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-fba46679387a0177",
+      "sha256": "c4727ed7ba2655f23afd680430626d64fd856b87e042e43effbe8cc7251717b1",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Entire ACTUAL expression 9,6 − 4,38 exact integer AST=261/50; all MCQs exact compared, signs/grouping/alignment retained; dedicated independent per-digit ledger validates written carry/borrow blocks. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "bd8a33132f005a51d31566a9fd5c389f39cbc62e58531e097c79963c19ce6a8b",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-802cec3d6ce2f09e",
+      "sha256": "fb7075f53c19b7f68c53364d6d305694095f5d3fd008967192bb2635bac630a1",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Printed ['4,72', '2,28'], exact sum 7 integral, TWO real adjacent fractional carries proved from independent digit ledger; trailing00 removed only after result established. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "765a53ed5cbaf7e521da2c3b01d18455fb7645d4c82766ef36d38e4966ed4124",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-19822675cbb2f4a3",
+      "sha256": "b3d573231dd8b8836255bc2786ed7977536057055ba9be98e7331536c60b68b9",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Full actual sum 293/50, scaled100 exact integer 586; requested SECOND fractional digit 6, not total value or tenths; 0,8 aligns as0,80. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "2e919e7895003b616b6d1b75c32dfd20a954f3b6d3535bf8f66621ef74ce2cea",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-a0191e76ae3066f6",
+      "sha256": "ebcf979636f04f680cc7d2776aa3d281d212f19fe2ceaca6c509d6699c5749b1",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Entire ACTUAL expression 7,04 + 0,6 exact integer AST=191/25; all MCQs exact compared, signs/grouping/alignment retained; dedicated independent per-digit ledger validates written carry/borrow blocks. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "4dc8fdd4b4311652373af7da7a225b68e7619a5da2dc8f648f11ef2c6f4ca2ee",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-fc36e8edfa3af806",
+      "sha256": "91f6852b56aa956e8f394a44ad443bf636a2a47d5a38268ab9d57309def2e6b0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Unknown MINUEND x−92/25=183/25, unique linear x=11; substitution checked. Both fractional carries validated from written actual column block, no subtrahend-role confusion. Independently validated 1 written column blocks/4 actual per-place equations.",
+      "sourceCanonicalSha256": "06b9dcd283af44d6909046061ca1aa3f7bc040cf95453ead3d90cdc639a70a4c",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-90fc9a336f9468a1",
+      "sha256": "379a42e270f85d1843919cd0c49fe82898dc3bf1f94c293e0ec06a69373065e1",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Entire ACTUAL expression 20 − 0,01 exact integer AST=1999/100; all MCQs exact compared, signs/grouping/alignment retained; dedicated independent per-digit ledger validates written carry/borrow blocks. Independently validated 1 written column blocks/4 actual per-place equations.",
+      "sourceCanonicalSha256": "acd6ae882770c1825cbf6bf787cd5f0626a74c8aeafc1c12489a5106d4ad54c2",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-0925ae3f0d96253e",
+      "sha256": "dd2d156ca73a52ca1c95bda0edb24d3ee049837f1823fe5f95ed6a421df36d68",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Entire ACTUAL expression (4,6 + 2,37) + 3,63 exact integer AST=53/5; all MCQs exact compared, signs/grouping/alignment retained; dedicated independent per-digit ledger validates written carry/borrow blocks. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "2c57a3881d5a17147387fb86d385ae3c3aa7c394d66e893449d7c941d5925fc0",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-5e9726041b6c3db2",
+      "sha256": "31dde815ee41508dc29fd75dd33b8d0c4f45b1ccdddd5186a1cd6c61f67cfc38",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Entire ACTUAL expression 15 − 6,7 exact integer AST=83/10; all MCQs exact compared, signs/grouping/alignment retained; dedicated independent per-digit ledger validates written carry/borrow blocks. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "021e1f23f8bc86e948803a3028211beb84f2276969b4c15235f13e415eecaa51",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-8b8269e0d44dafdb",
+      "sha256": "c3ed320c19054ad31d2e82a079a823b085a11cf676388dad6033f0b798672f05",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual two positive masses [Fraction(9, 10), Fraction(13, 20)], sum kg THEN×1000g/kg=1550; requested grams not decimal kilograms, whole carry included. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "be1de6d487d031440370a1f4d3aa7f4854936d139262367749c7417e61a32ec5",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-b9b01daa4e844a6c",
+      "sha256": "34ad2ba50c70d30ec0e8d4b926d93919d247015707d10ba49bd97a3c7e17d9c3",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ACTUAL grouped expression 16,583 − (7,583 + 3,4) + 0,4 evaluated independently by exact AST and expanded a−b−c+d; both negative signs preserved, integer 6. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "67e442c2c24f4b32cb9a6ef338a7c34e34b65808c425661a7dccf9eb97dd7968",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-2bf94f124be2faa2",
+      "sha256": "871a1ae161bfb8daaa853ca631ee17b8eed64fb2bec9050d3d8e73e55c27fe93",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ACTUAL coefficients 18/5+19/4−27/20=7; distributive identity proves coefficient for ALL x, not sampled x. All symbolic MCQs interpreted as coefficient×x, plus-final/omit-final traps exact checked. Independently validated 2 written column blocks/6 actual per-place equations.",
+      "sourceCanonicalSha256": "8877c500594e8b6564288ea32299e1aa153b5e3cf52d542e7cb744fc5c84356b",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-df3aae1ee1f8e520",
+      "sha256": "75f62fe8a3b6ea01ce19cbf7888ec6d271ab1fb468ca9f5806ce4039fd23875f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ALL four actual THREE-item totals [Fraction(121, 20), Fraction(61, 10), Fraction(59, 10), Fraction(121, 20)], capacity INCLUSIVE≤6; flags [False, False, True, False], unique admissible set 1,75 кг; 3,2 кг; 0,95 кг; equality explicitly allowed, no single-item shortcut. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "dabb04dbf6d03a3e3c2ed4a84d1bdc5b6db9301d88feac63e3ad21e29a7d9e72",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-ac20ef3a176a8a0e",
+      "sha256": "6e7ea2525fc54a312c70e1e706eb3e28d83f9fbddc3f9b716ec7df2169720bbb",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual first4 terms imply SAME positive step 3/4; all terms under STRICT 8: [Fraction(21, 5), Fraction(99, 20), Fraction(57, 10), Fraction(129, 20), Fraction(36, 5), Fraction(159, 20)], next 87/10; count 6. Positive step proves no later return below boundary. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "8f8da5cd683b81fb9c8c5ee0b13e9a9c009c7f9f6d489af7677272534b071bb7",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-64f274adc682bafe",
+      "sha256": "ab03f6913d4b16946935459357841d3ec5432689eb74438845017f235ddab4d8",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual STILL water 89/5, current 69/20, requested AGAINST=current subtract, positive speed 14,35 км/сағ; offered downstream sum verified wrong for target. Independently validated 1 written column blocks/4 actual per-place equations.",
+      "sourceCanonicalSha256": "67f7df2db0b9d39e867ec7c7c8008c57368e45ca133c2669526f1e032081db38",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-07afa3029fc78143",
+      "sha256": "a134c7f073156d8e18cbf1ff7504b6cada692eed91538af2c5633da43b2efff5",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual sides a=29/5, b=a+29/20=29/4, c=SECOND−13/5=93/20; all3 strict triangle inequalities hold. Perimeter 177/10; actual omitted-third/wrong-reference-first traps independently checked. Independently validated 2 written column blocks/6 actual per-place equations.",
+      "sourceCanonicalSha256": "be014bc0e6fe0aa4e8176e122724179180fb2355d9993cc5354c379c67b7c0a2",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-6b20274e82853096",
+      "sha256": "a343dbe9c1dec5732f358389ce123358ecd1b5e26ffa5a322aecf000cc0f63d0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ALL four actual values exact ordered, max 49/10, min 4089/1000, difference 811/1000; other digit-count/internal-zero candidates excluded before subtraction. Independently validated 1 written column blocks/4 actual per-place equations.",
+      "sourceCanonicalSha256": "b3bbef5844cbfb0a3123afe6d54c96ca14b23d73dd819ebdd28541a3908f3ce1",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-181bccc87e8de7ea",
+      "sha256": "6aea744dbb105bc205632318b000c68daf09ea50772b638add7388737f38653d",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual (x+117/25)−13/10=569/50, first invert outer subtraction then inner addition: x=8; full substitution, unique coefficient1 linear solution, both unknown roles preserved. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "f6fd2d736d05be7387bc92036255dd9e6deac007d2fcd062e39f59367e1721bf",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-025f9a6036d53012",
+      "sha256": "95f5d121f90c976cf5b56d3a5981d1e3a111460003bcff25618ecdf1a2e8110a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual apples 17/4, pears APPLES+11/10=107/20, grapes PEARS−59/20=12/5; all positive, total 12; second comparison uses named PEARS, not original apples. Independently validated 2 written column blocks/6 actual per-place equations.",
+      "sourceCanonicalSha256": "76e332922babecb57cb877a99ea9a1aa577efdb4e90ff54fb663fd885787cfc0",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-947f1ef6a004c697",
+      "sha256": "f8523185107d93ed25418a6406b82cb11bea71fa4db029d86392dbd987290d15",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual rope 15m minus BOTH cuts 97/20,57/10; remaining 89/20, conservation exact; actual first-remainder and shifted-second-cut traps checked. Independently validated 2 written column blocks/8 actual per-place equations.",
+      "sourceCanonicalSha256": "cd84880f3d9650dade4a6c5fa68889a4c53a132958d9d5df58b362155344b3eb",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-99dc9688d2224523",
+      "sha256": "e788a52da94916c93f3c76eb46f3485010ffa53ad38679e34e7d31b36c4d7999",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual total 571/20, day1 217/20, day2=day1−23/20=97/10, unknown THIRD 8; full3day conservation, no equal division. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "b719fcc11d5bb9ea585e012c5e31d044c63c2a07d48c2a88d346b4abbbeb4d0d",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-0f68e97fb07e3f2a",
+      "sha256": "e08d157b23be4edc1a304c521fc9d63d5090c8c682c6a18f52f7603efd5201ca",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual SUM63/5 and FIRST−SECOND17/5 uniquely give first8, second23/5; both original equations verified, requested larger FIRST, actual smaller/combined remainder traps excluded. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "5a9b2760d35adfdc7ec0cf127e236567cd3527043b186821b3b9753be4cd7dae",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-5b14716c0b902912",
+      "sha256": "f3b1f15cae932b8d2c9dbeb573a54825f78d64e00f8c55104cde793be1d8056e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual down 217/10, up 163/10; unique linear pair still19, current27/10; SUM cancels current, asked STILL not current, both speed equations verified. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "7f1488b360dd4d2d3aa6646637dda7c6301b5cf6c6aa63258705aae2e02609b5",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-e2a45f7d83bcd8ce",
+      "sha256": "d1ac7d59c474055c0a68c910b7dc3d82a2c6209e7d8b69dfdf8d1ce81bbcc0c7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "All ACTUAL pair sums 49/5,109/10,83/10; each counted TWICE yields total29/2; positive unique individual masses A18/5,B31/5,C47/10, all3 equations verified; maximum 6,2 кг. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "a52afe2af06146cefd3d5f093b3d0fbcdfb3f6f8c7d89f169c7f51e0bc58f352",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-6543f36ddf6bebb8",
+      "sha256": "a3ef88b9d79095ccb94c0e6f85fd94cef392ffbe37ef3e272e0f7af20d8ccca8",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ACTUAL ordered transfers1→2 23/10L then2→3 9/10L, final EACH57/10; reversed initials[Fraction(8, 1), Fraction(43, 10), Fraction(24, 5)], forward BOTH steps and conservation171/10L exact; requested original FIRST8. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "e3454ccfc325f2769e386a238e4776a1be91ab668174b610a1d6855d0ccdd687",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-a17df27e552c8107",
+      "sha256": "c38d5b15b0d0e6e0775d7fd95d31d50f2c2f1ff68f9d7fea6c18219525746e88",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ACTUAL expression bounds 4,58 + 3,6=409/50, 18,4 − 2,85=311/20; ALL naturals1…16 evaluated with BOTH STRICT comparisons→[9, 10, 11, 12, 13, 14, 15], count7; no fractional n. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "02a2fdd2661581eacaff5c0af336d0406ce9865ca56b2d9d0e3d95436e0a89f4",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-b20fd92e506cd224",
+      "sha256": "4ebcd4bc4f38f31e45e1372bc6d1a4b390e815c5fbe434eaa84f2a4ed65e1f97",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Entire ACTUAL expression 10,3 − 9,2 + 8,5 − 7,4 + 6,7 − 5,6 + 4,9 − 3,8 + 2,1 exact integer AST=13/2; all MCQs exact compared, signs/grouping/alignment retained; dedicated independent per-digit ledger validates written carry/borrow blocks. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "890c5de92b05b90b9aa1823c2440154865bc65323a250a3af760520a6e4427f7",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-cecf18b5813084f1",
+      "sha256": "a21d110e013f2919dd221fd4df3bf8292863ecc7b5f737d7c75eebac96660be1",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual original29/5 miscopied29/50, wrongsum973/100; recover OTHER=183/20, then replace wrong term→299/20. Independent correction delta261/50 agrees; actual direct-add and other-only traps false. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "132021461891d19df5d40657ba13ea977f6294b400886dec3cde8aa7d1b6193c",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-d30cfde6ff21b978",
+      "sha256": "172f547ed4edbcdcb0519de3219026fc5c00a26d690d6358898b54bc267fc838",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ALL ten actual addends (including INTEGER1and2) parsed from full AST, five opposite pairs [Fraction(3, 1), Fraction(3, 1), Fraction(3, 1), Fraction(3, 1), Fraction(3, 1)], exact sum15; no decimal-only regex omits integer terms. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "e537617f349a36e39cf54100d4e4b766397277de4e18aa0f51da48ce240912c2",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-21eae8506c099029",
+      "sha256": "90c164e84fc3b9ca1ee78ddef264993c2af3e2e4a12819200cf5333b9f476ce0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ALL6 permutations of ACTUAL digits[2, 5, 9], max238/25,min259/100, exact subtraction693/100; both actual adjacent borrow steps checked by independent column ledger; per-digit absolute difference trap remains false. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "dacbe72e5a0eb0053b1881308fbb2f4796ccc62de31d3652b232fcdaf85a637d",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-34322522ce511007",
+      "sha256": "640129040ef0fdbd0d6b7022e27483c46c1095ddc70cc03564116d32f56cce89",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ALL four actual operation/result equalities exact checked; flags[False, False, False, True]. Three deliberately false statements remain false MCQs, correct full equality0,8 + 0,55 = 1,35 selected. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "fb856e5c58826d1e3e9000b02e57e1b08bc3ca6ba62b0236c5a0f76e68081832",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-53e04b053d8c5fac",
+      "sha256": "8845b78b9b701f47570cd0ce71eb5fb5ac07f097bc4efc92ce073698ec25ae26",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ACTUAL cloth10, BOTH expenditures37/10,23/10, complementary pair used6 integral then remaining4; full conservation and positive residual checked. Independently validated 1 written column blocks/2 actual per-place equations.",
+      "sourceCanonicalSha256": "455461040561f29ce3eb6c7e3835138a5f28cc07376fa78bc5af91b6021a5e91",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-a14b6d22cc8abb1d",
+      "sha256": "fd72e5a82d19aec6cba9034964bf80d4d604a7548a04c8ff6df3325cfc4a607b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ALL actual two-number pairs summed exactly→[Fraction(11, 10), Fraction(1, 1), Fraction(23, 50), Fraction(11, 10)], unique SUM10,42 және 0,58; hundredth vs tenth and both carries retained. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "8a9a6f96282b5101853d0a03445115de21965152776f1a135ad5334df0f61704",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-5132d750dbb82d5c",
+      "sha256": "838190d8665ccd5cc8aa7813c948201a60cd455985e78f36db7671307c87bf2c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual firstheight157/100m, Dana=first−2/25=149/100, Erke=DANA+4/25=33/20; requested cm×100=165, second reference not original; borrow and carry each validated. Independently validated 2 written column blocks/6 actual per-place equations.",
+      "sourceCanonicalSha256": "6d73b385339f2d2fa75c0d8968c276d1a54b0b30bf21b3064ccf8b13016d6629",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-37f06b562ef7ac02",
+      "sha256": "1259f945d8ca52102b02feeb0d2ec887c985be23be3ce27faec6529c769c120a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ACTUAL unknown SUBTRAHEND47/5−x=93/20, unique x19/4; exact substitution and opposite unknown-minuend addition trap checked. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "f8de20236661c503d9e19aeefbf1f577f7d2bdcccdc5bacf43ca633de5fa9165",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-9bccae2d964cd936",
+      "sha256": "ece52ad6b8be2152caf5804dfe3b2ce241c47705bc726f4dc06f9d7a201ff0ea",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ALL FOUR actual full expression AST values[Fraction(31, 5), Fraction(123, 20), Fraction(153, 25), Fraction(613, 100)]; maximum value31/5 maps back to EXPRESSION9 − 2,8, not numeric answer string. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "aeb2cf94a9bc192d55668a1e9f324354f060578be99ad60e4e1a5ea5e96c0c24",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-c23ca028ee0e30b7",
+      "sha256": "eb5a73611d7d002d2348969482490889fc271b549f5e2116b6828d996b628066",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual TWO ordered positive seeds, every recurrence term constructed exactly→[Fraction(2, 5), Fraction(7, 10), Fraction(11, 10), Fraction(9, 5), Fraction(29, 10), Fraction(47, 10), Fraction(38, 5), Fraction(123, 10)]; FIRST strict>12 value123/10 is INDEX8. All earlier terms checked; key is position, not value. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "9b2ab8576a60acdf2def49cc114fc00274704d7c9a292494c5168ff2071a0672",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-533917afa262df38",
+      "sha256": "1d611bfeca6e92e74d7fc3e51de10dd4bebbfdf0701eb3c7ba1da64f55ed73e7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "Actual total25, adjacentAB79/5,BC333/20; repeated SECOND b=79/5+333/20−25=149/20, A167/20,C46/5; full equations and all FIRST/THIRD/doublecount actual traps checked. Independently validated 0 written column blocks/0 actual per-place equations.",
+      "sourceCanonicalSha256": "3565b962b5a6f09c042d23753962ac8cb66caebebcb4f8834f24e1373d683f01",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-addition-4e9eaea6dc263fde",
+      "sha256": "df614fa88c563fd40bbfc60fa248d7d7304172825c26ee59d3fc024fba34e6c2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/solutions/everyMCQ read; own exact DISPLAYED integer/Fraction AST, independent per-column actual-digit carry/borrow ledger and full finite domains; no author solver/spec/params",
+      "notes": "ALL ten digits0…9 in actual 5,□4+3,27<9,1 checked exactly; valid[0, 1, 2, 3, 4, 5, 6, 7], GREATEST7, every larger digit rejected. Unknown-addend bound583/100 agrees, equality excluded. Independently validated 1 written column blocks/3 actual per-place equations.",
+      "sourceCanonicalSha256": "bfdf29e91d2caf16c01c28a2fecf3e454e4f95993ca3b8b5e327e3a8171bf2d2",
+      "checks": [
+        "All41 source/new complete solutions and every MCQ manually read",
+        "Exact displayed integer ratios and full AST; no binary floats or omitted integer terms",
+        "Every written aligned-column result, per-place equation and borrow donor/recipient prose checked against own digit ledger",
+        "Positive physical sides/speeds/conservation and named original/second bases verified",
+        "Unknown minuend/subtrahend/addend roles, recurrence INDEX and max EXPRESSION distinguished",
+        "Minimal decimal place wording fix reread after author refreeze"
+      ]
+    }
+  ]
+}

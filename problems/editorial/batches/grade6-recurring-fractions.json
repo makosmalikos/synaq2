@@ -1,0 +1,580 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All14 individually read saved nonvisual grade6topic2.18 level1 sources. Closed author draft until independent full-content hash review.",
+  "summary": {
+    "editions": 14,
+    "sourceOccurrencesReferenced": 14,
+    "distinctModels": 14,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade6-recurring-fractions-06c3528e3fec3dcc",
+      "modelId": "grade6-recurring-fractions-recurring-with-integer-to-mixed",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "whole": 3,
+        "periodDigit": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "06c3528e3fec3dcc"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "3,(7) санын АРАЛАС санға айналдырыңыз.",
+      "options": [
+        "(3 + (7/10))",
+        "(37/9)",
+        "(3 + (7/99))",
+        "(3 + (7/9))"
+      ],
+      "answer": "(3 + (7/9))",
+      "solution": "Бүтін бөлік 3 өзгермейді. Қайталанатын бөлшек бөлік 0,(7) = (7/9), өйткені периодта бір цифр бар. Сондықтан 3,(7) = (3 + (7/9)). Бөлімге 10 жазу шектеулі ондықты, 99 жазу екі цифрлы периодты білдірер еді. Бүтін бөлікті алымдағы период цифрларына жалғап жібермейміз.",
+      "calculationVerification": {
+        "answer": "(3 + (7/9))",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-recurring-fractions-ddbb12c2d1e21a9d",
+      "modelId": "grade6-recurring-fractions-diagnose-finite-denominator-error",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "digit": 6
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "ddbb12c2d1e21a9d"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Әлия 0,(6) санын 0,(6) = (6/10) = (3/5) деп түрлендірді. Оның шешімін дұрыс бағалаған пікірді таңдаңыз.",
+      "options": [
+        "Қате: бөлім 9 болуы керек, 0,(6) = (2/3)",
+        "Қате жоқ, 0,(6) = (3/5)",
+        "Қате: бөлім 99, 0,(6) = (2/33)",
+        "Қате: бөлім 90, 0,(6) = (1/15)"
+      ],
+      "answer": "Қате: бөлім 9 болуы керек, 0,(6) = (2/3)",
+      "solution": "Әлия шексіз қайталанатын цифрды үтірден кейін бір рет қана жазылған цифрмен шатастырған. (6/10) — шектеулі 0,6, ал 0,(6) бұдан үлкен. Бір цифрлы таза периодтың бөлімі 9: (6/9) = (2/3). Бөлім 99 болса 0,(06), 90 болса 0,0(6) деген басқа сандар шығар еді.",
+      "calculationVerification": {
+        "answer": "Қате: бөлім 9 болуы керек, 0,(6) = (2/3)",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-recurring-fractions-c949dbaf5f3562d9",
+      "modelId": "grade6-recurring-fractions-find-unknown-repeating-digit",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "c949dbaf5f3562d9"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "x — бір цифр. 0,(x) = (1/3) болса, x неше? Жауапқа тек санды жазыңыз.",
+      "answer": "3",
+      "solution": "Бір цифрлы таза период үшін 0,(x) = (x/9). Берілген бөлшекті 9 бөліміне келтіреміз: (1/3) = ((1 × 3)/(3 × 3)) = (3/9). Бөлімдер тең болғандықтан x = 3. Алым мен бөлім бірдей 3 санына көбейтілді.",
+      "calculationVerification": {
+        "answer": "3",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-recurring-fractions-69d8d9c0654346b2",
+      "modelId": "grade6-recurring-fractions-two-digit-reduction-asked-denominator",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "period": "24"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "69d8d9c0654346b2"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "0,(24) санын қысқартылмайтын жай бөлшекке айналдырыңыз. Соңғы бөлшектің БӨЛІМІН табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "33",
+      "solution": "Периодта екі цифр, бастапқы бөлім 99: 0,(24) = (24/99). ЕҮОБ(24, 99) = 3, сондықтан (24/99) = (8/33). Бұл бөлшек қысқартылмайды. Алымы 8, бөлімі 33. Жауап: 33. Қысқартуға дейінгі 24 және 99 сандарын жауапқа қолданбаймыз.",
+      "calculationVerification": {
+        "answer": "33",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-recurring-fractions-f60431711660c228",
+      "modelId": "grade6-recurring-fractions-three-digit-pure-recurrence",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "period": "128"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "f60431711660c228"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "0,(128) шексіз периодты санын жай бөлшекке айналдырыңыз.",
+      "options": [
+        "(16/125)",
+        "(128/99)",
+        "(128/999)",
+        "(32/225)"
+      ],
+      "answer": "(128/999)",
+      "solution": "Период 128 үш цифрдан тұрады, сондықтан бөлімде үш 9 жазылады: 0,(128) = (128/999). ЕҮОБ(128, 999) = 1, бөлшек қысқармайды. (16/125) — шектеулі 0,128 саны. 99 бөлімінде 9 саны жеткіліксіз, 900 бөліміндегі нөлдер де таза периодқа сай емес.",
+      "calculationVerification": {
+        "answer": "(128/999)",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-recurring-fractions-9540b10d83ec60ba",
+      "modelId": "grade6-recurring-fractions-pure-recurrence-factor-over-one-ninth",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "digit": 6
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "9540b10d83ec60ba"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "0,(1) = (1/9). 0,(6) саны 0,(1) санынан неше есе үлкен? Жауапқа тек санды жазыңыз.",
+      "answer": "6",
+      "solution": "0,(6) = (2/3), ал 0,(1) = (1/9). «Неше есе» үшін үлкенін кішісіне бөлеміз: (6/9) : (1/9) = (6/9) × 9 = 6. Айырмасын табу бұл сұраққа жауап бермейді.",
+      "calculationVerification": {
+        "answer": "6",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-recurring-fractions-fac8cf5a7942e5c4",
+      "modelId": "grade6-recurring-fractions-unreduced-two-digit-period-denominator",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "examples": [
+          "46",
+          "73"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "fac8cf5a7942e5c4"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "0,(46) және 0,(73) сияқты ЕКІ цифрлы таза периодты бөлшектерді айналдырғанда, қысқартуға ДЕЙІН ортақ ереже бойынша қандай бөлім жазылады?",
+      "options": [
+        "100",
+        "99",
+        "90",
+        "9"
+      ],
+      "answer": "99",
+      "solution": "Екі цифрлы таза период үшін бөлімге екі 9 жазылады: 99. Мысалы, 0,(46) = (46/99). 100 — шектеулі ондыққа, 9 — бір цифрлы периодқа тән. Сұрақ қысқартылған бөлімді емес, ереже бойынша бастапқы бөлімді сұрайды.",
+      "calculationVerification": {
+        "answer": "99",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-recurring-fractions-e8a9708640980aeb",
+      "modelId": "grade6-recurring-fractions-opposite-negative-recurring-fraction",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "digit": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "e8a9708640980aeb"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "-0,(7) санына ҚАРАМА-ҚАРСЫ санды қысқартылған жай бөлшекпен таңдаңыз.",
+      "options": [
+        "-(7/9)",
+        "(7/10)",
+        "(7/9)",
+        "(7/99)"
+      ],
+      "answer": "(7/9)",
+      "solution": "Қарама-қарсы сан алу үшін таңбаны ауыстырамыз: -0,(7) орнына +0,(7). Содан кейін бір цифрлы периодты айналдырамыз: 0,(7) = (7/9) = (7/9). Теріс бөлшек берілген санның өзі, ал (7/10) шектеулі 0,7 саны. (7/99) екі цифрлы 0,(07) периодын білдіреді.",
+      "calculationVerification": {
+        "answer": "(7/9)",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-recurring-fractions-4b290e2e061e929c",
+      "modelId": "grade6-recurring-fractions-select-two-digit-recurring-equality",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "period": "47"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "4b290e2e061e929c"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Периодты ондықты жай бөлшекпен ДӘЛ теңестірген жазуды таңдаңыз.",
+      "options": [
+        "0,(47) = (47/100)",
+        "0,(47) = (47/99)",
+        "0,(47) = (47/90)",
+        "0,(47) = (4/9)"
+      ],
+      "answer": "0,(47) = (47/99)",
+      "solution": "Период 47, яғни екі цифр. Сол себепті 0,(47) = (47/99). 100 бөлімі шектеулі 0,47 санын береді; 90 бөлімі таза периодқа сай емес. Тек бірінші 4 цифрын алып, 9 бөліміне жазу да басқа сан шығарады.",
+      "calculationVerification": {
+        "answer": "0,(47) = (47/99)",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-recurring-fractions-10b07b31d70e3a17",
+      "modelId": "grade6-recurring-fractions-recurring-product-with-natural",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "digit": 3,
+        "multiplier": 27
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "10b07b31d70e3a17"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Дәл мәнін табыңыз: 0,(3) × 27. Жауапқа тек санды жазыңыз.",
+      "answer": "9",
+      "solution": "Периодты санды жай бөлшекке айналдырып қысқартамыз: 0,(3) = (3/9) = (1/3). Енді (1/3) × 27 = (27/3) = 9. Шектеулі 0,3 деп алсақ, 8,1 деген қате шығады; шексіз периодтың мәні одан өзгеше.",
+      "calculationVerification": {
+        "answer": "9",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-recurring-fractions-4d929c41be55ef75",
+      "modelId": "grade6-recurring-fractions-one-digit-recurrence-to-fraction",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "digit": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "4d929c41be55ef75"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "0,(8) санына тең қысқартылмайтын жай бөлшекті таңдаңыз.",
+      "options": [
+        "(8/9)",
+        "(4/5)",
+        "(8/99)",
+        "(1/8)"
+      ],
+      "answer": "(8/9)",
+      "solution": "Период бір цифрдан тұрады. 0,(8) = (8/9), ал ЕҮОБ(8, 9) = 1, сондықтан әрі қарай қысқармайды. (4/5) шектеулі 0,8 саны; (8/99) — 0,(08); (1/8) — 8 санының керісі, бұл басқа есеп.",
+      "calculationVerification": {
+        "answer": "(8/9)",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-recurring-fractions-f5c273eb33499a59",
+      "modelId": "grade6-recurring-fractions-reduced-recurrence-numerator-plus-denominator",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "period": "45"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "f5c273eb33499a59"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "0,(45) санын қысқартылмайтын жай бөлшекке айналдырыңыз. Соңғы бөлшектің алымы мен бөлімінің ҚОСЫНДЫСЫН табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "16",
+      "solution": "Периодта екі цифр, бастапқы бөлім 99: 0,(45) = (45/99). ЕҮОБ(45, 99) = 9, сондықтан (45/99) = (5/11). Бұл бөлшек қысқартылмайды. Алымы 5, бөлімі 11. Жауап: 5 + 11 = 16. Қысқартуға дейінгі 45 және 99 сандарын жауапқа қолданбаймыз.",
+      "calculationVerification": {
+        "answer": "16",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-recurring-fractions-30f444c7e173df8f",
+      "modelId": "grade6-recurring-fractions-two-digit-reduction-asked-numerator",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "period": "72"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "30f444c7e173df8f"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "0,(72) санын қысқартылмайтын жай бөлшекке айналдырыңыз. Соңғы бөлшектің АЛЫМЫН табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "8",
+      "solution": "Периодта екі цифр, бастапқы бөлім 99: 0,(72) = (72/99). ЕҮОБ(72, 99) = 9, сондықтан (72/99) = (8/11). Бұл бөлшек қысқартылмайды. Алымы 8, бөлімі 11. Жауап: 8. Қысқартуға дейінгі 72 және 99 сандарын жауапқа қолданбаймыз.",
+      "calculationVerification": {
+        "answer": "8",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-recurring-fractions-c89bbf93070d0b08",
+      "modelId": "grade6-recurring-fractions-complementary-recurring-digits-sum",
+      "grade": 6,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "first": 2,
+        "second": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-18-level1.json",
+          "sourceId": "c89bbf93070d0b08"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.18 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Бір/екі/үш цифрлы период, бүтін бөлік, қате талдау, нақты қысқарту және сұралған алым/бөлім/қосынды жеке сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. 10/90/99/999 шатастыру, таңба/қарама-қарсы сан, неше есе, белгісіз цифрға 9 бөліміне кеңейту және 0,(9)=1 шекарасы дәл тексерілді.",
+        "Native бөлшек/аралас сан, стандартты үтір/период жақшасы; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "0,(2) + 0,(7) қосындысының дәл мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "1",
+      "solution": "Екі санды жай бөлшекке айналдырамыз: 0,(2) = (2/9), 0,(7) = (7/9). Қосынды (2/9) + (7/9) = (9/9) = 1. Цифрлап жазғанда 0,(9) шығады, ол 1-ге жуық қана емес, дәл 1-ге тең.",
+      "calculationVerification": {
+        "answer": "1",
+        "checks": [
+          "All14saved nonvisual2.18 conditions/fullsolutions/everyMCQ individually read",
+          "Recurring versus finite and whole part versus repeating digits; exact9/99/999 denominator roles retained",
+          "Real reduction before requested numerator/denominator/sum, opposite versus original sign, ratio versus gap, unknown digit denominator scaling checked",
+          "Complement0,(9)=1 boundary kept; draft until separate independent full-content hash review; variants not extra meanings"
+        ]
+      }
+    }
+  ]
+}

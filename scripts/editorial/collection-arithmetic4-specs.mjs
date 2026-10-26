@@ -1,0 +1,30 @@
+// All24 canonical saved nonvisual part4 conditions/fullofficialsolutions/everyMCQ read.
+// Source3/11/25/27 SVG excluded; repeated raw conditions are separate occurrences,
+// not claims of new mathematical meanings.
+export const collection='ce7fe94f-f247-4af4-9701-725e04eac1ba';
+export const arithmetic4Specs=[
+ [1,'different-main-bar-scopes-then-subtraction',{expression:'(3/(15/5)) − ((3/4)/6)'},'(7/8)'],
+ [2,'mixed-division-product-left-to-right',{expression:'(2 + (1/8)) : (3 + (1/8)) × 50'},'34'],
+ [4,'absolute-both-positive-root-sum',{center:8,radius:5},'16'],
+ [5,'two-decimal-divisions-then-sum',{expression:'8,55 : 2,25 + 1,68 : 28'},'3,86'],
+ [6,'inverse-minuend-then-unknown-factor',{coefficient:4,subtract:137,right:391},'132'],
+ [7,'integer-y-both-sides',{equation:'13y + 2 = 16y - 7'},'3'],
+ [8,'equal-variable-coefficients-no-solution',{coefficient:5,insideSubtract:3,rightConstant:2},'Шешімі жоқ'],
+ [9,'duplicate-source-factor-cancellation-new-primes',{numerators:[11,3,2,13,9,2,2,3,11],denominators:[13,3,11,3,8,3,11,3,2]},'(1/2)'],
+ [10,'signed-decimals-positive-final-addend',{expression:'−9,2 + (−7,8) − (−19,4) + 3,6'},'6'],
+ [12,'negative-divisor-modulus-two-roots-sum',{shift:2,negativeDivisor:5,rightNumeratorTenths:36,rightDenominatorTenths:45},'-4'],
+ [13,'integer-x-both-sides',{equation:'47 + 15x = 110 + 8x'},'9'],
+ [14,'nested-unit-fraction-difference-decimal-division',{expression:'((8/11) − (21/44)) : 1,25'},'0,2'],
+ [15,'absolute-affine-inner-negative-coefficient-root-sum',{constant:3,coefficient:4,radius:67},'1,5'],
+ [16,'meters-minus-centimeters',{meters:4,centimeters:85},'315 см'],
+ [17,'mixed-carry-then-borrow-unknown-addend',{leftWhole:4,leftNumerator:7,leftDenominator:18,subtractWhole:2,subtractNumerator:5,subtractDenominator:9,rightWhole:5,rightNumerator:25,rightDenominator:36},'(3 + (31/36))'],
+ [18,'diagnose-one-false-signed-decimal-equality',{choices:['−3,8 − (−4,6) = −8,4','7,4 − 12,1 = −4,7','−16,3 − 5,8 = −22,1','−0,7 − (−10,2) = 9,5']},'−3,8 − (−4,6) = −8,4'],
+ [19,'three-positive-moduli-minus-last',{firstHundredths:345,secondHundredths:215,thirdHundredths:170},'3,9'],
+ [20,'repeated-source-three-denominator-new-equation',{equation:'((12 - 10x)/21) + ((3 - x)/3) = 6 - ((4x + 1)/7)'},'-18'],
+ [21,'sum-of-two-compound-main-fractions',{expression:'((((9,6 : (4/9) + (5 + (1/3)) × 0,75) : 2,56))/((3,6 : (1 + (4/5)) + 5) : (3 + (1/2)))) + (((3 + (1/3)) × 0,18 : 0,4)/((0,75 − (1/12)) × 0,75))'},'8'],
+ [22,'inverse-addend-affine-variable-divisor',{dividend:108,constant:35,coefficient:4,add:42,right:48},'4,25'],
+ [23,'mixed-multiplier-four-inverse-steps',{multiplierWhole:5,multiplierNumerator:1,multiplierDenominator:4,coefficient:7,innerTenths:8,subtractHundredths:413,rightHundredths:1477},'0,4'],
+ [24,'mixed-borrow-product-bracket-plus-quotient',{expression:'(22 − ((14 + (3/8)) − (7 + (5/6))) × (2 + (2/5))) + (10 + (1/4)) : (6 + (5/6))'},'7,8'],
+ [26,'sum-of-two-negative-bracket-equation-roots',{first:'-(5x - 4) - 36 = 7 × (3 - x) + x',second:'42 + 3x = -(9,5 - 2x)'},'1,5'],
+ [28,'three-layer-additive-continued-fraction',{expression:'(4/(3 + (4/(3 + (1/5)))))'},'(16/17)'],
+].map(([number,kind,params,handExpected])=>({number,kind,params,handExpected}));

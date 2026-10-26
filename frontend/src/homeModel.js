@@ -10,8 +10,10 @@ export function bindInitialDiagnostic(previous, result, uid) {
 }
 
 export function attemptTime(at) {
-  const value = at?.toMillis?.() ?? (typeof at?.seconds === 'number' ? at.seconds * 1000 : new Date(at).getTime());
-  return Number.isFinite(value) ? value : 0;
+  try {
+    const value = at?.toMillis?.() ?? (typeof at?.seconds === 'number' ? at.seconds * 1000 : new Date(at).getTime());
+    return Number.isFinite(value) ? value : 0;
+  } catch { return 0; }
 }
 
 export function currentDailyCount(daily, now = new Date()) {
@@ -22,7 +24,8 @@ export function currentDailyCount(daily, now = new Date()) {
 export function homeModel({ attempts = [], diagnostics = [], topics = [], daily, wallet,
   pendingTraining = false, pendingDiagnostic = false, historyReady = false, now = new Date() } = {}) {
   const catalog = new Map(topics.filter((topic) => topic.gradableCount > 0).map((topic) => [topic.id, topic]));
-  const answers = attempts.filter((item) => typeof item.correct === 'boolean')
+  const answers = attempts.filter((item) => item.verified === true && typeof item.correct === 'boolean'
+    && attemptTime(item.at) > 0 && attemptTime(item.at) <= Number(now))
     .sort((a, b) => attemptTime(b.at) - attemptTime(a.at)).slice(0, HOME_ATTEMPT_LIMIT);
   const groups = new Map();
   for (const answer of answers) {

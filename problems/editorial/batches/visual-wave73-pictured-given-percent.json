@@ -1,0 +1,796 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All11savedvisualgrade5topic6.2; archived sources only, no capture/download/traces; all11source rasters available.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5 topic6.2 sources",
+    "sourceVisualOccurrences": 11,
+    "addressedNewDrafts": 11,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "unavailableSourceRasters": [],
+    "exactNewSourceIds": [
+      "307b2beb58b02039",
+      "535b216648e9edbc",
+      "594c04f29d37bfd4",
+      "638b412802cb5569",
+      "6398b2379396276c",
+      "67d9a01d74a09bd1",
+      "7b95184c29fd4e40",
+      "ac4d7ef95704bbed",
+      "bed8d6af888e9e30",
+      "c6887079927c605d",
+      "c97f6a8661d884be"
+    ],
+    "distinctModels": 11,
+    "semantics": "Elevenaddressedpicturedgiven-percenttargets; nativepercentgeometry/knownwhole, newquantitynotrawpercent, changedbasisandgeometricarea/perimeterroles preserved."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave73-area-seven-hundred-thirty-one",
+      "modelId": "visual-wave73-shaded-hundred-grid-area-from-whole",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "easy",
+      "params": {
+        "scene": "grid",
+        "whole": 700,
+        "rows": 10,
+        "cols": 10,
+        "blue": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "yellow": []
+      },
+      "answer": "217",
+      "sourceRefs": [
+        {
+          "sourceId": "307b2beb58b02039",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-2-level1.json#3",
+      "sourceCanonicalSha256": "547a5b5e4ea16847c9a64640f9973c5a3cbcf695283c4e3e261e8743d56c7634",
+      "sourceSkill": "Whole700cm²,100cells31blue⇒31%→217cm²; percell7×31crosscheck.",
+      "adaptationChanges": [
+        "Барлық11сақталған5сынып6.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;11бастапқырастр2парақтақаралды.11адрестікжаңапараметр/өлшем/сан/өзnativeSVGжасалды, rawөзгермейді.",
+        "100тордағы31%аудан217,бесбөліктіжолақ80%мән360,80сәуледегі45%нүктеR,онбөліктіжолақ30%мән144,бақтүстерініңауданайырмасы520,қоспақалдық35%масса420,бастапқыбаға+25%жаңабаға6000,ен40%→аудан360,жаңабүтінді75%→40%мән1080,шаршыәрқабырға+20%→ауданӨСІМ275,екіқабырға+25%/−20%→жаңаP168.",
+        "Жаңаnativecell/strip/ray/brace/қабырғаөлшемдері, tracedpath/rasterкопияжоқ. Берілгенпайызданнақтышама,жаңабаза,соңғымәнменөзгеріс,ауданменпериметр,пайызсаныменбірліксаны ажыратылды. Source1400қатежауабына«÷100ұмытылған»жалғантүсіндірмесікөшірілмеді:нақтыwhole×paintedPARTCOUNTбез÷partsқатесіберілді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Санның бөлігін пайызбен табу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullofficial/newsolutions/everyMCQ plus2source/native343sheets. Actualcellcolors/wholelabels/stripunitwidths andpercenttexts, scaled80ray20intervals/lettertarget, mixture37/28unknown35geometricwidth, extra25%vsoriginal100%, rescalednewWHOLE75%then40%, actualdimension aspect/units andareaGAINvsnewP. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave73-area-seven-hundred-thirty-one.svg",
+      "verificationModule": "scripts/editorial/visual-wave73-models.mjs",
+      "statement": "Шаршының толық ауданы 700 см². Ол 100 тең торкөзге бөлінген. Суреттегі КӨК бөліктің ауданы неше см²? Алдымен оның бүкіл шаршының қандай бөлігін алатынын анықтаңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Үш толық көк жол 30 және тағы 1 торкөз: барлығы 31, яғни 31%. Боялған аудан 700 × (31/100) = 217 см². Басқа тексеру: бір торкөз 700 ÷ 100 = 7 см², сондықтан 31 × 7 = 217 см². 31 саны — пайыздың саны, ауданның өзі емес.",
+      "figureDescription": "Бүкіл шаршының ауданы 700 см². 10×10 бірдей торкөз. 1-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 2-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 3-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 4-жолдағы көк бағандар: 1. Қалғаны ақ.",
+      "figureSha256": "b3d81b894d1e79472cecab087b281fc741ddc965dcef184fb33cfcaf8bc2c539",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "217",
+        "checks": {
+          "wholeArea": 700,
+          "totalCells": 100,
+          "shaded": 31,
+          "percent": 31,
+          "unitArea": 7,
+          "shadedArea": 217
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave73-four-fifths-of-four-fifty",
+      "modelId": "visual-wave73-equal-strip-parts-value-from-whole",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "easy",
+      "params": {
+        "scene": "strip",
+        "whole": 450,
+        "parts": 5,
+        "blue": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "answer": "360",
+      "sourceRefs": [
+        {
+          "sourceId": "67d9a01d74a09bd1",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-2-level1.json#10",
+      "sourceCanonicalSha256": "fe832d82fde3c91483e93824a6192ef062a9bbe58a4346ecc7a482fe48d60597",
+      "sourceSkill": "Native5equal20%parts,4blue80%of450=360; wholediv5then×4.",
+      "adaptationChanges": [
+        "Барлық11сақталған5сынып6.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;11бастапқырастр2парақтақаралды.11адрестікжаңапараметр/өлшем/сан/өзnativeSVGжасалды, rawөзгермейді.",
+        "100тордағы31%аудан217,бесбөліктіжолақ80%мән360,80сәуледегі45%нүктеR,онбөліктіжолақ30%мән144,бақтүстерініңауданайырмасы520,қоспақалдық35%масса420,бастапқыбаға+25%жаңабаға6000,ен40%→аудан360,жаңабүтінді75%→40%мән1080,шаршыәрқабырға+20%→ауданӨСІМ275,екіқабырға+25%/−20%→жаңаP168.",
+        "Жаңаnativecell/strip/ray/brace/қабырғаөлшемдері, tracedpath/rasterкопияжоқ. Берілгенпайызданнақтышама,жаңабаза,соңғымәнменөзгеріс,ауданменпериметр,пайызсаныменбірліксаны ажыратылды. Source1400қатежауабына«÷100ұмытылған»жалғантүсіндірмесікөшірілмеді:нақтыwhole×paintedPARTCOUNTбез÷partsқатесіберілді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Санның бөлігін пайызбен табу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullofficial/newsolutions/everyMCQ plus2source/native343sheets. Actualcellcolors/wholelabels/stripunitwidths andpercenttexts, scaled80ray20intervals/lettertarget, mixture37/28unknown35geometricwidth, extra25%vsoriginal100%, rescalednewWHOLE75%then40%, actualdimension aspect/units andareaGAINvsnewP. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave73-four-fifths-of-four-fifty.svg",
+      "verificationModule": "scripts/editorial/visual-wave73-models.mjs",
+      "statement": "Бүкіл жолақ суретте жазылған санға сәйкес келеді. Жолақ тең бөліктерге бөлінген, әр бөліктің пайызы көрсетілген. КӨК бөліктер бірге қандай санды білдіреді? Жауапқа тек санды жазыңыз.",
+      "solution": "Бүкіл жолақ 450, әрқайсысы 20% болатын 5 тең бөлік бар. Төртеуі көк: 4 × 20% = 80%. Мәні 450 × (80/100) = 360. Бір бөлік 450 ÷ 5 = 90, төрт бөлік 90 × 4 = 360. Қалған ақ бөлік 90; 360 + 90 = 450.",
+      "figureDescription": "Бүкіл жолақ 450 санына сәйкес. Ол 5 тең бөлікке бөлінген. Әр бөліктің ішінде 20% жазылған. Солдан санағанда алғашқы 4 бөлігі көк.",
+      "figureSha256": "7c7c693e34131d8384dbfdac2883ceedd99498ab578df8e9d703f16cdb9f35b1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "360",
+        "checks": {
+          "whole": 450,
+          "parts": 5,
+          "unitPercent": 20,
+          "blue": 4,
+          "percent": 80,
+          "unitValue": 90,
+          "value": 360,
+          "unpainted": 90,
+          "wrongPartCountProduct": 1800
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave73-point-r-at-forty-five-percent",
+      "modelId": "visual-wave73-percent-coordinate-read-from-scaled-ray",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ray",
+        "max": 80,
+        "parts": 20,
+        "percent": 45,
+        "points": {
+          "P": 6,
+          "R": 9,
+          "Q": 11,
+          "S": 14
+        }
+      },
+      "answer": "R",
+      "sourceRefs": [
+        {
+          "sourceId": "c6887079927c605d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-2-level1.json#11",
+      "sourceCanonicalSha256": "b392e8e9009231551016d927c77e43c72f60e97e16793d0cdc3d9b156581a04b",
+      "sourceSkill": "80×45%=36, actualray20intervalsstep4, P24/R36/Q44/S56; requestedPOINTnotcoordinate.",
+      "adaptationChanges": [
+        "Барлық11сақталған5сынып6.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;11бастапқырастр2парақтақаралды.11адрестікжаңапараметр/өлшем/сан/өзnativeSVGжасалды, rawөзгермейді.",
+        "100тордағы31%аудан217,бесбөліктіжолақ80%мән360,80сәуледегі45%нүктеR,онбөліктіжолақ30%мән144,бақтүстерініңауданайырмасы520,қоспақалдық35%масса420,бастапқыбаға+25%жаңабаға6000,ен40%→аудан360,жаңабүтінді75%→40%мән1080,шаршыәрқабырға+20%→ауданӨСІМ275,екіқабырға+25%/−20%→жаңаP168.",
+        "Жаңаnativecell/strip/ray/brace/қабырғаөлшемдері, tracedpath/rasterкопияжоқ. Берілгенпайызданнақтышама,жаңабаза,соңғымәнменөзгеріс,ауданменпериметр,пайызсаныменбірліксаны ажыратылды. Source1400қатежауабына«÷100ұмытылған»жалғантүсіндірмесікөшірілмеді:нақтыwhole×paintedPARTCOUNTбез÷partsқатесіберілді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Санның бөлігін пайызбен табу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullofficial/newsolutions/everyMCQ plus2source/native343sheets. Actualcellcolors/wholelabels/stripunitwidths andpercenttexts, scaled80ray20intervals/lettertarget, mixture37/28unknown35geometricwidth, extra25%vsoriginal100%, rescalednewWHOLE75%then40%, actualdimension aspect/units andareaGAINvsnewP. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave73-point-r-at-forty-five-percent.svg",
+      "verificationModule": "scripts/editorial/visual-wave73-models.mjs",
+      "options": [
+        "P",
+        "Q",
+        "S",
+        "R"
+      ],
+      "statement": "Сәуледе 0 және 80 сандары, P, R, Q, S нүктелері берілген. Ұсақ аралықтар тең. Қай нүктенің координатасы 80 санының 45%-ына тең? Алдымен санның пайызын есептеп, содан кейін нүктенің әрпін таңдаңыз.",
+      "solution": "80 санының 45%-ы 80 × (45/100) = 36. Сәуледе 0–80 арасы 20 тең аралық: әр аралық 80 ÷ 20 = 4. Нүктелердің орындары P: 6 аралық → 24, R: 9 аралық → 36, Q: 11 аралық → 44, S: 14 аралық → 56. Сондықтан жауап R. Координатаның санын емес, осы санға сәйкес нүктенің әрпін таңдаймыз.",
+      "figureDescription": "0 және 80 белгіленген сан сәулесі, арасында 20 тең аралық. P, R, Q, S нүктелері тиісінше нөлден 6, 9, 11, 14 аралық оңда. Тек осы нүктелердің әріптері және 0, 80 сандары жазылған.",
+      "figureSha256": "5de25c11fbcafd6d70ee626cfabbf0303aa260c2a06cd6543a24b3ba1ab84ac0",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "R",
+        "checks": {
+          "max": 80,
+          "parts": 20,
+          "step": 4,
+          "percent": 45,
+          "target": 36,
+          "pointCoordinates": {
+            "P": 24,
+            "R": 36,
+            "Q": 44,
+            "S": 56
+          }
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave73-three-tenths-of-four-eighty",
+      "modelId": "visual-wave73-ten-strip-part-value-not-percent-or-unpainted",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "easy",
+      "params": {
+        "scene": "strip",
+        "whole": 480,
+        "parts": 10,
+        "blue": [
+          0,
+          1,
+          2
+        ]
+      },
+      "answer": "144",
+      "sourceRefs": [
+        {
+          "sourceId": "ac4d7ef95704bbed",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-2-level1.json#13",
+      "sourceCanonicalSha256": "eb35f14a38737f8d58cac3bf29ced456f25ab834f615e49c749a10d874feb2b9",
+      "sourceSkill": "Native3of10=30%whole480→144;30percentnumber/336unpainted/1440=whole×3missing÷10. Source1400false÷100rationale NOTcopied.",
+      "adaptationChanges": [
+        "Барлық11сақталған5сынып6.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;11бастапқырастр2парақтақаралды.11адрестікжаңапараметр/өлшем/сан/өзnativeSVGжасалды, rawөзгермейді.",
+        "100тордағы31%аудан217,бесбөліктіжолақ80%мән360,80сәуледегі45%нүктеR,онбөліктіжолақ30%мән144,бақтүстерініңауданайырмасы520,қоспақалдық35%масса420,бастапқыбаға+25%жаңабаға6000,ен40%→аудан360,жаңабүтінді75%→40%мән1080,шаршыәрқабырға+20%→ауданӨСІМ275,екіқабырға+25%/−20%→жаңаP168.",
+        "Жаңаnativecell/strip/ray/brace/қабырғаөлшемдері, tracedpath/rasterкопияжоқ. Берілгенпайызданнақтышама,жаңабаза,соңғымәнменөзгеріс,ауданменпериметр,пайызсаныменбірліксаны ажыратылды. Source1400қатежауабына«÷100ұмытылған»жалғантүсіндірмесікөшірілмеді:нақтыwhole×paintedPARTCOUNTбез÷partsқатесіберілді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Санның бөлігін пайызбен табу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullofficial/newsolutions/everyMCQ plus2source/native343sheets. Actualcellcolors/wholelabels/stripunitwidths andpercenttexts, scaled80ray20intervals/lettertarget, mixture37/28unknown35geometricwidth, extra25%vsoriginal100%, rescalednewWHOLE75%then40%, actualdimension aspect/units andareaGAINvsnewP. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave73-three-tenths-of-four-eighty.svg",
+      "verificationModule": "scripts/editorial/visual-wave73-models.mjs",
+      "options": [
+        "30",
+        "144",
+        "336",
+        "1440"
+      ],
+      "statement": "Жолақ 10 тең бөлікке бөлінген. Бүкіл жолақ суреттегі санға сәйкес. КӨК бөліктің мәнін таңдаңыз; пайыздың санын емес, бастапқы санның тиісті бөлігін табу керек.",
+      "solution": "Суреттегі бүтін 480. Он бөліктің үшеуі көк, демек 30%. Көк мән 480 × (30/100) = 144. Бір бөлік 48, үш бөлік 48 × 3 = 144. 30 — пайыздың саны ғана, 336 — ақ бөліктің мәні. 1440 = 480 × 3 — көк бөліктер санына тікелей көбейтіп, он тең бөлікке бөлуді ұмытқан қате; бұл 30%-ды дұрыс есептеу емес. 144 + 336 = 480.",
+      "figureDescription": "Бүкіл жолақ 480 санына сәйкес. Ол 10 тең бөлікке бөлінген. «Әр бөлік — 10%» деген жалпы жазу берілген. Солдан санағанда алғашқы 3 бөлігі көк.",
+      "figureSha256": "35d473277cbd7847039d411950e8f9b43789b417826e9e85ea91ef8defc5277f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "144",
+        "checks": {
+          "whole": 480,
+          "parts": 10,
+          "unitPercent": 10,
+          "blue": 3,
+          "percent": 30,
+          "unitValue": 48,
+          "value": 144,
+          "unpainted": 336,
+          "wrongPartCountProduct": 1440
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave73-garden-yellow-minus-blue",
+      "modelId": "visual-wave73-hundred-grid-area-difference-two-colors",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "grid",
+        "whole": 4000,
+        "rows": 10,
+        "cols": 10,
+        "blue": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "yellow": [
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75
+        ]
+      },
+      "answer": "520",
+      "sourceRefs": [
+        {
+          "sourceId": "638b412802cb5569",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-2-level2.json#4",
+      "sourceCanonicalSha256": "b009c6cc020debfef960454e1bdc759df4bc0bb286f5bc8d0218a06fd1e68883",
+      "sourceSkill": "Whole4000m², BLUE23cells/YELLOW36cells⇒13percentagepointsdifference→520m²; yellow1440/blue920/13rawpercenttraps.",
+      "adaptationChanges": [
+        "Барлық11сақталған5сынып6.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;11бастапқырастр2парақтақаралды.11адрестікжаңапараметр/өлшем/сан/өзnativeSVGжасалды, rawөзгермейді.",
+        "100тордағы31%аудан217,бесбөліктіжолақ80%мән360,80сәуледегі45%нүктеR,онбөліктіжолақ30%мән144,бақтүстерініңауданайырмасы520,қоспақалдық35%масса420,бастапқыбаға+25%жаңабаға6000,ен40%→аудан360,жаңабүтінді75%→40%мән1080,шаршыәрқабырға+20%→ауданӨСІМ275,екіқабырға+25%/−20%→жаңаP168.",
+        "Жаңаnativecell/strip/ray/brace/қабырғаөлшемдері, tracedpath/rasterкопияжоқ. Берілгенпайызданнақтышама,жаңабаза,соңғымәнменөзгеріс,ауданменпериметр,пайызсаныменбірліксаны ажыратылды. Source1400қатежауабына«÷100ұмытылған»жалғантүсіндірмесікөшірілмеді:нақтыwhole×paintedPARTCOUNTбез÷partsқатесіберілді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Санның бөлігін пайызбен табу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullofficial/newsolutions/everyMCQ plus2source/native343sheets. Actualcellcolors/wholelabels/stripunitwidths andpercenttexts, scaled80ray20intervals/lettertarget, mixture37/28unknown35geometricwidth, extra25%vsoriginal100%, rescalednewWHOLE75%then40%, actualdimension aspect/units andareaGAINvsnewP. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave73-garden-yellow-minus-blue.svg",
+      "verificationModule": "scripts/editorial/visual-wave73-models.mjs",
+      "options": [
+        "1440",
+        "920",
+        "520",
+        "13"
+      ],
+      "statement": "Мектеп бағының ауданы 4000 м². Жоспарда ол 100 тең торкөзге бөлінген: көк жерге жалбыз, сары жерге құлпынай егілген. ҚҰЛПЫНАЙ ауданы ЖАЛБЫЗ ауданынан неше м² АРТЫҚ?",
+      "solution": "Көк торкөздер 23, сары торкөздер 36. Айырма 36 − 23 = 13 торкөз, ол бүкіл бақтың 13%-ы. Аудан айырмасы 4000 × (13/100) = 520 м². Жеке аудандар: сары 4000 × (36/100) = 1440 м², көк 4000 × (23/100) = 920 м². Тексеру: 1440 − 920 = 520. 1440 мен 920 тек бір дақылдың ауданы; 13 — пайыз саны, шаршы метр емес.",
+      "figureDescription": "Бүкіл шаршының ауданы 4000 м². 10×10 бірдей торкөз. 1-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 2-жолдағы көк бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 3-жолдағы көк бағандар: 1; 2; 3. 5-жолдағы сары бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 6-жолдағы сары бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 7-жолдағы сары бағандар: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10. 8-жолдағы сары бағандар: 1; 2; 3; 4; 5; 6. Қалғаны ақ.",
+      "figureSha256": "e3445c9461933249d00293276bbe60309f1d9da8d4fbd4f9be8d75234826a840",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "520",
+        "checks": {
+          "wholeArea": 4000,
+          "blue": 23,
+          "yellow": 36,
+          "differencePercent": 13,
+          "blueArea": 920,
+          "yellowArea": 1440,
+          "differenceArea": 520
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave73-mixture-third-share-mass",
+      "modelId": "visual-wave73-missing-percent-complement-then-mass",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "mixture",
+        "whole": 1200,
+        "known": [
+          37,
+          28
+        ],
+        "names": [
+          "Алма",
+          "Алмұрт",
+          "Өрік"
+        ]
+      },
+      "answer": "420",
+      "sourceRefs": [
+        {
+          "sourceId": "535b216648e9edbc",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-2-level2.json#6",
+      "sourceCanonicalSha256": "6cf878545a993f0d1c80dc8c4e43ec7b9ce1509549efab6ae36b90531d36d149",
+      "sourceSkill": "Whole1200g,37%/28%/unknown35%, requestedTHIRDmass420g; other444/336 conservation1200.",
+      "adaptationChanges": [
+        "Барлық11сақталған5сынып6.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;11бастапқырастр2парақтақаралды.11адрестікжаңапараметр/өлшем/сан/өзnativeSVGжасалды, rawөзгермейді.",
+        "100тордағы31%аудан217,бесбөліктіжолақ80%мән360,80сәуледегі45%нүктеR,онбөліктіжолақ30%мән144,бақтүстерініңауданайырмасы520,қоспақалдық35%масса420,бастапқыбаға+25%жаңабаға6000,ен40%→аудан360,жаңабүтінді75%→40%мән1080,шаршыәрқабырға+20%→ауданӨСІМ275,екіқабырға+25%/−20%→жаңаP168.",
+        "Жаңаnativecell/strip/ray/brace/қабырғаөлшемдері, tracedpath/rasterкопияжоқ. Берілгенпайызданнақтышама,жаңабаза,соңғымәнменөзгеріс,ауданменпериметр,пайызсаныменбірліксаны ажыратылды. Source1400қатежауабына«÷100ұмытылған»жалғантүсіндірмесікөшірілмеді:нақтыwhole×paintedPARTCOUNTбез÷partsқатесіберілді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Санның бөлігін пайызбен табу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullofficial/newsolutions/everyMCQ plus2source/native343sheets. Actualcellcolors/wholelabels/stripunitwidths andpercenttexts, scaled80ray20intervals/lettertarget, mixture37/28unknown35geometricwidth, extra25%vsoriginal100%, rescalednewWHOLE75%then40%, actualdimension aspect/units andareaGAINvsnewP. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave73-mixture-third-share-mass.svg",
+      "verificationModule": "scripts/editorial/visual-wave73-models.mjs",
+      "statement": "Кепкен жеміс қоспасының толық массасы 1200 г. Жолақта алма мен алмұрттың үлесі көрсетілген; қалғаны өрік. Қоспада неше грамм ӨРІК бар? Алдымен белгісіз пайызды табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Бүкіл қоспа 100%. Өрік үлесі 100% − 37% − 28% = 35%. Оның массасы 1200 × (35/100) = 420 г. Тексеру: алма 444 г, алмұрт 336 г, өрік 420 г; 444 + 336 + 420 = 1200. 35 пайызын грамм деп бірден алуға болмайды.",
+      "figureDescription": "Бүкіл жолақ — 1200 г. Алма үлесі 37%, алмұрт үлесі 28%, қалған өрік үлесінің орнына сұрақ белгісі қойылған.",
+      "figureSha256": "47afa4230106843e376090562cb54ae95c99df60089ffa95a2434ef2011acb36",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "420",
+        "checks": {
+          "wholeMass": 1200,
+          "knownPercents": [
+            37,
+            28
+          ],
+          "missingPercent": 35,
+          "knownMasses": [
+            444,
+            336
+          ],
+          "requestedMass": 420
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave73-price-four-eight-plus-quarter",
+      "modelId": "visual-wave73-price-increase-original-base-then-new-total",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "increase",
+        "whole": 4800,
+        "increase": 25
+      },
+      "answer": "6000",
+      "sourceRefs": [
+        {
+          "sourceId": "c97f6a8661d884be",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-2-level2.json#9",
+      "sourceCanonicalSha256": "1e7f0ee1c27af3f2bb53da3b80115229b78ce10f73915873766da303007340b2",
+      "sourceSkill": "Original4800₸=100%, extra25%=1200₸, NEW6000₸=125%, notincrease1200noradd25currency.",
+      "adaptationChanges": [
+        "Барлық11сақталған5сынып6.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;11бастапқырастр2парақтақаралды.11адрестікжаңапараметр/өлшем/сан/өзnativeSVGжасалды, rawөзгермейді.",
+        "100тордағы31%аудан217,бесбөліктіжолақ80%мән360,80сәуледегі45%нүктеR,онбөліктіжолақ30%мән144,бақтүстерініңауданайырмасы520,қоспақалдық35%масса420,бастапқыбаға+25%жаңабаға6000,ен40%→аудан360,жаңабүтінді75%→40%мән1080,шаршыәрқабырға+20%→ауданӨСІМ275,екіқабырға+25%/−20%→жаңаP168.",
+        "Жаңаnativecell/strip/ray/brace/қабырғаөлшемдері, tracedpath/rasterкопияжоқ. Берілгенпайызданнақтышама,жаңабаза,соңғымәнменөзгеріс,ауданменпериметр,пайызсаныменбірліксаны ажыратылды. Source1400қатежауабына«÷100ұмытылған»жалғантүсіндірмесікөшірілмеді:нақтыwhole×paintedPARTCOUNTбез÷partsқатесіберілді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Санның бөлігін пайызбен табу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullofficial/newsolutions/everyMCQ plus2source/native343sheets. Actualcellcolors/wholelabels/stripunitwidths andpercenttexts, scaled80ray20intervals/lettertarget, mixture37/28unknown35geometricwidth, extra25%vsoriginal100%, rescalednewWHOLE75%then40%, actualdimension aspect/units andareaGAINvsnewP. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave73-price-four-eight-plus-quarter.svg",
+      "verificationModule": "scripts/editorial/visual-wave73-models.mjs",
+      "statement": "Жолақта тауардың бастапқы бағасы 100% деп берілген. Сары бөлік — бастапқы бағаға қосылған үстеме, оның пайызы жазылған. Тауардың ЖАҢА толық бағасы неше теңге? Жауапқа тек санды жазыңыз.",
+      "solution": "Бастапқы 100% — 4800 теңге. Үстеме 25%: 4800 × (25/100) = 1200 теңге. Жаңа толық баға 4800 + 1200 = 6000 теңге. Ол бастапқы бағаның 125%-ы: 4800 × (125/100) = 6000. 1200 тек үстеме; 25 теңгені ғана қосу пайызды ақша мөлшерімен шатастырады.",
+      "figureDescription": "Ақ 100% жолақ бастапқы 4800 теңгеге сәйкес. Оның оң жағына ұзындығы бастапқының 25%-ындай сары бөлік қосылған.",
+      "figureSha256": "83a931d65b7becaa0ce3d196823d03bafda12103b217ea6f89cbe6f82888a531",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6000",
+        "checks": {
+          "oldPrice": 4800,
+          "increasePercent": 25,
+          "increase": 1200,
+          "finalPercent": 125,
+          "newPrice": 6000,
+          "wrongAddCurrency": 4825
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave73-rectangle-thirty-width-forty-percent",
+      "modelId": "visual-wave73-rectangle-width-percent-of-length-then-area",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "length": 30,
+        "widthPercent": 40
+      },
+      "answer": "360",
+      "sourceRefs": [
+        {
+          "sourceId": "594c04f29d37bfd4",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-2-level2.json#12",
+      "sourceCanonicalSha256": "e62c1c7335f8ab03258c1cf5e00838483148f9d1d3305be23a522907dceb3d8f",
+      "sourceSkill": "Width40%of30=12, AREA30×12=360cm²;1200=L×percentnumberonly/84perimeter/144widthsquaredtraps.",
+      "adaptationChanges": [
+        "Барлық11сақталған5сынып6.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;11бастапқырастр2парақтақаралды.11адрестікжаңапараметр/өлшем/сан/өзnativeSVGжасалды, rawөзгермейді.",
+        "100тордағы31%аудан217,бесбөліктіжолақ80%мән360,80сәуледегі45%нүктеR,онбөліктіжолақ30%мән144,бақтүстерініңауданайырмасы520,қоспақалдық35%масса420,бастапқыбаға+25%жаңабаға6000,ен40%→аудан360,жаңабүтінді75%→40%мән1080,шаршыәрқабырға+20%→ауданӨСІМ275,екіқабырға+25%/−20%→жаңаP168.",
+        "Жаңаnativecell/strip/ray/brace/қабырғаөлшемдері, tracedpath/rasterкопияжоқ. Берілгенпайызданнақтышама,жаңабаза,соңғымәнменөзгеріс,ауданменпериметр,пайызсаныменбірліксаны ажыратылды. Source1400қатежауабына«÷100ұмытылған»жалғантүсіндірмесікөшірілмеді:нақтыwhole×paintedPARTCOUNTбез÷partsқатесіберілді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Санның бөлігін пайызбен табу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullofficial/newsolutions/everyMCQ plus2source/native343sheets. Actualcellcolors/wholelabels/stripunitwidths andpercenttexts, scaled80ray20intervals/lettertarget, mixture37/28unknown35geometricwidth, extra25%vsoriginal100%, rescalednewWHOLE75%then40%, actualdimension aspect/units andareaGAINvsnewP. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave73-rectangle-thirty-width-forty-percent.svg",
+      "verificationModule": "scripts/editorial/visual-wave73-models.mjs",
+      "options": [
+        "1200",
+        "360",
+        "84",
+        "144"
+      ],
+      "statement": "Тіктөртбұрыштың ұзындығы суретте сантиметрмен көрсетілген. Ені b ұзындығының 40%-ына тең. Тіктөртбұрыштың АУДАНЫ неше см²?",
+      "solution": "Ұзындығы 30 см. Ені b = 30 × (40/100) = 12 см. Аудан S = 30 × 12 = 360 см². 1200 = 30 × 40 пайызды үлеске айналдырмайды және дұрыс аудан емес. 84 = 2 × (30 + 12) — периметр, 144 = 12 × 12 енін екі рет көбейтеді. Тексеру: ені ұзындықтан кіші, себебі 40% < 100%.",
+      "figureDescription": "Тіктөртбұрыштың үстінде ұзындығы 30 см, сол жағында ені b деп жазылған; ені санмен берілмеген.",
+      "figureSha256": "c78806f067fb38876ef61c51a028406259a68caba5219aefa16f07ccd8572ec3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "360",
+        "checks": {
+          "length": 30,
+          "widthPercent": 40,
+          "width": 12,
+          "area": 360,
+          "perimeter": 84,
+          "wrongWidthSquared": 144,
+          "wrongUnconvertedPercent": 1200
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave73-nested-seventy-five-then-forty",
+      "modelId": "visual-wave73-nested-percent-new-whole-base-two-stage-value",
+      "grade": 5,
+      "topic": "ratio",
+      "difficulty": "hard",
+      "params": {
+        "scene": "nested",
+        "whole": 3600,
+        "first": 75,
+        "second": 40
+      },
+      "answer": "1080",
+      "sourceRefs": [
+        {
+          "sourceId": "bed8d6af888e9e30",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-2-level3.json#4",
+      "sourceCanonicalSha256": "d51b74bd92f0bdc2b856fc47463d2b436c656678d75095cc31a9128e918f0068",
+      "sourceSkill": "Topwhole3600,blue75%=2700; bottomFULLrescaledblueasNEW100%,yellow40%of2700=1080;1440originalbase/2700onlyfirst/4140addingpercenttraps.",
+      "adaptationChanges": [
+        "Барлық11сақталған5сынып6.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;11бастапқырастр2парақтақаралды.11адрестікжаңапараметр/өлшем/сан/өзnativeSVGжасалды, rawөзгермейді.",
+        "100тордағы31%аудан217,бесбөліктіжолақ80%мән360,80сәуледегі45%нүктеR,онбөліктіжолақ30%мән144,бақтүстерініңауданайырмасы520,қоспақалдық35%масса420,бастапқыбаға+25%жаңабаға6000,ен40%→аудан360,жаңабүтінді75%→40%мән1080,шаршыәрқабырға+20%→ауданӨСІМ275,екіқабырға+25%/−20%→жаңаP168.",
+        "Жаңаnativecell/strip/ray/brace/қабырғаөлшемдері, tracedpath/rasterкопияжоқ. Берілгенпайызданнақтышама,жаңабаза,соңғымәнменөзгеріс,ауданменпериметр,пайызсаныменбірліксаны ажыратылды. Source1400қатежауабына«÷100ұмытылған»жалғантүсіндірмесікөшірілмеді:нақтыwhole×paintedPARTCOUNTбез÷partsқатесіберілді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Санның бөлігін пайызбен табу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullofficial/newsolutions/everyMCQ plus2source/native343sheets. Actualcellcolors/wholelabels/stripunitwidths andpercenttexts, scaled80ray20intervals/lettertarget, mixture37/28unknown35geometricwidth, extra25%vsoriginal100%, rescalednewWHOLE75%then40%, actualdimension aspect/units andareaGAINvsnewP. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave73-nested-seventy-five-then-forty.svg",
+      "verificationModule": "scripts/editorial/visual-wave73-models.mjs",
+      "options": [
+        "1440",
+        "1080",
+        "2700",
+        "4140"
+      ],
+      "statement": "Жоғарғы жолақтың толық мәні суретте берілген. Оның көк бөлігі төменде ҮЛКЕЙТІЛІП көрсетілген: төменгі БҮКІЛ жолақ — сол көк бөлік, енді ол жаңа 100%. Төмендегі сары бөлік қандай санға сәйкес? Пайыздың негізі екінші қадамда өзгеретінін ескеріңіз.",
+      "solution": "Жоғарғы толық мән 3600. Көк бөлік 3600 × (75/100) = 2700. Екінші қадамда осы 2700 жаңа бүтін, яғни 100% болады. Сары мән 2700 × (40/100) = 1080. Тексеру: сары бастапқының (75/100) × (40/100) = (30/100) бөлігі; 3600 × (30/100) = 1080. 1440 екінші пайызды қате түрде бастапқы 3600-ден алады. 2700 тек көк бөлікті табады, 4140 пайыздарды 75% + 40% = 115% деп қате қосады.",
+      "figureDescription": "Жоғарғы толық жолақ 3600, көк бөлігі 75%, қалғаны 25%. Төменде жоғарғы көк бөлік ұлғайтылып жаңа толық жолақ 100% ретінде көрсетілген. Оның сары бөлігі 40%, қалғаны 60%.",
+      "figureSha256": "b787ece745ced71741b25db97dcb53ee0170e53c43e52f1f00e912771af94a52",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "1080",
+        "checks": {
+          "original": 3600,
+          "firstPercent": 75,
+          "firstValue": 2700,
+          "newWhole": 2700,
+          "secondPercent": 40,
+          "answer": 1080,
+          "originalEquivalentPercent": 30,
+          "wrongOriginalBase": 1440,
+          "wrongAddedPercents": 4140
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave73-square-side-twenty-percent-area-gain",
+      "modelId": "visual-wave73-square-side-increase-then-area-difference",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "square",
+        "side": 25,
+        "increase": 20
+      },
+      "answer": "275",
+      "sourceRefs": [
+        {
+          "sourceId": "6398b2379396276c",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-2-level3.json#7",
+      "sourceCanonicalSha256": "5a47bd55264055baafc7efeb8957d232544a9972bb196d4c44e26c562b614ca9",
+      "sourceSkill": "Oldside25→new30, OLD625/NEW900, requestedGAIN275cm², area44%growthnot20%nor40%.",
+      "adaptationChanges": [
+        "Барлық11сақталған5сынып6.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;11бастапқырастр2парақтақаралды.11адрестікжаңапараметр/өлшем/сан/өзnativeSVGжасалды, rawөзгермейді.",
+        "100тордағы31%аудан217,бесбөліктіжолақ80%мән360,80сәуледегі45%нүктеR,онбөліктіжолақ30%мән144,бақтүстерініңауданайырмасы520,қоспақалдық35%масса420,бастапқыбаға+25%жаңабаға6000,ен40%→аудан360,жаңабүтінді75%→40%мән1080,шаршыәрқабырға+20%→ауданӨСІМ275,екіқабырға+25%/−20%→жаңаP168.",
+        "Жаңаnativecell/strip/ray/brace/қабырғаөлшемдері, tracedpath/rasterкопияжоқ. Берілгенпайызданнақтышама,жаңабаза,соңғымәнменөзгеріс,ауданменпериметр,пайызсаныменбірліксаны ажыратылды. Source1400қатежауабына«÷100ұмытылған»жалғантүсіндірмесікөшірілмеді:нақтыwhole×paintedPARTCOUNTбез÷partsқатесіберілді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Санның бөлігін пайызбен табу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullofficial/newsolutions/everyMCQ plus2source/native343sheets. Actualcellcolors/wholelabels/stripunitwidths andpercenttexts, scaled80ray20intervals/lettertarget, mixture37/28unknown35geometricwidth, extra25%vsoriginal100%, rescalednewWHOLE75%then40%, actualdimension aspect/units andareaGAINvsnewP. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave73-square-side-twenty-percent-area-gain.svg",
+      "verificationModule": "scripts/editorial/visual-wave73-models.mjs",
+      "statement": "Шаршының бастапқы қабырғасы суретте сантиметрмен берілген. ӘР қабырғасы 20%-ға ұзартылды. Шаршының ауданы неше см²-ге АРТТЫ? Жаңа ауданның өзін емес, өзгерісін табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Бастапқы қабырға 25 см, аудан 25 × 25 = 625 см². Қабырғаға қосылғаны 25 × (20/100) = 5 см; жаңа қабырға 25 + 5 = 30 см. Жаңа аудан 30 × 30 = 900 см². Сұралған арту 900 − 625 = 275 см². Екі өлшем де өзгергендіктен аудан тек 20%-ға не 40%-ға ғана артпайды: 275 ÷ 625 = (44/100), яғни 44%.",
+      "figureDescription": "Бастапқы шаршы. Үстіңгі қабырғасына 25 см деп жазылған. Өскен шаршы не жаңа қабырға мәні суретте көрсетілмеген.",
+      "figureSha256": "040c1c95b0ab719b53715a2bc2d940abbf6687b94a6760e36e4d49ef5da6d55b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "275",
+        "checks": {
+          "oldSide": 25,
+          "increasePercent": 20,
+          "sideIncrease": 5,
+          "newSide": 30,
+          "oldArea": 625,
+          "newArea": 900,
+          "areaGain": 275,
+          "wrongLinearAreaGain": 125,
+          "wrongTwiceLinear": 250
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave73-rectangle-new-perimeter-two-rates",
+      "modelId": "visual-wave73-two-sides-opposite-percent-changes-new-perimeter",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "two-sides",
+        "length": 48,
+        "width": 30,
+        "lengthIncrease": 25,
+        "widthDecrease": 20
+      },
+      "answer": "168",
+      "sourceRefs": [
+        {
+          "sourceId": "7b95184c29fd4e40",
+          "sourceFile": "problems/sources/zerek/courses/5-math-6-2-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-6-2-leveltest.json#5",
+      "sourceCanonicalSha256": "f0ba59021ce1d3ead515a2bede19702e92429dbd907af58a6a602e7623fcb832",
+      "sourceSkill": "Original48×30, new60×24, requestedP2(60+24)=168cm; oldP156+2*(12−6)=168crosscheck, notarea1440.",
+      "adaptationChanges": [
+        "Барлық11сақталған5сынып6.2визуалдышарт/толықресмишешім/әрMCQ жекеоқылды;11бастапқырастр2парақтақаралды.11адрестікжаңапараметр/өлшем/сан/өзnativeSVGжасалды, rawөзгермейді.",
+        "100тордағы31%аудан217,бесбөліктіжолақ80%мән360,80сәуледегі45%нүктеR,онбөліктіжолақ30%мән144,бақтүстерініңауданайырмасы520,қоспақалдық35%масса420,бастапқыбаға+25%жаңабаға6000,ен40%→аудан360,жаңабүтінді75%→40%мән1080,шаршыәрқабырға+20%→ауданӨСІМ275,екіқабырға+25%/−20%→жаңаP168.",
+        "Жаңаnativecell/strip/ray/brace/қабырғаөлшемдері, tracedpath/rasterкопияжоқ. Берілгенпайызданнақтышама,жаңабаза,соңғымәнменөзгеріс,ауданменпериметр,пайызсаныменбірліксаны ажыратылды. Source1400қатежауабына«÷100ұмытылған»жалғантүсіндірмесікөшірілмеді:нақтыwhole×paintedPARTCOUNTбез÷partsқатесіберілді. Тәуелсізсыртқыreviewқажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Санның бөлігін пайызбен табу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all11saved/new/fullofficial/newsolutions/everyMCQ plus2source/native343sheets. Actualcellcolors/wholelabels/stripunitwidths andpercenttexts, scaled80ray20intervals/lettertarget, mixture37/28unknown35geometricwidth, extra25%vsoriginal100%, rescalednewWHOLE75%then40%, actualdimension aspect/units andareaGAINvsnewP. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave73-rectangle-new-perimeter-two-rates.svg",
+      "verificationModule": "scripts/editorial/visual-wave73-models.mjs",
+      "statement": "Тіктөртбұрыштың бастапқы қабырғалары суретте сантиметрмен жазылған. Ұзындығы 25%-ға арттырылып, ені 20%-ға кемітілді; әр пайыз өз бастапқы қабырғасынан алынады. ЖАҢА тіктөртбұрыштың ПЕРИМЕТРІ неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Бастапқы ұзындық 48 см, ен 30 см. Ұзындық өсімі 48 × (25/100) = 12, жаңасы 60 см. Ен азаюы 30 × (20/100) = 6, жаңасы 24 см. Жаңа периметр 2 × (60 + 24) = 168 см. Тексеру: бастапқы периметр 2 × (48 + 30) = 156, өзгеріс 2 × (12 − 6) = 12; 156 + 12 = 168. 60 × 24 = 1440 — аудан, периметр емес.",
+      "figureDescription": "Бастапқы тіктөртбұрыш. Үстіңгі ұзындық 48 см, сол жақ ені 30 см. Жаңа ұзындықтар суретте жазылмаған.",
+      "figureSha256": "34e38b6792b42c1f910302a4f5426f570b8ed416274e4263ba3f1db4f9309e31",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "168",
+        "checks": {
+          "originalLength": 48,
+          "originalWidth": 30,
+          "lengthIncreasePercent": 25,
+          "widthDecreasePercent": 20,
+          "lengthIncrease": 12,
+          "widthDecrease": 6,
+          "newLength": 60,
+          "newWidth": 24,
+          "perimeter": 168,
+          "oldPerimeter": 156,
+          "perimeterGain": 12,
+          "wrongArea": 1440
+        }
+      }
+    }
+  ]
+}

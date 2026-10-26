@@ -1,0 +1,526 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "independent_agent_zerek_progress_inventory",
+  "batch": "problems/editorial/batches/grade5-natural-add-sub.json",
+  "scope": "All45 saved/new fullconditions, complete official/authored solutions and everyMCQ read; own printed Integer/AST and symbolic-component roles, independent digit carry/borrow trace, all true inverse-check options by requested criterion, full permutation/hole/distinct-digit/ray domains. No author specs/params/model/solver imported.",
+  "summary": {
+    "verified": 45,
+    "findingsResolved": 1,
+    "wrongKeysRejected": 45,
+    "printedRoleOrGivenCanariesRejected": 45,
+    "printedNumericEqualities": 178,
+    "independentlyBoundColumnSteps": 84,
+    "digitPermutations": 24,
+    "twoHoleDigitAssignments": 100,
+    "fiveDigitFullDomain": 90000,
+    "distinctFiveDigitCandidates": 27216,
+    "twoUnknownRayDirections": 4,
+    "pythonJavaScriptHashesMatched": 45
+  },
+  "resolvedFindings": [
+    {
+      "sourceId": "459759e8c6b1f2be",
+      "finding": "Source used excess-left distance without negative integers; drafted explanation introduced signed net -9 during a natural-operation lesson.",
+      "resolution": "Final corrected fullrow reread: natural excess-left27-18=9 then46-9=37. Numbers/key/options retained, all45currentconditions independently rechecked."
+    }
+  ],
+  "sourceRefs": [
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level1.json",
+      "sourceId": "85edb28bd19262c4"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level1.json",
+      "sourceId": "b4fa609b1907335b"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level1.json",
+      "sourceId": "3679deccaaa05fae"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level1.json",
+      "sourceId": "0bc836aed2dd9771"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level1.json",
+      "sourceId": "d2a4233d03b0560d"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level1.json",
+      "sourceId": "a9c6703821a28d5d"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level1.json",
+      "sourceId": "f30e77b379bfef0f"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level1.json",
+      "sourceId": "b0c1900e4b30909e"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level1.json",
+      "sourceId": "70bcba82ca6aec7e"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level1.json",
+      "sourceId": "693974a17f861afc"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level1.json",
+      "sourceId": "08765a9d14121f0b"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level1.json",
+      "sourceId": "7772c2e5722d400a"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level1.json",
+      "sourceId": "e356d62b900ffbe0"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "b8ca0f836bff0694"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "2dccb62a0fb1a3ce"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "003682bb37d19c37"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "4ab0591b5297e19a"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "894da4c3b7f28497"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "4fc5f3cfb8debfd6"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "dbe5e2b7ae215c93"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "2d010cef7f7f58fe"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "95184286e4e97446"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "7bbc4ca1a9bcc415"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "3a76cd2f9fb3866a"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "459759e8c6b1f2be"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "dd9d6b0b9438009a"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level2.json",
+      "sourceId": "c88c86bd1ca0dc5d"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level3.json",
+      "sourceId": "11ce8a3e01867227"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level3.json",
+      "sourceId": "2a3c24605b677bda"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level3.json",
+      "sourceId": "ba28050bbd9fe5e6"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level3.json",
+      "sourceId": "39e7b1888469f1bf"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level3.json",
+      "sourceId": "d1a5beda2bc6d3be"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level3.json",
+      "sourceId": "850aa61ae5436f62"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level3.json",
+      "sourceId": "7c4881f4c14997de"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level3.json",
+      "sourceId": "2fde8624f1286c79"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level3.json",
+      "sourceId": "3e59b652cebc6390"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-level3.json",
+      "sourceId": "41435d984816300e"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-leveltest.json",
+      "sourceId": "a7c0d02178c61c8f"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-leveltest.json",
+      "sourceId": "41c13aa64ff161e7"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-leveltest.json",
+      "sourceId": "1d0396b970d22dbb"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-leveltest.json",
+      "sourceId": "4e4c2fdc33e35de8"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-leveltest.json",
+      "sourceId": "38838a2bcad08bf2"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-leveltest.json",
+      "sourceId": "801483143c7c0535"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-leveltest.json",
+      "sourceId": "4dcc0ac384969caf"
+    },
+    {
+      "sourceFile": "problems/sources/zerek/courses/5-math-1-4-leveltest.json",
+      "sourceId": "9fccf4567d3c8d54"
+    }
+  ],
+  "entries": [
+    {
+      "editionId": "grade5-natural-add-sub-85edb28bd19262c4",
+      "sha256": "ca4516bf961cbd6dd53ce827542b16d8145c34db66d7090c3ef153e36a4fc4b5",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-b4fa609b1907335b",
+      "sha256": "afe91bd42fdab1acd1055279f3ced08da38ebfc1c332b693c6498e3c3c1ec9b8",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-3679deccaaa05fae",
+      "sha256": "c9a2e24c4cba531f83f202cc75f950e2be531b78aee24aafa1e4a6b61ab52fff",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-0bc836aed2dd9771",
+      "sha256": "b4ae8ed6c116561802dc2da392521501e8124a795cac9f07e74142f5fe10121a",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-d2a4233d03b0560d",
+      "sha256": "91a173c02f778a8721842864411dde43ee1cc4d57386a408b5bc48699ec298b8",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-a9c6703821a28d5d",
+      "sha256": "57f7d6adf0e0485bbcad0154cc954ecd9def0e6af4e5874b711edf344e0e778d",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-f30e77b379bfef0f",
+      "sha256": "7eb120e1d0317f861ae8cbbc62cc046006fce9af5863dd6dfb91af75533e9db6",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-b0c1900e4b30909e",
+      "sha256": "5555ac4c47eb2c9c9d5cd98fa5b10edf1610dcc64ec1998507c59360773e13e4",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-70bcba82ca6aec7e",
+      "sha256": "91c91fe490aeb641477cdc8f558c0f2e9941e8e03cb41db10ac81e46ed2e5e37",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-693974a17f861afc",
+      "sha256": "41cbaf2bd4bdc75c68f2c16127dff85ee4b8d475129b152bafa5f7d48008dee5",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-08765a9d14121f0b",
+      "sha256": "f43a162c18e7c84f23be6020b55e436ce8e2371bf007951c0dc75863589330d8",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-7772c2e5722d400a",
+      "sha256": "a80b57701a53b28ba2b8149e3a5bd59ef924393373b88fb12e0dde78496da38f",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-e356d62b900ffbe0",
+      "sha256": "e523b3497e4f324822d7d17eec0c28bda98834cc57a3edcb5b85c232f9b4ee58",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-b8ca0f836bff0694",
+      "sha256": "c81c057a05c8620f3ea397a27fbeb596d0a0d64bfa5c3954ec08aca78cdc6477",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-2dccb62a0fb1a3ce",
+      "sha256": "5e2c0a486437054777cc865b188f62a7721b3cde6d0e8ed681812bc864233a96",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-003682bb37d19c37",
+      "sha256": "86d9b47c3029cb158671f56373085f2280a00c7f06973e30b12f5b02a5e85fcb",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-4ab0591b5297e19a",
+      "sha256": "7eb1e62e313a02b19c614b6418d6995ff1cbb91c04def90c35a41ad7b1c5d4b2",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-894da4c3b7f28497",
+      "sha256": "835d1ab4d4e40a8069d300990db9f9d526596703e838e4987f62d2f56203db6d",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-4fc5f3cfb8debfd6",
+      "sha256": "376213cf48ebea46bd0b24104b6fdc70709a5867ba3025159917ff2a28395879",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-dbe5e2b7ae215c93",
+      "sha256": "c0af3410ac5e4500087c26ba14dc5903710ca4a9432c8756acb4c9394c75bb93",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-2d010cef7f7f58fe",
+      "sha256": "009cf5169de54be68063570accfcff99c73fc59b11f60dd9cad7fc30918cce12",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-95184286e4e97446",
+      "sha256": "717b9dd482ae18d7d0bd28f061b0c9134229e7781ceaaa4542149e5eabdeae5d",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-7bbc4ca1a9bcc415",
+      "sha256": "7ce6c2797e766219d8ad0577a24da71c7646d69e35e92644a3b9941831f5a18d",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-3a76cd2f9fb3866a",
+      "sha256": "09d5d49a44f0dd34b659b6658b5644e14d97674a79673b283848686e246b249a",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-459759e8c6b1f2be",
+      "sha256": "2995fcbb536ba7ca72c55197211f6311ccea8c2e2cadbd1d823fc18a0f9cadb5",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-dd9d6b0b9438009a",
+      "sha256": "888537f9c83952897c5daf6b48e4ce55275c20fc19e16e3c7c730328b402f663",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-c88c86bd1ca0dc5d",
+      "sha256": "a67e0e0776ff2c2797e741b8674cd1f45b33c5eb9c2b60f3ab9523879f8c42c7",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-11ce8a3e01867227",
+      "sha256": "fe8afa9d4de8290bec9b648f72c462fee53888200498bbb751330171fdd40cd1",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-2a3c24605b677bda",
+      "sha256": "35953d9523f82276c6884b015b35b200d2d3bc8bb027d0775e9c417993994511",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-ba28050bbd9fe5e6",
+      "sha256": "be2f6520bbe5467b1f217d7a8fec0d8350efbbe77ef12eb14d1c36ca7febe5d9",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-39e7b1888469f1bf",
+      "sha256": "2e2a3f2e33587bf21222a71bbc8b06fb09a0b63ba97928b4416a7ad835ea705e",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-d1a5beda2bc6d3be",
+      "sha256": "823beb5afaa77cffde8f6066537f6474229178e708efe110a5b103f64cd6da31",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-850aa61ae5436f62",
+      "sha256": "a26e78f371057a77a26f85af8163fa646b4de78895ab803d6f1976ddbac53b06",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-7c4881f4c14997de",
+      "sha256": "0cf323982f1e378ab9e44b07fd4b820a9e3faa00eb7bf97622438e57153a1f49",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-2fde8624f1286c79",
+      "sha256": "104c77a090e9aaecc3dafbd6fb6bf942b8cca1bbb47dbdecc11ec80ae216b5cc",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-3e59b652cebc6390",
+      "sha256": "767dc4c93d7c53382ad3ca447cb1b4627edf14ed937afdf300a201ded38d4f72",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-41435d984816300e",
+      "sha256": "d2b0970178f77baeca3dae7d2e6a927bfa32365a415cdd4a6ecd14306a7493c2",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-a7c0d02178c61c8f",
+      "sha256": "2ebfefd68036def31cff98d1a28c7a623045f868257eae7cea1d5149456694fd",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-41c13aa64ff161e7",
+      "sha256": "f1d3e925904379a729db195d31ea5e5854b222eb3ff8d45ab6144fb9ff43fb81",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-1d0396b970d22dbb",
+      "sha256": "5ed244d0133c602dac4541dca2511faea49a4d8e7c154615d04efa2a7a98682a",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-4e4c2fdc33e35de8",
+      "sha256": "4a422b601edf105892e62b6149ebd532009d9d1e455d1fbf7acb26ea555ae11f",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-38838a2bcad08bf2",
+      "sha256": "f8e3ee87332c8880a84f2e5aa3acc040e1edff001f4196cd2106ea42b8513376",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-801483143c7c0535",
+      "sha256": "a1a1b91510d1adc7ed5d77c12f9841847f31be566a9e2b3eaa02cd2931794d78",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-4dcc0ac384969caf",
+      "sha256": "d238edea3ebae51008ea4195def43b390bb5f4abcfadcc3eb5d32a2c4b35d6e8",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    },
+    {
+      "editionId": "grade5-natural-add-sub-9fccf4567d3c8d54",
+      "sha256": "d18c2c096630eeaf34bd06316a8399f2eabcdd8283bdb34e818c0c5f6479e0dc",
+      "verdict": "verified",
+      "method": "independent_all_saved_new_official_authored_fullsolutions_every_MCQ_read_printed_integer_AST_separate_column_carry_borrow_finite_domains_target_oracle",
+      "notes": []
+    }
+  ]
+}

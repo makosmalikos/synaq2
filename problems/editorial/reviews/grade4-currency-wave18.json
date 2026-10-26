@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/batches/grade4-currency-wave18.json",
+  "reviewedAt": "2026-10-23",
+  "scope": "All40 saved/new full conditions, full solutions and MCQ read; actual printed exact ledgers,8 shortest-path minima,2 generating-function counts,complete integer coin/note/split domains and conditional FX;40 wrong-key and8 printed-given canaries rejected.",
+  "entries": [
+    {
+      "editionId": "grade4-currency-7ec82ce47f0817e4",
+      "sha256": "b84b3918814d51bd078b244d800d082d81768de9888592846fa036727d7aaafc",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Actual printed allowed set [1, 5, 10, 25, 50, 100]; select sole missing actual offered denomination. Conditional teaching-set membership, no current completeness claim. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-3fbdbd0673f30e7d",
+      "sha256": "96f3c2f39718e9273fb763d66e0cec7c00fbad21d027afd999b917d33276300f",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Actual mixed amount 700 cents conserves value as 28 identical 25-cent coins; requested count. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-24bfea36adccc8f9",
+      "sha256": "7ecab2a0520afe69dcb09c5995e24ffae30c4743d3f644d7ad55bb99cf9915e2",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Printed one-dollar unit100 divided into 5 equal shares; exact 20 cents, reverse multiplication100. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-bd68fafb9809460d",
+      "sha256": "7a71814cb995deb92cc28fd5572659d1ef916023fac70d56c6a704f05551c257",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Full actual printed expression sums [9000, 10000, 8000, 8000]; requested sole equal sum relative to 10000. All listed money must be used. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-074b8271dc00f600",
+      "sha256": "8d811e0e7bf5d68e49b93f88a0f0475432c4bef5f4cb6ae78c00ee0464f26c29",
+      "verdict": "verified",
+      "method": "Independent breadth-first search of EVERY reachable exact subtotal, all smaller coin-count graph layers exhausted before target",
+      "notes": "Printed target78, allowed[1, 2, 5, 10, 20, 50]; BFS minimum5 with witness[50, 20, 5, 2, 1]. Actual solution witness separately sums correctly and has same minimum length; no reliance on generic greedy claim. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-0e11f5024836bd1c",
+      "sha256": "714de77703851dae7907fc598961fbd95e3c13d232679fe5b4bc4ac18910e221",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "All actual mixed amounts converted to cents [407, 399, 400, 395]; unique greatest amount, cent digit kept at original place value. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-24dcb64513b73171",
+      "sha256": "47c8adca411e2fc022e77402d328917666a37706369d41eb6da4059fe8d0564b",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Full actual printed expression sums [200, 170, 195, 210]; requested sole equal sum relative to 200. All listed money must be used. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-eff5d0bb5c799598",
+      "sha256": "5bb4438946b982fcc7b2370e39f723865a0843a79acb66dc4d75e7893ef64197",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Actual printed allowed set [5, 10, 20, 50, 100, 200, 500]; select sole missing actual offered denomination. Conditional teaching-set membership, no current completeness claim. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-c31f40b32da24ca5",
+      "sha256": "98d027f9ec51659835ad3e76f30cc9e5683582339a640486c24df3cee6db8ada",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Actual printed euro/dollar plus remaining cents yields exact 609 cents; not concatenation or base1000. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-ef13cc2d0fb82498",
+      "sha256": "b9b383cdaa80644f3895f59f8e44179c10dc16d119cc9a54f85fbdf0d62e71e5",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Printed 1400 cents divides into 14 complete100-cent euro units, exact inverse. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-519ebbb2915de06a",
+      "sha256": "59ab3893fd0876c09f4f98943dcac23f514700da0f33feb9a4b434a69319f4bb",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "13 complete dollar units, each100cents, produce exact 1300 cents; requested output cents. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-72ef5c2ec8c3f180",
+      "sha256": "6239adcd7856e060c108294cd14cec206cab0ab0b06949e431f5e3f621314cb6",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Full actual printed expression sums [175, 175, 175, 174]; requested sole non-equal sum relative to 175. All listed money must be used. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-e1b7b23ee301096e",
+      "sha256": "d78cd5e1344afa9a8ac0efa1282e73877d89d9d16745d4112d104a4c486cf6a5",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Value-conserving exact count60 × denomination500 = total30000 tenge. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-053c31364f83641f",
+      "sha256": "3c08ff9da61aa944fe3a1be60f640afab03ef7f88163fd1ea80b5428a184be31",
+      "verdict": "verified",
+      "method": "Independent breadth-first search of EVERY reachable exact subtotal, all smaller coin-count graph layers exhausted before target",
+      "notes": "Printed target947, allowed[1, 2, 5, 10, 20, 50, 100]; BFS minimum13 with witness[100, 100, 100, 100, 100, 100, 100, 100, 100, 20, 20, 5, 2]. Actual solution witness separately sums correctly and has same minimum length; no reliance on generic greedy claim. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-65358c315f9aa38e",
+      "sha256": "55a17fa3ea7d5359fa11775b955849e13d84268fc8325f4a44341a753edfaa2a",
+      "verdict": "verified",
+      "method": "Complete nonnegative equal-count note domain, with total-value upper bound and exact inverse ledger",
+      "notes": "Only6 of EACH denomination2000/5000 conserves42000; asked ALL notes = 12, not number of pairs. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-632c88103293a0fd",
+      "sha256": "2bcb60cf230d6fae070eea961b1a558d617f8e2bf9a8d1d7c8ebd8959ae23eb4",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Actual printed same-unit comparison 906 versus960 cents yields<; no residual-cent multiplication by10. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-b4eab6ac62a2dcb8",
+      "sha256": "4ea3dac1e0eb0f6532dcef6076ef45ea432d7c09e3594f38671686c6b61bc207",
+      "verdict": "verified",
+      "method": "Independent breadth-first search of EVERY reachable exact subtotal, all smaller coin-count graph layers exhausted before target",
+      "notes": "Printed target96, allowed[1, 2, 5, 10, 20, 50, 100]; BFS minimum5 with witness[50, 20, 20, 5, 1]. Actual solution witness separately sums correctly and has same minimum length; no reliance on generic greedy claim. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-edd961249b833a22",
+      "sha256": "f1fcd061f1923687285d5db573301d429919c2ba60bde1d404e00700f0a47ee0",
+      "verdict": "verified",
+      "method": "Independent breadth-first search of EVERY reachable exact subtotal, all smaller coin-count graph layers exhausted before target",
+      "notes": "Printed target1376, allowed[1, 2, 5, 10, 20, 50, 100, 200, 500]; BFS minimum8 with witness[500, 500, 200, 100, 50, 20, 5, 1]. Actual solution witness separately sums correctly and has same minimum length; no reliance on generic greedy claim. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-7c8905d9bd9c9af8",
+      "sha256": "fc6fb0779aa01d817ca3711abb9dd802e185933d744002451511f88d0889ef52",
+      "verdict": "verified",
+      "method": "Exhaustive complete integer coin-count ledger, checking BOTH total coin count and exact value",
+      "notes": "Unique(high,low) pair[(8, 5)] for13coins totalling21; requested HIGH denomination count8. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-961240573deff1ee",
+      "sha256": "8aeae1a1114836c051345841fde185eb3eac93a30dc6649fda2e732cc96acbc5",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "All6 original notes of50 conserve exact total300; resulting5-unit notes count60, not one-original-note count. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-ae4bd1e8b296f247",
+      "sha256": "d75fe40ef701ca9cb94e1ef8e866a9bf596dba22b00e7c45dd1fb8cea40138aa",
+      "verdict": "verified",
+      "method": "Independent breadth-first search of EVERY reachable exact subtotal, all smaller coin-count graph layers exhausted before target",
+      "notes": "Printed target418, allowed[1, 2, 5, 10, 20, 50, 100, 200, 500]; BFS minimum6 with witness[200, 200, 10, 5, 2, 1]. Actual solution witness separately sums correctly and has same minimum length; no reliance on generic greedy claim. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-032a83e357f9211f",
+      "sha256": "4c6e698313669f9b9f2d15c50dc31547460eb1d2deaaa1de357a11a67872aff7",
+      "verdict": "verified",
+      "method": "Independent breadth-first search of EVERY reachable exact subtotal, all smaller coin-count graph layers exhausted before target",
+      "notes": "Printed target268, allowed[1, 2, 5, 10, 20, 50, 100]; BFS minimum7 with witness[100, 100, 50, 10, 5, 2, 1]. Actual solution witness separately sums correctly and has same minimum length; no reliance on generic greedy claim. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-c751c007dd26ba4b",
+      "sha256": "8d4111706f349fb492ab24175a336bd4ea67493fb2b85427df2fca91f56ff225",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Actual price845 and paid2000 cents give change1155; adding price+change reconstructs exact paid amount. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-a83cf114cc3429e1",
+      "sha256": "d520567e6b734979007a07c6eef4737d530caa93c79e277278f5d653cf0f860c",
+      "verdict": "verified",
+      "method": "Actual MCQ membership+cardinality+sum checked independently; complete allowed unordered triple enumeration confirms unique physical triple",
+      "notes": "Full allowed triple domain gives[(50, 50, 50)]; two incorrect options still total150 but contain forbidden25/40, fourth has wrong sum. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-fd038c7084f3fcd4",
+      "sha256": "2e820a52a5bb5b2d33ca0a054c863fee988e0fd6fb471dec2943f039691053a4",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "All affordable integer purchases0..153 checked; maximum13, exact leftover10, another item unaffordable. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-bd0abc1558ffe015",
+      "sha256": "6d3d170f79ead6add47089a8d0e893e785094a99627ffad6f720cf4f1c4d54b3",
+      "verdict": "verified",
+      "method": "Exhaustive nonnegative count domain0..N, actual printed mixed-money value converted to cents before simultaneous ledger checks",
+      "notes": "Only4 high/6 low coins give BOTH count10 and value320; requested LOW count6. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-0f915e63edfc6df2",
+      "sha256": "c04679e7516fe0b3851d8438222c1868e1745f91909aac2bba4c8910b7dd5e14",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Explicit hypothetical commission-free exchange rates only: dollar total13160, euro total12720, exact saving440 in requested currency; not current-rate guidance. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-d64e8822595cb0b3",
+      "sha256": "3d984b40dc749aa40b5c1098770c791f30a9010dc5b85373fedced3eb54df46c",
+      "verdict": "verified",
+      "method": "Independent exact generating-function coefficient convolution for unbounded denomination counts; each denomination contributes ONE count variable",
+      "notes": "Coefficient[x^30000] PRODUCT(1+x^d+...) for[10000, 5000, 2000] equals10; zero counts permitted and permutations never multiply a combination. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-20da71d46f5e54c4",
+      "sha256": "4205727076f999b458df30cda5da7b9c24f05850b378784d1ebb5f04ed869f0c",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Complete equal-count domain yields40coins of EACH25/10; both values sum to1400cents, asked all80coins. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-8438ab5071553314",
+      "sha256": "bcdf0de4519d6a628d7e400c09b561d2a5f2dbeab419709e24b40788c60ed97b",
+      "verdict": "verified",
+      "method": "Independent exact generating-function coefficient convolution for unbounded denomination counts; each denomination contributes ONE count variable",
+      "notes": "Coefficient[x^200] PRODUCT(1+x^d+...) for[50, 20, 10] equals29; zero counts permitted and permutations never multiply a combination. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-6f4902d10d57660e",
+      "sha256": "11f7ee4cceb9d3cea482a11eee6b6d11a2b40383d8cf6d2b7ae5167cb3da52f3",
+      "verdict": "verified",
+      "method": "Independent breadth-first search of EVERY reachable exact subtotal, all smaller coin-count graph layers exhausted before target",
+      "notes": "Printed target278, allowed[1, 2, 5, 10, 20, 50, 100, 200]; BFS minimum6 with witness[200, 50, 20, 5, 2, 1]. Actual solution witness separately sums correctly and has same minimum length; no reliance on generic greedy claim. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-27c0c813e5b42833",
+      "sha256": "0cc5bd1eb034f9c12f46483182e9c62c982b87424c1e0fd86ebc3a6da8794958",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Every actual configuration checks BOTH count8 and value100; exhaustive domain confirms4high+4low, not just a matching value. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-f5885d695dc71e2e",
+      "sha256": "364c45a3f0cf83c6813b652aeaa6c12dad362b0ed6a03c14dda1d6b026b88499",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Full initial split domain of18, subtract spending3/5 from respective people: only8/10 produces equal5/5 remaining; total decreases, unlike transfer. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-bad95347d40d8d89",
+      "sha256": "672aded15b354ad64051ab10a497226267bb9de3593a126956f26ba353581171",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Actual mixed amount 900 cents conserves value as 18 identical 50-cent coins; requested count. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-88b6734b8441a7f1",
+      "sha256": "73505f5bed7c310754657aaea02126bbc76ab4222556bb50d88522d0bbbd4a81",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Actual printed euro/dollar plus remaining cents yields exact 1235 cents; not concatenation or base1000. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-52dd2a921965c8cb",
+      "sha256": "56a35e416826c765e6924719a937507a804736e2df43b73a3e1006d46ffc7d47",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Actual printed allowed set [1, 2, 5, 10, 20, 50, 100, 200]; select sole missing actual offered denomination. Conditional teaching-set membership, no current completeness claim. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-a25840cae9416a7f",
+      "sha256": "dab53fb326b23f2c4db92a14383b2d746007ca90102781d59191aca8c7bf348e",
+      "verdict": "verified",
+      "method": "Independent breadth-first search of EVERY reachable exact subtotal, all smaller coin-count graph layers exhausted before target",
+      "notes": "Printed target965, allowed[1, 2, 5, 10, 20, 50, 100, 200, 500]; BFS minimum6 with witness[500, 200, 200, 50, 10, 5]. Actual solution witness separately sums correctly and has same minimum length; no reliance on generic greedy claim. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-930f54f29572315b",
+      "sha256": "95918d151f60be74965c5b5f4b77d0141138a3aa33ae090dfabf744813f5cf68",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Complete0..12 ledger gives5high/7low notes, total32000 and count12 separately satisfied; asked lower denomination count7. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-0043e0c7574f9d80",
+      "sha256": "53aa2e5d7188954538a3b25829dcd1b775af6f37277f723d36ef6ede5189e64f",
+      "verdict": "verified",
+      "method": "Exhaustive nonnegative count domain0..N, actual printed mixed-money value converted to cents before simultaneous ledger checks",
+      "notes": "Only4 high/10 low coins give BOTH count14 and value300; requested LOW count10. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    },
+    {
+      "editionId": "grade4-currency-a25faa8d7ec05123",
+      "sha256": "881ade07f2770e4aba13b98677173a9dc5070091867c136a25abd2ac20be2713",
+      "verdict": "verified",
+      "method": "Independent exact printed amount/unit ledger with inverse conservation check",
+      "notes": "Full initial split domain20; transfer3 removes from first AND adds to second, retaining total. Only13/7 becomes10/10; initial gap6 not3. All saved/new full conditions, complete solutions and every option read independently; source skill and requested quantity retained."
+    }
+  ]
+}

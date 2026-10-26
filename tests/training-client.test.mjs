@@ -2,12 +2,14 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
-import { readPendingTraining, writePendingTraining, clearPendingTraining, trainingDayKey, trainingQuestion } from '../frontend/src/trainingPersistence.js';
+import { readPendingTraining, writePendingTraining, clearPendingTraining, trainingDayKey, trainingQuestion, trainingElapsed } from '../frontend/src/trainingPersistence.js';
 
 const source = fs.readFileSync(new URL('../frontend/src/components/Training.jsx', import.meta.url), 'utf8');
 const saveHandlers = source.slice(source.indexOf('  function terminalLearningError('), source.indexOf('  const saveNotice ='));
 const navigation = source.slice(source.indexOf('  const start ='), source.indexOf('  const fmt ='));
 const loadEffect = source.slice(source.indexOf('  useEffect(() => {\n    let alive = true;'), source.indexOf('  }, [uid, loadRetry]);') + '  }, [uid, loadRetry]);'.length);
+const translationEffect = source.slice(source.indexOf('  useEffect(() => {\n    if (!questionKey || !translationReady)'), source.indexOf('  }, [activeQuestion, lang, questionKey, translationReady, uid]);') + '  }, [activeQuestion, lang, questionKey, translationReady, uid]);'.length);
+const translatedDisplay = source.slice(source.indexOf('  const visibleQuestion ='), source.indexOf('  const q = visibleQuestion'));
 const tick = () => new Promise((resolve) => setImmediate(resolve));
 const deferred = () => { let resolve, reject; const promise = new Promise((yes, no) => { resolve = yes; reject = no; }); return { promise, resolve, reject }; };
 function memoryStorage() {
@@ -19,21 +21,21 @@ function fixture({ storage = memoryStorage(), pro = false, count = 4, save, star
   const writes = [], starts = [], xp = [], timers = [];
   const question = { id: 'q1', statement: '2 + 2?', answer: '4', topic: 'eq', school: 'НИШ' };
   const topic = { id: 'eq', name: 'Equations' };
-  const state = { Done: count, Solved: new Set(), SolvedIn: {}, SaveState: 'idle', Checked: false, Answer: '4', Topic: topic, Items: [question], Loading: false, LoadErrorCode: '', SessionState: ready ? 'ready' : 'idle', ServerResult: null };
+  const state = { Done: count, Solved: new Set(), SolvedIn: {}, SaveState: 'idle', Checked: false, Answer: '4', Topic: topic, Items: [question], Loading: false, LoadErrorCode: '', SessionState: ready ? 'ready' : 'idle', ServerResult: null, QuestionTranslation: null };
   let saveImpl = save || (async () => ({ saved: true, gain: 105, totalXp: 130 }));
   let startImpl = start || (async (_owner, _payload, id) => ({ id, question: trainingQuestion(question), startedAt: Date.now(), expiresAt: Date.now() + 3600000 }));
   let countImpl = async () => count;
   let nextId = ready ? 1 : 0;
   const context = {
     uid, pro, locked: false, checked: false, loading: false, opening: false,
-    answer: '4', items: [question], i: 0, secs: 60, topic, lang: 'ru', loadRetry: 0,
+    answer: '4', items: [question], i: 0, secs: 60, topic, lang: 'ru', loadRetry: 0, questionTranslation: null,
     checkingRef: { current: false }, savingRef: { current: false }, pendingAttempt: { current: null },
     questionSession: { current: ready ? { key: `${uid}:eq:0:q1`, uid, qid: 'q1', id: 'stable-attempt-1', ready: true } : null },
     currentQuestion: { current: `${uid}:eq:0:q1` }, sessionState: ready ? 'ready' : 'idle',
     mounted: { current: true }, topicRequest: { current: 0 }, dayRef: { current: 'today' },
     solvedRef: { current: new Set() }, onXpRef: { current: (...args) => xp.push(args) },
     auth: { currentUser: { uid } }, crypto: { randomUUID: () => `stable-attempt-${++nextId}` },
-    trainingQuestion, trainingDayKey: () => 'today',
+    trainingQuestion, trainingElapsed, trainingDayKey: () => 'today',
     writePendingTraining: (value) => writePendingTraining(value, storage),
     readPendingTraining: (owner) => readPendingTraining(owner, storage),
     clearPendingTraining: (owner, id) => clearPendingTraining(owner, id, storage),
@@ -47,7 +49,7 @@ function fixture({ storage = memoryStorage(), pro = false, count = 4, save, star
     setTimeout: (callback) => timers.push(callback),
     useEffect: (effect) => { context.cleanup = effect(); },
   };
-  for (const name of ['Done', 'Solved', 'SolvedIn', 'SaveState', 'Checked', 'Answer', 'Topic', 'Items', 'I', 'Secs', 'XpPop', 'Opening', 'RecoveryAvailable', 'Loading', 'LoadError', 'LoadErrorCode', 'Pro', 'Flags', 'Topics', 'SessionState', 'SessionNotice', 'ServerResult']) {
+  for (const name of ['Done', 'Solved', 'SolvedIn', 'SaveState', 'Checked', 'Answer', 'Topic', 'Items', 'I', 'Secs', 'XpPop', 'Opening', 'RecoveryAvailable', 'Loading', 'LoadError', 'LoadErrorCode', 'Pro', 'Flags', 'Topics', 'SessionState', 'SessionNotice', 'ServerResult', 'QuestionTranslation']) {
     context[`set${name}`] = (value) => {
       state[name] = typeof value === 'function' ? value(state[name]) : value;
       context[name[0].toLowerCase() + name.slice(1)] = state[name];
@@ -58,6 +60,16 @@ function fixture({ storage = memoryStorage(), pro = false, count = 4, save, star
     setSave: (value) => { saveImpl = value; }, setCount: (value) => { countImpl = value; },
     setStart: (value) => { startImpl = value; },
     load: () => vm.runInContext(loadEffect, context),
+    translate: (lang = context.lang) => {
+      context.translationCleanup?.();
+      context.lang = lang; context.activeQuestion = context.items[context.i]; context.questionKey = context.currentQuestion.current;
+      context.translationReady = context.checked || context.sessionState === 'ready';
+      const previous = context.useEffect;
+      context.useEffect = effect => { context.translationCleanup = effect(); };
+      vm.runInContext(translationEffect, context);
+      context.useEffect = previous;
+    },
+    visible: () => vm.runInContext(`(() => { ${translatedDisplay} return visibleQuestion; })()`, context),
   };
 }
 
@@ -347,4 +359,106 @@ test('v2 journals contain the session and answer only, not local grading or answ
   const [key] = f.storage.data.keys();
   f.storage.setItem(key, JSON.stringify({ ...restored, payload: { ...restored.payload, sessionId: 'foreign-session' } }));
   assert.equal(readPendingTraining('kid', f.storage), null);
+});
+
+test('opening a topic does not translate unused questions; only the fresh active session is translated', async () => {
+  const f = fixture({ ready: false });
+  const calls = [];
+  const questions = Array.from({ length: 60 }, (_, i) => ({ ...trainingQuestion(f.question), id: `q${i + 1}`, statement: 'Old catalog text', lang: 'kk' }));
+  f.context.translateQuestions = async list => { calls.push(list); return list.map(q => ({ ...q, statement: 'Translated fresh text' })); };
+  await f.context.openQuestions(f.topic, async () => questions);
+  assert.equal(calls.length, 0);
+  assert.equal(f.state.Items.length, 60);
+  f.context.currentQuestion.current = 'kid:eq:0:q1';
+  f.setStart(async (_uid, _payload, id) => ({ id, question: { ...trainingQuestion(f.question), statement: 'Fresh server text', lang: 'kk' }, startedAt: Date.now() }));
+  await f.context.beginQuestion();
+  f.translate(); await tick();
+  assert.equal(calls.length, 1);
+  assert.equal(calls[0].length, 1);
+  assert.equal(calls[0][0].statement, 'Fresh server text');
+  assert.equal(f.visible().statement, 'Translated fresh text');
+  assert.equal(f.state.Items[0].statement, 'Fresh server text', 'retain the canonical source for switching back');
+  assert.equal(f.state.Items[1].statement, 'Old catalog text');
+  assert.equal(f.state.SessionState, 'ready');
+});
+
+test('the catalog and empty topics render without a translation or active question', () => {
+  const f = fixture();
+  f.context.items = []; f.context.currentQuestion.current = null;
+  f.translate();
+  assert.equal(f.visible(), undefined);
+  assert.equal(f.state.QuestionTranslation, null);
+});
+
+test('a delayed translation cannot populate another question or account', async () => {
+  for (const transition of ['question', 'account', 'unmount']) {
+    const f = fixture({ ready: false }), translated = deferred();
+    f.context.translateQuestions = () => translated.promise;
+    await f.context.beginQuestion(); f.translate();
+    if (transition === 'question') f.context.currentQuestion.current = 'kid:eq:1:q2';
+    if (transition === 'account') f.context.auth.currentUser = { uid: 'second' };
+    if (transition === 'unmount') f.context.mounted.current = false;
+    translated.resolve([{ ...trainingQuestion(f.question), statement: 'Stale translation' }]);
+    await tick();
+    assert.equal(f.state.Items[0].statement, '2 + 2?');
+    assert.equal(f.state.QuestionTranslation, null);
+  }
+});
+
+test('switching the current question in both directions preserves its answer, clock and session', async () => {
+  for (const originalLang of ['kk', 'ru']) {
+    const f = fixture({ ready: false });
+    const original = { ...trainingQuestion(f.question), lang: originalLang, statement: `Original ${originalLang}`, options: ['4', '5'] };
+    const otherLang = originalLang === 'kk' ? 'ru' : 'kk', calls = [];
+    f.setStart(async (_uid, _body, id) => ({ id, question: original, startedAt: Date.now() - 12000 }));
+    f.context.translateQuestions = async (list, lang) => {
+      calls.push({ source: list[0], lang });
+      return list.map(q => q.lang === lang ? q : { ...q, statement: `Translated ${lang}` });
+    };
+    await f.context.beginQuestion();
+    const session = f.context.questionSession.current, secs = f.state.Secs;
+    f.translate(originalLang); await tick();
+    assert.equal(f.visible().statement, original.statement);
+    f.translate(otherLang); await tick();
+    assert.equal(f.visible().statement, `Translated ${otherLang}`);
+    f.translate(originalLang);
+    assert.equal(f.visible().statement, original.statement, 'the old translation is hidden before the new effect resolves');
+    await tick();
+    assert.equal(f.visible().statement, original.statement);
+    assert.ok(calls.every(call => call.source.statement === original.statement));
+    assert.deepEqual(f.visible().options, original.options);
+    assert.equal(f.state.Answer, '4'); assert.equal(f.state.Secs, secs);
+    assert.equal(f.context.questionSession.current, session);
+    assert.equal(f.starts.length, 1); assert.equal(f.writes.length, 0);
+  }
+});
+
+test('an older language request cannot overwrite the latest selection, including after checking', async () => {
+  const f = fixture({ ready: false }), first = deferred(), latest = deferred();
+  f.setStart(async (_uid, _body, id) => ({ id, question: { ...trainingQuestion(f.question), lang: 'kk' } }));
+  await f.context.beginQuestion();
+  let requests = 0;
+  f.context.translateQuestions = async (list, lang) => lang === 'kk' ? list : (++requests === 1 ? first.promise : latest.promise);
+  f.translate('ru');
+  f.translate('kk'); await tick();
+  f.context.checked = true;
+  f.translate('ru');
+  latest.resolve([{ ...trainingQuestion(f.question), statement: 'Latest Russian' }]); await tick();
+  first.resolve([{ ...trainingQuestion(f.question), statement: 'Outdated Russian' }]); await tick();
+  assert.equal(f.visible().statement, 'Latest Russian');
+  assert.equal(f.starts.length, 1);
+});
+
+test('a language switch while the server opens the task uses the latest language', async () => {
+  const started = deferred(), f = fixture({ ready: false, start: () => started.promise });
+  f.context.lang = 'kk';
+  const opening = f.context.beginQuestion();
+  f.translate('ru');
+  const calls = [];
+  f.context.translateQuestions = async (list, lang) => { calls.push(lang); return [{ ...list[0], statement: 'Russian condition' }]; };
+  started.resolve({ id: 'stable-attempt-1', question: { ...trainingQuestion(f.question), lang: 'kk' } });
+  await opening; f.translate(); await tick();
+  assert.deepEqual(calls, ['ru']);
+  assert.equal(f.visible().statement, 'Russian condition');
+  assert.equal(f.starts.length, 1);
 });

@@ -16,7 +16,8 @@ async function loadEmulatorClient(name, { firestorePort = 18080 } = {}) {
     .replace('initializeApp(settings.config)', `initializeApp(settings.config, ${JSON.stringify(name)})`)
     .replace("connectFirestoreEmulator(db, '127.0.0.1', 18080)", `connectFirestoreEmulator(db, '127.0.0.1', ${firestorePort})`)
     .replace(/(['"])(firebase\/(?:app|auth|firestore))\1/g, (_, quote, specifier) => JSON.stringify(pathToFileURL(frontendRequire.resolve(specifier)).href))
-    .replace("'./firebaseConfig.js'", JSON.stringify(pathToFileURL(path.join(path.dirname(filename), 'firebaseConfig.js')).href));
+    .replace("'./firebaseConfig.js'", JSON.stringify(pathToFileURL(path.join(path.dirname(filename), 'firebaseConfig.js')).href))
+    .replace("'./authenticatedRequest.js'", JSON.stringify(pathToFileURL(path.join(path.dirname(filename), 'authenticatedRequest.js')).href));
   source += `\n//# sourceURL=synaq-emulator-client-${name}.mjs\n`;
   const client = await import(`data:text/javascript;base64,${Buffer.from(source).toString('base64')}`);
   if (client.auth.app.options.projectId !== 'demo-synaq-tests' || !client.auth.emulatorConfig) throw Error('Emulator client guard failed');

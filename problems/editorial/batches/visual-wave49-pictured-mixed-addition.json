@@ -1,0 +1,711 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All8savedvisualgrade5topic3.9;archivedsourcesonly,no newcapture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "Allcapturedvisualgrade5topic3.9sources",
+    "sourceVisualOccurrences": 8,
+    "addressedNewDrafts": 8,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "17b3831c3d44bb64",
+      "27488b0c4875e30d",
+      "5eef14b750a1e60b",
+      "8b2b88aa6f28e548",
+      "8d3276c40824d66d",
+      "bd69d89b1469dcc0",
+      "c3a1936efe10bff7",
+      "f2e360963cbdc3c4"
+    ],
+    "distinctModels": 8,
+    "semantics": "Eight source-specific targets rewritten separately, no inflatednewmeaningclaims."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave49-nine-sector-mixed-disc-sum",
+      "modelId": "visual-wave49-pictured-same-denominator-mixed-sum-no-carry",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "mixed-discs",
+        "parts": 9,
+        "values": [
+          [
+            1,
+            2,
+            9
+          ],
+          [
+            3,
+            5,
+            9
+          ]
+        ]
+      },
+      "answer": "(4 + (7/9))",
+      "sourceRefs": [
+        {
+          "sourceId": "8d3276c40824d66d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-9-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-9-level1.json#0",
+      "sourceCanonicalSha256": "8a506e5dfd9dddeb6c6b52be91b5d89071314389d056ba30faab4be6c14ed197",
+      "sourceSkill": "Read1+2/9and3+5/9fromactualwhole/partial9sectordiscs, nofractioncarry; keepaddden4+7/18,fractiondifference4+1/3,extrawhole5+7/9",
+      "adaptationChanges": [
+        "Барлық8сақталған3.9визуалшарт,толықшешімменбарлықMCQоқылды:бірдейбөлімдіараласқосынды,теңбөлшекбөліктібөліндікүшінжою,нақтыborrow/carryпериметр,3қабырғадан2бүтінкөтеру,екіқиықтан1бүтін,қабыспалыкүн/жолқосындыларыжәнесағатайырмасындұрысбөлшеккеайналдырудағдыларыбөлекқалдырылды.",
+        "Жаңадеректер9секторлы1+2/9және3+5/9;таспа7+5/12−3+5/12;rectangle9+1/6және3+3/4қысқа;triangle6+1/3,5+3/4,7+11/12;25метрарқаннан7+5/12және5+7/12қиық;75тонна/46+5/8/51+3/8;AC34+5/6,BD31+1/4,AD48+3/5;сағат5+1/5−4+3/4.ЖекеқателікнұсқаларыAB/CD,жартыпериметр,қатеені,бөлімқосу,borrowқателеріретіндеадрестісақталған.",
+        "БарлықSVGтазапараметрлік:дөңгелектің9теңсекторы,метр/тонна/километр/сағатқаұзындықпропорциясы,нативтіаралассандардыңбүтін/алым/бөлімбөлеканықжазуы.Қабырғалармасштабсыздепбелгіленген,үшбұрыштеңсіздіктеріорындалады.Sourceraster/tracedpathжоқ,белгісізкүн/жол/қалғанұзындықмәнідескриптордажасырылған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8saved/new/fullsolutions/allMCQ;9sectordiscswholecounts/paint2and5,exactcutbarlengths,rectangleborrowwidth/doublecarry,triangle24/12=2carry/validsides,rope12/12carry,dayspairbracketsactualendpointsand75ledger,routeACBDADallactualspans,proper9/20hourborrow;all343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave49-nine-sector-mixed-disc-sum.svg",
+      "verificationModule": "scripts/editorial/visual-wave49-models.mjs",
+      "options": [
+        "(4 + (7/18))",
+        "(4 + (1/3))",
+        "(4 + (7/9))",
+        "(5 + (7/9))"
+      ],
+      "statement": "Әр дөңгелек 9 тең секторға бөлінген, толық көк дөңгелек 1 бүтінді білдіреді. Жоғарғы қатар — A, төменгі қатар — B. Суреттегі A + B мәнін толық қысқартылған аралас санмен таңдаңыз.",
+      "solution": "A қатарында 1 толық дөңгелек және (2/9) бүтін бар: A = (1 + (2/9)). B = (3 + (5/9)). Бүтін бөліктер 1 + 3 = 4, бөлшек бөліктер (2/9) + (5/9) = (7/9). Қосынды (4 + (7/9)). Бөлшектердің бөлімі 9 болып қалады, оны екі есе арттыруға болмайды. (4 + (7/18)) — бөлімдерді қосу қатесі, (4 + (1/3)) — бөлшек үлестерді қосудың орнына азайту қатесі.",
+      "figureDescription": "A және B қатарлары: A-да 1 толық көк дөңгелек, келесі дөңгелекте 2 көк сектор; B-де 3 толық, соңғысында 5 көк сектор. Әр дөңгелек 9 тең секторға бөлінген.",
+      "figureSha256": "04e52af7b64e76f30b2280b907c9fa95d370a08eec433a8c28de2b369de2f2b0",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(4 + (7/9))",
+        "checks": {
+          "readMixeds": [
+            [
+              1,
+              2,
+              9
+            ],
+            [
+              3,
+              5,
+              9
+            ]
+          ],
+          "wholeSum": 4,
+          "fractionSum": [
+            7,
+            9
+          ],
+          "noNewWholeFromFractions": true,
+          "answer": "(4 + (7/9))",
+          "diagnosticAddedDenominators": "(4 + (7/18))",
+          "diagnosticFractionDifference": "(4 + (1/3))"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave49-seven-three-same-twelfths-ribbon",
+      "modelId": "visual-wave49-ribbon-equal-fractions-cancel-to-whole",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ribbon",
+        "total": [
+          7,
+          5,
+          12
+        ],
+        "cut": [
+          3,
+          5,
+          12
+        ]
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "8b2b88aa6f28e548",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-9-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-9-level1.json#13",
+      "sourceCanonicalSha256": "a49c4325cb65d4a0e403dc6f82b2eb5219d07ae09028d250909b6e2f3615ad4c",
+      "sourceSkill": "Readtotal7+5/12andcut3+5/12, samefractionpartcancels, integerrest4; exactsamefullribbonreverseledger",
+      "adaptationChanges": [
+        "Барлық8сақталған3.9визуалшарт,толықшешімменбарлықMCQоқылды:бірдейбөлімдіараласқосынды,теңбөлшекбөліктібөліндікүшінжою,нақтыborrow/carryпериметр,3қабырғадан2бүтінкөтеру,екіқиықтан1бүтін,қабыспалыкүн/жолқосындыларыжәнесағатайырмасындұрысбөлшеккеайналдырудағдыларыбөлекқалдырылды.",
+        "Жаңадеректер9секторлы1+2/9және3+5/9;таспа7+5/12−3+5/12;rectangle9+1/6және3+3/4қысқа;triangle6+1/3,5+3/4,7+11/12;25метрарқаннан7+5/12және5+7/12қиық;75тонна/46+5/8/51+3/8;AC34+5/6,BD31+1/4,AD48+3/5;сағат5+1/5−4+3/4.ЖекеқателікнұсқаларыAB/CD,жартыпериметр,қатеені,бөлімқосу,borrowқателеріретіндеадрестісақталған.",
+        "БарлықSVGтазапараметрлік:дөңгелектің9теңсекторы,метр/тонна/километр/сағатқаұзындықпропорциясы,нативтіаралассандардыңбүтін/алым/бөлімбөлеканықжазуы.Қабырғалармасштабсыздепбелгіленген,үшбұрыштеңсіздіктеріорындалады.Sourceraster/tracedpathжоқ,белгісізкүн/жол/қалғанұзындықмәнідескриптордажасырылған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8saved/new/fullsolutions/allMCQ;9sectordiscswholecounts/paint2and5,exactcutbarlengths,rectangleborrowwidth/doublecarry,triangle24/12=2carry/validsides,rope12/12carry,dayspairbracketsactualendpointsand75ledger,routeACBDADallactualspans,proper9/20hourborrow;all343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave49-seven-three-same-twelfths-ribbon.svg",
+      "verificationModule": "scripts/editorial/visual-wave49-models.mjs",
+      "statement": "Шебер безендіру таспасының көк бөлігін қиып алды. Таспаның бастапқы толық ұзындығы және қиылған бөліктің ұзындығы суретте метрмен көрсетілген. Неше метр таспа қалды? Жауапқа тек санды жазыңыз.",
+      "solution": "Толық таспа (7 + (5/12)) м, көк қиық (3 + (5/12)) м. Қалғаны (7 + (5/12)) − (3 + (5/12)). Бөлшек бөліктері бірдей: (5/12) − (5/12) = 0. Бүтіндер 7 − 3 = 4. Тексеру: 4 + (3 + (5/12)) = (7 + (5/12)) м. Қалған ұзындық бүтін санмен шығады.",
+      "figureDescription": "Бір таспа: жалпы ұзындық (7 + (5/12)) метр, қиылған көк бөлік (3 + (5/12)) метр. Қалған ақ бөлікте «?».",
+      "figureSha256": "1521318791e116750904233b7dc4697c79a7761a73de4eb978b5545b728bc5b2",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": {
+          "totalMixed": [
+            7,
+            5,
+            12
+          ],
+          "cutMixed": [
+            3,
+            5,
+            12
+          ],
+          "equalFractionPartsCancel": true,
+          "remainderMetres": 4,
+          "reverseSum": [
+            89,
+            12
+          ],
+          "actualBlueShare": 0.46067415730337075
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave49-rectangle-sixths-quarters-borrow-carry",
+      "modelId": "visual-wave49-rectangle-borrow-width-double-perimeter-carry",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "length": [
+          9,
+          1,
+          6
+        ],
+        "shorter": [
+          3,
+          3,
+          4
+        ]
+      },
+      "answer": "(29 + (1/6))",
+      "sourceRefs": [
+        {
+          "sourceId": "f2e360963cbdc3c4",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-9-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-9-level2.json#4",
+      "sourceCanonicalSha256": "6423525c16045b0edf0b117b51fa3aa69cd9433c581f48799efb00f87e953fd6",
+      "sourceSkill": "Length9+1/6minus3+3/4SHORTER; realborrowto5+5/12width, halfP14+7/12, doubledfractioncarriesagain→29+1/6; halfonly/wrongaddwidth/offby1traps",
+      "adaptationChanges": [
+        "Барлық8сақталған3.9визуалшарт,толықшешімменбарлықMCQоқылды:бірдейбөлімдіараласқосынды,теңбөлшекбөліктібөліндікүшінжою,нақтыborrow/carryпериметр,3қабырғадан2бүтінкөтеру,екіқиықтан1бүтін,қабыспалыкүн/жолқосындыларыжәнесағатайырмасындұрысбөлшеккеайналдырудағдыларыбөлекқалдырылды.",
+        "Жаңадеректер9секторлы1+2/9және3+5/9;таспа7+5/12−3+5/12;rectangle9+1/6және3+3/4қысқа;triangle6+1/3,5+3/4,7+11/12;25метрарқаннан7+5/12және5+7/12қиық;75тонна/46+5/8/51+3/8;AC34+5/6,BD31+1/4,AD48+3/5;сағат5+1/5−4+3/4.ЖекеқателікнұсқаларыAB/CD,жартыпериметр,қатеені,бөлімқосу,borrowқателеріретіндеадрестісақталған.",
+        "БарлықSVGтазапараметрлік:дөңгелектің9теңсекторы,метр/тонна/километр/сағатқаұзындықпропорциясы,нативтіаралассандардыңбүтін/алым/бөлімбөлеканықжазуы.Қабырғалармасштабсыздепбелгіленген,үшбұрыштеңсіздіктеріорындалады.Sourceraster/tracedpathжоқ,белгісізкүн/жол/қалғанұзындықмәнідескриптордажасырылған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8saved/new/fullsolutions/allMCQ;9sectordiscswholecounts/paint2and5,exactcutbarlengths,rectangleborrowwidth/doublecarry,triangle24/12=2carry/validsides,rope12/12carry,dayspairbracketsactualendpointsand75ledger,routeACBDADallactualspans,proper9/20hourborrow;all343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave49-rectangle-sixths-quarters-borrow-carry.svg",
+      "verificationModule": "scripts/editorial/visual-wave49-models.mjs",
+      "options": [
+        "(29 + (1/6))",
+        "(14 + (7/12))",
+        "(44 + (1/6))",
+        "(28 + (1/6))"
+      ],
+      "statement": "Тіктөртбұрыштың ұзындығы суретте сантиметрмен берілген. Ені одан (3 + (3/4)) см қысқа. Периметрін сантиметрмен таңдаңыз; сызба масштабсыз.",
+      "solution": "Алдымен енін табамыз: (9 + (1/6)) − (3 + (3/4)). Ортақ бөлім 12: бөлшек алымдары 2 және 9. Алғашқысы кіші, сондықтан 1 бүтінді 12 үлеске ауыстырамыз: (8 + (14/12)) − (3 + (9/12)) = (5 + (5/12)) см. Ұзындық пен еннің қосындысы (9 + (1/6)) + (5 + (5/12)) = (14 + (7/12)) см. Оны екі рет қосамыз: (14 + (7/12)) + (14 + (7/12)) = (29 + (1/6)) см. Бөлшек қосындысынан тағы 1 бүтін бөлінеді. (14 + (7/12)) — тек жарты периметр; енін қысқартудың орнына ұзартып алсақ (44 + (1/6)) деген қате периметр шығады.",
+      "figureDescription": "Тіктөртбұрыш: ұзындығы (9 + (1/6)) сантиметр, ені «?». Сызба масштабсыз.",
+      "figureSha256": "4109edc1c53cf6e3ad4d03d181c68acb65ac9bd45ae6c6597e2acbd258d1b862",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(29 + (1/6))",
+        "checks": {
+          "length": [
+            9,
+            1,
+            6
+          ],
+          "shorterBy": [
+            3,
+            3,
+            4
+          ],
+          "commonDenominator": 12,
+          "borrowedWhole": 8,
+          "borrowedNumerator": 14,
+          "width": "(5 + (5/12))",
+          "halfPerimeter": "(14 + (7/12))",
+          "perimeter": "(29 + (1/6))",
+          "carryOnDoubling": true,
+          "diagnosticHalfOnly": "(14 + (7/12))",
+          "diagnosticWidthLarger": "(44 + (1/6))"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave49-triangle-thirds-quarters-twelfths-carry-two",
+      "modelId": "visual-wave49-triangle-three-mixed-sides-fraction-carry-two",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "triangle",
+        "sides": [
+          [
+            6,
+            1,
+            3
+          ],
+          [
+            5,
+            3,
+            4
+          ],
+          [
+            7,
+            11,
+            12
+          ]
+        ]
+      },
+      "answer": "20",
+      "sourceRefs": [
+        {
+          "sourceId": "27488b0c4875e30d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-9-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-9-level2.json#6",
+      "sourceCanonicalSha256": "fc31564853d1921d0dc0cdc2838db82c3a91babf327d9c4156dbdad57ea9e332",
+      "sourceSkill": "Read3mixedlengths, LCM12, fractions4+9+11=24twelfths→2WHOLES, perimeter18+2=20, validstricttriangle",
+      "adaptationChanges": [
+        "Барлық8сақталған3.9визуалшарт,толықшешімменбарлықMCQоқылды:бірдейбөлімдіараласқосынды,теңбөлшекбөліктібөліндікүшінжою,нақтыborrow/carryпериметр,3қабырғадан2бүтінкөтеру,екіқиықтан1бүтін,қабыспалыкүн/жолқосындыларыжәнесағатайырмасындұрысбөлшеккеайналдырудағдыларыбөлекқалдырылды.",
+        "Жаңадеректер9секторлы1+2/9және3+5/9;таспа7+5/12−3+5/12;rectangle9+1/6және3+3/4қысқа;triangle6+1/3,5+3/4,7+11/12;25метрарқаннан7+5/12және5+7/12қиық;75тонна/46+5/8/51+3/8;AC34+5/6,BD31+1/4,AD48+3/5;сағат5+1/5−4+3/4.ЖекеқателікнұсқаларыAB/CD,жартыпериметр,қатеені,бөлімқосу,borrowқателеріретіндеадрестісақталған.",
+        "БарлықSVGтазапараметрлік:дөңгелектің9теңсекторы,метр/тонна/километр/сағатқаұзындықпропорциясы,нативтіаралассандардыңбүтін/алым/бөлімбөлеканықжазуы.Қабырғалармасштабсыздепбелгіленген,үшбұрыштеңсіздіктеріорындалады.Sourceraster/tracedpathжоқ,белгісізкүн/жол/қалғанұзындықмәнідескриптордажасырылған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8saved/new/fullsolutions/allMCQ;9sectordiscswholecounts/paint2and5,exactcutbarlengths,rectangleborrowwidth/doublecarry,triangle24/12=2carry/validsides,rope12/12carry,dayspairbracketsactualendpointsand75ledger,routeACBDADallactualspans,proper9/20hourborrow;all343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave49-triangle-thirds-quarters-twelfths-carry-two.svg",
+      "verificationModule": "scripts/editorial/visual-wave49-models.mjs",
+      "statement": "Сызбадағы үш қабырғаның ұзындығы сантиметрмен берілген, сурет масштабсыз. Осы үшбұрыштың периметрі неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Периметр үш қабырғаны қосады: (6 + (1/3)) + (5 + (3/4)) + (7 + (11/12)). Бүтін бөліктердің қосындысы 6 + 5 + 7 = 18. Бөлшек бөліктерді 12 бөліміне келтіреміз: (4/12) + (9/12) + (11/12) = (24/12) = 2. Сондықтан периметр 18 + 2 = 20 см. Қосындыдан шыққан 2 бүтінді ұмытпаймыз.",
+      "figureDescription": "Масштабсыз үшбұрыштың үш қабырғасы (6 + (1/3)), (5 + (3/4)), (7 + (11/12)) сантиметр деп белгіленген.",
+      "figureSha256": "c9538a00e0ca79a11e9e124384cacfb7e6beb27a899c7da45f6376e18d53340d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "20",
+        "checks": {
+          "sides": [
+            [
+              6,
+              1,
+              3
+            ],
+            [
+              5,
+              3,
+              4
+            ],
+            [
+              7,
+              11,
+              12
+            ]
+          ],
+          "commonDenominator": 12,
+          "scaledFractionNumerators": [
+            4,
+            9,
+            11
+          ],
+          "fractionSumRaw": [
+            24,
+            12
+          ],
+          "carryWholeCount": 2,
+          "wholePartSum": 18,
+          "perimeter": 20,
+          "strictTriangleInequalities": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave49-twenty-five-rope-two-complement-twelfths",
+      "modelId": "visual-wave49-two-cuts-complement-fractions-carry-before-remainder",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rope",
+        "total": 25,
+        "cuts": [
+          [
+            7,
+            5,
+            12
+          ],
+          [
+            5,
+            7,
+            12
+          ]
+        ]
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "5eef14b750a1e60b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-9-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-9-level2.json#9",
+      "sourceCanonicalSha256": "d96238655d5a3e92109720d67b758f0af1978f273792bcf495fc4461812e5bbd",
+      "sourceSkill": "Read2disjointcuts7+5/12and5+7/12, fractionalcomplementscarry1whole; cuts13,25−13=12; bothcutlengthsinsameoriginalrope",
+      "adaptationChanges": [
+        "Барлық8сақталған3.9визуалшарт,толықшешімменбарлықMCQоқылды:бірдейбөлімдіараласқосынды,теңбөлшекбөліктібөліндікүшінжою,нақтыborrow/carryпериметр,3қабырғадан2бүтінкөтеру,екіқиықтан1бүтін,қабыспалыкүн/жолқосындыларыжәнесағатайырмасындұрысбөлшеккеайналдырудағдыларыбөлекқалдырылды.",
+        "Жаңадеректер9секторлы1+2/9және3+5/9;таспа7+5/12−3+5/12;rectangle9+1/6және3+3/4қысқа;triangle6+1/3,5+3/4,7+11/12;25метрарқаннан7+5/12және5+7/12қиық;75тонна/46+5/8/51+3/8;AC34+5/6,BD31+1/4,AD48+3/5;сағат5+1/5−4+3/4.ЖекеқателікнұсқаларыAB/CD,жартыпериметр,қатеені,бөлімқосу,borrowқателеріретіндеадрестісақталған.",
+        "БарлықSVGтазапараметрлік:дөңгелектің9теңсекторы,метр/тонна/километр/сағатқаұзындықпропорциясы,нативтіаралассандардыңбүтін/алым/бөлімбөлеканықжазуы.Қабырғалармасштабсыздепбелгіленген,үшбұрыштеңсіздіктеріорындалады.Sourceraster/tracedpathжоқ,белгісізкүн/жол/қалғанұзындықмәнідескриптордажасырылған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8saved/new/fullsolutions/allMCQ;9sectordiscswholecounts/paint2and5,exactcutbarlengths,rectangleborrowwidth/doublecarry,triangle24/12=2carry/validsides,rope12/12carry,dayspairbracketsactualendpointsand75ledger,routeACBDADallactualspans,proper9/20hourborrow;all343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave49-twenty-five-rope-two-complement-twelfths.svg",
+      "verificationModule": "scripts/editorial/visual-wave49-models.mjs",
+      "statement": "Құрастыру жұмысына арқанның алдымен көк, кейін сары бөлігін кесті. Толық ұзындық пен екі қиықтың ұзындығы суретте метрмен берілген. Арқанның неше метрі қалды? Жауапқа тек санды жазыңыз.",
+      "solution": "Қиылған екі бөлік (7 + (5/12)) + (5 + (7/12)). Бөлшек бөліктер (5/12) + (7/12) = (12/12) = 1 бүтін. Қиылғаны 7 + 5 + 1 = 13 м. Қалғаны 25 − 13 = 12 м. Тексеру: 12 + (7 + (5/12)) + (5 + (7/12)) = 25 м. Екі қиық та бір бастапқы арқаннан алынды.",
+      "figureDescription": "Толық арқан 25 метр. Көк қиық (7 + (5/12)), сары қиық (5 + (7/12)) метр. Қалған ақ бөлікте «?».",
+      "figureSha256": "8019c300552f89283002a5c155e41c3818a7dc239ce5719a6d224e8649fbf281",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "totalMetres": 25,
+          "cuts": [
+            [
+              7,
+              5,
+              12
+            ],
+            [
+              5,
+              7,
+              12
+            ]
+          ],
+          "complementaryFractionNumerators": [
+            5,
+            7
+          ],
+          "commonDenominator": 12,
+          "carriedWhole": 1,
+          "removedWhole": 13,
+          "remainingWhole": 12,
+          "conservation": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave49-three-days-overlap-seventy-five-tonnes",
+      "modelId": "visual-wave49-three-days-overlapping-mixed-pair-totals",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "days",
+        "total": 75,
+        "firstTwo": [
+          46,
+          5,
+          8
+        ],
+        "lastTwo": [
+          51,
+          3,
+          8
+        ]
+      },
+      "answer": "23",
+      "sourceRefs": [
+        {
+          "sourceId": "bd69d89b1469dcc0",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-9-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-9-level3.json#5",
+      "sourceCanonicalSha256": "5031bcffd6cfd41ade51e0a68e31e113dcdeae9fedb709660b89b179c5f6a748",
+      "sourceSkill": "Nativeoverlappingfirsttwo46+5/8,lasttwo51+3/8,total75;75−46+5/8needsborrow→third28+3/8;then equal3/8cancel→second23; first23+5/8; noindividualmassleak",
+      "adaptationChanges": [
+        "Барлық8сақталған3.9визуалшарт,толықшешімменбарлықMCQоқылды:бірдейбөлімдіараласқосынды,теңбөлшекбөліктібөліндікүшінжою,нақтыborrow/carryпериметр,3қабырғадан2бүтінкөтеру,екіқиықтан1бүтін,қабыспалыкүн/жолқосындыларыжәнесағатайырмасындұрысбөлшеккеайналдырудағдыларыбөлекқалдырылды.",
+        "Жаңадеректер9секторлы1+2/9және3+5/9;таспа7+5/12−3+5/12;rectangle9+1/6және3+3/4қысқа;triangle6+1/3,5+3/4,7+11/12;25метрарқаннан7+5/12және5+7/12қиық;75тонна/46+5/8/51+3/8;AC34+5/6,BD31+1/4,AD48+3/5;сағат5+1/5−4+3/4.ЖекеқателікнұсқаларыAB/CD,жартыпериметр,қатеені,бөлімқосу,borrowқателеріретіндеадрестісақталған.",
+        "БарлықSVGтазапараметрлік:дөңгелектің9теңсекторы,метр/тонна/километр/сағатқаұзындықпропорциясы,нативтіаралассандардыңбүтін/алым/бөлімбөлеканықжазуы.Қабырғалармасштабсыздепбелгіленген,үшбұрыштеңсіздіктеріорындалады.Sourceraster/tracedpathжоқ,белгісізкүн/жол/қалғанұзындықмәнідескриптордажасырылған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8saved/new/fullsolutions/allMCQ;9sectordiscswholecounts/paint2and5,exactcutbarlengths,rectangleborrowwidth/doublecarry,triangle24/12=2carry/validsides,rope12/12carry,dayspairbracketsactualendpointsand75ledger,routeACBDADallactualspans,proper9/20hourborrow;all343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave49-three-days-overlap-seventy-five-tonnes.svg",
+      "verificationModule": "scripts/editorial/visual-wave49-models.mjs",
+      "statement": "Қоймаға үш күнде жеткізілген құм жолақтың 1, 2, 3 бөліктерімен көрсетілген. Үш күннің жалпы массасы, алғашқы екі күннің және соңғы екі күннің массалары суретте тоннамен берілген. Екінші күні неше тонна құм жеткізілді? Жауапқа тек санды жазыңыз.",
+      "solution": "Үшінші күнгі масса = жалпы масса − алғашқы екі күн: 75 − (46 + (5/8)). 1 бүтінді 8 үлеске ауыстырамыз: (74 + (8/8)) − (46 + (5/8)) = (28 + (3/8)) т. Енді соңғы екі күннен үшінші күнді азайтамыз: (51 + (3/8)) − (28 + (3/8)) = 23 т. Бұл азайтуда бөлшек бөліктер бірдей, олар жойылады. Қосымша тексеру: бірінші күні (23 + (5/8)) т; (23 + (5/8)) + 23 + (28 + (3/8)) = 75 т. Екі қосындыдағы ортақ екінші күнді екі рет санамау керек.",
+      "figureDescription": "1, 2, 3 деп белгіленген үш күндік жолақ. Барлығы 75 тонна; 1+2 күндер (46 + (5/8)), 2+3 күндер (51 + (3/8)) тонна. Жеке күн массалары көрсетілмеген.",
+      "figureSha256": "f5d905b4f627b7742e3fd2b99831bbb77f5049852667951db7084580fbe4d712",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "23",
+        "checks": {
+          "total": 75,
+          "firstTwo": [
+            46,
+            5,
+            8
+          ],
+          "lastTwo": [
+            51,
+            3,
+            8
+          ],
+          "borrowFromTotal": true,
+          "third": "(28 + (3/8))",
+          "second": "23",
+          "first": "(23 + (5/8))",
+          "massParts": [
+            [
+              189,
+              8
+            ],
+            [
+              23,
+              1
+            ],
+            [
+              227,
+              8
+            ]
+          ],
+          "overlapIdentity": 23,
+          "answer": "23"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave49-four-stops-overlap-sixtieths-distance",
+      "modelId": "visual-wave49-four-stops-overlap-mixed-distance-unknown-middle",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "route",
+        "ac": [
+          34,
+          5,
+          6
+        ],
+        "bd": [
+          31,
+          1,
+          4
+        ],
+        "ad": [
+          48,
+          3,
+          5
+        ]
+      },
+      "answer": "(17 + (29/60))",
+      "sourceRefs": [
+        {
+          "sourceId": "c3a1936efe10bff7",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-9-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-9-level3.json#9",
+      "sourceCanonicalSha256": "51658c06065b0c04ae0e654a349bd70c64ea260f4108526f6aa674ee9730cccb",
+      "sourceSkill": "Fourorderedstops, overlappingAC/BD/ADgivens;AB17+7/20thenBC17+29/60withoutborrow; CD13+23/30traprequiresborrow; nativeexactdistancesnoindividualanswerlabels",
+      "adaptationChanges": [
+        "Барлық8сақталған3.9визуалшарт,толықшешімменбарлықMCQоқылды:бірдейбөлімдіараласқосынды,теңбөлшекбөліктібөліндікүшінжою,нақтыborrow/carryпериметр,3қабырғадан2бүтінкөтеру,екіқиықтан1бүтін,қабыспалыкүн/жолқосындыларыжәнесағатайырмасындұрысбөлшеккеайналдырудағдыларыбөлекқалдырылды.",
+        "Жаңадеректер9секторлы1+2/9және3+5/9;таспа7+5/12−3+5/12;rectangle9+1/6және3+3/4қысқа;triangle6+1/3,5+3/4,7+11/12;25метрарқаннан7+5/12және5+7/12қиық;75тонна/46+5/8/51+3/8;AC34+5/6,BD31+1/4,AD48+3/5;сағат5+1/5−4+3/4.ЖекеқателікнұсқаларыAB/CD,жартыпериметр,қатеені,бөлімқосу,borrowқателеріретіндеадрестісақталған.",
+        "БарлықSVGтазапараметрлік:дөңгелектің9теңсекторы,метр/тонна/километр/сағатқаұзындықпропорциясы,нативтіаралассандардыңбүтін/алым/бөлімбөлеканықжазуы.Қабырғалармасштабсыздепбелгіленген,үшбұрыштеңсіздіктеріорындалады.Sourceraster/tracedpathжоқ,белгісізкүн/жол/қалғанұзындықмәнідескриптордажасырылған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8saved/new/fullsolutions/allMCQ;9sectordiscswholecounts/paint2and5,exactcutbarlengths,rectangleborrowwidth/doublecarry,triangle24/12=2carry/validsides,rope12/12carry,dayspairbracketsactualendpointsand75ledger,routeACBDADallactualspans,proper9/20hourborrow;all343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave49-four-stops-overlap-sixtieths-distance.svg",
+      "verificationModule": "scripts/editorial/visual-wave49-models.mjs",
+      "options": [
+        "(17 + (7/20))",
+        "(17 + (29/60))",
+        "(13 + (23/30))",
+        "(18 + (29/60))"
+      ],
+      "statement": "Түзу жолдағы A, B, C, D аялдамалары осы ретпен орналасқан. Сызбада AC, BD және AD ұзындықтары километрмен берілген. B мен C аялдамаларының арақашықтығын таңдаңыз.",
+      "solution": "AD = AB + BD, сондықтан AB = (48 + (3/5)) − (31 + (1/4)). Ортақ бөлім 20: (48 + (12/20)) − (31 + (5/20)) = (17 + (7/20)) км. AC = AB + BC: BC = (34 + (5/6)) − (17 + (7/20)). Енді ортақ бөлім 60: (34 + (50/60)) − (17 + (21/60)) = (17 + (29/60)) км. (17 + (7/20)) — AB, ал (13 + (23/30)) — CD аралығы; олар сұралған ортаңғы BC емес. Тексеру: (17 + (7/20)) + (17 + (29/60)) + (13 + (23/30)) = (48 + (3/5)) км. Ортақ бөлімдерді сақтап, бөлшек бөліктерді жеке азайттық.",
+      "figureDescription": "Түзу бойында A, B, C, D осы ретпен. AC=(34 + (5/6)), BD=(31 + (1/4)), AD=(48 + (3/5)) километр, ортаңғы BC белгісіз.",
+      "figureSha256": "3f93dea136d019b3351285f7c354b7f0a21049db8dd9458e403277d879dd9444",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(17 + (29/60))",
+        "checks": {
+          "AC": [
+            34,
+            5,
+            6
+          ],
+          "BD": [
+            31,
+            1,
+            4
+          ],
+          "AD": [
+            48,
+            3,
+            5
+          ],
+          "AB": "(17 + (7/20))",
+          "BC": "(17 + (29/60))",
+          "CD": "(13 + (23/30))",
+          "orderedSegmentLengths": [
+            [
+              347,
+              20
+            ],
+            [
+              1049,
+              60
+            ],
+            [
+              413,
+              30
+            ]
+          ],
+          "totalDistance": [
+            243,
+            5
+          ],
+          "commonDenominatorAB": 20,
+          "commonDenominatorBC": 60,
+          "sourceABandCDtrapsRetained": true,
+          "ABandBCSubtractWithoutBorrow": true,
+          "CDTrapNeedsBorrow": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave49-outward-returning-borrow-twentieths",
+      "modelId": "visual-wave49-two-trip-durations-borrow-to-proper-fraction",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "times",
+        "outward": [
+          5,
+          1,
+          5
+        ],
+        "returning": [
+          4,
+          3,
+          4
+        ]
+      },
+      "answer": "(9/20)",
+      "sourceRefs": [
+        {
+          "sourceId": "17b3831c3d44bb64",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-9-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-9-leveltest.json#2",
+      "sourceCanonicalSha256": "23bc1612bc33490cb6b840555bc10006b331beb81b15f711320af93705e8073a",
+      "sourceSkill": "Displayedmixed5+1/5−4+3/4; realborrowcommon20,wholepartvanishes→proper9/20. Absolute-frac1+11/20,forgotwholedecrement1+9/20,addition9+19/20diagnosticoptions",
+      "adaptationChanges": [
+        "Барлық8сақталған3.9визуалшарт,толықшешімменбарлықMCQоқылды:бірдейбөлімдіараласқосынды,теңбөлшекбөліктібөліндікүшінжою,нақтыborrow/carryпериметр,3қабырғадан2бүтінкөтеру,екіқиықтан1бүтін,қабыспалыкүн/жолқосындыларыжәнесағатайырмасындұрысбөлшеккеайналдырудағдыларыбөлекқалдырылды.",
+        "Жаңадеректер9секторлы1+2/9және3+5/9;таспа7+5/12−3+5/12;rectangle9+1/6және3+3/4қысқа;triangle6+1/3,5+3/4,7+11/12;25метрарқаннан7+5/12және5+7/12қиық;75тонна/46+5/8/51+3/8;AC34+5/6,BD31+1/4,AD48+3/5;сағат5+1/5−4+3/4.ЖекеқателікнұсқаларыAB/CD,жартыпериметр,қатеені,бөлімқосу,borrowқателеріретіндеадрестісақталған.",
+        "БарлықSVGтазапараметрлік:дөңгелектің9теңсекторы,метр/тонна/километр/сағатқаұзындықпропорциясы,нативтіаралассандардыңбүтін/алым/бөлімбөлеканықжазуы.Қабырғалармасштабсыздепбелгіленген,үшбұрыштеңсіздіктеріорындалады.Sourceraster/tracedpathжоқ,белгісізкүн/жол/қалғанұзындықмәнідескриптордажасырылған."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Суреттегі аралас сандар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all8saved/new/fullsolutions/allMCQ;9sectordiscswholecounts/paint2and5,exactcutbarlengths,rectangleborrowwidth/doublecarry,triangle24/12=2carry/validsides,rope12/12carry,dayspairbracketsactualendpointsand75ledger,routeACBDADallactualspans,proper9/20hourborrow;all343pxnativelegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave49-outward-returning-borrow-twentieths.svg",
+      "verificationModule": "scripts/editorial/visual-wave49-models.mjs",
+      "options": [
+        "(1 + (11/20))",
+        "(1 + (9/20))",
+        "(9/20)",
+        "(9 + (19/20))"
+      ],
+      "statement": "Автобустың тауға барған уақыты көк, кері қайтқаны күлгін жолақта сағатпен көрсетілген. Баруға қайтуға қарағанда неше сағат артық уақыт кетті?",
+      "solution": "Көк уақыт (5 + (1/5)) сағат, күлгін (4 + (3/4)) сағат. «Неше сағат артық» — айырма. Ортақ бөлім 20: (5 + (4/20)) − (4 + (15/20)). 4 < 15, сондықтан (4 + (24/20)) − (4 + (15/20)) = (9/20). Бүтін бөліктері жойылып, дұрыс бөлшек қалды. (1 + (11/20)) — бөлшек бөліктерді кері ретпен азайту қатесі, (1 + (9/20)) — алынған 1 бүтінді бүтін бөліктен кемітпеу қатесі. (9 + (19/20)) — екі уақытты қосу, ол айырма емес.",
+      "figureDescription": "Сағатпен берілген екі уақыт жолағы: көк бару (5 + (1/5)), күлгін қайту (4 + (3/4)). Екеуі бірдей сол жақтан басталып, ұзындықтары уақыттарына пропорционал.",
+      "figureSha256": "45f94772b6e149430854bcc8b8620da27bcbca34a7d4d2550108ade81a630754",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(9/20)",
+        "checks": {
+          "outward": [
+            5,
+            1,
+            5
+          ],
+          "returning": [
+            4,
+            3,
+            4
+          ],
+          "commonDenominator": 20,
+          "outwardFractionNumerator": 4,
+          "returnFractionNumerator": 15,
+          "borrowedNumerator": 24,
+          "properResult": [
+            9,
+            20
+          ],
+          "diagnosticAbsoluteFraction": "(1 + (11/20))",
+          "diagnosticForgotWholeDecrement": "(1 + (9/20))",
+          "diagnosticSum": "(9 + (19/20))",
+          "answer": "(9/20)"
+        }
+      }
+    }
+  ]
+}

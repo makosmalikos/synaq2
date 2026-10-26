@@ -1,0 +1,443 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All5 saved visual grade6topic9.5 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade6topic9.5",
+    "sourceVisualOccurrences": 5,
+    "addressedNewDrafts": 5,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "026faefd2290295e",
+      "02819430aeeda5ad",
+      "2519e4976a90cdfd",
+      "34dc97649592847f",
+      "dcb83dc08e749a9d"
+    ],
+    "distinctModels": 5,
+    "semantics": "5 source-addressed proportionality targets preserve sign, coefficient direction, coordinate input/output and physical units."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave17-negative-slope-forward-reading",
+      "modelId": "visual-wave17-negative-coefficient-forward",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "lines": [
+          {
+            "points": [
+              [
+                -6,
+                4
+              ],
+              [
+                6,
+                -4
+              ]
+            ]
+          }
+        ],
+        "queryX": -6
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "2519e4976a90cdfd",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-5-level1.json#2",
+      "sourceCanonicalSha256": "3c29c21e2994ae7c209e0c192874fda8a887f09cadfe957c76de837280aae749",
+      "sourceSkill": "Forward reading for a negative input on a negative rational-slope direct-proportional line",
+      "adaptationChanges": [
+        "Дереккөздің тура пропорционалдық дағдысы сақталды: берілген x-тегі y, таңбалы коэффициент, кері емес y/x, жылдамдық немесе төрт түзуден тиістісін тану.",
+        "Нүктелер, коэффициенттер, таңбалы бөлшек/ондық нұсқалар, масштаб және дұрыс жауаптар жаңадан берілді.",
+        "Native SVG сызықтары жаңа нақты координаталардан салынды; бірлік тор екі осьте бірдей. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тура пропорционалдық",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact rational y/x and printed-option parser, all-origin line checks, equal grid metrics and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave17-negative-slope-forward-reading.svg",
+      "verificationModule": "scripts/editorial/visual-wave17-models.mjs",
+      "statement": "Координаталық жазықтықта y = kx тура пропорционалдығы салынған. x = -6 болғанда y неге тең? Жауапқа тек санды жазыңыз.",
+      "solution": "Түзу (-6; 4) нүктесінен өтеді. Тексеру: k = -2/3, сондықтан y = (-2/3) × (-6) = 4. Теріс коэффициент пен теріс x көбейтілгенде y оң болады.",
+      "figureDescription": "Бірдей бірлік масштабты координаталық тор, әр ұсақ аралық1. Берілген түзуінің екі нүктесі (-6; 4) және (6; -4). ",
+      "figureSha256": "3144118f340776d8a73beabbe0f3db958482eab84ebdd456f4e48a7ca0e6ac59",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": {
+          "coefficient": {
+            "n": -2,
+            "d": 3
+          },
+          "query": -6
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave17-negative-fractional-coefficient",
+      "modelId": "visual-wave17-signed-fractional-coefficient",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "lines": [
+          {
+            "points": [
+              [
+                -4,
+                5
+              ],
+              [
+                4,
+                -5
+              ]
+            ]
+          }
+        ],
+        "point": [
+          -4,
+          5
+        ]
+      },
+      "answer": "-1,25",
+      "sourceRefs": [
+        {
+          "sourceId": "dcb83dc08e749a9d",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-5-level1.json#4",
+      "sourceCanonicalSha256": "47766b717fe02ec924009c2d75379e8328a825387c9620e3ab86d7c28ddb78c9",
+      "sourceSkill": "Reading a point in quadrantII then finding signed y/x rather than its unsigned or reciprocal value",
+      "adaptationChanges": [
+        "Дереккөздің тура пропорционалдық дағдысы сақталды: берілген x-тегі y, таңбалы коэффициент, кері емес y/x, жылдамдық немесе төрт түзуден тиістісін тану.",
+        "Нүктелер, коэффициенттер, таңбалы бөлшек/ондық нұсқалар, масштаб және дұрыс жауаптар жаңадан берілді.",
+        "Native SVG сызықтары жаңа нақты координаталардан салынды; бірлік тор екі осьте бірдей. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тура пропорционалдық",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact rational y/x and printed-option parser, all-origin line checks, equal grid metrics and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave17-negative-fractional-coefficient.svg",
+      "verificationModule": "scripts/editorial/visual-wave17-models.mjs",
+      "options": [
+        "1,25",
+        "(-4/5)",
+        "(4/5)",
+        "-1,25"
+      ],
+      "statement": "Тура пропорционалдық графигінде M нүктесі белгіленген. y = kx формуласындағы k коэффициентін таңдаңыз. Таңба мен координаталардың ретін ескеріңіз.",
+      "solution": "M(-4; 5). k = y/x = 5/(-4) = -1,25. Түзу II және IV ширектерден өтеді, сондықтан коэффициент теріс. x/y кері қатынасын алуға болмайды.",
+      "figureDescription": "Бірдей бірлік масштабты координаталық тор, әр ұсақ аралық1. Берілген түзуінің екі нүктесі (-4; 5) және (4; -5). M(-4; 5) белгіленген.",
+      "figureSha256": "b3a30cd1fbb358df80b766e35ae26a323c3d962d12578f1fffa44bf873c0c97b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-1,25",
+        "checks": {
+          "point": [
+            -4,
+            5
+          ],
+          "coefficient": {
+            "n": -5,
+            "d": 4
+          }
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave17-speed-from-scaled-proportion",
+      "modelId": "visual-wave17-scaled-cycle-speed",
+      "grade": 6,
+      "topic": "speed",
+      "difficulty": "medium",
+      "params": {
+        "scene": "speed",
+        "xLabel": "t (сағ)",
+        "yLabel": "s (км)",
+        "xMax": 5,
+        "yMax": 80,
+        "xStep": 1,
+        "yStep": 4,
+        "xLabelEvery": 1,
+        "yLabelEvery": 16,
+        "series": [
+          {
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                72
+              ]
+            ]
+          }
+        ]
+      },
+      "answer": "18",
+      "sourceRefs": [
+        {
+          "sourceId": "34dc97649592847f",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-5-level1.json#12",
+      "sourceCanonicalSha256": "6ee0fdb876c8aa294773551d061f1945832da9cc5cad33c0bea27448be320e3f",
+      "sourceSkill": "Interpreting the proportionality coefficient of a nonunit-scaled distance-time graph as speed",
+      "adaptationChanges": [
+        "Дереккөздің тура пропорционалдық дағдысы сақталды: берілген x-тегі y, таңбалы коэффициент, кері емес y/x, жылдамдық немесе төрт түзуден тиістісін тану.",
+        "Нүктелер, коэффициенттер, таңбалы бөлшек/ондық нұсқалар, масштаб және дұрыс жауаптар жаңадан берілді.",
+        "Native SVG сызықтары жаңа нақты координаталардан салынды; бірлік тор екі осьте бірдей. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тура пропорционалдық",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact rational y/x and printed-option parser, all-origin line checks, equal grid metrics and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave17-speed-from-scaled-proportion.svg",
+      "verificationModule": "scripts/editorial/visual-wave17-models.mjs",
+      "statement": "Велосипедшінің жүрген жолы қозғалыс уақытына тура пропорционал. График бойынша оның тұрақты жылдамдығы неше км/сағ? Тік шкаладағы бір тор аралығын ескеріңіз. Жауапқа тек санды жазыңыз.",
+      "solution": "Графикте 4 сағатта 72 км. v = s/t = 72 : 4 = 18 км/сағ. Тексеру: 18 × 4 = 72. Бір тік ұсақ аралық 4 км.",
+      "figureDescription": "Көлденең ось t (сағ), 0–5, бір аралық 1. Тік ось s (км), 0–80, бір аралық 4. Негізгі сынық сызық төбелері: (0; 0), (4; 72). ",
+      "figureSha256": "b9c3fb2a5c8228f958486c5f8caf325d7f398a0aaef89972260f620ada1c07b9",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "18",
+        "checks": {
+          "point": [
+            4,
+            72
+          ],
+          "speed": 18
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave17-identify-negative-three-slope",
+      "modelId": "visual-wave17-target-negative-slope-line",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "targetFormula": "y = -3x",
+        "lines": [
+          {
+            "label": "a",
+            "points": [
+              [
+                -2,
+                -6
+              ],
+              [
+                2,
+                6
+              ]
+            ]
+          },
+          {
+            "label": "b",
+            "points": [
+              [
+                -6,
+                -2
+              ],
+              [
+                6,
+                2
+              ]
+            ]
+          },
+          {
+            "label": "c",
+            "points": [
+              [
+                -6,
+                2
+              ],
+              [
+                6,
+                -2
+              ]
+            ],
+            "labelDy": 22
+          },
+          {
+            "label": "d",
+            "points": [
+              [
+                -2,
+                6
+              ],
+              [
+                2,
+                -6
+              ]
+            ],
+            "labelDy": 22
+          }
+        ]
+      },
+      "answer": "d",
+      "sourceRefs": [
+        {
+          "sourceId": "02819430aeeda5ad",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-5-level1.json#13",
+      "sourceCanonicalSha256": "9d21936f4337ac6b76399ec76e169cc8b901770b583caebc4a85a8e1ce1d1ac5",
+      "sourceSkill": "Identifying the target negative slope among sign-flipped and reciprocal-slope distractor lines on one equal-scale coordinate plane",
+      "adaptationChanges": [
+        "Дереккөздің тура пропорционалдық дағдысы сақталды: берілген x-тегі y, таңбалы коэффициент, кері емес y/x, жылдамдық немесе төрт түзуден тиістісін тану.",
+        "Нүктелер, коэффициенттер, таңбалы бөлшек/ондық нұсқалар, масштаб және дұрыс жауаптар жаңадан берілді.",
+        "Native SVG сызықтары жаңа нақты координаталардан салынды; бірлік тор екі осьте бірдей. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тура пропорционалдық",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact rational y/x and printed-option parser, all-origin line checks, equal grid metrics and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave17-identify-negative-three-slope.svg",
+      "verificationModule": "scripts/editorial/visual-wave17-models.mjs",
+      "options": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "statement": "a, b, c, d түзулерінің әрқайсысы координаталар басы арқылы өтеді. Қай түзу y = -3x формуласына сәйкес келеді?",
+      "solution": "Берілген формула бойынша x = 2 болса, y = -6. Осы (2; -6) нүктесінен d түзуі өтеді. Таңбасы оң түзулер сәйкес емес; теріс түзулердің көлбеуліктерін де нүктемен тексеру керек. Дұрыс түзу d.",
+      "figureDescription": "Бірдей бірлік масштабты координаталық тор, әр ұсақ аралық1. a түзуінің екі нүктесі (-2; -6) және (2; 6); b түзуінің екі нүктесі (-6; -2) және (6; 2); c түзуінің екі нүктесі (-6; 2) және (6; -2); d түзуінің екі нүктесі (-2; 6) және (2; -6). ",
+      "figureSha256": "8d233b069018ac4032313fd9f09185faf6d5bd9e6620873a75dea4bbc2d4e409",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "d",
+        "checks": {
+          "targetCoefficient": {
+            "n": -3,
+            "d": 1
+          },
+          "lineCoefficients": [
+            {
+              "label": "a",
+              "n": 3,
+              "d": 1
+            },
+            {
+              "label": "b",
+              "n": 1,
+              "d": 3
+            },
+            {
+              "label": "c",
+              "n": -1,
+              "d": 3
+            },
+            {
+              "label": "d",
+              "n": -3,
+              "d": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave17-positive-point-proportionality",
+      "modelId": "visual-wave17-positive-point-coefficient",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "scene": "plane",
+        "lines": [
+          {
+            "points": [
+              [
+                -3,
+                -6
+              ],
+              [
+                3,
+                6
+              ]
+            ]
+          }
+        ],
+        "point": [
+          3,
+          6
+        ]
+      },
+      "answer": "2",
+      "sourceRefs": [
+        {
+          "sourceId": "026faefd2290295e",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-5-level1.json#14",
+      "sourceCanonicalSha256": "7c2b6c3d973c940cb2c121b549a4886b3659882839e6e9d40511c56cdf90a029",
+      "sourceSkill": "Reading a positive plotted point and calculating the direct proportionality constant as y/x",
+      "adaptationChanges": [
+        "Дереккөздің тура пропорционалдық дағдысы сақталды: берілген x-тегі y, таңбалы коэффициент, кері емес y/x, жылдамдық немесе төрт түзуден тиістісін тану.",
+        "Нүктелер, коэффициенттер, таңбалы бөлшек/ондық нұсқалар, масштаб және дұрыс жауаптар жаңадан берілді.",
+        "Native SVG сызықтары жаңа нақты координаталардан салынды; бірлік тор екі осьте бірдей. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тура пропорционалдық",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, exact rational y/x and printed-option parser, all-origin line checks, equal grid metrics and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave17-positive-point-proportionality.svg",
+      "verificationModule": "scripts/editorial/visual-wave17-models.mjs",
+      "statement": "A нүктесі арқылы өтетін y = kx графигі берілген. Пропорционалдық коэффициенті k-ны табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "A(3; 6). k = y/x = 6 : 3 = 2. Координаталар басы мен осы нүкте арқылы өтетін түзу y = 2x формуласын береді.",
+      "figureDescription": "Бірдей бірлік масштабты координаталық тор, әр ұсақ аралық1. Берілген түзуінің екі нүктесі (-3; -6) және (3; 6). A(3; 6) белгіленген.",
+      "figureSha256": "2a529a3b659f11c937905ce6bebdf59c41fd7be30b14bce17fe0adbcf13e4cf4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2",
+        "checks": {
+          "point": [
+            3,
+            6
+          ],
+          "coefficient": {
+            "n": 2,
+            "d": 1
+          }
+        }
+      }
+    }
+  ]
+}

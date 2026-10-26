@@ -29,3 +29,14 @@ test('subject and bilingual search combine without mutating original topic order
   assert.equal(trainingTopicName({id:'reading',name:'Оқу сауаттылығы'},'ru'),'Грамотность чтения');
   assert.equal(trainingCatalog([{id:'reading',block:'reading',count:2,name:'Оқу сауаттылығы'}],{query:'чтени'}).length,1);
 });
+
+test('older server topic IDs have readable bilingual names and retain their original identity', () => {
+  const topics = [{ id: 'speed', name: 'speed', block: 'legacy', count: 3 },
+    { id: 'logic', name: 'logic', block: 'legacy', count: 4 }];
+  assert.equal(trainingTopicName(topics[0], 'ru'), 'Скорость');
+  assert.equal(trainingTopicName(topics[0], 'kk'), 'Жылдамдық');
+  assert.equal(trainingSubject(topics[1]), 'logic');
+  assert.equal(trainingCatalog(topics, { query: 'жылдам' })[0].topics[0].id, 'speed');
+  assert.equal(trainingTopicName({ ...topics[0], nameRu: 'Скорость работы' }, 'ru'), 'Скорость работы');
+  assert.equal(topics[0].name, 'speed');
+});

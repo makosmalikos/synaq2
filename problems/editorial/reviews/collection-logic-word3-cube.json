@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "scope": "Full saved/new cube condition, full official/new solution, all4options and\narchived raster inspected. Same root author separate computational and343px\nvisual review, not separate human reviewer. All24proper rotations checked.\nSource observations record orientation read from raster, not traced output.\nNew folding and exact whole marker shapes decoded from actual nativeSVG.\n",
+  "reviewer": "root_separate_computational_check_same_author",
+  "summary": {
+    "verified": 1,
+    "sourceRasterRead": 1,
+    "allSourceAndNewOptionsChecked": 8,
+    "properRotationsPerCandidate": 24,
+    "sourceCorrect": "B",
+    "newCorrect": "C",
+    "actualFigureSemanticMutationsRejected": 2,
+    "changedFiguresRecomputedKeys": [
+      "B",
+      "A"
+    ],
+    "wrongKeyRejected": 1,
+    "wholeNativeMarkerShapesMatched": true,
+    "separateHumanReviewer": false
+  },
+  "entries": [
+    {
+      "editionId": "collection-logic-word3-cube-19",
+      "sha256": "c8f85c2dad2dc507d5e28d7c6198a962ecef1ef77cfd2c913cef0fde0e513769",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "Full source/new condition, full official/new solution, every4MCQ and archived raster read. Source face/marker axes independently matched under all24proper rotations. Actual native6square net folded from primitives; complete projected marker polygons, circular mark radius and diagonal endpoints matched under all24proper rotations. Same author, not separate human reviewer.",
+      "figureReview": {
+        "status": "verified",
+        "sha256": "6b444b46d0211621dbf3c72145575291e1a5490ee6d2a936873782a60ae4d556",
+        "method": "All actual net polygons/circles/segments and4projected cube views decoded, full24proper3Drotations verified and343px PNG inspected."
+      },
+      "notes": [
+        "{\"actualNetSquareCount\": 6, \"allNormalsDistinctAfterFold\": true, \"netCellPatternKinds\": {\"(0, 0)\": \"pair\", \"(1, 0)\": \"one\", \"(-1, 0)\": \"triple\", \"(-2, 0)\": \"cross\", \"(0, -1)\": \"line\", \"(0, 1)\": \"line\"}, \"allActualMarkerCoordinatesDecoded\": true, \"properRotationsEnumerated\": 24, \"determinantOfEveryRotation\": 1, \"candidateMatchingRotationCounts\": {\"A\": 0, \"B\": 0, \"C\": 1, \"D\": 0}, \"wholeMarkShapesMatchedNotJustNormals\": true, \"oppositePatternsVerified\": true, \"answer\": \"C\"}"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "editionId": "collection-logic-word3-cube-19",
+      "savedSource": {
+        "archivedRasterSHA256": "53690d535c330a674e607e22d1cea25a55e3b4b164b9449425dac720b09a8c7d",
+        "all24ProperRotationsCheckedForEveryOption": true,
+        "sourceCandidateRotationCounts": {
+          "A": 0,
+          "B": 1,
+          "C": 0,
+          "D": 0
+        },
+        "sourceMarkerAxesDirectlyReadFromRaster": true,
+        "answer": "B"
+      },
+      "rewritten": {
+        "actualNetSquareCount": 6,
+        "allNormalsDistinctAfterFold": true,
+        "netCellPatternKinds": {
+          "(0, 0)": "pair",
+          "(1, 0)": "one",
+          "(-1, 0)": "triple",
+          "(-2, 0)": "cross",
+          "(0, -1)": "line",
+          "(0, 1)": "line"
+        },
+        "allActualMarkerCoordinatesDecoded": true,
+        "properRotationsEnumerated": 24,
+        "determinantOfEveryRotation": 1,
+        "candidateMatchingRotationCounts": {
+          "A": 0,
+          "B": 0,
+          "C": 1,
+          "D": 0
+        },
+        "wholeMarkShapesMatchedNotJustNormals": true,
+        "oppositePatternsVerified": true,
+        "answer": "C"
+      }
+    }
+  ]
+}

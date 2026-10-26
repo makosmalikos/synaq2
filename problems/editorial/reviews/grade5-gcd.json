@@ -1,0 +1,736 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/batches/grade5-gcd.json",
+  "reviewedAt": "2026-10-23",
+  "manualFindings": [],
+  "scope": "All48 saved source-addressed editions. Different numerical forms are not claimed as48 independent mathematical meanings. No author solver or test answer imported.",
+  "universalProofs": {
+    "coprimeDefinition": "Coprime means the complete common positive-divisor set is exactly{1}; new counterexamples refute all other universal choices.",
+    "consecutive": "For arbitrary n, symbolic coefficient subtraction (n+1)-n=1. Any common positive divisor divides1 and must equal1. This is general, not inferred from finite samples.",
+    "difference": "Any common divisor of n and n+D divides their linear difference D. Conversely every divisor d ofD occurs by n=d, so the possible gcd set is exactly the complete positive-divisor set ofD.",
+    "guaranteed": "g=gcd(A,B) divides every pair of respective multiples. Taking the numbers A,B themselves shows every universal divisor must divide g; hence the greatest is exactly g.",
+    "scaling": "Bezout: ua+vb=g. If d divides ka andkb, then d divides u(ka)+v(kb)=kg. Conversely kg divides both ka,kb. Thus gcd(ka,kb)=kg for every positive k, independently of the author prime-factor proof."
+  },
+  "entries": [
+    {
+      "editionId": "grade5-gcd-aca08380eb5a2c3a",
+      "sha256": "ac71816063462a0a36fad3ab2eca1240c4f243edcf4c4878478a83b82622ac45",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-d7e280fb42a92bf9",
+      "sha256": "fb368fbff8ed9ca193851fe9eff9b4162d6db07580a1f310ab552c5847fec17e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-4f73433f12e1ed0f",
+      "sha256": "9635aa7a563a22d8898b72e3908ce2c38527b6ece4159dac795429307d5bd63c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-f25a9c74ae05a41c",
+      "sha256": "94606273dbca668ba0d99f3b5cafbd2d273c0ffba176c9a43dd198f6430773ce",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-f95dbdb6bab86ca9",
+      "sha256": "0b5545611afb08e03be95f34d8a91122f6b57bb82df5cc52fa171ef2b5e001bc",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-c965190c0713ecbf",
+      "sha256": "7ffd802f222e03dd34a6054a36e725c19336b8c9a01f9489f3919f1c907373d3",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-742c1cc0fc53d81e",
+      "sha256": "cc688116293e806dc7870a097a39d7bbbcb4d439419cfb7f043acbfb182a52d6",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-0b3598c1eddc8d4d",
+      "sha256": "cda18ce3aa17ac357f82c12af4145d697293d78e09e951c8332ce54d462ea7dd",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-829ef7472e635422",
+      "sha256": "76bfb66525de2412d66fb04be4ac095c76d23fadca96edf061002543bdf6ef4d",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-2c6e081e10063a72",
+      "sha256": "91e21a4be5c62187a954df5b3b5a6f2db126c9b66c863cfe27b0c60138233061",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-de5b0746d5b3b0e5",
+      "sha256": "df98ab8735da98fe0ad17c9fb389bd7047ba9ed9b650168854f71810d58800c0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-ef95d0794c5c3001",
+      "sha256": "67b6a89dd4f036841fd5dd53f8f781f62650cd062fa866cf59648bb658abbde2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-49ccac2dcdf67c9b",
+      "sha256": "6143b19980b93c67216df225d3dd96ab32516ff612ad00574c5367a40df57185",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-ced0e702806e1e17",
+      "sha256": "f8f0a45af7da4027e2d2051dd8fe9818f0959a718b1c33af8557e4600952ff7f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-0536b6de11172cf7",
+      "sha256": "b9230f0e3a85c3a684051d99a7677188523caf7093817269e350b911e2810518",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-7609091468978607",
+      "sha256": "41ea9428bab634f33745463cd3959c47d64315e8daa8f9f1ef0b796c29ecadd0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-2dfebd89442e67ab",
+      "sha256": "a21bd634fcfd2066aed20f9748c186bedcfabe61d8a328fafd5229100e9e37ae",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-b9e3c029865fc717",
+      "sha256": "4715707eb76130810c15eb64cbd37619435c8d1cf87b781462bc2961a2469298",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-b1eb0fec88602786",
+      "sha256": "d88944f224f2b3dcc1ff973faf98776ff562775367216eebf1f1a3bb9797c5b5",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-9f90ee06d2f4ef2d",
+      "sha256": "fbe88dbeaaa55611f959427856cf8b200cc83c1621ff5100bb546231f4b524a7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-a6f805b9f879d895",
+      "sha256": "e3f3cf5d15e11a02bb4cb9f28791a2d4e9cd7403ead0991a1b48c3bf84099ae5",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-f2dacceed1f4e4dc",
+      "sha256": "a53b3248f0f9b0d56f33f87a986cd7bf97afdabc7b05aac1d2e9152dc61db21f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-61798fcac0cc4241",
+      "sha256": "b5a2099e15e2e2306ce7479a474511cfe9be3c82f363d9f9c89179fd1ff2af20",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-7c8d208473c61d28",
+      "sha256": "8c528f16e57cfa378d902a230f106d0452fba801bd0bb72dd5ee8768f03603e6",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-982f9bf6b48cad9e",
+      "sha256": "ea9e661ee0491eff3773ca0fbf99a16f2b7faae239888b8748ced9c4ad33b171",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-42fd4cdc5507fb89",
+      "sha256": "7e25d3d1ee4a7c223f1d45a35ee5736c29694512d86e82b0ce6a8094f5f8856f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-daee0e76a9fcda88",
+      "sha256": "bdcc1b960c72ce17e1164460c86ab5f32deeec840b6ba9be3e369b8b51f8f053",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-f94a05029bfa4ba3",
+      "sha256": "0019151b9756e899727d8afe1a4489d723915e35ad150a885d35a30d30baf1b3",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-5868fbb3edf34895",
+      "sha256": "a61d0192e76e72d3e21fe79ab5bc974c4803056a40e9b2717e98bda6b6aad3ad",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-e69c44ba7f37bec0",
+      "sha256": "396729efe0d3d7d733821f1a46f8c23a15d462915cb27a63a0dd0340598c7474",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-afe0958c2f1065fd",
+      "sha256": "096c3500f794b7556da266285c5d858b59c03addc9b36b51c6c95a8d15f1384d",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-7eee938f66df775c",
+      "sha256": "891cfe4073587800eb88e7acbe7afbe1e9f864a2de64b584bffcf1b4ae7c7ed2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-61c8f8b0fb88b808",
+      "sha256": "d2e675919ca22695043985a27c33b42e2a1d6840448fd6acf03c4707100929cb",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-06c904ad39e9351a",
+      "sha256": "29fd52a54e80519357d021ef415bd4dca6042a08c343ed0506df8c4c6936de58",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-6c27cdc97f063d23",
+      "sha256": "2aacf99588ce8ffc1f7e247baae8680ad1289b8c604e15565d8e60196ce42858",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-1cd327f6b48dd97c",
+      "sha256": "a0d70692afdd7aa1b132b91a20dabe1c55424e9dfb7ee11101170249b529cb63",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-bc9165dd12a8b4f0",
+      "sha256": "662338d5da68541f8e2066a8e4971603487bd37af38fcd5a1f51c54092f05c25",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-c1b25479e7c5b18b",
+      "sha256": "03bf3b3380959dfa120c1686e3e681c2f7fa1ba582abb74c090643f5d3e297ee",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-0a71da752e72d4c3",
+      "sha256": "2ac820e6f7b8c1c64cd4381d75ddac43e2d10f0fd0f77c90e4676569089a8923",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-6d2c4a4a47735a1a",
+      "sha256": "f5fe1f54d32e9046675057a81aab30f97262073f2bac3ccc47287b620f8dd0cf",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-aace2e7097bbda0e",
+      "sha256": "144104e6e9af0e9f4ec798cc4ba287c6a74405ce527d222b3ba3519d5febc271",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-2a2c1c23bc8dcb42",
+      "sha256": "df319320ca1d14f199d7b2201aba0c97c3d744e2b6861f7539ebbb80bda84582",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-05f8cf335a846774",
+      "sha256": "89aade23b385bfc89e1dad1df9b0b0683e298db482b16c750eac69226df7a54b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-d1e4aba3dea244d8",
+      "sha256": "1003b93929e372d63540f4f982b4b29b3c0f2df996afea7484fda982cbfd3c16",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-ef0edeef7fe8d3a4",
+      "sha256": "b95f26f77073b7513dd0184d68dae0145d3683a7ba9f02d11134927c55d3272a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-f06b5557bbd8a1a6",
+      "sha256": "2fb6f8815dd8e2dc05cac8368c70134e10092021c8b4e12f5610a312a33131f6",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-621b65925ce2bfe2",
+      "sha256": "804a4836fe4d0a9c8f5f969edb1a1c199a573f97ea43d2743d38bac64b6a2b3c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    },
+    {
+      "editionId": "grade5-gcd-d8b126f8ac7a0093",
+      "sha256": "64f88b6e6fa30fde9b10710cae85811df9f063b5c8ba13c16ef68dc2526c6ff1",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Complete divisor-set intersections; independent exhaustive feasible domains; literal printed power/polynomial/pair/unit options; general divisibility and Bezout proofs",
+      "checks": [
+        "all48 full saved and rewritten conditions, complete solutions and options read manually",
+        "full unordered-pair, two-digit, remainder and crate-removal domains checked, not a sample",
+        "maximum group/count/item/side and constant-capacity targets distinguished",
+        "typed polynomial coefficient maps require the greatest extracted factor, not merely an equivalent identity",
+        "universal definition/consecutive/guaranteed-divisor/scaling claims justified generally with independent counterexamples",
+        "source0536 false prohibition of extra powers of2 is not inherited;112 divisible by16 is correctly accepted"
+      ]
+    }
+  ]
+}

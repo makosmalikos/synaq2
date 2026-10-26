@@ -1,0 +1,720 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/batches/grade5-fraction-decimal-sequences.json",
+  "reviewedAt": "2026-10-24",
+  "manualFindings": [],
+  "resolvedFindings": [
+    {
+      "sourceId": "301eecfb01c476f7",
+      "finding": "Preserve genuine mixed-denominator comparison/conversion/carry AND fourth wrong pair taking TWO steps on BOTH jumps (a6,a8), not only firstskip.",
+      "resolution": "Author changed ONLY row14; firstsnapshot/deepdiff6fields, secondsnapshotONLYsolution/options; other43identical. Finalcommon10 conversion, key3+7/10;4+1/10 andwrong4+1/10;4+9/10 independentlyreread/recalculated."
+    }
+  ],
+  "scope": "ALL44source-addressedgrade5topic4.12nonvisualfractiondecimalsequences",
+  "entries": [
+    {
+      "editionId": "grade5-fraction-decimal-sequences-7b9097b6851f913c",
+      "sha256": "e0dc4e8842abf34e197b726d630588ff11834b587a0f6c40aa4b3a9ef896ff10",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "193c49e6820af42d68501391ca39cb701c9059fbc3ff55cfaf2005fcab7bd5aa",
+      "notes": "Actualfirst37/10, decrement3/5, index4→NminusONE3steps, ALLprevious/next/reversed-signtraps checked.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-12f5d874cd253e94",
+      "sha256": "047e928f173e456eec9099073e59068385dc980a0b26fe09a31d44678b83c2cd",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "6b722abb909e03a17a6b7946a23b347a2009e63c5c0623a56cc1d83686cd2a15",
+      "notes": "ALLactualofferedvalues uniquelyinverttoindices[Fraction(15, 1), Fraction(80, 1), Fraction(1, 1), Fraction(14, 3)]; only(3/14)requiresnonnaturalindex. Universaliffreducednumerator1, includesmember1.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-86e755e530c8b406",
+      "sha256": "4f4aa06e953e4adb2aeaa2f0f15713e40217a0c021c8865a46c515cfc5f30519",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "4413319c61461d0e39c4c0204b47d6374c1763b0b2cd7e472f76b42c91a66be9",
+      "notes": "ACTUALwholefraction((6n + 8)/n)substitute4inNUMERATORandDENOMINATOR, value8; bothbarroleschecked.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-6ef8621b83c4b6e5",
+      "sha256": "05e9a33175e7260d3577b090044352fa0cdc921a5f3850ae48982b1cdd516405",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "ae19e79b94874022e556f8e6c6538a695e2b2925158064057286a3dfecbf4c5d",
+      "notes": "ALLfourprinteddecimals[Fraction(39, 5), Fraction(71, 10), Fraction(32, 5), Fraction(57, 10)], exactequalnegativegaps-7/10, next5; skip/reversal/different-stepMCQs.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-c1bf6979dc870b1e",
+      "sha256": "0a6d9d2fcd3fcbf7a483ef39c64307da4baf15827851b7c26ac3eaa78cb275f0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "e1b8d00a63fe96d68248a9ffc74574a42a1fe352197c28799830e4b9ed1d3d79",
+      "notes": "ALLfouractualproper/mixedinputs[Fraction(5, 6), Fraction(5, 3), Fraction(5, 2), Fraction(10, 3)], genuinecommondenominatorfractiondifferences5/6; index12has11increments, target10.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-7661ad7f98c90008",
+      "sha256": "f0cba5c7728b7078d3e2d8b95b42da017275b924a8b986958ced00c4be0d9043",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "1060a427e5bae78f3652074bbcf8b40bb899c1959c9801be98dc4b88189cd16a",
+      "notes": "ALLactualmixedvalues[Fraction(11, 8), Fraction(17, 8), Fraction(23, 8), Fraction(29, 8)], step3/4, finalfractionalpartsCARRY5/8+3/4≥1→35/8; actualthreeincorrectincrements checked.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-a333c88daa0046e6",
+      "sha256": "bdc9d9432812237112ec223cc3417af16caaf4dde07eeed5384720c17bce8403",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "1aa4f62411d7ed66c8900999d2a2d7b47b41f2d39bb536af59dca013ca6fded1",
+      "notes": "Actualconstantdenominator9, targetVALUE4; uniqueINDEXn=36, backsubstitution, notvaluereport.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-758ee6d16924e956",
+      "sha256": "aa8d86e8b7e9215eeba6a658d0cb75996ebae0dfad800003da888e5e326b65cf",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "d771b357c3dbed22568bea7b8c67c4951fa18f4d64bf9405518e5f0cb51494e2",
+      "notes": "Actualaffineformula0,8n + 3atn10→11; multiplicationonlyncoefficient, constnotmultiplied.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-0f795b65562eb327",
+      "sha256": "17127330cb6b65383485405dc6db53e7851dc9347eb724127d220d27c0a63a52",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "34ad5eb19069818d7a07b4783f6189527f8669685d9873f89d650bc81d7b96c4",
+      "notes": "Actualfirst5/16,factor2,index6; FULLexactchain[Fraction(5, 16), Fraction(5, 8), Fraction(5, 4), Fraction(5, 2), Fraction(5, 1), Fraction(10, 1)], 5multiplicationsratherthanN.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-ad6350ffc2849769",
+      "sha256": "ac6506f9240093c64ee427d833619e52395e5177b90f560a69b1123c1dfcc10e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "763c8c21439abf0f98c092824399f96713eeaab95578408d46b6b4744e9e1a23",
+      "notes": "ALLactualthreeleadingzerooperands[Fraction(9, 1000), Fraction(9, 100), Fraction(9, 10)], ratio10, total5decimalshifts fromfirst→900; fullpadding/accounting.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-a1d42c79085093b9",
+      "sha256": "840d0de2b57b544caf785dc8a593a43fcf1656de93d3745328e5024735dcdfe0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "4e4b7e6aefb8bd382a3b65fee415eadaf2d3d1995e6a5907cdd8dde370895815",
+      "notes": "Actualfourfractions[Fraction(7, 17), Fraction(10, 17), Fraction(13, 17), Fraction(16, 17)], constantstep3/17; PREVIOUSsubtractstep4/17, notnext. Allnumminus1/twosteps/denominatorchangedtraps checked.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-c47ad66b02e42bf5",
+      "sha256": "b1e2fa18fe89f616ba147ca3cd5176e771b4a85e3b76a32f8b9197c7ba1ef7ca",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "e1d139b2ec13e97acf7bd382b1848c15bf5f13f07e93acb09999fe2d670e92ab",
+      "notes": "COMPLETEsixACTUALslots[Fraction(2, 5), Fraction(4, 5), Fraction(6, 5), Fraction(8, 5), Fraction(2, 1), Fraction(12, 5)], fillposition4 viaexactstep2/5; allFIVEadjacentgapsincludingbothneighborschecked, mixedanswer8/5.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-2e60719e8cf335fd",
+      "sha256": "5af27e712ba13d7d8556cf2fd77b0f8e058095cf3b8f815bc30ac3773bf5c174",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "8ca77f7ce3bdb32466fe3db30c8091dcf5bb3d87684b4178bbd964e771d53b9e",
+      "notes": "Actual9/20n=63/10, naturaluniqueINDEX14, equalbothmembercommashift andbackmultiply.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-22d9f7750d43e7f7",
+      "sha256": "8f2b85ae1e5e97d736fca7a86e861c38ad5e3dbd8f5b93406c51e9cd2eb77a0f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "8bb7a63c799c9273131037e863ee30ebe8528ba493a72bf89a7255934a0e94a2",
+      "notes": "ALL12actualn/6members explicitlyenumerated, pairedsum78/6=13; initialandlastincluded.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-301eecfb01c476f7",
+      "sha256": "c0fc4728554e4cf9a61fe2c0905a354b90feec1a7740e638767f6d59f06ea69a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "11094bba1a5ef13f3e1598e94f7d7c45652586655847900a4755cf801e2c949b",
+      "notes": "ALL4actualmixedinputs[Fraction(21, 10), Fraction(5, 2), Fraction(29, 10), Fraction(33, 10)]haveDIFFERENTreduceddenominators, exactcommonstep2/5; explicitdenominatorconversion/carryandorderedTWOanswers37/10,41/10. Actualnumerator-only/switch-secondstep/skippedtermsMCQschecked.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-9ebd93d101911432",
+      "sha256": "c0b31d6fcb91c3ba4ab8bc590082e73188ef9093445383bbd14bb3d64c6a3fdf",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "7f62301f75d6592f1c4ca153ebba1aacb0baba0e510a8609bee5c51b5920158f",
+      "notes": "FIRSTactualindex11/8=11/8, THENfixedhundredthHALFUP1,38; truncation/tenth/unroundedthreeformattraps actualchecked.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-b6317d9ee968a59f",
+      "sha256": "aca487e45cc6a5a5bf1e1e40130714ef8371002dcb6cbe8ff47cd4dd5727f18b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "bea9d0f263a0d6728fd08824b56db4b0045c37369c82560bb1edf1c567030fd5",
+      "notes": "ALLprintedvalues[Fraction(4, 5), Fraction(8, 5), Fraction(12, 5), Fraction(16, 5)], complete14terms[Fraction(4, 5), Fraction(8, 5), Fraction(12, 5), Fraction(16, 5), Fraction(4, 1), Fraction(24, 5), Fraction(28, 5), Fraction(32, 5), Fraction(36, 5), Fraction(8, 1), Fraction(44, 5), Fraction(48, 5), Fraction(52, 5), Fraction(56, 5)], 7equalendpairs; exactsum84.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-56c179c3b69917a7",
+      "sha256": "9cd3ca15d4de43377ea55dfe22e5071f1eeaab05aca51cd3a18c16fe48b1a43c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "f91c4b4bfe5e5e514d371892f4d9c813a77e9a8a1d1049c2cab74fc3a9a186ac",
+      "notes": "AllFOURACTUALformulaoptions substitutedatALL4declaredindices intoWHOLEfractionbar; flags[False, True, False, False]; first-member-matchingwrongformulaexplicitlyrejectsatSECOND. Actualtarget[Fraction(3, 4), Fraction(4, 5), Fraction(5, 6), Fraction(6, 7)].",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-5caab96df8abb25d",
+      "sha256": "fa35d43b0c1bf78da3b764cc6376ca53f097aeec93a9651da1a59bb170d608b9",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "abeaad5dd35efa0e91138468beb7aa7eb4abbc40e394c1494465cb9583ec0800",
+      "notes": "ACTUALfirsttwo1/7,2/7, all7members exacttwo-previous recurrence[Fraction(1, 7), Fraction(2, 7), Fraction(3, 7), Fraction(5, 7), Fraction(8, 7), Fraction(13, 7), Fraction(3, 1)]; nooneprevious/additionalstepconfusion.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-39ee6b3dd26e3630",
+      "sha256": "be27f0a38e51589fa977f7f1e44e8d80eb043a3edcd89dd422e2eb4defbdb486",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "1e6f890275feeac3db7ef6fe2bdc1d89fbf8905b88be583e6b531e10007c8e6c",
+      "notes": "ALL6actualvalues splitODD[Fraction(1, 3), Fraction(1, 9), Fraction(1, 27)]/EVEN[Fraction(3, 1), Fraction(9, 1), Fraction(27, 1)], respectivefactors1/3/3; orderednextpair[Fraction(1, 81), Fraction(81, 1)], reversed/falseadditivedenominator/falseadditiveeven traps.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-bbec55eab268070a",
+      "sha256": "d3aa77de3f8287243bdd8e4366f6462d959e8d60f70359ee83b8fe6fcada445d",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "c13a32dba75c827c1acc7d6bcbbe82ff60bd9ecd5a264b9aeedafbd6a6c5a0a2",
+      "notes": "Printedfirst3/5,integerSECOND1,third7/5,fourth9/5,last47/5; completeinclusivecount23, STEPS22, endpointsbound.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-ee0b949c5646ae32",
+      "sha256": "7d21b6066447f981131ff199fbc39f74ba88b4a499504137c529d98e4ff36eac",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "4cbd06012f73a134576d26a614069de64a3f57965985247e58fb0cb3c8f05665",
+      "notes": "ACTUALn/(n+6)=target5/7; crossmultiplypositivecoeff1−target yieldsUNIQUEindex15, natural/backsub. FractionVALUEnotINDEX.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-7fb3412c66e3b07b",
+      "sha256": "2c3f619cec565c00bc08a5ef98a366bee1b5521bda7d0e7e74f2729f6800d3e5",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "22666153a1c0701e229afbafb8314add1e0ab3e4742bdd02e4ea2a1641232d99",
+      "notes": "ActualDAY17/5,daily+2/5,targetDAILY29/5, 11increments→DAY12; previousdaybelow, notsumofdays.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-02ef3a3c19759af7",
+      "sha256": "8064e17e96edd3735f01a362da0c31353501cf92588002f69eb20f0269f72655",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "bf484eb1a336d35e8a6c55cec3a960d608d771b627613eb9c66f55ef53e6bbc7",
+      "notes": "ActualTIMEZERO32/5, 9FULLhourlosses9/20, removed81/20/remaining47/20; conservationandallone-less/sign/removed-roletraps.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-10a7b34d59c56ee7",
+      "sha256": "333894b6c428c803a0353d9455facbe5336c9926b21145d8478dff9c156a9849",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "9f956d04e07a292f4ac511a350752d3d3fa90c3b9e6a2854ed93688e340f95ae",
+      "notes": "ALLprinted3prefix+LAST243/25, factor3, bothinternalgaps[27/25,81/25], NEXTbackcheckbindslast. Orderedpair/fullrule notadditiveorchangingfactor.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-57e6b056310acde2",
+      "sha256": "8ed013c3f61b5a397439d73294bd996569db32961e13ce562553e653061abed7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "1ec94f8c459acadfda5912cfeca5261138e936cc1b4bf4079b58f8ce7667d15c",
+      "notes": "Actualaffine7/5n+7/10=119/10inverseuniquepositivecoefficient→naturalINDEX8; backsubstitution.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-c032063c6eab7d85",
+      "sha256": "09838883d54e017548fa0423740cffc66f1a27e6f648a0bc56d04f77e07dd363",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "469383ead7e06cf8e76df0143fb38764562c0757d514342a6f53b6b58827cced",
+      "notes": "Actualtwoaffines1/2n+6/5and4/5n−3/10; SAMEindex5, askedCOMMONVALUE37/10, notn; ALLneighbor/indexroleMCQs.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-6ffdd8520bb0d821",
+      "sha256": "acdc1252182b506d4577ab38c74b90b3421f8e69ca8549728b5825f47f0b28ee",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "fb859343facc0dad028e33d97cce7e58ada54fb2b829119c76fbdd2991f881e7",
+      "notes": "ACTUALformula((n + 2)/(n + 1)), completeproductALL10terms[Fraction(3, 2), Fraction(4, 3), Fraction(5, 4), Fraction(6, 5), Fraction(7, 6), Fraction(8, 7), Fraction(9, 8), Fraction(10, 9), Fraction(11, 10), Fraction(12, 11)]=6. UniversalpartialproductP(k)=(k+2)/2 viaP1=3/2 andP(k)*((k+3)/(k+2))=(k+3)/2; bothuncancelledendpointsretained.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-3077570d081453e0",
+      "sha256": "2bc2bb0a645d411935e13d2d6567b0fedbcf781cd5a207f6f6ca56aa912a62f5",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "1b26cbeca2bdf619d91584e1424d81fb77f0ed0c851cc657caa66f31837d2389",
+      "notes": "AllFOURACTUALformulaoptions substitutedatALL4declaredindices intoWHOLEfractionbar; flags[True, False, False, False]; first-member-matchingwrongformulaexplicitlyrejectsatSECOND. Actualtarget[Fraction(5, 2), Fraction(8, 3), Fraction(11, 4), Fraction(14, 5)].",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-8f058ce418306f20",
+      "sha256": "de50c8c1342f00389cb5142600673f92bbda8a21682d5f28a10934fd0a6187f5",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "db9fbd12d2243613e2c85cb95acefa0ff24175d4752a664627753b3152b6c411",
+      "notes": "FULL79inclusiveactualdecimalmembers, ODD39endpairsplusONEunpairedmiddle8; sum632, neitheromitnordoublemiddle.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-8e15fd0158877f57",
+      "sha256": "c9a32620183c283c9cf0bd8c5ee548ef2c305961d5253f5d725f5e6a275a8f82",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "cf8a5b02c8149775a69ea6964f34b6235020f91967ac3fec0882cd1b88c5649f",
+      "notes": "UNIVERSALcoprime21/50nintegerIFF50|n, FULL1…300domain[50, 100, 150, 200, 250, 300]; valuespositive, count6, endpointincluded.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-e2e5f54f92bdf0c2",
+      "sha256": "da9357a9c3479156f302a48bd4576bbced7873bb76677a3a670990b489e4339e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "988af033fcd6f880da3bf48a9a4f0bf1330af861d0de97f8ec8456061be06d9c",
+      "notes": "FULLnaturalINDEX1…64divisorlist[1, 2, 4, 8, 16, 32, 64]; alln>64give0<a(n)<1andimpossible. SQUAREroot8countedONCE; allinfinitelymanyexcludedbyinequality.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-38e98ef49620642f",
+      "sha256": "8e156c8a67dd1aed43c4edf02230e83ddacbc68a131fdd4f0410700b76aa600c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "0e216f4490eb69c5c07f15f587d5250aa5db16830ca72dd9f9337eb7550151d4",
+      "notes": "UNIVERSALn/(n+1)>actual24/25IFFn>24; strictpreviousEQUALITY24/25, firstnatural25; completedomain1…25, monotone gap1/(n+1)decreases.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-bd0cb3bcdd725636",
+      "sha256": "f1bec48108e37626ff62e555afd1601a5130a92a9f4ab1dc368d5c067f8efef3",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "bdf6dc4ff801f6d8312232a7d7604a5b24dee124c4337c8a832f43087cf551dd",
+      "notes": "COMPLETE300descendingactualmagnitudes withALLalternatingsigns, 150pairdifferences1/10; first/lastincluded, noleftoverunpairedterm, sum15.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-a0dec01d2bb2f7d4",
+      "sha256": "8368c3af6a0233b15ce9826da4182ddc6a027576e199fdcb593a9de3944058cf",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "a6ceb2de3339dc57ae530a0b8070e5cb0ef6f116ad26169cd224b42c82e5ff41",
+      "notes": "ALL15actualDAY1indexedlengths[Fraction(11, 10), Fraction(7, 5), Fraction(17, 10), Fraction(2, 1), Fraction(23, 10), Fraction(13, 5), Fraction(29, 10), Fraction(16, 5), Fraction(7, 2), Fraction(19, 5), Fraction(41, 10), Fraction(22, 5), Fraction(47, 10), Fraction(5, 1), Fraction(53, 10)], final53/10, 7pairsandONEmiddle16/5; requestedTOTAL48notlastday.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-843c286917336175",
+      "sha256": "4c1752679e8e5a3c62f5fa3fac5f67f7af49f2314c731005de1d827fd2bf8785",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "47161c2fcc3f3988327d69178bfee8ef84fb4e27771182d7b49b0620875d5ba1",
+      "notes": "ACTUALinitial2/5, WHOLEdenominator1+u; exactchain[Fraction(2, 5), Fraction(5, 7), Fraction(7, 12), Fraction(12, 19), Fraction(19, 31), Fraction(31, 50), Fraction(50, 81)], requestedINDEX6, preceding/followingactualtraps; universala/b→b/(a+b), no1/1+u precedenceerror.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-48a1a269404f19fa",
+      "sha256": "b2d41f586798b734a2670a33b2364ef39750940dd211ec1262e18fcf7b99a441",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "5d59feb72e20aaf46c382a47fd759ba2bcf7630effe7cbf066d22cdf5f0688a1",
+      "notes": "ALLactual4values[Fraction(81, 10), Fraction(27, 10), Fraction(9, 10), Fraction(3, 10)], exactratio1/3; EVERYoneof4writtenrules testedonALL3gaps, flags[True, False, False, False], nonconstantdifferencesrejectsingle-pairguess.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-23eec7a14a82d2e8",
+      "sha256": "3fd37f0d64e2cc9b2bb2cebc75ca835f63d581f265707d3767b0049928120501",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "daba965b3b33696e2e883025be91264f4c91d740c142595526b4303748246c59",
+      "notes": "ACTUALfirst3/100,factor2,target96/25; fullmonotonechain[Fraction(3, 100), Fraction(3, 50), Fraction(3, 25), Fraction(6, 25), Fraction(12, 25), Fraction(24, 25), Fraction(48, 25), Fraction(96, 25)], 7multiplications→INDEX8.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-c46936420f481558",
+      "sha256": "ae07b9d0127b73cecf171c105f887e29cbe112a23c7c1349c633f58aa825fb19",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "7e8002aeb41f0df291405c6d4767ad5a460fb36850cdbcec9745b45094d6858c",
+      "notes": "ALLactualprefixvalues[Fraction(48, 5), Fraction(46, 5), Fraction(44, 5), Fraction(42, 5)], strictthreshold2, completedownwardchainuntilFIRSTbelow[Fraction(48, 5), Fraction(46, 5), Fraction(44, 5), Fraction(42, 5), Fraction(8, 1), Fraction(38, 5), Fraction(36, 5), Fraction(34, 5), Fraction(32, 5), Fraction(6, 1), Fraction(28, 5), Fraction(26, 5), Fraction(24, 5), Fraction(22, 5), Fraction(4, 1), Fraction(18, 5), Fraction(16, 5), Fraction(14, 5), Fraction(12, 5), Fraction(2, 1), Fraction(8, 5)]; previousEQUALITYexcluded, STEPS20vsINDEX21.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-f3a3196a65baa8d8",
+      "sha256": "a75db1295ba504dd8b8459ea2e5c29e9279f2c70626539747906ee0e1e3fed8c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "024d019cefea2432ccbac8356640009329c30d8aeedd4c6fb54511fa3fe825d1",
+      "notes": "ALLactualFIRSTdifferences[Fraction(1, 5), Fraction(2, 5), Fraction(3, 5), Fraction(4, 5)], constantSECONDdifference1/5, nextgap1; next3,2, double/lastgap/previousgaptraps actualverified.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-7bbb9ce8c49c421a",
+      "sha256": "8f800bac3ee1f196ac89abfc25cb648cc4dcb2d80f47cdc86c843677b0a6812e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "bc981def2a769ec10a2910f5f583aa7c919a1db1e60f98ed9304a2a452adb7e4",
+      "notes": "ALL16actualfractionMCQmembers, EVERY12adjacentgap:[[Fraction(1, 8), Fraction(1, 8), Fraction(7, 24)], [Fraction(1, 8), Fraction(1, 8), Fraction(1, 8)], [Fraction(7, 72), Fraction(7, 90), Fraction(7, 110)], [Fraction(1, 8), Fraction(1, 24), Fraction(1, 12)]]; onlyrow2allTHREEgaps=1/8, firstgaponlywouldalsoacceptrows1/4andisrejected.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-080b1684370040cb",
+      "sha256": "eb4949aecad7989738f1c544e7c18b80defbb79bee3b7156fcc551a4041460df",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "ac6e78fe93ce0d48619cd3913f571706ac4df2efc0139eac58a495262e8d1e5b",
+      "notes": "COMPLETEorderedRAW(n,d)writes throughden14, exacttarget(9,14)index87; noFractiondedup, equal1/2and2/4remainTWOpositions.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-f8192481c853c576",
+      "sha256": "867a2f66f71bbdd09eb2f7c1129ffa335c062cfa181efc8f6733ad90ccda499e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "4dc0cc71506ed971038d0efda0e6016993f0acff6d1c288cebe58aaf758defa0",
+      "notes": "ALL4ACTUALorderedneighborpairs/gaps[Fraction(1, 56), Fraction(1, 72), Fraction(1, 756), Fraction(1, 3192)]. Universaldifference=[(n+1)^2−n(n+2)]/((n+1)(n+2))=1/((n+1)(n+2)); positiveproductincreasing, completeboundn<den56, unique[6].",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-decimal-sequences-696b0dad09c00a8f",
+      "sha256": "a262092e3ccc02ac3aaeca195f4699d39de78371e9fabc3e0363f6880d0014f0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "ALL44saved/newfullconditions/official/newsolutions/everyMCQ manuallyread; ownACTUALPRINTED exactFraction sequence/domain/monotonicity/recurrence/fullenumeration oracle; noauthorsolver/spec/params",
+      "sourceCanonicalSha256": "7e4101b3a046007124caeda67f29f9f6b13a3d67376aa799fc65725ba2944ad7",
+      "notes": "ACTUALfirst6/5,factor6/5,strictthreshold3, FULLexactunroundedchain[Fraction(6, 5), Fraction(36, 25), Fraction(216, 125), Fraction(1296, 625), Fraction(7776, 3125), Fraction(46656, 15625), Fraction(279936, 78125)]; allprior≤threshold, firstindex7, notroundintermediate2.985984to3.",
+      "checks": [
+        "Fullsource/newconditions/official/newsolutions/everyMCQread",
+        "ACTUALprinteddata exactrational NminusONE/orderedpair/valuevsindex/count/strictendpointroles",
+        "ALLnaturalvalue/indexfinitebounds plusuniversalexcludedtails/monotonicity/coprimecriterion",
+        "EveryofferedformulaatALL4givenindices, everyconsecutivegap andchanged-distractorroles checked",
+        "Nativeproper/mixed/wholefractionbar syntax plusallrowSHA matchesJS"
+      ]
+    }
+  ]
+}

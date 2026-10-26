@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All7 saved visual grade5topic1.1 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade5topic1.1",
+    "sourceVisualOccurrences": 7,
+    "addressedNewDrafts": 7,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "1dd72563b3d3f132",
+      "2c8e16ad5fe93bb9",
+      "36c7db3d752cdad2",
+      "70f4a7bee8c5864b",
+      "7e7e47c31c19d520",
+      "8d603e312b864009",
+      "cb411804c7792d41"
+    ],
+    "distinctModels": 7,
+    "semantics": "7 source-addressed targets distinguish hundreds-to-tens, zero-place abacus expansion, money regrouping, six-place placeholders, subsequence maximum, zero-card minimum and valid palindrome times."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave20-two-hundreds-as-tens",
+      "modelId": "visual-wave20-hundreds-to-tens",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "blocks",
+        "hundreds": 2
+      },
+      "answer": "20",
+      "sourceRefs": [
+        {
+          "sourceId": "8d603e312b864009",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-1-level1.json#4",
+      "sourceCanonicalSha256": "238e251748da3e72eea57cdf9ea28f8b2ceb552bda2bbf00953cd2636d6437b2",
+      "sourceSkill": "Regrouping base-ten hundred-grid units as tens rather than reporting unit count",
+      "adaptationChanges": [
+        "Дереккөздегі разряд, қайта топтастыру, цифр реті немесе уақытты санау дағдысы жеке сақталды.",
+        "Моншақтар, ақша саны, карточкалар, өшірілетін цифр саны және уақыт аралығы жаңадан таңдалды.",
+        "Native SVG нақты торлардан, моншақтардан, ақша белгілері мен цифр ұяшықтарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Натурал сандар және разрядтар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual SVG bead/grid/token counts, place-value option binding, exhaustive subsequence/permutation/time enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave20-two-hundreds-as-tens.svg",
+      "verificationModule": "scripts/editorial/visual-wave20-models.mjs",
+      "options": [
+        "200",
+        "2",
+        "20",
+        "100"
+      ],
+      "statement": "Екі көк шаршының әрқайсысы 100 бірліктен тұрады. Төменде 10 бірліктен тұратын бір ондықтың үлгісі берілген. Екі жүздікте неше ондық бар?",
+      "solution": "2 жүздік = 200 бірлік. Бір ондықта 10 бірлік болғандықтан, 200 : 10 = 20 ондық. Бірліктер саны мен ондықтар санын шатастырмау керек.",
+      "figureDescription": "2 көк 10×10 торлы шаршы, әр ұсақ тор бір бірлік; бөлек ондық үлгісі10 тордан тұрады.",
+      "figureSha256": "3d26afcb3682a591dccc3e46841b408193701b423556eb8400c23f42b4b60928",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "20",
+        "checks": {
+          "units": 200,
+          "tens": 20
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave20-abacus-place-value-expansion",
+      "modelId": "visual-wave20-abacus-expanded-form",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "abacus",
+        "values": [
+          1000,
+          100,
+          10,
+          1
+        ],
+        "counts": [
+          4,
+          0,
+          5,
+          8
+        ]
+      },
+      "answer": "4000 + 50 + 8",
+      "sourceRefs": [
+        {
+          "sourceId": "2c8e16ad5fe93bb9",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-1-level1.json#9",
+      "sourceCanonicalSha256": "3e2f5cdd1dcf00741358931c96a23f59b7dda73028fe173e14fb317eab951c17",
+      "sourceSkill": "Reading an empty hundreds rod and expressing each nonzero digit at its own place value",
+      "adaptationChanges": [
+        "Дереккөздегі разряд, қайта топтастыру, цифр реті немесе уақытты санау дағдысы жеке сақталды.",
+        "Моншақтар, ақша саны, карточкалар, өшірілетін цифр саны және уақыт аралығы жаңадан таңдалды.",
+        "Native SVG нақты торлардан, моншақтардан, ақша белгілері мен цифр ұяшықтарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Натурал сандар және разрядтар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual SVG bead/grid/token counts, place-value option binding, exhaustive subsequence/permutation/time enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave20-abacus-place-value-expansion.svg",
+      "verificationModule": "scripts/editorial/visual-wave20-models.mjs",
+      "options": [
+        "4000 + 500 + 8",
+        "400 + 50 + 8",
+        "4000 + 50 + 8",
+        "4 + 5 + 8"
+      ],
+      "statement": "Есепшоттың әр сымындағы моншақ саны — астында жазылған разрядтың цифры. Көрсетілген санды разрядтық қосылғыштардың қосындысымен жазыңыз.",
+      "solution": "Моншақтарды разряд ретімен оқимыз: 4, 0, 5, 8. Бос жүздіктер сымы 0-ді білдіреді. 4000 + 50 + 8 = 4058. Ондықтардың цифры жүздіктер орнына ауыспайды.",
+      "figureDescription": "Сымдардың разрядтық мәндері солдан оңға 1000, 100, 10, 1, моншақ сандары 4, 0, 5, 8.",
+      "figureSha256": "f8cae984d41f5449b99f681907debd7e768c8825fe2f48108ac8ab3f9e5e1f97",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4000 + 50 + 8",
+        "checks": {
+          "value": 4058,
+          "terms": [
+            4000,
+            50,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave20-money-regrouping-over-nine-coins",
+      "modelId": "visual-wave20-money-with-regrouping",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "money",
+        "groups": [
+          {
+            "value": 1000,
+            "count": 6,
+            "kind": "note"
+          },
+          {
+            "value": 100,
+            "count": 11,
+            "kind": "coin"
+          },
+          {
+            "value": 10,
+            "count": 7,
+            "kind": "coin"
+          }
+        ]
+      },
+      "answer": "7170",
+      "sourceRefs": [
+        {
+          "sourceId": "70f4a7bee8c5864b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-1-level2.json#4",
+      "sourceCanonicalSha256": "d3c26b6ecb8edbd432ea3ec99c2a4a9121fa6141c1ea43faaef5657148970758",
+      "sourceSkill": "Counting different denominations and regrouping eleven hundreds rather than concatenating counts",
+      "adaptationChanges": [
+        "Дереккөздегі разряд, қайта топтастыру, цифр реті немесе уақытты санау дағдысы жеке сақталды.",
+        "Моншақтар, ақша саны, карточкалар, өшірілетін цифр саны және уақыт аралығы жаңадан таңдалды.",
+        "Native SVG нақты торлардан, моншақтардан, ақша белгілері мен цифр ұяшықтарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Натурал сандар және разрядтар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual SVG bead/grid/token counts, place-value option binding, exhaustive subsequence/permutation/time enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave20-money-regrouping-over-nine-coins.svg",
+      "verificationModule": "scripts/editorial/visual-wave20-models.mjs",
+      "statement": "Суретте Әминаның барлық ақшасы топтарға бөлінген. Әр қатардың сол жағында сол қатардағы бір банкноттың не тиынның құны жазылған. Барлығы неше теңге? Жауапқа тек санды жазыңыз.",
+      "solution": "6 × 1000 = 6000; 11 × 100 = 1100; 7 × 10 = 70. Қосындысы 6000 + 1100 + 70 = 7170 теңге. Оннан көп жүз теңгелік тиын болғанда разрядтарды қайта топтастыру керек.",
+      "figureDescription": "1000 теңгелік 6 дана; 100 теңгелік 11 дана; 10 теңгелік 7 дана.",
+      "figureSha256": "25331f3f15a176d10c04c4ce869c8281c4e167b2238e0b7d7ad565ad76db60e4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7170",
+        "checks": {
+          "subtotals": [
+            6000,
+            1100,
+            70
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave20-six-place-zero-rods",
+      "modelId": "visual-wave20-six-place-abacus",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "abacus",
+        "values": [
+          100000,
+          10000,
+          1000,
+          100,
+          10,
+          1
+        ],
+        "counts": [
+          4,
+          0,
+          3,
+          7,
+          0,
+          6
+        ]
+      },
+      "answer": "403706",
+      "sourceRefs": [
+        {
+          "sourceId": "7e7e47c31c19d520",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-1-level2.json#14",
+      "sourceCanonicalSha256": "f3695ddf235c404bf246a15d38422ed00282788de7d29d9a1f3557aded8c365d",
+      "sourceSkill": "Preserving two zero-placeholders when reading a six-place abacus",
+      "adaptationChanges": [
+        "Дереккөздегі разряд, қайта топтастыру, цифр реті немесе уақытты санау дағдысы жеке сақталды.",
+        "Моншақтар, ақша саны, карточкалар, өшірілетін цифр саны және уақыт аралығы жаңадан таңдалды.",
+        "Native SVG нақты торлардан, моншақтардан, ақша белгілері мен цифр ұяшықтарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Натурал сандар және разрядтар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual SVG bead/grid/token counts, place-value option binding, exhaustive subsequence/permutation/time enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave20-six-place-zero-rods.svg",
+      "verificationModule": "scripts/editorial/visual-wave20-models.mjs",
+      "options": [
+        "43706",
+        "430706",
+        "403760",
+        "403706"
+      ],
+      "statement": "Әр сымдағы моншақ саны сол разрядтың цифрын білдіреді. Бос сымдарға 0 жазылады. Есепшоттағы алты таңбалы санды таңдаңыз.",
+      "solution": "Солдан оңға алты разрядтың цифрлары: 4, 0, 3, 7, 0, 6. Бос сымдардағы нөлдер түсірілмейді. 400000 + 3000 + 700 + 6 = 403706.",
+      "figureDescription": "Сымдардың разрядтық мәндері солдан оңға 100000, 10000, 1000, 100, 10, 1, моншақ сандары 4, 0, 3, 7, 0, 6.",
+      "figureSha256": "e6a28d65499f8c9c9b06f6aec863803383d9a018753adf3b0c99dbb9b4381dd7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "403706",
+        "checks": {
+          "value": 403706,
+          "nonzeroTerms": [
+            400000,
+            3000,
+            700,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave20-largest-order-preserving-deletion",
+      "modelId": "visual-wave20-delete-digits-preserve-order",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "sequence",
+        "last": 11,
+        "sequence": "1234567891011",
+        "remove": 6
+      },
+      "answer": "7891011",
+      "sourceRefs": [
+        {
+          "sourceId": "cb411804c7792d41",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-1-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-1-level3.json#4",
+      "sourceCanonicalSha256": "cedbb526cceb512964967db498a079817efaace36b800ca0c32bf49172b3146b",
+      "sourceSkill": "Maximizing a fixed-length subsequence of consecutive written numbers without changing digit order",
+      "adaptationChanges": [
+        "Дереккөздегі разряд, қайта топтастыру, цифр реті немесе уақытты санау дағдысы жеке сақталды.",
+        "Моншақтар, ақша саны, карточкалар, өшірілетін цифр саны және уақыт аралығы жаңадан таңдалды.",
+        "Native SVG нақты торлардан, моншақтардан, ақша белгілері мен цифр ұяшықтарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Натурал сандар және разрядтар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual SVG bead/grid/token counts, place-value option binding, exhaustive subsequence/permutation/time enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave20-largest-order-preserving-deletion.svg",
+      "verificationModule": "scripts/editorial/visual-wave20-models.mjs",
+      "options": [
+        "7891011",
+        "6789111",
+        "7891101",
+        "891011"
+      ],
+      "statement": "1-ден 11-ге дейінгі сандар бос орынсыз қатар жазылған. Әр ұяшықта бір цифр бар. 6 цифрды өшіріп, қалғандарының ретін өзгертпей алуға болатын ең үлкен санды таңдаңыз.",
+      "solution": "Жазылған қатарда 13 цифр бар; 6 цифр өшкенде 7 цифр қалады. Бірінші цифр тек алғашқы 7 ұяшықтан таңдалады: 1, 2, 3, 4, 5, 6, 7. Олардың ең үлкені 7. Оған дейінгі 6 цифрды өшіреміз. Өшіретін цифр қалмағандықтан, кейінгі цифрлар өзгермейді. Нәтиже 7891011.",
+      "figureDescription": "Бір цифрдан ұяшықтарға жазылған қатар: 1234567891011.",
+      "figureSha256": "722e7dcc1b4b615af0fc1332ff9de921c584b4965369c0881509d5057acceb9d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7891011",
+        "checks": {
+          "original": "1234567891011",
+          "length": 13,
+          "remaining": 7
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave20-smallest-zero-digit-card-number",
+      "modelId": "visual-wave20-minimum-four-digit-cards",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cards",
+        "digits": [
+          4,
+          0,
+          8,
+          6
+        ]
+      },
+      "answer": "4068",
+      "sourceRefs": [
+        {
+          "sourceId": "1dd72563b3d3f132",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-1-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-1-leveltest.json#5",
+      "sourceCanonicalSha256": "4b1404c3039b9bdf2e2eb2e4b500b92af5d8b072f9675f1fd8d2ea47569a7a90",
+      "sourceSkill": "Constructing the smallest four-digit number with a zero card while forbidding a leading zero",
+      "adaptationChanges": [
+        "Дереккөздегі разряд, қайта топтастыру, цифр реті немесе уақытты санау дағдысы жеке сақталды.",
+        "Моншақтар, ақша саны, карточкалар, өшірілетін цифр саны және уақыт аралығы жаңадан таңдалды.",
+        "Native SVG нақты торлардан, моншақтардан, ақша белгілері мен цифр ұяшықтарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Натурал сандар және разрядтар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual SVG bead/grid/token counts, place-value option binding, exhaustive subsequence/permutation/time enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave20-smallest-zero-digit-card-number.svg",
+      "verificationModule": "scripts/editorial/visual-wave20-models.mjs",
+      "options": [
+        "0468",
+        "4086",
+        "4068",
+        "4608"
+      ],
+      "statement": "Суреттегі төрт цифр карточкасының әрқайсысын бір рет қолданыңыз. Жазуға болатын ең кіші төрт таңбалы сан қайсы?",
+      "solution": "Алғашқы цифр 0 бола алмайды. Нөлден өзге ең кіші цифрды бірінші қойып, қалғандарын өсу ретімен орналастырамыз: 4, 0, 6, 8. Нәтиже 4068.",
+      "figureDescription": "Жеке цифр карточкалары: 4, 0, 8, 6.",
+      "figureSha256": "9d857a795bd1c0b959315ebe28300ab7fd0bf0652c19e62d58731eaf00ac9d15",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4068",
+        "checks": {
+          "validCandidates": 18,
+          "minimum": 4068
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave20-palindromic-clock-bounded-window",
+      "modelId": "visual-wave20-palindrome-clock-window",
+      "grade": 5,
+      "topic": "comb",
+      "difficulty": "medium",
+      "params": {
+        "scene": "clock",
+        "display": "15:20",
+        "start": 600,
+        "end": 1439
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "36c7db3d752cdad2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-1-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-1-leveltest.json#7",
+      "sourceCanonicalSha256": "89e34cfa1bdd942b10fb64e6a70eb5acb555302e045224d2cbfd723a2bc26eef",
+      "sourceSkill": "Enumerating four-digit palindromic24h times in an explicit bounded daytime interval with valid minute range",
+      "adaptationChanges": [
+        "Дереккөздегі разряд, қайта топтастыру, цифр реті немесе уақытты санау дағдысы жеке сақталды.",
+        "Моншақтар, ақша саны, карточкалар, өшірілетін цифр саны және уақыт аралығы жаңадан таңдалды.",
+        "Native SVG нақты торлардан, моншақтардан, ақша белгілері мен цифр ұяшықтарынан салынды; source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Натурал сандар және разрядтар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual SVG bead/grid/token counts, place-value option binding, exhaustive subsequence/permutation/time enumeration and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave20-palindromic-clock-bounded-window.svg",
+      "verificationModule": "scripts/editorial/visual-wave20-models.mjs",
+      "statement": "Электронды сағат уақытты төрт цифрмен көрсетеді. 10:00-ден 23:59-ға дейін, шеттерін қоса алғанда, төрт цифры екі бағытта бірдей оқылатын неше уақыт бар? Мысалы, 12:21 осындай уақыт. Жауапқа тек санды жазыңыз.",
+      "solution": "Әр сағаттың екі цифрын кері жазу минутты береді, бірақ минут 59-дан аспауы тиіс. Берілген аралықтағы жарамды уақыттар: 10:01, 11:11, 12:21, 13:31, 14:41, 15:51, 20:02, 21:12, 22:22, 23:32. Барлығы 10 уақыт. 24 сағаттық толық тәулікті емес, берілген аралықты санаймыз.",
+      "figureDescription": "Төрт цифрлы сағаттың үлгісі: 15:20. Берілген аралық 10:00–23:59.",
+      "figureSha256": "3c9270a6405b7a54301d1d8ed24af72355175ee9504f66e844db889d9ffbd4f6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": {
+          "times": [
+            "10:01",
+            "11:11",
+            "12:21",
+            "13:31",
+            "14:41",
+            "15:51",
+            "20:02",
+            "21:12",
+            "22:22",
+            "23:32"
+          ]
+        }
+      }
+    }
+  ]
+}

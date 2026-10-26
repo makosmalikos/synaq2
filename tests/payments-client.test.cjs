@@ -12,7 +12,7 @@ function client() {
   const doc = (_, ...parts) => parts.join('/');
   const snap = (key) => ({ exists: () => docs.has(key), data: () => docs.get(key) });
   const context = {
-    module: { exports: {} }, console, Date, crypto: crypto.webcrypto, setTimeout, clearTimeout, AbortSignal,
+    module: { exports: {} }, console, Date, crypto: crypto.webcrypto, setTimeout, clearTimeout, AbortSignal, AbortController,
     initializeApp: () => ({}), getAuth: () => auth, getFirestore: () => ({}), doc,
     firebaseSettings: () => ({ config: {}, emulators: false }),
     getDoc: async (ref) => snap(ref), serverTimestamp: () => new Date(),
@@ -33,7 +33,8 @@ function client() {
   };
   const source = fs.readFileSync(`${__dirname}/../frontend/src/firebase.js`, 'utf8')
     .replace(/^import[\s\S]*?from ['"][^'"]+['"];\n/gm, '').replace(/\bexport /g, '').replaceAll('import.meta.env', 'undefined');
-  vm.runInNewContext(source + '\nmodule.exports = { getMyProfile, familyHasPro, isPro, watchMyProfile, watchAuth, isAdmin, loginChild, createChild, resetChildPassword, ensureFamilyProfile, saveAttempt, startLearningSession, todayCount };', context);
+  const requestSource = fs.readFileSync(`${__dirname}/../frontend/src/authenticatedRequest.js`, 'utf8').replace(/\bexport /g, '');
+  vm.runInNewContext(requestSource + '\n' + source + '\nmodule.exports = { getMyProfile, familyHasPro, isPro, watchMyProfile, watchAuth, isAdmin, loginChild, createChild, resetChildPassword, ensureFamilyProfile, saveAttempt, startLearningSession, todayCount };', context);
   return { api: context.module.exports, docs, auth, calls, rejectNextCommit() { rejectCommit = true; },
     respond(value) { response = value; },
     update(ref, data) { docs.set(ref, data); subscriptions.get(ref)?.(snap(ref)); } };

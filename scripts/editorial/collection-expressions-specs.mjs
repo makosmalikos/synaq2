@@ -1,0 +1,31 @@
+// All25 saved nonvisual conditions/full official solutions/every MCQ read.
+// Source4 SVG excluded. Shared distribution/coefficient mechanisms are variants,
+// not twenty-five claims of new semantic models.
+export const collection='5501ac47-8683-4d41-b8e0-f367faa6935c';
+export const expressionSpecs=[
+ [1,'minus-inner-constant-variable-cancellation',{expression:'−(1/16) × (4b − 16) + (1/4) × (b + 6)',options:['(1/2)b + 2,5','−(1/2)b + 2,5','(1/2)b','2,5']},'2,5'],
+ [2,'distribute-group-then-common-factor',{expression:'8 × (4a + 7b) − 32b + 20a',options:['4 × (13a + 5b)','8 × (13a − 3b)','4 × (13a + 6b)','3 × (6b + 4a)']},'4 × (13a + 6b)'],
+ [3,'negative-input-square-modulus-order',{coefficient:2,insideCoefficient:5,constant:14,input:-3},'11'],
+ [5,'subtract-two-variable-bracket-then-factor',{expression:'3 × (4n − m) − 6 × (n − 3m)',options:['2n + 5m','3n + 2m','3 × (2n + 5m)','6 × (n + m)']},'3 × (2n + 5m)'],
+ [6,'coefficient-even-negative-rational',{expression:'(−2/9)a × (−3/4)b × 3 × (1/2)c'},'0,25'],
+ [7,'two-assigned-expressions-ratio-main-denominator',{firstExpression:'((4 + (1/6)) − (3 + (1/5)) + (1 + (17/60))) × 5',secondExpression:'((0,8 × 2,3 − 0,8 × 1,3)/(0,8²))',numerator:85},'(85/9)'],
+ [8,'proportion-root-then-negative-subtraction-target',{numeratorShift:5,denominatorShift:2,rightNumerator:3,rightDenominator:2,targetBase:3,targetCoefficient:5},'23'],
+ [9,'coefficient-odd-negative-rational',{expression:'(2/9)a × (−9/14)b × (−7)c × (−3/4)d'},'-0,75'],
+ [10,'fractional-two-brackets-two-negative-coefficients',{expression:'(1/4) × (3,2x − 2,8y) − (3/4) × (2,4y + 1,6x)',options:['−0,4x + 2,5y','2x − 2,5y','0,4x − 2,5y','−0,4x − 2,5y']},'−0,4x − 2,5y'],
+ [11,'fractional-brackets-common-denominator-by-variable',{expression:'(1/3) × (8a − 1,8b) + (1/4) × (b − a)',options:['(31/12)a − (7/20)b','−(29/12)a − (7/20)b','(29/12)a + (7/20)b','(29/12)a − (7/20)b']},'(29/12)a − (7/20)b'],
+ [12,'negative-fraction-distribution-both-mixed-coefficients',{expression:'−(3/7) × (14x + (2/3)y) + (2/7) × (x − 7y)',options:['−(40/7)x − (16/7)y','(40/7)x − (16/7)y','−(44/7)x − (16/7)y','(40/7)x + (16/7)y']},'−(40/7)x − (16/7)y'],
+ [13,'decimal-distribution-two-integer-coefficients',{expression:'4 × (1,7x − 0,8y) − 2,8x + 0,2y',options:['4x − 3,4y','9,6x − 3y','4x + 3y','4x − 3y']},'4x − 3y'],
+ [14,'mixed-multiplier-constant-cancels',{expression:'(6 + (1/8)) × ((2/7) − a) − ((1 + (3/4)) + a)',options:['−(57/8)a − 3,5','−(57/8)a','−(57/8)a + 3,5','−(49/8)a']},'−(57/8)a'],
+ [15,'plus-inner-constant-variable-cancellation',{expression:'−(1/25) × (5b + 25) + (1/5) × (b + 7)',options:['−(2/5)b − 0,4','−0,4','(2/5)b + 0,4','0,4']},'0,4'],
+ [16,'negative-decimal-distribution-signed-two-variables',{expression:'−6 × (0,8m − 1,2n) − 2,2m + 2,4n',options:['−2,6m + 9,6n','−7m − 9,6n','7m + 9,6n','−7m + 9,6n']},'−7m + 9,6n'],
+ [17,'fractional-distribution-decimal-coefficients',{expression:'(3/4) × (16a − (2/3)b) + (1/4) × (b − a)',options:['11,75a − 0,25b','12,25a − 0,25b','12,25a + 0,25b','3,75a − 0,25b']},'11,75a − 0,25b'],
+ [18,'decimal-minus-fraction-brackets-partial-coefficient',{expression:'0,6 × (a − 3b) − (1/8) × (4b + 2,4a)',options:['0,6a − 0,5b','0,3a − 2,3b','0,6a − 2,3b','0,3a + 2,3b']},'0,3a − 2,3b'],
+ [19,'decimal-affine-one-variable-and-constant',{expression:'−1,6 × (3a − 0,4) + 0,24 × ((1/4)a + 5)',options:['−4,86a + 1,84','4,74a + 0,56','−4,2a + 1,84','−4,74a + 1,84']},'−4,74a + 1,84'],
+ [20,'subtract-second-whole-bracket-signs',{expression:'4 × (6x − 8) − 3 × (6x + 2)',options:['6x − 38','−6x − 38','6x + 38','−6x + 38']},'6x − 38'],
+ [21,'two-different-arguments-then-value-sum',{firstFormula:'((5 + 3x)/8)',firstInput:7,secondFormula:'(5/(4 + x))',secondInput:-2},'5,75'],
+ [22,'rewrite-known-sum-and-product-without-solving',{expression:'6a + 3b × (4a + 2)',givenSum:3,givenProduct:-2},'-6'],
+ [23,'nested-subtractions-all-inner-members',{expression:'4a − (6a + 9a − (2a + b) + (11b − 5a) − 7b) − 4a',options:['−8a − 3b','−8a + 3b','8a − 3b','8a + 3b']},'−8a − 3b'],
+ [24,'coefficient-even-negative-decimal',{expression:'−0,2a × (−1/40)b × 135c'},'0,675'],
+ [25,'mixed-equals-decimal-partial-variable-cancellation',{expression:'(3/8) × (5,6a + (5 + (3/5))b) − 4,2 × ((1/2)a − 0,3b)',options:['4,36b','3,36a','a − 3,36b','3,36b']},'3,36b'],
+ [26,'three-brackets-common-variable-factor',{expression:'4 × (18a − 5) + (7b − 6) − (3 − 5a)',options:['7 × (11a + b) − 29','(77a + 1) − 29','7 × (18a + b) − 20','7 × (11a + b) − 26']},'7 × (11a + b) − 29'],
+].map(([number,kind,params,handExpected])=>({number,kind,params,handExpected}));

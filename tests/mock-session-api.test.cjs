@@ -167,3 +167,13 @@ test('sessions started before weekly rollout can still save a result', async () 
   assert.equal(response.status, 200);
   assert.equal(f.docs.get('results/kid/mocks/attempt_12345678').weekKey, null);
 });
+
+test('mock start/resume expose server time and expired start retries cannot reopen old sessions', async () => {
+ const f=fixture({paid:true});
+ const request={action:'start',id:'attempt_clock_1234',school:'РФМШ',excludeQuestionIds:[]};
+ const started=await f.invoke(request);assert.equal(started.status,200);
+ assert.equal(typeof started.body.serverNow,'number');assert.ok(started.body.serverNow>=started.body.startedAt);
+ const resumed=await f.invoke({action:'resume',id:request.id});assert.equal(typeof resumed.body.serverNow,'number');
+ const stored=f.docs.get('mockSessions/kid_'+request.id);stored.expiresAt=Date.now()-1;
+ assert.equal((await f.invoke(request)).status,410);
+});

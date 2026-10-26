@@ -1,0 +1,15 @@
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {fileURLToPath} from 'node:url';
+import {rationalSetSpecs} from './grade6-rational-sets-specs.mjs';import {renderEdition,verifyEdition} from './grade6-rational-sets-models.mjs';
+const root=fileURLToPath(new URL('../../',import.meta.url)),specs=new Map(rationalSetSpecs.map(([id,model,params])=>[id,{model,params}]));assert.equal(specs.size,13);
+const sourceFile='problems/sources/zerek/courses/6-math-2-3-level1.json',source=JSON.parse(fs.readFileSync(path.join(root,sourceFile),'utf8'));assert.equal(source.grade,6);assert.equal(source.status,'captured');
+const clean=s=>s.normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim(),editions=[];
+for(const original of source.questions.filter(q=>!q.images?.length&&!q.svg?.length)){
+ assert.equal(original.checked,true);const spec=specs.get(original.id);assert.ok(spec,'Individually read saved source '+original.id);
+ const row={editionId:'grade6-rational-sets-'+original.id,modelId:'grade6-rational-sets-'+spec.model,grade:6,topic:'num',difficulty:'basic',params:spec.params,sourceRefs:[{sourceFile,sourceId:original.id}],minimumPlan:'pro',editorialStatus:'draft',reviewStatus:'awaiting_independent_review',relationToSource:'Individual saved grade6topic2.3 nonvisual adaptation. Set definitions and numeric/context variants are not a semantic uniqueness count.',adaptationChanges:[
+  'Барлық13 сақталған бастапқы шарт, толық шешім және MCQ жеке оқылды. Рационал түрде жазу, санның мәні бойынша бүтін/натурал жіктеу, нақты бөлім мен алым рөлі, N/Z/Q тиістілігі жеке сақталды.',
+  'Сандар, таңдау реті және қазақша шарттар қайта жазылды. N жиыны 1-ден басталады деп нақты берілді; нөл, теріс бүтіндер және бүтін мән беретін бөлшектер ажыратылды.',
+  'Бөлшектердің мәні дәл қысқартылып тексеріледі, бірақ сұралған жазу мен бөлім қысқартылып ауыстырылмайды. Бір таңбалы санда минус цифр емес. Қатаң және екі шеті кіретін бүтін аралықтар бөлек сақталды.',
+  'Native canonical бөлшек, аралас сан және ∈ белгісі қолданылады, TeX жоқ. Тек сақталған level1 материал алынды; жаңа жинау жоқ. Сыртқы толық тәуелсіз hash review-ге дейін жабық.'
+ ]};Object.assign(row,renderEdition(row));row.calculationVerification=verifyEdition(row);assert.notEqual(clean(row.statement),clean(original.statement));assert.ok(!/[\\$]/.test([row.statement,row.solution,row.answer,...row.options||[]].join(' ')));editions.push(row);
+}
+assert.equal(editions.length,13);const batch={schemaVersion:1,status:'draft_awaiting_independent_review',scope:'All13 individually read saved nonvisual grade6topic2.3 level1 sources. Closed author draft until separate full-content hash-bound independent review.',summary:{editions:13,sourceOccurrencesReferenced:13,distinctModels:new Set(editions.map(r=>r.modelId)).size,independentlyReviewed:0},editions};const text=JSON.stringify(batch,null,2)+'\n',file=path.join(root,'problems/editorial/batches/grade6-rational-sets.json');if(process.argv.includes('--write'))fs.writeFileSync(file,text);else assert.equal(fs.readFileSync(file,'utf8'),text);console.log(JSON.stringify(batch.summary));

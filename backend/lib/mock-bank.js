@@ -1,3 +1,4 @@
+const { randomSample } = require('./random-sample');
 const SPECS = Object.freeze({
   'РФМШ': { count: 30, minutes: 120, subjects: [[null, 30, 1]] },
   'НИШ': { count: 180, minutes: 240, subjects: [['math', 40, 1], ['kolzar', 60, 1], ['science', 20, 1], ['eng', 20, 2], ['rus', 20, 2], ['kaz', 20, 2]] },
@@ -9,8 +10,6 @@ const { publicQuestionAllowed } = require('./question-access');
 
 const { loadPublishedBank: loadBank } = require('./published-bank');
 
-const shuffled = (items) => items.map((item) => [Math.random(), item])
-  .sort((a, b) => a[0] - b[0]).map((item) => item[1]);
 const gradable = (question) => question?.id && question?.statement && question.answer != null
   && !['', '-', '—'].includes(String(question.answer).trim())
   && (!question.options || (Array.isArray(question.options) && question.options.length >= 2
@@ -26,7 +25,10 @@ function poolFor(pool, school, subject) {
 
 function preferFresh(items, count, excluded) {
   const ids = new Set(excluded || []);
-  return [...items.filter((item) => !ids.has(item.id)), ...items.filter((item) => ids.has(item.id))].slice(0, count);
+  const fresh = [], previous = [];
+  for (const item of items) (ids.has(item.id) ? previous : fresh).push(item);
+  const selected = randomSample(fresh, count);
+  return selected.concat(randomSample(previous, count - selected.length));
 }
 
 function availability(pool, school) {
@@ -54,7 +56,7 @@ async function createMock(db, school, excluded = []) {
   if (!info.ready) return null;
   const questions = [];
   for (const [subject, target, section] of spec.subjects) {
-    const candidates = shuffled(poolFor(pool, school, subject));
+    const candidates = poolFor(pool, school, subject);
     for (const question of preferFresh(candidates, target, excluded)) {
       questions.push({ ...question, num: questions.length + 1, subject: subject || question.subject || null, section });
     }
@@ -105,7 +107,8 @@ async function gradeMock(db, session, answers) {
     if (ok) correct += 1;
     else if (has && norm(answers[question.num]) !== '') wrong += 1;
     return { qid: question.id, num: question.num, topic: question.topic || null,
-      subject: question.subject || null, school: variant.school, statement: question.statement,
+      subject: question.subject || null, section: question.section, lang: question.lang || null,
+      school: variant.school, statement: question.statement,
       solution: question.solution || '', image: question.image || null, options: question.options || null,
       your: answers[question.num] ?? null, answer: question.answer, correct: ok, note: question.note || null };
   });

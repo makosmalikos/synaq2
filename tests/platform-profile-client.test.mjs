@@ -10,8 +10,8 @@ function extractEffect(marker, dependencies) {
   assert.ok(start >= 0 && end > start);
   return source.slice(start + 'useEffect('.length, end + '  }'.length);
 }
-const familyEffect = extractEffect('if (!user || isKid(user) || adminUser !== false) return;', 'user, adminUser, familyRetry');
-const profileEffect = extractEffect('setProfileError(false);', 'user');
+const familyEffect = extractEffect('if (!user || isKid(user) || adminUser !== false) return;', 'user?.uid, adminUser, familyRetry');
+const profileEffect = extractEffect('setProfileError(false);', 'user?.uid, profileRetry');
 const trainingXpCallback = source.match(/onXp=\{(\(gain, totalXp\) =>[^\n]+)\}/)?.[1];
 assert.ok(trainingXpCallback);
 const tick = () => new Promise((resolve) => setImmediate(resolve));
@@ -85,10 +85,12 @@ test('family gate skips children, admins and unverified roles, and ignores late 
 });
 
 function profileHarness() {
-  const state = { xp: 0, profile: null, error: false };
+  const state = { xp: 0, profile: null, error: false, profileUid: null };
+  const authUidRef = {current: null};
   const requests = [], listeners = [];
   const context = vm.createContext({
     isKid, console: { error() {} },
+    authUidRef, setProfileUid: value => {state.profileUid = value;},
     setProfileError: (value) => { state.error = value; },
     setProfile: (value) => { state.profile = value; },
     setXp: (value) => { state.xp = typeof value === 'function' ? value(state.xp) : value; },
@@ -105,7 +107,7 @@ function profileHarness() {
   });
   const mount = vm.runInContext(`(user) => (${profileEffect})()`, context);
   const onTrainingXp = vm.runInContext(`(${trainingXpCallback})`, context);
-  return { mount, onTrainingXp, state, requests, listeners };
+  return { mount: user => {authUidRef.current = user?.uid; return mount(user);}, onTrainingXp, state, requests, listeners, authUidRef };
 }
 
 test('late initial XP loading cannot lower a confirmed training total or duplicate a replay award', async () => {
@@ -216,4 +218,15 @@ test('switching accounts and signing out invalidate the previous verified role',
   state.role = false;
   onAuth({ uid: 'second' });
   assert.equal(state.role, undefined);
+});
+
+test('auth change rejects old profile writes even before React effect cleanup', async () => {
+  const f = profileHarness();
+  const stop = f.mount({uid:'old-child',kind:'kid'});
+  f.authUidRef.current = 'new-child';
+  f.listeners[0].callback({name:'Old private name'});
+  f.requests[0].resolve({xp:500});
+  await tick();
+  assert.equal(f.state.profile, null); assert.equal(f.state.profileUid, null); assert.equal(f.state.xp,0);
+  stop();
 });

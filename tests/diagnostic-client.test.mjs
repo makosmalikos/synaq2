@@ -53,11 +53,11 @@ test('v2 progress keeps only recovery data and rejects malformed pending answers
     const valid = { version: 2, screen: 'test', grade: 5, index: 4, answer: '12', attemptId: 'diagnostic_12345678',
       pendingStart: false, pendingAnswer: { index: 4, answer: '12' } };
     storage.setItem(diagnosticProgressKey(uid), JSON.stringify(valid));
-    assert.deepEqual(readDiagnosticProgress(uid), valid);
+    assert.deepEqual(readDiagnosticProgress(uid, storage, storage), valid);
     for (const invalid of [{ ...valid, version: 1 }, { ...valid, index: 20 },
       { ...valid, pendingAnswer: { index: 4, answer: { correct: true } } }, { ...valid, attemptId: '../foreign' }]) {
       storage.setItem(diagnosticProgressKey(uid), JSON.stringify(invalid));
-      assert.equal(readDiagnosticProgress(uid), null);
+      assert.equal(readDiagnosticProgress(uid, storage, storage), null);
     }
   } finally { globalThis.localStorage = previous; }
 });

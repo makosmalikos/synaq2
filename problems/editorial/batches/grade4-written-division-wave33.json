@@ -1,0 +1,1446 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All25 remaining saved grade-4 nonvisual topic5.4 written division, equal cancellation and scaled Euclidean remainder domains; no new source collection.",
+  "summary": {
+    "editions": 25,
+    "models": 21,
+    "skillFamilies": 21,
+    "sourceOccurrencesReferenced": 25,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-written-division-91040c9d5beb4604",
+      "modelId": "grade4-written-division-exact-zero-quotient",
+      "skillFamily": "exact-zero-quotient",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 96000,
+        "divisor": 400,
+        "inputZeros": [
+          3,
+          2
+        ],
+        "quotientZeros": 1,
+        "choices": [
+          24,
+          240,
+          204,
+          2400
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level1.json",
+          "sourceId": "91040c9d5beb4604"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жазбаша бөлуді орындап, 96000 : 400 амалының дұрыс нәтижесін таңдаңыз.",
+      "options": [
+        "24",
+        "240",
+        "204",
+        "2400"
+      ],
+      "answer": "240",
+      "solution": "Екі санды да 100 санына бөліп, бірдей 2 нөлді қысқартамыз: 96000 : 400 = 960 : 4 = 240. Тексеру: 240 × 400 = 96000. Бөліндіде 1 соңғы нөл сақталады. Артық не кем нөл жауапты 10 есе өзгертеді.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "240",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-ecb4ee9273cb8336",
+      "modelId": "grade4-written-division-fully-reduced-division",
+      "skillFamily": "fully-reduced-division",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 456000,
+        "divisor": 800,
+        "inputZeros": [
+          3,
+          2
+        ],
+        "choices": [
+          [
+            4560,
+            80
+          ],
+          [
+            4560,
+            8
+          ],
+          [
+            45600,
+            8
+          ],
+          [
+            456,
+            8
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level1.json",
+          "sourceId": "ecb4ee9273cb8336"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді.",
+        "Бастапқы ресми түсіндірмеде3780:70қысқартуаяқталмағанымендұрысделінген, бірақ54≠540. Жаңа шешімде барлық қате қысқарту бөліндіні өзгертетіні нақты түзетілді; rawөзгертілгенжоқ."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "456000 : 800 бөліндісінде екі саннан да бірдей санды соңғы нөлді қысқартыңыз. Бөлгіште соңғы нөл қалмайтындай алынған бөлуді таңдаңыз.",
+      "options": [
+        "4560 : 80",
+        "4560 : 8",
+        "45600 : 8",
+        "456 : 8"
+      ],
+      "answer": "4560 : 8",
+      "solution": "Екі санды да 100 санына бөліп, бірдей 2 нөлді қысқартамыз: 456000 : 800 = 4560 : 8 = 570. Тексеру: 570 × 800 = 456000. Қысқартылған бөлгіш 8, ал бөлінгіш 4560. Қалған үш нұсқа екі санды бірдей есеге өзгертпейді, сондықтан бастапқы бөліндіні сақтамайды.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "4560 : 8",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-53f31dc68bdd7e9d",
+      "modelId": "grade4-written-division-verify-with-original-divisor",
+      "skillFamily": "verify-with-original-divisor",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 51600,
+        "divisor": 60,
+        "quotient": 860
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level1.json",
+          "sourceId": "53f31dc68bdd7e9d"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Зере 51600 : 60 = 860 деп есептеді. Бөлінгіш қайта шығуы үшін тексеруде қай өрнек есептелуі керек?",
+      "options": [
+        "860 × 60",
+        "860 × 6",
+        "860 : 60",
+        "51600 × 60"
+      ],
+      "answer": "860 × 60",
+      "solution": "Бөлуге кері амал — көбейту. Бөліндіні бастапқы бөлгішке көбейтеміз: 860 × 60 = 51600. Қысқартылған 6 саны емес, бастапқы 60 алынуы тиіс; әйтпесе 5160 шығып, бөлінгіштен 10 есе кем болады.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "860 × 60",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-f5daa33fc61e4175",
+      "modelId": "grade4-written-division-exact-zero-quotient",
+      "skillFamily": "exact-zero-quotient",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 540000,
+        "divisor": 6000,
+        "inputZeros": [
+          4,
+          3
+        ],
+        "quotientZeros": 1,
+        "choices": [
+          9000,
+          900,
+          90,
+          9
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level1.json",
+          "sourceId": "f5daa33fc61e4175"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жазбаша бөлуді орындап, 540000 : 6000 амалының дұрыс нәтижесін таңдаңыз.",
+      "options": [
+        "9000",
+        "900",
+        "90",
+        "9"
+      ],
+      "answer": "90",
+      "solution": "Екі санды да 1000 санына бөліп, бірдей 3 нөлді қысқартамыз: 540000 : 6000 = 540 : 6 = 90. Тексеру: 90 × 6000 = 540000. Бөліндіде 1 соңғы нөл сақталады. Артық не кем нөл жауапты 10 есе өзгертеді.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "90",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-f212969e0133ecdb",
+      "modelId": "grade4-written-division-exact-zero-quotient",
+      "skillFamily": "exact-zero-quotient",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 57600,
+        "divisor": 800,
+        "inputZeros": [
+          2,
+          2
+        ],
+        "quotientZeros": 0,
+        "choices": [
+          7200,
+          72,
+          720,
+          7
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level1.json",
+          "sourceId": "f212969e0133ecdb"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жазбаша бөлуді орындап, 57600 : 800 амалының дұрыс нәтижесін таңдаңыз.",
+      "options": [
+        "7200",
+        "72",
+        "720",
+        "7"
+      ],
+      "answer": "72",
+      "solution": "Екі санды да 100 санына бөліп, бірдей 2 нөлді қысқартамыз: 57600 : 800 = 576 : 8 = 72. Тексеру: 72 × 800 = 57600. Бөлінді соңғы нөлмен аяқталмайды. Артық не кем нөл жауапты 10 есе өзгертеді.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "72",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-a7a22ea074696092",
+      "modelId": "grade4-written-division-correct-cancellation-equality",
+      "skillFamily": "correct-cancellation-equality",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 72000,
+        "divisor": 800,
+        "choices": [
+          [
+            72,
+            8
+          ],
+          [
+            7200,
+            8
+          ],
+          [
+            720,
+            80
+          ],
+          [
+            720,
+            8
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level1.json",
+          "sourceId": "a7a22ea074696092"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бөлінгіш пен бөлгіштің нөлдері бірдей қысқартылған жалғыз теңдікті табыңыз. Қалған жазуларда әдейі қате қысқарту көрсетілген.",
+      "options": [
+        "72000 : 800 = 72 : 8",
+        "72000 : 800 = 7200 : 8",
+        "72000 : 800 = 720 : 80",
+        "72000 : 800 = 720 : 8"
+      ],
+      "answer": "72000 : 800 = 720 : 8",
+      "solution": "Екі санды да 100 санына бөліп, бірдей 2 нөлді қысқартамыз: 72000 : 800 = 720 : 8 = 90. Тексеру: 90 × 800 = 72000. 72 : 8 = 9. 7200 : 8 = 900. 720 : 80 = 9. 720 : 8 = 90. Бастапқы 90 мәнін сақтайтын бір ғана нұсқа бар.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "72000 : 800 = 720 : 8",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-d3ad4f5864b4304c",
+      "modelId": "grade4-written-division-quotient-digit-length",
+      "skillFamily": "quotient-digit-length",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 217200,
+        "divisor": 600,
+        "choices": [
+          2,
+          5,
+          4,
+          3
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level1.json",
+          "sourceId": "d3ad4f5864b4304c"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "217200 : 600 бөліндісін ондық жүйеде жазғанда барлығы неше цифр шығады?",
+      "options": [
+        "2",
+        "5",
+        "4",
+        "3"
+      ],
+      "answer": "3",
+      "solution": "Екі санды да 100 санына бөліп, бірдей 2 нөлді қысқартамыз: 217200 : 600 = 2172 : 6 = 362. Тексеру: 362 × 600 = 217200. Қысқарған 2172 санының бірінші цифры — 2. Ол 6 санынан кіші, сондықтан алғашқы екі цифр бірге алынады. Төрт таңбалы қысқарған бөлінгіштен үш таңбалы 362 бөліндісі шығады. Оның цифр саны 3.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "3",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-48c656f518748245",
+      "modelId": "grade4-written-division-unequal-quotients-comparison",
+      "skillFamily": "unequal-quotients-comparison",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "first": [
+          56000,
+          80
+        ],
+        "second": [
+          8100,
+          9
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level1.json",
+          "sourceId": "48c656f518748245"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Екі бөліндіні есептеп салыстырыңыз: 56000 : 80 □ 8100 : 9. Тиісті белгіні таңдаңыз.",
+      "options": [
+        ">",
+        "<",
+        "Салыстыру мүмкін емес",
+        "="
+      ],
+      "answer": "<",
+      "solution": "Екі санды да 10 санына бөліп, бірдей 1 нөлді қысқартамыз: 56000 : 80 = 5600 : 8 = 700. Тексеру: 700 × 80 = 56000. Бұл бөлуде қысқартылатын ортақ соңғы нөл жоқ: 8100 : 9 = 900. Тексеру: 900 × 9 = 8100. 700 < 900. Бөлінгіштің үлкен болуы бөліндінің де үлкен болуын міндеттемейді.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "<",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-1f590180a671fcf2",
+      "modelId": "grade4-written-division-quotient-zero-count",
+      "skillFamily": "quotient-zero-count",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 5600000,
+        "divisor": 800,
+        "choices": [
+          3,
+          2,
+          4,
+          5
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level2.json",
+          "sourceId": "1f590180a671fcf2"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "5600000 : 800 амалының нәтижесі қатарынан неше соңғы нөлмен аяқталады?",
+      "options": [
+        "3",
+        "2",
+        "4",
+        "5"
+      ],
+      "answer": "3",
+      "solution": "Екі санды да 100 санына бөліп, бірдей 2 нөлді қысқартамыз: 5600000 : 800 = 56000 : 8 = 7000. Тексеру: 7000 × 800 = 5600000. 7000 жазылуы дәл 3 нөлмен аяқталады; бөлінгіштегі барлық нөл бөліндіге сол күйі көшпейді.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "3",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-dddbd47267c36a43",
+      "modelId": "grade4-written-division-equal-price-smaller-order",
+      "skillFamily": "equal-price-smaller-order",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "count": 80,
+        "total": 312000,
+        "requested": 20
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level2.json",
+          "sourceId": "dddbd47267c36a43"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Сурет үйірмесі бағалары бірдей 80 альбомға 312000 теңге төледі. Осындай 20 альбом үшін неше теңге төленеді? Жауапқа тек санды жазыңыз.",
+      "answer": "78000",
+      "solution": "Бір альбомның бағасы: 312000 : 80 = 3900 теңге. Қажетті тапсырыстың құны 3900 × 20 = 78000 теңге. Тексеру: 80 : 20 = 4, сондықтан бастапқы құн да 4 есе азаяды.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "78000",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-566da7e32f083c76",
+      "modelId": "grade4-written-division-largest-quotient",
+      "skillFamily": "largest-quotient",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "pairs": [
+          [
+            63000,
+            90
+          ],
+          [
+            54000,
+            60
+          ],
+          [
+            560000,
+            800
+          ],
+          [
+            68000,
+            80
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level2.json",
+          "sourceId": "566da7e32f083c76"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Төрт бөлуден ең үлкен мән беретінін таңдаңыз.",
+      "options": [
+        "63000 : 90",
+        "54000 : 60",
+        "560000 : 800",
+        "68000 : 80"
+      ],
+      "answer": "54000 : 60",
+      "solution": "63000 : 90 = 700; 54000 : 60 = 900; 560000 : 800 = 700; 68000 : 80 = 850. Екі бөлінді бірдей, ал ең үлкені 900. Оны бөлінгіштердің өздерін салыстыру арқылы ғана табуға болмайды.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "54000 : 60",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-f611f70cdc646fd3",
+      "modelId": "grade4-written-division-ratio-of-two-quotients",
+      "skillFamily": "ratio-of-two-quotients",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "first": [
+          168000,
+          70
+        ],
+        "second": [
+          4800,
+          60
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level2.json",
+          "sourceId": "f611f70cdc646fd3"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "168000 : 70 бөліндісі 4800 : 60 бөліндісінен неше есе үлкен? Жауапқа тек санды жазыңыз.",
+      "answer": "30",
+      "solution": "Екі санды да 10 санына бөліп, бірдей 1 нөлді қысқартамыз: 168000 : 70 = 16800 : 7 = 2400. Тексеру: 2400 × 70 = 168000. Екі санды да 10 санына бөліп, бірдей 1 нөлді қысқартамыз: 4800 : 60 = 480 : 6 = 80. Тексеру: 80 × 60 = 4800. «Неше есе?» дегенде үлкен мәнді кішісіне бөлеміз: 2400 : 80 = 30. Айырмасын табу басқа сұраққа жауап берер еді.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "30",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-730dcbc481bc12d3",
+      "modelId": "grade4-written-division-identify-missing-zero-equality",
+      "skillFamily": "identify-missing-zero-equality",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "equalities": [
+          [
+            33600,
+            60,
+            560
+          ],
+          [
+            65800,
+            700,
+            94
+          ],
+          [
+            56700,
+            90,
+            63
+          ],
+          [
+            406000,
+            700,
+            580
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level2.json",
+          "sourceId": "730dcbc481bc12d3"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көбейтумен тексергенде жалған болып шығатын жалғыз бөлу теңдігін таңдаңыз. Қате жазу әдейі берілген.",
+      "options": [
+        "33600 : 60 = 560",
+        "65800 : 700 = 94",
+        "56700 : 90 = 63",
+        "406000 : 700 = 580"
+      ],
+      "answer": "56700 : 90 = 63",
+      "solution": "560 × 60 = 33600 — бастапқы бөлінгішпен тең. 94 × 700 = 65800 — бастапқы бөлінгішпен тең. 63 × 90 = 5670, бұл 56700 емес. 580 × 700 = 406000 — бастапқы бөлінгішпен тең. Қате жолдың дұрысы 56700 : 90 = 630; жауапта бір нөл түсіп қалған.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "56700 : 90 = 63",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-ac8748bfc648c797",
+      "modelId": "grade4-written-division-target-quotient",
+      "skillFamily": "target-quotient",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "target": 420,
+        "pairs": [
+          [
+            3360,
+            80
+          ],
+          [
+            40000,
+            80
+          ],
+          [
+            33600,
+            80
+          ],
+          [
+            37800,
+            900
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level2.json",
+          "sourceId": "ac8748bfc648c797"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай бөлуді орындағанда дәл 420 шығады?",
+      "options": [
+        "3360 : 80",
+        "40000 : 80",
+        "33600 : 80",
+        "37800 : 900"
+      ],
+      "answer": "33600 : 80",
+      "solution": "3360 : 80 = 42; 40000 : 80 = 500; 33600 : 80 = 420; 37800 : 900 = 42. Тек 33600 : 80 420 мәнін береді. Екі нұсқада нәтиже одан 10 есе кем.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "33600 : 80",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-5df0c85f00eea6cd",
+      "modelId": "grade4-written-division-restore-one-zero-remainder",
+      "skillFamily": "restore-one-zero-remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 4970,
+        "divisor": 600,
+        "choices": [
+          [
+            8,
+            17
+          ],
+          [
+            80,
+            170
+          ],
+          [
+            8,
+            170
+          ],
+          [
+            8,
+            1700
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level3.json",
+          "sourceId": "5df0c85f00eea6cd"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "4970 : 600 амалын қалдықпен орындаңыз. Толымсыз бөлінді мен бастапқы сандарға сәйкес қалдықты таңдаңыз.",
+      "options": [
+        "8 (қалдық 17)",
+        "80 (қалдық 170)",
+        "8 (қалдық 170)",
+        "8 (қалдық 1700)"
+      ],
+      "answer": "8 (қалдық 170)",
+      "solution": "Екі саннан 1 бірдей соңғы нөл қысқартсақ, 497 : 60 аламыз. Мұнда толымсыз бөлінді 8, қысқарған қалдық 17. Бастапқы өлшемге қайтарғанда қалдық 17 × 10 = 170. Тексеру: 8 × 600 + 170 = 4970; 170 < 600. Қысқарған есептегі қалдықты сол күйі жазуға болмайды.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "8 (қалдық 170)",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-ad481cae73f9a4eb",
+      "modelId": "grade4-written-division-full-boxes-and-leftovers",
+      "skillFamily": "full-boxes-and-leftovers",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "items": 58600,
+        "capacity": 700,
+        "choices": [
+          [
+            836,
+            0
+          ],
+          [
+            83,
+            5
+          ],
+          [
+            83,
+            500
+          ],
+          [
+            84,
+            200
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level3.json",
+          "sourceId": "ad481cae73f9a4eb"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Баспаханада 58600 күнтізбе дайындалды. Әр қорапқа дәл 700 күнтізбеден салынады. Неше толық қорап толады және неше күнтізбе қораптан тыс қалады?",
+      "options": [
+        "836 қорап, 0 күнтізбе",
+        "83 қорап, 5 күнтізбе",
+        "83 қорап, 500 күнтізбе",
+        "84 қорап, 200 күнтізбе"
+      ],
+      "answer": "83 қорап, 500 күнтізбе",
+      "solution": "Екі саннан 2 бірдей соңғы нөл қысқартсақ, 586 : 7 аламыз. Мұнда толымсыз бөлінді 83, қысқарған қалдық 5. Бастапқы өлшемге қайтарғанда қалдық 5 × 100 = 500. Тексеру: 83 × 700 + 500 = 58600; 500 < 700. Келесі толық қорапқа 58800 күнтізбе керек, бұл қолдағы саннан артық. Сұрақ жартылай толған қорапты емес, толық қорап пен артылған күнтізбені сұрайды.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "83 қорап, 500 күнтізбе",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-06adcebba5658672",
+      "modelId": "grade4-written-division-wrong-divisor-tenfold",
+      "skillFamily": "wrong-divisor-tenfold",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "correctDivisor": 80,
+        "wrongDivisor": 800,
+        "wrongQuotient": 63,
+        "choices": [
+          6300,
+          63,
+          630,
+          5040
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level3.json",
+          "sourceId": "06adcebba5658672"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Самат белгісіз санды 80 санына бөлмек болды, бірақ 800 санына бөліп, қалдықсыз 63 алды. Жоспарланған бөлудің дұрыс нәтижесі қандай?",
+      "options": [
+        "6300",
+        "63",
+        "630",
+        "5040"
+      ],
+      "answer": "630",
+      "solution": "Алдымен бөлінгішті қалпына келтіреміз: 63 × 800 = 50400. Дұрыс есеп 50400 : 80 = 630. Қате бөлгіш 10 есе үлкен болғандықтан, қате жауап дұрысынан 10 есе кем; 63 × 10 = 630.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "630",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-8dc23f6eeffaec7a",
+      "modelId": "grade4-written-division-rebuild-dividend-new-divisor",
+      "skillFamily": "rebuild-dividend-new-divisor",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 70,
+        "quotient": 146,
+        "remainder": 50,
+        "newDivisor": 700
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level3.json",
+          "sourceId": "8dc23f6eeffaec7a"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Белгісіз натурал санды 70 санына бөлгенде толымсыз бөлінді 146, қалдық 50 болды. Сол санды 700 санына бөлгендегі толымсыз бөліндіні табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "14",
+      "solution": "Бөлінгіш = бөлгіш × толымсыз бөлінді + қалдық: 70 × 146 + 50 = 10270. Жаңа бөлуде 700 × 14 = 9800, ал 10270 − 9800 = 470. Қалдық 470 < 700, демек жаңа толымсыз бөлінді 14. Тексеру: 14 × 700 + 470 = 10270.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "14",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-315e106aa3ea9be6",
+      "modelId": "grade4-written-division-maximum-fixed-floor-quotient",
+      "skillFamily": "maximum-fixed-floor-quotient",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 40,
+        "quotient": 750
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level3.json",
+          "sourceId": "315e106aa3ea9be6"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "40 санына бөлгенде толымсыз бөліндісі 750 болатын натурал сандардың ең үлкенін табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "30039",
+      "solution": "Қалдық 0-ден 39 санына дейін ғана болады. Ең үлкен қалдықты аламыз: 750 × 40 + 39 = 30039. Одан кейінгі 30040 саны 40 × 751, оның толымсыз бөліндісі енді 751. Сондықтан 30039 — дәл ең үлкен жарамды сан.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "30039",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-a0ed14736e2efd4a",
+      "modelId": "grade4-written-division-remainder-with-tenfold-divisor",
+      "skillFamily": "remainder-with-tenfold-divisor",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 700,
+        "remainder": 540,
+        "newDivisor": 70,
+        "choices": [
+          0,
+          54,
+          540,
+          50
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level3.json",
+          "sourceId": "a0ed14736e2efd4a"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Натурал санды 700 санына бөлгенде қалдық 540 болды. Сол санды 70 санына бөлгенде қалдық неше болады?",
+      "options": [
+        "0",
+        "54",
+        "540",
+        "50"
+      ],
+      "answer": "50",
+      "solution": "Кез келген мұндай сан 700 × k + 540 түрінде, мұнда k — теріс емес бүтін сан. 700 саны 70 санына қалдықсыз бөлінеді, сондықтан бірінші қосылғыш жаңа қалдыққа әсер етпейді. 540 = 7 × 70 + 50. Жаңа қалдық 50, әрі 50 < 70. Қалдықты жай ғана 10 есе азайту ережесі жоқ.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "50",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-9fa2fa346c2f2cfa",
+      "modelId": "grade4-written-division-largest-restored-remainder",
+      "skillFamily": "largest-restored-remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "pairs": [
+          [
+            5310,
+            90
+          ],
+          [
+            7800,
+            900
+          ],
+          [
+            11300,
+            400
+          ],
+          [
+            6710,
+            80
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level3.json",
+          "sourceId": "9fa2fa346c2f2cfa"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бастапқы сандармен есептегенде қай бөлудің қалдығы ең үлкен болады?",
+      "options": [
+        "5310 : 90",
+        "7800 : 900",
+        "11300 : 400",
+        "6710 : 80"
+      ],
+      "answer": "7800 : 900",
+      "solution": "Екі саннан 1 бірдей соңғы нөл қысқартсақ, 531 : 9 аламыз. Мұнда толымсыз бөлінді 59, қысқарған қалдық 0. Бастапқы өлшемге қайтарғанда қалдық 0 × 10 = 0. Тексеру: 59 × 90 + 0 = 5310; 0 < 90. Бұл бөлудегі бастапқы қалдық 0. Екі саннан 2 бірдей соңғы нөл қысқартсақ, 78 : 9 аламыз. Мұнда толымсыз бөлінді 8, қысқарған қалдық 6. Бастапқы өлшемге қайтарғанда қалдық 6 × 100 = 600. Тексеру: 8 × 900 + 600 = 7800; 600 < 900. Бұл бөлудегі бастапқы қалдық 600. Екі саннан 2 бірдей соңғы нөл қысқартсақ, 113 : 4 аламыз. Мұнда толымсыз бөлінді 28, қысқарған қалдық 1. Бастапқы өлшемге қайтарғанда қалдық 1 × 100 = 100. Тексеру: 28 × 400 + 100 = 11300; 100 < 400. Бұл бөлудегі бастапқы қалдық 100. Екі саннан 1 бірдей соңғы нөл қысқартсақ, 671 : 8 аламыз. Мұнда толымсыз бөлінді 83, қысқарған қалдық 7. Бастапқы өлшемге қайтарғанда қалдық 7 × 10 = 70. Тексеру: 83 × 80 + 70 = 6710; 70 < 80. Бұл бөлудегі бастапқы қалдық 70. Ең үлкені 600. Әртүрлі нөл саны қысқарғандықтан, қысқарған есептердің қалдықтарын тікелей салыстыруға болмайды.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "7800 : 900",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-5d0f861ae2ec7f92",
+      "modelId": "grade4-written-division-exact-zero-quotient",
+      "skillFamily": "exact-zero-quotient",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 720000,
+        "divisor": 900,
+        "inputZeros": [
+          4,
+          2
+        ],
+        "quotientZeros": 2,
+        "choices": [
+          80,
+          8,
+          800,
+          8000
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-leveltest.json",
+          "sourceId": "5d0f861ae2ec7f92"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жазбаша бөлуді орындап, 720000 : 900 амалының дұрыс нәтижесін таңдаңыз.",
+      "options": [
+        "80",
+        "8",
+        "800",
+        "8000"
+      ],
+      "answer": "800",
+      "solution": "Екі санды да 100 санына бөліп, бірдей 2 нөлді қысқартамыз: 720000 : 900 = 7200 : 9 = 800. Тексеру: 800 × 900 = 720000. Бөліндіде 2 соңғы нөл сақталады. Артық не кем нөл жауапты 10 есе өзгертеді.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "800",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-2dc91f49a7b4433f",
+      "modelId": "grade4-written-division-fully-reduced-division",
+      "skillFamily": "fully-reduced-division",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 5280000,
+        "divisor": 4000,
+        "inputZeros": [
+          4,
+          3
+        ],
+        "choices": [
+          [
+            5280,
+            40
+          ],
+          [
+            5280,
+            4
+          ],
+          [
+            528,
+            4
+          ],
+          [
+            52800,
+            4
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-leveltest.json",
+          "sourceId": "2dc91f49a7b4433f"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "5280000 : 4000 бөліндісінде екі саннан да бірдей санды соңғы нөлді қысқартыңыз. Бөлгіште соңғы нөл қалмайтындай алынған бөлуді таңдаңыз.",
+      "options": [
+        "5280 : 40",
+        "5280 : 4",
+        "528 : 4",
+        "52800 : 4"
+      ],
+      "answer": "5280 : 4",
+      "solution": "Екі санды да 1000 санына бөліп, бірдей 3 нөлді қысқартамыз: 5280000 : 4000 = 5280 : 4 = 1320. Тексеру: 1320 × 4000 = 5280000. Қысқартылған бөлгіш 4, ал бөлінгіш 5280. Қалған үш нұсқа екі санды бірдей есеге өзгертпейді, сондықтан бастапқы бөліндіні сақтамайды.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "5280 : 4",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-1224e0a1929199bb",
+      "modelId": "grade4-written-division-same-quotient-false-equality",
+      "skillFamily": "same-quotient-false-equality",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "equalities": [
+          [
+            32000,
+            800,
+            400
+          ],
+          [
+            32000,
+            80,
+            400
+          ],
+          [
+            3200,
+            8,
+            400
+          ],
+          [
+            320000,
+            800,
+            400
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-leveltest.json",
+          "sourceId": "1224e0a1929199bb"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көбейтумен тексергенде жалған болып шығатын жалғыз бөлу теңдігін таңдаңыз. Қате жазу әдейі берілген.",
+      "options": [
+        "32000 : 800 = 400",
+        "32000 : 80 = 400",
+        "3200 : 8 = 400",
+        "320000 : 800 = 400"
+      ],
+      "answer": "32000 : 800 = 400",
+      "solution": "400 × 800 = 320000, бұл 32000 емес. 400 × 80 = 32000 — бастапқы бөлінгішпен тең. 400 × 8 = 3200 — бастапқы бөлінгішпен тең. 400 × 800 = 320000 — бастапқы бөлінгішпен тең. Қате жолдың дұрысы 32000 : 800 = 40; жауапта бір нөл артық жазылған.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "32000 : 800 = 400",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-written-division-f18a92959d2586bb",
+      "modelId": "grade4-written-division-leading-digit-divisibility",
+      "skillFamily": "leading-digit-divisibility",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "place": 10000,
+        "suffix": 6000,
+        "divisor": 900,
+        "choices": [
+          3,
+          6,
+          2,
+          8
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-leveltest.json",
+          "sourceId": "f18a92959d2586bb"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық25 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жазбаша бөлу, бірдей нөлді қысқарту, бастапқы бөлгішпен тексеру және бөліндінің цифр/соңғы нөл саны сақталды.",
+        "Жаңа сандар мен дербес қазақша шарттар жазылды. Қалдықтың қысқарған және бастапқы өлшемі, толымсыз бөлінді мен толық қорап, қатаң0≤r<dшегі бөлек көрсетілді.",
+        "Қате мысалдарда жалған теңдік әдейі нұсқа ретінде берілді. Жетекші цифрдың1–9толықдомені, барлық ықтимал қалдық және бөлгіш өзгергендегі қалдық жаңа деректермен қайта есептелді.25source25жаңа мағына дегенді білдірмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.4 written division, cancellation, Euclidean remainder, inverse or staged equal-price edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "□6000 — бес таңбалы сан, □ орнына 1–9 цифрларының бірі жазылады. □6000 : 900 қалдықсыз орындалуы үшін қандай цифр керек?",
+      "options": [
+        "3",
+        "6",
+        "2",
+        "8"
+      ],
+      "answer": "3",
+      "solution": "Барлық 1–9 бастапқы цифрды қарастырамыз. Екі соңғы нөлді бірдей қысқартсақ, 160, 260, 360, 460, 560, 660, 760, 860, 960 сандарын 9 санына бөлу керек. Олардың ішінде тек 360 қалдықсыз бөлінеді: 360 : 9 = 40. Демек, жасырын цифр 3. Тексеру: 36000 : 900 = 40.",
+      "calculationVerification": {
+        "method": "exact_integer_written_division_cancellation_Euclidean_remainder_scaling_and_complete_domains",
+        "answer": "3",
+        "checks": [
+          "exact_integer_quotients_equal_zero_cancellation_and_original_divisor_inverse",
+          "quotient_digit_trailing_zero_counts_and_first_partial_dividend_preserved",
+          "Euclidean_n_equals_dq_plus_r_and_zero_to_d_minus_one_remainder_bounds",
+          "remainder_restored_to_original_scale_complete_digit_and_residue_domains",
+          "false_example_options_intentional_unique_MCQs_and_all_text_bound_to_params"
+        ]
+      }
+    }
+  ]
+}

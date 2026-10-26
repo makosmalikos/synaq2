@@ -1,0 +1,15 @@
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {fileURLToPath} from 'node:url';
+import {subtractionDistanceSpecs} from './grade6-signed-subtraction-distances-specs.mjs';import {renderEdition,verifyEdition} from './grade6-signed-subtraction-distances-models.mjs';
+const root=fileURLToPath(new URL('../../',import.meta.url)),specs=new Map(subtractionDistanceSpecs.map(([topic,id,model,params])=>[id,{topic,model,params}]));assert.equal(specs.size,24);
+const editions=[];
+for(const topic of ['2-11','2-12']) {
+ const sourceFile=`problems/sources/zerek/courses/6-math-${topic}-level1.json`,source=JSON.parse(fs.readFileSync(path.join(root,sourceFile),'utf8'));assert.equal(source.grade,6);assert.equal(source.status,'captured');
+ for(const original of source.questions.filter(q=>!q.images?.length&&!q.svg?.length)){
+ assert.equal(original.checked,true);const spec=specs.get(original.id);assert.ok(spec,'Individually read saved source '+original.id);assert.equal(spec.topic,topic);
+ const row={editionId:'grade6-signed-subtraction-distances-'+original.id,modelId:'grade6-signed-subtraction-distances-'+spec.model,grade:6,topic:'num',difficulty:'basic',params:spec.params,sourceRefs:[{sourceFile,sourceId:original.id}],minimumPlan:'pro',editorialStatus:'draft',reviewStatus:'awaiting_independent_review',relationToSource:'Individual saved grade6topic2.7 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.',adaptationChanges:[
+  'Барлық24сақталғанвизуалсызшарт,толықшешімжәнеMCQ жекеоқылды:2.11/2.12денәрқайсысы12. Азайтуды қосуғаауыстыру,сандықнәтиже,арақашықтық,өрнектаңдау жәнежалпыформула рөлдеріжеке сақталды.',
+  'Сандар,қазақшашарттар мен нұсқалар жаңарды. Терісазайтқыштаңбасы,модуль,координаталарреті,біржақты/қарамақарсыжақтыаралық,бөлшек/ондықөлшемдер тексерілді.',
+  'Нақтыгеографиялықбиіктіктердіойданауыстырмауүшін шарттыкартаконтексті берілді. Nativeбөлшек,TeX/скан/жаңажинаужоқ. Нұсқалар жаңа мағына саны емес; сыртқытолықhashreview дейін draftжабық.'
+ ]};Object.assign(row,renderEdition(row));row.calculationVerification=verifyEdition(row);assert.notEqual(row.statement.normalize('NFKC').trim(),original.statement.normalize('NFKC').trim());assert.ok(!/[\\$]/.test([row.statement,row.solution,row.answer,...row.options||[]].join(' ')));editions.push(row);
+}}
+assert.equal(editions.length,24);const batch={schemaVersion:1,status:'draft_awaiting_independent_review',scope:'All24 individually read saved nonvisual grade6topics2.11/2.12 level1 sources. Closed author draft until independent full-content hash review.',summary:{editions:24,sourceOccurrencesReferenced:24,distinctModels:new Set(editions.map(r=>r.modelId)).size,independentlyReviewed:0},editions};const text=JSON.stringify(batch,null,2)+'\n',file=path.join(root,'problems/editorial/batches/grade6-signed-subtraction-distances.json');if(process.argv.includes('--write'))fs.writeFileSync(file,text);else assert.equal(fs.readFileSync(file,'utf8'),text);console.log(JSON.stringify(batch.summary));

@@ -1,0 +1,23 @@
+// Full20 saved nonvisual9.3/9.4/9.5 conditions, officialsolutions and allMCQs read individually.
+export const graphsDirectSpecs=[
+ ['9-3','139a999d4a8510d2','table-pair-input-first',{rate:9},'geo'],
+ ['9-3','066d565272ca9329','ordinate-from-given-abscissa',{rate:11,input:4},'geo'],
+ ['9-3','a4d906aa24e3a8fe','motion-point-on-given-formula',{rate:60,time:3},'motion'],
+ ['9-3','89506ebf83d9ad07','horizontal-cumulative-distance-means-stop',{},'motion'],
+ ['9-3','8e975c67099f3a5f','graph-definition-input-output',{},'geo'],
+ ['9-3','2b88165463730beb','independent-mass-horizontal-axis',{},'geo'],
+ ['9-4','44d3e68dac751575','origin-motion-slope-from-point',{time:4,distance:304},'motion'],
+ ['9-4','50bfe81931816b52','initially-empty-positive-constant-flow',{},'geo'],
+ ['9-4','2047fcc83a226ac1','temperature-point-state-not-change',{time:6,temperature:41},'geo'],
+ ['9-5','fd979d07320cb5df','direct-cost-inverse-count',{price:320,total:2880},'ratio'],
+ ['9-5','733328d1deec67b0','all-nonzero-coefficients-origin',{},'ratio'],
+ ['9-5','ce9fb83258bc1988','positive-coefficient-negative-point',{coefficient:4,x:-3},'ratio'],
+ ['9-5','42c64854041ef1f3','decimal-coefficient-output',{tenths:25,input:6},'ratio'],
+ ['9-5','a52006062b3d792c','negative-coefficient-y-over-x',{x:8,y:-2},'ratio'],
+ ['9-5','b87677abfbe8b75c','unit-input-increment-output-difference',{coefficient:9},'ratio'],
+ ['9-5','804a011f77a9a2cc','negative-slope-quadrants',{magnitude:7},'geo'],
+ ['9-5','74738107cfeba592','count-direct-not-inverse-or-affine',{negative:4,denominator:8,offset:3,tenths:6},'ratio'],
+ ['9-5','c9f14e667c54ea9d','coefficient-from-variable-divided-by-constant',{denominator:5},'ratio'],
+ ['9-5','133c49012f075a5d','negative-fraction-coefficient-not-reciprocal',{numerator:3,denominator:8},'ratio'],
+ ['9-5','b2fe93286bcba147','recover-coefficient-from-positive-pair',{x:8,y:72},'ratio'],
+];

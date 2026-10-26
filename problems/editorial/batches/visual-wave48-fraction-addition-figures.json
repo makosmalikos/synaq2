@@ -1,0 +1,386 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All5savedvisualgrade5topic3.8;archivedsourcesonly,no newcapture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "Allcapturedvisualgrade5topic3.8sources",
+    "sourceVisualOccurrences": 5,
+    "addressedNewDrafts": 5,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "00341f96e5b3fb2f",
+      "33977807e1b8b21d",
+      "53e10589b72eea4e",
+      "5660c3dcd2f192bf",
+      "efcd6c098052d346"
+    ],
+    "distinctModels": 5,
+    "semantics": "Five source-specific targets rewritten separately, notinflated asnewsemanticmeanings."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave48-fifth-sixth-hour-clock-sum",
+      "modelId": "visual-wave48-equal-hour-clock-fraction-sum-minutes",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "clocks",
+        "parts": [
+          5,
+          6
+        ],
+        "painted": [
+          1,
+          1
+        ]
+      },
+      "answer": "22",
+      "sourceRefs": [
+        {
+          "sourceId": "33977807e1b8b21d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-8-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-8-level1.json#8",
+      "sourceCanonicalSha256": "0c77cdf880164f0b6f13a81cfcdad492d30d5bfedf8d2a808745af047f15089c",
+      "sourceSkill": "Read two onehourclocksector unitfractions; sum through commonLCM30, convert TOTAL hours to22minutes; separate12+10 ledger preservesunits",
+      "adaptationChanges": [
+        "Барлық5сақталғанвизуалды3.8шарт,толықшешімжәнебарлықнұсқажекеоқылды;сағатүлестерініңқосындысы→минут,бірдейбүтіндердіңқосындысы→аралассаны,периметрденекіқабырғаныазайту→см,қабыспайтынсыныпүлестерініңқалдығыбойыншабүтін,белгісізқосылғышдағдыларыбөлексақталды.",
+        "Жаңадеректер1/5+1/6сағат22мин;7/8+1/4=1+1/8;P39/40,known3/8+7/20→1/4м25см;1/6+1/4,ақ21→36оқушы;1/4+□=1/3→1/12.ҚатеMCQлогикасықосу/көбейту/азайтужәнебелгісізқосылғыштыорынсызқосу/бөлімдердіқосу/екіеселеуретіндеадрестісақталған.",
+        "SVGтазапараметрлікжолменжасалған,source/tracedpathжоқ.Радиусы87теңдөңгелектер5/6және8/4теңсекторға,сынып1/6+1/4+7/12нақты396pxұзындыққа,бірдейекіжолақ396pxқылыпсалынған.Треугольникмасштабсыздепайқын,барлықүштеңсіздікқаталорындалады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшектердің қосындысы мен айырмасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all5saved/new/fullsolutions/MCQ review; exactclock5/6equal87rsectorsandminuteunits,7of8+1of4sumwithsource-specificwrongoperations,trianglelabels3/8and7/20/P39/40reduction+cm,actualclass66/99/231widths/21peopleintegrality,unknownstripblue132vs99+yellow33/commonend;native343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave48-fifth-sixth-hour-clock-sum.svg",
+      "verificationModule": "scripts/editorial/visual-wave48-models.mjs",
+      "statement": "Әр сағат дөңгелегі 1 сағатты білдіреді және тең секторларға бөлінген. A — Әлияның сурет салған, B — қағаздан модель құрастырған уақытының көк үлесі. Екі іске барлығы неше минут жұмсалды? Жауапқа тек санды жазыңыз.",
+      "solution": "A дөңгелегінің 5 тең секторының 1-еуі көк: (1/5) сағат. B-де 6 тең сектордың 1-еуі көк: (1/6) сағат. Ортақ бөлім 30: (1/5) + (1/6) = (6/30) + (5/30) = (11/30). 1 сағат = 60 минут, сондықтан 60 : 30 × 11 = 22 минут. Бөлек тексеру: 12 + 10 = 22 минут. Сағат үлесін минут саны деп бірден жазбаймыз.",
+      "figureDescription": "Бірдей радиусты A және B дөңгелектері. A 5, B 6 тең секторға бөлінген, көк сектор саны тиісінше 1 және 1. Әр дөңгелек — 1 сағат.",
+      "figureSha256": "1b43f5bdd90b0e82face26b3e6655a235ef3e99d46d816f1d60c6b7902ad7906",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "22",
+        "checks": {
+          "clockWholesHours": 1,
+          "rawUnitFractions": [
+            "1/5",
+            "1/6"
+          ],
+          "commonDenominator": 30,
+          "scaledNumerators": [
+            6,
+            5
+          ],
+          "totalHours": "11/30",
+          "totalMinutes": 22,
+          "independentMinuteLedger": [
+            12,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave48-seven-eighths-quarter-disc-sum",
+      "modelId": "visual-wave48-equal-discs-improper-sum-mixed-and-distractors",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "discs",
+        "parts": [
+          8,
+          4
+        ],
+        "painted": [
+          7,
+          1
+        ]
+      },
+      "answer": "(1 + (1/8))",
+      "sourceRefs": [
+        {
+          "sourceId": "5660c3dcd2f192bf",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-8-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-8-level1.json#13",
+      "sourceCanonicalSha256": "844efae920ad5fc84fa3e73eca9dbe02de06cbde325621d1a19b650597668602",
+      "sourceSkill": "Equalwholes read7/8+1/4; denominator8multipleof4; improper9/8→mixed1+1/8, ALLsource diagnoses retained: addterms2/3,multiply7/32,subtract5/8",
+      "adaptationChanges": [
+        "Барлық5сақталғанвизуалды3.8шарт,толықшешімжәнебарлықнұсқажекеоқылды;сағатүлестерініңқосындысы→минут,бірдейбүтіндердіңқосындысы→аралассаны,периметрденекіқабырғаныазайту→см,қабыспайтынсыныпүлестерініңқалдығыбойыншабүтін,белгісізқосылғышдағдыларыбөлексақталды.",
+        "Жаңадеректер1/5+1/6сағат22мин;7/8+1/4=1+1/8;P39/40,known3/8+7/20→1/4м25см;1/6+1/4,ақ21→36оқушы;1/4+□=1/3→1/12.ҚатеMCQлогикасықосу/көбейту/азайтужәнебелгісізқосылғыштыорынсызқосу/бөлімдердіқосу/екіеселеуретіндеадрестісақталған.",
+        "SVGтазапараметрлікжолменжасалған,source/tracedpathжоқ.Радиусы87теңдөңгелектер5/6және8/4теңсекторға,сынып1/6+1/4+7/12нақты396pxұзындыққа,бірдейекіжолақ396pxқылыпсалынған.Треугольникмасштабсыздепайқын,барлықүштеңсіздікқаталорындалады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшектердің қосындысы мен айырмасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all5saved/new/fullsolutions/MCQ review; exactclock5/6equal87rsectorsandminuteunits,7of8+1of4sumwithsource-specificwrongoperations,trianglelabels3/8and7/20/P39/40reduction+cm,actualclass66/99/231widths/21peopleintegrality,unknownstripblue132vs99+yellow33/commonend;native343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave48-seven-eighths-quarter-disc-sum.svg",
+      "verificationModule": "scripts/editorial/visual-wave48-models.mjs",
+      "options": [
+        "(2/3)",
+        "(7/32)",
+        "(1 + (1/8))",
+        "(5/8)"
+      ],
+      "statement": "A және B дөңгелектері бірдей бір бүтінді білдіреді. Екі көк үлестің ҚОСЫНДЫСЫН толық қысқартылған аралас санмен таңдаңыз.",
+      "solution": "Суреттен A — (7/8), B — (1/4). 8 саны 4 санына бөлінеді, сондықтан ортақ бөлім 8. (1/4) = (2/8). Қосынды (7/8) + (2/8) = (9/8) = (1 + (1/8)). Алымдар мен бөлімдерді жеке қоссақ (8/12) = (2/3) деген қате шығады. Екі үлесті көбейтсек (7/32), ал қосудың орнына азайтсақ (5/8) шығады. Бұлар сұралған қосынды емес.",
+      "figureDescription": "Бірдей радиусты A және B дөңгелектері. A 8, B 4 тең секторға бөлінген, көк сектор саны тиісінше 7 және 1. Әр дөңгелек — бір бүтін.",
+      "figureSha256": "2b36add04c39c0ed89b6ba4775705915ede9b2aceda7768ae1189bb662a71e42",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(1 + (1/8))",
+        "checks": {
+          "wholeDiscsEqual": true,
+          "parts": [
+            8,
+            4
+          ],
+          "painted": [
+            7,
+            1
+          ],
+          "commonDenominator": 8,
+          "expandedNumerators": [
+            7,
+            2
+          ],
+          "sumRaw": "9/8",
+          "reducedImproper": "9/8",
+          "mixed": "(1 + (1/8))",
+          "diagnosticAdditionTerms": "(8/12)",
+          "diagnosticAdditionReduced": "(2/3)",
+          "diagnosticMultiplication": "(7/32)",
+          "diagnosticSubtraction": "(5/8)"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave48-thirty-nine-fortieth-metre-triangle",
+      "modelId": "visual-wave48-triangle-perimeter-fractional-metre-to-centimetre",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "triangle",
+        "lengths": [
+          [
+            39,
+            40
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            7,
+            20
+          ]
+        ]
+      },
+      "answer": "25",
+      "sourceRefs": [
+        {
+          "sourceId": "53e10589b72eea4e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-8-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-8-level2.json#0",
+      "sourceCanonicalSha256": "5050c170589e286e356b6544a97b0526a1d540a728fcb2ffdcd7a05d92275261",
+      "sourceSkill": "Read two pictured metre sides, perimeter minusBOTH, common40; 10/40 reallyreduces1/4; convert25cm; stricttrianglevalidity verified",
+      "adaptationChanges": [
+        "Барлық5сақталғанвизуалды3.8шарт,толықшешімжәнебарлықнұсқажекеоқылды;сағатүлестерініңқосындысы→минут,бірдейбүтіндердіңқосындысы→аралассаны,периметрденекіқабырғаныазайту→см,қабыспайтынсыныпүлестерініңқалдығыбойыншабүтін,белгісізқосылғышдағдыларыбөлексақталды.",
+        "Жаңадеректер1/5+1/6сағат22мин;7/8+1/4=1+1/8;P39/40,known3/8+7/20→1/4м25см;1/6+1/4,ақ21→36оқушы;1/4+□=1/3→1/12.ҚатеMCQлогикасықосу/көбейту/азайтужәнебелгісізқосылғыштыорынсызқосу/бөлімдердіқосу/екіеселеуретіндеадрестісақталған.",
+        "SVGтазапараметрлікжолменжасалған,source/tracedpathжоқ.Радиусы87теңдөңгелектер5/6және8/4теңсекторға,сынып1/6+1/4+7/12нақты396pxұзындыққа,бірдейекіжолақ396pxқылыпсалынған.Треугольникмасштабсыздепайқын,барлықүштеңсіздікқаталорындалады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшектердің қосындысы мен айырмасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all5saved/new/fullsolutions/MCQ review; exactclock5/6equal87rsectorsandminuteunits,7of8+1of4sumwithsource-specificwrongoperations,trianglelabels3/8and7/20/P39/40reduction+cm,actualclass66/99/231widths/21peopleintegrality,unknownstripblue132vs99+yellow33/commonend;native343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave48-thirty-nine-fortieth-metre-triangle.svg",
+      "verificationModule": "scripts/editorial/visual-wave48-models.mjs",
+      "statement": "Үшбұрыштың периметрі (39/40) м. Суретте белгілі екі қабырғаның ұзындығы метрмен берілген, сызба масштабсыз. «?» қабырғасының ұзындығы неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Периметр барлық үш қабырғаның қосындысы. Ортақ бөлім 40: (39/40) = (39/40); (3/8) = (15/40); (7/20) = (14/40). Белгісіз қабырға (39/40) − (15/40) − (14/40) = (10/40) = (1/4) м. 1 м = 100 см, демек 100 × (1/4) = 25 см. Кері тексеру: (3/8) + (7/20) + (1/4) = (39/40) м. Ұзындық суретті өлшеумен табылмайды.",
+      "figureDescription": "Масштабсыз үшбұрыш: сол қабырға 3/8 м, табаны 7/20 м; оң қабырға «?». Барлық берілген ұзындық метрмен.",
+      "figureSha256": "fbe5b9d70c4b0b80664c8e1d607cc9348e67a6db6c0d65775f65399f8f649de4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "25",
+        "checks": {
+          "perimeter": [
+            39,
+            40
+          ],
+          "knownSides": [
+            [
+              3,
+              8
+            ],
+            [
+              7,
+              20
+            ]
+          ],
+          "commonDenominator": 40,
+          "remainingRaw": "10/40",
+          "reductionFactor": 10,
+          "thirdSideMetres": "1/4",
+          "strictTriangleInequalities": true,
+          "centimetres": 25
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave48-class-sixth-quarter-twenty-one-left",
+      "modelId": "visual-wave48-disjoint-class-fractions-known-complement-count",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "class",
+        "parts": [
+          6,
+          4
+        ],
+        "remaining": 21
+      },
+      "answer": "36",
+      "sourceRefs": [
+        {
+          "sourceId": "00341f96e5b3fb2f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-8-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-8-level2.json#9",
+      "sourceCanonicalSha256": "0857afa3454971e9d7961d61a1e12654f3542211562edc37314c8d7140a0a21c",
+      "sourceSkill": "Read fractions1/6and1/4ofORIGINALclass, disjointsum5/12, complement7/12 corresponds21; unit1/12=3, total36; integral6+9+21 ledger",
+      "adaptationChanges": [
+        "Барлық5сақталғанвизуалды3.8шарт,толықшешімжәнебарлықнұсқажекеоқылды;сағатүлестерініңқосындысы→минут,бірдейбүтіндердіңқосындысы→аралассаны,периметрденекіқабырғаныазайту→см,қабыспайтынсыныпүлестерініңқалдығыбойыншабүтін,белгісізқосылғышдағдыларыбөлексақталды.",
+        "Жаңадеректер1/5+1/6сағат22мин;7/8+1/4=1+1/8;P39/40,known3/8+7/20→1/4м25см;1/6+1/4,ақ21→36оқушы;1/4+□=1/3→1/12.ҚатеMCQлогикасықосу/көбейту/азайтужәнебелгісізқосылғыштыорынсызқосу/бөлімдердіқосу/екіеселеуретіндеадрестісақталған.",
+        "SVGтазапараметрлікжолменжасалған,source/tracedpathжоқ.Радиусы87теңдөңгелектер5/6және8/4теңсекторға,сынып1/6+1/4+7/12нақты396pxұзындыққа,бірдейекіжолақ396pxқылыпсалынған.Треугольникмасштабсыздепайқын,барлықүштеңсіздікқаталорындалады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшектердің қосындысы мен айырмасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all5saved/new/fullsolutions/MCQ review; exactclock5/6equal87rsectorsandminuteunits,7of8+1of4sumwithsource-specificwrongoperations,trianglelabels3/8and7/20/P39/40reduction+cm,actualclass66/99/231widths/21peopleintegrality,unknownstripblue132vs99+yellow33/commonend;native343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave48-class-sixth-quarter-twenty-one-left.svg",
+      "verificationModule": "scripts/editorial/visual-wave48-models.mjs",
+      "statement": "Жолақ — бір сыныптың барлық оқушысы. Көк үлес роботтехникаға, күлгін үлес сурет үйірмесіне қатысады. Әр оқушы ең көбі бір үйірмеге барады; ақ бөліктегі 21 оқушы ешқайсысына қатыспайды. Жолақтағы бөлшектер БАСТАПҚЫ сыныптың үлестерін білдіреді. Сыныпта барлығы неше оқушы бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Үйірмелер қабыспайды және екеуі де бастапқы сыныптың үлесі. Қатысатындар: (1/6) + (1/4) = (2/12) + (3/12) = (5/12). Ақ үлес 1 − (5/12) = (7/12), оған 21 оқушы сәйкес. (1/12) үлеске 21 : 7 = 3 оқушы келеді. Барлығы 3 × 12 = 36. Тексеру: роботтехника 6, сурет 9, ешқайсысына қатыспайды 21; 6 + 9 + 21 = 36. 21 — бүкіл сынып емес, тек ақ бөліктегі оқушылар.",
+      "figureDescription": "Бір толық жолақтағы үш қабыспайтын бөлік: көк 1/6, күлгін 1/4 бастапқы сынып үлесі; қалған ақ бөлікте 21 оқушы. Жолақ үстінде барлық оқушы саны белгісіз екені «?» арқылы көрсетілген.",
+      "figureSha256": "11e5ae7358d872a74ebe5547469dfcf40924596d501c9a928766bfd978d01801",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "36",
+        "checks": {
+          "allPartsOfORIGINALClass": true,
+          "disjoint": true,
+          "unitFractions": [
+            "1/6",
+            "1/4"
+          ],
+          "commonDenominator": 12,
+          "usedRaw": "5/12",
+          "whiteRaw": "7/12",
+          "knownWhiteStudents": 21,
+          "studentsPerCommonUnit": 3,
+          "counts": [
+            6,
+            9,
+            21
+          ],
+          "total": 36
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave48-quarter-plus-blank-third-strips",
+      "modelId": "visual-wave48-two-equal-strips-unknown-addend-unit-difference",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "unknown",
+        "parts": [
+          4,
+          3
+        ]
+      },
+      "answer": "(1/12)",
+      "sourceRefs": [
+        {
+          "sourceId": "efcd6c098052d346",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-8-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-8-leveltest.json#2",
+      "sourceCanonicalSha256": "1d4cbd695794f977c3cfc54f07ef8a68869e831dc8c246cfe7ead3e885661810",
+      "sourceSkill": "Two equalwholes, unknownaddend1/4+□=1/3, common12 difference1/12; source additioninsteadsub7/12, adddenominators1/7,doubleknown1/2 traps retained",
+      "adaptationChanges": [
+        "Барлық5сақталғанвизуалды3.8шарт,толықшешімжәнебарлықнұсқажекеоқылды;сағатүлестерініңқосындысы→минут,бірдейбүтіндердіңқосындысы→аралассаны,периметрденекіқабырғаныазайту→см,қабыспайтынсыныпүлестерініңқалдығыбойыншабүтін,белгісізқосылғышдағдыларыбөлексақталды.",
+        "Жаңадеректер1/5+1/6сағат22мин;7/8+1/4=1+1/8;P39/40,known3/8+7/20→1/4м25см;1/6+1/4,ақ21→36оқушы;1/4+□=1/3→1/12.ҚатеMCQлогикасықосу/көбейту/азайтужәнебелгісізқосылғыштыорынсызқосу/бөлімдердіқосу/екіеселеуретіндеадрестісақталған.",
+        "SVGтазапараметрлікжолменжасалған,source/tracedpathжоқ.Радиусы87теңдөңгелектер5/6және8/4теңсекторға,сынып1/6+1/4+7/12нақты396pxұзындыққа,бірдейекіжолақ396pxқылыпсалынған.Треугольникмасштабсыздепайқын,барлықүштеңсіздікқаталорындалады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлшектердің қосындысы мен айырмасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all5saved/new/fullsolutions/MCQ review; exactclock5/6equal87rsectorsandminuteunits,7of8+1of4sumwithsource-specificwrongoperations,trianglelabels3/8and7/20/P39/40reduction+cm,actualclass66/99/231widths/21peopleintegrality,unknownstripblue132vs99+yellow33/commonend;native343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave48-quarter-plus-blank-third-strips.svg",
+      "verificationModule": "scripts/editorial/visual-wave48-models.mjs",
+      "options": [
+        "(7/12)",
+        "(1/7)",
+        "(1/2)",
+        "(1/12)"
+      ],
+      "statement": "(1/4) + □ = (1/3) теңдігі бірдей толық ұзындықтағы екі жолақпен берілген. Төменгі жолақта сары бөлік көк бөлікке қосылады. □ орнына қай бөлшек жазылады?",
+      "solution": "Жоғарғы көк үлес (1/3). Төменгі жолақтағы көк (1/4) үлесіне сары белгісіз қосылса, сол ұзындық шығады. Белгісіз қосылғышты қосындыдан белгілі қосылғышты азайтып табамыз: □ = (1/3) − (1/4) = (4/12) − (3/12) = (1/12). Тексеру: (1/4) + (1/12) = (3/12) + (1/12) = (4/12) = (1/3). (7/12) — азайтудың орнына қосылғанда шығады. Бөлімдерді қосу не белгілі үлесті екі есе алу теңдікті орындамайды.",
+      "figureDescription": "Бірдей толық ұзындықтағы екі жолақ. Жоғарғы көк үлес 1/3. Төменгі көк үлес 1/4 және оған жалғасқан сары «?» бөлік жоғарғы көк бөліктің соңына дейін жетеді.",
+      "figureSha256": "c7c4f5d47d44deff3fdc75406ec3fd3d0dd712c86e499dc86c82b5b9f33bb581",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(1/12)",
+        "checks": {
+          "wholeStripWidthsEqual": true,
+          "knownUnit": "1/4",
+          "totalUnit": "1/3",
+          "commonDenominator": 12,
+          "expandedTotal": 4,
+          "expandedKnown": 3,
+          "remainingRaw": "1/12",
+          "unitAnswer": "(1/12)",
+          "reverseSumTrue": true,
+          "diagnosticAddition": "(7/12)",
+          "diagnosticAddDenominators": "(1/7)",
+          "diagnosticDoubleKnown": "(2/4)"
+        }
+      }
+    }
+  ]
+}

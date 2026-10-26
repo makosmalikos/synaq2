@@ -1,0 +1,552 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All12 individually read saved nonvisual grade6topic2.5 level1 sources. Closed author draft until independent full-content hash review.",
+  "summary": {
+    "editions": 12,
+    "sourceOccurrencesReferenced": 12,
+    "distinctModels": 12,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade6-signed-comparison-3d85f3e9ead5c53e",
+      "modelId": "grade6-signed-comparison-smallest-strictly-greater-integer",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "bound": -9
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json",
+          "sourceId": "3d85f3e9ead5c53e"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.5 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Сақталған12визуалсыз шарт, толық шешім және нұсқалар жеке оқылды. Қатаңеңкішібүтін,терісондықаралық,терісбүтіндерсаны,әртаңбалы/теріссалыстыру,ондықреттеу,қосаралық,температура,терісбөлшек жәнежалпыреттеу жеке сақталды.",
+        "Сандар,қазақшашарттар мен нұсқалар қайта жазылды. Нөл/оңсандар,қатаң/қатаңемесшеттер,теріссанмодулі,ондықразряд,бөлшекбөлімдері тексерілді.",
+        "BigInt дәлондықсалыстыру және nativeбөлшектер қолданылды. Скан/TeX/жаңажинау жоқ. Сандардыңварианттары жаңа мағына санын білдірмейді; сыртқы толық hash review дейін авторлық draft жабық."
+      ],
+      "statement": "x > -9 шартын орындайтын ең кіші бүтін x-ті таңдаңыз.",
+      "options": [
+        "-8",
+        "-9",
+        "-10",
+        "8"
+      ],
+      "answer": "-8",
+      "solution": "-9 өзі кірмейді, себебі теңсіздік қатаң. Одан оңға қарай бірінші бүтін сан -8. Сондықтан ең кіші жарамды мән -8; 8 саны да шартты орындайды, бірақ ол үлкенірек.",
+      "calculationVerification": {
+        "answer": "-8",
+        "checks": [
+          "Individual source ordering, count, inequality, sign and context preserved",
+          "Exact BigInt decimal comparisons, never floating-point sorting",
+          "Strict/non-strict and negative-only endpoints retained",
+          "Separate full-content independent hash-bound review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-signed-comparison-6e0aa126eccbd547",
+      "modelId": "grade6-signed-comparison-decimal-between-negative-integers",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "left": -6,
+        "right": -5,
+        "choices": [
+          "-4,8",
+          "-6,3",
+          "-5,7",
+          "5,5"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json",
+          "sourceId": "6e0aa126eccbd547"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.5 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Сақталған12визуалсыз шарт, толық шешім және нұсқалар жеке оқылды. Қатаңеңкішібүтін,терісондықаралық,терісбүтіндерсаны,әртаңбалы/теріссалыстыру,ондықреттеу,қосаралық,температура,терісбөлшек жәнежалпыреттеу жеке сақталды.",
+        "Сандар,қазақшашарттар мен нұсқалар қайта жазылды. Нөл/оңсандар,қатаң/қатаңемесшеттер,теріссанмодулі,ондықразряд,бөлшекбөлімдері тексерілді.",
+        "BigInt дәлондықсалыстыру және nativeбөлшектер қолданылды. Скан/TeX/жаңажинау жоқ. Сандардыңварианттары жаңа мағына санын білдірмейді; сыртқы толық hash review дейін авторлық draft жабық."
+      ],
+      "statement": "Қай сан -6 пен -5 арасында жатыр? Екі шет аралыққа кірмейді.",
+      "options": [
+        "-4,8",
+        "-6,3",
+        "-5,7",
+        "5,5"
+      ],
+      "answer": "-5,7",
+      "solution": "-6 < -5,7 < -5. Теріс сандарда модулі кішірек сан оң жақта жатады: -5,7 екі шеттен де бөлек. Басқа нұсқалар аралықтың сыртында немесе оң сан болып тұр.",
+      "calculationVerification": {
+        "answer": "-5,7",
+        "checks": [
+          "Individual source ordering, count, inequality, sign and context preserved",
+          "Exact BigInt decimal comparisons, never floating-point sorting",
+          "Strict/non-strict and negative-only endpoints retained",
+          "Separate full-content independent hash-bound review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-signed-comparison-15af4938c60763a1",
+      "modelId": "grade6-signed-comparison-negative-integers-above-bound",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "bound": -8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json",
+          "sourceId": "15af4938c60763a1"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.5 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Сақталған12визуалсыз шарт, толық шешім және нұсқалар жеке оқылды. Қатаңеңкішібүтін,терісондықаралық,терісбүтіндерсаны,әртаңбалы/теріссалыстыру,ондықреттеу,қосаралық,температура,терісбөлшек жәнежалпыреттеу жеке сақталды.",
+        "Сандар,қазақшашарттар мен нұсқалар қайта жазылды. Нөл/оңсандар,қатаң/қатаңемесшеттер,теріссанмодулі,ондықразряд,бөлшекбөлімдері тексерілді.",
+        "BigInt дәлондықсалыстыру және nativeбөлшектер қолданылды. Скан/TeX/жаңажинау жоқ. Сандардыңварианттары жаңа мағына санын білдірмейді; сыртқы толық hash review дейін авторлық draft жабық."
+      ],
+      "statement": "-8 санынан үлкен теріс бүтін сандар барлығы нешеу? Жауапқа тек санды жазыңыз.",
+      "answer": "7",
+      "solution": "Шарт -8 < x < 0 түрінде. Сандар -7; -6; -5; -4; -3; -2; -1. Олардың саны 7. Сол шет -8 кірмейді, ал 0 теріс сан емес.",
+      "calculationVerification": {
+        "answer": "7",
+        "checks": [
+          "Individual source ordering, count, inequality, sign and context preserved",
+          "Exact BigInt decimal comparisons, never floating-point sorting",
+          "Strict/non-strict and negative-only endpoints retained",
+          "Separate full-content independent hash-bound review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-signed-comparison-1d94ccec9343d231",
+      "modelId": "grade6-signed-comparison-correct-cross-sign-inequality",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "choices": [
+          "-6 < 2",
+          "-9 > 3",
+          "0 < -4",
+          "-2 > 0"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json",
+          "sourceId": "1d94ccec9343d231"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.5 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Сақталған12визуалсыз шарт, толық шешім және нұсқалар жеке оқылды. Қатаңеңкішібүтін,терісондықаралық,терісбүтіндерсаны,әртаңбалы/теріссалыстыру,ондықреттеу,қосаралық,температура,терісбөлшек жәнежалпыреттеу жеке сақталды.",
+        "Сандар,қазақшашарттар мен нұсқалар қайта жазылды. Нөл/оңсандар,қатаң/қатаңемесшеттер,теріссанмодулі,ондықразряд,бөлшекбөлімдері тексерілді.",
+        "BigInt дәлондықсалыстыру және nativeбөлшектер қолданылды. Скан/TeX/жаңажинау жоқ. Сандардыңварианттары жаңа мағына санын білдірмейді; сыртқы толық hash review дейін авторлық draft жабық."
+      ],
+      "statement": "Теріс сан, нөл және оң сан туралы қай теңсіздік дұрыс?",
+      "options": [
+        "-6 < 2",
+        "-9 > 3",
+        "0 < -4",
+        "-2 > 0"
+      ],
+      "answer": "-6 < 2",
+      "solution": "-6 < 2 — дұрыс. Теріс сан кез келген оң саннан да, нөлден де кіші. Қалған үш теңсіздік кері салыстыруды береді.",
+      "calculationVerification": {
+        "answer": "-6 < 2",
+        "checks": [
+          "Individual source ordering, count, inequality, sign and context preserved",
+          "Exact BigInt decimal comparisons, never floating-point sorting",
+          "Strict/non-strict and negative-only endpoints retained",
+          "Separate full-content independent hash-bound review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-signed-comparison-3bfc23860076124a",
+      "modelId": "grade6-signed-comparison-greatest-negative-decimal",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "values": [
+          "-0,7",
+          "-0,07",
+          "-7",
+          "-0,77"
+        ],
+        "choices": [
+          "-7",
+          "-0,77",
+          "-0,7",
+          "-0,07"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json",
+          "sourceId": "3bfc23860076124a"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.5 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Сақталған12визуалсыз шарт, толық шешім және нұсқалар жеке оқылды. Қатаңеңкішібүтін,терісондықаралық,терісбүтіндерсаны,әртаңбалы/теріссалыстыру,ондықреттеу,қосаралық,температура,терісбөлшек жәнежалпыреттеу жеке сақталды.",
+        "Сандар,қазақшашарттар мен нұсқалар қайта жазылды. Нөл/оңсандар,қатаң/қатаңемесшеттер,теріссанмодулі,ондықразряд,бөлшекбөлімдері тексерілді.",
+        "BigInt дәлондықсалыстыру және nativeбөлшектер қолданылды. Скан/TeX/жаңажинау жоқ. Сандардыңварианттары жаңа мағына санын білдірмейді; сыртқы толық hash review дейін авторлық draft жабық."
+      ],
+      "statement": "Ең үлкен мәнді таңдаңыз: -0,7; -0,07; -7; -0,77.",
+      "options": [
+        "-7",
+        "-0,77",
+        "-0,7",
+        "-0,07"
+      ],
+      "answer": "-0,07",
+      "solution": "Барлық сан теріс. Өсу реті: -7 < -0,77 < -0,7 < -0,07. Модулі ең кішісі, яғни 0-ге ең жақыны -0,07. Ондық таңбаларды бірдей разрядқа келтіргенде де осы рет сақталады.",
+      "calculationVerification": {
+        "answer": "-0,07",
+        "checks": [
+          "Individual source ordering, count, inequality, sign and context preserved",
+          "Exact BigInt decimal comparisons, never floating-point sorting",
+          "Strict/non-strict and negative-only endpoints retained",
+          "Separate full-content independent hash-bound review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-signed-comparison-d605f6e317ac4ca0",
+      "modelId": "grade6-signed-comparison-count-strictly-below",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "bound": -3,
+        "values": [
+          "-8",
+          "-2",
+          "-3",
+          "-3,6",
+          "0",
+          "-15",
+          "2",
+          "-2,9"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json",
+          "sourceId": "d605f6e317ac4ca0"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.5 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Сақталған12визуалсыз шарт, толық шешім және нұсқалар жеке оқылды. Қатаңеңкішібүтін,терісондықаралық,терісбүтіндерсаны,әртаңбалы/теріссалыстыру,ондықреттеу,қосаралық,температура,терісбөлшек жәнежалпыреттеу жеке сақталды.",
+        "Сандар,қазақшашарттар мен нұсқалар қайта жазылды. Нөл/оңсандар,қатаң/қатаңемесшеттер,теріссанмодулі,ондықразряд,бөлшекбөлімдері тексерілді.",
+        "BigInt дәлондықсалыстыру және nativeбөлшектер қолданылды. Скан/TeX/жаңажинау жоқ. Сандардыңварианттары жаңа мағына санын білдірмейді; сыртқы толық hash review дейін авторлық draft жабық."
+      ],
+      "statement": "Тізімдегі неше сан -3 санынан қатаң кіші: -8; -2; -3; -3,6; 0; -15; 2; -2,9? Жауапқа тек санды жазыңыз.",
+      "answer": "3",
+      "solution": "Талапқа сай сандар -8; -3,6; -15. Барлығы 3. -3 саны өзінен кіші емес; басқа теріс мәндердің модульдері мен ондық разрядтары салыстырылады. Нөл мен оң сан бұл шектен үлкен.",
+      "calculationVerification": {
+        "answer": "3",
+        "checks": [
+          "Individual source ordering, count, inequality, sign and context preserved",
+          "Exact BigInt decimal comparisons, never floating-point sorting",
+          "Strict/non-strict and negative-only endpoints retained",
+          "Separate full-content independent hash-bound review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-signed-comparison-c049f43d48971d63",
+      "modelId": "grade6-signed-comparison-correct-two-negative-inequality",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "choices": [
+          "-23 > -14",
+          "-23 < -14",
+          "-14 < -23",
+          "-14 < -15"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json",
+          "sourceId": "c049f43d48971d63"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.5 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Сақталған12визуалсыз шарт, толық шешім және нұсқалар жеке оқылды. Қатаңеңкішібүтін,терісондықаралық,терісбүтіндерсаны,әртаңбалы/теріссалыстыру,ондықреттеу,қосаралық,температура,терісбөлшек жәнежалпыреттеу жеке сақталды.",
+        "Сандар,қазақшашарттар мен нұсқалар қайта жазылды. Нөл/оңсандар,қатаң/қатаңемесшеттер,теріссанмодулі,ондықразряд,бөлшекбөлімдері тексерілді.",
+        "BigInt дәлондықсалыстыру және nativeбөлшектер қолданылды. Скан/TeX/жаңажинау жоқ. Сандардыңварианттары жаңа мағына санын білдірмейді; сыртқы толық hash review дейін авторлық draft жабық."
+      ],
+      "statement": "Екі теріс сан салыстырылған нұсқалардың қайсысы дұрыс?",
+      "options": [
+        "-23 > -14",
+        "-23 < -14",
+        "-14 < -23",
+        "-14 < -15"
+      ],
+      "answer": "-23 < -14",
+      "solution": "-23 < -14 — дұрыс. Екі теріс санның модулі үлкені сол жақта жатады, сондықтан өзі кіші болады. Қалған үш теңсіздік кері салыстыруды береді.",
+      "calculationVerification": {
+        "answer": "-23 < -14",
+        "checks": [
+          "Individual source ordering, count, inequality, sign and context preserved",
+          "Exact BigInt decimal comparisons, never floating-point sorting",
+          "Strict/non-strict and negative-only endpoints retained",
+          "Separate full-content independent hash-bound review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-signed-comparison-33b78b4365bb3c8e",
+      "modelId": "grade6-signed-comparison-left-open-right-closed-integer-count",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "left": -7,
+        "right": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json",
+          "sourceId": "33b78b4365bb3c8e"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.5 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Сақталған12визуалсыз шарт, толық шешім және нұсқалар жеке оқылды. Қатаңеңкішібүтін,терісондықаралық,терісбүтіндерсаны,әртаңбалы/теріссалыстыру,ондықреттеу,қосаралық,температура,терісбөлшек жәнежалпыреттеу жеке сақталды.",
+        "Сандар,қазақшашарттар мен нұсқалар қайта жазылды. Нөл/оңсандар,қатаң/қатаңемесшеттер,теріссанмодулі,ондықразряд,бөлшекбөлімдері тексерілді.",
+        "BigInt дәлондықсалыстыру және nativeбөлшектер қолданылды. Скан/TeX/жаңажинау жоқ. Сандардыңварианттары жаңа мағына санын білдірмейді; сыртқы толық hash review дейін авторлық draft жабық."
+      ],
+      "statement": "-7 < x ≤ 3 қос теңсіздігін орындайтын бүтін x мәндері нешеу? Жауапқа тек санды жазыңыз.",
+      "answer": "10",
+      "solution": "Сол шет -7 кірмейді, оң шет 3 кіреді. Жарамды бүтіндер -6; -5; -4; -3; -2; -1; 0; 1; 2; 3. Саны 3 − (-6) + 1 = 10. Нөл де осы аралықта жатыр.",
+      "calculationVerification": {
+        "answer": "10",
+        "checks": [
+          "Individual source ordering, count, inequality, sign and context preserved",
+          "Exact BigInt decimal comparisons, never floating-point sorting",
+          "Strict/non-strict and negative-only endpoints retained",
+          "Separate full-content independent hash-bound review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-signed-comparison-1a23f469251938a1",
+      "modelId": "grade6-signed-comparison-warmer-still-negative-integer-count",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "morning": -11
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json",
+          "sourceId": "1a23f469251938a1"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.5 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Сақталған12визуалсыз шарт, толық шешім және нұсқалар жеке оқылды. Қатаңеңкішібүтін,терісондықаралық,терісбүтіндерсаны,әртаңбалы/теріссалыстыру,ондықреттеу,қосаралық,температура,терісбөлшек жәнежалпыреттеу жеке сақталды.",
+        "Сандар,қазақшашарттар мен нұсқалар қайта жазылды. Нөл/оңсандар,қатаң/қатаңемесшеттер,теріссанмодулі,ондықразряд,бөлшекбөлімдері тексерілді.",
+        "BigInt дәлондықсалыстыру және nativeбөлшектер қолданылды. Скан/TeX/жаңажинау жоқ. Сандардыңварианттары жаңа мағына санын білдірмейді; сыртқы толық hash review дейін авторлық draft жабық."
+      ],
+      "statement": "Таңертең ауа -11 °C болды. Түсте жылыды, бірақ температура 0 °C-тан әлі төмен. Түстегі температура бүтін градус болса, неше түрлі мән болуы мүмкін? Жауапқа тек санды жазыңыз.",
+      "answer": "10",
+      "solution": "Жылынғандықтан t > -11, ал нөлден төмен болғандықтан t < 0. Екі шеті де кірмейді. Мүмкін мәндер -10; -9; -8; -7; -6; -5; -4; -3; -2; -1 °C, саны 10. Бастапқы температура өзгеріссіз қалса немесе 0 °C болса, шарт орындалмайды.",
+      "calculationVerification": {
+        "answer": "10",
+        "checks": [
+          "Individual source ordering, count, inequality, sign and context preserved",
+          "Exact BigInt decimal comparisons, never floating-point sorting",
+          "Strict/non-strict and negative-only endpoints retained",
+          "Separate full-content independent hash-bound review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-signed-comparison-baee77eb3ff51903",
+      "modelId": "grade6-signed-comparison-negative-like-denominator-comparison",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "smallNumerator": 3,
+        "largeNumerator": 8,
+        "denominator": 11
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json",
+          "sourceId": "baee77eb3ff51903"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.5 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Сақталған12визуалсыз шарт, толық шешім және нұсқалар жеке оқылды. Қатаңеңкішібүтін,терісондықаралық,терісбүтіндерсаны,әртаңбалы/теріссалыстыру,ондықреттеу,қосаралық,температура,терісбөлшек жәнежалпыреттеу жеке сақталды.",
+        "Сандар,қазақшашарттар мен нұсқалар қайта жазылды. Нөл/оңсандар,қатаң/қатаңемесшеттер,теріссанмодулі,ондықразряд,бөлшекбөлімдері тексерілді.",
+        "BigInt дәлондықсалыстыру және nativeбөлшектер қолданылды. Скан/TeX/жаңажинау жоқ. Сандардыңварианттары жаңа мағына санын білдірмейді; сыртқы толық hash review дейін авторлық draft жабық."
+      ],
+      "statement": "-(3/11) және -(8/11) мәндерін салыстыратын дұрыс нұсқаны таңдаңыз.",
+      "options": [
+        "-(3/11) < -(8/11)",
+        "-(3/11) > -(8/11)",
+        "-(3/11) = -(8/11)",
+        "Теріс бөлшектерді салыстыру мүмкін емес"
+      ],
+      "answer": "-(3/11) > -(8/11)",
+      "solution": "Бөлімдері бірдей оң бөлшектер үшін (3/11) < (8/11). Екеуін де теріс таңбамен алғанда рет ауысады: -(3/11) > -(8/11). Модулі кішісі санақ басына жақын, демек үлкенірек.",
+      "calculationVerification": {
+        "answer": "-(3/11) > -(8/11)",
+        "checks": [
+          "Individual source ordering, count, inequality, sign and context preserved",
+          "Exact BigInt decimal comparisons, never floating-point sorting",
+          "Strict/non-strict and negative-only endpoints retained",
+          "Separate full-content independent hash-bound review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-signed-comparison-14291ac1533b7b67",
+      "modelId": "grade6-signed-comparison-ascending-mixed-sign-order",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "values": [
+          -4,
+          3,
+          -9,
+          0
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json",
+          "sourceId": "14291ac1533b7b67"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.5 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Сақталған12визуалсыз шарт, толық шешім және нұсқалар жеке оқылды. Қатаңеңкішібүтін,терісондықаралық,терісбүтіндерсаны,әртаңбалы/теріссалыстыру,ондықреттеу,қосаралық,температура,терісбөлшек жәнежалпыреттеу жеке сақталды.",
+        "Сандар,қазақшашарттар мен нұсқалар қайта жазылды. Нөл/оңсандар,қатаң/қатаңемесшеттер,теріссанмодулі,ондықразряд,бөлшекбөлімдері тексерілді.",
+        "BigInt дәлондықсалыстыру және nativeбөлшектер қолданылды. Скан/TeX/жаңажинау жоқ. Сандардыңварианттары жаңа мағына санын білдірмейді; сыртқы толық hash review дейін авторлық draft жабық."
+      ],
+      "statement": "Сандарды өсу ретімен орналастырыңыз: -4; 3; -9; 0.",
+      "options": [
+        "-4; -9; 0; 3",
+        "3; 0; -4; -9",
+        "-9; -4; 0; 3",
+        "0; -4; 3; -9"
+      ],
+      "answer": "-9; -4; 0; 3",
+      "solution": "Алдымен модулі үлкен теріс сан -9, одан кейін -4. Нөл екеуінен де үлкен, ал оң 3 нөлден үлкен. Дұрыс тізбек -9 < -4 < 0 < 3.",
+      "calculationVerification": {
+        "answer": "-9; -4; 0; 3",
+        "checks": [
+          "Individual source ordering, count, inequality, sign and context preserved",
+          "Exact BigInt decimal comparisons, never floating-point sorting",
+          "Strict/non-strict and negative-only endpoints retained",
+          "Separate full-content independent hash-bound review required"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-signed-comparison-c81685e7162de7c4",
+      "modelId": "grade6-signed-comparison-maximum-mixed-sign-list",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "values": [
+          "-18",
+          "7",
+          "-45",
+          "0",
+          "4,8",
+          "-0,8"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-5-level1.json",
+          "sourceId": "c81685e7162de7c4"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.5 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Сақталған12визуалсыз шарт, толық шешім және нұсқалар жеке оқылды. Қатаңеңкішібүтін,терісондықаралық,терісбүтіндерсаны,әртаңбалы/теріссалыстыру,ондықреттеу,қосаралық,температура,терісбөлшек жәнежалпыреттеу жеке сақталды.",
+        "Сандар,қазақшашарттар мен нұсқалар қайта жазылды. Нөл/оңсандар,қатаң/қатаңемесшеттер,теріссанмодулі,ондықразряд,бөлшекбөлімдері тексерілді.",
+        "BigInt дәлондықсалыстыру және nativeбөлшектер қолданылды. Скан/TeX/жаңажинау жоқ. Сандардыңварианттары жаңа мағына санын білдірмейді; сыртқы толық hash review дейін авторлық draft жабық."
+      ],
+      "statement": "Мына тізімдегі ең үлкен санды табыңыз: -18; 7; -45; 0; 4,8; -0,8. Жауапқа тек санды жазыңыз.",
+      "answer": "7",
+      "solution": "Өсу реті -45 < -18 < -0,8 < 0 < 4,8 < 7. Барлық оң сан нөл мен теріс сандардан үлкен. Оң мәндерді өзара салыстырсақ, ең үлкені 7. Модулі үлкен теріс санды таңдауға болмайды.",
+      "calculationVerification": {
+        "answer": "7",
+        "checks": [
+          "Individual source ordering, count, inequality, sign and context preserved",
+          "Exact BigInt decimal comparisons, never floating-point sorting",
+          "Strict/non-strict and negative-only endpoints retained",
+          "Separate full-content independent hash-bound review required"
+        ]
+      }
+    }
+  ]
+}

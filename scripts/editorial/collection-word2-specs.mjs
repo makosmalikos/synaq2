@@ -1,0 +1,28 @@
+// All24 canonical conditions, full official solutions and all MCQs individually read.
+export const collection='f3b6293e-3864-4091-8dd5-9dfffae765f7';
+export const wordSpecs=[
+ [1,'faster-speed-same-distance-new-time',{distance:240,oldHours:4,increase:20,options:['2','3','4','6']},'3'],
+ [2,'equal-orders-remaining-pair',{firstDaily:35,secondDaily:29,days:6,remainingFactor:3,options:['18; 54','54; 18','210; 174','36; 72']},'18; 54'],
+ [3,'earlier-faster-departure-ordered-speeds',{leadMinutes:20,laterMinutes:40,extraPercent:25,gap:28,options:['48; 60','60; 48','56; 70','40; 50']},'48; 60'],
+ [4,'lossless-mixture-known-mass-gap',{firstPercent:15,secondPercent:45,targetPercent:35,massGap:4,options:['4','8','12','16']},'12'],
+ [5,'arrival-gap-fraction-full-distance',{speedGap:12,hoursWhole:2,hoursNumerator:2,hoursDenominator:3,remainingNumerator:1,remainingDenominator:5,options:['32','160','192','128']},'160'],
+ [6,'whole-fractions-extras-then-half-remainder',{firstDenominator:3,firstExtra:3,secondDenominator:4,secondExtra:2,finalDenominator:6,options:['60','36','20','10']},'60'],
+ [7,'late-departure-same-arrival-planned-speed',{plannedHours:6,lateMinutes:45,speedIncrease:12,options:['72','84','96','12']},'84'],
+ [8,'opposite-travel-slower-before-meeting-distance',{distance:132,hours:3,speedGap:12,options:['16','48','84','44']},'48'],
+ [9,'weighted-salt-concentration-not-mean',{firstMass:600,firstPercent:45,secondPercent:15,massFactor:2,options:['30','35','60','52,5']},'35'],
+ [10,'packing-extra-shortage-one-more-box',{smallCapacity:36,extra:2,largeCapacity:42,shortage:4,boxDifference:1,options:['252','288','290','294']},'290'],
+ [11,'ratio-adjust-both-values-sum-target',{factor:'3,5',removed:'6,2',added:'8,8',options:['6','21','27','14,8']},'27'],
+ [12,'fabric-eliminate-one-second-item',{a1:1,b1:4,total1:17,a2:2,b2:7,total2:31,options:['5; 3','3; 5','4; 3','5; 4']},'5; 3'],
+ [13,'three-days-fraction-third-target',{total:216,secondFactor:3,thirdNumerator:1,thirdDenominator:2,options:['48','144','24','72']},'24'],
+ [14,'two-masses-divide-comparison-substitute',{a1:2,b1:3,total:57,a2:3,b2:6,gap:12,options:['18; 7','7; 18','16; 9','20; 5']},'18; 7'],
+ [15,'withdrawal-ratio-then-remaining-ratio',{firstInitial:60,secondInitial:90,withdrawalFactor:3,remainingFactor:2,options:['24','36','18','72']},'24'],
+ [16,'daily-rations-eliminate-opposite-signs',{firstCount:5,secondCount:8,total:83,compareFirst:4,compareSecond:3,gap:10,options:['6; 7','7; 6','9; 5','5; 8']},'7; 6'],
+ [17,'initial-ratio-external-out-and-in',{factor:3,removed:680,added:220,options:['1350; 450','450; 1350','900; 300','2010; 670']},'1350; 450'],
+ [18,'full-rooms-two-capacities-ordered-counts',{rooms:14,small:3,large:5,people:54,options:['8; 6','6; 8','7; 7','9; 5']},'8; 6'],
+ [19,'past-ages-both-decrease',{adult:58,child:34,factor:2,options:['24','10','12','6']},'10'],
+ [20,'fabric-eliminate-seven-second-items',{a1:4,b1:3,total1:39,a2:2,b2:5,total2:37,options:['6; 5','5; 6','7; 4','4; 7']},'6; 5'],
+ [21,'whole-book-fractions-plus-extra-day-target',{firstDenominator:3,secondDenominator:6,secondExtra:15,thirdFraction:'0,25',readTotal:150,options:['180','60','45','30']},'45'],
+ [22,'two-prices-substitution-target-first',{secondCount:2,total:370,compareSecond:3,compareFirst:4,gap:60,options:['140','90','230','80']},'90'],
+ [23,'river-roundtrip-own-speed-not-shore',{downHours:4,upHours:6,current:3,options:['12','18','15','3']},'15'],
+ [24,'daily-total-and-cross-days-rate-difference',{togetherDays:6,total:456,firstCompareDays:3,secondCompareDays:5,gap:52,options:['54','22','32','76']},'32'],
+].map(([number,kind,params,handExpected])=>({number,kind,params,handExpected}));

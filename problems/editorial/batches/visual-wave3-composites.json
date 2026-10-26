@@ -1,0 +1,1702 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "No further collection; all addressed references are saved captured sources. New native coordinates and arithmetic only, with explicit occurrence coverage.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "Every captured visual source in grade4 topic4.3, all four levels",
+    "sourceVisualOccurrences": 30,
+    "addressedNewDrafts": 28,
+    "previousEditionsRetained": [
+      {
+        "sourceId": "ce5c3630b43e6904",
+        "editionId": "geometry-courtyard-corner"
+      },
+      {
+        "sourceId": "b378b8e971afc3ff",
+        "editionId": "visual-notched-frame"
+      }
+    ],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "0034c46223b47376",
+      "02e05679fe0c6af1",
+      "099a5f8d2cd388e8",
+      "20a732fdb8081f54",
+      "25940b79122dfafc",
+      "448a15b35182fede",
+      "47939f42d2cc71fe",
+      "4f19f784d3d3ef83",
+      "5c5f16eb7c720f4e",
+      "6a3f8a8a5799c6e1",
+      "6c2785da4075c9f6",
+      "6d3d30b163146fbd",
+      "8325cc187c202436",
+      "9e712e03bb0545aa",
+      "a6a45d5b92cbfe1b",
+      "aeea3643ac316b6b",
+      "bbe90bcc302b569b",
+      "be365ee3bcaaabc0",
+      "c66c0a12b89d2d1e",
+      "cd7976272c84d5a2",
+      "ce98fb01343f7ece",
+      "d2ece4d7bd9a7660",
+      "db67a1dd9ef677ec",
+      "e8ccb403629e2a2d",
+      "eaaaf44b606d5f52",
+      "ecb84842d4069369",
+      "fce143ca012d7627",
+      "ffc24145df9dfe13"
+    ],
+    "distinctModels": 25,
+    "semantics": "28 individual new editions plus2 previously addressed occurrences exhaust this visual topic; no wider family/source coverage is implied."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave3-square-sticker",
+      "modelId": "visual-wave3-square-cut",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "w": 13,
+        "h": 13,
+        "cw": 5,
+        "ch": 5
+      },
+      "answer": "144",
+      "sourceRefs": [
+        {
+          "sourceId": "ecb84842d4069369",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level1.json#4",
+      "sourceCanonicalSha256": "2f1b9de040f9e2979bb7c0b88de6afae60d9cd43dd94abfa0d3b58532e95262d",
+      "sourceSkill": "Square-minus-corner-square area, using squared side lengths",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-square-sticker.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Шебер қабырғасы 13 см шаршы жапсырманың бір бұрышынан қабырғасы 5 см шағын шаршы кесті. Көк түспен көрсетілген жапсырманың ауданы неше см²?",
+      "solution": "Толық аудан 13 × 13 = 169 см². Кесілген бөлік 5 × 5 = 25 см². Қалғаны: 169 − 25 = 144 см².",
+      "figureDescription": "Шебер қабырғасы 13 см шаршы жапсырманың бір бұрышынан қабырғасы 5 см шағын шаршы кесті. Көк түспен көрсетілген жапсырманың ауданы неше см²? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "1e05dcfcd29ed98faa672e839fe90b3211630088b0e5653496b1e224ceea2635",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "144",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-corner-model",
+      "modelId": "visual-wave3-corner-area",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "w": 14,
+        "h": 9,
+        "cw": 6,
+        "ch": 4
+      },
+      "answer": "102",
+      "sourceRefs": [
+        {
+          "sourceId": "aeea3643ac316b6b",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level1.json#5",
+      "sourceCanonicalSha256": "ef87bf629488e0d922e69cc6b596bd0cd44ca62a51d7c760a57a6020e21a7e97",
+      "sourceSkill": "Rectangle-minus-corner-rectangle area, with independently retained side dimensions",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-corner-model.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Макет үшін 14 см × 9 см тіктөртбұрыштың жоғарғы оң бұрышынан 6 см × 4 см бөлік алынып тасталған. Сызбадағы қалған көк бөліктің ауданын см² есебімен табыңдар.",
+      "solution": "Толық аудан 14 × 9 = 126 см². Кесілген бөлік 6 × 4 = 24 см². Қалғаны: 126 − 24 = 102 см².",
+      "figureDescription": "Макет үшін 14 см × 9 см тіктөртбұрыштың жоғарғы оң бұрышынан 6 см × 4 см бөлік алынып тасталған. Сызбадағы қалған көк бөліктің ауданын см² есебімен табыңдар. Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "682aead01994f79683767a65e82926c04ae57f2b7d6be6fc796d774f8ccc4a4c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "102",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-joined-sign",
+      "modelId": "visual-wave3-two-rectangles",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "aw": 7,
+        "ah": 4,
+        "bw": 3,
+        "bh": 2
+      },
+      "answer": "34",
+      "sourceRefs": [
+        {
+          "sourceId": "02e05679fe0c6af1",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level1.json#6",
+      "sourceCanonicalSha256": "8b7ce29c7a25376daedb9fc7c8dbe887b03f4db74825fa0ff5e0115bc5de7c62",
+      "sourceSkill": "Adding two non-overlapping rectangular part areas rather than their dimensions or perimeters",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-joined-sign.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Көрме белгісі екі қабаттаспайтын тіктөртбұрыштан құралды. I бөліктің өлшемдері 7 × 4 см, II бөліктікі 3 × 2 см. Екі бөлік бірге неше см² орын алады?",
+      "solution": "Қабаттасу жоқ: аудандар қосылады. 7 × 4 + 3 × 2 = 28 + 6 = 34 см².",
+      "figureDescription": "Көрме белгісі екі қабаттаспайтын тіктөртбұрыштан құралды. I бөліктің өлшемдері 7 × 4 см, II бөліктікі 3 × 2 см. Екі бөлік бірге неше см² орын алады? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "b8db425a377462a9ebb567f730d527d1a47028d7b3ea2ce3c4a88b3a1dda6768",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "34",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-diagonal-paper",
+      "modelId": "visual-wave3-diagonal-half",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "w": 12,
+        "h": 7
+      },
+      "answer": "42",
+      "sourceRefs": [
+        {
+          "sourceId": "0034c46223b47376",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level1.json#7",
+      "sourceCanonicalSha256": "3a6f67eb81b67260a39e2da5bc937a9834c5af67474e98b1f2f0bf8c075769e4",
+      "sourceSkill": "A right triangle obtained as exactly half of its diagonal-cut rectangle",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-diagonal-paper.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Қабырғалары 12 см және 7 см тіктөртбұрыш диагональмен екі бірдей бөлікке бөлінді. Көк үшбұрыштың ауданы неше см²?",
+      "solution": "Диагональ тіктөртбұрышты тең екіге бөледі. 12 × 7 : 2 = 84 : 2 = 42 см².",
+      "figureDescription": "Қабырғалары 12 см және 7 см тіктөртбұрыш диагональмен екі бірдей бөлікке бөлінді. Көк үшбұрыштың ауданы неше см²? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "f9db99216819266ae21fb43b05f23e79aacce8e0359d3ad44d29fe67b8a13114",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "42",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Each triangular part is independently checked with the polygon shoelace formula; it meets rectangles only on a boundary",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-three-piece-panel",
+      "modelId": "visual-wave3-three-pillars",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "pillarW": 3,
+        "pillarH": 8,
+        "gap": 5,
+        "bridgeH": 2
+      },
+      "answer": "58",
+      "sourceRefs": [
+        {
+          "sourceId": "8325cc187c202436",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level1.json#8",
+      "sourceCanonicalSha256": "312aab1e4d807448aaab513d012df0a94d2d625b6529cfb7a1283a5622d4bcea",
+      "sourceSkill": "Adding three non-overlapping rectangular areas in a P-shaped panel",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-three-piece-panel.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Сөренің П тәрізді алдыңғы панелі қабаттаспайтын үш бөлшектен тұрады: екі тік бөлшектің әрқайсысы 3 × 8 см, олардың арасындағы жоғарғы бөлшек 5 × 2 см. Панельдің ауданын см² есебімен табыңдар.",
+      "solution": "Екі тік бөліктің ауданы 3 × 8 × 2 = 48 см². Аралық бөліктің ауданы 5 × 2 = 10 см². Қосындысы 58 см².",
+      "figureDescription": "Сөренің П тәрізді алдыңғы панелі қабаттаспайтын үш бөлшектен тұрады: екі тік бөлшектің әрқайсысы 3 × 8 см, олардың арасындағы жоғарғы бөлшек 5 × 2 см. Панельдің ауданын см² есебімен табыңдар. Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "e52b8e39ca47affaae969b1cda979b67f6ecad8b82074ba4abea2ce69873fab8",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "58",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-t-pointer",
+      "modelId": "visual-wave3-t-shape",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "barW": 12,
+        "barH": 3,
+        "stemW": 4,
+        "stemH": 6
+      },
+      "answer": "60",
+      "sourceRefs": [
+        {
+          "sourceId": "448a15b35182fede",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level1.json#10",
+      "sourceCanonicalSha256": "20332b17c4ffd720150f8dd7033cd5cb13573345a84a8bc0bcf1362ea3fc1aad",
+      "sourceSkill": "T-shaped composite area with a stem that starts below, without overlapping, the top bar",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-t-pointer.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Т пішінді көрсеткіштің көлденең бөлігі 12 × 3 см. Оның ортасынан төмен қарай 4 × 6 см тік бөлік жалғанған; бөліктер қабаттаспайды. Көрсеткіштің ауданы неше см²?",
+      "solution": "Екі бөлік ортақ аудансыз жалғасқан. 12 × 3 + 4 × 6 = 36 + 24 = 60 см².",
+      "figureDescription": "Т пішінді көрсеткіштің көлденең бөлігі 12 × 3 см. Оның ортасынан төмен қарай 4 × 6 см тік бөлік жалғанған; бөліктер қабаттаспайды. Көрсеткіштің ауданы неше см²? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "ff69cb48ff5e4d7489db4ad642f35941aff427ecc3d1a528a13c7105aec8e95f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "60",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-count-grid",
+      "modelId": "visual-wave3-grid-area",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "rows": [
+          8,
+          8,
+          5
+        ],
+        "cells": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "side": 1
+      },
+      "answer": "21",
+      "sourceRefs": [
+        {
+          "sourceId": "e8ccb403629e2a2d",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level1.json#11",
+      "sourceCanonicalSha256": "56e6396fd26129644e229340cada842b82ac522ad733e336fff75f75de9f79a5",
+      "sourceSkill": "Counting actual unit-area cells of a nonrectangular three-row figure",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-count-grid.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Көк өрнек бірдей торкөздерден құралған. Бір торкөздің қабырғасы 1 см. Өрнектің ауданын см² есебімен табыңдар.",
+      "solution": "Қатарлардағы торкөздер саны 8 + 8 + 5 = 21. Бір торкөз 1 × 1 = 1 см². Жалпы аудан 21 × 1 = 21 см².",
+      "figureDescription": "Көк өрнек бірдей торкөздерден құралған. Бір торкөздің қабырғасы 1 см. Өрнектің ауданын см² есебімен табыңдар. Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "f23e2a4c2a452209b2511adeb05d3ce97196ba5f3ee13804d90b1efc02ff69c0",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "21",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-inner-zone",
+      "modelId": "visual-wave3-inner-garden",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "w": 23,
+        "h": 16,
+        "cw": 7,
+        "ch": 5,
+        "holeX": 8,
+        "holeY": 5,
+        "unit": "м"
+      },
+      "answer": "333",
+      "sourceRefs": [
+        {
+          "sourceId": "25940b79122dfafc",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level1.json#13",
+      "sourceCanonicalSha256": "9727a9a39fef7f1cc735dcde8c74e43bab68e18de005ee3d2ac7f1ee74a911dc",
+      "sourceSkill": "Subtracting a strictly interior rectangular area from its surrounding rectangle",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-inner-zone.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "23 × 16 м демалыс алаңының ішінде 7 × 5 м ашық түсті тіктөртбұрышты аймақ бөлінген. Қалған көк аймақтың ауданы неше м²?",
+      "solution": "Үлкен ауданнан ішкі ақ бөлікті азайтамыз: 23 × 16 − 7 × 5 = 368 − 35 = 333 м².",
+      "figureDescription": "23 × 16 м демалыс алаңының ішінде 7 × 5 м ашық түсті тіктөртбұрышты аймақ бөлінген. Қалған көк аймақтың ауданы неше м²? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "7491a6b62d820acbc274142309c2e70ef679f8ec5ee296275be9f7ff5b553722",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "333",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-choose-formula",
+      "modelId": "visual-wave3-choose-expression",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "w": 13,
+        "h": 9,
+        "cw": 4,
+        "ch": 3,
+        "unit": "м"
+      },
+      "answer": "13 × 9 − 4 × 3",
+      "sourceRefs": [
+        {
+          "sourceId": "eaaaf44b606d5f52",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level1.json#15",
+      "sourceCanonicalSha256": "daed8de30a7e87c535be76cc8ee4932050721f94989c59ad51dc9241fde78509",
+      "sourceSkill": "Selecting a correct area expression, rather than merely computing a numerical area",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-choose-formula.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "13 м × 9 м тіктөртбұрыштың жоғарғы оң бұрышынан 4 м × 3 м бөлік алынып тасталған. Қалған көк фигураның ауданын дұрыс есептейтін өрнекті таңдаңдар.",
+      "solution": "Алынған бөлік ауданға кірмейді, сондықтан толық ауданнан оның ауданын азайтамыз: 13 × 9 − 4 × 3 = 105 м². Тек өлшемдерді азайту немесе аудандарды қосу бұл фигураны бермейді.",
+      "figureDescription": "13 м × 9 м тіктөртбұрыштың жоғарғы оң бұрышынан 4 м × 3 м бөлік алынып тасталған. Қалған көк фигураның ауданын дұрыс есептейтін өрнекті таңдаңдар. Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "options": [
+        "13 × 9 − 4 × 3",
+        "9 × 6",
+        "13 × 9 + 4 × 3",
+        "13 × 9 − 4 − 3"
+      ],
+      "figureSha256": "b0c8b64938061eb6cb97a97d2f1be2cf155936d543795f3d3e70cdbbe0b496be",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "13 × 9 − 4 × 3",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Every expression is independently evaluated with multiplication precedence",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-reject-formula",
+      "modelId": "visual-wave3-wrong-expression",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "w": 14,
+        "h": 9,
+        "cw": 5,
+        "ch": 3,
+        "unit": "м"
+      },
+      "answer": "14 × 9 − 5 × 6",
+      "sourceRefs": [
+        {
+          "sourceId": "6d3d30b163146fbd",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level2.json#1",
+      "sourceCanonicalSha256": "53a8dcafea3ed67ff156ebeebb0349cc71a5862b22669578e2611b1dd4693b7a",
+      "sourceSkill": "Identifying exactly one incorrect expression among three valid decompositions of a cut rectangle",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-reject-formula.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "14 м × 9 м тіктөртбұрыштың жоғарғы оң бұрышынан 5 м × 3 м бөлік алынып тасталған. Көк фигураның ауданын есептеуге ұсынылған төрт өрнектің біреуі ҚАТЕ. Сол өрнекті табыңдар.",
+      "solution": "Көк аудан 111 м². Өрнектердің мәндері ретімен: 111, 111, 111, 96. Соңғы өрнек қиылған бөліктің 3 м биіктігінің орнына 6 м алады, сондықтан ол қате.",
+      "figureDescription": "14 м × 9 м тіктөртбұрыштың жоғарғы оң бұрышынан 5 м × 3 м бөлік алынып тасталған. Көк фигураның ауданын есептеуге ұсынылған төрт өрнектің біреуі ҚАТЕ. Сол өрнекті табыңдар. Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "options": [
+        "14 × 6 + 9 × 3",
+        "14 × 9 − 5 × 3",
+        "9 × 9 + 5 × 6",
+        "14 × 9 − 5 × 6"
+      ],
+      "figureSha256": "fa959546c995af8765e90d521da5680dd00b6e23db1b7bc522a5150700ea6477",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "14 × 9 − 5 × 6",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Every expression is independently evaluated with multiplication precedence",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-four-flowerbeds",
+      "modelId": "visual-wave3-four-corners",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "w": 15,
+        "cut": 2,
+        "unit": "м"
+      },
+      "answer": "209",
+      "sourceRefs": [
+        {
+          "sourceId": "099a5f8d2cd388e8",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level2.json#2",
+      "sourceCanonicalSha256": "c79af9bc5efde9287cec8ec042de355e78d689aef43087419772a714e4b48c30",
+      "sourceSkill": "Subtracting all four disjoint equal corner squares from a larger square",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-four-flowerbeds.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Қабырғасы 15 м шаршы аула төрт бұрышындағы төрт бірдей шаршы гүлзардан басқа жерде көгалмен жабылған. Әр гүлзардың қабырғасы 2 м. Көк көгалдың ауданы неше м²?",
+      "solution": "Бір гүлзар 2 × 2 = 4 м². Төрт гүлзар 16 м². Көгал: 15 × 15 − 16 = 209 м².",
+      "figureDescription": "Қабырғасы 15 м шаршы аула төрт бұрышындағы төрт бірдей шаршы гүлзардан басқа жерде көгалмен жабылған. Әр гүлзардың қабырғасы 2 м. Көк көгалдың ауданы неше м²? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "00478b0e9e72edbb9cbaaaaec1cb696a4de157b5538ff61e52cd93bc8c3d2bc9",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "209",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-workshop-wall",
+      "modelId": "visual-wave3-wall-openings",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "w": 8,
+        "h": 4,
+        "windowW": 3,
+        "windowH": 1,
+        "windowX": 1,
+        "windowY": 1,
+        "doorW": 2,
+        "doorH": 3,
+        "doorX": 5,
+        "unit": "м"
+      },
+      "answer": "23",
+      "sourceRefs": [
+        {
+          "sourceId": "20a732fdb8081f54",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level2.json#3",
+      "sourceCanonicalSha256": "593c67d3368cb491d62da468a5566247c7249310d52e6fb8a0a22559d91de47c",
+      "sourceSkill": "Wall area after subtracting two separate openings with different dimensions",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-workshop-wall.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Шеберхананың 8 × 4 м қабырғасында 3 × 1 м терезе және 2 × 3 м есік бар. Олардың орындарына тұсқағаз жапсырылмайды. Қалған қабырғаға неше м² тұсқағаз қажет?",
+      "solution": "Қабырға 32 м², терезе 3 м², есік 6 м². Тұсқағаз: 32 − 3 − 6 = 23 м².",
+      "figureDescription": "Шеберхананың 8 × 4 м қабырғасында 3 × 1 м терезе және 2 × 3 м есік бар. Олардың орындарына тұсқағаз жапсырылмайды. Қалған қабырғаға неше м² тұсқағаз қажет? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "4a2d2cc2a89070871a4cb223d15f2463b652184668f7108afecfbbb56522be2a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "23",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-corner-ribbon",
+      "modelId": "visual-wave3-corner-perimeter",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "w": 16,
+        "h": 9,
+        "cw": 6,
+        "ch": 4
+      },
+      "answer": "50",
+      "sourceRefs": [
+        {
+          "sourceId": "6c2785da4075c9f6",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level2.json#4",
+      "sourceCanonicalSha256": "1af7116378cda4e30aced82832846a597a7794312586caba501f10ab0b4d4a80",
+      "sourceSkill": "Corner-cut perimeter invariance, explicitly contrasting area subtraction with boundary length",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-corner-ribbon.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "16 см × 9 см тіктөртбұрыштың жоғарғы оң бұрышынан 6 см × 4 см бөлік алынып тасталған. Көк фигураның тек сыртқы шекарасын айналдыра таспа жапсырылады. Неше см таспа керек?",
+      "solution": "Кесілген бұрыштағы 6 см және 4 см шеттердің орнына дәл сондай екі шет қосылды. Сондықтан периметр өзгермейді: 2 × (16 + 9) = 50 см.",
+      "figureDescription": "16 см × 9 см тіктөртбұрыштың жоғарғы оң бұрышынан 6 см × 4 см бөлік алынып тасталған. Көк фигураның тек сыртқы шекарасын айналдыра таспа жапсырылады. Неше см таспа керек? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "04a7741711b34f68c165539cceb8f987c6d2fe77f29e66ebe8ba8404cb16183f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "50",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Every exposed edge is counted once; shared interior edges are excluded",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-crossed-paths",
+      "modelId": "visual-wave3-cross-paths",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "w": 33,
+        "h": 23,
+        "path": 3,
+        "unit": "м"
+      },
+      "answer": "600",
+      "sourceRefs": [
+        {
+          "sourceId": "cd7976272c84d5a2",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level2.json#5",
+      "sourceCanonicalSha256": "64b7922cbc4151af7e2532b9eb1fcada81961329decfde26588082790d3b4d92",
+      "sourceSkill": "Remaining area after two crossing full-span paths, counting their intersection only once",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-crossed-paths.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "33 × 23 м алаңның ортасынан бір-біріне перпендикуляр екі жол өтеді. Екеуі де тиісті қарама-қарсы шеттерге дейін созылған, әрқайсысының ені 3 м. Жолдардан тыс көк бөліктің ауданы неше м²?",
+      "solution": "Жолдардың ортақ 3 × 3 бөлігі екі рет алынбауы керек. Қалған аудан 33 × 23 − 33 × 3 − 23 × 3 + 3 × 3 = 600 м². Бұл (33 − 3) × (23 − 3) өрнегімен де тексеріледі.",
+      "figureDescription": "33 × 23 м алаңның ортасынан бір-біріне перпендикуляр екі жол өтеді. Екеуі де тиісті қарама-қарсы шеттерге дейін созылған, әрқайсысының ені 3 м. Жолдардан тыс көк бөліктің ауданы неше м²? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "0a3833ff046749091389f02ca4e8e7c30bed870b42bcdb500d0e381ff0bd4c2a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "600",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-notched-coating",
+      "modelId": "visual-wave3-notch-paint",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "w": 13,
+        "h": 9,
+        "cw": 5,
+        "ch": 4,
+        "rate": 180,
+        "unit": "м"
+      },
+      "answer": "17460",
+      "sourceRefs": [
+        {
+          "sourceId": "fce143ca012d7627",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level2.json#6",
+      "sourceCanonicalSha256": "83cf6a2292ec9eb6b9ea81f01f7a0bbbc5bfdf7bb33ebd93a0440e7352419020",
+      "sourceSkill": "A notched composite floor area followed by material mass per square metre",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-notched-coating.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "13 × 9 м еденнің жоғарғы ұзын шетінің ортасынан 5 м енді, 4 м терең ойық алынып тасталды. Қалған еденнің 1 м²-іне 180 г жабын жұмсалады. Барлық көк еденге неше грамм жабын қажет?",
+      "solution": "Еден 13 × 9 − 5 × 4 = 97 м². Жабын массасы 97 × 180 = 17460 г.",
+      "figureDescription": "13 × 9 м еденнің жоғарғы ұзын шетінің ортасынан 5 м енді, 4 м терең ойық алынып тасталды. Қалған еденнің 1 м²-іне 180 г жабын жұмсалады. Барлық көк еденге неше грамм жабын қажет? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "c94bd6461f7ec1b6f0ab8e952b47b4b793d73ae41a57d44a49d0f7da06a23f9a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "17460",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "A separate rate is accumulated for every remaining square metre",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-restore-width",
+      "modelId": "visual-wave3-inverse-width",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "w": 12,
+        "h": 9,
+        "cw": 5,
+        "ch": 3,
+        "remaining": 93
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "5c5f16eb7c720f4e",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level2.json#9",
+      "sourceCanonicalSha256": "5c84fdb5a66d1194b0d0108fe102d0f65796ed137ecd7a8cd65ba1875b2347fe",
+      "sourceSkill": "Recovering an unknown original width from the remaining area and a removed corner rectangle",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-restore-width.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Ұзындығы 12 см панельдің жоғарғы оң бұрышынан 5 × 3 см бөлік кесілгеннен кейін көк бөліктің ауданы 93 см² болды. Бастапқы панельдің h енін табыңдар. Сызбадағы белгісіз өлшемді суреттің масштабынан өлшеуге болмайды.",
+      "solution": "Кесілген бөлікті қайта қосқанда толық аудан 93 + 5 × 3 = 108 см². h = 108 : 12 = 9 см. Тексеру: 12 × 9 − 15 = 93 см².",
+      "figureDescription": "Ұзындығы 12 см панельдің жоғарғы оң бұрышынан 5 × 3 см бөлік кесілгеннен кейін көк бөліктің ауданы 93 см² болды. Бастапқы панельдің h енін табыңдар. Сызбадағы белгісіз өлшемді суреттің масштабынан өлшеуге болмайды. Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "d13c823ad5e1b6f1636a9540ba7be695e600ffa7e3f7baa8a3c8fbc297ac9322",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Every candidate width is tested by actual remaining unit-square count",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-floor-budget",
+      "modelId": "visual-wave3-floor-cost",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "w": 8,
+        "h": 5,
+        "cw": 3,
+        "ch": 2,
+        "rate": 3500,
+        "unit": "м"
+      },
+      "answer": "119000",
+      "sourceRefs": [
+        {
+          "sourceId": "bbe90bcc302b569b",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level2.json#11",
+      "sourceCanonicalSha256": "72d3537b822c7732753a18ded70a4fd396062287f10f2fde19e73bba0ea3ad96",
+      "sourceSkill": "Floor area excluding furniture footprint followed by a price per square metre",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-floor-budget.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "8 × 5 м бөлменің бір бұрышындағы 3 × 2 м кіріктірме шкаф астына еден жабыны төселмейді. Қалған 1 м² еденге материал 3500 теңге тұрады. Материалдың жалпы құны неше теңге?",
+      "solution": "Материал төселетін аудан 8 × 5 − 3 × 2 = 34 м². Құны 34 × 3500 = 119000 теңге.",
+      "figureDescription": "8 × 5 м бөлменің бір бұрышындағы 3 × 2 м кіріктірме шкаф астына еден жабыны төселмейді. Қалған 1 м² еденге материал 3500 теңге тұрады. Материалдың жалпы құны неше теңге? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "37b85f48587d17aa03fd6753c91b3bbec2df77e16e44d78172b1be960fbca9a5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "119000",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "A separate rate is accumulated for every remaining square metre",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-reading-corner",
+      "modelId": "visual-wave3-rectangle-triangle",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "w": 6,
+        "h": 4,
+        "leg": 3,
+        "unit": "м"
+      },
+      "answer": "30",
+      "sourceRefs": [
+        {
+          "sourceId": "47939f42d2cc71fe",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level2.json#15",
+      "sourceCanonicalSha256": "fb69be55e3a503e8faa9dc7daa28d38c3d90b5bed1e84531537d1c5e1d035f39",
+      "sourceSkill": "Sum of a rectangle and a right triangle sharing a full side, without overlap",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-reading-corner.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Кітапхана бұрышындағы төсеніш 6 × 4 м тіктөртбұрыштан және оған жалғасқан тікбұрышты үшбұрыштан тұрады. Үшбұрыштың 4 м катеті тіктөртбұрыштың қысқа қабырғасымен толық беттеседі, екінші катеті 3 м. Төсеніштің ауданы неше м²?",
+      "solution": "Тіктөртбұрыш 6 × 4 = 24 м². Үшбұрыш 4 × 3 : 2 = 6 м². Жалпы 30 м².",
+      "figureDescription": "Кітапхана бұрышындағы төсеніш 6 × 4 м тіктөртбұрыштан және оған жалғасқан тікбұрышты үшбұрыштан тұрады. Үшбұрыштың 4 м катеті тіктөртбұрыштың қысқа қабырғасымен толық беттеседі, екінші катеті 3 м. Төсеніштің ауданы неше м²? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "702085b46a2fc2d64b17bdda9c952c0e7f478ef460ea40d81c6e88889e5df763",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "30",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Each triangular part is independently checked with the polygon shoelace formula; it meets rectangles only on a boundary",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-l-tile-border",
+      "modelId": "visual-wave3-l-grid-perimeter",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "side": 4
+      },
+      "answer": "48",
+      "sourceRefs": [
+        {
+          "sourceId": "ce98fb01343f7ece",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level3.json#0",
+      "sourceCanonicalSha256": "ededfac8bf37cad30dcd0bdaa70fd1e91de895bdedb5150667853d3e53ea6ee8",
+      "sourceSkill": "Boundary perimeter of an L polyomino, excluding every shared square side",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-l-tile-border.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Бірдей 5 шаршыдан Г тәрізді белгі құрастырылды: 4 шаршы тік бағана түзеді, соңғысы төменгі шаршының оң жағына толық қабырғасымен жалғасады. Әр шаршының қабырғасы 4 см. Белгінің сыртқы периметрі неше см?",
+      "solution": "Шаршылардың жеке қабырғалары 5 × 4 = 20. 4 ортақ қабырғаның әрқайсысы екі рет ішке кетеді. Сыртқы 20 − 8 = 12 қабырға қалады. Периметр 12 × 4 = 48 см.",
+      "figureDescription": "Бірдей 5 шаршыдан Г тәрізді белгі құрастырылды: 4 шаршы тік бағана түзеді, соңғысы төменгі шаршының оң жағына толық қабырғасымен жалғасады. Әр шаршының қабырғасы 4 см. Белгінің сыртқы периметрі неше см? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "c169062e6d57606d6a0b60e5776b82f85bd17f6c7245446d4956d9290de2ac9e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "48",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Every exposed edge is counted once; shared interior edges are excluded",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-overlap-cards",
+      "modelId": "visual-wave3-overlap-union",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "aw": 8,
+        "ah": 5,
+        "bw": 6,
+        "bh": 4,
+        "ow": 3
+      },
+      "answer": "52",
+      "sourceRefs": [
+        {
+          "sourceId": "db67a1dd9ef677ec",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level3.json#2",
+      "sourceCanonicalSha256": "8b945a16b23035102a4d112707d5d30ba86769d5ceb5f75bd0c407789f80febf",
+      "sourceSkill": "Union area of partially overlapping rectangles, subtracting their common area once",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-overlap-cards.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Екі мөлдір карточканың өлшемдері 8 × 5 см және 6 × 4 см. Олар сызбадағыдай қабаттасқанда ортақ тіктөртбұрыш 3 × 4 см болды. Карточкалар бірге жауып тұрған аудан неше см²?",
+      "solution": "Бөлек аудандар 40 және 24 см². Ортақ 12 см² екі рет саналды. Біріккен аудан 40 + 24 − 12 = 52 см².",
+      "figureDescription": "Екі мөлдір карточканың өлшемдері 8 × 5 см және 6 × 4 см. Олар сызбадағыдай қабаттасқанда ортақ тіктөртбұрыш 3 × 4 см болды. Карточкалар бірге жауып тұрған аудан неше см²? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "62eba810e423cef0184ee47c4620ec043f9e7148720a99d26f1d6a941bf689f7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "52",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-pool-walkway",
+      "modelId": "visual-wave3-outer-border",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "w": 13,
+        "h": 7,
+        "border": 2,
+        "context": "pool",
+        "unit": "м"
+      },
+      "answer": "96",
+      "sourceRefs": [
+        {
+          "sourceId": "be365ee3bcaaabc0",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level3.json#4",
+      "sourceCanonicalSha256": "c07bff54813677d367f270a42ace28915edb3354214d58bcae1dd27ee481646f",
+      "sourceSkill": "Outer uniform rectangular border area, increasing both dimensions by twice the border width",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-pool-walkway.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Жаттығу бассейнінің су беті 13 × 7 м. Оның сыртын айнала барлық жағынан ені 2 м бірдей жолақ төселді. Көк жолақтың ауданы неше м²?",
+      "solution": "Сыртқы өлшемдер: 13 + 2 × 2 = 17 м және 7 + 2 × 2 = 11 м. Жолақ ауданы 17 × 11 − 13 × 7 = 96 м².",
+      "figureDescription": "Жаттығу бассейнінің су беті 13 × 7 м. Оның сыртын айнала барлық жағынан ені 2 м бірдей жолақ төселді. Көк жолақтың ауданы неше м²? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "3b93c221e0a6c32925bc02d67c068c213e84df59d04b30464134c8341d8ab1a3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "96",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-whole-tile-packs",
+      "modelId": "visual-wave3-tile-boxes",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "w": 7,
+        "h": 5,
+        "cw": 3,
+        "ch": 2,
+        "tileCm": 25,
+        "pack": 12,
+        "unit": "м"
+      },
+      "answer": "39",
+      "sourceRefs": [
+        {
+          "sourceId": "c66c0a12b89d2d1e",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level3.json#5",
+      "sourceCanonicalSha256": "84585743cb663047f546d435c5a6853b71032d9e102c9cf0110928a9a3f4934d",
+      "sourceSkill": "Composite floor area, squared centimetre-to-metre tile conversion, then whole-pack ceiling",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-whole-tile-packs.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Еден жоспарындағы сыртқы тіктөртбұрыш 7 × 5 м. Жоғарғы оң бұрышындағы 3 × 2 м ойыққа плитка төселмейді. Көк еденге қабырғасы 25 см шаршы плиткалар қиылмай толық төселеді. Бір қорапта 12 плитка бар. Материал жетуі үшін ең аз неше бүтін қорап алу керек?",
+      "solution": "Еденнің ауданы 7 × 5 − 3 × 2 = 29 м². 1 м қабырғаға 4 плитка, 1 м²-ге 4 × 4 = 16 плитка керек. Барлығы 29 × 16 = 464 плитка. 38 қорапта 456 ғана, 39 қорапта 468 плитка бар. Ең азы 39 қорап.",
+      "figureDescription": "Еден жоспарындағы сыртқы тіктөртбұрыш 7 × 5 м. Жоғарғы оң бұрышындағы 3 × 2 м ойыққа плитка төселмейді. Көк еденге қабырғасы 25 см шаршы плиткалар қиылмай толық төселеді. Бір қорапта 12 плитка бар. Материал жетуі үшін ең аз неше бүтін қорап алу керек? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "57fe8065f42f98834c5990e18d2ef1315ae63906ccee5a56d8a1d4cab38ddb43",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "39",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Square-centimetre conversion produces an exact tile grid; whole packs are added until capacity suffices",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-cross-two-measures",
+      "modelId": "visual-wave3-cross-area-perimeter",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "cells": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "side": 3
+      },
+      "answer": "45 см² және 36 см",
+      "sourceRefs": [
+        {
+          "sourceId": "a6a45d5b92cbfe1b",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level3.json#9",
+      "sourceCanonicalSha256": "d7c780cb56618f09d5aff3eec3b5a5d5811fe058f7c4b7f57660f318f2d15da3",
+      "sourceSkill": "Simultaneous area and exposed-edge perimeter of a five-square cross",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-cross-two-measures.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Бір шаршының төрт жағына тағы төрт бірдей шаршы толық қабырғаларымен жалғанған. Әр шаршының қабырғасы 3 см. Көк айқыш фигураның ауданы мен сыртқы периметрі көрсетілген дұрыс жұпты таңдаңдар.",
+      "solution": "Аудан 5 × 3 × 3 = 45 см². Ортаңғы шаршының шеттері іште, төрт сыртқы шаршының әрқайсысының 3 шеті ашық: 4 × 3 × 3 = 36 см.",
+      "figureDescription": "Бір шаршының төрт жағына тағы төрт бірдей шаршы толық қабырғаларымен жалғанған. Әр шаршының қабырғасы 3 см. Көк айқыш фигураның ауданы мен сыртқы периметрі көрсетілген дұрыс жұпты таңдаңдар. Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "options": [
+        "15 см² және 36 см",
+        "45 см² және 36 см",
+        "45 см² және 60 см",
+        "45 см² және 30 см"
+      ],
+      "figureSha256": "94a298d2529c143c171ac3652831e22c6ce929b214d19246f15d64115d4e3464",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "45 см² және 36 см",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Area is square-scaled but each boundary edge is only length-scaled",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-stair-boundary",
+      "modelId": "visual-wave3-stair-perimeter",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "rows": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "side": 3
+      },
+      "answer": "60",
+      "sourceRefs": [
+        {
+          "sourceId": "6a3f8a8a5799c6e1",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level3.json#11",
+      "sourceCanonicalSha256": "13420886df67ff3afc3027cece98d869cb8535cf15dd69e33ae6946025052ef5",
+      "sourceSkill": "Perimeter of a left-aligned full staircase, consolidating the step lengths",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-stair-boundary.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Баспалдақ өрнектің төменнен жоғары қатарларында 5, 4, 3, 2, 1 бірдей шаршы бар; қатарлардың сол жақ шеттері тураланған. Шаршының қабырғасы 3 см. Көк өрнектің периметрі неше см?",
+      "solution": "Төменгі қабырға мен сол жақ қабырға бірге 30 см. Сатылардың барлық көлденең бөліктері 15 см, тік бөліктері де 15 см. Периметр 60 см.",
+      "figureDescription": "Баспалдақ өрнектің төменнен жоғары қатарларында 5, 4, 3, 2, 1 бірдей шаршы бар; қатарлардың сол жақ шеттері тураланған. Шаршының қабырғасы 3 см. Көк өрнектің периметрі неше см? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "6af50e6f84c1760746682beca530e4bc001bb2ea20d600bcc4878e3e6e1a9f63",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "60",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Every exposed edge is counted once; shared interior edges are excluded",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-test-corner",
+      "modelId": "visual-wave3-corner-area",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "w": 15,
+        "h": 11,
+        "cw": 4,
+        "ch": 6
+      },
+      "answer": "141",
+      "sourceRefs": [
+        {
+          "sourceId": "ffc24145df9dfe13",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-leveltest.json#0",
+      "sourceCanonicalSha256": "d310a33e89b2e484dcc590e7741305408dd71c5a3092b67032ca5b648fc29feb",
+      "sourceSkill": "An independent test instance of remaining area after a rectangular corner is removed",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-test-corner.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Макет үшін 15 см × 11 см тіктөртбұрыштың жоғарғы оң бұрышынан 4 см × 6 см бөлік алынып тасталған. Сызбадағы қалған көк бөліктің ауданын см² есебімен табыңдар.",
+      "solution": "Толық аудан 15 × 11 = 165 см². Кесілген бөлік 4 × 6 = 24 см². Қалғаны: 165 − 24 = 141 см².",
+      "figureDescription": "Макет үшін 15 см × 11 см тіктөртбұрыштың жоғарғы оң бұрышынан 4 см × 6 см бөлік алынып тасталған. Сызбадағы қалған көк бөліктің ауданын см² есебімен табыңдар. Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "624e891be82f1c19765c57544c984cfbc58efe4708a02f3f0e137b64c6bdf712",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "141",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-test-t-panel",
+      "modelId": "visual-wave3-t-shape",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "barW": 14,
+        "barH": 2,
+        "stemW": 6,
+        "stemH": 7
+      },
+      "answer": "70",
+      "sourceRefs": [
+        {
+          "sourceId": "4f19f784d3d3ef83",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-leveltest.json#2",
+      "sourceCanonicalSha256": "78d8b1b4119e0bbc9df23b5a2b7d35dec3eb06443bc3df4b8604a90a63c9911c",
+      "sourceSkill": "Test T-panel area with independent top bar and below-bar stem dimensions",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-test-t-panel.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Т пішінді көрсеткіштің көлденең бөлігі 14 × 2 см. Оның ортасынан төмен қарай 6 × 7 см тік бөлік жалғанған; бөліктер қабаттаспайды. Көрсеткіштің ауданы неше см²?",
+      "solution": "Екі бөлік ортақ аудансыз жалғасқан. 14 × 2 + 6 × 7 = 28 + 42 = 70 см².",
+      "figureDescription": "Т пішінді көрсеткіштің көлденең бөлігі 14 × 2 см. Оның ортасынан төмен қарай 6 × 7 см тік бөлік жалғанған; бөліктер қабаттаспайды. Көрсеткіштің ауданы неше см²? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "87d1a766250edd2f08682610ea11cd404c1025e0752ad5aa02fd88fa34115cb9",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "70",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-through-path",
+      "modelId": "visual-wave3-longitudinal-strip",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "w": 27,
+        "h": 18,
+        "path": 4,
+        "unit": "м"
+      },
+      "answer": "378",
+      "sourceRefs": [
+        {
+          "sourceId": "d2ece4d7bd9a7660",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-leveltest.json#4",
+      "sourceCanonicalSha256": "dcbf8d7daba26018fb0638c6c3f94dd49d687b5a1bc1eb975acf2154cf409cb4",
+      "sourceSkill": "Remaining rectangle area after one full-length longitudinal strip is removed",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-through-path.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "27 × 18 м тікбұрышты алаңды ұзын бойымен бір шетінен екіншісіне дейін ені 4 м жол қиып өтеді. Жолдан тыс көк бөліктің ауданы неше м²?",
+      "solution": "Жолдың еніне тең бөлікті алып тастағанда тиімді ен 18 − 4 = 14 м. Көк аудан 27 × 14 = 378 м².",
+      "figureDescription": "27 × 18 м тікбұрышты алаңды ұзын бойымен бір шетінен екіншісіне дейін ені 4 м жол қиып өтеді. Жолдан тыс көк бөліктің ауданы неше м²? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "d76b820a00f589f23487e0f563f186260f528a0443c9503004b8dc01b6db9e6a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "378",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave3-picture-border",
+      "modelId": "visual-wave3-outer-border",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "w": 18,
+        "h": 13,
+        "border": 3,
+        "context": "frame",
+        "unit": "см"
+      },
+      "answer": "222",
+      "sourceRefs": [
+        {
+          "sourceId": "9e712e03bb0545aa",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-leveltest.json#8",
+      "sourceCanonicalSha256": "4fa825bfb7eda255f950c7f210d9049f3c4092664d56b25eae2436f175a30baa",
+      "sourceSkill": "Picture-frame area from inner dimensions and the same added width on all four sides",
+      "adaptationChanges": [
+        "Сақталған бастапқы тапсырманың нақты сұрағы мен шешу дағдысы жеке қаралып сақталды; жаңа шарт пен өлшемдер жасалды.",
+        "Әр фигура жаңа параметрлерден құрастырылды; бастапқы скан, traced SVG және дайын path қолданылмады.",
+        "Аудан бірлік ұяшықтарды тізу арқылы, периметр тек ашық шеттерді санау арқылы формуладан бөлек тексерілді.",
+        "Шамалар мен бірліктер, дұрыс/қате өрнек бағыты, белгісіз өлшем және материалға керек бүтін қорап талабы сақталды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Құрама фигуралар шеберханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, topology, dimensional labels, material units and 343px readability review"
+      },
+      "image": "/figures/synaq-editions/visual-wave3-picture-border.svg",
+      "verificationModule": "scripts/editorial/visual-wave3-models.mjs",
+      "statement": "Қабырғаға ілінетін сурет 18 × 13 см. Оның сыртын айнала барлық жағынан ені 3 см бірдей жақтау қосылды. Көк жақтаудың ауданы неше см²?",
+      "solution": "Сыртқы өлшемдер: 18 + 2 × 3 = 24 см және 13 + 2 × 3 = 19 см. Жолақ ауданы 24 × 19 − 18 × 13 = 222 см².",
+      "figureDescription": "Қабырғаға ілінетін сурет 18 × 13 см. Оның сыртын айнала барлық жағынан ені 3 см бірдей жақтау қосылды. Көк жақтаудың ауданы неше см²? Көк бөліктер есепке алынады; ашық түсті ойықтар мен бос орындар алынбайды.",
+      "figureSha256": "6f713b6990455a255dd447cb4d61a7e7521528b8a79098321027db732ee5e998",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "222",
+        "checks": [
+          "Unit squares are enumerated by geometric union and subtraction, rather than using the written solution formula",
+          "Condition, units, native regions, answer and SVG hash are bound to the same source-specific edition"
+        ]
+      }
+    }
+  ]
+}

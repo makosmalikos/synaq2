@@ -1,0 +1,1925 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All39 remaining saved grade-4 nonvisual topic4.1 cuboid topology/surface/volume/layer/domain sources; no new source collection.",
+  "summary": {
+    "editions": 39,
+    "models": 39,
+    "skillFamilies": 39,
+    "sourceOccurrencesReferenced": 39,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-cuboids-40270d30cc577c06",
+      "modelId": "grade4-cuboids-equal-length-edges",
+      "skillFamily": "equal-length-edges",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dimensions": [
+          14,
+          7,
+          5
+        ],
+        "target": 14,
+        "choices": [
+          2,
+          4,
+          8,
+          12
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level1.json",
+          "sourceId": "40270d30cc577c06"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қораптың сыртқы пішіні — тікбұрышты параллелепипед. Өлшемдері: ұзындығы 14 см, ені 7 см, биіктігі 5 см. Ұзындығы 14 см болатын қырларын санап, дұрыс нұсқаны таңдаңыз.",
+      "options": [
+        "2",
+        "4",
+        "8",
+        "12"
+      ],
+      "answer": "4",
+      "solution": "Үш өлшемнің әрқайсысына сәйкес төрт қыр бар. Ұзындығы 14 см болатын екі қыр төменгі жақта, тағы екеуі жоғарғы жақта орналасқан: 2 + 2 = 4. Қалған сегіз қырдың ұзындықтары басқа.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "4",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-c5b41081f72dfd00",
+      "modelId": "grade4-cuboids-largest-face",
+      "skillFamily": "largest-face",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dimensions": [
+          9,
+          6,
+          4
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level1.json",
+          "sourceId": "c5b41081f72dfd00"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ағаш білеудің үш өлшемі 9 см, 6 см, 4 см. Білеу тікбұрышты параллелепипед пішінді. Оның ауданы ең үлкен бір жағы неше см²? Жауапқа тек санды жазыңыз.",
+      "answer": "54",
+      "solution": "Үш түрлі жақтың аудандары: 9 × 6 = 54 см²; 9 × 4 = 36 см²; 6 × 4 = 24 см². Олардың ең үлкені — 54 см².",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "54",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-07c0fe86bdb61887",
+      "modelId": "grade4-cuboids-cube-box-comparison",
+      "skillFamily": "cube-box-comparison",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "cubeEdge": 5,
+        "box": [
+          6,
+          5,
+          4
+        ],
+        "names": [
+          "Мәдина",
+          "Олжас"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level1.json",
+          "sourceId": "07c0fe86bdb61887"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Мәдина қыры 5 см текше қорап жасады. Олжас жасаған тікбұрышты қораптың өлшемдері 6 см, 5 см, 4 см. Қайсысының көлемі үлкен?",
+      "options": [
+        "Мәдина жасаған қорап",
+        "Олжас жасаған қорап",
+        "Екеуінің көлемі бірдей",
+        "Өлшемдер көлемді салыстыруға жеткіліксіз"
+      ],
+      "answer": "Мәдина жасаған қорап",
+      "solution": "Текшенің көлемі: 5 × 5 × 5 = 125 см³. Екінші қорап: 6 × 5 × 4 = 120 см³. 125 > 120, сондықтан Мәдина жасаған қораптың көлемі үлкен. Бір ғана ең ұзын қырды салыстыру жеткіліксіз.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "Мәдина жасаған қорап",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-8834fe9d2c2fd7ce",
+      "modelId": "grade4-cuboids-square-faces",
+      "skillFamily": "square-faces",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dimensions": [
+          24,
+          12,
+          12
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level1.json",
+          "sourceId": "8834fe9d2c2fd7ce"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тікбұрышты қаптаманың ұзындығы 24 см, ені 12 см, биіктігі 12 см. Қаптама жақтарының нешеуі шаршы пішінді? Жауапқа тек санды жазыңыз.",
+      "answer": "2",
+      "solution": "24 см × 12 см және 24 см × 12 см жақтар шаршы емес. 12 см × 12 см өлшемді жақтың екі қабырғасы тең. Осындай қарама-қарсы екі жақ бар, сондықтан жауап — 2.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "2",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-319ddff5fc2c329b",
+      "modelId": "grade4-cuboids-opposite-face-claim",
+      "skillFamily": "opposite-face-claim",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "example": [
+          7,
+          4,
+          3
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level1.json",
+          "sourceId": "319ddff5fc2c329b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тікбұрышты қораптың бір-біріне қарама-қарсы орналасқан екі жағы үшін әрқашан орындалатын сипаттаманы белгілеңіз.",
+      "options": [
+        "Олар бір қырмен міндетті түрде түйіседі",
+        "Олар бірдей өлшемді тікбұрыштар болады",
+        "Олардың әрқайсысы міндетті түрде шаршы",
+        "Олардың аудандары бір-біріне тең болмайды"
+      ],
+      "answer": "Олар бірдей өлшемді тікбұрыштар болады",
+      "solution": "Қарама-қарсы жақтардың сәйкес ұзындықтары тең, демек олар бірдей өлшемді тікбұрыштар және аудандары да тең. Олар ортақ қырмен түйіспейді. Мысалы, өлшемдері 7 см, 4 см, 3 см қораптың табаны 7 см × 4 см тікбұрыш, шаршы емес. Сондықтан тек екінші сипаттама әрқашан дұрыс.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "Олар бірдей өлшемді тікбұрыштар болады",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-a25dc38b01a071b3",
+      "modelId": "grade4-cuboids-vertex-degree",
+      "skillFamily": "vertex-degree",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          2,
+          3,
+          4,
+          6
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level1.json",
+          "sourceId": "a25dc38b01a071b3"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қораптың қаңқасы тікбұрышты параллелепипед пішінді. Оның бір бұрышын белгілесек, сол төбеден шығатын қырлардың саны қанша?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "answer": "3",
+      "solution": "Белгіленген төбеден үш бағытта бір-бір қыр шығады: ұзындық, ен және биіктік бойымен. Барлығы 1 + 1 + 1 = 3 қыр. Тек төменгі екі бағытты санау биіктік қырын ескермейді.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "3",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-f030c5e3b7952e9c",
+      "modelId": "grade4-cuboids-target-volume",
+      "skillFamily": "target-volume",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "target": 84,
+        "choices": [
+          [
+            14,
+            6,
+            2
+          ],
+          [
+            40,
+            30,
+            14
+          ],
+          [
+            7,
+            4,
+            3
+          ],
+          [
+            8,
+            4,
+            3
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level1.json",
+          "sourceId": "f030c5e3b7952e9c"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көлемі дәл 84 см³ болатын тікбұрышты қорап керек. Қай нұсқада оған сәйкес ұзындық, ен және биіктік берілген?",
+      "options": [
+        "14 см, 6 см, 2 см",
+        "40 см, 30 см, 14 см",
+        "7 см, 4 см, 3 см",
+        "8 см, 4 см, 3 см"
+      ],
+      "answer": "7 см, 4 см, 3 см",
+      "solution": "14 × 6 × 2 = 168 см³. 40 × 30 × 14 = 16800 см³. 7 × 4 × 3 = 84 см³. 8 × 4 × 3 = 96 см³. Көлем үшін үш өлшем көбейтіледі; олардың қосындысын 84 деп алу дұрыс емес. Дәл 84 см³ беретін жалғыз нұсқа — 7 см, 4 см, 3 см.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "7 см, 4 см, 3 см",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-b6b04b830296f2ac",
+      "modelId": "grade4-cuboids-cube-edge-from-wire",
+      "skillFamily": "cube-edge-from-wire",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "wire": 84
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level1.json",
+          "sourceId": "b6b04b830296f2ac"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Текше қаңқасының барлық қырын жасауға 84 см сым жұмсалды. Сым жалғауға немесе қиындыға кетпеген. Бір қырдың ұзындығын сантиметрмен анықтаңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "7",
+      "solution": "Текшеде ұзындықтары бірдей 12 қыр бар. Бір қыры: 84 : 12 = 7 см. Тексеру: 12 × 7 = 84 см.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "7",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-de095b432d54bd59",
+      "modelId": "grade4-cuboids-base-area",
+      "skillFamily": "base-area",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dimensions": [
+          15,
+          7,
+          6
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level1.json",
+          "sourceId": "de095b432d54bd59"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Сақтау жәшігінің ішкі ұзындығы 15 см, ені 7 см, биіктігі 6 см. Жәшіктің ішкі табанының ауданы неше см²? Жауапқа тек санды жазыңыз.",
+      "answer": "105",
+      "solution": "Төменгі табан — ұзындығы 15 см, ені 7 см тікбұрыш. Оның ауданы 15 × 7 = 105 см². Биіктік 6 см бұл ауданның есебіне кірмейді.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "105",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-ae5cf1aed3fc90cb",
+      "modelId": "grade4-cuboids-cube-surface-open",
+      "skillFamily": "cube-surface-open",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "edge": 8,
+        "unit": "дм"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level1.json",
+          "sourceId": "ae5cf1aed3fc90cb"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Текше пішінді макеттің қыры 8 дм. Макеттің барлық алты жағын жабатын қағаздың ең аз ауданы қанша дм²? Қағаз қиындысы мен жапсыру жиегі есептелмейді. Жауапқа тек санды жазыңыз.",
+      "answer": "384",
+      "solution": "Бір шаршы жақтың ауданы: 8 × 8 = 64 дм². Бірдей алты жақтың ауданы: 64 × 6 = 384 дм². 512 дм³ — көлем, ал бұл сұрақта аудан керек.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "384",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-a5345dea67bac639",
+      "modelId": "grade4-cuboids-face-count",
+      "skillFamily": "face-count",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dimensions": [
+          8,
+          5,
+          3
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level1.json",
+          "sourceId": "a5345dea67bac639"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Өлшемдері 8 см, 5 см, 3 см болатын тікбұрышты білеудің барлық жақтарын санаса, неше жақ шығады? Жауапқа тек санды жазыңыз.",
+      "answer": "6",
+      "solution": "Төменгі және жоғарғы жақ — 2, алдыңғы және артқы жақ — 2, сол және оң жақ — 2. Барлығы: 2 + 2 + 2 = 6 жақ. Өлшемдердің мәндері жақтар санын өзгертпейді.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "6",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-6667fe146deedb60",
+      "modelId": "grade4-cuboids-cube-single-face",
+      "skillFamily": "cube-single-face",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "edge": 7,
+        "choices": [
+          343,
+          14,
+          49,
+          21
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level1.json",
+          "sourceId": "6667fe146deedb60"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қыры 7 см текшенің бір ғана жағына түсті қағаз жапсырылады. Қиындысыз қажет қағаздың ауданы қанша?",
+      "options": [
+        "343 см²",
+        "14 см²",
+        "49 см²",
+        "21 см²"
+      ],
+      "answer": "49 см²",
+      "solution": "Текшенің бір жағы — қабырғасы 7 см шаршы. Сондықтан 7 × 7 = 49 см² қағаз қажет. 343 см³ текшенің көлемін білдіреді, ол бір жақтың ауданы емес.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "49 см²",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-6c09b3f9ee2a0268",
+      "modelId": "grade4-cuboids-equal-sum-volume-gap",
+      "skillFamily": "equal-sum-volume-gap",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "first": [
+          12,
+          7,
+          5
+        ],
+        "second": [
+          9,
+          10,
+          5
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level2.json",
+          "sourceId": "6c09b3f9ee2a0268"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Құм салатын бірінші қораптың ішкі өлшемдері 12 см, 7 см, 5 см. Екінші қораптың ішкі өлшемдері 9 см, 10 см, 5 см. Қораптар тікбұрышты параллелепипед пішінді. Қайсысына көбірек құм сыяды және көлемдерінің айырмасы қанша?",
+      "options": [
+        "Бірінші қорапқа 30 см³ артық",
+        "Екінші қорапқа 30 см³ артық",
+        "Екі қорапқа бірдей көлем сыяды",
+        "Екінші қорапқа 3 см³ артық"
+      ],
+      "answer": "Екінші қорапқа 30 см³ артық",
+      "solution": "Бірінші көлем: 12 × 7 × 5 = 420 см³. Екінші көлем: 9 × 10 × 5 = 450 см³. Айырмасы: 450 − 420 = 30 см³. Екінші қорапқа көбірек сыяды. Өлшемдердің қосындысы екі қорапта да 24 см болғанымен, көбейтінділері әртүрлі.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "Екінші қорапқа 30 см³ артық",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-80ba5d34ecc65603",
+      "modelId": "grade4-cuboids-height-from-wire",
+      "skillFamily": "height-from-wire",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "wire": 100,
+        "length": 12,
+        "width": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level2.json",
+          "sourceId": "80ba5d34ecc65603"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тікбұрышты қораптың қаңқасына барлығы 100 см сым кетті. Қораптың ұзындығы 12 см, ені 8 см. Биіктігін сантиметрмен табыңыз. Сымның барлығы тек қырларды жасауға жұмсалды. Жауапқа тек санды жазыңыз.",
+      "answer": "5",
+      "solution": "Әр өлшемге сәйкес төрт қырдан бар. Үш өлшемнің қосындысы: 100 : 4 = 25 см. Биіктігі: 25 − 12 − 8 = 5 см. Тексеру: 4 × (12 + 8 + 5) = 100 см.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "5",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-34ffe7bb3ddbb501",
+      "modelId": "grade4-cuboids-height-volume-gain",
+      "skillFamily": "height-volume-gain",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dimensions": [
+          8,
+          5,
+          3
+        ],
+        "increase": 4,
+        "choices": [
+          4,
+          80,
+          160,
+          280
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level2.json",
+          "sourceId": "34ffe7bb3ddbb501"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қалыптың ішкі ұзындығы 8 см, ені 5 см, бастапқы биіктігі 3 см. Ұзындығы мен енін сақтап, биіктігін 4 см-ге ұлғайтты. Ішкі көлем қанша см³-ге көбейді?",
+      "options": [
+        "4 см³",
+        "80 см³",
+        "160 см³",
+        "280 см³"
+      ],
+      "answer": "160 см³",
+      "solution": "Табан ауданы 8 × 5 = 40 см². Қосылған қабаттың биіктігі 4 см, сондықтан қосылған көлем 40 × 4 = 160 см³. Бұрынғы көлем 120 см³, жаңа көлем 280 см³: айырмасы 280 − 120 = 160 см³. Жаңа көлемнің өзін айырма деп жазуға болмайды.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "160 см³",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-7d6354bfc1ac1359",
+      "modelId": "grade4-cuboids-wire-remainder",
+      "skillFamily": "wire-remainder",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "wireMeters": 2,
+        "edge": 15
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level2.json",
+          "sourceId": "7d6354bfc1ac1359"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Робот үйірмесінде ұзындығы 2 м сымнан қыры 15 см текшенің қаңқасы жасалды. Жалғауға қосымша сым жұмсалмаса, неше сантиметр сым қалады? Жауапқа тек санды жазыңыз.",
+      "answer": "20",
+      "solution": "Барлық ұзындықты сантиметрмен аламыз: 2 м = 200 см. Он екі қырға 15 × 12 = 180 см керек. Қалғаны: 200 − 180 = 20 см.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "20",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-5ceff22ddb1338fb",
+      "modelId": "grade4-cuboids-cube-volume-from-surface",
+      "skillFamily": "cube-volume-from-surface",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "surface": 150,
+        "choices": [
+          25,
+          125,
+          150,
+          625
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level2.json",
+          "sourceId": "5ceff22ddb1338fb"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Текше пішінді тастың барлық жақтарының ауданы бірге 150 см². Осы тастың көлемін таңдаңыз.",
+      "options": [
+        "25 см³",
+        "125 см³",
+        "150 см³",
+        "625 см³"
+      ],
+      "answer": "125 см³",
+      "solution": "Бір жақтың ауданы: 150 : 6 = 25 см². 5 × 5 = 25 болғандықтан қыры 5 см. Көлемі: 5 × 5 × 5 = 125 см³. Бір жақтың ауданын қыр ұзындығының орнына қоюға болмайды.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "125 см³",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-39f3063f002b0045",
+      "modelId": "grade4-cuboids-face-area-gap",
+      "skillFamily": "face-area-gap",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dimensions": [
+          11,
+          7,
+          3
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level2.json",
+          "sourceId": "39f3063f002b0045"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Өлшемдері 11 см, 7 см, 3 см тікбұрышты білеудің ең үлкен бір жағының ауданы ең кіші бір жағының ауданынан қанша см² артық? Жауапқа тек санды жазыңыз.",
+      "answer": "56",
+      "solution": "Үш түрлі аудан: 11 × 7 = 77 см²; 11 × 3 = 33 см²; 7 × 3 = 21 см². Ең үлкені 77 см², ең кішісі 21 см². Айырмасы 77 − 21 = 56 см².",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "56",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-08753d45b51c785d",
+      "modelId": "grade4-cuboids-wire-from-single-face",
+      "skillFamily": "wire-from-single-face",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "faceArea": 81
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level2.json",
+          "sourceId": "08753d45b51c785d"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Текше макетінің бір жағының ауданы 81 см². Макеттің барлық қырларын бір реттен бойлайтын сымның ұзындығы қанша сантиметр? Жауапқа тек санды жазыңыз.",
+      "answer": "108",
+      "solution": "Шаршы жақтың қабырғасын табамыз: 9 × 9 = 81, демек қыры 9 см. Он екі қырдың толық ұзындығы: 12 × 9 = 108 см.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "108",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-3995990317bc0dd5",
+      "modelId": "grade4-cuboids-mixed-volume-dm",
+      "skillFamily": "mixed-volume-dm",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "lengthMeters": 3,
+        "widthMeters": 2,
+        "heightCm": 40
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level2.json",
+          "sourceId": "3995990317bc0dd5"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ішкі өлшемдері: ұзындығы 3 м, ені 2 м, биіктігі 40 см болатын тікбұрышты жәшіктің сыйымдылығы неше дм³? Жауапқа тек санды жазыңыз.",
+      "answer": "2400",
+      "solution": "Үш өлшемді дециметрге ауыстырамыз: 3 м = 30 дм, 2 м = 20 дм, 40 см = 4 дм. Көлемі: 30 × 20 × 4 = 2400 дм³. Әртүрлі ұзындық бірліктерін бірден көбейту дұрыс емес.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "2400",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-773db3ed98c4af63",
+      "modelId": "grade4-cuboids-largest-wire",
+      "skillFamily": "largest-wire",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          [
+            8,
+            5,
+            4
+          ],
+          [
+            7,
+            7,
+            5
+          ],
+          [
+            15,
+            3,
+            2
+          ],
+          [
+            10,
+            6,
+            3
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level2.json",
+          "sourceId": "773db3ed98c4af63"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Төрт тікбұрышты қораптың өлшемдері ұсынылған. Әр қораптың барлық он екі қырына бір қабат таспа жапсырады. Қай нұсқаға ең көп таспа қажет?",
+      "options": [
+        "8 см, 5 см, 4 см",
+        "7 см, 7 см, 5 см",
+        "15 см, 3 см, 2 см",
+        "10 см, 6 см, 3 см"
+      ],
+      "answer": "15 см, 3 см, 2 см",
+      "solution": "(8 + 5 + 4) × 4 = 68 см. (7 + 7 + 5) × 4 = 76 см. (15 + 3 + 2) × 4 = 80 см. (10 + 6 + 3) × 4 = 76 см. Ең үлкен ұзындық — 80 см, сондықтан 15 см, 3 см, 2 см өлшемді қорап таңдалады. Таспа ұзындығын көлемдермен салыстыруға болмайды.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "15 см, 3 см, 2 см",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-8169c1fbd08b204e",
+      "modelId": "grade4-cuboids-reciprocal-volume-scale",
+      "skillFamily": "reciprocal-volume-scale",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "factor": 3,
+        "example": [
+          18,
+          5,
+          4
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level2.json",
+          "sourceId": "8169c1fbd08b204e"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тікбұрышты параллелепипедтің ұзындығын 3 есе қысқартып, биіктігін 3 есе өсірді. Ені өзгерген жоқ. Көлем туралы дұрыс қорытындыны таңдаңыз.",
+      "options": [
+        "3 есе көбейеді",
+        "9 есе көбейеді",
+        "Көлемі бұрынғыдай қалады",
+        "3 есе азаяды"
+      ],
+      "answer": "Көлемі бұрынғыдай қалады",
+      "solution": "Көлемді табуда бір көбейткіш 3 есе азайса, екіншісі дәл 3 есе көбейеді: өзгерістер бірін-бірі өтейді. Мысалы, 18 × 5 × 4 = 360; жаңа өлшемдерде 6 × 5 × 12 = 360. Жалпы да (ұзындық : 3) × ен × (биіктік × 3) бастапқы ұзындық × ен × биіктікке тең. Көлем өзгермейді.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "Көлемі бұрынғыдай қалады",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-c7f84862d6ba1323",
+      "modelId": "grade4-cuboids-box-surface",
+      "skillFamily": "box-surface",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dimensions": [
+          7,
+          5,
+          4
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level2.json",
+          "sourceId": "c7f84862d6ba1323"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Сырты толық боялатын тікбұрышты бөлшектің өлшемдері 7 см, 5 см, 4 см. Барлық алты жақтың жалпы ауданы қанша см²? Жауапқа тек санды жазыңыз.",
+      "answer": "166",
+      "solution": "Қарама-қарсы жақтар жұппен тең. Үш түрлі жақ: 7 × 5 = 35 см²; 7 × 4 = 28 см²; 5 × 4 = 20 см². Жалпы аудан: (35 + 28 + 20) × 2 = 166 см². Тек үш жақтың қосындысын алу беттің жартысын ғана есептейді.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "166",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-8531c2462d192bf4",
+      "modelId": "grade4-cuboids-successive-sides-wire",
+      "skillFamily": "successive-sides-wire",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "wire": 84,
+        "gap": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level3.json",
+          "sourceId": "8531c2462d192bf4"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Білеудің ені биіктігінен 3 см артық, ал ұзындығы енінен 3 см артық. Ол тікбұрышты параллелепипед пішінді, барлық қырларының қосындысы 84 см. Көлемін см³-пен есептеңіз. Жауапқа тек санды жазыңыз.",
+      "answer": "280",
+      "solution": "Үш өлшемнің қосындысы 84 : 4 = 21 см. Биіктікті негізге алсақ, енге 3 см, ұзындыққа 6 см қосылады. Үш бірдей биіктік: 21 − 9 = 12 см; бір биіктік 12 : 3 = 4 см. Ені 7 см, ұзындығы 10 см. Көлемі 10 × 7 × 4 = 280 см³. Тексеру: 4 × (10 + 7 + 4) = 84 см.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "280",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-f474fb7d2262b2de",
+      "modelId": "grade4-cuboids-largest-integer-cube-tiling",
+      "skillFamily": "largest-integer-cube-tiling",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "dimensions": [
+          12,
+          9,
+          6
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level3.json",
+          "sourceId": "f474fb7d2262b2de"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Өлшемдері 12 см, 9 см, 6 см білеуді бірдей текшелерге кеседі. Артық бөлік те, қиынды да қалмауы керек. Текше қыры сантиметрмен натурал сан және мүмкіндігінше үлкен болуы шарт. Неше текше алынады? Жауапқа тек санды жазыңыз.",
+      "answer": "24",
+      "solution": "Текше қыры үш өлшемді де қалдықсыз бөлуі керек. Ортақ бөлгіштер: 1, 3; ең үлкені 3 см. Үш бағытта тиісінше 12 : 3 = 4, 9 : 3 = 3, 6 : 3 = 2 текше орналасады. Барлығы: 4 × 3 × 2 = 24. Көлеммен тексеру: 648 : 27 = 24.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "24",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-bc51b525ca1438a7",
+      "modelId": "grade4-cuboids-volume-from-increment-layers",
+      "skillFamily": "volume-from-increment-layers",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "lengthGain": 24,
+        "widthGain": 30,
+        "heightGain": 20,
+        "choices": [
+          74,
+          120,
+          240,
+          600
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level3.json",
+          "sourceId": "bc51b525ca1438a7"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бастапқы тікбұрышты бөлшектің тек ұзындығын 1 см өсіргенде, көлемі 24 см³-ге көбейеді. Бастапқы бөлшектің тек енін 1 см өсірсе, 30 см³ қосылады; тек биіктігін 1 см өсірсе, 20 см³ қосылады. Бастапқы бөлшектің көлемі қанша?",
+      "options": [
+        "74 см³",
+        "120 см³",
+        "240 см³",
+        "600 см³"
+      ],
+      "answer": "120 см³",
+      "solution": "Қалыңдығы 1 см қосылған қабаттардың көлемдері сәйкес жақтардың аудандарына тең. Демек, ен × биіктік = 24, ұзындық × биіктік = 30, ұзындық × ен = 20. Ұзындықты 5 см, енді 4 см, биіктікті 6 см деп алсақ: 4 × 6 = 24, 5 × 6 = 30, 5 × 4 = 20 — үшеуі де орындалады. Көлемі 5 × 4 × 6 = 120 см³. Үш берілген санды жай қосу көлемді бермейді.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "120 см³",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-1988b173f0b59e27",
+      "modelId": "grade4-cuboids-volume-from-face-areas",
+      "skillFamily": "volume-from-face-areas",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "faceAreas": [
+          12,
+          28,
+          21
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level3.json",
+          "sourceId": "1988b173f0b59e27"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тікбұрышты білеудің үш түрлі жағының аудандары 12 см², 28 см², 21 см². Үш өлшемі де сантиметрмен натурал сандар. Білеудің көлемі неше см³? Жауапқа тек санды жазыңыз.",
+      "answer": "84",
+      "solution": "Жақ аудандарының ортақ көбейткіштерін іздейміз: 3 × 4 = 12, 3 × 7 = 21, 4 × 7 = 28. Сондықтан өлшемдер 3 см, 4 см, 7 см. Көлемі 3 × 4 × 7 = 84 см³. Аудандардың үшеуін көбейтсек, әр өлшем екі рет кіріп кетеді; ол көлемнің өзі емес, көлемнің квадраты болады.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "84",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-d492b535f1602cc7",
+      "modelId": "grade4-cuboids-equal-wire-volume-comparison",
+      "skillFamily": "equal-wire-volume-comparison",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "wire": 72,
+        "length": 9,
+        "width": 6,
+        "choices": [
+          54,
+          18,
+          0,
+          -54
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level3.json",
+          "sourceId": "d492b535f1602cc7"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Екі бөлек қаңқа жасалды: бірі текше, екіншісі тікбұрышты параллелепипед. Әр қаңқаға 72 см сым жұмсалды. Параллелепипедтің ұзындығы 9 см, ені 6 см. Сым тек қырларға жұмсалса, көлемдер туралы дұрыс жауап қайсы?",
+      "options": [
+        "Текшенің көлемі 54 см³ артық",
+        "Текшенің көлемі 18 см³ артық",
+        "Екі дененің көлемі тең",
+        "Параллелепипедтің көлемі 54 см³ артық"
+      ],
+      "answer": "Текшенің көлемі 54 см³ артық",
+      "solution": "Текше қыры: 72 : 12 = 6 см; көлемі 6³ = 216 см³. Екінші дененің үш өлшемінің қосындысы 72 : 4 = 18 см. Биіктігі 18 − 9 − 6 = 3 см; көлемі 9 × 6 × 3 = 162 см³. Айырмасы 216 − 162 = 54 см³, текшенің көлемі артық. Бірдей сым ұзындығы көлемдердің теңдігін білдірмейді.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "Текшенің көлемі 54 см³ артық",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-8e5c9d9bf4ab7dfd",
+      "modelId": "grade4-cuboids-minimum-surface-factor-triples",
+      "skillFamily": "minimum-surface-factor-triples",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "unitCubes": 24,
+        "choices": [
+          68,
+          56,
+          52,
+          98
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level3.json",
+          "sourceId": "8e5c9d9bf4ab7dfd"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қыры 1 см болатын 24 текшенің бәрін саңылаусыз біріктіріп, бір тікбұрышты параллелепипед жасайды. Текшелер кесілмейді. Алынатын дененің бетінің ең кіші мүмкін ауданы қанша?",
+      "options": [
+        "68 см²",
+        "56 см²",
+        "52 см²",
+        "98 см²"
+      ],
+      "answer": "52 см²",
+      "solution": "Өлшемдердің көбейтіндісі 24 болуы керек. Бағыттарды алмастыруды қайталау деп санамай, барлық натурал өлшем үштігін жазамыз: 1 × 1 × 24 болса, беті 2 × (1 + 24 + 24) = 98 см²; 1 × 2 × 12 болса, беті 2 × (2 + 12 + 24) = 76 см²; 1 × 3 × 8 болса, беті 2 × (3 + 8 + 24) = 70 см²; 1 × 4 × 6 болса, беті 2 × (4 + 6 + 24) = 68 см²; 2 × 2 × 6 болса, беті 2 × (4 + 12 + 12) = 56 см²; 2 × 3 × 4 болса, беті 2 × (6 + 8 + 12) = 52 см². Осы толық тізімдегі ең кіші аудан — 52 см².",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "52 см²",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-df68072ce4ebcb0d",
+      "modelId": "grade4-cuboids-edge-from-cube-volume-gain",
+      "skillFamily": "edge-from-cube-volume-gain",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "increase": 1,
+        "volumeGain": 127
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level3.json",
+          "sourceId": "df68072ce4ebcb0d"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Текше пішінді бөлшектің бастапқы қыры сантиметрмен натурал сан. Әр қырын 1 см-ге ұзартқанда көлемі 127 см³-ге ұлғайды. Бастапқы қырдың ұзындығы қанша сантиметр? Жауапқа тек санды жазыңыз.",
+      "answer": "6",
+      "solution": "Натурал қырларды ретімен тексереміз: 1 см болса, 2³ − 1³ = 7 см³; 2 см болса, 3³ − 2³ = 19 см³; 3 см болса, 4³ − 3³ = 37 см³; 4 см болса, 5³ − 4³ = 61 см³; 5 см болса, 6³ − 5³ = 91 см³; 6 см болса, 7³ − 6³ = 127 см³. Керек айырма 127 см³ тек 6 см кезінде шығады. Қыр өскен сайын қосылатын қабаттардың аудандары да өседі, сондықтан одан үлкен натурал қыр бұл айырманы қайта бермейді.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "6",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-7dd88079cf46af7f",
+      "modelId": "grade4-cuboids-corner-removed-surface",
+      "skillFamily": "corner-removed-surface",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "edge": 8,
+        "smallEdge": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level3.json",
+          "sourceId": "7dd88079cf46af7f"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қыры 8 см үлкен текше қыры 2 см кішкентай текшелерден жиналған. Үлкен текшенің бір бұрышындағы бір кішкентай текшені алып тастады. Қалған дененің барлық ашық бетінің ауданы қалай өзгереді?",
+      "options": [
+        "12 см²-ге кемиді",
+        "Ауданы өзгермейді",
+        "12 см²-ге артады",
+        "4 см²-ге кемиді"
+      ],
+      "answer": "Ауданы өзгермейді",
+      "solution": "Бұрыштағы текшенің сыртқа қараған үш жағы алынады: 3 × 2 × 2 = 12 см² жоғалады. Оның орнына көрші текшелердің дәл сондай үш жағы ашылады: 12 см² қосылады. Өзгеріс 12 − 12 = 0, сондықтан аудан 384 см² болып қалады. Ойықтың жаңадан ашылған беттерін де санау қажет.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "Ауданы өзгермейді",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-4db885eb532c6ecb",
+      "modelId": "grade4-cuboids-two-painted-faces",
+      "skillFamily": "two-painted-faces",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "edge": 6,
+        "smallEdge": 1
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level3.json",
+          "sourceId": "4db885eb532c6ecb"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қыры 6 см текшенің тек жоғарғы және төменгі жақтары боялды. Кейін оны қыры 1 см бірдей текшелерге бөлді. Бірде-бір боялған жағы жоқ кішкентай текшелер нешеу? Жауапқа тек санды жазыңыз.",
+      "answer": "144",
+      "solution": "Биіктік бойымен 6 : 1 = 6 қабат бар. Тек ең жоғарғы және ең төменгі қабаттарда бояу бар; ортадағы 6 − 2 = 4 қабат боялмаған. Әр қабатта 6 × 6 = 36 текше. Боялмағандар саны: 36 × 4 = 144. Бүйір беттер боялмаған, сондықтан ортаңғы қабаттардың шетіндегі текшелер де есепке кіреді.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "144",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-a5b5fafe96f80251",
+      "modelId": "grade4-cuboids-direct-volume",
+      "skillFamily": "direct-volume",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dimensions": [
+          9,
+          8,
+          6
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-leveltest.json",
+          "sourceId": "a5b5fafe96f80251"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қоймадағы тікбұрышты бөлшектің ұзындығы 9 см, ені 8 см, биіктігі 6 см. Бөлшек көлемін текше сантиметрмен есептеңіз. Жауапқа тек санды жазыңыз.",
+      "answer": "432",
+      "solution": "Табанның ауданы 9 × 8 = 72 см². Биіктікке көбейтеміз: 72 × 6 = 432 см³. Демек, көлем үш өлшемнің көбейтіндісіне тең.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "432",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-08c04ba6fa6e89dd",
+      "modelId": "grade4-cuboids-cube-topology-triple",
+      "skillFamily": "cube-topology-triple",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          [
+            6,
+            8,
+            12
+          ],
+          [
+            4,
+            12,
+            8
+          ],
+          [
+            6,
+            12,
+            8
+          ],
+          [
+            8,
+            12,
+            6
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-leveltest.json",
+          "sourceId": "08c04ba6fa6e89dd"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Текше макеті үшін жақтар саны, қырлар саны, төбелер саны осы ретпен жазылуы керек. Қай жол дұрыс?",
+      "options": [
+        "6 жақ; 8 қыр; 12 төбе",
+        "4 жақ; 12 қыр; 8 төбе",
+        "6 жақ; 12 қыр; 8 төбе",
+        "8 жақ; 12 қыр; 6 төбе"
+      ],
+      "answer": "6 жақ; 12 қыр; 8 төбе",
+      "solution": "Қарама-қарсы жақтардың үш жұбы бар: 3 × 2 = 6 жақ. Төменгі шаршының 4 қыры, жоғарғысының 4 қыры және оларды қосатын 4 қыр бар: 4 + 4 + 4 = 12 қыр. Төменде 4, жоғарыда 4 төбе: 4 + 4 = 8 төбе. Сұралған рет — 6 жақ; 12 қыр; 8 төбе.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "6 жақ; 12 қыр; 8 төбе",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-9a2869fc348d90d9",
+      "modelId": "grade4-cuboids-box-wire-total",
+      "skillFamily": "box-wire-total",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dimensions": [
+          15,
+          8,
+          6
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-leveltest.json",
+          "sourceId": "9a2869fc348d90d9"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Өлшемдері 15 см, 8 см, 6 см қораптың барлық он екі қырына жіңішке таспа жүргізіледі. Әр қыр бір рет жабылса, барлығы неше сантиметр таспа қажет? Жауапқа тек санды жазыңыз.",
+      "answer": "116",
+      "solution": "Ұзындығы 15 см болатын төрт қыр, 8 см болатын төрт қыр және 6 см болатын төрт қыр бар. Барлығы: 4 × (15 + 8 + 6) = 4 × 29 = 116 см.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "116",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-3788d23ac0104797",
+      "modelId": "grade4-cuboids-cube-surface-choice",
+      "skillFamily": "cube-surface-choice",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "edge": 4,
+        "unit": "дм",
+        "choices": [
+          16,
+          64,
+          96,
+          48
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-leveltest.json",
+          "sourceId": "3788d23ac0104797"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Текше пішінді макеттің қыры 4 дм. Макеттің барлық алты жағын жабатын қағаздың ең аз ауданы қанша дм²? Қағаз қиындысы мен жапсыру жиегі есептелмейді.",
+      "options": [
+        "16 дм²",
+        "64 дм²",
+        "96 дм²",
+        "48 дм²"
+      ],
+      "answer": "96 дм²",
+      "solution": "Бір шаршы жақтың ауданы: 4 × 4 = 16 дм². Бірдей алты жақтың ауданы: 16 × 6 = 96 дм². 64 дм³ — көлем, ал бұл сұрақта аудан керек.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "96 дм²",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-49b6ccd8dae2357f",
+      "modelId": "grade4-cuboids-wire-from-surface",
+      "skillFamily": "wire-from-surface",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "surface": 216
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-leveltest.json",
+          "sourceId": "49b6ccd8dae2357f"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Текше қораптың толық бетінің ауданы 216 см². Осы текшенің он екі қырының жалпы ұзындығын сантиметрмен анықтаңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "72",
+      "solution": "Бір жағының ауданы 216 : 6 = 36 см². 6 × 6 = 36, сондықтан қыры 6 см. Барлық қырының ұзындықтары: 12 × 6 = 72 см. Ауданнан алдымен қырды табу қажет.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "72",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-5ff98cacf3e99bdb",
+      "modelId": "grade4-cuboids-equal-cube-volume-choice",
+      "skillFamily": "equal-cube-volume-choice",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "edge": 8,
+        "choices": [
+          [
+            12,
+            8,
+            4
+          ],
+          [
+            16,
+            8,
+            4
+          ],
+          [
+            10,
+            8,
+            6
+          ],
+          [
+            11,
+            8,
+            5
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-leveltest.json",
+          "sourceId": "5ff98cacf3e99bdb"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қыры 8 см текшенің көлеміне тең тікбұрышты параллелепипедті таңдаңыз. Нұсқаларда үш өлшемі берілген.",
+      "options": [
+        "12 см, 8 см, 4 см",
+        "16 см, 8 см, 4 см",
+        "10 см, 8 см, 6 см",
+        "11 см, 8 см, 5 см"
+      ],
+      "answer": "16 см, 8 см, 4 см",
+      "solution": "Текшенің көлемі 8³ = 512 см³. Нұсқаларды тексереміз: 12 × 8 × 4 = 384 см³; 16 × 8 × 4 = 512 см³; 10 × 8 × 6 = 480 см³; 11 × 8 × 5 = 440 см³. Тек 16 см, 8 см, 4 см өлшемдері 512 см³ береді. Басқа нұсқаларда үш өлшемнің қосындысы текшенікіндей 24 см болғанымен, көлемдер тең емес.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "16 см, 8 см, 4 см",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-cuboids-20de63c6d3fe04ec",
+      "modelId": "grade4-cuboids-maximum-volume-wire",
+      "skillFamily": "maximum-volume-wire",
+      "grade": 4,
+      "topic": "geometry",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "wire": 48,
+        "choices": [
+          60,
+          64,
+          48,
+          144
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-leveltest.json",
+          "sourceId": "20de63c6d3fe04ec"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық39 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Жақ, қыр, төбе сандары геометриялық тұрақтылар ретінде сақталды; қораптың бір қырын/бір жағын/толық бетін/көлемін шатастырмау дағдылары ажыратылды.",
+        "Дербес қазақша шарттар, жаңа өлшемдер және толық шешімдер жазылды. Ұзындық бірліктері, кері есеп, бірдей қырлар қосындысына қарамастан әртүрлі көлем, көлем өсімінің қосылған қабаты жеке тексерілді.",
+        "Натурал өлшем үштіктері мен ортақ бөлгіштер толық тексерілді. Бұрыш текшесін алу және тек екі қарама-қарсы жақты бояу есептері өздерінің ашық бет/қабат моделін сақтайды. Сандық нұсқалар жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic4.1 cuboid topology, dimensions, surface, volume, layers or finite integer domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тікбұрышты параллелепипед қаңқасының барлық қырлары бірге 48 см. Ұзындығы, ені және биіктігі сантиметрмен натурал сандар. Осындай дененің ең үлкен мүмкін көлемі қанша?",
+      "options": [
+        "60 см³",
+        "64 см³",
+        "48 см³",
+        "144 см³"
+      ],
+      "answer": "64 см³",
+      "solution": "Үш өлшемнің қосындысы 48 : 4 = 12 см. Бағыттарды алмастыруды қайталамай, барлық үштікті тексереміз: 1 × 1 × 10 = 10; 1 × 2 × 9 = 18; 1 × 3 × 8 = 24; 1 × 4 × 7 = 28; 1 × 5 × 6 = 30; 2 × 2 × 8 = 32; 2 × 3 × 7 = 42; 2 × 4 × 6 = 48; 2 × 5 × 5 = 50; 3 × 3 × 6 = 54; 3 × 4 × 5 = 60; 4 × 4 × 4 = 64. Толық тізімдегі ең үлкен көбейтінді 64, сондықтан ең үлкен көлем 64 см³.",
+      "calculationVerification": {
+        "method": "exact_native_cuboid_faces_edges_volumes_layer_voxel_and_complete_integer_domains",
+        "answer": "64 см³",
+        "checks": [
+          "positive_integer_geometric_dimensions",
+          "statement_solution_choices_exactly_bound_to_params",
+          "unit_and_requested_quantity_consistent",
+          "all_options_distinct_and_unique_key",
+          "complete_geometric_domains_or_exact_layer_arithmetic"
+        ]
+      }
+    }
+  ]
+}

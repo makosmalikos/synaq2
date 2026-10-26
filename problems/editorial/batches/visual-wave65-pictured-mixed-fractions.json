@@ -1,0 +1,592 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All9savedvisualgrade5topic4.10; archived sources only, no capture/download/traces; all9source rasters available.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5 topic4.10 sources",
+    "sourceVisualOccurrences": 9,
+    "addressedNewDrafts": 9,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "unavailableSourceRasters": [],
+    "exactNewSourceIds": [
+      "48cfe1325c5ba5c0",
+      "4d8cc813d55e8a37",
+      "720672ab9e585dd6",
+      "8c496d6b5cdca816",
+      "8ed4ae7056ee7458",
+      "9b0e279ded0e9f6d",
+      "a2691bf383605c6c",
+      "ba1a03d3e357953e",
+      "eb456f6d5ddfa0ce"
+    ],
+    "distinctModels": 9,
+    "semantics": "Nine source-specific mixed ordinary/decimal visualskills with native stackedfractions, exactphysicalmetric, targetroleMCQs and fifthraycoordinates."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave65-bar-nine-five-three-fifths",
+      "modelId": "visual-wave65-equal-bar-fraction-of-decimal-length",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "bar",
+        "totalHundredths": 950,
+        "parts": 5,
+        "colored": 3
+      },
+      "answer": "5,7",
+      "sourceRefs": [
+        {
+          "sourceId": "a2691bf383605c6c",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-10-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-10-level1.json#6",
+      "sourceCanonicalSha256": "4a5010d30f4fb33e56153ba553ff333f7b16a08bb1fe8b1a57f7cfbef9b346ff",
+      "sourceSkill": "9.5m fiveequalpartsthreecolored→one1.9×3=5.7; preserved decimalwhole×terminatingproperfraction.",
+      "adaptationChanges": [
+        "Барлық 9 сақталған 4.10 визуалды шарт, толық ресми шешім және барлық MCQ жеке оқылды; екі бастапқы парақтағы тоғыз растр қаралды. Жай және аралас бөлшектерді ондыққа айналдыру, жолақтың үлесі, периметр мен ауданның айырмасы, толық маршруттан үшінші бөлік пен оның уақытын бөлек табу, қалған сектордың оқушы саны, аралас көбейткішпен соңғы нөлдер, кесілген бұрыштың ауданы, ортақ қабырға арқылы сыртқы периметр, бестік сәуледегі көбейтінді мен ығысқан координата сақталды.",
+        "Жаңа деректер:9,5м/5×3→5,7;1,4дмжәне4/5дм→P4,4;маршрут17,25−4,5−5,25=7,5км÷1,5сағ→5;60оқушы25%және1/5қалған55%→33;7,2×3¾=27,000→27;6,4×3¾−2,4×1½=20,4;көкS7,7/2,8=ортақ2,75см,сары1⅖→P13,9;M1⅘×0,5=0,9;A0,8/B3,8→AC0,4×3=1,2→C2.",
+        "Барлық SVG тек жаңа параметрден нативті жасалды; тік төртбұрыш/ойық/жол бөліктері бір метрикалық масштабта, сектор бұрыштары жазылған үлестерге сай. Дәл бестік сәуле қадамы мен ішкі шекараны сыртқы периметрге қоспау сақталған. Source raster/traced paths қолданылмаған; сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай және ондық бөлшектері бар суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full9saved/newconditions/official/newsolutions/everyMCQ plusbothsource/native343sheets. Check actualstackedproper/mixedfractions/metricrectangles+route, sectorangles/complementstudentcounts, raw72×375with3trimmedzeros, cutouterminusinner/shoelace, commonheightjoinedrectangleandEXTERNALP, fifthrayunit/product/offsetinteriorcoordinate. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave65-bar-nine-five-three-fifths.svg",
+      "verificationModule": "scripts/editorial/visual-wave65-models.mjs",
+      "statement": "Таспаның толық ұзындығы метрмен көрсетілген. Тең бөліктердің көк түске боялғандарының БАРЛЫҚ ұзындығы неше метр? Жауапқа тек санды жазыңыз.",
+      "solution": "Толық 9,5 м 5 тең бөлікке бөлінген. Бір бөлік 9,5 ÷ 5 = 1,9 м. Көк 3 бөлік 1,9 × 3 = 5,7 м. Үлеспен де 9,5 × (3/5) = 5,7. Ақ бөліктерді қосу басқа сұраққа жауап береді.",
+      "figureDescription": "5 тең бөлік, сол жақтағы 3 бөлігі көк. Бүкіл жолаққа қатысты өлшем 9,5 м.",
+      "figureSha256": "bedcc1c62f04cf158703b6ee9baad7bf0ebbecbfd43ceab2be8ecf5f503a9348",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5,7",
+        "checks": {
+          "equalParts": 5,
+          "colored": 3,
+          "onePartHundredths": 190,
+          "coloredHundredths": 570,
+          "wholeHundredths": 950,
+          "backConservation": 950
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave65-rectangle-one-four-four-fifths",
+      "modelId": "visual-wave65-mixed-format-rectangle-perimeter",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "easy",
+      "params": {
+        "scene": "rectangle",
+        "lengthHundredths": 140,
+        "widthMixed": [
+          0,
+          4,
+          5
+        ],
+        "target": "perimeter"
+      },
+      "answer": "4,4",
+      "sourceRefs": [
+        {
+          "sourceId": "4d8cc813d55e8a37",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-10-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-10-level1.json#12",
+      "sourceCanonicalSha256": "ad7ab9d788d887e94ac6a8a76e97bc0221cb0ef061a21fa17fe6f0b2db98d0cc",
+      "sourceSkill": "1.4dm and4/5dm=.8→P4.4; half2.2/area1.12/fractiondigits.45→wrongP3.7.",
+      "adaptationChanges": [
+        "Барлық 9 сақталған 4.10 визуалды шарт, толық ресми шешім және барлық MCQ жеке оқылды; екі бастапқы парақтағы тоғыз растр қаралды. Жай және аралас бөлшектерді ондыққа айналдыру, жолақтың үлесі, периметр мен ауданның айырмасы, толық маршруттан үшінші бөлік пен оның уақытын бөлек табу, қалған сектордың оқушы саны, аралас көбейткішпен соңғы нөлдер, кесілген бұрыштың ауданы, ортақ қабырға арқылы сыртқы периметр, бестік сәуледегі көбейтінді мен ығысқан координата сақталды.",
+        "Жаңа деректер:9,5м/5×3→5,7;1,4дмжәне4/5дм→P4,4;маршрут17,25−4,5−5,25=7,5км÷1,5сағ→5;60оқушы25%және1/5қалған55%→33;7,2×3¾=27,000→27;6,4×3¾−2,4×1½=20,4;көкS7,7/2,8=ортақ2,75см,сары1⅖→P13,9;M1⅘×0,5=0,9;A0,8/B3,8→AC0,4×3=1,2→C2.",
+        "Барлық SVG тек жаңа параметрден нативті жасалды; тік төртбұрыш/ойық/жол бөліктері бір метрикалық масштабта, сектор бұрыштары жазылған үлестерге сай. Дәл бестік сәуле қадамы мен ішкі шекараны сыртқы периметрге қоспау сақталған. Source raster/traced paths қолданылмаған; сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай және ондық бөлшектері бар суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full9saved/newconditions/official/newsolutions/everyMCQ plusbothsource/native343sheets. Check actualstackedproper/mixedfractions/metricrectangles+route, sectorangles/complementstudentcounts, raw72×375with3trimmedzeros, cutouterminusinner/shoelace, commonheightjoinedrectangleandEXTERNALP, fifthrayunit/product/offsetinteriorcoordinate. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave65-rectangle-one-four-four-fifths.svg",
+      "verificationModule": "scripts/editorial/visual-wave65-models.mjs",
+      "options": [
+        "2,2",
+        "4,4",
+        "1,12",
+        "3,7"
+      ],
+      "statement": "ABCD тіктөртбұрышының екі қабырғасы дециметрмен берілген: біреуі ондық, екіншісі жай бөлшек. Тіктөртбұрыштың ПЕРИМЕТРІ неше дециметр?",
+      "solution": "(4/5) = 0,8 дм. Қабырғалардың қосындысы 1,4 + 0,8 = 2,2. Периметр 2 × (1,4 + 0,8) = 4,4 дм. 2,2 — жарты периметр; 1,12 — ауданның сандық мәні. (4/5)-ті 0,45 деп жазсақ, 2 × (1,4 + 0,45) = 3,7 деген қате периметр шығар еді.",
+      "figureDescription": "ABCD тіктөртбұрышы, AD 1,4, AB 4/5. Бірлік дм.",
+      "figureSha256": "a907fe31fd1e12c1030b008a00082ec5706994372f0610924b8eddb9858b15c9",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4,4",
+        "checks": {
+          "lengthHundredths": 140,
+          "widthHundredths": 80,
+          "areaTenThousandths": 11200,
+          "perimeterHundredths": 440,
+          "mixed": [
+            0,
+            4,
+            5
+          ],
+          "target": "perimeter"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave65-route-seventeen-quarter-three-segments",
+      "modelId": "visual-wave65-remaining-third-route-over-mixed-time",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "route",
+        "totalHundredths": 1725,
+        "firstMixed": [
+          4,
+          1,
+          2
+        ],
+        "secondHundredths": 525,
+        "timeMixed": [
+          1,
+          1,
+          2
+        ]
+      },
+      "answer": "5",
+      "sourceRefs": [
+        {
+          "sourceId": "ba1a03d3e357953e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-10-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-10-level2.json#1",
+      "sourceCanonicalSha256": "a33c6f54a625765e449bc3ceeeec382049b2c866f354d094d6ee30704bb96516",
+      "sourceSkill": "Total17.25−first4.5−second5.25=third7.5, ONLYthird distance÷1.5h=5; all3stage and2mixedconversionsbound.",
+      "adaptationChanges": [
+        "Барлық 9 сақталған 4.10 визуалды шарт, толық ресми шешім және барлық MCQ жеке оқылды; екі бастапқы парақтағы тоғыз растр қаралды. Жай және аралас бөлшектерді ондыққа айналдыру, жолақтың үлесі, периметр мен ауданның айырмасы, толық маршруттан үшінші бөлік пен оның уақытын бөлек табу, қалған сектордың оқушы саны, аралас көбейткішпен соңғы нөлдер, кесілген бұрыштың ауданы, ортақ қабырға арқылы сыртқы периметр, бестік сәуледегі көбейтінді мен ығысқан координата сақталды.",
+        "Жаңа деректер:9,5м/5×3→5,7;1,4дмжәне4/5дм→P4,4;маршрут17,25−4,5−5,25=7,5км÷1,5сағ→5;60оқушы25%және1/5қалған55%→33;7,2×3¾=27,000→27;6,4×3¾−2,4×1½=20,4;көкS7,7/2,8=ортақ2,75см,сары1⅖→P13,9;M1⅘×0,5=0,9;A0,8/B3,8→AC0,4×3=1,2→C2.",
+        "Барлық SVG тек жаңа параметрден нативті жасалды; тік төртбұрыш/ойық/жол бөліктері бір метрикалық масштабта, сектор бұрыштары жазылған үлестерге сай. Дәл бестік сәуле қадамы мен ішкі шекараны сыртқы периметрге қоспау сақталған. Source raster/traced paths қолданылмаған; сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай және ондық бөлшектері бар суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full9saved/newconditions/official/newsolutions/everyMCQ plusbothsource/native343sheets. Check actualstackedproper/mixedfractions/metricrectangles+route, sectorangles/complementstudentcounts, raw72×375with3trimmedzeros, cutouterminusinner/shoelace, commonheightjoinedrectangleandEXTERNALP, fifthrayunit/product/offsetinteriorcoordinate. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave65-route-seventeen-quarter-three-segments.svg",
+      "verificationModule": "scripts/editorial/visual-wave65-models.mjs",
+      "statement": "Маршруттың толық және алғашқы екі бөлігінің ұзындығы километрмен көрсетілген. Турист ТЕК үшінші жасыл бөлікті (1 + (1/2)) сағатта жүрді. Оның осы бөліктегі жылдамдығы неше км/сағ? Жауапқа тек санды жазыңыз.",
+      "solution": "Бірінші (4 + (1/2)) = 4,5 км. Үшінші бөлік 17,25 − 4,5 − 5,25 = 7,5 км. Берілген уақыт (1 + (1/2)) = 1,5 сағ. Жылдамдық 7,5 ÷ 1,5 = 5 км/сағ. Тексеру: 5 × 1,5 = 7,5; үш бөліктің қосындысы 17,25 км. Уақыт бүкіл маршрутқа емес, тек үшінші бөлікке тиесілі.",
+      "figureDescription": "Үш түсті маршрут, толық ұзындығы 17,25 км; бірінші 4 бүтін 1/2 км, екінші 5,25 км, үшінші жасылда сұрақ белгісі.",
+      "figureSha256": "e8be31de717090a2de846e071f334dc55f08656f3f3100376a0d8b83cba39cc1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5",
+        "checks": {
+          "firstHundredths": 450,
+          "secondHundredths": 525,
+          "thirdHundredths": 750,
+          "totalHundredths": 1725,
+          "timeHundredths": 150,
+          "speed": 5,
+          "backDistance": 750
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave65-sports-sixty-quarter-fifth",
+      "modelId": "visual-wave65-pie-complement-mixed-format-student-count",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "pie",
+        "students": 60,
+        "blueHundredths": 25,
+        "yellowFraction": [
+          1,
+          5
+        ]
+      },
+      "answer": "33",
+      "sourceRefs": [
+        {
+          "sourceId": "720672ab9e585dd6",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-10-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-10-level2.json#11",
+      "sourceCanonicalSha256": "f2233623b81ccc58f228cce4c4acaccc276110b4a4dc400384db0e098bdaac32",
+      "sourceSkill": "Actualblue.25/yellow1/5=.2→green.55,60students→33;blue15/yellow12/sum27 allwrongrolesunique.",
+      "adaptationChanges": [
+        "Барлық 9 сақталған 4.10 визуалды шарт, толық ресми шешім және барлық MCQ жеке оқылды; екі бастапқы парақтағы тоғыз растр қаралды. Жай және аралас бөлшектерді ондыққа айналдыру, жолақтың үлесі, периметр мен ауданның айырмасы, толық маршруттан үшінші бөлік пен оның уақытын бөлек табу, қалған сектордың оқушы саны, аралас көбейткішпен соңғы нөлдер, кесілген бұрыштың ауданы, ортақ қабырға арқылы сыртқы периметр, бестік сәуледегі көбейтінді мен ығысқан координата сақталды.",
+        "Жаңа деректер:9,5м/5×3→5,7;1,4дмжәне4/5дм→P4,4;маршрут17,25−4,5−5,25=7,5км÷1,5сағ→5;60оқушы25%және1/5қалған55%→33;7,2×3¾=27,000→27;6,4×3¾−2,4×1½=20,4;көкS7,7/2,8=ортақ2,75см,сары1⅖→P13,9;M1⅘×0,5=0,9;A0,8/B3,8→AC0,4×3=1,2→C2.",
+        "Барлық SVG тек жаңа параметрден нативті жасалды; тік төртбұрыш/ойық/жол бөліктері бір метрикалық масштабта, сектор бұрыштары жазылған үлестерге сай. Дәл бестік сәуле қадамы мен ішкі шекараны сыртқы периметрге қоспау сақталған. Source raster/traced paths қолданылмаған; сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай және ондық бөлшектері бар суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full9saved/newconditions/official/newsolutions/everyMCQ plusbothsource/native343sheets. Check actualstackedproper/mixedfractions/metricrectangles+route, sectorangles/complementstudentcounts, raw72×375with3trimmedzeros, cutouterminusinner/shoelace, commonheightjoinedrectangleandEXTERNALP, fifthrayunit/product/offsetinteriorcoordinate. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave65-sports-sixty-quarter-fifth.svg",
+      "verificationModule": "scripts/editorial/visual-wave65-models.mjs",
+      "options": [
+        "15",
+        "12",
+        "33",
+        "27"
+      ],
+      "statement": "60 оқушының спорт таңдауы үш топқа бөлінген. Көк және сары секторларда БАРЛЫҚ оқушыға қатысты үлестері жазылған. Үлесі сұрақ белгісімен берілген ЖАСЫЛ топта неше оқушы бар?",
+      "solution": "(1/5) = 0,2. Жасыл үлес 1 − 0,25 − 0,2 = 0,55. Оқушы саны 60 × 0,55 = 33. Көк 15, сары 12, жасыл 33: барлығы 60. Алғашқы екі топты қосу 27 береді; бұл жасыл топ емес.",
+      "figureDescription": "Дөңгелек үш топ. Көк үлес 0,25, сары 1/5, жасыл сұрақ белгісі. Секторлардың аудандары үлестерге сай.",
+      "figureSha256": "51479db178d557803ae17d8fabdec5479f84c5790f1c0f0a9f17d3416f6be867",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "33",
+        "checks": {
+          "blueHundredths": 25,
+          "yellowHundredths": 20,
+          "greenHundredths": 55,
+          "counts": [
+            15,
+            12,
+            33
+          ],
+          "allStudents": 60,
+          "backTotal": 60
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave65-rectangle-seven-two-three-three-quarters",
+      "modelId": "visual-wave65-decimal-times-mixed-rectangle-area",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "lengthHundredths": 720,
+        "widthMixed": [
+          3,
+          3,
+          4
+        ],
+        "target": "area"
+      },
+      "answer": "27",
+      "sourceRefs": [
+        {
+          "sourceId": "48cfe1325c5ba5c0",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-10-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-10-level2.json#13",
+      "sourceCanonicalSha256": "a3650f51743efb67f84330cb2e674da7182f9d869c14936264d075f794e0d86f",
+      "sourceSkill": "7.2cm×3¾=7.2×3.75; raw72×375=27000/placecount3→27.000=27; decomposition21.6+5.4.",
+      "adaptationChanges": [
+        "Барлық 9 сақталған 4.10 визуалды шарт, толық ресми шешім және барлық MCQ жеке оқылды; екі бастапқы парақтағы тоғыз растр қаралды. Жай және аралас бөлшектерді ондыққа айналдыру, жолақтың үлесі, периметр мен ауданның айырмасы, толық маршруттан үшінші бөлік пен оның уақытын бөлек табу, қалған сектордың оқушы саны, аралас көбейткішпен соңғы нөлдер, кесілген бұрыштың ауданы, ортақ қабырға арқылы сыртқы периметр, бестік сәуледегі көбейтінді мен ығысқан координата сақталды.",
+        "Жаңа деректер:9,5м/5×3→5,7;1,4дмжәне4/5дм→P4,4;маршрут17,25−4,5−5,25=7,5км÷1,5сағ→5;60оқушы25%және1/5қалған55%→33;7,2×3¾=27,000→27;6,4×3¾−2,4×1½=20,4;көкS7,7/2,8=ортақ2,75см,сары1⅖→P13,9;M1⅘×0,5=0,9;A0,8/B3,8→AC0,4×3=1,2→C2.",
+        "Барлық SVG тек жаңа параметрден нативті жасалды; тік төртбұрыш/ойық/жол бөліктері бір метрикалық масштабта, сектор бұрыштары жазылған үлестерге сай. Дәл бестік сәуле қадамы мен ішкі шекараны сыртқы периметрге қоспау сақталған. Source raster/traced paths қолданылмаған; сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай және ондық бөлшектері бар суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full9saved/newconditions/official/newsolutions/everyMCQ plusbothsource/native343sheets. Check actualstackedproper/mixedfractions/metricrectangles+route, sectorangles/complementstudentcounts, raw72×375with3trimmedzeros, cutouterminusinner/shoelace, commonheightjoinedrectangleandEXTERNALP, fifthrayunit/product/offsetinteriorcoordinate. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave65-rectangle-seven-two-three-three-quarters.svg",
+      "verificationModule": "scripts/editorial/visual-wave65-models.mjs",
+      "statement": "ABCD тіктөртбұрышының өлшемдері сантиметрмен берілген. Ұзындығын ондық саннан, енін аралас саннан оқып, АУДАНЫН табыңыз. Жауап шаршы сантиметрмен алынады. Жауапқа тек санды жазыңыз.",
+      "solution": "Аралас ен (3 + (3/4)) = 3,75 см. Аудан 7,2 × 3,75 = 27 см². Үтірсіз 72 × 375 = 27000; екі көбейткіште барлығы 1 + 2 = 3 ондық орын: 27,000 = 27. Таратып тексеру: 7,2 × 3 + 7,2 × (3/4) = 21,6 + 5,4 = 27. Периметр емес, екі қабырғаның көбейтіндісі сұралған.",
+      "figureDescription": "ABCD тіктөртбұрышы, AD 7,2, AB 3 бүтін 3/4. Бірлік см.",
+      "figureSha256": "aac251837dc4d542eb2918b91b65b022e78a875700385d5cd9975bcb42dfb644",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "27",
+        "checks": {
+          "lengthHundredths": 720,
+          "widthHundredths": 375,
+          "areaTenThousandths": 270000,
+          "perimeterHundredths": 2190,
+          "mixed": [
+            3,
+            3,
+            4
+          ],
+          "target": "area"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave65-notch-six-four-three-three-quarters",
+      "modelId": "visual-wave65-mixed-format-corner-cut-area",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "notch",
+        "lengthHundredths": 640,
+        "heightMixed": [
+          3,
+          3,
+          4
+        ],
+        "cutWidthHundredths": 240,
+        "cutHeightMixed": [
+          1,
+          1,
+          2
+        ]
+      },
+      "answer": "20,4",
+      "sourceRefs": [
+        {
+          "sourceId": "8c496d6b5cdca816",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-10-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-10-level3.json#7",
+      "sourceCanonicalSha256": "830356f935f35eedc165ce3b41c0132bed5ca33486f188d5acb038eeac5a0c8f",
+      "sourceSkill": "Outer6.4×3.75=24,cut2.4×1.5=3.6,area20.4; options24omitcut/27.6addcut/20.3outerP.",
+      "adaptationChanges": [
+        "Барлық 9 сақталған 4.10 визуалды шарт, толық ресми шешім және барлық MCQ жеке оқылды; екі бастапқы парақтағы тоғыз растр қаралды. Жай және аралас бөлшектерді ондыққа айналдыру, жолақтың үлесі, периметр мен ауданның айырмасы, толық маршруттан үшінші бөлік пен оның уақытын бөлек табу, қалған сектордың оқушы саны, аралас көбейткішпен соңғы нөлдер, кесілген бұрыштың ауданы, ортақ қабырға арқылы сыртқы периметр, бестік сәуледегі көбейтінді мен ығысқан координата сақталды.",
+        "Жаңа деректер:9,5м/5×3→5,7;1,4дмжәне4/5дм→P4,4;маршрут17,25−4,5−5,25=7,5км÷1,5сағ→5;60оқушы25%және1/5қалған55%→33;7,2×3¾=27,000→27;6,4×3¾−2,4×1½=20,4;көкS7,7/2,8=ортақ2,75см,сары1⅖→P13,9;M1⅘×0,5=0,9;A0,8/B3,8→AC0,4×3=1,2→C2.",
+        "Барлық SVG тек жаңа параметрден нативті жасалды; тік төртбұрыш/ойық/жол бөліктері бір метрикалық масштабта, сектор бұрыштары жазылған үлестерге сай. Дәл бестік сәуле қадамы мен ішкі шекараны сыртқы периметрге қоспау сақталған. Source raster/traced paths қолданылмаған; сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай және ондық бөлшектері бар суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full9saved/newconditions/official/newsolutions/everyMCQ plusbothsource/native343sheets. Check actualstackedproper/mixedfractions/metricrectangles+route, sectorangles/complementstudentcounts, raw72×375with3trimmedzeros, cutouterminusinner/shoelace, commonheightjoinedrectangleandEXTERNALP, fifthrayunit/product/offsetinteriorcoordinate. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave65-notch-six-four-three-three-quarters.svg",
+      "verificationModule": "scripts/editorial/visual-wave65-models.mjs",
+      "options": [
+        "20,4",
+        "24",
+        "27,6",
+        "20,3"
+      ],
+      "statement": "Үлкен тіктөртбұрыштың жоғарғы оң бұрышынан шағын тіктөртбұрыш кесілген. Барлық ұзындық дециметрмен берілген. Көк түсті қалған фигураның АУДАНЫ неше дм²?",
+      "solution": "Биіктіктер (3 + (3/4)) = 3,75 және (1 + (1/2)) = 1,5. Үлкен аудан 6,4 × 3,75 = 24 дм². Кесілген аудан 2,4 × 1,5 = 3,6 дм². Қалғаны 24 − 3,6 = 20,4 дм². Төменгі және үстіңгі қалдық тіктөртбұрышпен тексеру: 14,4 + 6 = 20,4. 27,6 — кесілгенді қосқан қате аудан; 20,3 — үлкен тіктөртбұрыштың периметрі.",
+      "figureDescription": "Жоғарғы оң бұрышында ойығы бар фигура. Сыртқы төменгі ұзындық 6,4, сол толық биіктік 3 бүтін 3/4. Ойық ені 2,4, ішкі тік тереңдік 1 бүтін 1/2.",
+      "figureSha256": "fe3dc6327920e79b31074a440a953aaf2d6435709eb039b132125967d540634a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "20,4",
+        "checks": {
+          "outerHeightHundredths": 375,
+          "cutHeightHundredths": 150,
+          "outerAreaTenThousandths": 240000,
+          "cutAreaTenThousandths": 36000,
+          "areaTenThousandths": 204000,
+          "lowerAreaTenThousandths": 144000,
+          "upperAreaTenThousandths": 60000,
+          "outerPerimeterHundredths": 2030
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave65-joined-seven-seven-width-two-eight",
+      "modelId": "visual-wave65-joined-rectangle-common-height-outer-perimeter",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "joined",
+        "blueWidthHundredths": 280,
+        "blueAreaTenThousandths": 77000,
+        "yellowWidthMixed": [
+          1,
+          2,
+          5
+        ]
+      },
+      "answer": "13,9",
+      "sourceRefs": [
+        {
+          "sourceId": "8ed4ae7056ee7458",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-10-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-10-level3.json#11",
+      "sourceCanonicalSha256": "37d504a0f2b847f5e0432368a49a54b9d55478d096c592c58f22509931b28549",
+      "sourceSkill": "BlueS7.7cm²/2.8cm→sharedh2.75;yellowwidth1⅖=1.4→whole4.2,P13.9;internalborderNOTouterP.",
+      "adaptationChanges": [
+        "Барлық 9 сақталған 4.10 визуалды шарт, толық ресми шешім және барлық MCQ жеке оқылды; екі бастапқы парақтағы тоғыз растр қаралды. Жай және аралас бөлшектерді ондыққа айналдыру, жолақтың үлесі, периметр мен ауданның айырмасы, толық маршруттан үшінші бөлік пен оның уақытын бөлек табу, қалған сектордың оқушы саны, аралас көбейткішпен соңғы нөлдер, кесілген бұрыштың ауданы, ортақ қабырға арқылы сыртқы периметр, бестік сәуледегі көбейтінді мен ығысқан координата сақталды.",
+        "Жаңа деректер:9,5м/5×3→5,7;1,4дмжәне4/5дм→P4,4;маршрут17,25−4,5−5,25=7,5км÷1,5сағ→5;60оқушы25%және1/5қалған55%→33;7,2×3¾=27,000→27;6,4×3¾−2,4×1½=20,4;көкS7,7/2,8=ортақ2,75см,сары1⅖→P13,9;M1⅘×0,5=0,9;A0,8/B3,8→AC0,4×3=1,2→C2.",
+        "Барлық SVG тек жаңа параметрден нативті жасалды; тік төртбұрыш/ойық/жол бөліктері бір метрикалық масштабта, сектор бұрыштары жазылған үлестерге сай. Дәл бестік сәуле қадамы мен ішкі шекараны сыртқы периметрге қоспау сақталған. Source raster/traced paths қолданылмаған; сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай және ондық бөлшектері бар суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full9saved/newconditions/official/newsolutions/everyMCQ plusbothsource/native343sheets. Check actualstackedproper/mixedfractions/metricrectangles+route, sectorangles/complementstudentcounts, raw72×375with3trimmedzeros, cutouterminusinner/shoelace, commonheightjoinedrectangleandEXTERNALP, fifthrayunit/product/offsetinteriorcoordinate. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave65-joined-seven-seven-width-two-eight.svg",
+      "verificationModule": "scripts/editorial/visual-wave65-models.mjs",
+      "statement": "Көк пен сары тіктөртбұрыштардың биіктігі ортақ; барлық қабырға сантиметрмен берілген. S — тек көк бөліктің ауданы, см². Екеуінен құралған ҮЛКЕН тіктөртбұрыштың сыртқы периметрі неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Ортақ биіктік S ÷ көк ен: 7,7 ÷ 2,8 = 2,75 см. Сары ен (1 + (2/5)) = 1,4 см. Үлкен ұзындық 2,8 + 1,4 = 4,2 см. Сыртқы периметр 2 × (4,2 + 2,75) = 13,9 см. Ортаңғы ортақ шекара ішкі қабырға, периметрге қосылмайды. Тексеру: 2,8 × 2,75 = 7,7 см².",
+      "figureDescription": "Бірдей биіктікті көк және сары екі тіктөртбұрыш. Көк ен 2,8, сары ен 1 бүтін 2/5, көктің ішіндегі S = 7,7 см².",
+      "figureSha256": "2083f578b06acfdb587dc7b1fbc11acf60cd9a94e7e88269ae6534f0801d5760",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "13,9",
+        "checks": {
+          "commonHeightHundredths": 275,
+          "blueWidthHundredths": 280,
+          "yellowWidthHundredths": 140,
+          "wholeLengthHundredths": 420,
+          "perimeterHundredths": 1390,
+          "backBlueArea": 77000,
+          "wrongWithSharedBorderHundredths": 1940
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave65-ray-nine-fifths-half-product",
+      "modelId": "visual-wave65-fifth-ray-coordinate-times-half",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "ray",
+        "maxTick": 13,
+        "denominator": 5,
+        "mTick": 9,
+        "multiplierHundredths": 50
+      },
+      "answer": "0,9",
+      "sourceRefs": [
+        {
+          "sourceId": "eb456f6d5ddfa0ce",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-10-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-10-leveltest.json#2",
+      "sourceCanonicalSha256": "0a655349faad8b1ebb803bc1bad3c18af2ef0cd858ced2804f74d2a120ae7ff5",
+      "sourceSkill": "Unit5equalgaps,M1⅘=1.8×.5=.9; wrongtickindex9×.5=4.5,assumingtenths.9×.5=.45,adding.5→2.3.",
+      "adaptationChanges": [
+        "Барлық 9 сақталған 4.10 визуалды шарт, толық ресми шешім және барлық MCQ жеке оқылды; екі бастапқы парақтағы тоғыз растр қаралды. Жай және аралас бөлшектерді ондыққа айналдыру, жолақтың үлесі, периметр мен ауданның айырмасы, толық маршруттан үшінші бөлік пен оның уақытын бөлек табу, қалған сектордың оқушы саны, аралас көбейткішпен соңғы нөлдер, кесілген бұрыштың ауданы, ортақ қабырға арқылы сыртқы периметр, бестік сәуледегі көбейтінді мен ығысқан координата сақталды.",
+        "Жаңа деректер:9,5м/5×3→5,7;1,4дмжәне4/5дм→P4,4;маршрут17,25−4,5−5,25=7,5км÷1,5сағ→5;60оқушы25%және1/5қалған55%→33;7,2×3¾=27,000→27;6,4×3¾−2,4×1½=20,4;көкS7,7/2,8=ортақ2,75см,сары1⅖→P13,9;M1⅘×0,5=0,9;A0,8/B3,8→AC0,4×3=1,2→C2.",
+        "Барлық SVG тек жаңа параметрден нативті жасалды; тік төртбұрыш/ойық/жол бөліктері бір метрикалық масштабта, сектор бұрыштары жазылған үлестерге сай. Дәл бестік сәуле қадамы мен ішкі шекараны сыртқы периметрге қоспау сақталған. Source raster/traced paths қолданылмаған; сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай және ондық бөлшектері бар суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full9saved/newconditions/official/newsolutions/everyMCQ plusbothsource/native343sheets. Check actualstackedproper/mixedfractions/metricrectangles+route, sectorangles/complementstudentcounts, raw72×375with3trimmedzeros, cutouterminusinner/shoelace, commonheightjoinedrectangleandEXTERNALP, fifthrayunit/product/offsetinteriorcoordinate. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave65-ray-nine-fifths-half-product.svg",
+      "verificationModule": "scripts/editorial/visual-wave65-models.mjs",
+      "options": [
+        "0,9",
+        "4,5",
+        "0,45",
+        "2,3"
+      ],
+      "statement": "Сәуледегі бірлік кесіндінің тең бөліктерін санап, M нүктесінің координатасын оқыңыз. Осы координатаны 0,5 санына көбейткендегі МӘНДІ таңдаңыз.",
+      "solution": "0 мен 1 арасында бес аралық, қадам (1/5) = 0,2. M тоғызыншы қадамда: (1 + (4/5)) = 1,8. 1,8 × 0,5 = 0,9. 9-ды координата деу 4,5; қадамды 0,1 деу 0,45; көбейтудің орнына қосу 2,3 береді. Үшеуі де басқа қате әрекет.",
+      "figureDescription": "Бірлік бес тең аралыққа бөлінген координаталық сәуле. M нүктесі 0-ден 9-аралықта.",
+      "figureSha256": "c7e2703d5d96fc8e639f015235a7c91449e0ff127ce18835ad1215b3fc4542ff",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,9",
+        "checks": {
+          "unitIntervals": 5,
+          "mCoordinateHundredths": 180,
+          "multiplierHundredths": 50,
+          "resultHundredths": 90
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave65-ray-four-nineteen-fifths-inner-point",
+      "modelId": "visual-wave65-offset-ray-given-fraction-segment-interior-coordinate",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "ray",
+        "maxTick": 20,
+        "denominator": 5,
+        "aTick": 4,
+        "bTick": 19,
+        "partHundredths": 40
+      },
+      "answer": "2",
+      "sourceRefs": [
+        {
+          "sourceId": "9b0e279ded0e9f6d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-10-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-10-leveltest.json#5",
+      "sourceCanonicalSha256": "b44218310e5fcda0af1d1cc16fa1e481e06bcf170f34489335d1142232531097",
+      "sourceSkill": "A.8/B3.8→AB3,AC=.4×3=1.2 thenCOORDC=.8+1.2=2;wrongAClength1.2/B−AC2.6/doubledpart.8AB→3.2.",
+      "adaptationChanges": [
+        "Барлық 9 сақталған 4.10 визуалды шарт, толық ресми шешім және барлық MCQ жеке оқылды; екі бастапқы парақтағы тоғыз растр қаралды. Жай және аралас бөлшектерді ондыққа айналдыру, жолақтың үлесі, периметр мен ауданның айырмасы, толық маршруттан үшінші бөлік пен оның уақытын бөлек табу, қалған сектордың оқушы саны, аралас көбейткішпен соңғы нөлдер, кесілген бұрыштың ауданы, ортақ қабырға арқылы сыртқы периметр, бестік сәуледегі көбейтінді мен ығысқан координата сақталды.",
+        "Жаңа деректер:9,5м/5×3→5,7;1,4дмжәне4/5дм→P4,4;маршрут17,25−4,5−5,25=7,5км÷1,5сағ→5;60оқушы25%және1/5қалған55%→33;7,2×3¾=27,000→27;6,4×3¾−2,4×1½=20,4;көкS7,7/2,8=ортақ2,75см,сары1⅖→P13,9;M1⅘×0,5=0,9;A0,8/B3,8→AC0,4×3=1,2→C2.",
+        "Барлық SVG тек жаңа параметрден нативті жасалды; тік төртбұрыш/ойық/жол бөліктері бір метрикалық масштабта, сектор бұрыштары жазылған үлестерге сай. Дәл бестік сәуле қадамы мен ішкі шекараны сыртқы периметрге қоспау сақталған. Source raster/traced paths қолданылмаған; сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай және ондық бөлшектері бар суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full9saved/newconditions/official/newsolutions/everyMCQ plusbothsource/native343sheets. Check actualstackedproper/mixedfractions/metricrectangles+route, sectorangles/complementstudentcounts, raw72×375with3trimmedzeros, cutouterminusinner/shoelace, commonheightjoinedrectangleandEXTERNALP, fifthrayunit/product/offsetinteriorcoordinate. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave65-ray-four-nineteen-fifths-inner-point.svg",
+      "verificationModule": "scripts/editorial/visual-wave65-models.mjs",
+      "options": [
+        "1,2",
+        "2,6",
+        "2",
+        "3,2"
+      ],
+      "statement": "A және B координаталарын сәуледен оқыңыз. C нүктесі AB кесіндісінде, AC = 0,4 × AB. C нүктесінің КООРДИНАТАСЫН таңдаңыз; AC ұзындығы емес, координата сұралған.",
+      "solution": "Қадам (1/5) = 0,2. A(0,8), B(3,8). AB = 3,8 − 0,8 = 3. AC = 0,4 × 3 = 1,2. C координатасы A-дан оңға осы ұзындықты қосумен табылады: 0,8 + 1,2 = 2. 1,2 — тек AC ұзындығы; B-дан кері санау 2,6, үлесті 0,8 деп алу 3,2 берер еді. 0,8 < 2 < 3,8 болғандықтан C кесіндінің ішінде.",
+      "figureDescription": "Бірлік бес тең аралыққа бөлінген координаталық сәуле. A нүктесі 0-ден 4-аралықта, B 19-аралықта. C орналасуы алдын ала көрсетілмеген.",
+      "figureSha256": "e4deb79c0898838b6f57adda3617f2086ea18f75e35e1c19e42b779d42b4da78",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2",
+        "checks": {
+          "aHundredths": 80,
+          "bHundredths": 380,
+          "abHundredths": 300,
+          "acHundredths": 120,
+          "cHundredths": 200,
+          "partHundredths": 40,
+          "backRatio": 0.4
+        }
+      }
+    }
+  ]
+}

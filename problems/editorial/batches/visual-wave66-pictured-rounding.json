@@ -1,0 +1,871 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All13savedvisualgrade5topic4.11; archived sources only, no capture/download/traces; all13source rasters available.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5 topic4.11 sources",
+    "sourceVisualOccurrences": 13,
+    "addressedNewDrafts": 13,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "unavailableSourceRasters": [],
+    "exactNewSourceIds": [
+      "092e2ce45c63214c",
+      "12bdc835cc216aae",
+      "13e4c816ba4a9dd8",
+      "47d3eae7ce8aa29f",
+      "531521d14834565c",
+      "b1b432942dc7d069",
+      "c63fcfee8d0782dc",
+      "ca8cc333f6e05e0e",
+      "ce0971210b58b51d",
+      "ef21a4cf8d94a62e",
+      "f0bec31e85886ae4",
+      "f2cdad0699192250",
+      "f782f70870508c3a"
+    ],
+    "distinctModels": 13,
+    "semantics": "Thirteen source-specific rounding visualskills with exactinteger placearithmetic, actualscale reading, preservedtie/carryzero/order/targetroles."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave66-ruler-sixteen-eight-round-whole",
+      "modelId": "visual-wave66-ruler-length-tenths-round-whole",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ruler",
+        "startTenths": 0,
+        "endTenths": 168,
+        "maxTenths": 180
+      },
+      "answer": "17",
+      "sourceRefs": [
+        {
+          "sourceId": "b1b432942dc7d069",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-11-level1.json#3",
+      "sourceCanonicalSha256": "74f8183d50ddd61f9f858dd961334f7c96f058a506458045d438298ee31fb297",
+      "sourceSkill": "Actualruler0…18cm tenmmpercm,pencil16.8cm→17whole, notendpointtruncation.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.11 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; үш парақтағы 13 бастапқы растр қаралды. Жаңа сандар/нүкте атаулары/өз нативті SVG берілді. Өлшемді шкаладан оқу, төмен/жоғары дөңгелектеу, дәл 5 ортасын жоғары алу, барлық нүктені жіктеу, әр координатаны бөлек дөңгелектеу, дәл аудан/периметрден соң ғана жуықтау, төрт цифрдың толық ең кіші реті, екі дәлдіктегі мәннің қосындысы, ондық 9-дан бүтінге ауысу және соңғы0, кесінді ұзындығын алдымен азайту сақталды.",
+        "Жаңа деректер:қарындаш16,8→17см;A5,24→5,2;термометр38,7→39;M3,75→3,8;A14,8→15;K6,32/L6,34/M6,35/N6,39ішінен6,4кеM/N;A10,7жәнеB11,3→11+11=22;еден5,7×4,6=26,22→26;P2(2,76+1,57)=8,66→8,7;2479карточкаларыmin2,479→2,48;K2,45→2+2,5=4,5;P19,96→20,0;A0,8/B4,4→AB3,6→4.",
+        "Барлық SVG жаңа параметрлермен нативті жасалды. Термометр оқу үлгісі, медициналық нұсқау емес. Еден екі өлшем бойынша ортақ масштабта. Жуықтайтын нүктелердің нақты координаталары суреттегі белгілерден оқылады; C-style answer marker немесе дайын жуық жауап суретте көрсетілмеген. Source raster/tracedpaths қолданылмаған, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Өлшемдер мен координаталарды дөңгелектеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/newconditions/official/newsolutions/everyMCQ plus3source/native343sheets. Observeactualrulermmticks/pencilend, thermometerliquid38.7, everylocalrayendpoint/unittick/midpoint, all4selectedpointsincltie, metricfloor/Pbefore-round, all24cardpermutations/rounding, twoindependenttargets, 19.96carryto20.0finalzero, subtractABBEFORErounding. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave66-ruler-sixteen-eight-round-whole.svg",
+      "verificationModule": "scripts/editorial/visual-wave66-models.mjs",
+      "statement": "Қарындаштың A ұшы сызғыштың 0 белгісінде. B ұшына дейінгі ұзындығын сызғыштан оқып, БҮТІН сантиметрге дейін дөңгелектеңіз. Жауапқа тек санды жазыңыз.",
+      "solution": "Бір сантиметр он кіші аралыққа бөлінген, бір кіші қадам 0,1 см. A — 0, B — 16,8 см. Ұзындық 16,8 см. Ондық цифр 8 ≥ 5, сондықтан ең жақын бүтін 17 см. B ұшы 16-дан гөрі 17-ге жақын.",
+      "figureDescription": "Сантиметрлік сызғыш, әр сантиметр он ұсақ қадам. A ұшы 0 см, B ұшы 16,8 см белгісінде. B ұшы тұрған бір сантиметрлік бөлік жоғарыда бөлек үлкейтілген.",
+      "figureSha256": "15de753c6282337f1c6ab7f87ced053295e68bb0ee36f54a9488ae9c9fa88bd5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "17",
+        "checks": {
+          "startTenths": 0,
+          "endTenths": 168,
+          "lengthTenths": 168,
+          "roundedWhole": 17,
+          "decidingDigit": 8
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave66-local-five-twenty-four-round-tenths",
+      "modelId": "visual-wave66-local-hundredth-ray-round-down-tenths",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "local",
+        "startHundredths": 520,
+        "stepHundredths": 1,
+        "ticks": 10,
+        "points": [
+          [
+            "A",
+            4
+          ]
+        ],
+        "roundPlaces": 1
+      },
+      "answer": "5,2",
+      "sourceRefs": [
+        {
+          "sourceId": "531521d14834565c",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-11-level1.json#7",
+      "sourceCanonicalSha256": "d1960ea89889c340e36092ebcec4e1d20606631823d794c68ef3633c50463a42",
+      "sourceSkill": "Local5.2…5.3TENintervals.01,A5.24→5.2down;wrong5.3up/5.24unrounded/5.25incrementwrongplace.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.11 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; үш парақтағы 13 бастапқы растр қаралды. Жаңа сандар/нүкте атаулары/өз нативті SVG берілді. Өлшемді шкаладан оқу, төмен/жоғары дөңгелектеу, дәл 5 ортасын жоғары алу, барлық нүктені жіктеу, әр координатаны бөлек дөңгелектеу, дәл аудан/периметрден соң ғана жуықтау, төрт цифрдың толық ең кіші реті, екі дәлдіктегі мәннің қосындысы, ондық 9-дан бүтінге ауысу және соңғы0, кесінді ұзындығын алдымен азайту сақталды.",
+        "Жаңа деректер:қарындаш16,8→17см;A5,24→5,2;термометр38,7→39;M3,75→3,8;A14,8→15;K6,32/L6,34/M6,35/N6,39ішінен6,4кеM/N;A10,7жәнеB11,3→11+11=22;еден5,7×4,6=26,22→26;P2(2,76+1,57)=8,66→8,7;2479карточкаларыmin2,479→2,48;K2,45→2+2,5=4,5;P19,96→20,0;A0,8/B4,4→AB3,6→4.",
+        "Барлық SVG жаңа параметрлермен нативті жасалды. Термометр оқу үлгісі, медициналық нұсқау емес. Еден екі өлшем бойынша ортақ масштабта. Жуықтайтын нүктелердің нақты координаталары суреттегі белгілерден оқылады; C-style answer marker немесе дайын жуық жауап суретте көрсетілмеген. Source raster/tracedpaths қолданылмаған, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Өлшемдер мен координаталарды дөңгелектеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/newconditions/official/newsolutions/everyMCQ plus3source/native343sheets. Observeactualrulermmticks/pencilend, thermometerliquid38.7, everylocalrayendpoint/unittick/midpoint, all4selectedpointsincltie, metricfloor/Pbefore-round, all24cardpermutations/rounding, twoindependenttargets, 19.96carryto20.0finalzero, subtractABBEFORErounding. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave66-local-five-twenty-four-round-tenths.svg",
+      "verificationModule": "scripts/editorial/visual-wave66-models.mjs",
+      "options": [
+        "5,3",
+        "5,24",
+        "5,25",
+        "5,2"
+      ],
+      "statement": "Көрсетілген кесінді он тең аралыққа бөлінген. A нүктесінің координатасын оқып, ОНДЫҚ үлеске дейін дөңгелектеген мәнді таңдаңыз.",
+      "solution": "Шеткі мәндер 5,2 және 5,3. 10 аралықтың біреуі 0,01. A 4-қадамда: координатасы 5,24. Алынатын келесі цифр 4 < 5, сондықтан сақталатын разряд өзгермейді. 5,24 ≈ 5,2. Жауап координатаның дәл мәні емес, сұралған дәлдіктегі жуық мән.",
+      "figureDescription": "Сан түзуі 5,2 мәнінен 5,3 мәніне дейін 10 бірдей қадам. A сол жақтан 4-қадамда.",
+      "figureSha256": "5600d9d0243a274ccc6ff94c5b567cad0a7529ecbe8d8ae4d88bdf5c395845fe",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5,2",
+        "checks": {
+          "point": "A",
+          "coordinateHundredths": 524,
+          "roundedRaw": 52,
+          "roundPlaces": 1,
+          "decidingDigit": 4,
+          "tie": false,
+          "retainedZero": false
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave66-thermometer-thirty-eight-seven",
+      "modelId": "visual-wave66-thermometer-tenth-reading-round-whole",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "thermometer",
+        "lowTenths": 360,
+        "highTenths": 410,
+        "valueTenths": 387
+      },
+      "answer": "39",
+      "sourceRefs": [
+        {
+          "sourceId": "f782f70870508c3a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-11-level1.json#8",
+      "sourceCanonicalSha256": "23d818633048eeddf1e6e0ef784f12b533519d915a528430fecfcb4fb17a284e",
+      "sourceSkill": "Native1degreeTENequalminorgaps,liquid38.7→39whole; simulatedmaththermometer notmedicaladvice.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.11 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; үш парақтағы 13 бастапқы растр қаралды. Жаңа сандар/нүкте атаулары/өз нативті SVG берілді. Өлшемді шкаладан оқу, төмен/жоғары дөңгелектеу, дәл 5 ортасын жоғары алу, барлық нүктені жіктеу, әр координатаны бөлек дөңгелектеу, дәл аудан/периметрден соң ғана жуықтау, төрт цифрдың толық ең кіші реті, екі дәлдіктегі мәннің қосындысы, ондық 9-дан бүтінге ауысу және соңғы0, кесінді ұзындығын алдымен азайту сақталды.",
+        "Жаңа деректер:қарындаш16,8→17см;A5,24→5,2;термометр38,7→39;M3,75→3,8;A14,8→15;K6,32/L6,34/M6,35/N6,39ішінен6,4кеM/N;A10,7жәнеB11,3→11+11=22;еден5,7×4,6=26,22→26;P2(2,76+1,57)=8,66→8,7;2479карточкаларыmin2,479→2,48;K2,45→2+2,5=4,5;P19,96→20,0;A0,8/B4,4→AB3,6→4.",
+        "Барлық SVG жаңа параметрлермен нативті жасалды. Термометр оқу үлгісі, медициналық нұсқау емес. Еден екі өлшем бойынша ортақ масштабта. Жуықтайтын нүктелердің нақты координаталары суреттегі белгілерден оқылады; C-style answer marker немесе дайын жуық жауап суретте көрсетілмеген. Source raster/tracedpaths қолданылмаған, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Өлшемдер мен координаталарды дөңгелектеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/newconditions/official/newsolutions/everyMCQ plus3source/native343sheets. Observeactualrulermmticks/pencilend, thermometerliquid38.7, everylocalrayendpoint/unittick/midpoint, all4selectedpointsincltie, metricfloor/Pbefore-round, all24cardpermutations/rounding, twoindependenttargets, 19.96carryto20.0finalzero, subtractABBEFORErounding. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave66-thermometer-thirty-eight-seven.svg",
+      "verificationModule": "scripts/editorial/visual-wave66-models.mjs",
+      "statement": "Оқу термометрінде көршілес бүтін белгілердің арасы он бірдей кіші аралыққа бөлінген. Қызыл бағананың мәнін оқып, БҮТІН градусқа дейін дөңгелектеңіз. Жауапқа тек санды жазыңыз.",
+      "solution": "Әр бүтін градус он бірдей аралыққа бөлінген: кіші қадам 0,1°. Қызыл бағана 38,7° деңгейінде. Ондық цифр 7 ≥ 5: 38,7° ≈ 39°. Жауапта тек бүтін градустың саны жазылады.",
+      "figureDescription": "Термометр бүтін 36…41 градустармен белгіленген; әр бүтін аралығы он ұсақ қадам. Қызыл бағана 38,7 градус деңгейінде.",
+      "figureSha256": "d29c4577b89af47e7667e40c19cd31e2cbf10f5538bd3a5ca80c579c208efd6c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "39",
+        "checks": {
+          "valueTenths": 387,
+          "scaleMinorStepTenths": 1,
+          "roundedWhole": 39,
+          "decidingDigit": 7
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave66-local-three-seventy-five-tie",
+      "modelId": "visual-wave66-local-hundredth-ray-exact-half-round-up",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "local",
+        "startHundredths": 370,
+        "stepHundredths": 1,
+        "ticks": 10,
+        "points": [
+          [
+            "M",
+            5
+          ]
+        ],
+        "roundPlaces": 1
+      },
+      "answer": "3,8",
+      "sourceRefs": [
+        {
+          "sourceId": "092e2ce45c63214c",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-11-level1.json#13",
+      "sourceCanonicalSha256": "7106babb613dc1f430f5ad5489a5a6965a1b6a342ee1bd0f83dab7f16d823c41",
+      "sourceSkill": "Exactmidpoint3.75between3.7/3.8→3.8 tiesup;wrong3.7down/3.75unrounded/3.76hundredthincrement.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.11 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; үш парақтағы 13 бастапқы растр қаралды. Жаңа сандар/нүкте атаулары/өз нативті SVG берілді. Өлшемді шкаладан оқу, төмен/жоғары дөңгелектеу, дәл 5 ортасын жоғары алу, барлық нүктені жіктеу, әр координатаны бөлек дөңгелектеу, дәл аудан/периметрден соң ғана жуықтау, төрт цифрдың толық ең кіші реті, екі дәлдіктегі мәннің қосындысы, ондық 9-дан бүтінге ауысу және соңғы0, кесінді ұзындығын алдымен азайту сақталды.",
+        "Жаңа деректер:қарындаш16,8→17см;A5,24→5,2;термометр38,7→39;M3,75→3,8;A14,8→15;K6,32/L6,34/M6,35/N6,39ішінен6,4кеM/N;A10,7жәнеB11,3→11+11=22;еден5,7×4,6=26,22→26;P2(2,76+1,57)=8,66→8,7;2479карточкаларыmin2,479→2,48;K2,45→2+2,5=4,5;P19,96→20,0;A0,8/B4,4→AB3,6→4.",
+        "Барлық SVG жаңа параметрлермен нативті жасалды. Термометр оқу үлгісі, медициналық нұсқау емес. Еден екі өлшем бойынша ортақ масштабта. Жуықтайтын нүктелердің нақты координаталары суреттегі белгілерден оқылады; C-style answer marker немесе дайын жуық жауап суретте көрсетілмеген. Source raster/tracedpaths қолданылмаған, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Өлшемдер мен координаталарды дөңгелектеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/newconditions/official/newsolutions/everyMCQ plus3source/native343sheets. Observeactualrulermmticks/pencilend, thermometerliquid38.7, everylocalrayendpoint/unittick/midpoint, all4selectedpointsincltie, metricfloor/Pbefore-round, all24cardpermutations/rounding, twoindependenttargets, 19.96carryto20.0finalzero, subtractABBEFORErounding. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave66-local-three-seventy-five-tie.svg",
+      "verificationModule": "scripts/editorial/visual-wave66-models.mjs",
+      "options": [
+        "3,7",
+        "3,75",
+        "3,76",
+        "3,8"
+      ],
+      "statement": "Көрсетілген кесінді он тең аралыққа бөлінген. M нүктесінің координатасын оқып, ОНДЫҚ үлеске дейін дөңгелектеген мәнді таңдаңыз.",
+      "solution": "Шеткі мәндер 3,7 және 3,8. 10 аралықтың біреуі 0,01. M 5-қадамда: координатасы 3,75. Бұл екі көрші ондық мәннің дәл ортасы; 5 болғанда жоғары дөңгелектейміз. 3,75 ≈ 3,8. Жауап координатаның дәл мәні емес, сұралған дәлдіктегі жуық мән.",
+      "figureDescription": "Сан түзуі 3,7 мәнінен 3,8 мәніне дейін 10 бірдей қадам. M сол жақтан 5-қадамда.",
+      "figureSha256": "c395663d48b18d01745cb47ff1606bbfcd6ee1b1de2bbefeb124c86677e853ec",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3,8",
+        "checks": {
+          "point": "M",
+          "coordinateHundredths": 375,
+          "roundedRaw": 38,
+          "roundPlaces": 1,
+          "decidingDigit": 5,
+          "tie": true,
+          "retainedZero": false
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave66-local-fourteen-eight-round-whole",
+      "modelId": "visual-wave66-local-tenth-ray-round-whole",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "local",
+        "startHundredths": 1400,
+        "stepHundredths": 10,
+        "ticks": 10,
+        "points": [
+          [
+            "A",
+            8
+          ]
+        ],
+        "roundPlaces": 0
+      },
+      "answer": "15",
+      "sourceRefs": [
+        {
+          "sourceId": "c63fcfee8d0782dc",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-11-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-11-level1.json#15",
+      "sourceCanonicalSha256": "34f6e2f895df03b5f1ad4ce3cccb56a60966e1cf2f8f5f0583f6d626c29f1614",
+      "sourceSkill": "14…15tenintervals.1,A14.8→15; actualpointleftof15notabstractroundingonly.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.11 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; үш парақтағы 13 бастапқы растр қаралды. Жаңа сандар/нүкте атаулары/өз нативті SVG берілді. Өлшемді шкаладан оқу, төмен/жоғары дөңгелектеу, дәл 5 ортасын жоғары алу, барлық нүктені жіктеу, әр координатаны бөлек дөңгелектеу, дәл аудан/периметрден соң ғана жуықтау, төрт цифрдың толық ең кіші реті, екі дәлдіктегі мәннің қосындысы, ондық 9-дан бүтінге ауысу және соңғы0, кесінді ұзындығын алдымен азайту сақталды.",
+        "Жаңа деректер:қарындаш16,8→17см;A5,24→5,2;термометр38,7→39;M3,75→3,8;A14,8→15;K6,32/L6,34/M6,35/N6,39ішінен6,4кеM/N;A10,7жәнеB11,3→11+11=22;еден5,7×4,6=26,22→26;P2(2,76+1,57)=8,66→8,7;2479карточкаларыmin2,479→2,48;K2,45→2+2,5=4,5;P19,96→20,0;A0,8/B4,4→AB3,6→4.",
+        "Барлық SVG жаңа параметрлермен нативті жасалды. Термометр оқу үлгісі, медициналық нұсқау емес. Еден екі өлшем бойынша ортақ масштабта. Жуықтайтын нүктелердің нақты координаталары суреттегі белгілерден оқылады; C-style answer marker немесе дайын жуық жауап суретте көрсетілмеген. Source raster/tracedpaths қолданылмаған, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Өлшемдер мен координаталарды дөңгелектеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/newconditions/official/newsolutions/everyMCQ plus3source/native343sheets. Observeactualrulermmticks/pencilend, thermometerliquid38.7, everylocalrayendpoint/unittick/midpoint, all4selectedpointsincltie, metricfloor/Pbefore-round, all24cardpermutations/rounding, twoindependenttargets, 19.96carryto20.0finalzero, subtractABBEFORErounding. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave66-local-fourteen-eight-round-whole.svg",
+      "verificationModule": "scripts/editorial/visual-wave66-models.mjs",
+      "statement": "Кесіндідегі тең аралықтардан A координатасын анықтап, оны БҮТІН санға дейін дөңгелектеңіз. Жауапқа тек санды жазыңыз.",
+      "solution": "Шеткі мәндер 14 және 15. 10 аралықтың біреуі 0,1. A 8-қадамда: координатасы 14,8. Алынатын келесі цифр 8 ≥ 5, сондықтан сақталатын разряд біреуге артады. 14,8 ≈ 15. Жауап координатаның дәл мәні емес, сұралған дәлдіктегі жуық мән.",
+      "figureDescription": "Сан түзуі 14 мәнінен 15 мәніне дейін 10 бірдей қадам. A сол жақтан 8-қадамда.",
+      "figureSha256": "0a10c571dc3e775b923e37404438ab94559ef8f1a950b44bd497a0cad83dfaa5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "15",
+        "checks": {
+          "point": "A",
+          "coordinateHundredths": 1480,
+          "roundedRaw": 15,
+          "roundPlaces": 0,
+          "decidingDigit": 8,
+          "tie": false,
+          "retainedZero": false
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave66-four-points-six-three-midpoint-included",
+      "modelId": "visual-wave66-all-marked-points-round-to-upper-tenth",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "local",
+        "startHundredths": 630,
+        "stepHundredths": 1,
+        "ticks": 10,
+        "points": [
+          [
+            "K",
+            2
+          ],
+          [
+            "L",
+            4
+          ],
+          [
+            "M",
+            5
+          ],
+          [
+            "N",
+            9
+          ]
+        ],
+        "targetTenths": 64
+      },
+      "answer": "M және N",
+      "sourceRefs": [
+        {
+          "sourceId": "f0bec31e85886ae4",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-11-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-11-level2.json#0",
+      "sourceCanonicalSha256": "9074fe8e204a39e69874cd3d0397bbcee29bdf96fcb42975a9325d9e667d219b",
+      "sourceSkill": "FournewlabelsK/L/M/N at6.32/6.34/6.35/6.39;upper6.4includesTIE6.35 notonlyabove;completepointclassification.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.11 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; үш парақтағы 13 бастапқы растр қаралды. Жаңа сандар/нүкте атаулары/өз нативті SVG берілді. Өлшемді шкаладан оқу, төмен/жоғары дөңгелектеу, дәл 5 ортасын жоғары алу, барлық нүктені жіктеу, әр координатаны бөлек дөңгелектеу, дәл аудан/периметрден соң ғана жуықтау, төрт цифрдың толық ең кіші реті, екі дәлдіктегі мәннің қосындысы, ондық 9-дан бүтінге ауысу және соңғы0, кесінді ұзындығын алдымен азайту сақталды.",
+        "Жаңа деректер:қарындаш16,8→17см;A5,24→5,2;термометр38,7→39;M3,75→3,8;A14,8→15;K6,32/L6,34/M6,35/N6,39ішінен6,4кеM/N;A10,7жәнеB11,3→11+11=22;еден5,7×4,6=26,22→26;P2(2,76+1,57)=8,66→8,7;2479карточкаларыmin2,479→2,48;K2,45→2+2,5=4,5;P19,96→20,0;A0,8/B4,4→AB3,6→4.",
+        "Барлық SVG жаңа параметрлермен нативті жасалды. Термометр оқу үлгісі, медициналық нұсқау емес. Еден екі өлшем бойынша ортақ масштабта. Жуықтайтын нүктелердің нақты координаталары суреттегі белгілерден оқылады; C-style answer marker немесе дайын жуық жауап суретте көрсетілмеген. Source raster/tracedpaths қолданылмаған, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Өлшемдер мен координаталарды дөңгелектеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/newconditions/official/newsolutions/everyMCQ plus3source/native343sheets. Observeactualrulermmticks/pencilend, thermometerliquid38.7, everylocalrayendpoint/unittick/midpoint, all4selectedpointsincltie, metricfloor/Pbefore-round, all24cardpermutations/rounding, twoindependenttargets, 19.96carryto20.0finalzero, subtractABBEFORErounding. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave66-four-points-six-three-midpoint-included.svg",
+      "verificationModule": "scripts/editorial/visual-wave66-models.mjs",
+      "options": [
+        "тек N",
+        "L, M және N",
+        "M және N",
+        "K және L"
+      ],
+      "statement": "Ондық үлеске дейін дөңгелектегенде 6,4 болатын координаталардың БАРЛЫҚ нүктесін таңдаңыз. Екі шеткі белгі арасындағы он аралық тең.",
+      "solution": "Кіші қадам 0,01. K(6,32) ≈ 6,3; L(6,34) ≈ 6,3; M(6,35) ≈ 6,4; N(6,39) ≈ 6,4. 6,4 нәтижесін M және N береді. M дәл ортада: 6,35 мәніндегі 5 жоғары дөңгелектенетіндіктен, оны қалдырмаймыз.",
+      "figureDescription": "Сан түзуі 6,3 мәнінен 6,4 мәніне дейін 10 бірдей қадам. K сол жақтан 2-қадамда; L сол жақтан 4-қадамда; M сол жақтан 5-қадамда; N сол жақтан 9-қадамда.",
+      "figureSha256": "354b8f3fbf98ae634da34c0262d54ebe8be24c46d50d1513ed3f9871b9774d7d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "M және N",
+        "checks": {
+          "classified": [
+            {
+              "label": "K",
+              "t": 2,
+              "hundredths": 632,
+              "roundedTenths": 63
+            },
+            {
+              "label": "L",
+              "t": 4,
+              "hundredths": 634,
+              "roundedTenths": 63
+            },
+            {
+              "label": "M",
+              "t": 5,
+              "hundredths": 635,
+              "roundedTenths": 64
+            },
+            {
+              "label": "N",
+              "t": 9,
+              "hundredths": 639,
+              "roundedTenths": 64
+            }
+          ],
+          "targetTenths": 64,
+          "selected": [
+            "M",
+            "N"
+          ],
+          "midpointIncluded": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave66-round-ten-seven-eleven-three-separately",
+      "modelId": "visual-wave66-each-coordinate-round-then-sum",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "local",
+        "startHundredths": 1000,
+        "stepHundredths": 10,
+        "ticks": 20,
+        "points": [
+          [
+            "A",
+            7
+          ],
+          [
+            "B",
+            13
+          ]
+        ],
+        "roundPlaces": 0
+      },
+      "answer": "22",
+      "sourceRefs": [
+        {
+          "sourceId": "f2cdad0699192250",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-11-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-11-level2.json#1",
+      "sourceCanonicalSha256": "8c0d266ea98e7f27c80611f41ebf8b33f46243167ee3bdc39de7ab76a6976c69",
+      "sourceSkill": "A10.7→11,B11.3→11; EACHfirstthenSUM22, bothsidesof11; Theexactunroundedsumalso22coincidentally; requestedSEPARATEroundings kept explicit, no inventednewmeaning.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.11 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; үш парақтағы 13 бастапқы растр қаралды. Жаңа сандар/нүкте атаулары/өз нативті SVG берілді. Өлшемді шкаладан оқу, төмен/жоғары дөңгелектеу, дәл 5 ортасын жоғары алу, барлық нүктені жіктеу, әр координатаны бөлек дөңгелектеу, дәл аудан/периметрден соң ғана жуықтау, төрт цифрдың толық ең кіші реті, екі дәлдіктегі мәннің қосындысы, ондық 9-дан бүтінге ауысу және соңғы0, кесінді ұзындығын алдымен азайту сақталды.",
+        "Жаңа деректер:қарындаш16,8→17см;A5,24→5,2;термометр38,7→39;M3,75→3,8;A14,8→15;K6,32/L6,34/M6,35/N6,39ішінен6,4кеM/N;A10,7жәнеB11,3→11+11=22;еден5,7×4,6=26,22→26;P2(2,76+1,57)=8,66→8,7;2479карточкаларыmin2,479→2,48;K2,45→2+2,5=4,5;P19,96→20,0;A0,8/B4,4→AB3,6→4.",
+        "Барлық SVG жаңа параметрлермен нативті жасалды. Термометр оқу үлгісі, медициналық нұсқау емес. Еден екі өлшем бойынша ортақ масштабта. Жуықтайтын нүктелердің нақты координаталары суреттегі белгілерден оқылады; C-style answer marker немесе дайын жуық жауап суретте көрсетілмеген. Source raster/tracedpaths қолданылмаған, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Өлшемдер мен координаталарды дөңгелектеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/newconditions/official/newsolutions/everyMCQ plus3source/native343sheets. Observeactualrulermmticks/pencilend, thermometerliquid38.7, everylocalrayendpoint/unittick/midpoint, all4selectedpointsincltie, metricfloor/Pbefore-round, all24cardpermutations/rounding, twoindependenttargets, 19.96carryto20.0finalzero, subtractABBEFORErounding. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave66-round-ten-seven-eleven-three-separately.svg",
+      "verificationModule": "scripts/editorial/visual-wave66-models.mjs",
+      "statement": "A және B координаталарын сан түзуінен оқыңыз. ӘРҚАЙСЫСЫН алдымен бүтінге дейін дөңгелектеп, содан соң екі жуық мәнді қосыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "A = 10,7 ≈ 11; B = 11,3 ≈ 11. Сұралған қосынды 11 + 11 = 22. Екі нүкте де 11-дің екі жағында, бірақ ең жақын бүтіні бірдей. Әр координатаның дөңгелектеуі жеке орындалды.",
+      "figureDescription": "Сан түзуі 10 мәнінен 12 мәніне дейін 20 бірдей қадам. A сол жақтан 7-қадамда; B сол жақтан 13-қадамда.",
+      "figureSha256": "ab883155821bffad330f332d1224344fb0b1d1ef84e1dca585a282111a140e9f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "22",
+        "checks": {
+          "points": [
+            {
+              "label": "A",
+              "t": 7,
+              "hundredths": 1070
+            },
+            {
+              "label": "B",
+              "t": 13,
+              "hundredths": 1130
+            }
+          ],
+          "roundedWhole": [
+            11,
+            11
+          ],
+          "sum": 22,
+          "requestedEachFirst": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave66-floor-five-seven-four-six-area",
+      "modelId": "visual-wave66-exact-decimal-area-before-whole-rounding",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "lengthHundredths": 570,
+        "widthHundredths": 460,
+        "target": "area"
+      },
+      "answer": "26",
+      "sourceRefs": [
+        {
+          "sourceId": "13e4c816ba4a9dd8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-11-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-11-level2.json#5",
+      "sourceCanonicalSha256": "05dac13135a6e2132692f6e34009363342a45d0a3dee474719466fdd1230a985",
+      "sourceSkill": "Metric5.7×4.6=26.22m²THENwhole26; roundingdimensionsfirst6×5=30wrong, bothroundedupasoriginal.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.11 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; үш парақтағы 13 бастапқы растр қаралды. Жаңа сандар/нүкте атаулары/өз нативті SVG берілді. Өлшемді шкаладан оқу, төмен/жоғары дөңгелектеу, дәл 5 ортасын жоғары алу, барлық нүктені жіктеу, әр координатаны бөлек дөңгелектеу, дәл аудан/периметрден соң ғана жуықтау, төрт цифрдың толық ең кіші реті, екі дәлдіктегі мәннің қосындысы, ондық 9-дан бүтінге ауысу және соңғы0, кесінді ұзындығын алдымен азайту сақталды.",
+        "Жаңа деректер:қарындаш16,8→17см;A5,24→5,2;термометр38,7→39;M3,75→3,8;A14,8→15;K6,32/L6,34/M6,35/N6,39ішінен6,4кеM/N;A10,7жәнеB11,3→11+11=22;еден5,7×4,6=26,22→26;P2(2,76+1,57)=8,66→8,7;2479карточкаларыmin2,479→2,48;K2,45→2+2,5=4,5;P19,96→20,0;A0,8/B4,4→AB3,6→4.",
+        "Барлық SVG жаңа параметрлермен нативті жасалды. Термометр оқу үлгісі, медициналық нұсқау емес. Еден екі өлшем бойынша ортақ масштабта. Жуықтайтын нүктелердің нақты координаталары суреттегі белгілерден оқылады; C-style answer marker немесе дайын жуық жауап суретте көрсетілмеген. Source raster/tracedpaths қолданылмаған, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Өлшемдер мен координаталарды дөңгелектеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/newconditions/official/newsolutions/everyMCQ plus3source/native343sheets. Observeactualrulermmticks/pencilend, thermometerliquid38.7, everylocalrayendpoint/unittick/midpoint, all4selectedpointsincltie, metricfloor/Pbefore-round, all24cardpermutations/rounding, twoindependenttargets, 19.96carryto20.0finalzero, subtractABBEFORErounding. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave66-floor-five-seven-four-six-area.svg",
+      "verificationModule": "scripts/editorial/visual-wave66-models.mjs",
+      "statement": "Тіктөртбұрышты еденнің өлшемдері метрмен берілген. Алдымен ДӘЛ ауданын есептеп, тек содан кейін бүтін м²-ге дейін дөңгелектеңіз. Жауапқа тек санды жазыңыз.",
+      "solution": "Дәл аудан 5,7 × 4,6 = 26,22 м². Үтірсіз 57 × 46 = 2622, барлығы екі ондық орын: 26,22. Ондық цифр 2 < 5, сондықтан аудан ≈ 26 м². Қабырғаларды алдын ала 6 және 5 деп дөңгелектесек 30 м² шығады; бұл дәл ауданның дөңгелектеуі емес.",
+      "figureDescription": "Тіктөртбұрыштың төменгі қабырғасы 5,7, сол қабырғасы 4,6. Бірлік м.",
+      "figureSha256": "188ded449017b3214d7ea9a0f9ad838054f72e5b553423c839c5f9469e86565f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "26",
+        "checks": {
+          "exactAreaTenThousandths": 262200,
+          "roundedWhole": 26,
+          "prematureDimensionProduct": 30,
+          "roundAfterProduct": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave66-perimeter-two-seventy-six-one-fifty-seven",
+      "modelId": "visual-wave66-exact-perimeter-before-tenth-rounding",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "lengthHundredths": 276,
+        "widthHundredths": 157,
+        "target": "perimeter"
+      },
+      "answer": "8,7",
+      "sourceRefs": [
+        {
+          "sourceId": "ce0971210b58b51d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-11-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-11-level2.json#15",
+      "sourceCanonicalSha256": "ea51e3cec51ff33cb4092a528746e59bcceda533b44f2cd8d4b26b8bbb0c374a",
+      "sourceSkill": "2(2.76+1.57)=8.66→8.7tenth;wrong8.6truncate,4.3roundedhalfP,8.66unrounded.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.11 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; үш парақтағы 13 бастапқы растр қаралды. Жаңа сандар/нүкте атаулары/өз нативті SVG берілді. Өлшемді шкаладан оқу, төмен/жоғары дөңгелектеу, дәл 5 ортасын жоғары алу, барлық нүктені жіктеу, әр координатаны бөлек дөңгелектеу, дәл аудан/периметрден соң ғана жуықтау, төрт цифрдың толық ең кіші реті, екі дәлдіктегі мәннің қосындысы, ондық 9-дан бүтінге ауысу және соңғы0, кесінді ұзындығын алдымен азайту сақталды.",
+        "Жаңа деректер:қарындаш16,8→17см;A5,24→5,2;термометр38,7→39;M3,75→3,8;A14,8→15;K6,32/L6,34/M6,35/N6,39ішінен6,4кеM/N;A10,7жәнеB11,3→11+11=22;еден5,7×4,6=26,22→26;P2(2,76+1,57)=8,66→8,7;2479карточкаларыmin2,479→2,48;K2,45→2+2,5=4,5;P19,96→20,0;A0,8/B4,4→AB3,6→4.",
+        "Барлық SVG жаңа параметрлермен нативті жасалды. Термометр оқу үлгісі, медициналық нұсқау емес. Еден екі өлшем бойынша ортақ масштабта. Жуықтайтын нүктелердің нақты координаталары суреттегі белгілерден оқылады; C-style answer marker немесе дайын жуық жауап суретте көрсетілмеген. Source raster/tracedpaths қолданылмаған, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Өлшемдер мен координаталарды дөңгелектеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/newconditions/official/newsolutions/everyMCQ plus3source/native343sheets. Observeactualrulermmticks/pencilend, thermometerliquid38.7, everylocalrayendpoint/unittick/midpoint, all4selectedpointsincltie, metricfloor/Pbefore-round, all24cardpermutations/rounding, twoindependenttargets, 19.96carryto20.0finalzero, subtractABBEFORErounding. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave66-perimeter-two-seventy-six-one-fifty-seven.svg",
+      "verificationModule": "scripts/editorial/visual-wave66-models.mjs",
+      "options": [
+        "8,6",
+        "8,7",
+        "4,3",
+        "8,66"
+      ],
+      "statement": "Тіктөртбұрыштың қабырғалары дециметрмен жазылған. Алдымен толық ПЕРИМЕТРДІ есептеп, содан кейін ондық үлеске дейін дөңгелектеген санды таңдаңыз.",
+      "solution": "Екі көршілес қабырға 2,76 + 1,57 = 4,33. Периметр 2 × 4,33 = 8,66 дм. Жүздік цифр 6 ≥ 5: 8,66 ≈ 8,7. 4,3 — жарты периметрдің жуық мәні; 8,66 — дөңгелектелмеген, 8,6 — арттыру орындалмаған жазба.",
+      "figureDescription": "Тіктөртбұрыштың төменгі қабырғасы 2,76, сол қабырғасы 1,57. Бірлік дм.",
+      "figureSha256": "04d3a3fc6a349ae3e37e6ceafee0da7f87b363bb4604f7c9f031e9c27184cbc8",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8,7",
+        "checks": {
+          "halfPerimeterHundredths": 433,
+          "exactPerimeterHundredths": 866,
+          "roundedTenths": 87,
+          "roundedHalfTenths": 43
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave66-cards-four-nine-two-seven-minimum",
+      "modelId": "visual-wave66-all-digit-cards-minimum-before-hundredth-rounding",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "cards",
+        "digits": [
+          4,
+          9,
+          2,
+          7
+        ]
+      },
+      "answer": "2,48",
+      "sourceRefs": [
+        {
+          "sourceId": "ca8cc333f6e05e0e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-11-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-11-level3.json#3",
+      "sourceCanonicalSha256": "e00cd2e61b69e732c43c1a82d1c8bd6294343cb4d2d4e3443b6622d13959434a",
+      "sourceSkill": "ALL4distinctnonzerodigits usedONCE,wholeONEdigit,24permutations min2.479→2.48;wrong2.47truncate/max9.742→9.74/tenths2.5.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.11 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; үш парақтағы 13 бастапқы растр қаралды. Жаңа сандар/нүкте атаулары/өз нативті SVG берілді. Өлшемді шкаладан оқу, төмен/жоғары дөңгелектеу, дәл 5 ортасын жоғары алу, барлық нүктені жіктеу, әр координатаны бөлек дөңгелектеу, дәл аудан/периметрден соң ғана жуықтау, төрт цифрдың толық ең кіші реті, екі дәлдіктегі мәннің қосындысы, ондық 9-дан бүтінге ауысу және соңғы0, кесінді ұзындығын алдымен азайту сақталды.",
+        "Жаңа деректер:қарындаш16,8→17см;A5,24→5,2;термометр38,7→39;M3,75→3,8;A14,8→15;K6,32/L6,34/M6,35/N6,39ішінен6,4кеM/N;A10,7жәнеB11,3→11+11=22;еден5,7×4,6=26,22→26;P2(2,76+1,57)=8,66→8,7;2479карточкаларыmin2,479→2,48;K2,45→2+2,5=4,5;P19,96→20,0;A0,8/B4,4→AB3,6→4.",
+        "Барлық SVG жаңа параметрлермен нативті жасалды. Термометр оқу үлгісі, медициналық нұсқау емес. Еден екі өлшем бойынша ортақ масштабта. Жуықтайтын нүктелердің нақты координаталары суреттегі белгілерден оқылады; C-style answer marker немесе дайын жуық жауап суретте көрсетілмеген. Source raster/tracedpaths қолданылмаған, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Өлшемдер мен координаталарды дөңгелектеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/newconditions/official/newsolutions/everyMCQ plus3source/native343sheets. Observeactualrulermmticks/pencilend, thermometerliquid38.7, everylocalrayendpoint/unittick/midpoint, all4selectedpointsincltie, metricfloor/Pbefore-round, all24cardpermutations/rounding, twoindependenttargets, 19.96carryto20.0finalzero, subtractABBEFORErounding. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave66-cards-four-nine-two-seven-minimum.svg",
+      "verificationModule": "scripts/editorial/visual-wave66-models.mjs",
+      "options": [
+        "2,48",
+        "2,47",
+        "9,74",
+        "2,5"
+      ],
+      "statement": "Төрт карточканың ӘРҚАЙСЫСЫН бір реттен қолданыңыз. Бүтін бөлігінде дәл БІР цифры бар ЕҢ КІШІ ондық сан құрып, сол санды жүздік үлеске дейін дөңгелектеңіз.",
+      "solution": "Ең кіші цифр 2 бүтін бөлікте тұрады; қалған 4, 7, 9 цифрларын өсу ретімен орналастырамыз: 2,479. Барлық төрт карточка бір реттен қолданылды. Жүздікке дейінгі дөңгелектеуде мыңдық 9 ≥ 5, сондықтан 2,479 ≈ 2,48. 2,47 — арттырусыз қалдыру; ең үлкен 9,742 санын алу 9,74; ондыққа дөңгелектеу 2,5 береді.",
+      "figureDescription": "Төрт бөлек карточкадағы цифрлар 4, 9, 2, 7.",
+      "figureSha256": "d0ee09d4716b4b09c15dc6a7025f4311bb6a111ae4658f365eeb5c885d8083a2",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2,48",
+        "checks": {
+          "permutationCount": 24,
+          "minimumThousandths": 2479,
+          "maximumThousandths": 9742,
+          "roundedHundredths": 248,
+          "truncatedHundredths": 247,
+          "maxRoundedHundredths": 974,
+          "wrongTenth": 25
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave66-local-two-forty-five-two-rounded-targets",
+      "modelId": "visual-wave66-one-coordinate-two-roundings-sum",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "local",
+        "startHundredths": 230,
+        "stepHundredths": 1,
+        "ticks": 20,
+        "points": [
+          [
+            "K",
+            15
+          ]
+        ]
+      },
+      "answer": "4,5",
+      "sourceRefs": [
+        {
+          "sourceId": "12bdc835cc216aae",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-11-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-11-level3.json#8",
+      "sourceCanonicalSha256": "d92743eb390215dbdddde9ee649aa46745bef635e915104b81239ef63b9de537",
+      "sourceSkill": "K2.45→whole2/tenths2.5TIE;SUM4.5;wrong4.4tiedown/5.5wholeup/4.45unroundedtenths.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.11 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; үш парақтағы 13 бастапқы растр қаралды. Жаңа сандар/нүкте атаулары/өз нативті SVG берілді. Өлшемді шкаладан оқу, төмен/жоғары дөңгелектеу, дәл 5 ортасын жоғары алу, барлық нүктені жіктеу, әр координатаны бөлек дөңгелектеу, дәл аудан/периметрден соң ғана жуықтау, төрт цифрдың толық ең кіші реті, екі дәлдіктегі мәннің қосындысы, ондық 9-дан бүтінге ауысу және соңғы0, кесінді ұзындығын алдымен азайту сақталды.",
+        "Жаңа деректер:қарындаш16,8→17см;A5,24→5,2;термометр38,7→39;M3,75→3,8;A14,8→15;K6,32/L6,34/M6,35/N6,39ішінен6,4кеM/N;A10,7жәнеB11,3→11+11=22;еден5,7×4,6=26,22→26;P2(2,76+1,57)=8,66→8,7;2479карточкаларыmin2,479→2,48;K2,45→2+2,5=4,5;P19,96→20,0;A0,8/B4,4→AB3,6→4.",
+        "Барлық SVG жаңа параметрлермен нативті жасалды. Термометр оқу үлгісі, медициналық нұсқау емес. Еден екі өлшем бойынша ортақ масштабта. Жуықтайтын нүктелердің нақты координаталары суреттегі белгілерден оқылады; C-style answer marker немесе дайын жуық жауап суретте көрсетілмеген. Source raster/tracedpaths қолданылмаған, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Өлшемдер мен координаталарды дөңгелектеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/newconditions/official/newsolutions/everyMCQ plus3source/native343sheets. Observeactualrulermmticks/pencilend, thermometerliquid38.7, everylocalrayendpoint/unittick/midpoint, all4selectedpointsincltie, metricfloor/Pbefore-round, all24cardpermutations/rounding, twoindependenttargets, 19.96carryto20.0finalzero, subtractABBEFORErounding. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave66-local-two-forty-five-two-rounded-targets.svg",
+      "verificationModule": "scripts/editorial/visual-wave66-models.mjs",
+      "options": [
+        "4,4",
+        "4,5",
+        "5,5",
+        "4,45"
+      ],
+      "statement": "K нүктесінің координатасын анықтаңыз. Оны бөлек бүтінге дейін және ондық үлеске дейін дөңгелектеп, шыққан ЕКІ жуық мәннің қосындысын таңдаңыз.",
+      "solution": "Қадам 0,01. K координатасы 2,45. Бүтінге дейін: ондық 4 < 5, сондықтан 2. Ондыққа дейін: жүздік 5, сондықтан 2,5. Екі жуық мәннің қосындысы 2 + 2,5 = 4,5. Ортадағы санды төмен дөңгелектеу 4,4; бүтінді қате арттыру 5,5; екінші санды дөңгелектемей қою 4,45 береді.",
+      "figureDescription": "Сан түзуі 2,3 мәнінен 2,5 мәніне дейін 20 бірдей қадам. K сол жақтан 15-қадамда.",
+      "figureSha256": "ad691bd292a6d2bc39be81a5dd6a79691f22914da8096f973ce12c9e8056c06b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4,5",
+        "checks": {
+          "coordinateHundredths": 245,
+          "whole": 2,
+          "tenths": 25,
+          "sumTenths": 45,
+          "tieAtTenth": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave66-local-nineteen-ninety-six-carry",
+      "modelId": "visual-wave66-tenth-rounding-carry-whole-retain-final-zero",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "local",
+        "startHundredths": 1990,
+        "stepHundredths": 1,
+        "ticks": 10,
+        "points": [
+          [
+            "P",
+            6
+          ]
+        ],
+        "roundPlaces": 1,
+        "retainZero": true
+      },
+      "answer": "20,0",
+      "sourceRefs": [
+        {
+          "sourceId": "47d3eae7ce8aa29f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-11-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-11-leveltest.json#2",
+      "sourceCanonicalSha256": "aa7b618ca6243c7c9da00182420b0eaa0b68a1f05fdf39f2266e5a81d2bee16e",
+      "sourceSkill": "19.96hundredthsforces9tenth+1carrytoWHOLE20.0, REQUIREDoneplacezero;wrong19.9truncate/19.10badcarry/19.96unrounded.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.11 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; үш парақтағы 13 бастапқы растр қаралды. Жаңа сандар/нүкте атаулары/өз нативті SVG берілді. Өлшемді шкаладан оқу, төмен/жоғары дөңгелектеу, дәл 5 ортасын жоғары алу, барлық нүктені жіктеу, әр координатаны бөлек дөңгелектеу, дәл аудан/периметрден соң ғана жуықтау, төрт цифрдың толық ең кіші реті, екі дәлдіктегі мәннің қосындысы, ондық 9-дан бүтінге ауысу және соңғы0, кесінді ұзындығын алдымен азайту сақталды.",
+        "Жаңа деректер:қарындаш16,8→17см;A5,24→5,2;термометр38,7→39;M3,75→3,8;A14,8→15;K6,32/L6,34/M6,35/N6,39ішінен6,4кеM/N;A10,7жәнеB11,3→11+11=22;еден5,7×4,6=26,22→26;P2(2,76+1,57)=8,66→8,7;2479карточкаларыmin2,479→2,48;K2,45→2+2,5=4,5;P19,96→20,0;A0,8/B4,4→AB3,6→4.",
+        "Барлық SVG жаңа параметрлермен нативті жасалды. Термометр оқу үлгісі, медициналық нұсқау емес. Еден екі өлшем бойынша ортақ масштабта. Жуықтайтын нүктелердің нақты координаталары суреттегі белгілерден оқылады; C-style answer marker немесе дайын жуық жауап суретте көрсетілмеген. Source raster/tracedpaths қолданылмаған, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Өлшемдер мен координаталарды дөңгелектеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/newconditions/official/newsolutions/everyMCQ plus3source/native343sheets. Observeactualrulermmticks/pencilend, thermometerliquid38.7, everylocalrayendpoint/unittick/midpoint, all4selectedpointsincltie, metricfloor/Pbefore-round, all24cardpermutations/rounding, twoindependenttargets, 19.96carryto20.0finalzero, subtractABBEFORErounding. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave66-local-nineteen-ninety-six-carry.svg",
+      "verificationModule": "scripts/editorial/visual-wave66-models.mjs",
+      "options": [
+        "19,9",
+        "19,10",
+        "20,0",
+        "19,96"
+      ],
+      "statement": "P координатасын сәуледен оқып, оны ондық үлеске дейін дөңгелектеңіз. Жауапта үтірден кейін дәл БІР цифр сақталатын жазбаны таңдаңыз.",
+      "solution": "Шеткі мәндер 19,9 және 20. 10 аралықтың біреуі 0,01. P 6-қадамда: координатасы 19,96. Алынатын келесі цифр 6 ≥ 5, сондықтан сақталатын разряд біреуге артады. 19,96 ≈ 20,0. Ондықтағы 9 біреуге артқанда ауысу бүтін бөлікке өтеді. 20,0 соңындағы 0 дөңгелектеудің ондық дәлдігін көрсетеді; 19,10 деп жазу ондық 9-дан ауысуды орындамайды.",
+      "figureDescription": "Сан түзуі 19,9 мәнінен 20 мәніне дейін 10 бірдей қадам. P сол жақтан 6-қадамда.",
+      "figureSha256": "b57f8663bbf93a2405461ecbd1c754040757e55ff727ad7177c86172334269f4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "20,0",
+        "checks": {
+          "point": "P",
+          "coordinateHundredths": 1996,
+          "roundedRaw": 200,
+          "roundPlaces": 1,
+          "decidingDigit": 6,
+          "tie": false,
+          "retainedZero": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave66-ray-eight-fourty-four-length-before-round",
+      "modelId": "visual-wave66-segment-distance-before-whole-rounding",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "ray",
+        "maxTenths": 50,
+        "aTenths": 8,
+        "bTenths": 44
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "ef21a4cf8d94a62e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-11-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-11-leveltest.json#5",
+      "sourceCanonicalSha256": "cbd7cb202acf45cd50ac2e32a82dbacca509c7e21d0c4690a0bc4362acd709d9",
+      "sourceSkill": "A.8B4.4→AB3.6THENwhole4;roundingendpointfirst4−1=3giveswronganswer, lengthnotBcoordinate.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.11 визуалды шарт, толық ресми шешім және әр MCQ жеке оқылды; үш парақтағы 13 бастапқы растр қаралды. Жаңа сандар/нүкте атаулары/өз нативті SVG берілді. Өлшемді шкаладан оқу, төмен/жоғары дөңгелектеу, дәл 5 ортасын жоғары алу, барлық нүктені жіктеу, әр координатаны бөлек дөңгелектеу, дәл аудан/периметрден соң ғана жуықтау, төрт цифрдың толық ең кіші реті, екі дәлдіктегі мәннің қосындысы, ондық 9-дан бүтінге ауысу және соңғы0, кесінді ұзындығын алдымен азайту сақталды.",
+        "Жаңа деректер:қарындаш16,8→17см;A5,24→5,2;термометр38,7→39;M3,75→3,8;A14,8→15;K6,32/L6,34/M6,35/N6,39ішінен6,4кеM/N;A10,7жәнеB11,3→11+11=22;еден5,7×4,6=26,22→26;P2(2,76+1,57)=8,66→8,7;2479карточкаларыmin2,479→2,48;K2,45→2+2,5=4,5;P19,96→20,0;A0,8/B4,4→AB3,6→4.",
+        "Барлық SVG жаңа параметрлермен нативті жасалды. Термометр оқу үлгісі, медициналық нұсқау емес. Еден екі өлшем бойынша ортақ масштабта. Жуықтайтын нүктелердің нақты координаталары суреттегі белгілерден оқылады; C-style answer marker немесе дайын жуық жауап суретте көрсетілмеген. Source raster/tracedpaths қолданылмаған, сыртқы тәуелсіз review қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Өлшемдер мен координаталарды дөңгелектеу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/newconditions/official/newsolutions/everyMCQ plus3source/native343sheets. Observeactualrulermmticks/pencilend, thermometerliquid38.7, everylocalrayendpoint/unittick/midpoint, all4selectedpointsincltie, metricfloor/Pbefore-round, all24cardpermutations/rounding, twoindependenttargets, 19.96carryto20.0finalzero, subtractABBEFORErounding. No selfsignature."
+      },
+      "image": "/figures/synaq-editions/visual-wave66-ray-eight-fourty-four-length-before-round.svg",
+      "verificationModule": "scripts/editorial/visual-wave66-models.mjs",
+      "statement": "A және B координаталарын сәуледен оқыңыз. Алдымен AB ұзындығын ДӘЛ тауып, содан кейін сол ұзындықты бүтінге дейін дөңгелектеңіз. Жауапқа тек санды жазыңыз.",
+      "solution": "Әр бірлік он тең аралық, қадам 0,1. A(0,8), B(4,4). Ұзындық AB = 4,4 − 0,8 = 3,6. Содан кейін 3,6 ≈ 4. A мен B-ны алдымен 1 және 4 деп дөңгелектеу 4 − 1 = 3 береді; бұл сұралған дәл ұзындықты дөңгелектеуге тең емес.",
+      "figureDescription": "0-ден 5-ке координаталық сәуле, әр бірлік он тең аралық. A 8-қадамда, B 44-қадамда.",
+      "figureSha256": "9cbcaaaed6fa721326127654c8fad45f5375f98412afadeb2da719e116feff00",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": {
+          "aTenths": 8,
+          "bTenths": 44,
+          "lengthTenths": 36,
+          "roundedWhole": 4,
+          "prematureEndpointDifference": 3
+        }
+      }
+    }
+  ]
+}

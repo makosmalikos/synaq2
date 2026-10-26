@@ -1,0 +1,1213 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "root_separate_computational_check_same_author",
+  "batch": "problems/editorial/batches/grade5-order-completion.json",
+  "scope": "Last20 full source/new conditions, solutions and every MCQ read.\nExact Fraction arithmetic; exhaustive contiguous one-pair intervals and binary\ndivision trees, digit counts, operator positions and money ledgers. Same root\nauthored both; separate computational check, not separate human/agent review.\n",
+  "summary": {
+    "verified": 20,
+    "findings": 0,
+    "allSourceNewConditionsSolutionsMCQsRead": 20,
+    "wrongKeysRejected": 20,
+    "printedSemanticCanariesRejected": 20,
+    "newSolutionNumericEqualitiesVerified": 55,
+    "all15OnePairIntervalsChecked": true,
+    "all5BinaryDivisionTreesChecked": true,
+    "pythonJavaScriptHashesMatched": 20,
+    "nativeFractions": 0,
+    "separateHumanReviewer": false
+  },
+  "retainedVerifiedDuplicate": {
+    "sourceId": "0d0d7f87bc97c986",
+    "editionId": "grade4-arithmetic-0d0d7f87bc97c986",
+    "source": "50 ×17 ×2",
+    "edition": "50 ×29 ×2",
+    "sameTarget": "efficient grouping 50×2 first",
+    "addedAgain": false
+  },
+  "evidence": [
+    {
+      "editionId": "grade5-order-completion-c57605b4b768b4c9",
+      "rewritten": {
+        "printedNumbers": [
+          "1999",
+          "1999",
+          "1999",
+          "2000"
+        ],
+        "printedExpression": "(1999 × 1999 + 1999) ÷ 2000",
+        "answer": "1999"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "999",
+          "999",
+          "999",
+          "1000"
+        ],
+        "printedExpression": "(999 \\cdot 999 + 999) : 1000",
+        "answer": "999"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-1a5035fb54e618ce",
+      "rewritten": {
+        "printedNumbers": [
+          "120",
+          "119",
+          "118",
+          "117",
+          "4",
+          "3",
+          "2",
+          "1",
+          "1",
+          "120"
+        ],
+        "everyAlternatingTerm": [
+          "120",
+          "-119",
+          "118",
+          "-117",
+          "116",
+          "-115",
+          "114",
+          "-113",
+          "112",
+          "-111",
+          "110",
+          "-109",
+          "108",
+          "-107",
+          "106",
+          "-105",
+          "104",
+          "-103",
+          "102",
+          "-101",
+          "100",
+          "-99",
+          "98",
+          "-97",
+          "96",
+          "-95",
+          "94",
+          "-93",
+          "92",
+          "-91",
+          "90",
+          "-89",
+          "88",
+          "-87",
+          "86",
+          "-85",
+          "84",
+          "-83",
+          "82",
+          "-81",
+          "80",
+          "-79",
+          "78",
+          "-77",
+          "76",
+          "-75",
+          "74",
+          "-73",
+          "72",
+          "-71",
+          "70",
+          "-69",
+          "68",
+          "-67",
+          "66",
+          "-65",
+          "64",
+          "-63",
+          "62",
+          "-61",
+          "60",
+          "-59",
+          "58",
+          "-57",
+          "56",
+          "-55",
+          "54",
+          "-53",
+          "52",
+          "-51",
+          "50",
+          "-49",
+          "48",
+          "-47",
+          "46",
+          "-45",
+          "44",
+          "-43",
+          "42",
+          "-41",
+          "40",
+          "-39",
+          "38",
+          "-37",
+          "36",
+          "-35",
+          "34",
+          "-33",
+          "32",
+          "-31",
+          "30",
+          "-29",
+          "28",
+          "-27",
+          "26",
+          "-25",
+          "24",
+          "-23",
+          "22",
+          "-21",
+          "20",
+          "-19",
+          "18",
+          "-17",
+          "16",
+          "-15",
+          "14",
+          "-13",
+          "12",
+          "-11",
+          "10",
+          "-9",
+          "8",
+          "-7",
+          "6",
+          "-5",
+          "4",
+          "-3",
+          "2",
+          "-1"
+        ],
+        "answer": "60"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "100",
+          "99",
+          "98",
+          "97",
+          "96",
+          "95",
+          "4",
+          "3",
+          "2",
+          "1"
+        ],
+        "everyAlternatingTerm": [
+          "100",
+          "-99",
+          "98",
+          "-97",
+          "96",
+          "-95",
+          "94",
+          "-93",
+          "92",
+          "-91",
+          "90",
+          "-89",
+          "88",
+          "-87",
+          "86",
+          "-85",
+          "84",
+          "-83",
+          "82",
+          "-81",
+          "80",
+          "-79",
+          "78",
+          "-77",
+          "76",
+          "-75",
+          "74",
+          "-73",
+          "72",
+          "-71",
+          "70",
+          "-69",
+          "68",
+          "-67",
+          "66",
+          "-65",
+          "64",
+          "-63",
+          "62",
+          "-61",
+          "60",
+          "-59",
+          "58",
+          "-57",
+          "56",
+          "-55",
+          "54",
+          "-53",
+          "52",
+          "-51",
+          "50",
+          "-49",
+          "48",
+          "-47",
+          "46",
+          "-45",
+          "44",
+          "-43",
+          "42",
+          "-41",
+          "40",
+          "-39",
+          "38",
+          "-37",
+          "36",
+          "-35",
+          "34",
+          "-33",
+          "32",
+          "-31",
+          "30",
+          "-29",
+          "28",
+          "-27",
+          "26",
+          "-25",
+          "24",
+          "-23",
+          "22",
+          "-21",
+          "20",
+          "-19",
+          "18",
+          "-17",
+          "16",
+          "-15",
+          "14",
+          "-13",
+          "12",
+          "-11",
+          "10",
+          "-9",
+          "8",
+          "-7",
+          "6",
+          "-5",
+          "4",
+          "-3",
+          "2",
+          "-1"
+        ],
+        "answer": "50"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-7207177640f1a62c",
+      "rewritten": {
+        "printedNumbers": [
+          "6",
+          "5",
+          "4",
+          "3",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2"
+        ],
+        "printedExpression": "6 × (5 × (4 × (3 × 2 + 2) + 2) + 2) + 2",
+        "answer": "1034"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "5",
+          "4",
+          "3",
+          "2",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "printedExpression": "5 \\cdot (4 \\cdot (3 \\cdot (2 \\cdot 1 + 1) + 1) + 1) + 1",
+        "answer": "206"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-0aa971e844b110f1",
+      "rewritten": {
+        "printedNumbers": [
+          "18",
+          "18",
+          "6",
+          "3",
+          "12"
+        ],
+        "answer": "(18 + 18) ÷ (6 − 3)",
+        "everyMCQValue": [
+          "18",
+          "24",
+          "12",
+          "3"
+        ],
+        "target": "12"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "8",
+          "12",
+          "4",
+          "2",
+          "10"
+        ],
+        "answer": "$(8 + 12) : (4 - 2)$",
+        "everyMCQValue": [
+          "14",
+          "10",
+          "3",
+          "9"
+        ],
+        "target": "10"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-4059fe3c1ae08fe2",
+      "rewritten": {
+        "printedNumbers": [
+          "360",
+          "6",
+          "3",
+          "5"
+        ],
+        "printedExpression": "360 ÷ 6 ÷ 3 × 5",
+        "answer": "100"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "120",
+          "6",
+          "2",
+          "5"
+        ],
+        "printedExpression": "120 : 6 : 2 \\cdot 5",
+        "answer": "50"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-da10165c88be6edf",
+      "rewritten": {
+        "printedNumbers": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "everyOnePairInterval": [
+          {
+            "expression": "(3)+4*5+6*7",
+            "value": "65"
+          },
+          {
+            "expression": "(3+4)*5+6*7",
+            "value": "77"
+          },
+          {
+            "expression": "(3+4*5)+6*7",
+            "value": "65"
+          },
+          {
+            "expression": "(3+4*5+6)*7",
+            "value": "203"
+          },
+          {
+            "expression": "(3+4*5+6*7)",
+            "value": "65"
+          },
+          {
+            "expression": "3+(4)*5+6*7",
+            "value": "65"
+          },
+          {
+            "expression": "3+(4*5)+6*7",
+            "value": "65"
+          },
+          {
+            "expression": "3+(4*5+6)*7",
+            "value": "185"
+          },
+          {
+            "expression": "3+(4*5+6*7)",
+            "value": "65"
+          },
+          {
+            "expression": "3+4*(5)+6*7",
+            "value": "65"
+          },
+          {
+            "expression": "3+4*(5+6)*7",
+            "value": "311"
+          },
+          {
+            "expression": "3+4*(5+6*7)",
+            "value": "191"
+          },
+          {
+            "expression": "3+4*5+(6)*7",
+            "value": "65"
+          },
+          {
+            "expression": "3+4*5+(6*7)",
+            "value": "65"
+          },
+          {
+            "expression": "3+4*5+6*(7)",
+            "value": "65"
+          }
+        ],
+        "answer": "311"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "everyOnePairInterval": [
+          {
+            "expression": "(2)+3*4+5*6",
+            "value": "44"
+          },
+          {
+            "expression": "(2+3)*4+5*6",
+            "value": "50"
+          },
+          {
+            "expression": "(2+3*4)+5*6",
+            "value": "44"
+          },
+          {
+            "expression": "(2+3*4+5)*6",
+            "value": "114"
+          },
+          {
+            "expression": "(2+3*4+5*6)",
+            "value": "44"
+          },
+          {
+            "expression": "2+(3)*4+5*6",
+            "value": "44"
+          },
+          {
+            "expression": "2+(3*4)+5*6",
+            "value": "44"
+          },
+          {
+            "expression": "2+(3*4+5)*6",
+            "value": "104"
+          },
+          {
+            "expression": "2+(3*4+5*6)",
+            "value": "44"
+          },
+          {
+            "expression": "2+3*(4)+5*6",
+            "value": "44"
+          },
+          {
+            "expression": "2+3*(4+5)*6",
+            "value": "164"
+          },
+          {
+            "expression": "2+3*(4+5*6)",
+            "value": "104"
+          },
+          {
+            "expression": "2+3*4+(5)*6",
+            "value": "44"
+          },
+          {
+            "expression": "2+3*4+(5*6)",
+            "value": "44"
+          },
+          {
+            "expression": "2+3*4+5*(6)",
+            "value": "44"
+          }
+        ],
+        "answer": "164"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-d67cc40bf84ed85d",
+      "rewritten": {
+        "printedNumbers": [
+          "72",
+          "8",
+          "3",
+          "4",
+          "21"
+        ],
+        "answer": "÷",
+        "everyMCQValue": [
+          "21",
+          "588",
+          "92",
+          "76"
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "48",
+          "6",
+          "2",
+          "5",
+          "18"
+        ],
+        "answer": "$:$",
+        "everyMCQValue": [
+          "64",
+          "52",
+          "18",
+          "298"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-0f7db5c73d0395dd",
+      "rewritten": {
+        "printedNumbers": [
+          "1400",
+          "3",
+          "5",
+          "12000",
+          "4300"
+        ],
+        "moneyLedger": [
+          "4200",
+          "3500",
+          "4300",
+          "12000"
+        ],
+        "answer": "700"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "1250",
+          "4",
+          "3",
+          "10000",
+          "4100"
+        ],
+        "moneyLedger": [
+          "5000",
+          "900",
+          "4100",
+          "10000"
+        ],
+        "answer": "300"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-2be527b7d9b9be83",
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "177"
+        ],
+        "answer": "44 × 4 + 4 ÷ 4",
+        "everyMCQValue": [
+          "176",
+          "48",
+          "260",
+          "177"
+        ],
+        "exactDigitCount": 5
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "100"
+        ],
+        "answer": "$33 \\cdot 3 + 3 : 3$",
+        "everyMCQValue": [
+          "99",
+          "36",
+          "84",
+          "100"
+        ],
+        "exactDigitCount": 5
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-ac042be97737043f",
+      "rewritten": {
+        "printedNumbers": [
+          "1296",
+          "18",
+          "6",
+          "2"
+        ],
+        "everyFullBinaryDivisionTree": [
+          {
+            "expression": "(1296/(18/(6/2)))",
+            "value": "216"
+          },
+          {
+            "expression": "(1296/((18/6)/2))",
+            "value": "864"
+          },
+          {
+            "expression": "((1296/18)/(6/2))",
+            "value": "24"
+          },
+          {
+            "expression": "((1296/(18/6))/2)",
+            "value": "216"
+          },
+          {
+            "expression": "(((1296/18)/6)/2)",
+            "value": "6"
+          }
+        ],
+        "answer": "4"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "256",
+          "16",
+          "4",
+          "2"
+        ],
+        "everyFullBinaryDivisionTree": [
+          {
+            "expression": "(256/(16/(4/2)))",
+            "value": "32"
+          },
+          {
+            "expression": "(256/((16/4)/2))",
+            "value": "128"
+          },
+          {
+            "expression": "((256/16)/(4/2))",
+            "value": "8"
+          },
+          {
+            "expression": "((256/(16/4))/2)",
+            "value": "32"
+          },
+          {
+            "expression": "(((256/16)/4)/2)",
+            "value": "2"
+          }
+        ],
+        "answer": "4"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-ff46486b1fe91550",
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "3",
+          "6",
+          "5",
+          "4",
+          "3",
+          "6",
+          "5",
+          "4",
+          "3",
+          "6",
+          "5"
+        ],
+        "answer": "C < B < A",
+        "everyValue": {
+          "A": "132",
+          "B": "90",
+          "C": "42"
+        }
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "2",
+          "3",
+          "4",
+          "5",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "answer": "$C < A < B$",
+        "everyValue": {
+          "A": "46",
+          "B": "50",
+          "C": "26"
+        }
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-fb8bea9383d7d4aa",
+      "rewritten": {
+        "printedNumbers": [
+          "320",
+          "85",
+          "46"
+        ],
+        "printedExpression": "320 − 85 + 46",
+        "answer": "281"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "250",
+          "70",
+          "35"
+        ],
+        "printedExpression": "250 - 70 + 35",
+        "answer": "215"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-124ab1dd2687bddf",
+      "rewritten": {
+        "printedNumbers": [
+          "8",
+          "84",
+          "7"
+        ],
+        "printedExpression": "8 + 84 ÷ 7",
+        "answer": "20"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "6",
+          "54",
+          "9"
+        ],
+        "printedExpression": "6 + 54 : 9",
+        "answer": "12"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-384a89b96f3d3149",
+      "rewritten": {
+        "printedNumbers": [
+          "24",
+          "18",
+          "6"
+        ],
+        "printedExpression": "24 + 18 ÷ 6",
+        "answer": "27"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "18",
+          "12",
+          "6"
+        ],
+        "printedExpression": "18 + 12 : 6",
+        "answer": "20"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-f56a56d0db9a5969",
+      "rewritten": {
+        "printedNumbers": [
+          "9",
+          "140",
+          "96",
+          "64"
+        ],
+        "printedExpression": "9 × (140 − 96) + 64",
+        "answer": "460"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "7",
+          "120",
+          "85",
+          "55"
+        ],
+        "printedExpression": "7 \\cdot (120 - 85) + 55",
+        "answer": "300"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-06d707146b35f1a2",
+      "rewritten": {
+        "printedNumbers": [
+          "4800",
+          "64",
+          "4",
+          "4",
+          "3"
+        ],
+        "printedExpression": "4800 ÷ (64 − 4 × 4) × 3",
+        "answer": "300"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3600",
+          "48",
+          "3",
+          "4",
+          "2"
+        ],
+        "printedExpression": "3600 : (48 - 3 \\cdot 4) \\cdot 2",
+        "answer": "200"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-d10fdebd447c6463",
+      "rewritten": {
+        "printedNumbers": [
+          "90",
+          "30",
+          "5",
+          "5",
+          "6"
+        ],
+        "answer": "(90 − 30) ÷ (5 + 5)",
+        "everyMCQValue": [
+          "17",
+          "6",
+          "87",
+          "79"
+        ],
+        "target": "6"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "60",
+          "20",
+          "5",
+          "5",
+          "4"
+        ],
+        "answer": "$(60 - 20) : (5 + 5)$",
+        "everyMCQValue": [
+          "13",
+          "4",
+          "58",
+          "51"
+        ],
+        "target": "4"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-c93ba858c7c02000",
+      "rewritten": {
+        "printedNumbers": [
+          "300",
+          "21",
+          "5",
+          "120",
+          "60",
+          "3",
+          "10",
+          "2"
+        ],
+        "printedExpression": "300 − (21 × 5 − (120 − 60 ÷ 3) ÷ 10) × 2",
+        "answer": "110"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "200",
+          "17",
+          "4",
+          "96",
+          "48",
+          "2",
+          "8",
+          "2"
+        ],
+        "printedExpression": "200 - (17 \\cdot 4 - (96 - 48 : 2) : 8) \\cdot 2",
+        "answer": "82"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-20cc2d9cb38a3626",
+      "rewritten": {
+        "printedNumbers": [
+          "43200",
+          "6",
+          "1500",
+          "3",
+          "5000",
+          "8"
+        ],
+        "completeCashLedger": [
+          "43200",
+          "9000",
+          "15000",
+          "19200"
+        ],
+        "answer": "2400"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "30000",
+          "5",
+          "1200",
+          "2",
+          "5000",
+          "7"
+        ],
+        "completeCashLedger": [
+          "30000",
+          "6000",
+          "10000",
+          "14000"
+        ],
+        "answer": "2000"
+      }
+    },
+    {
+      "editionId": "grade5-order-completion-2c4eac2bdb4245dc",
+      "rewritten": {
+        "printedNumbers": [
+          "48",
+          "6",
+          "3",
+          "24"
+        ],
+        "answer": "÷ және ×",
+        "everyMCQValue": [
+          "96",
+          "24",
+          "30",
+          "11"
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "36",
+          "4",
+          "2",
+          "18"
+        ],
+        "answer": "$:$ және $\\cdot$",
+        "everyMCQValue": [
+          "18",
+          "28",
+          "11",
+          "72"
+        ]
+      }
+    }
+  ],
+  "entries": [
+    {
+      "editionId": "grade5-order-completion-c57605b4b768b4c9",
+      "sha256": "878fe7bbc263af0e949c15b1e2bcb580d09d0dbf15a8abd95c4eab2f3aeec6c2",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"1999\", \"1999\", \"1999\", \"2000\"], \"printedExpression\": \"(1999 × 1999 + 1999) ÷ 2000\", \"answer\": \"1999\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-1a5035fb54e618ce",
+      "sha256": "fbea4d942706af04686324edef8f5db58444726b9e0ab74ce4b9691c0b6ece7c",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"120\", \"119\", \"118\", \"117\", \"4\", \"3\", \"2\", \"1\", \"1\", \"120\"], \"everyAlternatingTerm\": [\"120\", \"-119\", \"118\", \"-117\", \"116\", \"-115\", \"114\", \"-113\", \"112\", \"-111\", \"110\", \"-109\", \"108\", \"-107\", \"106\", \"-105\", \"104\", \"-103\", \"102\", \"-101\", \"100\", \"-99\", \"98\", \"-97\", \"96\", \"-95\", \"94\", \"-93\", \"92\", \"-91\", \"90\", \"-89\", \"88\", \"-87\", \"86\", \"-85\", \"84\", \"-83\", \"82\", \"-81\", \"80\", \"-79\", \"78\", \"-77\", \"76\", \"-75\", \"74\", \"-73\", \"72\", \"-71\", \"70\", \"-69\", \"68\", \"-67\", \"66\", \"-65\", \"64\", \"-63\", \"62\", \"-61\", \"60\", \"-59\", \"58\", \"-57\", \"56\", \"-55\", \"54\", \"-53\", \"52\", \"-51\", \"50\", \"-49\", \"48\", \"-47\", \"46\", \"-45\", \"44\", \"-43\", \"42\", \"-41\", \"40\", \"-39\", \"38\", \"-37\", \"36\", \"-35\", \"34\", \"-33\", \"32\", \"-31\", \"30\", \"-29\", \"28\", \"-27\", \"26\", \"-25\", \"24\", \"-23\", \"22\", \"-21\", \"20\", \"-19\", \"18\", \"-17\", \"16\", \"-15\", \"14\", \"-13\", \"12\", \"-11\", \"10\", \"-9\", \"8\", \"-7\", \"6\", \"-5\", \"4\", \"-3\", \"2\", \"-1\"], \"answer\": \"60\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-7207177640f1a62c",
+      "sha256": "535952d41a1c731d084f5d04b0282cce0dcdb6d6b29328e7b30ce46ce9564e11",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"6\", \"5\", \"4\", \"3\", \"2\", \"2\", \"2\", \"2\", \"2\"], \"printedExpression\": \"6 × (5 × (4 × (3 × 2 + 2) + 2) + 2) + 2\", \"answer\": \"1034\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-0aa971e844b110f1",
+      "sha256": "9669e19c2ce01b5d019ee685a9712507493d184f9aaef5bb8b7e7ca78acd1d0b",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"18\", \"18\", \"6\", \"3\", \"12\"], \"answer\": \"(18 + 18) ÷ (6 − 3)\", \"everyMCQValue\": [\"18\", \"24\", \"12\", \"3\"], \"target\": \"12\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-4059fe3c1ae08fe2",
+      "sha256": "2ed49b077f7154959ff27194ff1ea17cb7e6111a814298adf4938844d7de8930",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"360\", \"6\", \"3\", \"5\"], \"printedExpression\": \"360 ÷ 6 ÷ 3 × 5\", \"answer\": \"100\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-da10165c88be6edf",
+      "sha256": "9d1c26984bf04d4ca20a2b5c02078b7245396813c964f0131a3cfd131ec67354",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"4\", \"5\", \"6\", \"7\"], \"everyOnePairInterval\": [{\"expression\": \"(3)+4*5+6*7\", \"value\": \"65\"}, {\"expression\": \"(3+4)*5+6*7\", \"value\": \"77\"}, {\"expression\": \"(3+4*5)+6*7\", \"value\": \"65\"}, {\"expression\": \"(3+4*5+6)*7\", \"value\": \"203\"}, {\"expression\": \"(3+4*5+6*7)\", \"value\": \"65\"}, {\"expression\": \"3+(4)*5+6*7\", \"value\": \"65\"}, {\"expression\": \"3+(4*5)+6*7\", \"value\": \"65\"}, {\"expression\": \"3+(4*5+6)*7\", \"value\": \"185\"}, {\"expression\": \"3+(4*5+6*7)\", \"value\": \"65\"}, {\"expression\": \"3+4*(5)+6*7\", \"value\": \"65\"}, {\"expression\": \"3+4*(5+6)*7\", \"value\": \"311\"}, {\"expression\": \"3+4*(5+6*7)\", \"value\": \"191\"}, {\"expression\": \"3+4*5+(6)*7\", \"value\": \"65\"}, {\"expression\": \"3+4*5+(6*7)\", \"value\": \"65\"}, {\"expression\": \"3+4*5+6*(7)\", \"value\": \"65\"}], \"answer\": \"311\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-d67cc40bf84ed85d",
+      "sha256": "97e018f1b9ed026829daa870c53a47fe65476b4b2e38f808c47a5e87d26dd5f9",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"72\", \"8\", \"3\", \"4\", \"21\"], \"answer\": \"÷\", \"everyMCQValue\": [\"21\", \"588\", \"92\", \"76\"]}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-0f7db5c73d0395dd",
+      "sha256": "cb44be13e22637cfe548c932d640fd0499989d0881d3be5956760eaa71bb20e6",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"1400\", \"3\", \"5\", \"12000\", \"4300\"], \"moneyLedger\": [\"4200\", \"3500\", \"4300\", \"12000\"], \"answer\": \"700\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-2be527b7d9b9be83",
+      "sha256": "d94b4f80ae3dc69bb675f47ee150dccfa292375712c2ad07b66bf46c6d24407b",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"177\"], \"answer\": \"44 × 4 + 4 ÷ 4\", \"everyMCQValue\": [\"176\", \"48\", \"260\", \"177\"], \"exactDigitCount\": 5}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-ac042be97737043f",
+      "sha256": "a35fb17583ec157f13cd37796676d5d1cda6d32fd2f248ae6ca0b1f5b9f27384",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"1296\", \"18\", \"6\", \"2\"], \"everyFullBinaryDivisionTree\": [{\"expression\": \"(1296/(18/(6/2)))\", \"value\": \"216\"}, {\"expression\": \"(1296/((18/6)/2))\", \"value\": \"864\"}, {\"expression\": \"((1296/18)/(6/2))\", \"value\": \"24\"}, {\"expression\": \"((1296/(18/6))/2)\", \"value\": \"216\"}, {\"expression\": \"(((1296/18)/6)/2)\", \"value\": \"6\"}], \"answer\": \"4\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-ff46486b1fe91550",
+      "sha256": "6b440faf8670d6a10e1c22529467538bdac75aad91d27f82c8d345a99724534a",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"3\", \"6\", \"5\", \"4\", \"3\", \"6\", \"5\", \"4\", \"3\", \"6\", \"5\"], \"answer\": \"C < B < A\", \"everyValue\": {\"A\": \"132\", \"B\": \"90\", \"C\": \"42\"}}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-fb8bea9383d7d4aa",
+      "sha256": "c6ff78b638fe216f229955ccd0186ee3deac239dc438af7f3bca6929090bb17c",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"320\", \"85\", \"46\"], \"printedExpression\": \"320 − 85 + 46\", \"answer\": \"281\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-124ab1dd2687bddf",
+      "sha256": "d1d64f134f68460f0386b66aa1add9f630a4494c72c9bb07532f89e2f9cce62d",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"8\", \"84\", \"7\"], \"printedExpression\": \"8 + 84 ÷ 7\", \"answer\": \"20\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-384a89b96f3d3149",
+      "sha256": "0f49531fc6109413c3f4eab97b77a382f21dc71c6bf3ab86ffbf46591309bd9c",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"24\", \"18\", \"6\"], \"printedExpression\": \"24 + 18 ÷ 6\", \"answer\": \"27\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-f56a56d0db9a5969",
+      "sha256": "7b1804d0a3690d618985071d165690169da48cc65ddcbfd3b21aec8160e0235c",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"9\", \"140\", \"96\", \"64\"], \"printedExpression\": \"9 × (140 − 96) + 64\", \"answer\": \"460\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-06d707146b35f1a2",
+      "sha256": "814eebd3e33ea6c542335b8d093d0eef9da233c5cc58ee69a09fa5972376b58d",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"4800\", \"64\", \"4\", \"4\", \"3\"], \"printedExpression\": \"4800 ÷ (64 − 4 × 4) × 3\", \"answer\": \"300\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-d10fdebd447c6463",
+      "sha256": "5046e3ec2fb49f30feb7acf6f772ffbb578be9c4c1772a161b8bfa168705210c",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"90\", \"30\", \"5\", \"5\", \"6\"], \"answer\": \"(90 − 30) ÷ (5 + 5)\", \"everyMCQValue\": [\"17\", \"6\", \"87\", \"79\"], \"target\": \"6\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-c93ba858c7c02000",
+      "sha256": "757c4e42d01650000b1bcf7c499e7197ec163819ba7365adcd985f03dfa7fa1e",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"300\", \"21\", \"5\", \"120\", \"60\", \"3\", \"10\", \"2\"], \"printedExpression\": \"300 − (21 × 5 − (120 − 60 ÷ 3) ÷ 10) × 2\", \"answer\": \"110\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-20cc2d9cb38a3626",
+      "sha256": "cbbac8c5c038465024030fba1417a428accb87454bb1604482535d374aa757df",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"43200\", \"6\", \"1500\", \"3\", \"5000\", \"8\"], \"completeCashLedger\": [\"43200\", \"9000\", \"15000\", \"19200\"], \"answer\": \"2400\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-order-completion-2c4eac2bdb4245dc",
+      "sha256": "19cef4fef27079a6207ede29b0849639edcb1d22cb8ee14d0ccdaf3e26232556",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "full source/new text/solutions/allMCQs; exact printed Fraction arithmetic, all15 contiguous bracket intervals, all5 binary division trees, exact digits/operators/ledgers; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"48\", \"6\", \"3\", \"24\"], \"answer\": \"÷ және ×\", \"everyMCQValue\": [\"96\", \"24\", \"30\", \"11\"]}"
+      ]
+    }
+  ]
+}

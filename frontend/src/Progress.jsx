@@ -7,8 +7,11 @@ import { buildDiagnosis, pickDiagnosticMock } from './diagnosis.js';
 import { buildProgressModel, formatProgressDate, PROGRESS_ATTEMPT_LIMIT } from './progressModel.js';
 import DiagnosisReport from './components/DiagnosisReport.jsx';
 import BrandLoader from './components/BrandLoader.jsx';
+import MockResults from './components/MockResults.jsx';
 import './Progress.css';
 import { trainingTopicName } from './trainingCatalogModel.js';
+import useReportRefresh from './useReportRefresh.js';
+import { readWithDeadline } from './readDeadline.js';
 
 const Arrow = () => <span aria-hidden="true">→</span>;
 const topicLabel = (topic, ru) => trainingTopicName(topic, ru ? 'ru' : 'kk');
@@ -33,13 +36,13 @@ function ProgressAccount({ uid, onXpLoad, onTrainTopic, onGoDiagnostic }) {
   const [loadError, setLoadError] = useState(false);
   const [loadRetry, setLoadRetry] = useState(0);
   const [open, setOpen] = useState(null);
-  const [q, setQ] = useState(null);
   const [onlyErrors, setOnlyErrors] = useState(false);
-  const reviewHeading = useRef(null);
   const returnToMock = useRef(null);
+  useReportRefresh(setLoadRetry, Boolean(uid) && !open);
 
   useEffect(() => {
     let active = true;
+    const controller = new AbortController();
     const isCurrent = () => active && auth.currentUser?.uid === uid;
     setLoading(true);
     setLoadError(false);
@@ -49,17 +52,22 @@ function ProgressAccount({ uid, onXpLoad, onTrainTopic, onGoDiagnostic }) {
       setLoadError(true);
       return () => { active = false; };
     }
+    let resolveEntitlement, rejectEntitlement;
+    const entitlement = new Promise((resolve, reject) => { resolveEntitlement = resolve; rejectEntitlement = reject; });
     const stopPro = watchPro(uid, (value) => {
+      resolveEntitlement();
       if (isCurrent()) setPro(value);
     }, (error) => {
       console.error('progress entitlement load failed', error);
+      rejectEntitlement(error);
       if (isCurrent()) { setPro(null); setLoadError(true); }
     });
     (async () => {
       try {
-        const [att, mk, topicList, xp, diagnosticResults] = await Promise.all([
+        const [att, mk, topicList, xp, diagnosticResults] = await readWithDeadline(() => Promise.all([
           getAttempts(uid, PROGRESS_ATTEMPT_LIMIT), getMocks(uid), loadTopicCatalog(), getXpSummary(uid), getPlatformDiagnostics(uid),
-        ]);
+          entitlement,
+        ]), { signal: controller.signal });
         const nextStats = buildProgressModel({ attempts: att, topics: topicList });
         if (!isCurrent()) return;
         setDiagnostics(diagnosticResults);
@@ -75,12 +83,11 @@ function ProgressAccount({ uid, onXpLoad, onTrainTopic, onGoDiagnostic }) {
         if (isCurrent()) setLoading(false);
       }
     })();
-    return () => { active = false; stopPro(); };
+    return () => { active = false; controller.abort(); stopPro(); };
   }, [uid, loadRetry, onXpLoad]);
 
   useEffect(() => {
-    if (open) reviewHeading.current?.focus();
-    else if (returnToMock.current !== null) document.getElementById(`progress-mock-${returnToMock.current}`)?.focus();
+    if (!open && returnToMock.current !== null) document.getElementById(`progress-mock-${returnToMock.current}`)?.focus();
   }, [open]);
 
   if (loadError) return (
@@ -96,36 +103,8 @@ function ProgressAccount({ uid, onXpLoad, onTrainTopic, onGoDiagnostic }) {
   );
   if (loading || !stats || pro === null) return <main className="student-progress" aria-busy="true"><header className="sp-heading"><h1>{t('prog.title')}</h1></header><BrandLoader /></main>;
 
-  if (open) return (
-    <main className="student-progress sp-review">
-      <button type="button" className="sp-back" onClick={() => { setOpen(null); setQ(null); }}>← {ru ? 'К моему прогрессу' : 'Менің прогресіме'}</button>
-      <header className="sp-heading">
-        <p className="sp-eyebrow">{ru ? 'РАЗБОР ПРОБНОГО ТЕСТА' : 'СЫНАҚТЫ ТАЛДАУ'}</p>
-        <h1 ref={reviewHeading} tabIndex={-1}>{open.school || (ru ? 'Пробный тест' : 'Сынақ тесті')}</h1>
-        <p>{fmtDate(open.at, lang)}{open.spentSec ? ` · ${fmtSpent(open.spentSec)}` : ''}</p>
-      </header>
-      <div className="sp-review-score"><strong>{mockDisplayScore(open).score}<small> / {mockDisplayScore(open).max}</small></strong><span>{open.school === 'БИЛ' || open.scoring === 'bil' ? (ru ? 'баллов' : 'ұпай') : (ru ? 'верных ответов' : 'дұрыс жауап')}</span><p>{ru ? 'Открой задачу, чтобы посмотреть условие и решение.' : 'Шарты мен шешімін көру үшін есепті аш.'}</p></div>
-      {open.review?.length ? (
-        <div className="sp-review-list">
-          {open.review.map((r, index) => {
-            const on = q === index;
-            return <article key={index} className="sp-question">
-              <h2><button type="button" id={`progress-question-toggle-${index}`} aria-expanded={on} aria-controls={`progress-question-${index}`} onClick={() => setQ(on ? null : index)}>
-                <span className={`sp-answer-mark ${r.correct ? 'is-correct' : 'is-wrong'}`} aria-hidden="true">{r.correct ? '✓' : '×'}</span>
-                <span className="sp-question-copy"><strong>№{r.num} · {r.correct ? (ru ? 'Верно' : 'Дұрыс') : (ru ? 'Разберём вместе' : 'Бірге талдайық')}</strong><span>{ru ? 'Твой ответ' : 'Сенің жауабың'}: «{r.your ?? '—'}» · {ru ? 'Верный' : 'Дұрыс'}: «{r.answer ?? '?' }»</span></span>
-                <span className="sp-question-chevron" aria-hidden="true">{on ? '−' : '+'}</span>
-              </button></h2>
-              <div className="sp-question-detail" id={`progress-question-${index}`} hidden={!on} aria-labelledby={`progress-question-toggle-${index}`}>
-                {String(r.statement || '').split(/\n{2,}/).map((paragraph, i) => <p className="stmt" key={i}>{paragraph}</p>)}
-                {r.image && <img className="fig" src={r.image} alt={ru ? `Рисунок к задаче ${r.num}` : `${r.num}-есептің суреті`} />}
-                {r.solution && <div className="sp-solution"><strong>{ru ? 'Решение' : 'Шешімі'}</strong><p>{r.solution}</p></div>}
-              </div>
-            </article>;
-          })}
-        </div>
-      ) : <section className="sp-state"><h2>{ru ? 'Разбор не сохранился' : 'Талдау сақталмады'}</h2><p>{t('ui.41')}</p></section>}
-    </main>
-  );
+  if (open) return <MockResults key={open.id || returnToMock.current} result={open} school={open.school} lang={lang}
+    backLabel={ru ? 'К моему прогрессу' : 'Менің прогресіме'} onBack={() => setOpen(null)} />;
 
   const { accuracy, answerCount, totalSeconds, week, next, historyLimited } = stats;
   const maxSeconds = Math.max(1, ...week.map(day => day.seconds));
@@ -144,7 +123,7 @@ function ProgressAccount({ uid, onXpLoad, onTrainTopic, onGoDiagnostic }) {
       <section className="sp-next" aria-labelledby="progress-next-title">
         <div className="sp-next-copy"><span className="sp-next-tag">{ru ? 'ТВОЙ СЛЕДУЮЩИЙ ШАГ' : 'КЕЛЕСІ ҚАДАМЫҢ'}</span>
           <h2 id="progress-next-title">{next ? (next.kind === 'review' ? (ru ? 'Давай разберём ошибки' : 'Қателерді бірге талдайық') : (ru ? 'Отличное начало. Продолжим?' : 'Жақсы бастама. Жалғастырайық?')) : (ru ? 'Узнай, с чего начать' : 'Неден бастау керегін біл')}</h2>
-          {next ? <><p className="sp-next-topic">{topicLabel(next.topic, ru)}</p><p>{next.kind === 'review' ? (ru ? `Верно ${next.topic.correct} из ${next.topic.total} ответов. Ещё немного практики поможет разобраться.` : `${next.topic.total} жауаптың ${next.topic.correct}-і дұрыс. Тағы біраз жаттығу тақырыпты түсінуге көмектеседі.`) : (ru ? `Все ${next.topic.total} ответа в этой теме верные. Закрепи результат на следующих задачах.` : `Бұл тақырыптағы ${next.topic.total} жауаптың бәрі дұрыс. Келесі есептермен нәтижеңді бекіт.`)}</p>
+          {next ? <><p className="sp-next-topic">{topicLabel(next.topic, ru)}</p><p>{next.kind === 'review' ? (ru ? `Верно ${next.topic.correct} из ${next.topic.total} ответов. Ещё немного практики поможет разобраться.` : `${next.topic.total} жауаптың ${next.topic.correct}-і дұрыс. Тағы біраз жаттығу тақырыпты түсінуге көмектеседі.`) : (ru ? 'В этой теме пока нет ошибок. Закрепи результат на следующих задачах.' : `Бұл тақырыптағы ${next.topic.total} жауаптың бәрі дұрыс. Келесі есептермен нәтижеңді бекіт.`)}</p>
             {onTrainTopic && <button type="button" className="sp-button sp-button-mint" onClick={() => onTrainTopic(next.topic.id)}>{next.kind === 'review' ? (ru ? 'Потренировать тему' : 'Тақырыпты жаттықтыру') : (ru ? 'Продолжить практику' : 'Жаттығуды жалғастыру')}<Arrow /></button>}
           </> : <><p>{ru ? 'Пройди диагностику: она поможет выбрать тему для первых занятий.' : 'Диагностикадан өт: ол алғашқы сабақтарға тақырып таңдауға көмектеседі.'}</p><button type="button" className="sp-button sp-button-mint" onClick={onGoDiagnostic}>{ru ? 'Пройти диагностику' : 'Диагностикадан өту'}<Arrow /></button></>}
         </div>
@@ -164,7 +143,7 @@ function ProgressAccount({ uid, onXpLoad, onTrainTopic, onGoDiagnostic }) {
           <div className="sp-topic-top"><span className="sp-topic-badge">{topic.wrong ? (ru ? 'Можно повторить' : 'Қайталап көр') : (ru ? 'Без ошибок' : 'Қатесіз')}</span><strong>{topic.pct}%</strong></div>
           <h3>{topicLabel(topic, ru)}</h3>
           <div className="sp-meter" aria-hidden="true"><i style={{ width: `${topic.pct}%` }} /></div>
-          <p className="sp-topic-count">{ru ? `${topic.correct} из ${topic.total} ответов верно` : `${topic.total} жауаптың ${topic.correct}-і дұрыс`} <span>· {ru ? `Ошибок: ${topic.wrong}` : `Қате: ${topic.wrong}`}</span></p>
+          <p className="sp-topic-count">{ru ? `Верно: ${topic.correct} из ${topic.total}` : `${topic.total} жауаптың ${topic.correct}-і дұрыс`} <span>· {ru ? `Ошибок: ${topic.wrong}` : `Қате: ${topic.wrong}`}</span></p>
           {topic.total < 5 && <p className="sp-small-sample">{ru ? 'Пока мало ответов — продолжай пробовать.' : 'Әзірге жауап аз — жаттығуды жалғастыр.'}</p>}
           {topic.canPractice && onTrainTopic ? <button type="button" className="sp-topic-action" onClick={() => onTrainTopic(topic.id)} aria-label={`${ru ? 'Практика' : 'Жаттығу'}: ${topicLabel(topic, ru)}`}>{ru ? 'Практика по теме' : 'Тақырып бойынша жаттығу'}<Arrow /></button> : <p className="sp-small-sample">{ru ? 'Новые задачи по теме появятся позже.' : 'Тақырып бойынша жаңа есептер кейін қосылады.'}</p>}
         </article>)}</div> : <div className="sp-state sp-topic-empty"><span className="sp-state-icon" aria-hidden="true">{onlyErrors ? '✓' : '↗'}</span><h3>{onlyErrors ? (ru ? 'В этих ответах нет ошибок' : 'Бұл жауаптарда қате жоқ') : (ru ? 'Здесь появятся твои результаты' : 'Мұнда сенің нәтижелерің пайда болады')}</h3><p>{onlyErrors ? (ru ? 'Выбери любую из своих тем и продолжай практику.' : 'Өз тақырыптарыңның бірін таңдап, жаттығуды жалғастыр.') : (ru ? 'Ответь на задачи в практике — увидишь точность и количество верных ответов по каждой теме.' : 'Жаттығуда есептерге жауап бер: әр тақырып бойынша дәлдік пен дұрыс жауап санын көресің.')}</p>{onlyErrors && <button type="button" className="sp-text-button" onClick={() => setOnlyErrors(false)}>{ru ? 'Показать все темы' : 'Барлық тақырыпты көрсету'}<Arrow /></button>}</div>}
@@ -184,7 +163,7 @@ function ProgressAccount({ uid, onXpLoad, onTrainTopic, onGoDiagnostic }) {
       {!latestDiagnostic && diagnosis && <div className="sp-legacy-diagnosis"><DiagnosisReport diagnosis={diagnosis} pro={pro} onUnlock={proUnlockHint} onTrainTopic={pro ? onTrainTopic : undefined} compact /></div>}
 
       <section className="sp-mocks" aria-labelledby="progress-mocks-title"><div className="sp-section-head"><div><span className="sp-eyebrow">{ru ? 'ПОСМОТРИ И РАЗБЕРИСЬ' : 'ҚАРАП, ТҮСІНІП АЛ'}</span><h2 id="progress-mocks-title">{ru ? 'Твои пробные тесты' : 'Сенің сынақ тесттерің'}</h2></div><span className="sp-count">{mocks.length}</span></div>
-        {mocks.length ? <div className="sp-mock-list">{mocks.map((mock, index) => <button type="button" id={`progress-mock-${index}`} className="sp-mock" key={index} onClick={() => { returnToMock.current = index; setQ(null); setOpen(mock); }}><span className="sp-mock-icon" aria-hidden="true">▤</span><span className="sp-mock-copy"><strong>{mock.school || (ru ? 'Пробный тест' : 'Сынақ тесті')}</strong><small>{fmtDate(mock.at, lang)}{mock.spentSec ? ` · ${fmtSpent(mock.spentSec)}` : ''}</small></span><span className="sp-mock-result"><strong>{mockDisplayScore(mock).score}/{mockDisplayScore(mock).max}</strong><small>{mock.school === 'БИЛ' || mock.scoring === 'bil' ? (ru ? 'баллов' : 'ұпай') : (ru ? 'верных ответов' : 'дұрыс жауап')}</small></span><Arrow /></button>)}</div> : <div className="sp-mock-empty"><p>{ru ? 'Пока нет завершённых пробных тестов. После первого здесь появятся результат и разбор задач.' : 'Әзірге аяқталған сынақ тесті жоқ. Бірінші сынақтан кейін нәтиже мен есептерді талдау осы жерде пайда болады.'}</p></div>}
+        {mocks.length ? <div className="sp-mock-list">{mocks.map((mock, index) => <button type="button" id={`progress-mock-${index}`} className="sp-mock" key={index} onClick={() => { returnToMock.current = index; setOpen(mock); }}><span className="sp-mock-icon" aria-hidden="true">▤</span><span className="sp-mock-copy"><strong>{mock.school || (ru ? 'Пробный тест' : 'Сынақ тесті')}</strong><small>{fmtDate(mock.at, lang)}{mock.spentSec ? ` · ${fmtSpent(mock.spentSec)}` : ''}</small></span><span className="sp-mock-result"><strong>{mockDisplayScore(mock).score}/{mockDisplayScore(mock).max}</strong><small>{mock.school === 'БИЛ' || mock.scoring === 'bil' ? (ru ? 'баллов' : 'ұпай') : (ru ? 'верных ответов' : 'дұрыс жауап')}</small></span><Arrow /></button>)}</div> : <div className="sp-mock-empty"><p>{ru ? 'Пока нет завершённых пробных тестов. После первого здесь появятся результат и разбор задач.' : 'Әзірге аяқталған сынақ тесті жоқ. Бірінші сынақтан кейін нәтиже мен есептерді талдау осы жерде пайда болады.'}</p></div>}
       </section>
     </main>
   );

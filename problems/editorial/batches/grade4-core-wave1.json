@@ -1,0 +1,1616 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "43 authored nonvisual grade-4 editions, one real curriculum model per captured topic; not full grade-4 source coverage.",
+  "summary": {
+    "editions": 43,
+    "sourceOccurrencesReferenced": 43,
+    "sourceTopicsReferenced": 43,
+    "models": 43,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-core-joined-ribbons",
+      "modelId": "grade4-joined-ribbons",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "firstM": 3,
+        "firstCm": 28,
+        "secondM": 2,
+        "secondCm": 67
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-1-level1.json",
+          "sourceId": "fc1e3f6a6ea14afe"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Сахнаны безендіруге ұзындығы 3 м 28 см және 2 м 67 см екі таспа алынды. Таспалар ұштарынан жалғанды, ұзындықтары қысқарған жоқ. Жалпы ұзындықты сантиметрмен жазыңдар.",
+      "answer": "595",
+      "solution": "3 м 28 см = 328 см, ал 2 м 67 см = 267 см. Жалпы ұзындық: 328 + 267 = 595 см.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "metres converted to centimetres before addition"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-quarter-hour-finish",
+      "modelId": "grade4-quarter-hour-finish",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "hour": 14,
+        "afterMinutes": 20
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-10-level1.json",
+          "sourceId": "a312b350b278c653"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "24 сағаттық уақыт есебімен сағат 14-тен ширек өткенде робототехника үйірмесінің таныстырылымы басталды. Ол 20 минутқа созылды. Таныстырылым нешеде аяқталды? Жауапты сағат:минут түрінде жазыңдар.",
+      "answer": "14:35",
+      "solution": "Ширек сағат — 60 : 4 = 15 минут. Басталуы — 14:15. 20 минуттан кейін 14:35 болады.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "quarter hour is 15 minutes",
+          "no day or hour ambiguity"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-banknote-change",
+      "modelId": "grade4-banknote-change",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "total": 18000,
+        "large": 10000,
+        "small": 2000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level1.json",
+          "sourceId": "f8d2d6ba4c5d805f"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Кассир 18 000 теңгені ұсақтады: бір 10 000 теңгелік банкнот беріп, қалған соманы тек 2 000 теңгелік банкноттармен қайтарды. Неше 2 000 теңгелік банкнот берілді?",
+      "answer": "4",
+      "solution": "Алдымен қалған соманы табамыз: 18 000 − 10 000 = 8 000 теңге. Банкнот саны: 8 000 : 2 000 = 4.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "banknotes sum back to the original total"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-euro-cent-change",
+      "modelId": "grade4-euro-cent-change",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "firstEuro": 3,
+        "firstCent": 75,
+        "secondEuro": 2,
+        "secondCent": 60,
+        "paidEuro": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-12-level1.json",
+          "sourceId": "6d1a73da43ddb42e"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Оқу ойынында 1 еуро 100 центке тең. Бір ашықхат 3 еуро 75 цент, екіншісі 2 еуро 60 цент тұрады. Екі ашықхат үшін 10 еуро берілді. Қайтарылатын ақша неше цент?",
+      "answer": "365",
+      "solution": "Бағаларды центке ауыстырамыз: 375 және 260. Екі ашықхат: 375 + 260 = 635 цент. Төленгені 1000 цент, сондықтан қайтарым 1000 − 635 = 365 цент.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "currency conversion is an explicit fictional-game given"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-place-value-assembly",
+      "modelId": "grade4-place-value-assembly",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "thousands": 40,
+        "hundreds": 3,
+        "ones": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-2-level1.json",
+          "sourceId": "ec4232667e0aff3f"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Құпия сан 40 мыңнан, 3 жүздіктен және 8 бірліктен құралған. Оның ондықтар разрядында 0 тұр. Құпия санды цифрлармен жазыңдар.",
+      "answer": "40308",
+      "solution": "40 мың = 40 000, 3 жүздік = 300. Қосамыз: 40 000 + 300 + 8 = 40 308.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "empty tens place retained"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-digit-contribution",
+      "modelId": "grade4-digit-contribution",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "number": 274806391,
+        "digit": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level1.json",
+          "sourceId": "895497af40ea6690"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "274 806 391 санындағы 7 цифрының разрядтық мәнін санмен жазыңдар.",
+      "answer": "70000000",
+      "solution": "Оң жақтан санағанда 7 цифры 8-орында тұр. Оның разрядтық мәні: 7 · 10 000 000 = 70 000 000.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "unique occurrence of the target digit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-checkpoint-sequence",
+      "modelId": "grade4-checkpoint-sequence",
+      "grade": 4,
+      "topic": "seq",
+      "difficulty": "medium",
+      "params": {
+        "start": 20420,
+        "step": 1200,
+        "position": 6
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-4-level2.json",
+          "sourceId": "8c3b2dc6deb0bffb"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бақылау нүктелерінің кодтары әр жолы бірдей санға артады: 20 420, 21 620, 22 820, … . Осы рет сақталса, 6-нүктенің коды қандай?",
+      "answer": "26420",
+      "solution": "Кодтардың айырмасы: 21 620 − 20 420 = 1 200. Бірінші нүктеден 6-нүктеге дейін 5 қадам бар. Код: 20 420 + 5 · 1 200 = 26 420.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "index is one-based and the equal increment is explicit"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-extreme-codes-zero",
+      "modelId": "grade4-extreme-codes-zero",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "digits": [
+          0,
+          2,
+          6,
+          8
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-5-level1.json",
+          "sourceId": "573fe2d7f165c2fa"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "0, 2, 6, 8 цифрларының әрқайсысын бір рет қолданып, ең үлкен және ең кіші төрттаңбалы код құрыңдар. Код 0-ден басталмайды. Үлкен кодтан кіші кодты азайтқанда қандай сан шығады?",
+      "answer": "6552",
+      "solution": "Ең үлкен код — 8 620. Ең кіші кодтың басына ең кіші нөлден өзге цифр, содан кейін қалған цифрлар өсу ретімен жазылады: 2 068. Айырмасы: 8 620 − 2 068 = 6 552.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "all 24 digit permutations enumerated; leading zero rejected"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-mixed-freight-mass",
+      "modelId": "grade4-mixed-freight-mass",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "tonnes": 6,
+        "centners": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level1.json",
+          "sourceId": "fe097f3baabedb48"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жүк көлігі 6 т 5 ц құрылыс қоспасын жеткізді. Жүктің массасын килограммен жазыңдар.",
+      "answer": "6500",
+      "solution": "1 т = 1000 кг, 1 ц = 100 кг. Сондықтан 6 · 1000 + 5 · 100 = 6 500 кг.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "both tonne and centner scale factors applied"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-cube-wire-frame",
+      "modelId": "grade4-cube-wire-frame",
+      "grade": 4,
+      "topic": "spat",
+      "difficulty": "medium",
+      "params": {
+        "edge": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-7-level1.json",
+          "sourceId": "3fbf213e977cd299"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ұзындығы 7 см болатын сым кесінділерінен текшенің қаңқасы жасалады. Әр қырына бір кесінді кетеді. Сымды жалғауға қосымша ұзындық қажет емес. Барлығы неше сантиметр сым керек?",
+      "answer": "84",
+      "solution": "Текшенің жоғарғы жағында 4 қыр, төменгі жағында 4 қыр және оларды қосатын 4 қыр бар: барлығы 12 қыр. Сым ұзындығы: 12 · 7 = 84 см.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "cube edges counted as 4 + 4 + 4"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-park-area-remainder",
+      "modelId": "grade4-park-area-remainder",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "squareKm": 3,
+        "reservedM2": 180000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-8-level1.json",
+          "sourceId": "ed19efc458dc35fb"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Табиғат бағының ауданы 3 км². Оның 180 000 м² аумағы зерттеу алаңына бөлінді. Қалған аумақ неше шаршы метр?",
+      "answer": "2820000",
+      "solution": "1 км² = 1000 · 1000 = 1 000 000 м². Бақтың ауданы 3 000 000 м². Қалғаны: 3 000 000 − 180 000 = 2 820 000 м².",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "area conversion squares the length conversion"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-sum-of-squares",
+      "modelId": "grade4-sum-of-squares",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "small": 7,
+        "large": 70
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-9-level1.json",
+          "sourceId": "98687ffaf89ab2ee"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Тақтадағы 7² + 70² өрнегінің мәнін есептеңдер.",
+      "answer": "4949",
+      "solution": "7² = 7 · 7 = 49, 70² = 70 · 70 = 4900. Қосындысы: 49 + 4900 = 4949.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "exponents evaluated before addition"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-product-comparison-gap",
+      "modelId": "grade4-product-comparison-gap",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "factor": 26104,
+        "times": 3,
+        "reference": 78300
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level1.json",
+          "sourceId": "3392bcb064efc0d0"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "26 104 · 3 көбейтіндісі 78 300 санынан қаншаға артық?",
+      "answer": "12",
+      "solution": "Көбейтінді: 26 104 · 3 = 78 312. Айырма: 78 312 − 78 300 = 12.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "comparison requests an additive gap, not a ratio"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-zero-quotient-packages",
+      "modelId": "grade4-zero-quotient-packages",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "items": 72024,
+        "groups": 6
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-2-level1.json",
+          "sourceId": "0a8ca9895d689cf8"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қоймадағы 72 024 бекіткіш 6 шеберханаға тең бөлінді. Әр шеберхана неше бекіткіш алды?",
+      "answer": "12004",
+      "solution": "72 024 : 6 = 12 004. Бөліндідегі нөлдерді түсірмейміз. Тексеру: 12 004 · 6 = 72 024.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "whole equal groups and zero places retained"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-divisible-code-extremum",
+      "modelId": "grade4-divisible-code-extremum",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "digits": [
+          4,
+          2,
+          6,
+          0
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-3-level1.json",
+          "sourceId": "51150c0a45cb3d51"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "4, 2, 6, 0 цифрларын әрқайсысын бір рет қолданыңдар. Солардан құралатын, 2-ге де, 5-ке де бөлінетін ең үлкен төрттаңбалы санды табыңдар.",
+      "answer": "6420",
+      "solution": "2-ге де, 5-ке де бөлінетін сан 0-мен аяқталады. Қалған цифрларды кему ретімен орналастырамыз: 6420. Барлық цифр бір рет қолданылды.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "all distinct four-digit candidates tested for both divisibilities"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-thousand-sheet-order",
+      "modelId": "grade4-thousand-sheet-order",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "bundles": 26,
+        "used": 500
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-4-level1.json",
+          "sourceId": "8838011ef7d1634f"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Баспахана әрқайсысында 1000 парақ бар 26 бума қағаз алды. Соның 500 парағы жұмсалды. Неше парақ қалды?",
+      "answer": "25500",
+      "solution": "Барлық қағаз: 26 · 1000 = 26 000 парақ. Қалғаны: 26 000 − 500 = 25 500 парақ.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "multiplication by a power of ten precedes stock subtraction"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-complete-hundreds-reconstruction",
+      "modelId": "grade4-complete-hundreds-reconstruction",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "full": 47,
+        "remainder": 23
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-5-level1.json",
+          "sourceId": "97cc7c5eccfa817c"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ашықхаттарды 100-ден буғанда 47 толық бума жиналып, 23 ашықхат артылды. Бастапқыда неше ашықхат болған?",
+      "answer": "4723",
+      "solution": "Толық бумаларда 47 · 100 = 4 700 ашықхат бар. Қалдықты қосамыз: 4 700 + 23 = 4 723.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "Euclidean remainder is less than the bundle size"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-multiple-ticket-count",
+      "modelId": "grade4-multiple-ticket-count",
+      "grade": 4,
+      "topic": "sets",
+      "difficulty": "medium",
+      "params": {
+        "lower": 24,
+        "upper": 84,
+        "multiple": 6
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json",
+          "sourceId": "6cf772c695b595c4"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ойын билеттері 24-тен 84-ке дейін, екі шеткі нөмірді де қоса нөмірленген. Нөмірі 6-ға еселік билеттерге белгі қойылады. Неше билет белгіленеді?",
+      "answer": "11",
+      "solution": "Шартқа сай нөмірлер: 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84. Олардың саны — 11. Екі шеткі нөмір де тексерілді.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "inclusive integer interval exhaustively enumerated"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-ski-trip-with-rest",
+      "modelId": "grade4-ski-trip-with-rest",
+      "grade": 4,
+      "topic": "work",
+      "difficulty": "medium",
+      "params": {
+        "speed": 6,
+        "distance": 18,
+        "rest": 30
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-1-level1.json",
+          "sourceId": "acef4c2ad6544365"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Шаңғышы 6 км/сағ тұрақты жылдамдықпен 18 км жол жүрді. Жолда ол қозғалыс уақытынан бөлек 30 минут демалды. Жолға шығудан мәреге жетуге дейін барлығы неше минут өтті?",
+      "answer": "210",
+      "solution": "Қозғалыс уақыты: 18 : 6 = 3 сағ, яғни 180 минут. Демалысты қосамыз: 180 + 30 = 210 минут.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "moving time and stopped time are explicitly separate"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-three-speed-gap",
+      "modelId": "grade4-three-speed-gap",
+      "grade": 4,
+      "topic": "work",
+      "difficulty": "hard",
+      "params": {
+        "kmHour": 54,
+        "metresSecond": 14,
+        "metresMinute": 960
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-2-level1.json",
+          "sourceId": "d606f37a8a1b5e3d"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Сынақта бірінші құрылғы 54 км/сағ, екіншісі 14 м/с, үшіншісі 960 м/мин жылдамдықпен қозғалды. Ең жылдам құрылғының жылдамдығы екінші құрылғының жылдамдығынан неше м/мин артық?",
+      "answer": "120",
+      "solution": "Бірінші жылдамдық: 54000 : 60 = 900 м/мин. Екінші: 14 · 60 = 840 м/мин. Үшінші: 960 м/мин. Ең үлкені 960 м/мин, айырмасы 960 − 840 = 120 м/мин.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "all three units converted before comparison",
+          "unique fastest speed"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-union-of-word-letters",
+      "modelId": "grade4-union-of-word-letters",
+      "grade": 4,
+      "topic": "sets",
+      "difficulty": "medium",
+      "params": {
+        "first": "ҚАЗЫНА",
+        "second": "ЗАМАН"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-3-3-level1.json",
+          "sourceId": "5758bac210671cfe"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бірінші жиын «ҚАЗЫНА» сөзіндегі әріптерден, екіншісі «ЗАМАН» сөзіндегі әріптерден құралған. Екі жиынның бірігуінде неше әріп болады? Қайталанатын әріп бір рет қана есептеледі.",
+      "answer": "6",
+      "solution": "Екі сөзден кездесетін әртүрлі әріптер: Қ, А, З, Ы, Н, М. Қайталанған әріптерді қайта санамаймыз. Бірігуде 6 элемент бар.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "Unicode letter sets deduplicated"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-cubic-container-volume",
+      "modelId": "grade4-cubic-container-volume",
+      "grade": 4,
+      "topic": "spat",
+      "difficulty": "medium",
+      "params": {
+        "edge": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level1.json",
+          "sourceId": "9be87b4267e9b0e2"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қыры 4 дм болатын текше пішінді жәшіктің ішкі көлемін табыңдар. Берілген өлшем — ішкі қырының ұзындығы. Жауапты дм³-пен жазыңдар.",
+      "answer": "64",
+      "solution": "Текшенің ұзындығы, ені және биіктігі бірдей. Көлемі: 4 · 4 · 4 = 64 дм³.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "all three orthogonal dimensions equal the given inner edge"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-free-floor-area",
+      "modelId": "grade4-free-floor-area",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "length": 12,
+        "width": 7,
+        "carpetLength": 4,
+        "carpetWidth": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-2-level1.json",
+          "sourceId": "631b83be7a42c0b0"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ұзындығы 12 м, ені 7 м тік төртбұрышты бөлменің еденіне ұзындығы 4 м, ені 2 м кілем төселді. Кілем еденнің ішіне толық сыйды. Кілем жабылмаған еденнің ауданы неше м²?",
+      "answer": "76",
+      "solution": "Бөлме ауданы 12 · 7 = 84 м². Кілем ауданы 4 · 2 = 8 м². Ашық қалған аудан: 84 − 8 = 76 м².",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "contained carpet area subtracted without overlap ambiguity"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-adjacent-square-posters",
+      "modelId": "grade4-adjacent-square-posters",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "count": 4,
+        "side": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level1.json",
+          "sourceId": "614821fc5eb462d1"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қабырғасы 7 дм болатын 4 бірдей шаршы плакат бір қатарға қатарластырылды. Плакаттар бірінің үстін бірі жаппайды. Олардың жалпы ауданы неше дм²?",
+      "answer": "196",
+      "solution": "Бір плакаттың ауданы: 7 · 7 = 49 дм². 4 плакаттың жалпы ауданы: 49 · 4 = 196 дм².",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "areas add because there is no overlap"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-three-level-packing",
+      "modelId": "grade4-three-level-packing",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "trays": 18,
+        "boxes": 5,
+        "items": 24
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level1.json",
+          "sourceId": "50fde1419d0dfde2"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көрмеге 18 сөре дайындалды. Әр сөреге 5 қорап, әр қорапқа 24 белгі салынды. Барлық белгі саны 18 · (5 · 24) өрнегімен жазылады. Жақшаны басқаша қойып, көбейтіндінің мәнін өзгертпейтін жазуды таңдаңдар.",
+      "answer": "(18 · 5) · 24",
+      "solution": "Көбейтудің терімділік қасиеті бойынша 18 · (5 · 24) = (18 · 5) · 24. Екі жазудың да мәні 2 160. Қалған нұсқалардың мәндері 552, 114, 522; бұлар 2 160 санына тең емес.",
+      "options": [
+        "(18 · 5) · 24",
+        "(18 + 5) · 24",
+        "18 · 5 + 24",
+        "18 · (5 + 24)"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "associative regrouping preserves all factors and operations",
+          "exactly one offered expression equals the original product"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-triple-digit-unknown-factor",
+      "modelId": "grade4-triple-digit-unknown-factor",
+      "grade": 4,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "each": 216,
+        "total": 19656
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-10-level1.json",
+          "sourceId": "dc799dcf10cf1d1d"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бірдей қораптардың әрқайсысына 216 суретті карточка салынды. Барлық қорапта 19 656 карточка бар. Қорап санын табыңдар.",
+      "answer": "91",
+      "solution": "216 · x = 19 656. Сондықтан x = 19 656 : 216 = 91. Тексеру: 91 · 216 = 19 656.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "unknown factor checked by inverse multiplication"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-production-equal-distribution",
+      "modelId": "grade4-production-equal-distribution",
+      "grade": 4,
+      "topic": "work",
+      "difficulty": "hard",
+      "params": {
+        "daily": 168,
+        "days": 125,
+        "destinations": 75
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-11-level2.json",
+          "sourceId": "95cfb8e8a71b90a2"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Шеберхана күн сайын 168 ойыншық бөлшек дайындайды. 125 күнде дайындалған барлық бөлшек 75 үйірмеге тең бөлінді. Әр үйірме неше бөлшек алды?",
+      "answer": "280",
+      "solution": "Барлық бөлшек: 168 · 125 = 21 000. Әр үйірмеге: 21 000 : 75 = 280 бөлшек. Тексеру: 280 · 75 = 21 000.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "production conserved in exact destination groups"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-tens-package-division",
+      "modelId": "grade4-tens-package-division",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "total": 7200,
+        "capacity": 90
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-2-level1.json",
+          "sourceId": "c7cf6cd423be4e45"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Құрастыру жиынтығына арналған 7 200 тетік бар. Әр пакетке 90 тетік салынады. Барлық тетік қалдықсыз салынуы үшін неше пакет керек?",
+      "answer": "80",
+      "solution": "Пакет саны: 7 200 : 90 = 720 : 9 = 80. Тексеру: 80 · 90 = 7 200.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "equal factor of ten removed from dividend and divisor"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-daily-stock-remainder",
+      "modelId": "grade4-daily-stock-remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "daily": 1280,
+        "days": 20,
+        "shipped": 9600
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-3-level2.json",
+          "sourceId": "680091af8b4f721b"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Мектеп шеберханасы күніне 1 280 қағаз белгі жасайды. 20 күндегі белгілердің 9 600 данасы жарысқа жіберілді, өзгесі қоймада қалды. Қоймада неше белгі қалды?",
+      "answer": "16000",
+      "solution": "Барлығы: 1 280 · 20 = 25 600 белгі. Қоймада: 25 600 − 9 600 = 16 000 белгі.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "daily accumulation minus a single shipment"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-equal-budget-price-count",
+      "modelId": "grade4-equal-budget-price-count",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "budget": 7200,
+        "firstPrice": 120,
+        "secondPrice": 90
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-4-level2.json",
+          "sourceId": "fb29d93dd96c6816"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Екі сыныптың әрқайсысы жапсырмаға 7 200 теңгеден жұмсады. Бірінші сынып бір жапсырманы 120 теңгеден, екіншісі 90 теңгеден алды. Екінші сынып неше жапсырма артық алды?",
+      "answer": "20",
+      "solution": "Бірінші сынып: 7 200 : 120 = 60 жапсырма. Екінші: 7 200 : 90 = 80. Айырма: 80 − 60 = 20.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "separate equal budgets each purchase whole items"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-full-seats-total",
+      "modelId": "grade4-full-seats-total",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "rows": 24,
+        "seats": 18
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-5-level1.json",
+          "sourceId": "a02434d81899c58c"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қойылым залындағы 24 қатардың әрқайсысында 18 орын бар. Бос орын қалған жоқ. Қойылымды неше көрермен тамашалады?",
+      "answer": "432",
+      "solution": "24 қатардың әрқайсысында 18 көрермен: 24 · 18 = 432.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "all seats occupied exactly once"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-three-digit-quotient-selection",
+      "modelId": "grade4-three-digit-quotient-selection",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "pairs": [
+          [
+            8640,
+            72
+          ],
+          [
+            5796,
+            84
+          ],
+          [
+            4216,
+            68
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-6-level1.json",
+          "sourceId": "c2afb9be6382ef17"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Мына бөлінділерді қарастырыңдар: 8 640 : 72; 5 796 : 84; 4 216 : 68. Олардың тек біреуі үштаңбалы санға тең. Сол үштаңбалы санды жазыңдар.",
+      "answer": "120",
+      "solution": "Бөлінділер ретімен: 120, 69, 62. Осылардың ішіндегі жалғыз үштаңбалы сан — 120.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "all candidate quotients exact; one and only one has three digits"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-full-crates-remainder",
+      "modelId": "grade4-full-crates-remainder",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "total": 1019,
+        "capacity": 42
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-7-level1.json",
+          "sourceId": "b74e5399b8b7d295"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жәрмеңкеде 1 019 алма бар. Бір жәшікке 42 алма сыяды. Толық жәшіктер ғана жөнелтіледі, артылған алма бөлек қалады. Неше толық жәшік жөнелтіледі?",
+      "answer": "24",
+      "solution": "1 019 : 42 = 24, қалдық 11. 24 толық жәшікке 1008 алма салынады. Қалған 11 алма тағы бір жәшікті толтырмайды.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "0 < remainder < capacity; next full crate is impossible"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-unit-price-repeat-purchase",
+      "modelId": "grade4-unit-price-repeat-purchase",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "count": 28,
+        "total": 14280,
+        "wanted": 6
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-8-level2.json",
+          "sourceId": "537b4a01345ee74c"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бірдей 28 сызғыш үшін 14 280 теңге төленді. Баға өзгермесе, сондай 6 сызғыш неше теңге тұрады?",
+      "answer": "3060",
+      "solution": "Бір сызғыштың бағасы: 14 280 : 28 = 510 теңге. 6 сызғыш: 510 · 6 = 3 060 теңге.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "same unit price used for both purchases; quotient zero retained"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-three-digit-product",
+      "modelId": "grade4-three-digit-product",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "first": 406,
+        "second": 213
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-9-level1.json",
+          "sourceId": "3e4a5fe8abd21a33"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір бетке 406 түрлі өрнек басылған. Осындай 213 бетте барлығы неше өрнек бар?",
+      "answer": "86478",
+      "solution": "406 · 213 көбейтіндісін разрядтарға бөліп есептейміз: 1 218 + 4 060 + 81 200 = 86 478.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "partial products shifted by their actual place values"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-productivity-comparison-gap",
+      "modelId": "grade4-productivity-comparison-gap",
+      "grade": 4,
+      "topic": "work",
+      "difficulty": "medium",
+      "params": {
+        "firstMinutes": 6,
+        "firstItems": 54,
+        "secondMinutes": 8,
+        "secondItems": 64
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-6-1-level1.json",
+          "sourceId": "e762b27b32d91c80"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Айша 6 минутта 54 қағаз гүл, Меруерт 8 минутта 64 қағаз гүл жасады. Әрқайсысы бірқалыпты жұмыс істейді. Айшаның бір минуттағы өнімділігі Меруерттікінен неше гүлге артық?",
+      "answer": "1",
+      "solution": "Айша: 54 : 6 = 9 гүл/мин. Меруерт: 64 : 8 = 8 гүл/мин. Айырмасы: 9 − 8 = 1 гүл/мин.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "rates, rather than raw total outputs, compared"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-parallel-printer-time",
+      "modelId": "grade4-parallel-printer-time",
+      "grade": 4,
+      "topic": "work",
+      "difficulty": "medium",
+      "params": {
+        "firstRate": 18,
+        "secondRate": 22,
+        "total": 600
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-6-2-level1.json",
+          "sourceId": "4f18343853bad0fd"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бірінші принтер минутына 18 бет, екіншісі минутына 22 бет басады. Олар бір уақытта қосылып, үзіліссіз жұмыс істейді. Екеуі бірге 600 бетті неше минутта басып бітіреді?",
+      "answer": "15",
+      "solution": "Бір минутта екеуі 18 + 22 = 40 бет басады. Қажет уақыт: 600 : 40 = 15 минут.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "independent simultaneous rates add; total is divisible by combined rate"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-shared-unit-price",
+      "modelId": "grade4-shared-unit-price",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "firstCount": 7,
+        "secondCount": 5,
+        "total": 9600
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-6-3-level1.json",
+          "sourceId": "3e61e439444e39dc"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көрмеге бірдей бағамен 7 жасыл және 5 көк папка алынды. Барлығына 9 600 теңге төленді. Бір папка неше теңге тұрады?",
+      "answer": "800",
+      "solution": "Барлық папка саны: 7 + 5 = 12. Бір папканың бағасы: 9 600 : 12 = 800 теңге.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "both colours explicitly share the same unit price"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-equal-speed-time-difference",
+      "modelId": "grade4-equal-speed-time-difference",
+      "grade": 4,
+      "topic": "work",
+      "difficulty": "hard",
+      "params": {
+        "longer": 7,
+        "shorter": 4,
+        "extraDistance": 195
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-6-4-level1.json",
+          "sourceId": "dae5c16da06a07b0"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Екі туристік автобус бірдей тұрақты жылдамдықпен жүрді. Біріншісі 7 сағат, екіншісі 4 сағат қозғалды. Бірінші автобус 195 км артық жол жүрді. Екінші автобус неше километр жүрді?",
+      "answer": "260",
+      "solution": "Уақыт айырмасы 7 − 4 = 3 сағат. Бірдей жылдамдық: 195 : 3 = 65 км/сағ. Екінші автобус: 65 · 4 = 260 км.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "distance difference belongs to the difference in travel times"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-closing-route-length",
+      "modelId": "grade4-closing-route-length",
+      "grade": 4,
+      "topic": "work",
+      "difficulty": "medium",
+      "params": {
+        "firstSpeed": 12,
+        "secondSpeed": 15,
+        "time": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-6-5-level1.json",
+          "sourceId": "b0a8c90b83edc9a3"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Екі ауылдан бір уақытта бір-біріне қарсы екі велосипедші шықты. Бірі 12 км/сағ, екіншісі 15 км/сағ жылдамдықпен жүріп, 3 сағаттан кейін кездесті. Олар бір жолдың бойымен жүрді. Ауылдардың арасы неше километр?",
+      "answer": "81",
+      "solution": "Кездескенге дейін біріншісі 12 · 3 = 36 км, екіншісі 15 · 3 = 45 км жүрді. Екі жол бірге ауылдардың арақашықтығын береді: 36 + 45 = 81 км.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "simultaneous start and one connecting route make distances add"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-bracket-equation",
+      "modelId": "grade4-bracket-equation",
+      "grade": 4,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "addend": 35,
+        "factor": 6,
+        "product": 540
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-6-6-level1.json",
+          "sourceId": "f70c4ec25767d9c8"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "(x + 35) · 6 = 540 теңдеуіндегі x санын табыңдар.",
+      "answer": "55",
+      "solution": "Алдымен жақшадағы мәнді табамыз: x + 35 = 540 : 6 = 90. Сондықтан x = 90 − 35 = 55. Тексеру: (55 + 35) · 6 = 540.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "both inverse operations applied and substituted back"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-separation-rate-from-distance",
+      "modelId": "grade4-separation-rate-from-distance",
+      "grade": 4,
+      "topic": "work",
+      "difficulty": "medium",
+      "params": {
+        "distance": 840,
+        "hours": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-6-7-level1.json",
+          "sourceId": "ff3d071ac68beab7"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Екі пойыз бір стансадан бір мезгілде қарама-қарсы бағытта шықты. 4 сағаттан кейін олардың арасы 840 км болды. Пойыздардың арақашықтығы бір сағатта неше километрге ұлғайып отырған?",
+      "answer": "210",
+      "solution": "Қашықтау жылдамдығы: 840 : 4 = 210 км/сағ. Бір сағаттағы арақашықтық өсімі — 210 км.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "separation grows from zero at a constant combined rate"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-core-meeting-unknown-speed",
+      "modelId": "grade4-meeting-unknown-speed",
+      "grade": 4,
+      "topic": "work",
+      "difficulty": "hard",
+      "params": {
+        "distance": 156,
+        "time": 6,
+        "firstSpeed": 11
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-6-8-level1.json",
+          "sourceId": "57cda2912696cc1a"
+        }
+      ],
+      "adaptationChanges": [
+        "Жаңа қазақша шарт жазылды; бастапқы мәтін мен дайын шешім көшірілген жоқ.",
+        "Деректер мен сұралған шама осы редакция үшін таңдалып, жауап жаңа деректерден қайта есептелді.",
+        "Сурет қажет емес: барлық сан, өлшем бірлігі және байланыс шарттың өзінде берілген."
+      ],
+      "relationToSource": "Grade-4 curriculum skill reference. This is an authored edition, not a claim to reproduce the original exercise.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Арақашықтығы 156 м екі қақпадан бір уақытта бір-біріне қарсы екі робот қозғалды. Олар 6 секундтан кейін кездесті. Бірінші роботтың жылдамдығы 11 м/с. Екіншісінің жылдамдығын м/с-пен табыңдар.",
+      "answer": "15",
+      "solution": "Жақындау жылдамдығы: 156 : 6 = 26 м/с. Екінші робот: 26 − 11 = 15 м/с. Тексеру: (11 + 15) · 6 = 156 м.",
+      "calculationVerification": {
+        "method": "exact_integer_model_with_givens_binding",
+        "checks": [
+          "exact model result",
+          "condition and solution bound to all model givens",
+          "positive second speed satisfies the full meeting-distance equation"
+        ]
+      }
+    }
+  ]
+}

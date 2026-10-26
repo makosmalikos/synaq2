@@ -1,0 +1,1602 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All32 remaining saved grade-4 nonvisual topic5.1 associative-product/division/factorization/inverse sources; no new source collection.",
+  "summary": {
+    "editions": 32,
+    "models": 30,
+    "skillFamilies": 30,
+    "sourceOccurrencesReferenced": 32,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-product-8bf583af7359aeaa",
+      "modelId": "grade4-product-factor-associative-choice",
+      "skillFamily": "factor-associative-choice",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "outer": 11,
+        "pair": [
+          4,
+          25
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level1.json",
+          "sourceId": "8bf583af7359aeaa"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "44 = 11 × 4 жіктеуін пайдаланыңыз. Қай өрнек 44 × 25 көбейтіндісіне тең болады?",
+      "options": [
+        "11 × 4 + 25",
+        "(11 + 4) × 25",
+        "11 × (4 × 25)",
+        "11 × (4 + 25)"
+      ],
+      "answer": "11 × (4 × 25)",
+      "solution": "44 × 25 = (11 × 4) × 25 = 11 × (4 × 25). Ыңғайлы жұп 4 × 25 = 100, сондықтан нәтиже 11 × 100 = 1100. Қалған жолдарда көбейтудің орнына қосу кірген.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "11 × (4 × 25)",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-78b3ef3db1aa91df",
+      "modelId": "grade4-product-associative-product-compare",
+      "skillFamily": "associative-product-compare",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "factors": [
+          9,
+          6,
+          7
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level1.json",
+          "sourceId": "78b3ef3db1aa91df"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көбейтіндіні түгел есептемей, топтастыру ережесімен салыстырыңыз: 9 × (6 × 7) □ (9 × 6) × 7.",
+      "options": [
+        "<",
+        "=",
+        ">",
+        "Салыстыру мүмкін емес"
+      ],
+      "answer": "=",
+      "solution": "Екі жазуда да 9, 6, 7 сандары көбейтіледі. Қалай топтастырсақ та көбейтінді өзгермейді, сондықтан «=» белгісі келеді. Сандық тексеру: 9 × 42 = 378; 54 × 7 = 378.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "=",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-f86d8f27961a4e9c",
+      "modelId": "grade4-product-nested-ten-product",
+      "skillFamily": "nested-ten-product",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 46,
+        "pair": [
+          2,
+          5
+        ],
+        "choices": [
+          4600,
+          460,
+          56,
+          97
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level1.json",
+          "sourceId": "f86d8f27961a4e9c"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Есептеу нәтижесін таңдаңыз: 46 × (2 × 5).",
+      "options": [
+        "4600",
+        "460",
+        "56",
+        "97"
+      ],
+      "answer": "460",
+      "solution": "Жақшадағы 2 × 5 = 10. Сондықтан 46 × 10 = 460. Басқа топтастыру да сол нәтиже береді: (46 × 2) × 5 = 92 × 5 = 460. Қосу арқылы 56 не 97 алу көбейту амалын өзгертеді.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "460",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-8be7e0cfc2a38f7f",
+      "modelId": "grade4-product-decomposed-divisor",
+      "skillFamily": "decomposed-divisor",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 810,
+        "parts": [
+          10,
+          9
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level1.json",
+          "sourceId": "8be7e0cfc2a38f7f"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "90 = 10 × 9 жіктеуіне сүйеніп, 810 : 90 бөліндісін кезекпен бөлу арқылы табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "9",
+      "solution": "Көбейтіндіге бөлу — оның көбейткіштеріне кезекпен бөлу: 810 : (10 × 9) = (810 : 10) : 9. Алдымен 810 : 10 = 81, содан кейін 81 : 9 = 9. Тексеру: 90 × 9 = 810.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "9",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-123f0daea7dd95d4",
+      "modelId": "grade4-product-twenty-product",
+      "skillFamily": "twenty-product",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 47
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level1.json",
+          "sourceId": "123f0daea7dd95d4"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "20 санын 2 × 10 түрінде жіктеп, 47 × 20 көбейтіндісін ыңғайлы тәсілмен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "940",
+      "solution": "47 × 20 = 47 × (2 × 10) = (47 × 2) × 10. Екі еселесек 94, одан кейін 10-ға көбейтсек 940. Толық жазу: 94 × 10 = 940.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "940",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-011bfec2eea46b50",
+      "modelId": "grade4-product-division-chain-choice",
+      "skillFamily": "division-chain-choice",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 1440,
+        "parts": [
+          10,
+          6
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level1.json",
+          "sourceId": "011bfec2eea46b50"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1440 : 60 амалын сол мәнді сақтайтын кезекті бөлулермен ауыстыру керек. Дұрыс жазуды таңдаңыз.",
+      "options": [
+        "1440 : 10 : 6",
+        "1440 : 10 × 6",
+        "1440 : 60 × 10",
+        "1440 : 6 × 10"
+      ],
+      "answer": "1440 : 10 : 6",
+      "solution": "60 = 10 × 6, сондықтан екі рет те бөлу қажет: 1440 : 10 : 6 = 144 : 6 = 24. Қалған нұсқалардағы екінші амал көбейту болғандықтан, олар бастапқы бөліндіге тең емес.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "1440 : 10 : 6",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-0488b5cd8016244c",
+      "modelId": "grade4-product-nested-product-division",
+      "skillFamily": "nested-product-division",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 180,
+        "parts": [
+          3,
+          5
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level1.json",
+          "sourceId": "0488b5cd8016244c"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көбейтіндіге бөлу ережесін пайдаланыңыз: 180 : (3 × 5). Нәтижесі қандай? Жауапқа тек санды жазыңыз.",
+      "answer": "12",
+      "solution": "Алдымен 180 : 3 = 60, одан кейін 60 : 5 = 12. Жақшадағы көбейтінді 3 × 5 = 15; тікелей тексерсек, 180 : 15 = 12. Екінші көбейткішке де бөлу керек.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "12",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-7288718964544034",
+      "modelId": "grade4-product-symbolic-product-division",
+      "skillFamily": "symbolic-product-division",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "letters": [
+          "x",
+          "y",
+          "z"
+        ],
+        "example": [
+          420,
+          5,
+          7
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level1.json",
+          "sourceId": "7288718964544034"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "x, y, z — натурал сандар; y > 1, z > 1 және x саны y × z көбейтіндісіне қалдықсыз бөлінеді. x : (y × z) өрнегін берілген шарттарды орындайтын кез келген мәндер үшін дұрыс алмастыратын жазуды табыңыз.",
+      "options": [
+        "(x : y) : z",
+        "x : y + x : z",
+        "(x × y) : z",
+        "(x : y) × z"
+      ],
+      "answer": "(x : y) : z",
+      "solution": "Көбейтіндіге бөлу ережесі: x : (y × z) = (x : y) : z. Мысал: x = 420, y = 5, z = 7 болса, 420 : (5 × 7) = 12 және (420 : 5) : 7 = 84 : 7 = 12. Қалған үш жазу бөлуге қосу не көбейту қосып, жалпы ережені бұзады.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "(x : y) : z",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-2cd258e3100e9c00",
+      "modelId": "grade4-product-correct-division-equality",
+      "skillFamily": "correct-division-equality",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 1080,
+        "parts": [
+          6,
+          15
+        ],
+        "choices": [
+          24,
+          2700,
+          12,
+          120
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level2.json",
+          "sourceId": "2cd258e3100e9c00"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір бөліндіні есептегенде төрт түрлі теңдік жазылған. Олардың ішінен шын теңдікті таңдаңыз.",
+      "options": [
+        "1080 : (6 × 15) = 24",
+        "1080 : (6 × 15) = 2700",
+        "1080 : (6 × 15) = 12",
+        "1080 : (6 × 15) = 120"
+      ],
+      "answer": "1080 : (6 × 15) = 12",
+      "solution": "1080 : 6 = 180; 180 : 15 = 12. Демек, 1080 : (6 × 15) = 12. Тексеру: 90 × 12 = 1080. Қалған теңдіктер — әдейі берілген қате нұсқалар.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "1080 : (6 × 15) = 12",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-251c0d7b3dedda82",
+      "modelId": "grade4-product-odd-division-expression",
+      "skillFamily": "odd-division-expression",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 840,
+        "parts": [
+          7,
+          12
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level2.json",
+          "sourceId": "251c0d7b3dedda82"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Төрт жазудың үшеуі бірдей санды береді. Мәні қалған үшеуінен өзгеше болатын жазуды белгілеңіз.",
+      "options": [
+        "840 : (7 × 12)",
+        "(840 : 7) : 12",
+        "(840 : 12) : 7",
+        "(840 : 7) × 12"
+      ],
+      "answer": "(840 : 7) × 12",
+      "solution": "Алғашқы үш өрнекте 840 саны 7 × 12 = 84 көбейтіндісіне бөлінеді. Олардың бәрі 10 береді. Соңғы өрнекте екінші амал көбейту: (840 : 7) × 12 = 120 × 12 = 1440. Сондықтан өзгеше өрнек — соңғысы.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "(840 : 7) × 12",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-5a49ce6e74d3435c",
+      "modelId": "grade4-product-round-hundred-multiplier",
+      "skillFamily": "round-hundred-multiplier",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 175,
+        "parts": [
+          4,
+          7
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level2.json",
+          "sourceId": "5a49ce6e74d3435c"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "28 = 4 × 7 екенін қолданып, 175 × 28 мәнін тиімді топтастырумен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "4900",
+      "solution": "175 × 28 = 175 × (4 × 7) = (175 × 4) × 7. Алдымен 175 × 4 = 700 дөңгелек саны шығады. Одан кейін 700 × 7 = 4900. Ыңғайлы топтастыру көп таңбалы көбейтуді қысқартады.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "4900",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-eb5592d28d3ec838",
+      "modelId": "grade4-product-division-rewrite-equality",
+      "skillFamily": "division-rewrite-equality",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 1260,
+        "parts": [
+          9,
+          7
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level2.json",
+          "sourceId": "eb5592d28d3ec838"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көбейтіндіге бөлудің дұрыс түрлендіруі қай теңдікте көрсетілген?",
+      "options": [
+        "1260 : (9 × 7) = (1260 × 9) : 7",
+        "1260 : (9 × 7) = (1260 : 9) × 7",
+        "1260 : (9 × 7) = 1260 : 9 + 1260 : 7",
+        "1260 : (9 × 7) = (1260 : 9) : 7"
+      ],
+      "answer": "1260 : (9 × 7) = (1260 : 9) : 7",
+      "solution": "Сол жақ 1260 : (9 × 7) = 20. Дұрыс оң жақ: (1260 : 9) : 7 = 140 : 7 = 20. Басқа оң жақтардың мәндері тиісінше 1620, 980, 320; олар 20 мәніне тең емес.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "1260 : (9 × 7) = (1260 : 9) : 7",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-a783a52748438f9d",
+      "modelId": "grade4-product-daily-product-resource",
+      "skillFamily": "daily-product-resource",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "perItem": 5,
+        "itemsPerDay": 20,
+        "total": 800,
+        "choices": [
+          8,
+          160,
+          40,
+          100
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level2.json",
+          "sourceId": "a783a52748438f9d"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Мектеп мерекесіне арналған бір әшекейге 5 м таспа жұмсалады. Күніне 20 әшекей жасайды. Басқа шығын болмаса, 800 м таспа осы қарқынмен толық неше күнге жетеді?",
+      "options": [
+        "8",
+        "160",
+        "40",
+        "100"
+      ],
+      "answer": "8",
+      "solution": "Бір күнде 5 × 20 = 100 м таспа кетеді. Барлығы 800 : 100 = 8 күнге жетеді. 800 : 5 = 160 — бұйымдар саны, күн саны емес. Тексеру: 8 × 100 = 800 м.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "8",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-a600db8121ad549b",
+      "modelId": "grade4-product-fifty-hundred-comparison",
+      "skillFamily": "fifty-hundred-comparison",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "left": 44,
+        "right": 21
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level2.json",
+          "sourceId": "a600db8121ad549b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "44 × 50 □ 21 × 100 жазбасын ыңғайлы көбейткіштерге жіктеп салыстырыңыз. Қай белгі қойылады?",
+      "options": [
+        "<",
+        "=",
+        ">",
+        "Салыстыру мүмкін емес"
+      ],
+      "answer": ">",
+      "solution": "44 = 22 × 2, ал 2 × 50 = 100. Сондықтан 44 × 50 = 22 × 100 = 2200. Екінші мән 21 × 100 = 2100. 2200 > 2100, демек тиісті белгі — «>».",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": ">",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-527f5a996fd5a226",
+      "modelId": "grade4-product-decomposed-divisor",
+      "skillFamily": "decomposed-divisor",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 3360,
+        "parts": [
+          6,
+          8
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level2.json",
+          "sourceId": "527f5a996fd5a226"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "48 = 6 × 8 жіктеуіне сүйеніп, 3360 : 48 бөліндісін кезекпен бөлу арқылы табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "70",
+      "solution": "Көбейтіндіге бөлу — оның көбейткіштеріне кезекпен бөлу: 3360 : (6 × 8) = (3360 : 6) : 8. Алдымен 3360 : 6 = 560, содан кейін 560 : 8 = 70. Тексеру: 48 × 70 = 3360.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "70",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-36b17c25e713f920",
+      "modelId": "grade4-product-parentheses-division-comparison",
+      "skillFamily": "parentheses-division-comparison",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 900,
+        "parts": [
+          9,
+          5
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level2.json",
+          "sourceId": "36b17c25e713f920"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жақшаның әсерін ескеріп салыстырыңыз: 900 : (9 × 5) □ 900 : 9 × 5.",
+      "options": [
+        "<",
+        "=",
+        ">",
+        "Салыстыру мүмкін емес"
+      ],
+      "answer": "<",
+      "solution": "Бірінші өрнек 900 : 45 = 20. Жақшасыз екінші өрнек солдан оңға есептеледі: (900 : 9) × 5 = 100 × 5 = 500. 20 < 500, сондықтан «<» қойылады. Бірінде 5 санына бөлеміз, екіншісінде көбейтеміз.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "<",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-bdd06cf7bd352bf0",
+      "modelId": "grade4-product-full-bus-repeated-trips",
+      "skillFamily": "full-bus-repeated-trips",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "seats": 65,
+        "buses": 4,
+        "trips": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level2.json",
+          "sourceId": "bdd06cf7bd352bf0"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қалалық шараға әрқайсысы 65 жолаушы алатын 4 автобус бөлінді. Әр автобус 5 рет толық толып қатынады; әр жолы бұрын тасымалданбаған жаңа жолаушылар отырды. Барлығы неше жолаушы жеткізілді? Жауапқа тек санды жазыңыз.",
+      "answer": "1300",
+      "solution": "Толық автобус рейстерінің саны 4 × 5 = 20. Барлығы 65 × 20 = (65 × 2) × 10 = 130 × 10 = 1300 жолаушы. Тексеру: бір мезгілдегі 4 автобус 260 жолаушы, 5 ретте 1300. Жолаушылар қайталанбайтыны шартта берілген.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "1300",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-2e52c42345876ad2",
+      "modelId": "grade4-product-inverse-two-divisions",
+      "skillFamily": "inverse-two-divisions",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "parts": [
+          4,
+          25
+        ],
+        "result": 48
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level3.json",
+          "sourceId": "2e52c42345876ad2"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ерасыл ойлаған санын алдымен 4 санына, содан кейін 25 санына бөлді. Екі бөлу де қалдықсыз орындалып, соңғы нәтиже 48 болды. Бастапқы санды табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "4800",
+      "solution": "4 санына, кейін 25 санына бөлу 4 × 25 = 100 санына бөлумен бірдей. Сондықтан бастапқы сан 48 × 100 = 4800. Кері амалдарды жеке орындасақ: 48 × 25 = 1200, 1200 × 4 = 4800. Тексеру: 4800 : 4 : 25 = 48.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "4800",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-0adfe13b374cf03f",
+      "modelId": "grade4-product-missing-round-thousand-factor",
+      "skillFamily": "missing-round-thousand-factor",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "outer": 9,
+        "parts": [
+          8,
+          125
+        ],
+        "choices": [
+          1000,
+          8,
+          125,
+          1125
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level3.json",
+          "sourceId": "0adfe13b374cf03f"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Теңдікті сақтайтын санды таңдаңыз: 72 × 125 = 9 × □.",
+      "options": [
+        "1000",
+        "8",
+        "125",
+        "1125"
+      ],
+      "answer": "1000",
+      "solution": "72 = 9 × 8. Сондықтан 72 × 125 = 9 × (8 × 125). 8 × 125 = 1000, демек бос орынға 1000 жазылады. Тексеру: екі жақ та 9000 береді.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "1000",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-7fbd63934df84d16",
+      "modelId": "grade4-product-pairwise-product-cancellation",
+      "skillFamily": "pairwise-product-cancellation",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "numerators": [
+          32,
+          54,
+          35
+        ],
+        "denominators": [
+          8,
+          9,
+          7
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level3.json",
+          "sourceId": "7fbd63934df84d16"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көбейтінділерді толық жаймай, ыңғайлы қысқартумен есептеңіз: (32 × 54 × 35) : (8 × 9 × 7). Жауапқа тек санды жазыңыз.",
+      "answer": "120",
+      "solution": "Алымдағы әр көбейткішті сәйкес бөлгішке бөлеміз: 32 : 8 = 4; 54 : 9 = 6; 35 : 7 = 5. Қалған көбейтінді 4 × 6 × 5 = 120. Тексеру: алым 60480, бөлім 504, ал 504 × 120 = 60480.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "120",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-90e495a9fab6b5ba",
+      "modelId": "grade4-product-inverse-three-multiplications",
+      "skillFamily": "inverse-three-multiplications",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "factors": [
+          2,
+          4,
+          125
+        ],
+        "result": 53000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level3.json",
+          "sourceId": "90e495a9fab6b5ba"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Дана бір санды кезекпен 2, 4, 125 сандарына көбейтті. Соңғы нәтиже 53000 болды. Ол бастапқыда қандай сан алған? Жауапқа тек санды жазыңыз.",
+      "answer": "53",
+      "solution": "Үш көбейткіштің көбейтіндісі 2 × 4 × 125 = 1000. Демек, бастапқы сан 53000 : 1000 = 53. Кезекпен тексеру: 53 × 2 = 106; 106 × 4 = 424; 424 × 125 = 53000.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "53",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-a1be3bcfe9cbbbcf",
+      "modelId": "grade4-product-unknown-divisor-factor",
+      "skillFamily": "unknown-divisor-factor",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 18480,
+        "factor": 7,
+        "quotient": 80,
+        "choices": [
+          1617,
+          231,
+          33,
+          66
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level3.json",
+          "sourceId": "a1be3bcfe9cbbbcf"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бөлінді дұрыс болуы үшін бос орынға қандай сан керек: 18480 : (□ × 7) = 80?",
+      "options": [
+        "1617",
+        "231",
+        "33",
+        "66"
+      ],
+      "answer": "33",
+      "solution": "Жақшадағы толық бөлгіш 18480 : 80 = 231. Оның бір көбейткіші 7, екіншісі 231 : 7 = 33. Тексеру: 18480 : (33 × 7) = 80. 231 — толық бөлгіш, бос орынның өзі емес.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "33",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-6f8e7a5189d5a960",
+      "modelId": "grade4-product-known-quotient-nested",
+      "skillFamily": "known-quotient-nested",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "quotient": 35,
+        "factor": 5,
+        "choices": [
+          30,
+          40,
+          175,
+          7
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level3.json",
+          "sourceId": "6f8e7a5189d5a960"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "x және y — натурал сандар, x : y = 35. x : (y × 5) өрнегінің мәнін таңдаңыз.",
+      "options": [
+        "30",
+        "40",
+        "175",
+        "7"
+      ],
+      "answer": "7",
+      "solution": "Көбейтіндіге бөлу ережесімен x : (y × 5) = (x : y) : 5. Берілген бөліндіні қоямыз: 35 : 5 = 7. 5 санына көбейту не қосу басқа нәтижелер береді.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "7",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-ac0ec4f709f9c942",
+      "modelId": "grade4-product-product-relative-changes",
+      "skillFamily": "product-relative-changes",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "increaseA": 3,
+        "decreaseB": 4,
+        "increaseC": 8,
+        "example": [
+          5,
+          12,
+          7
+        ],
+        "choices": [
+          6,
+          1,
+          96,
+          7
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level3.json",
+          "sourceId": "ac0ec4f709f9c942"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "a, b, c — оң натурал сандар, b саны 4 санына қалдықсыз бөлінеді. a × b × c көбейтіндісінде a мәнін 3 есе арттырып, b мәнін 4 есе кемітті, c мәнін 8 есе арттырды. Көбейтінді қалай өзгереді?",
+      "options": [
+        "6 есе өседі",
+        "Көбейтінді өзгермейді",
+        "96 есе өседі",
+        "7 есе өседі"
+      ],
+      "answer": "6 есе өседі",
+      "solution": "Екі арту бірге 3 × 8 = 24 есе көбейтеді. Кемуге бөліп, 24 : 4 = 6 коэффициентін аламыз. Мысал: 5 × 12 × 7 = 420; өзгергені 15 × 3 × 56 = 2520. Көбейтінді 6 есе өседі, көбейткіштердің өзгерісін қосуға болмайды.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "6 есе өседі",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-2ba4b3c407c3c93e",
+      "modelId": "grade4-product-unfinished-division-correction",
+      "skillFamily": "unfinished-division-correction",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "intendedDivisor": 42,
+        "usedDivisor": 6,
+        "wrongResult": 1960
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level3.json",
+          "sourceId": "2ba4b3c407c3c93e"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Нұрлан бір санды 42 санына бөлуге тиіс еді. Ол тек 6 санына бөліп, 1960 нәтижесін алды. Бастапқы тапсырманы дұрыс аяқтаса, қандай бөлінді шығуы керек? Жауапқа тек санды жазыңыз.",
+      "answer": "280",
+      "solution": "42 = 6 × 7. 6 санына бөлу бірінші қадам ғана, енді 7 санына бөлу қажет. Дұрыс нәтиже 1960 : 7 = 280. Бастапқы сан 1960 × 6 = 11760; оны 42 санына бөлсек, 280 шығады.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "280",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-bddd59aad63a4563",
+      "modelId": "grade4-product-largest-efficient-product",
+      "skillFamily": "largest-efficient-product",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "factors": [
+          [
+            125,
+            8,
+            13
+          ],
+          [
+            28,
+            25,
+            20
+          ],
+          [
+            72,
+            5,
+            25
+          ],
+          [
+            56,
+            25,
+            9
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-level3.json",
+          "sourceId": "bddd59aad63a4563"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ыңғайлы көбейткіштерді топтастырып, мәні ең үлкен өрнекті табыңыз.",
+      "options": [
+        "125 × 8 × 13",
+        "28 × 25 × 20",
+        "72 × 5 × 25",
+        "56 × 25 × 9"
+      ],
+      "answer": "28 × 25 × 20",
+      "solution": "125 × 8 × 13 = (125 × 8) × 13 = 1000 × 13 = 13000. 28 × 25 × 20 = 7 × (4 × 25) × 20 = 7 × 100 × 20 = 14000. 72 × 5 × 25 = 18 × (4 × 25) × 5 = 18 × 100 × 5 = 9000. 56 × 25 × 9 = 14 × (4 × 25) × 9 = 14 × 100 × 9 = 12600. Ең үлкен нәтиже — 14000.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "28 × 25 × 20",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-0e9472b1906e42e1",
+      "modelId": "grade4-product-nested-product-division-choice",
+      "skillFamily": "nested-product-division-choice",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 1080,
+        "parts": [
+          9,
+          3
+        ],
+        "choices": [
+          40,
+          360,
+          20,
+          120
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-leveltest.json",
+          "sourceId": "0e9472b1906e42e1"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Көбейтіндіге бөлу ережесін пайдаланыңыз: 1080 : (9 × 3). Нәтижесі қандай?",
+      "options": [
+        "40",
+        "360",
+        "20",
+        "120"
+      ],
+      "answer": "40",
+      "solution": "Алдымен 1080 : 9 = 120, одан кейін 120 : 3 = 40. Жақшадағы көбейтінді 9 × 3 = 27; тікелей тексерсек, 1080 : 27 = 40. Екінші көбейткішке де бөлу керек.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "40",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-1e4cffc995603488",
+      "modelId": "grade4-product-twenty-product",
+      "skillFamily": "twenty-product",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 65
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-leveltest.json",
+          "sourceId": "1e4cffc995603488"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "20 санын 2 × 10 түрінде жіктеп, 65 × 20 көбейтіндісін ыңғайлы тәсілмен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "1300",
+      "solution": "65 × 20 = 65 × (2 × 10) = (65 × 2) × 10. Екі еселесек 130, одан кейін 10-ға көбейтсек 1300. Толық жазу: 130 × 10 = 1300.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "1300",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-487827c6d110f52b",
+      "modelId": "grade4-product-associative-division-compare",
+      "skillFamily": "associative-division-compare",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 1260,
+        "parts": [
+          9,
+          7
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-leveltest.json",
+          "sourceId": "487827c6d110f52b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Барлық мәнді есептемей, бөлу ережесі бойынша белгі таңдаңыз: (1260 : 9) : 7 □ 1260 : (9 × 7).",
+      "options": [
+        "<",
+        "=",
+        ">",
+        "Салыстыру мүмкін емес"
+      ],
+      "answer": "=",
+      "solution": "Екі жазу да 1260 санын алдымен 9, кейін 7 санына бөлуді білдіреді. Сондықтан мәндері тең. Тексеру: 140 : 7 = 20 және 1260 : 63 = 20.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "=",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-b2ea8c5928d4fb78",
+      "modelId": "grade4-product-round-thousand-multiplier",
+      "skillFamily": "round-thousand-multiplier",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 125,
+        "parts": [
+          8,
+          11
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-leveltest.json",
+          "sourceId": "b2ea8c5928d4fb78"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "88 = 8 × 11 екенін қолданып, 125 × 88 мәнін тиімді топтастырумен табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "11000",
+      "solution": "125 × 88 = 125 × (8 × 11) = (125 × 8) × 11. Алдымен 125 × 8 = 1000 дөңгелек саны шығады. Одан кейін 1000 × 11 = 11000. Ыңғайлы топтастыру көп таңбалы көбейтуді қысқартады.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "11000",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-8d6047e90074c944",
+      "modelId": "grade4-product-division-factorization-choice",
+      "skillFamily": "division-factorization-choice",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "dividend": 4800,
+        "parts": [
+          6,
+          8
+        ],
+        "wrongSumSplit": [
+          40,
+          8
+        ],
+        "wrongOther": [
+          8,
+          3
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-leveltest.json",
+          "sourceId": "8d6047e90074c944"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "4800 : 48 бөліндісін есептеу үшін қай кезекті амалдар бастапқы мәнді сақтайды?",
+      "options": [
+        "4800 : 40 : 8",
+        "4800 : 8 : 3",
+        "4800 : 6 : 8",
+        "4800 : 6 × 8"
+      ],
+      "answer": "4800 : 6 : 8",
+      "solution": "48 = 6 × 8, сондықтан 4800 : 48 = 4800 : 6 : 8 = 800 : 8 = 100. 40 + 8 = 48 қосындысы дұрыс болғанымен, бөлу үшін көбейткіштер керек; олардың көбейтіндісі 320. 8 × 3 = 24 те 48 емес. Соңғы жазу бөлуді көбейтуге ауыстырады.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "4800 : 6 : 8",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-product-385f98760f466d73",
+      "modelId": "grade4-product-unknown-fourth-factor",
+      "skillFamily": "unknown-fourth-factor",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "factors": [
+          4,
+          9,
+          25
+        ],
+        "result": 63000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-5-1-leveltest.json",
+          "sourceId": "385f98760f466d73"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық32 қалған сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Көбейтіндіге көбейту/бөлу, терімділік, кезекті бөлу және жақша әсері жеке ажыратылды.",
+        "Жаңа деректер мен дербес қазақша шарттар, толық тура/кері қадамдар жазылды. 4×25,8×125,2×50сияқты нақты ыңғайлы жұптар мен дөңгелек санға апаратын жіктеу педагогикалық тұрақтылар ретінде сақталды.",
+        "Айнымалылардың оң натурал облысы мен қалдықсыз бөлінуі ашық берілді. Барлық нұсқаның мәні дәл рационал арифметикамен тексерілді; дұрыс теңдікті табу сұрағындағы жалған жазулар әдейі қате нұсқа ретінде қалдырылды. Сандық үлгілер жаңа мағыналар саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic5.1 nonvisual associative product/division, efficient factorization, inverse or symbolic-domain edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Теңдікке сәйкес бос орындағы санды табыңыз: 4 × 9 × 25 × □ = 63000. Жауапқа тек санды жазыңыз.",
+      "answer": "70",
+      "solution": "Алдымен 4 × 25 = 100 жұбын топтастырамыз: 4 × 9 × 25 = 100 × 9 = 900. Белгісіз көбейткіш 63000 : 900 = 70. Тексеру: 900 × 70 = 63000.",
+      "calculationVerification": {
+        "method": "exact_native_BigInt_product_division_factorization_symbolic_and_inverse_domains",
+        "answer": "70",
+        "checks": [
+          "exact_reduced_BigInt_expression_arithmetic_and_unique_choices",
+          "all_direct_inverse_product_division_steps_bound_to_params",
+          "concrete_round_pair_and_associative_skill_preserved",
+          "positive_natural_symbolic_division_domain_explicit",
+          "intentional_false_equalities_only_in_identification_choices"
+        ]
+      }
+    }
+  ]
+}

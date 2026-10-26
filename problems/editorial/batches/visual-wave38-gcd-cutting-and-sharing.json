@@ -1,0 +1,417 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All6 saved visual grade5topic2.8; sourcearchiveonly, no capture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5topic2.8sources",
+    "sourceVisualOccurrences": 6,
+    "addressedNewDrafts": 6,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "3f3f7d4edbcde0ac",
+      "66fdbabe1be33406",
+      "744cc6599046bce6",
+      "7f22569c3fe591e9",
+      "efb26717c3c2cf77",
+      "fb5ec44e94ff40e3"
+    ],
+    "distinctModels": 6,
+    "semantics": "Allsixsource targets individuallyrewritten; variant/modelcounts are not claims ofnew semanticmeanings."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave38-twenty-four-thirty-six-fruits",
+      "modelId": "visual-wave38-fruit-max-identical-sharing",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "fruit",
+        "apples": 24,
+        "pears": 36
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "3f3f7d4edbcde0ac",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-8-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-8-level1.json#1",
+      "sourceCanonicalSha256": "b8fe123f7708b0ad403760643543641f17afe44be152ccb448ba780d3af2a559",
+      "sourceSkill": "Counting each illustrated fruit type separately then maximizing identical no-remainder recipient groups",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: жемістің екі түрін санау және ең көп тең үлес, ЕҮОБ үшін ортақ жай көбейткіштер, ең ұзын кесінділердің жалпы саны, аралас бірліктегі шаршы тақта, тұйық шекарадағы бағаналар, үш өлшемнен ең үлкен текше және саны.",
+        "Жемістер 24/36, көбейткіштер 5 | 2,2,3 | 7, таспа 84/132 м, еден 4 м 50 см × 3 м 30 см, қоршау 324 × 216 м, кесек 90 × 54 × 36 см болып жаңарды. Қайталанған 2 көбейткіші және төрт міндетті бұрыш нақты көрсетілген.",
+        "Native SVG барлық жеке жемісті, ортақ аймақтың әр көбейткішін, пропорционалды таспа/еден/шекара өлшемін және үш қырды өз параметрінен салады. Тақта мен текшелердің қатарлары/кесінділері бастапқы жақтарға параллель делінді. Source raster/traced path қолданылған жоқ."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ортақ бөлгіш",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview; actual24apple/36pearcounts, overlappingprimefactor2twice,84/132same-scalebars,fullmixedfloorunits,4mandatorycorners-only,all3cuboidmeasurements,actual343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave38-twenty-four-thirty-six-fruits.svg",
+      "verificationModule": "scripts/editorial/visual-wave38-models.mjs",
+      "statement": "Жемістерді балаларға қалдықсыз бөліп береді. Әр балаға алма саны бірдей, алмұрт саны да бірдей тиюі керек. Суреттегі жеміс қоры ең көп дегенде неше балаға жетеді? Жауапқа тек санды жазыңыз.",
+      "solution": "Алмалар 2 қатар, әр қатарда 12: барлығы 24. Алмұрттар 3 қатар 12 данадан: барлығы 36. Балалар саны екі қорды да қалдықсыз бөлуі тиіс. Ортақ бөлгіштер 1, 2, 3, 4, 6, 12, ең үлкені 12. Әр балаға 2 алма және 3 алмұрт тиеді: 12 × 2 = 24, 12 × 3 = 36. Екі жеміс түрін араластырып жалпы санның бөлгішін алу жеткіліксіз.",
+      "figureDescription": "Алмалар 2 қатар 12 данадан, алмұрттар 3 қатар 12 данадан салынған. Жеміс бейнелері жеке-жеке көрсетілген.",
+      "figureSha256": "b7f5df5a140b469106826e2f9a5d56d3e9d40689a483b4384931fa9169ba8162",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "appleRows": 2,
+          "pearRows": 3,
+          "validRecipients": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            12
+          ],
+          "applesEach": 2,
+          "pearsEach": 3
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave38-repeated-twos-shared-factors",
+      "modelId": "visual-wave38-venn-prime-multiplicity-gcd",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "venn",
+        "left": [
+          5
+        ],
+        "common": [
+          2,
+          2,
+          3
+        ],
+        "right": [
+          7
+        ]
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "efb26717c3c2cf77",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-8-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-8-level1.json#13",
+      "sourceCanonicalSha256": "ccf486073ecf8f68ab6027db313701095a0248050f7e39160321f2502a67350c",
+      "sourceSkill": "Interpreting multiset prime-factor Venn overlap as a product, retaining repeated factors",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: жемістің екі түрін санау және ең көп тең үлес, ЕҮОБ үшін ортақ жай көбейткіштер, ең ұзын кесінділердің жалпы саны, аралас бірліктегі шаршы тақта, тұйық шекарадағы бағаналар, үш өлшемнен ең үлкен текше және саны.",
+        "Жемістер 24/36, көбейткіштер 5 | 2,2,3 | 7, таспа 84/132 м, еден 4 м 50 см × 3 м 30 см, қоршау 324 × 216 м, кесек 90 × 54 × 36 см болып жаңарды. Қайталанған 2 көбейткіші және төрт міндетті бұрыш нақты көрсетілген.",
+        "Native SVG барлық жеке жемісті, ортақ аймақтың әр көбейткішін, пропорционалды таспа/еден/шекара өлшемін және үш қырды өз параметрінен салады. Тақта мен текшелердің қатарлары/кесінділері бастапқы жақтарға параллель делінді. Source raster/traced path қолданылған жоқ."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ортақ бөлгіш",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview; actual24apple/36pearcounts, overlappingprimefactor2twice,84/132same-scalebars,fullmixedfloorunits,4mandatorycorners-only,all3cuboidmeasurements,actual343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave38-repeated-twos-shared-factors.svg",
+      "verificationModule": "scripts/editorial/visual-wave38-models.mjs",
+      "options": [
+        "12",
+        "4",
+        "420",
+        "21"
+      ],
+      "statement": "Диаграммадағы әр сан — бір жай көбейткіш. a сол дөңгелектегі барлық көбейткіштен, b оң дөңгелектегі барлық көбейткіштен құралады. Ортақ аймақтағы әр белгі екеуіне де кіреді; қайталанған белгі бөлек көбейткіш ретінде саналады. ЕҮОБ(a, b) қайсысы?",
+      "solution": "Ортақ аймақтың жай көбейткіштері 2, 2, 3. Бірдей 2 белгілері жеке көбейткіштер, біреуін тастамаймыз. ЕҮОБ — ортақ көбейткіштердің көбейтіндісі: 2 × 2 × 3 = 12. Барлық сол көбейткіштен a = 5 × 2 × 2 × 3 = 60, барлық оң көбейткіштен b = 2 × 2 × 3 × 7 = 84. Тексеру: екі санның ортақ бөлгіштері 1, 2, 3, 4, 6, 12, ең үлкені 12. Барлық аймақтың көбейткіштерін қосып немесе көбейтіп алу ЕҮОБ бермейді.",
+      "figureDescription": "Сол дөңгелек a, оң дөңгелек b. Тек сол аймақта 5, ортақ аймақта 2, 2, 3, тек оң аймақта 7. Әр белгі жеке көбейткіш.",
+      "figureSha256": "9bc027572dd76ae216ea5b3f887826f8ee469ac92f5f1216dee437103bc9d2b5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "a": 60,
+          "b": 84,
+          "commonFactors": [
+            2,
+            2,
+            3
+          ],
+          "actualGCD": 12,
+          "fullCommonDivisors": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            12
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave38-eighty-four-one-thirty-two-strips",
+      "modelId": "visual-wave38-longest-strip-total-piece-count",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "strips",
+        "first": 84,
+        "second": 132
+      },
+      "answer": "18",
+      "sourceRefs": [
+        {
+          "sourceId": "66fdbabe1be33406",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-8-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-8-level2.json#12",
+      "sourceCanonicalSha256": "bf49c23bca0d69dbe08a6a0fe097925b974d460318b2fb8c2f0bb8a31b2d4b41",
+      "sourceSkill": "Maximizing shared segment length then separately counting all resulting segments",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: жемістің екі түрін санау және ең көп тең үлес, ЕҮОБ үшін ортақ жай көбейткіштер, ең ұзын кесінділердің жалпы саны, аралас бірліктегі шаршы тақта, тұйық шекарадағы бағаналар, үш өлшемнен ең үлкен текше және саны.",
+        "Жемістер 24/36, көбейткіштер 5 | 2,2,3 | 7, таспа 84/132 м, еден 4 м 50 см × 3 м 30 см, қоршау 324 × 216 м, кесек 90 × 54 × 36 см болып жаңарды. Қайталанған 2 көбейткіші және төрт міндетті бұрыш нақты көрсетілген.",
+        "Native SVG барлық жеке жемісті, ортақ аймақтың әр көбейткішін, пропорционалды таспа/еден/шекара өлшемін және үш қырды өз параметрінен салады. Тақта мен текшелердің қатарлары/кесінділері бастапқы жақтарға параллель делінді. Source raster/traced path қолданылған жоқ."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ортақ бөлгіш",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview; actual24apple/36pearcounts, overlappingprimefactor2twice,84/132same-scalebars,fullmixedfloorunits,4mandatorycorners-only,all3cuboidmeasurements,actual343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave38-eighty-four-one-thirty-two-strips.svg",
+      "verificationModule": "scripts/editorial/visual-wave38-models.mjs",
+      "statement": "Екі таспаның ұзындықтары суретте берілген. Оларды қалдықсыз, бірдей әрі МҮМКІНДІГІНШЕ ҰЗЫН бөліктерге кесті. Екі таспадан бірге неше бөлік шықты? Жауапқа тек санды жазыңыз.",
+      "solution": "Бір бөліктің ұзындығы 84 және 132 сандарын да қалдықсыз бөлуі керек. Ортақ бөлгіштер 1, 2, 3, 4, 6, 12, ең үлкені 12 м. Бірінші таспадан 84 : 12 = 7, екіншісінен 132 : 12 = 11 бөлік шығады. Барлығы 7 + 11 = 18 бөлік. Сұралғаны бір бөліктің 12 м ұзындығы емес, екі таспаның барлық бөліктер саны.",
+      "figureDescription": "Жоғарғы көк таспа 84 м, төменгі күлгін таспа 132 м. Екі жолақ бірдей масштабпен салынған, кесу сызықтары әзірге жоқ.",
+      "figureSha256": "23a32d82a9890c87670a6372539c5bc0087f4dd629881d9cafb550a32fc88ad2",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "18",
+        "checks": {
+          "validLengths": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            12
+          ],
+          "longest": 12,
+          "piecesPerStrip": [
+            7,
+            11
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave38-four-fifty-three-thirty-floor",
+      "modelId": "visual-wave38-largest-square-floor-tile",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "floor",
+        "lengthM": 4,
+        "lengthCm": 50,
+        "widthM": 3,
+        "widthCm": 30
+      },
+      "answer": "30",
+      "sourceRefs": [
+        {
+          "sourceId": "7f22569c3fe591e9",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-8-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-8-level2.json#13",
+      "sourceCanonicalSha256": "d468431237bd10aec397ca8b3ef241e6887dfc12b998b8a81c09f92b3532b07c",
+      "sourceSkill": "Reading mixed metre-centimetre dimensions and maximizing an uncut square tile edge",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: жемістің екі түрін санау және ең көп тең үлес, ЕҮОБ үшін ортақ жай көбейткіштер, ең ұзын кесінділердің жалпы саны, аралас бірліктегі шаршы тақта, тұйық шекарадағы бағаналар, үш өлшемнен ең үлкен текше және саны.",
+        "Жемістер 24/36, көбейткіштер 5 | 2,2,3 | 7, таспа 84/132 м, еден 4 м 50 см × 3 м 30 см, қоршау 324 × 216 м, кесек 90 × 54 × 36 см болып жаңарды. Қайталанған 2 көбейткіші және төрт міндетті бұрыш нақты көрсетілген.",
+        "Native SVG барлық жеке жемісті, ортақ аймақтың әр көбейткішін, пропорционалды таспа/еден/шекара өлшемін және үш қырды өз параметрінен салады. Тақта мен текшелердің қатарлары/кесінділері бастапқы жақтарға параллель делінді. Source raster/traced path қолданылған жоқ."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ортақ бөлгіш",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview; actual24apple/36pearcounts, overlappingprimefactor2twice,84/132same-scalebars,fullmixedfloorunits,4mandatorycorners-only,all3cuboidmeasurements,actual343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave38-four-fifty-three-thirty-floor.svg",
+      "verificationModule": "scripts/editorial/visual-wave38-models.mjs",
+      "statement": "Тіктөртбұрышты бөлменің өлшемдерін суреттен оқыңыз. Еденге бірдей шаршы тақталар қабырғаларға параллель қатармен, саңылаусыз төселеді; тақталар кесілмейді. Бір тақтаның қабырғасы ең үлкен болғанда неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Өлшемдерді сантиметрге ауыстырамыз: 4 м 50 см = 450 см; 3 м 30 см = 330 см. Тақтаның қабырғасы екеуін де бүтін рет бөлуі керек. Ең үлкен ортақ бөлгіш 30 см. Ұзындыққа 15, енге 11 тақта сыяды; тексеру 15 × 30 = 450, 11 × 30 = 330. Жалпы 165 тақта керек, бірақ сұралған жауап — қабырға ұзындығы.",
+      "figureDescription": "Тіктөртбұрыштың төменгі қабырғасы 4 м 50 см, сол қабырғасы 3 м 30 см. Ішкі тақталар салынбаған.",
+      "figureSha256": "98b3eb36fdae90b5e6dab5a59f7623fc58c36b1ce557e22e753cefe9ae8871ef",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "30",
+        "checks": {
+          "dimensionsCm": [
+            450,
+            330
+          ],
+          "validTileSides": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            10,
+            15,
+            30
+          ],
+          "tileRows": 15,
+          "tileColumns": 11,
+          "totalTiles": 165
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave38-three-twenty-four-two-sixteen-posts",
+      "modelId": "visual-wave38-closed-boundary-max-gap-post-count",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "posts",
+        "length": 324,
+        "width": 216
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "fb5ec44e94ff40e3",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-8-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-8-level3.json#3",
+      "sourceCanonicalSha256": "3b7472db798354b87864b8bee999099d161d95623ccff09d59bcc273441eb630",
+      "sourceSkill": "Maximal equal post spacing with all four corners, then closed-boundary unique post count",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: жемістің екі түрін санау және ең көп тең үлес, ЕҮОБ үшін ортақ жай көбейткіштер, ең ұзын кесінділердің жалпы саны, аралас бірліктегі шаршы тақта, тұйық шекарадағы бағаналар, үш өлшемнен ең үлкен текше және саны.",
+        "Жемістер 24/36, көбейткіштер 5 | 2,2,3 | 7, таспа 84/132 м, еден 4 м 50 см × 3 м 30 см, қоршау 324 × 216 м, кесек 90 × 54 × 36 см болып жаңарды. Қайталанған 2 көбейткіші және төрт міндетті бұрыш нақты көрсетілген.",
+        "Native SVG барлық жеке жемісті, ортақ аймақтың әр көбейткішін, пропорционалды таспа/еден/шекара өлшемін және үш қырды өз параметрінен салады. Тақта мен текшелердің қатарлары/кесінділері бастапқы жақтарға параллель делінді. Source raster/traced path қолданылған жоқ."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ортақ бөлгіш",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview; actual24apple/36pearcounts, overlappingprimefactor2twice,84/132same-scalebars,fullmixedfloorunits,4mandatorycorners-only,all3cuboidmeasurements,actual343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave38-three-twenty-four-two-sixteen-posts.svg",
+      "verificationModule": "scripts/editorial/visual-wave38-models.mjs",
+      "statement": "Тіктөртбұрышты серуен алаңының шетін бойлай қоршау бағаналары қойылады. Көрсетілген төрт бұрыштың әрқайсысында бағана міндетті түрде болады. Көршілес бағаналардың аралығы бірдей әрі мүмкіндігінше үлкен. Барлығы неше бағана қажет? Жауапқа тек санды жазыңыз.",
+      "solution": "Бағана әр бұрышқа түсуі үшін аралық 324 және 216 ұзындықтарын бүтін рет бөледі. Ең үлкен ортақ бөлгіш 108 м. Периметр 2 × (324 + 216) = 1080 м. Тұйық шекарада бағана саны аралық санына тең: 1080 : 108 = 10. Бір қабырғада 3, екіншісінде 2 аралық; 2 × (3 + 2) = 10. Бұрыштарды екі рет санамаймыз және ашық кесіндідегідей соңына тағы 1 қоспаймыз.",
+      "figureDescription": "Тіктөртбұрыштың төменгі қабырғасы 324 м, сол қабырғасы 216 м. Тек төрт міндетті бұрыш бағанасы қызыл нүктемен берілген; кейін қойылатын бағаналар көрсетілмеген.",
+      "figureSha256": "0368ee33dd10c8db3e98eee88f0f0c4b083e4c593a14edb02595e842e124a593",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": {
+          "allPossibleIntegerSpacings": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            9,
+            12,
+            18,
+            27,
+            36,
+            54,
+            108
+          ],
+          "maximalSpacing": 108,
+          "perimeter": 1080,
+          "uniqueBoundaryPosts": 10
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave38-ninety-fifty-four-thirty-six-cuboid",
+      "modelId": "visual-wave38-largest-cube-cut-count",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "cuboid",
+        "sides": [
+          90,
+          54,
+          36
+        ]
+      },
+      "answer": "30",
+      "sourceRefs": [
+        {
+          "sourceId": "744cc6599046bce6",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-8-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-8-leveltest.json#3",
+      "sourceCanonicalSha256": "78070142cf62eb445480877da3cf2e1bb191861b8d764d9e82ca5ceaaa9116ec",
+      "sourceSkill": "Maximizing a common cube edge then multiplying the three counts under a volume-preserving cut",
+      "adaptationChanges": [
+        "Барлық 6 бастапқы визуалды дағды жеке сақталды: жемістің екі түрін санау және ең көп тең үлес, ЕҮОБ үшін ортақ жай көбейткіштер, ең ұзын кесінділердің жалпы саны, аралас бірліктегі шаршы тақта, тұйық шекарадағы бағаналар, үш өлшемнен ең үлкен текше және саны.",
+        "Жемістер 24/36, көбейткіштер 5 | 2,2,3 | 7, таспа 84/132 м, еден 4 м 50 см × 3 м 30 см, қоршау 324 × 216 м, кесек 90 × 54 × 36 см болып жаңарды. Қайталанған 2 көбейткіші және төрт міндетті бұрыш нақты көрсетілген.",
+        "Native SVG барлық жеке жемісті, ортақ аймақтың әр көбейткішін, пропорционалды таспа/еден/шекара өлшемін және үш қырды өз параметрінен салады. Тақта мен текшелердің қатарлары/кесінділері бастапқы жақтарға параллель делінді. Source raster/traced path қолданылған жоқ."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ортақ бөлгіш",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview; actual24apple/36pearcounts, overlappingprimefactor2twice,84/132same-scalebars,fullmixedfloorunits,4mandatorycorners-only,all3cuboidmeasurements,actual343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave38-ninety-fifty-four-thirty-six-cuboid.svg",
+      "verificationModule": "scripts/editorial/visual-wave38-models.mjs",
+      "statement": "Тікбұрышты параллелепипед пішінді материалдан қалдықсыз бірдей текшелер кесіледі. Кесінділер бастапқы жақтарға параллель; әр текше мүмкіндігінше үлкен. Барлығы неше текше шығады? Жауапқа тек санды жазыңыз.",
+      "solution": "Текшенің қыры үш өлшемді де қалдықсыз бөлуі тиіс. 90, 54, 36 сандарының ең үлкен ортақ бөлгіші 18 см. Үш бағытта текшелер саны 90 : 18 = 5; 54 : 18 = 3; 36 : 18 = 2. Барлығы 5 × 3 × 2 = 30 текше. Көлеммен тексеру: 174960 : 5832 = 30. Бағыттардағы сандарды қосу емес, көбейту керек; 18 — текшенің қыры ғана.",
+      "figureDescription": "Тікбұрышты параллелепипедтің ұзындығы 90 см, биіктігі 36 см, тереңдігі 54 см. Кесу торы салынбаған.",
+      "figureSha256": "81068624754a7088ee4863e8435dd8161336cd6225a927116e065c8982f0cb45",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "30",
+        "checks": {
+          "allCubeEdges": [
+            1,
+            2,
+            3,
+            6,
+            9,
+            18
+          ],
+          "largestEdge": 18,
+          "countsPerAxis": [
+            5,
+            3,
+            2
+          ],
+          "solidVolume": 174960,
+          "cubeVolume": 5832
+        }
+      }
+    }
+  ]
+}

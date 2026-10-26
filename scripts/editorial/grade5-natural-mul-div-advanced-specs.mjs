@@ -1,0 +1,23 @@
+// All20 savednonvisual1.5 levels3/test fullconditions/FULLofficialsolutions/everyMCQ read individually.
+export const mulDivAdvancedSpecs=[
+ ['3','879478602b26c628','unequal-dividend-divisor-scaling',{quotient:18,numeratorScale:5,denominatorScale:15}],
+ ['3','bd296ce958067dcf','reciprocal-factor-changes-invariant',{scale:4}],
+ ['3','6534fe31670c66bc','bus-capacity-minimum-ceiling',{oldBuses:4,oldCapacity:48,newCapacity:42}],
+ ['3','8901eb57403d34c5','product-possible-digit-counts',{firstDigits:3,secondDigits:3}],
+ ['3','b43ea68c1a26b3dd','known-product-opposite-factor-scaling',{product:96,up:7,down:4}],
+ ['3','c1659c388e9938e9','three-digit-times-thousand-one',{a:482}],
+ ['3','a90c49e90fa885ac','undo-multiply-add-divide',{factor:15,add:45,divisor:9,result:40}],
+ ['3','403e3c2d2711c362','least-digit-count-multiple',{digits:4,divisor:44}],
+ ['3','a466579a68e7a240','page-number-digit-budget',{digitBudget:429}],
+ ['3','0cc7927aea4624c8','inverse-changed-product',{changed:1800,up:8,down:2}],
+ ['3','3227cbcb786bad4a','mass-equalize-books-request-album',{books:3,albums:2,firstMass:2050,secondBooks:6,secondAlbums:1,secondMass:3050}],
+ ['test','36885794910d5a19','column-division',{dividend:6561,divisor:27}],
+ ['test','23ae37aad4a5d12c','middle-zero-product',{a:72,b:18}],
+ ['test','5c8b10d699b991ce','column-product-interior-zero',{a:607,b:39}],
+ ['test','d7c15c1dd29cbe36','choose-round-divisor-multiplier',{dividend:8100,divisor:45,choices:[5,3,2,7]}],
+ ['test','a4f4a70c15e65118','nonzero-second-factor-product-zero',{factor:72,shift:16}],
+ ['test','602e58ec8e7853b0','boxes-mass-to-bag-count',{boxes:16,mass:21,perBag:7}],
+ ['test','694f73743fa2cf02','prefix-number-quotient-digit-count',{prefix:6,digits:5,divisor:78}],
+ ['test','88b4994a14a5463d','undo-multiply-subtract-divide',{factor:9,subtract:27,divisor:6,result:33}],
+ ['test','65ddde443c4bb387','count-positive-multiples-upperbound',{limit:250,divisor:8}],
+];

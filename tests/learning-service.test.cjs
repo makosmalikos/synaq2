@@ -71,7 +71,9 @@ test('training catalog and question selection are server-owned and answer-free',
 test('server sessions hide the answer and replay the same question without extra rate charge', async () => {
   const f = fixture();
   const first = await f.start(); f.advance(1000);
-  assert.deepEqual(await f.start(), first);
+  const replay = await f.start();
+  assert.deepEqual({ ...replay, serverNow: first.serverNow }, first);
+  assert.equal(replay.serverNow - first.serverNow, 1000);
   assert.equal(first.question.answer, undefined); assert.equal(first.question.solution, undefined);
   assert.equal(f.db.records.get('learningRateLimits/kid').starts, 1);
   await assert.rejects(f.start('session-1', 'q2'), /request-conflict/);
@@ -295,4 +297,12 @@ test('downgrade blocks restricted resume and answer replays before returning key
   db.records.get('learningSessions/kid_paid-pending').question = { ...question, id: 'zerek_crypt_01' };
   await assert.rejects(start('paid-pending'), /question-unavailable/);
   await assert.rejects(answer('paid-pending'), /question-unavailable/);
+});
+
+test('training clock response includes time spent preparing the condition', async () => {
+ let clock=Date.parse('2026-10-26T10:00:00Z');
+ const db=memoryStore({'families/p':{plan:'pro'},'families/p/children/k':{code:'clock'},'childIndex/k':{parentUid:'p'}});
+ const act=createLearningService({db,now:()=>clock,getTrainingQuestion:async id=>{clock+=2300;return{id,topic:'num',school:'БИЛ',statement:'2+2',answer:'4'};}});
+ const value=await act({uid:'k',email:'clock@synaq.kids'},{action:'start',mode:'training',id:'clock_session_1',qid:'q1'});
+ assert.equal(value.serverNow-value.startedAt,2300);assert.equal(value.question.answer,undefined);
 });

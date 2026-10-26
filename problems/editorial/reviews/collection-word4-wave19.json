@@ -1,0 +1,744 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "root_independent_of_word4_author",
+  "batch": "problems/editorial/batches/collection-word4-wave19.json",
+  "scope": "Root external review: all21 full saved/new conditions, official/new solutions\nand every MCQ manually read. Own exact printed-condition arithmetic, two-way\nledgers, affine counting equations and positive finite integer domains. No\nauthor models/specs/params/checks imported or used as the answer oracle.\n",
+  "summary": {
+    "verified": 21,
+    "findings": 0,
+    "fullSavedNewOfficialAuthoredSolutionsEveryMCQRead": 21,
+    "sourceTargetsRecomputed": 21,
+    "wrongKeysRejected": 21,
+    "printedGivenCanariesRejected": 21,
+    "nativeFractionTextNodes": 39,
+    "positivePriceTriplesEnumerated": 33411,
+    "positiveWeighingPairsEnumerated": 1369,
+    "positivePostmeetingSpeedPairsEnumerated": 16129,
+    "pythonJavaScriptHashesMatched": 21
+  },
+  "evidence": [
+    {
+      "editionId": "collection-word4-91f6d9db-01",
+      "proof": {
+        "printedNumbers": [
+          "260",
+          "130",
+          "200"
+        ],
+        "orderedPrices": [
+          "30",
+          "50",
+          "180"
+        ],
+        "sameGroupSum": "230",
+        "actualAllMCQTruths": [
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      "sourceIndependentTarget": "[Fraction(10, 1), Fraction(20, 1), Fraction(110, 1)]",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-02",
+      "proof": {
+        "printedNumbers": [
+          "5",
+          "4",
+          "37",
+          "4",
+          "5",
+          "35"
+        ],
+        "orderedMasses": [
+          "5",
+          "3"
+        ],
+        "pairedSum": "8",
+        "difference": "2",
+        "actualAllMCQTruths": [
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      "sourceIndependentTarget": "[Fraction(3, 1), Fraction(1, 1)]",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-03",
+      "proof": {
+        "printedNumbers": [
+          "5",
+          "9"
+        ],
+        "side": "3",
+        "length": "15",
+        "outsidePerimeter": "36",
+        "notSumOfIndividualPerimeters": "60",
+        "actualAllMCQValues": [
+          "18",
+          "36",
+          "60",
+          "45"
+        ]
+      },
+      "sourceIndependentTarget": "32",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-04",
+      "proof": {
+        "printedNumbers": [
+          "62",
+          "8"
+        ],
+        "equalLegs": "18",
+        "requestedBase": "26",
+        "strictTriangleInequality": true,
+        "actualAllMCQValues": [
+          "18",
+          "26",
+          "36",
+          "54"
+        ]
+      },
+      "sourceIndependentTarget": "21",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-05",
+      "proof": {
+        "printedNumbers": [
+          "6",
+          "5",
+          "7150"
+        ],
+        "totalPackages": "11",
+        "unitPrice": "650",
+        "actualAllMCQValues": [
+          "650",
+          "600",
+          "3575",
+          "715"
+        ]
+      },
+      "sourceIndependentTarget": "500",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-06",
+      "proof": {
+        "printedNumbers": [
+          "5",
+          "8",
+          "30",
+          "26"
+        ],
+        "firstSameWholeFraction": "5/8",
+        "secondSameWholeFraction": "3/10",
+        "requestedWhole": "80",
+        "parts": [
+          "50",
+          "24"
+        ],
+        "actualAllMCQValues": [
+          "80",
+          "50",
+          "65",
+          "52"
+        ]
+      },
+      "sourceIndependentTarget": "68",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-07",
+      "proof": {
+        "printedNumbers": [
+          "63",
+          "18",
+          "9"
+        ],
+        "secondCount": "81",
+        "total": "144",
+        "perEnvelope": "16",
+        "actualAllMCQValues": [
+          "16",
+          "8",
+          "18",
+          "144"
+        ]
+      },
+      "sourceIndependentTarget": "14",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-08",
+      "proof": {
+        "printedNumbers": [
+          "792/25",
+          "7/5"
+        ],
+        "first": "132/5",
+        "second": "924/25",
+        "requestedFirstNotMeanOrSecond": true,
+        "actualAllMCQValues": [
+          "132/5",
+          "792/25",
+          "924/25",
+          "53/2"
+        ]
+      },
+      "sourceIndependentTarget": "173/10",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-09",
+      "proof": {
+        "printedNumbers": [
+          "3",
+          "2",
+          "5",
+          "4"
+        ],
+        "requestedEquationNotRoot": true,
+        "total": "36",
+        "integerChildLedger": [
+          "3",
+          "6",
+          "9"
+        ],
+        "actualMCQAffineSides": [
+          [
+            [
+              "1/5",
+              "21/5"
+            ],
+            [
+              "1/4",
+              "-3/2"
+            ]
+          ],
+          [
+            [
+              "1/5",
+              "-6/5"
+            ],
+            [
+              "1/4",
+              "0"
+            ]
+          ],
+          [
+            [
+              "1/5",
+              "9/5"
+            ],
+            [
+              "1/4",
+              "0"
+            ]
+          ],
+          [
+            [
+              "1/5",
+              "9/5"
+            ],
+            [
+              "1/5",
+              "0"
+            ]
+          ]
+        ]
+      },
+      "sourceIndependentTarget": "None",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-10",
+      "proof": {
+        "printedNumbers": [
+          "3/4",
+          "96",
+          "16"
+        ],
+        "timeFromMeeting": "3/4",
+        "sumSpeed": "128",
+        "orderedSpeeds": [
+          "56",
+          "72"
+        ],
+        "actualAllMCQTruths": [
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      "sourceIndependentTarget": "[Fraction(50, 1), Fraction(70, 1)]",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-11",
+      "proof": {
+        "printedNumbers": [
+          "3",
+          "7/2",
+          "3"
+        ],
+        "ownSpeed": "39",
+        "directionalSpeeds": [
+          "42",
+          "36"
+        ],
+        "requestedDistance": "126",
+        "actualAllMCQValues": [
+          "126",
+          "39",
+          "108",
+          "147"
+        ]
+      },
+      "sourceIndependentTarget": "40",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-12",
+      "proof": {
+        "printedNumbers": [
+          "8",
+          "1",
+          "4"
+        ],
+        "newToOldArea": "27/20",
+        "requestedIncreasePercent": "35",
+        "notNewAreaPercent": "135",
+        "actualAllMCQValues": [
+          "35",
+          "135",
+          "33",
+          "25"
+        ]
+      },
+      "sourceIndependentTarget": "40",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-13",
+      "proof": {
+        "printedNumbers": [
+          "15",
+          "8",
+          "1680",
+          "3",
+          "5",
+          "3",
+          "75"
+        ],
+        "firstHeight": "14",
+        "newDimensions": [
+          "9",
+          "5",
+          "21/2"
+        ],
+        "newVolume": "945/2",
+        "percentBaseFirstHeight": true,
+        "actualAllMCQValues": [
+          "945/2",
+          "630",
+          "336",
+          "1680"
+        ]
+      },
+      "sourceIndependentTarget": "108",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-14",
+      "proof": {
+        "printedNumbers": [
+          "48",
+          "40",
+          "3",
+          "24"
+        ],
+        "oldBusCount": "12",
+        "newBusCount": "15",
+        "requestedStudents": "576",
+        "singlePartialBusPassengers": "16",
+        "actualAllMCQValues": [
+          "12",
+          "600",
+          "576",
+          "480"
+        ]
+      },
+      "sourceIndependentTarget": "360",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-15",
+      "proof": {
+        "printedNumbers": [
+          "18",
+          "10",
+          "1440",
+          "3",
+          "4",
+          "4",
+          "50"
+        ],
+        "firstHeight": "8",
+        "newDimensions": [
+          "27/2",
+          "6",
+          "4"
+        ],
+        "newVolume": "324",
+        "percentBaseFirstHeight": true,
+        "actualAllMCQValues": [
+          "324",
+          "1440",
+          "432",
+          "216"
+        ]
+      },
+      "sourceIndependentTarget": "144",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-16",
+      "proof": {
+        "printedNumbers": [
+          "66",
+          "18",
+          "20",
+          "30"
+        ],
+        "initialHeadStartDistance": "6",
+        "remainingDistance": "60",
+        "requestedLaterTime": "5/4",
+        "firstTotalTime": "19/12",
+        "actualAllMCQHours": [
+          "5/4",
+          "19/12",
+          "3/2",
+          "11/12"
+        ]
+      },
+      "sourceIndependentTarget": "4/3",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-17",
+      "proof": {
+        "printedNumbers": [
+          "1002",
+          "84",
+          "3",
+          "66"
+        ],
+        "initialHeadStartDistance": "252",
+        "remainingDistance": "750",
+        "requestedLaterTime": "5",
+        "firstTotalTime": "8",
+        "actualAllMCQValues": [
+          "5",
+          "8",
+          "3",
+          "6"
+        ]
+      },
+      "sourceIndependentTarget": "4",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-18",
+      "proof": {
+        "printedNumbers": [
+          "30",
+          "540",
+          "30"
+        ],
+        "dimensionsCm": [
+          "30",
+          "540",
+          "30"
+        ],
+        "areaCm2": "16200",
+        "tileAreaCm2": "900",
+        "count": "18",
+        "sourceDimensionalWordingCorrection": true,
+        "actualAllMCQValues": [
+          "18",
+          "9",
+          "30",
+          "16200"
+        ]
+      },
+      "sourceIndependentTarget": "15",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-19",
+      "proof": {
+        "printedNumbers": [
+          "2",
+          "57",
+          "3",
+          "36"
+        ],
+        "totalDistance": "222",
+        "totalTime": "5",
+        "weightedSpeed": "222/5",
+        "unweightedWrong": "93/2",
+        "actualAllMCQValues": [
+          "222/5",
+          "93/2",
+          "57",
+          "222"
+        ]
+      },
+      "sourceIndependentTarget": "37",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-20",
+      "proof": {
+        "printedNumbers": [
+          "17",
+          "4",
+          "6"
+        ],
+        "firstHours": "21/2",
+        "secondHours": "13/2",
+        "requestedFirstDistance": "63",
+        "actualAllMCQValues": [
+          "63",
+          "21/2",
+          "39",
+          "102"
+        ]
+      },
+      "sourceIndependentTarget": "34",
+      "sourceFullRead": true
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-21",
+      "proof": {
+        "printedNumbers": [
+          "135",
+          "3",
+          "5/4"
+        ],
+        "cycleDistance": "60",
+        "motorDistance": "75",
+        "requestedMotorSpeed": "25",
+        "cycleSpeed": "20",
+        "actualAllMCQValues": [
+          "25",
+          "20",
+          "75",
+          "45/2"
+        ]
+      },
+      "sourceIndependentTarget": "24",
+      "sourceFullRead": true
+    }
+  ],
+  "entries": [
+    {
+      "editionId": "collection-word4-91f6d9db-01",
+      "sha256": "325ebd7305dee58162bebdd74dbc567b9325e56d85c7e7315fc9427e03568feb",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"260\", \"130\", \"200\"], \"orderedPrices\": [\"30\", \"50\", \"180\"], \"sameGroupSum\": \"230\", \"actualAllMCQTruths\": [true, false, false, false]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-02",
+      "sha256": "1ab0b9f44988cf479a614c5f75b27cd1a2d78aca7982d0704df7f0c408df3d3c",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"5\", \"4\", \"37\", \"4\", \"5\", \"35\"], \"orderedMasses\": [\"5\", \"3\"], \"pairedSum\": \"8\", \"difference\": \"2\", \"actualAllMCQTruths\": [true, false, false, false]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-03",
+      "sha256": "0bcd4a26157807094cf9f9f245d28f3c6bcaf52a63c655116ab3e612dfc7c0c1",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"5\", \"9\"], \"side\": \"3\", \"length\": \"15\", \"outsidePerimeter\": \"36\", \"notSumOfIndividualPerimeters\": \"60\", \"actualAllMCQValues\": [\"18\", \"36\", \"60\", \"45\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-04",
+      "sha256": "f82e23963023ae532997c56d14659263e7a55aa4d6ee05facb6fbad637753084",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"62\", \"8\"], \"equalLegs\": \"18\", \"requestedBase\": \"26\", \"strictTriangleInequality\": true, \"actualAllMCQValues\": [\"18\", \"26\", \"36\", \"54\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-05",
+      "sha256": "4ab95baf039273c47b42c58f75c2a15ff76a92aefe374049c001d01e26a0c0f7",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"6\", \"5\", \"7150\"], \"totalPackages\": \"11\", \"unitPrice\": \"650\", \"actualAllMCQValues\": [\"650\", \"600\", \"3575\", \"715\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-06",
+      "sha256": "1e0114f25b87994dd791306afc1ab0389a3a310d5278cefe55fe4b2686195160",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"5\", \"8\", \"30\", \"26\"], \"firstSameWholeFraction\": \"5/8\", \"secondSameWholeFraction\": \"3/10\", \"requestedWhole\": \"80\", \"parts\": [\"50\", \"24\"], \"actualAllMCQValues\": [\"80\", \"50\", \"65\", \"52\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-07",
+      "sha256": "03952ef74f8e88dd5ad19ed39bee24b404c0354936645307bbc552f74da0801b",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"63\", \"18\", \"9\"], \"secondCount\": \"81\", \"total\": \"144\", \"perEnvelope\": \"16\", \"actualAllMCQValues\": [\"16\", \"8\", \"18\", \"144\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-08",
+      "sha256": "2978eef96fd79bea7927146c7ca43ddc6af497c207ab9c0ec437702710d5ef17",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"792/25\", \"7/5\"], \"first\": \"132/5\", \"second\": \"924/25\", \"requestedFirstNotMeanOrSecond\": true, \"actualAllMCQValues\": [\"132/5\", \"792/25\", \"924/25\", \"53/2\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-09",
+      "sha256": "daf4cb0445b6e86af9d5e0726d6bb1da394c5bfe8a7c5e5cf53e8866633eb1d6",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"2\", \"5\", \"4\"], \"requestedEquationNotRoot\": true, \"total\": \"36\", \"integerChildLedger\": [\"3\", \"6\", \"9\"], \"actualMCQAffineSides\": [[[\"1/5\", \"21/5\"], [\"1/4\", \"-3/2\"]], [[\"1/5\", \"-6/5\"], [\"1/4\", \"0\"]], [[\"1/5\", \"9/5\"], [\"1/4\", \"0\"]], [[\"1/5\", \"9/5\"], [\"1/5\", \"0\"]]]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-10",
+      "sha256": "7ee9b5705c40fca57723d2a260def98e06afa167b5595574e0db9af9d91718ab",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"3/4\", \"96\", \"16\"], \"timeFromMeeting\": \"3/4\", \"sumSpeed\": \"128\", \"orderedSpeeds\": [\"56\", \"72\"], \"actualAllMCQTruths\": [true, false, false, false]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-11",
+      "sha256": "6f96adc59c151f753a224e8cdfcb37bfe17ae6adfae6d0c041945537dea33e63",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"7/2\", \"3\"], \"ownSpeed\": \"39\", \"directionalSpeeds\": [\"42\", \"36\"], \"requestedDistance\": \"126\", \"actualAllMCQValues\": [\"126\", \"39\", \"108\", \"147\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-12",
+      "sha256": "810bf399f325edd616c3a6f52f780639f0c1878c4cffbdaa5f863a2a067031e5",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"8\", \"1\", \"4\"], \"newToOldArea\": \"27/20\", \"requestedIncreasePercent\": \"35\", \"notNewAreaPercent\": \"135\", \"actualAllMCQValues\": [\"35\", \"135\", \"33\", \"25\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-13",
+      "sha256": "41d370f8aa64b839b749adae1a7fcf021438704fda5af86d9afaf1015c16d9e6",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"15\", \"8\", \"1680\", \"3\", \"5\", \"3\", \"75\"], \"firstHeight\": \"14\", \"newDimensions\": [\"9\", \"5\", \"21/2\"], \"newVolume\": \"945/2\", \"percentBaseFirstHeight\": true, \"actualAllMCQValues\": [\"945/2\", \"630\", \"336\", \"1680\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-14",
+      "sha256": "699fc28b973a6923cf15699728e1e6dbad8bab894558315f1a539b228992f2c4",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"48\", \"40\", \"3\", \"24\"], \"oldBusCount\": \"12\", \"newBusCount\": \"15\", \"requestedStudents\": \"576\", \"singlePartialBusPassengers\": \"16\", \"actualAllMCQValues\": [\"12\", \"600\", \"576\", \"480\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-15",
+      "sha256": "22e8af6d61719138056101794fa64902382abe11a82d17c680a3b2cd3db85fb0",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"18\", \"10\", \"1440\", \"3\", \"4\", \"4\", \"50\"], \"firstHeight\": \"8\", \"newDimensions\": [\"27/2\", \"6\", \"4\"], \"newVolume\": \"324\", \"percentBaseFirstHeight\": true, \"actualAllMCQValues\": [\"324\", \"1440\", \"432\", \"216\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-16",
+      "sha256": "a3b70a53f41d6ed480767acfbfada8e2b0da6c265230add36eaf5a4ce9a70efc",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"66\", \"18\", \"20\", \"30\"], \"initialHeadStartDistance\": \"6\", \"remainingDistance\": \"60\", \"requestedLaterTime\": \"5/4\", \"firstTotalTime\": \"19/12\", \"actualAllMCQHours\": [\"5/4\", \"19/12\", \"3/2\", \"11/12\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-17",
+      "sha256": "c3a1e473408debbb01f422e28d33bae5f9fe27b1da85f37f36d0f928bd906980",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"1002\", \"84\", \"3\", \"66\"], \"initialHeadStartDistance\": \"252\", \"remainingDistance\": \"750\", \"requestedLaterTime\": \"5\", \"firstTotalTime\": \"8\", \"actualAllMCQValues\": [\"5\", \"8\", \"3\", \"6\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-18",
+      "sha256": "1f0a16cd408f9ac323b5d49e6b9304f4b3bce878a29ed1688a671c075dbda8df",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"30\", \"540\", \"30\"], \"dimensionsCm\": [\"30\", \"540\", \"30\"], \"areaCm2\": \"16200\", \"tileAreaCm2\": \"900\", \"count\": \"18\", \"sourceDimensionalWordingCorrection\": true, \"actualAllMCQValues\": [\"18\", \"9\", \"30\", \"16200\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-19",
+      "sha256": "abbcf1ea2ad2757e77cc7aeb11a271d419489f4f0591b99a282f631555b78af5",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"2\", \"57\", \"3\", \"36\"], \"totalDistance\": \"222\", \"totalTime\": \"5\", \"weightedSpeed\": \"222/5\", \"unweightedWrong\": \"93/2\", \"actualAllMCQValues\": [\"222/5\", \"93/2\", \"57\", \"222\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-20",
+      "sha256": "17ee8604909cf287e9ebdce5361833c1a8fcf5f5265f2ee5443be7531b73aebb",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"17\", \"4\", \"6\"], \"firstHours\": \"21/2\", \"secondHours\": \"13/2\", \"requestedFirstDistance\": \"63\", \"actualAllMCQValues\": [\"63\", \"21/2\", \"39\", \"102\"]}"
+      ]
+    },
+    {
+      "editionId": "collection-word4-91f6d9db-21",
+      "sha256": "5f99d407856213828055b24214e1fa7175a41d77dd7ec4b8f4819b2e6270fe88",
+      "verdict": "verified",
+      "method": "independent_root_all_saved_new_official_authored_fullsolutions_every_MCQ_read_exact_printed_two_way_affine_unit_target_and_positive_domain_oracle",
+      "notes": [
+        "{\"printedNumbers\": [\"135\", \"3\", \"5/4\"], \"cycleDistance\": \"60\", \"motorDistance\": \"75\", \"requestedMotorSpeed\": \"25\", \"cycleSpeed\": \"20\", \"actualAllMCQValues\": [\"25\", \"20\", \"75\", \"45/2\"]}"
+      ]
+    }
+  ]
+}

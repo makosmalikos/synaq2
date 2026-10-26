@@ -1,0 +1,1646 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All30 remaining saved grade-4 nonvisual topic1.6 mass/unit/weighing sources; no new source collection.",
+  "summary": {
+    "editions": 30,
+    "models": 30,
+    "skillFamilies": 29,
+    "sourceOccurrencesReferenced": 30,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-mass-f2da4ba6bb376093",
+      "modelId": "grade4-mass-physical-unit",
+      "skillFamily": "physical-unit",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "quantity": 360
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level1.json",
+          "sourceId": "f2da4ba6bb376093"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Ұсақ металл түйірінің массасы жарты грамнан аз. Өлшеу жазбасында «360 ...» деп көрсетілген. Көп нүктенің орнына сәйкес бірлікті таңдаңдар.",
+      "answer": "мг",
+      "solution": "Жарты грамм — 500 мг. 360 мг < 500 мг, ал 360 г, 360 кг және 360 ц жарты грамнан әлдеқайда ауыр. Сондықтан сәйкес бірлік — мг.",
+      "options": [
+        "г",
+        "ц",
+        "мг",
+        "кг"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "мг",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-a6767af9e77904cd",
+      "modelId": "grade4-mass-greatest-mixed-mass",
+      "skillFamily": "greatest-mixed-mass",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "masses": [
+          [
+            [
+              4,
+              "кг"
+            ],
+            [
+              700,
+              "г"
+            ]
+          ],
+          [
+            [
+              4,
+              "кг"
+            ],
+            [
+              7,
+              "г"
+            ]
+          ],
+          [
+            [
+              47000,
+              "мг"
+            ]
+          ],
+          [
+            [
+              4070,
+              "г"
+            ]
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level1.json",
+          "sourceId": "a6767af9e77904cd"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Берілген массалардың ең ауырын таңдаңдар.",
+      "answer": "4 кг 700 г",
+      "solution": "Барлығын г бірлігімен жазамыз: 4 кг 700 г = 4 700 г; 4 кг 7 г = 4 007 г; 47 000 мг = 47 г; 4 070 г = 4 070 г. 47 < 4 007 < 4 070 < 4 700. Сондықтан ең ауыр масса — 4 кг 700 г.",
+      "options": [
+        "4 кг 700 г",
+        "4 кг 7 г",
+        "47 000 мг",
+        "4 070 г"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "4 кг 700 г",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-e0dff843fe328713",
+      "modelId": "grade4-mass-tonne-centner-ratio",
+      "skillFamily": "tonne-centner-ratio",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "tonnes": 3,
+        "centners": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level1.json",
+          "sourceId": "e0dff843fe328713"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "3 т жүктің массасы 2 ц жүктің массасынан неше есе үлкен? Жауапқа тек сан енгізіңдер.",
+      "answer": "15",
+      "solution": "1 т = 10 ц, сондықтан 3 т = 30 ц. Бірдей бірліктердегі массаларды бөлеміз: 30 : 2 = 15. Айырма емес, неше есе екені сұралған.",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "15",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-5ddce79c174ed372",
+      "modelId": "grade4-mass-gram-milligram-compare",
+      "skillFamily": "gram-milligram-compare",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "grams": 5,
+        "milligrams": 60,
+        "rightMg": 5600
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level1.json",
+          "sourceId": "5ddce79c174ed372"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "5 г 60 мг □ 5 600 мг. Қай белгі дұрыс?",
+      "answer": "<",
+      "solution": "5 г 60 мг = 5 000 + 60 = 5 060 мг. 5 060 < 5 600. Миллиграмм бөлігін үш орынмен жазамыз: 060, оны он есе үлкейтпейміз.",
+      "options": [
+        ">",
+        "салыстыру мүмкін емес",
+        "=",
+        "<"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "<",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-6e30ff29a51b0571",
+      "modelId": "grade4-mass-supply-shortfall",
+      "skillFamily": "supply-shortfall",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "needed": 74000,
+        "available": 57380
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level2.json",
+          "sourceId": "6e30ff29a51b0571"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қоймаларға барлығы 74 000 т астық қажет. Қазір 57 380 т жиналды. Қорды толықтыру үшін тағы неше тонна әкелу керек? Жауапқа тек сан енгізіңдер.",
+      "answer": "16620",
+      "solution": "Қажетті қордан жиналғанын азайтамыз: 74 000 − 57 380 = 16 620 т. Тексеру: 57 380 + 16 620 = 74 000 т.",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "16620",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-7dee57cae93de722",
+      "modelId": "grade4-mass-strict-mass-threshold",
+      "skillFamily": "strict-mass-threshold",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "tonnes": 3,
+        "masses": [
+          [
+            [
+              2990,
+              "кг"
+            ]
+          ],
+          [
+            [
+              31,
+              "ц"
+            ]
+          ],
+          [
+            [
+              30,
+              "ц"
+            ]
+          ],
+          [
+            [
+              2,
+              "т"
+            ],
+            [
+              999,
+              "кг"
+            ]
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level2.json",
+          "sourceId": "7dee57cae93de722"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қай масса 3 т шамасынан қатаң үлкен?",
+      "answer": "31 ц",
+      "solution": "3 т = 3 000 кг. Нұсқалар: 2 990 кг = 2 990 кг; 31 ц = 3 100 кг; 30 ц = 3 000 кг; 2 т 999 кг = 2 999 кг. Тең масса «ауыр» деген талапқа сай келмейді. Тек 31 ц шектен артық.",
+      "options": [
+        "2 990 кг",
+        "31 ц",
+        "30 ц",
+        "2 т 999 кг"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "31 ц",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-e8e7fd0723c25ddc",
+      "modelId": "grade4-mass-mixed-centner-borrow",
+      "skillFamily": "mixed-centner-borrow",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "leftTonnes": 10,
+        "leftCentners": 2,
+        "rightTonnes": 4,
+        "rightCentners": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level2.json",
+          "sourceId": "e8e7fd0723c25ddc"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "10 т 2 ц − 4 т 8 ц айырмасын центнермен табыңдар. Жауапқа тек сан енгізіңдер.",
+      "answer": "54",
+      "solution": "1 т = 10 ц. Бірінші масса 10 × 10 + 2 = 102 ц, екіншісі 4 × 10 + 8 = 48 ц. Айырма 102 − 48 = 54 ц. Тексеру: 48 + 54 = 102.",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "54",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-7efa9a8c1557dfa5",
+      "modelId": "grade4-mass-ordered-small-masses",
+      "skillFamily": "ordered-small-masses",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "masses": [
+          [
+            [
+              8,
+              "г"
+            ],
+            [
+              70,
+              "мг"
+            ]
+          ],
+          [
+            [
+              6,
+              "г"
+            ],
+            [
+              500,
+              "мг"
+            ]
+          ],
+          [
+            [
+              8700,
+              "мг"
+            ]
+          ],
+          [
+            [
+              7,
+              "г"
+            ],
+            [
+              8,
+              "мг"
+            ]
+          ]
+        ],
+        "orders": [
+          [
+            1,
+            3,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            3,
+            0
+          ],
+          [
+            1,
+            3,
+            0,
+            2
+          ],
+          [
+            0,
+            2,
+            3,
+            1
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level2.json",
+          "sourceId": "7efa9a8c1557dfa5"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Массаларды өсу ретімен орналастырыңдар: 8 г 70 мг; 6 г 500 мг; 8 700 мг; 7 г 8 мг.",
+      "answer": "6 г 500 мг; 7 г 8 мг; 8 г 70 мг; 8 700 мг",
+      "solution": "Миллиграммен: 8 г 70 мг = 8 070 мг; 6 г 500 мг = 6 500 мг; 8 700 мг = 8 700 мг; 7 г 8 мг = 7 008 мг. 6 500 < 7 008 < 8 070 < 8 700. Дұрыс рет: 6 г 500 мг; 7 г 8 мг; 8 г 70 мг; 8 700 мг. Миллиграмм бөлігіндегі нөлдерді сақтаймыз.",
+      "options": [
+        "6 г 500 мг; 7 г 8 мг; 8 700 мг; 8 г 70 мг",
+        "8 700 мг; 6 г 500 мг; 7 г 8 мг; 8 г 70 мг",
+        "6 г 500 мг; 7 г 8 мг; 8 г 70 мг; 8 700 мг",
+        "8 г 70 мг; 8 700 мг; 7 г 8 мг; 6 г 500 мг"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "6 г 500 мг; 7 г 8 мг; 8 г 70 мг; 8 700 мг",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-31e54813ba7bfaf9",
+      "modelId": "grade4-mass-equal-basket-total",
+      "skillFamily": "equal-basket-total",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "masses": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          12
+        ],
+        "baskets": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level2.json",
+          "sourceId": "31e54813ba7bfaf9"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "3, 4, 5, 6, 7, 8, 12 кг тартатын жеті қауынды үш себетке бөлді. Бос себеттердің массасы ескерілмейді; әр себеттегі қауындардың жалпы массасы бірдей. Бір себеттегі қауындар неше килограмм тартады? Жауапқа тек сан енгізіңдер.",
+      "answer": "15",
+      "solution": "Барлық масса 3 + 4 + 5 + 6 + 7 + 8 + 12 = 45 кг. Әр себетке 45 : 3 = 15 кг келеді. Бөлудің мүмкіндігі: 3 + 12 = 15; 4 + 5 + 6 = 15; 7 + 8 = 15. Бірде-бір қауын бөлшектенбейді.",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "15",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-131bf95952933c9b",
+      "modelId": "grade4-mass-approx-fruit-count",
+      "skillFamily": "approx-fruit-count",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "unitGrams": 250,
+        "totalKg": 6,
+        "choices": [
+          24,
+          240,
+          6,
+          2400
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level2.json",
+          "sourceId": "131bf95952933c9b"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір алмұрттың массасы шамамен 250 г. Массасы 6 кг алмұртта шамамен неше дана бар?",
+      "answer": "24",
+      "solution": "6 кг = 6 000 г. Бір дананың массасына бөлеміз: 6 000 : 250 = 24. Тексеру: 250 × 24 = 6 000 г. Бұл шамамен алынған сан.",
+      "options": [
+        "24",
+        "240",
+        "6",
+        "2 400"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "24",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-9aaaacc62efdde0d",
+      "modelId": "grade4-mass-two-year-combined-yield",
+      "skillFamily": "two-year-combined-yield",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "thisYear": 62800,
+        "less": 9630
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level2.json",
+          "sourceId": "9aaaacc62efdde0d"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Шаруа қожалығы биыл 62 800 кг сәбіз жинады. Былтырғы өнім биылғыдан 9 630 кг кем еді. Екі жылғы өнімнің қосындысы неше килограмм? Жауапқа тек сан енгізіңдер.",
+      "answer": "115970",
+      "solution": "Былтыр 62 800 − 9 630 = 53 170 кг жиналған. Екі жылда 62 800 + 53 170 = 115 970 кг. Тексеру: 62 800 × 2 − 9 630 = 115 970.",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "115970",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-83b42ced052fb6dd",
+      "modelId": "grade4-mass-sample-production-mass",
+      "skillFamily": "sample-production-mass",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "sampleMg": 450,
+        "perDay": 4,
+        "days": 15,
+        "choices": [
+          [
+            [
+              27,
+              "г"
+            ]
+          ],
+          [
+            [
+              270,
+              "г"
+            ]
+          ],
+          [
+            [
+              2700,
+              "г"
+            ]
+          ],
+          [
+            [
+              1,
+              "г"
+            ],
+            [
+              800,
+              "мг"
+            ]
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level2.json",
+          "sourceId": "83b42ced052fb6dd"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Зертханада күніне массасы 450 мг болатын 4 бірдей металл үлгі дайындалады. 15 күнде дайындалған үлгілердің жалпы массасын таңдаңдар.",
+      "answer": "27 г",
+      "solution": "Бір күнде 450 × 4 = 1 800 мг. 15 күнде 1 800 × 15 = 27 000 мг. 1 г = 1 000 мг болғандықтан, 27 000 : 1 000 = 27 г. Бір күндегі масса мен барлық күндегі массаны шатастырмаймыз.",
+      "options": [
+        "27 г",
+        "270 г",
+        "2 700 г",
+        "1 г 800 мг"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "27 г",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-8aa9bff31016195f",
+      "modelId": "grade4-mass-two-backward-yield-steps",
+      "skillFamily": "two-backward-yield-steps",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "current": 530740,
+        "firstLess": 5370,
+        "secondLess": 2485
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level2.json",
+          "sourceId": "8aa9bff31016195f"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Биыл өңірде 530 740 т астық жиналды. Былтыр биылғыдан 5 370 т кем, ал одан бұрынғы жылы былтырғыдан 2 485 т кем жиналған. Одан бұрынғы жылғы өнім неше тонна? Жауапқа тек сан енгізіңдер.",
+      "answer": "522885",
+      "solution": "Былтырғысы 530 740 − 5 370 = 525 370 т. Одан бұрынғысы 525 370 − 2 485 = 522 885 т. Екі айырма да азайтылады: 530 740 − (5 370 + 2 485) = 522 885.",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "522885",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-6f8fb8d44ebe798c",
+      "modelId": "grade4-mass-mixed-mass-product",
+      "skillFamily": "mixed-mass-product",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "kg": 4,
+        "grams": 200,
+        "multiplier": 5,
+        "choices": [
+          [
+            [
+              20,
+              "кг"
+            ],
+            [
+              200,
+              "г"
+            ]
+          ],
+          [
+            [
+              21,
+              "кг"
+            ]
+          ],
+          [
+            [
+              21,
+              "кг"
+            ],
+            [
+              1000,
+              "г"
+            ]
+          ],
+          [
+            [
+              2100,
+              "г"
+            ]
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level2.json",
+          "sourceId": "6f8fb8d44ebe798c"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "4 кг 200 г массасын 5 есе арттырғанда қандай масса шығады?",
+      "answer": "21 кг",
+      "solution": "Алдымен 4 кг 200 г = 4 200 г. Сонда 4 200 × 5 = 21 000 г = 21 кг. Грамм бөлігі де 5 есе көбейеді және толық килограмға айналады.",
+      "options": [
+        "20 кг 200 г",
+        "21 кг",
+        "21 кг 1 000 г",
+        "2 100 г"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "21 кг",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-0793849e5f45c21d",
+      "modelId": "grade4-mass-equal-portion-count",
+      "skillFamily": "equal-portion-count",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "kg": 2,
+        "portionGrams": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level2.json",
+          "sourceId": "0793849e5f45c21d"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Шеберханада 2 кг ұнтақты әрқайсысы 8 г болатын тең үлестерге бөледі. Неше толық үлес шығады? Жауапқа тек сан енгізіңдер.",
+      "answer": "250",
+      "solution": "2 кг = 2 000 г. Үлестер саны 2 000 : 8 = 250. Тексеру: 250 × 8 = 2 000 г.",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "250",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-224e95f3b4fc5088",
+      "modelId": "grade4-mass-correct-mass-equality",
+      "skillFamily": "correct-mass-equality",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "tonnes": 3,
+        "centners": 7,
+        "choices": [
+          370,
+          3007,
+          3700,
+          37000
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level2.json",
+          "sourceId": "224e95f3b4fc5088"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Массалар туралы дұрыс теңдікті таңдаңдар.",
+      "answer": "3 т 7 ц = 3 700 кг",
+      "solution": "3 т = 3 000 кг; 7 ц = 700 кг. Қосқанда 3 000 + 700 = 3 700 кг. Центнерді бір килограмм деп есептеуге болмайды.",
+      "options": [
+        "3 т 7 ц = 370 кг",
+        "3 т 7 ц = 3 007 кг",
+        "3 т 7 ц = 3 700 кг",
+        "3 т 7 ц = 37 000 кг"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "3 т 7 ц = 3 700 кг",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-4b814049c779d617",
+      "modelId": "grade4-mass-three-pack-ratio-offset",
+      "skillFamily": "three-pack-ratio-offset",
+      "grade": 4,
+      "topic": "eq",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "multiplier": 2,
+        "offsetGrams": 450,
+        "totalKg": 3,
+        "totalGrams": 700
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level3.json",
+          "sourceId": "4b814049c779d617"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Үш қаптаманың жалпы массасы 3 кг 700 г. Екінші қаптама біріншіден 2 есе ауыр. Үшіншісі екіншіден 450 г ауыр. Бірінші қаптаманың массасын граммен табыңдар. Жауапқа тек сан енгізіңдер.",
+      "answer": "650",
+      "solution": "Бірінші масса — 1 бөлік, екіншісі — 2 бөлік, үшіншісі — 2 бөлік және 450 г. Барлығы 5 бөлік және 450 г. 3 700 − 450 = 3 250 г; 3 250 : 5 = 650 г. Тексеру: 650 + 1 300 + 1 750 = 3 700 г.",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "650",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-a3ac80b8aa0a445f",
+      "modelId": "grade4-mass-two-pan-unmeasurable",
+      "skillFamily": "two-pan-unmeasurable",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "weights": [
+          3,
+          4,
+          9
+        ],
+        "choices": [
+          15,
+          8,
+          5,
+          10
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level3.json",
+          "sourceId": "a3ac80b8aa0a445f"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Екі табақты таразы үшін 3, 4, 9 кг гірлердің әрқайсысы бір данадан бар. Әр гірді қолданбауға немесе екі табақтың тек біреуіне қоюға болады. Қай массаны бір өлшеуде өлшеп алу мүмкін емес?",
+      "answer": "15",
+      "solution": "Өлшеуге болатындары: 3 + 9 − 4 = 8; 9 − 4 = 5; 4 + 9 − 3 = 10. Үш гірді бір табаққа қойсақ, максимум 16 кг. Бір гірді алып тастау нәтижені кемінде 3 кг азайтады, ал қарсы табаққа ауыстыру одан да көп азайтады. Сондықтан 15 кг алынбайды.",
+      "options": [
+        "15",
+        "8",
+        "5",
+        "10"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "15",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-830089f4259db838",
+      "modelId": "grade4-mass-two-equal-one-multiple",
+      "skillFamily": "two-equal-one-multiple",
+      "grade": 4,
+      "topic": "eq",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 72,
+        "multiplier": 2,
+        "choices": [
+          [
+            12,
+            12,
+            48
+          ],
+          [
+            18,
+            18,
+            36
+          ],
+          [
+            24,
+            24,
+            24
+          ],
+          [
+            15,
+            15,
+            42
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level3.json",
+          "sourceId": "830089f4259db838"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "72 кг дәнді үш жәшікке салды. Алғашқы екі жәшіктегі массалар тең, үшінші жәшікте олардың әрқайсысынан 2 есе көп. Алғашқы, екінші және үшінші жәшіктегі массаларды осы ретпен таңдаңдар.",
+      "answer": "18 кг; 18 кг; 36 кг",
+      "solution": "Тең екі жәшікке 1 бөліктен, үшіншіге 2 бөлік сәйкес келеді. Барлығы 4 бөлік: 72 : 4 = 18 кг. Үшіншісі 18 × 2 = 36 кг. Тексеру: 18 + 18 + 36 = 72.",
+      "options": [
+        "12 кг; 12 кг; 48 кг",
+        "18 кг; 18 кг; 36 кг",
+        "24 кг; 24 кг; 24 кг",
+        "15 кг; 15 кг; 42 кг"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "18 кг; 18 кг; 36 кг",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-bff89098677a64d7",
+      "modelId": "grade4-mass-minimum-one-pan-weights",
+      "skillFamily": "minimum-one-pan-weights",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "upper": 31,
+        "choices": [
+          4,
+          5,
+          31,
+          6
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level3.json",
+          "sourceId": "bff89098677a64d7"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Гірлерді таразының тек бір табағына қоюға болады. 1 г мен 31 г аралығындағы әр бүтін массаны, екі шетін қоса, өлшеу үшін ең аз неше гір қажет? Әр гірдің массасын өздерің таңдайсыңдар.",
+      "answer": "5",
+      "solution": "Әр гір не қойылады, не қойылмайды. 4 гірден ең көбі 2 × 2 × 2 × 2 − 1 = 15 бос емес жиынтық шығады; бұл 31 түрлі массаға жетпейді. 5 гір жеткілікті: 1, 2, 4, 8, 16 г. Оларды екілік жіктеу бойынша біріктіріп, 1-ден 31-ге дейінгі барлық массаны аламыз.",
+      "options": [
+        "4",
+        "5",
+        "31",
+        "6"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "5",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-f263c4924c06fbf5",
+      "modelId": "grade4-mass-three-pair-package-masses",
+      "skillFamily": "three-pair-masses",
+      "grade": 4,
+      "topic": "eq",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "names": [
+          "A",
+          "B",
+          "C"
+        ],
+        "ab": 74,
+        "bc": 81,
+        "ac": 77,
+        "ask": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level3.json",
+          "sourceId": "f263c4924c06fbf5"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Үш қаптама A, B, C деп белгіленген. A және B бірге 74 кг, B және C бірге 81 кг, A және C бірге 77 кг. C қаптамасының массасы неше килограмм? Жауапқа тек сан енгізіңдер.",
+      "answer": "42",
+      "solution": "Үш қосындыны қоссақ, әр масса екі рет есептеледі: 74 + 81 + 77 = 232 кг. Үшеуінің жалпы массасы 232 : 2 = 116 кг. Сұралған масса 116 − 74 = 42 кг. Барлық массалар: A — 35 кг; B — 39 кг; C — 42 кг. Тексеру: 35 + 39 = 74; 39 + 42 = 81; 35 + 42 = 77.",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "42",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-cf7f7db1455bde67",
+      "modelId": "grade4-mass-lighter-token-weighings",
+      "skillFamily": "lighter-token-weighings",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "tokens": 27,
+        "choices": [
+          2,
+          3,
+          4,
+          26
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level3.json",
+          "sourceId": "cf7f7db1455bde67"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Сырттай бірдей 27 жетонның біреуі ғана басқаларынан жеңіл. Қалғандарының массалары тең. Гірсіз екі табақты таразымен жеңіл жетонды міндетті түрде табу үшін ең аз неше өлшеу қажет?",
+      "answer": "3",
+      "solution": "Таразының үш нәтижесі бар: сол жақ жеңіл, оң жақ жеңіл, екі жағы тең. Әр жолы күмәнді жетондарды үш тең топқа бөлеміз: 1-өлшеуде 9 жетонды 9 жетонмен салыстырамыз; 2-өлшеуде 3 жетонды 3 жетонмен салыстырамыз; 3-өлшеуде 1 жетонды 1 жетонмен салыстырамыз. Теңдік болса, таразыға қойылмаған топ қалады. Осылай 3 өлшеу жеткілікті. 2 өлшеу ең көбі 3 × 3 = 9 жағдайды ажыратады, ал жетон 27; сондықтан аз өлшеу жеткіліксіз.",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "26"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "3",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-1c4f5ec0d252ec7a",
+      "modelId": "grade4-mass-equal-rate-mass-production",
+      "skillFamily": "equal-rate-mass-production",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "baseMachines": 4,
+        "baseCentners": 1,
+        "baseKg": 44,
+        "machines": 6,
+        "days": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level3.json",
+          "sourceId": "1c4f5ec0d252ec7a"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бірдей өнімділікпен жұмыс істейтін 4 станок бір күнде барлығы 1 ц 44 кг бөлшек дайындайды. Сондай 6 станок 7 күнде неше килограмм бөлшек дайындайды? Жауапқа тек сан енгізіңдер.",
+      "answer": "1512",
+      "solution": "1 ц 44 кг = 144 кг. Бір станок бір күнде 144 : 4 = 36 кг дайындайды. 6 станок бір күнде 36 × 6 = 216 кг, 7 күнде 216 × 7 = 1 512 кг дайындайды.",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "1512",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-abc2db398cd0e10f",
+      "modelId": "grade4-mass-two-mixed-pair-total",
+      "skillFamily": "two-mixed-pair-total",
+      "grade": 4,
+      "topic": "eq",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "firstPlusDoubleSecond": 470,
+        "doubleFirstPlusSecond": 430
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level3.json",
+          "sourceId": "abc2db398cd0e10f"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір қызыл шар мен екі көк шардың жалпы массасы 470 г. Екі қызыл шар мен бір көк шар бірге 430 г. Бір түстегі шарлардың массалары бірдей. Бір қызыл және бір көк шар бірге неше грамм тартады? Жауапқа тек сан енгізіңдер.",
+      "answer": "300",
+      "solution": "Екі жиынтықты қоссақ, үш қызыл және үш көк шар аламыз: 470 + 430 = 900 г. Бұл бір қызыл мен бір көк шардан тұратын жұптың үш еселенген массасы. 900 : 3 = 300 г. Тексеру: қызыл 130 г, көк 170 г; 130 + 340 = 470, 260 + 170 = 430.",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "300",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-ca0a8ab66b0f99ea",
+      "modelId": "grade4-mass-unlabelled-equal-triple-partitions",
+      "skillFamily": "unlabelled-equal-triple-partitions",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "masses": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          12
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-level3.json",
+          "sourceId": "ca0a8ab66b0f99ea"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Массалары 1, 2, 3, 4, 5, 7, 8, 9, 12 кг болатын тоғыз жүктің әрқайсысын үш бірдей себеттің біріне салу керек. Әр себетте дәл үш жүк және бірдей жалпы масса болсын. Жүктерді бөлшектеуге болмайды. Себеттерді өзара алмастыру жаңа тәсіл саналмайды. Неше түрлі топтастыру бар? Жауапқа тек сан енгізіңдер.",
+      "answer": "2",
+      "solution": "Жалпы масса 1 + 2 + 3 + 4 + 5 + 7 + 8 + 9 + 12 = 51 кг, әр себетте 51 : 3 = 17 кг болуы керек. Ең жеңіл 1 кг жүкпен қалған екі массаның қосындысы 16 кг болуы қажет. Екі мүмкіндік бар: 4 + 12 немесе 7 + 9. Бірінші жағдайда қалған 2 кг жүкке тек 7 + 8 сәйкес келеді, соңғы топ 3 + 5 + 9 = 17. Екінші жағдайда қалған 2 кг жүкке тек 3 + 12 сәйкес келеді, соңғы топ 4 + 5 + 8 = 17. Демек, дәл екі топтастыру бар: (1, 7, 9); (2, 3, 12); (4, 5, 8) / (1, 4, 12); (2, 7, 8); (3, 5, 9).",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "2",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-f1a4d2d2d58a2cee",
+      "modelId": "grade4-mass-million-mg-kg-equality",
+      "skillFamily": "million-mg-kg-equality",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "milligrams": 8000000,
+        "kg": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-leveltest.json",
+          "sourceId": "f1a4d2d2d58a2cee"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "8 000 000 мг □ 8 кг. Қай белгі дұрыс?",
+      "answer": "=",
+      "solution": "1 кг = 1 000 г және 1 г = 1 000 мг, демек 1 кг = 1 000 000 мг. 8 000 000 : 1 000 = 8 000 г; 8 000 : 1 000 = 8 кг. Екі масса тең.",
+      "options": [
+        "=",
+        ">",
+        "салыстыру мүмкін емес",
+        "<"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "=",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-c99b0ec1ebd2cc4a",
+      "modelId": "grade4-mass-lightest-mixed-mass",
+      "skillFamily": "lightest-mixed-mass",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "masses": [
+          [
+            [
+              2080,
+              "кг"
+            ]
+          ],
+          [
+            [
+              2,
+              "т"
+            ],
+            [
+              8,
+              "ц"
+            ]
+          ],
+          [
+            [
+              21,
+              "ц"
+            ]
+          ],
+          [
+            [
+              2,
+              "т"
+            ],
+            [
+              8,
+              "кг"
+            ]
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-leveltest.json",
+          "sourceId": "c99b0ec1ebd2cc4a"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Берілген массалардың ең жеңілін таңдаңдар.",
+      "answer": "2 т 8 кг",
+      "solution": "Барлығын кг бірлігімен жазамыз: 2 080 кг = 2 080 кг; 2 т 8 ц = 2 800 кг; 21 ц = 2 100 кг; 2 т 8 кг = 2 008 кг. 2 008 < 2 080 < 2 100 < 2 800. Сондықтан ең жеңіл масса — 2 т 8 кг.",
+      "options": [
+        "2 080 кг",
+        "2 т 8 ц",
+        "21 ц",
+        "2 т 8 кг"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "2 т 8 кг",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-62049f86421d69a8",
+      "modelId": "grade4-mass-centner-addition-carry",
+      "skillFamily": "centner-addition-carry",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "firstCentners": 6,
+        "firstKg": 74,
+        "secondCentners": 3,
+        "secondKg": 58
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-leveltest.json",
+          "sourceId": "62049f86421d69a8"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "6 ц 74 кг + 3 ц 58 кг қосындысын килограммен табыңдар. Жауапқа тек сан енгізіңдер.",
+      "answer": "1032",
+      "solution": "6 ц 74 кг = 674 кг; 3 ц 58 кг = 358 кг. 674 + 358 = 1 032 кг. Килограмдарды жеке қоссақ, 74 + 58 = 132 кг = 1 ц 32 кг; осы қосымша центнерді де ескереміз.",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "1032",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-2a291c61e2de969b",
+      "modelId": "grade4-mass-equal-baskets-companion",
+      "skillFamily": "equal-baskets-companion",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "masses": [
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "special": 8,
+        "choices": [
+          [
+            3,
+            4
+          ],
+          [
+            6
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-leveltest.json",
+          "sourceId": "2a291c61e2de969b"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "3, 4, 5, 6, 8 кг тартатын бес қауынды массалары тең екі себетке бөлді. Қауындар бөлшектенбейді, себеттің өз массасы ескерілмейді. 8 кг қауынмен бірге қандай қауындар жатыр?",
+      "answer": "5 кг",
+      "solution": "Жалпы масса 3 + 4 + 5 + 6 + 8 = 26 кг, әр себетте 13 кг. 8 кг қауынға 13 − 8 = 5 кг жетіспейді. Қалған массалардан бұл тек 5. Екінші себетте 3 + 4 + 6 = 13 кг.",
+      "options": [
+        "3 кг және 4 кг",
+        "6 кг",
+        "4 кг",
+        "5 кг"
+      ],
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "5 кг",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-mass-8de63cf95a9ca693",
+      "modelId": "grade4-mass-three-pair-fruit-masses",
+      "skillFamily": "three-pair-masses",
+      "grade": 4,
+      "topic": "eq",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "names": [
+          "қарбыз",
+          "қауын",
+          "асқабақ"
+        ],
+        "ab": 11,
+        "bc": 10,
+        "ac": 13,
+        "ask": 0
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-6-leveltest.json",
+          "sourceId": "8de63cf95a9ca693"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр бастапқы шарт, нұсқалар, жауап және толық ресми шешім жеке оқылды. Массаның аралас бірліктері, нөлдік орындар, қатаң теңсіздік, разряд тасымалы және мөлшерлер арасындағы байланыс сақталды.",
+        "Жаңа деректер мен өздігінен түсінікті қазақша тұжырым жазылды. Дәріні қабылдау сюжеті металл үлгілерін дайындаумен алмастырылды; тең үлестер мен өнімділік шарттары ашық берілді.",
+        "Бөлінбейтін жүктер үшін толық тең топтастыру, екі табақты таразы үшін −1/0/1 толық іздеу, ең аз өлшеу үшін ақпараттық төменгі шек пен нақты құрылым тексерілді. Қайталанатын сандық нұсқалар жаңа мағына ретінде есептелмейді."
+      ],
+      "relationToSource": "One source-specific saved grade-4 mass edition; complete source-occurrence coverage does not imply semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір қарбыз, бір қауын, бір асқабақ бар. Қарбыз және қауын бірге 11 кг, қауын және асқабақ бірге 10 кг, қарбыз және асқабақ бірге 13 кг. Қарбыздың массасы неше килограмм? Жауапқа тек сан енгізіңдер.",
+      "answer": "7",
+      "solution": "Үш қосындыны қоссақ, әр масса екі рет есептеледі: 11 + 10 + 13 = 34 кг. Үшеуінің жалпы массасы 34 : 2 = 17 кг. Сұралған масса 17 − 10 = 7 кг. Барлық массалар: қарбыз — 7 кг; қауын — 4 кг; асқабақ — 6 кг. Тексеру: 7 + 4 = 11; 4 + 6 = 10; 7 + 6 = 13.",
+      "calculationVerification": {
+        "method": "exact_integer_mass_units_and_complete_finite_partition_weighing_domains",
+        "answer": "7",
+        "checks": [
+          "canonical source-specific quantity/unit/strictness/finite weighing skill retained",
+          "exact integer milligram arithmetic and full subset/partition/signed-weight search",
+          "self-contained Kazakh statement solution and all choices bound to parameters",
+          "independent editorial review pending"
+        ]
+      }
+    }
+  ]
+}

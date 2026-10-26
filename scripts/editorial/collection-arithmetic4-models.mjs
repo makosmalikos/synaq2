@@ -1,0 +1,106 @@
+import assert from 'node:assert/strict';
+import {Q,add,sub,mul,div,neg,equal,scalar,affine,at,comparisons,display as d,fr,gcd,parse,coefficients,expandedTerms,termsText,linear} from './collection-inequalities-math.mjs';
+const keys=(p,ks)=>assert.deepEqual(Object.keys(p).sort(),ks.toSorted()),positive=(...ns)=>ns.forEach(n=>assert(Number.isSafeInteger(n)&&n>0));
+const choose=(statement,value,solution,custom)=>{const answer=d(value),wrong=custom||[d(neg(value)),d(add(value,Q(1))),d(sub(value,Q(1)))],options=[...wrong,answer];assert.equal(new Set(options.map(o=>scalar(o).join('/'))).size,4);return{statement,options,answer,solution};};
+function arithmeticTree(expression){const ts=expression.replace(/−/g,'-').replace(/×/g,'*').replace(/:/g,'/').match(/\d+(?:,\d+)?|[()+*/²-]/g)||[];assert.equal(ts.join(''),expression.replace(/−/g,'-').replace(/×/g,'*').replace(/:/g,'/').replace(/\s/g,''));let i=0;
+ const atom=()=>{let t=ts[i++];assert(t);if(t==='('){const v=sum();assert.equal(ts[i++],')');return v;}assert(/^\d/.test(t));return['n',scalar(t),t];};
+ const power=()=>{if(ts[i]==='-'){i++;return['neg',power()];}if(ts[i]==='+'){i++;return power();}let v=atom();if(ts[i]==='²'){i++;v=['square',v];}return v;};
+ const product=()=>{let a=power();while(ts[i]==='*'||ts[i]==='/'){const op=ts[i++];a=[op,a,power()];}return a;};
+ const sum=()=>{let a=product();while(ts[i]==='+'||ts[i]==='-'){const op=ts[i++];a=[op,a,product()];}return a;};const v=sum();assert.equal(i,ts.length);return v;}
+const evalTree=t=>t[0]==='n'?t[1]:t[0]==='neg'?neg(evalTree(t[1])):t[0]==='square'?mul(evalTree(t[1]),evalTree(t[1])):({'+':add,'-':sub,'*':mul,'/':div})[t[0]](evalTree(t[1]),evalTree(t[2]));
+function calcTrace(t){
+ if(t[0]==='n')return d(t[1])===t[2]?[]:[`${t[2]} = ${fr(t[1])}`];
+ if(t[0]==='neg'){const a=evalTree(t[1]);return[...calcTrace(t[1]),`−(${d(a)}) = ${d(neg(a))}`];}
+ if(t[0]==='square'){const a=evalTree(t[1]);return[...calcTrace(t[1]),`(${d(a)})² = ${d(mul(a,a))}`];}
+ const a=evalTree(t[1]),b=evalTree(t[2]),result=evalTree(t),op={'+':'+','-':'−','*':'×','/':':'}[t[0]];let work;
+ if(t[0]==='/')work=`(${d(a)}) : (${d(b)}) = (${d(a)}) × (${fr(div(Q(1),b))}) = ${d(result)}`;
+ else if((t[0]==='+'||t[0]==='-')&&(a[1]>1||b[1]>1)){
+  const common=a[1]/gcd(a[1],b[1])*b[1],an=a[0]*(common/a[1]),bn=b[0]*(common/b[1]);
+  work=`${fr(a)} ${op} ${fr(b)}: ортақ бөлім ${common}, (${an}/${common}) ${op} (${bn}/${common}) = ${d(result)}`;
+ }else if(t[0]==='*'&&(a[1]>1||b[1]>1)){
+  const g1=gcd(a[0],b[1]),g2=gcd(b[0],a[1]),factors=[g1,g2].filter(n=>n>1);
+  work=g1>1||g2>1?`${fr(a)} × ${fr(b)}: айқыш ортақ ${factors.join(' және ')} ${factors.length===1?'көбейткішін':'көбейткіштерін'} қысқартамыз, ${fr(Q(a[0]/g1,a[1]/g2))} × ${fr(Q(b[0]/g2,b[1]/g1))} = ${d(result)}`:`(${d(a)}) × (${d(b)}) = ${d(result)}`;
+ }else work=`(${d(a)}) ${op} (${d(b)}) = ${d(result)}`;
+ return[...calcTrace(t[1]),...calcTrace(t[2]),work];
+}
+function solveEquation(s){const c=comparisons(s.replaceAll('c','x').replace(/:/g,'/'));assert.equal(c.length,1);assert.equal(c[0][1],'=');const l=affine(c[0][0]),r=affine(c[0][2]),a=sub(l.a,r.a),b=sub(l.b,r.b);assert(a[0]);return{c:c[0],l,r,a,b,root:div(neg(b),a)};}
+function equationWork(s){const variable=/\bc\b/.test(s)||/\dc\b/.test(s)?'c':/\by\b/.test(s)||/\dy\b/.test(s)?'y':'x',e=solveEquation(s),lt=expandedTerms(parse(e.c[0])),rt=expandedTerms(parse(e.c[2])),common=[...lt,...rt].reduce((n,t)=>n/gcd(n,t.value[1])*t.value[1],1);assert(common>0);const scale=Q(common),L={a:mul(e.l.a,scale),b:mul(e.l.b,scale)},R={a:mul(e.r.a,scale),b:mul(e.r.b,scale)},A=mul(e.a,scale),B=mul(e.b,scale),v=at(e.l,e.root);assert(equal(v,at(e.r,e.root)));return{...e,work:`${s.includes('(')?'Жақшаларды таратып, барлық мүшелерді сақтаймыз':'Екі жақтағы мүшелерді жазамыз'}: ${termsText(lt,variable)} = ${termsText(rt,variable)}. ${common>1?`Екі жақтың ӘР МҮШЕСІН оң ортақ бөлім ${common} санына көбейтеміз: ${termsText(lt,variable,scale)} = ${termsText(rt,variable,scale)}. `:''}Ұқсас мүшелерді жинасақ, ${linear(L,variable)} = ${linear(R,variable)}. Айнымалы мүшелерді бір жаққа, тұрақтыларды екінші жаққа жинаймыз: ${linear({a:A,b:Q(0)},variable)} = ${d(neg(B))}. ${equal(A,Q(1))?`Осыдан ${variable} = ${d(e.root)}.`:`${d(A)} санына бөліп, ${variable} = ${d(e.root)} аламыз.`} Бастапқы теңдеуге қойғандағы екі жақ та ${d(v)}.`};}
+const pick=(statement,options,answer,solution)=>{assert.equal(options.length,4);assert.equal(new Set(options).size,4);assert.equal(options.filter(o=>o===answer).length,1);return{statement,options,answer,solution};};
+const calcIntros={
+ 'different-main-bar-scopes-then-subtraction':'Бірінші бөлшектің бөлімінде бүтін бөлшек, екіншісінің алымында бүтін бөлшек тұр. Негізгі сызықтың орнын шатастырмай, екеуін бөлек табамыз.',
+ 'mixed-division-product-left-to-right':'Бөлу мен көбейту бірдей деңгейде: солдан оңға орындаймыз. Бөлгіш — тек екінші аралас сан, оны соңғы көбейткішпен бірге бір үлкен бөлімге айналдырмаймыз.',
+ 'two-decimal-divisions-then-sum':'Екі бөліндіні бөлек есептейміз. Бірінші бөлуде екі санның да үтірін бірдей екі орынға жылжытуға болады; соңында дайын бөлінділерді қосамыз.',
+ 'signed-decimals-positive-final-addend':'Теріс санды азайтуды қосуға ауыстырамыз. Соңғы мүше оң сан болып ҚОСЫЛАДЫ, оны теріс топқа қоспаймыз.',
+ 'nested-unit-fraction-difference-decimal-division':'Алдымен екі бөлшекті ортақ бөлімге келтіріп азайтамыз. Содан кейін толық айырманы оң ондық санға бөлеміз.',
+ 'sum-of-two-compound-main-fractions':'Екі негізгі бөлшектің әр алымы мен бөлімін бөлек есептейміз. Ішкі бөлу/көбейтулер толық аяқталған соң әр негізгі бөлшекті табамыз, тек соңында сол екеуін қосамыз.',
+ 'mixed-borrow-product-bracket-plus-quotient':'Ең ішкі аралас айырмада бір бүтінді ұсақтау керек. Дайын айырманы аралас санға көбейтеміз, сыртқы жақшаны есептейміз; соңғы бөлек бөліндіні содан кейін қосамыз.',
+ 'three-layer-additive-continued-fraction':'Төменгі қабаттан бастап бөлімдерді толық есептейміз. Әр бөлшектің негізгі сызығы өзінен төмен тұрған бүкіл қосындыны бөлімге алады.',
+};
+const authoredStructure={
+  "different-main-bar-scopes-then-subtraction": "(N/(N/N))-((N/N)/N)",
+  "mixed-division-product-left-to-right": "(N+(N/N))/(N+(N/N))*N",
+  "two-decimal-divisions-then-sum": "N/N+N/N",
+  "integer-y-both-sides": "NV+N=NV-N",
+  "signed-decimals-positive-final-addend": "-N+(-N)-(-N)+N",
+  "integer-x-both-sides": "N+NV=N+NV",
+  "nested-unit-fraction-difference-decimal-division": "((N/N)-(N/N))/N",
+  "repeated-source-three-denominator-new-equation": "((N-NV)/N)+((N-V)/N)=N-((NV+N)/N)",
+  "sum-of-two-compound-main-fractions": "((((N/(N/N)+(N+(N/N))*N)/N))/((N/(N+(N/N))+N)/(N+(N/N))))+(((N+(N/N))*N/N)/((N-(N/N))*N))",
+  "mixed-borrow-product-bracket-plus-quotient": "(N-((N+(N/N))-(N+(N/N)))*(N+(N/N)))+(N+(N/N))/(N+(N/N))",
+  "sum-of-two-negative-bracket-equation-roots": [
+    "-(NV-N)-N=N*(N-V)+V",
+    "N+NV=-(N-NV)"
+  ],
+  "three-layer-additive-continued-fraction": "(N/(N+(N/(N+(N/N)))))"
+};
+const structure=s=>s.replace(/\d+(?:,\d+)?/g,'N').replace(/[xyca]/g,'V').replace(/×/g,'*').replace(/−/g,'-').replace(/:/g,'/').replace(/\s/g,'');
+export function renderEdition(row){const p=row.params,k=row.skillFamily;
+ if(p.expression||p.equation)assert.equal(structure(p.expression||p.equation),authoredStructure[k],'Source-specific nested mainbar, bracket, unary sign and operation scopes');
+ if(p.first)assert.deepEqual([structure(p.first),structure(p.second)],authoredStructure[k]);
+ if(['integer-y-both-sides','integer-x-both-sides','repeated-source-three-denominator-new-equation'].includes(k)){keys(p,['equation']);const e=equationWork(p.equation);return choose(`${p.equation} теңдеуінің түбірін таңдаңыз.`,e.root,e.work);}
+ if(k==='inverse-minuend-then-unknown-factor'){
+  keys(p,['coefficient','subtract','right']);positive(...Object.values(p));const product=p.right+p.subtract;assert(product%p.coefficient===0);const answer=product/p.coefficient;return choose(`${p.coefficient}x − ${p.subtract} = ${p.right} теңдеуіндегі x мәнін таңдаңыз.`,Q(answer),`Белгісіз азайғыш ${p.coefficient}x = ${p.right} + ${p.subtract} = ${product}. Одан белгісіз көбейткіш x = ${product} : ${p.coefficient} = ${answer}. Тексеру: ${p.coefficient} × ${answer} − ${p.subtract} = ${p.right}.`);
+ }
+ if(k==='absolute-both-positive-root-sum'){
+  keys(p,['center','radius']);positive(...Object.values(p));assert(p.center>p.radius);const low=p.center-p.radius,high=p.center+p.radius,answer=2*p.center;return pick(`|x − ${p.center}| = ${p.radius} теңдеуінің БАРЛЫҚ түбірлерінің қосындысын таңдаңыз.`,[String(high),String(low),'Шешімі жоқ',String(answer)],String(answer),`x − ${p.center} = ${p.radius} болса, x = ${high}; x − ${p.center} = −${p.radius} болса, x = ${low}. Екеуі де оң, бірақ екі бөлек тармақтан табылды. Қосынды ${high} + ${low} = ${answer}. Тексеру: |${high} − ${p.center}| = |${low} − ${p.center}| = ${p.radius}.`);
+ }
+ if(k==='equal-variable-coefficients-no-solution'){
+  keys(p,['coefficient','insideSubtract','rightConstant']);positive(...Object.values(p));const left=-p.coefficient*p.insideSubtract;assert(left!==p.rightConstant);return pick(`${p.coefficient} × (x − ${p.insideSubtract}) = ${p.coefficient}x + ${p.rightConstant} теңдеуінің шешімдері туралы дұрыс нұсқаны таңдаңыз.`,['0','2','3','Шешімі жоқ'],'Шешімі жоқ',`Жақшаны ашсақ, ${p.coefficient}x − ${-left} = ${p.coefficient}x + ${p.rightConstant}. Екі жақтан да ${p.coefficient}x мүшесін алып тастаймыз: ${left} = ${p.rightConstant} — жалған. Айнымалының коэффициенті нөлге келді, сондықтан нөлге бөліп түбір шығармаймыз. Ешбір нақты x бастапқы теңдікті орындамайды.`);
+ }
+ if(k==='duplicate-source-factor-cancellation-new-primes'){
+  keys(p,['numerators','denominators']);assert.deepEqual(p.numerators,[11,3,2,13,9,2,2,3,11]);assert.deepEqual(p.denominators,[13,3,11,3,8,3,11,3,2]);const product=xs=>xs.reduce((a,n)=>mul(a,Q(n)),Q(1)),answer=div(product(p.numerators),product(p.denominators));return choose(`((${p.numerators.join(' × ')})/(${p.denominators.join(' × ')})) бөлшегін барлық көбейтіндіні ашып есептемей қысқартыңыз.`,answer,'9 = 3², 8 = 2³ деп жіктейміз. Алым 2³ × 3⁴ × 11² × 13, бөлім 2⁴ × 3⁴ × 11² × 13. Ортақ үш 2, төрт 3, екі 11 және бір 13 көбейткіштері қысқарады. Бөлімде бір 2 ғана қалып, нәтиже (1/2) болады.',['(3/2)','1','0']);
+ }
+ if(k==='negative-divisor-modulus-two-roots-sum'){
+  keys(p,['shift','negativeDivisor','rightNumeratorTenths','rightDenominatorTenths']);positive(...Object.values(p));const ratio=div(Q(-p.rightNumeratorTenths,10),Q(p.rightDenominatorTenths,10)),radius=mul(Q(-p.negativeDivisor),ratio);assert(radius[0]>0);const high=sub(radius,Q(p.shift)),low=sub(neg(radius),Q(p.shift)),answer=add(high,low);return choose(`((|x + ${p.shift}|)/(−${p.negativeDivisor})) = (−${d(Q(p.rightNumeratorTenths,10))}/${d(Q(p.rightDenominatorTenths,10))}) теңдеуінің БАРЛЫҚ түбірлерінің қосындысын таңдаңыз.`,answer,`Оң жақ ${fr(ratio)}. Модульді жалғыз қалдырамыз: |x + ${p.shift}| = (−${p.negativeDivisor}) × ${fr(ratio)} = ${d(radius)}. Екі тармақ x + ${p.shift} = ${d(radius)} немесе x + ${p.shift} = ${d(neg(radius))}. Түбірлер ${d(high)} және ${d(low)}; қосынды ${d(high)} + (${d(low)}) = ${d(answer)}. Теріс тұрақты бөлім нөл емес; модульдің оң мәні екі тармақты да береді.`);
+ }
+ if(k==='absolute-affine-inner-negative-coefficient-root-sum'){
+  keys(p,['constant','coefficient','radius']);positive(...Object.values(p));assert(p.radius>p.constant);const low=div(Q(p.constant-p.radius),Q(p.coefficient)),high=div(Q(p.constant+p.radius),Q(p.coefficient)),answer=add(low,high);return choose(`|${p.constant} − ${p.coefficient}x| = ${p.radius} теңдеуінің барлық түбірлерінің ҚОСЫНДЫСЫН таңдаңыз.`,answer,`${p.constant} − ${p.coefficient}x = ${p.radius} тармағында −${p.coefficient}x = ${p.radius-p.constant}, x = ${d(low)}. Екінші тармақ ${p.constant} − ${p.coefficient}x = −${p.radius}: −${p.coefficient}x = −${p.radius+p.constant}, x = ${d(high)}. Қосынды ${d(low)} + ${d(high)} = ${d(answer)}. Тексеру үшін екі түбір де модульдің ішінде ${p.radius} не −${p.radius} береді.`);
+ }
+ if(k==='meters-minus-centimeters'){
+  keys(p,['meters','centimeters']);positive(...Object.values(p));assert(p.centimeters<100);const total=p.meters*100,answer=total-p.centimeters;return pick(`${p.meters} м − ${p.centimeters} см айырмасын САНТИМЕТРМЕН көрсететін жауапты таңдаңыз.`,[`${p.meters-p.centimeters} см`,`${total+p.centimeters} см`,`${answer} см`,`${p.meters*1000-p.centimeters} см`],`${answer} см`,`1 м = 100 см, сондықтан ${p.meters} м = ${total} см. Бірдей бірліктермен азайтамыз: ${total} см − ${p.centimeters} см = ${answer} см. Метрдегі ${p.meters} санынан сантиметрдегі ${p.centimeters} санын тікелей азайтуға болмайды.`);
+ }
+ if(k==='mixed-carry-then-borrow-unknown-addend'){
+  keys(p,['leftWhole','leftNumerator','leftDenominator','subtractWhole','subtractNumerator','subtractDenominator','rightWhole','rightNumerator','rightDenominator']);positive(...Object.values(p));assert(p.leftNumerator<p.leftDenominator&&p.subtractNumerator<p.subtractDenominator&&p.rightNumerator<p.rightDenominator);const D=[p.leftDenominator,p.subtractDenominator,p.rightDenominator].reduce((a,b)=>a/gcd(a,b)*b),leftN=p.leftNumerator*D/p.leftDenominator,subN=p.subtractNumerator*D/p.subtractDenominator,rightN=p.rightNumerator*D/p.rightDenominator,rawWhole=p.rightWhole+p.subtractWhole,rawN=rightN+subN,carry=Math.floor(rawN/D),whole=rawWhole+carry,n=rawN%D;assert.equal(carry,1);assert(n<leftN);const answer=add(Q(whole-1-p.leftWhole),Q(n+D-leftN,D)),mixed=`(${whole-1-p.leftWhole} + (${n+D-leftN}/${D}))`;return pick(`((${p.leftWhole} + (${p.leftNumerator}/${p.leftDenominator})) + y) − (${p.subtractWhole} + (${p.subtractNumerator}/${p.subtractDenominator})) = (${p.rightWhole} + (${p.rightNumerator}/${p.rightDenominator})) теңдеуінің түбірін таңдаңыз.`,[d(add(answer,Q(1))),d(sub(answer,Q(1))),d(neg(answer)),mixed],mixed,`Ортақ бөлім ${D}. Алдымен белгісіз азайғыш: (${p.leftWhole} + (${leftN}/${D})) + y = (${p.rightWhole} + (${rightN}/${D})) + (${p.subtractWhole} + (${subN}/${D})) = (${rawWhole} + (${rawN}/${D})) = (${whole} + (${n}/${D})). Бөлшек бөліктен бір бүтін бөлінді. Енді белгісіз қосылғышты табамыз; ${n} < ${leftN}, сондықтан бір бүтінді ұсақтаймыз: (${whole} + (${n}/${D})) = (${whole-1} + (${n+D}/${D})). Одан y = (${whole-1} + (${n+D}/${D})) − (${p.leftWhole} + (${leftN}/${D})) = ${mixed}. Тексеру бастапқы теңдеудің екі жағын ${fr(add(Q(p.rightWhole),Q(p.rightNumerator,p.rightDenominator)))} мәніне келтіреді.`);
+ }
+ if(k==='diagnose-one-false-signed-decimal-equality'){
+  keys(p,['choices']);assert.equal(row.intentionalIncorrectExample,true);assert.equal(p.choices.length,4);const checked=p.choices.map(o=>{const[l,r]=o.split('=');assert(r!==undefined);const left=scalar(l.replace(/−/g,'-')),right=scalar(r.replace(/−/g,'-'));return{left,right,correct:equal(left,right)};}),wrong=checked.flatMap((r,i)=>r.correct?[]:[i]);assert.equal(wrong.length,1);const answer=p.choices[wrong[0]];return pick('Төмендегі төрт теңдіктің ҮШЕУІ дұрыс, БІРЕУІ әдейі қате жазылған. ҚАТЕ теңдікті таңдаңыз.',p.choices,answer,`Теріс санды азайтқанда оның қарама-қарсысын қосамыз. Нұсқаларды жеке тексеру: `+p.choices.map((o,i)=>`${i+1}) ${o.split('=')[0].trim()} = ${d(checked[i].left)}, берілген оң жақ ${d(checked[i].right)} — ${checked[i].correct?'дұрыс':'ҚАТЕ'}`).join('; ')+`. Сондықтан таңдалған қате жазбаның дұрыс нәтижесі ${d(checked[wrong[0]].left)}. Бұл әдейі диагностикалық қате, оны дұрыс ереже деп жаттамаймыз.`);
+ }
+ if(k==='three-positive-moduli-minus-last'){
+  keys(p,['firstHundredths','secondHundredths','thirdHundredths']);positive(...Object.values(p));const a=Q(p.firstHundredths,100),b=Q(p.secondHundredths,100),c=Q(p.thirdHundredths,100),answer=sub(add(a,b),c);assert(answer[0]>0);return choose(`|−${d(a)}| + |−${d(b)}| − |−${d(c)}| өрнегінің мәнін таңдаңыз.`,answer,`Модульдер ${d(a)}, ${d(b)}, ${d(c)} — үшеуі де оң. Сыртқы амалдар өзгермейді: ${d(a)} + ${d(b)} = ${d(add(a,b))}; ${d(add(a,b))} − ${d(c)} = ${d(answer)}. Соңғы модульдің алдында азайту тұр, ал алғашқы екеуі қосылады.`);
+ }
+ if(k==='inverse-addend-affine-variable-divisor'){
+  keys(p,['dividend','constant','coefficient','add','right']);positive(...Object.values(p));assert(p.right>p.add);const quotient=Q(p.right-p.add),divisor=div(Q(p.dividend),quotient),answer=div(sub(Q(p.constant),divisor),Q(p.coefficient)),excluded=Q(p.constant,p.coefficient);assert(!equal(answer,excluded)&&answer[0]);return choose(`${p.dividend} : (${p.constant} − ${p.coefficient}x) + ${p.add} = ${p.right} теңдеуінің түбірін таңдаңыз. Бөлгіш нөл емес болуы тиіс.`,answer,`Анықталу шарты ${p.constant} − ${p.coefficient}x ≠ 0, яғни x ≠ ${d(excluded)}. Белгісіз қосылғыш ${p.dividend} : (${p.constant} − ${p.coefficient}x) = ${p.right} − ${p.add} = ${d(quotient)}. Белгісіз бөлгіш ${p.constant} − ${p.coefficient}x = ${p.dividend} : ${d(quotient)} = ${d(divisor)}. Белгісіз азайтқыш ${p.coefficient}x = ${p.constant} − ${d(divisor)} = ${d(sub(Q(p.constant),divisor))}, x = ${d(answer)}. Тексеру: бөлгіш ${d(divisor)} ≠ 0; ${p.dividend} : ${d(divisor)} + ${p.add} = ${p.right}.`);
+ }
+ if(k==='mixed-multiplier-four-inverse-steps'){
+  keys(p,['multiplierWhole','multiplierNumerator','multiplierDenominator','coefficient','innerTenths','subtractHundredths','rightHundredths']);positive(...Object.values(p));assert(p.multiplierNumerator<p.multiplierDenominator);const multiplier=add(Q(p.multiplierWhole),Q(p.multiplierNumerator,p.multiplierDenominator)),inner=Q(p.innerTenths,10),subtract=Q(p.subtractHundredths,100),right=Q(p.rightHundredths,100),product=add(right,subtract),factor=div(product,multiplier),term=sub(factor,inner),answer=div(term,Q(p.coefficient));assert(answer[0]>0);return choose(`(${p.multiplierWhole} + (${p.multiplierNumerator}/${p.multiplierDenominator})) × (${p.coefficient}x + ${d(inner)}) − ${d(subtract)} = ${d(right)} теңдеуінің түбірін таңдаңыз.`,answer,`Аралас көбейткіш ${fr(multiplier)} = ${d(multiplier)}. 1) Белгісіз азайғыш ${d(right)} + ${d(subtract)} = ${d(product)}. 2) Белгісіз көбейткіш ${p.coefficient}x + ${d(inner)} = ${d(product)} : ${d(multiplier)} = ${d(factor)}. 3) Белгісіз қосылғыш ${p.coefficient}x = ${d(factor)} − ${d(inner)} = ${d(term)}. 4) Белгісіз көбейткіш x = ${d(term)} : ${p.coefficient} = ${d(answer)}. Қайта тексеру: ${p.coefficient} × ${d(answer)} + ${d(inner)} = ${d(factor)}; ${d(multiplier)} × ${d(factor)} − ${d(subtract)} = ${d(right)}.`);
+ }
+ if(k==='sum-of-two-negative-bracket-equation-roots'){
+  keys(p,['first','second']);const first=equationWork(p.first),second=equationWork(p.second),answer=add(first.root,second.root);assert(first.root[0]>0&&second.root[0]<0&&answer[0]>0);return choose(`${p.first} және ${p.second} теңдеулерін бөлек шешіп, олардың түбірлерінің ҚОСЫНДЫСЫН таңдаңыз.`,answer,`Бірінші теңдеу. ${first.work} Екінші теңдеу. ${second.work} Сұралған қосынды ${d(first.root)} + (${d(second.root)}) = ${d(answer)}. Екі теңдеудің түбірлері бірдей болуы талап етілмейді.`);
+ }
+ assert(k in calcIntros,'Unknown individually read arithmetic4 role '+k);keys(p,['expression']);const tree=arithmeticTree(p.expression),answer=evalTree(tree);assert(answer[0]);let supplement='';
+ if(k==='two-decimal-divisions-then-sum'){assert.equal(p.expression,'8,55 : 2,25 + 1,68 : 28');supplement=' Бірінші бөліндіде 8,55 : 2,25 = 855 : 225 = 3,8: бөлінгіш пен бөлгішті бірдей 100 санына көбейттік.';}
+ if(k==='mixed-division-product-left-to-right'){assert.equal(p.expression,'(2 + (1/8)) : (3 + (1/8)) × 50');supplement=' Аралас сандар (17/8) және (25/8). (17/8) : (25/8) = (17/8) × (8/25) = (17/25). Енді (17/25) × 50 = 34; 50 санын бөлгіштің ішіне көшірмейміз.';}
+ if(k==='mixed-borrow-product-bracket-plus-quotient'){assert.equal(p.expression,'(22 − ((14 + (3/8)) − (7 + (5/6))) × (2 + (2/5))) + (10 + (1/4)) : (6 + (5/6))');supplement=' Ішкі айырманың ортақ бөлімі 24. (14 + (9/24)) − (7 + (20/24)): 9 < 20 болғандықтан (14 + (9/24)) = (13 + (33/24)). Айырма (13 + (33/24)) − (7 + (20/24)) = (6 + (13/24)) = (157/24).';}
+ return choose(`Амалдар мен негізгі бөлшек сызықтарының орнын сақтап, ${p.expression} өрнегінің мәнін таңдаңыз.`,answer,calcIntros[k]+supplement+' Қадамдар: '+calcTrace(tree).join('; ')+`. Нәтиже ${d(answer)}. Әр қолданылған бөлгіш нөлден өзге.`);
+}
+export function verifyEdition(row){assert.equal(row.grade,6);assert.equal(row.minimumPlan,'pro');const result=renderEdition(row);for(const k of['statement','options','answer','solution'])assert.deepEqual(row[k],result[k]);assert(!/[\\$]|NaN|undefined/.test(row.statement+row.solution));return{answer:result.answer,checks:['All24 canonical nonvisual savedpart4 conditions/full official solutions/everyMCQ read; four sourceSVG occurrences excluded.','Individually changed numbers/wording, exact nested mainbars and arithmetic roles; repeated raw expressions remain distinct occurrences, not semantic uniqueness.','Both-positive modulus roots versus affine two-branch roots and SUM targets, zero-slope no-solution, intentional false equality correction, sameunits and mixedcarry+BORROW explicitly retained.','Inverse addend/divisor/subtrahend/factor chain, denominator domain and two-equation rootSUM independent; closed draft until full independent review/hash signature.']};}

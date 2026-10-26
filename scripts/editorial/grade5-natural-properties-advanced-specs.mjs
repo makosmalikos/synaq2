@@ -1,0 +1,23 @@
+// All20 saved level3/test FULL conditions, official solutions and EVERY MCQ read.
+export const propertiesAdvancedSpecs=[
+ ['3','9368caca6804b5a7','gauss-consecutive-even-count',{first:41,last:60}],
+ ['3','3cfbb41875eade06','gauss-first-odd-numbers',{last:47}],
+ ['3','6bc613520dab2a96','three-common-difference-chain',{terms:[23,18,13,8],weights:[46,44,42]}],
+ ['3','5f03e89d32ea4796','striking-clock-inclusive-and-half-hours',{first:2,last:10}],
+ ['3','fd128d82a6d6c4c4','square-plus-itself-round-successor',{n:9999}],
+ ['3','332eeac2a2ea320d','even-sum-minus-preceding-odd-sum',{top:120}],
+ ['3','ce14bfd2504988f2','three-term-common-factor-hundred',{factor:31,terms:[24,39,37]}],
+ ['3','525e77c690f533ab','gauss-positive-even-numbers',{last:120}],
+ ['3','36314b706f854d5c','equal-pair-sums-use-every-card',{last:16}],
+ ['3','4828ea6fca6320ef','distinct-count-minimal-total-rigidity',{count:8,minimum:9,total:100}],
+ ['3','4d123423be4a3659','split-middle-two-round-products',{middle:64}],
+ ['test','fbc0be22539301d7','round-hundred-triple',{terms:[82,69,18]}],
+ ['test','91eb3c140c19686f','name-distributive-addition',{k:9,a:20,b:4}],
+ ['test','bb031b83b99cb446','four-times-middle-times-twentyfive',{middle:117}],
+ ['test','461cca7f63e69afd','expand-symbolic-difference',{k:12,b:7}],
+ ['test','e09a7b2dca05a3d0','two-term-common-factor-hundred',{a:65,b:35,k:23}],
+ ['test','48d739ee8139bf50','three-tier-total-cost',{crates:5,perCrate:22,price:600}],
+ ['test','da777902741bbb93','gauss-consecutive-even-count',{first:71,last:90}],
+ ['test','edea14da60e6e907','three-common-difference-chain',{terms:[26,22,18,14],weights:[19,17,15]}],
+ ['test','9843bb51ca735670','gauss-positive-multiples',{step:4,last:96}],
+];

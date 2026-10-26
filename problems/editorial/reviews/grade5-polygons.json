@@ -1,0 +1,809 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "root_independent_of_polygon_author",
+  "batch": "problems/editorial/batches/grade5-polygons.json",
+  "scope": "Independent root review: all25 full saved/new conditions, official/authored\nsolutions and every MCQ read. Exact printed geometry, explicit unordered pair\nenumeration and geometric existence witnesses. No author specs/models/params\nimported as an oracle. Numeric variants are not claimed as semantic stories.\n",
+  "summary": {
+    "verified": 25,
+    "findings": 0,
+    "fullSavedNewOfficialAuthoredSolutionsEveryMCQRead": 25,
+    "wrongKeysRejected": 25,
+    "printedGivensOrMCQCanariesRejected": 25,
+    "exhaustivePolygonSizes": 148,
+    "nativeFractions": 5,
+    "pythonJavaScriptHashesMatched": 25
+  },
+  "evidence": [
+    {
+      "editionId": "grade5-polygons-8923d6e4e1396bd7",
+      "rewritten": {
+        "printedNumbers": [
+          "37/10",
+          "8",
+          "34/5"
+        ],
+        "answer": "37/2"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "9/2",
+          "6",
+          "19/5"
+        ],
+        "answer": "143/10"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-1af74144392b54f3",
+      "rewritten": {
+        "printedNumbers": [],
+        "counterexampleSides": [
+          "3",
+          "9",
+          "6"
+        ],
+        "samePerimeter": "24",
+        "optionTruth": [
+          true,
+          false,
+          false,
+          false
+        ],
+        "answer": "Беттесетін көпбұрыштардың шекара ұзындықтары бірдей."
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "counterexampleSides": [
+          "2",
+          "6",
+          "4"
+        ],
+        "samePerimeter": "16",
+        "optionTruth": [
+          false,
+          false,
+          false,
+          true
+        ],
+        "answer": "Тең екі көпбұрыштың периметрлері де тең болады"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-935332fe7dbf0c90",
+      "rewritten": {
+        "printedNumbers": [],
+        "cyclicVertices": "PQRS",
+        "adjacentVertices": [
+          "Q",
+          "S"
+        ],
+        "answer": "S және Q"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "cyclicVertices": "ABCD",
+        "adjacentVertices": [
+          "B",
+          "D"
+        ],
+        "answer": "B және D"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-310dcc8e7dbefae5",
+      "rewritten": {
+        "printedNumbers": [
+          "15"
+        ],
+        "answer": "12"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "answer": "9"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-9683b5f49d7a92ef",
+      "rewritten": {
+        "printedNumbers": [],
+        "allMCQDiagonalCounts": [
+          0,
+          9,
+          20,
+          2
+        ],
+        "answer": "Үшбұрыш"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "allMCQDiagonalCounts": [
+          0,
+          2,
+          5,
+          2
+        ],
+        "answer": "Үшбұрыш"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-46173e19df6158fb",
+      "rewritten": {
+        "printedNumbers": [
+          "44",
+          "12",
+          "17"
+        ],
+        "answer": "15"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "30",
+          "8",
+          "13"
+        ],
+        "answer": "9"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-ac25c0c9c9fe7e22",
+      "rewritten": {
+        "printedNumbers": [
+          "9"
+        ],
+        "answer": "27"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "answer": "21"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-1efa79d760f1dde5",
+      "rewritten": {
+        "printedNumbers": [
+          "18",
+          "11",
+          "16",
+          "13",
+          "14",
+          "4",
+          "3200"
+        ],
+        "perimeter": "72",
+        "fencedLength": "68",
+        "requestedCost": "217600",
+        "answer": "217600"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "12",
+          "15",
+          "9",
+          "14",
+          "10",
+          "3",
+          "1",
+          "2500"
+        ],
+        "perimeter": "60",
+        "fencedLength": "57",
+        "requestedCost": "142500",
+        "answer": "142500"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-822ed3628542a083",
+      "rewritten": {
+        "printedNumbers": [
+          "54"
+        ],
+        "allMCQDiagonalCounts": [
+          27,
+          44,
+          324,
+          54
+        ],
+        "answer": "12"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "20"
+        ],
+        "allMCQDiagonalCounts": [
+          5,
+          14,
+          35,
+          20
+        ],
+        "answer": "8"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-3e560e98eb0f27f2",
+      "rewritten": {
+        "printedNumbers": [
+          "140",
+          "10"
+        ],
+        "answer": "14"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "96"
+        ],
+        "answer": "12"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-e1db580bf01426b7",
+      "rewritten": {
+        "printedNumbers": [
+          "8",
+          "11",
+          "6",
+          "9",
+          "13"
+        ],
+        "bijection": {
+          "R": "A",
+          "S": "B",
+          "T": "C",
+          "U": "D",
+          "V": "E"
+        },
+        "requestedCorrespondingEdge": "UV",
+        "answer": "9"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "3",
+          "5",
+          "4",
+          "6",
+          "7"
+        ],
+        "bijection": {
+          "A": "K",
+          "B": "L",
+          "C": "M",
+          "D": "N",
+          "E": "P"
+        },
+        "requestedCorrespondingEdge": "CD",
+        "answer": "4"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-457dd8e15d279394",
+      "rewritten": {
+        "printedNumbers": [
+          "9"
+        ],
+        "answer": "27"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "answer": "9"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-749da3f6187ce168",
+      "rewritten": {
+        "printedNumbers": [
+          "11",
+          "5",
+          "1",
+          "2"
+        ],
+        "orderedSides": [
+          "11",
+          "16",
+          "8"
+        ],
+        "answer": "35"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "7",
+          "3",
+          "2"
+        ],
+        "orderedSides": [
+          "7",
+          "10",
+          "5"
+        ],
+        "answer": "22"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-11eafbbd4102f866",
+      "rewritten": {
+        "printedNumbers": [
+          "3",
+          "85"
+        ],
+        "orderedNonCyclicProgression": [
+          "11",
+          "14",
+          "17",
+          "20",
+          "23"
+        ],
+        "answer": "23"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "45",
+          "1"
+        ],
+        "orderedNonCyclicProgression": [
+          "7",
+          "8",
+          "9",
+          "10",
+          "11"
+        ],
+        "answer": "11"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-71a237b6e3fbf7cc",
+      "rewritten": {
+        "printedNumbers": [
+          "9"
+        ],
+        "answer": "12"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "6"
+        ],
+        "answer": "8"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-a806a628c1f7b0e0",
+      "rewritten": {
+        "printedNumbers": [
+          "46",
+          "33",
+          "35"
+        ],
+        "commonInternalSegment": "11",
+        "strictConvexKiteWitness": [
+          "11",
+          "11",
+          "12",
+          "12"
+        ],
+        "answer": "11"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "30",
+          "22",
+          "24"
+        ],
+        "commonInternalSegment": "8",
+        "strictConvexKiteWitness": [
+          "7",
+          "7",
+          "8",
+          "8"
+        ],
+        "answer": "8"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-c2412e5758a4e755",
+      "rewritten": {
+        "printedNumbers": [
+          "19",
+          "22",
+          "25"
+        ],
+        "recoveredSides": [
+          "14",
+          "11",
+          "8"
+        ],
+        "answer": "33"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "13",
+          "15",
+          "18"
+        ],
+        "recoveredSides": [
+          "10",
+          "8",
+          "5"
+        ],
+        "answer": "23"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-19b8b8c7b77a5e1b",
+      "rewritten": {
+        "printedNumbers": [
+          "100"
+        ],
+        "originalArea": "100",
+        "newDimensions": [
+          "10",
+          "5"
+        ],
+        "answer": "30"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "36"
+        ],
+        "originalArea": "36",
+        "newDimensions": [
+          "6",
+          "3"
+        ],
+        "answer": "18"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-f765e7e2d8fb7ad1",
+      "rewritten": {
+        "printedNumbers": [
+          "4"
+        ],
+        "answer": "11"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "3"
+        ],
+        "answer": "9"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-93370841ca49b257",
+      "rewritten": {
+        "printedNumbers": [
+          "11"
+        ],
+        "answer": "44"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "8"
+        ],
+        "answer": "20"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-0307747db36474cb",
+      "rewritten": {
+        "printedNumbers": [],
+        "everyMCQTruth": [
+          false,
+          true,
+          true,
+          true
+        ],
+        "answer": "Үшбұрышта екі диагональ жүргізуге болады."
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "everyMCQTruth": [
+          true,
+          false,
+          true,
+          true
+        ],
+        "answer": "Үшбұрыштың бір диагоналы бар"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-c4c3b9adb27c775a",
+      "rewritten": {
+        "printedNumbers": [],
+        "answer": "EG және FH"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "answer": "MK және NP"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-fd1248fd86500c34",
+      "rewritten": {
+        "printedNumbers": [
+          "14"
+        ],
+        "originalAdjacencyRetained": true,
+        "answer": "66"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [],
+        "originalAdjacencyRetained": true,
+        "answer": "36"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-a506292c325713d4",
+      "rewritten": {
+        "printedNumbers": [
+          "42",
+          "13"
+        ],
+        "oppositeGluingWitnessSides": [
+          "13",
+          "29/2",
+          "29/2"
+        ],
+        "answer": "58"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "30",
+          "9"
+        ],
+        "oppositeGluingWitnessSides": [
+          "9",
+          "21/2",
+          "21/2"
+        ],
+        "answer": "42"
+      }
+    },
+    {
+      "editionId": "grade5-polygons-4af12b7e72422221",
+      "rewritten": {
+        "printedNumbers": [
+          "13"
+        ],
+        "fanTriangleCount": "13",
+        "recoveredVertices": "15",
+        "oneVertexDiagonals": "12",
+        "requestedAllDiagonals": "90",
+        "answer": "90"
+      },
+      "sourceFromPrintedCondition": {
+        "printedNumbers": [
+          "10"
+        ],
+        "fanTriangleCount": "10",
+        "recoveredVertices": "12",
+        "oneVertexDiagonals": "9",
+        "requestedAllDiagonals": "54",
+        "answer": "54"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "editionId": "grade5-polygons-8923d6e4e1396bd7",
+      "sha256": "2d1a3007788b69574f439db23e73025f467155314e13027306952eb0b1903ce9",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"37/10\", \"8\", \"34/5\"], \"answer\": \"37/2\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-1af74144392b54f3",
+      "sha256": "4b418767c5322941969d909f0e3ec391a64ea0a586058577fdaa13fa4c92843b",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [], \"counterexampleSides\": [\"3\", \"9\", \"6\"], \"samePerimeter\": \"24\", \"optionTruth\": [true, false, false, false], \"answer\": \"Беттесетін көпбұрыштардың шекара ұзындықтары бірдей.\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-935332fe7dbf0c90",
+      "sha256": "c53080ff3beca47f024f57b84d59752923a147f0f53d790b1dce3895d4cc0d57",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [], \"cyclicVertices\": \"PQRS\", \"adjacentVertices\": [\"Q\", \"S\"], \"answer\": \"S және Q\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-310dcc8e7dbefae5",
+      "sha256": "0b4bea3475173d5092e9d9c56200d6eed38992c2031e6215eaf9261d0416d052",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"15\"], \"answer\": \"12\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-9683b5f49d7a92ef",
+      "sha256": "1f53e1fc5644857d640c7355f579d2ca7d2d1cac83b793ac56f2166adb1005cd",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [], \"allMCQDiagonalCounts\": [0, 9, 20, 2], \"answer\": \"Үшбұрыш\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-46173e19df6158fb",
+      "sha256": "0bf9ee99b91c49d75f2ad8c5c5fb12ff9ea10a6c3e1ee32eeeda43c3c3604732",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"44\", \"12\", \"17\"], \"answer\": \"15\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-ac25c0c9c9fe7e22",
+      "sha256": "0101dfb612f6745955fa532a655575ab7a8b7aef3f82a8a2c512c8b446984baf",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"9\"], \"answer\": \"27\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-1efa79d760f1dde5",
+      "sha256": "882f00265190a749441b217c3d3dc3ae5b17735196c025513cebdfe856373724",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"18\", \"11\", \"16\", \"13\", \"14\", \"4\", \"3200\"], \"perimeter\": \"72\", \"fencedLength\": \"68\", \"requestedCost\": \"217600\", \"answer\": \"217600\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-822ed3628542a083",
+      "sha256": "0431e8e80fc5ece00d84d4a5abc3c504e8b0e917b498919e4bb53debcc95b073",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"54\"], \"allMCQDiagonalCounts\": [27, 44, 324, 54], \"answer\": \"12\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-3e560e98eb0f27f2",
+      "sha256": "269c542d95d5f3c0aae661146252d0aaeaf935683847ed061b39c4c2984fe464",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"140\", \"10\"], \"answer\": \"14\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-e1db580bf01426b7",
+      "sha256": "eaa44db1f6fdc8d9e4ef5b06f4edc95ce1d29c74c4846f9e5989069b078ffd11",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"8\", \"11\", \"6\", \"9\", \"13\"], \"bijection\": {\"R\": \"A\", \"S\": \"B\", \"T\": \"C\", \"U\": \"D\", \"V\": \"E\"}, \"requestedCorrespondingEdge\": \"UV\", \"answer\": \"9\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-457dd8e15d279394",
+      "sha256": "b6b25cc5d013c47616a8342f197e773b1a7a3f2947937caf8452fe4d80459aa0",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"9\"], \"answer\": \"27\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-749da3f6187ce168",
+      "sha256": "49aaca95238bf7b6d140c3ed72d1338b7e561cad627c6eb39d88eb6ac8355987",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"11\", \"5\", \"1\", \"2\"], \"orderedSides\": [\"11\", \"16\", \"8\"], \"answer\": \"35\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-11eafbbd4102f866",
+      "sha256": "762559efbe7dbdf5e497ae94b29ee3b2a6282d8bcb93b131ab50a83a5d107927",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"85\"], \"orderedNonCyclicProgression\": [\"11\", \"14\", \"17\", \"20\", \"23\"], \"answer\": \"23\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-71a237b6e3fbf7cc",
+      "sha256": "3a9f62df30484676b8297a2417f33d9fac949bd9b612baa3651ed7abf08ad0d2",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"9\"], \"answer\": \"12\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-a806a628c1f7b0e0",
+      "sha256": "3e20b916e2d5f3be561c1e5b0f3d970ab62e60b06756b71c1348ff1d00697674",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"46\", \"33\", \"35\"], \"commonInternalSegment\": \"11\", \"strictConvexKiteWitness\": [\"11\", \"11\", \"12\", \"12\"], \"answer\": \"11\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-c2412e5758a4e755",
+      "sha256": "b7df0f50b75b1aa025b1aa40fcf68d6afa71df7349bdf619c0d69cf54495e946",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"19\", \"22\", \"25\"], \"recoveredSides\": [\"14\", \"11\", \"8\"], \"answer\": \"33\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-19b8b8c7b77a5e1b",
+      "sha256": "0fed4be1e96d1589580c018d025527ecbdb6e5bf907db533bdf01687941b4f74",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"100\"], \"originalArea\": \"100\", \"newDimensions\": [\"10\", \"5\"], \"answer\": \"30\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-f765e7e2d8fb7ad1",
+      "sha256": "a99c32c9d69e9ee4c8b08d9ef99697e380a207e8060d48e4e350a5310492000c",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"4\"], \"answer\": \"11\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-93370841ca49b257",
+      "sha256": "82bcfd5ea009f628bd6c9536d62e6c40019c4a04887eb7da80a493e134a44338",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"11\"], \"answer\": \"44\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-0307747db36474cb",
+      "sha256": "c9e6316c5d3eb29eae4dbe8d18cb3d932366b2f208b1f43ac34db90f12a3c09e",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [], \"everyMCQTruth\": [false, true, true, true], \"answer\": \"Үшбұрышта екі диагональ жүргізуге болады.\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-c4c3b9adb27c775a",
+      "sha256": "4ef2819460f3f7215a1574bf416a5199ae95a4d36cf35e8e586fe068b436d82e",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [], \"answer\": \"EG және FH\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-fd1248fd86500c34",
+      "sha256": "e9c04c007992d51b34762c1b8fa1a486c7d1dd9af1f64129af6ea5504c2d05df",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"14\"], \"originalAdjacencyRetained\": true, \"answer\": \"66\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-a506292c325713d4",
+      "sha256": "7aacbee0c1a6bcfc239d5c580f9d94b31108b8a56a7fc1b5e595b71d8882e494",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"42\", \"13\"], \"oppositeGluingWitnessSides\": [\"13\", \"29/2\", \"29/2\"], \"answer\": \"58\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-polygons-4af12b7e72422221",
+      "sha256": "0583604e2ee1e44984a57c4049d908f8ff8c34c9abe16e0f600debe13ba1c9e6",
+      "verdict": "verified",
+      "method": "independent_root_full_saved_new_solutions_every_MCQ_read_printed_exact_arithmetic_unordered_adjacency_enumeration_and_physical_witnesses",
+      "notes": [
+        "{\"printedNumbers\": [\"13\"], \"fanTriangleCount\": \"13\", \"recoveredVertices\": \"15\", \"oneVertexDiagonals\": \"12\", \"requestedAllDiagonals\": \"90\", \"answer\": \"90\"}"
+      ]
+    }
+  ]
+}

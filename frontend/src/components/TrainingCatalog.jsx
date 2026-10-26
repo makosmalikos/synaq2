@@ -7,6 +7,11 @@ const words = {
   kk: { eyebrow: 'СЕНІҢ ЖАТТЫҒУЫҢ', title: 'Қай дағдыны дамытамыз?', intro: 'Тақырыпты таңда немесе әр бөлімнен математикалық есептер шығар.', mixed: 'Аралас жаттығу', mixedNote: 'БИЛ, НИШ және РФМШ-ға дайындық математикасы.', start: 'Жаттығуды бастау', all: 'Барлық тақырып', search: 'Тақырып не мектеп іздеу', clear: 'Іздеуді тазарту', found: 'Табылған тақырып', topics: 'Тақырып', done: 'Орындалды', available: 'Қолжетімді', locked: 'Standard арқылы ашу', empty: 'Мұндай тақырып табылмады', emptyNote: 'Басқа атауды жаз немесе барлық тақырыпты таңда.', note: 'Санауыш орындалған есептерді көрсетеді. Жауап дәлдігі «Прогресс» бөлімінде.', free: 'Тегін тарифте алғашқы тақырып пен аралас жаттығу ашық. Қалған тақырыптарға Standard қажет.' },
 };
 
+function PracticeIcon({ kind = 'arrow' }) {
+  const paths = { arrow: 'M4 12h16m-6-6 6 6-6 6', chevron: 'm9 5 7 7-7 7', check: 'm5 12 4 4L19 6' };
+  return <svg className="practice-action-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d={paths[kind]} /></svg>;
+}
+
 function SubjectArt({ subject }) {
   if (subject === 'logic' || subject === 'science') return <img src={`/landing/benefits-3d/${subject === 'logic' ? 'puzzle' : 'compass'}-280.webp`} width="280" height="280" alt="" loading="lazy" decoding="async" />;
   return <span className={`practice-tiles is-${subject}`} aria-hidden="true"><i>{subject === 'math' ? '÷' : 'Ә'}</i><b>{subject === 'math' ? '+' : 'A'}</b></span>;
@@ -23,12 +28,12 @@ export default function TrainingCatalog({ topics, solvedIn = {}, pro, freeTopicI
     {notice}
     <header className="practice-heading"><span>{c.eyebrow}</span><h1>{c.title}</h1><p>{c.intro}</p></header>
     <section className="practice-mixed" aria-labelledby="practice-mixed-title">
-      <div><span className="practice-mixed-tag">БИЛ · НИШ · РФМШ</span><h2 id="practice-mixed-title">{c.mixed}</h2><p>{c.mixedNote}</p><button type="button" onClick={onMixed}>{c.start}<span aria-hidden="true">↗</span></button></div>
+      <div><span className="practice-mixed-tag">БИЛ · НИШ · РФМШ</span><h2 id="practice-mixed-title">{c.mixed}</h2><p>{c.mixedNote}</p><button type="button" onClick={onMixed}>{c.start}<PracticeIcon /></button></div>
       <img src="/mascot/synaq-owl-study.webp" width="640" height="640" alt="" decoding="async" />
     </section>
     <div className="practice-subjects" aria-label={locale === 'ru' ? 'Направления практики' : 'Жаттығу бағыттары'}>
       {choices.map(group => <button type="button" key={group.id} className={`practice-subject is-${group.id}${subject === group.id ? ' is-selected' : ''}`} aria-pressed={subject === group.id} onClick={() => { setSubject(subject === group.id ? 'all' : group.id); setQuery(''); }}>
-        <div className="practice-subject-art" aria-hidden="true"><SubjectArt subject={group.id}/></div><strong>{group[locale]}</strong><small>{c.topics}: {group.topics.length}</small><span className="practice-subject-arrow" aria-hidden="true">{subject === group.id ? '✓' : '↗'}</span>
+        <div className="practice-subject-art" aria-hidden="true"><SubjectArt subject={group.id}/></div><strong>{group[locale]}</strong><small>{c.topics}: {group.topics.length}</small><span className="practice-subject-arrow" aria-hidden="true"><PracticeIcon kind={subject === group.id ? 'check' : 'arrow'} /></span>
       </button>)}
     </div>
     <section className="practice-directory" aria-labelledby="practice-topics-title">
@@ -40,7 +45,7 @@ export default function TrainingCatalog({ topics, solvedIn = {}, pro, freeTopicI
         const locked = !pro && topic.id !== freeTopicId;
         return <button type="button" key={topic.id} className={`practice-topic${locked ? ' is-locked' : ''}`} onClick={() => locked ? onUpgrade?.() : onOpen(topic)} aria-label={`${trainingTopicName(topic, locale)} · ${c.done}: ${done} / ${total} · ${locked ? c.locked : c.available}`}>
           <div className="practice-topic-copy"><strong>{trainingTopicName(topic, locale)}</strong><small>{(topic.schools || []).join(' · ')}</small><span>{c.done}: {done} / {total}</span></div>
-          <div className="practice-topic-side"><span className={locked ? 'practice-lock' : 'practice-open'}>{locked ? 'Standard' : '↗'}</span><div className="practice-topic-bar" aria-hidden="true"><i style={{width:`${done / total * 100}%`}}/></div></div>
+          <div className="practice-topic-side"><span className={locked ? 'practice-lock' : 'practice-open'}>{locked ? 'Standard' : <PracticeIcon kind="chevron" />}</span><div className="practice-topic-bar" aria-hidden="true"><i style={{width:`${done / total * 100}%`}}/></div></div>
         </button>;
       })}</div></section>)}
       {!count && <div className="practice-empty"><strong>{c.empty}</strong><p>{c.emptyNote}</p><button type="button" onClick={reset}>{c.clear}</button></div>}

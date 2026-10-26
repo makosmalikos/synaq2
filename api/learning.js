@@ -1,8 +1,10 @@
+const { randomSample } = require('../backend/lib/random-sample');
 const { getAdmin } = require('../backend/lib/firebase-admin');
 const { findTrainingQuestion } = require('../backend/lib/training-question');
 const { createLearningService } = require('../backend/lib/learning-service');
 const { trainingGradeAllowed } = require('../backend/lib/training-grade');
 const { questionAccessAllowed } = require('../backend/lib/question-access');
+const { readPrivateFigure } = require('../backend/lib/private-figure');
 
 function content(db) {
   let requestContent;
@@ -34,8 +36,7 @@ function content(db) {
         && questionAccessAllowed(question, plan)
         && (mixed ? ['eq', 'num', 'work', 'ratio', 'geo', 'frac', 'pct', 'sys'].includes(question.topic)
           : question.topic === topicId));
-      const shuffled = candidates.map((question) => [Math.random(), question])
-        .sort((a, b) => a[0] - b[0]).map((item) => item[1]).slice(0, limit);
+      const shuffled = randomSample(candidates, limit);
       return shuffled.map(({ answer, solution, note, ...question }) => question);
     },
     async getCurriculumQuestion(key, level, id, accessOnly = false) {
@@ -58,16 +59,25 @@ function content(db) {
   };
 }
 
-module.exports = async function handler(req, res) {
+function createLearningHandler({ admin = getAdmin, readFigure = readPrivateFigure } = {}) { return async function handler(req, res) {
   res.setHeader('Cache-Control', 'private, no-store');
   if (req.method !== 'POST') return res.status(405).json({ error: 'method-not-allowed' });
   const token = String(req.headers.authorization || '').match(/^Bearer\s+(.+)$/i)?.[1];
   if (!token) return res.status(401).json({ error: 'auth-required' });
   try {
-    const { auth, db } = getAdmin();
+    const { auth, db } = admin();
     const user = await auth.verifyIdToken(token, true);
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
-    return res.status(200).json(await createLearningService({ db, ...content(db) })(user, body));
+    const result = await createLearningService({ db, ...content(db) })(user, body);
+    if (body.action === 'figure') {
+      const bytes = await readFigure(result.image);
+      res.setHeader('Content-Type', 'image/svg+xml; charset=utf-8');
+      res.setHeader('X-Content-Type-Options', 'nosniff');
+      res.setHeader('Vary', 'Authorization');
+      res.setHeader('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'; sandbox");
+      return res.status(200).send(bytes);
+    }
+    return res.status(200).json(result);
   } catch (cause) {
     if (cause?.code?.startsWith('auth/')) return res.status(401).json({ error: 'auth-required' });
     if (cause instanceof SyntaxError) return res.status(400).json({ error: 'bad-body' });
@@ -75,5 +85,7 @@ module.exports = async function handler(req, res) {
     console.error('learning', cause?.code || cause?.name || 'failed');
     return res.status(503).json({ error: 'temporarily-unavailable' });
   }
-};
+}; }
+module.exports = createLearningHandler();
+module.exports.createLearningHandler = createLearningHandler;
 module.exports.content = content;

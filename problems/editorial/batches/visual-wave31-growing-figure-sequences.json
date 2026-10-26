@@ -1,0 +1,486 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All7 saved visual grade5topic1.12 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade5topic1.12",
+    "sourceVisualOccurrences": 7,
+    "addressedNewDrafts": 7,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "22b30ed499c1b6e8",
+      "34d21f5784dcd68a",
+      "58a0c9f4266c4381",
+      "a2e2c487a35fa7fc",
+      "dca3125ee6879c0f",
+      "f39b83bf99b79da2",
+      "fb6e4aa4eb5e5128"
+    ],
+    "distinctModels": 7,
+    "semantics": "All7visual sequence targets individuallysource-addressed: shifted square lattice, boundary-only dots, shared square and triangle strips, objectsversusintervals, daily increment and rectangular lattice."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave31-shifted-square-dots-seventh",
+      "modelId": "visual-wave31-shifted-square-dot-sequence",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "square-dots",
+        "firstSide": 2,
+        "shown": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "query": 7
+      },
+      "answer": "64",
+      "sourceRefs": [
+        {
+          "sourceId": "dca3125ee6879c0f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-12-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-12-level1.json#7",
+      "sourceCanonicalSha256": "45288b2313bbf625ca89c9be6128427489f455a2d7604c41a4cc574134ea6648",
+      "sourceSkill": "Identifying square lattice growth with index offset and squaring the correct query-side count",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды өсу моделі жеке сақталды: толық шаршы/тіктөртбұрыш нүктелері, тек шекарадағы нүктелер, ортақ сіріңке қабырғалары, ағаш аралықтары және күндік арифметикалық өсім.",
+        "Алғашқы қабырға/баған ығысулары, көрсетілген сіріңке мысалдары, сұралған фигура/күн нөмірлері, барлық сіріңке саны және ағаш аралығы жаңа деректермен берілді.",
+        "Барлық native SVG нақты нүкте/бірегей қыр құрылымынан салынды; ағаштардың көп нүктесі мен диаграммадағы нақты биіктіктері анық берілді. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Фигуралар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/newfullsolution/MCQreview; allactualdots/corners, unique equal-length shared matchsticks, ordered tree labels with honest ellipsis, actual bar heights and343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave31-shifted-square-dots-seventh.svg",
+      "verificationModule": "scripts/editorial/visual-wave31-models.mjs",
+      "statement": "Нүктелер толық шаршы торлар құрайды. Әр келесі фигурада бір қатар мен бір баған қосылады. Алғашқы 4 фигура берілген. Осы ереже жалғасса, 7-фигурада неше нүкте болады? Жауапқа тек санды жазыңыз.",
+      "solution": "Көрсетілген шаршылардың қабырғасындағы нүктелер 2, 3, 4, 5, жалпы сандары 4, 9, 16, 25. Бірінші фигураның қабырғасында 2 нүкте болғандықтан, n-фигурада 2 + n − 1 нүктеден қатар мен баған бар. 7-фигураның қабырғасында 8 нүкте; барлығы 8 × 8 = 64.",
+      "figureDescription": "1-фигурада 2 қатар 2 баған нүкте; 2-фигурада 3 қатар 3 баған нүкте; 3-фигурада 4 қатар 4 баған нүкте; 4-фигурада 5 қатар 5 баған нүкте.",
+      "figureSha256": "a5bfe54bd6ba7a3d2acb9ee4b44b39168dbd044354200896e0faf27198072a77",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "64",
+        "checks": {
+          "side": 8,
+          "known": [
+            4,
+            9,
+            16,
+            25
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave31-square-outline-four-n-plus-four",
+      "modelId": "visual-wave31-square-outline-dot-formula",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "outline-dots",
+        "sideOffset": 2,
+        "shown": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "answer": "4 × n + 4",
+      "sourceRefs": [
+        {
+          "sourceId": "34d21f5784dcd68a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-12-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-12-level1.json#15",
+      "sourceCanonicalSha256": "be4d245395b865b96e924283623b14c34ee6176a60108b5b0a8df7d9b235f879",
+      "sourceSkill": "Counting square-boundary lattice points without double-counting corners and expressing their count as a linear index formula",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды өсу моделі жеке сақталды: толық шаршы/тіктөртбұрыш нүктелері, тек шекарадағы нүктелер, ортақ сіріңке қабырғалары, ағаш аралықтары және күндік арифметикалық өсім.",
+        "Алғашқы қабырға/баған ығысулары, көрсетілген сіріңке мысалдары, сұралған фигура/күн нөмірлері, барлық сіріңке саны және ағаш аралығы жаңа деректермен берілді.",
+        "Барлық native SVG нақты нүкте/бірегей қыр құрылымынан салынды; ағаштардың көп нүктесі мен диаграммадағы нақты биіктіктері анық берілді. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Фигуралар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/newfullsolution/MCQreview; allactualdots/corners, unique equal-length shared matchsticks, ordered tree labels with honest ellipsis, actual bar heights and343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave31-square-outline-four-n-plus-four.svg",
+      "verificationModule": "scripts/editorial/visual-wave31-models.mjs",
+      "options": [
+        "4 × n",
+        "4 × n + 4",
+        "n + 7",
+        "8 × n"
+      ],
+      "statement": "Нүктелер шаршылардың тек шекарасында орналасқан; бұрыштағы нүкте бір рет саналады. Әр келесі фигурада әр қабырғадағы нүкте саны біреуге артады. n-нөмірлі фигураның барлық нүкте санын беретін өрнекті таңдаңыз.",
+      "solution": "n-фигураның әр қабырғасында n + 2 нүкте. Төрт қабырға бойынша 4 × (n + 2) алынады, бірақ төрт бұрыштың әрқайсысы екі рет саналған: 4 × (n + 2) − 4 = 4 × n + 4. Алғашқы сандар 8, 12, 16, 20. Әр бұрыштан бір артық есепті алып тастаймыз.",
+      "figureDescription": "1-фигураның шаршы шекарасында әр қабырғаға 3 нүкте; бұрыштар ортақ; 2-фигураның шаршы шекарасында әр қабырғаға 4 нүкте; бұрыштар ортақ; 3-фигураның шаршы шекарасында әр қабырғаға 5 нүкте; бұрыштар ортақ; 4-фигураның шаршы шекарасында әр қабырғаға 6 нүкте; бұрыштар ортақ.",
+      "figureSha256": "34d57a76f5d20cf63e3e2edf383a4f675e3a413b5756b60e880bf9d4f2e9002b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4 × n + 4",
+        "checks": {
+          "coefficient": 4,
+          "constant": 4,
+          "known": [
+            8,
+            12,
+            16,
+            20
+          ],
+          "optionCoefficients": [
+            [
+              {
+                "n": 4,
+                "d": 1
+              },
+              {
+                "n": 0,
+                "d": 1
+              }
+            ],
+            [
+              {
+                "n": 4,
+                "d": 1
+              },
+              {
+                "n": 4,
+                "d": 1
+              }
+            ],
+            [
+              {
+                "n": 1,
+                "d": 1
+              },
+              {
+                "n": 7,
+                "d": 1
+              }
+            ],
+            [
+              {
+                "n": 8,
+                "d": 1
+              },
+              {
+                "n": 0,
+                "d": 1
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave31-eighteen-shared-side-squares",
+      "modelId": "visual-wave31-square-matchstick-row",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "square-matches",
+        "shown": [
+          2,
+          3,
+          4
+        ],
+        "query": 18
+      },
+      "answer": "55",
+      "sourceRefs": [
+        {
+          "sourceId": "a2e2c487a35fa7fc",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-12-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-12-level2.json#3",
+      "sourceCanonicalSha256": "ccde64233fe04636c09b18594d5009c511e94feabfc38221293874b869f09554",
+      "sourceSkill": "Counting unique horizontal and vertical matchsticks in a shared-side square strip rather than four independent sides per square",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды өсу моделі жеке сақталды: толық шаршы/тіктөртбұрыш нүктелері, тек шекарадағы нүктелер, ортақ сіріңке қабырғалары, ағаш аралықтары және күндік арифметикалық өсім.",
+        "Алғашқы қабырға/баған ығысулары, көрсетілген сіріңке мысалдары, сұралған фигура/күн нөмірлері, барлық сіріңке саны және ағаш аралығы жаңа деректермен берілді.",
+        "Барлық native SVG нақты нүкте/бірегей қыр құрылымынан салынды; ағаштардың көп нүктесі мен диаграммадағы нақты биіктіктері анық берілді. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Фигуралар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/newfullsolution/MCQreview; allactualdots/corners, unique equal-length shared matchsticks, ordered tree labels with honest ellipsis, actual bar heights and343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave31-eighteen-shared-side-squares.svg",
+      "verificationModule": "scripts/editorial/visual-wave31-models.mjs",
+      "statement": "Бір қатардағы көрші шаршылардың бір сіріңке қабырғасы ортақ. Суретте 2, 3, 4 шаршысы бар мысалдар көрсетілген. Осындай 18 шаршыдан тұратын қатарға неше сіріңке керек? Жауапқа тек санды жазыңыз.",
+      "solution": "Мысалдардағы сіріңкелер саны 7, 10, 13. Бірінші шаршыға 4, әр қосылғанына 3 жаңа сіріңке керек. Формула 4 + 3 × (n − 1) = 3 × n + 1. n = 18 болса, 3 × 18 + 1 = 55. Тексеру: 18 жоғарғы, 18 төменгі және 19 тік сіріңке; қосындысы 55.",
+      "figureDescription": "2 шаршы бір қатарда, көрші екеуінің бір қабырғасы ортақ; 3 шаршы бір қатарда, көрші екеуінің бір қабырғасы ортақ; 4 шаршы бір қатарда, көрші екеуінің бір қабырғасы ортақ.",
+      "figureSha256": "afa9f9dd846c60e1bdb0a5d5a74bf41e867f5079daa8de6d2f3a794b0e5b2cfb",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "55",
+        "checks": {
+          "known": [
+            7,
+            10,
+            13
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave31-sixteen-trees-seven-metre-gaps",
+      "modelId": "visual-wave31-tree-row-gap-count",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "trees",
+        "count": 16,
+        "gap": 7
+      },
+      "answer": "105",
+      "sourceRefs": [
+        {
+          "sourceId": "fb6e4aa4eb5e5128",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-12-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-12-level2.json#4",
+      "sourceCanonicalSha256": "773f1ef9bcd631f4b8250b4643e6b2ebcce0e576bf08df8f8967a3e75af6ed45",
+      "sourceSkill": "Separating the number of objects from the number of equal intervals between the first and last tree",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды өсу моделі жеке сақталды: толық шаршы/тіктөртбұрыш нүктелері, тек шекарадағы нүктелер, ортақ сіріңке қабырғалары, ағаш аралықтары және күндік арифметикалық өсім.",
+        "Алғашқы қабырға/баған ығысулары, көрсетілген сіріңке мысалдары, сұралған фигура/күн нөмірлері, барлық сіріңке саны және ағаш аралығы жаңа деректермен берілді.",
+        "Барлық native SVG нақты нүкте/бірегей қыр құрылымынан салынды; ағаштардың көп нүктесі мен диаграммадағы нақты биіктіктері анық берілді. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Фигуралар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/newfullsolution/MCQreview; allactualdots/corners, unique equal-length shared matchsticks, ordered tree labels with honest ellipsis, actual bar heights and343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave31-sixteen-trees-seven-metre-gaps.svg",
+      "verificationModule": "scripts/editorial/visual-wave31-models.mjs",
+      "statement": "Қатардағы ағаштар біріншісінен соңғысына дейін ретімен нөмірленген. Сызба масштабсыз. Көп нүкте арадағы ағаштардың жалғасын білдіреді. Кез келген екі көрші ағаштың арасы суретте берілгендей бірдей. Бірінші мен соңғы ағаштың арақашықтығы неше метр? Жауапқа тек санды жазыңыз.",
+      "solution": "Бірінші ағаштан 16-нөмірлі ағашқа дейін 16 − 1 = 15 аралық бар. Әрқайсысы 7 м. Қашықтық 15 × 7 = 105 м. Ағаш саны мен аралық саны бірдей емес: екі ағаштың арасында тек бір аралық бар.",
+      "figureDescription": "Көрінген ағаш нөмірлері: 1, 2, 3, 15, 16; арасында жалғасуды білдіретін көп нүкте бар. Әр көрші аралық 7 м.",
+      "figureSha256": "68ab78986400f6d0fdb9b90f8ea5b43dd09ae5514e05ba17ea7cb2e0e4b84a5b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "105",
+        "checks": {
+          "gaps": 15
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave31-one-twenty-one-triangle-matches",
+      "modelId": "visual-wave31-triangle-matchstick-inverse",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "triangle-matches",
+        "shown": [
+          2,
+          3,
+          4
+        ],
+        "matches": 121
+      },
+      "answer": "60",
+      "sourceRefs": [
+        {
+          "sourceId": "f39b83bf99b79da2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-12-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-12-level3.json#3",
+      "sourceCanonicalSha256": "d5b06b1cc42df3bbee8e752707f55d943384707f3cee1edfd1a5b187ff4ed9db",
+      "sourceSkill": "Counting unique equilateral-triangle strip edges with one shared side and inverting the2n+1matchstick rule",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды өсу моделі жеке сақталды: толық шаршы/тіктөртбұрыш нүктелері, тек шекарадағы нүктелер, ортақ сіріңке қабырғалары, ағаш аралықтары және күндік арифметикалық өсім.",
+        "Алғашқы қабырға/баған ығысулары, көрсетілген сіріңке мысалдары, сұралған фигура/күн нөмірлері, барлық сіріңке саны және ағаш аралығы жаңа деректермен берілді.",
+        "Барлық native SVG нақты нүкте/бірегей қыр құрылымынан салынды; ағаштардың көп нүктесі мен диаграммадағы нақты биіктіктері анық берілді. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Фигуралар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/newfullsolution/MCQreview; allactualdots/corners, unique equal-length shared matchsticks, ordered tree labels with honest ellipsis, actual bar heights and343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave31-one-twenty-one-triangle-matches.svg",
+      "verificationModule": "scripts/editorial/visual-wave31-models.mjs",
+      "options": [
+        "40",
+        "61",
+        "59",
+        "60"
+      ],
+      "statement": "Көрші үшбұрыштардың бір сіріңке қабырғасы ортақ. Суреттегі қатар сол ережемен жалғасады. Барлық 121 сіріңке түгел жұмсалса, қатарда неше үшбұрыш болады?",
+      "solution": "Көрсетілген мысалдарда 2, 3, 4 үшбұрышқа тиісінше 5, 7, 9 сіріңке жұмсалады. Бірінші үшбұрышқа 3, әр жаңасына 2 керек. Жалпы 3 + 2 × (n − 1) = 2 × n + 1. 2 × n + 1 = 121, сондықтан n = (121 − 1) : 2 = 60. Тексеру: 2 × 60 + 1 = 121. Ортақ қабырғалар бір рет саналады.",
+      "figureDescription": "2 үшбұрыш бір қатарда кезектесіп жоғары/төмен бағытталған; әр көрші жұптың бір қабырғасы ортақ; 3 үшбұрыш бір қатарда кезектесіп жоғары/төмен бағытталған; әр көрші жұптың бір қабырғасы ортақ; 4 үшбұрыш бір қатарда кезектесіп жоғары/төмен бағытталған; әр көрші жұптың бір қабырғасы ортақ.",
+      "figureSha256": "b66c447b03464371df0b48cea8c744153e36c7fb9d42e7efaec6997feed60b17",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "60",
+        "checks": {
+          "known": [
+            5,
+            7,
+            9
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave31-reading-twelfth-day",
+      "modelId": "visual-wave31-reading-arithmetic-day",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "bars",
+        "shown": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "first": 9,
+        "step": 4,
+        "query": 12
+      },
+      "answer": "53",
+      "sourceRefs": [
+        {
+          "sourceId": "22b30ed499c1b6e8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-12-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-12-leveltest.json#5",
+      "sourceCanonicalSha256": "9170225049118ff082afa52d197ad00608d24740afe9bf962f97a5dbe71e5d81",
+      "sourceSkill": "Reading four exact bar heights, deriving a constant increment and applying query-minus-one steps rather than summing all days",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды өсу моделі жеке сақталды: толық шаршы/тіктөртбұрыш нүктелері, тек шекарадағы нүктелер, ортақ сіріңке қабырғалары, ағаш аралықтары және күндік арифметикалық өсім.",
+        "Алғашқы қабырға/баған ығысулары, көрсетілген сіріңке мысалдары, сұралған фигура/күн нөмірлері, барлық сіріңке саны және ағаш аралығы жаңа деректермен берілді.",
+        "Барлық native SVG нақты нүкте/бірегей қыр құрылымынан салынды; ағаштардың көп нүктесі мен диаграммадағы нақты биіктіктері анық берілді. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Фигуралар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/newfullsolution/MCQreview; allactualdots/corners, unique equal-length shared matchsticks, ordered tree labels with honest ellipsis, actual bar heights and343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave31-reading-twelfth-day.svg",
+      "verificationModule": "scripts/editorial/visual-wave31-models.mjs",
+      "statement": "Диаграммада оқушының алғашқы 4 күнде оқыған бет саны берілген. Әр келесі күні алдыңғысынан бірдей санға артық бет оқиды. 12-күні неше бет оқиды? Жауапқа тек санды жазыңыз.",
+      "solution": "Алғашқы бет сандары 9, 13, 17, 21, өсімі 4. Бірінші күннен 12-күнге дейін 12 − 1 = 11 қадам. Сол күнгі бет саны 9 + 11 × 4 = 53. Бұл барлық күннің қосындысы емес, тек 12-күннің мәні.",
+      "figureDescription": "1-күн 9 бет; 2-күн 13 бет; 3-күн 17 бет; 4-күн 21 бет.",
+      "figureSha256": "3da129e274eb5e1be68a3a900baae10453783456d1c05403937662a88a0ccbc2",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "53",
+        "checks": {
+          "steps": 11,
+          "known": [
+            9,
+            13,
+            17,
+            21
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave31-rectangular-dots-eighth",
+      "modelId": "visual-wave31-rectangular-dot-sequence",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rect-dots",
+        "shown": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "offset": 3,
+        "query": 8
+      },
+      "answer": "88",
+      "sourceRefs": [
+        {
+          "sourceId": "58a0c9f4266c4381",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-12-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-12-leveltest.json#8",
+      "sourceCanonicalSha256": "fe6cd01a8d3951bcfdcb4401a21ee626619d26120a8983644b9a351b455d2c85",
+      "sourceSkill": "Reading row/column growth for n(n+offset) and evaluating the requested rectangle, not its neighbor",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды өсу моделі жеке сақталды: толық шаршы/тіктөртбұрыш нүктелері, тек шекарадағы нүктелер, ортақ сіріңке қабырғалары, ағаш аралықтары және күндік арифметикалық өсім.",
+        "Алғашқы қабырға/баған ығысулары, көрсетілген сіріңке мысалдары, сұралған фигура/күн нөмірлері, барлық сіріңке саны және ағаш аралығы жаңа деректермен берілді.",
+        "Барлық native SVG нақты нүкте/бірегей қыр құрылымынан салынды; ағаштардың көп нүктесі мен диаграммадағы нақты биіктіктері анық берілді. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Фигуралар тізбегі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/newfullsolution/MCQreview; allactualdots/corners, unique equal-length shared matchsticks, ordered tree labels with honest ellipsis, actual bar heights and343px legibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave31-rectangular-dots-eighth.svg",
+      "verificationModule": "scripts/editorial/visual-wave31-models.mjs",
+      "options": [
+        "70",
+        "88",
+        "108",
+        "80"
+      ],
+      "statement": "Фигуралар толық тіктөртбұрыш торлардан тұрады. Әр келесі фигураға бір қатар мен бір баған қосылады. Нөмірлер суретте берілген. Осы ережемен 8-фигурада неше нүкте болады?",
+      "solution": "Алғашқы фигураларда қатар саны 1, 2, 3, 4, баған саны 4, 5, 6, 7. Нүкте сандары 4, 10, 18, 28. n-фигурада n қатар және n + 3 баған, сондықтан n × (n + 3). n = 8 кезінде 8 × 11 = 88. Көрші фигураның емес, сұралған нөмірдің екі өлшемі алынады.",
+      "figureDescription": "1-фигурада 1 қатар 4 баған нүкте; 2-фигурада 2 қатар 5 баған нүкте; 3-фигурада 3 қатар 6 баған нүкте; 4-фигурада 4 қатар 7 баған нүкте.",
+      "figureSha256": "c50eefb2a5a9dfe43189406ec8deeb404719d9cf6c0e6bcf4d0a24914b9e53bc",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "88",
+        "checks": {
+          "rows": 8,
+          "columns": 11,
+          "known": [
+            4,
+            10,
+            18,
+            28
+          ]
+        }
+      }
+    }
+  ]
+}

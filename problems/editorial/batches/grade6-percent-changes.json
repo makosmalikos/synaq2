@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All12 individually read saved nonvisual grade6topic2.16 level1 sources. Closed author draft until independent full-content hash review.",
+  "summary": {
+    "editions": 12,
+    "sourceOccurrencesReferenced": 12,
+    "distinctModels": 12,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade6-percent-changes-4c599b2b7c972a36",
+      "modelId": "grade6-percent-changes-price-increase-multiplier",
+      "grade": 6,
+      "topic": "percent",
+      "difficulty": "basic",
+      "params": {
+        "percent": 18
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sourceId": "4c599b2b7c972a36"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.16 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Көбейткіш, бастапқы/соңғы сома, жалпы процент, үш жылдық өрнек, бөлік ішіндегі бөлік және тұз массаларының сақталуы жеке сақталды.",
+        "Сандар мен жағдайлар қайта жазылды. Өсімнің базасы, таза тұз қосылғанда екі массаның өзгеруі, тек су қосылғанда тұз массасының өзгермеуі, адамдар/мысалдың бүтін саны дәл тексерілді.",
+        "Native бөлшектер мен дәрежелер, дәл ондық есеп. Жаңа жинау/скан/TeX жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Бастапқы баға 18% өсті. Жаңа бағаны бір амалмен табу үшін бастапқы бағаны қандай көбейткішке көбейтеміз?",
+      "options": [
+        "1,18",
+        "0,18",
+        "1,8",
+        "0,82"
+      ],
+      "answer": "1,18",
+      "solution": "Бастапқы баға 100% еді. Жаңа баға 100% + 18% = 118%, демек көбейткіш (118/100) = 1,18. 0,18 — өсімнің өзі ғана, 0,82 — арзандау көбейткіші, ал 1,8 басқа өсімді білдіреді.",
+      "calculationVerification": {
+        "answer": "1,18",
+        "checks": [
+          "All12saved nonvisual2.16 complete conditions/solutions/everyMCQ read",
+          "Asked factor versus original amount versus final amount versus net percent versus expression preserved",
+          "New-base compound increase/decrease, sequential percent bases and physical salt+solution mass conservation retained",
+          "Exact scaled integer arithmetic and integer people/mass ledgers; draft until independent full-content hash review; variants not distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-percent-changes-c627c7b1e7c1d8fe",
+      "modelId": "grade6-percent-changes-add-pure-salt-both-masses-change",
+      "grade": 6,
+      "topic": "percent",
+      "difficulty": "basic",
+      "params": {
+        "initialMass": 320,
+        "initialPercent": 5,
+        "addedSalt": 80
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sourceId": "c627c7b1e7c1d8fe"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.16 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Көбейткіш, бастапқы/соңғы сома, жалпы процент, үш жылдық өрнек, бөлік ішіндегі бөлік және тұз массаларының сақталуы жеке сақталды.",
+        "Сандар мен жағдайлар қайта жазылды. Өсімнің базасы, таза тұз қосылғанда екі массаның өзгеруі, тек су қосылғанда тұз массасының өзгермеуі, адамдар/мысалдың бүтін саны дәл тексерілді.",
+        "Native бөлшектер мен дәрежелер, дәл ондық есеп. Жаңа жинау/скан/TeX жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Массасы 320 г тұзды ерітіндінің 5%-і тұз. Оған 80 г таза тұз қосылып, түгел еріді. Су қосылған да, алынған да жоқ. Жаңа ерітіндінің неше проценті тұз?",
+      "options": [
+        "10%",
+        "25%",
+        "96%",
+        "24%"
+      ],
+      "answer": "24%",
+      "solution": "Алғашқы тұз массасы 320 × 0,05 = 16 г. Тұз қосылған соң тұз 16 + 80 = 96 г, ал бүкіл ерітінді 320 + 80 = 400 г болады. Концентрация (96/400) × 100% = 24%. 96% деп граммды процентке айналдырмай жазуға болмайды. 25% — тек қосылған тұзды ескі ерітінді массасына бөлу қатесі; екі массаның да өзгерісін ескеру керек.",
+      "calculationVerification": {
+        "answer": "24%",
+        "checks": [
+          "All12saved nonvisual2.16 complete conditions/solutions/everyMCQ read",
+          "Asked factor versus original amount versus final amount versus net percent versus expression preserved",
+          "New-base compound increase/decrease, sequential percent bases and physical salt+solution mass conservation retained",
+          "Exact scaled integer arithmetic and integer people/mass ledgers; draft until independent full-content hash review; variants not distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-percent-changes-4a2a33f0f1daab78",
+      "modelId": "grade6-percent-changes-original-stipend-before-increase",
+      "grade": 6,
+      "topic": "percent",
+      "difficulty": "basic",
+      "params": {
+        "percent": 12,
+        "newAmount": 246400,
+        "wrongAbsoluteSubtraction": 12000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sourceId": "4a2a33f0f1daab78"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.16 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Көбейткіш, бастапқы/соңғы сома, жалпы процент, үш жылдық өрнек, бөлік ішіндегі бөлік және тұз массаларының сақталуы жеке сақталды.",
+        "Сандар мен жағдайлар қайта жазылды. Өсімнің базасы, таза тұз қосылғанда екі массаның өзгеруі, тек су қосылғанда тұз массасының өзгермеуі, адамдар/мысалдың бүтін саны дәл тексерілді.",
+        "Native бөлшектер мен дәрежелер, дәл ондық есеп. Жаңа жинау/скан/TeX жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Айлық шәкіртақы 12% көтерілгеннен кейін 246400 теңге болды. Көтерілгенге дейін айына неше теңге төленген?",
+      "options": [
+        "220000",
+        "216832",
+        "275968",
+        "234400"
+      ],
+      "answer": "220000",
+      "solution": "Жаңа 246400 теңге бастапқы соманың 112%-іне тең. Сондықтан ескі сома 246400 : 1,12 = 220000 теңге. Тексеру: 220000 × 1,12 = 246400. Жаңа сомадан 12% алып тастау 216832 береді, бірақ өсім жаңа сомадан емес, бастапқы сомадан алынған. Белгілі процентті жай 12000 теңге деп азайту да дұрыс емес.",
+      "calculationVerification": {
+        "answer": "220000",
+        "checks": [
+          "All12saved nonvisual2.16 complete conditions/solutions/everyMCQ read",
+          "Asked factor versus original amount versus final amount versus net percent versus expression preserved",
+          "New-base compound increase/decrease, sequential percent bases and physical salt+solution mass conservation retained",
+          "Exact scaled integer arithmetic and integer people/mass ledgers; draft until independent full-content hash review; variants not distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-percent-changes-ccbc1e2397092f10",
+      "modelId": "grade6-percent-changes-water-addition-salt-invariant",
+      "grade": 6,
+      "topic": "percent",
+      "difficulty": "basic",
+      "params": {
+        "initialMass": 300,
+        "initialPercent": 12,
+        "addedWater": 150
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sourceId": "ccbc1e2397092f10"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.16 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Көбейткіш, бастапқы/соңғы сома, жалпы процент, үш жылдық өрнек, бөлік ішіндегі бөлік және тұз массаларының сақталуы жеке сақталды.",
+        "Сандар мен жағдайлар қайта жазылды. Өсімнің базасы, таза тұз қосылғанда екі массаның өзгеруі, тек су қосылғанда тұз массасының өзгермеуі, адамдар/мысалдың бүтін саны дәл тексерілді.",
+        "Native бөлшектер мен дәрежелер, дәл ондық есеп. Жаңа жинау/скан/TeX жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Тұзды ерітіндіге тек таза су құйылды. Төгілгені де, буланғаны да жоқ. Осы әрекеттен кейін қай шама бастапқы мәнін сақтайды?",
+      "options": [
+        "тұздың концентрациясы",
+        "тұздың массасы",
+        "барлық ерітіндінің массасы",
+        "судың массасы"
+      ],
+      "answer": "тұздың массасы",
+      "solution": "Таза сумен бірге тұз келмейді, тұз алынбайды да. Сондықтан тұздың массасы сақталады. Су мен ерітінді массалары өседі, ал концентрация төмендейді. Мысалы, 300 г ерітіндінің 12%-і 36 г тұз. 150 г су қосылса, тұз сол 36 г, жалпы масса 450 г, концентрация 8% болады.",
+      "calculationVerification": {
+        "answer": "тұздың массасы",
+        "checks": [
+          "All12saved nonvisual2.16 complete conditions/solutions/everyMCQ read",
+          "Asked factor versus original amount versus final amount versus net percent versus expression preserved",
+          "New-base compound increase/decrease, sequential percent bases and physical salt+solution mass conservation retained",
+          "Exact scaled integer arithmetic and integer people/mass ledgers; draft until independent full-content hash review; variants not distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-percent-changes-ed6379b92b28f136",
+      "modelId": "grade6-percent-changes-same-percent-down-up-new-base",
+      "grade": 6,
+      "topic": "percent",
+      "difficulty": "basic",
+      "params": {
+        "percent": 20
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sourceId": "ed6379b92b28f136"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.16 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Көбейткіш, бастапқы/соңғы сома, жалпы процент, үш жылдық өрнек, бөлік ішіндегі бөлік және тұз массаларының сақталуы жеке сақталды.",
+        "Сандар мен жағдайлар қайта жазылды. Өсімнің базасы, таза тұз қосылғанда екі массаның өзгеруі, тек су қосылғанда тұз массасының өзгермеуі, адамдар/мысалдың бүтін саны дәл тексерілді.",
+        "Native бөлшектер мен дәрежелер, дәл ондық есеп. Жаңа жинау/скан/TeX жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Кроссовканың бағасы алдымен 20% төмендеді. Кейін дәл сол ЖАҢА баға 20% көтерілді. Соңғы баға бастапқы бағамен салыстырғанда қалай өзгерді?",
+      "options": [
+        "өзгермеді",
+        "4% арзандады",
+        "4% қымбаттады",
+        "2% арзандады"
+      ],
+      "answer": "4% арзандады",
+      "solution": "Бірінші көбейткіш 0,8, екіншісі 1,2. Олардың көбейтіндісі 0,8 × 1,2 = 0,96, яғни бастапқының 96%-і. Соңғы баға 4% арзандаған. Екі процентті өзара жойып жіберуге болмайды: көтерілген процент кішірейген жаңа бағадан есептелді.",
+      "calculationVerification": {
+        "answer": "4% арзандады",
+        "checks": [
+          "All12saved nonvisual2.16 complete conditions/solutions/everyMCQ read",
+          "Asked factor versus original amount versus final amount versus net percent versus expression preserved",
+          "New-base compound increase/decrease, sequential percent bases and physical salt+solution mass conservation retained",
+          "Exact scaled integer arithmetic and integer people/mass ledgers; draft until independent full-content hash review; variants not distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-percent-changes-3db47ee601c9a07d",
+      "modelId": "grade6-percent-changes-two-year-compound-amount",
+      "grade": 6,
+      "topic": "percent",
+      "difficulty": "basic",
+      "params": {
+        "initial": 500000,
+        "percent": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sourceId": "3db47ee601c9a07d"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.16 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Көбейткіш, бастапқы/соңғы сома, жалпы процент, үш жылдық өрнек, бөлік ішіндегі бөлік және тұз массаларының сақталуы жеке сақталды.",
+        "Сандар мен жағдайлар қайта жазылды. Өсімнің базасы, таза тұз қосылғанда екі массаның өзгеруі, тек су қосылғанда тұз массасының өзгермеуі, адамдар/мысалдың бүтін саны дәл тексерілді.",
+        "Native бөлшектер мен дәрежелер, дәл ондық есеп. Жаңа жинау/скан/TeX жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Жинаққа 500000 теңге салынды. Есеп шарты бойынша жыл сайынғы 4% өсім алдыңғы жылдың соңындағы толық сомаға қосылады. Ақша қосылмайды және алынбайды. Екі жылдан кейін шоттағы сома неше теңге? Жауапқа тек санды жазыңыз.",
+      "answer": "540800",
+      "solution": "Әр өзгерістің көбейткіші 1,04. Бірінші өзгеріс: 500000 × 1,04 = 520000. Екінші өзгеріс жаңа 520000 санынан есептеледі: 520000 × 1,04 = 540800 теңге. Өзгерістерді жай қосып 8% деп есептеу 540000 деген қате береді. Екінші өзгерістің базасы бастапқы сан емес.",
+      "calculationVerification": {
+        "answer": "540800",
+        "checks": [
+          "All12saved nonvisual2.16 complete conditions/solutions/everyMCQ read",
+          "Asked factor versus original amount versus final amount versus net percent versus expression preserved",
+          "New-base compound increase/decrease, sequential percent bases and physical salt+solution mass conservation retained",
+          "Exact scaled integer arithmetic and integer people/mass ledgers; draft until independent full-content hash review; variants not distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-percent-changes-ffaa1c454ca1bbe6",
+      "modelId": "grade6-percent-changes-two-year-population-decay",
+      "grade": 6,
+      "topic": "percent",
+      "difficulty": "basic",
+      "params": {
+        "initial": 2500,
+        "percent": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sourceId": "ffaa1c454ca1bbe6"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.16 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Көбейткіш, бастапқы/соңғы сома, жалпы процент, үш жылдық өрнек, бөлік ішіндегі бөлік және тұз массаларының сақталуы жеке сақталды.",
+        "Сандар мен жағдайлар қайта жазылды. Өсімнің базасы, таза тұз қосылғанда екі массаның өзгеруі, тек су қосылғанда тұз массасының өзгермеуі, адамдар/мысалдың бүтін саны дәл тексерілді.",
+        "Native бөлшектер мен дәрежелер, дәл ондық есеп. Жаңа жинау/скан/TeX жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Елді мекенде 2500 тұрғын бар еді. Бірінші жылы тұрғындар саны 4%, екінші жылы сол кезде қалған саннан тағы 4% кеміді. Екі жылдан кейін неше тұрғын қалды? Жауапқа тек санды жазыңыз.",
+      "answer": "2304",
+      "solution": "Әр өзгерістің көбейткіші 0,96. Бірінші өзгеріс: 2500 × 0,96 = 2400. Екінші өзгеріс жаңа 2400 санынан есептеледі: 2400 × 0,96 = 2304 тұрғын. Өзгерістерді жай қосып 8% деп есептеу 2300 деген қате береді. Екінші өзгерістің базасы бастапқы сан емес.",
+      "calculationVerification": {
+        "answer": "2304",
+        "checks": [
+          "All12saved nonvisual2.16 complete conditions/solutions/everyMCQ read",
+          "Asked factor versus original amount versus final amount versus net percent versus expression preserved",
+          "New-base compound increase/decrease, sequential percent bases and physical salt+solution mass conservation retained",
+          "Exact scaled integer arithmetic and integer people/mass ledgers; draft until independent full-content hash review; variants not distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-percent-changes-5e75cfa50ccfcd94",
+      "modelId": "grade6-percent-changes-choose-three-year-compound-expression",
+      "grade": 6,
+      "topic": "percent",
+      "difficulty": "basic",
+      "params": {
+        "initial": 750000,
+        "percent": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sourceId": "5e75cfa50ccfcd94"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.16 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Көбейткіш, бастапқы/соңғы сома, жалпы процент, үш жылдық өрнек, бөлік ішіндегі бөлік және тұз массаларының сақталуы жеке сақталды.",
+        "Сандар мен жағдайлар қайта жазылды. Өсімнің базасы, таза тұз қосылғанда екі массаның өзгеруі, тек су қосылғанда тұз массасының өзгермеуі, адамдар/мысалдың бүтін саны дәл тексерілді.",
+        "Native бөлшектер мен дәрежелер, дәл ондық есеп. Жаңа жинау/скан/TeX жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Жинақтағы 750000 теңге жыл сайын 8% күрделі өсіммен көбейеді: әр жылғы өсім алдыңғы жылдың толық сомасынан алынады. Үш жылдан кейінгі соманы қай өрнек көрсетеді?",
+      "options": [
+        "750000 × 1,24",
+        "750000 × 1,08 × 3",
+        "750000 × 1,08³",
+        "750000 × 0,08³"
+      ],
+      "answer": "750000 × 1,08³",
+      "solution": "Бір жылдағы көбейткіш 1 + (8/100) = 1,08. Үш жылда оны үш рет қолданамыз: 750000 × 1,08 × 1,08 × 1,08 = 750000 × 1,08³. 1,24 көбейткіші жай өсімге жатады. × 3 деп жыл санын көбейту немесе тек өсімнің 0,08 үлесін дәрежелеу күрделі өсім емес.",
+      "calculationVerification": {
+        "answer": "750000 × 1,08³",
+        "checks": [
+          "All12saved nonvisual2.16 complete conditions/solutions/everyMCQ read",
+          "Asked factor versus original amount versus final amount versus net percent versus expression preserved",
+          "New-base compound increase/decrease, sequential percent bases and physical salt+solution mass conservation retained",
+          "Exact scaled integer arithmetic and integer people/mass ledgers; draft until independent full-content hash review; variants not distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-percent-changes-62b64d32a41fa25d",
+      "modelId": "grade6-percent-changes-percent-of-percent-value",
+      "grade": 6,
+      "topic": "percent",
+      "difficulty": "basic",
+      "params": {
+        "number": 800,
+        "firstPercent": 40,
+        "secondPercent": 15
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sourceId": "62b64d32a41fa25d"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.16 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Көбейткіш, бастапқы/соңғы сома, жалпы процент, үш жылдық өрнек, бөлік ішіндегі бөлік және тұз массаларының сақталуы жеке сақталды.",
+        "Сандар мен жағдайлар қайта жазылды. Өсімнің базасы, таза тұз қосылғанда екі массаның өзгеруі, тек су қосылғанда тұз массасының өзгермеуі, адамдар/мысалдың бүтін саны дәл тексерілді.",
+        "Native бөлшектер мен дәрежелер, дәл ондық есеп. Жаңа жинау/скан/TeX жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "800 санының алдымен 40%-ін, кейін шыққан нәтижесінің 15%-ін табыңыз. Соңғы сан неше? Жауапқа тек санды жазыңыз.",
+      "answer": "48",
+      "solution": "Алғашқы үлес 800 × 0,4 = 320. Екінші процент осы 320 санынан алынады: 320 × 0,15 = 48. Екі процентті қоспаймыз; жалпы көбейткіш 0,4 × 0,15.",
+      "calculationVerification": {
+        "answer": "48",
+        "checks": [
+          "All12saved nonvisual2.16 complete conditions/solutions/everyMCQ read",
+          "Asked factor versus original amount versus final amount versus net percent versus expression preserved",
+          "New-base compound increase/decrease, sequential percent bases and physical salt+solution mass conservation retained",
+          "Exact scaled integer arithmetic and integer people/mass ledgers; draft until independent full-content hash review; variants not distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-percent-changes-b0b93ab9e003f774",
+      "modelId": "grade6-percent-changes-club-girls-percent-original-class",
+      "grade": 6,
+      "topic": "percent",
+      "difficulty": "basic",
+      "params": {
+        "girlsPercent": 80,
+        "clubPercentOfGirls": 25,
+        "exampleClass": 20
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sourceId": "b0b93ab9e003f774"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.16 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Көбейткіш, бастапқы/соңғы сома, жалпы процент, үш жылдық өрнек, бөлік ішіндегі бөлік және тұз массаларының сақталуы жеке сақталды.",
+        "Сандар мен жағдайлар қайта жазылды. Өсімнің базасы, таза тұз қосылғанда екі массаның өзгеруі, тек су қосылғанда тұз массасының өзгермеуі, адамдар/мысалдың бүтін саны дәл тексерілді.",
+        "Native бөлшектер мен дәрежелер, дәл ондық есеп. Жаңа жинау/скан/TeX жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Сынып оқушыларының 80%-і қыздар. Сол ҚЫЗДАРДЫҢ 25%-і сурет үйірмесіне қатысады. Үйірмеге қатысатын қыздар бүкіл сыныптың неше процентін құрайды?",
+      "options": [
+        "25%",
+        "55%",
+        "105%",
+        "20%"
+      ],
+      "answer": "20%",
+      "solution": "Екінші процент барлық сыныптан емес, қыздардан алынады: 80% × 0,25 = 20%. Мысалы, сыныпта 20 оқушы болса, қыздар 16, олардың үйірмеге қатысатыны 4. (4/20) × 100% = 20%. Проценттерді қосу не азайту бөлік ішіндегі бөлікті бермейді.",
+      "calculationVerification": {
+        "answer": "20%",
+        "checks": [
+          "All12saved nonvisual2.16 complete conditions/solutions/everyMCQ read",
+          "Asked factor versus original amount versus final amount versus net percent versus expression preserved",
+          "New-base compound increase/decrease, sequential percent bases and physical salt+solution mass conservation retained",
+          "Exact scaled integer arithmetic and integer people/mass ledgers; draft until independent full-content hash review; variants not distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-percent-changes-88bf50f3fdbe4350",
+      "modelId": "grade6-percent-changes-two-different-increases-net-percent",
+      "grade": 6,
+      "topic": "percent",
+      "difficulty": "basic",
+      "params": {
+        "first": 25,
+        "second": 8
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sourceId": "88bf50f3fdbe4350"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.16 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Көбейткіш, бастапқы/соңғы сома, жалпы процент, үш жылдық өрнек, бөлік ішіндегі бөлік және тұз массаларының сақталуы жеке сақталды.",
+        "Сандар мен жағдайлар қайта жазылды. Өсімнің базасы, таза тұз қосылғанда екі массаның өзгеруі, тек су қосылғанда тұз массасының өзгермеуі, адамдар/мысалдың бүтін саны дәл тексерілді.",
+        "Native бөлшектер мен дәрежелер, дәл ондық есеп. Жаңа жинау/скан/TeX жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Спорт сөмкесінің бағасы 25% өсті, кейін жаңа бағасы тағы 8% көтерілді. Бастапқы бағамен салыстырғанда жалпы өсім неше процент?",
+      "options": [
+        "33%",
+        "26%",
+        "35%",
+        "32%"
+      ],
+      "answer": "35%",
+      "solution": "Екі көбейткішті қолданамыз: 1,25 × 1,08 = 1,35. Бұл бастапқы бағаның 135%-і, сондықтан өсім 135% − 100% = 35%. Жай 25% + 8% = 33% деп қосу дұрыс емес: екінші процент өскен жаңа бағаға есептелді.",
+      "calculationVerification": {
+        "answer": "35%",
+        "checks": [
+          "All12saved nonvisual2.16 complete conditions/solutions/everyMCQ read",
+          "Asked factor versus original amount versus final amount versus net percent versus expression preserved",
+          "New-base compound increase/decrease, sequential percent bases and physical salt+solution mass conservation retained",
+          "Exact scaled integer arithmetic and integer people/mass ledgers; draft until independent full-content hash review; variants not distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-percent-changes-7d650e74e92d4a46",
+      "modelId": "grade6-percent-changes-two-price-increases-final-value",
+      "grade": 6,
+      "topic": "percent",
+      "difficulty": "basic",
+      "params": {
+        "initial": 6400,
+        "percent": 25
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-16-level1.json",
+          "sourceId": "7d650e74e92d4a46"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic2.16 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және барлық MCQ жеке оқылды. Көбейткіш, бастапқы/соңғы сома, жалпы процент, үш жылдық өрнек, бөлік ішіндегі бөлік және тұз массаларының сақталуы жеке сақталды.",
+        "Сандар мен жағдайлар қайта жазылды. Өсімнің базасы, таза тұз қосылғанда екі массаның өзгеруі, тек су қосылғанда тұз массасының өзгермеуі, адамдар/мысалдың бүтін саны дәл тексерілді.",
+        "Native бөлшектер мен дәрежелер, дәл ондық есеп. Жаңа жинау/скан/TeX жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Үстел шамы 6400 теңге тұратын. Бағасы 25% өсті, кейін сол жаңа бағасы тағы 25% өсті. Екінші өсімнен кейін бағасы неше теңге болды? Жауапқа тек санды жазыңыз.",
+      "answer": "10000",
+      "solution": "Әр өзгерістің көбейткіші 1,25. Бірінші өзгеріс: 6400 × 1,25 = 8000. Екінші өзгеріс жаңа 8000 санынан есептеледі: 8000 × 1,25 = 10000 теңге. Өзгерістерді жай қосып 50% деп есептеу 9600 деген қате береді. Екінші өзгерістің базасы бастапқы сан емес.",
+      "calculationVerification": {
+        "answer": "10000",
+        "checks": [
+          "All12saved nonvisual2.16 complete conditions/solutions/everyMCQ read",
+          "Asked factor versus original amount versus final amount versus net percent versus expression preserved",
+          "New-base compound increase/decrease, sequential percent bases and physical salt+solution mass conservation retained",
+          "Exact scaled integer arithmetic and integer people/mass ledgers; draft until independent full-content hash review; variants not distinct meanings"
+        ]
+      }
+    }
+  ]
+}

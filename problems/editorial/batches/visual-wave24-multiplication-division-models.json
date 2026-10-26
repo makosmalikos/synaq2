@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All6 saved visual grade5topic1.5 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade5topic1.5",
+    "sourceVisualOccurrences": 6,
+    "addressedNewDrafts": 6,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "3702768c2dcb2259",
+      "6430f58f21a38695",
+      "79accad837fee68a",
+      "8be51b6267633e3c",
+      "eecf75961ef72dc2",
+      "f496d4eeb6efcda2"
+    ],
+    "distinctModels": 6,
+    "semantics": "6 source-addressed multiplication/division targets preserve repeated sums, multistep purchase division, inward motion, unit-price scaling, ratio parts and constant-speed remaining time."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave24-equal-five-by-eight-dot-array",
+      "modelId": "visual-wave24-equal-row-dot-array",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "dots",
+        "rows": 5,
+        "columns": 8
+      },
+      "answer": "40",
+      "sourceRefs": [
+        {
+          "sourceId": "f496d4eeb6efcda2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-5-level1.json#1",
+      "sourceCanonicalSha256": "7b81b63b04f0541b54140db1faa13f88186212704f8cc137bc54ee89ff168f53",
+      "sourceSkill": "Converting equal-row repeated addition to multiplication while distinguishing row count from per-row count",
+      "adaptationChanges": [
+        "Дереккөздегі нақты көбейту-бөлу моделі сақталды: бірдей қосылғыш, сатып алу қалдығын бөлу, жақындау жылдамдығы, бірлік құн, еселік қатынас және уақыт.",
+        "Нүкте қатары, зат сандары мен бағалары, жылдамдықтар, қашықтықтар және жеміс қатынасы дербес жаңадан берілді.",
+        "Native SVG жаңа қатарлардан, нақты зат/сағат/килограмм бөліктерінен және қарсы бағытталған нұсқарлардан салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Көбейту және бөлу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual row/dot/item/hour/kilogram counts, equal-unit invariants, separate travelled-distance ledger and all-target inverse checks,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave24-equal-five-by-eight-dot-array.svg",
+      "verificationModule": "scripts/editorial/visual-wave24-models.mjs",
+      "statement": "Нүктелер бірдей қатарларға орналасқан. Олардың санын бірдей қосылғыштардың қосындысымен есептеп, көбейтінді түріне келтіріңіз. Барлығы неше нүкте бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Әр қатарда 8 нүкте, қатар саны 5. Бірдей қосылғыштар: 8 + 8 + 8 + 8 + 8 = 40. Қосылғыш 8 саны 5 рет алынған: 8 × 5 = 40.",
+      "figureDescription": "5 қатар, әр қатарда 8 нүкте.",
+      "figureSha256": "dcadf4e8f7309f72d659354318be34708719575e5b156a0a61bd68f1218f05d5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "40",
+        "checks": {
+          "rowSums": [
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "rows": 5,
+          "columns": 8
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave24-remove-four-notebooks-price-three-pens",
+      "modelId": "visual-wave24-remove-notebooks-divide-pens",
+      "grade": 5,
+      "topic": "word",
+      "difficulty": "medium",
+      "params": {
+        "scene": "notepens",
+        "noteCount": 4,
+        "notePrice": 185,
+        "penCount": 3,
+        "total": 1550
+      },
+      "answer": "270",
+      "sourceRefs": [
+        {
+          "sourceId": "8be51b6267633e3c",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-5-level2.json#3",
+      "sourceCanonicalSha256": "0379efac58008d0693adaf2f132eb39be95344ed035d40ed5ef140dc713a328d",
+      "sourceSkill": "Multiplying all known notebook prices, subtracting their total, then dividing equally among the pens",
+      "adaptationChanges": [
+        "Дереккөздегі нақты көбейту-бөлу моделі сақталды: бірдей қосылғыш, сатып алу қалдығын бөлу, жақындау жылдамдығы, бірлік құн, еселік қатынас және уақыт.",
+        "Нүкте қатары, зат сандары мен бағалары, жылдамдықтар, қашықтықтар және жеміс қатынасы дербес жаңадан берілді.",
+        "Native SVG жаңа қатарлардан, нақты зат/сағат/килограмм бөліктерінен және қарсы бағытталған нұсқарлардан салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Көбейту және бөлу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual row/dot/item/hour/kilogram counts, equal-unit invariants, separate travelled-distance ledger and all-target inverse checks,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave24-remove-four-notebooks-price-three-pens.svg",
+      "verificationModule": "scripts/editorial/visual-wave24-models.mjs",
+      "statement": "Көк бөліктің әрқайсысы — бір дәптер, сары бөліктің әрқайсысы — бір қалам. Дәптердің бағасы көк бөліктерде, жалпы баға жақшада жазылған. Қаламдар бірдей, сурет масштабсыз. Бір қалам неше теңге? Жауапқа тек санды жазыңыз.",
+      "solution": "Дәптерлер саны 4, құны 185 × 4 = 740 теңге. Қаламдардың жалпы бағасы 1550 − 740 = 810. 3 бірдей қаламның біреуі 810 : 3 = 270 теңге. Тек бір дәптердің бағасын азайту жеткіліксіз.",
+      "figureDescription": "4 көк бөлік, әрқайсысында 185; 3 сары бөлік сұрақ белгісімен; барлығы 1550 теңге.",
+      "figureSha256": "f5d66ea355817490528844e47d9873221cd44f9bd0fcc86d6040d9626d80565a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "270",
+        "checks": {
+          "notebookTotal": 740,
+          "allPens": 810
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave24-two-buses-head-on",
+      "modelId": "visual-wave24-head-on-meeting-time",
+      "grade": 5,
+      "topic": "speed",
+      "difficulty": "medium",
+      "params": {
+        "scene": "meeting",
+        "distance": 396,
+        "firstSpeed": 72,
+        "secondSpeed": 60
+      },
+      "answer": "3",
+      "sourceRefs": [
+        {
+          "sourceId": "3702768c2dcb2259",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-5-level2.json#9",
+      "sourceCanonicalSha256": "70e3df407d4aada5436b750eefb0334079a95d2b8264ad90bfe350d3499ab143",
+      "sourceSkill": "Interpreting inward direction arrows as additive closing speed before deriving integer meeting time",
+      "adaptationChanges": [
+        "Дереккөздегі нақты көбейту-бөлу моделі сақталды: бірдей қосылғыш, сатып алу қалдығын бөлу, жақындау жылдамдығы, бірлік құн, еселік қатынас және уақыт.",
+        "Нүкте қатары, зат сандары мен бағалары, жылдамдықтар, қашықтықтар және жеміс қатынасы дербес жаңадан берілді.",
+        "Native SVG жаңа қатарлардан, нақты зат/сағат/килограмм бөліктерінен және қарсы бағытталған нұсқарлардан салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Көбейту және бөлу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual row/dot/item/hour/kilogram counts, equal-unit invariants, separate travelled-distance ledger and all-target inverse checks,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave24-two-buses-head-on.svg",
+      "verificationModule": "scripts/editorial/visual-wave24-models.mjs",
+      "statement": "Екі ауылдан автобустар бір мезгілде бір-біріне қарсы шықты. Жылдамдықтары тұрақты, арақашықтық суретте көрсетілген. Олар неше сағаттан кейін кездеседі? Жауапқа тек санды жазыңыз.",
+      "solution": "Бір сағатта арақашықтық 72 + 60 = 132 км-ге қысқарады. Кездесу уақыты 396 : 132 = 3 сағат. Тексеру: бірінші автобус 216 км, екіншісі 180 км жүріп, бірге 396 км-ді өтеді.",
+      "figureDescription": "Екі ауыл арасы 396 км, солдан оңға 72 км/сағ, оңнан солға 60 км/сағ нұсқарлары.",
+      "figureSha256": "578247f70b83c84d0f2f877c80fbe1020e4b71e72e6edc91c90de82eed1e6f08",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3",
+        "checks": {
+          "closingSpeed": 132,
+          "firstTravel": 216,
+          "secondTravel": 180
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave24-same-price-six-to-nine-kilos",
+      "modelId": "visual-wave24-equal-unit-price-scale",
+      "grade": 5,
+      "topic": "word",
+      "difficulty": "medium",
+      "params": {
+        "scene": "unitprice",
+        "knownParts": 6,
+        "knownTotal": 3240,
+        "targetParts": 9
+      },
+      "answer": "4860",
+      "sourceRefs": [
+        {
+          "sourceId": "6430f58f21a38695",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-5-level2.json#14",
+      "sourceCanonicalSha256": "92e86cd63d2db2b57b5630bbece50577882c89d83c7c56f4ff090513dccec18d",
+      "sourceSkill": "Deriving one kilogram price from equal known units then multiplying by a different displayed kilogram count",
+      "adaptationChanges": [
+        "Дереккөздегі нақты көбейту-бөлу моделі сақталды: бірдей қосылғыш, сатып алу қалдығын бөлу, жақындау жылдамдығы, бірлік құн, еселік қатынас және уақыт.",
+        "Нүкте қатары, зат сандары мен бағалары, жылдамдықтар, қашықтықтар және жеміс қатынасы дербес жаңадан берілді.",
+        "Native SVG жаңа қатарлардан, нақты зат/сағат/килограмм бөліктерінен және қарсы бағытталған нұсқарлардан салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Көбейту және бөлу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual row/dot/item/hour/kilogram counts, equal-unit invariants, separate travelled-distance ledger and all-target inverse checks,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave24-same-price-six-to-nine-kilos.svg",
+      "verificationModule": "scripts/editorial/visual-wave24-models.mjs",
+      "statement": "Алманың бағасы екі сатып алуда да бірдей. Әр бөлік — 1 кг. Жоғарғы жолақтың жалпы бағасы берілген. Төменгі жолақтағы алма неше теңге тұрады? Жауапқа тек санды жазыңыз.",
+      "solution": "Жоғарғы жолақта 6 бөлік. Бір килограмм 3240 : 6 = 540 теңге. Төменгі жолақта 9 бөлік: 540 × 9 = 4860 теңге. Екі жолақта да бір бөліктің бағасы бірдей.",
+      "figureDescription": "Жоғарғы жолақ 6 тең бөлік, бағасы 3240 теңге. Төменгі жолақ 9 тең бөлік, бағасы белгісіз; әр бөлік1кг.",
+      "figureSha256": "83ab8bb2eb445db41739067902787103db574e248ea30397d3e3c4288d7dc484",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4860",
+        "checks": {
+          "unitPrice": 540
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave24-five-to-one-fruit-total",
+      "modelId": "visual-wave24-part-ratio-ask-larger",
+      "grade": 5,
+      "topic": "word",
+      "difficulty": "medium",
+      "params": {
+        "scene": "ratio",
+        "multiple": 5,
+        "total": 96
+      },
+      "answer": "80",
+      "sourceRefs": [
+        {
+          "sourceId": "eecf75961ef72dc2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-5-level3.json#3",
+      "sourceCanonicalSha256": "1c3b33682ceb9634390eea30aa8eed5ef9fc7c74026e0fb379fa180cfac316b7",
+      "sourceSkill": "Splitting total into one plus five equal parts and returning the larger fruit count rather than the single part",
+      "adaptationChanges": [
+        "Дереккөздегі нақты көбейту-бөлу моделі сақталды: бірдей қосылғыш, сатып алу қалдығын бөлу, жақындау жылдамдығы, бірлік құн, еселік қатынас және уақыт.",
+        "Нүкте қатары, зат сандары мен бағалары, жылдамдықтар, қашықтықтар және жеміс қатынасы дербес жаңадан берілді.",
+        "Native SVG жаңа қатарлардан, нақты зат/сағат/килограмм бөліктерінен және қарсы бағытталған нұсқарлардан салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Көбейту және бөлу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual row/dot/item/hour/kilogram counts, equal-unit invariants, separate travelled-distance ledger and all-target inverse checks,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave24-five-to-one-fruit-total.svg",
+      "verificationModule": "scripts/editorial/visual-wave24-models.mjs",
+      "options": [
+        "16",
+        "480",
+        "91",
+        "80"
+      ],
+      "statement": "Сары жолақ — алмұрт саны, көк жолақ — алма саны. Алма алмұрттан 5 есе көп. Жақшада барлық жеміс саны берілген. Неше алма бар?",
+      "solution": "Алмұрт — 1 бөлік, алма — 5 бөлік. Барлығы 6 тең бөлік: 96 : 6 = 16. Бұл алмұрт саны. Алма 16 × 5 = 80. Тексеру: 80 + 16 = 96.",
+      "figureDescription": "Бір сары бөлікке қарсы 5 бірдей көк бөлік, жалпы 96 жеміс.",
+      "figureSha256": "21ac3784b4d6b790c6cb818f9cf6c26c44ecf60d7d8abdf8401bcda3aedb2476",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "80",
+        "checks": {
+          "pears": 16,
+          "apples": 80,
+          "equalParts": 6
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave24-four-hour-speed-remaining-time",
+      "modelId": "visual-wave24-derive-speed-find-remaining-time",
+      "grade": 5,
+      "topic": "speed",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cycle",
+        "knownHours": 4,
+        "knownDistance": 68,
+        "remainingDistance": 153
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "79accad837fee68a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-5-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-5-leveltest.json#4",
+      "sourceCanonicalSha256": "44690bcd12577d66bb93969094b825e6a811e33b78e46b2ba2dfa6eef4a0a187",
+      "sourceSkill": "Inferring a constant hourly distance from the known divided strip then finding the duration of the remaining distance",
+      "adaptationChanges": [
+        "Дереккөздегі нақты көбейту-бөлу моделі сақталды: бірдей қосылғыш, сатып алу қалдығын бөлу, жақындау жылдамдығы, бірлік құн, еселік қатынас және уақыт.",
+        "Нүкте қатары, зат сандары мен бағалары, жылдамдықтар, қашықтықтар және жеміс қатынасы дербес жаңадан берілді.",
+        "Native SVG жаңа қатарлардан, нақты зат/сағат/килограмм бөліктерінен және қарсы бағытталған нұсқарлардан салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Көбейту және бөлу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, actual row/dot/item/hour/kilogram counts, equal-unit invariants, separate travelled-distance ledger and all-target inverse checks,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave24-four-hour-speed-remaining-time.svg",
+      "verificationModule": "scripts/editorial/visual-wave24-models.mjs",
+      "statement": "Велосипедші тұрақты жылдамдықпен жүреді. Көк бөліктердің әрқайсысы оның бір сағатта жүрген жолын көрсетеді. Сары жолақ — қалған жол; қашықтықтар жақшада берілген. Сары жолақтағы жолды неше сағатта жүреді? Жолақтар масштабсыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Көк жолақта 4 сағаттың жолы 68 км. Бір сағатта 68 : 4 = 17 км жүреді. Қалған 153 км жолға 153 : 17 = 9 сағат керек. Тексеру: 17 × 9 = 153.",
+      "figureDescription": "Көк жолақта 4 бірдей бөлік, барлығы 68 км. Бір сары жолақ 153 км.",
+      "figureSha256": "fe51ad2c7537093b5c04b1409f7f7b10d9de3eb5d848328bb60a8d9efff8d341",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": {
+          "speed": 17,
+          "hours": 9
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1976 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "Only saved archive records are read. Every source occurrence in the selected visual topic has its own new condition, parameters, computed answer and native protractor. No trace or source image is reused.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual occurrences in grade 5 topic 7.2, levels 1/2/3/test",
+    "sourceVisualOccurrences": 29,
+    "addressedDrafts": 29,
+    "exactSourceIds": [
+      "150ec8efd00c21d6",
+      "17d1f7278fb2c0e8",
+      "2699b11a5615279e",
+      "26e9350d03de4ead",
+      "2f3471d8d76538d3",
+      "3b44c38bab048b07",
+      "3de425471f88e31e",
+      "5d7ac5156e9d65cb",
+      "611ac0b41aebe4c3",
+      "65af0bf2bfe4aece",
+      "747aeb9caacf0267",
+      "7fcca51173a52c30",
+      "87ab2e109e092f7c",
+      "89786aaf67b06f06",
+      "8b945166178e4a90",
+      "95e48cbc55d062f2",
+      "99d2f30b8de44a54",
+      "a004eaa7f42e9f3b",
+      "b99d20ee1e508d17",
+      "c0a9129a701e4e88",
+      "cfaacf7ee97c91b1",
+      "d1ac745bb7813812",
+      "da2fa7c6f70567bf",
+      "dba7f1f68b476604",
+      "dff804f49a3e463c",
+      "e3965ed57137fde1",
+      "f1e625942eed05b1",
+      "f8e42a6227b4f245",
+      "fd1440f257372ea5"
+    ],
+    "missingSourceIds": [],
+    "distinctModels": 20,
+    "semantics": "29 individual source-specific drafts, sharing 20 explicit model forms. No other source tasks are implicitly covered by these models."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave2-obtuse-right",
+      "modelId": "visual-wave2-baseline-reading",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "B",
+            "mark": 125
+          }
+        ],
+        "scale": "inner",
+        "base": "A",
+        "target": "B"
+      },
+      "answer": "125",
+      "sourceRefs": [
+        {
+          "sourceId": "3de425471f88e31e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level1.json#0",
+      "sourceCanonicalSha256": "f5ad449352d216ca1c403d2e51b3656b57fbbfc6ab94d2b508321d608f7a4f2d",
+      "sourceSkill": "Reading an obtuse angle from the right-origin inner scale",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OB — 125°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-obtuse-right.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. O — центр, OA сәулесі ішкі көк шкаланың нөлімен беттеседі. ∠AOB бұрышын градуспен жазыңдар.",
+      "solution": "Нөл OA бағытында тұрған ішкі көк шкаланы оқимыз. OB белгісі 125°-қа сәйкес келеді. Жауабы: 125°.",
+      "figureSha256": "728d6763a31e15fb13b7ca1e9d4715fe11b4debfe750c8f58aba5ee5555aeeaa",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "125",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The correct zero row is selected from the baseline direction",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-unit-left",
+      "modelId": "visual-wave2-baseline-reading",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 180
+          },
+          {
+            "label": "B",
+            "mark": 43
+          }
+        ],
+        "scale": "outer",
+        "base": "A",
+        "target": "B"
+      },
+      "answer": "137",
+      "sourceRefs": [
+        {
+          "sourceId": "99d2f30b8de44a54",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level1.json#1",
+      "sourceCanonicalSha256": "1f955bd5e2dc37bd8bee833c011f6b2f2c076444fcd160974e30cc63e11ad556",
+      "sourceSkill": "One-degree reading from a left-origin outer scale, avoiding its complementary row",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 180°; OB — 43°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-unit-left.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. O — центр, OA сәулесі сыртқы қара шкаланың нөлімен беттеседі. ∠AOB бұрышын градуспен жазыңдар.",
+      "solution": "Нөл OA бағытында тұрған сыртқы қара шкаланы оқимыз. OB белгісі 137°-қа сәйкес келеді. Жауабы: 137°.",
+      "figureSha256": "9302b13d2df1918fc7055a041872f35872f794b8315e2fe6360d621c40cc9cc7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "137",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The correct zero row is selected from the baseline direction",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-small-ticks",
+      "modelId": "visual-wave2-baseline-reading",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "B",
+            "mark": 32
+          }
+        ],
+        "scale": "inner",
+        "base": "A",
+        "target": "B"
+      },
+      "answer": "32",
+      "sourceRefs": [
+        {
+          "sourceId": "150ec8efd00c21d6",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level1.json#5",
+      "sourceCanonicalSha256": "32dd8fd30551bad95c78ff2d197958f9cc664f45667cf9f2940a4172f1b7b879",
+      "sourceSkill": "Counting one-degree ticks for an acute angle rather than rounding to a five-degree mark",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OB — 32°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-small-ticks.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. O — центр, OA сәулесі ішкі көк шкаланың нөлімен беттеседі. ∠AOB бұрышын градуспен жазыңдар.",
+      "solution": "Нөл OA бағытында тұрған ішкі көк шкаланы оқимыз. OB белгісі 32°-қа сәйкес келеді. Жауабы: 32°.",
+      "figureSha256": "e3fd323e5cfcf3f328b56db12588be1e90e983db1cc4357cfb07421abfcd637f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "32",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The correct zero row is selected from the baseline direction",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-tilted-left",
+      "modelId": "visual-wave2-baseline-reading",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "rotation": 18,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 180
+          },
+          {
+            "label": "B",
+            "mark": 68
+          }
+        ],
+        "scale": "outer",
+        "base": "A",
+        "target": "B"
+      },
+      "answer": "112",
+      "sourceRefs": [
+        {
+          "sourceId": "7fcca51173a52c30",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level1.json#6",
+      "sourceCanonicalSha256": "f45eb7fc87c1a5181d1383a7b56ac798698ead1dda2a59cbed739de5caecca47",
+      "sourceSkill": "Choosing the outer zero row even when the entire protractor is tilted",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 180°; OB — 68°. Құралдың бұрылуы: 18°.",
+      "image": "/figures/synaq-editions/visual-wave2-tilted-left.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Құрал қағазда бұрылып тұр. O — центр, OA сәулесі сыртқы қара шкаланың нөлімен беттеседі. ∠AOB бұрышын градуспен жазыңдар.",
+      "solution": "Нөл OA бағытында тұрған сыртқы қара шкаланы оқимыз. OB белгісі 112°-қа сәйкес келеді. Жауабы: 112°.",
+      "figureSha256": "7e155643447f64a88d64098cb9b6e69e1181eb75cb0ad20f7f04d89b9aaff10c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "112",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The correct zero row is selected from the baseline direction",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-wide-left",
+      "modelId": "visual-wave2-baseline-reading",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 180
+          },
+          {
+            "label": "B",
+            "mark": 25
+          }
+        ],
+        "scale": "outer",
+        "base": "A",
+        "target": "B"
+      },
+      "answer": "155",
+      "sourceRefs": [
+        {
+          "sourceId": "f8e42a6227b4f245",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level1.json#7",
+      "sourceCanonicalSha256": "7e1d4825fecdbd830489ff527a8b34202d2f2af5361daa5e0da63110cbde5cea",
+      "sourceSkill": "Reading the obtuse angle from a left baseline rather than the acute reverse-scale number",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 180°; OB — 25°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-wide-left.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. O — центр, OA сәулесі сыртқы қара шкаланың нөлімен беттеседі. ∠AOB бұрышын градуспен жазыңдар.",
+      "solution": "Нөл OA бағытында тұрған сыртқы қара шкаланы оқимыз. OB белгісі 155°-қа сәйкес келеді. Жауабы: 155°.",
+      "figureSha256": "3523ef03b9905dfd2a6fd8576596e8afcf475a6341ec01a8938679e0722642fd",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "155",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The correct zero row is selected from the baseline direction",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-ignore-middle",
+      "modelId": "visual-wave2-named-target-reading",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "B",
+            "mark": 57
+          },
+          {
+            "label": "C",
+            "mark": 146
+          }
+        ],
+        "base": "A",
+        "target": "C"
+      },
+      "answer": "146",
+      "sourceRefs": [
+        {
+          "sourceId": "f1e625942eed05b1",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level1.json#8",
+      "sourceCanonicalSha256": "4056ad2062ceab837e81940c280924bae8f7094d1bf42a9984a283149deddd23",
+      "sourceSkill": "Selecting the named terminal ray while ignoring an unrelated intermediate ray",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OB — 57°; OC — 146°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-ignore-middle.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Сызбадағы OA, OB, OC сәулелеріне назар аударыңдар. ∠AOC бұрышын өлшеңдер; басқа сәулені есепке алмаңдар.",
+      "solution": "Ішкі шкалада OA — 0°, OC — 146°. Олардың айырмасы 146°. Өзге сәуле бұл бұрыштың қабырғасы емес.",
+      "figureSha256": "d5919660a8532a2d59652a4e49f7e164118ab233941cb30ef0279db5fe42702b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "146",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "Only the two requested rays are used; the distractor ray is ignored",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-select-scale",
+      "modelId": "visual-wave2-baseline-reading",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "B",
+            "mark": 68
+          }
+        ],
+        "scale": "inner",
+        "base": "A",
+        "target": "B"
+      },
+      "answer": "68",
+      "sourceRefs": [
+        {
+          "sourceId": "5d7ac5156e9d65cb",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level1.json#10",
+      "sourceCanonicalSha256": "04cbc923384e37174b9aad550432bb7ce2b856c24f7d1cc79499c81fbe169733",
+      "sourceSkill": "Selecting the zero row for a right-baseline acute angle on a double scale",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OB — 68°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-select-scale.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. O — центр, OA сәулесі ішкі көк шкаланың нөлімен беттеседі. ∠AOB бұрышын градуспен жазыңдар.",
+      "solution": "Нөл OA бағытында тұрған ішкі көк шкаланы оқимыз. OB белгісі 68°-қа сәйкес келеді. Жауабы: 68°.",
+      "figureSha256": "46c72ec02f8b490b0e723cae060a6750709ed2eafbd385016dc7a8aea0b422b6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "68",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The correct zero row is selected from the baseline direction",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-construction-point",
+      "modelId": "visual-wave2-construction-point",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "U",
+            "mark": 55,
+            "pointOnly": true
+          },
+          {
+            "label": "V",
+            "mark": 105,
+            "pointOnly": true
+          },
+          {
+            "label": "W",
+            "mark": 75,
+            "pointOnly": true
+          },
+          {
+            "label": "T",
+            "mark": 85,
+            "pointOnly": true
+          }
+        ],
+        "goal": 75,
+        "base": "A"
+      },
+      "answer": "W",
+      "sourceRefs": [
+        {
+          "sourceId": "2f3471d8d76538d3",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level1.json#12",
+      "sourceCanonicalSha256": "3e5a2e4c369eacd3979bd3896ff8a10e5d706259e5299a441521848ae0532179",
+      "sourceSkill": "Choosing a marked construction point for a given angle, including the reverse-scale distractor",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OU — 55° (белгіленген нүкте); OV — 105° (белгіленген нүкте); OW — 75° (белгіленген нүкте); OT — 85° (белгіленген нүкте). Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-construction-point.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "options": [
+        "U",
+        "V",
+        "W",
+        "T"
+      ],
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Дана OA сәулесінен бастап 75° бұрыш салмақ. Екінші қабырғасы құралда белгіленген қай нүкте арқылы өтуі керек? Нүктенің әрпін таңдаңдар.",
+      "solution": "OA нөлдік бағытынан 75°-ты ішкі шкаладан белгілейміз. Сол белгіде W нүктесі тұр. Қарама-қарсы шкаладағы 75 саны басқа бағытты береді.",
+      "figureSha256": "5fa541eaf405e86cb93f3f40d98934f8b61a9a63d0d3e6f3bff91b00515e6500",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "W",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "Every candidate point is tested against the requested angle, including the reverse-scale distractor",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-acute-left",
+      "modelId": "visual-wave2-baseline-reading",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 180
+          },
+          {
+            "label": "B",
+            "mark": 138
+          }
+        ],
+        "scale": "outer",
+        "base": "A",
+        "target": "B"
+      },
+      "answer": "42",
+      "sourceRefs": [
+        {
+          "sourceId": "fd1440f257372ea5",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level1.json#13",
+      "sourceCanonicalSha256": "194330d44b13af6110f6281bb228600e42be38e5d0d197787057073b65d2bef9",
+      "sourceSkill": "Acute-angle reading with a left-origin baseline and the appropriate outer scale",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 180°; OB — 138°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-acute-left.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. O — центр, OA сәулесі сыртқы қара шкаланың нөлімен беттеседі. ∠AOB бұрышын градуспен жазыңдар.",
+      "solution": "Нөл OA бағытында тұрған сыртқы қара шкаланы оқимыз. OB белгісі 42°-қа сәйкес келеді. Жауабы: 42°.",
+      "figureSha256": "c65ef4d9ab4115c422638e274d0e8e221c353c08eb6dde240d9837ba674035bf",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "42",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The correct zero row is selected from the baseline direction",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-tilted-precision",
+      "modelId": "visual-wave2-baseline-reading",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "rotation": -12,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "B",
+            "mark": 57
+          }
+        ],
+        "scale": "inner",
+        "base": "A",
+        "target": "B"
+      },
+      "answer": "57",
+      "sourceRefs": [
+        {
+          "sourceId": "da2fa7c6f70567bf",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level1.json#14",
+      "sourceCanonicalSha256": "4b6e9cca5df74ecc8a6af00d60534f4541fe37c5149ea27c3496e45524652321",
+      "sourceSkill": "Precise acute reading on a tilted instrument without substituting its complementary scale",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OB — 57°. Құралдың бұрылуы: -12°.",
+      "image": "/figures/synaq-editions/visual-wave2-tilted-precision.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Құрал қағазда бұрылып тұр. O — центр, OA сәулесі ішкі көк шкаланың нөлімен беттеседі. ∠AOB бұрышын градуспен жазыңдар.",
+      "solution": "Нөл OA бағытында тұрған ішкі көк шкаланы оқимыз. OB белгісі 57°-қа сәйкес келеді. Жауабы: 57°.",
+      "figureSha256": "17ef3571ae5196aefbd95ee2f7067830fa18406c7dc354204761bee4db3d2c3d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "57",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The correct zero row is selected from the baseline direction",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-below-instrument",
+      "modelId": "visual-wave2-external-supplement",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "rotation": 12,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "B",
+            "mark": 180
+          },
+          {
+            "label": "C",
+            "mark": 76
+          },
+          {
+            "label": "D",
+            "mark": 256,
+            "outside": true
+          }
+        ],
+        "base": "A",
+        "visible": "C",
+        "opposite": "D"
+      },
+      "answer": "104",
+      "sourceRefs": [
+        {
+          "sourceId": "87ab2e109e092f7c",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level2.json#0",
+      "sourceCanonicalSha256": "9e01cfdcb642cb9decbeffda5f6b58373dadfbb38525efd8b6fd83625195a075",
+      "sourceSkill": "Measuring a visible ray and using its opposite ray below the instrument to obtain a supplementary angle",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OB — 180°; OC — 76°; OD — 256° (құралдан тыс). Құралдың бұрылуы: 12°.",
+      "image": "/figures/synaq-editions/visual-wave2-below-instrument.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Құрал қағазда бұрылып тұр. C, O және D бір түзудің бойында, O олардың арасында жатыр. OD сәулесі құралдың төменгі жағында берілген. ∠AOD бұрышын табыңдар.",
+      "solution": "∠AOC = 76°. COD — түзу, сондықтан сұралған бұрыш 180° − 76° = 104°.",
+      "figureSha256": "47e974d8f878fabcfcf7589b1a71834851455a15da092833ef331cfbfa214efc",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "104",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The requested ray below the instrument is opposite the visible ray; their adjacent angles sum to 180",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-test-bisector",
+      "modelId": "visual-wave2-bisector-check",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "C",
+            "mark": 52
+          },
+          {
+            "label": "B",
+            "mark": 104
+          }
+        ],
+        "base": "A",
+        "middle": "C",
+        "target": "B"
+      },
+      "answer": "Иә: 52° және 52°",
+      "sourceRefs": [
+        {
+          "sourceId": "cfaacf7ee97c91b1",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level2.json#1",
+      "sourceCanonicalSha256": "9552e28751cb6c79836de4faae123488a8bf726eb919e41b67c8394b66c2a2ec",
+      "sourceSkill": "Testing a claimed bisector by separately comparing its two adjacent measured angles",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OC — 52°; OB — 104°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-test-bisector.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "options": [
+        "Жоқ: 52° және 104°",
+        "Иә: 52° және 52°",
+        "Жоқ: 48° және 56°",
+        "Иә: 104° және 104°"
+      ],
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Әли OC сәулесін ∠AOB бұрышының биссектрисасы деп атады. Оның пікірі дұрыс па? Екі бөліктің өлшемі көрсетілген жауапты таңдаңдар.",
+      "solution": "∠AOC = 52°, ∠COB = 52°. Бұл екі өлшем тең, демек сәуле бұрыштың биссектрисасы.",
+      "figureSha256": "358e8661a84dfe61a0ac3ba20833218900ee444bae6692f98006ae92e45b58b2",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "Иә: 52° және 52°",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "Both adjacent angles are separately measured and compared; a candidate is not assumed to bisect",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-two-nonzero",
+      "modelId": "visual-wave2-nonzero-reading",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 152
+          },
+          {
+            "label": "B",
+            "mark": 29
+          }
+        ],
+        "base": "A",
+        "target": "B"
+      },
+      "answer": "123",
+      "sourceRefs": [
+        {
+          "sourceId": "a004eaa7f42e9f3b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level2.json#2",
+      "sourceCanonicalSha256": "3ad6650a2dd194d68a8f4ee94c05bb70876e89ae08eb07d26d2abcd54d4e2540",
+      "sourceSkill": "Measuring an angle whose two sides are both away from the scale zero",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 152°; OB — 29°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-two-nonzero.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Бұл жолы ∠AOB бұрышының ешбір қабырғасы шкаланың нөлімен беттеспейді. Бұрыштың өлшемін табыңдар.",
+      "solution": "Бір ғана ішкі шкаламен оқимыз: OA — 152°, OB — 29°. Үлкен саннан кішісін азайтамыз: 152° − 29° = 123°. Екі шкаланың сандарын араластыруға болмайды.",
+      "figureSha256": "ee11b404ba6ff87ebd975bffcfa57d425692f7dcfbf40899b5f7a12bb6dccf5e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "123",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The smaller angle is recomputed using both ray vectors, not mixed scale rows",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-between-two",
+      "modelId": "visual-wave2-difference-rays",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "C",
+            "mark": 46
+          },
+          {
+            "label": "B",
+            "mark": 121
+          }
+        ],
+        "reference": "A",
+        "base": "C",
+        "target": "B"
+      },
+      "answer": "75",
+      "sourceRefs": [
+        {
+          "sourceId": "26e9350d03de4ead",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level2.json#4",
+      "sourceCanonicalSha256": "80584c33abd0643a831d74cf6ce0865914f87de4effc490756fbb32a3aaec99d",
+      "sourceSkill": "Subtracting two nonzero ray readings while ignoring a separate zero-reference ray",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OC — 46°; OB — 121°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-between-two.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. OA сәулесі нөлдік бағытты көрсетеді. ∠COB бұрышын өлшеңдер.",
+      "solution": "Бір ғана ішкі шкаламен оқимыз: OC — 46°, OB — 121°. Үлкен саннан кішісін азайтамыз: 121° − 46° = 75°. Екі шкаланың сандарын араластыруға болмайды.",
+      "figureSha256": "0375bd5cc8f04e71ea281651e4db7976f4092781ae976e95c79f294ed9609e0d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "75",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The smaller angle is recomputed using both ray vectors, not mixed scale rows",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-three-inclined",
+      "modelId": "visual-wave2-named-ray-difference",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "E",
+            "mark": 180
+          },
+          {
+            "label": "F",
+            "mark": 0
+          },
+          {
+            "label": "K",
+            "mark": 149
+          },
+          {
+            "label": "L",
+            "mark": 83
+          },
+          {
+            "label": "N",
+            "mark": 31
+          }
+        ],
+        "baselineLeft": "E",
+        "baselineRight": "F",
+        "base": "K",
+        "target": "L"
+      },
+      "answer": "66",
+      "sourceRefs": [
+        {
+          "sourceId": "65af0bf2bfe4aece",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level2.json#6",
+      "sourceCanonicalSha256": "b9112f3cae75f7ab0575ef4d39a346f09a158bc62e996a119c4312263370a8f7",
+      "sourceSkill": "Choosing the correct nonzero pair among three inclined rays and a straight baseline",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OE — 180°; OF — 0°; OK — 149°; OL — 83°; ON — 31°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-three-inclined.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. E, O және F бір түзудің бойында. Үш көлбеу сәуленің ішінен ∠KOL бұрышын ғана өлшеңдер.",
+      "solution": "Бір ғана ішкі шкаламен оқимыз: OK — 149°, OL — 83°. Үлкен саннан кішісін азайтамыз: 149° − 83° = 66°. Екі шкаланың сандарын араластыруға болмайды.",
+      "figureSha256": "6f0c7afcdf2c9257ed598126dacd91e52f6203b4efa820f1867c34c5abd54e6a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "66",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The smaller angle is recomputed using both ray vectors, not mixed scale rows",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-opposite-baseline",
+      "modelId": "visual-wave2-baseline-supplement",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "E",
+            "mark": 180
+          },
+          {
+            "label": "B",
+            "mark": 61
+          }
+        ],
+        "baselineLeft": "E",
+        "baselineRight": "A",
+        "target": "B"
+      },
+      "answer": "119",
+      "sourceRefs": [
+        {
+          "sourceId": "17d1f7278fb2c0e8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level2.json#7",
+      "sourceCanonicalSha256": "94978f2a98eb3a3f96d28899bb48d78662e2882a3d7205885d86927cd5660eb5",
+      "sourceSkill": "Finding the angle to the opposite baseline by supplementing the measured acute angle",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OE — 180°; OB — 61°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-opposite-baseline.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. E, O және A бір түзудің бойында, O олардың арасында. ∠BOE бұрышын градуспен табыңдар.",
+      "solution": "∠AOB = 61°. Жазыңқы бұрыш 180°, сондықтан ∠BOE = 180° − 61° = 119°.",
+      "figureSha256": "55fcc029c8fe2726af36d2956829040d7686942ede616eb6e177c386d6280b25",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "119",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The opposite baseline is included rather than the measured acute angle returned",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-construct-half",
+      "modelId": "visual-wave2-construct-bisector",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "B",
+            "mark": 146
+          }
+        ],
+        "base": "A",
+        "target": "B",
+        "future": "C"
+      },
+      "answer": "73",
+      "sourceRefs": [
+        {
+          "sourceId": "c0a9129a701e4e88",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level2.json#12",
+      "sourceCanonicalSha256": "21157ddec3f56b60843ffc6c789e213f9ade92a83a8128828e72a512b1fbf8f6",
+      "sourceSkill": "Determining the scale mark of an internal bisector when one boundary is at zero",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OB — 146°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-construct-half.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. OC сәулесін ∠AOB бұрышының биссектрисасы етіп салу керек. Ол ішкі көк шкаланың қай белгісі арқылы өтеді? OC әзірше сызылмаған.",
+      "solution": "∠AOB = 146°. Оның жартысы 146° : 2 = 73°. Нөл OA бағытында болғандықтан, ізделген ішкі белгі — 73°.",
+      "figureSha256": "4c36fe934058189d991f4dcb69a8502cc9fee4a805aa2242d43c5a4f71763e3c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "73",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The internal bisector is obtained from the sum of unit direction vectors",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-nonzero-offset",
+      "modelId": "visual-wave2-nonzero-reading",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 35
+          },
+          {
+            "label": "B",
+            "mark": 119
+          }
+        ],
+        "base": "A",
+        "target": "B"
+      },
+      "answer": "84",
+      "sourceRefs": [
+        {
+          "sourceId": "d1ac745bb7813812",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level2.json#14",
+      "sourceCanonicalSha256": "d8f0c6a28b79e837e26a10ab50b847d69271268e0a2254150bb6d7238085caf8",
+      "sourceSkill": "Measuring from two nonzero inner-scale marks rather than treating one mark as the whole angle",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 35°; OB — 119°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-nonzero-offset.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Бұл жолы ∠AOB бұрышының ешбір қабырғасы шкаланың нөлімен беттеспейді. Бұрыштың өлшемін табыңдар.",
+      "solution": "Бір ғана ішкі шкаламен оқимыз: OA — 35°, OB — 119°. Үлкен саннан кішісін азайтамыз: 119° − 35° = 84°. Екі шкаланың сандарын араластыруға болмайды.",
+      "figureSha256": "c28931ff6196a3912be2c6bbd20a362a5007eb6e24aa02ff2abcc13460590f81",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "84",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The smaller angle is recomputed using both ray vectors, not mixed scale rows",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-tilted-offset",
+      "modelId": "visual-wave2-nonzero-reading",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "rotation": -14,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 33
+          },
+          {
+            "label": "B",
+            "mark": 119
+          }
+        ],
+        "base": "A",
+        "target": "B"
+      },
+      "answer": "86",
+      "sourceRefs": [
+        {
+          "sourceId": "e3965ed57137fde1",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level2.json#15",
+      "sourceCanonicalSha256": "0162c2e33eda10e3e46db2f9f19b4fead15890e528fa72573b3baeb7f5374ba8",
+      "sourceSkill": "Consistent-scale subtraction when neither side is at zero and the instrument is rotated",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 33°; OB — 119°. Құралдың бұрылуы: -14°.",
+      "image": "/figures/synaq-editions/visual-wave2-tilted-offset.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Құрал қағазда бұрылып тұр. Бұл жолы ∠AOB бұрышының ешбір қабырғасы шкаланың нөлімен беттеспейді. Бұрыштың өлшемін табыңдар.",
+      "solution": "Бір ғана ішкі шкаламен оқимыз: OA — 33°, OB — 119°. Үлкен саннан кішісін азайтамыз: 119° − 33° = 86°. Екі шкаланың сандарын араластыруға болмайды.",
+      "figureSha256": "b7814cd519fc24e19e0ea36009df2967d4699a1fbed4edf83a75a0b6db9cb869",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "86",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The smaller angle is recomputed using both ray vectors, not mixed scale rows",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-compare-adjacent",
+      "modelId": "visual-wave2-adjacent-difference",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "rotation": 15,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 21
+          },
+          {
+            "label": "B",
+            "mark": 69
+          },
+          {
+            "label": "C",
+            "mark": 153
+          }
+        ],
+        "first": "A",
+        "middle": "B",
+        "last": "C"
+      },
+      "answer": "36",
+      "sourceRefs": [
+        {
+          "sourceId": "8b945166178e4a90",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level3.json#0",
+      "sourceCanonicalSha256": "6bbbc878c4a68bbc5441fc02780ea75a2f445149288de7777299aed83a6d0eb0",
+      "sourceSkill": "Finding the difference of two adjacent measured angles on a rotated protractor",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 21°; OB — 69°; OC — 153°. Құралдың бұрылуы: 15°.",
+      "image": "/figures/synaq-editions/visual-wave2-compare-adjacent.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Құрал қағазда бұрылып тұр. ∠BOC бұрышы ∠AOB бұрышынан неше градус үлкен?",
+      "solution": "∠AOB = 69° − 21° = 48°. ∠BOC = 153° − 69° = 84°. Айырмасы: 84° − 48° = 36°.",
+      "figureSha256": "6a77e615d316aaa9c6ca1ee1b8f24f02f2ad146345fd12c34101cafcad644116",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "36",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "Two adjacent measured angles are compared, rather than returning either one",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-bisector-offset",
+      "modelId": "visual-wave2-bisector-offset",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "E",
+            "mark": 180
+          },
+          {
+            "label": "F",
+            "mark": 0
+          },
+          {
+            "label": "K",
+            "mark": 162
+          },
+          {
+            "label": "L",
+            "mark": 106
+          },
+          {
+            "label": "N",
+            "mark": 26
+          }
+        ],
+        "first": "K",
+        "middle": "L",
+        "last": "N",
+        "future": "P"
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "b99d20ee1e508d17",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level3.json#1",
+      "sourceCanonicalSha256": "d06a671d9d1b6389be9f87268119aa5718a20d0ebf60a2cee99fd04297ecdebb",
+      "sourceSkill": "Constructing the bisector of two nonzero rays before finding its offset from a third ray",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OE — 180°; OF — 0°; OK — 162°; OL — 106°; ON — 26°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-bisector-offset.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. OP сәулесі ∠KON бұрышын тең екіге бөлуі керек. Осы сәуле салынғанда ∠LOP неше градус болады? OP суретте әлі салынбаған.",
+      "solution": "Биссектриса ішкі шкаладағы (162° + 26°) : 2 = 94° белгісінен өтеді. OL — 106°, сондықтан ізделген бұрыш 106° − 94° = 12°.",
+      "figureSha256": "6b12b334f0bea633f2f55fbbf2bfdeb882b6db69e65735e503a87637240deb3e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The missing bisector direction is constructed before its angle to the third ray is measured",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-avoid-mixed-rows",
+      "modelId": "visual-wave2-mixed-scale-reading",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "P",
+            "mark": 164
+          },
+          {
+            "label": "Q",
+            "mark": 39
+          }
+        ],
+        "base": "P",
+        "target": "Q"
+      },
+      "answer": "125",
+      "sourceRefs": [
+        {
+          "sourceId": "747aeb9caacf0267",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level3.json#2",
+      "sourceCanonicalSha256": "d08aba4644781b314c60b4b779c36206458b48088f37c6fb8c983c072b917fb9",
+      "sourceSkill": "Avoiding a mixed inner/outer-row subtraction when both angle sides are nonzero",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OP — 164°; OQ — 39°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-avoid-mixed-rows.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Сәулелер екі шкалада да әртүрлі сандарға сәйкес келеді. Бір шкаланы ғана пайдаланып, ∠POQ бұрышын табыңдар.",
+      "solution": "Бір ғана ішкі шкаламен оқимыз: OP — 164°, OQ — 39°. Үлкен саннан кішісін азайтамыз: 164° − 39° = 125°. Екі шкаланың сандарын араластыруға болмайды.",
+      "figureSha256": "5d85665e7c90a1e5bd3d101fc57554c00ba35de9c5674e8fbe4df90bb03d9157",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "125",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The smaller angle is recomputed using both ray vectors, not mixed scale rows",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-bisector-other-row",
+      "modelId": "visual-wave2-bisector-crossscale",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "rotation": -16,
+        "rays": [
+          {
+            "label": "M",
+            "mark": 37
+          },
+          {
+            "label": "N",
+            "mark": 153
+          }
+        ],
+        "base": "M",
+        "target": "N",
+        "future": "K"
+      },
+      "answer": "95",
+      "sourceRefs": [
+        {
+          "sourceId": "dff804f49a3e463c",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level3.json#3",
+      "sourceCanonicalSha256": "fe11abecb263d26784e3e250a345633ebb99b432364baff01f810930b70f3eb7",
+      "sourceSkill": "Bisecting a nonzero-origin angle and converting the midpoint to the specifically requested inner scale",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OM — 37°; ON — 153°. Құралдың бұрылуы: -16°.",
+      "image": "/figures/synaq-editions/visual-wave2-bisector-other-row.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Құрал қағазда бұрылып тұр. ∠MON бұрышының OK биссектрисасын салғанда, ол ішкі көк шкалада қай санға сәйкес келеді? Биссектриса сызбада берілмеген.",
+      "solution": "Сыртқы шкаладағы шеткі белгілер: 143° және 27°. Биссектриса олардың ортасында: (143 + 27) : 2 = 85°. Сол бағыттың ішкі белгісі 180° − 85° = 95°.",
+      "figureSha256": "d84ab5737488390a378b4eb7bcf011272d34e22e9bacc0bbcd8deab6152685d6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "95",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The nonzero-origin angle is bisected and the result is expressed on the requested inner scale",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-equal-named-angle",
+      "modelId": "visual-wave2-equal-angle",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "P",
+            "mark": 0
+          },
+          {
+            "label": "Q",
+            "mark": 31
+          },
+          {
+            "label": "R",
+            "mark": 97
+          },
+          {
+            "label": "S",
+            "mark": 128
+          },
+          {
+            "label": "T",
+            "mark": 180
+          }
+        ],
+        "base": "P",
+        "target": "R",
+        "candidates": [
+          [
+            "R",
+            "T"
+          ],
+          [
+            "Q",
+            "S"
+          ],
+          [
+            "P",
+            "S"
+          ],
+          [
+            "Q",
+            "R"
+          ]
+        ]
+      },
+      "answer": "∠QOS",
+      "sourceRefs": [
+        {
+          "sourceId": "3b44c38bab048b07",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level3.json#4",
+      "sourceCanonicalSha256": "ce8193598a13b20368dfcdf27d30d8e3273e50187b73acf58e6f33055e249df6",
+      "sourceSkill": "Comparing named angle differences and returning a matching angle label rather than a number",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OP — 0°; OQ — 31°; OR — 97°; OS — 128°; OT — 180°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-equal-named-angle.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "options": [
+        "∠ROT",
+        "∠QOS",
+        "∠POS",
+        "∠QOR"
+      ],
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Төмендегі бұрыштардың қайсысы ∠POR бұрышына тең? Әр бұрыштың екі қабырғасын да ескеріңдер.",
+      "solution": "∠POR = 97°. Нұсқаларды жеке тексереміз: ∠ROT = 83°; ∠QOS = 97°; ∠POS = 128°; ∠QOR = 66°. Тең бұрыш — ∠QOS.",
+      "figureSha256": "3483d497672fbd99906e2a848336567616157e207bcd26b52c04865ac60a48c6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "∠QOS",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "All named candidate angle pairs are measured and exactly one is equal",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-all-pair-sum",
+      "modelId": "visual-wave2-pair-sum",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "B",
+            "mark": 34
+          },
+          {
+            "label": "C",
+            "mark": 82
+          },
+          {
+            "label": "D",
+            "mark": 139
+          },
+          {
+            "label": "E",
+            "mark": 180
+          }
+        ]
+      },
+      "answer": "930",
+      "sourceRefs": [
+        {
+          "sourceId": "dba7f1f68b476604",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-level3.json#8",
+      "sourceCanonicalSha256": "2a0e95d20745d9e28d0dcffe9653be98d827f56f458060940260acdc9d5c29f1",
+      "sourceSkill": "Enumerating every unordered ray-pair angle, including the straight angle, then summing them",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OB — 34°; OC — 82°; OD — 139°; OE — 180°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-all-pair-sum.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Белгіленген 5 сәуленің әр жұбы арасындағы кіші бұрышты бір реттен есептеңдер. Жазыңқы бұрыш та есепке кіреді. Осы бұрыштардың өлшемдерінің қосындысы неше градус?",
+      "solution": "Әр жұпты бір рет аламыз. A сәулесінен: 34 + 82 + 139 + 180 = 435°; B сәулесінен: 48 + 105 + 146 = 299°; C сәулесінен: 57 + 98 = 155°; D сәулесінен: 41 = 41°. Барлығы: 435 + 299 + 155 + 41 = 930°.",
+      "figureSha256": "6307d1b2fd7aeacb48ca80f2a9e7fcdd30ec5605beaa00b0c0ee5dba580e7762",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "930",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "Every unordered ray pair is enumerated exactly once, including the straight angle",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-identify-ray",
+      "modelId": "visual-wave2-identify-ray",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "B",
+            "mark": 62
+          },
+          {
+            "label": "C",
+            "mark": 108
+          },
+          {
+            "label": "D",
+            "mark": 118
+          },
+          {
+            "label": "E",
+            "mark": 128
+          }
+        ],
+        "base": "A",
+        "goal": 118
+      },
+      "answer": "OD",
+      "sourceRefs": [
+        {
+          "sourceId": "95e48cbc55d062f2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-leveltest.json#0",
+      "sourceCanonicalSha256": "91086d320a7af738b1ead9d1cd1bed5ef08f3b7af8aeebd8d5952b8e65c22794",
+      "sourceSkill": "Identifying a named ray for a prescribed angle while rejecting an opposite-scale match",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OB — 62°; OC — 108°; OD — 118°; OE — 128°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-identify-ray.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "options": [
+        "OB",
+        "OC",
+        "OD",
+        "OE"
+      ],
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. OA сәулесінен басталатын 118° бұрыштың екінші қабырғасы қай сәуле болады? Сәуленің атын таңдаңдар.",
+      "solution": "Нөл OA бағытында. Ішкі шкаладағы 118° белгісіне OD сәулесі сәйкес келеді. Екінші шкаладан дәл сол санды іздеу басқа сәулені таңдауға әкеледі.",
+      "figureSha256": "8f8622fd966d0c5dd83131e0b1fd18de6b39135d7e565b46d4317cee7b1d6372",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "OD",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "Each named ray is tested from the stated baseline, including the opposite-scale trap",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-double-construction",
+      "modelId": "visual-wave2-twice-angle",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "M",
+            "mark": 0
+          },
+          {
+            "label": "N",
+            "mark": 43
+          }
+        ],
+        "base": "M",
+        "target": "N",
+        "future": "P"
+      },
+      "answer": "86",
+      "sourceRefs": [
+        {
+          "sourceId": "2699b11a5615279e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-leveltest.json#1",
+      "sourceCanonicalSha256": "fa06c327f95c640d50435cb0ec4ad5646919af80d9941fd1e1a4896d22c579b9",
+      "sourceSkill": "Measuring an angle before constructing its double in the same half-plane",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OM — 0°; ON — 43°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-double-construction.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. ∠MOP бұрышын ∠MON бұрышынан екі есе үлкен етіп, сол жарты жазықтықта салу керек. OP ішкі көк шкаланың қай белгісі арқылы өтеді?",
+      "solution": "Алдымен ∠MON = 43° екенін оқимыз. Екі есесі: 43° × 2 = 86°. Бұл 180°-тан кіші, сондықтан берілген жарты жазықтықта ішкі шкаланың 86° белгісін аламыз.",
+      "figureSha256": "f642c8998e1baf310ac779516eae215e892a364e463c8f04adb9590bc7b28f9c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "86",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "The measured direction is composed with itself, within the same half-plane",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-supplement-gap",
+      "modelId": "visual-wave2-supplement-difference",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "E",
+            "mark": 180
+          },
+          {
+            "label": "F",
+            "mark": 0
+          },
+          {
+            "label": "K",
+            "mark": 136
+          }
+        ],
+        "left": "E",
+        "right": "F",
+        "target": "K"
+      },
+      "answer": "92",
+      "sourceRefs": [
+        {
+          "sourceId": "611ac0b41aebe4c3",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-leveltest.json#6",
+      "sourceCanonicalSha256": "55c30a3dce85e9229283793f3e1e5341ca4db0917217fdf71f25cab0471e5712",
+      "sourceSkill": "Comparing both supplementary angles instead of returning one measured angle",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OE — 180°; OF — 0°; OK — 136°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-supplement-gap.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. E, O және F бір түзудің бойында. ∠KOF бұрышы ∠EOK бұрышынан неше градус үлкен?",
+      "solution": "∠KOF = 136°, ∠EOK = 180° − 136° = 44°. Екеуінің айырмасы: 136° − 44° = 92°.",
+      "figureSha256": "cefee5dc521604d23ca6996022bf99c57818f08f0a5f9e5311e73d5b041dd87b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "92",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "Both supplementary angles are measured before their difference is taken",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave2-strict-acute-pairs",
+      "modelId": "visual-wave2-acute-count",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "rotation": 0,
+        "rays": [
+          {
+            "label": "A",
+            "mark": 0
+          },
+          {
+            "label": "B",
+            "mark": 30
+          },
+          {
+            "label": "C",
+            "mark": 60
+          },
+          {
+            "label": "D",
+            "mark": 100
+          },
+          {
+            "label": "E",
+            "mark": 150
+          },
+          {
+            "label": "F",
+            "mark": 180
+          }
+        ]
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "89786aaf67b06f06",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-2-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-2-leveltest.json#8",
+      "sourceCanonicalSha256": "c38208e8242dfc5ebbfc4be6558ac94c3a7224d8d7afc5681e45ff8f3b3191a4",
+      "sourceSkill": "Counting every strictly acute unordered ray pair, explicitly excluding a 90-degree pair",
+      "adaptationChanges": [
+        "Әр сақталған көрнекі тапсырманың нақты дағдысы жеке қаралып, жаңа шарт пен деректер жасалды.",
+        "Бұрыштар, белгілер және жауап қайта таңдалды; дұрыс жауап бағыт векторлары не барлық жұптарды тізу арқылы бөлек есептелді.",
+        "Транспортирдің екі шкаласы мен 181 белгісі жаңа геометриялық параметрлерден native SVG ретінде салынды; бастапқы сурет көшірілмеді.",
+        "Биссектриса мен бұрыш салу есептерінде ізделетін жаңа сәуле суретке дайын жауап ретінде қосылмады."
+      ],
+      "figureTitle": "Бұрыштарды өлшеу зертханасы",
+      "figureDescription": "Әр кіші белгі 1°. Ішкі шкала көк, сыртқы шкала қара. Ішкі шкаладағы бағыттар: OA — 0°; OB — 30°; OC — 60°; OD — 100°; OE — 150°; OF — 180°. Құралдың бұрылуы: 0°.",
+      "image": "/figures/synaq-editions/visual-wave2-strict-acute-pairs.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent per-source skill, answer, both scale rows, exact marks and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-wave2-models.mjs",
+      "statement": "Транспортирдің әр кіші бөлігі 1°-қа тең. Белгіленген 6 сәуленің әр жұбы арасындағы кіші бұрыш қарастырылады. Неше сүйір бұрыш бар? Өлшемі дәл 90° болатын бұрышты санамаңдар.",
+      "solution": "Кіші бұрыштың өлшемі шкала белгілерінің айырмасына тең. Айырмасы 90°-тан кіші жұптар: ∠AOB, ∠AOC, ∠BOC, ∠BOD, ∠COD, ∠DOE, ∠DOF, ∠EOF. Барлығы 8 сүйір бұрыш. Айырмасы дәл 90° болса, ол тік бұрыш және бұл санға кірмейді.",
+      "figureSha256": "df0a3c75301366dea117a62b3e17ec03ba181311e8a45ec667d04ad3aea47bbe",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": [
+          "Direction vectors are recomputed from the authored marks, independently of the SVG coordinates",
+          "All unordered pairs are checked against the strict acute threshold; exactly 90 degrees is excluded",
+          "The condition, solution, accessible figure and SVG digest are all bound to the same authored parameters"
+        ]
+      }
+    }
+  ]
+}

@@ -5,6 +5,12 @@ export function trainingDayKey(now = new Date()) {
   return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Almaty', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
 }
 
+// Derive the stopwatch from the session clock, not throttled interval ticks.
+export function trainingElapsed(session, now = Date.now()) {
+  if (!Number.isFinite(session?.startedAt)) return 0;
+  return Math.max(0, Math.floor((now + (session.clockOffsetMs || 0) - session.startedAt) / 1000));
+}
+
 export function trainingQuestion(question) {
   const { answer: _answer, solution: _solution, ...publicQuestion } = question || {};
   return publicQuestion;

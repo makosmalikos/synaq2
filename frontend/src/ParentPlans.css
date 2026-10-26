@@ -1,0 +1,33 @@
+.parent-plans{padding:5px 0 22px;font-family:Manrope,'Golos Text',sans-serif}
+.parent-account-settings>.parent-plans{margin:0 22px}
+.parent-plans-heading{margin:0 0 22px;padding-top:8px}
+.parent-app .parent-plans-heading h2{font:750 24px/1.3 Manrope,'Golos Text',sans-serif;margin:0 0 8px;color:#192c44}
+.parent-plans-heading p{font:400 14px/1.7 'Golos Text',sans-serif;color:#61738d;margin:0}
+.parent-plans-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.family-plan{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #dde5f1;border-radius:22px;padding:23px}
+.family-plan.is-current{border:2px solid #3c56df;padding:22px;background:#f4f6ff}
+.family-plan-mentor{background:#faf8ff;border-color:#e1dcf3}
+.family-plan-label{display:flex;justify-content:space-between;align-items:center;gap:9px;margin-bottom:19px;min-height:34px}
+.family-plan-symbol{display:grid;place-items:center;width:35px;height:35px;border-radius:11px;background:#edf1ff;color:#4860bf;font-size:12px;font-weight:750}
+.family-plan-mentor .family-plan-symbol{background:#eee7ff;color:#7650bf}
+.family-plan-badge{display:flex;align-items:center;gap:4px;padding:6px 8px;border-radius:8px;background:#e3e9ff;color:#3450b3;font-size:11px;font-weight:650;line-height:1.5}
+.family-plan-badge svg{width:15px;height:15px}
+.parent-app .family-plan h3{font:750 21px/1.35 Manrope,'Golos Text',sans-serif;color:#192c44;margin:0 0 7px}
+.family-plan-intro{font:400 13px/1.6 'Golos Text',sans-serif;color:#61738d;margin:0;min-height:42px}
+.family-plan-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px;margin:21px 0 23px;color:#192c44;line-height:1.2;min-height:37px}
+.family-plan-price strong{font:800 clamp(25px,2.5vw,31px)/1.2 Manrope,'Golos Text',sans-serif;letter-spacing:-.04em}
+.family-plan-price small,.family-plan-price>span{font:500 13px/1.6 'Golos Text',sans-serif;color:#61738d}
+.family-plan ul{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:13px}
+.family-plan li{display:flex;gap:8px;align-items:flex-start;font:400 14px/1.65 'Golos Text',sans-serif;color:#394f69}
+.family-plan li svg{color:#4763cf;width:17px;height:17px;flex:none;margin-top:3px}
+.family-plan-actions{display:grid;gap:9px;margin-top:auto}
+.family-plan-actions button{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:47px;width:100%;border:0;border-radius:12px;padding:12px 14px;background:#d8ff89;color:#203a29;font:650 12px/1.6 Manrope,'Golos Text',sans-serif;text-align:left;cursor:pointer}
+.family-plan-actions button+button{background:white;border:1px solid #dce4ef;color:#405779}
+.family-plan-actions button:disabled{opacity:.6;cursor:default}
+.family-plan-actions svg{flex:none}
+.family-plan-active{display:flex;align-items:center;gap:7px;background:#e4f3e9;color:#216e4b;border-radius:11px;padding:11px 12px;font:650 13px/1.6 'Golos Text',sans-serif;margin:0}
+.family-plan-active svg{flex:none;width:18px;height:18px}
+.family-plan-footnote,.family-plan-included{font:400 12px/1.7 'Golos Text',sans-serif;color:#61738d;margin:0 0 8px}
+.family-plan-included{padding:11px 0;margin:0;color:#3d5e9d}
+@media(max-width:1000px){.parent-plans-grid{grid-template-columns:1fr}.family-plan{padding:23px}.family-plan.is-current{padding:22px}.family-plan-intro{min-height:0}.family-plan-price strong{font-size:30px}.family-plan-actions button{font-size:13px}.family-plan-label{margin-bottom:15px}.family-plan-price{margin:18px 0 20px}}
+@media(max-width:600px){.parent-account-settings>.parent-plans{margin:0 15px}}

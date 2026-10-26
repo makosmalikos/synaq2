@@ -1,0 +1,496 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All7 saved visual grade5topic2.1 sources only; no capture/download or traced art.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade5topic2.1",
+    "sourceVisualOccurrences": 7,
+    "addressedNewDrafts": 7,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "19c0c3a8fcb1c5e3",
+      "49fc192d0a31b813",
+      "4f05738b6dcfc303",
+      "68a6806d5a0d1130",
+      "72e2d0e96830c3a1",
+      "89dd74db3bec24f8",
+      "f1023fb9add326f8"
+    ],
+    "distinctModels": 7,
+    "semantics": "Seven distinct source targets separately addressed, with a finite available-box bound, unlabelled solution values and complete factor/toggle domains."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave32-thirty-five-apples-five-friends",
+      "modelId": "visual-wave32-pictured-divisor-choice",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "apples",
+        "rows": 5,
+        "columns": 7
+      },
+      "answer": "5",
+      "sourceRefs": [
+        {
+          "sourceId": "68a6806d5a0d1130",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-1-level1.json#8",
+      "sourceCanonicalSha256": "2ff040c45c96c9b9a633af9e8659ae3df939dddc30071ff6a61d0739eaf05403",
+      "sourceSkill": "Counting an exact pictured array, then choosing its positive divisor among distractors",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды дағды жеке сақталды: нұсқалар арасындағы бөлгіш, қорап саны шектелген еселік, координаталық сәуле, ең үлкен ортақ бөлгіш арқылы бөлу, реттелмеген жұптар және шам ауыстыруының жұп-тақтығы.",
+        "Алма қатары, қорап/қарындаш саны, қатаң шек, сәуле мәндері, қағаз өлшемдері, бақша/тіктөртбұрыш аудандары мен айырмасы және шам саны жаңа деректермен берілді.",
+        "Жаңа native SVG нақты объектілерден, тең аралықтардан және өлшем белгілерінен құрастырылды. Бақша/айнымалы қабырғалар масштабсыз деп анық жазылды. Бастапқы raster/traced SVG көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлгіштер мен еселіктер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/new fullsolution/MCQ review; actual35apples/8boxes/80initiallyofflamps, equal ray spacing, unsolved rectangle labels, square-pair central case and343px typography"
+      },
+      "image": "/figures/synaq-editions/visual-wave32-thirty-five-apples-five-friends.svg",
+      "verificationModule": "scripts/editorial/visual-wave32-models.mjs",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "8"
+      ],
+      "statement": "Суреттегі алмалардың бәрін достарға бірдей мөлшерде, қалдықсыз бөліп беру керек. Берілген нұсқалардың ішінен бұл алмаларды неше досқа тең бөліп беруге болатынын таңдаңыз.",
+      "solution": "Алмалар 5 қатарда, әр қатарда 7 алмадан: 5 × 7 = 35. Достар саны осы санның бөлгіші болуы керек. Нұсқаларға бөлгендегі қалдықтар: 35 : 4 — қалдық 3; 35 : 5 — қалдық 0; 35 : 6 — қалдық 5; 35 : 8 — қалдық 3. Тек 5 досқа бөлгенде қалдық жоқ, әрқайсысына 7 алмадан тиеді.",
+      "figureDescription": "5 қатар, әр қатарда 7 алма. Әр алма бөлек салынған.",
+      "figureSha256": "7065370b6d0634d4c790cb1a7840f527801f8763be97af5eb8d3b96644a44a1a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5",
+        "checks": {
+          "total": 35,
+          "portions": 7,
+          "remainders": [
+            3,
+            0,
+            5,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave32-eight-sealed-eleven-pencil-boxes",
+      "modelId": "visual-wave32-sealed-box-strict-maximum",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "boxes",
+        "boxes": 8,
+        "perBox": 11,
+        "limit": 66
+      },
+      "answer": "55",
+      "sourceRefs": [
+        {
+          "sourceId": "89dd74db3bec24f8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-1-level1.json#14",
+      "sourceCanonicalSha256": "33ed173817e8607cb706df61fe4820967b4d86b9f3aef646acd75135f596fc61",
+      "sourceSkill": "Maximizing an available whole-box multiple under a strict bound that is itself a multiple",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды дағды жеке сақталды: нұсқалар арасындағы бөлгіш, қорап саны шектелген еселік, координаталық сәуле, ең үлкен ортақ бөлгіш арқылы бөлу, реттелмеген жұптар және шам ауыстыруының жұп-тақтығы.",
+        "Алма қатары, қорап/қарындаш саны, қатаң шек, сәуле мәндері, қағаз өлшемдері, бақша/тіктөртбұрыш аудандары мен айырмасы және шам саны жаңа деректермен берілді.",
+        "Жаңа native SVG нақты объектілерден, тең аралықтардан және өлшем белгілерінен құрастырылды. Бақша/айнымалы қабырғалар масштабсыз деп анық жазылды. Бастапқы raster/traced SVG көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлгіштер мен еселіктер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/new fullsolution/MCQ review; actual35apples/8boxes/80initiallyofflamps, equal ray spacing, unsolved rectangle labels, square-pair central case and343px typography"
+      },
+      "image": "/figures/synaq-editions/visual-wave32-eight-sealed-eleven-pencil-boxes.svg",
+      "verificationModule": "scripts/editorial/visual-wave32-models.mjs",
+      "statement": "Суретте бар қораптардың әрқайсысында үстіне жазылғандай қарындаш бар. Қорапты ашуға болмайды, тек бүтін қораптар алынады. Осы қораптардан 66 қарындаштан қатаң аз болатын ең көп неше қарындаш алуға болады? Жауапқа тек санды жазыңыз.",
+      "solution": "Барлығы 8 қорап бар, әрқайсысында 11 қарындаш. Алынатын сан 11 санына еселік әрі 88 санынан аспайды. 66 санынан аз қолжетімді сандар: 0, 11, 22, 33, 44, 55. Ең үлкені 55 = 5 × 11. Келесі 66 саны 66 шегінен қатаң аз емес, сондықтан жарамайды. 5 қорап қолжетімді 8 қораптан аспайды.",
+      "figureDescription": "8 жабық қорап, әрқайсысының үстінде 11 саны жазылған.",
+      "figureSha256": "17f66c2ab6390f0b737ca8cf13d62fd0b6af1ea815c09741d05ce6ec404241df",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "55",
+        "checks": {
+          "eligible": [
+            0,
+            11,
+            22,
+            33,
+            44,
+            55
+          ],
+          "boxesTaken": 5,
+          "availableTotal": 88
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave32-first-multiple-twenty-three",
+      "modelId": "visual-wave32-first-multiple-ray",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "ray",
+        "labels": [
+          [
+            2,
+            46
+          ],
+          [
+            3,
+            69
+          ],
+          [
+            4,
+            92
+          ]
+        ]
+      },
+      "answer": "23",
+      "sourceRefs": [
+        {
+          "sourceId": "f1023fb9add326f8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-1-level2.json#1",
+      "sourceCanonicalSha256": "eb91d98d0c4a1a113ccd1e2e334d559b9e69c5c11fa88ecdca673e7236ca3e91",
+      "sourceSkill": "Reading equally spaced first multiples from a ray and distinguishing a value from its index",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды дағды жеке сақталды: нұсқалар арасындағы бөлгіш, қорап саны шектелген еселік, координаталық сәуле, ең үлкен ортақ бөлгіш арқылы бөлу, реттелмеген жұптар және шам ауыстыруының жұп-тақтығы.",
+        "Алма қатары, қорап/қарындаш саны, қатаң шек, сәуле мәндері, қағаз өлшемдері, бақша/тіктөртбұрыш аудандары мен айырмасы және шам саны жаңа деректермен берілді.",
+        "Жаңа native SVG нақты объектілерден, тең аралықтардан және өлшем белгілерінен құрастырылды. Бақша/айнымалы қабырғалар масштабсыз деп анық жазылды. Бастапқы raster/traced SVG көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлгіштер мен еселіктер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/new fullsolution/MCQ review; actual35apples/8boxes/80initiallyofflamps, equal ray spacing, unsolved rectangle labels, square-pair central case and343px typography"
+      },
+      "image": "/figures/synaq-editions/visual-wave32-first-multiple-twenty-three.svg",
+      "verificationModule": "scripts/editorial/visual-wave32-models.mjs",
+      "options": [
+        "46",
+        "23",
+        "115",
+        "2"
+      ],
+      "statement": "Координаталық сәуледе 0-ден бастап бірдей аралықпен x санының бірінші, екінші, үшінші және төртінші оң еселіктері берілген. Бірінші еселіктің мәні x деп белгіленген. x санын табыңыз.",
+      "solution": "Екінші еселік 46 = 2 × x, сондықтан x = 46 : 2 = 23. Үшінші еселік: 3 × 23 = 69, төртіншісі: 4 × 23 = 92. Көрші нүктелер арасындағы тұрақты айырма да 23. Екінші еселікті x-тің өзімен шатастырмаймыз.",
+      "figureDescription": "Координаталық сәуледе бірдей аралықпен 0, x, 46, 69, 92 белгілері орналасқан. x — бірінші оң еселік.",
+      "figureSha256": "13904f8536c7a0e3fa65e070f23bb26a3132782524282ccacc874651d388a6a3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "23",
+        "checks": {
+          "indexes": [
+            2,
+            3,
+            4
+          ],
+          "labelledValues": [
+            46,
+            69,
+            92
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave32-thirty-five-by-twenty-square-cuts",
+      "modelId": "visual-wave32-largest-square-cut-count",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "paper",
+        "length": 35,
+        "width": 20
+      },
+      "answer": "28",
+      "sourceRefs": [
+        {
+          "sourceId": "19c0c3a8fcb1c5e3",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-1-level2.json#3",
+      "sourceCanonicalSha256": "52569b7d0728021e322336b596e323c606717b0893a3bff9c9c2eb421ef2390c",
+      "sourceSkill": "Finding the largest common natural centimetre side, then counting a complete equal-square tiling",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды дағды жеке сақталды: нұсқалар арасындағы бөлгіш, қорап саны шектелген еселік, координаталық сәуле, ең үлкен ортақ бөлгіш арқылы бөлу, реттелмеген жұптар және шам ауыстыруының жұп-тақтығы.",
+        "Алма қатары, қорап/қарындаш саны, қатаң шек, сәуле мәндері, қағаз өлшемдері, бақша/тіктөртбұрыш аудандары мен айырмасы және шам саны жаңа деректермен берілді.",
+        "Жаңа native SVG нақты объектілерден, тең аралықтардан және өлшем белгілерінен құрастырылды. Бақша/айнымалы қабырғалар масштабсыз деп анық жазылды. Бастапқы raster/traced SVG көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлгіштер мен еселіктер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/new fullsolution/MCQ review; actual35apples/8boxes/80initiallyofflamps, equal ray spacing, unsolved rectangle labels, square-pair central case and343px typography"
+      },
+      "image": "/figures/synaq-editions/visual-wave32-thirty-five-by-twenty-square-cuts.svg",
+      "verificationModule": "scripts/editorial/visual-wave32-models.mjs",
+      "statement": "Өлшемдері суретте көрсетілген қағазды қалдық қалдырмай бірдей шаршыларға бөледі. Шаршы қабырғасы сантиметрмен натурал сан және мүмкіндігінше ең үлкен болуы керек. Барлығы неше шаршы шығады? Жауапқа тек санды жазыңыз.",
+      "solution": "Шаршының қабырғасы 35 және 20 сандарының ортақ бөлгіші болуы керек. Ортақ бөлгіштер: 1, 5. Ең үлкені 5 см. Ұзындық бойымен 35 : 5 = 7, ені бойымен 20 : 5 = 4 шаршы сыяды. Барлығы 7 × 4 = 28. Ауданды тексеру: 28 × 5 × 5 = 700 см², бастапқы қағаз ауданына тең.",
+      "figureDescription": "Қағаз тіктөртбұрыш: ұзындығы 35 см, ені 20 см. Ішкі бөлу сызықтары көрсетілмеген.",
+      "figureSha256": "675cee547d0b611d601d57da8bbabe42643e9bd58621e2e002441bc90fcfb08f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "28",
+        "checks": {
+          "common": [
+            1,
+            5
+          ],
+          "side": 5,
+          "along": 7,
+          "across": 4,
+          "wholeArea": 700
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave32-one-forty-four-garden-factor-pairs",
+      "modelId": "visual-wave32-unordered-garden-factor-pairs",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "garden",
+        "area": 144
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "49fc192d0a31b813",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-1-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-1-level3.json#0",
+      "sourceCanonicalSha256": "5e073aa9496ee9e344a31ca959134b97028ba6a5f41f24a3e2f270337fad015c",
+      "sourceSkill": "Enumerating all unordered positive integer factor pairs, including the central square once",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды дағды жеке сақталды: нұсқалар арасындағы бөлгіш, қорап саны шектелген еселік, координаталық сәуле, ең үлкен ортақ бөлгіш арқылы бөлу, реттелмеген жұптар және шам ауыстыруының жұп-тақтығы.",
+        "Алма қатары, қорап/қарындаш саны, қатаң шек, сәуле мәндері, қағаз өлшемдері, бақша/тіктөртбұрыш аудандары мен айырмасы және шам саны жаңа деректермен берілді.",
+        "Жаңа native SVG нақты объектілерден, тең аралықтардан және өлшем белгілерінен құрастырылды. Бақша/айнымалы қабырғалар масштабсыз деп анық жазылды. Бастапқы raster/traced SVG көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлгіштер мен еселіктер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/new fullsolution/MCQ review; actual35apples/8boxes/80initiallyofflamps, equal ray spacing, unsolved rectangle labels, square-pair central case and343px typography"
+      },
+      "image": "/figures/synaq-editions/visual-wave32-one-forty-four-garden-factor-pairs.svg",
+      "verificationModule": "scripts/editorial/visual-wave32-models.mjs",
+      "statement": "Ауданы суретте берілген бақшаның a және b қабырғалары метрмен натурал сандар. Қабырғаларының орнын ауыстырғанда бірдей өлшемдегі бақша шығады деп есептейміз. Шаршы да есепке кіреді. Неше түрлі өлшем жұбы болуы мүмкін? Сызба масштабсыз. Жауапқа тек санды жазыңыз.",
+      "solution": "a × b = 144. Қайталауды болдырмау үшін a ≤ b деп аламыз. Барлық жұп: 1 × 144; 2 × 72; 3 × 48; 4 × 36; 6 × 24; 8 × 18; 9 × 16; 12 × 12. 12 × 12 шаршысы бір рет саналады. Қабырғаларды керісінше жазу жаңа бақша бермейді. Сондықтан 8 түрлі өлшем жұбы бар.",
+      "figureDescription": "Масштабсыз тіктөртбұрыштың қабырғалары a м және b м, ауданы 144 м². a мен b-ның нақты мәндері көрсетілмеген.",
+      "figureSha256": "776d822b20b0a98a6de6d1222012e1bcd369dc1020611de4aa406fc8b009b54a",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": {
+          "pairs": [
+            [
+              1,
+              144
+            ],
+            [
+              2,
+              72
+            ],
+            [
+              3,
+              48
+            ],
+            [
+              4,
+              36
+            ],
+            [
+              6,
+              24
+            ],
+            [
+              8,
+              18
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              12,
+              12
+            ]
+          ],
+          "includesSquare": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave32-area-one-fifty-side-difference-five",
+      "modelId": "visual-wave32-factor-difference-perimeter",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "factor-rectangle",
+        "area": 150,
+        "difference": 5
+      },
+      "answer": "50",
+      "sourceRefs": [
+        {
+          "sourceId": "72e2d0e96830c3a1",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-1-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-1-level3.json#9",
+      "sourceCanonicalSha256": "f8e5474d0673af0df35df4bf6054449e3e76249e32108e08fd49fd41d321f285",
+      "sourceSkill": "Selecting the unique integer factor pair with a given side difference, then computing its full perimeter",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды дағды жеке сақталды: нұсқалар арасындағы бөлгіш, қорап саны шектелген еселік, координаталық сәуле, ең үлкен ортақ бөлгіш арқылы бөлу, реттелмеген жұптар және шам ауыстыруының жұп-тақтығы.",
+        "Алма қатары, қорап/қарындаш саны, қатаң шек, сәуле мәндері, қағаз өлшемдері, бақша/тіктөртбұрыш аудандары мен айырмасы және шам саны жаңа деректермен берілді.",
+        "Жаңа native SVG нақты объектілерден, тең аралықтардан және өлшем белгілерінен құрастырылды. Бақша/айнымалы қабырғалар масштабсыз деп анық жазылды. Бастапқы raster/traced SVG көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлгіштер мен еселіктер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/new fullsolution/MCQ review; actual35apples/8boxes/80initiallyofflamps, equal ray spacing, unsolved rectangle labels, square-pair central case and343px typography"
+      },
+      "image": "/figures/synaq-editions/visual-wave32-area-one-fifty-side-difference-five.svg",
+      "verificationModule": "scripts/editorial/visual-wave32-models.mjs",
+      "options": [
+        "25",
+        "50",
+        "60",
+        "150"
+      ],
+      "statement": "Сызбада тіктөртбұрыштың ауданы мен қабырғалары белгіленген. x — натурал сан, сызба масштабсыз. Периметрі неше сантиметр екенін таңдаңыз.",
+      "solution": "Қабырғалар 150 санының натурал көбейткіштер жұбы, ал айырмасы 5. Жұптар: 1 × 150; 2 × 75; 3 × 50; 5 × 30; 6 × 25; 10 × 15. Айырмасы 5 болатын жалғыз жұп — 10 және 15. Тексеру: 10 × 15 = 150. Периметр 2 × (10 + 15) = 50 см. Екі көрші қабырғаның қосындысы ғана толық периметр болмайды.",
+      "figureDescription": "Масштабсыз тіктөртбұрыштың қабырғалары x см және x + 5 см, ауданы 150 см². Қабырғалардың сандық шешімі көрсетілмеген.",
+      "figureSha256": "80ba719924ff094124e4c3efd7d1e6d9c30745f6b02bac059d8f39dd8d62d298",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "50",
+        "checks": {
+          "pairs": [
+            [
+              1,
+              150
+            ],
+            [
+              2,
+              75
+            ],
+            [
+              3,
+              50
+            ],
+            [
+              5,
+              30
+            ],
+            [
+              6,
+              25
+            ],
+            [
+              10,
+              15
+            ]
+          ],
+          "short": 10,
+          "long": 15,
+          "difference": 5
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave32-eighty-lamps-divisor-parity",
+      "modelId": "visual-wave32-divisor-parity-lamps",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "lamps",
+        "lamps": 80,
+        "rows": 8,
+        "columns": 10
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "4f05738b6dcfc303",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-1-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-1-leveltest.json#7",
+      "sourceCanonicalSha256": "a8fb20865205f5793ca4a9da11a2ba90da97ef2007b9a17b090569fd8d82e2e9",
+      "sourceSkill": "Linking successive multiples toggles to divisor parity and counting all square-labelled lamps",
+      "adaptationChanges": [
+        "Әр бастапқы визуалды дағды жеке сақталды: нұсқалар арасындағы бөлгіш, қорап саны шектелген еселік, координаталық сәуле, ең үлкен ортақ бөлгіш арқылы бөлу, реттелмеген жұптар және шам ауыстыруының жұп-тақтығы.",
+        "Алма қатары, қорап/қарындаш саны, қатаң шек, сәуле мәндері, қағаз өлшемдері, бақша/тіктөртбұрыш аудандары мен айырмасы және шам саны жаңа деректермен берілді.",
+        "Жаңа native SVG нақты объектілерден, тең аралықтардан және өлшем белгілерінен құрастырылды. Бақша/айнымалы қабырғалар масштабсыз деп анық жазылды. Бастапқы raster/traced SVG көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бөлгіштер мен еселіктер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7source/new fullsolution/MCQ review; actual35apples/8boxes/80initiallyofflamps, equal ray spacing, unsolved rectangle labels, square-pair central case and343px typography"
+      },
+      "image": "/figures/synaq-editions/visual-wave32-eighty-lamps-divisor-parity.svg",
+      "verificationModule": "scripts/editorial/visual-wave32-models.mjs",
+      "statement": "Суретте 1-ден 80-ге дейін нөмірленген 80 шам бар, бастапқыда бәрі сөніп тұр. 80 оқушы кезекпен әрекет етеді: k-нөмірлі оқушы нөмірі k санына еселік барлық шамның күйін бір рет ауыстырады. Яғни жанған шамды сөндіреді, сөнгенін жағады. Бірінші оқушыдан 80-нөмірлі оқушыға дейін осы ереже орындалған соң, неше шам жанып тұрады? Жауапқа тек санды жазыңыз.",
+      "solution": "n-нөмірлі шамды нөмірі n санының бөлгіші болатын оқушылар ауыстырады. Ол бастапқыда сөнгендіктен, тек ауыстыру саны тақ болса ғана соңында жанады. Бөлгіштер d және n : d болып жұптасады. Тек n толық квадрат болса, √n бөлгіші өзімен жұптасады да, бөлгіш саны тақ болады. 80 санынан аспайтын толық квадраттар: 1, 4, 9, 16, 25, 36, 49, 64. Келесі квадрат 9 × 9 = 81 > 80. Демек, 8 шам жанады.",
+      "figureDescription": "8 қатарда 10 шамнан, нөмірлері 1-ден 80-ге дейін ретімен берілген. Барлығы бастапқы сөнген күйінде көрсетілген.",
+      "figureSha256": "9cc60ce8aaf1698668f8963ad6c9a9e03627b4ea9296be55b2c83350b8f7e7b2",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": {
+          "lit": [
+            1,
+            4,
+            9,
+            16,
+            25,
+            36,
+            49,
+            64
+          ],
+          "nextSquare": 81,
+          "allInitiallyOff": true
+        }
+      }
+    }
+  ]
+}

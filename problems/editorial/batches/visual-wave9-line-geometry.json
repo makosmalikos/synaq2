@@ -1,0 +1,1408 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "Complete saved visual topics6.1–6.3 only; no capture/download or source traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources in grade6 topics6.1–6.3",
+    "sourceVisualOccurrences": 16,
+    "addressedNewDrafts": 15,
+    "previousEditionsRetained": [
+      {
+        "sourceId": "c3650cb97d75483f",
+        "editionId": "visual-opposite-angle"
+      }
+    ],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "2bcb54092157bbb8",
+      "3b8f642c5ecfef42",
+      "3edbe1f974f5f8bf",
+      "4cb9ffcd898f7518",
+      "501581243405bbae",
+      "556ab351a3c88dcd",
+      "62cec31c10e2d2e2",
+      "657645c86d10b106",
+      "6875630aacc6e2c3",
+      "88e602355c188206",
+      "a84e146d9e7241df",
+      "d1a627b4d96fa70f",
+      "d733fefe47579ec9",
+      "e8ba17925496e969",
+      "eccac463ee35ca43"
+    ],
+    "distinctModels": 15,
+    "semantics": "15 source-addressed drafts plus one retained opposite-angle source cover16 occurrences, not15 unrelated mathematical families."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave9-off-line-point",
+      "modelId": "visual-wave9-off-line",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "grid",
+        "points": [
+          {
+            "label": "A",
+            "x": -4,
+            "y": -1
+          },
+          {
+            "label": "B",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "label": "C",
+            "x": 4,
+            "y": 1
+          },
+          {
+            "label": "D",
+            "x": -1,
+            "y": 3
+          }
+        ],
+        "linePoint": [
+          -4,
+          -1
+        ],
+        "lineOther": [
+          4,
+          1
+        ]
+      },
+      "answer": "D",
+      "sourceRefs": [
+        {
+          "sourceId": "e8ba17925496e969",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-1-level1.json#4",
+      "sourceCanonicalSha256": "e68ca10069a8290f99af05e4c379e13cb0f9a41844363b5ba945c441f029a50f",
+      "sourceSkill": "Distinguishing one off-line point from three collinear points, without treating any three labels as a plane definition",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-off-line-point.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "statement": "Сызбада бір түзу мен төрт нүкте берілген. Қай нүкте осы түзудің бойында жатпайды?",
+      "solution": "A, B, C нүктелері бір түзу бойында: олардың орындары сол бағытпен жалғасады. D нүктесі түзуден бөлек орналасқан, сондықтан жауап D.",
+      "figureDescription": "Бірлік тордағы нүктелер: A(-4; -1), B(0; 0), C(4; 1), D(-1; 3). Түзу (-4; -1) және (4; 1) нүктелері арқылы өтеді.",
+      "figureSha256": "ddace65c13fb10a4f3310a9d368687b001f9bcf8f79b3ef71c97ac8aa21f558c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "D",
+        "checks": {
+          "offLine": "D"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-named-linear-pair",
+      "modelId": "visual-wave9-named-supplement",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "angles",
+        "rays": [
+          {
+            "label": "B",
+            "degrees": 0
+          },
+          {
+            "label": "D",
+            "degrees": 112
+          },
+          {
+            "label": "A",
+            "degrees": 180
+          },
+          {
+            "label": "C",
+            "degrees": 292
+          }
+        ],
+        "given": [
+          "B",
+          "D"
+        ],
+        "givenDegrees": 112,
+        "target": [
+          "D",
+          "A"
+        ],
+        "givenRadius": 58,
+        "targetRadius": 78
+      },
+      "answer": "68",
+      "sourceRefs": [
+        {
+          "sourceId": "556ab351a3c88dcd",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-1-level1.json#5",
+      "sourceCanonicalSha256": "73834f6b78b94f007b6e1fdd210421c52177791dc157600706c4f13c381ea9f9",
+      "sourceSkill": "Finding a named angle supplementary to the given obtuse angle on two complete intersecting lines",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-named-linear-pair.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "statement": "AB және CD түзулері O нүктесінде қиылысады. Суреттегі BOD бұрышы 112°. AOD бұрышының градустық өлшемін табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "OA және OB — қарама-қарсы сәулелер. AOD пен BOD іргелес бұрыштарының қосындысы 180°. AOD = 180 − 112 = 68°. Тексеру: 68 + 112 = 180.",
+      "figureDescription": "O нүктесінен сәулелер: B — оңға бағыттан сағат тіліне қарсы 0° бағытында; D — оңға бағыттан сағат тіліне қарсы 112° бағытында; A — оңға бағыттан сағат тіліне қарсы 180° бағытында; C — оңға бағыттан сағат тіліне қарсы 292° бағытында. Берілген BOD бұрышы 112°. Ізделген бұрыш DOA.",
+      "figureSha256": "33b9c15ed91afcc0574875e594295c012d9f69ac478e1ae408659f4241621945",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "68",
+        "checks": {
+          "given": 112,
+          "target": 68,
+          "relation": "named-supplement"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-vertical-sector-pair",
+      "modelId": "visual-wave9-opposite-pair",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "angles",
+        "rays": [
+          {
+            "label": "R",
+            "degrees": 0
+          },
+          {
+            "label": "S",
+            "degrees": 60
+          },
+          {
+            "label": "T",
+            "degrees": 180
+          },
+          {
+            "label": "U",
+            "degrees": 240
+          }
+        ],
+        "noRayLabels": true,
+        "sectorLabels": [
+          2,
+          4,
+          3,
+          1
+        ],
+        "choices": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "answer": "∠2 және ∠3",
+      "sourceRefs": [
+        {
+          "sourceId": "501581243405bbae",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-1-level1.json#9",
+      "sourceCanonicalSha256": "95f26587ceff9333987f1e4ea955076da681da7136660f6e847b918fbe23d604",
+      "sourceSkill": "Recognizing opposite angle sectors with noncyclic numeric labels, separately from adjacent angles",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-vertical-sector-pair.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "options": [
+        "∠1 және ∠2",
+        "∠2 және ∠4",
+        "∠2 және ∠3",
+        "∠3 және ∠4"
+      ],
+      "statement": "Екі түзу қиылысқанда пайда болған бұрыштар 1–4 сандарымен белгіленген. Қай жұп вертикаль бұрыштардан тұрады?",
+      "solution": "Жоғарғы оң жақтағы ∠2-ге төменгі сол жақтағы ∠3 қарама-қарсы орналасқан. Олардың қабырғалары бір-бірінің созындылары, сондықтан ∠2 және ∠3 — вертикаль жұп. ∠4 пен ∠1 де вертикаль, бірақ ол жұп жауап нұсқаларында жоқ.",
+      "figureDescription": "O нүктесінен сәулелер: R — оңға бағыттан сағат тіліне қарсы 0° бағытында; S — оңға бағыттан сағат тіліне қарсы 60° бағытында; T — оңға бағыттан сағат тіліне қарсы 180° бағытында; U — оңға бағыттан сағат тіліне қарсы 240° бағытында. Жоғарғы оң сектордан сағат тіліне қарсы сектор белгілері 2, 4, 3, 1.",
+      "figureSha256": "0360adbd25cc15e505f02fa77ca361a1163e1249bb0fdabf982b60db00b82901",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "∠2 және ∠3",
+        "checks": {
+          "oppositeSectors": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-adjacent-obtuse-angle",
+      "modelId": "visual-wave9-adjacent-supplement",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "angles",
+        "rays": [
+          {
+            "label": "R",
+            "degrees": 0
+          },
+          {
+            "label": "S",
+            "degrees": 54
+          },
+          {
+            "label": "T",
+            "degrees": 180
+          },
+          {
+            "label": "U",
+            "degrees": 234
+          }
+        ],
+        "given": [
+          "R",
+          "S"
+        ],
+        "givenDegrees": 54,
+        "target": [
+          "S",
+          "T"
+        ],
+        "noRayLabels": true,
+        "lineLabels": [
+          {
+            "label": "a",
+            "degrees": 0
+          },
+          {
+            "label": "b",
+            "degrees": 54
+          }
+        ],
+        "givenRadius": 62,
+        "targetRadius": 87
+      },
+      "answer": "126",
+      "sourceRefs": [
+        {
+          "sourceId": "a84e146d9e7241df",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-1-level1.json#13",
+      "sourceCanonicalSha256": "e609c8ddeb02405e883d3bd00e412584b2303bc7902577ff48d3b7d4bbb59c8a",
+      "sourceSkill": "Using an acute given angle and its adjacent obtuse angle on a straight line, not vertical-angle equality",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-adjacent-obtuse-angle.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "statement": "a және b түзулері қиылысады. 54° бұрышына іргелес тұрған, сұрақ белгісімен көрсетілген бұрыш неше градус? Жауапқа тек санды жазыңыз.",
+      "solution": "Ортақ қабырғадан басқа екі қабырға бір түзудің қарама-қарсы сәулелері болады. Демек, ізделген бұрыш 54°-пен бірге жазыңқы бұрыш құрайды: 180 − 54 = 126°.",
+      "figureDescription": "O нүктесінен сәулелер: R — оңға бағыттан сағат тіліне қарсы 0° бағытында; S — оңға бағыттан сағат тіліне қарсы 54° бағытында; T — оңға бағыттан сағат тіліне қарсы 180° бағытында; U — оңға бағыттан сағат тіліне қарсы 234° бағытында. Берілген ROS бұрышы 54°. Ізделген бұрыш SOT.",
+      "figureSha256": "84ac833362624979a1643439188fd70619978498ecdceb2fcf4df624cb33ad4b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "126",
+        "checks": {
+          "given": 54,
+          "target": 126,
+          "relation": "adjacent-supplement"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-perpendicular-point-gap",
+      "modelId": "visual-wave9-point-line-distance",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "grid",
+        "lineX": -2,
+        "points": [
+          {
+            "label": "A",
+            "x": 3,
+            "y": 1
+          },
+          {
+            "label": "B",
+            "x": -2,
+            "y": 4
+          }
+        ]
+      },
+      "answer": "5",
+      "sourceRefs": [
+        {
+          "sourceId": "6875630aacc6e2c3",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-2-level1.json#0",
+      "sourceCanonicalSha256": "fcde01b5af5bcbbf06753985edcccb3fbf8b5edb18a4e0cb2a6e5682cdf46d46",
+      "sourceSkill": "Measuring the perpendicular horizontal unit distance to a vertical line while rejecting an explicitly drawn longer oblique segment",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-perpendicular-point-gap.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "statement": "Торкөздің қабырғасы 1 бірлік. A нүктесінен ℓ түзуіне дейінгі ең қысқа қашықтық неше бірлік? Суреттегі AB кесіндісі де берілген. Жауапқа тек санды жазыңыз.",
+      "solution": "ℓ тік түзуіне перпендикуляр бағыт — көлденең бағыт. A-дан ℓ-ге дейін көлденең бойымен 5 бірлік аралық бар. Қиғаш AB кесіндісі бұдан ұзын, сондықтан оны қашықтық деп алуға болмайды.",
+      "figureDescription": "Бірлік тордағы нүктелер: A(3; 1), B(-2; 4). Тік ℓ түзуінің көлденең орны -2.",
+      "figureSha256": "cd8ad709d89768ed867d3bc08e353da9b7fd1f912bca8bbb94b7783ff7133c0b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5",
+        "checks": {
+          "horizontalUnitGaps": 5,
+          "distractorSlant": [
+            -2,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-right-angle-remainder",
+      "modelId": "visual-wave9-right-complement",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "angles",
+        "rays": [
+          {
+            "label": "A",
+            "degrees": 0
+          },
+          {
+            "label": "E",
+            "degrees": 28
+          },
+          {
+            "label": "C",
+            "degrees": 90
+          },
+          {
+            "label": "B",
+            "degrees": 180
+          },
+          {
+            "label": "D",
+            "degrees": 270
+          }
+        ],
+        "origin": [
+          220,
+          190
+        ],
+        "rayLength": 142,
+        "given": [
+          "A",
+          "E"
+        ],
+        "givenDegrees": 28,
+        "target": [
+          "E",
+          "C"
+        ],
+        "rightMark": true,
+        "givenRadius": 65,
+        "targetRadius": 87
+      },
+      "answer": "62",
+      "sourceRefs": [
+        {
+          "sourceId": "3b8f642c5ecfef42",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-2-level1.json#1",
+      "sourceCanonicalSha256": "36ac201506387fde264aa30a5b806f74bff9e8fbfb24658634abec4331cadb3f",
+      "sourceSkill": "Subtracting one internal ray angle from a complete right angle formed by perpendicular full lines",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-right-angle-remainder.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "statement": "AB ⟂ CD. OE сәулесі AOC тік бұрышының ішінде жатыр. AOE бұрышы 28° болса, EOC бұрышы неше градус? Жауапқа тек санды жазыңыз.",
+      "solution": "AOC = 90°. OE осы тік бұрышты AOE және EOC бөліктеріне бөледі. EOC = 90 − 28 = 62°. Екі бөлік қосылғанда 90° шығады.",
+      "figureDescription": "O нүктесінен сәулелер: A — оңға бағыттан сағат тіліне қарсы 0° бағытында; E — оңға бағыттан сағат тіліне қарсы 28° бағытында; C — оңға бағыттан сағат тіліне қарсы 90° бағытында; B — оңға бағыттан сағат тіліне қарсы 180° бағытында; D — оңға бағыттан сағат тіліне қарсы 270° бағытында. Берілген AOE бұрышы 28°. Ізделген бұрыш EOC.",
+      "figureSha256": "71a58f11ce670f509d09af37cc79a0c5a4b071bdeb3f9bba767bf3ecf946f700",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "62",
+        "checks": {
+          "given": 28,
+          "target": 62,
+          "relation": "right-complement"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-outside-right-angle",
+      "modelId": "visual-wave9-outside-right",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "angles",
+        "rays": [
+          {
+            "label": "A",
+            "degrees": 0
+          },
+          {
+            "label": "B",
+            "degrees": 90
+          },
+          {
+            "label": "C",
+            "degrees": 115
+          }
+        ],
+        "origin": [
+          240,
+          250
+        ],
+        "rayLength": 185,
+        "given": [
+          "B",
+          "C"
+        ],
+        "givenDegrees": 25,
+        "target": [
+          "A",
+          "C"
+        ],
+        "rightMark": true,
+        "givenRadius": 55,
+        "givenOffset": 68,
+        "targetRadius": 95,
+        "targetOffset": 30
+      },
+      "answer": "115",
+      "sourceRefs": [
+        {
+          "sourceId": "d1a627b4d96fa70f",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-2-level1.json#9",
+      "sourceCanonicalSha256": "d2f41d7490cff6a9aa44b96ddffeca97bb7c08fb2ef3cb87ac6d0f67707f6775",
+      "sourceSkill": "Adding an external ray angle to the right angle because the perpendicular intermediate ray lies inside the requested full angle",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-outside-right-angle.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "statement": "OA ⟂ OB. OC сәулесі AOB тік бұрышының сыртында, ал OB сәулесі AOC бұрышының ішінде жатыр. BOC бұрышы 25°. AOC бұрышы неше градус? Жауапқа тек санды жазыңыз.",
+      "solution": "OB сәулесі ізделген AOC бұрышының ішінде болғандықтан, AOC = AOB + BOC = 90 + 25 = 115°. Азайтуға болмайды: OC тік бұрыштың сыртында жатыр.",
+      "figureDescription": "O нүктесінен сәулелер: A — оңға бағыттан сағат тіліне қарсы 0° бағытында; B — оңға бағыттан сағат тіліне қарсы 90° бағытында; C — оңға бағыттан сағат тіліне қарсы 115° бағытында. Берілген BOC бұрышы 25°. Ізделген бұрыш AOC.",
+      "figureSha256": "150c21ab3902eaac851e24a6ca05e7bd797c89d076998c31b7787011829cb7ad",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "115",
+        "checks": {
+          "given": 25,
+          "target": 115,
+          "relation": "outside-right"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-closest-perpendicular-point",
+      "modelId": "visual-wave9-closest-line",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "grid",
+        "lineX": 0,
+        "points": [
+          {
+            "label": "A",
+            "x": 2,
+            "y": 3
+          },
+          {
+            "label": "B",
+            "x": 4,
+            "y": -1
+          },
+          {
+            "label": "C",
+            "x": -1,
+            "y": -3
+          },
+          {
+            "label": "D",
+            "x": -3,
+            "y": 1
+          }
+        ]
+      },
+      "answer": "C",
+      "sourceRefs": [
+        {
+          "sourceId": "657645c86d10b106",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-2-level1.json#12",
+      "sourceCanonicalSha256": "9f757068af9b50f5bf6032856e6dd1cccd97de52ff274f8f037d247b99c4798f",
+      "sourceSkill": "Comparing perpendicular distances rather than point height or apparent diagonal separation",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-closest-perpendicular-point.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "statement": "Бірлік торда k түзуі мен A, B, C, D нүктелері салынған. k түзуіне ең жақын нүктені таңдаңыз.",
+      "solution": "k тік болғандықтан, әр нүктеден оған дейінгі көлденең тор аралықтарын санаймыз: A — 2, B — 4, C — 1, D — 3. Ең аз қашықтық C нүктесінде. Нүктенің жоғары не төмен тұруы бұл қашықтықты өзгертпейді.",
+      "figureDescription": "Бірлік тордағы нүктелер: A(2; 3), B(4; -1), C(-1; -3), D(-3; 1). Тік k түзуінің көлденең орны 0.",
+      "figureSha256": "25e50f1d9ffb28fb88fb635aad2085fedc57a4d23c881affc2696b9a6972f516",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "C",
+        "checks": {
+          "distances": [
+            {
+              "label": "A",
+              "distance": 2
+            },
+            {
+              "label": "B",
+              "distance": 4
+            },
+            {
+              "label": "C",
+              "distance": 1
+            },
+            {
+              "label": "D",
+              "distance": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-perpendicular-grid-pairs",
+      "modelId": "visual-wave9-perpendicular-pair",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "perp-gallery",
+        "pairs": [
+          [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ]
+      },
+      "answer": "2",
+      "sourceRefs": [
+        {
+          "sourceId": "88e602355c188206",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-2-level1.json#15",
+      "sourceCanonicalSha256": "103ab2e960c27916a66602e3609ff1e0dd24e43003d57993acf60f0556704c00",
+      "sourceSkill": "Recognizing a perpendicular pair of opposite square-grid diagonals amid horizontal/slanted and vertical/slanted distractors",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-perpendicular-grid-pairs.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "statement": "Төрт жұп түзу бірдей шаршы торда берілген. Қай нөмірлі жұптың түзулері өзара перпендикуляр?",
+      "solution": "2-жұпта екі түзу торкөз диагональдары бойымен қарама-қарсы бағытта көлбеу жүреді. Әрқайсысы көлденеңмен 45° жасайды, сондықтан олардың арасындағы бұрыш 45 + 45 = 90°. Қалған жұптарда тік бұрыш жоқ.",
+      "figureDescription": "Төрт шаршы тор. Түзулердің бағыттары әр торда оңға-жоғары бірлік векторларымен: 1: (1; 0) және (1; 1); 2: (1; 1) және (1; -1); 3: (1; 0) және (2; 1); 4: (0; 1) және (1; 1).",
+      "figureSha256": "62da068dede2356a2ccad1d3090ab4106fc8d4f3e1f6d84e1f0100a2a0f2c145",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2",
+        "checks": {
+          "pairDots": [
+            1,
+            0,
+            2,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-cuboid-parallel-class",
+      "modelId": "visual-wave9-cuboid-parallels",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "cuboid",
+        "vertices": {
+          "J": [
+            0,
+            0,
+            0
+          ],
+          "K": [
+            6,
+            0,
+            0
+          ],
+          "L": [
+            6,
+            4,
+            0
+          ],
+          "M": [
+            0,
+            4,
+            0
+          ],
+          "J₁": [
+            0,
+            0,
+            3
+          ],
+          "K₁": [
+            6,
+            0,
+            3
+          ],
+          "L₁": [
+            6,
+            4,
+            3
+          ],
+          "M₁": [
+            0,
+            4,
+            3
+          ]
+        },
+        "edges": [
+          [
+            "J",
+            "K"
+          ],
+          [
+            "K",
+            "L"
+          ],
+          [
+            "L",
+            "M"
+          ],
+          [
+            "M",
+            "J"
+          ],
+          [
+            "J₁",
+            "K₁"
+          ],
+          [
+            "K₁",
+            "L₁"
+          ],
+          [
+            "L₁",
+            "M₁"
+          ],
+          [
+            "M₁",
+            "J₁"
+          ],
+          [
+            "J",
+            "J₁"
+          ],
+          [
+            "K",
+            "K₁"
+          ],
+          [
+            "L",
+            "L₁"
+          ],
+          [
+            "M",
+            "M₁"
+          ]
+        ],
+        "reference": [
+          "J",
+          "J₁"
+        ]
+      },
+      "answer": "KK₁, LL₁, MM₁",
+      "sourceRefs": [
+        {
+          "sourceId": "eccac463ee35ca43",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-3-level1.json#2",
+      "sourceCanonicalSha256": "ef213c3d5fc17578983ab0833f94ba51012c5b554f883d916b6b35705e723214",
+      "sourceSkill": "Identifying the complete class of three other parallel cuboid edges, excluding the selected edge itself; the count-three invariant is preserved rather than falsified",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-cuboid-parallel-class.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "options": [
+        "KK₁, LL₁, MM₁",
+        "JK, KL, LM",
+        "J₁K₁, K₁L₁, L₁M₁",
+        "JM, KL, K₁L₁"
+      ],
+      "statement": "JKLMJ₁K₁L₁M₁ — тікбұрышты параллелепипед. Бөлектелген JJ₁ қырын қоспай, оған параллель қалған үш қырдың толық тізімін таңдаңыз. Үзік сызықтар көрінбейтін қырларды білдіреді.",
+      "solution": "JJ₁ биіктік бағытымен өтеді. Осы бағыттағы қалған қырлар — KK₁, LL₁, MM₁. Әрқайсысы JJ₁-мен ортақ тікбұрышты жақтың қарама-қарсы қыры болады немесе сол бағыттағы қырға параллель. Толық тізімде 3 қыр бар; JJ₁ өзін санамаймыз.",
+      "figureDescription": "Тікбұрышты JKLMJ₁K₁L₁M₁ денесі. JK = 6, KL = 4, JJ₁ = 3 шартты бірлік; JJ₁ бөлектелген. J, K, L, M — төменгі, индексті нүктелер — оларға сәйкес жоғарғы төбелер. Үзік сызық — жасырын қыр.",
+      "figureSha256": "962f72cda507fddefc102acf2dbec126b0b69f423ee0af7fd1916dea79d043b7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "KK₁, LL₁, MM₁",
+        "checks": {
+          "parallelEdges": [
+            [
+              "K",
+              "K₁"
+            ],
+            [
+              "L",
+              "L₁"
+            ],
+            [
+              "M",
+              "M₁"
+            ]
+          ],
+          "referenceVector": [
+            0,
+            0,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-quadrilateral-parallel-sides",
+      "modelId": "visual-wave9-quadrilateral-parallels",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "grid",
+        "points": [
+          {
+            "label": "M",
+            "x": -4,
+            "y": -2,
+            "dx": -14,
+            "dy": 16
+          },
+          {
+            "label": "N",
+            "x": -2,
+            "y": 2,
+            "dx": -12,
+            "dy": -14
+          },
+          {
+            "label": "P",
+            "x": 3,
+            "y": 3,
+            "dx": 14,
+            "dy": -8
+          },
+          {
+            "label": "Q",
+            "x": 0,
+            "y": -3,
+            "dx": 0,
+            "dy": 20
+          }
+        ]
+      },
+      "answer": "MN ∥ PQ",
+      "sourceRefs": [
+        {
+          "sourceId": "62cec31c10e2d2e2",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-3-level1.json#7",
+      "sourceCanonicalSha256": "c57455c0569d5799fe70189305e86729abd57b739188543aff5c75e9a6b363da",
+      "sourceSkill": "Comparing proportional grid displacements of unequal-length opposite sides, distinguishing the other nonparallel opposite pair",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-quadrilateral-parallel-sides.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "options": [
+        "MN ∥ PQ",
+        "NP ∥ QM",
+        "MN ∥ NP",
+        "Параллель қабырғалар жоқ"
+      ],
+      "statement": "Шаршы торда MNPQ төртбұрышы салынған. Оның қабырғалары туралы қай тұжырым дұрыс?",
+      "solution": "M-нен N-ге 2 торкөз оңға, 4 торкөз жоғары жүреміз: әр 1 оңға — 2 жоғары. Q-дан P-ға 3 оңға, 6 жоғары: тағы да әр 1 оңға — 2 жоғары. Сондықтан MN ∥ PQ. NP үшін 5 оңға, 1 жоғары, MQ үшін 4 оңға, 1 төмен, яғни бұл екеуі параллель емес.",
+      "figureDescription": "Бірлік тордағы нүктелер: M(-4; -2), N(-2; 2), P(3; 3), Q(0; -3). M, N, P, Q ретімен қосылған.",
+      "figureSha256": "2fd78545478f38ea5ed3d2a17bf5de82c0f5591c5a3a038b10f7c599cfebc3cc",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "MN ∥ PQ",
+        "checks": {
+          "edgePairs": [
+            [
+              0,
+              2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-parallel-segment-count",
+      "modelId": "visual-wave9-parallel-segments",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "segments",
+        "segments": [
+          {
+            "labels": [
+              "A",
+              "B"
+            ],
+            "direction": [
+              2,
+              1
+            ]
+          },
+          {
+            "labels": [
+              "C",
+              "D"
+            ],
+            "direction": [
+              4,
+              2
+            ]
+          },
+          {
+            "labels": [
+              "E",
+              "F"
+            ],
+            "direction": [
+              2,
+              1
+            ]
+          },
+          {
+            "labels": [
+              "G",
+              "H"
+            ],
+            "direction": [
+              1,
+              2
+            ]
+          },
+          {
+            "labels": [
+              "K",
+              "L"
+            ],
+            "direction": [
+              3,
+              1
+            ]
+          },
+          {
+            "labels": [
+              "M",
+              "N"
+            ],
+            "direction": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "answer": "2",
+      "sourceRefs": [
+        {
+          "sourceId": "2bcb54092157bbb8",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-3-level1.json#12",
+      "sourceCanonicalSha256": "4671968111c643ae2e0c3c3b0fe4c2e551a55fd56bb4becce5e42cc25315b505",
+      "sourceSkill": "Counting all segments parallel to a reference, accepting a doubled direction vector and excluding the reference itself",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-parallel-segment-count.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "statement": "Алты кесінді бірдей өлшемді шаршы торларда көрсетілген. AB-дан басқа неше кесінді AB кесіндісіне параллель? Кесінділердің ұзындығы бірдей болуы міндетті емес. Жауапқа тек санды жазыңыз.",
+      "solution": "AB бағыты: 2 торкөз оңға, 1 жоғары. CD бағыты 4 оңға, 2 жоғары — сол бағыт; EF те 2 оңға, 1 жоғары. GH, KL, MN бағыттары бұдан өзгеше. AB-дың өзін қоспағанда, параллель кесінділер CD және EF, саны 2.",
+      "figureDescription": "Бірдей бірлік тордағы кесінді бағыттары: AB: 2 оңға, 1 жоғары; CD: 4 оңға, 2 жоғары; EF: 2 оңға, 1 жоғары; GH: 1 оңға, 2 жоғары; KL: 3 оңға, 1 жоғары; MN: 2 оңға, 3 жоғары.",
+      "figureSha256": "1e55f1e2baf60a3cea64ff23174939d36ca76a6c886593ddc29f60a974636593",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2",
+        "checks": {
+          "parallelNames": [
+            "CD",
+            "EF"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-parallel-line-through-point",
+      "modelId": "visual-wave9-parallel-through",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "grid",
+        "reference": {
+          "point": [
+            -4,
+            -3
+          ],
+          "direction": [
+            3,
+            1
+          ]
+        },
+        "through": [
+          -2,
+          2
+        ],
+        "lines": [
+          {
+            "label": "p",
+            "direction": [
+              3,
+              1
+            ],
+            "labelX": 416,
+            "labelY": 59
+          },
+          {
+            "label": "q",
+            "direction": [
+              1,
+              2
+            ],
+            "labelX": 227,
+            "labelY": 33
+          },
+          {
+            "label": "r",
+            "direction": [
+              2,
+              1
+            ],
+            "labelX": 352,
+            "labelY": 33
+          }
+        ]
+      },
+      "answer": "p",
+      "sourceRefs": [
+        {
+          "sourceId": "d733fefe47579ec9",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-3-level1.json#13",
+      "sourceCanonicalSha256": "283ec2e7828ce616d4a78fa7f33c010c5da79050e641cd83794c121b6b3cd6b2",
+      "sourceSkill": "Selecting the unique parallel through an off-line point among three different grid directions",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-parallel-line-through-point.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "options": [
+        "p",
+        "q",
+        "r",
+        "Ондай түзу жоқ"
+      ],
+      "statement": "A нүктесі t түзуінде жатпайды. A арқылы жүргізілген p, q, r түзулерінің қайсысы t түзуіне параллель?",
+      "solution": "t бойымен әр 3 торкөз оңға жылжығанда 1 торкөз жоғары көтерілеміз. p түзуі де дәл осы бағытпен өтеді. q үшін 1 оңға — 2 жоғары, r үшін 2 оңға — 1 жоғары: екеуі де t-ға параллель емес. Дұрыс түзу p.",
+      "figureDescription": "Бірлік тор. t: (-4; -3) нүктесі, бағыты (3; 1). A(-2; 2). A арқылы өтетіндер: p бағыты (3; 1), q бағыты (1; 2), r бағыты (2; 1).",
+      "figureSha256": "2ed2b3ec0efa4d63c809afa2e205124abc97c27ce922ef2736b95d0d148d3ddc",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "p",
+        "checks": {
+          "parallelLine": "p"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-convex-octagon-parallel-pairs",
+      "modelId": "visual-wave9-octagon-pairs",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "octagon",
+        "labels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ],
+        "polygon": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            0,
+            6
+          ]
+        ]
+      },
+      "answer": "3",
+      "sourceRefs": [
+        {
+          "sourceId": "4cb9ffcd898f7518",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-3-level1.json#14",
+      "sourceCanonicalSha256": "ee371ac6da3a27a9a9276e45dca4fd331a260d6fa080b601bd0396e8ec1a4541",
+      "sourceSkill": "Counting unordered pairs of parallel octagon sides using actual grid directions while preserving a strictly convex eight-sided figure",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-convex-octagon-parallel-pairs.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "statement": "Шаршы тордағы ABCDEFGH сегізбұрышының өзара параллель қабырғаларының неше жұбы бар? Әр жұпты бір рет қана санаңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Торкөздер бойынша бірдей бағыттағы қабырғаларды салыстырамыз: AB ∥ EF; BC ∥ FG; CD ∥ GH. DE мен HA бағыттары қалған қабырғалармен жұптаспайды. Сондықтан 3 жұп.",
+      "figureDescription": "Бірлік тордағы сегізбұрыштың реттелген төбелері: A(0; 2), B(2; 0), C(6; 0), D(9; 3), E(8; 6), F(6; 8), G(2; 8), H(0; 6).",
+      "figureSha256": "1dfd54d9999166f44bf27c0f5d58184ef06fb56375919b808e73b2916c02f979",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3",
+        "checks": {
+          "edgePairs": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              6
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave9-parallel-grid-spacing",
+      "modelId": "visual-wave9-parallel-distance",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "grid",
+        "firstY": -2,
+        "secondY": 3,
+        "unitMm": 3
+      },
+      "answer": "15",
+      "sourceRefs": [
+        {
+          "sourceId": "3edbe1f974f5f8bf",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-3-level1.json#15",
+      "sourceCanonicalSha256": "c5325ea374c9b8bc40524b0dc17a113edd98b5a2a0cc53e84720f921d48cf107",
+      "sourceSkill": "Reading the perpendicular grid gap of two horizontal parallel lines and converting cell units into millimetres",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы жеке сақталды: нүктенің түзуге тиістілігі, вертикаль/іргелес бұрыштар, тік бұрыштың ішкі/сыртқы бөлігі, перпендикуляр қашықтық не параллель бағыттар.",
+        "Бұрыштар, тор орындары, сызықтардың бағыттары, фигура төбелері, белгілер және дұрыс жауаптар жаңадан берілді. Қораптың үш параллель қыр инварианты жаңа қырлар тізімін таңдаумен тексеріледі.",
+        "Барлық сурет жаңа параметрлерден native SVG түрінде салынды. Растр, source trace немесе дайын source path пайдаланылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Түзулер мен бұрыштар",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target, exact line incidence/direction, right/straight/vertical angle geometry, three-dimensional edges and native343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave9-parallel-grid-spacing.svg",
+      "verificationModule": "scripts/editorial/visual-wave9-models.mjs",
+      "statement": "a және b — тор сызықтары бойымен өтетін параллель түзулер. Бір торкөздің қабырғасы 3 мм. Екі түзудің арақашықтығы неше миллиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Түзулердің арақашықтығын оларға перпендикуляр тік бағытпен өлшейміз. Арада 5 торкөз бар. Әрқайсысы 3 мм: 5 × 3 = 15 мм.",
+      "figureDescription": "Шаршы торда a мен b көлденең. a жолы -2, b жолы 3 шартты координатасында. Бір ұяшық 3 мм.",
+      "figureSha256": "120dfab193339d7fe29f1d08f0d57a8b4377610d7ded74951760470cffdc43a1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "15",
+        "checks": {
+          "unitGaps": 5,
+          "unitMm": 3
+        }
+      }
+    }
+  ]
+}

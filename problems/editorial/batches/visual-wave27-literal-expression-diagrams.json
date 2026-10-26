@@ -1,0 +1,482 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All7 saved visual grade5topic1.8 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade5topic1.8",
+    "sourceVisualOccurrences": 7,
+    "addressedNewDrafts": 7,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "unavailableSourceRasters": [
+      "30f99de881f8e9cb"
+    ],
+    "exactNewSourceIds": [
+      "24f0083051876960",
+      "30f99de881f8e9cb",
+      "54d0fc32880fafbf",
+      "54d13ab5aefd920a",
+      "79194751f6c650f9",
+      "89b5bb25fcce970a",
+      "b5a14f4b7c149709"
+    ],
+    "distinctModels": 7,
+    "semantics": "7 addressed literal-expression targets retain object-count substitution, area/perimeter distinctions and symbolic geometric relations, head-on distance substitution, repeated day increments, and grouped route subtraction."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave27-seven-notebooks-substitute-n",
+      "modelId": "visual-wave27-notebook-variable-substitution",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "notebooks",
+        "count": 7,
+        "price": 175
+      },
+      "answer": "1225",
+      "sourceRefs": [
+        {
+          "sourceId": "30f99de881f8e9cb",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-8-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-8-level1.json#6",
+      "sourceCanonicalSha256": "a0eefb953f3335c80f4022e6fee07b82053602bffea260d50a89cd36f57cdc20",
+      "sourceSkill": "Counting pictured objects then substituting their count into a given unit-price literal expression",
+      "adaptationChanges": [
+        "Әр бастапқы нысана сақталды: суреттегі санды әріп орнына қою, қысқарған қабырғаның ауданы, салыстырмалы периметр, екі кезеңді оқу және екі түрлі жылдамдықпен жүрілген жолды жалпы жолдан азайту.",
+        "Сандар, бағалар, өлшемдер, уақыттар, шектеулер және күндер жаңадан берілді; шынайы қалалардың арақашықтығы туралы дерек қолданылмады.",
+        "Native SVG жаңа параметрлерден салынды. Бір бастапқы дәптер raster-і архивте жоқ: тек сақталған толық шарт/шешімдегі дағды пайдаланылды, бастапқы суретпен визуалды салыстырылды деп мәлімделмейді. Ешбір source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Әріпті өрнек",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source/new review; exact symbolic polynomial identity and MCQ uniqueness; actual notebook/day counts, directed travel, metric garden dimensions, symbolic deficits and343px legibility. One unavailable source raster must remain disclosed."
+      },
+      "image": "/figures/synaq-editions/visual-wave27-seven-notebooks-substitute-n.svg",
+      "verificationModule": "scripts/editorial/visual-wave27-models.mjs",
+      "statement": "Суреттегі дәптерлердің әрқайсысы 175 теңге тұрады. n дәптердің құны 175 · n өрнегімен берілген. n орнына суреттегі дәптер санын қойып, жалпы құнын теңгемен табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Суретте 7 дәптер, сондықтан n = 7. Құны 175 · n = 175 · 7 = 1225 теңге. Әр дәптер бір рет саналады.",
+      "figureDescription": "7 дәптер және әрқайсысына 175 теңге бағасы.",
+      "figureSha256": "95e7685d84465e03bf1fcae80410443ed266b3ed6b2433bf2e1dfcb8d5ef24b7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "1225",
+        "checks": {
+          "n": 7,
+          "unitPrice": 175
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave27-blue-part-square-completion",
+      "modelId": "visual-wave27-square-completion-area-expression",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "area",
+        "deficit": 4,
+        "sampleA": 12
+      },
+      "answer": "a × (a − 4)",
+      "sourceRefs": [
+        {
+          "sourceId": "89b5bb25fcce970a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-8-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-8-level2.json#1",
+      "sourceCanonicalSha256": "a618d0b4690a27f8f37c853965a45ccf12ffd75ee22a57ad8cbe5ed8682898ec",
+      "sourceSkill": "Expressing a rectangle area as a product with a whole deficient side, distinguishing area from perimeter or subtracting a length",
+      "adaptationChanges": [
+        "Әр бастапқы нысана сақталды: суреттегі санды әріп орнына қою, қысқарған қабырғаның ауданы, салыстырмалы периметр, екі кезеңді оқу және екі түрлі жылдамдықпен жүрілген жолды жалпы жолдан азайту.",
+        "Сандар, бағалар, өлшемдер, уақыттар, шектеулер және күндер жаңадан берілді; шынайы қалалардың арақашықтығы туралы дерек қолданылмады.",
+        "Native SVG жаңа параметрлерден салынды. Бір бастапқы дәптер raster-і архивте жоқ: тек сақталған толық шарт/шешімдегі дағды пайдаланылды, бастапқы суретпен визуалды салыстырылды деп мәлімделмейді. Ешбір source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Әріпті өрнек",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source/new review; exact symbolic polynomial identity and MCQ uniqueness; actual notebook/day counts, directed travel, metric garden dimensions, symbolic deficits and343px legibility. One unavailable source raster must remain disclosed."
+      },
+      "image": "/figures/synaq-editions/visual-wave27-blue-part-square-completion.svg",
+      "verificationModule": "scripts/editorial/visual-wave27-models.mjs",
+      "options": [
+        "a × a − 4",
+        "2 × (a + a − 4)",
+        "a × 4",
+        "a × (a − 4)"
+      ],
+      "statement": "Үзік сызық көк тіктөртбұрышты қабырғасы a см шаршыға дейін толықтырады; a > 4. Көк бөліктің ауданын см²-пен өрнектейтін жазуды таңдаңыз. Сызба — өлшемдер арасындағы байланысты көрсететін үлгі.",
+      "solution": "Толық шаршының екі өлшемі де a. Көк тіктөртбұрыштың бір өлшемі a, екіншісі a − 4. Сондықтан аудан a × (a − 4). Шаршы ауданынан 4-ті ғана азайтуға болмайды: алынған жолақтың ауданы 4 × a. Мысалы, a = 12 болса, аудан 12 × (12 − 4) = 96 см².",
+      "figureDescription": "Толық шаршының қабырғасы a, төменгі көк тіктөртбұрыштың жоғарғы шеті толық шаршының жоғарғы шетінен 4 см төмен. Көк бөліктің ені a.",
+      "figureSha256": "429af95b27033fe1e03d821586146e4212776fb831b56cedefad5e6d947c3fc1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "a × (a − 4)",
+        "checks": {
+          "coefficients": [
+            0,
+            -4,
+            1
+          ],
+          "optionPolynomials": [
+            [
+              -4,
+              0,
+              1
+            ],
+            [
+              -8,
+              4,
+              0
+            ],
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              0,
+              -4,
+              1
+            ]
+          ],
+          "positiveDomain": "a > 4"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave27-head-on-distance-substitute-a-b",
+      "modelId": "visual-wave27-head-on-variable-distance",
+      "grade": 5,
+      "topic": "speed",
+      "difficulty": "medium",
+      "params": {
+        "scene": "meet",
+        "firstSpeed": 17,
+        "secondSpeed": 13,
+        "hours": 4
+      },
+      "answer": "120",
+      "sourceRefs": [
+        {
+          "sourceId": "b5a14f4b7c149709",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-8-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-8-level2.json#3",
+      "sourceCanonicalSha256": "74c1b8fee763e0e8daf6abf0cca80a53f624c86f4a87f1912c1f0c7dfe52ce72",
+      "sourceSkill": "Constructing the sum-of-speeds common-time expression for two head-on paths, then substituting both speed values",
+      "adaptationChanges": [
+        "Әр бастапқы нысана сақталды: суреттегі санды әріп орнына қою, қысқарған қабырғаның ауданы, салыстырмалы периметр, екі кезеңді оқу және екі түрлі жылдамдықпен жүрілген жолды жалпы жолдан азайту.",
+        "Сандар, бағалар, өлшемдер, уақыттар, шектеулер және күндер жаңадан берілді; шынайы қалалардың арақашықтығы туралы дерек қолданылмады.",
+        "Native SVG жаңа параметрлерден салынды. Бір бастапқы дәптер raster-і архивте жоқ: тек сақталған толық шарт/шешімдегі дағды пайдаланылды, бастапқы суретпен визуалды салыстырылды деп мәлімделмейді. Ешбір source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Әріпті өрнек",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source/new review; exact symbolic polynomial identity and MCQ uniqueness; actual notebook/day counts, directed travel, metric garden dimensions, symbolic deficits and343px legibility. One unavailable source raster must remain disclosed."
+      },
+      "image": "/figures/synaq-editions/visual-wave27-head-on-distance-substitute-a-b.svg",
+      "verificationModule": "scripts/editorial/visual-wave27-models.mjs",
+      "statement": "A және B елді мекендерінен екі велосипедші бір мезгілде бір-біріне қарай жүріп, 4 сағаттан кейін M нүктесінде кездесті. Суреттегі a = 17 км/сағ, b = 13 км/сағ болғанда, A мен B арақашықтығын a және b арқылы өрнектеп, километрмен мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Екі бөлек жол a · 4 және b · 4. Арақашықтық (a + b) · 4. Сандарды қойсақ: (17 + 13) · 4 = 30 · 4 = 120 км. Тексеру: 68 + 52 = 120 км.",
+      "figureDescription": "A-дан M-ге оңға a, B-дан M-ге солға b бағытталған; M екі жолдың кездесу нүктесі.",
+      "figureSha256": "046a56e3e7eff636b3d00c383d2a0fda073a51190ded3cd3f2a6136f055f028c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "120",
+        "checks": {
+          "first": 68,
+          "second": 52,
+          "rate": 30
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave27-garden-expression-substitution",
+      "modelId": "visual-wave27-garden-minus-square-substitution",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "garden",
+        "length": 28,
+        "width": 18,
+        "flower": 7
+      },
+      "answer": "455",
+      "sourceRefs": [
+        {
+          "sourceId": "79194751f6c650f9",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-8-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-8-level2.json#6",
+      "sourceCanonicalSha256": "a2114e4e859187079e87a60f155bb19a8fe41f227c6541b1235095f1f644525c",
+      "sourceSkill": "Reading three dimensions and substituting them into rectangle area minus square area without replacing area by perimeter",
+      "adaptationChanges": [
+        "Әр бастапқы нысана сақталды: суреттегі санды әріп орнына қою, қысқарған қабырғаның ауданы, салыстырмалы периметр, екі кезеңді оқу және екі түрлі жылдамдықпен жүрілген жолды жалпы жолдан азайту.",
+        "Сандар, бағалар, өлшемдер, уақыттар, шектеулер және күндер жаңадан берілді; шынайы қалалардың арақашықтығы туралы дерек қолданылмады.",
+        "Native SVG жаңа параметрлерден салынды. Бір бастапқы дәптер raster-і архивте жоқ: тек сақталған толық шарт/шешімдегі дағды пайдаланылды, бастапқы суретпен визуалды салыстырылды деп мәлімделмейді. Ешбір source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Әріпті өрнек",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source/new review; exact symbolic polynomial identity and MCQ uniqueness; actual notebook/day counts, directed travel, metric garden dimensions, symbolic deficits and343px legibility. One unavailable source raster must remain disclosed."
+      },
+      "image": "/figures/synaq-editions/visual-wave27-garden-expression-substitution.svg",
+      "verificationModule": "scripts/editorial/visual-wave27-models.mjs",
+      "statement": "Тіктөртбұрыш бақшаның ұзындығын a, енін b, ал ішіндегі шаршы гүлзардың қабырғасын c деп белгілейміз. Гүлзардан басқа бөліктің ауданын a, b, c арқылы өрнектеңіз. Содан кейін суреттегі өлшемдерді қойып, ауданның м²-пен мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "a = 28, b = 18, c = 7. Бақша 28 · 18 = 504 м², гүлзар 7 · 7 = 49 м². Қалғаны 504 − 49 = 455 м². c · c — аудан, 4 · c — периметр; оларды шатастырмаймыз.",
+      "figureDescription": "Сыртқы тіктөртбұрыш 28 м × 18 м; ішкі жасыл шаршы 7 м × 7 м.",
+      "figureSha256": "7e103be8208ea46f627fc29ffe659877bc33a0865cce369bfbd069b56a23caa1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "455",
+        "checks": {
+          "garden": 504,
+          "flower": 49
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave27-relative-sides-full-perimeter",
+      "modelId": "visual-wave27-relative-perimeter-expression",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "perimeter",
+        "lengthFactor": 2,
+        "deficit": 3,
+        "sampleA": 8
+      },
+      "answer": "2 × (2 × a + a − 3)",
+      "sourceRefs": [
+        {
+          "sourceId": "54d13ab5aefd920a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-8-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-8-level3.json#3",
+      "sourceCanonicalSha256": "fc2e26cabdc499debb84ac722e3e5a3c501a1f19c9ddf73c354cf0690580ed42",
+      "sourceSkill": "Distinguishing multiplicative length comparison from additive deficit, and doubling both dimensions for perimeter",
+      "adaptationChanges": [
+        "Әр бастапқы нысана сақталды: суреттегі санды әріп орнына қою, қысқарған қабырғаның ауданы, салыстырмалы периметр, екі кезеңді оқу және екі түрлі жылдамдықпен жүрілген жолды жалпы жолдан азайту.",
+        "Сандар, бағалар, өлшемдер, уақыттар, шектеулер және күндер жаңадан берілді; шынайы қалалардың арақашықтығы туралы дерек қолданылмады.",
+        "Native SVG жаңа параметрлерден салынды. Бір бастапқы дәптер raster-і архивте жоқ: тек сақталған толық шарт/шешімдегі дағды пайдаланылды, бастапқы суретпен визуалды салыстырылды деп мәлімделмейді. Ешбір source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Әріпті өрнек",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source/new review; exact symbolic polynomial identity and MCQ uniqueness; actual notebook/day counts, directed travel, metric garden dimensions, symbolic deficits and343px legibility. One unavailable source raster must remain disclosed."
+      },
+      "image": "/figures/synaq-editions/visual-wave27-relative-sides-full-perimeter.svg",
+      "verificationModule": "scripts/editorial/visual-wave27-models.mjs",
+      "options": [
+        "2 × (2 × a + a − 3)",
+        "2 × (a + 2 + a − 3)",
+        "2 × a + a − 3",
+        "2 × 2 × a + a − 3"
+      ],
+      "statement": "Сол жақтағы шаршының қабырғасы a см, a > 3. Оң жақтағы тіктөртбұрыштың ұзындығы шаршы қабырғасынан 2 есе үлкен, ал ені шаршы қабырғасынан 3 см қысқа. Тіктөртбұрыштың периметрін көрсететін өрнекті таңдаңыз. Сызба — өлшемдер арасындағы байланысты көрсететін үлгі.",
+      "solution": "Ұзындық 2 × a, ен a − 3. Екі ұзындық пен екі еннің қосындысы 2 × (2 × a + a − 3). Сондықтан дұрыс нұсқа 2 × (2 × a + a − 3). a = 8 кезінде ұзындық 16, ен 5, периметр 42 см. Еселеу мен қосу бір амал емес; жақша екі өлшемнің де екі рет алынуын сақтайды.",
+      "figureDescription": "Бір a қабырғалы шаршы; оң жақтағы тіктөртбұрыштың ұзындығында 2 бөлек a аралығы көрсетілген, ені a-дан 3 см қысқа.",
+      "figureSha256": "2d65c97bda8f3eb176ceec882b248b43f9d2badc81efd732f99922cadcacb845",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2 × (2 × a + a − 3)",
+        "checks": {
+          "coefficients": [
+            -6,
+            6,
+            0
+          ],
+          "optionPolynomials": [
+            [
+              -6,
+              6,
+              0
+            ],
+            [
+              -2,
+              4,
+              0
+            ],
+            [
+              -3,
+              3,
+              0
+            ],
+            [
+              -3,
+              5,
+              0
+            ]
+          ],
+          "positiveDomain": "a > 3"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave27-two-days-five-longer-days",
+      "modelId": "visual-wave27-two-reading-stages-substitution",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "reading",
+        "firstDays": 2,
+        "laterDays": 5,
+        "base": 15,
+        "extra": 4
+      },
+      "answer": "125",
+      "sourceRefs": [
+        {
+          "sourceId": "24f0083051876960",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-8-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-8-level3.json#4",
+      "sourceCanonicalSha256": "30eaa57094959987393a5759e6405dfc83fb1c7ddad1e637a1948e07688f6f2a",
+      "sourceSkill": "Reading day boundaries in a partitioned tape, repeating a-plus-extra for every later day and evaluating the two-stage literal sum",
+      "adaptationChanges": [
+        "Әр бастапқы нысана сақталды: суреттегі санды әріп орнына қою, қысқарған қабырғаның ауданы, салыстырмалы периметр, екі кезеңді оқу және екі түрлі жылдамдықпен жүрілген жолды жалпы жолдан азайту.",
+        "Сандар, бағалар, өлшемдер, уақыттар, шектеулер және күндер жаңадан берілді; шынайы қалалардың арақашықтығы туралы дерек қолданылмады.",
+        "Native SVG жаңа параметрлерден салынды. Бір бастапқы дәптер raster-і архивте жоқ: тек сақталған толық шарт/шешімдегі дағды пайдаланылды, бастапқы суретпен визуалды салыстырылды деп мәлімделмейді. Ешбір source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Әріпті өрнек",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source/new review; exact symbolic polynomial identity and MCQ uniqueness; actual notebook/day counts, directed travel, metric garden dimensions, symbolic deficits and343px legibility. One unavailable source raster must remain disclosed."
+      },
+      "image": "/figures/synaq-editions/visual-wave27-two-days-five-longer-days.svg",
+      "verificationModule": "scripts/editorial/visual-wave27-models.mjs",
+      "statement": "Оқылған беттер сызбада күндер бойынша берілген: жуан тік сызықтар күндердің шекарасын көрсетеді, a — негізгі бет саны. Барлығы 7 күн. Жалпы бет санын a арқылы өрнектеп, a = 15 болғандағы мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Алғашқы 2 күнде әрқайсысы a бет, кейінгі 5 күнде әрқайсысы a + 4 бет оқылған. Жалпы 2 × a + 5 × (a + 4). a = 15 қойсақ: 2 × 15 + 5 × (15 + 4) = 30 + 95 = 125 бет. Қосымша 4 бет кейінгі күндердің әрқайсысында бар.",
+      "figureDescription": "2 күннің әрқайсысы a; кейінгі 5 күннің әрқайсысы a және қосымша 4 бет. Жуан сызықтар жеке күндерді бөледі.",
+      "figureSha256": "cab231dac4db0e0193b4d9e46b5f9d5640c795a23900c1f160aaba7bbe0f0587",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "125",
+        "checks": {
+          "early": 30,
+          "later": 95,
+          "totalDays": 7,
+          "coefficients": [
+            20,
+            7,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave27-remaining-route-two-speed-terms",
+      "modelId": "visual-wave27-route-remaining-expression",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "route",
+        "total": 720,
+        "firstSpeed": 90,
+        "secondSpeed": 60,
+        "fixedHours": 3,
+        "tMax": 6
+      },
+      "answer": "720 − (90 × t + 60 × 3)",
+      "sourceRefs": [
+        {
+          "sourceId": "54d0fc32880fafbf",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-8-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-8-leveltest.json#7",
+      "sourceCanonicalSha256": "3e88babef49455146ce08138e61d8ae28fd029477587bd8a13d82d6263337150",
+      "sourceSkill": "Subtracting the grouped sum of two different speed-time segments from the whole route with literal time",
+      "adaptationChanges": [
+        "Әр бастапқы нысана сақталды: суреттегі санды әріп орнына қою, қысқарған қабырғаның ауданы, салыстырмалы периметр, екі кезеңді оқу және екі түрлі жылдамдықпен жүрілген жолды жалпы жолдан азайту.",
+        "Сандар, бағалар, өлшемдер, уақыттар, шектеулер және күндер жаңадан берілді; шынайы қалалардың арақашықтығы туралы дерек қолданылмады.",
+        "Native SVG жаңа параметрлерден салынды. Бір бастапқы дәптер raster-і архивте жоқ: тек сақталған толық шарт/шешімдегі дағды пайдаланылды, бастапқы суретпен визуалды салыстырылды деп мәлімделмейді. Ешбір source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Әріпті өрнек",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source/new review; exact symbolic polynomial identity and MCQ uniqueness; actual notebook/day counts, directed travel, metric garden dimensions, symbolic deficits and343px legibility. One unavailable source raster must remain disclosed."
+      },
+      "image": "/figures/synaq-editions/visual-wave27-remaining-route-two-speed-terms.svg",
+      "verificationModule": "scripts/editorial/visual-wave27-models.mjs",
+      "options": [
+        "720 − 90 × t + 60 × 3",
+        "720 − (90 × t + 60 × 3)",
+        "720 − (90 + 60) × (t + 3)",
+        "720 − 90 × (t + 3)"
+      ],
+      "statement": "Автобус P елді мекенінен Q-ға жүрді. Әр жүрілген бөліктің үстінде жылдамдық (км/сағ), астында уақыт (сағ) көрсетілген. 0 < t < 6. Қалған жолдың ұзындығын километрмен беретін өрнекті таңдаңыз. Сызба масштабсыз берілген.",
+      "solution": "Бірінші бөлік 90 × t км, екінші бөлік 60 × 3 км. Жалпы жолдан екеуінің қосындысы азайтылады: 720 − (90 × t + 60 × 3). Бұл өрнек 540 − 90 × t түріне келеді. Мысалы, t = 2 болса, 720 − (90 × 2 + 60 × 3) = 360 км. Жақшасыз екінші жолды қайта қосу қате болар еді.",
+      "figureDescription": "P пен Q арасы 720 км. Алғашқы жүрілген бөлік 90 км/сағ және t сағ; екіншісі 60 км/сағ және 3 сағ; соңғы бөлік сұрақ белгісімен көрсетілген.",
+      "figureSha256": "e35563ea7925631374fabee2b9b2f3ca00e8b042463cb1e51c9d56558e846923",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "720 − (90 × t + 60 × 3)",
+        "checks": {
+          "coefficients": [
+            540,
+            -90,
+            0
+          ],
+          "optionPolynomials": [
+            [
+              900,
+              -90,
+              0
+            ],
+            [
+              540,
+              -90,
+              0
+            ],
+            [
+              270,
+              -150,
+              0
+            ],
+            [
+              450,
+              -90,
+              0
+            ]
+          ],
+          "domain": "0 < t < 6",
+          "exampleAtTwo": 360
+        }
+      }
+    }
+  ]
+}

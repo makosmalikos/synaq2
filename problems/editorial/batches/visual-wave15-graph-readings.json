@@ -1,0 +1,846 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All10 saved visual grade6topic9.3 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade6topic9.3",
+    "sourceVisualOccurrences": 10,
+    "addressedNewDrafts": 10,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "1098a9a37bdabe77",
+      "5ae0995c8dc7b70b",
+      "673c4c9e35b514d4",
+      "716b99e5f15d8b11",
+      "73033576c57f6ec4",
+      "7e084ab2b860d601",
+      "be8c60b4db436d3c",
+      "cc27e38330613a34",
+      "f661ec98c92ea0d9",
+      "fcb693ccc9c304ab"
+    ],
+    "distinctModels": 10,
+    "semantics": "10 individually addressed graph targets, preserving coordinate meaning, direction of reading, units and discrete versus continuous domain."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave15-point-on-ribbon-cost-line",
+      "modelId": "visual-wave15-point-on-cost-graph",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "medium",
+      "params": {
+        "xLabel": "ℓ (м)",
+        "yLabel": "C (₸)",
+        "xMax": 6,
+        "yMax": 12000,
+        "xStep": 1,
+        "yStep": 2000,
+        "xLabelEvery": 1,
+        "yLabelEvery": 2000,
+        "series": [
+          {
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                6,
+                12000
+              ]
+            ]
+          }
+        ],
+        "candidates": [
+          {
+            "label": "A",
+            "x": 2,
+            "y": 2000
+          },
+          {
+            "label": "B",
+            "x": 3,
+            "y": 6000
+          },
+          {
+            "label": "C",
+            "x": 4,
+            "y": 6000,
+            "dy": 23
+          },
+          {
+            "label": "D",
+            "x": 5,
+            "y": 8000
+          }
+        ]
+      },
+      "answer": "B",
+      "sourceRefs": [
+        {
+          "sourceId": "be8c60b4db436d3c",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-3-level1.json#4",
+      "sourceCanonicalSha256": "c959793869168dcecf9df970749fbdda666f680dbec162e907929b129f3a2f4c",
+      "sourceSkill": "Checking actual graph membership among near-line points using paired input/output coordinates",
+      "adaptationChanges": [
+        "Әр бастапқы график дағдысы сақталды: нүктенің тиістілігі, тоқтау аралығы, жеке нүктелердегі бірлік баға, кері/тура оқу, бір мезеттегі салыстыру немесе екі биіктіктің айырмасы.",
+        "Шамалар, берілген сандар, график төбелері, тоқтау уақыттары, тор қадамдары және дұрыс жауаптар жаңадан берілді. Квадрат периметрінің4коэффициенті сақталды.",
+        "Әр график жаңа координаталардан native SVG түрінде сызылды. Сызықаралық мәндер бүтін айқас көбейтінділермен дәл есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Шамалардың графигі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, printed axis units/scales, actual polyline interpolation/inverse, discrete points and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave15-point-on-ribbon-cost-line.svg",
+      "verificationModule": "scripts/editorial/visual-wave15-models.mjs",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "statement": "Графикте таспаның C құнының оның ℓ ұзындығына тәуелділігі берілген. A, B, C, D нүктелерінің қайсысы график сызығының дәл бойында жатыр?",
+      "solution": "График әр метрге 2000 теңге көрсетеді. A(2; 2000) төмен, C(4; 6000) төмен, D(5; 8000) төмен. B(3; 6000) үшін 3 × 2000 = 6000, сондықтан тек B графикте жатыр.",
+      "figureDescription": "Көлденең ось ℓ (м), 0–6, бір аралық 1. Тік ось C (₸), 0–12000, бір аралық 2000. Негізгі сынық сызық төбелері: (0; 0), (6; 12000). Белгіленген нүктелер A(2; 2000), B(3; 6000), C(4; 6000), D(5; 8000).",
+      "figureSha256": "71188902d09b299a8b7acfb54d4944a7769f21f8116e4caaff3d1929135bc7f3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "B",
+        "checks": {
+          "candidateCoordinates": [
+            [
+              "A",
+              2,
+              2000
+            ],
+            [
+              "B",
+              3,
+              6000
+            ],
+            [
+              "C",
+              4,
+              6000
+            ],
+            [
+              "D",
+              5,
+              8000
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave15-scaled-walk-stop-duration",
+      "modelId": "visual-wave15-stopped-duration",
+      "grade": 6,
+      "topic": "speed",
+      "difficulty": "medium",
+      "params": {
+        "xLabel": "t (мин)",
+        "yLabel": "s (м)",
+        "xMax": 32,
+        "yMax": 1200,
+        "xStep": 4,
+        "yStep": 200,
+        "xLabelEvery": 4,
+        "yLabelEvery": 200,
+        "series": [
+          {
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                8,
+                600
+              ],
+              [
+                20,
+                600
+              ],
+              [
+                32,
+                1200
+              ]
+            ]
+          }
+        ]
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "673c4c9e35b514d4",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-3-level1.json#5",
+      "sourceCanonicalSha256": "287342475cdd3fe5ebd93ebb1288ba236b2bda7e1919955b5f68459fd632e4fd",
+      "sourceSkill": "Reading a horizontal distance-time segment duration using a nonunit4-minute grid, rather than counting3cells",
+      "adaptationChanges": [
+        "Әр бастапқы график дағдысы сақталды: нүктенің тиістілігі, тоқтау аралығы, жеке нүктелердегі бірлік баға, кері/тура оқу, бір мезеттегі салыстыру немесе екі биіктіктің айырмасы.",
+        "Шамалар, берілген сандар, график төбелері, тоқтау уақыттары, тор қадамдары және дұрыс жауаптар жаңадан берілді. Квадрат периметрінің4коэффициенті сақталды.",
+        "Әр график жаңа координаталардан native SVG түрінде сызылды. Сызықаралық мәндер бүтін айқас көбейтінділермен дәл есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Шамалардың графигі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, printed axis units/scales, actual polyline interpolation/inverse, discrete points and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave15-scaled-walk-stop-duration.svg",
+      "verificationModule": "scripts/editorial/visual-wave15-models.mjs",
+      "statement": "Данияр жаяу жүріп, жолда аялдады. Графикте жүрген жолының уақытқа тәуелділігі көрсетілген. Ол неше минут қозғалмай тұрды? Уақыт шкаласының бір аралығына назар аударыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Жол 600 м деңгейінде өзгермейтін көлденең бөлік 8 минутта басталып, 20 минутта аяқталады. Аялдау 20 − 8 = 12 минут. Үш ұсақ тор аралығының әрқайсысы 4 минут екенін ескереміз.",
+      "figureDescription": "Көлденең ось t (мин), 0–32, бір аралық 4. Тік ось s (м), 0–1200, бір аралық 200. Негізгі сынық сызық төбелері: (0; 0), (8; 600), (20; 600), (32; 1200). ",
+      "figureSha256": "237975650428f7dd85c5a4cd0228f4954fccbb02ce4311e5ecc86139107f9a85",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "start": 8,
+          "end": 20,
+          "level": 600
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave15-discrete-ticket-unit-price",
+      "modelId": "visual-wave15-discrete-ticket-price",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "xLabel": "n (билет)",
+        "yLabel": "C (₸)",
+        "xMax": 7,
+        "yMax": 2450,
+        "xStep": 1,
+        "yStep": 350,
+        "xLabelEvery": 1,
+        "yLabelEvery": 700,
+        "series": [
+          {
+            "points": [
+              [
+                2,
+                700
+              ],
+              [
+                3,
+                1050
+              ],
+              [
+                5,
+                1750
+              ],
+              [
+                6,
+                2100
+              ]
+            ],
+            "discrete": true
+          }
+        ]
+      },
+      "answer": "350",
+      "sourceRefs": [
+        {
+          "sourceId": "716b99e5f15d8b11",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-3-level1.json#6",
+      "sourceCanonicalSha256": "60249a6520e26fe973f84cc1a7ae74df2f1e334cc212b0a40eafd5ad3f979b4b",
+      "sourceSkill": "Recovering a unit price from discrete integer-count purchase points without joining them into a continuous domain",
+      "adaptationChanges": [
+        "Әр бастапқы график дағдысы сақталды: нүктенің тиістілігі, тоқтау аралығы, жеке нүктелердегі бірлік баға, кері/тура оқу, бір мезеттегі салыстыру немесе екі биіктіктің айырмасы.",
+        "Шамалар, берілген сандар, график төбелері, тоқтау уақыттары, тор қадамдары және дұрыс жауаптар жаңадан берілді. Квадрат периметрінің4коэффициенті сақталды.",
+        "Әр график жаңа координаталардан native SVG түрінде сызылды. Сызықаралық мәндер бүтін айқас көбейтінділермен дәл есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Шамалардың графигі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, printed axis units/scales, actual polyline interpolation/inverse, discrete points and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave15-discrete-ticket-unit-price.svg",
+      "verificationModule": "scripts/editorial/visual-wave15-models.mjs",
+      "statement": "Көрме билеттерінің жалпы құны билет санына тәуелді түрде жеке нүктелермен берілген. Әр билет бірдей бағамен сатылады. Бір билеттің бағасы неше теңге? Жауапқа тек санды жазыңыз.",
+      "solution": "Мысалы, 2 билет 700 теңге, сондықтан бір билет 700 : 2 = 350 теңге. Қалған нүктелер де сол бағаны береді: 1050 : 3 = 1750 : 5 = 2100 : 6 = 350. Билет саны бөлшек болмайтындықтан, нүктелерді үздіксіз сызықпен қоспаймыз.",
+      "figureDescription": "Көлденең ось n (билет), 0–7, бір аралық 1. Тік ось C (₸), 0–2450, бір аралық 350. Негізгі жеке нүктелері: (2; 700), (3; 1050), (5; 1750), (6; 2100). ",
+      "figureSha256": "2f940de43fa65d1a1e3ec4d88946de2b33384cdda0ceb1dc56ffc315a1ee187d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "350",
+        "checks": {
+          "rates": [
+            350,
+            350,
+            350,
+            350
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave15-water-volume-inverse-time",
+      "modelId": "visual-wave15-inverse-water-time",
+      "grade": 6,
+      "topic": "speed",
+      "difficulty": "medium",
+      "params": {
+        "xLabel": "t (мин)",
+        "yLabel": "V (л)",
+        "xMax": 8,
+        "yMax": 192,
+        "xStep": 1,
+        "yStep": 24,
+        "xLabelEvery": 1,
+        "yLabelEvery": 24,
+        "series": [
+          {
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                8,
+                192
+              ]
+            ]
+          }
+        ],
+        "requestedY": 144
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "fcb693ccc9c304ab",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-3-level1.json#7",
+      "sourceCanonicalSha256": "f528f59e06ecd345839d67b987aaf10cf27bb8b6d82851e6dc645e1b9de73965",
+      "sourceSkill": "Reading a known volume from the vertical axis to obtain the corresponding time on the horizontal axis",
+      "adaptationChanges": [
+        "Әр бастапқы график дағдысы сақталды: нүктенің тиістілігі, тоқтау аралығы, жеке нүктелердегі бірлік баға, кері/тура оқу, бір мезеттегі салыстыру немесе екі биіктіктің айырмасы.",
+        "Шамалар, берілген сандар, график төбелері, тоқтау уақыттары, тор қадамдары және дұрыс жауаптар жаңадан берілді. Квадрат периметрінің4коэффициенті сақталды.",
+        "Әр график жаңа координаталардан native SVG түрінде сызылды. Сызықаралық мәндер бүтін айқас көбейтінділермен дәл есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Шамалардың графигі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, printed axis units/scales, actual polyline interpolation/inverse, discrete points and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave15-water-volume-inverse-time.svg",
+      "verificationModule": "scripts/editorial/visual-wave15-models.mjs",
+      "statement": "Ыдыста жиналған судың көлемі графикте көрсетілген. Көлем 144 литрге неше минутта жетеді? Жауапқа тек санды жазыңыз.",
+      "solution": "Көлем осіндегі 144 л мәнінен графикке дейін көлденең, одан уақыт осіне тік бағытпен оқимыз: t = 6 мин. Графиктен минутына 24 л, 6 × 24 = 144 л.",
+      "figureDescription": "Көлденең ось t (мин), 0–8, бір аралық 1. Тік ось V (л), 0–192, бір аралық 24. Негізгі сынық сызық төбелері: (0; 0), (8; 192). ",
+      "figureSha256": "4a4f0cf51e2e41b341212b950b7b4aeae545b65559c48bed831ce0160bb8da7b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "point": [
+            6,
+            144
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave15-faster-line-common-time",
+      "modelId": "visual-wave15-faster-same-time",
+      "grade": 6,
+      "topic": "speed",
+      "difficulty": "medium",
+      "params": {
+        "xLabel": "t (сағ)",
+        "yLabel": "s (км)",
+        "xMax": 4,
+        "yMax": 48,
+        "xStep": 1,
+        "yStep": 6,
+        "xLabelEvery": 1,
+        "yLabelEvery": 6,
+        "series": [
+          {
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                18
+              ]
+            ],
+            "label": "I"
+          },
+          {
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                45
+              ]
+            ],
+            "label": "II",
+            "labelDy": 6
+          }
+        ],
+        "comparisonTime": 2
+      },
+      "answer": "II",
+      "sourceRefs": [
+        {
+          "sourceId": "1098a9a37bdabe77",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-3-level1.json#8",
+      "sourceCanonicalSha256": "b74ca8bab610edb8f1020c19411944a44fcce2bd737e67d4af5e17b5ae9977f4",
+      "sourceSkill": "Comparing two distance-time graphs at the same time and identifying the greater speed when the second line is steeper",
+      "adaptationChanges": [
+        "Әр бастапқы график дағдысы сақталды: нүктенің тиістілігі, тоқтау аралығы, жеке нүктелердегі бірлік баға, кері/тура оқу, бір мезеттегі салыстыру немесе екі биіктіктің айырмасы.",
+        "Шамалар, берілген сандар, график төбелері, тоқтау уақыттары, тор қадамдары және дұрыс жауаптар жаңадан берілді. Квадрат периметрінің4коэффициенті сақталды.",
+        "Әр график жаңа координаталардан native SVG түрінде сызылды. Сызықаралық мәндер бүтін айқас көбейтінділермен дәл есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Шамалардың графигі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, printed axis units/scales, actual polyline interpolation/inverse, discrete points and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave15-faster-line-common-time.svg",
+      "verificationModule": "scripts/editorial/visual-wave15-models.mjs",
+      "options": [
+        "I",
+        "II",
+        "Жылдамдықтары бірдей",
+        "Графиктен анықталмайды"
+      ],
+      "statement": "Екі қатысушы бір мезгілде бір жерден шыққан. Олардың жүрген жолдары I және II графиктерімен берілген. Қай график жылдамдығы үлкен қатысушыға тиесілі?",
+      "solution": "2 сағатта I графигі 12 км, II графигі 30 км. Бірдей уақытта II көбірек жол жүреді: 30 : 2 = 15 км/сағ, ал I үшін 12 : 2 = 6 км/сағ. Сондықтан жылдамы II.",
+      "figureDescription": "Көлденең ось t (сағ), 0–4, бір аралық 1. Тік ось s (км), 0–48, бір аралық 6. I сынық сызық төбелері: (0; 0), (3; 18). II сынық сызық төбелері: (0; 0), (3; 45). ",
+      "figureSha256": "6ac52706fdc7e82c635a0798f16d354b2812f2fd6fb55b876e576b9629071f84",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "II",
+        "checks": {
+          "atSameTime": [
+            {
+              "label": "I",
+              "value": 12
+            },
+            {
+              "label": "II",
+              "value": 30
+            }
+          ],
+          "time": 2
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave15-interpret-volume-mass-point",
+      "modelId": "visual-wave15-interpret-mass-point",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "xLabel": "V (дм³)",
+        "yLabel": "m (кг)",
+        "xMax": 8,
+        "yMax": 12,
+        "xStep": 1,
+        "yStep": 3,
+        "xLabelEvery": 1,
+        "yLabelEvery": 3,
+        "series": [
+          {
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                8,
+                12
+              ]
+            ]
+          }
+        ],
+        "point": [
+          6,
+          9
+        ]
+      },
+      "answer": "6 дм³ түйіршіктің массасы 9 кг",
+      "sourceRefs": [
+        {
+          "sourceId": "cc27e38330613a34",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-3-level1.json#9",
+      "sourceCanonicalSha256": "1e13350a41e9e4f096cd2e0029713d6ce90c9a75770e9f06ebd0f0c4b9302eed",
+      "sourceSkill": "Interpreting the meaning and units of one labeled point without swapping volume and mass axes",
+      "adaptationChanges": [
+        "Әр бастапқы график дағдысы сақталды: нүктенің тиістілігі, тоқтау аралығы, жеке нүктелердегі бірлік баға, кері/тура оқу, бір мезеттегі салыстыру немесе екі биіктіктің айырмасы.",
+        "Шамалар, берілген сандар, график төбелері, тоқтау уақыттары, тор қадамдары және дұрыс жауаптар жаңадан берілді. Квадрат периметрінің4коэффициенті сақталды.",
+        "Әр график жаңа координаталардан native SVG түрінде сызылды. Сызықаралық мәндер бүтін айқас көбейтінділермен дәл есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Шамалардың графигі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, printed axis units/scales, actual polyline interpolation/inverse, discrete points and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave15-interpret-volume-mass-point.svg",
+      "verificationModule": "scripts/editorial/visual-wave15-models.mjs",
+      "options": [
+        "9 дм³ түйіршіктің массасы 6 кг",
+        "1 дм³ түйіршіктің массасы 9 кг",
+        "6 дм³ түйіршіктің массасы 9 кг",
+        "6 дм³ түйіршіктің массасы 1,5 кг"
+      ],
+      "statement": "График түйіршіктің m массасының V көлеміне тәуелділігін көрсетеді. Белгіленген A нүктесі нені білдіреді?",
+      "solution": "A нүктесінің абсциссасы V = 6 дм³, ординатасы m = 9 кг. Демек, 6 дм³ түйіршіктің массасы 9 кг. Координаталардың мағынасы мен ретін ауыстыруға болмайды.",
+      "figureDescription": "Көлденең ось V (дм³), 0–8, бір аралық 1. Тік ось m (кг), 0–12, бір аралық 3. Негізгі сынық сызық төбелері: (0; 0), (8; 12). A(6; 9) белгіленген.",
+      "figureSha256": "37c87f2b723e51b610f59a350e5f75e8e4950a1f34f7c668fdc0da582262ddcb",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6 дм³ түйіршіктің массасы 9 кг",
+        "checks": {
+          "volume": 6,
+          "mass": 9
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave15-plant-growth-between-times",
+      "modelId": "visual-wave15-plant-height-difference",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "xLabel": "t (апта)",
+        "yLabel": "h (см)",
+        "xMax": 5,
+        "yMax": 30,
+        "xStep": 1,
+        "yStep": 2,
+        "xLabelEvery": 1,
+        "yLabelEvery": 6,
+        "series": [
+          {
+            "points": [
+              [
+                0,
+                4
+              ],
+              [
+                1,
+                6
+              ],
+              [
+                2,
+                10
+              ],
+              [
+                3,
+                18
+              ],
+              [
+                4,
+                26
+              ],
+              [
+                5,
+                30
+              ]
+            ]
+          }
+        ],
+        "firstTime": 2,
+        "secondTime": 4
+      },
+      "answer": "16",
+      "sourceRefs": [
+        {
+          "sourceId": "f661ec98c92ea0d9",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-3-level1.json#10",
+      "sourceCanonicalSha256": "ab5dbcfda3abf635e5cce0fd2ebe4960690631598d3fe13e2d1e22bd0502fb8e",
+      "sourceSkill": "Reading two intermediate2cm-grid heights between major labels and subtracting them, rather than returning the final height",
+      "adaptationChanges": [
+        "Әр бастапқы график дағдысы сақталды: нүктенің тиістілігі, тоқтау аралығы, жеке нүктелердегі бірлік баға, кері/тура оқу, бір мезеттегі салыстыру немесе екі биіктіктің айырмасы.",
+        "Шамалар, берілген сандар, график төбелері, тоқтау уақыттары, тор қадамдары және дұрыс жауаптар жаңадан берілді. Квадрат периметрінің4коэффициенті сақталды.",
+        "Әр график жаңа координаталардан native SVG түрінде сызылды. Сызықаралық мәндер бүтін айқас көбейтінділермен дәл есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Шамалардың графигі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, printed axis units/scales, actual polyline interpolation/inverse, discrete points and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave15-plant-growth-between-times.svg",
+      "verificationModule": "scripts/editorial/visual-wave15-models.mjs",
+      "statement": "Көшет биіктігінің аптаға тәуелділік графигі берілген. 2-аптаның соңынан 4-аптаның соңына дейін көшет неше сантиметрге өскен? Жауапқа тек санды жазыңыз.",
+      "solution": "Бір тік тор аралығы 2 см. 2 аптада h = 10 см, 4 аптада h = 26 см. Өсімі 26 − 10 = 16 см. Сұралғаны соңғы биіктік емес, өзгерісі.",
+      "figureDescription": "Көлденең ось t (апта), 0–5, бір аралық 1. Тік ось h (см), 0–30, бір аралық 2. Негізгі сынық сызық төбелері: (0; 4), (1; 6), (2; 10), (3; 18), (4; 26), (5; 30). ",
+      "figureSha256": "2a819e19933dbe250e6a9d237255d09deffd9252b9e2f33af1285af159521c7d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "16",
+        "checks": {
+          "firstHeight": 10,
+          "secondHeight": 26
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave15-remaining-fuel-reading",
+      "modelId": "visual-wave15-fuel-remaining",
+      "grade": 6,
+      "topic": "speed",
+      "difficulty": "medium",
+      "params": {
+        "xLabel": "s (км)",
+        "yLabel": "V (л)",
+        "xMax": 400,
+        "yMax": 48,
+        "xStep": 40,
+        "yStep": 4,
+        "xLabelEvery": 80,
+        "yLabelEvery": 8,
+        "series": [
+          {
+            "points": [
+              [
+                0,
+                48
+              ],
+              [
+                400,
+                8
+              ]
+            ]
+          }
+        ],
+        "requestedX": 160
+      },
+      "answer": "32",
+      "sourceRefs": [
+        {
+          "sourceId": "73033576c57f6ec4",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-3-level1.json#12",
+      "sourceCanonicalSha256": "5ae47a0bff8466c63603b84172195daead0b80802c9ec4b3b3d7c012f108bc10",
+      "sourceSkill": "Reading the remaining value on a decreasing graph with40km and4litre grid units, not the distinct amount16litres consumed",
+      "adaptationChanges": [
+        "Әр бастапқы график дағдысы сақталды: нүктенің тиістілігі, тоқтау аралығы, жеке нүктелердегі бірлік баға, кері/тура оқу, бір мезеттегі салыстыру немесе екі биіктіктің айырмасы.",
+        "Шамалар, берілген сандар, график төбелері, тоқтау уақыттары, тор қадамдары және дұрыс жауаптар жаңадан берілді. Квадрат периметрінің4коэффициенті сақталды.",
+        "Әр график жаңа координаталардан native SVG түрінде сызылды. Сызықаралық мәндер бүтін айқас көбейтінділермен дәл есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Шамалардың графигі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, printed axis units/scales, actual polyline interpolation/inverse, discrete points and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave15-remaining-fuel-reading.svg",
+      "verificationModule": "scripts/editorial/visual-wave15-models.mjs",
+      "statement": "Автокөліктегі отынның қалған көлемі жүрілген жолға тәуелді графикпен берілген. 160 км жүргеннен кейін неше литр отын қалады? Жауапқа тек санды жазыңыз.",
+      "solution": "Жол осіндегі 160 км мәніне сәйкес график ординатасы 32 л. Басында 48 л болған. 160 км-де 16 л жұмсалған, ал сұралған қалғаны 48 − 16 = 32 л.",
+      "figureDescription": "Көлденең ось s (км), 0–400, бір аралық 40. Тік ось V (л), 0–48, бір аралық 4. Негізгі сынық сызық төбелері: (0; 48), (400; 8). ",
+      "figureSha256": "4e9da7e50e451aa21555363308f9ad69d30d126df1c480bd63d2af680295aa55",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "32",
+        "checks": {
+          "point": [
+            160,
+            32
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave15-square-perimeter-inverse-side",
+      "modelId": "visual-wave15-inverse-square-side",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "xLabel": "a (см)",
+        "yLabel": "P (см)",
+        "xMax": 8,
+        "yMax": 32,
+        "xStep": 1,
+        "yStep": 4,
+        "xLabelEvery": 1,
+        "yLabelEvery": 4,
+        "series": [
+          {
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                8,
+                32
+              ]
+            ]
+          }
+        ],
+        "requestedY": 28
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "7e084ab2b860d601",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-3-level1.json#14",
+      "sourceCanonicalSha256": "57e59d329d5fbf32877146cc23024eb114b1b82a8ccd44978b9aaf7419b27032",
+      "sourceSkill": "Reading a square side from a specified perimeter on the graph and checking the geometric factor4 invariant",
+      "adaptationChanges": [
+        "Әр бастапқы график дағдысы сақталды: нүктенің тиістілігі, тоқтау аралығы, жеке нүктелердегі бірлік баға, кері/тура оқу, бір мезеттегі салыстыру немесе екі биіктіктің айырмасы.",
+        "Шамалар, берілген сандар, график төбелері, тоқтау уақыттары, тор қадамдары және дұрыс жауаптар жаңадан берілді. Квадрат периметрінің4коэффициенті сақталды.",
+        "Әр график жаңа координаталардан native SVG түрінде сызылды. Сызықаралық мәндер бүтін айқас көбейтінділермен дәл есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Шамалардың графигі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, printed axis units/scales, actual polyline interpolation/inverse, discrete points and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave15-square-perimeter-inverse-side.svg",
+      "verificationModule": "scripts/editorial/visual-wave15-models.mjs",
+      "statement": "Квадраттың P периметрі оның a қабырғасына тәуелді. Графикті пайдаланып, периметрі 28 см квадраттың қабырғасы неше сантиметр болатынын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "P = 28 деңгейінен графикке көлденең барып, a осіне түсеміз: a = 7 см. Тексеру: P = 4a, 4 × 7 = 28 см.",
+      "figureDescription": "Көлденең ось a (см), 0–8, бір аралық 1. Тік ось P (см), 0–32, бір аралық 4. Негізгі сынық сызық төбелері: (0; 0), (8; 32). ",
+      "figureSha256": "031c0d2436006a822e5ef5c93398fe027b430d1da7476c458c9573872f9fe46b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": {
+          "point": [
+            7,
+            28
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave15-cycle-time-to-distance",
+      "modelId": "visual-wave15-cycle-distance",
+      "grade": 6,
+      "topic": "speed",
+      "difficulty": "medium",
+      "params": {
+        "xLabel": "t (сағ)",
+        "yLabel": "s (км)",
+        "xMax": 5,
+        "yMax": 60,
+        "xStep": 1,
+        "yStep": 6,
+        "xLabelEvery": 1,
+        "yLabelEvery": 12,
+        "series": [
+          {
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                5,
+                60
+              ]
+            ]
+          }
+        ],
+        "requestedX": 4
+      },
+      "answer": "48",
+      "sourceRefs": [
+        {
+          "sourceId": "5ae0995c8dc7b70b",
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-9-3-level1.json#15",
+      "sourceCanonicalSha256": "4e77fb9e5df1d172396169bc490b535be6851ab88c59fd46934c599a6d8d3a81",
+      "sourceSkill": "Forward time-to-distance graph reading with a nonunit distance scale",
+      "adaptationChanges": [
+        "Әр бастапқы график дағдысы сақталды: нүктенің тиістілігі, тоқтау аралығы, жеке нүктелердегі бірлік баға, кері/тура оқу, бір мезеттегі салыстыру немесе екі биіктіктің айырмасы.",
+        "Шамалар, берілген сандар, график төбелері, тоқтау уақыттары, тор қадамдары және дұрыс жауаптар жаңадан берілді. Квадрат периметрінің4коэффициенті сақталды.",
+        "Әр график жаңа координаталардан native SVG түрінде сызылды. Сызықаралық мәндер бүтін айқас көбейтінділермен дәл есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Шамалардың графигі",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, printed axis units/scales, actual polyline interpolation/inverse, discrete points and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave15-cycle-time-to-distance.svg",
+      "verificationModule": "scripts/editorial/visual-wave15-models.mjs",
+      "statement": "Велосипедшінің жүрген жолы уақытқа тәуелді графикпен берілген. 4 сағатта ол неше километр жүрген? Жауапқа тек санды жазыңыз.",
+      "solution": "t = 4 сағаттағы график биіктігі 48 км. График бір сағатта 12 км жолды көрсетеді, сондықтан 12 × 4 = 48 км.",
+      "figureDescription": "Көлденең ось t (сағ), 0–5, бір аралық 1. Тік ось s (км), 0–60, бір аралық 6. Негізгі сынық сызық төбелері: (0; 0), (5; 60). ",
+      "figureSha256": "1fd6c995e7c9b5876882c295b2151eff615c22f4a0381a1a88153d67968af4b7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "48",
+        "checks": {
+          "point": [
+            4,
+            48
+          ]
+        }
+      }
+    }
+  ]
+}

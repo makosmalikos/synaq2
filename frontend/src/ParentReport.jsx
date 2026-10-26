@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { buildDiagnosticShareText, daysUntilDiagnostic } from './platformDiagnostic.js';
 import './ParentReport.css';
+import { mockDisplayScore } from './analytics.js';
+import { displayDate } from './displayDate.js';
 
-export default function ParentReport({ child, summary, mocks = [], diagnostics = [], lang }) {
+export default function ParentReport({ child, summary, mocks = [], diagnostics = [], diagnosticsReady = true, onRetry, lang }) {
   const text = (ru, kk) => lang === 'ru' ? ru : kk;
-  const locale = lang === 'ru' ? 'ru-RU' : 'kk-KZ';
   const [filter, setFilter] = useState('all');
   const topicName = topic => lang === 'ru' ? topic.nameRu || topic.name : topic.name;
   const topics = [...summary.topics].sort((a, b) => a.pct - b.pct);
@@ -14,12 +15,12 @@ export default function ParentReport({ child, summary, mocks = [], diagnostics =
   const days = diagnostic ? daysUntilDiagnostic(diagnostic.completedAt) : 0;
   const dateLabel = value => {
     const ms = value?.at?.toMillis?.() || (value?.at?.seconds || 0) * 1000 || Date.parse(value?.completedAt || '');
-    return Number.isFinite(ms) && ms > 0 ? new Date(ms).toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' }) : text('Дата не указана', 'Күні көрсетілмеген');
+    return Number.isFinite(ms) && ms > 0 ? displayDate(ms, lang, { day: 'numeric', month: 'short', year: 'numeric' }) : text('Дата не указана', 'Күні көрсетілмеген');
   };
 
   return <div className="pd-report">
     <section id="pdr-topics" className="pdr-topics" aria-label={text('Подробный прогресс по темам', 'Тақырыптар бойынша толық прогресс')}>
-      <div className="pdr-section-heading"><div><span className="pd-eyebrow">{text('Полная картина', 'Толық көрініс')}</span><h2>{text('Карта тем', 'Тақырыптар картасы')}</h2><p>{text('Каждая тема — маленький шаг к уверенности.', 'Әр тақырып — сенімділікке бір қадам.')}</p></div><span className="pd-chip">{topics.length} {text('тем в практике', 'жаттығу тақырыбы')}</span></div>
+      <div className="pdr-section-heading"><div><span className="pd-eyebrow">{text('Полная картина', 'Толық көрініс')}</span><h2>{text('Карта тем', 'Тақырыптар картасы')}</h2><p>{text('Каждая тема — маленький шаг к уверенности.', 'Әр тақырып — сенімділікке бір қадам.')}</p></div><span className="pd-chip">{text('Тем в практике:', 'Жаттығу тақырыбы:')} {topics.length}</span></div>
       <div className="pdr-filters" aria-label={text('Фильтр тем', 'Тақырып сүзгісі')}>
         {[['all', text('Все темы', 'Барлық тақырыптар')], ['practice', text('Стоит повторить', 'Қайталау керек')], ['strong', text('Получается хорошо', 'Жақсы нәтиже')]].map(([id, label]) => <button type="button" key={id} aria-pressed={filter === id} onClick={() => setFilter(id)}>{label} <span>{id === 'all' ? topics.length : topics.filter(topic => level(topic) === id).length}</span></button>)}
       </div>
@@ -31,7 +32,7 @@ export default function ParentReport({ child, summary, mocks = [], diagnostics =
             <h3>{topicName(topic)}</h3>
             <div className="pdr-topic-score"><strong>{topic.pct}%</strong><span>{text('верных ответов', 'дұрыс жауап')}</span></div>
             <div className="pd-topic-track"><i style={{ width: `${topic.pct}%` }} /></div>
-            <div className="pdr-topic-meta"><span>{topic.count} {text('ответов', 'жауап')}</span>{topic.delta !== null && <span>{topic.delta > 0 ? '+' : ''}{topic.delta} {text('п. п. за неделю', 'п. т. бір аптада')}</span>}</div>
+            <div className="pdr-topic-meta"><span>{text('Ответов:', 'Жауаптар:')} {topic.count}</span>{topic.delta !== null && <span>{topic.delta > 0 ? '+' : ''}{topic.delta} {text('п. п. за неделю', 'п. т. бір аптада')}</span>}</div>
             <p>{tone === 'new' ? text('Пока мало ответов для вывода. Дайте ребёнку время освоиться.', 'Қорытынды үшін жауап аз. Балаңызға үйренуге уақыт беріңіз.') : tone === 'strong' ? text('Похвалите за старание и закрепите результат несколькими задачами.', 'Еңбегін мақтап, нәтижені бірнеше есеппен бекітіңіз.') : text('Разберите одну ошибку вместе, затем предложите 5 похожих задач.', 'Бір қатені бірге талдап, содан кейін 5 ұқсас есеп ұсыныңыз.')}</p>
           </article>;
         })}
@@ -42,7 +43,7 @@ export default function ParentReport({ child, summary, mocks = [], diagnostics =
     <div className="pdr-history-grid">
       <section className="pd-panel pdr-diagnostic">
         <div className="pd-panel-head"><div><span className="pd-eyebrow">SYNAQ DIAGNOSTIC</span><h3>{text('Диагностика знаний', 'Білім диагностикасы')}</h3></div><span className="pd-icon" aria-hidden="true">◎</span></div>
-        {diagnostic ? <>
+        {!diagnosticsReady ? <div className="pdr-empty pdr-empty-compact" role="alert"><h3>{text('Диагностика пока недоступна', 'Диагностика әзірге қолжетімсіз')}</h3><p>{text('Не удалось получить результаты. Это не означает, что ребёнок ещё не проходил диагностику.', 'Нәтижелер алынбады. Бұл баланың диагностикадан өтпегенін білдірмейді.')}</p>{onRetry && <button type="button" className="btn" onClick={onRetry}>{text('Повторить загрузку', 'Жүктеуді қайталау')}</button>}</div> : diagnostic ? <>
           <div className="pdr-diagnostic-result"><div className="pdr-score-ring" style={{ '--score': `${Math.max(0, Math.min(100, diagnostic.readiness || 0)) * 3.6}deg` }}><strong>{diagnostic.readiness}%</strong><span>{text('по диагностике', 'диагностикада')}</span></div><div><strong>{diagnostic.correct}/{diagnostic.total}</strong><p>{text('правильных ответов', 'дұрыс жауап')}</p><small>{dateLabel(diagnostic)}</small></div></div>
           <div className="pdr-diagnostic-topics">{(diagnostic.topics || []).filter(topic => topic.level !== 'strong').slice(0, 3).map(topic => <div key={topic.moduleId}><span>{topic.title?.[lang]}</span><strong>{topic.pct}%</strong></div>)}</div>
           <p className="pdr-diagnostic-next">{days ? text(`Следующая проверка через ${days} дн.`, `Келесі тексеруге ${days} күн қалды.`) : text('Можно пройти повторную диагностику.', 'Диагностиканы қайта өтуге болады.')}</p>
@@ -51,7 +52,11 @@ export default function ParentReport({ child, summary, mocks = [], diagnostics =
         </> : <div className="pdr-empty pdr-empty-compact"><span aria-hidden="true">◎</span><h3>{text('Познакомимся с сильными сторонами', 'Мықты тұстарымен танысайық')}</h3><p>{text('После диагностики в кабинете ребёнка здесь появится результат и темы для повторения.', 'Баланың кабинетіндегі диагностикадан кейін нәтиже мен қайталау тақырыптары көрінеді.')}</p></div>}
       </section>
       <section className="pd-panel"><div className="pd-panel-head"><div><span className="pd-eyebrow">{text('Путь к результату', 'Нәтижеге жету жолы')}</span><h3>{text('История пробных тестов', 'Сынақтар тарихы')}</h3></div><span className="pd-icon" aria-hidden="true">✓</span></div>
-        {mocks.length ? <div className="pdr-test-list">{mocks.map((mock, index) => <article key={mock.id || index}><span className="pdr-test-number">{String(index + 1).padStart(2, '0')}</span><div><strong>{mock.school || text('Пробный тест', 'Сынақ')}</strong><small>{dateLabel(mock)}</small></div><span className="pdr-test-score">{mock.score ?? 0}/{mock.gradable ?? '—'}<small>{text('баллов', 'балл')}</small></span></article>)}</div> : <div className="pdr-empty pdr-empty-compact"><span aria-hidden="true">✓</span><h3>{text('Первый пробник ещё впереди', 'Алғашқы сынақ әлі алда')}</h3><p>{text('Когда ребёнок пройдёт тест, здесь появятся дата, школа и набранные баллы.', 'Балаңыз сынақтан өткен соң, күні, мектебі және жинаған ұпайы көрсетіледі.')}</p></div>}
+        {mocks.length ? <div className="pdr-test-list">{mocks.map((mock, index) => {
+          const points = mockDisplayScore(mock);
+          const weighted = (mock.school === 'БИЛ' || mock.scoring === 'bil') && Number.isFinite(mock.wrong);
+          return <article key={mock.id || index}><span className="pdr-test-number">{String(index + 1).padStart(2, '0')}</span><div><strong>{mock.school || text('Пробный тест', 'Сынақ')}</strong><small>{dateLabel(mock)}</small>{weighted && <small>{mock.score}/{mock.gradable} {text('верных ответов', 'дұрыс жауап')}</small>}</div><span className="pdr-test-score">{points.score}/{points.max || '—'}<small>{weighted ? text('баллов', 'ұпай') : text('верных ответов', 'дұрыс жауап')}</small></span></article>;
+        })}</div> : <div className="pdr-empty pdr-empty-compact"><span aria-hidden="true">✓</span><h3>{text('Первый пробник ещё впереди', 'Алғашқы сынақ әлі алда')}</h3><p>{text('Когда ребёнок пройдёт тест, здесь появятся дата, школа и набранные баллы.', 'Балаңыз сынақтан өткен соң, күні, мектебі және жинаған ұпайы көрсетіледі.')}</p></div>}
       </section>
     </div>
   </div>;

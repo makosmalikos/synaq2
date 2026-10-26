@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All6 saved visual grade5topic1.6 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade5topic1.6",
+    "sourceVisualOccurrences": 6,
+    "addressedNewDrafts": 6,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "29cfac1619ce1e49",
+      "556b35993183c2ef",
+      "5ab8e469d6d88997",
+      "808ff94c768555b9",
+      "902ae08f5f98249b",
+      "c4738e02fbaeb45b"
+    ],
+    "distinctModels": 6,
+    "semantics": "6 source-addressed property targets preserve sum-to-products, products-to-common-factor, paired purchase distribution, common-start outward distance, odd arithmetic-series pairing and a near-hundred product."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave25-split-area-distribution",
+      "modelId": "visual-wave25-split-rectangle-distribution",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "split",
+        "first": 20,
+        "second": 4,
+        "height": 9
+      },
+      "answer": "216",
+      "sourceRefs": [
+        {
+          "sourceId": "808ff94c768555b9",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-6-level1.json#11",
+      "sourceCanonicalSha256": "7fdbe65e685017d416e04aee87bde129cb9c2bf1c90104053c67d23f8ce6f52a",
+      "sourceSkill": "Applying multiplication over an explicit rectangle-width sum and checking both subareas",
+      "adaptationChanges": [
+        "Дереккөздегі қасиет дағдылары сақталды: қосындыға көбейтуді үлестіру, ортақ көбейткіш, екі бағыттағы жол қосындысы және тақ тізбекті жұптау.",
+        "Қабырғалар, жұп саны мен бағалар, жылдамдықтар/уақыт және арифметикалық қатар жаңадан берілді.",
+        "Native SVG жаңа нақты пропорциялы тіктөртбұрыштар, жұптар, сыртқа бағытталған нұсқарлар мен диаграммадан салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Арифметикалық амалдардың қасиеттері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, distributive identities and native metric aspect ratios, actual pair counts, outward direction arrows, actual first-three chart heights and odd-middle pairing,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave25-split-area-distribution.svg",
+      "verificationModule": "scripts/editorial/visual-wave25-models.mjs",
+      "statement": "Тіктөртбұрыш екі бөлікке бөлінген. Қабырғаларының ұзындықтары берілген. Көбейтудің үлестірімділік қасиетін қолданып, бүкіл тіктөртбұрыштың ауданын есептеңіз. Жауапқа тек санды жазыңыз.",
+      "solution": "Ұзындығы 20 + 4 = 24. Аудан: (20 + 4) × 9 = 20 × 9 + 4 × 9 = 180 + 36 = 216. Әр қосылғыш бірдей 9 санына көбейтілді.",
+      "figureDescription": "Екі жалғас тіктөртбұрыштың ұзындықтары 20 және 4, ортақ ені 9.",
+      "figureSha256": "30d95585a9658a66979cd48cf3f07575a222ba2c9a8152e5904cf400ef63615f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "216",
+        "checks": {
+          "firstArea": 180,
+          "secondArea": 36,
+          "wholeWidth": 24
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave25-five-matching-stationery-pairs",
+      "modelId": "visual-wave25-paired-purchase-common-factor",
+      "grade": 5,
+      "topic": "word",
+      "difficulty": "medium",
+      "params": {
+        "scene": "pairs",
+        "pairs": 5,
+        "notePrice": 185,
+        "penPrice": 65
+      },
+      "answer": "1250",
+      "sourceRefs": [
+        {
+          "sourceId": "556b35993183c2ef",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-6-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-6-level2.json#11",
+      "sourceCanonicalSha256": "51a6ed0483377d9fa7c7e93382667e62406d54283d0f6476b70661c22811fc83",
+      "sourceSkill": "Grouping equal counts of different-priced items as repeated notebook-plus-pen pairs using distributivity",
+      "adaptationChanges": [
+        "Дереккөздегі қасиет дағдылары сақталды: қосындыға көбейтуді үлестіру, ортақ көбейткіш, екі бағыттағы жол қосындысы және тақ тізбекті жұптау.",
+        "Қабырғалар, жұп саны мен бағалар, жылдамдықтар/уақыт және арифметикалық қатар жаңадан берілді.",
+        "Native SVG жаңа нақты пропорциялы тіктөртбұрыштар, жұптар, сыртқа бағытталған нұсқарлар мен диаграммадан салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Арифметикалық амалдардың қасиеттері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, distributive identities and native metric aspect ratios, actual pair counts, outward direction arrows, actual first-three chart heights and odd-middle pairing,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave25-five-matching-stationery-pairs.svg",
+      "verificationModule": "scripts/editorial/visual-wave25-models.mjs",
+      "statement": "Әр баған — бір дәптер мен бір қаламнан тұратын жиынтық. Көк бөлікте дәптердің, сары бөлікте қаламның бағасы теңгемен жазылған. Барлық жиынтық үшін неше теңге төленеді? Жауапқа тек санды жазыңыз.",
+      "solution": "Жиынтық саны 5. Бір жиынтық 185 + 65 = 250 теңге. Барлығы (185 + 65) × 5 = 1250 теңге. Тексеру: дәптерлер 925, қаламдар 325 теңге; қосындысы 1250.",
+      "figureDescription": "5 баған, әрқайсысында көк 185 теңгелік дәптер мен сары 65 теңгелік қалам.",
+      "figureSha256": "b3c1a02b41dac03e0b22e4f5a1b0474b2d6feb460d14493f010355bbe0888b51",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "1250",
+        "checks": {
+          "pairPrice": 250,
+          "noteTotal": 925,
+          "penTotal": 325
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave25-outward-cyclists-separation",
+      "modelId": "visual-wave25-opposite-directions-common-start",
+      "grade": 5,
+      "topic": "speed",
+      "difficulty": "medium",
+      "params": {
+        "scene": "separate",
+        "firstSpeed": 18,
+        "secondSpeed": 23,
+        "hours": 4
+      },
+      "answer": "164",
+      "sourceRefs": [
+        {
+          "sourceId": "29cfac1619ce1e49",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-6-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-6-level2.json#12",
+      "sourceCanonicalSha256": "34955c0229852e187538f55c773b07dbc64879a6978cf01246b2153e2e51b5ad",
+      "sourceSkill": "Interpreting outward arrows from a common origin as a sum of separate travelled distances and a common-time factor",
+      "adaptationChanges": [
+        "Дереккөздегі қасиет дағдылары сақталды: қосындыға көбейтуді үлестіру, ортақ көбейткіш, екі бағыттағы жол қосындысы және тақ тізбекті жұптау.",
+        "Қабырғалар, жұп саны мен бағалар, жылдамдықтар/уақыт және арифметикалық қатар жаңадан берілді.",
+        "Native SVG жаңа нақты пропорциялы тіктөртбұрыштар, жұптар, сыртқа бағытталған нұсқарлар мен диаграммадан салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Арифметикалық амалдардың қасиеттері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, distributive identities and native metric aspect ratios, actual pair counts, outward direction arrows, actual first-three chart heights and odd-middle pairing,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave25-outward-cyclists-separation.svg",
+      "verificationModule": "scripts/editorial/visual-wave25-models.mjs",
+      "statement": "Екі велосипедші бір нүктеден бір мезгілде қарама-қарсы бағытта шықты. Суретте тұрақты жылдамдықтары көрсетілген. 4 сағаттан кейін олардың арақашықтығы неше километр болады? Жауапқа тек санды жазыңыз.",
+      "solution": "Біріншісі 18 × 4 = 72 км, екіншісі 23 × 4 = 92 км жүреді. Олар ортақ бастау нүктесінің екі жағында болғандықтан, арасы 72 + 92 = 164 км. Сол нәтиже (18 + 23) × 4 = 41 × 4 = 164.",
+      "figureDescription": "Ортақ O нүктесінен солға 18 км/сағ, оңға 23 км/сағ бағытталған екі нұсқар.",
+      "figureSha256": "4e75bfb53b8bd717f5357a75960fae102aff50d28904a8490fb626dd009f94cc",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "164",
+        "checks": {
+          "firstTravel": 72,
+          "secondTravel": 92,
+          "separationRate": 41
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave25-joined-areas-common-height",
+      "modelId": "visual-wave25-join-rectangle-common-factor",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "split",
+        "first": 38,
+        "second": 62,
+        "height": 15
+      },
+      "answer": "1500",
+      "sourceRefs": [
+        {
+          "sourceId": "902ae08f5f98249b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-6-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-6-level2.json#13",
+      "sourceCanonicalSha256": "9d6ca951e44050359aad49170ae5d8a345b16437c579bee21a0a3a7d5dfde64c",
+      "sourceSkill": "Extracting the common height from two subarea products to use complementary widths summing to100",
+      "adaptationChanges": [
+        "Дереккөздегі қасиет дағдылары сақталды: қосындыға көбейтуді үлестіру, ортақ көбейткіш, екі бағыттағы жол қосындысы және тақ тізбекті жұптау.",
+        "Қабырғалар, жұп саны мен бағалар, жылдамдықтар/уақыт және арифметикалық қатар жаңадан берілді.",
+        "Native SVG жаңа нақты пропорциялы тіктөртбұрыштар, жұптар, сыртқа бағытталған нұсқарлар мен диаграммадан салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Арифметикалық амалдардың қасиеттері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, distributive identities and native metric aspect ratios, actual pair counts, outward direction arrows, actual first-three chart heights and odd-middle pairing,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave25-joined-areas-common-height.svg",
+      "verificationModule": "scripts/editorial/visual-wave25-models.mjs",
+      "statement": "Ені ортақ екі тіктөртбұрыш жалғастырылған. Екі бөліктің аудандарын қосып, ортақ көбейткішті жақша сыртына шығару арқылы жалпы ауданын тиімді есептеңіз. Жауапқа тек санды жазыңыз.",
+      "solution": "38 × 15 + 62 × 15 = (38 + 62) × 15 = 100 × 15 = 1500. Бөлек тексеру: 570 + 930 = 1500. Ортақ көбейткіш 15 сақталады.",
+      "figureDescription": "Екі жалғас тіктөртбұрыштың ұзындықтары 38 және 62, ортақ ені 15.",
+      "figureSha256": "cbb21b0aaab1168b12eb9e3101df043c1e475384d67f2b867e80ac03ab908518",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "1500",
+        "checks": {
+          "firstArea": 570,
+          "secondArea": 930,
+          "wholeWidth": 100
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave25-nine-bouquets-odd-pairing",
+      "modelId": "visual-wave25-odd-arithmetic-sum-from-chart",
+      "grade": 5,
+      "topic": "seq",
+      "difficulty": "medium",
+      "params": {
+        "scene": "bars",
+        "count": 9,
+        "first": 5,
+        "step": 4,
+        "yMax": 16,
+        "yStep": 1
+      },
+      "answer": "189",
+      "sourceRefs": [
+        {
+          "sourceId": "5ab8e469d6d88997",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-6-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-6-level3.json#4",
+      "sourceCanonicalSha256": "cdb48d5a032acf7fd1dc874eb10f5df25495376a16f79d8f18704c88923ca72c",
+      "sourceSkill": "Reading a constant increment from the first three bars then pairing an odd arithmetic progression while retaining its unpaired middle",
+      "adaptationChanges": [
+        "Дереккөздегі қасиет дағдылары сақталды: қосындыға көбейтуді үлестіру, ортақ көбейткіш, екі бағыттағы жол қосындысы және тақ тізбекті жұптау.",
+        "Қабырғалар, жұп саны мен бағалар, жылдамдықтар/уақыт және арифметикалық қатар жаңадан берілді.",
+        "Native SVG жаңа нақты пропорциялы тіктөртбұрыштар, жұптар, сыртқа бағытталған нұсқарлар мен диаграммадан салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Арифметикалық амалдардың қасиеттері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, distributive identities and native metric aspect ratios, actual pair counts, outward direction arrows, actual first-three chart heights and odd-middle pairing,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave25-nine-bouquets-odd-pairing.svg",
+      "verificationModule": "scripts/editorial/visual-wave25-models.mjs",
+      "options": [
+        "168",
+        "189",
+        "210",
+        "230"
+      ],
+      "statement": "Барлығы 9 гүл шоғы дайындалады. Әр келесі шоқта алдыңғысынан бірдей санға артық гүл бар. Диаграммада алғашқы үш шоқтағы сан берілген, қалғандары сұрақ белгісімен көрсетілген. Барлық шоқта неше гүл болады?",
+      "solution": "Алғашқы сандар 5, 9, 13, өсімі 4. Барлық қатар: 5, 9, 13, 17, 21, 25, 29, 33, 37. Шеткілерді жұптасақ, 5 + 37 = 42; 9 + 33 = 42; 13 + 29 = 42; 17 + 25 = 42. Ортада 21 жалғыз қалады. Барлығы 42 × 4 + 21 = 189. Ортаңғы санды ұмытпау керек.",
+      "figureDescription": "Шоқтар1–9 деп нөмірленген. Алғашқы үш бағанның мәндері 5, 9, 13, қалғандары сұрақ белгісімен. Тік шкалада бір ұсақ аралық 1.",
+      "figureSha256": "d1c2d705b155f13d0f32475ab2ae136e37201b117420716c9e8c7a942e327151",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "189",
+        "checks": {
+          "values": [
+            5,
+            9,
+            13,
+            17,
+            21,
+            25,
+            29,
+            33,
+            37
+          ],
+          "pairs": [
+            [
+              5,
+              37
+            ],
+            [
+              9,
+              33
+            ],
+            [
+              13,
+              29
+            ],
+            [
+              17,
+              25
+            ]
+          ],
+          "middle": 21
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave25-hundred-plus-two-rectangle",
+      "modelId": "visual-wave25-near-hundred-rectangle-product",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "length": 102,
+        "width": 57
+      },
+      "answer": "5814",
+      "sourceRefs": [
+        {
+          "sourceId": "c4738e02fbaeb45b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-6-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-6-leveltest.json#6",
+      "sourceCanonicalSha256": "e39bf936fbac9188be9e74d4911f19a383616d5ad201c748bdfd7d22dfab221e",
+      "sourceSkill": "Distributing a near-hundred factor into100plus2 so the extra2 multiplies the other side instead of being added alone",
+      "adaptationChanges": [
+        "Дереккөздегі қасиет дағдылары сақталды: қосындыға көбейтуді үлестіру, ортақ көбейткіш, екі бағыттағы жол қосындысы және тақ тізбекті жұптау.",
+        "Қабырғалар, жұп саны мен бағалар, жылдамдықтар/уақыт және арифметикалық қатар жаңадан берілді.",
+        "Native SVG жаңа нақты пропорциялы тіктөртбұрыштар, жұптар, сыртқа бағытталған нұсқарлар мен диаграммадан салынды. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Арифметикалық амалдардың қасиеттері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, distributive identities and native metric aspect ratios, actual pair counts, outward direction arrows, actual first-three chart heights and odd-middle pairing,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave25-hundred-plus-two-rectangle.svg",
+      "verificationModule": "scripts/editorial/visual-wave25-models.mjs",
+      "options": [
+        "5702",
+        "5814",
+        "5816",
+        "5914"
+      ],
+      "statement": "Тіктөртбұрыштың қабырғаларының ұзындықтары суретте берілген. Оның ауданын қосындыны санға көбейту қасиеті арқылы есептеңіз.",
+      "solution": "102 = 100 + 2. Аудан 102 × 57 = 100 × 57 + 2 × 57 = 5700 + 114 = 5814. Қосымша 2 саны да 57 санына көбейтіледі.",
+      "figureDescription": "Тіктөртбұрыштың ұзындығы 102, ені 57.",
+      "figureSha256": "9669f32a2389595fefdf1c66efe19408990aa4d57f043077b21c5b60931ba577",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5814",
+        "checks": {
+          "hundredPart": 5700,
+          "extraPart": 114
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+// All34 nonvisual fullsaved conditions/officialsolutions/MCQs read; part4#23–24 visual excluded.
+const part4='b20e44ff-fb29-4273-8b42-de067aeca247',circle='7d38e769-4ebd-4583-b95e-ef208b67ea3b';
+const block=(collection,xs)=>xs.map(([kind,params,topic='ratio'],i)=>({collection,number:i+1,kind,params,topic}));
+export const COLLECTION_RATIO4_SPECS=[
+ ...block(part4,[
+ ['mixed-reciprocal-proportion-root-only',{leftWhole:2,leftNum:2,leftDen:5,rightWhole:3,rightNum:3,rightDen:5,smallNum:3,smallDen:50},'eq'],
+ ['same-mixture-component-share',{knownMass:300,knownCopper:90,targetMass:450}],
+ ['workforce-factor-time-inverse-plain',{workers:5,hours:45,factor:3}],
+ ['two-side-ratios-all-three-triangle-lengths',{a:6,b:5,b2:10,c:9,perimeterTenths:1085},'geom'],
+ ['circle-area-ratio-to-circumference-ratio',{firstSquare:25,secondSquare:81},'geom'],
+ ['negative-given-ratio-scaled-denominator',{coefficient:3,givenNum:2,givenDen:5,negativeWhole:2,denominatorFactor:4},'eq'],
+ ['verbal-improper-part-of-part',{firstNum:7,firstDen:4,secondNum:3,secondDen:5,targetNum:9,targetDen:10},'frac'],
+ ['rectangle-ratio-gap-to-decimal-perimeter',{small:4,large:9,gap:27},'geom'],
+ ['second-colour-fraction-of-whole',{first:4,second:9}],
+ ['second-food-share-of-total',{total:84,first:3,second:4}],
+ ['whole-over-x-equals-decimal-ratio',{first:30,rightNumTenths:84,rightDenTenths:35},'eq'],
+ ['computed-weights-outer-ratio-denominator',{firstWhole:4,firstNum:1,firstDen:4,secondWhole:3,secondNum:7,secondDen:12,thirdWhole:1,thirdNum:5,thirdDen:6,multiplier:7,commonTenths:3,leftTenths:28,rightTenths:13,top:65},'eq'],
+ ['workforce-factor-time-inverse-with-units',{workers:6,hours:54,factor:3}],
+ ['constant-speed-new-time-distance',{firstKm:24,firstHours:4,nextHours:7}],
+ ['negative-decimal-root-then-affine-expression',{leftDenTenths:32,rightNegativeTenths:75,rightDen:20,targetCoefficient:3,targetAdd:2},'eq'],
+ ['decimal-left-ratio-fraction-coefficient',{firstTenths:2864,secondTenths:358,coefficient:4,lastTenths:174},'eq'],
+ ['both-ratio-members-same-factor',{value:72,factor:3}],
+ ['equal-item-price-new-quantity',{knownCount:9,knownCost:3150,targetCount:7}],
+ ['nested-divisor-affine-backwards',{numerator:96,insideConstant:28,coefficient:2,outsideAdd:27,total:35},'eq'],
+ ['first-group-share-of-large-total',{total:330,first:5,second:6}],
+ ['mixed-same-denominator-requested-root-multiple',{leftWhole:8,leftNum:4,leftDen:5,leftDivisor:11,rightWhole:2,rightNum:1,rightDen:5,multiplier:4},'eq'],
+ ['sum-of-unit-ratios-symbolic-denominator-gap',{firstDen:4,secondDen:2,coefficient:3},'eq'],
+ ]),
+ ...block(circle,[
+ ['area-to-same-radius-circumference-1',{areaHundredths:11304,piHundredths:314},'geom'],
+ ['diameter-fractional-arc-1',{diameter:48,numerator:5,denominator:12,piHundredths:314},'geom'],
+ ['diameter-wheel-full-turn-distance',{diameter:70,turns:6,piHundredths:314},'geom'],
+ ['circumference-smaller-radius-area-1',{circumferenceHundredths:15072,shrink:3,piHundredths:314},'geom'],
+ ['circumference-smaller-radius-area-2',{circumferenceHundredths:12560,shrink:4,piHundredths:314},'geom'],
+ ['diameter-fractional-arc-2',{diameter:45,numerator:4,denominator:5,piHundredths:314},'geom'],
+ ['area-to-same-radius-circumference-2',{areaHundredths:15386,piHundredths:314},'geom'],
+ ['largest-inscribed-disc-square-remainder',{side:30,piHundredths:314},'geom'],
+ ['area-to-same-radius-circumference-3',{areaHundredths:20096,piHundredths:314},'geom'],
+ ['concentric-ring-difference-of-squares',{outerRadius:9,innerRadius:5,piHundredths:314},'geom'],
+ ['circumference-smaller-radius-area-3',{circumferenceHundredths:8792,shrink:2,piHundredths:314},'geom'],
+ ['radius-wheel-full-turn-distance',{radiusTenths:6,turns:150,piHundredths:314},'geom'],
+ ]),
+];

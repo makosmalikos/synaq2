@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "scope": "Both source rasters, full source/new conditions official/new solutions and all\n8saved/newchoices read. Two own native SVGs inspected as343px PNGs. No source\nart reused/traced. Actual labelled triangle cells and rectangle intersection\ngeometry drive exact answers. Same author computation, not another human.\n",
+  "summary": {
+    "verified": 2,
+    "sourceOptionsRead": 8,
+    "rewrittenOptionsRead": 8,
+    "nativeFigures": 2,
+    "validChangedActualInputsRecomputed": 2,
+    "malformedActualGeometryRejected": 2,
+    "pythonJavaScriptHashesMatched": 2,
+    "allFortyBIL14TasksCompleteWithOtherBatch": true,
+    "separateHumanReviewer": false
+  },
+  "entries": [
+    {
+      "editionId": "bil14-final-bil-31",
+      "sha256": "aee5c0f9b28af222693883f426c9e79c1aab5014ec42ecb5929d3b8988264bbd",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "Full source/new conditions official/new solutions all8saved/newchoices read. All actual triangle cell vertices and positioned values, divider endpoints and rules checked. Actual square rectangle white intersection decoded and physical labels validated at a single scale. Changed actual inputs reject old answers and accept recomputed values; malformed updated-hash geometry rejected. Same author computation.",
+      "figureReview": {
+        "status": "verified",
+        "sha256": "9943b36c0f43fac0287cae214985affbb39d36c79f4047a52a00c5592a7201d2",
+        "method": "Own native SVG geometry independently recomputed,343px PNG inspected. Source art not reused."
+      },
+      "notes": [
+        "{\"allActualPositionedTriangleValues\": [[\"9\", \"6\", \"8\", \"12\"], [\"7\", \"5\", \"15\", \"21\"], [\"10\", \"4\", \"x\", \"20\"]], \"allCellCentroidsAndDividingEdgesVerified\": true, \"allActualOptionValues\": [\"2\", \"7\", \"4\", \"8\"], \"target\": \"8\", \"validChangedActualGeometryOrConditionTarget\": \"10\", \"updatedHashMalformedActualNativeGeometryRejected\": true}"
+      ]
+    },
+    {
+      "editionId": "bil14-final-bil-36",
+      "sha256": "facb8ce96fef1c84a98126035859ccf45545b9a7bd40dae85a75a777a4a088de",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "Full source/new conditions official/new solutions all8saved/newchoices read. All actual triangle cell vertices and positioned values, divider endpoints and rules checked. Actual square rectangle white intersection decoded and physical labels validated at a single scale. Changed actual inputs reject old answers and accept recomputed values; malformed updated-hash geometry rejected. Same author computation.",
+      "figureReview": {
+        "status": "verified",
+        "sha256": "1a83057c7244c109d6f631cbb5ea05b50d02008cfb795e1871fe5c9c587e0e15",
+        "method": "Own native SVG geometry independently recomputed,343px PNG inspected. Source art not reused."
+      },
+      "notes": [
+        "{\"actualPhysicalSquareRectangleOverlapAreas\": [\"100\", \"100\", \"25\"], \"actualIntersectionRectDecodedNotAssumed\": [\"85\", \"105\", \"60\", \"60\"], \"allPhysicalLabelsShareSingleScale\": \"12\", \"allActualOptionValues\": [\"150\", \"175\", \"200\", \"205\"], \"target\": \"150\", \"validChangedActualGeometryOrConditionTarget\": \"600\", \"updatedHashMalformedActualNativeGeometryRejected\": true}"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "editionId": "bil14-final-bil-31",
+      "savedSource": {
+        "sourceRasterSHA256": "92de0781562061dc3ec8775adeb3b8641b0abd528be8f6df86ef814e81b5d040",
+        "allSourceRasterGivensAndOfficialSolutionReadNotTraced": true,
+        "sourceActualTopLeftRightMiddleExamples": [
+          [
+            "12",
+            "9",
+            "6",
+            "8"
+          ],
+          [
+            "5",
+            "3",
+            "15",
+            "25"
+          ]
+        ],
+        "explicitRuleAddedToNewTaskToAvoidFinitePatternAmbiguity": true,
+        "allSourceOptionValues": [
+          "1",
+          "6",
+          "3",
+          "7"
+        ],
+        "target": "7"
+      },
+      "rewritten": {
+        "allActualPositionedTriangleValues": [
+          [
+            "9",
+            "6",
+            "8",
+            "12"
+          ],
+          [
+            "7",
+            "5",
+            "15",
+            "21"
+          ],
+          [
+            "10",
+            "4",
+            "x",
+            "20"
+          ]
+        ],
+        "allCellCentroidsAndDividingEdgesVerified": true,
+        "allActualOptionValues": [
+          "2",
+          "7",
+          "4",
+          "8"
+        ],
+        "target": "8",
+        "validChangedActualGeometryOrConditionTarget": "10",
+        "updatedHashMalformedActualNativeGeometryRejected": true
+      }
+    },
+    {
+      "editionId": "bil14-final-bil-36",
+      "savedSource": {
+        "sourceRasterSHA256": "411a298fa9c6ff08b7918095a6661538811d97f5fda827d1e4a0daf9ffc90f79",
+        "allSourceRasterGivensAndOfficialSolutionReadNotTraced": true,
+        "sourceBothAreasAndWhiteIntersection": [
+          "64",
+          "64",
+          "12"
+        ],
+        "allSourceOptionValues": [
+          "104",
+          "116",
+          "128",
+          "130"
+        ],
+        "target": "104"
+      },
+      "rewritten": {
+        "actualPhysicalSquareRectangleOverlapAreas": [
+          "100",
+          "100",
+          "25"
+        ],
+        "actualIntersectionRectDecodedNotAssumed": [
+          "85",
+          "105",
+          "60",
+          "60"
+        ],
+        "allPhysicalLabelsShareSingleScale": "12",
+        "allActualOptionValues": [
+          "150",
+          "175",
+          "200",
+          "205"
+        ],
+        "target": "150",
+        "validChangedActualGeometryOrConditionTarget": "600",
+        "updatedHashMalformedActualNativeGeometryRejected": true
+      }
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import {
   getFirestore, doc, setDoc, getDoc, getDocs, collection, serverTimestamp,
   runTransaction, onSnapshot, connectFirestoreEmulator, query, orderBy, limit,
 } from 'firebase/firestore';
+import { authenticatedRequest } from './authenticatedRequest.js';
 import { firebaseSettings } from './firebaseConfig.js';
 
 const settings = firebaseSettings(import.meta.env, globalThis.location?.hostname);
@@ -354,23 +355,7 @@ export async function getFlags(uid) {
 // или нет. Ребёнок решал — значит, задача засчитана как пройденная; счётчик
 // «шешілген есеп» не должен стоять на нуле только потому, что он ошибся.
 // Ключ = qid, поэтому повторное открытие той же задачи счётчик не надувает.
-async function learningRequest(uid, body) {
-  const user = auth.currentUser;
-  if (!user || user.uid !== uid) throw Object.assign(new Error('auth-required'), { code: 'learning/auth-required' });
-  const token = await user.getIdToken();
-  if (auth.currentUser?.uid !== uid) throw Object.assign(new Error('auth-required'), { code: 'learning/auth-required' });
-  const response = await fetch('/api/learning', {
-    method: 'POST', signal: AbortSignal.timeout(20000),
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-    body: JSON.stringify(body),
-  });
-  const result = await response.json().catch(() => null);
-  if (!response.ok || !result || typeof result !== 'object') {
-    const reason = result?.error || 'temporarily-unavailable';
-    throw Object.assign(new Error(reason), { code: `learning/${reason}` });
-  }
-  return result;
-}
+const learningRequest = (uid, body) => authenticatedRequest(auth, '/api/learning', { uid, body, prefix: 'learning/' });
 
 export function startLearningSession(uid, request, id = crypto.randomUUID()) {
   const body = request?.mode === 'curriculum'
@@ -397,18 +382,9 @@ export async function getXpSummary(uid) {
   return snap.exists() ? snap.data() : { xp: 0, studySecs: 0 };
 }
 
-export async function rewardRequest(body) {
-  const user = auth.currentUser;
-  if (!user) throw new Error('login_required');
-  const response = await fetch('/api/rewards', {
-    method: body ? 'POST' : 'GET',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${await user.getIdToken()}` },
-    ...(body ? { body: JSON.stringify(body) } : {}),
-  });
-  const data = await response.json().catch(() => ({}));
-  if (!response.ok) throw Object.assign(new Error(data.error || 'failed'), { status: response.status });
-  return data;
-}
+export const rewardRequest = (body) => authenticatedRequest(auth, '/api/rewards', {
+  body, method: body ? 'POST' : 'GET', authError: 'login_required', fallback: 'failed',
+});
 
 export async function getDiagnosticStatus(uid) {
   const snap = await getDoc(statsRef(uid));

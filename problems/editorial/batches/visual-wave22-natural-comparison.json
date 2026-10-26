@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All6 saved visual grade5topic1.3 sources only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade5topic1.3",
+    "sourceVisualOccurrences": 6,
+    "addressedNewDrafts": 6,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "0d491c1e0dad1046",
+      "0f3598be7238e496",
+      "297a31b32d133058",
+      "304fb3bff9451282",
+      "8d7459b77a515535",
+      "cc99a49e2ebe7ccc"
+    ],
+    "distinctModels": 6,
+    "semantics": "6 source-addressed comparison targets preserve open natural intervals, digit-card extrema with zero or a bound, strict transitive mass inequalities and symbolic ray order."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave22-strict-interval-natural-count",
+      "modelId": "visual-wave22-strict-natural-interval",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "interval",
+        "minTick": 20,
+        "maxTick": 30,
+        "lo": 21,
+        "hi": 29
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "297a31b32d133058",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-3-level1.json#2",
+      "sourceCanonicalSha256": "91b71521280e4d302c122982459909ea0c37589f7103406cc6c6aa07b512e6e3",
+      "sourceSkill": "Counting natural numbers strictly between two open endpoints, without including boundary dots",
+      "adaptationChanges": [
+        "Дереккөздегі әр салыстыру дағдысы сақталды: ашық аралық, разряд бойынша максимум/минимум, қатаң салмақ тізбегі, нүкте реті және шектелген максимум.",
+        "Шекаралар, цифрлар, салмақ қатынастары, нүктелер реті және жоғарғы шек дербес жаңадан берілді.",
+        "Native SVG жаңа цифрлар, аралық шеттері және жеміс сандарынан салынды. Қатаң салыстыру таразы табақтарының төмен/жоғары орналасуымен бірдей. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Натурал сандарды салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, exhaustive card permutations, open interval enumeration, exact positive-cone proof of printed strict mass claims, actual native fruit counts and pan heights,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave22-strict-interval-natural-count.svg",
+      "verificationModule": "scripts/editorial/visual-wave22-models.mjs",
+      "statement": "Көк бөлік 21 < x < 29 қос теңсіздігіне сәйкес келеді. Бос дөңгелектердің өзі аралыққа кірмейді. Осы шартты неше натурал сан қанағаттандырады? Жауапқа тек санды жазыңыз.",
+      "solution": "Шеттері кірмейтіндіктен, жарамды сандар 22, 23, 24, 25, 26, 27, 28. Барлығы 7 сан. 21 және 29 сандары саналмайды.",
+      "figureDescription": "Бірлік штрихтар. 21 және 29 белгілері бос дөңгелекпен, арасы көк кесіндімен көрсетілген.",
+      "figureSha256": "e09c2b765ddf9a37371419bad2d977f6931b732f0acf7a3fb46b0a3a4d33a74f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": {
+          "values": [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "openBoundaries": [
+            21,
+            29
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave22-largest-four-digit-card-number",
+      "modelId": "visual-wave22-maximum-four-digit-cards",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cards",
+        "digits": [
+          6,
+          0,
+          2,
+          8
+        ]
+      },
+      "answer": "8620",
+      "sourceRefs": [
+        {
+          "sourceId": "0f3598be7238e496",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-3-level1.json#3",
+      "sourceCanonicalSha256": "9f858e7404218f161227e560f7cb0eba08b1892d7a2346e766102e4f6e6a2fbd",
+      "sourceSkill": "Maximizing a number from four digit cards by place-value comparison",
+      "adaptationChanges": [
+        "Дереккөздегі әр салыстыру дағдысы сақталды: ашық аралық, разряд бойынша максимум/минимум, қатаң салмақ тізбегі, нүкте реті және шектелген максимум.",
+        "Шекаралар, цифрлар, салмақ қатынастары, нүктелер реті және жоғарғы шек дербес жаңадан берілді.",
+        "Native SVG жаңа цифрлар, аралық шеттері және жеміс сандарынан салынды. Қатаң салыстыру таразы табақтарының төмен/жоғары орналасуымен бірдей. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Натурал сандарды салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, exhaustive card permutations, open interval enumeration, exact positive-cone proof of printed strict mass claims, actual native fruit counts and pan heights,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave22-largest-four-digit-card-number.svg",
+      "verificationModule": "scripts/editorial/visual-wave22-models.mjs",
+      "statement": "Төрт карточканың әрқайсысын бір рет қолданып, жазуға болатын ең үлкен төрт таңбалы санды табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Сандарды жоғары разрядтан салыстырамыз. Ең үлкен сан үшін цифрларды кему ретімен қоямыз: 8, 6, 2, 0. Нәтиже 8620.",
+      "figureDescription": "Жеке цифр карточкалары: 6, 0, 2, 8.",
+      "figureSha256": "c1da63202eb6b769e280d8fe91a2ffac019c03b83c8017557819e7ebee022902",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8620",
+        "checks": {
+          "candidates": 18
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave22-smallest-five-digit-card-number",
+      "modelId": "visual-wave22-minimum-five-digit-cards",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cards",
+        "digits": [
+          4,
+          0,
+          9,
+          2,
+          7
+        ]
+      },
+      "answer": "20479",
+      "sourceRefs": [
+        {
+          "sourceId": "cc99a49e2ebe7ccc",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-3-level2.json#13",
+      "sourceCanonicalSha256": "9e3076acad352e923b3f773cdce7938132f15fc02e6ad47e5062efc8da0cc518",
+      "sourceSkill": "Minimizing a five-digit number while retaining the zero card but forbidding a leading zero",
+      "adaptationChanges": [
+        "Дереккөздегі әр салыстыру дағдысы сақталды: ашық аралық, разряд бойынша максимум/минимум, қатаң салмақ тізбегі, нүкте реті және шектелген максимум.",
+        "Шекаралар, цифрлар, салмақ қатынастары, нүктелер реті және жоғарғы шек дербес жаңадан берілді.",
+        "Native SVG жаңа цифрлар, аралық шеттері және жеміс сандарынан салынды. Қатаң салыстыру таразы табақтарының төмен/жоғары орналасуымен бірдей. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Натурал сандарды салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, exhaustive card permutations, open interval enumeration, exact positive-cone proof of printed strict mass claims, actual native fruit counts and pan heights,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave22-smallest-five-digit-card-number.svg",
+      "verificationModule": "scripts/editorial/visual-wave22-models.mjs",
+      "statement": "Бес карточканың әрқайсысын бір рет қолданып, ең кіші бес таңбалы санды жазыңыз. Бірінші цифр 0 бола алмайды. Жауапқа тек санды жазыңыз.",
+      "solution": "Нөлден басқа ең кіші цифр бірінші тұрады, қалғандары өсу ретімен жазылады: 2, 0, 4, 7, 9. Осылай 20479 саны шығады. 0-ден басталса, бес таңбалы сан болмайды.",
+      "figureDescription": "Жеке цифр карточкалары: 4, 0, 9, 2, 7.",
+      "figureSha256": "6b17d349233b44abe0f7e32c46ee99a7cc849d0648b7c625dba8b5e5ea86ac7d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "20479",
+        "checks": {
+          "candidates": 96
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave22-fruit-mass-strict-transitivity",
+      "modelId": "visual-wave22-transitive-strict-mass-bound",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "fruit-scales",
+        "watermelonMelons": 2,
+        "melonApples": 5
+      },
+      "answer": "Қарбыз 10 алмадан ауыр",
+      "sourceRefs": [
+        {
+          "sourceId": "0d491c1e0dad1046",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-3-level3.json#1",
+      "sourceCanonicalSha256": "2480e07a88ed30d9f9aee2ce38ec68b87dfe20903bf9b7512d5e033c49830977",
+      "sourceSkill": "Combining two strict multiplicative mass comparisons into a logically necessary lower bound, avoiding a stronger unproved bound",
+      "adaptationChanges": [
+        "Дереккөздегі әр салыстыру дағдысы сақталды: ашық аралық, разряд бойынша максимум/минимум, қатаң салмақ тізбегі, нүкте реті және шектелген максимум.",
+        "Шекаралар, цифрлар, салмақ қатынастары, нүктелер реті және жоғарғы шек дербес жаңадан берілді.",
+        "Native SVG жаңа цифрлар, аралық шеттері және жеміс сандарынан салынды. Қатаң салыстыру таразы табақтарының төмен/жоғары орналасуымен бірдей. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Натурал сандарды салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, exhaustive card permutations, open interval enumeration, exact positive-cone proof of printed strict mass claims, actual native fruit counts and pan heights,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave22-fruit-mass-strict-transitivity.svg",
+      "verificationModule": "scripts/editorial/visual-wave22-models.mjs",
+      "options": [
+        "Қарбыз 11 алмадан ауыр",
+        "2 қауын 10 алмадан жеңіл",
+        "Қарбыз 10 алмадан ауыр",
+        "Бір қауын қарбыздың жартысынан ауыр"
+      ],
+      "statement": "Барлық қарбыздың массасы бірдей. Қауындардың да өзара, алмалардың да өзара массалары бірдей. Үлкен жасыл — қарбыз, сары — қауын, қызыл — алма. Таразының төмен түскен табағы ауыр. Қай тұжырым міндетті түрде дұрыс?",
+      "solution": "Бірінші таразыдан қарбыз 2 қауыннан ауыр. Екіншісінен бір қауын 5 алмадан ауыр. Сондықтан 2 қауын 2 × 5 = 10 алмадан ауыр, ал қарбыз одан да ауыр. Демек, «Қарбыз 10 алмадан ауыр» міндетті түрде дұрыс. Бұдан 11 алмадан да ауыр деген қорытынды шықпайды.",
+      "figureDescription": "Бірінші таразының қарбыз тұрған сол табағы 2 қауын тұрған оң табақтан төмен. Екінші таразының бір қауын тұрған сол табағы 5 алма тұрған оң табақтан төмен.",
+      "figureSha256": "0f8871a710fdcb1e1a24be89b19230b9d64bfe98ebe2f2c717e9bb34c091fcf1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "Қарбыз 10 алмадан ауыр",
+        "checks": {
+          "proofs": [
+            {
+              "text": "Қарбыз 11 алмадан ауыр",
+              "required": false,
+              "cone": [
+                -1,
+                2,
+                1
+              ]
+            },
+            {
+              "text": "2 қауын 10 алмадан жеңіл",
+              "required": false,
+              "cone": [
+                0,
+                -2,
+                0
+              ]
+            },
+            {
+              "text": "Қарбыз 10 алмадан ауыр",
+              "required": true,
+              "cone": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "text": "Бір қауын қарбыздың жартысынан ауыр",
+              "required": false,
+              "cone": [
+                0,
+                0,
+                -1
+              ]
+            }
+          ],
+          "guaranteedAppleBound": 10
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave22-read-order-as-double-inequality",
+      "modelId": "visual-wave22-point-order-double-inequality",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "order",
+        "positions": {
+          "a": 2,
+          "b": 8,
+          "c": 5
+        }
+      },
+      "answer": "a < c < b",
+      "sourceRefs": [
+        {
+          "sourceId": "8d7459b77a515535",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-3-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-3-level3.json#4",
+      "sourceCanonicalSha256": "8649dbf4521bb4d62ed72fe73f9695851e823dfa5b12d00f385770afcaeeb7b7",
+      "sourceSkill": "Converting left-to-right point order on a ray into a symbolic double inequality",
+      "adaptationChanges": [
+        "Дереккөздегі әр салыстыру дағдысы сақталды: ашық аралық, разряд бойынша максимум/минимум, қатаң салмақ тізбегі, нүкте реті және шектелген максимум.",
+        "Шекаралар, цифрлар, салмақ қатынастары, нүктелер реті және жоғарғы шек дербес жаңадан берілді.",
+        "Native SVG жаңа цифрлар, аралық шеттері және жеміс сандарынан салынды. Қатаң салыстыру таразы табақтарының төмен/жоғары орналасуымен бірдей. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Натурал сандарды салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, exhaustive card permutations, open interval enumeration, exact positive-cone proof of printed strict mass claims, actual native fruit counts and pan heights,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave22-read-order-as-double-inequality.svg",
+      "verificationModule": "scripts/editorial/visual-wave22-models.mjs",
+      "options": [
+        "c < a < b",
+        "b < c < a",
+        "a < c < b",
+        "a < b < c"
+      ],
+      "statement": "Сәуледе A(a), B(b), C(c) нүктелері белгіленген. Олардың орналасуына сәйкес дұрыс қос теңсіздікті таңдаңыз.",
+      "solution": "Сәуледе оң жақтағы нүктенің координатасы үлкен. Солдан оңға реті A, C, B. Сондықтан a < c < b.",
+      "figureDescription": "Сәуледе солдан оңға нүктелер реті A, C, B.",
+      "figureSha256": "0365283b4d220a4c887921b5f3a0ff7cc365166f2d0cca6e8d866166d1b071d5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "a < c < b",
+        "checks": {
+          "leftToRight": [
+            "a",
+            "c",
+            "b"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave22-largest-five-digit-number-below-limit",
+      "modelId": "visual-wave22-maximum-below-bound",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cards",
+        "digits": [
+          2,
+          0,
+          5,
+          4,
+          9
+        ],
+        "limit": 70000
+      },
+      "answer": "59420",
+      "sourceRefs": [
+        {
+          "sourceId": "304fb3bff9451282",
+          "sourceFile": "problems/sources/zerek/courses/5-math-1-3-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-1-3-leveltest.json#3",
+      "sourceCanonicalSha256": "e38dc3e42ae5acef31c955e98a7888aa6003c1464888d19297aa35414603e39a",
+      "sourceSkill": "Maximizing a five-digit permutation subject to a strict upper bound rather than sorting every digit downward blindly",
+      "adaptationChanges": [
+        "Дереккөздегі әр салыстыру дағдысы сақталды: ашық аралық, разряд бойынша максимум/минимум, қатаң салмақ тізбегі, нүкте реті және шектелген максимум.",
+        "Шекаралар, цифрлар, салмақ қатынастары, нүктелер реті және жоғарғы шек дербес жаңадан берілді.",
+        "Native SVG жаңа цифрлар, аралық шеттері және жеміс сандарынан салынды. Қатаң салыстыру таразы табақтарының төмен/жоғары орналасуымен бірдей. Source raster/traced path қолданылмады."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Натурал сандарды салыстыру",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-target review, exhaustive card permutations, open interval enumeration, exact positive-cone proof of printed strict mass claims, actual native fruit counts and pan heights,343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave22-largest-five-digit-number-below-limit.svg",
+      "verificationModule": "scripts/editorial/visual-wave22-models.mjs",
+      "statement": "Бес карточканың әрқайсысын бір рет қолданып, 70000 санынан кіші болатын ең үлкен бес таңбалы санды жазыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Сан 70000 шегінен кіші болуы тиіс. Осы шекке сай ең үлкен алғашқы цифр 5. Қалған цифрларды кему ретімен қоямыз: 9, 4, 2, 0. Нәтиже 59420. Тексеру: 59420 < 70000. Барлық бес карточка бір реттен қолданылған.",
+      "figureDescription": "Жеке цифр карточкалары: 2, 0, 5, 4, 9.",
+      "figureSha256": "c99d8c6ec8b11a6fe8fc34d2ae205228e7edcb50fa2f4ec28964c70c88e25a12",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "59420",
+        "checks": {
+          "limit": 70000,
+          "validCandidates": 72
+        }
+      }
+    }
+  ]
+}

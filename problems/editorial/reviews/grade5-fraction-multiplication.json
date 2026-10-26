@@ -1,0 +1,721 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/batches/grade5-fraction-multiplication.json",
+  "reviewedAt": "2026-10-24",
+  "manualFindings": [],
+  "resolvedFindings": [
+    {
+      "sourceId": "acc18c0baadc7526",
+      "finding": "Lost actual cancellation and both-num/den-multiplication distractor",
+      "resolution": "7/18×6 reduces by6 before converting7/3→2+1/3; originalfraction7/18 offered as false option."
+    },
+    {
+      "sourceId": "ab53780f24c4ed56",
+      "finding": "Whole-part-only multiplication distractor omitted",
+      "resolution": "18+5/12 now offered and explicitly explained false."
+    },
+    {
+      "sourceId": "4164222ef7bfe3f4",
+      "finding": "Separate-parts multiplication and mistaken-sum distractors replaced by generic ±1",
+      "resolution": "6+1/6 and5+11/12 restored with correct diagnoses."
+    },
+    {
+      "sourceId": "c69327e9e812edb8",
+      "finding": "Only-whole-minutes volume distractor omitted",
+      "resolution": "21/10=2+1/10 now offered and explicitly explained false."
+    }
+  ],
+  "scope": "All46 source-addressed grade5topic3.11 nonvisual fraction-multiplication adaptations; full independent printed exact review",
+  "entries": [
+    {
+      "editionId": "grade5-fraction-multiplication-ad32c7f327a43770",
+      "sha256": "4408cdc31c9a58098a8e7a56e90207f702f86a15e9aab45199ea4d00903e2038",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(5/6) × (9/10) evaluated by exact Fraction AST=3/4; requested role reducedDENOMINATOR; every actual MCQ evaluated independently, answer4.",
+      "sourceCanonicalSha256": "0f7e0ec2945ae95eb5dea2504f697cf11c2712c198f7cfb0a810e192a11c120d",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-077e43207b07b058",
+      "sha256": "b941863c4666228150be161a12ac13ea4bb31e82d671a871e58d48ea7ad03eb2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(4/9) × (5/7) evaluated by exact Fraction AST=20/63; requested role fullvalue; every actual MCQ evaluated independently, answer(20/63).",
+      "sourceCanonicalSha256": "63e491e0450b81933a6d88cf372e1d40426493eb40d38d8fa3a25b7a33c04963",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-acc18c0baadc7526",
+      "sha256": "29148dade587268f5c0d8fe13680464634a76e1cfb3f4ea54be91db206179db4",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(7/18) × 6 evaluated by exact Fraction AST=7/3; requested role fullvalue; every actual MCQ evaluated independently, answer(2 + (1/3)). Preserves REAL precancellation gcd(18,6)=6>1 and unchanged-original-fraction distractor from multiplying BOTH numerator/denominator.",
+      "sourceCanonicalSha256": "63bf758b4dc3aaa5f55f3498cdc3c54db920ff5350d45d1caae54fb85a7bca02",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-a34f2458b3488696",
+      "sha256": "403a26490a8310661186ba783acdee1ff4fbc778035b4d4123b6d30e8a6c4cd0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(1 + (2/3)) × (1 + (4/5)) evaluated by exact Fraction AST=3; requested role fullvalue; every actual MCQ evaluated independently, answer3.",
+      "sourceCanonicalSha256": "ce36ca6c5f20c213ae195dd3a9513e9d6a154eac4be48a74c88c7f78cad730f0",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-a81844650a7a2c5d",
+      "sha256": "f54f0f679ae9da59c76b0439c092e440939adf45d75ac9d5f8aa02f452d7e119",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(9/14) × 0 × (4 + (1/3)) evaluated by exact Fraction AST=0; requested role fullvalue; every actual MCQ evaluated independently, answer0.",
+      "sourceCanonicalSha256": "a59edd077dfba3680a7728735103a67b59d09fdcdf62559416020c479c82c30b",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-ab53780f24c4ed56",
+      "sha256": "d1f70e77b04277a904b38e1d467c83c8fc8fe7e7feb3c59210201a789e04392f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression6 × (3 + (5/12)) evaluated by exact Fraction AST=41/2; requested role fullvalue; every actual MCQ evaluated independently, answer(20 + (1/2)). Source-specific whole-only multiplication trap221/12 is actually offered and false.",
+      "sourceCanonicalSha256": "f89c4e59e130f9902af89c5cc54ede4d9dbc5d79423efa73a13b1216781a8ad9",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-aedef301c12750ec",
+      "sha256": "42d3314ad664123d5670b33c508a0aa73691f9001c08741257357d697881c9b7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(4/17) × 3 evaluated by exact Fraction AST=12/17; requested role reducedNUMERATOR; every actual MCQ evaluated independently, answer12.",
+      "sourceCanonicalSha256": "c2f126cd605c5348c7252fe8ff1c189851a24e50fed33ccc40e44def8777870d",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-03b39fb82e6aa0cb",
+      "sha256": "3f5c9e961f640b89ea774dbcf413647d67b8030ed0b5caf7d85e89ff0ca2831d",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(8/21) × (7/12) evaluated by exact Fraction AST=2/9; requested role fullvalue; every actual MCQ evaluated independently, answer(2/9).",
+      "sourceCanonicalSha256": "13b7dbe57b5c6642effc785fe5d0660712214d7ff473a61b2aabbc6dd0396f5c",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-1c09fe84dbe8b9a6",
+      "sha256": "db5789294ed0785c2c77bd063b98112d14c05639137a7ac04723ab2cebfa5b20",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Printed whole36 times printedpart5/12=15, integer output, denominator retained in unit scaling.",
+      "sourceCanonicalSha256": "e8f901020899f3e996ae54f1914d7dd34867cfd96aeb2a0c55ffea71962794b0",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-59bdde9214a15af9",
+      "sha256": "df79aafc5eca7858ba17cafa954e7401c47f1ee02a3c801b10848ece2275d780",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "All FOUR offered rational-function identities proved/refuted by EXACT sparse-polynomial cross products, flags[False, False, True, False]; positive natural denominators mean every formula defined. Correct n×q denominator identity universal, not finite samples.",
+      "sourceCanonicalSha256": "e8221f0956ca06c03ef0cab0ffeab533c8b2539959f7f54b4f169b75b321e88f",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-a769fef25fafa6b3",
+      "sha256": "7593cfd6d6e70c19ccf274a3da3800abedb7bd6b0585daae778f263dfba55de3",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Full displayed mixed value(3 + (2/5))×natural5=17; distributive whole and fraction both included.",
+      "sourceCanonicalSha256": "383fe337236d098314a89673e2bbeabdb5736c1e0b72790636a492fcc26e77ac",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-c6ac043199341326",
+      "sha256": "904c4b69d35dc00e0a519dbebcae05443287d9a0dece82b67c71d32d561f5e52",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(5/11) × (7/9) evaluated by exact Fraction AST=35/99; requested role reducedDENOMINATOR; every actual MCQ evaluated independently, answer99.",
+      "sourceCanonicalSha256": "e6d225d3c6b79f226b5ae1479c52707d6ca549b06391f72ae784fb076d3162a9",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-4b55381cd2d8fd5d",
+      "sha256": "79447cba39ea8273fe17afdd2379a1c3e4aaaa8ad1e27aa0f1c5d1b763174155",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire printedvalue3/5 raised to2=9/25; every MCQ exact, source-specific incompletepower/tripling/square traps['3/25', '6/5', '3/5'] retained and false.",
+      "sourceCanonicalSha256": "fe7c4cf23729ef95baf6b8e73e2c54ed257ad8c53639683982ef1b1e7b72c162",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-9e64e3fb9ed333a2",
+      "sha256": "28ac9cb8359c168134a0ae0fe6fc2090e6e7de0d136fb56f75a7a0ea29c090c4",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(2 + (6/7)) × (3 + (1/2)) evaluated by exact Fraction AST=10; requested role fullvalue; every actual MCQ evaluated independently, answer10.",
+      "sourceCanonicalSha256": "4a077ba31bc24f501f55d5770919fc55b60fccf6f38dc11da31ad92fe68125d2",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-6aca134cb7a4927d",
+      "sha256": "9a4e21bf07374dca2cac92c18b180e0ea6d15bd214c2336a42858c8aaed3d253",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "ALL actual FOUR products['36/35', '99/100', '1', '1']; unique STRICT>1, two exact reciprocal products1 excluded, <1 preserved. Both mixed reciprocal distractors still require mixed conversion.",
+      "sourceCanonicalSha256": "edb946948170ec6facf92b9968e64a8a318ba82bd0c5024da3db19f9fd3cb393",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-b06754bd6e86f27f",
+      "sha256": "f13194f857d1b82ad85d8dd6f5eb7d3e19cc537312bca21b95bbfadd3751ead9",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(7/12) × (6/7) − (1/8) evaluated by exact Fraction AST=3/8; requested role fullvalue; every actual MCQ evaluated independently, answer(3/8). Reassociation distractor evaluated as a×(b−c), different from a×b−c.",
+      "sourceCanonicalSha256": "7c711559d2539a7f77711862a6a7071c1f2a64f880e27d945fec5ea8e6d7eaf7",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-c53a7bedfe654ae6",
+      "sha256": "5ca7aacd35e9ff2a6390195f52d4ff669142952b24541b09717f0fed64663436",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Displayed mixed substitutiona=21/4 into ENTIRE affine expression(4/7) × a + 3 gives6; multiplication before addition.",
+      "sourceCanonicalSha256": "90881a7568b190ab7ab7593bbb6835ff26d155a57646496a00d33fd67f2131cc",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-b042356fb84ba2e1",
+      "sha256": "a6ee279d4206b7e9e86f06059893425474f22784a0e7c6d8d5aa94d836ace22f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Actual unitprice960×full length29/8=3480tenge; whole/fraction cost ledger conserved.",
+      "sourceCanonicalSha256": "86890a29d53879d68fb219e780669101b9b1e4ceb051e72c82a4a3bf724d6888",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-4164222ef7bfe3f4",
+      "sha256": "e5c056e489789f761979095a4a1759df137d2302cc69b4689fa5f91b076aa6ed",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(3 + (1/4)) × (2 + (2/3)) evaluated by exact Fraction AST=26/3; requested role fullvalue; every actual MCQ evaluated independently, answer(8 + (2/3)). Both diagnosed source traps retained: whole×whole+fraction×fraction=37/6, mistaken SUM=71/12; all differ from product.",
+      "sourceCanonicalSha256": "c597d9d9fc67a708848ee1a4409843d8618f3fff51ef27e64aec9b8e0c6ed5bf",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-c69327e9e812edb8",
+      "sha256": "70e8065495bb7e69eecb117956dced1de006b8dc7b5c66305a761462f75c89bb",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Actual constant rate7/10m³/min×FULL time15/4min=21/8m³; source whole-minutes-only trap21/10 offered and false; correct cubic units.",
+      "sourceCanonicalSha256": "de96bcdbb868c7ff5af934c5b70b194abfaf51b8ea2515cd0c6a5e0c88e303fe",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-bb6b8f20e2268109",
+      "sha256": "db69c232b1ffd7aa24145918cf7a3b0cb2fa7262193f404d5c6eea5fb8951e65",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Actual printed mixed speed40/3km/h×mixed time9/4h=30km, positive constant rate, independent dimensional check.",
+      "sourceCanonicalSha256": "c374a8882e370b6e6e2b0018d78ab9c02059311079cb58a4884597d1cce17f76",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-b16f6c5febda2974",
+      "sha256": "90cdeeebc62688053dff6928fc179c2d4c46e125bab11b321427cd23275326ac",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "PRINTED fixed denominator10, target14/15, knownfactor7/9: exact positive coefficient yields UNIQUE raw a=12; allnatural1…12checked, strictmonotonicity excludes larger. Product substituted; normalized secondfactor numerator6 is NOT requested.",
+      "sourceCanonicalSha256": "28bacc94a037ef001169dd64472b6bd6e371784934ddd5ae9d817bcee821f802",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-64befa7488bb7011",
+      "sha256": "cfc3a5bad138cd9398d76931f9e7f4a06fa86a037b706df0daf01f8bfd2f74d1",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(9/28) × (14/15) evaluated by exact Fraction AST=3/10; requested role fullvalue; every actual MCQ evaluated independently, answer(3/10).",
+      "sourceCanonicalSha256": "aa1b28382cc3e85f053db4eddfa6eb6def37642c393bbf71a2a17f97317e1b48",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-05e25400c027690e",
+      "sha256": "014f901ae24cbc63aa757ac8dfd278ab33ce65354b5c109ffce5304a7f7190f5",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "ALL actual offered roots substituted into PRINTED equation5 × (x − (3/11)); nonzero factor5 proves unique bracket root3/11, not x0 or scaledroot.",
+      "sourceCanonicalSha256": "7a6ac3a4ffa575857279449ad3e064e6f04c3d9c8b8e5d6528ff57c8c8ff5c89",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-ed20c907bde6f8af",
+      "sha256": "593b35b8134c22147fb5a3813fef91dc0246218e35ff70bb7d6c6847b6754b58",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire printedvalue5/3 raised to3=125/27; every MCQ exact, source-specific incompletepower/tripling/square traps['35/27', '5', '25/9'] retained and false.",
+      "sourceCanonicalSha256": "f0e431b73ab5b1a130f6f36cfd2b9c3a8df1519d5c2c4958ac03cf57f0e55081",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-6bfb0751b320ffd2",
+      "sha256": "66419a294b72ca828e7e7109c5a1741d1397a00ea40424f8516254a3697b7f15",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(15/22) × (11/9) × (12/5) evaluated by exact Fraction AST=2; requested role fullvalue; every actual MCQ evaluated independently, answer2.",
+      "sourceCanonicalSha256": "1e5bc90fd9fe5caf0671ba4930ba9c89391a42fe621bdc658832f86d49cb4124",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-702ad5a43dab4dd6",
+      "sha256": "42f53f33000f1626f3cf059c9e7ba3f1c06e4b23dc93e936c750efae5fca1514",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression9 × (7/17) + 9 × (10/17) evaluated by exact Fraction AST=9; requested role fullvalue; every actual MCQ evaluated independently, answer9.",
+      "sourceCanonicalSha256": "e6de5d652ef8e0a897e2f107a499a27949cc45cf414f9a6537d6e1a3ed4c3e3d",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-9d1d003c4f079d28",
+      "sha256": "1dcb591eee9c6cfc0b276dc0055ef47fbff3a538aaa104838cfad4f6b46f644c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Every one of actual1120equal steps has printedlength4/7m; independent repeated-addition ledger=640m matches multiplication, denominator not lost.",
+      "sourceCanonicalSha256": "6a2a79596958e59050ae0f9ed0ecb5aaa58f76729f5778979262afa4f81c1b0f",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-68ef14f01d1b4c4c",
+      "sha256": "b874a8a141d96f51e71ad33330f8bbacbf040c7e72fdaf3907ef54936fb4820f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Expanded EVERY inclusive displayed mixed denominator4…19 (16factors), full Fraction product5; telescoping endpoint20/4 independently confirmed, notlastfactor or count.",
+      "sourceCanonicalSha256": "5cdfb52437ecc4322191c182a04efa331127067ba9c11d13945b0b47c34c5d65",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-8ccc6827b8f9988b",
+      "sha256": "d0b8f939a01e52a734d775d801da28b3b69b351eb9ec6d9d55fe355f39ba4fa3",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Both actual factors parsed: distinct roots['12/5', '5/8']; both substituted, zero-product property proves complete rootset. Requested PRODUCT3/2, offered sum121/40 and one-root traps false.",
+      "sourceCanonicalSha256": "30eefb33a6c996e6b84aaf5ecf06778d5296752d2eb4b6959b82683c2827dab1",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-e7d1dbf72b3927e2",
+      "sha256": "f2c3428189e55b876b89492378759eeb8e7779688f3d1abc269f7c3381a9e05b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "THREE actual successive-impact ledger['125', '75', '45', '27']dm; priorheight updated eachtime, thirdafterimpact notfirstbounce or totaltravel.",
+      "sourceCanonicalSha256": "1b647ceb9d4785cd9d98ddd1b5e148a5097243f0e04a556508750c4417d9a1de",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-e133cf5be1e59cab",
+      "sha256": "c563451525cdd13062a4eaa9daa1b9e31407f29001ef2a23752ddeed0e0ceff2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Actual square BOTH side lengths scale5/3; independent concrete square oldarea81,newarea225, ratio25/9; sidefactor and incrementratio are false MCQs. General identity(s×a)²/a²=s² for every a>0.",
+      "sourceCanonicalSha256": "520b61f1e0fa2de4018d22a31eeec46e9efd40a14d71b8d07c1d9a07dd1a38c8",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-7dd519e7b89bd4f3",
+      "sha256": "b1621d6a704294bf2808997faa21918bbbe1e1ead2e42a5c32b4a8cbdba38513",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "COMPLETE positive integerdomain1…432, exact whole-product checks for BOTH printedfractions5/18,7/24; valid[72, 144, 216, 288, 360, 432], minimum72, denominatorproduct works but is larger. Bound is known valid witness so unbounded tail cannot alter minimum.",
+      "sourceCanonicalSha256": "d0f39f6940937d70afe670ec4c41a65dded85445eccc149113235e65f4ce0e0d",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-8b56a5ff72cfed08",
+      "sha256": "17e015db8ea611e63570b779e2691939ed5b87730e389b7a1696ddf6927b069b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "UNIVERSAL proof: t−t²=t(1−t)>0 for every0<t<1. Both positive factors justified by printed strictdomain; equality roots0,1 excluded, so no equalitycase and finite examples are not the proof.",
+      "sourceCanonicalSha256": "5a3f624806ae2afe54964be5de8ba2aad27d77ed7d1db8df369fef17bf24fcdb",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-9141217fd5340947",
+      "sha256": "d2042e53abed7ae48f30b188426b1a7f2c649962e2496138e4713eaaf4f02666",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Actual own/current69/4,9/4, signs+and−give39/2,15; times8/3,4, separate positive distances['52', '60']km, TOTAL112, notsigneddisplacement.",
+      "sourceCanonicalSha256": "df2911ae354eed1c68d217c6973604850787e07213fa34e768caac97d6e02980",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-895f088e3ab4e2c1",
+      "sha256": "d0ed2cb87d1db860d176bd296e05e3de61fe19151de0deff01aaa006edd6e50e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Ratio3/2 inferred from ALL actualfirstfour values, EVERYfirstseven computed['2/5', '3/5', '9/10', '27/20', '81/40', '243/80', '729/160']; SIXTH index5 answer(3 + (3/80)), actual fifth/seventh distractors false.",
+      "sourceCanonicalSha256": "bc9f00a6ad14bdedd91d488a559cc65ca5a8e021a2ee26ff15e663feec919b28",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-80deb8b67872a056",
+      "sha256": "bbf70f308c1ad623bb299ec7c3ac61dc82e494f8e94a10b1969b135492468921",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Expanded ALL actualfractions numerator2…26; exact product2/27, uncancelledfirstNUM2/lastDEN27; actual lastfactor and off-by-one denominator distractors evaluated.",
+      "sourceCanonicalSha256": "b7d23c43cab5d5624ae37e6bee3b53160b78a5b609d3ecf4b58bfb4376c5ccf3",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-0a5db718d011fe99",
+      "sha256": "6758c043099950457b4cab6ee351854acc57bd710169cbede13ce2d137677aaa",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(5 + (3/8)) × (5 + (3/8)) − (5 + (3/8)) × (3 + (3/8)) evaluated by exact Fraction AST=43/4; requested role fullvalue; every actual MCQ evaluated independently, answer(10 + (3/4)).",
+      "sourceCanonicalSha256": "e5e4facc6581d81dfcb4f984a377b5d2398b3a84cb752bef928c3270c478268a",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-5cc902fdd1ca73b0",
+      "sha256": "c843cb6b96ecb2d0f1b87d21385bd0511d2337aab35f66264bfbce128d28ae7b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "ALL4 actual offeredproduct values['3/35', '1/7', '5/49', '5/14']; unique equals printedtarget5/14, bothfactors accounted.",
+      "sourceCanonicalSha256": "95da095787c36e190e0a37f347c3ed8ac49af149dc9b650da2e0e6d17f2e65b8",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-8b8bdd781aa46f11",
+      "sha256": "3af97e3acb3fcdf25324ea770593aa87268f66dc9a63a5cfcecbbaebf076f014",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(2 + (3/7)) × 0 + (2 + (3/7)) × 1 evaluated by exact Fraction AST=17/7; requested role fullvalue; every actual MCQ evaluated independently, answer(2 + (3/7)). Zero annihilates only first product, never the separate second addend.",
+      "sourceCanonicalSha256": "5647549f90f0ec37f102b22d03a4fa3da097cc56188101307942140d56aaaace",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-4e0c53ceda4ae0ca",
+      "sha256": "cc36d0f949bf4ab68de477c84935963dc1be8a4b572103f5bde17873a4e08543",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Entire DISPLAYED expression(3 + (1/3)) × (3/5) × (2 + (1/2)) evaluated by exact Fraction AST=5; requested role fullvalue; every actual MCQ evaluated independently, answer5.",
+      "sourceCanonicalSha256": "8a0fc020a9bea710dbc61d934792a4eb19f9c7bd6b20f4f8e399a3694716c7f8",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-f0042a463d84b711",
+      "sha256": "59a869ea51ab6388cca13e2b110ebe5590aa05af9696358d47d0de4e318024df",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Printed exact recipe4/9litres PER1kg×full mass27/4kg=3litres; no rounding recurringfraction and no dropping fractional kg.",
+      "sourceCanonicalSha256": "d2f775f298491a2a079108e5e6cb0a6ae96f86ec9ffda0171c467d4e3cc00aa2",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-093dbe3b927d344d",
+      "sha256": "c09f3e696643cf0295c130b2b785318b7a90cb033d456f0a9b649b408648bb1a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Exact SPARSE POLYNOMIAL identity for ALLx, includingx0, original(5/6) × x + (7/10) × x − x; actual4flags[True, False, False, False], coefficient5/6+7/10−implicit1=8/15. No division byx or finitewitness used for universality.",
+      "sourceCanonicalSha256": "92bf6a64fa88f105c51f81712a97fc05e00c039be4e51dcd1a03018696197b3b",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-3540449d885fd95c",
+      "sha256": "28fe537d8501877c169e7e5ac328cacb87da0509985d9ff9510fcce3c530abd8",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "Actual known ORIGINALab2/5, separate factorchanges4,3/8; associative polynomial regrouping proves productmultiplier3/2, resulting3/5 for EVERYa,b with givenab. Bothchanges included.",
+      "sourceCanonicalSha256": "579070574de1efd263118d514f1aef03577e6649e64d2d499c9242c18c0899d9",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-cc43060d334339a7",
+      "sha256": "a6322d1b8ccf14b2737da2e713ddcbbee559f28a24fb58dfafd397e96edce0ac",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "ALL3 actual price/mass pairs[('9/4', 960), ('5/3', 480), ('5/8', 2400)], exact costs['2160', '800', '1500'], spent4460, paid6000, change1540; reverse ledger closes exactly.",
+      "sourceCanonicalSha256": "a8b58b7dd1303ce59e587e361469aa64eb6aa5b1709dc9a3d450f84c273fe6c6",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    },
+    {
+      "editionId": "grade5-fraction-multiplication-b6782548655bb698",
+      "sha256": "06104588c823d4b47c52601566b8f4e866136ef82f2d83f7b6e6b1d87421b0c6",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Displayed conditions/ALL MCQs parsed independently by exact Fraction AST, complete positive minimum domains, universal sparse-polynomial identities and strict-order proofs; source micro-skills/fullsolutions manually read; no author model/spec/params used",
+      "notes": "PRINTED fraction-of-fraction coefficient4/5×3/8=3/10; knownpartial42 gives ORIGINALwhole140, then wanted5/7part=100. Both reversechecks exact, known42 is not thewhole.",
+      "sourceCanonicalSha256": "8e1b181b84535e85fc5da6a216b6ec24e5388637da4924cb85226f820d5c260a",
+      "checks": [
+        "All46 saved/new/fullsolutions/MCQs manually read",
+        "Exact reduced/raw numerator-denominator and canonical mixed roles checked",
+        "Four source-specific didactic findings fixed and final4 reread; other42 unchanged",
+        "Strict>1 reciprocal traps, fullpowers, rootproducts, both telescoping endpoints and allrate/quantity ledgers checked"
+      ]
+    }
+  ]
+}

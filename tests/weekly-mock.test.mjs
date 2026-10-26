@@ -86,4 +86,6 @@ test('weekly BIL submission scores answered errors and skips separately', async 
   for (const question of variant.questions.slice(1, 5)) answers[question.num] = '__wrong_answer__';
   const result = await gradeMock(db, session, answers);
   assert.deepEqual([result.score, result.wrong, result.unanswered, result.points, result.maxPoints], [1, 4, 55, 0, 240]);
+  assert.equal(result.review[0].lang, variant.questions[0].lang || null);
+  assert.equal(result.review[0].section, variant.questions[0].section);
 });

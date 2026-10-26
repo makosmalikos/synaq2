@@ -1,0 +1,466 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All10 individually read saved nonvisual GRADE6topic9.2 with original nativeMathML-compatible tables. Closed until independent fullcontenthash review.",
+  "summary": {
+    "editions": 10,
+    "sourceOccurrencesReferenced": 10,
+    "distinctModels": 10,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade6-dependency-tables-bc1432ae348e4a5d",
+      "modelId": "grade6-dependency-tables-affine-last-value-from-given-formula",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "coefficient": 5,
+        "offset": 2,
+        "xs": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json",
+          "sourceId": "bc1432ae348e4a5d"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic9.2 nonvisual adaptation; newly authored nativeMathML table data not sourceTeX or raster; variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10сақталған визуалсыз9.2шарт, толық ресми шешім және MCQ жеке оқылды. Жеке жаңа деректер, контекст пен толық шешім берілді.",
+        "Түпнұсқа TeX кестелері өз нативті MathML кестелерімен алмастырылды; сурет/скан жоқ. Бағандардың сәйкестігі, тәуелсіз/тәуелді қадам және бірлік баға ажыратылды.",
+        "Тұрақты қадам мен нақты сандар облысы туралы тұжырымдар нақты шектелді. Standard жабық draft, сыртқы тәуелсіз толық hash және native table review қажет."
+      ],
+      "statement": "y = 5x + 2 формуласына сәйкес кесте берілген. Соңғы бағандағы ? орнына y-тің қандай мәні келеді?\n\n| x | 1 | 2 | 3 | 4 | 5 |\n| --- | --- | --- | --- | --- | --- |\n| y | 7 | 12 | 17 | 22 | ? |\n\nЖауапқа тек санды жазыңыз.",
+      "answer": "27",
+      "solution": "? тұрған бағанда x = 5. y = 5 × 5 + 2 = 25 + 2 = 27. Алдыңғы мәндер 7; 12; 17; 22; x біреуге артқанда y 5-ке артады: 22 + 5 = 27. Сұралғаны x нөмірі емес, сол бағандағы y.",
+      "calculationVerification": {
+        "answer": "27",
+        "checks": [
+          "All10 saved nonvisual9.2 fullconditions/officialsolutions/everyMCQ individually read; oldTeXtables replaced by original nativeMathML-compatible rectangular tables",
+          "Correspondingcolumn notrowindex, dependentoutput versus independentinputstep, nonunitquantitystep versus unitprice distinguished",
+          "Finite sampled real-domain example explicitly constrained; nofalseuniversal claim that every finite-domain table must omit values",
+          "Every decreasing-formula output/operationorder option checked; fourthinput hasthreeincrements; no imageassets/scan/traces",
+          "Closed Standard draft until independent fullcontenthash and native table structure review; variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-dependency-tables-3256a7ccc3272f1f",
+      "modelId": "grade6-dependency-tables-real-domain-table-only-samples",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json",
+          "sourceId": "3256a7ccc3272f1f"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic9.2 nonvisual adaptation; newly authored nativeMathML table data not sourceTeX or raster; variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10сақталған визуалсыз9.2шарт, толық ресми шешім және MCQ жеке оқылды. Жеке жаңа деректер, контекст пен толық шешім берілді.",
+        "Түпнұсқа TeX кестелері өз нативті MathML кестелерімен алмастырылды; сурет/скан жоқ. Бағандардың сәйкестігі, тәуелсіз/тәуелді қадам және бірлік баға ажыратылды.",
+        "Тұрақты қадам мен нақты сандар облысы туралы тұжырымдар нақты шектелді. Standard жабық draft, сыртқы тәуелсіз толық hash және native table review қажет."
+      ],
+      "statement": "x кез келген НАҚТЫ сан бола алады, y = 2x + 1. Төмендегі шағын кесте туралы қай тұжырым дұрыс?\n\n| x | 0 | 0,5 | 1 | 1,5 |\n| --- | --- | --- | --- | --- |\n| y | 1 | 2 | 3 | 4 |\n\n",
+      "options": [
+        "Кестеде x-тің кейбір мәндері және оларға сәйкес y мәндері берілген",
+        "Мұнда x-тің барлық мүмкін нақты мәні түгел жазылған",
+        "Бұл кестедегі x қадамы 1-ге тең",
+        "Бір бағандағы x пен y бір-біріне қатысы жоқ"
+      ],
+      "answer": "Кестеде x-тің кейбір мәндері және оларға сәйкес y мәндері берілген",
+      "solution": "Нақты x мәндері шексіз көп; кестеде тек 0; 0,5; 1; 1,5 таңдалған. Мысалы, x = 2,25 мәні рұқсат етілгенімен, кестеде жоқ. Бір бағандағы x пен y формуламен байланысқан. Көрші x мәндерінің айырмасы 0,5, сондықтан бұл кестеде қадам 1 емес.",
+      "calculationVerification": {
+        "answer": "Кестеде x-тің кейбір мәндері және оларға сәйкес y мәндері берілген",
+        "checks": [
+          "All10 saved nonvisual9.2 fullconditions/officialsolutions/everyMCQ individually read; oldTeXtables replaced by original nativeMathML-compatible rectangular tables",
+          "Correspondingcolumn notrowindex, dependentoutput versus independentinputstep, nonunitquantitystep versus unitprice distinguished",
+          "Finite sampled real-domain example explicitly constrained; nofalseuniversal claim that every finite-domain table must omit values",
+          "Every decreasing-formula output/operationorder option checked; fourthinput hasthreeincrements; no imageassets/scan/traces",
+          "Closed Standard draft until independent fullcontenthash and native table structure review; variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-dependency-tables-877229e90e49a23a",
+      "modelId": "grade6-dependency-tables-decimal-independent-step",
+      "grade": 6,
+      "topic": "seq",
+      "difficulty": "basic",
+      "params": {
+        "tenths": [
+          24,
+          26,
+          28,
+          30,
+          32
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json",
+          "sourceId": "877229e90e49a23a"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic9.2 nonvisual adaptation; newly authored nativeMathML table data not sourceTeX or raster; variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10сақталған визуалсыз9.2шарт, толық ресми шешім және MCQ жеке оқылды. Жеке жаңа деректер, контекст пен толық шешім берілді.",
+        "Түпнұсқа TeX кестелері өз нативті MathML кестелерімен алмастырылды; сурет/скан жоқ. Бағандардың сәйкестігі, тәуелсіз/тәуелді қадам және бірлік баға ажыратылды.",
+        "Тұрақты қадам мен нақты сандар облысы туралы тұжырымдар нақты шектелді. Standard жабық draft, сыртқы тәуелсіз толық hash және native table review қажет."
+      ],
+      "statement": "Кестедегі x мәндері бірдей қадаммен өседі. Көрші ЕКІ x мәнінің аралығындағы қадамды таңдаңыз.\n\n| Орны | 1 | 2 | 3 | 4 | 5 |\n| --- | --- | --- | --- | --- | --- |\n| x | 2,4 | 2,6 | 2,8 | 3 | 3,2 |\n\n",
+      "options": [
+        "5",
+        "0,4",
+        "0,2",
+        "0,8"
+      ],
+      "answer": "0,2",
+      "solution": "Қатар тұрған x мәндерінің айырмалары: 2,6 − 2,4 = 0,2; 2,8 − 2,6 = 0,2; 3 − 2,8 = 0,2; 3,2 − 3 = 0,2. Қадам 0,2. 5 — мәндер саны; 0,4 — екі қадам; 0,8 — бірінші мен соңғының төрт қадамдық айырмасы. Қадамның бүтін сан болуы міндетті емес.",
+      "calculationVerification": {
+        "answer": "0,2",
+        "checks": [
+          "All10 saved nonvisual9.2 fullconditions/officialsolutions/everyMCQ individually read; oldTeXtables replaced by original nativeMathML-compatible rectangular tables",
+          "Correspondingcolumn notrowindex, dependentoutput versus independentinputstep, nonunitquantitystep versus unitprice distinguished",
+          "Finite sampled real-domain example explicitly constrained; nofalseuniversal claim that every finite-domain table must omit values",
+          "Every decreasing-formula output/operationorder option checked; fourthinput hasthreeincrements; no imageassets/scan/traces",
+          "Closed Standard draft until independent fullcontenthash and native table structure review; variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-dependency-tables-ad3588b0a1e6df40",
+      "modelId": "grade6-dependency-tables-flow-rate-aligned-time-column",
+      "grade": 6,
+      "topic": "work",
+      "difficulty": "basic",
+      "params": {
+        "rate": 18,
+        "xs": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "target": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json",
+          "sourceId": "ad3588b0a1e6df40"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic9.2 nonvisual adaptation; newly authored nativeMathML table data not sourceTeX or raster; variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10сақталған визуалсыз9.2шарт, толық ресми шешім және MCQ жеке оқылды. Жеке жаңа деректер, контекст пен толық шешім берілді.",
+        "Түпнұсқа TeX кестелері өз нативті MathML кестелерімен алмастырылды; сурет/скан жоқ. Бағандардың сәйкестігі, тәуелсіз/тәуелді қадам және бірлік баға ажыратылды.",
+        "Тұрақты қадам мен нақты сандар облысы туралы тұжырымдар нақты шектелді. Standard жабық draft, сыртқы тәуелсіз толық hash және native table review қажет."
+      ],
+      "statement": "Шағын сорғы бос ыдысқа минутына 18 л су құяды. Су көлемі V уақыт t-ға тәуелді. t = 3 минут бағанының астындағы ? мәнін табыңыз (литр).\n\n| t, мин | 1 | 2 | 3 | 4 | 5 |\n| --- | --- | --- | --- | --- | --- |\n| V, л | 18 | 36 | ? | 72 | 90 |\n\nЖауапқа тек санды жазыңыз.",
+      "answer": "54",
+      "solution": "V = 18t. Берілген бағанда t = 3, сондықтан V = 18 × 3 = 54 л. Толық көлемдер қатары 18; 36; 54; 72; 90. Уақыт пен көлем бір бағанда жұптасады; көрші бағанның мәнін алуға болмайды.",
+      "calculationVerification": {
+        "answer": "54",
+        "checks": [
+          "All10 saved nonvisual9.2 fullconditions/officialsolutions/everyMCQ individually read; oldTeXtables replaced by original nativeMathML-compatible rectangular tables",
+          "Correspondingcolumn notrowindex, dependentoutput versus independentinputstep, nonunitquantitystep versus unitprice distinguished",
+          "Finite sampled real-domain example explicitly constrained; nofalseuniversal claim that every finite-domain table must omit values",
+          "Every decreasing-formula output/operationorder option checked; fourthinput hasthreeincrements; no imageassets/scan/traces",
+          "Closed Standard draft until independent fullcontenthash and native table structure review; variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-dependency-tables-d2a103fd261e8ba5",
+      "modelId": "grade6-dependency-tables-decreasing-formula-entire-output-row",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "constant": 22,
+        "coefficient": 3,
+        "xs": [
+          1,
+          2,
+          3
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json",
+          "sourceId": "d2a103fd261e8ba5"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic9.2 nonvisual adaptation; newly authored nativeMathML table data not sourceTeX or raster; variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10сақталған визуалсыз9.2шарт, толық ресми шешім және MCQ жеке оқылды. Жеке жаңа деректер, контекст пен толық шешім берілді.",
+        "Түпнұсқа TeX кестелері өз нативті MathML кестелерімен алмастырылды; сурет/скан жоқ. Бағандардың сәйкестігі, тәуелсіз/тәуелді қадам және бірлік баға ажыратылды.",
+        "Тұрақты қадам мен нақты сандар облысы туралы тұжырымдар нақты шектелді. Standard жабық draft, сыртқы тәуелсіз толық hash және native table review қажет."
+      ],
+      "statement": "y = 22 − 3x. Кестеде x мәндеріне СӘЙКЕС келетін y жолын толық таңдаңыз.\n\n| x | 1 | 2 | 3 |\n| --- | --- | --- | --- |\n| y | ? | ? | ? |\n\n",
+      "options": [
+        "25; 28; 31",
+        "19; 16; 13",
+        "19; 18; 17",
+        "63; 60; 57"
+      ],
+      "answer": "19; 16; 13",
+      "solution": "x = 1: y = 22 − 3 × 1 = 19; x = 2: y = 22 − 3 × 2 = 16; x = 3: y = 22 − 3 × 3 = 13. Сондықтан y жолы 19; 16; 13. Ол әр x қадамында 3-ке кемиді. 25; 28; 31 азайтуды қосуға ауыстырады; 19; 18; 17 біреуге ғана кемиді; 63; 60; 57 формулаға жоқ жақша қосып, (22 − x) × 3 есептейді.",
+      "calculationVerification": {
+        "answer": "19; 16; 13",
+        "checks": [
+          "All10 saved nonvisual9.2 fullconditions/officialsolutions/everyMCQ individually read; oldTeXtables replaced by original nativeMathML-compatible rectangular tables",
+          "Correspondingcolumn notrowindex, dependentoutput versus independentinputstep, nonunitquantitystep versus unitprice distinguished",
+          "Finite sampled real-domain example explicitly constrained; nofalseuniversal claim that every finite-domain table must omit values",
+          "Every decreasing-formula output/operationorder option checked; fourthinput hasthreeincrements; no imageassets/scan/traces",
+          "Closed Standard draft until independent fullcontenthash and native table structure review; variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-dependency-tables-e9fbb451de7637ff",
+      "modelId": "grade6-dependency-tables-fourth-input-three-steps",
+      "grade": 6,
+      "topic": "seq",
+      "difficulty": "basic",
+      "params": {
+        "first": 9,
+        "step": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json",
+          "sourceId": "e9fbb451de7637ff"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic9.2 nonvisual adaptation; newly authored nativeMathML table data not sourceTeX or raster; variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10сақталған визуалсыз9.2шарт, толық ресми шешім және MCQ жеке оқылды. Жеке жаңа деректер, контекст пен толық шешім берілді.",
+        "Түпнұсқа TeX кестелері өз нативті MathML кестелерімен алмастырылды; сурет/скан жоқ. Бағандардың сәйкестігі, тәуелсіз/тәуелді қадам және бірлік баға ажыратылды.",
+        "Тұрақты қадам мен нақты сандар облысы туралы тұжырымдар нақты шектелді. Standard жабық draft, сыртқы тәуелсіз толық hash және native table review қажет."
+      ],
+      "statement": "Тәуелсіз айнымалының алғашқы мәні 9, әр келесі мән оған 3 қосу арқылы табылады. ТӨРТІНШІ мән қандай?",
+      "options": [
+        "21",
+        "36",
+        "18",
+        "12"
+      ],
+      "answer": "18",
+      "solution": "Алғашқы төрт мән 9; 12; 15; 18. Біріншіден төртіншіге дейін 4 − 1 = 3 қадам: 9 + 3 × 3 = 18. 21 — бесінші мән; 36 бастапқы мәнді төртке көбейтеді; 12 — екінші мән. Қадам саны мүше нөмірінен біреуге кем.",
+      "calculationVerification": {
+        "answer": "18",
+        "checks": [
+          "All10 saved nonvisual9.2 fullconditions/officialsolutions/everyMCQ individually read; oldTeXtables replaced by original nativeMathML-compatible rectangular tables",
+          "Correspondingcolumn notrowindex, dependentoutput versus independentinputstep, nonunitquantitystep versus unitprice distinguished",
+          "Finite sampled real-domain example explicitly constrained; nofalseuniversal claim that every finite-domain table must omit values",
+          "Every decreasing-formula output/operationorder option checked; fourthinput hasthreeincrements; no imageassets/scan/traces",
+          "Closed Standard draft until independent fullcontenthash and native table structure review; variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-dependency-tables-471a7b4373540bdb",
+      "modelId": "grade6-dependency-tables-input-mass-first-row-not-cost",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {},
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json",
+          "sourceId": "471a7b4373540bdb"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic9.2 nonvisual adaptation; newly authored nativeMathML table data not sourceTeX or raster; variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10сақталған визуалсыз9.2шарт, толық ресми шешім және MCQ жеке оқылды. Жеке жаңа деректер, контекст пен толық шешім берілді.",
+        "Түпнұсқа TeX кестелері өз нативті MathML кестелерімен алмастырылды; сурет/скан жоқ. Бағандардың сәйкестігі, тәуелсіз/тәуелді қадам және бірлік баға ажыратылды.",
+        "Тұрақты қадам мен нақты сандар облысы туралы тұжырымдар нақты шектелді. Standard жабық draft, сыртқы тәуелсіз толық hash және native table review қажет."
+      ],
+      "statement": "Жеткізу қызметінде алдымен сәлемдеме массасын таңдап, соған сай құнын есептейміз. Кестенің БІРІНШІ жолы тәуелсіз айнымалыға, екіншісі құнға арналған. Бірінші жолға нені жазамыз?",
+      "options": [
+        "Жеткізу құнын",
+        "Сәлемдеме массасын",
+        "Көліктің жылдамдығын",
+        "Жіберушілер санын"
+      ],
+      "answer": "Сәлемдеме массасын",
+      "solution": "Осы қолданылуда берілетін шама — сәлемдеменің массасы, құны соған тәуелді. Сондықтан бірінші жолға масса мәндері, екінші жолға әр массаға сәйкес құн жазылады. Көлік жылдамдығы мен жіберушілер саны бұл тәуелділікке енгізілмеген.",
+      "calculationVerification": {
+        "answer": "Сәлемдеме массасын",
+        "checks": [
+          "All10 saved nonvisual9.2 fullconditions/officialsolutions/everyMCQ individually read; oldTeXtables replaced by original nativeMathML-compatible rectangular tables",
+          "Correspondingcolumn notrowindex, dependentoutput versus independentinputstep, nonunitquantitystep versus unitprice distinguished",
+          "Finite sampled real-domain example explicitly constrained; nofalseuniversal claim that every finite-domain table must omit values",
+          "Every decreasing-formula output/operationorder option checked; fourthinput hasthreeincrements; no imageassets/scan/traces",
+          "Closed Standard draft until independent fullcontenthash and native table structure review; variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-dependency-tables-649d62998546e0ed",
+      "modelId": "grade6-dependency-tables-read-aligned-quantity-cost-column",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "price": 160,
+        "counts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "target": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json",
+          "sourceId": "649d62998546e0ed"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic9.2 nonvisual adaptation; newly authored nativeMathML table data not sourceTeX or raster; variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10сақталған визуалсыз9.2шарт, толық ресми шешім және MCQ жеке оқылды. Жеке жаңа деректер, контекст пен толық шешім берілді.",
+        "Түпнұсқа TeX кестелері өз нативті MathML кестелерімен алмастырылды; сурет/скан жоқ. Бағандардың сәйкестігі, тәуелсіз/тәуелді қадам және бірлік баға ажыратылды.",
+        "Тұрақты қадам мен нақты сандар облысы туралы тұжырымдар нақты шектелді. Standard жабық draft, сыртқы тәуелсіз толық hash және native table review қажет."
+      ],
+      "statement": "Бірдей өшіргіштер саны n мен олардың құны C кестеде берілген. n = 5 өшіргіштің құны неше теңге?\n\n| n | 1 | 2 | 3 | 4 | 5 | 6 |\n| --- | --- | --- | --- | --- | --- | --- |\n| C, тг | 160 | 320 | 480 | 640 | 800 | 960 |\n\nЖауапқа тек санды жазыңыз.",
+      "answer": "800",
+      "solution": "Жоғарғы жолдан n = 5 тұрған бағанды табамыз. Сол бағанның төменгі мәні C = 800. Бір өшіргіш 160 теңге болғандықтан, 160 × 5 = 800 деп те тексереміз. Құн дәл сол бағаннан оқылады; мәндердің орнын ауыстырмаймыз.",
+      "calculationVerification": {
+        "answer": "800",
+        "checks": [
+          "All10 saved nonvisual9.2 fullconditions/officialsolutions/everyMCQ individually read; oldTeXtables replaced by original nativeMathML-compatible rectangular tables",
+          "Correspondingcolumn notrowindex, dependentoutput versus independentinputstep, nonunitquantitystep versus unitprice distinguished",
+          "Finite sampled real-domain example explicitly constrained; nofalseuniversal claim that every finite-domain table must omit values",
+          "Every decreasing-formula output/operationorder option checked; fourthinput hasthreeincrements; no imageassets/scan/traces",
+          "Closed Standard draft until independent fullcontenthash and native table structure review; variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-dependency-tables-c4a4dec9b970a672",
+      "modelId": "grade6-dependency-tables-unit-price-from-nonunit-step",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "price": 210,
+        "counts": [
+          3,
+          6,
+          9,
+          12
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json",
+          "sourceId": "c4a4dec9b970a672"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic9.2 nonvisual adaptation; newly authored nativeMathML table data not sourceTeX or raster; variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10сақталған визуалсыз9.2шарт, толық ресми шешім және MCQ жеке оқылды. Жеке жаңа деректер, контекст пен толық шешім берілді.",
+        "Түпнұсқа TeX кестелері өз нативті MathML кестелерімен алмастырылды; сурет/скан жоқ. Бағандардың сәйкестігі, тәуелсіз/тәуелді қадам және бірлік баға ажыратылды.",
+        "Тұрақты қадам мен нақты сандар облысы туралы тұжырымдар нақты шектелді. Standard жабық draft, сыртқы тәуелсіз толық hash және native table review қажет."
+      ],
+      "statement": "Бірдей жапсырма парақтарының саны n мен жалпы құны C кестеде көрсетілген. Бір парақ неше теңге тұрады?\n\n| n | 3 | 6 | 9 | 12 |\n| --- | --- | --- | --- | --- |\n| C, тг | 630 | 1260 | 1890 | 2520 |\n\nЖауапқа тек санды жазыңыз.",
+      "answer": "210",
+      "solution": "Кез келген бағаннан C-ны n-ге бөлеміз: 630 ÷ 3 = 210; 1260 ÷ 6 = 210; 1890 ÷ 9 = 210; 2520 ÷ 12 = 210. Бір парақ 210 теңге. Құн өсімі 1260 − 630 = 630 — бір парақтың емес, n-нің 3 парақтық қадамының құны. Сондықтан 630 ÷ 3 = 210 деп те тексеруге болады.",
+      "calculationVerification": {
+        "answer": "210",
+        "checks": [
+          "All10 saved nonvisual9.2 fullconditions/officialsolutions/everyMCQ individually read; oldTeXtables replaced by original nativeMathML-compatible rectangular tables",
+          "Correspondingcolumn notrowindex, dependentoutput versus independentinputstep, nonunitquantitystep versus unitprice distinguished",
+          "Finite sampled real-domain example explicitly constrained; nofalseuniversal claim that every finite-domain table must omit values",
+          "Every decreasing-formula output/operationorder option checked; fourthinput hasthreeincrements; no imageassets/scan/traces",
+          "Closed Standard draft until independent fullcontenthash and native table structure review; variants not additional meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-dependency-tables-c62de94e9f557f0b",
+      "modelId": "grade6-dependency-tables-missing-input-not-output-step",
+      "grade": 6,
+      "topic": "seq",
+      "difficulty": "basic",
+      "params": {
+        "first": 2,
+        "step": 4,
+        "coefficient": 2,
+        "offset": 1
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-9-2-level1.json",
+          "sourceId": "c62de94e9f557f0b"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic9.2 nonvisual adaptation; newly authored nativeMathML table data not sourceTeX or raster; variants not extra semantic meanings.",
+      "adaptationChanges": [
+        "Барлық10сақталған визуалсыз9.2шарт, толық ресми шешім және MCQ жеке оқылды. Жеке жаңа деректер, контекст пен толық шешім берілді.",
+        "Түпнұсқа TeX кестелері өз нативті MathML кестелерімен алмастырылды; сурет/скан жоқ. Бағандардың сәйкестігі, тәуелсіз/тәуелді қадам және бірлік баға ажыратылды.",
+        "Тұрақты қадам мен нақты сандар облысы туралы тұжырымдар нақты шектелді. Standard жабық draft, сыртқы тәуелсіз толық hash және native table review қажет."
+      ],
+      "statement": "Кестедегі x мәндерінің қадамы тұрақты. x жолындағы ? мәнін табыңыз; төменгі жолдағы y қадамын x қадамымен шатастырмаңыз.\n\n| x | 2 | 6 | 10 | ? | 18 | 22 |\n| --- | --- | --- | --- | --- | --- | --- |\n| y | 5 | 13 | 21 | 29 | 37 | 45 |\n\nЖауапқа тек санды жазыңыз.",
+      "answer": "14",
+      "solution": "x қадамы 6 − 2 = 4 және 10 − 6 = 4. Төртінші мән 10 + 4 = 14. Одан кейін 14 + 4 = 18, кестемен сәйкес. y қадамы бөлек: 13 − 5 = 8. ? орны x жолында тұрғандықтан, оған y-тің 29 мәні емес, 14 жазылады.",
+      "calculationVerification": {
+        "answer": "14",
+        "checks": [
+          "All10 saved nonvisual9.2 fullconditions/officialsolutions/everyMCQ individually read; oldTeXtables replaced by original nativeMathML-compatible rectangular tables",
+          "Correspondingcolumn notrowindex, dependentoutput versus independentinputstep, nonunitquantitystep versus unitprice distinguished",
+          "Finite sampled real-domain example explicitly constrained; nofalseuniversal claim that every finite-domain table must omit values",
+          "Every decreasing-formula output/operationorder option checked; fourthinput hasthreeincrements; no imageassets/scan/traces",
+          "Closed Standard draft until independent fullcontenthash and native table structure review; variants not additional meanings"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,932 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "summary": {
+    "editions": 23,
+    "models": 13,
+    "sourceOccurrencesReferenced": 23,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-rounding-e4e9d36cc01fc90e",
+      "modelId": "grade4-round-to-place",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "number": 65784,
+        "unit": 1000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level1.json",
+          "sourceId": "e4e9d36cc01fc90e"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "65 784 санын мыңдыққа дейін дөңгелектеп, нәтижесін санмен жазыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "66000",
+      "solution": "Көршілес еселіктер: 65 000 және 66 000. Қашықтықтар: 784 және 216. Ең жақын еселік 66 000.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "66000",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "exact half-up integer rounding",
+          "distance to both neighbours compared"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-8be23c617f41f5ba",
+      "modelId": "grade4-round-to-place",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "number": 4387,
+        "unit": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level1.json",
+          "sourceId": "8be23c617f41f5ba"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "4 387 санын ондыққа дейін дөңгелектеп, нәтижесін санмен жазыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "4390",
+      "solution": "Көршілес еселіктер: 4 380 және 4 390. Қашықтықтар: 7 және 3. Ең жақын еселік 4 390.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "4390",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "exact half-up integer rounding",
+          "distance to both neighbours compared"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-b5841fdce55484d2",
+      "modelId": "grade4-rounding-choice",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "unit": 100,
+        "target": 6400,
+        "candidates": [
+          6371,
+          6349,
+          6450,
+          6307
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level1.json",
+          "sourceId": "b5841fdce55484d2"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жүздікке дейін дөңгелектегенде 6 400 шығатын санды таңдаңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "6371",
+      "solution": "Нұсқаларды тексереміз: 6 371 → 6 400; 6 349 → 6 300; 6 450 → 6 500; 6 307 → 6 300. Талапқа сай жалғыз сан — 6 371.",
+      "options": [
+        "6371",
+        "6349",
+        "6450",
+        "6307"
+      ],
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "6371",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "all choices rounded",
+          "one matching choice"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-802671dcc49ce9c0",
+      "modelId": "grade4-rounding-inverse-extreme",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "target": 4600,
+        "unit": 100,
+        "maximum": false
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level2.json",
+          "sourceId": "802671dcc49ce9c0"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жүздікке дейін дөңгелектегенде 4 600 шығатын ең кіші натурал санды табыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "4550",
+      "solution": "Дөңгелектеуге сай толық аралық: 4 550–4 649, екі шеті де кіреді. Алдыңғы 4 549 саны басқа еселікке дөңгелектеледі. Ізделген ең кіші сан — 4 550.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "4550",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "both included and both excluded interval endpoints checked"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-fac0393826057124",
+      "modelId": "grade4-round-to-place",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "number": 89967,
+        "unit": 100
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level2.json",
+          "sourceId": "fac0393826057124"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "89 967 санын жүздікке дейін дөңгелектеп, нәтижесін санмен жазыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "90000",
+      "solution": "Көршілес еселіктер: 89 900 және 90 000. Қашықтықтар: 67 және 33. Ең жақын еселік 90 000.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "90000",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "exact half-up integer rounding",
+          "distance to both neighbours compared"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-86e99bd174fb0695",
+      "modelId": "grade4-rounding-inverse-extreme",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "target": 73000,
+        "unit": 1000,
+        "maximum": true
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level2.json",
+          "sourceId": "86e99bd174fb0695"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Мыңдыққа дейін дөңгелектегенде 73 000 шығатын ең үлкен натурал санды табыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "73499",
+      "solution": "Дөңгелектеуге сай толық аралық: 72 500–73 499, екі шеті де кіреді. Келесі 73 500 саны басқа еселікке дөңгелектеледі. Ізделген ең үлкен сан — 73 499.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "73499",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "both included and both excluded interval endpoints checked"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-a33fef7f9a554890",
+      "modelId": "grade4-round-to-place",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "number": 476281,
+        "unit": 10000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level2.json",
+          "sourceId": "a33fef7f9a554890"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "476 281 санын ондық мыңға дейін дөңгелектеп, нәтижесін санмен жазыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "480000",
+      "solution": "Көршілес еселіктер: 470 000 және 480 000. Қашықтықтар: 6 281 және 3 719. Ең жақын еселік 480 000.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "480000",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "exact half-up integer rounding",
+          "distance to both neighbours compared"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-7af1f9eb1aa79c93",
+      "modelId": "grade4-round-to-place",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "number": 2458163,
+        "unit": 10000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level2.json",
+          "sourceId": "7af1f9eb1aa79c93"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "2 458 163 санын ондық мыңға дейін дөңгелектеп, нәтижесін санмен жазыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "2460000",
+      "solution": "Көршілес еселіктер: 2 450 000 және 2 460 000. Қашықтықтар: 8 163 және 1 837. Ең жақын еселік 2 460 000.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "2460000",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "exact half-up integer rounding",
+          "distance to both neighbours compared"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-5d141ae9d5cd6058",
+      "modelId": "grade4-rounding-choice",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "unit": 100000,
+        "target": 4800000,
+        "candidates": [
+          4763218,
+          4744000,
+          4850000,
+          4860000
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level2.json",
+          "sourceId": "5d141ae9d5cd6058"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жүздік мыңға дейін дөңгелектегенде 4 800 000 шығатын санды таңдаңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "4763218",
+      "solution": "Нұсқаларды тексереміз: 4 763 218 → 4 800 000; 4 744 000 → 4 700 000; 4 850 000 → 4 900 000; 4 860 000 → 4 900 000. Талапқа сай жалғыз сан — 4 763 218.",
+      "options": [
+        "4763218",
+        "4744000",
+        "4850000",
+        "4860000"
+      ],
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "4763218",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "all choices rounded",
+          "one matching choice"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-b741e7a2fbd1b539",
+      "modelId": "grade4-round-to-place",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "number": 99996,
+        "unit": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level2.json",
+          "sourceId": "b741e7a2fbd1b539"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "99 996 санын ондыққа дейін дөңгелектеп, нәтижесін санмен жазыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "100000",
+      "solution": "Көршілес еселіктер: 99 990 және 100 000. Қашықтықтар: 6 және 4. Ең жақын еселік 100 000.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "100000",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "exact half-up integer rounding",
+          "distance to both neighbours compared"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-e46230ab8bd66198",
+      "modelId": "grade4-distinct-code-then-round",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "digits": [
+          0,
+          1,
+          2,
+          4,
+          6,
+          7,
+          9
+        ],
+        "unit": 100000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level2.json",
+          "sourceId": "e46230ab8bd66198"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "0, 1, 2, 4, 6, 7, 9 цифрларының әрқайсысын бір рет қолданып, ең үлкен жеті таңбалы санды құрастырыңдар. Шыққан санды жүздік мыңға дейін дөңгелектеп, соңғы нәтижені жазыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "9800000",
+      "solution": "Ең үлкен сан үшін цифрларды кему ретімен жазамыз: 9 764 210. Оны жүздік мыңға дейін дөңгелектегенде 9 800 000 шығады.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "9800000",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "seven distinct given digits used once",
+          "lexicographic maximum precedes rounding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-272e412586837e89",
+      "modelId": "grade4-rounding-set-difference",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "target": 8200,
+        "coarse": 100,
+        "fine": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level3.json",
+          "sourceId": "272e412586837e89"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жүздікке дейін дөңгелектегенде 8 200 шығатын, бірақ ондыққа дейін дөңгелектегенде 8 200 шықпайтын натурал сандар нешеу? Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "90",
+      "solution": "Бірінші аралық 8 150–8 249: 100 сан. Екінші аралық 8 195–8 204: 10 сан; ол бірінші аралықтың ішінде. Айырмасы: 100 − 10 = 90.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "90",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "set difference agrees with full interval enumeration"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-cabb1689cab38186",
+      "modelId": "grade4-two-rounding-max",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "firstTarget": 7200,
+        "firstUnit": 100,
+        "secondTarget": 7150,
+        "secondUnit": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level3.json",
+          "sourceId": "cabb1689cab38186"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Санды жүздікке дейін дөңгелектегенде 7 200, ал ондыққа дейін дөңгелектегенде 7 150 шығады. Екі шартқа сай ең үлкен санды табыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "7154",
+      "solution": "Бірінші аралық 7 150–7 249, екіншісі 7 145–7 154. Ортақ аралық 7 150–7 154. Оның ең үлкені 7 154.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "7154",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "intersection nonempty",
+          "maximum satisfies both rounding conditions"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-86023b7f5e0034dc",
+      "modelId": "grade4-rounding-interval-width",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "target": 317000,
+        "unit": 1000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level3.json",
+          "sourceId": "86023b7f5e0034dc"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Мыңдыққа дейін дөңгелектегенде 317 000 шығатын натурал сандардың ең үлкені мен ең кішісінің айырмасын табыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "999",
+      "solution": "Шеткі сандар: 316 500 және 317 499. Олардың айырмасы 317 499 − 316 500 = 999. Бұл аралықтағы сандар саны емес, екі шеткі санның айырмасы.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "999",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "endpoint difference distinguished from inclusive count"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-a7eb6f07fe2cd126",
+      "modelId": "grade4-digit-bound-rounding-count",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "digits": 6,
+        "target": 100000,
+        "unit": 100000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level3.json",
+          "sourceId": "a7eb6f07fe2cd126"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "6 таңбалы санды жүздік мыңға дейін дөңгелектегенде 100 000 шығады. Мұндай 6 таңбалы сандар нешеу? Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "50000",
+      "solution": "Дөңгелектеу аралығы 50 000–149 999. 6 таңбалы сандармен қиылысуы 100 000–149 999. Екі шетті қоса есептегенде 149 999 − 100 000 + 1 = 50 000 сан.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "50000",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "rounding interval intersected with the exact digit-length interval"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-8132bcec2c029565",
+      "modelId": "grade4-rounded-digit-sum-count",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "target": 42000,
+        "unit": 1000,
+        "sum": 9
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level3.json",
+          "sourceId": "8132bcec2c029565"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Мыңдыққа дейін дөңгелектегенде 42 000 шығатын және цифрларының қосындысы 9 болатын натурал сандар нешеу? Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "10",
+      "solution": "Толық тексерілетін аралық: 41 500–42 499. Цифрларының қосындысы 9 болатын сандар: 42 003, 42 012, 42 021, 42 030, 42 102, 42 111, 42 120, 42 201, 42 210, 42 300. Барлығы 10 сан.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "10",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "every rounded candidate checked for its actual decimal digit sum"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-4eb3164b9deeae79",
+      "modelId": "grade4-rounded-distinct-maximum",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "target": 73000,
+        "unit": 1000,
+        "digits": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level3.json",
+          "sourceId": "4eb3164b9deeae79"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Мыңдыққа дейін дөңгелектегенде 73 000 шығатын, цифрлары әртүрлі ең үлкен 5 таңбалы санды табыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "73498",
+      "solution": "Дөңгелектеу аралығы 72 500–73 499. Осы аралықты үлкеннен кішіге қарай тексергенде, цифрлары қайталанбайтын алғашқы сан — 73 498. Оның барлық 5 цифры әртүрлі және ол 73 000 санына дөңгелектеледі.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "73498",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "full rounded interval checked for digit uniqueness and maximum"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-bc27704b909dfa23",
+      "modelId": "grade4-rounded-neighbour-gap",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "first": 874999,
+        "second": 875001,
+        "unit": 10000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-level3.json",
+          "sourceId": "bc27704b909dfa23"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "874 999 және 875 001 сандарының әрқайсысын ондық мыңға дейін дөңгелектеді. Дөңгелектелген екі санның үлкенінен кішісін азайтыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "10000",
+      "solution": "874 999 → 870 000, 875 001 → 880 000. Сұралған айырма 880 000 − 870 000 = 10 000. Бастапқы сандардың айырмасын алуға болмайды.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "10000",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "both rounding outcomes computed before taking the gap"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-6476b8d26a2d2be7",
+      "modelId": "grade4-round-to-place",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "number": 682341,
+        "unit": 10000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-leveltest.json",
+          "sourceId": "6476b8d26a2d2be7"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "682 341 санын ондық мыңға дейін дөңгелектеп, нәтижесін санмен жазыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "680000",
+      "solution": "Көршілес еселіктер: 680 000 және 690 000. Қашықтықтар: 2 341 және 7 659. Ең жақын еселік 680 000.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "680000",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "exact half-up integer rounding",
+          "distance to both neighbours compared"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-f7c7d415b4844fbe",
+      "modelId": "grade4-rounding-inverse-extreme",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "target": 60000,
+        "unit": 1000,
+        "maximum": false
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-leveltest.json",
+          "sourceId": "f7c7d415b4844fbe"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Мыңдыққа дейін дөңгелектегенде 60 000 шығатын ең кіші натурал санды табыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "59500",
+      "solution": "Дөңгелектеуге сай толық аралық: 59 500–60 499, екі шеті де кіреді. Алдыңғы 59 499 саны басқа еселікке дөңгелектеледі. Ізделген ең кіші сан — 59 500.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "59500",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "both included and both excluded interval endpoints checked"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-65132b852db726ea",
+      "modelId": "grade4-round-to-place",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "number": 2068419,
+        "unit": 100000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-leveltest.json",
+          "sourceId": "65132b852db726ea"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "2 068 419 санын жүздік мыңға дейін дөңгелектеп, нәтижесін санмен жазыңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "2100000",
+      "solution": "Көршілес еселіктер: 2 000 000 және 2 100 000. Қашықтықтар: 68 419 және 31 581. Ең жақын еселік 2 100 000.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "2100000",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "exact half-up integer rounding",
+          "distance to both neighbours compared"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-ca101ea4dea633af",
+      "modelId": "grade4-rounded-multiple-count",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "target": 1300,
+        "unit": 100,
+        "divisor": 20
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-leveltest.json",
+          "sourceId": "ca101ea4dea633af"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жүздікке дейін дөңгелектегенде 1 300 шығатын және 20 санына қалдықсыз бөлінетін натурал сандар нешеу? Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "5",
+      "solution": "Дөңгелектеу аралығы 1 250–1 349. Осы аралықтағы 20 еселіктері: 1 260, 1 280, 1 300, 1 320, 1 340. Барлығы 5 сан.",
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "5",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "divisibility applied only after both rounding endpoints are fixed"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-rounding-7bf212fa09cf1210",
+      "modelId": "grade4-two-rounding-choice",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "firstTarget": 18000,
+        "firstUnit": 1000,
+        "secondTarget": 17500,
+        "secondUnit": 100,
+        "candidates": [
+          17513,
+          17499,
+          17450,
+          17551
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-3-leveltest.json",
+          "sourceId": "7bf212fa09cf1210"
+        }
+      ],
+      "adaptationChanges": [
+        "Толық бастапқы шарт пен шешімнен нақты дөңгелектеу/шекара/цифрлық шектеу дағдысы оқылып сақталды.",
+        "Жаңа сандар, нұсқалар және өздігінен түсінікті қазақша шарт жазылды; ескірген нақты халық саны деректері қолданылмайды.",
+        "Дәл жартыда жоғары жаққа дөңгелектеу шарты айқын берілді; аралық шеттері, бірмәнділік және жаңа жауап қайта тексерілді."
+      ],
+      "relationToSource": "Specific saved grade-4 rounding skill. Multiple numeric exercises can share one mathematical model; these are not claimed as semantically unique stories.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Санды мыңдыққа дейін дөңгелектегенде 18 000, ал жүздікке дейін дөңгелектегенде 17 500 шығады. Осы екі шартқа сай нұсқаны таңдаңдар. Дәл ортасында тұрған сан жоғары жаққа дөңгелектеледі.",
+      "answer": "17513",
+      "solution": "Нұсқалардың екі нәтижесі: 17 513 → 18 000 және 17 500; 17 499 → 17 000 және 17 500; 17 450 → 17 000 және 17 500; 17 551 → 18 000 және 17 600. Екі шартқа да тек 17 513 сай.",
+      "options": [
+        "17513",
+        "17499",
+        "17450",
+        "17551"
+      ],
+      "calculationVerification": {
+        "method": "exact_half_up_boundaries_and_candidates",
+        "answer": "17513",
+        "checks": [
+          "explicit positive-integer half-up convention",
+          "exact native condition/solution/options binding",
+          "all choices checked against both rounding conditions"
+        ]
+      }
+    }
+  ]
+}

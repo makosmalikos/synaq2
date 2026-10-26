@@ -1,0 +1,917 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All13savedvisualgrade5topic4.4; archived sources only, no new capture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5 topic4.4 sources",
+    "sourceVisualOccurrences": 13,
+    "addressedNewDrafts": 13,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "112feae65274a9f4",
+      "18fbc6c3a24d00bd",
+      "398cdf8e04cba483",
+      "4538d41d0d474b3b",
+      "469adc6824390ea6",
+      "48e0d5ad0083728d",
+      "49ef573c1c9dbc01",
+      "4f4a5a89653a3383",
+      "58ee6d392478f07f",
+      "68512b7e992f59be",
+      "6ae8bf6cee621cb3",
+      "83370748469c1f37",
+      "feb9c9786d5031df"
+    ],
+    "distinctModels": 13,
+    "semantics": "Thirteen source-specific pictured decimal-operation targets; missing digits checked over complete domains, not assumed individually unique when only their sum is fixed."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave59-ray-one-eight-two-five-distance",
+      "modelId": "visual-wave59-ray-decimal-distance-borrow",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "ray",
+        "points": [
+          [
+            "A",
+            18
+          ],
+          [
+            "B",
+            25
+          ]
+        ],
+        "target": "distance"
+      },
+      "answer": "0,7",
+      "sourceRefs": [
+        {
+          "sourceId": "18fbc6c3a24d00bd",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-4-level1.json#0",
+      "sourceCanonicalSha256": "c88bf49d2f07eb9a17f72025245856a936d8128ad6f1fe010b225a8a7498dc73",
+      "sourceSkill": "A1,8/B2,5 actual0,1ticks→distance0,7;|2−1|,|5−8|→1,3/sum4,3/forgotborrow1,7traps.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.4 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Сәуледегі айырма мен болашақ координата, нақты периметр, тең иіннің теңдеуі, бағандағы тасымал/алу, бірден үш цифрдың жеке емес қосындысының бірмәнділігі, ортаңғы кесінді, реттелген амалдар мен кері тізбек, сиқырлы кесте және екі толық маршрут сақталды.",
+        "Жаңа деректер: A1,8/B2,5→0,7;үшбұрыш5,6/4,2/3,2→13;таразыx+3,78=9,78→6;3,4□7+2,586=6,053→6;8,□3−3,7□=5,06→8+7=15;AD13,6AB4,45CD5,15→4;7,4+3,65−5,09+1,8→7,76;тіктөртбұрыш5,35/3,7→18,1;M0,7N2,8NP=MN+1,1→P6;□,□8+2,□7=9,05→барлық10шешімніңқосындысы15;magicS6,9→a1,4;жол8,25/8,75км→500м;?+3,46−1,2=10,26→8.",
+        "Барлық SVG нативті жаңа параметрден салынған. Үшбұрыш, тіктөртбұрыш, үш бөлік және төрт жол бөлігі өз ұзындықтарына сай. Баған цифрлары мен үтірлер бір разрядта, амал тізбегі жоғарыдан төмен анық. Source raster/traced path жоқ; сыртқы тәуелсіз review қажет, өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық сандармен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual metrictriangle/rectangle/segment/roads, equalbalancearms, everycolumnprintedpattern and complete10/100/1000digitdomains, invariant15over10triples, fullmagic8lines, forward/reversearrow order and SI1000. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave59-ray-one-eight-two-five-distance.svg",
+      "verificationModule": "scripts/editorial/visual-wave59-models.mjs",
+      "options": [
+        "1,3",
+        "4,3",
+        "1,7",
+        "0,7"
+      ],
+      "statement": "A мен B нүктелерінің координаталарын сәуледен оқыңыз. AB кесіндісінің бірлік кесіндімен өлшенген ҰЗЫНДЫҒЫН таңдаңыз.",
+      "solution": "Бір қадам 0,1: A(1,8), B(2,5). Ұзындық 2,5 − 1,8 = 0,7. 1,3 — разрядтарда үлкен цифрдан кішісін жеке азайту қатесі; 4,3 — координаталар қосындысы; 1,7 — ондық үлеске берген бірлікті бүтіннен азайтуды ұмыту. 0,7 қосып бастапқы A координатасынан B-ға жетеміз.",
+      "figureDescription": "0–3 сәулесінде әр бірлік 10 тең аралық. A сол жақ 0-ден 18 қадамда; B сол жақ 0-ден 25 қадамда.",
+      "figureSha256": "d13a8d2e3982b12ca04688b8e7e4c3b19c246baace4a5860e6171bd673af8ee5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,7",
+        "checks": {
+          "stepHundredths": 10,
+          "coordinates": [
+            180,
+            250
+          ],
+          "distanceHundredths": 70,
+          "borrowRequired": true,
+          "wrongPerDigit": "1,3"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave59-triangle-five-six-four-two-three-two",
+      "modelId": "visual-wave59-triangle-decimal-perimeter",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "easy",
+      "params": {
+        "scene": "triangle",
+        "sides": [
+          560,
+          420,
+          320
+        ]
+      },
+      "answer": "13",
+      "sourceRefs": [
+        {
+          "sourceId": "49ef573c1c9dbc01",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-4-level1.json#4",
+      "sourceCanonicalSha256": "8b86262a32c503b9aeffeb87e1f605372422368b0bf6d2090969dcab8de15f98",
+      "sourceSkill": "ReadAB5,6BC4,2AC3,2cm→sum13withfractioncarry;alltriangleinequalities, actualSVGmetricgeometry.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.4 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Сәуледегі айырма мен болашақ координата, нақты периметр, тең иіннің теңдеуі, бағандағы тасымал/алу, бірден үш цифрдың жеке емес қосындысының бірмәнділігі, ортаңғы кесінді, реттелген амалдар мен кері тізбек, сиқырлы кесте және екі толық маршрут сақталды.",
+        "Жаңа деректер: A1,8/B2,5→0,7;үшбұрыш5,6/4,2/3,2→13;таразыx+3,78=9,78→6;3,4□7+2,586=6,053→6;8,□3−3,7□=5,06→8+7=15;AD13,6AB4,45CD5,15→4;7,4+3,65−5,09+1,8→7,76;тіктөртбұрыш5,35/3,7→18,1;M0,7N2,8NP=MN+1,1→P6;□,□8+2,□7=9,05→барлық10шешімніңқосындысы15;magicS6,9→a1,4;жол8,25/8,75км→500м;?+3,46−1,2=10,26→8.",
+        "Барлық SVG нативті жаңа параметрден салынған. Үшбұрыш, тіктөртбұрыш, үш бөлік және төрт жол бөлігі өз ұзындықтарына сай. Баған цифрлары мен үтірлер бір разрядта, амал тізбегі жоғарыдан төмен анық. Source raster/traced path жоқ; сыртқы тәуелсіз review қажет, өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық сандармен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual metrictriangle/rectangle/segment/roads, equalbalancearms, everycolumnprintedpattern and complete10/100/1000digitdomains, invariant15over10triples, fullmagic8lines, forward/reversearrow order and SI1000. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave59-triangle-five-six-four-two-three-two.svg",
+      "verificationModule": "scripts/editorial/visual-wave59-models.mjs",
+      "statement": "Үшбұрыштың қабырғалары сызбада сантиметрмен берілген. Оның барлық шекарасының ұзындығы, яғни ПЕРИМЕТРІ неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Қабырғалар AB 5,6 см, BC 4,2 см, AC 3,2 см. Үшеуін де қосамыз: 5,6 + 4,2 + 3,2 = 13 см. Соңғы бөлшек үлестер бүтінге ауысады; тек екі қабырғаны қосу периметрді бермейді.",
+      "figureDescription": "ABC үшбұрышының қабырға жазулары AB 5,6, BC 4,2, AC 3,2 сантиметр.",
+      "figureSha256": "9b5ac4d47368d3627aa70d0b948fa998213b24ded6d68fca10fb7211ef1cf820",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "13",
+        "checks": {
+          "sidesHundredths": [
+            560,
+            420,
+            320
+          ],
+          "perimeterHundredths": 1300,
+          "triangleValid": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave59-balanced-three-seventy-eight-nine-seventy-eight",
+      "modelId": "visual-wave59-equal-arm-balance-unknown-addend",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "easy",
+      "params": {
+        "scene": "balance",
+        "left": 378,
+        "right": 978
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "58ee6d392478f07f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-4-level1.json#5",
+      "sourceCanonicalSha256": "f937e5e732241e961aa8235237bce1affae2a5acfe16b480fe2987aa4662f20a",
+      "sourceSkill": "Equallevelarms,actualleftx+3,78kg=right9,78kg→x6positive;unknownADDEND,notbothweightsadd.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.4 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Сәуледегі айырма мен болашақ координата, нақты периметр, тең иіннің теңдеуі, бағандағы тасымал/алу, бірден үш цифрдың жеке емес қосындысының бірмәнділігі, ортаңғы кесінді, реттелген амалдар мен кері тізбек, сиқырлы кесте және екі толық маршрут сақталды.",
+        "Жаңа деректер: A1,8/B2,5→0,7;үшбұрыш5,6/4,2/3,2→13;таразыx+3,78=9,78→6;3,4□7+2,586=6,053→6;8,□3−3,7□=5,06→8+7=15;AD13,6AB4,45CD5,15→4;7,4+3,65−5,09+1,8→7,76;тіктөртбұрыш5,35/3,7→18,1;M0,7N2,8NP=MN+1,1→P6;□,□8+2,□7=9,05→барлық10шешімніңқосындысы15;magicS6,9→a1,4;жол8,25/8,75км→500м;?+3,46−1,2=10,26→8.",
+        "Барлық SVG нативті жаңа параметрден салынған. Үшбұрыш, тіктөртбұрыш, үш бөлік және төрт жол бөлігі өз ұзындықтарына сай. Баған цифрлары мен үтірлер бір разрядта, амал тізбегі жоғарыдан төмен анық. Source raster/traced path жоқ; сыртқы тәуелсіз review қажет, өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық сандармен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual metrictriangle/rectangle/segment/roads, equalbalancearms, everycolumnprintedpattern and complete10/100/1000digitdomains, invariant15over10triples, fullmagic8lines, forward/reversearrow order and SI1000. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave59-balanced-three-seventy-eight-nine-seventy-eight.svg",
+      "verificationModule": "scripts/editorial/visual-wave59-models.mjs",
+      "statement": "Таразының иіндері бірдей, табақтары тепе-теңдікте. Жүктердің жазулары — килограмм. x жүгінің массасы неше килограмм? Жауапқа тек санды жазыңыз.",
+      "solution": "Тең иінді таразыда массалар тең: x + 3,78 = 9,78. Белгісіз қосылғыш x = 9,78 − 3,78 = 6 кг. Тексеру: 6 + 3,78 = 9,78. Екі белгілі массаны қосып жібермейміз.",
+      "figureDescription": "Тең иінді көлденең таразы: сол табақта x және 3,78 кг, оң табақта 9,78 кг. Иіндер көлденең, табақтар бір деңгейде.",
+      "figureSha256": "31ab859cc2b60c95c82c91e452a252d30af0eed5e8fd67e564aee472eca379fe",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "leftKnownHundredths": 378,
+          "rightHundredths": 978,
+          "unknownHundredths": 600,
+          "equationVerified": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave59-column-hidden-hundredths-six",
+      "modelId": "visual-wave59-column-addition-one-hidden-digit",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "column",
+        "operation": "+",
+        "top": "3,4□7",
+        "bottom": "2,586",
+        "result": "6,053"
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "83370748469c1f37",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-4-level1.json#10",
+      "sourceCanonicalSha256": "599b03464a6fa5a8a10c9080d8da78fdedd2320dc658480a2f54349c8c9988ea",
+      "sourceSkill": "UnknownHUNDREDTHdigit:3,4□7+2,586=6,053→□6; actual7+6=13then6+8+1=15then4+5+1=10,carriespreserved.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.4 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Сәуледегі айырма мен болашақ координата, нақты периметр, тең иіннің теңдеуі, бағандағы тасымал/алу, бірден үш цифрдың жеке емес қосындысының бірмәнділігі, ортаңғы кесінді, реттелген амалдар мен кері тізбек, сиқырлы кесте және екі толық маршрут сақталды.",
+        "Жаңа деректер: A1,8/B2,5→0,7;үшбұрыш5,6/4,2/3,2→13;таразыx+3,78=9,78→6;3,4□7+2,586=6,053→6;8,□3−3,7□=5,06→8+7=15;AD13,6AB4,45CD5,15→4;7,4+3,65−5,09+1,8→7,76;тіктөртбұрыш5,35/3,7→18,1;M0,7N2,8NP=MN+1,1→P6;□,□8+2,□7=9,05→барлық10шешімніңқосындысы15;magicS6,9→a1,4;жол8,25/8,75км→500м;?+3,46−1,2=10,26→8.",
+        "Барлық SVG нативті жаңа параметрден салынған. Үшбұрыш, тіктөртбұрыш, үш бөлік және төрт жол бөлігі өз ұзындықтарына сай. Баған цифрлары мен үтірлер бір разрядта, амал тізбегі жоғарыдан төмен анық. Source raster/traced path жоқ; сыртқы тәуелсіз review қажет, өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық сандармен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual metrictriangle/rectangle/segment/roads, equalbalancearms, everycolumnprintedpattern and complete10/100/1000digitdomains, invariant15over10triples, fullmagic8lines, forward/reversearrow order and SI1000. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave59-column-hidden-hundredths-six.svg",
+      "verificationModule": "scripts/editorial/visual-wave59-models.mjs",
+      "statement": "Бағандағы қосу теңдігі дұрыс. Бір цифр □ арқылы жасырылған. Сол цифрды табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Жасырын цифр 6 болса, 3,467 + 2,586 = 6,053. Мыңдықтар 7 + 6 = 13: 3 жазып, 1 жүздік көшеді. Жүздіктер 6 + 8 + 1 = 15: 5 жазып, 1 ондық үлес көшеді. Ондық үлестер 4 + 5 + 1 = 10: 0 жазып, 1 бірлік көшеді. Бірліктер 3 + 2 + 1 = 6. Тексеру: 6,053 − 2,586 = 3,467; жүздік орындағы цифр 6.",
+      "figureDescription": "Бағанның жоғарғы саны 3,4□7, төменгі саны 2,586, амал +, төмендегі нәтиже 6,053. Үтірлер бір бағанда, шаршы тұрған цифрлар жасырылған.",
+      "figureSha256": "63ebd6fc1854320320c28a8160fa38ca185e726060a935576c50a7e6e84f48ea",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "topPattern": "3,4□7",
+          "bottomPattern": "2,586",
+          "operation": "+",
+          "result": "6,053",
+          "completeDomain": 10,
+          "validDigits": [
+            [
+              6
+            ]
+          ],
+          "uniqueRequestedSum": 6,
+          "individualDigitsNeedNotBeUnique": false
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave59-column-two-borrow-digits-eight-seven",
+      "modelId": "visual-wave59-column-subtraction-two-independent-digit-sum",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "column",
+        "operation": "−",
+        "top": "8,□3",
+        "bottom": "3,7□",
+        "result": "5,06"
+      },
+      "answer": "15",
+      "sourceRefs": [
+        {
+          "sourceId": "4f4a5a89653a3383",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-4-level2.json#3",
+      "sourceCanonicalSha256": "bb1bdc0fbb569e895857b668c850ba5c32c66e9d5a1f59c71d67fc0fb6a4d58b",
+      "sourceSkill": "Independenttwo□:8,a3−3,7b=5,06→a8,b7;hundredthborrow13−7=6,tenths8−1−7=0,sum15,all100pairsexhausted.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.4 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Сәуледегі айырма мен болашақ координата, нақты периметр, тең иіннің теңдеуі, бағандағы тасымал/алу, бірден үш цифрдың жеке емес қосындысының бірмәнділігі, ортаңғы кесінді, реттелген амалдар мен кері тізбек, сиқырлы кесте және екі толық маршрут сақталды.",
+        "Жаңа деректер: A1,8/B2,5→0,7;үшбұрыш5,6/4,2/3,2→13;таразыx+3,78=9,78→6;3,4□7+2,586=6,053→6;8,□3−3,7□=5,06→8+7=15;AD13,6AB4,45CD5,15→4;7,4+3,65−5,09+1,8→7,76;тіктөртбұрыш5,35/3,7→18,1;M0,7N2,8NP=MN+1,1→P6;□,□8+2,□7=9,05→барлық10шешімніңқосындысы15;magicS6,9→a1,4;жол8,25/8,75км→500м;?+3,46−1,2=10,26→8.",
+        "Барлық SVG нативті жаңа параметрден салынған. Үшбұрыш, тіктөртбұрыш, үш бөлік және төрт жол бөлігі өз ұзындықтарына сай. Баған цифрлары мен үтірлер бір разрядта, амал тізбегі жоғарыдан төмен анық. Source raster/traced path жоқ; сыртқы тәуелсіз review қажет, өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық сандармен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual metrictriangle/rectangle/segment/roads, equalbalancearms, everycolumnprintedpattern and complete10/100/1000digitdomains, invariant15over10triples, fullmagic8lines, forward/reversearrow order and SI1000. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave59-column-two-borrow-digits-eight-seven.svg",
+      "verificationModule": "scripts/editorial/visual-wave59-models.mjs",
+      "statement": "Бағандағы азайту теңдігі дұрыс. Екі □ орнындағы цифрлар бірдей де, әртүрлі де болуы мүмкін. Жасырын ЕКІ цифрдың қосындысын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Жүздікте 3-тен жасырын цифрды азайтқанда 6 шығуы үшін ондық үлестен аламыз: 13 − b = 6, сондықтан b = 7. Ондық үлесте (a − 1) − 7 = 0, бұдан a = 8. Толық жазу 8,83 − 3,77 = 5,06. Сұралған қосынды 8 + 7 = 15. Барлық 100 цифр жұбынан осы жұп қана теңдікті орындайды.",
+      "figureDescription": "Бағанның жоғарғы саны 8,□3, төменгі саны 3,7□, амал −, төмендегі нәтиже 5,06. Үтірлер бір бағанда, шаршы тұрған цифрлар жасырылған.",
+      "figureSha256": "1149744ab526ed16c56bbed8b952354ab6bc63285169e2a174d0144f15014799",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "15",
+        "checks": {
+          "topPattern": "8,□3",
+          "bottomPattern": "3,7□",
+          "operation": "−",
+          "result": "5,06",
+          "completeDomain": 100,
+          "validDigits": [
+            [
+              8,
+              7
+            ]
+          ],
+          "uniqueRequestedSum": 15,
+          "individualDigitsNeedNotBeUnique": false
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave59-segment-total-thirteen-six-middle-four",
+      "modelId": "visual-wave59-segment-middle-from-total-two-ends",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "segment",
+        "total": 1360,
+        "left": 445,
+        "right": 515
+      },
+      "answer": "4",
+      "sourceRefs": [
+        {
+          "sourceId": "4538d41d0d474b3b",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-4-level2.json#8",
+      "sourceCanonicalSha256": "dc05ef3b0e2e49420cd7187a57cfd3492ccfe3c8a90bbd31986da383f5ed1942",
+      "sourceSkill": "AD13,6AB4,45CD5,15cm,endsum9,6→BC4. ActualorderedA/B/C/Dpositionsproportionaltoallthreeparts,wholeconstraint.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.4 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Сәуледегі айырма мен болашақ координата, нақты периметр, тең иіннің теңдеуі, бағандағы тасымал/алу, бірден үш цифрдың жеке емес қосындысының бірмәнділігі, ортаңғы кесінді, реттелген амалдар мен кері тізбек, сиқырлы кесте және екі толық маршрут сақталды.",
+        "Жаңа деректер: A1,8/B2,5→0,7;үшбұрыш5,6/4,2/3,2→13;таразыx+3,78=9,78→6;3,4□7+2,586=6,053→6;8,□3−3,7□=5,06→8+7=15;AD13,6AB4,45CD5,15→4;7,4+3,65−5,09+1,8→7,76;тіктөртбұрыш5,35/3,7→18,1;M0,7N2,8NP=MN+1,1→P6;□,□8+2,□7=9,05→барлық10шешімніңқосындысы15;magicS6,9→a1,4;жол8,25/8,75км→500м;?+3,46−1,2=10,26→8.",
+        "Барлық SVG нативті жаңа параметрден салынған. Үшбұрыш, тіктөртбұрыш, үш бөлік және төрт жол бөлігі өз ұзындықтарына сай. Баған цифрлары мен үтірлер бір разрядта, амал тізбегі жоғарыдан төмен анық. Source raster/traced path жоқ; сыртқы тәуелсіз review қажет, өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық сандармен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual metrictriangle/rectangle/segment/roads, equalbalancearms, everycolumnprintedpattern and complete10/100/1000digitdomains, invariant15over10triples, fullmagic8lines, forward/reversearrow order and SI1000. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave59-segment-total-thirteen-six-middle-four.svg",
+      "verificationModule": "scripts/editorial/visual-wave59-models.mjs",
+      "statement": "A, B, C, D нүктелері бір түзуде осы ретпен жатыр. Сызбадағы ұзындықтар сантиметрмен берілген. BC ортаңғы бөлігінің ұзындығы неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "AD = AB + BC + CD. Шеткі бөліктер 4,45 + 5,15 = 9,6 см. Ортаңғы BC = 13,6 − 9,6 = 4 см. Тексеру: 4,45 + 4 + 5,15 = 13,6. Барлық AD ұзындығынан екі шет те алынады.",
+      "figureDescription": "A, B, C, D бір сызықта осы ретпен. AB 4,45 см, CD 5,15 см, барлық AD 13,6 см. BC жазылмаған.",
+      "figureSha256": "6e6b63e141cc90e774be0b730050e7c0cd0c20bb76c6772bf23ac7abdf58e484",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4",
+        "checks": {
+          "totalHundredths": 1360,
+          "leftHundredths": 445,
+          "rightHundredths": 515,
+          "middleHundredths": 400,
+          "conservation": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave59-chain-seven-four-three-operations",
+      "modelId": "visual-wave59-forward-decimal-operation-chain",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "chain",
+        "start": 740,
+        "operations": [
+          365,
+          -509,
+          180
+        ]
+      },
+      "answer": "7,76",
+      "sourceRefs": [
+        {
+          "sourceId": "398cdf8e04cba483",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-4-level2.json#9",
+      "sourceCanonicalSha256": "afc42c2b9f3b20939fd9dd71dcc8d4739b2e6b80b62b37e5a0c8c9fbd4ecda5f",
+      "sourceSkill": "7,4+3,65=11,05 then−5,09zerochainborrow→5,96 then+1,8→7,76. Omitlast5,96/lastas0,18→6,14/+1error8,76wrong.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.4 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Сәуледегі айырма мен болашақ координата, нақты периметр, тең иіннің теңдеуі, бағандағы тасымал/алу, бірден үш цифрдың жеке емес қосындысының бірмәнділігі, ортаңғы кесінді, реттелген амалдар мен кері тізбек, сиқырлы кесте және екі толық маршрут сақталды.",
+        "Жаңа деректер: A1,8/B2,5→0,7;үшбұрыш5,6/4,2/3,2→13;таразыx+3,78=9,78→6;3,4□7+2,586=6,053→6;8,□3−3,7□=5,06→8+7=15;AD13,6AB4,45CD5,15→4;7,4+3,65−5,09+1,8→7,76;тіктөртбұрыш5,35/3,7→18,1;M0,7N2,8NP=MN+1,1→P6;□,□8+2,□7=9,05→барлық10шешімніңқосындысы15;magicS6,9→a1,4;жол8,25/8,75км→500м;?+3,46−1,2=10,26→8.",
+        "Барлық SVG нативті жаңа параметрден салынған. Үшбұрыш, тіктөртбұрыш, үш бөлік және төрт жол бөлігі өз ұзындықтарына сай. Баған цифрлары мен үтірлер бір разрядта, амал тізбегі жоғарыдан төмен анық. Source raster/traced path жоқ; сыртқы тәуелсіз review қажет, өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық сандармен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual metrictriangle/rectangle/segment/roads, equalbalancearms, everycolumnprintedpattern and complete10/100/1000digitdomains, invariant15over10triples, fullmagic8lines, forward/reversearrow order and SI1000. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave59-chain-seven-four-three-operations.svg",
+      "verificationModule": "scripts/editorial/visual-wave59-models.mjs",
+      "options": [
+        "5,96",
+        "6,14",
+        "8,76",
+        "7,76"
+      ],
+      "statement": "Бастапқы санға төмен бағытталған нұсқарлардың жанындағы амалдарды РЕТІМЕН орындаңыз. Соңғы сұрақ белгісінің мәнін таңдаңыз.",
+      "solution": "Нұсқарларды жоғарыдан төмен орындаймыз: 7,4 + 3,65 = 11,05; 11,05 − 5,09 = 5,96; 5,96 + 1,8 = 7,76. Екінші азайтуда нөлдік ондық разряд арқылы алу керек. 5,96 — соңғы амалды тастау; 6,14 — соңғы 1,8 санын 0,18 деп алу.",
+      "figureDescription": "Төрт қорап жоғарыдан төмен нұсқармен жалғасқан: бірінші 7,4, соңғы ?, ортаңғылар бос. Нұсқарлар ретімен +3,65; −5,09; +1,8.",
+      "figureSha256": "c87528b1aeb6d8d4cfe6a1a26326fd4c1a0843e75f8beddc83b14057ff3059aa",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7,76",
+        "checks": {
+          "start": 740,
+          "operations": [
+            365,
+            -509,
+            180
+          ],
+          "successiveHundredths": [
+            740,
+            1105,
+            596,
+            776
+          ],
+          "omittedLast": "5,96",
+          "lastShiftedByTen": "6,14"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave59-rectangle-five-thirty-five-three-seven",
+      "modelId": "visual-wave59-rectangle-decimal-perimeter",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "rectangle",
+        "length": 535,
+        "width": 370
+      },
+      "answer": "18,1 см",
+      "sourceRefs": [
+        {
+          "sourceId": "feb9c9786d5031df",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-4-level2.json#10",
+      "sourceCanonicalSha256": "b2ae7222eb686a13d6a448cec717bab8d6b3f949c22367f824d9f74f90d8ab1e",
+      "sourceSkill": "Read5,35cm/3,7cm;half9,05 thenREALdouble18,1. Half9,05/misalign3,7as0,37→11,44/forgotcarry17,1wrong;actualaspect535:370.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.4 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Сәуледегі айырма мен болашақ координата, нақты периметр, тең иіннің теңдеуі, бағандағы тасымал/алу, бірден үш цифрдың жеке емес қосындысының бірмәнділігі, ортаңғы кесінді, реттелген амалдар мен кері тізбек, сиқырлы кесте және екі толық маршрут сақталды.",
+        "Жаңа деректер: A1,8/B2,5→0,7;үшбұрыш5,6/4,2/3,2→13;таразыx+3,78=9,78→6;3,4□7+2,586=6,053→6;8,□3−3,7□=5,06→8+7=15;AD13,6AB4,45CD5,15→4;7,4+3,65−5,09+1,8→7,76;тіктөртбұрыш5,35/3,7→18,1;M0,7N2,8NP=MN+1,1→P6;□,□8+2,□7=9,05→барлық10шешімніңқосындысы15;magicS6,9→a1,4;жол8,25/8,75км→500м;?+3,46−1,2=10,26→8.",
+        "Барлық SVG нативті жаңа параметрден салынған. Үшбұрыш, тіктөртбұрыш, үш бөлік және төрт жол бөлігі өз ұзындықтарына сай. Баған цифрлары мен үтірлер бір разрядта, амал тізбегі жоғарыдан төмен анық. Source raster/traced path жоқ; сыртқы тәуелсіз review қажет, өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық сандармен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual metrictriangle/rectangle/segment/roads, equalbalancearms, everycolumnprintedpattern and complete10/100/1000digitdomains, invariant15over10triples, fullmagic8lines, forward/reversearrow order and SI1000. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave59-rectangle-five-thirty-five-three-seven.svg",
+      "verificationModule": "scripts/editorial/visual-wave59-models.mjs",
+      "options": [
+        "18,1 см",
+        "9,05 см",
+        "11,44 см",
+        "17,1 см"
+      ],
+      "statement": "ABCD — тіктөртбұрыш. Сызбадағы ұзындықтар сантиметрмен жазылған. Оның ПЕРИМЕТРІН таңдаңыз.",
+      "solution": "Көршілес қабырғалар 5,35 см және 3,7 см. Олардың қосындысы 9,05 см. Қарама-қарсы қабырғалар да тең, сондықтан P = 2 × 9,05 = 18,1 см. 9,05 см тек екі қабырға; 11,44 см — 3,7 санын 0,37 деп қате туралағанда шығатын периметр.",
+      "figureDescription": "ABCD тіктөртбұрышында AB 5,35 см, BC 3,7 см. Қарама-қарсы қабырғалар параллель.",
+      "figureSha256": "eafb4dcb6745ccafa8dabe205763c4212ce0082d941c794165e79aca06dae045",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "18,1 см",
+        "checks": {
+          "lengthHundredths": 535,
+          "widthHundredths": 370,
+          "semiperimeter": 905,
+          "perimeter": 1810,
+          "misalignedWidth": "11,44"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave59-ray-m-seven-tenths-n-two-eight-extension",
+      "modelId": "visual-wave59-ray-future-point-from-longer-next-segment",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "ray",
+        "points": [
+          [
+            "M",
+            7
+          ],
+          [
+            "N",
+            28
+          ]
+        ],
+        "extra": 110,
+        "target": "extension"
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "6ae8bf6cee621cb3",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-4-level2.json#14",
+      "sourceCanonicalSha256": "a08be7bc111cfc666e9fbc57a550dbbcc946ee9e5a4ee81d1f0aa0e3a9bb7bd1",
+      "sourceSkill": "ReadM0,7/N2,8,MN2,1;NP=MN+1,1=3,2,PtoRIGHTofN→2,8+3,2=6. Sourceadditionofunitlengthreplacedpositive1,1,notdistanceMNonly.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.4 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Сәуледегі айырма мен болашақ координата, нақты периметр, тең иіннің теңдеуі, бағандағы тасымал/алу, бірден үш цифрдың жеке емес қосындысының бірмәнділігі, ортаңғы кесінді, реттелген амалдар мен кері тізбек, сиқырлы кесте және екі толық маршрут сақталды.",
+        "Жаңа деректер: A1,8/B2,5→0,7;үшбұрыш5,6/4,2/3,2→13;таразыx+3,78=9,78→6;3,4□7+2,586=6,053→6;8,□3−3,7□=5,06→8+7=15;AD13,6AB4,45CD5,15→4;7,4+3,65−5,09+1,8→7,76;тіктөртбұрыш5,35/3,7→18,1;M0,7N2,8NP=MN+1,1→P6;□,□8+2,□7=9,05→барлық10шешімніңқосындысы15;magicS6,9→a1,4;жол8,25/8,75км→500м;?+3,46−1,2=10,26→8.",
+        "Барлық SVG нативті жаңа параметрден салынған. Үшбұрыш, тіктөртбұрыш, үш бөлік және төрт жол бөлігі өз ұзындықтарына сай. Баған цифрлары мен үтірлер бір разрядта, амал тізбегі жоғарыдан төмен анық. Source raster/traced path жоқ; сыртқы тәуелсіз review қажет, өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық сандармен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual metrictriangle/rectangle/segment/roads, equalbalancearms, everycolumnprintedpattern and complete10/100/1000digitdomains, invariant15over10triples, fullmagic8lines, forward/reversearrow order and SI1000. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave59-ray-m-seven-tenths-n-two-eight-extension.svg",
+      "verificationModule": "scripts/editorial/visual-wave59-models.mjs",
+      "statement": "M мен N координаталарын сәуледен оқыңыз. P нүктесі N-нің ОҢ ЖАҒЫНДА, ал NP ұзындығы MN ұзындығынан 1,1 бірлікке артық. P координатасы қандай? Жауапқа тек санды жазыңыз.",
+      "solution": "Бір қадам 0,1: M(0,7), N(2,8). MN = 2,8 − 0,7 = 2,1. NP = 2,1 + 1,1 = 3,2. P нүктесі N-нен оңда, сондықтан координатасы 2,8 + 3,2 = 6. Тексеру: 6 − 2,8 = 3,2; бұл MN-нен 1,1 артық.",
+      "figureDescription": "0–3 сәулесінде әр бірлік 10 тең аралық. M сол жақ 0-ден 7 қадамда; N сол жақ 0-ден 28 қадамда.",
+      "figureSha256": "5ba1c18e62499ab4cd2df70775c0c033fd4613ceae62e09fcd8ddb7017b02ef3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "mHundredths": 70,
+          "nHundredths": 280,
+          "mnHundredths": 210,
+          "npHundredths": 320,
+          "extraHundredths": 110,
+          "pCoordinateHundredths": 600,
+          "rightOfN": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave59-three-hidden-column-total-fifteen",
+      "modelId": "visual-wave59-column-addition-three-hidden-digits-invariant-sum",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "column",
+        "operation": "+",
+        "top": "□,□8",
+        "bottom": "2,□7",
+        "result": "9,05"
+      },
+      "answer": "15",
+      "sourceRefs": [
+        {
+          "sourceId": "48e0d5ad0083728d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-4-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-4-level3.json#0",
+      "sourceCanonicalSha256": "5f71e6289897630f54be554d709f43861d8aa6b536c9ea7640a9ce9eccdd29c3",
+      "sourceSkill": "Threeindependentdigits:8+7=15→carry1; b+c+1=10⇒b+c9; a+2+1=9⇒a6;10feasibletriplesbutALLa+b+c15,notrequireuniqueeachdigit.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.4 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Сәуледегі айырма мен болашақ координата, нақты периметр, тең иіннің теңдеуі, бағандағы тасымал/алу, бірден үш цифрдың жеке емес қосындысының бірмәнділігі, ортаңғы кесінді, реттелген амалдар мен кері тізбек, сиқырлы кесте және екі толық маршрут сақталды.",
+        "Жаңа деректер: A1,8/B2,5→0,7;үшбұрыш5,6/4,2/3,2→13;таразыx+3,78=9,78→6;3,4□7+2,586=6,053→6;8,□3−3,7□=5,06→8+7=15;AD13,6AB4,45CD5,15→4;7,4+3,65−5,09+1,8→7,76;тіктөртбұрыш5,35/3,7→18,1;M0,7N2,8NP=MN+1,1→P6;□,□8+2,□7=9,05→барлық10шешімніңқосындысы15;magicS6,9→a1,4;жол8,25/8,75км→500м;?+3,46−1,2=10,26→8.",
+        "Барлық SVG нативті жаңа параметрден салынған. Үшбұрыш, тіктөртбұрыш, үш бөлік және төрт жол бөлігі өз ұзындықтарына сай. Баған цифрлары мен үтірлер бір разрядта, амал тізбегі жоғарыдан төмен анық. Source raster/traced path жоқ; сыртқы тәуелсіз review қажет, өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық сандармен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual metrictriangle/rectangle/segment/roads, equalbalancearms, everycolumnprintedpattern and complete10/100/1000digitdomains, invariant15over10triples, fullmagic8lines, forward/reversearrow order and SI1000. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave59-three-hidden-column-total-fifteen.svg",
+      "verificationModule": "scripts/editorial/visual-wave59-models.mjs",
+      "statement": "Бағандағы қосу теңдігі дұрыс. Әр □ өз алдына бір цифрды жасырады; әртүрлі шаршыларға бірдей де, әртүрлі де цифр келуі мүмкін. Жасырын ҮШ цифрдың қосындысын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Жасырын цифрларды жоғарғы бүтінде a, жоғарғы ондықта b, төменгі ондықта c деп атайық. Жүздіктер 8 + 7 = 15: 5 жазылып, 1 көшеді. Ондық үлестердің соңғы цифры 0: b + c + 1 = 10, демек b + c = 9. Бірліктер a + 2 + 1 = 9, сондықтан a = 6. Жұптар b, c әртүрлі болуы мүмкін, бірақ үш цифр қосындысы әрқашан a + b + c = 6 + 9 = 15. Мысалы 6,48 + 2,57 = 9,05; 6,28 + 2,77 = 9,05. Барлық 1000 үштік тексергенде жарамды 10 үштіктің бәрі осы қосындыны береді.",
+      "figureDescription": "Бағанның жоғарғы саны □,□8, төменгі саны 2,□7, амал +, төмендегі нәтиже 9,05. Үтірлер бір бағанда, шаршы тұрған цифрлар жасырылған.",
+      "figureSha256": "c3d2d73fb85d61f1ebf1c5cf3e221c59934cb119ce281f3671bb851d347a0a51",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "15",
+        "checks": {
+          "topPattern": "□,□8",
+          "bottomPattern": "2,□7",
+          "operation": "+",
+          "result": "9,05",
+          "completeDomain": 1000,
+          "validDigits": [
+            [
+              6,
+              0,
+              9
+            ],
+            [
+              6,
+              1,
+              8
+            ],
+            [
+              6,
+              2,
+              7
+            ],
+            [
+              6,
+              3,
+              6
+            ],
+            [
+              6,
+              4,
+              5
+            ],
+            [
+              6,
+              5,
+              4
+            ],
+            [
+              6,
+              6,
+              3
+            ],
+            [
+              6,
+              7,
+              2
+            ],
+            [
+              6,
+              8,
+              1
+            ],
+            [
+              6,
+              9,
+              0
+            ]
+          ],
+          "uniqueRequestedSum": 15,
+          "individualDigitsNeedNotBeUnique": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave59-magic-square-six-nine-bottom-corner",
+      "modelId": "visual-wave59-decimal-magic-square-target-corner",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "magic",
+        "givens": [
+          [
+            0,
+            0,
+            320
+          ],
+          [
+            0,
+            1,
+            110
+          ],
+          [
+            0,
+            2,
+            260
+          ],
+          [
+            2,
+            0,
+            200
+          ]
+        ],
+        "target": [
+          2,
+          2
+        ]
+      },
+      "answer": "1,4",
+      "sourceRefs": [
+        {
+          "sourceId": "469adc6824390ea6",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-4-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-4-level3.json#1",
+      "sourceCanonicalSha256": "9683dee280fe25ce6e719e1b6d725a089cc76bfa1779f63e6a549489e0b002cd",
+      "sourceSkill": "NewconsistentmagicS6,9;anti-diagonal2,6+center+2→center2,3;main3,2+2,3+a=6,9→a1,4. Fullall8linesconsistent,center2,3trapretained.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.4 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Сәуледегі айырма мен болашақ координата, нақты периметр, тең иіннің теңдеуі, бағандағы тасымал/алу, бірден үш цифрдың жеке емес қосындысының бірмәнділігі, ортаңғы кесінді, реттелген амалдар мен кері тізбек, сиқырлы кесте және екі толық маршрут сақталды.",
+        "Жаңа деректер: A1,8/B2,5→0,7;үшбұрыш5,6/4,2/3,2→13;таразыx+3,78=9,78→6;3,4□7+2,586=6,053→6;8,□3−3,7□=5,06→8+7=15;AD13,6AB4,45CD5,15→4;7,4+3,65−5,09+1,8→7,76;тіктөртбұрыш5,35/3,7→18,1;M0,7N2,8NP=MN+1,1→P6;□,□8+2,□7=9,05→барлық10шешімніңқосындысы15;magicS6,9→a1,4;жол8,25/8,75км→500м;?+3,46−1,2=10,26→8.",
+        "Барлық SVG нативті жаңа параметрден салынған. Үшбұрыш, тіктөртбұрыш, үш бөлік және төрт жол бөлігі өз ұзындықтарына сай. Баған цифрлары мен үтірлер бір разрядта, амал тізбегі жоғарыдан төмен анық. Source raster/traced path жоқ; сыртқы тәуелсіз review қажет, өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық сандармен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual metrictriangle/rectangle/segment/roads, equalbalancearms, everycolumnprintedpattern and complete10/100/1000digitdomains, invariant15over10triples, fullmagic8lines, forward/reversearrow order and SI1000. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave59-magic-square-six-nine-bottom-corner.svg",
+      "verificationModule": "scripts/editorial/visual-wave59-models.mjs",
+      "options": [
+        "2,3",
+        "1,2",
+        "1,6",
+        "1,4"
+      ],
+      "statement": "Сиқырлы кестенің әр жолы, әр бағаны және ЕКІ диагоналі бірдей қосынды береді. Толық жоғарғы жол мен басқа берілгендерді пайдаланып, a тұрған санды таңдаңыз.",
+      "solution": "Жоғарғы жол 3,2 + 1,1 + 2,6 = 6,9. Сондықтан орта 6,9 − 2,6 − 2 = 2,3. Екінші диагональдан a = 6,9 − 3,2 − 2,3 = 1,4. Толық кесте жолдары: 3,2; 1,1; 2,6 | 1,7; 2,3; 2,9 | 2; 3,5; 1,4. Әр жол, әр баған және екі диагональ 6,9 береді. 2,3 — ортадағы сан, a емес.",
+      "figureDescription": "3×3 кесте. 1-жол 1-бағанда 3,2; 1-жол 2-бағанда 1,1; 1-жол 3-бағанда 2,6; 3-жол 1-бағанда 2. 3-жол 3-бағанда a, басқа ұяшықтар бос.",
+      "figureSha256": "f9f736ddeace6b5d6b33b71b08fa4c685f8b599fa3e2acc760821a9fbd3645c1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "1,4",
+        "checks": {
+          "allGridHundredths": [
+            [
+              320,
+              110,
+              260
+            ],
+            [
+              170,
+              230,
+              290
+            ],
+            [
+              200,
+              350,
+              140
+            ]
+          ],
+          "magicSumHundredths": 690,
+          "allEightLineSums": [
+            690,
+            690,
+            690,
+            690,
+            690,
+            690,
+            690,
+            690
+          ],
+          "centerHundredths": 230,
+          "targetHundredths": 140,
+          "uniqueByTopSumAndTwoDiagonals": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave59-two-village-routes-difference-five-hundred-metres",
+      "modelId": "visual-wave59-two-two-edge-routes-shorter-difference-metres",
+      "grade": 5,
+      "topic": "word",
+      "difficulty": "hard",
+      "params": {
+        "scene": "roads",
+        "edges": [
+          345,
+          480,
+          265,
+          610
+        ],
+        "base": 700
+      },
+      "answer": "500",
+      "sourceRefs": [
+        {
+          "sourceId": "112feae65274a9f4",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-4-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-4-level3.json#10",
+      "sourceCanonicalSha256": "9ac9d3b8783dd5a8e0ddec5bf9b4ce68b024db094ac05218a1594e61ca7bea51",
+      "sourceSkill": "AC3,45+CB4,8=8,25km vsAD2,65+DB6,1=8,75km,shortCroute0,5km=500m. ShortestsingleedgeDrouteNOTshortestwhole;actualtwo-trianglemetricpossible.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.4 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Сәуледегі айырма мен болашақ координата, нақты периметр, тең иіннің теңдеуі, бағандағы тасымал/алу, бірден үш цифрдың жеке емес қосындысының бірмәнділігі, ортаңғы кесінді, реттелген амалдар мен кері тізбек, сиқырлы кесте және екі толық маршрут сақталды.",
+        "Жаңа деректер: A1,8/B2,5→0,7;үшбұрыш5,6/4,2/3,2→13;таразыx+3,78=9,78→6;3,4□7+2,586=6,053→6;8,□3−3,7□=5,06→8+7=15;AD13,6AB4,45CD5,15→4;7,4+3,65−5,09+1,8→7,76;тіктөртбұрыш5,35/3,7→18,1;M0,7N2,8NP=MN+1,1→P6;□,□8+2,□7=9,05→барлық10шешімніңқосындысы15;magicS6,9→a1,4;жол8,25/8,75км→500м;?+3,46−1,2=10,26→8.",
+        "Барлық SVG нативті жаңа параметрден салынған. Үшбұрыш, тіктөртбұрыш, үш бөлік және төрт жол бөлігі өз ұзындықтарына сай. Баған цифрлары мен үтірлер бір разрядта, амал тізбегі жоғарыдан төмен анық. Source raster/traced path жоқ; сыртқы тәуелсіз review қажет, өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық сандармен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual metrictriangle/rectangle/segment/roads, equalbalancearms, everycolumnprintedpattern and complete10/100/1000digitdomains, invariant15over10triples, fullmagic8lines, forward/reversearrow order and SI1000. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave59-two-village-routes-difference-five-hundred-metres.svg",
+      "verificationModule": "scripts/editorial/visual-wave59-models.mjs",
+      "statement": "A мен B ауылдарына екі жолмен баруға болады: C арқылы немесе D арқылы. Әр бөліктің ұзындығы сызбада КИЛОМЕТРМЕН берілген. Қысқа толық маршрут ұзын маршруттан НЕШЕ МЕТРГЕ қысқа? Жауапқа тек санды жазыңыз.",
+      "solution": "C арқылы 3,45 + 4,8 = 8,25 км. D арқылы 2,65 + 6,1 = 8,75 км. Қысқасы C арқылы; айырма 8,75 − 8,25 = 0,5 км. 1 км = 1000 м, сондықтан 0,5 × 1000 = 500 м. Бір ғана ең қысқа бөлікті қарап маршрутты таңдауға болмайды.",
+      "figureDescription": "A-дан B-ға жоғарғы C және төменгі D арқылы екі маршрут. AC 3,45 км, CB 4,8 км, AD 2,65 км, DB 6,1 км.",
+      "figureSha256": "f47c22ab85286148263551f7b6d414182e9badff775a5d82f92acd037d3c42cb",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "500",
+        "checks": {
+          "edgesHundredthsKm": [
+            345,
+            480,
+            265,
+            610
+          ],
+          "viaCHundredths": 825,
+          "viaDHundredths": 875,
+          "shorterRoute": "C",
+          "differenceHundredths": 50,
+          "metres": 500,
+          "shortestSingleEdgeOnLongerRoute": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave59-inverse-chain-eight-plus-three-forty-six",
+      "modelId": "visual-wave59-reverse-decimal-operation-chain-initial",
+      "grade": 5,
+      "topic": "eq",
+      "difficulty": "hard",
+      "params": {
+        "scene": "chain-inverse",
+        "operations": [
+          346,
+          -120
+        ],
+        "final": 1026
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "68512b7e992f59be",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-4-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-4-leveltest.json#5",
+      "sourceCanonicalSha256": "bfcfa4531ecb772b8c04da0d7fed668e7e73d5e039d364d820d38f01b1abd51a",
+      "sourceSkill": "Unknownstart+3,46−1,2=10,26;reverse+1,2then−3,46→8. Forwardcheck8→11,46→10,26,originalrolepreserved.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.4 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Сәуледегі айырма мен болашақ координата, нақты периметр, тең иіннің теңдеуі, бағандағы тасымал/алу, бірден үш цифрдың жеке емес қосындысының бірмәнділігі, ортаңғы кесінді, реттелген амалдар мен кері тізбек, сиқырлы кесте және екі толық маршрут сақталды.",
+        "Жаңа деректер: A1,8/B2,5→0,7;үшбұрыш5,6/4,2/3,2→13;таразыx+3,78=9,78→6;3,4□7+2,586=6,053→6;8,□3−3,7□=5,06→8+7=15;AD13,6AB4,45CD5,15→4;7,4+3,65−5,09+1,8→7,76;тіктөртбұрыш5,35/3,7→18,1;M0,7N2,8NP=MN+1,1→P6;□,□8+2,□7=9,05→барлық10шешімніңқосындысы15;magicS6,9→a1,4;жол8,25/8,75км→500м;?+3,46−1,2=10,26→8.",
+        "Барлық SVG нативті жаңа параметрден салынған. Үшбұрыш, тіктөртбұрыш, үш бөлік және төрт жол бөлігі өз ұзындықтарына сай. Баған цифрлары мен үтірлер бір разрядта, амал тізбегі жоғарыдан төмен анық. Source raster/traced path жоқ; сыртқы тәуелсіз review қажет, өздігінен қол қойылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық сандармен суретті есеп",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all13saved/new/fullsolutions/everyMCQ plus six source/native343pxsheets. Inspect actual metrictriangle/rectangle/segment/roads, equalbalancearms, everycolumnprintedpattern and complete10/100/1000digitdomains, invariant15over10triples, fullmagic8lines, forward/reversearrow order and SI1000. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave59-inverse-chain-eight-plus-three-forty-six.svg",
+      "verificationModule": "scripts/editorial/visual-wave59-models.mjs",
+      "statement": "Нұсқарлардағы амалдар бастапқы белгісіз санға ретімен қолданылып, соңғы белгілі нәтиже шыққан. БАСТАПҚЫ санды табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Соңынан кері жүреміз: 10,26 + 1,2 = 11,46; 11,46 − 3,46 = 8. Тексеру алға: 8 + 3,46 = 11,46; 11,46 − 1,2 = 10,26. Әр кері қадамда амал таңбасы өзгереді.",
+      "figureDescription": "Үш қорап жоғарыдан төмен жалғасқан: бірінші ?, ортаңғы бос, соңғы 10,26. Нұсқарлар ретімен +3,46; −1,2.",
+      "figureSha256": "2d960248641db7ed7fc66deea310872f29cb420f26b5c4a4d02fcc3033f6ec0f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": {
+          "operations": [
+            346,
+            -120
+          ],
+          "finalHundredths": 1026,
+          "initialHundredths": 800,
+          "forwardHundredths": [
+            800,
+            1146,
+            1026
+          ],
+          "reverseHundredths": [
+            1026,
+            1146,
+            800
+          ]
+        }
+      }
+    }
+  ]
+}

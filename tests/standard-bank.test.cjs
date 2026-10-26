@@ -11,10 +11,13 @@ const { fakeFirestore } = require('./helpers/fake-firestore.cjs');
 const root = path.resolve(__dirname, '..');
 const editions = getStandardBank();
 
-test('all 51 reviewed editions are server-only and resolve through the server registry', async () => {
+test('every reviewed edition is server-only and resolves through the server registry', async () => {
   const { POOL } = await import('../frontend/src/bank.js');
-  assert.equal(editions.length, 51);
-  assert.equal(new Set(editions.map(q => q.id)).size, 51);
+  const report = JSON.parse(fs.readFileSync(path.join(root, 'problems/reviews/synaq-standard-editions.json'), 'utf8'));
+  assert.ok(editions.length >= 51, 'The original verified batch must be retained');
+  assert.equal(editions.length, report.summary.verifiedEditions);
+  assert.deepEqual(new Set(editions.map(q => q.id)), new Set(report.records.map(q => q.id)));
+  assert.equal(new Set(editions.map(q => q.id)).size, editions.length);
   const publicIds = new Set(POOL.map(q => q.id));
   assert.ok(Object.isFrozen(editions));
   for (const q of editions) {
@@ -55,29 +58,45 @@ test('real private topics and questions require public Standard or higher withou
   }
 });
 
-test('the real statistics topic is private and follows the server grade ceiling', async () => {
+test('the real statistics topic is private and follows the server grade ceiling across bounded batches', async () => {
   const content = require('../api/learning').content(fakeFirestore());
   const statistics = editions.filter(q => q.topic === 'stats');
   assert.ok(statistics.length > 0);
   assert.ok(statistics.some(q => q.grade === 6));
   assert.ok(statistics.some(q => q.grade === 4));
   const request = { topicId:'stats', mixed:false, excludeIds:[], limit:60 };
+  async function collectEligible(options, expected) {
+    const expectedIds = new Set(expected.map(q => q.id));
+    const seen = new Map();
+    for (let batch = 0; batch <= Math.ceil(expected.length / request.limit); batch++) {
+      const rows = await content.getTrainingQuestions({...request,...options,excludeIds:[...seen.keys()]});
+      assert.ok(rows.length <= request.limit, 'A request must respect its batch limit');
+      if (!rows.length) break;
+      for (const row of rows) {
+        assert.ok(expectedIds.has(row.id), `Unexpected plan/grade access: ${row.id}`);
+        assert.equal(seen.has(row.id), false, 'Excluded questions must not repeat');
+        assert.ok(row.grade <= options.gradeCeiling);
+        assert.equal(Object.hasOwn(row, 'answer'), false);
+        assert.equal(Object.hasOwn(row, 'solution'), false);
+        seen.set(row.id, row);
+      }
+    }
+    assert.deepEqual(new Set(seen.keys()), expectedIds, 'Every eligible question must remain reachable');
+  }
   for (const options of [{plan:'free',gradeCeiling:6},{plan:'standard',gradeCeiling:6},{plan:'pro',gradeCeiling:4},{plan:'mentor',gradeCeiling:5}]) {
     const expected=['pro','mentor'].includes(options.plan) ? statistics.filter(q=>q.grade<=options.gradeCeiling) : [];
-    const rows=await content.getTrainingQuestions({...request,...options});
-    assert.deepEqual(new Set(rows.map(q=>q.id)),new Set(expected.map(q=>q.id)));
+    await collectEligible(options, expected);
     const topic=(await content.getTrainingTopics(options)).find(t=>t.id==='stats');
     assert.equal(topic?.count||0,expected.length);
   }
   for(const plan of ['pro','mentor']){
-    const rows=await content.getTrainingQuestions({...request,plan,gradeCeiling:6});
-    assert.deepEqual(new Set(rows.map(q=>q.id)),new Set(statistics.map(q=>q.id)));
+    await collectEligible({plan,gradeCeiling:6}, statistics);
     assert.equal((await content.getTrainingTopics({plan,gradeCeiling:6})).find(t=>t.id==='stats').count,statistics.length);
   }
 });
 
 test('published admin ID collisions cannot replace private editions or grant free access', async () => {
-  assert.equal(editions.length,51);
+  assert.ok(editions.length >= 51);
   const q=editions[0];
   const db=fakeFirestore({[`bankTasks/${q.id}`]:{...q,status:'published',minimumPlan:'free',editorialStatus:'draft',sourceProvider:'admin',statement:'Collision should never be selected',answer:'wrong'}});
   assert.equal(await findTrainingQuestion(db,q.id),q);

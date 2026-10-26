@@ -1,0 +1,756 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/batches/grade5-decimal-division.json",
+  "reviewedAt": "2026-10-24",
+  "manualFindings": [],
+  "resolvedFindings": [
+    {
+      "editionId": "grade5-decimal-division-181ab7f770036369",
+      "issue": "Source explicitly teaches TWOzero padding at integer-dividend/.25; initial adaptation/.2 lost one of these places.",
+      "resolution": "Target small-mass divisor replaced by .24, same integer payment960; exactTWOzero padding →96000/24, unit4000, requested.75kg price3000. Other42 unchanged."
+    }
+  ],
+  "scope": "All43source-addressed grade5topic4.8 nonvisual decimaldivision; fullindependent printed exact review",
+  "divisionAudit": {
+    "traceBlocks": 45,
+    "perPlaceSteps": 17,
+    "requiredZeroSlots": 0,
+    "appendedZeroSteps": 5,
+    "repeatedStateCycles": 0,
+    "bothMemberShifts": 43,
+    "exactPaddedZeros": 33
+  },
+  "entries": [
+    {
+      "editionId": "grade5-decimal-division-0df1b3fc11685e68",
+      "sha256": "90399586799202c191bc730d2544e7645e9add0fccfcd14b998779a61e39316d",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUAL8/0,5=16; exact WHOLE0 and decimal place/final zeros retained; all numeric MCQs evaluated. Checked 1 BOTHshifts/1 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "b8b3ad4e56a433a10a4e56c4ddb6ac0c86ffaab3a0bba931dcbd8d7a9586c9a7",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-eef9936654e5e2f3",
+      "sha256": "42ca521ca6b5db82673259eb9adff6044d99a70295598570d981c435bae47207",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "FULL actual MCQs [('870 ÷ 15', True), ('87 ÷ 15', False), ('8,7 ÷ 15', False), ('8700 ÷ 15', False)]; target EXPRESSION keeps quotient58 and NATURAL divisor, both members scaled equally, residual dividend decimal never dropped. Checked 1 BOTHshifts/1 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "97e9ebc866063d967e573b9b746a367707896cc6324cde25b2470648b389faac",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-999bf94d572ddff6",
+      "sha256": "9e09d04aa006b04ddd086719b2dc45fe29e754fe94b96d58d22fd7dc9fb0bfc6",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUALdistance792/25/time12/5=speed66/5; distance×time MCQ false. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "5161b760cd58ed0a2c637e091ef98ad112164096559f8135498f3a9e97add419",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-ec9bb20c90c4369a",
+      "sha256": "88bfd8482885eaac120b5f0f718787818555cdf3367e5f8e9dbe65c5f689fd20",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUAL8,4/0,7=12; exact WHOLE0 and decimal place/final zeros retained; all numeric MCQs evaluated. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "309a6fb169e1d0e09b24024f4420dc303bbad570a11313c7b78f0fe48f59d1a3",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-94bd1dc5591cfd8c",
+      "sha256": "234e0fd24fb2951d2f1938d5664b674075c48c843ff46e936cded3e1091cd5b4",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "Nonzero ACTUAL coefficient1/25×x=24/5; unique rational root120, substitution and every shift/product trap checked. Checked 1 BOTHshifts/1 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "bde1c798da8d1c287ad4dd83baa792522a8713477c2b63cddf6433d88a53ce06",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-8bdd3968877bc808",
+      "sha256": "8ff7f79808211e6a6d4c7a6147b8bd67bd838634bf0adaf7a7780e7b5065ec37",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ALLactual positive divisors; quotient>positiveDIVIDEND iff0<divisor<1 by positive-order proof; unique EXPRESSION4,8 ÷ 0,8. Checked 0 BOTHshifts/0 exact paddedzeros/0 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "ddd51cc22ad9e8117669eb59b44779f8f34bfd722f120185bdd15a63f9be4439",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-f8f452ea152708a1",
+      "sha256": "a37d04a8b0c505393ed2e69ae8522ac0d32f76a72a791962158ddc39a26e6a7c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "Nonzero ACTUAL coefficient4/5×x=92/25; unique rational root23/5, substitution and every shift/product trap checked. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "05fa9212f29b601e70d81ae6462b4ef68ad7a28185c821c525678915969fa36e",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-0411a99bb83c667d",
+      "sha256": "d12b0569d53846563e85e673dec86a7c8463df128e4130fc8c49d875a6fd421e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "FULL actual MCQs [('79,2 ÷ 6', True), ('7,92 ÷ 6', False), ('792 ÷ 6', False), ('79,2 ÷ 0,06', False)]; target EXPRESSION keeps quotient66/5 and NATURAL divisor, both members scaled equally, residual dividend decimal never dropped. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "1754dedf74d3aad9d23e5e6fad189f031239966f8aa605bb602b73938906a592",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-04b5fba398cf85b0",
+      "sha256": "c60f78e072332a9d9b0f5bde7355b73eecf4fe7e7cf621e759ba6c2284b2c3fa",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUAL paid1260/mass3/5=UNITkgprice2100, mass×price conservation checked. Checked 1 BOTHshifts/1 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "ce58f5275fab7128591e928f85ed5bee5376b1bf0b2dc04f63f430317f8bf975",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-4912d07a1f536e0b",
+      "sha256": "183bad79a4d3c79f1962528d537e8d906025ef7dcef383d21d524246cd7eefe7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUAL2,8/0,07=40; exact WHOLE0 and decimal place/final zeros retained; all numeric MCQs evaluated. Checked 1 BOTHshifts/1 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "bf6c3ffebd3ef64219fc0ff01fc12bb3fa432956dbcd19bed92cb82ada461dea",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-fb4d50924422049b",
+      "sha256": "f532cf7c220e56dda6e600a1eb3291da4de593a33e96b3d10fedeb09d01964a7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUAL0,54/0,9=3/5; exact WHOLE0 and decimal place/final zeros retained; all numeric MCQs evaluated. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "3a42782be0e5b78750f320f5ef5a36d53dd707ed729fc679d5441c90cbb64d01",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-1bdc17e6b69108f8",
+      "sha256": "41e40353e83eae6410dd1df32b4d1125780affd2fa0a8ebaaf65c5d89e894284",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUAL1,35/0,045=30; exact WHOLE0 and decimal place/final zeros retained; all numeric MCQs evaluated. Checked 1 BOTHshifts/1 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "97be7e17c0f7a27e6b5cf33bfc4b68d911b8911b6f971633ece780c31fdb2c5e",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-698ea22ab9730a09",
+      "sha256": "37d6cac72eab77793a047ff9a1b084098e62ca27169e105fb18abf25324541ca",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "SAMEhomogeneous material, ACTUALdensity231/5/33/2=14/5; newV37/5 gives NEWMASS518/25, not density; both mass/volume ratios checked. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "1570384101ee99b427744662425d54867bb606dd92effdab4cde32b0da72d7d8",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-ce53a751116ddfbb",
+      "sha256": "737d4cfacbbcc681db76e525ac098a5178b410b41b5d5a7eec14ad417e41167f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "GIVENremaining792/5 corresponds to COMPLEMENT1−7/25, originalWHOLE220; walked+remaining conservation. Checked 1 BOTHshifts/1 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "50b8c2008cdc7dd72b5975a268beb2a021b3d4249ac39943f19e89759efc6ba6",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-1c87be5eb81bcd9b",
+      "sha256": "d3b5d18ce1ff8fb4c3e4bc137622ab0bbcc929796a19a367f0354392af815fa6",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUAL a/x=q yields unique nonzero x=a/q=3/5; reciprocal and product MCQs explicitly false. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "4b3aeff0845b8531ea4c96830e17fd6f5cba81deed08eadd1d9d45d3c8e61d2d",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-68b41fdf87f5355c",
+      "sha256": "b53679367a619bd9ec74915a5a051466faea411e79384603d6db420b57c02d7d",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ALLactual expression values['7', '6', '9', '3']; unique MAX target EXPRESSION6,3 ÷ 0,7, not its result. Checked 0 BOTHshifts/0 exact paddedzeros/0 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "fa087382e9fdf3f00921b15c6789ded4854e6ac5b0c956396924abef579e1ad1",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-72ce9841995d014e",
+      "sha256": "fcad152b87d07978644d5788353cc8aed8e619451621edc91431efb0e2d989f7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUALdistance162/5/speed27/2→12/5h; requestedMINUTES×60, whole and fractional hours both converted, not ×100. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "d66cdf4721d640762ed27e18ff52807c2c007f14e88319f25a1bd4446b6fe36b",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-f65037ade6650096",
+      "sha256": "37642b413b1dd9b88b3514054fd450d2bc2e52bdfbe558a14a712b477ab7d292",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUALdownstream1188/25/12/5=99/5; STILLspeed167/10=down−current31/10, not down/up; typed rates and backward equation. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "c9179e7bf0e95966294b26492307aa36147f5440606625eabe3fe40d67b22113",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-19cfb5a01dbffa50",
+      "sha256": "368771813ea539db423ac5710b838ad72c09836e2267a06e5d111a0bba0bdcab",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUALpart21/50 ofORIGINAL=189/5, originalWHOLE90, not complementary base. Checked 1 BOTHshifts/1 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "02f5e8e2712a3e565e213e3c3d19a39fb06e35cd6e1cdfbeb6deda37905aaf8f",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-1ff3cea47a31f2c6",
+      "sha256": "be744f2ba6886018368f9238c4cd15f49048b69938579a8616e89a2f16ed301b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "DIFFERENT actualmasses priced separately:1360/0,8=1700,2925/1,5=1950; requested ALMONDminusPEANUT UNITprices=250. Checked 2 BOTHshifts/2 exact paddedzeros/2 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "241de1f526e234adc9a1424934237a83aa16a41a0cb6a89fed67ac87a4b9e535",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-8e62226131146e7e",
+      "sha256": "c747c05cb48fed3586b485029ed86cff6ec68aa45bcb5329db5d4784c0cce2a8",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "Both actual divisions FIRST12,21/5 then difference39/5; seconddivisor-onlyshift trap independently false. Checked 2 BOTHshifts/0 exact paddedzeros/2 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "2b45c64cc03d7064aa2de4d1200a4b31fa9864c10bac3eae69ea8827c9a57efc",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-39e56dc429a5ef26",
+      "sha256": "cd5a7bd2603ea2ad4bf1555263ea8c075d8e1ab1c10d1af0c399bbb5fcd09ade",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUAL a×x−b=c: recoverMINUENDc+b=49/10, then unknownFACTORx7/2; exact substitution/traproles. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "2176c7a70686fa8b86f642f4a81e21ae28a3d694cb741b62e59e619e8171ff07",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-181ab7f770036369",
+      "sha256": "ef548a82f91987f59efbc0c1acdba3c6cf354102c8ff51cac8e7af290ef4dd45",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "Actual960/6/25→UNITprice4000; NEW3/4kg×sameunit=3000, conservation; exact padding retained. Checked 1 BOTHshifts/2 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "05f87f422b9c835b26085e760a69ffaf1d570ff033d9d379d0bd8df9fd1dad25",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-9340671d5ba306d2",
+      "sha256": "dce680e2dcb55401676f7a534737e058c0c567dea4e68df6b3845aeb28a8df0b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ENTIRE actualPARENTHESEDSUM72/5+24/5=96/5 then /12/25=40; omitting grouping givesdifferent122/5. Checked 1 BOTHshifts/1 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "3319816f07a056a6d0ec9ef9cdab9c73f3af0b1525ba5c9d88e9436bd93610af",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-60801f610846faa9",
+      "sha256": "cbbb3ae31e0e1fd0db51f31b31d8a1e911d7b8c684f77bc42c3e224136444126",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ALLACTUALsix factors, numerator places4,denominator3; SAMEscale10000 gives12960/7200=9/5; denominator additional×10 essential, rawintegerproducts alone wouldgive18. Checked 0 BOTHshifts/0 exact paddedzeros/1 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "3042e0470b366ce6b39ba1bc5fb5b27a4763864a8f7b243eb74fe89f1c220a3f",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-a1c916c41037e93a",
+      "sha256": "ca09f80df8b40111d53f774ff4758c0decadcc9d6b04fca5b23a10546dbabe7f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "SAMEactualdistance336/5; down24,up16, currentHALFdifference4; RAFT336/5/current=84/5, not boat/down-upwhole. Checked 2 BOTHshifts/0 exact paddedzeros/3 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "8a66d8be9eec019a830169169fb7696532824138cc41c494759b8a0a1f3dd7c0",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-09586d2a6fefc495",
+      "sha256": "1e534591cbd76eb6f5e799d650543de243f504a0ef6732f946a41a9c07bc310f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "EQUALcost actualmass7/2×plain=21/10×(plain+480); uniqueplainUNIT720,soft1200, bothcosts2520 conserved. Checked 1 BOTHshifts/1 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "0f6241959a58d77ee53c8cdf1847463b78a396fadb1310419fac448a27020ae3",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-675fa0d3e606615d",
+      "sha256": "3f07d23151f8a643d696ab2654599dd1449534cae9609e2e9d21e0a7796e1c05",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUAL(x+27/20)/3/5=42/5; recoverENTIREdividend126/25 then x369/100; checkoriginal nested equation, reverseddivision/addroles false. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "38682726710e44009b7cbbd8302e2adac49252149ea7ffdb8052194799a78cb9",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-5a373673d9f9cd3e",
+      "sha256": "f44e6e2eed24c4dd0cd68bd8e013d0ef7890f9d26d966608007eb4d9f719d86c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "DAY1original1/5,DAY2remainingbase(1−first)×3/10=6/25,DAY314/25; difference8/25oforiginal→WHOLE2400, masses[Fraction(480, 1), Fraction(576, 1), Fraction(1344, 1)]; total/gap conservation. Checked 1 BOTHshifts/2 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "103122238780e5fad8b40fdabbc61877c2a6d073f52ebdf40576b91b6a62aa25",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-76fc8bb887b72c42",
+      "sha256": "d25a08df1be2e99165bfcd3e614cd217c2d769b617a11dad938aaf15ee78cd4b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "COMPLETEactualnine-elementdomain[Fraction(1, 10), Fraction(1, 5), Fraction(3, 10), Fraction(2, 5), Fraction(1, 2), Fraction(3, 5), Fraction(7, 10), Fraction(4, 5), Fraction(9, 10)], ONLYnaturalquotient divisors[Fraction(1, 10), Fraction(3, 10), Fraction(7, 10), Fraction(9, 10)], requestedCOUNT4. Checked 0 BOTHshifts/0 exact paddedzeros/0 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "e4a370ec96e7ac993ae1b703d520dc718866346e4557696ddc65b59a41307cc5",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-f6f30051ab322276",
+      "sha256": "54224273a380aead3b8f922990d07e8b3b804d7addb485cbe4ae7541e1f2b0d5",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ALLfouractual divisions['40', '40', '40', '4000']; threeequivalent/oneoddEXPRESSSION840 ÷ 0,21, independent both-member shifts for all. Checked 4 BOTHshifts/5 exact paddedzeros/4 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "556570d45be5ddef391f4f7016893d6c3466b8bc22bc8ce18251442de514cba6",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-8444e20e8a3274d7",
+      "sha256": "198507df1992e1725850b1493185150d88242f7b9b1f24b508d032fbd2a161f1",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "COMPLETEALL0…9printedmask:6,□4/0,24; integercandidates[2]; independentdiv8[2, 6],div3[2, 5, 8], intersectionunique, notMCQ-onlysearch. Checked 0 BOTHshifts/0 exact paddedzeros/0 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "5a307f014b118f119074990fc487ebc094a0faed9a347b083c17de4a29403dc0",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-06b6903da46fb1f4",
+      "sha256": "bc063d52b87203eff8352eada55e6d924f59ffdd3b09304e8f86fc36816f0c75",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "SIMULTANEOUSoppositeapproachSUMspeeds21/2, time13/5h, ALLfractionalhours×60→156min; pathconservation. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "fce8dfdf2e4e303117f287594ec145810610e2a4c3afefc71fc24de5e0741694",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-6243fa12734459aa",
+      "sha256": "262ad6e4fa6c0aa843ca58b6a95ef20b29b10600e855bcf15bcb5480422ae3ea",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUALpayment7280/Lprice280=litres26, /perkm13/200=400km; THREEzeropadding preserved, fuel/payment backwardconservation. Checked 1 BOTHshifts/3 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "9f7becd44cadac2c618e8b0a8edf0f7e578f34e8f7936d9accb74d68c39466fd",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-560c341fb85dc4ee",
+      "sha256": "0c6be541bdd9e33d8c97ba8f8f4cd9af44776e5b7c70c1a4b7728d09e6076376",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUAL0,72/0,8=9/10; exact WHOLE0 and decimal place/final zeros retained; all numeric MCQs evaluated. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/1 perplaceidentities.",
+      "sourceCanonicalSha256": "726a83212edd59f1c7b684e137a64b66da5fab92ee8ae393f522fcae90f0fe65",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-72336925ca62d523",
+      "sha256": "bde6d0c4d423ddac9dc1bc292a00c1e3c749d4f509938a53b95ab3bcd019dfaa",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ActualWHOLEliquid4/onecup4/25=25FULLcups, exactinteger so no partialcup/remainder; eachcupconservation. Checked 1 BOTHshifts/2 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "572919c3e1301b39a285e39d47ebbb9afc74222460962730add5b6ecdc569f5c",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-b1ff8ca6754c8a23",
+      "sha256": "aa74dab0fdfd3f3d9e65495c91f0c185376c3c4af79496b9b199cfe3c1c0aa7c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUAL4,5/0,006=750; exact WHOLE0 and decimal place/final zeros retained; all numeric MCQs evaluated. Checked 1 BOTHshifts/2 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "0145c9de641e8ba56689b9c37a6dfcf95eb471303ce10505b26c05c09e322ceb",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-8feca5cd97f4d7ad",
+      "sha256": "227bde0accd3e2d9cb7cdb96cae56a1c507e2a6521f65fdaec0826f26db94064",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "Actual6300/7/4→UNITprice3600; NEW12/5kg×sameunit=8640, conservation; exact padding retained. Checked 1 BOTHshifts/2 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "4cee7d4b2046abbb88e6a18c8b1314dbfb6e586beb3e362b96c072bc5c8f17aa",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-afeeca161c4769eb",
+      "sha256": "9e1d62992809c7872c6f8e55e9981f4bed7e25e2a7d2edbce8e5c798c5076565",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ENTIREunknownDIVISORx−7/10=18/5/4=9/10; x=8/5, nonzero-divisor exclusion retained; substitution andwrong inverse/minuend roles. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "5d35ccedea2c09c4dcf7a1de1d975c9cbd94444eb29f93c14f3edac545bc46a0",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-dfc01be349d4e12e",
+      "sha256": "39128b717d75d7088e4f0f4db844d627251eaa8e740ee318c36d60507f4ddce6",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUAL0,0225/0,15=3/20; exact WHOLE0 and decimal place/final zeros retained; all numeric MCQs evaluated. Checked 1 BOTHshifts/0 exact paddedzeros/1 fulltraces/2 perplaceidentities.",
+      "sourceCanonicalSha256": "746aba8ab52aeabe2dc7dbe4dd3ed5e54091dd6e7e4c48bb89c1a8e0486878d6",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-b0e849553480f972",
+      "sha256": "a2d7180f2b36706ee77bdf22423146ded553b612f043547f8bc04f16266dffbd",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "DRIED99/10correspondstoCOMPLEMENT1−lost41/50; originalFRESH55; lost+remaining conservation, notdividebylostshare. Checked 1 BOTHshifts/1 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "7c27bd5f427c3ae9e3f63ec69ad0629295b6ab57c202955b232eca14931017aa",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-fab321680565ab13",
+      "sha256": "bb894a056b3cadaaef957c6c98c7c40c6c0066c44e4f9cbd1f5e8016a9ae5562",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "FULLbridgecrossing involvesTRAIN+BRIDGE=21/10, /7/200h=60km/h; bothtrain-only/bridge-only distractors explicitlyfalse, twozeropadding preserved. Checked 1 BOTHshifts/2 exact paddedzeros/1 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "66293c5f9217948ead5a69aa3f0577bc8fca536b8f0838037a536a666f920904",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-division-fb90d989ee268a4d",
+      "sha256": "07a747413e2214070e47453198f20611547925328876b311dd0598464c2b7fc2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All43 saved/new full conditions/official solutions/everyMCQ read; own ACTUAL PRINTED Fraction/AST BOTH-member shifts, exact Euclidean ledger, universal coprime and complete digit-domain oracle; no author solver/spec/params",
+      "notes": "ACTUALdivisor reduced=9/20, gcd=1; UNIVERSALcoprimecriterion b*n/a integer iff a|n. Minimumpositive9; all1…8independentlyrejected, nofalseassumptionthat9isprime. Checked 0 BOTHshifts/0 exact paddedzeros/0 fulltraces/0 perplaceidentities.",
+      "sourceCanonicalSha256": "b49674601263048bdc12dee19a2bc4a5d31694e455bd74bc9f578fa370d72192",
+      "checks": [
+        "Every full saved/new condition/official and own solution/everyMCQ manually read",
+        "Both operands scaled by SAME exact10^places; missingzero count and retained decimal dividend bound",
+        "Natural Euclidean whole and every remainder×10+nextdigit/divisor×quotient+remainder/place/zero checked",
+        "Full0…9 digitmask and complete1…9 tenthsdivisors checked, notonlyMCQchoices",
+        "Universal reducedcoprime criterion for leastn/.45, without falseprimeassumption",
+        "Actualoriginal/remaining/complement/price/ratebases, raftHALFcurrent, bridgeSUM and minutesSI60 checked"
+      ]
+    }
+  ]
+}

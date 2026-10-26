@@ -1,0 +1,1223 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "Only archived mathematical skills are used as references. Every SVG is constructed from new authored parameters, never copied or traced. No source collection is being fetched.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard",
+    "originalSourceTasksPublished": 0
+  },
+  "coverage": {
+    "sourceOccurrencesInVisualInventory": 1799,
+    "draftSourceOccurrences": 22,
+    "distinctDraftModels": 22,
+    "semantics": "One explicitly linked visual source occurrence per draft. These drafts do not cover other examples or whole families by implication.",
+    "remainingVisualOccurrencesNotAuthoredByThisBatch": 1777
+  },
+  "editions": [
+    {
+      "editionId": "visual-bead-number",
+      "modelId": "visual-abacus-number",
+      "grade": 4,
+      "topic": "num",
+      "difficulty": "basic",
+      "params": {
+        "digits": [
+          4,
+          9,
+          0,
+          6
+        ]
+      },
+      "answer": "4906",
+      "sourceRefs": [
+        {
+          "sourceId": "5ec4a10c36b0f476",
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-1-1-level1.json#7",
+      "sourceSkill": "place-value reading with an explicit zero place",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Төрт разрядты есепшот",
+      "figureDescription": "мыңдық, жүздік, ондық, бірлік бағандарында тиісінше 4, 9, 0, 6 моншақ",
+      "image": "/figures/synaq-editions/visual-bead-number.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Математика үйірмесінде төрт разрядты есепшот жасалды. Солдан оңға қарай бағандар мыңдықты, жүздікті, ондықты және бірлікті білдіреді. Әр моншақ өз бағанындағы бір разрядтық бірлікке тең. Суреттегі санды цифрмен жазыңдар; бос бағанның орнына 0 қойылады.",
+      "solution": "Бағандарда 4, 9, 0, 6 моншақ бар. Разрядтық қосылғыштар: 4000 + 900 + 0 + 6 = 4906. Бос ондықтар бағанына 0 жазылады. Жауабы: 4906.",
+      "figureSha256": "9034a3833d99067a01aaf25854dc3d67cfdb32e1ebc978173113614c7c6f8fca",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4906",
+        "checks": [
+          "beads counted individually by place value",
+          "empty rods contribute zero",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-trek-days",
+      "modelId": "visual-route-days",
+      "grade": 4,
+      "topic": "speed",
+      "difficulty": "hard",
+      "params": {
+        "segmentsCm": [
+          4,
+          6,
+          8
+        ],
+        "kmPerCm": 5,
+        "kmPerDay": 15
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "9880db612f195c7b",
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-1-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-1-1-level3.json#4",
+      "sourceSkill": "map route length followed by travel-time division",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Жаяу саяхаттың бағыты",
+      "figureDescription": "4 см, 6 см және 8 см үш бөлік; 1 см жердегі 5 км-ге тең",
+      "image": "/figures/synaq-editions/visual-trek-days.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Жаяу саяхаттың сызбасында үш жол бөлігі 4 см, 6 см, 8 см деп белгіленген. Сызбадағы 1 см жердегі 5 км-ге сәйкес келеді. Топ осы жолмен күніне 15 км жүреді. Үш бөліктің бәрін неше күнде жүріп өтеді?",
+      "solution": "Сызбадағы жол: 4 + 6 + 8 = 18 см. Нақты жол: 18 × 5 = 90 км. Күн саны: 90 : 15 = 6. Жауабы: 6.",
+      "figureSha256": "4e62897ef7f8413aa6aaeee3c6cd5e2ba2ead7156366de32d9e950c3ab2c0220",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": [
+          "map units accumulated independently",
+          "daily travel iterated to exactly zero remaining distance",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-clock-angle",
+      "modelId": "visual-clock-angle",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "hour": 9,
+        "minute": 40
+      },
+      "answer": "50",
+      "sourceRefs": [
+        {
+          "sourceId": "d3a98301508c9b91",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-1-level1.json#8",
+      "sourceSkill": "smaller angle between actual clock-hand directions",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Сағат тілдерінің орналасуы",
+      "figureDescription": "Сағат 09:40; сағат тілі 9 бен 10 арасында, минут тілі 8-де",
+      "image": "/figures/synaq-editions/visual-clock-angle.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Шеберханадағы сағат 09:40 уақытын көрсетіп тұр. Сағат тілі минуттар өткен сайын бірқалыпты қозғалады. Екі тілдің арасындағы кіші бұрышты градуспен табыңдар.",
+      "solution": "Минут тілі 12-ден 40 × 6 = 240° бұрылған. Сағат тілі 9 × 30 + 40 × 0,5 = 290° бұрылған. Екі бағыттың кіші айырмасы 50°. Сағат тілін дәл бүтін сағаттың белгісінде қалдыруға болмайды. Жауабы: 50.",
+      "figureSha256": "37a04d5b410baffb00f9828a744621e875684a6526f05fa6e551a0bb4131a042",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "50",
+        "checks": [
+          "hour hand moves continuously with minutes",
+          "shorter arc counted on 720 half-degree steps",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-sector-fraction",
+      "modelId": "visual-sector-fraction",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "basic",
+      "params": {
+        "total": 12,
+        "shaded": 7
+      },
+      "answer": "7/12",
+      "sourceRefs": [
+        {
+          "sourceId": "a1d86b83aa9c6f06",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-1-level1.json#12",
+      "sourceSkill": "equal-part numerator and denominator from a circle",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Тең секторлы төсбелгі",
+      "figureDescription": "12 тең сектордың жетеуі көк, қалған бесеуі ақ",
+      "image": "/figures/synaq-editions/visual-sector-fraction.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Дөңгелек төсбелгі 12 тең секторға бөлінген. Төсбелгінің қандай бөлігі көк түспен белгіленген? Жауапты қысқартылған жай бөлшекпен жазыңдар.",
+      "solution": "Барлық сектор саны 12, көк сектор саны 7. Көк бөлік 7/12. Қысқартылған жауап: 7/12.",
+      "figureSha256": "e1c825449c17080dfa88bc4ef3d0dfe32c8c79af1763693c1ed281ffcf276a45",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7/12",
+        "checks": [
+          "equal-angle sectors have equal area",
+          "shaded and total sectors enumerated separately",
+          "fraction reduced",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-temperature-rise",
+      "modelId": "visual-temperature-rise",
+      "grade": 6,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "cold": -7,
+        "warm": 5
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "698c58efc5c36cc3",
+          "sourceFile": "problems/sources/zerek/courses/6-math-2-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-2-1-level2.json#2",
+      "sourceSkill": "signed temperature difference across zero",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Екі уақыттағы температура",
+      "figureDescription": "Таңертең −7 °C, түсте +5 °C; әр кіші бөлік 1 °C",
+      "image": "/figures/synaq-editions/visual-temperature-rise.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Таңертең және түсте өлшенген ауа температурасы екі термометрмен көрсетілген. Шкаладағы әр кіші бөлік 1 °C-қа тең. Таңертеңнен түске дейін ауа неше градусқа жылынды?",
+      "solution": "Таңертеңгі көрсеткіш -7 °C, түскі көрсеткіш +5 °C. -7 °C-тан 0 °C-қа дейін 7 градус, одан +5 °C-қа дейін 5 градус. Барлығы 7 + 5 = 12 градус. Жауабы: 12.",
+      "figureSha256": "9a6f2fdf4b65c58dcad27c69ad673ca843b7cc2cc0252072db00d90eabd9127f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": [
+          "one-degree intervals counted across zero",
+          "both thermometer columns bound to their actual readings",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-reading-bar-gap",
+      "modelId": "visual-bar-difference",
+      "grade": 5,
+      "topic": "stats",
+      "difficulty": "basic",
+      "params": {
+        "labels": [
+          "Айша",
+          "Берік",
+          "Дана",
+          "Ерке"
+        ],
+        "values": [
+          12,
+          8,
+          5,
+          9
+        ],
+        "first": 0,
+        "second": 2
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "7444a428736c7c57",
+          "sourceFile": "problems/sources/zerek/courses/5-math-8-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-8-3-level1.json#4",
+      "sourceSkill": "difference of exactly two selected bar-chart readings",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Шешілген басқатырғыштар",
+      "figureDescription": "Айша — 12, Берік — 8, Дана — 5, Ерке — 9 басқатырғыш",
+      "image": "/figures/synaq-editions/visual-reading-bar-gap.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Диаграммада төрт оқушының бір аптада шешкен басқатырғыштарының саны көрсетілген. Тік осьтегі сандар басқатырғыш санын білдіреді. Айша Данадан неше басқатырғыш артық шешті?",
+      "solution": "Диаграммадан Айшаның бағаны 12, Дананың бағаны 5 екенін оқимыз. Айырмасы: 12 − 5 = 7. Қалған екі баған бұл айырмаға қосылмайды. Жауабы: 7.",
+      "figureSha256": "17b5171d1622ba2ec253aeb737e9ff63da3a5dacdc6e6ad1d42af0a2c467aeee",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": [
+          "requested two bars only",
+          "unit height difference enumerated",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-shoot-growth",
+      "modelId": "visual-line-growth",
+      "grade": 5,
+      "topic": "stats",
+      "difficulty": "basic",
+      "params": {
+        "values": [
+          4,
+          7,
+          9,
+          14,
+          20,
+          25
+        ],
+        "from": 2,
+        "to": 5
+      },
+      "answer": "13",
+      "sourceRefs": [
+        {
+          "sourceId": "1eb9298094f0f5ff",
+          "sourceFile": "problems/sources/zerek/courses/5-math-8-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-8-3-level1.json#3",
+      "sourceSkill": "change between two specified times on a line chart",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Жылыжайдағы өскін",
+      "figureDescription": "1–6-күндердегі биіктік: 4, 7, 9, 14, 20, 25 см",
+      "image": "/figures/synaq-editions/visual-shoot-growth.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Мектеп жылыжайындағы бұршақ өскінінің биіктігі алты күн бойы өлшенді. Графиктің көлденең осі — күн нөмірі, тік осі — биіктік, сантиметрмен. 2-күннен 5-күнге дейін өскін неше сантиметрге өсті?",
+      "solution": "2-күнгі биіктік 7 см, 5-күнгі биіктік 20 см. Өсуі 20 − 7 = 13 см. Биіктіктерді қосу емес, соңғы және алғашқы мәннің айырмасын табу керек. Жауабы: 13.",
+      "figureSha256": "2e7e5d220df739a43f4724443136f59db8a06c7805180d5917ba05c12c097fa8",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "13",
+        "checks": [
+          "consecutive changes telescope between exactly the requested days",
+          "all six plotted heights retain explicit values",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-ray-improper-numerator",
+      "modelId": "visual-ray-numerator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "divisions": 6,
+        "numerator": 17
+      },
+      "answer": "17",
+      "sourceRefs": [
+        {
+          "sourceId": "eb624f925aad939a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-5-level1.json#6",
+      "sourceSkill": "improper-fraction numerator by counting unit subintervals",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Сан сәулесіндегі P нүктесі",
+      "figureDescription": "Әр бірлік алтыға бөлінген; P нүктесі нөлден кейінгі 17-аралықта",
+      "image": "/figures/synaq-editions/visual-ray-improper-numerator.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Сан сәулесінде әр бірлік 6 тең аралыққа бөлінген. P нүктесінің координатасын a/6 түрінде жазғанда, a неге тең? P-ге дейінгі аралықтарды 0-ден бастап санаңдар.",
+      "solution": "Бір бірлікте 6 тең аралық бар. P-ге дейін 17 аралық саналады, сондықтан P координатасы 17/6. Демек a = 17. 0-дегі бастапқы сызықша аралық болып саналмайды. Жауабы: 17.",
+      "figureSha256": "0eca78b3f6c920a71bc2dd2dfb60cb0003691e7a054e48dae6e294399f7d9f45",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "17",
+        "checks": [
+          "equal subintervals counted from zero, not tick marks including zero",
+          "question requests numerator with fixed denominator",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-notched-frame",
+      "modelId": "visual-notch-perimeter",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "width": 18,
+        "height": 11,
+        "depth": 4,
+        "notchWidth": 5,
+        "offset": 8
+      },
+      "answer": "66",
+      "sourceRefs": [
+        {
+          "sourceId": "b378b8e971afc3ff",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-3-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-3-level2.json#0",
+      "sourceSkill": "orthogonal perimeter with an inward rectangular notch",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Ойығы бар жақтау",
+      "figureDescription": "Сыртқы ені 18 см, биіктігі 11 см, жоғарғы ойықтың тереңдігі 4 см",
+      "image": "/figures/synaq-editions/visual-notched-frame.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Мектеп қойылымына арналған тікбұрышты жақтаудың жоғарғы жағынан тікбұрышты ойық жасалды. Сыртқы ені 18 см, биіктігі 11 см, ойықтың тереңдігі 4 см. Барлық бұрыштары тік. Жақтаудың суретте көрсетілген сыртқы шекарасының периметрі неше сантиметр?",
+      "solution": "Жоғарғы үш көлденең бөлік бірге 18 см, төменгі қабырға да 18 см. Екі сыртқы тік қабырға 11 + 11 см, ойықтың ішкі екі қабырғасы 4 + 4 см. Периметрі: 2 × 18 + 2 × 11 + 2 × 4 = 66 см. Жауабы: 66.",
+      "figureSha256": "dcbb22079211e0bea0a6da2dc0995c3e1f8bacc2c3b5c5577153bbb7ab04cfe1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "66",
+        "checks": [
+          "eight-edge orthogonal polygon boundary walked explicitly",
+          "two inner vertical sides retained",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-fan-all-triangles",
+      "modelId": "visual-fan-triangles",
+      "grade": 5,
+      "topic": "comb",
+      "difficulty": "medium",
+      "params": {
+        "baseSegments": 5
+      },
+      "answer": "15",
+      "sourceRefs": [
+        {
+          "sourceId": "d751c6bb677c8245",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-4-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-4-level2.json#8",
+      "sourceSkill": "count all fan triangles, including composite triangles",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Үшбұрышты желпуіш",
+      "figureDescription": "Жоғарғы төбеден табандағы алты нүктеге кесінділер жүргізілген",
+      "image": "/figures/synaq-editions/visual-fan-all-triangles.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Үшбұрышты желпуіштің табаны 5 бөлікке бөлінген, ал жоғарғы төбесі табанның барлық бөлу нүктелерімен қосылған. Суретте барлығы неше үшбұрыш бар? Бірнеше кіші бөліктен құралған үлкен үшбұрыштар да есептеледі.",
+      "solution": "Әр үшбұрыштың жоғарғы төбесі ортақ. Табаны 1, 2, …, 5 кіші бөліктен тұратын үшбұрыштарды санаймыз: 5 + 4 + 3 + 2 + 1 = 15. Үлкен үшбұрышты да осы қосынды есепке алады. Жауабы: 15.",
+      "figureSha256": "deea3d88c9e88601a0123ab55bc9b59eec099023ae563f61112f490794b28958",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "15",
+        "checks": [
+          "all vertex triples enumerated",
+          "collinear base triples excluded",
+          "every remaining edge is drawn or is a continuous part of the base",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-polygon-pieces",
+      "modelId": "visual-polygon-triangulation",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "sides": 11
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "f2da6bb957073dff",
+          "sourceFile": "problems/sources/zerek/courses/5-math-7-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-7-4-level1.json#15",
+      "sourceSkill": "count triangulation faces rather than every larger triangle",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Дөңес көпбұрышты бөлу",
+      "figureDescription": "Он бір төбелі дөңес көпбұрыштың бір төбесінен барлық диагональ жүргізілген",
+      "image": "/figures/synaq-editions/visual-polygon-pieces.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Суреттегі дөңес көпбұрыштың бір төбесінен сол төбеге іргелес емес барлық төбелерге диагональ жүргізілген. Көпбұрыш неше үшбұрышты бөлікке бөлінді? Тек бөлінген жеке бөліктерді санаңдар, бірнеше бөліктің бірігуін санамаңдар.",
+      "solution": "Суреттен 11 төбені санаймыз. Бір төбеден шыққан диагональдар дөңес көпбұрышты 11 − 2 = 9 жеке үшбұрышқа бөледі. Мұнда диагональдардың саны емес, олардың арасындағы бөліктердің саны сұралған. Жауабы: 9.",
+      "figureSha256": "7ca39d7f7c92d0319c5e2fa8d7cdd569cfcf7cac81a987c6f7a1ac083b50fe97",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": [
+          "fan faces enumerated on a convex polygon",
+          "sum of triangle areas equals polygon area",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-club-union",
+      "modelId": "visual-venn-union",
+      "grade": 4,
+      "topic": "sets",
+      "difficulty": "basic",
+      "params": {
+        "leftOnly": 11,
+        "rightOnly": 8,
+        "both": 6
+      },
+      "answer": "25",
+      "sourceRefs": [
+        {
+          "sourceId": "1993abd9490b9a59",
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-2-6-level1.json#4",
+      "sourceSkill": "distinct members of a two-set union from whole-set totals and their intersection",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Екі үйірменің оқушылары",
+      "figureDescription": "A-да барлығы 17, B-да барлығы 14 оқушы; ортақ аймақта 6 оқушы",
+      "image": "/figures/synaq-editions/visual-club-union.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "A шеңбері — фотосурет үйірмесінің, B шеңбері — астрономия үйірмесінің оқушылары. Әр шеңбердің үстінде сол үйірмедегі барлық оқушы саны, ал қиылысқан бөлікте екі үйірмеге де қатысатындардың саны берілген. Кемінде бір үйірмеге қатысатын неше түрлі оқушы бар?",
+      "solution": "A үйірмесінде 17, B үйірмесінде 14 оқушы бар. Бұл екі санға ортақ 6 оқушы екі рет кірген. Бір рет алып тастаймыз: 17 + 14 − 6 = 25. Тексеру: тек A-да 11, екеуінде де 6, тек B-да 8; 11 + 6 + 8 = 25. Жауабы: 25.",
+      "figureSha256": "da4fdef5e9ab74f6a79d18b9de53b0b075786e5941d789c50213db5476cd490b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "25",
+        "checks": [
+          "distinct membership tokens constructed",
+          "common region appears in both sets but once in the union",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-interval-integer",
+      "modelId": "visual-interval-maximum",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "a": {
+          "lo": -5,
+          "hi": 4,
+          "loClosed": false,
+          "hiClosed": true
+        },
+        "b": {
+          "lo": 1,
+          "hi": 11,
+          "loClosed": true,
+          "hiClosed": false
+        }
+      },
+      "answer": "10",
+      "sourceRefs": [
+        {
+          "sourceId": "316028916b84ad9e",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-4-level1.json#10",
+      "sourceSkill": "largest integer in an overlapping union with an open right endpoint",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Екі сан аралығы",
+      "figureDescription": "A = (−5; 4], B = [1; 11); ашық және жабық шеттер көрсетілген",
+      "image": "/figures/synaq-editions/visual-interval-integer.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Суретте A және B сан аралықтары екі бөлек жолға салынған. Боялған нүкте аралыққа кіреді, іші ақ нүкте кірмейді. A немесе B аралығының кемінде біріне тиісті ең үлкен бүтін санды табыңдар.",
+      "solution": "A аралығы (-5; 4], B аралығы [1; 11). Олар қабаттасады. Оң жақтағы 11 нүктесі ашық, сондықтан бұл шет бірігуге кірмейді. Одан кіші ең үлкен бүтін сан 10. Жауабы: 10.",
+      "figureSha256": "9ac971de188c2258847fe36fb0f428dae6742a31fbe958a8053bd8e8d7fddfd4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "10",
+        "checks": [
+          "union membership evaluated for every candidate integer",
+          "open and closed endpoints respected separately",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-led-weight",
+      "modelId": "visual-seven-segment-mass",
+      "grade": 6,
+      "topic": "ratio",
+      "difficulty": "medium",
+      "params": {
+        "target": "3579",
+        "referenceCents": 50
+      },
+      "answer": "4,75",
+      "sourceRefs": [
+        {
+          "sourceId": "zerek_7d1f8732-e93b-4174-9f7c-8f167a7a117b_47",
+          "sourceFile": "frontend/src/zerekImportedQuestions.js",
+          "rawSourceFile": "problems/sources/zerek/collections/7d1f8732-e93b-4174-9f7c-8f167a7a117b.json",
+          "rawSourceIndex": 46,
+          "rawSourceSha256": "13a49ea667ae8e444254a6366c4ca5ba59e6637f0b71be3bff1f4c8485132d24"
+        }
+      ],
+      "sourceOccurrenceId": "collection:7d1f8732-e93b-4174-9f7c-8f167a7a117b#46",
+      "sourceSkill": "seven-segment counting followed by equal-stick mass proportionality",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Таяқшалардан жасалған цифрлар",
+      "figureDescription": "Үлгіде «1» екі таяқшадан тұрады және 0,5 кг; төменде 3579 жазуы берілген",
+      "image": "/figures/synaq-editions/visual-led-weight.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Электрондық таблодағы цифрлар суреттегідей бірдей металл таяқшалардан жасалған. «1» цифрының массасы 0,5 кг. «3579» жазуындағы барлық таяқшаның жалпы массасы неше килограмм?",
+      "solution": "«1» екі таяқшадан тұрады, сондықтан бір таяқшаның массасы 0,5 : 2 = 0,25 кг. «3» — 5, «5» — 5, «7» — 3, «9» — 6 таяқша. Барлығы 5 + 5 + 3 + 6 = 19 таяқша. Жалпы масса 4,75 кг. Жауабы: 4,75.",
+      "figureSha256": "dc5cb0c2e0966dc5c6ded99b30ae8c6641c215aab4dbe081882249e9532b0698",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4,75",
+        "checks": [
+          "standard seven-segment counts checked independently of SVG masks",
+          "reference digit 1 has two equal sticks",
+          "exact hundredths of a kilogram",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-mirror-point",
+      "modelId": "visual-point-ox-reflection",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "x": 4,
+        "y": -3
+      },
+      "answer": "(4; 3)",
+      "sourceRefs": [
+        {
+          "sourceId": "825b17c2bd93989d",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-5-level1.json#6",
+      "sourceSkill": "point reflection across Ox with one invariant coordinate",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Ox осіне қатысты шағылдыру",
+      "figureDescription": "Бірлік тордағы M нүктесінің координатасы (4; −3); Ox осі көк",
+      "image": "/figures/synaq-editions/visual-mirror-point.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Координаталық торда M нүктесі белгіленген. M нүктесін Ox осіне қатысты шағылдырғанда алынатын N нүктесінің координаталарын (x; y) түрінде жазыңдар. Әр торкөздің қабырғасы бір координаталық бірлікке тең.",
+      "solution": "Тордан M(4; -3) екенін оқимыз. Ox осіне қатысты шағылдырғанда x өзгермейді, ал y таңбасы өзгереді: (4; -3) → (4; 3). Жауабы: (4; 3).",
+      "figureSha256": "8112ad6d2f5f72c3e3322422652d6ae32faf9fd0062de3b65654b985cec1baa1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(4; 3)",
+        "checks": [
+          "unique opposite-half-plane point with equal perpendicular distance",
+          "abscissa preserved under Ox reflection",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-mirror-cells",
+      "modelId": "visual-pixel-reflection",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "cells": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "axis": 5
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "81166b251336aa5f",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-5-level1.json#3",
+      "sourceSkill": "area preservation of a reflected nonconvex grid figure",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Торкөзді өрнек пен симметрия осі",
+      "figureDescription": "Қатарларда 3, 2 және 4 көк торкөз; оң жақтағы k түзуі — шағылдыру осі",
+      "image": "/figures/synaq-editions/visual-mirror-cells.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Көк өрнек бірдей торкөздерден құрастырылған. Оған k түзуіне қатысты симметриялы өрнек салынбақ. Жаңа өрнек неше торкөзден тұрады? Ішіндегі боялмаған торкөздерді санамаңдар.",
+      "solution": "Боялған торкөздерді қатар бойынша санаймыз: 3 + 2 + 4 = 9. Шағылдыру фигураның ауданын да, торкөз санын да өзгертпейді. Жаңа өрнекте 9 торкөз болады. Жауабы: 9.",
+      "figureSha256": "db7f136869742dbfa28999b54e5ae2eb1a0b76534142956cb25421687b164693",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": [
+          "cell centres reflected, including the half-cell offset",
+          "reflection applied twice restores the exact original cells",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-open-pool-tiles",
+      "modelId": "visual-open-pool-surface",
+      "grade": 4,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "length": 12,
+        "width": 9,
+        "depth": 3
+      },
+      "answer": "234",
+      "sourceRefs": [
+        {
+          "sourceId": "9bbbf8c2b3dec26a",
+          "sourceFile": "problems/sources/zerek/courses/4-math-4-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:4-math-4-1-level2.json#8",
+      "sourceSkill": "surface area of floor and four walls, excluding the open top",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Үсті ашық су ыдысы",
+      "figureDescription": "Тікбұрышты ыдыстың ұзындығы 12 м, ені 9 м, тереңдігі 3 м; қақпағы жоқ",
+      "image": "/figures/synaq-editions/visual-open-pool-tiles.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Мектептің ашық су ыдысының ішкі ұзындығы 12 м, ені 9 м, тереңдігі 3 м. Тек ішкі түбі мен төрт қабырғасына су өткізбейтін жабын төселеді; үсті ашық қалады. Неше шаршы метр жабын керек? Қабаттасуға қосымша материал есептелмейді.",
+      "solution": "Түбінің ауданы 12 × 9 = 108 м². Ұзын екі қабырға 72 м², қысқа екі қабырға 54 м². Барлығы 108 + 72 + 54 = 234 м². Үстіңгі бет есептелмейді. Жауабы: 234.",
+      "figureSha256": "c07e56a2b65f4628701001ec1a0a4656a3b6b1ba6b45e24000f3e1d6159114d7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "234",
+        "checks": [
+          "unit square faces enumerated over floor and four walls",
+          "top face deliberately excluded",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-opposite-angle",
+      "modelId": "visual-vertical-angle",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "angle": 58
+      },
+      "answer": "58",
+      "sourceRefs": [
+        {
+          "sourceId": "c3650cb97d75483f",
+          "sourceFile": "problems/sources/zerek/courses/6-math-6-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-6-1-level1.json#0",
+      "sourceSkill": "vertical-angle equality, not adjacent-angle supplementation",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Қиылысқан түзулер",
+      "figureDescription": "Бір бұрыш 58°; оған вертикаль қарсы бұрыш x деп белгіленген",
+      "image": "/figures/synaq-editions/visual-opposite-angle.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Екі түзу O нүктесінде қиылысады. Суретте берілген 58° бұрышқа қарама-қарсы орналасқан x бұрышын градуспен табыңдар. Әр түзудің екі сәулесі бір-бірінің созындысы.",
+      "solution": "x бұрышы 58° бұрышпен ортақ қабырғасы жоқ қарама-қарсы жұп құрайды. Бұлар вертикаль бұрыштар, сондықтан тең: x = 58°. Іргелес бұрыштың 180°-қа толықтауын бұл жерде іздемейміз. Жауабы: 58.",
+      "figureSha256": "bbf2c994697b2c22a5dc3f73ff72d160a3d63324af192af99e709f94bb771eb3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "58",
+        "checks": [
+          "both rays reversed rather than adjacent sector selected",
+          "angle between opposite direction vectors recomputed",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-circle-sector-gap",
+      "modelId": "visual-circle-sector-gap",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "known": [
+          60,
+          105,
+          110
+        ]
+      },
+      "answer": "85",
+      "sourceRefs": [
+        {
+          "sourceId": "85be9b38a970e8eb",
+          "sourceFile": "problems/sources/zerek/courses/5-math-8-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-8-2-level1.json#5",
+      "sourceSkill": "missing sector from the full-turn angle sum",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Төрт секторлы дөңгелек",
+      "figureDescription": "Үш секторда 60°, 105° және 110° жазылған; төртіншісінде сұрақ белгісі бар",
+      "image": "/figures/synaq-editions/visual-circle-sector-gap.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Сәндік дөңгелек төрт секторға бөлінген. Үш сектордың градустық өлшемдері суретте берілген. Сұрақ белгісі қойылған төртінші сектордың бұрышын градуспен табыңдар.",
+      "solution": "Толық айналым 360°. Белгілі секторлар: 60 + 105 + 110 = 275°. Қалған бұрыш: 360 − 275 = 85°. Жауабы: 85.",
+      "figureSha256": "ec60514945c795ab367ae34c9adf3c61646f3ecd1eb3067947f62571baa2d898",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "85",
+        "checks": [
+          "known sectors occupy distinct degree units",
+          "remaining sector completes one full turn",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-nested-subsets",
+      "modelId": "visual-nested-subsets",
+      "grade": 5,
+      "topic": "sets",
+      "difficulty": "medium",
+      "params": {
+        "inner": [
+          4,
+          8,
+          12,
+          16
+        ],
+        "outerOnly": [
+          2,
+          6,
+          10,
+          14
+        ]
+      },
+      "answer": "16",
+      "sourceRefs": [
+        {
+          "sourceId": "8bbb5b3def4784ea",
+          "sourceFile": "problems/sources/zerek/courses/5-math-5-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-5-2-level2.json#3",
+      "sourceSkill": "all subsets of the inner set, including empty and full subsets",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Бірінің ішіндегі екі жиын",
+      "figureDescription": "B ішінде 4, 8, 12, 16; A-ның B-дан тыс бөлігінде 2, 6, 10, 14",
+      "image": "/figures/synaq-editions/visual-nested-subsets.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Суретте A жиыны және оның B ішкі жиыны берілген. B жиынының бос жиын мен өзін қоса есептегенде неше ішкі жиыны бар? A-ның B-ға кірмейтін элементтерін есепке алмаңдар.",
+      "solution": "B ішіндегі элементтер: 4; 8; 12; 16. Олардың саны 4. Әр элемент ішкі жиынға кіреді немесе кірмейді: 2 × 2 × 2 × 2 = 16. Бұл санға бос жиын мен B жиынының өзі де кіреді. Жауабы: 16.",
+      "figureSha256": "878381c84cc0ccfdb0ba46c646d7fb76b371eb653624cbb5e0eb1069d18252dc",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "16",
+        "checks": [
+          "all membership bitmasks enumerated",
+          "empty set and whole inner set each counted once",
+          "outer-only elements excluded",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-square-circle-corners",
+      "modelId": "visual-square-circle-corners",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "radius": 6,
+        "piHundredths": 314
+      },
+      "answer": "30,96",
+      "sourceRefs": [
+        {
+          "sourceId": "zerek_9dd9307d-6568-455d-9203-9fbd242ff4ff_02",
+          "sourceFile": "frontend/src/zerekImportedQuestions.js",
+          "rawSourceFile": "problems/sources/zerek/collections/9dd9307d-6568-455d-9203-9fbd242ff4ff.json",
+          "rawSourceIndex": 1,
+          "rawSourceSha256": "b28246c3aa88c3e49ff4e4e2e54944d091ed7812b27df024244e7676875794f1"
+        }
+      ],
+      "sourceOccurrenceId": "collection:9dd9307d-6568-455d-9203-9fbd242ff4ff#1",
+      "sourceSkill": "square-minus-inscribed-disk area under an explicit pi approximation",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Шаршының көк бұрыштары",
+      "figureDescription": "Радиусы 6 см шеңбер шаршының төрт жағына жанасады; бұрыштар көк",
+      "image": "/figures/synaq-editions/visual-square-circle-corners.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Өрнектің дөңгелек бөлігі шаршының төрт қабырғасына да іштей жанасады. Дөңгелектің радиусы 6 см. Көк түспен шаршының дөңгелектен тыс қалған бөлігі боялған. Көк бөліктің ауданын шаршы сантиметрмен табыңдар. Есептеуде π орнына 3,14 алыңдар.",
+      "solution": "Шаршының қабырғасы диаметрге тең: 2 × 6 = 12 см. Шаршының ауданы 12 × 12 = 144 см². Дөңгелектің ауданы есептің жуықтауымен 3,14 × 6 × 6 = 113,04 см². Көк аудан: 144 − 113,04 = 30,96 см². Жауабы: 30,96.",
+      "figureSha256": "c43a1e99de7e0bbac9ffd4637eb670ea23f7acf7e9e6042dde83813c2acc4ca3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "30,96",
+        "checks": [
+          "inscribed diameter equals square side",
+          "square and approximate disk areas computed as exact hundredths",
+          "pi substitution explicitly stated, not an exact equality claim",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-ring-width",
+      "modelId": "visual-ring-width",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "basic",
+      "params": {
+        "inner": 4,
+        "outer": 11
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "554e3e7d79d42821",
+          "sourceFile": "problems/sources/zerek/courses/5-math-8-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-8-1-level1.json#15",
+      "sourceSkill": "radial ring width rather than a difference of diameters",
+      "adaptationChanges": [
+        "Түпнұсқаның тек математикалық дағдысы сақталды; тапсырманың шарты SYNAQ үшін жаңадан жазылды.",
+        "Параметрлер, суреттегі деректер және жауап жаңадан таңдалып, жеке математикалық әдіспен қайта есептелді.",
+        "Скан, бастапқы сурет және traced SVG көшірілмеді: тек жаңа параметрлерден native SVG құрылды.",
+        "Жауап пен сызба бөлек редакциялық тексеруге ұсынылады; бұл жазба әзірше жарияланбайды."
+      ],
+      "figureTitle": "Концентрлі екі шеңбер",
+      "figureDescription": "Ортақ центрден сызылған ішкі радиус 4 см, сыртқы радиус 11 см",
+      "image": "/figures/synaq-editions/visual-ring-width.svg",
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, parameter, SVG and 343px readability review"
+      },
+      "verificationModule": "scripts/editorial/visual-foundation-models.mjs",
+      "statement": "Бір центрден сызылған екі шеңбердің радиустары 4 см және 11 см. Екі шеңбердің арасындағы сақина көк түспен берілген. Сақинаның радиус бойымен өлшенген ені неше сантиметр?",
+      "solution": "Бір радиус бойымен центрден ішкі шеңберге дейін 4 см, сыртқы шеңберге дейін 11 см. Аралық ені: 11 − 4 = 7 см. Диаметрлерді азайтсақ, енді екі есе артық алар едік. Жауабы: 7.",
+      "figureSha256": "f89bdccca407d40bc2d34c5dd8eca7cea977230b7370ada07178dbfdba036b6f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": [
+          "radii share a centre",
+          "radial gap counted between the two circumference intersections",
+          "exact condition and solution binding",
+          "new native SVG generated only from authored parameters",
+          "external editorial and figure review still required for drafts"
+        ]
+      }
+    }
+  ]
+}

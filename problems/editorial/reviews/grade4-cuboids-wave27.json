@@ -1,0 +1,639 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/batches/grade4-cuboids-wave27.json",
+  "reviewedAt": "2026-10-24",
+  "manualFindings": [
+    {
+      "sourceId": "de095b432d54bd59",
+      "status": "corrected_before_signature",
+      "finding": "Question explicitly asks INTERNALbasearea for supplied inner dimensions, avoiding an unintended externalfootprint interpretation."
+    }
+  ],
+  "scope": "All39source-addressed saved grade4cuboid editions; noauthorcalculator/spec/checker imported.",
+  "entries": [
+    {
+      "editionId": "grade4-cuboids-40270d30cc577c06",
+      "sha256": "c20e3da069841cab9e9f15d509e8e2189f3f98ef736ee2b0dce1b4448143b12f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "All12bit-coordinate edges measured for actualdimensions[14, 7, 5]; length14appears4times.",
+      "sourceCanonicalSha256": "3fc765fee413c0ec14557b456a4ca6e9ac9cb74c224361c45ca278ce0a886518",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-c5b41081f72dfd00",
+      "sha256": "1b1df2832331f3feff2c956f8903174a5f566967b5eac90b15fb20f6b691a0c2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Every distinct orientation area[54, 36, 24]checked; requestedlargest-face=54.",
+      "sourceCanonicalSha256": "fb65a2a5a1e06d66d944d9935c871cc22ca5d16d5c96bd55b74d5a3f422375bc",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-07c0fe86bdb61887",
+      "sha256": "83bf9c3eed10bb46d013888a1daa508126fb55370af6b6c2796ca1173616a659",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Actual cube5³=125versus completeothertriple[6, 5, 4]product120; largest singleedge doesnotdeterminevolume.",
+      "sourceCanonicalSha256": "44192a296b8b2482ee7baba56ad8e94862d9ac812a0fbc79a1f23d562dd5116a",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-8834fe9d2c2fd7ce",
+      "sha256": "80e1787da7355084766198b849558b65e5271976427ebb454d871c7f91faf0c2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "All6actualfaces[(24, 12), (24, 12), (24, 12), (24, 12), (12, 12), (12, 12)]classified as squaresiff dimensions equal.",
+      "sourceCanonicalSha256": "2713a5748fa142449360112ef332ebc7428e74d4c089539938f5db5162da3aa0",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-319ddff5fc2c329b",
+      "sha256": "36858176f9624122c7f02e1925a624e817cbf583888d84d692ecc58110f5eabf",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Coordinate faces on each fixed axis0/1are congruent, disjoint, have no commonedge. Generalface lengths neednotbesquares; actual7/4/3counterexample in solutionchecked.",
+      "sourceCanonicalSha256": "ae328fbb8e4e5161133f03b4311d829607ed311d90c294546b17e45a6a84f406",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-a25dc38b01a071b3",
+      "sha256": "3051e03a75681593922fb0184b8a77fea98c91763c4bdebf1f04a25a9daf2da2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Independent8vertex binary-coordinate graph constructs12edges; everyvertex degree3.",
+      "sourceCanonicalSha256": "3d3bfe51f0e497c10b44d54a183bc31883da9654d6a29c08aa9af0cf140a052d",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-f030c5e3b7952e9c",
+      "sha256": "5f4858e032d2e86f4a286f75d4d820579e25be923de40d94c63e174a3030d9d0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "EveryactualMCQdimensiontriple multiplied, products[168, 16800, 84, 96], target84; sumtraprejected.",
+      "sourceCanonicalSha256": "3ba3bd4be55f335f45f129950595d5ac7392804e13ab5cbc3062e3e3ae5f368a",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-b6b04b830296f2ac",
+      "sha256": "7f50fc9c78198e4f69eb3d6fba835047081c25d2b0e21d18949e153a3f574a0a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Actual framewire84/independent edgecount12=7; no joint/waste allowances per condition.",
+      "sourceCanonicalSha256": "24162cf98db33d5c34b572789076141c5292d0a91e7087bb4130cd930fc429e1",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-de095b432d54bd59",
+      "sha256": "f4b790883d132ed7e1970a0b933e0f91501112e2f44063f76d2c6de3d93962a8",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Actual INTERNALbase15×7=105; height6irrelevant; external footprint not claimed.",
+      "sourceCanonicalSha256": "22bc9a3d129ede321d661d158b0a11502cf94dcdd4e80f4c3ba3afbb8b39cbaf",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-ae5cf1aed3fc90cb",
+      "sha256": "e51ea55d2bc928f39479ce3ede86ad2e232cf84f22871b1fcbbfd80486fbbd4f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Cube edge8дм; squarearea64; actual requested6faces gives384дм², not cubicvolume.",
+      "sourceCanonicalSha256": "8aba77324177e2485a14c9491f217cb22820dd910e8bc890ffb5cb151160e499",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-a5345dea67bac639",
+      "sha256": "9e3a11ea216f1a689a835ff554e2db715ae999f319f110bf8181a261706842f2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Six distinct coordinate faces, threeoppositepairs, independentof8/5/3dimensions.",
+      "sourceCanonicalSha256": "551dde692b5ec3e3c8fcf318f734a7e523d0298ee8e88c379faf8cbf4e64a0b4",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-6667fe146deedb60",
+      "sha256": "2ca45a306296cf659966de44cc77f289e0fad9a85e2fc9b1888f822b07d59626",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Cube edge7см; squarearea49; actual requested1faces gives49см², not cubicvolume.",
+      "sourceCanonicalSha256": "24ea7a2a88a9be41acedaa01c50b8bcc0cd44faf7e54e2f600978f563d4f4142",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-6c09b3f9ee2a0268",
+      "sha256": "474fd1b3a7725eaf407f0feaeb318f016fa0e5b45094f56d4801e866c0a50522",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Actualtwoinnertriples[12, 7, 5]/[9, 10, 5], equal sums, exactvolumes420/450; directionandgap30bothchecked.",
+      "sourceCanonicalSha256": "884bb0c991728ecc41e18ad310b2188dd3b22c0d9f5fc73d97541f5f45b440e7",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-80ba5d34ecc65603",
+      "sha256": "029409f0f16f72308ffcc52c6b3e7802bef4dab9bda484a015b72a7d82c952ed",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Actualwire100=4(a+b+h), recoveredh5, substitutedbackexactly.",
+      "sourceCanonicalSha256": "010d1be8ee638ce84fcc4082797c280d8d7e4eaba0d414a3394c01f6d7669ffa",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-34ffe7bb3ddbb501",
+      "sha256": "12cf02feae4992841bfd76988dcef90fa215d87040a910d8a6d8a326685e258b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Old/newactualvolumes120/280, difference160; base×addedheight as independentcrosscheck.",
+      "sourceCanonicalSha256": "47f8ebe6c223501dffdb0ee872ee2cb755461a92db6216fd9db107f60102eaa0",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-7d6354bfc1ac1359",
+      "sha256": "fd59c9dbc4d798f9a4bd7a12c287793a55d26319648884df964e91875f93b2a5",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Exact2m→200cm;12edges×15; remaining20cm, unitconversion before subtraction.",
+      "sourceCanonicalSha256": "2fd5768dbe193373a904adc8777e83c284a7aa0bad7719fd7355d8e55ea3f124",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-5ceff22ddb1338fb",
+      "sha256": "5fa76bc76ffd1a3b88101b6f2ae1de2868cf6613bb05b289fb9be86ce2ec61d8",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Sixface total150, oneface25, unique positiveedge5, volume125; no real-positive ambiguity.",
+      "sourceCanonicalSha256": "814e4045ddd9044984e22045c0bf0be14ab46363089b775043b06b75d936fff1",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-39f3063f002b0045",
+      "sha256": "effe1db0b51b94ee5e0cc93a5020129296aac098048dd578b2c84c16ab2e8396",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Every distinct orientation area[77, 33, 21]checked; requestedface-area-gap=56.",
+      "sourceCanonicalSha256": "6895d2a68901a54a4eea1e8ea03fe9ff0c5a6bfcb08fd48ab7ca26bb02c8b3d8",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-08753d45b51c785d",
+      "sha256": "958cbe62127b0a8158165e241d78c34688076ff4ff0112f0fcb36315f0957d0f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Actual singleface81, positiveedge9; all12edge lengths sum108.",
+      "sourceCanonicalSha256": "fa921cebba2c21765fe7e37a9495d655d9a0ac32118b11f89fb8452a48688a33",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-3995990317bc0dd5",
+      "sha256": "76b89cf4f254a607b4ccc921542ad4f8e492ed779d57d9c973443f6007e56e55",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Every length converted to dm exactly[Fraction(30, 1), Fraction(20, 1), Fraction(4, 1)], product2400dm³; no mixed-unit multiplication.",
+      "sourceCanonicalSha256": "d2d4bf7ce6c53f70c54d02b3a09d06c955c9b0167db074a4583579e84ee09dab",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-773db3ed98c4af63",
+      "sha256": "e71ef597d68cf8b5c339c4329c2fd15639e8c8fdcae68d7a9d888964f2761142",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "All12edges actualcandidate sums[68, 76, 80, 76], maximum80; eachcandidate distinctdimensiontriple checked.",
+      "sourceCanonicalSha256": "e50f15bc1b62438786c92f3017e01a52d66d6d71a0931a16a9a44f32b8420985",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-8169c1fbd08b204e",
+      "sha256": "37d16f83436737323083df1ea7bca74c6ea83fdbd6ce7a8cca988fbf07233d8f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Universal scale product(1/3)×1×3=1 exactly for allpositivedimensions; actual18×5×4 and6×5×12examples both360.",
+      "sourceCanonicalSha256": "5e828d3956cb27247e759f3df17f00630ee5ab9117411978b363fff894e9d0fd",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-c7f84862d6ba1323",
+      "sha256": "6ba860d8fc8053ae15ae477868c8fd62a35698e1a1c1f7eab7f0cfa287e68c64",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "All6faces paired[35, 28, 20]twice, exactsurface166, not3facehalfsum.",
+      "sourceCanonicalSha256": "d9646b45f66fd86877d05f52bfe39d8716f4a75125b9d8afacd740375176fb97",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-8531c2462d192bf4",
+      "sha256": "eea29bb054323c1375d608678e7dd5d7f6bb3b34255dd34d46e433b186c7af99",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Complete positiveheight1..21domain, exactwire/successivegaps giveonly(10, 7, 4); volume280.",
+      "sourceCanonicalSha256": "3e75e2ae1c79580da0a7b653578f49ee88d1b79e815a5676619ef127ae724d82",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-f474fb7d2262b2de",
+      "sha256": "530b5d75109eb831cd47582307d663ce029a2f560188513affa8088a250e843b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Allcommondivisors[1, 3], largestedge3; exact3Dcounts[4, 3, 2], volumeconservation checked.",
+      "sourceCanonicalSha256": "191ea816fcff541b7aae8721e182144544c3e394d6cc1d9de18ea0065e1ddaad",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-bc51b525ca1438a7",
+      "sha256": "c48b311bdd213d51a2fe6315754a984e029eb958cdd9cac0b0548ecf5ec014b4",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Printed1cmindependentincrements give actualfaceproducts[24, 30, 20]; positive uniqueness L²/W²/H² exactrational, dims(5, 4, 6), V²=14400, V120.",
+      "sourceCanonicalSha256": "450e0b8f4f9513184abcb5f1b7c2343d6599c2d413a806c71771f9a8df3499b1",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-1988b173f0b59e27",
+      "sha256": "5e0f6486132e46067cfb85f5ebf6b2b994fa4919e8de0d985e053ab54d13bb63",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "V²=allthreefaceareaproduct7056, uniquepositiveV84; fullvolume-factortriples corroborateonly[(3, 4, 7)]with thoseareaorientations.",
+      "sourceCanonicalSha256": "4228cdfbe0d7cce749857370a0c2bbc7e715adca4f4c4d43e5f82b4d9af3b66f",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-d492b535f1602cc7",
+      "sha256": "a63147d607f924f109441d5684bbdeacdbbabd5d7ccd8b65389c1c389dc0eba4",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Equalwire72→cubeedge6, otherheight3; volumes216/162, directional gap54.",
+      "sourceCanonicalSha256": "70ef0fd413a4e550190c2c810077195b071fcb7b59c5c44d6750984501a4d69f",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-8e5c9d9bf4ab7dfd",
+      "sha256": "01b2630602c76a27b30167852d751217199b58c631d369dffb74ca0c239bb9c0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Completeunorderedfactortriples of24:[((1, 1, 24), 98), ((1, 2, 12), 76), ((1, 3, 8), 70), ((1, 4, 6), 68), ((2, 2, 6), 56), ((2, 3, 4), 52)]; minimum52, no assumedcube heuristic.",
+      "sourceCanonicalSha256": "7b1aa51f11520148d74bc0a040dbbe0a9f2664c2218156cec2faec0621a6b031",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-df68072ce4ebcb0d",
+      "sha256": "67ea3247f0b710979f1bcce1a44e09748c197f2e8a3e519de449fe291db5534a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Completepositive1..127edge domain; uniquekey6; gap3a²+3a+1strictlyincreasing, beyondbound cannotreturn delta.",
+      "sourceCanonicalSha256": "e339c57af518e32ccb0470a7b26abc8fb4bc4fc00f7963c38d9d38cadf18fddd",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-7dd88079cf46af7f",
+      "sha256": "706da08d15471fe531db262e55d382d04a713b6c2c1e1ae4c12ed27a05e7c4b2",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Independentfull4³voxeloccupancy/6-neighbour exposed-face enumeration, before384, aftercornerremove384; allnewcavityfacescounted.",
+      "sourceCanonicalSha256": "4f1cc1542e0b1100a2184f508f023c62956299358d01742bdf12b042271f800b",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-4db885eb532c6ecb",
+      "sha256": "be56937daea9133dce731b78c2cebe234377e1ad5f88b54c0b86f923c6f7392c",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Every6³smallcube coordinate classified; paintonlyplanesz0/z5; side-border cubes correctly retained, unpainted144.",
+      "sourceCanonicalSha256": "2433179ee8863b3c033e4a4029bdd90b985ab2a7dd0005a5995a198c48103b5e",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-a5b5fafe96f80251",
+      "sha256": "0ff1e90f3324e58817b8091798b066f62c0379362fde6e301d726ce62b558d24",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Actual3lengths[9, 8, 6]multiplied, volume432cm³.",
+      "sourceCanonicalSha256": "034ba5f6823daccfa50d2f565028b22c6cac672444080962457f1473e85130fe",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-08c04ba6fa6e89dd",
+      "sha256": "01ea62b4b8547fb1ef6a76588827de537ded1f075811ac6aee263a9c2dc18e43",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Independentbinarycoordinatecuboid graph:6faces,12edges,8vertices, actual requestedorder and all4MCQtriples inspected.",
+      "sourceCanonicalSha256": "927594815dea3858fb52c828267ebb69dbecac48328d5f7f6a3b30d739331cad",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-9a2869fc348d90d9",
+      "sha256": "3858c9b42dca3ad221a54b1805ee5315011c20819902c1fb7127e7ab0dcd9115",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Actualdimensions[15, 8, 6], exactly4edgesperaxis, total116cm.",
+      "sourceCanonicalSha256": "a384e01c7edf2f8cb80cd98513dc9bf8d21d02c42d5f8d72711ac92066c6502e",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-3788d23ac0104797",
+      "sha256": "963f9d1711c620488b7757fcf4e4a567320d99c8a60fe34a170f82a4663142a7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Cube edge4дм; squarearea16; actual requested6faces gives96дм², not cubicvolume.",
+      "sourceCanonicalSha256": "7aaa826a9cc61fef8fde78cee19e75ac895e296ec3df2da79c81f8db8ef5d90a",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-49b6ccd8dae2357f",
+      "sha256": "e86ea165246455c1da1899539a093ef845fd38096fdbe13d804b00f7f39bd2bb",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Actualfullsurface216, oneface36, exactpositiveedge6, sum12edges72.",
+      "sourceCanonicalSha256": "d99f8b24c97193dc2e59e021578742a1b623489e960228a7ca99821b0dfca899",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-5ff98cacf3e99bdb",
+      "sha256": "e07d85141f3ffff31ab5cb41de9546e53e0d698c1adf6cc21793058b458c003d",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Actualcubevolume8³=512; all4actualtripleproducts[384, 512, 480, 440]checked, equalsumsnotmistakenforequalvolumes.",
+      "sourceCanonicalSha256": "2092a10345c17b105ead2f3edebcd7b50e473659fca5fdd0b47e8f478a0d9537",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    },
+    {
+      "editionId": "grade4-cuboids-20de63c6d3fe04ec",
+      "sha256": "ba914f35de86ec944a6919e46bf1855b4d3310b437cebab4c06d8ea632391f5b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "Actual printed dimensions and exact units; independent8vertex/12edge/6face graph, fullfactor/sum triples, positivevolume uniqueness and fullpainted/corner voxel domains",
+      "notes": "Complete unorderedpositive tripledomain withsum12:[((1, 1, 10), 10), ((1, 2, 9), 18), ((1, 3, 8), 24), ((1, 4, 7), 28), ((1, 5, 6), 30), ((2, 2, 8), 32), ((2, 3, 7), 42), ((2, 4, 6), 48), ((2, 5, 5), 50), ((3, 3, 6), 54), ((3, 4, 5), 60), ((4, 4, 4), 64)]; maximum64, finite proof includes every case.",
+      "sourceCanonicalSha256": "654338587f16e1acc484c778ab435cb29e109a3ae27ef9a2ae0d5789341bfbcd",
+      "checks": [
+        "all39saved/newconditions/MCQs/fullsolutions read manually",
+        "linear/area/volume units and each requested quantity distinguished",
+        "complete positive factor/sum/unknownheight domains enumerated with equality endpoints",
+        "allactual MCQdimensiontriples/units/directionalclaims checked",
+        "paintedplanes and corner-exposed faces counted by an independent3D coordinate model"
+      ]
+    }
+  ]
+}

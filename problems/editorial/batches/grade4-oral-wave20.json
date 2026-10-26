@@ -1,0 +1,961 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All20 remaining saved grade-4 nonvisual topic2.1 oral-method sources; no new source collection.",
+  "summary": {
+    "editions": 20,
+    "models": 16,
+    "skillFamilies": 16,
+    "sourceOccurrencesReferenced": 20,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-oral-057fdae3db56998a",
+      "modelId": "grade4-oral-digitwise-division",
+      "skillFamily": "digitwise-division",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 63696,
+        "divisor": 3,
+        "digits": 5,
+        "zeroPlaces": []
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level1.json",
+          "sourceId": "057fdae3db56998a"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Разрядтық қосылғыштарға жіктеп, ауызша есептеңіз: 63 696 : 3. Жауапқа тек санды жазыңыз.",
+      "answer": "21232",
+      "solution": "63 696 = 60 000 + 3 000 + 600 + 90 + 6. Әр разрядты жеке бөлеміз: 60 000 : 3 = 20 000; 3 000 : 3 = 1 000; 600 : 3 = 200; 90 : 3 = 30; 6 : 3 = 2. Қосынды 20 000 + 1 000 + 200 + 30 + 2 = 21 232. Тексеру: 21 232 · 3 = 63 696.",
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "21232",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-613bdf982a7a5f57",
+      "modelId": "grade4-oral-distributed-division-choice",
+      "skillFamily": "distributed-division-choice",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 6842,
+        "divisor": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level1.json",
+          "sourceId": "613bdf982a7a5f57"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "6 842 : 2 бөліндісін разрядтарға жіктеп есептеу үшін қай жазу дұрыс?",
+      "answer": "6 000 : 2 + 800 : 2 + 40 : 2 + 2 : 2",
+      "solution": "Бөлінгіш 6 000 + 800 + 40 + 2 қосындысына тең. Қосындыны санға бөлгенде ӘР қосылғыш бөлінеді: 6 000 : 2 + 800 : 2 + 40 : 2 + 2 : 2 = 3 421. Бірлік разрядын тастауға немесе кей қосылғыштарды бөлмей қалдыруға болмайды.",
+      "options": [
+        "6 000 : 2 + 800 : 2 + 40 : 2",
+        "6 000 : 2 + 800 + 40 + 2",
+        "6 000 + 800 + 40 + 2 : 2",
+        "6 000 : 2 + 800 : 2 + 40 : 2 + 2 : 2"
+      ],
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "6 000 : 2 + 800 : 2 + 40 : 2 + 2 : 2",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-f0fa137ac4185e11",
+      "modelId": "grade4-oral-digitwise-division",
+      "skillFamily": "digitwise-division",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 884408,
+        "divisor": 4,
+        "digits": 6,
+        "zeroPlaces": [
+          1
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level1.json",
+          "sourceId": "f0fa137ac4185e11"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Разрядтық қосылғыштарға жіктеп, ауызша есептеңіз: 884 408 : 4. Жауапқа тек санды жазыңыз.",
+      "answer": "221102",
+      "solution": "884 408 = 800 000 + 80 000 + 4 000 + 400 + 8. Әр разрядты жеке бөлеміз: 800 000 : 4 = 200 000; 80 000 : 4 = 20 000; 4 000 : 4 = 1 000; 400 : 4 = 100; 8 : 4 = 2. Қосынды 200 000 + 20 000 + 1 000 + 100 + 2 = 221 102. Нөл тұрған разрядты сақтаймыз, көрші цифрларды жылжытпаймыз. Тексеру: 221 102 · 4 = 884 408.",
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "221102",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-37b69f0a6daf9d41",
+      "modelId": "grade4-oral-round-minus-one-product",
+      "skillFamily": "round-minus-one-product",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "round": 600,
+        "multiplier": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level1.json",
+          "sourceId": "37b69f0a6daf9d41"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Дөңгелек санға алмастырып, артығын түзету тәсілімен дәл есептеңіз: 599 · 4. Жауапқа тек санды жазыңыз.",
+      "answer": "2396",
+      "solution": "599 = 600 − 1. Сондықтан 599 · 4 = 600 · 4 − 1 · 4 = 2400 − 4 = 2396. Бір артық бірлік 4 рет алынғандықтан, тек 1 емес, 4 азайтылады.",
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "2396",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-ebbb5eeb6942bce7",
+      "modelId": "grade4-oral-round-minus-one-expression",
+      "skillFamily": "round-minus-one-expression",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "round": 400,
+        "multiplier": 6
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level1.json",
+          "sourceId": "ebbb5eeb6942bce7"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "399 · 6 көбейтіндісін дөңгелек сан арқылы дәл есептейтін өрнекті таңдаңыз.",
+      "answer": "400 · 6 − 6",
+      "solution": "399 = 400 − 1. Үлестірімділік бойынша (400 − 1) · 6 = 400 · 6 − 6. Нәтиже 2394. 1-ді ғана азайту артық алынған көшірмелердің бәрін түзетпейді.",
+      "options": [
+        "400 · 5 − 6",
+        "400 · 6 − 1",
+        "400 · 6 + 6",
+        "400 · 6 − 6"
+      ],
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "400 · 6 − 6",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-58fc16e40bb655cb",
+      "modelId": "grade4-oral-digitwise-division",
+      "skillFamily": "digitwise-division",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 8624,
+        "divisor": 2,
+        "digits": 4,
+        "zeroPlaces": []
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level1.json",
+          "sourceId": "58fc16e40bb655cb"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Разрядтық қосылғыштарға жіктеп, ауызша есептеңіз: 8 624 : 2. Жауапқа тек санды жазыңыз.",
+      "answer": "4312",
+      "solution": "8 624 = 8 000 + 600 + 20 + 4. Әр разрядты жеке бөлеміз: 8 000 : 2 = 4 000; 600 : 2 = 300; 20 : 2 = 10; 4 : 2 = 2. Қосынды 4 000 + 300 + 10 + 2 = 4 312. Тексеру: 4 312 · 2 = 8 624.",
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "4312",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-c4d3bb73a5b3c00f",
+      "modelId": "grade4-oral-precedence-round-difference",
+      "skillFamily": "precedence-round-difference",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "first": 96000,
+        "second": 42000,
+        "divisor": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level2.json",
+          "sourceId": "c4d3bb73a5b3c00f"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Амалдардың ретін сақтап есептеңіз: 96 000 − 42 000 : 3. Жауапқа тек санды жазыңыз.",
+      "answer": "82000",
+      "solution": "Жақша жоқ, бөлу азайтудан бұрын орындалады. 42 000 : 3 = 14 000. Содан кейін 96 000 − 14 000 = 82 000. Алдымен азайту басқа өрнектің мәнін берер еді: (96 000 − 42 000) : 3 = 18 000.",
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "82000",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-3e205eee28ccb924",
+      "modelId": "grade4-oral-detect-swapped-place-error",
+      "skillFamily": "detect-swapped-place-error",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          {
+            "a": 96369,
+            "op": ":",
+            "b": 3,
+            "result": 32123
+          },
+          {
+            "a": 34123,
+            "op": "·",
+            "b": 2,
+            "result": 68246
+          },
+          {
+            "a": 32012,
+            "op": "·",
+            "b": 3,
+            "result": 96063
+          },
+          {
+            "a": 844804,
+            "op": ":",
+            "b": 4,
+            "result": 211201
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level2.json",
+          "sourceId": "3e205eee28ccb924"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "intentionalIncorrectExample": true,
+      "statement": "Төрт мысалдың біреуінде жауаптың ондықтары мен бірліктері әдейі ауыстырылып жазылған. Қате шығарылған мысалды таңдаңыз.",
+      "answer": "32 012 · 3 = 96 063",
+      "solution": "Нақты нәтижелер: 96 369 : 3 = 32 123; 34 123 · 2 = 68 246; 32 012 · 3 = 96 036; 844 804 : 4 = 211 201. Қате нұсқада 96 036 орнына 96 063 жазылған: соңғы екі разряд ауысқан. Қалған үш теңдік дұрыс.",
+      "options": [
+        "96 369 : 3 = 32 123",
+        "34 123 · 2 = 68 246",
+        "32 012 · 3 = 96 063",
+        "844 804 : 4 = 211 201"
+      ],
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "32 012 · 3 = 96 063",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-83666ac3b1e2e38d",
+      "modelId": "grade4-oral-scaled-divisor",
+      "skillFamily": "scaled-divisor",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 1260,
+        "oldDivisor": 3,
+        "factor": 2,
+        "choices": [
+          210,
+          840,
+          1260,
+          420
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level2.json",
+          "sourceId": "83666ac3b1e2e38d"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "1260 : 3 = 420 екені берілген. Осыны пайдаланып, 1260 : 6 мәнін таңдаңыз.",
+      "answer": "210",
+      "solution": "Бөлгіш 6 : 3 = 2 есе артты, бөлінгіш өзгермеді. Сондықтан бөлінді 2 есе кемиді: 420 : 2 = 210. Тексеру: 210 · 6 = 1260.",
+      "options": [
+        "210",
+        "840",
+        "1 260",
+        "420"
+      ],
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "210",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-83d127c4f1fff60b",
+      "modelId": "grade4-oral-near-round-comparison",
+      "skillFamily": "near-round-comparison",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "round": 3000,
+        "multiplier": 3,
+        "rightSubtract": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level2.json",
+          "sourceId": "83d127c4f1fff60b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Толық көбейтуді орындамай салыстырыңыз: 2 999 · 3 □ 9 000 − 4.",
+      "answer": ">",
+      "solution": "Сол жақ (3 000 − 1) · 3 = 9 000 − 3. Оң жақ 9 000 − 4. Бірдей саннан 3 азайтылғанда, 4 азайтылғаннан үлкен нәтиже шығады. Сондықтан белгі >.",
+      "options": [
+        "=",
+        ">",
+        "<",
+        "Салыстыруға болмайды"
+      ],
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": ">",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-65f0c615fc328825",
+      "modelId": "grade4-oral-sum-factor-unknown",
+      "skillFamily": "sum-factor-unknown",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "known": 6000,
+        "multiplier": 6,
+        "total": 66000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level3.json",
+          "sourceId": "65f0c615fc328825"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "(a + b) · 6 = 66 000 және a = 6 000. b мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "5000",
+      "solution": "Алдымен жақшадағы қосынды: a + b = 66 000 : 6 = 11 000. Содан кейін b = 11 000 − 6 000 = 5 000. Тексеру: (6 000 + 5 000) · 6 = 66 000.",
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "5000",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-f94de92f8316a5cd",
+      "modelId": "grade4-oral-ordered-person-assignment",
+      "skillFamily": "ordered-person-assignment",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "expressions": [
+          {
+            "a": 32123,
+            "op": "·",
+            "b": 3
+          },
+          {
+            "a": 86428,
+            "op": ":",
+            "b": 2
+          },
+          {
+            "a": 21121,
+            "op": "·",
+            "b": 4
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level3.json",
+          "sourceId": "f94de92f8316a5cd"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Аян, Дәулет және Мирас мына үш өрнекті бір-бірден есептеді: 32 123 · 3; 86 428 : 2; 21 121 · 4. Әркімде әртүрлі өрнек бар. Аянның жауабы ең кішісі емес, Дәулеттің жауабы Аяндікінен үлкен. Мирас қай өрнекті есептеді?",
+      "answer": "86 428 : 2",
+      "solution": "Мәндер: 32 123 · 3 = 96 369; 86 428 : 2 = 43 214; 21 121 · 4 = 84 484. Аян ең кішіні ала алмайды және Дәулет одан үлкен алғандықтан ең үлкенді де ала алмайды: ол ортаңғы мәнді алған. Мирасқа ең кіші мән қалады, яғни 86 428 : 2. Үш адамның барлық 6 түрлі тағайындауынан осы біреуі ғана шартқа сай.",
+      "options": [
+        "Анықтау мүмкін емес",
+        "86 428 : 2",
+        "21 121 · 4",
+        "32 123 · 3"
+      ],
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "86 428 : 2",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-ee779565a1f67a50",
+      "modelId": "grade4-oral-multiply-by-nine",
+      "skillFamily": "multiply-by-nine",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 2345,
+        "choices": [
+          23441,
+          21105,
+          20105,
+          21115
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level3.json",
+          "sourceId": "ee779565a1f67a50"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "9 = 10 − 1 теңдігін пайдаланып, 2 345 · 9 көбейтіндісін табыңыз.",
+      "answer": "21 105",
+      "solution": "2 345 · 9 = 2 345 · (10 − 1) = 23 450 − 2 345 = 21 105. Бір ғана 9 санын емес, толық 2 345 санын азайтамыз. Тексеру: 2 000 · 9 + 300 · 9 + 40 · 9 + 5 · 9 = 21 105.",
+      "options": [
+        "23 441",
+        "21 105",
+        "20 105",
+        "21 115"
+      ],
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "21 105",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-c05488ce550c1f9e",
+      "modelId": "grade4-oral-known-large-product",
+      "skillFamily": "known-large-product",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 37037037,
+        "knownMultiplier": 3,
+        "newMultiplier": 12,
+        "choices": [
+          444444444,
+          44444444,
+          111111120,
+          333333333
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level3.json",
+          "sourceId": "c05488ce550c1f9e"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "37 037 037 · 3 = 111 111 111 екені берілген. Осы көбейтіндіні пайдаланып, 37 037 037 · 12 мәнін табыңыз.",
+      "answer": "444 444 444",
+      "solution": "12 = 3 · 4. Көбейтудің терімділік қасиеті: 37 037 037 · 12 = (37 037 037 · 3) · 4 = 111 111 111 · 4 = 444 444 444. Белгілі нәтижені 12 санына қайта көбейту бастапқы көбейткішті екі рет есептер еді.",
+      "options": [
+        "444 444 444",
+        "44 444 444",
+        "111 111 120",
+        "333 333 333"
+      ],
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "444 444 444",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-cc21515c56a57998",
+      "modelId": "grade4-oral-maximum-distinct-divisible-digits",
+      "skillFamily": "maximum-distinct-divisible-digits",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "divisor": 3,
+        "length": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level3.json",
+          "sourceId": "cc21515c56a57998"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Цифрлары әртүрлі 4 таңбалы санның әр цифры 3 санына қалдықсыз бөлінеді. Осындай сандардың ең үлкенін 3 санына бөліңіз. Бөлінді неге тең? Жауапқа тек санды жазыңыз.",
+      "answer": "3210",
+      "solution": "Жарамды цифрлар 0, 3, 6, 9. Олардың саны дәл 4; ең үлкен сан үшін цифрларды кему ретімен жазамыз: 9 630. Нөл алдыңғы разрядқа қойылмайды. Әр разрядты бөлеміз: 9 000 : 3 + 600 : 3 + 30 : 3 = 3 210. Тексеру: 3 210 · 3 = 9 630.",
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "3210",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-13976edeb6ec9f9b",
+      "modelId": "grade4-oral-parentheses-target",
+      "skillFamily": "parentheses-target",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "parts": [
+          56000,
+          8000,
+          800
+        ],
+        "divisor": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level3.json",
+          "sourceId": "13976edeb6ec9f9b"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "56 000 + 8 000 + 800 : 4 жазуындағы сандар мен амалдардың орнын өзгертпей, жақша қойғанда мәні 16 200 болсын. Дұрыс нұсқаны таңдаңыз.",
+      "answer": "(56 000 + 8 000 + 800) : 4",
+      "solution": "Нұсқалардың мәндері тиісінше 16 200; 58 200; 64 200; 16 800. Тек бүкіл қосындыны бөлгенде 14 000 + 2 000 + 200 = 16 200 шығады. Жақша бөлу амалына қай қосылғыштар қатысатынын өзгертеді.",
+      "options": [
+        "(56 000 + 8 000 + 800) : 4",
+        "56 000 + (8 000 + 800) : 4",
+        "56 000 + 8 000 + 800 : 4",
+        "(56 000 + 8 000) : 4 + 800"
+      ],
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "(56 000 + 8 000 + 800) : 4",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-0589db3d16b483d4",
+      "modelId": "grade4-oral-largest-repdigit-quotient",
+      "skillFamily": "largest-repdigit-quotient",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "length": 5,
+        "divisor": 3,
+        "choices": [
+          88888,
+          99999,
+          99993,
+          66666
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-level3.json",
+          "sourceId": "0589db3d16b483d4"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Барлық цифры бірдей 5 таңбалы санды 3 санына қалдықсыз бөлгенде, бөлінді де барлық цифры бірдей 5 таңбалы сан болды. Ең үлкен мүмкін бастапқы санды таңдаңыз.",
+      "answer": "99 999",
+      "solution": "Бастапқы сан d · 11111 түрінде. Барлық мүмкін нөлден өзге d цифрларын тексерсек: 33 333 : 3 = 11 111; 66 666 : 3 = 22 222; 99 999 : 3 = 33 333. Осылардың ең үлкені 99 999. Цифрлары бірдей болу шарты бастапқы санға да, бөліндіге де қолданылады.",
+      "options": [
+        "88 888",
+        "99 999",
+        "99 993",
+        "66 666"
+      ],
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "99 999",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-163e33777989e399",
+      "modelId": "grade4-oral-digitwise-division",
+      "skillFamily": "digitwise-division",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 46826,
+        "divisor": 2,
+        "digits": 5,
+        "zeroPlaces": []
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-leveltest.json",
+          "sourceId": "163e33777989e399"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Разрядтық қосылғыштарға жіктеп, ауызша есептеңіз: 46 826 : 2. Жауапқа тек санды жазыңыз.",
+      "answer": "23413",
+      "solution": "46 826 = 40 000 + 6 000 + 800 + 20 + 6. Әр разрядты жеке бөлеміз: 40 000 : 2 = 20 000; 6 000 : 2 = 3 000; 800 : 2 = 400; 20 : 2 = 10; 6 : 2 = 3. Қосынды 20 000 + 3 000 + 400 + 10 + 3 = 23 413. Тексеру: 23 413 · 2 = 46 826.",
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "23413",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-72a5602d5340d1ef",
+      "modelId": "grade4-oral-round-minus-one-product",
+      "skillFamily": "round-minus-one-product",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "round": 800,
+        "multiplier": 3,
+        "choices": [
+          2397,
+          2403,
+          2399,
+          798
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-leveltest.json",
+          "sourceId": "72a5602d5340d1ef"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Дөңгелек санға алмастырып, артығын түзету тәсілімен дәл есептеңіз: 799 · 3.",
+      "answer": "2 397",
+      "solution": "799 = 800 − 1. Сондықтан 799 · 3 = 800 · 3 − 1 · 3 = 2400 − 3 = 2397. Бір артық бірлік 3 рет алынғандықтан, тек 1 емес, 3 азайтылады.",
+      "options": [
+        "2 397",
+        "2 403",
+        "2 399",
+        "798"
+      ],
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "2 397",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-oral-ed05a30607ccc6da",
+      "modelId": "grade4-oral-known-small-product",
+      "skillFamily": "known-small-product",
+      "grade": 4,
+      "topic": "arith",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "number": 74,
+        "knownMultiplier": 3,
+        "newMultiplier": 21,
+        "choices": [
+          1554,
+          15554,
+          1332,
+          4662
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-2-1-leveltest.json",
+          "sourceId": "ed05a30607ccc6da"
+        }
+      ],
+      "adaptationChanges": [
+        "Барлық20 сақталған шарт, кілт, толық шешім және нұсқалар жеке оқылды. Қарапайым ұзын көбейтуге ауыстырмай, бастапқы ауызша тәсіл сақталды.",
+        "Жаңа сандар, дербес қазақша шарт пен толық шешім жазылды. Әр разрядты қалдықсыз бөлу, нөлдік разряд, дөңгелек саннан бірді түзету, 9=10−1, үлестірімділік, амал реті және белгілі көбейтіндіні қайта қолдану нақты көрсетілді.",
+        "Әдейі қате мысалда соңғы екі разрядтың ауысуы ашық белгіленген. Ең үлкен цифрлық санның редакциясы барлық бес жұп цифрдың орнына барлық төрт 3-ке бөлінетін цифрды қолданады: нөл, әртүрлі цифрлар, ең үлкен санды құру және разрядтап бөлу дағдылары сақталады. Сандық нұсқалар жаңа мағына саны емес."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic2.1 oral-method edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "74 · 3 = 222 екені берілген. Осы көбейтіндіні пайдаланып, 74 · 21 мәнін табыңыз.",
+      "answer": "1 554",
+      "solution": "21 = 3 · 7. Көбейтудің терімділік қасиеті: 74 · 21 = (74 · 3) · 7 = 222 · 7 = 1 554. Белгілі нәтижені 21 санына қайта көбейту бастапқы көбейткішті екі рет есептер еді.",
+      "options": [
+        "1 554",
+        "15 554",
+        "1 332",
+        "4 662"
+      ],
+      "calculationVerification": {
+        "method": "exact_digitwise_division_compensation_precedence_finite_digits_assignment_domains",
+        "answer": "1 554",
+        "checks": [
+          "digitwise exact division with retained zero-position structure and no digit remainder",
+          "source-specific compensation/distribution/precedence/known-product shortcuts explicitly explained",
+          "complete assignment/digit/repdigit domains and exact native full display binding"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1975 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "root_separate_computational_check_same_author",
+  "batch": "problems/editorial/batches/grade5-simplification.json",
+  "scope": "All 47 source/new simplification conditions, full solutions and every MCQ.\nExact polynomial proof, including implicit source coefficients/letter products,\nand printed word-problem ledgers. Same root authored both: this is a separate\ncomputational check, not a separate human/agent review. No JS/specs/params oracle.\n",
+  "summary": {
+    "verified": 47,
+    "findings": 0,
+    "allSavedNewFullConditionsSolutionsMCQsRead": 47,
+    "wrongKeysRejected": 47,
+    "printedSemanticCanariesRejected": 47,
+    "newSolutionSymbolicAndNumericEqualitiesVerified": 92,
+    "exactPolynomialProofs": true,
+    "pythonJavaScriptHashesMatched": 47,
+    "nativeFractions": 0,
+    "separateHumanReviewer": false
+  },
+  "resolvedSourceFindings": [
+    {
+      "sourceId": "991c7d33c095a0c5",
+      "issue": "Saved explanation attributes 13x−6 to treating the blue count as 4x, but that model actually gives x+2x+4x+(4x−6)=11x−6.",
+      "resolution": "Rewritten chained-count distractor is 8x−5, matching x+3x+2x+(2x−5); every option is separately checked against the correct full polynomial."
+    }
+  ],
+  "evidence": [
+    {
+      "editionId": "grade5-simplification-768ac9321282c1c5",
+      "rewritten": {
+        "printedNumbers": [
+          "6",
+          "6",
+          "7"
+        ],
+        "answer": "6 × (t + 7)",
+        "target": "6 × t + 6 × 7",
+        "allMCQIdentities": [
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "8",
+          "8",
+          "5"
+        ],
+        "answer": "$8(a + 5)$",
+        "target": "8a + 8 \\cdot 5",
+        "allMCQIdentities": [
+          true,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-dd12beb98f5db7f3",
+      "rewritten": {
+        "printedNumbers": [
+          "175",
+          "8",
+          "75",
+          "8"
+        ],
+        "target": "175 × 8 − 75 × 8",
+        "assignments": {},
+        "answer": "800"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "125",
+          "9",
+          "25",
+          "9"
+        ],
+        "target": "125 \\cdot 9 - 25 \\cdot 9",
+        "assignments": {},
+        "answer": "900"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-5d178a938a097a7f",
+      "rewritten": {
+        "printedNumbers": [
+          "8",
+          "9",
+          "4"
+        ],
+        "target": "8 × u + 9 × u",
+        "assignments": {
+          "u": "4"
+        },
+        "answer": "68"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "5",
+          "7",
+          "6"
+        ],
+        "target": "5y + 7y",
+        "assignments": {
+          "y": "6"
+        },
+        "answer": "72"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-847b4de1d2e009eb",
+      "rewritten": {
+        "printedNumbers": [],
+        "answer": "Барлық жарамды мәнде бастапқы өрнекке тең, жазылуы қарапайым өрнекке түрлендіру"
+      },
+      "savedSource": {
+        "printedNumbers": [],
+        "answer": "Өрнектің мәнін өзгертпей, амалдар саны азырақ өрнекпен алмастыру"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-5925692985a75fb5",
+      "rewritten": {
+        "printedNumbers": [],
+        "answer": "6 × b + 5 × b = 11 × b",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ],
+        "allLeftPolynomialDegrees": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [],
+        "answer": "$4a + 3a = 7a$",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ],
+        "allLeftPolynomialDegrees": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-e3727bf6e452db70",
+      "rewritten": {
+        "printedNumbers": [
+          "7",
+          "8"
+        ],
+        "answer": "56 × r",
+        "target": "7 × r × 8",
+        "allMCQIdentities": [
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "6",
+          "9"
+        ],
+        "answer": "$54b$",
+        "target": "6b \\cdot 9",
+        "allMCQIdentities": [
+          true,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-cf4d1628d61031c8",
+      "rewritten": {
+        "printedNumbers": [
+          "18",
+          "7"
+        ],
+        "answer": "11 × p",
+        "target": "18 × p − 7 × p",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "15",
+          "8"
+        ],
+        "answer": "$7m$",
+        "target": "15m - 8m",
+        "allMCQIdentities": [
+          false,
+          true,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-fd907b69fbfb5966",
+      "rewritten": {
+        "printedNumbers": [
+          "3",
+          "4",
+          "6"
+        ],
+        "answer": "72 × a × b × c",
+        "target": "3 × a × 4 × b × 6 × c",
+        "allMCQIdentities": [
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "2",
+          "3",
+          "5"
+        ],
+        "answer": "$30abc$",
+        "target": "2a \\cdot 3b \\cdot 5c",
+        "allMCQIdentities": [
+          false,
+          false,
+          false,
+          true
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-0cae8ee4e4d579d2",
+      "rewritten": {
+        "printedNumbers": [
+          "5",
+          "6",
+          "4"
+        ],
+        "target": "5 × 6 × w × 4",
+        "survivingVariable": "w",
+        "coefficient": "120",
+        "answer": "120"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "4",
+          "7",
+          "5"
+        ],
+        "target": "4 \\cdot 7y \\cdot 5",
+        "survivingVariable": "y",
+        "coefficient": "140",
+        "answer": "140"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-27bb22999adc9612",
+      "rewritten": {
+        "printedNumbers": [
+          "12"
+        ],
+        "target": "12 × z − z",
+        "survivingVariable": "z",
+        "coefficient": "11",
+        "answer": "11"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "9"
+        ],
+        "target": "9x - x",
+        "survivingVariable": "x",
+        "coefficient": "8",
+        "answer": "8"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-c63dccde7cf1a646",
+      "rewritten": {
+        "printedNumbers": [
+          "18",
+          "29"
+        ],
+        "answer": "t + 47",
+        "target": "18 + t + 29",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "12",
+          "25"
+        ],
+        "answer": "$x + 37$",
+        "target": "12 + x + 25",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-a7d100e5dd995e6d",
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "7",
+          "15"
+        ],
+        "target": "4 × r + 7 × r + 15 × r",
+        "survivingVariable": "r",
+        "coefficient": "26",
+        "answer": "26"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "5",
+          "12"
+        ],
+        "target": "3a + 5a + 12a",
+        "survivingVariable": "a",
+        "coefficient": "20",
+        "answer": "20"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-2b6570cce25838c0",
+      "rewritten": {
+        "printedNumbers": [
+          "31",
+          "19"
+        ],
+        "exactRegroupedConstant": "50",
+        "answer": "50"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "27",
+          "13"
+        ],
+        "exactRegroupedConstant": "40",
+        "answer": "40"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-1adbdc32dacbdfc8",
+      "rewritten": {
+        "printedNumbers": [
+          "14",
+          "9"
+        ],
+        "answer": "23 × v",
+        "target": "14 × v + 9 × v",
+        "allMCQIdentities": [
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "11",
+          "6"
+        ],
+        "answer": "$17x$",
+        "target": "11x + 6x",
+        "allMCQIdentities": [
+          false,
+          false,
+          false,
+          true
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-1465ed91c40d9251",
+      "rewritten": {
+        "printedNumbers": [
+          "6",
+          "25",
+          "8"
+        ],
+        "target": "6 × 25 × p × 8",
+        "survivingVariable": "p",
+        "coefficient": "1200",
+        "answer": "1200"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "8",
+          "25",
+          "5"
+        ],
+        "target": "8 \\cdot 25x \\cdot 5",
+        "survivingVariable": "x",
+        "coefficient": "1000",
+        "answer": "1000"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-ad8607f58cbaab8b",
+      "rewritten": {
+        "printedNumbers": [
+          "21",
+          "29",
+          "24"
+        ],
+        "target": "21 × q + 29 × q",
+        "assignments": {
+          "q": "24"
+        },
+        "answer": "1200"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "17",
+          "23",
+          "25"
+        ],
+        "target": "17a + 23a",
+        "assignments": {
+          "a": "25"
+        },
+        "answer": "1000"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-53f96d8c1d25ddc3",
+      "rewritten": {
+        "printedNumbers": [
+          "6",
+          "5",
+          "1"
+        ],
+        "answer": "11 × p",
+        "target": "(6+5)*p",
+        "allMCQIdentities": [
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "7",
+          "3",
+          "1",
+          "1"
+        ],
+        "answer": "$10c$",
+        "target": "(7+3)*c",
+        "allMCQIdentities": [
+          false,
+          false,
+          false,
+          true
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-1c9b673c68005d36",
+      "rewritten": {
+        "printedNumbers": [
+          "12",
+          "8",
+          "18"
+        ],
+        "independentRowDifference": {
+          "firstPopulation": "216",
+          "secondPopulation": "144",
+          "extraRows": "4"
+        },
+        "answer": "72"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "9",
+          "6",
+          "28"
+        ],
+        "independentRowDifference": {
+          "firstPopulation": "252",
+          "secondPopulation": "168",
+          "extraRows": "3"
+        },
+        "answer": "84"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-5259b527846d94cf",
+      "rewritten": {
+        "printedNumbers": [
+          "46",
+          "74"
+        ],
+        "answer": "u + v + 120",
+        "target": "(46 + u) + (74 + v)",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "35",
+          "65"
+        ],
+        "answer": "$p + q + 100$",
+        "target": "(35 + p) + (65 + q)",
+        "allMCQIdentities": [
+          false,
+          true,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-d5cbde58d11b44b7",
+      "rewritten": {
+        "printedNumbers": [
+          "57",
+          "18",
+          "14",
+          "32"
+        ],
+        "target": "57 × n − 18 × n − 14 × n",
+        "assignments": {
+          "n": "32"
+        },
+        "answer": "800"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "48",
+          "19",
+          "9",
+          "35"
+        ],
+        "target": "48y - 19y - 9y",
+        "assignments": {
+          "y": "35"
+        },
+        "answer": "700"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-4884bfc7c6886048",
+      "rewritten": {
+        "printedNumbers": [
+          "5",
+          "8",
+          "20",
+          "4"
+        ],
+        "target": "5 × 8 × a × 20",
+        "assignments": {
+          "a": "4"
+        },
+        "answer": "3200"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "4",
+          "9",
+          "25",
+          "3"
+        ],
+        "target": "4 \\cdot 9a \\cdot 25",
+        "assignments": {
+          "a": "3"
+        },
+        "answer": "2700"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-08aec89c9fd3648f",
+      "rewritten": {
+        "printedNumbers": [
+          "18"
+        ],
+        "answer": "3 × t + 6 × t",
+        "target": "18 × t",
+        "allMCQIdentities": [
+          true,
+          true,
+          true,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "12"
+        ],
+        "answer": "$3x + 4x$",
+        "target": "12x",
+        "allMCQIdentities": [
+          false,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-df4f95582366c68d",
+      "rewritten": {
+        "printedNumbers": [
+          "86",
+          "35",
+          "35",
+          "66"
+        ],
+        "target": "86 × 35 − 35 × 66",
+        "assignments": {},
+        "answer": "700"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "73",
+          "28",
+          "28",
+          "63"
+        ],
+        "target": "73 \\cdot 28 - 28 \\cdot 63",
+        "assignments": {},
+        "answer": "280"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-15d138bc6b723deb",
+      "rewritten": {
+        "printedNumbers": [
+          "8",
+          "8",
+          "8",
+          "9"
+        ],
+        "answer": "8 × (r + s + 9)",
+        "target": "8 × r + 8 × s + 8 × 9",
+        "allMCQIdentities": [
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "6",
+          "6",
+          "6",
+          "7"
+        ],
+        "answer": "$6(a + b + 7)$",
+        "target": "6a + 6b + 6 \\cdot 7",
+        "allMCQIdentities": [
+          false,
+          true,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-f144ab0d3b2df75e",
+      "rewritten": {
+        "printedNumbers": [
+          "2",
+          "7",
+          "5",
+          "3"
+        ],
+        "answer": "210 × m × n",
+        "target": "2 × 7 × m × 5 × n × 3",
+        "allMCQIdentities": [
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "4",
+          "5",
+          "2"
+        ],
+        "answer": "$120mn$",
+        "target": "3 \\cdot 4m \\cdot 5n \\cdot 2",
+        "allMCQIdentities": [
+          false,
+          false,
+          false,
+          true
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-9067f0e865b2e674",
+      "rewritten": {
+        "printedNumbers": [
+          "17",
+          "12",
+          "8"
+        ],
+        "answer": "21 × x",
+        "target": "17 × x + 12 × x − 8 × x",
+        "allMCQIdentities": [
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "14",
+          "9",
+          "5"
+        ],
+        "answer": "$18x$",
+        "target": "14x + 9x - 5x",
+        "allMCQIdentities": [
+          true,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-45094397ad226dd0",
+      "rewritten": {
+        "printedNumbers": [
+          "35",
+          "65",
+          "30"
+        ],
+        "answer": "70 × a",
+        "target": "35 × a + 65 × a − 30 × a",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "25",
+          "75",
+          "40"
+        ],
+        "answer": "$60a$",
+        "target": "25a + 75a - 40a",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-73d6d91859ce1e9f",
+      "rewritten": {
+        "printedNumbers": [
+          "3",
+          "5",
+          "7"
+        ],
+        "answer": "16 × x",
+        "target": "x + 3 × x + 5 × x + 7 × x",
+        "allMCQIdentities": [
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "$10x$",
+        "target": "x + 2x + 3x + 4x",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-3fe8106fd5224012",
+      "rewritten": {
+        "printedNumbers": [
+          "1",
+          "6",
+          "55"
+        ],
+        "headLegLedger": {
+          "heads": "11",
+          "legs": "66",
+          "difference": "55"
+        },
+        "answer": "11"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "1",
+          "8",
+          "63"
+        ],
+        "headLegLedger": {
+          "heads": "9",
+          "legs": "72",
+          "difference": "63"
+        },
+        "answer": "9"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-4030b7d52dfd811a",
+      "rewritten": {
+        "printedNumbers": [],
+        "answer": "5 × (b + 3) − 4 × b = b + 15",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ],
+        "allLeftPolynomialDegrees": [
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [],
+        "answer": "$3(a + 4) - 2a = a + 12$",
+        "allMCQIdentities": [
+          false,
+          false,
+          false,
+          true
+        ],
+        "allLeftPolynomialDegrees": [
+          1,
+          2,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-7fc06afe34935bec",
+      "rewritten": {
+        "printedNumbers": [
+          "2",
+          "3",
+          "4",
+          "4"
+        ],
+        "distanceLedger": {
+          "walking": "8",
+          "cycling": "48",
+          "cyclingSpeed": "16"
+        },
+        "answer": "56"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "2",
+          "3",
+          "5"
+        ],
+        "distanceLedger": {
+          "walking": "15",
+          "cycling": "30",
+          "cyclingSpeed": "15"
+        },
+        "answer": "45"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-f6d120f10cdfaf94",
+      "rewritten": {
+        "printedNumbers": [
+          "2",
+          "3",
+          "23",
+          "24",
+          "1",
+          "24"
+        ],
+        "answer": "300 × t",
+        "target": "1*t+2*t+3*t+4*t+5*t+6*t+7*t+8*t+9*t+10*t+11*t+12*t+13*t+14*t+15*t+16*t+17*t+18*t+19*t+20*t+21*t+22*t+23*t+24*t",
+        "allMCQIdentities": [
+          false,
+          true,
+          false,
+          false
+        ],
+        "allCoefficients": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "2",
+          "3",
+          "19",
+          "20",
+          "1",
+          "20"
+        ],
+        "answer": "$210a$",
+        "target": "1*a+2*a+3*a+4*a+5*a+6*a+7*a+8*a+9*a+10*a+11*a+12*a+13*a+14*a+15*a+16*a+17*a+18*a+19*a+20*a",
+        "allMCQIdentities": [
+          false,
+          true,
+          false,
+          false
+        ],
+        "allCoefficients": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-991c7d33c095a0c5",
+      "rewritten": {
+        "printedNumbers": [
+          "3",
+          "2",
+          "5"
+        ],
+        "answer": "16 × x − 5",
+        "target": "x+3*x+6*x+(6*x-5)",
+        "allMCQIdentities": [
+          true,
+          false,
+          false,
+          false
+        ],
+        "positiveCountsAtMinimumNaturalInput": [
+          "1",
+          "3",
+          "6",
+          "1"
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "2",
+          "4",
+          "6"
+        ],
+        "answer": "$19x - 6$",
+        "target": "x+2*x+8*x+(8*x-6)",
+        "allMCQIdentities": [
+          true,
+          false,
+          false,
+          false
+        ],
+        "positiveCountsAtMinimumNaturalInput": [
+          "1",
+          "2",
+          "8",
+          "2"
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-8613219a6777267d",
+      "rewritten": {
+        "printedNumbers": [
+          "9",
+          "17",
+          "9",
+          "23",
+          "9",
+          "60",
+          "84",
+          "6",
+          "6",
+          "16"
+        ],
+        "target": "9 × 17 + 9 × 23 + 9 × 60 + 84 × 6 + 6 × 16",
+        "assignments": {},
+        "answer": "1500"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "7",
+          "13",
+          "7",
+          "27",
+          "7",
+          "60",
+          "93",
+          "4",
+          "4",
+          "7"
+        ],
+        "target": "7 \\cdot 13 + 7 \\cdot 27 + 7 \\cdot 60 + 93 \\cdot 4 + 4 \\cdot 7",
+        "assignments": {},
+        "answer": "1100"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-1994363442f07128",
+      "rewritten": {
+        "printedNumbers": [
+          "3",
+          "4",
+          "5",
+          "7",
+          "2"
+        ],
+        "answer": "19 × u + 29",
+        "target": "3 × (4 × u + 5) + 7 × (u + 2)",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "4",
+          "2",
+          "3",
+          "5",
+          "2"
+        ],
+        "answer": "$13x + 22$",
+        "target": "4(2x + 3) + 5(x + 2)",
+        "allMCQIdentities": [
+          true,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-207c2c1c7950eac1",
+      "rewritten": {
+        "printedNumbers": [
+          "18",
+          "7",
+          "5",
+          "20",
+          "25",
+          "16"
+        ],
+        "target": "18 × b + 7 × b + 5 × b × 20 − 25 × b",
+        "assignments": {
+          "b": "16"
+        },
+        "answer": "1600"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "16",
+          "9",
+          "4",
+          "25",
+          "25",
+          "25"
+        ],
+        "target": "16a + 9a + 4a \\cdot 25 - 25a",
+        "assignments": {
+          "a": "25"
+        },
+        "answer": "2500"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-5842acbc9e65d556",
+      "rewritten": {
+        "printedNumbers": [],
+        "answer": "12 × u × v",
+        "target": "(u + u + u + u) × (v + v + v)",
+        "allMCQIdentities": [
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [],
+        "answer": "$6xy$",
+        "target": "(x + x + x) \\cdot (y + y)",
+        "allMCQIdentities": [
+          false,
+          true,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-a850cb12d980b455",
+      "rewritten": {
+        "printedNumbers": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "12"
+        ],
+        "answer": "30 × p",
+        "target": "3 × p × 4 + 5 × p × 6 − 12 × p",
+        "allMCQIdentities": [
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "answer": "$20a$",
+        "target": "2a \\cdot 3 + 4a \\cdot 5 - 6a",
+        "allMCQIdentities": [
+          false,
+          false,
+          false,
+          true
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-5711788f49d608d9",
+      "rewritten": {
+        "printedNumbers": [
+          "21",
+          "56"
+        ],
+        "answer": "y + 77",
+        "target": "21 + y + 56",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "13",
+          "48"
+        ],
+        "answer": "$y + 61$",
+        "target": "13 + y + 48",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-6476d1600c03c224",
+      "rewritten": {
+        "printedNumbers": [
+          "9",
+          "14"
+        ],
+        "target": "9 × w × 14",
+        "survivingVariable": "w",
+        "coefficient": "126",
+        "answer": "126"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "7",
+          "12"
+        ],
+        "target": "7z \\cdot 12",
+        "survivingVariable": "z",
+        "coefficient": "84",
+        "answer": "84"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-f29abf09036caf7f",
+      "rewritten": {
+        "printedNumbers": [
+          "32",
+          "17"
+        ],
+        "answer": "15 × c",
+        "target": "32 × c − 17 × c",
+        "allMCQIdentities": [
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "21",
+          "13"
+        ],
+        "answer": "$8c$",
+        "target": "21c - 13c",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-55249f6ca6377a08",
+      "rewritten": {
+        "printedNumbers": [
+          "28",
+          "17",
+          "10",
+          "12"
+        ],
+        "target": "28 × k + 17 × k − 10 × k",
+        "assignments": {
+          "k": "12"
+        },
+        "answer": "420"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "26",
+          "19",
+          "15",
+          "13"
+        ],
+        "target": "26b + 19b - 15b",
+        "assignments": {
+          "b": "13"
+        },
+        "answer": "390"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-22206e4a195a88ec",
+      "rewritten": {
+        "printedNumbers": [
+          "7",
+          "7",
+          "8",
+          "7"
+        ],
+        "answer": "7 × (m + 8 − n)",
+        "target": "7 × m + 7 × 8 − 7 × n",
+        "allMCQIdentities": [
+          false,
+          false,
+          true,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "9",
+          "9",
+          "6",
+          "9"
+        ],
+        "answer": "$9(m + 6 - n)$",
+        "target": "9m + 9 \\cdot 6 - 9n",
+        "allMCQIdentities": [
+          true,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-79cc8191d4b13deb",
+      "rewritten": {
+        "printedNumbers": [
+          "6",
+          "5",
+          "4"
+        ],
+        "answer": "120 × x × y",
+        "target": "6 × x × 5 × y × 4",
+        "allMCQIdentities": [
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "5",
+          "4",
+          "3"
+        ],
+        "answer": "$60xy$",
+        "target": "5x \\cdot 4y \\cdot 3",
+        "allMCQIdentities": [
+          false,
+          false,
+          false,
+          true
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-3d5e1a650c579c41",
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "2",
+          "180"
+        ],
+        "equalGroupLegLedger": {
+          "firstLegs": "120",
+          "secondLegs": "60",
+          "requestedFirstGroup": "30"
+        },
+        "answer": "30"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "132"
+        ],
+        "equalGroupLegLedger": {
+          "firstLegs": "88",
+          "secondLegs": "44",
+          "requestedFirstGroup": "22"
+        },
+        "answer": "22"
+      }
+    },
+    {
+      "editionId": "grade5-simplification-1caceb761885920d",
+      "rewritten": {
+        "printedNumbers": [
+          "4",
+          "6",
+          "3",
+          "2",
+          "5"
+        ],
+        "answer": "10 × x + 39",
+        "target": "4 × (x + 6) + 3 × (2 × x + 5)",
+        "allMCQIdentities": [
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "3",
+          "5",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "$9x + 23$",
+        "target": "3(x + 5) + 2(3x + 4)",
+        "allMCQIdentities": [
+          false,
+          true,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "editionId": "grade5-simplification-be5855c9b851b191",
+      "rewritten": {
+        "printedNumbers": [
+          "3",
+          "2",
+          "100"
+        ],
+        "threeAges": [
+          "10",
+          "30",
+          "60"
+        ],
+        "answer": "10"
+      },
+      "savedSource": {
+        "printedNumbers": [
+          "4",
+          "2",
+          "104"
+        ],
+        "threeAges": [
+          "8",
+          "32",
+          "64"
+        ],
+        "answer": "8"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "editionId": "grade5-simplification-768ac9321282c1c5",
+      "sha256": "80912c6fb6b6e6d9a08f100067337cab7c23fb86014f37f8e480f755e6d62b1c",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"6\", \"6\", \"7\"], \"answer\": \"6 × (t + 7)\", \"target\": \"6 × t + 6 × 7\", \"allMCQIdentities\": [true, false, false, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-dd12beb98f5db7f3",
+      "sha256": "f2996c4d7b5f2500a85c8e19878536262cc191f513e235d2cf58adb1aa1517a4",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"175\", \"8\", \"75\", \"8\"], \"target\": \"175 × 8 − 75 × 8\", \"assignments\": {}, \"answer\": \"800\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-5d178a938a097a7f",
+      "sha256": "35a2ea90eec259c5766326582ea7be5cab54f9846182c1891694e1a2963e2b43",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"8\", \"9\", \"4\"], \"target\": \"8 × u + 9 × u\", \"assignments\": {\"u\": \"4\"}, \"answer\": \"68\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-847b4de1d2e009eb",
+      "sha256": "eedd752e1f293df4e8bdffe72d34310e2499202e36aaf4750d41f661e6be491c",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [], \"answer\": \"Барлық жарамды мәнде бастапқы өрнекке тең, жазылуы қарапайым өрнекке түрлендіру\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-5925692985a75fb5",
+      "sha256": "8efe9306c998facd4aababd58910e4175ce26def9dd8bfaa5df6b27c029735b2",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [], \"answer\": \"6 × b + 5 × b = 11 × b\", \"allMCQIdentities\": [false, false, true, false], \"allLeftPolynomialDegrees\": [1, 1, 1, 1]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-e3727bf6e452db70",
+      "sha256": "b388531a8702be01704f2c8390d8b3548bdb9a5b95756f1bcc4b52af30bf326e",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"7\", \"8\"], \"answer\": \"56 × r\", \"target\": \"7 × r × 8\", \"allMCQIdentities\": [false, false, false, true]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-cf4d1628d61031c8",
+      "sha256": "f55829fa9944866c76e425c07719631ea2273b284412d2aeb3bf1e1f085aba99",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"18\", \"7\"], \"answer\": \"11 × p\", \"target\": \"18 × p − 7 × p\", \"allMCQIdentities\": [false, false, true, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-fd907b69fbfb5966",
+      "sha256": "7f5c9ddaf48e468b78b1ed7fae9ff177bf9ca563fba447fc7202fd497198b897",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"4\", \"6\"], \"answer\": \"72 × a × b × c\", \"target\": \"3 × a × 4 × b × 6 × c\", \"allMCQIdentities\": [false, true, false, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-0cae8ee4e4d579d2",
+      "sha256": "7f00359f1476c227c30d884853893b4143cbe301f05737cd3cf068b06416317c",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"5\", \"6\", \"4\"], \"target\": \"5 × 6 × w × 4\", \"survivingVariable\": \"w\", \"coefficient\": \"120\", \"answer\": \"120\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-27bb22999adc9612",
+      "sha256": "3ecf11276f40097b70855921221b93143ab6081327aef580c30affcb10416a31",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"12\"], \"target\": \"12 × z − z\", \"survivingVariable\": \"z\", \"coefficient\": \"11\", \"answer\": \"11\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-c63dccde7cf1a646",
+      "sha256": "99bbe13e235024fa06cd714291c866f48431a2fe77a9710c7192f0c37b7ed7b1",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"18\", \"29\"], \"answer\": \"t + 47\", \"target\": \"18 + t + 29\", \"allMCQIdentities\": [false, false, true, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-a7d100e5dd995e6d",
+      "sha256": "d15c111d5ef345a24141be1d9f4c9e5bb8c33c7455f9a4a6b7ff5e4728bff635",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"7\", \"15\"], \"target\": \"4 × r + 7 × r + 15 × r\", \"survivingVariable\": \"r\", \"coefficient\": \"26\", \"answer\": \"26\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-2b6570cce25838c0",
+      "sha256": "af18891ffd1fdff532047f9fdb0911ec30c7e8ac79ec3de74349ee4bff49abc9",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"31\", \"19\"], \"exactRegroupedConstant\": \"50\", \"answer\": \"50\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-1adbdc32dacbdfc8",
+      "sha256": "9879027bf409f6a0bdcf6ce22047c9a492b41b6bc5cb8b375b387d3cd2daa31b",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"14\", \"9\"], \"answer\": \"23 × v\", \"target\": \"14 × v + 9 × v\", \"allMCQIdentities\": [false, false, false, true]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-1465ed91c40d9251",
+      "sha256": "78795e0f5aca9041b82d66d745c3766e49febe46096811cf95688eac20a3a4ee",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"6\", \"25\", \"8\"], \"target\": \"6 × 25 × p × 8\", \"survivingVariable\": \"p\", \"coefficient\": \"1200\", \"answer\": \"1200\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-ad8607f58cbaab8b",
+      "sha256": "a8034c861468ca6dd8272269a6e2b73fbf07432b31efbd555290567b8d11c9e2",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"21\", \"29\", \"24\"], \"target\": \"21 × q + 29 × q\", \"assignments\": {\"q\": \"24\"}, \"answer\": \"1200\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-53f96d8c1d25ddc3",
+      "sha256": "dc402aadf2cc77b12f71c830a9d3b676250f0cb934efa28eca1076d7c4990e43",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"6\", \"5\", \"1\"], \"answer\": \"11 × p\", \"target\": \"(6+5)*p\", \"allMCQIdentities\": [true, false, false, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-1c9b673c68005d36",
+      "sha256": "d14097ad701bf347e81389cbaa2a5e57cbc4c6a8d341f03d3c2fc6e1a26ee4ab",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"12\", \"8\", \"18\"], \"independentRowDifference\": {\"firstPopulation\": \"216\", \"secondPopulation\": \"144\", \"extraRows\": \"4\"}, \"answer\": \"72\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-5259b527846d94cf",
+      "sha256": "99b3916636f27d2761b8db9f9e255e722ad3ea035640c13036bd9808f4cf945e",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"46\", \"74\"], \"answer\": \"u + v + 120\", \"target\": \"(46 + u) + (74 + v)\", \"allMCQIdentities\": [false, false, true, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-d5cbde58d11b44b7",
+      "sha256": "4582ec14c48628784e3d67336f3b77f31ddf9a970635fe5d748f6795ea3ff217",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"57\", \"18\", \"14\", \"32\"], \"target\": \"57 × n − 18 × n − 14 × n\", \"assignments\": {\"n\": \"32\"}, \"answer\": \"800\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-4884bfc7c6886048",
+      "sha256": "02dd3d37a412357166329cd4b3034f236e3c55e7439b8471b196617df5624338",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"5\", \"8\", \"20\", \"4\"], \"target\": \"5 × 8 × a × 20\", \"assignments\": {\"a\": \"4\"}, \"answer\": \"3200\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-08aec89c9fd3648f",
+      "sha256": "1afcb670492a3fdcb0a5f79c34dcebd1cfadba7782180967191ae5430cc149eb",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"18\"], \"answer\": \"3 × t + 6 × t\", \"target\": \"18 × t\", \"allMCQIdentities\": [true, true, true, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-df4f95582366c68d",
+      "sha256": "53597b3c6108dd61a3035807b649d00902935223a3a810148c033193025eacc1",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"86\", \"35\", \"35\", \"66\"], \"target\": \"86 × 35 − 35 × 66\", \"assignments\": {}, \"answer\": \"700\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-15d138bc6b723deb",
+      "sha256": "d3cbb4a803a0d9ba3cbdf8a672f0cea29572a47e449b59f94303cf4ff97175ac",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"8\", \"8\", \"8\", \"9\"], \"answer\": \"8 × (r + s + 9)\", \"target\": \"8 × r + 8 × s + 8 × 9\", \"allMCQIdentities\": [false, true, false, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-f144ab0d3b2df75e",
+      "sha256": "02a3d7434a03debaa4d9bc6367c5b1163fdab4fd6bf4a1b48b94a0cc29cb6434",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"2\", \"7\", \"5\", \"3\"], \"answer\": \"210 × m × n\", \"target\": \"2 × 7 × m × 5 × n × 3\", \"allMCQIdentities\": [true, false, false, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-9067f0e865b2e674",
+      "sha256": "34febb4f714369475a1e19d56ca00e7e9e1e4ce71632b8f97a1c17e8cc7208e4",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"17\", \"12\", \"8\"], \"answer\": \"21 × x\", \"target\": \"17 × x + 12 × x − 8 × x\", \"allMCQIdentities\": [false, false, false, true]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-45094397ad226dd0",
+      "sha256": "f73386092a5c88a72c70db4b470b9d2b00e64718f3cbe52b165b3c8afa3ebab0",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"35\", \"65\", \"30\"], \"answer\": \"70 × a\", \"target\": \"35 × a + 65 × a − 30 × a\", \"allMCQIdentities\": [false, false, true, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-73d6d91859ce1e9f",
+      "sha256": "0f85eafa323aee5592729cb3cd2bd69ec106eedb39dbcca7b667f98bf8f0c061",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"5\", \"7\"], \"answer\": \"16 × x\", \"target\": \"x + 3 × x + 5 × x + 7 × x\", \"allMCQIdentities\": [false, true, false, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-3fe8106fd5224012",
+      "sha256": "186d49da4a38e07297198c795cf0149b7f7099f69d820ca920a536ce77fe13d2",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"1\", \"6\", \"55\"], \"headLegLedger\": {\"heads\": \"11\", \"legs\": \"66\", \"difference\": \"55\"}, \"answer\": \"11\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-4030b7d52dfd811a",
+      "sha256": "448dad138a493e6e8da5e3d414510c428c8d74fa74c20c262afbf2e4deccc7ff",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [], \"answer\": \"5 × (b + 3) − 4 × b = b + 15\", \"allMCQIdentities\": [false, false, true, false], \"allLeftPolynomialDegrees\": [2, 1, 1, 1]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-7fc06afe34935bec",
+      "sha256": "d3ea0ad3d20ddb1c218205574db8574f5a96c911b11885a2de434b91ac31fc65",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"2\", \"3\", \"4\", \"4\"], \"distanceLedger\": {\"walking\": \"8\", \"cycling\": \"48\", \"cyclingSpeed\": \"16\"}, \"answer\": \"56\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-f6d120f10cdfaf94",
+      "sha256": "4a26663db21879a7f49682300a40a281cc840bb6ff8d47b20f49321d6eaec13e",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"2\", \"3\", \"23\", \"24\", \"1\", \"24\"], \"answer\": \"300 × t\", \"target\": \"1*t+2*t+3*t+4*t+5*t+6*t+7*t+8*t+9*t+10*t+11*t+12*t+13*t+14*t+15*t+16*t+17*t+18*t+19*t+20*t+21*t+22*t+23*t+24*t\", \"allMCQIdentities\": [false, true, false, false], \"allCoefficients\": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-991c7d33c095a0c5",
+      "sha256": "346a5cf1a03c9d7c033661b221b41ceae6303be465f9556b2b329b775724f7a8",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"2\", \"5\"], \"answer\": \"16 × x − 5\", \"target\": \"x+3*x+6*x+(6*x-5)\", \"allMCQIdentities\": [true, false, false, false], \"positiveCountsAtMinimumNaturalInput\": [\"1\", \"3\", \"6\", \"1\"]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-8613219a6777267d",
+      "sha256": "7878b6b64816580de74b45120c1a52b690262655f4864f88dbfce0237ffd861d",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"9\", \"17\", \"9\", \"23\", \"9\", \"60\", \"84\", \"6\", \"6\", \"16\"], \"target\": \"9 × 17 + 9 × 23 + 9 × 60 + 84 × 6 + 6 × 16\", \"assignments\": {}, \"answer\": \"1500\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-1994363442f07128",
+      "sha256": "2e466c93e4b9d58d46bd62eb0d2745af2d8e7279b42e23efeebf6ce5809efb55",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"4\", \"5\", \"7\", \"2\"], \"answer\": \"19 × u + 29\", \"target\": \"3 × (4 × u + 5) + 7 × (u + 2)\", \"allMCQIdentities\": [false, false, true, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-207c2c1c7950eac1",
+      "sha256": "4942de5cea5fb700ca949d91745b7cec88092f364e05759a1122d5be85345e32",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"18\", \"7\", \"5\", \"20\", \"25\", \"16\"], \"target\": \"18 × b + 7 × b + 5 × b × 20 − 25 × b\", \"assignments\": {\"b\": \"16\"}, \"answer\": \"1600\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-5842acbc9e65d556",
+      "sha256": "8b04f685675b4279882311cb7523b318c7fbe2583b932e2e6091e99dbae15a94",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [], \"answer\": \"12 × u × v\", \"target\": \"(u + u + u + u) × (v + v + v)\", \"allMCQIdentities\": [true, false, false, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-a850cb12d980b455",
+      "sha256": "30b70dc5334e27e55e1d3a6c6c1e895f5711cb24d2eb44ffaef679fb1f6d04ff",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"4\", \"5\", \"6\", \"12\"], \"answer\": \"30 × p\", \"target\": \"3 × p × 4 + 5 × p × 6 − 12 × p\", \"allMCQIdentities\": [false, false, false, true]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-5711788f49d608d9",
+      "sha256": "295eba98d3c81bd54b7d9e065e4e1546672885d57ce61c3e57c46c75b861d00b",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"21\", \"56\"], \"answer\": \"y + 77\", \"target\": \"21 + y + 56\", \"allMCQIdentities\": [false, false, true, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-6476d1600c03c224",
+      "sha256": "ce047915a43fdbee572ecc205934724a3e48884bf43b643d44cbee53542efaff",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"9\", \"14\"], \"target\": \"9 × w × 14\", \"survivingVariable\": \"w\", \"coefficient\": \"126\", \"answer\": \"126\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-f29abf09036caf7f",
+      "sha256": "ac462fcc050bc94f1bbd2faa6690cdc3a3438c98ea8672dfbc416a249e61ea0a",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"32\", \"17\"], \"answer\": \"15 × c\", \"target\": \"32 × c − 17 × c\", \"allMCQIdentities\": [true, false, false, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-55249f6ca6377a08",
+      "sha256": "379dde8eab87f0a1a7061556d71fc43570fb0950dd5a2f8d0bb5dc687b542e47",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"28\", \"17\", \"10\", \"12\"], \"target\": \"28 × k + 17 × k − 10 × k\", \"assignments\": {\"k\": \"12\"}, \"answer\": \"420\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-22206e4a195a88ec",
+      "sha256": "a6ed9c48a5f2bf3b7590d2b06899992d89f5c7faa1dd79683ae14002f7407b06",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"7\", \"7\", \"8\", \"7\"], \"answer\": \"7 × (m + 8 − n)\", \"target\": \"7 × m + 7 × 8 − 7 × n\", \"allMCQIdentities\": [false, false, true, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-79cc8191d4b13deb",
+      "sha256": "ee0c7e442316add515cb987e9a6ac28de7b1e6eea31477d914ba8ff7e452e4e1",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"6\", \"5\", \"4\"], \"answer\": \"120 × x × y\", \"target\": \"6 × x × 5 × y × 4\", \"allMCQIdentities\": [false, true, false, false]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-3d5e1a650c579c41",
+      "sha256": "5c97bdeaf6de374153712cd29af173050a922ce6f5f996e2f5c93500749f04b3",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"2\", \"180\"], \"equalGroupLegLedger\": {\"firstLegs\": \"120\", \"secondLegs\": \"60\", \"requestedFirstGroup\": \"30\"}, \"answer\": \"30\"}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-1caceb761885920d",
+      "sha256": "86144193f33bc6a69fd57d41c72d90e27498784371241a4527b87a2761be6a34",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"4\", \"6\", \"3\", \"2\", \"5\"], \"answer\": \"10 × x + 39\", \"target\": \"4 × (x + 6) + 3 × (2 × x + 5)\", \"allMCQIdentities\": [false, false, false, true]}"
+      ]
+    },
+    {
+      "editionId": "grade5-simplification-be5855c9b851b191",
+      "sha256": "765e5266ec8742713ca754e8baed49c25db9432cdc480bffb1338617b03e03dd",
+      "verdict": "verified",
+      "reviewer": "root_separate_computational_check_same_author",
+      "method": "all source/new full conditions, solutions and every MCQ; separate exact rational polynomial proof and printed word ledgers; no author model/params oracle; not separate human review",
+      "notes": [
+        "{\"printedNumbers\": [\"3\", \"2\", \"100\"], \"threeAges\": [\"10\", \"30\", \"60\"], \"answer\": \"10\"}"
+      ]
+    }
+  ]
+}

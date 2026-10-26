@@ -1,0 +1,640 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All10 saved visual grade5topic3.1; sourcearchiveonly, no capture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5topic3.1sources",
+    "sourceVisualOccurrences": 10,
+    "addressedNewDrafts": 10,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "079204f678228969",
+      "4872424190c4faba",
+      "9dd6e7dc4256d805",
+      "a1d86b83aa9c6f06",
+      "bfcfbe741710503a",
+      "c53538f52207d192",
+      "d40930916cef7c4e",
+      "e7b590371d37cdff",
+      "f1d0e49a094ee8a8",
+      "f83ca84bbfaee06f"
+    ],
+    "distinctModels": 10,
+    "semantics": "Alltensource targets individuallyrewritten; variant/modelcounts are not claims ofnew semanticmeanings."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave41-four-of-nine-equal-triangles",
+      "modelId": "visual-wave41-equal-triangle-shaded-fraction",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "triangle",
+        "subdivisions": 3,
+        "shaded": [
+          0,
+          2,
+          5,
+          7
+        ]
+      },
+      "answer": "(4/9)",
+      "sourceRefs": [
+        {
+          "sourceId": "4872424190c4faba",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-1-level1.json#3",
+      "sourceCanonicalSha256": "876147b6b3a6d3ffe1bf1c64ea6a52c6e1c3b1f06555450d27e01b1d5e721bd6",
+      "sourceSkill": "Equal-area triangle partition: shaded count over all equal parts",
+      "adaptationChanges": [
+        "Барлық10бастапқы визуалды дағды жеке сақталды:теңүшбұрыш/тор/сектордан үлес,кесілгеннен қалған алым,санның суреттегі бөлігі,бөлігі бойынша бүтін,төрт шеңберден таңдау,теңемес аудандар,алтыбұрыштың толықтауышы,екі кезеңнен қалғаны арқылы толықжол.",
+        "Үшбұрыш9бөлік/4күлгін,тор12/5,бәліш12/5,таспа12/5алынған,168км8бөлік/5көк,9бөліктің4-і12бала,мақсат2/3жәнежауапC,теңемесшаршы11/16,алтыбұрыш2боялған,12жолбөліктің3көк/4күлгін/5ақ35км болып жаңарды.",
+        "Native SVG барлық бөлікті геометриялық параметрмен құрады. Теңүшбұрыштар barycentric тордан,теңсекторлар бірдейбұрыштан,теңемесшаршы9нақтыполигоннан тұрады. Shoelace аудандары толықшаршыны және11/16үлесті береді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтіннің бөліктері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview; equal9triangle/12grid/12sectorareas,allstripcoloredcounts,4circlelabelbindings,unequal9regionactualareas11/16,regularhexagonareas,wholevsremainingdistancebrackets; all343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave41-four-of-nine-equal-triangles.svg",
+      "verificationModule": "scripts/editorial/visual-wave41-models.mjs",
+      "options": [
+        "(4/9)",
+        "(5/9)",
+        "(9/4)",
+        "(4/5)"
+      ],
+      "statement": "Үшбұрышты панно тең кішкентай үшбұрыштарға бөлінген. Күлгінмен белгіленген аудан бүкіл панноның қандай бөлігін құрайды?",
+      "solution": "Панно 9 тең үшбұрыштан тұрады. Күлгіндері 4 дана. Бөлімге барлық тең бөліктер санын, алымға боялған санын жазамыз: (4/9). Боялмаған бөліктерді ғана бөлімге қоюға болмайды.",
+      "figureDescription": "Үлкен үшбұрыш 9 тең ұсақ үшбұрыштан тұрады, оның 4 бөлігі күлгін.",
+      "figureSha256": "7c717cb81a5b927c03975c6cc20a59238adbedfd18fdb669b96d31c4b06095ff",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(4/9)",
+        "checks": {
+          "equalTriangles": 9,
+          "shaded": 4,
+          "areaEach": 4924.444444444443
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave41-five-of-twelve-grid-cells",
+      "modelId": "visual-wave41-rectangle-grid-shaded-fraction",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "grid",
+        "rows": 3,
+        "columns": 4,
+        "shaded": [
+          0,
+          3,
+          5,
+          7,
+          10
+        ]
+      },
+      "answer": "(5/12)",
+      "sourceRefs": [
+        {
+          "sourceId": "9dd6e7dc4256d805",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-1-level1.json#9",
+      "sourceCanonicalSha256": "ee7bd39dba1b4f2703ac642b1d9e29f82c68b9821907527e958d325fe12de129",
+      "sourceSkill": "Reading shaded rectangular equal-cell area against the whole",
+      "adaptationChanges": [
+        "Барлық10бастапқы визуалды дағды жеке сақталды:теңүшбұрыш/тор/сектордан үлес,кесілгеннен қалған алым,санның суреттегі бөлігі,бөлігі бойынша бүтін,төрт шеңберден таңдау,теңемес аудандар,алтыбұрыштың толықтауышы,екі кезеңнен қалғаны арқылы толықжол.",
+        "Үшбұрыш9бөлік/4күлгін,тор12/5,бәліш12/5,таспа12/5алынған,168км8бөлік/5көк,9бөліктің4-і12бала,мақсат2/3жәнежауапC,теңемесшаршы11/16,алтыбұрыш2боялған,12жолбөліктің3көк/4күлгін/5ақ35км болып жаңарды.",
+        "Native SVG барлық бөлікті геометриялық параметрмен құрады. Теңүшбұрыштар barycentric тордан,теңсекторлар бірдейбұрыштан,теңемесшаршы9нақтыполигоннан тұрады. Shoelace аудандары толықшаршыны және11/16үлесті береді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтіннің бөліктері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview; equal9triangle/12grid/12sectorareas,allstripcoloredcounts,4circlelabelbindings,unequal9regionactualareas11/16,regularhexagonareas,wholevsremainingdistancebrackets; all343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave41-five-of-twelve-grid-cells.svg",
+      "verificationModule": "scripts/editorial/visual-wave41-models.mjs",
+      "options": [
+        "(7/12)",
+        "(5/7)",
+        "(5/12)",
+        "(12/5)"
+      ],
+      "statement": "Тікбұрышты мозаика бірдей ұяшықтардан тұрады. Боялған ұяшықтар барлық мозаиканың қандай бөлігі?",
+      "solution": "Тор 3 қатар мен 4 бағаннан тұрады, барлық ұяшық 3 × 4 = 12. Күлгін ұяшықтар 5, демек боялған үлес (5/12). Боялмаған 7 ұяшықты алымға алу сұрақты ауыстырады.",
+      "figureDescription": "3 қатар және 4 бағаннан тұратын тікбұрышта 5 ұяшық боялған.",
+      "figureSha256": "144b6d8c031492d40c58cb3d125c12516494085bbe0b4619c119f63e38158bae",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(5/12)",
+        "checks": {
+          "total": 12,
+          "shaded": 5,
+          "unshaded": 7
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave41-five-of-twelve-pie-slices",
+      "modelId": "visual-wave41-pie-used-sector-fraction",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "pie",
+        "parts": 12,
+        "shaded": [
+          0,
+          1,
+          2,
+          5,
+          8
+        ]
+      },
+      "answer": "(5/12)",
+      "sourceRefs": [
+        {
+          "sourceId": "a1d86b83aa9c6f06",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-1-level1.json#12",
+      "sourceCanonicalSha256": "c2490294cb60f8dc905879ccc5466bf83125742496f8c28b07ccbe9369ab688b",
+      "sourceSkill": "Fraction of a consumed equal-sector pie, numerator/whole denominator roles",
+      "adaptationChanges": [
+        "Барлық10бастапқы визуалды дағды жеке сақталды:теңүшбұрыш/тор/сектордан үлес,кесілгеннен қалған алым,санның суреттегі бөлігі,бөлігі бойынша бүтін,төрт шеңберден таңдау,теңемес аудандар,алтыбұрыштың толықтауышы,екі кезеңнен қалғаны арқылы толықжол.",
+        "Үшбұрыш9бөлік/4күлгін,тор12/5,бәліш12/5,таспа12/5алынған,168км8бөлік/5көк,9бөліктің4-і12бала,мақсат2/3жәнежауапC,теңемесшаршы11/16,алтыбұрыш2боялған,12жолбөліктің3көк/4күлгін/5ақ35км болып жаңарды.",
+        "Native SVG барлық бөлікті геометриялық параметрмен құрады. Теңүшбұрыштар barycentric тордан,теңсекторлар бірдейбұрыштан,теңемесшаршы9нақтыполигоннан тұрады. Shoelace аудандары толықшаршыны және11/16үлесті береді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтіннің бөліктері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview; equal9triangle/12grid/12sectorareas,allstripcoloredcounts,4circlelabelbindings,unequal9regionactualareas11/16,regularhexagonareas,wholevsremainingdistancebrackets; all343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave41-five-of-twelve-pie-slices.svg",
+      "verificationModule": "scripts/editorial/visual-wave41-models.mjs",
+      "options": [
+        "(12/5)",
+        "(5/7)",
+        "(7/12)",
+        "(5/12)"
+      ],
+      "statement": "Дөңгелек бәліш тең тілімдерге бөлінген. Дина күлгінмен белгіленген тілімдерді алды. Ол бүкіл бәліштің қандай бөлігін алды?",
+      "solution": "Бәліш 12 тең секторға бөлінген. Дина алған күлгін секторлар саны 5. Сондықтан алынған бөлік (5/12). Бөлім — алынған және қалған тілімдердің барлығы, тек қалғандарының саны емес.",
+      "figureDescription": "Шеңбер 12 бірдей бұрышты секторға бөлінген, оның 5 секторы күлгін.",
+      "figureSha256": "1b1f67e53fdf1773e09444939ac672efdf6c6e2bf880da2280d4e048288bb8e5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(5/12)",
+        "checks": {
+          "equalSectors": 12,
+          "used": 5,
+          "sectorAngle": 30
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave41-seven-of-twelve-ribbon-remains",
+      "modelId": "visual-wave41-remaining-strip-original-numerator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "removed",
+        "parts": 12,
+        "removed": [
+          1,
+          3,
+          4,
+          8,
+          10
+        ]
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "d40930916cef7c4e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-1-level1.json#14",
+      "sourceCanonicalSha256": "c71391437f915dbd66e71ad62fad07773d5013a8e5ef7d1179a88c9148d6b265",
+      "sourceSkill": "Complement fraction of a cut strip, requested numerator at original partition",
+      "adaptationChanges": [
+        "Барлық10бастапқы визуалды дағды жеке сақталды:теңүшбұрыш/тор/сектордан үлес,кесілгеннен қалған алым,санның суреттегі бөлігі,бөлігі бойынша бүтін,төрт шеңберден таңдау,теңемес аудандар,алтыбұрыштың толықтауышы,екі кезеңнен қалғаны арқылы толықжол.",
+        "Үшбұрыш9бөлік/4күлгін,тор12/5,бәліш12/5,таспа12/5алынған,168км8бөлік/5көк,9бөліктің4-і12бала,мақсат2/3жәнежауапC,теңемесшаршы11/16,алтыбұрыш2боялған,12жолбөліктің3көк/4күлгін/5ақ35км болып жаңарды.",
+        "Native SVG барлық бөлікті геометриялық параметрмен құрады. Теңүшбұрыштар barycentric тордан,теңсекторлар бірдейбұрыштан,теңемесшаршы9нақтыполигоннан тұрады. Shoelace аудандары толықшаршыны және11/16үлесті береді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтіннің бөліктері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview; equal9triangle/12grid/12sectorareas,allstripcoloredcounts,4circlelabelbindings,unequal9regionactualareas11/16,regularhexagonareas,wholevsremainingdistancebrackets; all343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave41-seven-of-twelve-ribbon-remains.svg",
+      "verificationModule": "scripts/editorial/visual-wave41-models.mjs",
+      "statement": "Таспаның барлық тең бөліктері көрсетілген. Күлгін бөліктерді қиып алып тастады. Қалған ұзындықты БЕРІЛГЕН БӨЛІКТЕР САНЫНА сәйкес бөліммен жазады. Осы бөлшектің алымы неше? Жауапқа тек санды жазыңыз.",
+      "solution": "Барлығы 12 тең бөлік болған, 5 күлгін бөлігі алынды. Қалғаны 12 − 5 = 7 бөлік. Берілген бөлім 12 болып сақталады, қалған үлес (7/12). Сұралған алым 7, алынған бөліктер саны емес.",
+      "figureDescription": "Таспа 12 тең бөліктен тұрады; 5 күлгін бөлік алынып тасталған деп белгіленген, басқалары ақ.",
+      "figureSha256": "a94199866a44aaaa6f02ecc10dc4a98e3bf807104a0386417fcb7e0bf0570834",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": {
+          "allParts": 12,
+          "removed": 5,
+          "remaining": 7,
+          "originalPartitionFraction": "(7/12)"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave41-one-sixty-eight-eight-part-route",
+      "modelId": "visual-wave41-travel-unshaded-distance",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "travel",
+        "parts": 8,
+        "colored": 5,
+        "total": 168
+      },
+      "answer": "63",
+      "sourceRefs": [
+        {
+          "sourceId": "bfcfbe741710503a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-1-level2.json#3",
+      "sourceCanonicalSha256": "76446d99d0e7b3fe59c680678cd7ade5d3040807c058e5fdedaceec07100747d",
+      "sourceSkill": "Whole-distance times unshaded taxi fraction, not shaded bus distance",
+      "adaptationChanges": [
+        "Барлық10бастапқы визуалды дағды жеке сақталды:теңүшбұрыш/тор/сектордан үлес,кесілгеннен қалған алым,санның суреттегі бөлігі,бөлігі бойынша бүтін,төрт шеңберден таңдау,теңемес аудандар,алтыбұрыштың толықтауышы,екі кезеңнен қалғаны арқылы толықжол.",
+        "Үшбұрыш9бөлік/4күлгін,тор12/5,бәліш12/5,таспа12/5алынған,168км8бөлік/5көк,9бөліктің4-і12бала,мақсат2/3жәнежауапC,теңемесшаршы11/16,алтыбұрыш2боялған,12жолбөліктің3көк/4күлгін/5ақ35км болып жаңарды.",
+        "Native SVG барлық бөлікті геометриялық параметрмен құрады. Теңүшбұрыштар barycentric тордан,теңсекторлар бірдейбұрыштан,теңемесшаршы9нақтыполигоннан тұрады. Shoelace аудандары толықшаршыны және11/16үлесті береді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтіннің бөліктері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview; equal9triangle/12grid/12sectorareas,allstripcoloredcounts,4circlelabelbindings,unequal9regionactualareas11/16,regularhexagonareas,wholevsremainingdistancebrackets; all343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave41-one-sixty-eight-eight-part-route.svg",
+      "verificationModule": "scripts/editorial/visual-wave41-models.mjs",
+      "statement": "Жолаушы жолдың көкпен белгіленген бөлігін автобуспен, боялмаған бөлігін таксимен өтті. Жолақ тең бөліктерге бөлінген, үстінде барлық жолдың ұзындығы берілген. Таксимен жүрген жол неше километр? Жауапқа тек санды жазыңыз.",
+      "solution": "Бүкіл 168 км жол 8 тең бөлікке бөлінген. Бір бөлік 168 : 8 = 21 км. Таксимен жүрілген боялмаған бөліктер 3 дана, жолы 21 × 3 = 63 км. Автобус жолы 105 км; 105 + 63 = 168 км болып толық жолды береді.",
+      "figureDescription": "Жолақ 8 тең бөлік: алғашқы 5 көк, қалғаны ақ. Барлық жолақ үстіндегі өлшем 168 км.",
+      "figureSha256": "a7801b02b66f4251057284d37da2cc1888326c1313801441194e9754a14e63de",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "63",
+        "checks": {
+          "unitKm": 21,
+          "busParts": 5,
+          "taxiParts": 3,
+          "busKm": 105,
+          "taxiKm": 63
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave41-twelve-in-four-of-nine-groups",
+      "modelId": "visual-wave41-group-total-from-shaded-share",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "group",
+        "parts": 9,
+        "colored": 4,
+        "known": 12
+      },
+      "answer": "27",
+      "sourceRefs": [
+        {
+          "sourceId": "f83ca84bbfaee06f",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-1-level2.json#5",
+      "sourceCanonicalSha256": "92ccabb9e64f46177e753b1ac7cb52c4bbddce599644102b5ef4ae1066ed154c",
+      "sourceSkill": "Recovering whole group size from a pictured known fraction and subset count",
+      "adaptationChanges": [
+        "Барлық10бастапқы визуалды дағды жеке сақталды:теңүшбұрыш/тор/сектордан үлес,кесілгеннен қалған алым,санның суреттегі бөлігі,бөлігі бойынша бүтін,төрт шеңберден таңдау,теңемес аудандар,алтыбұрыштың толықтауышы,екі кезеңнен қалғаны арқылы толықжол.",
+        "Үшбұрыш9бөлік/4күлгін,тор12/5,бәліш12/5,таспа12/5алынған,168км8бөлік/5көк,9бөліктің4-і12бала,мақсат2/3жәнежауапC,теңемесшаршы11/16,алтыбұрыш2боялған,12жолбөліктің3көк/4күлгін/5ақ35км болып жаңарды.",
+        "Native SVG барлық бөлікті геометриялық параметрмен құрады. Теңүшбұрыштар barycentric тордан,теңсекторлар бірдейбұрыштан,теңемесшаршы9нақтыполигоннан тұрады. Shoelace аудандары толықшаршыны және11/16үлесті береді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтіннің бөліктері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview; equal9triangle/12grid/12sectorareas,allstripcoloredcounts,4circlelabelbindings,unequal9regionactualareas11/16,regularhexagonareas,wholevsremainingdistancebrackets; all343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave41-twelve-in-four-of-nine-groups.svg",
+      "verificationModule": "scripts/editorial/visual-wave41-models.mjs",
+      "statement": "Жолақ үйірмедегі барлық баланы тең топтарға бөліп көрсетеді. Көк топтардағы балалар робот құрастыруды таңдады, олардың саны 12. Үйірмеде барлығы неше бала бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Көк 4 бөлікке 12 бала сәйкес. Бір бөлік 12 : 4 = 3 бала. Барлық 9 бөлік 3 × 9 = 27 бала. Тексеру: 27 : 9 × 4 = 12. Жолақтағы әр бөлік бір бала емес, бірдей мөлшердегі топ.",
+      "figureDescription": "Барлығы 9 тең бөлік; алғашқы 4 көк, басқалары ақ. Бір бөліктегі бала саны жазылмаған.",
+      "figureSha256": "e07d8291136bd457337324e58fa8954d9d780999bd0af81f0f807b1edb2f7d5e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "27",
+        "checks": {
+          "knownParts": 4,
+          "membersPerPart": 3,
+          "totalParts": 9,
+          "totalMembers": 27
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave41-circle-c-two-thirds",
+      "modelId": "visual-wave41-select-circle-with-given-fraction",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "circles",
+        "target": [
+          2,
+          3
+        ],
+        "circles": [
+          {
+            "parts": 3,
+            "shaded": 1
+          },
+          {
+            "parts": 5,
+            "shaded": 2
+          },
+          {
+            "parts": 3,
+            "shaded": 2
+          },
+          {
+            "parts": 8,
+            "shaded": 2
+          }
+        ]
+      },
+      "answer": "C",
+      "sourceRefs": [
+        {
+          "sourceId": "f1d0e49a094ee8a8",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-1-level2.json#7",
+      "sourceCanonicalSha256": "c0b7bb8144453cf2458e13810a65d81e68e7da6d9df52680cd7105f1ad29dd4d",
+      "sourceSkill": "Selecting the circle whose shaded/total sectors matches target fraction",
+      "adaptationChanges": [
+        "Барлық10бастапқы визуалды дағды жеке сақталды:теңүшбұрыш/тор/сектордан үлес,кесілгеннен қалған алым,санның суреттегі бөлігі,бөлігі бойынша бүтін,төрт шеңберден таңдау,теңемес аудандар,алтыбұрыштың толықтауышы,екі кезеңнен қалғаны арқылы толықжол.",
+        "Үшбұрыш9бөлік/4күлгін,тор12/5,бәліш12/5,таспа12/5алынған,168км8бөлік/5көк,9бөліктің4-і12бала,мақсат2/3жәнежауапC,теңемесшаршы11/16,алтыбұрыш2боялған,12жолбөліктің3көк/4күлгін/5ақ35км болып жаңарды.",
+        "Native SVG барлық бөлікті геометриялық параметрмен құрады. Теңүшбұрыштар barycentric тордан,теңсекторлар бірдейбұрыштан,теңемесшаршы9нақтыполигоннан тұрады. Shoelace аудандары толықшаршыны және11/16үлесті береді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтіннің бөліктері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview; equal9triangle/12grid/12sectorareas,allstripcoloredcounts,4circlelabelbindings,unequal9regionactualareas11/16,regularhexagonareas,wholevsremainingdistancebrackets; all343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave41-circle-c-two-thirds.svg",
+      "verificationModule": "scripts/editorial/visual-wave41-models.mjs",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "statement": "Әр дөңгелек өз ішінде тең секторларға бөлінген. Қай дөңгелектің (2/3) бөлігі боялған?",
+      "solution": "Әр дөңгелекте боялған секторды барлық секторға бөлеміз: A: 1 / 3 = (1/3); B: 2 / 5 = (2/5); C: 2 / 3 = (2/3); D: 2 / 8 = (1/4). (2/3) үлесі тек C дөңгелегінде. Бөлімге боялмаған бөліктер санын емес, барлық бөліктер санын жазамыз.",
+      "figureDescription": "A: 3 тең сектордың 1 данасы күлгін; B: 5 тең сектордың 2 данасы күлгін; C: 3 тең сектордың 2 данасы күлгін; D: 8 тең сектордың 2 данасы күлгін.",
+      "figureSha256": "149f7ec8c450617f35e172167473c54af79763f4eb2254b34b441cae72945e95",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "C",
+        "checks": {
+          "target": "(2/3)",
+          "circleFractions": [
+            "(1/3)",
+            "(2/5)",
+            "(2/3)",
+            "(1/4)"
+          ],
+          "selected": "C"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave41-eleven-sixteenths-unequal-regions",
+      "modelId": "visual-wave41-unequal-regions-area-fraction",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "unequal",
+        "layout": "quarter-half-tiny"
+      },
+      "answer": "(11/16)",
+      "sourceRefs": [
+        {
+          "sourceId": "079204f678228969",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-1-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-1-level3.json#10",
+      "sourceCanonicalSha256": "df1567c12f395bbcd719d47e7759c642925f432639538b161b56e8690f43209b",
+      "sourceSkill": "Measuring unequal pictured regions by common unit AREA, not raw region counts",
+      "adaptationChanges": [
+        "Барлық10бастапқы визуалды дағды жеке сақталды:теңүшбұрыш/тор/сектордан үлес,кесілгеннен қалған алым,санның суреттегі бөлігі,бөлігі бойынша бүтін,төрт шеңберден таңдау,теңемес аудандар,алтыбұрыштың толықтауышы,екі кезеңнен қалғаны арқылы толықжол.",
+        "Үшбұрыш9бөлік/4күлгін,тор12/5,бәліш12/5,таспа12/5алынған,168км8бөлік/5көк,9бөліктің4-і12бала,мақсат2/3жәнежауапC,теңемесшаршы11/16,алтыбұрыш2боялған,12жолбөліктің3көк/4күлгін/5ақ35км болып жаңарды.",
+        "Native SVG барлық бөлікті геометриялық параметрмен құрады. Теңүшбұрыштар barycentric тордан,теңсекторлар бірдейбұрыштан,теңемесшаршы9нақтыполигоннан тұрады. Shoelace аудандары толықшаршыны және11/16үлесті береді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтіннің бөліктері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview; equal9triangle/12grid/12sectorareas,allstripcoloredcounts,4circlelabelbindings,unequal9regionactualareas11/16,regularhexagonareas,wholevsremainingdistancebrackets; all343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave41-eleven-sixteenths-unequal-regions.svg",
+      "verificationModule": "scripts/editorial/visual-wave41-models.mjs",
+      "options": [
+        "(6/9)",
+        "(11/16)",
+        "(5/16)",
+        "(9/16)"
+      ],
+      "statement": "Қалың сызықтар шаршыны төрт тең ширекке бөледі. Әр ширектің ішіндегі бөліктер өзара тең, бірақ әртүрлі ширектердің ұсақ бөліктері бірдей емес. Күлгін аудан бүкіл шаршының қандай бөлігі?",
+      "solution": "Шаршыны ойша 16 бірдей ең кішкентай шаршымен өлшейміз. Жоғарғы сол ширек 4 осындай ауданға тең және толық боялған. Жоғарғы оң ширектің жартысы 2 аудан; төменгі сол ширекте 3 кішкентай шаршы; төменгі оң ширектің жартысы 2 аудан боялған. Барлығы 4 + 2 + 3 + 2 = 11. Демек боялған үлес (11/16). Жай суреттегі боялған пішін санын барлық пішін санына бөлу қате, өйткені олардың аудандары тең емес.",
+      "figureDescription": "Шаршының 4 тең ширегі бар. Сол жоғарғы ширек толық күлгін; оң жоғарғы ширекте тең 2 үшбұрыш бар, біреуі күлгін. Сол төменгі ширекте 4 тең шаршы бар, оның 3-еуі күлгін. Оң төменгі ширекте 2 тең тікбұрыш бар, солы күлгін.",
+      "figureSha256": "ae63e654173056777617f6f28918a205bbe0ce47e93f2dd1d907171c4d102c10",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(11/16)",
+        "checks": {
+          "allAreas": [
+            19600,
+            9800,
+            9800,
+            4900,
+            4900,
+            4900,
+            4900,
+            9800,
+            9800
+          ],
+          "paintedAreas": [
+            19600,
+            9800,
+            4900,
+            4900,
+            4900,
+            9800
+          ],
+          "shaded": 53900,
+          "total": 78400,
+          "fraction": "(11/16)"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave41-four-unshaded-hexagon-sectors",
+      "modelId": "visual-wave41-hexagon-unshaded-fraction",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "hexagon",
+        "parts": 6,
+        "shaded": [
+          0,
+          3
+        ]
+      },
+      "answer": "(2/3)",
+      "sourceRefs": [
+        {
+          "sourceId": "e7b590371d37cdff",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-1-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-1-leveltest.json#2",
+      "sourceCanonicalSha256": "d25f20c75e7007f069d3ed539df7dbb48e7dd9a2b76125d3fe9365bbdfb5acbb",
+      "sourceSkill": "Complement of shaded equal-area triangles in a regular hexagon",
+      "adaptationChanges": [
+        "Барлық10бастапқы визуалды дағды жеке сақталды:теңүшбұрыш/тор/сектордан үлес,кесілгеннен қалған алым,санның суреттегі бөлігі,бөлігі бойынша бүтін,төрт шеңберден таңдау,теңемес аудандар,алтыбұрыштың толықтауышы,екі кезеңнен қалғаны арқылы толықжол.",
+        "Үшбұрыш9бөлік/4күлгін,тор12/5,бәліш12/5,таспа12/5алынған,168км8бөлік/5көк,9бөліктің4-і12бала,мақсат2/3жәнежауапC,теңемесшаршы11/16,алтыбұрыш2боялған,12жолбөліктің3көк/4күлгін/5ақ35км болып жаңарды.",
+        "Native SVG барлық бөлікті геометриялық параметрмен құрады. Теңүшбұрыштар barycentric тордан,теңсекторлар бірдейбұрыштан,теңемесшаршы9нақтыполигоннан тұрады. Shoelace аудандары толықшаршыны және11/16үлесті береді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтіннің бөліктері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview; equal9triangle/12grid/12sectorareas,allstripcoloredcounts,4circlelabelbindings,unequal9regionactualareas11/16,regularhexagonareas,wholevsremainingdistancebrackets; all343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave41-four-unshaded-hexagon-sectors.svg",
+      "verificationModule": "scripts/editorial/visual-wave41-models.mjs",
+      "options": [
+        "(1/3)",
+        "(2/3)",
+        "(3/2)",
+        "(1/2)"
+      ],
+      "statement": "Дұрыс алтыбұрыш ортасынан тең үшбұрыштарға бөлінген. Оның БОЯЛМАҒАН бөлігіне сәйкес бөлшекті таңдаңыз.",
+      "solution": "Алтыбұрышта 6 тең үшбұрыш бар, оның 2 данасы күлгін. Боялмағаны 6 − 2 = 4. Үлес (4/6) = (2/3). Сұрақ боялған (1/3) үлесі туралы емес.",
+      "figureDescription": "Дұрыс алтыбұрыш 6 тең үшбұрышқа бөлінген, 2 қарама-қарсы бөлігі күлгін.",
+      "figureSha256": "4f0b90d9012619e105a2c90c0a29fc96eafb230e51728a0e515927a1e8d7f4e2",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(2/3)",
+        "checks": {
+          "allSectors": 6,
+          "shaded": 2,
+          "unshaded": 4
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave41-thirty-five-five-remaining-route-parts",
+      "modelId": "visual-wave41-whole-route-from-remaining-parts",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "route",
+        "parts": 12,
+        "firstParts": 3,
+        "secondParts": 4,
+        "remainingKm": 35
+      },
+      "answer": "84",
+      "sourceRefs": [
+        {
+          "sourceId": "c53538f52207d192",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-1-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-1-leveltest.json#5",
+      "sourceCanonicalSha256": "0d5b1302421b008c65e9b51c1d7a420f0283b9c76ed99871b501df948beeb110",
+      "sourceSkill": "Inverse whole-route reconstruction from the remaining uncolored part after two stages",
+      "adaptationChanges": [
+        "Барлық10бастапқы визуалды дағды жеке сақталды:теңүшбұрыш/тор/сектордан үлес,кесілгеннен қалған алым,санның суреттегі бөлігі,бөлігі бойынша бүтін,төрт шеңберден таңдау,теңемес аудандар,алтыбұрыштың толықтауышы,екі кезеңнен қалғаны арқылы толықжол.",
+        "Үшбұрыш9бөлік/4күлгін,тор12/5,бәліш12/5,таспа12/5алынған,168км8бөлік/5көк,9бөліктің4-і12бала,мақсат2/3жәнежауапC,теңемесшаршы11/16,алтыбұрыш2боялған,12жолбөліктің3көк/4күлгін/5ақ35км болып жаңарды.",
+        "Native SVG барлық бөлікті геометриялық параметрмен құрады. Теңүшбұрыштар barycentric тордан,теңсекторлар бірдейбұрыштан,теңемесшаршы9нақтыполигоннан тұрады. Shoelace аудандары толықшаршыны және11/16үлесті береді. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Бүтіннің бөліктері",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all10saved/new/fullsolutions/MCQreview; equal9triangle/12grid/12sectorareas,allstripcoloredcounts,4circlelabelbindings,unequal9regionactualareas11/16,regularhexagonareas,wholevsremainingdistancebrackets; all343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave41-thirty-five-five-remaining-route-parts.svg",
+      "verificationModule": "scripts/editorial/visual-wave41-models.mjs",
+      "statement": "Жолақ велосипедшінің бүкіл бағытын тең бөліктерге бөледі. Көк бөлікті бірінші сағатта, күлгін бөлікті екінші сағатта өтті. Боялмаған бөліктің ұзындығы үстінде берілген. Бүкіл бағыт неше километр? Жауапқа тек санды жазыңыз.",
+      "solution": "Барлығы 12 тең бөлік: 3 көк, 4 күлгін, 5 боялмаған. Боялмаған 5 бөлік 35 км, сондықтан бір бөлік 35 : 5 = 7 км. Бүкіл жол 7 × 12 = 84 км. Тексеру 21 + 28 + 35 = 84. Берілген 35 км бір ғана бөлікке қатысты емес.",
+      "figureDescription": "Жолақ 12 тең бөлікке бөлінген. Алғашқы 3 көк, келесі 4 күлгін, соңғы 5 ақ бөліктің үстінде 35 км өлшемі бар.",
+      "figureSha256": "305d88d5cb8361744ff0ce62e42f9c165539c2916965723384c7cd207d0ddebc",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "84",
+        "checks": {
+          "remainingParts": 5,
+          "unitKm": 7,
+          "firstKm": 21,
+          "secondKm": 28,
+          "totalKm": 84
+        }
+      }
+    }
+  ]
+}

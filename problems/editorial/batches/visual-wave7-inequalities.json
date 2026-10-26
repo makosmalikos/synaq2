@@ -1,0 +1,1678 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "Complete saved visual chapter5 scope, no capture/download and no source traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources in grade6 topics5.1–5.7",
+    "sourceVisualOccurrences": 25,
+    "addressedNewDrafts": 24,
+    "previousEditionsRetained": [
+      {
+        "sourceId": "316028916b84ad9e",
+        "editionId": "visual-interval-integer"
+      }
+    ],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "045e507f6550c998",
+      "0e3cb7239f23e0d4",
+      "12c74c7734cd10c7",
+      "1a3ae1c6e9806920",
+      "1b7a6cfc80081fbd",
+      "1c1366f39ad3e144",
+      "29db0ec9e942ed94",
+      "2d355b6e281c27c8",
+      "332bc994e817d23a",
+      "4b7b03bf7c75ce61",
+      "4d12081e965be501",
+      "4d9288d466f173ff",
+      "597a2f5c8370824f",
+      "8834e9ba307a7442",
+      "89ff4a1b41860435",
+      "a1b9ea3b989b8157",
+      "a717458d69fde19e",
+      "c5601715cbe5a061",
+      "ccac26f46d675606",
+      "f33530c8f46ed0ff",
+      "f5aca4008b2e2ac1",
+      "f664cc2cffdb694e",
+      "fb88c9e2587e7dab",
+      "ff65e8cb35fe1430"
+    ],
+    "distinctModels": 24,
+    "semantics": "24 individually addressed drafts plus1 retained source exhaust all25 visual occurrences. Named source-specific models do not imply24 unrelated mathematical families."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave7-grid-area-comparison",
+      "modelId": "visual-wave7-grid-area-difference",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "grid-pair",
+        "shapes": [
+          {
+            "label": "A",
+            "rows": 4,
+            "cols": 9
+          },
+          {
+            "label": "B",
+            "rows": 7,
+            "cols": 7
+          }
+        ]
+      },
+      "answer": "13",
+      "sourceRefs": [
+        {
+          "sourceId": "4d9288d466f173ff",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-1-level1.json#7",
+      "sourceCanonicalSha256": "4b72b8c4b2576f01c32c726fbb90c6fb9ee663aa1127d7f211cc2ae643e2ca5e",
+      "sourceSkill": "Counting unit cells in a long rectangle and a square, then comparing their areas by positive difference",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-grid-area-comparison.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "statement": "Әр торкөз — қабырғасы 1 см шаршы. A тік төртбұрышы мен B шаршысының аудандарын салыстырыңыз. Үлкенінің ауданы екіншісінен неше см²-ге артық? Жауапқа тек санды жазыңыз.",
+      "solution": "A: 9 · 4 = 36 см². B: 7 · 7 = 49 см². Сондықтан B ауданы үлкен: 49 − 36 = 13 см².\nЖауап: 13.",
+      "figureDescription": "Әр торкөз — қабырғасы 1 см шаршы. A тік төртбұрышы мен B шаршысының аудандарын салыстырыңыз. Үлкенінің ауданы екіншісінен неше см²-ге артық? Жауапқа тек санды жазыңыз. A: 4 жол, 9 баған бірлік шаршы; B: 7 жол, 7 баған бірлік шаршы. ",
+      "figureSha256": "5b54456fa25d65149da0d8f62901a676320ef239174d88eb54293cdb8c128cb8",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "13",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-negative-point-order",
+      "modelId": "visual-wave7-numeric-order",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "A",
+            "value": -5
+          },
+          {
+            "label": "B",
+            "value": -2
+          },
+          {
+            "label": "C",
+            "value": 4
+          }
+        ],
+        "min": -7,
+        "max": 6,
+        "labels": [
+          0,
+          1
+        ],
+        "first": "A",
+        "second": "B"
+      },
+      "answer": "-5 < -2",
+      "sourceRefs": [
+        {
+          "sourceId": "ff65e8cb35fe1430",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-1-level1.json#8",
+      "sourceCanonicalSha256": "61d6ee26a92464b86f0aa6634907ce47e8b98969b811752a0537f9286ae5fa32",
+      "sourceSkill": "Reading and comparing two negative coordinates without dropping their minus signs",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-negative-point-order.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "-5 > -2",
+        "-5 < -2",
+        "5 < 2",
+        "-2 < -5"
+      ],
+      "statement": "Шкаладан A және B координаталарын оқыңыз. Осы екі санды дұрыс салыстыратын теңсіздікті таңдаңыз.",
+      "solution": "A(-5), B(-2). Сол жақтағы сан кіші: -5 < -2. Екі сан да теріс болғанда 0-ден алысырақ орналасқаны кіші болады.\nЖауап: -5 < -2.",
+      "figureDescription": "Шкаладан A және B координаталарын оқыңыз. Осы екі санды дұрыс салыстыратын теңсіздікті таңдаңыз. Нүктелер: A(-5), B(-2), C(4). ",
+      "figureSha256": "34e88013ad5fe0fe8dae1bb2707d47c9a58977947237a62a958951d55074e1d5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-5 < -2",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-strict-between-integers",
+      "modelId": "visual-wave7-strict-integer-count",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "A",
+            "value": -4
+          },
+          {
+            "label": "B",
+            "value": 5
+          }
+        ],
+        "min": -6,
+        "max": 7,
+        "labels": [
+          0,
+          1
+        ],
+        "first": "A",
+        "second": "B"
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "f5aca4008b2e2ac1",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-1-level1.json#9",
+      "sourceCanonicalSha256": "55ac7486c9fce614c53a20c8e53b50363671737a4a3d06250065a50192f31449",
+      "sourceSkill": "Counting integers strictly between two plotted coordinates, excluding both endpoint values",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-strict-between-integers.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "statement": "A координатасын a, B координатасын b деп алайық. a < x < b шартын қанағаттандыратын неше бүтін x бар? Жауапқа тек санды жазыңыз.",
+      "solution": "A(-4), B(5). Екі шекара да кірмейді. Сәйкес бүтіндер: -3, -2, -1, 0, 1, 2, 3, 4. Барлығы 8.\nЖауап: 8.",
+      "figureDescription": "A координатасын a, B координатасын b деп алайық. a < x < b шартын қанағаттандыратын неше бүтін x бар? Жауапқа тек санды жазыңыз. Нүктелер: A(-4), B(5). ",
+      "figureSha256": "cef4b1eb24b4d0fd5e374a939e1732c1dc1d564f160a7db0189e5a45600dea2f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-heavier-pumpkin",
+      "modelId": "visual-wave7-possible-mass",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "balance",
+        "weights": [
+          5,
+          4
+        ],
+        "lowerSide": "left",
+        "massCandidates": [
+          9,
+          9.5,
+          8,
+          4
+        ]
+      },
+      "answer": "9,5 кг",
+      "sourceRefs": [
+        {
+          "sourceId": "1a3ae1c6e9806920",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-1-level1.json#11",
+      "sourceCanonicalSha256": "fc943fc285fdb964116c37aa82093eb8194e190874b484242403f8446fe60665",
+      "sourceSkill": "Reading a lower balance pan as strictly heavier than the sum of two labelled weights",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-heavier-pumpkin.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "9 кг",
+        "9,5 кг",
+        "8 кг",
+        "4 кг"
+      ],
+      "statement": "Сол табақтағы асқабақтың массасы x кг. Оң жақтағы кір тастардың массалары килограммен жазылған. Таразының көлбеуін ескерсек, x қай мән болуы мүмкін?",
+      "solution": "Оң жақтың толық массасы 5 + 4 = 9 кг. Сол табақ төмен, сондықтан асқабақ ауыр: x > 9. Нұсқалардың ішінде тек 9,5 кг осы шартқа сай; тең масса таразыны көлбеу ұстамас еді.\nЖауап: 9,5 кг.",
+      "figureDescription": "Сол табақтағы асқабақтың массасы x кг. Оң жақтағы кір тастардың массалары килограммен жазылған. Таразының көлбеуін ескерсек, x қай мән болуы мүмкін? Сол табақ оң табақтан төмен. Оңдағы кір тастар 5 және 4 кг. ",
+      "figureSha256": "f1e17ba67477ca139f3bda4e51c85e34b446b48a27390fb84921ee7e4649cfa3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9,5 кг",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "The lower left pan is strictly heavier, so equality with total weights is excluded",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-negative-multiplier-order",
+      "modelId": "visual-wave7-negative-scale-order",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "u",
+            "value": -4
+          },
+          {
+            "label": "v",
+            "value": 1
+          }
+        ],
+        "min": -6,
+        "max": 4,
+        "labels": [
+          0,
+          1
+        ],
+        "numericLabels": false,
+        "factor": -2,
+        "first": "u",
+        "second": "v"
+      },
+      "answer": "-2u > -2v",
+      "sourceRefs": [
+        {
+          "sourceId": "a717458d69fde19e",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-2-level1.json#2",
+      "sourceCanonicalSha256": "bc38cc0df147615d8114528e063138168f5081c0b9789adc8e62e82e5c61fff1",
+      "sourceSkill": "Reversing order under the same negative multiplier rather than reversing for every operation",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-negative-multiplier-order.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "-2u < -2v",
+        "-2u > -2v",
+        "4u > 4v",
+        "u + 3 > v + 3"
+      ],
+      "statement": "Түзудегі u және v сандарының орналасуын салыстырыңыз. Төмендегі теңсіздіктердің қайсысы міндетті түрде дұрыс?",
+      "solution": "u нүктесі v нүктесінен солда, яғни u < v. Екі жақты -2 теріс санына көбейткенде белгі кері бағытқа өзгереді: -2u > -2v. Оң санға көбейту немесе екі жаққа бірдей сан қосу белгіні өзгертпейді.\nЖауап: -2u > -2v.",
+      "figureDescription": "Түзудегі u және v сандарының орналасуын салыстырыңыз. Төмендегі теңсіздіктердің қайсысы міндетті түрде дұрыс? Солдан оңға қарай u, v. ",
+      "figureSha256": "aa5e8f9734f5e822faf869103958c68e48cba58faa717d82499d72e5d3440926",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-2u > -2v",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Negative multiplication reverses every ordered pair, not only the plotted example",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-same-left-translation",
+      "modelId": "visual-wave7-translated-order",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "A",
+            "value": -2
+          },
+          {
+            "label": "B",
+            "value": 4
+          },
+          {
+            "label": "A′",
+            "value": -7
+          },
+          {
+            "label": "B′",
+            "value": -1
+          }
+        ],
+        "min": -9,
+        "max": 6,
+        "labels": [
+          -7,
+          -2,
+          -1,
+          0,
+          1,
+          4
+        ],
+        "first": "A",
+        "second": "B",
+        "shiftedFirst": "A′",
+        "shiftedSecond": "B′",
+        "translation": -5
+      },
+      "answer": "-2 − 5 < 4 − 5",
+      "sourceRefs": [
+        {
+          "sourceId": "c5601715cbe5a061",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-2-level1.json#7",
+      "sourceCanonicalSha256": "89307bc6b9a0699cca72349123487645cafe6e03208e07f398739949f6245f4a",
+      "sourceSkill": "Matching two identical leftward translations to adding the same signed amount on both sides",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-same-left-translation.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "-2 − 5 < 4 − 5",
+        "-2 − 5 > 4 − 5",
+        "-2 + 5 < 4 + 5",
+        "-2 − 5 < 4 + 5"
+      ],
+      "statement": "Көк нүктелер бірдей шамаға солға жылжып, қызғылт нүктелердің орнына келді. Екі нұсқар да -5 өзгерісін көрсетеді. Дәл осы жылжуды қай теңсіздік сипаттайды?",
+      "solution": "Бастапқы сандар -2 және 4. Екеуіне де -5 қосылған: соңғы сандар -7 және -1. Бірдей сан қосқанда рет сақталады: -2 − 5 < 4 − 5.\nЖауап: -2 − 5 < 4 − 5.",
+      "figureDescription": "Көк нүктелер бірдей шамаға солға жылжып, қызғылт нүктелердің орнына келді. Екі нұсқар да -5 өзгерісін көрсетеді. Дәл осы жылжуды қай теңсіздік сипаттайды? Нүктелер: A(-2), B(4), A′(-7), B′(-1). ",
+      "figureSha256": "1162a21bd5a5d9be18f199d17dce123879eef32fc966c236ab3b01206ab82c1f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "-2 − 5 < 4 − 5",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-add-inequalities",
+      "modelId": "visual-wave7-sum-left-sides",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "sum",
+        "leftHalfUnits": [
+          13,
+          9
+        ],
+        "right": [
+          3,
+          2
+        ]
+      },
+      "answer": "11",
+      "sourceRefs": [
+        {
+          "sourceId": "045e507f6550c998",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-2-level1.json#12",
+      "sourceCanonicalSha256": "9536f2853db4bde79b26e2aee529f665ca2591bc85a4ba5ecf725fca40882dac",
+      "sourceSkill": "Adding corresponding sides of two true same-direction inequalities with half-integer left values",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-add-inequalities.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "statement": "Сызбадағы екі дұрыс теңсіздік мүшелеп қосылды. Сызықтың астындағы сұрақ белгісінің орнына қандай сан жазылады? Жауапқа тек санды жазыңыз.",
+      "solution": "Сол жақтар: 6,5 + 4,5 = 11. Оң жақтар: 3 + 2 = 5. Шыққан теңсіздік 11 > 5 — дұрыс.\nЖауап: 11.",
+      "figureDescription": "Сызбадағы екі дұрыс теңсіздік мүшелеп қосылды. Сызықтың астындағы сұрақ белгісінің орнына қандай сан жазылады? Жауапқа тек санды жазыңыз. Берілген жолдар 6,5 > 3 және 4,5 > 2. Қосындының сол жағы белгісіз, оң жағы 5. ",
+      "figureSha256": "f00aaac099a50c528ac7aa8ef62f7a47a69a57ecefc9660cb60cbf3588ef5070",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "11",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-ordered-triple",
+      "modelId": "visual-wave7-transitive-order",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "axis",
+        "points": [
+          {
+            "label": "u",
+            "value": -5
+          },
+          {
+            "label": "v",
+            "value": 0
+          },
+          {
+            "label": "w",
+            "value": 4
+          }
+        ],
+        "min": -7,
+        "max": 6,
+        "labels": [
+          0,
+          1
+        ],
+        "numericLabels": false,
+        "upper": "w",
+        "middle": "v",
+        "lower": "u"
+      },
+      "answer": "w > u",
+      "sourceRefs": [
+        {
+          "sourceId": "4b7b03bf7c75ce61",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-2-level1.json#13",
+      "sourceCanonicalSha256": "c0f95e779bc176fb14a5e153ca1f4cc7e70463a6d6a7b2eef5a4168590a04aa0",
+      "sourceSkill": "Using the order of three plotted letters to infer a transitive inequality",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-ordered-triple.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "u > w",
+        "v > w",
+        "w > u",
+        "u > v"
+      ],
+      "statement": "Түзудегі u, v, w сандарының орналасуына сүйеніп, дұрыс тұжырымды таңдаңыз.",
+      "solution": "Солдан оңға қарай u, v, w орналасқан. Сондықтан w > v және v > u. Транзитивтілік бойынша w > u.\nЖауап: w > u.",
+      "figureDescription": "Түзудегі u, v, w сандарының орналасуына сүйеніп, дұрыс тұжырымды таңдаңыз. Солдан оңға қарай u, v, w. ",
+      "figureSha256": "96d7d43a599b4a88ee6ff345a23eb0cfb35cb85103af3506b12c9f24a1ba134b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "w > u",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-half-open-integer-count",
+      "modelId": "visual-wave7-interval-integer-count",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": -5,
+            "hi": 3,
+            "lc": false,
+            "hc": true
+          }
+        ],
+        "min": -7,
+        "max": 5
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "fb88c9e2587e7dab",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-3-level1.json#3",
+      "sourceCanonicalSha256": "fc1569c61dc2d9167293ee5c21e64a4c13dd7fff66a87c04a281d37f89b02a1f",
+      "sourceSkill": "Counting integer members of a left-open right-closed interval",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-half-open-integer-count.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "statement": "Боялған сан аралығына тиісті бүтін сандардың санын табыңыз. Бос және толтырылған шеткі нүктелерді ескеріңіз. Жауапқа тек санды жазыңыз.",
+      "solution": "Суреттегі аралық (-5; 3]. Бүтіндері: -4, -3, -2, -1, 0, 1, 2, 3. Барлығы 8. Ашық шекара кірмейді, жабық шекара кіреді.\nЖауап: 8.",
+      "figureDescription": "Боялған сан аралығына тиісті бүтін сандардың санын табыңыз. Бос және толтырылған шеткі нүктелерді ескеріңіз. Жауапқа тек санды жазыңыз. Қатар 1: сол жақ -5 шекарасы бос, оң жақ 3 шекарасы толтырылған. ",
+      "figureSha256": "8421b42157f39bd8e4e87aa0e82c205576f944462f7722a96d4a39594558fa32",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-closed-left-ray",
+      "modelId": "visual-wave7-ray-inequality",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": null,
+            "hi": -4,
+            "lc": false,
+            "hc": true
+          }
+        ],
+        "min": -8,
+        "max": 2
+      },
+      "answer": "x ≤ -4",
+      "sourceRefs": [
+        {
+          "sourceId": "a1b9ea3b989b8157",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-3-level1.json#7",
+      "sourceCanonicalSha256": "18c0a40e275dc8b237b24dec957bba3e80b03ea688067f0f229aaa2c3e01efee",
+      "sourceSkill": "Reading a leftward infinite ray and including its filled endpoint",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-closed-left-ray.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "x < -4",
+        "x ≥ -4",
+        "x ≤ -4",
+        "x > -4"
+      ],
+      "statement": "Боялған сәулеге сәйкес теңсіздікті таңдаңыз. Толтырылған шекара осы жиынға кіреді.",
+      "solution": "Боялған сәуле -4 белгісінен солға созылады. Шеткі нүкте толтырылған, сондықтан шекара кіреді: x ≤ -4.\nЖауап: x ≤ -4.",
+      "figureDescription": "Боялған сәулеге сәйкес теңсіздікті таңдаңыз. Толтырылған шекара осы жиынға кіреді. Қатар 1: сол жақ солға шексіз созылады, оң жақ -4 шекарасы толтырылған. ",
+      "figureSha256": "b62a12b4e7385db8bf1cbe9698d29c3c0a319720534015cfa16c52ee21e9e398",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "x ≤ -4",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-endpoint-point-membership",
+      "modelId": "visual-wave7-marked-members-count",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": -4,
+            "hi": 3,
+            "lc": true,
+            "hc": false
+          }
+        ],
+        "min": -6,
+        "max": 5,
+        "points": [
+          {
+            "label": "A",
+            "value": -5
+          },
+          {
+            "label": "B",
+            "value": -4
+          },
+          {
+            "label": "C",
+            "value": 0
+          },
+          {
+            "label": "D",
+            "value": 3
+          },
+          {
+            "label": "E",
+            "value": 4
+          }
+        ]
+      },
+      "answer": "2",
+      "sourceRefs": [
+        {
+          "sourceId": "0e3cb7239f23e0d4",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-3-level1.json#11",
+      "sourceCanonicalSha256": "c40be10b998828e462b4645014cd45c82d7652b2cdc6bbcfdac9a192bdbbb4c2",
+      "sourceSkill": "Testing marked points against an interval, with explicit included and excluded boundary cases",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-endpoint-point-membership.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "statement": "Жоғарғы қатарда сан аралығы, төменгі қатарда бес нүкте бірдей шкаламен берілген. Неше белгіленген нүкте осы аралыққа тиісті? Жауапқа тек санды жазыңыз.",
+      "solution": "Жиын [-4; 3). Нүктелер: A(-5), B(-4), C(0), D(3), E(4). Тиістілері B, C. Саны 2. Шекарадағы нүктелердің тиістілігі шеңбердің бос не толтырылған болуына тәуелді.\nЖауап: 2.",
+      "figureDescription": "Жоғарғы қатарда сан аралығы, төменгі қатарда бес нүкте бірдей шкаламен берілген. Неше белгіленген нүкте осы аралыққа тиісті? Жауапқа тек санды жазыңыз. Нүктелер: A(-5), B(-4), C(0), D(3), E(4). Қатар 1: сол жақ -4 шекарасы толтырылған, оң жақ 3 шекарасы бос. ",
+      "figureSha256": "217076a9d697938522db34412f13527e04438eb25c82558e7136cd5857468d05",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-write-half-open-interval",
+      "modelId": "visual-wave7-interval-notation",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": -3,
+            "hi": 4,
+            "lc": true,
+            "hc": false
+          }
+        ],
+        "min": -6,
+        "max": 7
+      },
+      "answer": "[-3; 4)",
+      "sourceRefs": [
+        {
+          "sourceId": "f664cc2cffdb694e",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-3-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-3-level1.json#15",
+      "sourceCanonicalSha256": "807e388be104b16a2d08cd88d7e8d9fca44447cf94deafc0733bb22db87144ca",
+      "sourceSkill": "Choosing brackets from separately filled left and empty right endpoints",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-write-half-open-interval.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "(-3; 4]",
+        "[-3; 4]",
+        "[-3; 4)",
+        "(-3; 4)"
+      ],
+      "statement": "Сызбадағы боялған жиынның сан аралығы түріндегі дұрыс белгіленуін таңдаңыз.",
+      "solution": "Сол шекара -3 — жабық, оң шекара 4 — ашық. Сондықтан [-3; 4).\nЖауап: [-3; 4).",
+      "figureDescription": "Сызбадағы боялған жиынның сан аралығы түріндегі дұрыс белгіленуін таңдаңыз. Қатар 1: сол жақ -3 шекарасы толтырылған, оң жақ 4 шекарасы бос. ",
+      "figureSha256": "f122d485ba5ab58ff4858d4b515d4560b1077ceafd8e1476c48ab012485860b8",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "[-3; 4)",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-disjoint-intervals",
+      "modelId": "visual-wave7-disjoint-statement",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": -7,
+            "hi": -3,
+            "lc": true,
+            "hc": true
+          },
+          {
+            "lo": 2,
+            "hi": 6,
+            "lc": false,
+            "hc": true
+          }
+        ],
+        "min": -9,
+        "max": 8,
+        "names": [
+          "C",
+          "D"
+        ]
+      },
+      "answer": "C ∩ D = ∅",
+      "sourceRefs": [
+        {
+          "sourceId": "89ff4a1b41860435",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-4-level1.json#2",
+      "sourceCanonicalSha256": "9b80e65c1cbfae3655704994239a6db66daaac98b7cfe756a9af298973314782",
+      "sourceSkill": "Recognizing a genuinely empty intersection rather than filling the gap as a continuous union",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-disjoint-intervals.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "C ∪ D = [-7; 6]",
+        "C ∩ D = [-3; 2]",
+        "C ∪ D = (-7; 6]",
+        "C ∩ D = ∅"
+      ],
+      "statement": "C және D аралықтары екі қатарда бірдей шкаламен көрсетілген. Қай тұжырым дұрыс?",
+      "solution": "C = [-7; -3], D = (2; 6]. Олардың арасында бос орын бар, ортақ сан жоқ. Сондықтан C ∩ D = ∅. Бірігуін бір тұтас аралық деп жазсақ, бос орынды қате қосып жібереміз.\nЖауап: C ∩ D = ∅.",
+      "figureDescription": "C және D аралықтары екі қатарда бірдей шкаламен көрсетілген. Қай тұжырым дұрыс? C: сол жақ -7 шекарасы толтырылған, оң жақ -3 шекарасы толтырылған; D: сол жақ 2 шекарасы бос, оң жақ 6 шекарасы толтырылған. ",
+      "figureSha256": "2e628453102e046439f9422734d0550a672867785bdc93d2cc84756e038bf000",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "C ∩ D = ∅",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-closed-intersection",
+      "modelId": "visual-wave7-intersection-notation",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": -6,
+            "hi": 4,
+            "lc": false,
+            "hc": true
+          },
+          {
+            "lo": -1,
+            "hi": 8,
+            "lc": true,
+            "hc": false
+          }
+        ],
+        "min": -8,
+        "max": 10,
+        "names": [
+          "A",
+          "B"
+        ]
+      },
+      "answer": "[-1; 4]",
+      "sourceRefs": [
+        {
+          "sourceId": "1c1366f39ad3e144",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-4-level1.json#13",
+      "sourceCanonicalSha256": "dd86e8b581070565d16c22323baa48012a1d516aea1787f02c3430ac6606a9ff",
+      "sourceSkill": "Taking the common overlap and retaining a boundary only when it belongs to both source intervals",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-closed-intersection.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "(-6; 8)",
+        "[-1; 4)",
+        "[-1; 4]",
+        "(-1; 4]"
+      ],
+      "statement": "A және B аралықтарының ортақ бөлігін, яғни A ∩ B қиылысуын таңдаңыз.",
+      "solution": "Берілген жиындар (-6; 4] және [-1; 8). Екі шарттың да орындалатын бөлігі — [-1; 4]. Әр шекараның екі жиынға да тиістілігін жеке тексереміз.\nЖауап: [-1; 4].",
+      "figureDescription": "A және B аралықтарының ортақ бөлігін, яғни A ∩ B қиылысуын таңдаңыз. A: сол жақ -6 шекарасы бос, оң жақ 4 шекарасы толтырылған; B: сол жақ -1 шекарасы толтырылған, оң жақ 8 шекарасы бос. ",
+      "figureSha256": "0d9dd9fbd98e467485fe79a66259458e52bc5f805181f2e4dc5431061b7aaffa",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "[-1; 4]",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-connected-union",
+      "modelId": "visual-wave7-union-notation",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": -7,
+            "hi": -2,
+            "lc": true,
+            "hc": false
+          },
+          {
+            "lo": -4,
+            "hi": 3,
+            "lc": true,
+            "hc": true
+          }
+        ],
+        "min": -9,
+        "max": 5,
+        "names": [
+          "A",
+          "B"
+        ]
+      },
+      "answer": "[-7; 3]",
+      "sourceRefs": [
+        {
+          "sourceId": "597a2f5c8370824f",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-4-level1.json#14",
+      "sourceCanonicalSha256": "ec933437c70a78d27493da6bd2f5dae6ddbc9e8ac14581969a767512c41e3b8b",
+      "sourceSkill": "Joining overlapping intervals without losing included extreme endpoints",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-connected-union.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "[-4; -2)",
+        "[-7; 3]",
+        "[-7; 3)",
+        "(-7; 3]"
+      ],
+      "statement": "A немесе B аралығына кіретін барлық сандарды қамтитын A ∪ B бірігуін таңдаңыз.",
+      "solution": "Берілген аралықтар [-7; -2) және [-4; 3]. Олар қабаттасады; бос орын жоқ. Кемінде біреуіне тиісті сандардың толық жиыны — [-7; 3].\nЖауап: [-7; 3].",
+      "figureDescription": "A немесе B аралығына кіретін барлық сандарды қамтитын A ∪ B бірігуін таңдаңыз. A: сол жақ -7 шекарасы толтырылған, оң жақ -2 шекарасы бос; B: сол жақ -4 шекарасы толтырылған, оң жақ 3 шекарасы толтырылған. ",
+      "figureSha256": "3538951019c56d4fde20d0bed083790b867e55885aa438241d1f766b406e1e52",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "[-7; 3]",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-intersection-unit-length",
+      "modelId": "visual-wave7-intersection-length",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": -5,
+            "hi": 7,
+            "lc": true,
+            "hc": true
+          },
+          {
+            "lo": 1,
+            "hi": 12,
+            "lc": true,
+            "hc": true
+          }
+        ],
+        "min": -7,
+        "max": 14,
+        "names": [
+          "A",
+          "B"
+        ]
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "f33530c8f46ed0ff",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-4-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-4-level1.json#15",
+      "sourceCanonicalSha256": "db85b7a7b73aa0097ba5b145100d877095a80a369bdd8b4734b2e4fc539941b7",
+      "sourceSkill": "Finding the length of the overlap of two closed segments, not the count of integer points",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-intersection-unit-length.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "statement": "Екі кесіндінің ортақ бөлігі де кесінді. Осы қиылысу кесіндісінің ұзындығын бірлікпен табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Ортақ бөлігі [1; 7]. Ұзындығы 7 − (1) = 6 бірлік. Бүтін нүктелер саны емес, бірлік аралықтар саны сұралған.\nЖауап: 6.",
+      "figureDescription": "Екі кесіндінің ортақ бөлігі де кесінді. Осы қиылысу кесіндісінің ұзындығын бірлікпен табыңыз. Жауапқа тек санды жазыңыз. A: сол жақ -5 шекарасы толтырылған, оң жақ 7 шекарасы толтырылған; B: сол жақ 1 шекарасы толтырылған, оң жақ 12 шекарасы толтырылған. ",
+      "figureSha256": "9fe4bb5cd3d17cc1aee491c2c729ee34e47d6fe3438cecf5902ee4588d43d88b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Length is the number of unit gaps, not the count of included integer points",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-match-linear-solution",
+      "modelId": "visual-wave7-linear-inequality-choice",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": 4,
+            "hi": null,
+            "lc": false,
+            "hc": false
+          }
+        ],
+        "min": -2,
+        "max": 9,
+        "linearCandidates": [
+          {
+            "display": "3x ≥ 12",
+            "a": 3,
+            "b": 0,
+            "op": "≥",
+            "rhs": 12
+          },
+          {
+            "display": "-3x > -12",
+            "a": -3,
+            "b": 0,
+            "op": ">",
+            "rhs": -12
+          },
+          {
+            "display": "3x > 12",
+            "a": 3,
+            "b": 0,
+            "op": ">",
+            "rhs": 12
+          },
+          {
+            "display": "x + 4 > 0",
+            "a": 1,
+            "b": 4,
+            "op": ">",
+            "rhs": 0
+          }
+        ]
+      },
+      "answer": "3x > 12",
+      "sourceRefs": [
+        {
+          "sourceId": "8834e9ba307a7442",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-5-level1.json#8",
+      "sourceCanonicalSha256": "8b8b1d3ebf863140bb1a506554c3d321738aa4e2953e99784cddef529d33f439",
+      "sourceSkill": "Selecting the one linear inequality with exactly the depicted open right ray, including direction after negative division",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-match-linear-solution.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "3x ≥ 12",
+        "-3x > -12",
+        "3x > 12",
+        "x + 4 > 0"
+      ],
+      "statement": "Сызбадағы боялған жиын қай сызықтық теңсіздіктің шешімдер жиыны болады?",
+      "solution": "Сызба (4; +∞) жиынын береді. 3x > 12 теңсіздігінің екі жағын 3 санына бөлеміз: x > 4. Шекара ашық және сәуле оңға бағытталған, демек сәйкес нұсқа 3x > 12.\nЖауап: 3x > 12.",
+      "figureDescription": "Сызбадағы боялған жиын қай сызықтық теңсіздіктің шешімдер жиыны болады? Қатар 1: сол жақ 4 шекарасы бос, оң жақ оңға шексіз созылады. ",
+      "figureSha256": "c04d90aba329da0a711a01d0606114bc5183e425e60b2b81006dc115dadb1ff5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3x > 12",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-linear-bound-parameter",
+      "modelId": "visual-wave7-linear-parameter",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "medium",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": null,
+            "hi": 5,
+            "lc": false,
+            "hc": true
+          }
+        ],
+        "min": -2,
+        "max": 9,
+        "coefficient": 3
+      },
+      "answer": "15",
+      "sourceRefs": [
+        {
+          "sourceId": "29db0ec9e942ed94",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-5-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-5-level1.json#14",
+      "sourceCanonicalSha256": "73fde18bd448173b7aac8efe6d6b962c9f005067b9a231024c12aa013cc84932",
+      "sourceSkill": "Recovering an unknown inequality right-hand constant from the plotted boundary and a positive coefficient",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-linear-bound-parameter.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "statement": "Суретте 3x ≤ b теңсіздігінің шешімдері берілген. b параметрін табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Суреттен x ≤ 5 оқылады. 3x ≤ b теңсіздігінің шекарасы b/3. Сондықтан b/3 = 5, b = 3 · 5 = 15.\nЖауап: 15.",
+      "figureDescription": "Суретте 3x ≤ b теңсіздігінің шешімдері берілген. b параметрін табыңыз. Жауапқа тек санды жазыңыз. Қатар 1: сол жақ солға шексіз созылады, оң жақ 5 шекарасы толтырылған. ",
+      "figureSha256": "436646b48ccb77ebff0ff384873578f498fa36068adefcaefe425ca03f5e2fa3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "15",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-system-integer-members",
+      "modelId": "visual-wave7-system-integer-count",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "hard",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": -4,
+            "hi": null,
+            "lc": true,
+            "hc": false
+          },
+          {
+            "lo": null,
+            "hi": 5,
+            "lc": false,
+            "hc": false
+          }
+        ],
+        "min": -7,
+        "max": 8,
+        "names": [
+          "I",
+          "II"
+        ]
+      },
+      "answer": "9",
+      "sourceRefs": [
+        {
+          "sourceId": "4d12081e965be501",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-6-level1.json#1",
+      "sourceCanonicalSha256": "82ce75e529190d42cd453fc5570139d8937a5e844dde4db28dfe8c715fcf2f6e",
+      "sourceSkill": "Counting integer solutions of both rays simultaneously, with one inclusive and one strict bound",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-system-integer-members.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "statement": "Екі қатарда бір жүйедегі теңсіздіктердің шешімдері көрсетілген. Екі шартты бірдей қанағаттандыратын неше бүтін сан бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Екі сәуленің қиылысуы [-4; 5). Бүтін шешімдер: -4, -3, -2, -1, 0, 1, 2, 3, 4. Саны 9.\nЖауап: 9.",
+      "figureDescription": "Екі қатарда бір жүйедегі теңсіздіктердің шешімдері көрсетілген. Екі шартты бірдей қанағаттандыратын неше бүтін сан бар? Жауапқа тек санды жазыңыз. I: сол жақ -4 шекарасы толтырылған, оң жақ оңға шексіз созылады; II: сол жақ солға шексіз созылады, оң жақ 5 шекарасы бос. ",
+      "figureSha256": "9993884d6d90813ec9a4cc69e8db45c3d07c31735c66015afa35e8f323a77292",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "9",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-two-condition-system",
+      "modelId": "visual-wave7-system-choice",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "hard",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": -2,
+            "hi": 4,
+            "lc": true,
+            "hc": false
+          }
+        ],
+        "min": -5,
+        "max": 7
+      },
+      "answer": "x ≥ -2 және x < 4",
+      "sourceRefs": [
+        {
+          "sourceId": "ccac26f46d675606",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-6-level1.json#2",
+      "sourceCanonicalSha256": "c1deca3070ba7cf2b0af3e9e0a6f1aeffe77bdf8430f4f9e4de9ffb14d8db3c3",
+      "sourceSkill": "Writing a depicted half-open interval as simultaneous lower and upper conditions",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-two-condition-system.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "x > -2 және x ≤ 4",
+        "x ≤ -2 және x > 4",
+        "x ≥ -2 және x > 4",
+        "x ≥ -2 және x < 4"
+      ],
+      "statement": "Сызбадағы боялған жиынды бір мезгілде орындалатын екі шартпен сипаттаңыз. Дұрыс жүйені таңдаңыз.",
+      "solution": "Суреттегі сол шекара -2 жабық, оң шекара 4 ашық. Екі шарт бір мезгілде орындалуы тиіс: x ≥ -2 және x < 4.\nЖауап: x ≥ -2 және x < 4.",
+      "figureDescription": "Сызбадағы боялған жиынды бір мезгілде орындалатын екі шартпен сипаттаңыз. Дұрыс жүйені таңдаңыз. Қатар 1: сол жақ -2 шекарасы толтырылған, оң жақ 4 шекарасы бос. ",
+      "figureSha256": "b409dd8ad7e5aedd10ed9ad9388e8f274b910a4ce6c7b9fe5bcb90c0809abd2f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "x ≥ -2 және x < 4",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-intersection-of-rays",
+      "modelId": "visual-wave7-system-interval",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "hard",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": -4,
+            "hi": null,
+            "lc": false,
+            "hc": false
+          },
+          {
+            "lo": null,
+            "hi": 5,
+            "lc": false,
+            "hc": true
+          }
+        ],
+        "min": -7,
+        "max": 8,
+        "names": [
+          "I",
+          "II"
+        ]
+      },
+      "answer": "(-4; 5]",
+      "sourceRefs": [
+        {
+          "sourceId": "1b7a6cfc80081fbd",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-6-level1.json#7",
+      "sourceCanonicalSha256": "c85d7fe126c0cfbb6083da54272f07f142bb21ab899254781193de71a8c46bc2",
+      "sourceSkill": "Intersecting the two system rays with an open lower and closed upper endpoint",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-intersection-of-rays.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "[-4; 5)",
+        "(-4; 5)",
+        "(-4; 5]",
+        "(-∞; 5]"
+      ],
+      "statement": "Екі қатардағы теңсіздіктер бір жүйеге жатады. Олардың ортақ шешімдер жиынын таңдаңыз.",
+      "solution": "Берілген жиындар (-4; +∞) және (-∞; 5]. Екі шарттың да орындалатын бөлігі — (-4; 5]. Әр шекараның екі жиынға да тиістілігін жеке тексереміз.\nЖауап: (-4; 5].",
+      "figureDescription": "Екі қатардағы теңсіздіктер бір жүйеге жатады. Олардың ортақ шешімдер жиынын таңдаңыз. I: сол жақ -4 шекарасы бос, оң жақ оңға шексіз созылады; II: сол жақ солға шексіз созылады, оң жақ 5 шекарасы толтырылған. ",
+      "figureSha256": "ed55db4f75c7b6c2ef57783fe58cb51f0a1929947db68c02eb066b13e9c6933f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(-4; 5]",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-distance-outside-centre",
+      "modelId": "visual-wave7-absolute-outside",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "hard",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": null,
+            "hi": -3,
+            "lc": false,
+            "hc": false
+          },
+          {
+            "lo": 5,
+            "hi": null,
+            "lc": false,
+            "hc": false
+          }
+        ],
+        "min": -7,
+        "max": 9,
+        "sameAxis": true
+      },
+      "answer": "|x - 1| > 4",
+      "sourceRefs": [
+        {
+          "sourceId": "2d355b6e281c27c8",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-7-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-7-level1.json#4",
+      "sourceCanonicalSha256": "8c6471c6cad052c6b4c22800af2b30935df36cfeba72e02d343ae573c97d9ec1",
+      "sourceSkill": "Recovering a shifted centre and radius from two open exterior rays and using a strict distance inequality",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-distance-outside-centre.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "|x - 1| < 4",
+        "|x - 1| > 4",
+        "|x + 1| > 4",
+        "|x - 1| ≥ 4"
+      ],
+      "statement": "Бір түзуде боялған екі сәуле көрсетілген. Бұл жиынды модулі бар қай теңсіздік сипаттайды?",
+      "solution": "Ашық шекаралар -3 және 5. Ортасы (-3 + 5) : 2 = 1, әр шетке қашықтық 4. Боялған нүктелер сыртта, шекаралар кірмейді. Сондықтан |x - 1| > 4.\nЖауап: |x - 1| > 4.",
+      "figureDescription": "Бір түзуде боялған екі сәуле көрсетілген. Бұл жиынды модулі бар қай теңсіздік сипаттайды? Қатар 1: сол жақ солға шексіз созылады, оң жақ -3 шекарасы бос; Қатар 2: сол жақ 5 шекарасы бос, оң жақ оңға шексіз созылады. ",
+      "figureSha256": "28db3ee1dc4910cb6d6a239ef545dcdb3584497c8d75b130981817ed6746231f",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "|x - 1| > 4",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-distance-inside-origin",
+      "modelId": "visual-wave7-absolute-inside",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "hard",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": -6,
+            "hi": 6,
+            "lc": false,
+            "hc": false
+          }
+        ],
+        "min": -9,
+        "max": 9
+      },
+      "answer": "|x| < 6",
+      "sourceRefs": [
+        {
+          "sourceId": "12c74c7734cd10c7",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-7-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-7-level1.json#5",
+      "sourceCanonicalSha256": "c31930063ed8db367795998aab81636880aac98309e3b57c20959f119e420f9c",
+      "sourceSkill": "Matching an open symmetric interval to a strict absolute-value inequality about zero",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-distance-inside-origin.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "options": [
+        "|x| ≤ 6",
+        "|x| > 6",
+        "|x - 6| < 6",
+        "|x| < 6"
+      ],
+      "statement": "Екі бос шекараның арасындағы бөлік боялған. Осы жиынға сәйкес модулі бар теңсіздікті таңдаңыз.",
+      "solution": "Боялған аралық (-6; 6). Бұл 0-ден қашықтығы 6 санынан қатаң кіші нүктелер: |x| < 6.\nЖауап: |x| < 6.",
+      "figureDescription": "Екі бос шекараның арасындағы бөлік боялған. Осы жиынға сәйкес модулі бар теңсіздікті таңдаңыз. Қатар 1: сол жақ -6 шекарасы бос, оң жақ 6 шекарасы бос. ",
+      "figureSha256": "f2ad60749e6698020d95df32a9735fbc703c511c5e8cefe21e3d0d601e87e262",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "|x| < 6",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    },
+    {
+      "editionId": "visual-wave7-absolute-radius-parameter",
+      "modelId": "visual-wave7-absolute-parameter",
+      "grade": 6,
+      "topic": "sys",
+      "difficulty": "hard",
+      "params": {
+        "scene": "interval",
+        "ranges": [
+          {
+            "lo": -7,
+            "hi": 7,
+            "lc": true,
+            "hc": true
+          }
+        ],
+        "min": -10,
+        "max": 10
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "332bc994e817d23a",
+          "sourceFile": "problems/sources/zerek/courses/6-math-5-7-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-5-7-level1.json#9",
+      "sourceCanonicalSha256": "563a8889b3088a7156f2dd449968cb1dcce84967ef06365899fe616f03eb0765",
+      "sourceSkill": "Reading the positive absolute-value bound from a closed interval symmetric about zero",
+      "adaptationChanges": [
+        "Әр дереккөздің нақты дағдысы сақталды: салыстыру, қасиет, бүтін шешім саны, нүктенің тиістілігі, бірігу, қиылысу, кесінді ұзындығы немесе модульдік теңсіздік.",
+        "Координаталар, шекаралар, шамалар, әріптер, коэффициенттер және дұрыс жауап жаңадан таңдалды.",
+        "Ашық/жабық шекаралар, сәуле бағыттары, ұяшықтар және көлбеу таразы жаңа параметрлерден native SVG ретінде салынды; түпнұсқа сурет не traced path көшірілмеді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Рет пен аралықтар зертханасы",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent source-skill, endpoint closure, ray direction, actual interval overlap, balance tilt and343px native review"
+      },
+      "image": "/figures/synaq-editions/visual-wave7-absolute-radius-parameter.svg",
+      "verificationModule": "scripts/editorial/visual-wave7-models.mjs",
+      "statement": "Сызбада |x| ≤ a теңсіздігінің шешімі берілген. a > 0 параметрінің мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Жиын [-7; 7], шекаралары 0-ге қатысты симметриялы және жабық. |x| ≤ a шешімі [-a; a] болғандықтан, a = 7.\nЖауап: 7.",
+      "figureDescription": "Сызбада |x| ≤ a теңсіздігінің шешімі берілген. a > 0 параметрінің мәнін табыңыз. Жауапқа тек санды жазыңыз. Қатар 1: сол жақ -7 шекарасы толтырылған, оң жақ 7 шекарасы толтырылған. ",
+      "figureSha256": "4d33f08dae96cd14bc01cc4d51e5f25e93db3cfff34452287d50ddf9c1e466b0",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": [
+          "Endpoint-aware membership checks each boundary separately from every intervening open cell",
+          "Source-specific condition, closure flags, direction, candidate answer, solution and native SVG are bound"
+        ]
+      }
+    }
+  ]
+}

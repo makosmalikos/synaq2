@@ -1,0 +1,31 @@
+const s=(id,kind,params)=>({id,kind,params});
+// All27 remaining canonical nonvisual1.8 conditions/keys/full solutions/options read.
+export const AREA_SPECS=[
+ s('08e8c61cac9b5ce5','same-area-quotient',{first:750,second:125}),
+ s('6e32c6c67669c13c','hectare-comparison',{hectares:9,rightM2:90000}),
+ s('becb26757a006574','scalar-area-division',{area:1050,divisor:7}),
+ s('7ef8f44334e14784','are-minus-square-metres',{ares:12,m2:170}),
+ s('b9c18717d75243e5','mixed-area-sum-hectares',{m2:50000,ares:700}),
+ s('573909d87566fd66','plot-yard-remainder',{sotyks:12,houseM2:165,gardenSotyks:5}),
+ s('de7572ac7331b232','hectare-two-step',{hectares:47,choices:[[470,47000],[4700,470000],[47000,470000],[4700,47000]]}),
+ s('bb2da8cf6706eb3f','square-metre-dm-sum',{m2:9,dm2:80,choices:[170,980,9080,89]}),
+ s('5f06281453ee768c','square-metre-dm-difference',{m2:40,dm2:450}),
+ s('fbf35337f60f06ee','dm-first-area-sum',{dm2:90,m2:40,choices:[490,130,4900,4090]}),
+ s('23c0c07113a7f5a3','greatest-area',{choices:[[3800000,'дм²'],[4,'га'],[380,'а'],[39000,'м²']]}),
+ s('e3c3ddcb2c3a30ed','hectare-are-quotient',{hectares:6,ares:75}),
+ s('a47af026a8d5157f','square-metre-cm-comparison',{m2:8,rightCm2:80060}),
+ s('c60cdfe456a3578f','hectare-minus-square-metres',{hectares:3,m2:3500}),
+ s('f9ee133950cc5b17','four-legged-animal-count',{heads:34,legs:94,animal:'қой'}),
+ s('2dc266611397d5db','land-sum-gap-larger',{hectares:2,gapAres:36,choices:[13600,11800,10000,8200]}),
+ s('34e3799ac6d627a0','children-horses-count',{heads:29,legs:82,choices:[[17,12],[12,17],[18,11],[16,13]]}),
+ s('1823dfd0c264e9bb','rectangle-target-hectares',{hectares:2,choices:[[250,80],[200,10],[80,80],[500,400]]}),
+ s('19771e330f591e94','area-before-rescaling',{lengthFactor:3,widthFactor:4,newHectares:21,choices:[[300,'а'],[9,'га'],[1750,'а'],[175,'а']]}),
+ s('9b53c72772162473','least-area',{choices:[[2,'км²'],[19999,'а'],[199,'га'],[200000000,'дм²']]}),
+ s('79347cb8200bf030','square-plot-fence',{sotyks:16}),
+ s('871ec5a0ebc247b4','rectangle-length-excess',{ares:12,widthM:30}),
+ s('5cea8ad7b6a85599','scalar-area-division',{area:96,divisor:8,choices:['768 а','12','12 а','88 а']}),
+ s('c33897d9a6b2c61f','hectare-comparison',{hectares:5,rightM2:49900}),
+ s('248fa015493efaf1','hectare-minus-ares',{hectares:7,ares:45}),
+ s('2c5495cc3a0a1176','fractional-house-garden',{sotyks:9,houseDivisor:5,pathsM2:55,choices:[665,845,775,720]}),
+ s('b20d5d876d44dbe6','four-legged-animal-count',{heads:52,legs:146,animal:'қоян'})
+];

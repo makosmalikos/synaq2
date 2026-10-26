@@ -1,0 +1,958 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All13savedvisualgrade5topic4.1; archived sources only, no new capture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5 topic4.1 sources",
+    "sourceVisualOccurrences": 13,
+    "addressedNewDrafts": 13,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "041da8453676319e",
+      "192cd324fe8e177e",
+      "44c3962099e7cec6",
+      "4c0fd5b3b8a8e3af",
+      "6003249633a3fe43",
+      "7929eade03697659",
+      "a5d43e04854a9abb",
+      "b9e382c841f125a7",
+      "bb3b017b17ca0554",
+      "bcdac4394175e603",
+      "c277d85de1a1e7dd",
+      "dc2c234c29e900e2",
+      "e0199e9138155599"
+    ],
+    "distinctModels": 13,
+    "semantics": "Thirteen source-specific pictorial targets; digit-card count12 invariant honestly retained, not thirteen interchangeable number variants."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave56-hundred-grid-fifty-eight-blue",
+      "modelId": "visual-wave56-hundred-grid-painted-decimal",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "grid",
+        "blue": 58,
+        "mode": "rows"
+      },
+      "answer": "0,58",
+      "sourceRefs": [
+        {
+          "sourceId": "e0199e9138155599",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-1-level1.json#3",
+      "sourceCanonicalSha256": "5cfedad988bc64c2ed0d6f810bb59aaa386770ba5546f268503b28548ff21c38",
+      "sourceSkill": "Read100equalcells5fullrows+8=58blue→0,58; preservecomplement0,42 anddecimalshifts5,8/0,058.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.1 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Жүздік торды санау, бүтін мен ондық үлесті біріктіру, ақ ондықтардың санын үлестің мәнінен айыру, бос разряд, бүтінді қоса есептеген мыңдық/жүздік саны, екі разрядтағы тасымал, нөл карточкасының шектеулі орны және нөлден басталмайтын миллиметрлік өлшем сақталды.",
+        "Жаңа деректер:58көк/100;3бүтін6ондық;көк0,4→6ақондық;4/0/7/3фишка→4,073;1бүтін38жүздік→138;A0B64мм→0,64дм;3ондық0бірлік6ондықүлес0жүздік2мыңдық→30,602оқылуы;3/0/4/7→3047;1/12/6/14→2274;20көк9сары→0,71ақ;8/0/2/6карточка→12инвариант;1бүтін4ондықсектор→1,4;A17B73мм→5,6см.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең торлар/жолақтар/секторлар, нақты жеке фишкалар және сантиметрлік/миллиметрлік шкала. Source raster/traced path жоқ. Карточкадағы12тәсіл — сол шектеулердің комбинаторлық инварианты, жаңа мағына деп саналмайды; сыртқы тәуелсіз қол қою қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық үлестерді суреттен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full13saved/new/solutions/everyMCQ plus all343pxsheets; countactual100cellgrids, individualchips includingboth>9columns, same10partwholes, equalpieangles, cmmajor/mmminoractualrulercoordinates and zero-cardcompletepermutations. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave56-hundred-grid-fifty-eight-blue.svg",
+      "verificationModule": "scripts/editorial/visual-wave56-models.mjs",
+      "options": [
+        "0,58",
+        "5,8",
+        "0,058",
+        "0,42"
+      ],
+      "statement": "Мозаиканың үлкен квадраты — бір бүтін. Ол 100 тең ұяшықтан тұрады. Көк ұяшықтардың үлесін ондық бөлшекпен таңдаңыз.",
+      "solution": "Көк ұяшықтар: 5 толық қатарда 5 × 10 = 50, келесі қатарда 8. Барлығы 58 ұяшық. Әрқайсысы (1/100) болғандықтан, көк бөлік (58/100) = 0,58. 0,42 — ақ бөлік; басқа нұсқаларда үтірдің орны өзгерген.",
+      "figureDescription": "10 қатар және 10 бағанды тең ұяшықтар. Алғашқы 5 қатар түгел көк, келесі қатардың алғашқы 8 ұяшығы көк, қалғандары ақ.",
+      "figureSha256": "f0005cf27bae1dd7641f726a5013bd87c5a01fd70e63e3e338fcd19d93f5f1da",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,58",
+        "checks": {
+          "wholeCells": 100,
+          "fullBlueRows": 5,
+          "extraBlue": 8,
+          "blueCells": 58,
+          "whiteCells": 42,
+          "decimal": "0,58"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave56-three-whole-strips-six-tenths",
+      "modelId": "visual-wave56-whole-strips-plus-tenths-decimal",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "strips",
+        "whole": 3,
+        "blue": 6
+      },
+      "answer": "3,6",
+      "sourceRefs": [
+        {
+          "sourceId": "6003249633a3fe43",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-1-level1.json#12",
+      "sourceCanonicalSha256": "60a8a7f0fe4a63ff9b339ddb5d1c70c4925a2de29f2b688b01f7c7581dfdc4ee",
+      "sourceSkill": "ThreeFULL10partstripsplus6/10; whole retained, decimalhundredth/concatenation/swappedwhole traps.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.1 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Жүздік торды санау, бүтін мен ондық үлесті біріктіру, ақ ондықтардың санын үлестің мәнінен айыру, бос разряд, бүтінді қоса есептеген мыңдық/жүздік саны, екі разрядтағы тасымал, нөл карточкасының шектеулі орны және нөлден басталмайтын миллиметрлік өлшем сақталды.",
+        "Жаңа деректер:58көк/100;3бүтін6ондық;көк0,4→6ақондық;4/0/7/3фишка→4,073;1бүтін38жүздік→138;A0B64мм→0,64дм;3ондық0бірлік6ондықүлес0жүздік2мыңдық→30,602оқылуы;3/0/4/7→3047;1/12/6/14→2274;20көк9сары→0,71ақ;8/0/2/6карточка→12инвариант;1бүтін4ондықсектор→1,4;A17B73мм→5,6см.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең торлар/жолақтар/секторлар, нақты жеке фишкалар және сантиметрлік/миллиметрлік шкала. Source raster/traced path жоқ. Карточкадағы12тәсіл — сол шектеулердің комбинаторлық инварианты, жаңа мағына деп саналмайды; сыртқы тәуелсіз қол қою қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық үлестерді суреттен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full13saved/new/solutions/everyMCQ plus all343pxsheets; countactual100cellgrids, individualchips includingboth>9columns, same10partwholes, equalpieangles, cmmajor/mmminoractualrulercoordinates and zero-cardcompletepermutations. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave56-three-whole-strips-six-tenths.svg",
+      "verificationModule": "scripts/editorial/visual-wave56-models.mjs",
+      "options": [
+        "0,36",
+        "3,06",
+        "6,3",
+        "3,6"
+      ],
+      "statement": "Әр таспа — бір бүтін және 10 тең бөлікке бөлінген. Барлық көк бөліктерді біріктіргенде қандай ондық сан шығады?",
+      "solution": "Толық көк таспа саны 3. Қалған фигурада 10 тең бөліктің 6 бөлігі көк: (6/10). Барлығы (3 + (6/10)) = 3,6. Бүтін мен бөлшекті ауыстыруға немесе ондық үлестің алдына артық нөл қосуға болмайды.",
+      "figureDescription": "3 таспа түгел көк, соңғы таспаның алғашқы 6 бөлігі көк. Әр таспа 10 тең ұяшық.",
+      "figureSha256": "c55f3beae3e9754bcb1e85bf25e4e413df428d9bc81b184bbfad2c60c1a80094",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3,6",
+        "checks": {
+          "equalPartsPerWhole": 10,
+          "fullWholes": 3,
+          "partialTenths": 6,
+          "totalTenths": 36,
+          "decimal": "3,6"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave56-four-blue-six-white-tenths",
+      "modelId": "visual-wave56-count-unpainted-tenths-not-share",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "white-strip",
+        "blue": 4
+      },
+      "answer": "6",
+      "sourceRefs": [
+        {
+          "sourceId": "7929eade03697659",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-1-level1.json#13",
+      "sourceCanonicalSha256": "1457a7ac07a6f9aebb95d5de6cbd28f06f0a5780929b7ccc05160956b37b9937",
+      "sourceSkill": "Blue0,4of10; askNUMBERofunpaintedTENTHS6, notdecimal0,6.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.1 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Жүздік торды санау, бүтін мен ондық үлесті біріктіру, ақ ондықтардың санын үлестің мәнінен айыру, бос разряд, бүтінді қоса есептеген мыңдық/жүздік саны, екі разрядтағы тасымал, нөл карточкасының шектеулі орны және нөлден басталмайтын миллиметрлік өлшем сақталды.",
+        "Жаңа деректер:58көк/100;3бүтін6ондық;көк0,4→6ақондық;4/0/7/3фишка→4,073;1бүтін38жүздік→138;A0B64мм→0,64дм;3ондық0бірлік6ондықүлес0жүздік2мыңдық→30,602оқылуы;3/0/4/7→3047;1/12/6/14→2274;20көк9сары→0,71ақ;8/0/2/6карточка→12инвариант;1бүтін4ондықсектор→1,4;A17B73мм→5,6см.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең торлар/жолақтар/секторлар, нақты жеке фишкалар және сантиметрлік/миллиметрлік шкала. Source raster/traced path жоқ. Карточкадағы12тәсіл — сол шектеулердің комбинаторлық инварианты, жаңа мағына деп саналмайды; сыртқы тәуелсіз қол қою қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық үлестерді суреттен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full13saved/new/solutions/everyMCQ plus all343pxsheets; countactual100cellgrids, individualchips includingboth>9columns, same10partwholes, equalpieangles, cmmajor/mmminoractualrulercoordinates and zero-cardcompletepermutations. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave56-four-blue-six-white-tenths.svg",
+      "verificationModule": "scripts/editorial/visual-wave56-models.mjs",
+      "statement": "Таспа — бір бүтін. Оның 0,4 бөлігі көк. Ақ бөлігі бүтіннің НЕШЕ ондық үлесіне тең? Үлес санын жазыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Көк бөлік 0,4, яғни 4 ондық үлес. Бүтінде 10 ондық үлес бар: 10 − 4 = 6. Ақ бөліктің мәні 0,6, бірақ сұралғаны ондық үлестердің САНЫ: 6. Тексеру: 4 + 6 = 10.",
+      "figureDescription": "10 тең ұяшықты бір таспаның алғашқы 4 ұяшығы көк, қалғандары ақ.",
+      "figureSha256": "080786f0e6f91a100b16d0d1b4f2a194c1f299f5af450bd1987ff3297d5faf82",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "6",
+        "checks": {
+          "wholeTenths": 10,
+          "blueTenths": 4,
+          "unpaintedTenths": 6,
+          "requested": "count_not_decimal_share",
+          "blueDecimal": "0,4"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave56-four-units-zero-tenths-seven-hundredths",
+      "modelId": "visual-wave56-place-chip-empty-tenths-decimal",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "chips",
+        "weights": [
+          1000,
+          100,
+          10,
+          1
+        ],
+        "counts": [
+          4,
+          0,
+          7,
+          3
+        ]
+      },
+      "answer": "4,073",
+      "sourceRefs": [
+        {
+          "sourceId": "44c3962099e7cec6",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-1-level1.json#15",
+      "sourceCanonicalSha256": "f7daefc4c2acc83792ec691bd3ddabe885ccf42e03015f754d05f8c9bbfbfb82",
+      "sourceSkill": "Readchipcolumnsunits4/tenths0/hundredths7/thousandths3; EMPTYtenths keptas0; droppedzero/movedzero/lostwholewrong.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.1 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Жүздік торды санау, бүтін мен ондық үлесті біріктіру, ақ ондықтардың санын үлестің мәнінен айыру, бос разряд, бүтінді қоса есептеген мыңдық/жүздік саны, екі разрядтағы тасымал, нөл карточкасының шектеулі орны және нөлден басталмайтын миллиметрлік өлшем сақталды.",
+        "Жаңа деректер:58көк/100;3бүтін6ондық;көк0,4→6ақондық;4/0/7/3фишка→4,073;1бүтін38жүздік→138;A0B64мм→0,64дм;3ондық0бірлік6ондықүлес0жүздік2мыңдық→30,602оқылуы;3/0/4/7→3047;1/12/6/14→2274;20көк9сары→0,71ақ;8/0/2/6карточка→12инвариант;1бүтін4ондықсектор→1,4;A17B73мм→5,6см.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең торлар/жолақтар/секторлар, нақты жеке фишкалар және сантиметрлік/миллиметрлік шкала. Source raster/traced path жоқ. Карточкадағы12тәсіл — сол шектеулердің комбинаторлық инварианты, жаңа мағына деп саналмайды; сыртқы тәуелсіз қол қою қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық үлестерді суреттен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full13saved/new/solutions/everyMCQ plus all343pxsheets; countactual100cellgrids, individualchips includingboth>9columns, same10partwholes, equalpieangles, cmmajor/mmminoractualrulercoordinates and zero-cardcompletepermutations. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave56-four-units-zero-tenths-seven-hundredths.svg",
+      "verificationModule": "scripts/editorial/visual-wave56-models.mjs",
+      "options": [
+        "4,73",
+        "4,073",
+        "4,703",
+        "0,473"
+      ],
+      "statement": "Әр фишканың мәні өз бағанының жоғарғы жағында жазылған. Бос баған да өз орнын сақтайды. Барлық фишкалар қандай ондық санды көрсетеді?",
+      "solution": "Бағандардағы фишкалар: 4 бірлік, 0 ондық үлес, 7 жүздік үлес, 3 мыңдық үлес. Бос ондық бағанға 0 жазамыз: 4,073. Тексеру: 4 + (7/100) + (3/1000) = 4,073. Нөлді алып тастау не басқа разрядқа қою санның мәнін өзгертеді.",
+      "figureDescription": "Бағандардың бір фишкаға шаққандағы мәндері 1,000; 0,100; 0,010; 0,001. Сәйкес фишка сандары 4; 0; 7; 3. Бос бағандарда фишка жоқ.",
+      "figureSha256": "50c46d6c379e57650f06f1246e42292ab999d17ecb70c1d65a14df3c7f274924",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "4,073",
+        "checks": {
+          "thousandthsPerChip": [
+            1000,
+            100,
+            10,
+            1
+          ],
+          "counts": [
+            4,
+            0,
+            7,
+            3
+          ],
+          "weightedContributions": [
+            4000,
+            0,
+            70,
+            3
+          ],
+          "totalThousandths": 4073,
+          "whole": 4,
+          "fractionalThousandths": 73,
+          "decimal": "4,073"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave56-whole-square-thirty-eight-hundredths",
+      "modelId": "visual-wave56-whole-hundred-grids-total-hundredths",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "double-grid",
+        "whole": 1,
+        "blue": 38
+      },
+      "answer": "138",
+      "sourceRefs": [
+        {
+          "sourceId": "b9e382c841f125a7",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-1-level2.json#0",
+      "sourceCanonicalSha256": "4371c4e369f1d100045e422774a93ec1458b9737c0ec501503834bb7d8fd95ff",
+      "sourceSkill": "OneFULL100cellgridplus38cells; read1,38thenaskTOTALhundredths138includingwhole100, notfractional38.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.1 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Жүздік торды санау, бүтін мен ондық үлесті біріктіру, ақ ондықтардың санын үлестің мәнінен айыру, бос разряд, бүтінді қоса есептеген мыңдық/жүздік саны, екі разрядтағы тасымал, нөл карточкасының шектеулі орны және нөлден басталмайтын миллиметрлік өлшем сақталды.",
+        "Жаңа деректер:58көк/100;3бүтін6ондық;көк0,4→6ақондық;4/0/7/3фишка→4,073;1бүтін38жүздік→138;A0B64мм→0,64дм;3ондық0бірлік6ондықүлес0жүздік2мыңдық→30,602оқылуы;3/0/4/7→3047;1/12/6/14→2274;20көк9сары→0,71ақ;8/0/2/6карточка→12инвариант;1бүтін4ондықсектор→1,4;A17B73мм→5,6см.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең торлар/жолақтар/секторлар, нақты жеке фишкалар және сантиметрлік/миллиметрлік шкала. Source raster/traced path жоқ. Карточкадағы12тәсіл — сол шектеулердің комбинаторлық инварианты, жаңа мағына деп саналмайды; сыртқы тәуелсіз қол қою қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық үлестерді суреттен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full13saved/new/solutions/everyMCQ plus all343pxsheets; countactual100cellgrids, individualchips includingboth>9columns, same10partwholes, equalpieangles, cmmajor/mmminoractualrulercoordinates and zero-cardcompletepermutations. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave56-whole-square-thirty-eight-hundredths.svg",
+      "verificationModule": "scripts/editorial/visual-wave56-models.mjs",
+      "statement": "Әр үлкен квадрат — бір бүтін, оның 100 тең ұяшығы бар. Көк бөліктерді алдымен бір ондық санмен өрнектеңіз. Осы сан барлығы НЕШЕ жүздік үлестен тұрады? Жауапқа тек санды жазыңыз.",
+      "solution": "Бірінші квадраттың барлық 100 ұяшығы көк. Екіншісінде 3 толық қатар және 8 қосымша ұяшық, барлығы 38. Ондық сан 1,38. Бір бүтіннің 100 жүздік үлесін де қосамыз: 100 + 38 = 138. Тексеру: 1,38 = (138/100); тек 38 деп жазу бүтін бөлікті жоғалтады.",
+      "figureDescription": "Екі бірдей 10×10 ұяшықты квадрат. Біріншісі түгел көк; екіншісінде алғашқы 3 қатар және келесі қатардың алғашқы 8 ұяшығы көк.",
+      "figureSha256": "943ed452f14212455f4583722557652cdef2290f4254feb4326cd8c8181af906",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "138",
+        "checks": {
+          "wholeSquares": 1,
+          "cellsPerWhole": 100,
+          "partialBlueCells": 38,
+          "totalHundredths": 138,
+          "decimal": "1,38",
+          "wholeIncluded": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave56-ruler-zero-sixty-four-millimetres",
+      "modelId": "visual-wave56-ruler-origin-to-decimal-decimetres",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "ruler",
+        "a": 0,
+        "b": 64,
+        "unit": "dm"
+      },
+      "answer": "0,64",
+      "sourceRefs": [
+        {
+          "sourceId": "dc2c234c29e900e2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-1-level2.json#2",
+      "sourceCanonicalSha256": "56a5b031c3ae31090c703a60d7407a781376d193c84fc8395a60c203f88b02a2",
+      "sourceSkill": "Actualcmmajorticks/mmminorticksA0B6cm4mm→64mm÷100=0,64dm; retaincm6,4/mm64/order0,064traps.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.1 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Жүздік торды санау, бүтін мен ондық үлесті біріктіру, ақ ондықтардың санын үлестің мәнінен айыру, бос разряд, бүтінді қоса есептеген мыңдық/жүздік саны, екі разрядтағы тасымал, нөл карточкасының шектеулі орны және нөлден басталмайтын миллиметрлік өлшем сақталды.",
+        "Жаңа деректер:58көк/100;3бүтін6ондық;көк0,4→6ақондық;4/0/7/3фишка→4,073;1бүтін38жүздік→138;A0B64мм→0,64дм;3ондық0бірлік6ондықүлес0жүздік2мыңдық→30,602оқылуы;3/0/4/7→3047;1/12/6/14→2274;20көк9сары→0,71ақ;8/0/2/6карточка→12инвариант;1бүтін4ондықсектор→1,4;A17B73мм→5,6см.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең торлар/жолақтар/секторлар, нақты жеке фишкалар және сантиметрлік/миллиметрлік шкала. Source raster/traced path жоқ. Карточкадағы12тәсіл — сол шектеулердің комбинаторлық инварианты, жаңа мағына деп саналмайды; сыртқы тәуелсіз қол қою қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық үлестерді суреттен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full13saved/new/solutions/everyMCQ plus all343pxsheets; countactual100cellgrids, individualchips includingboth>9columns, same10partwholes, equalpieangles, cmmajor/mmminoractualrulercoordinates and zero-cardcompletepermutations. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave56-ruler-zero-sixty-four-millimetres.svg",
+      "verificationModule": "scripts/editorial/visual-wave56-models.mjs",
+      "options": [
+        "0,64",
+        "6,4",
+        "0,064",
+        "64,0"
+      ],
+      "statement": "Сызғыштың санмен белгіленген ірі бөліктері — сантиметр, ең ұсақ бөліктері — миллиметр. AB кесіндісінің ұзындығын ДЕЦИМЕТРМЕН беретін ондық санды таңдаңыз.",
+      "solution": "A нүктесі 0 мм-де, B нүктесі 6 см және 4 мм белгісінде. AB = 64 − 0 = 64 мм. 1 дм = 100 мм, сондықтан (64/100) дм = 0,64 дм. 6,4 — сантиметрмен өлшем; миллиметр санын не үтірі жылжыған мәнді таңдауға болмайды.",
+      "figureDescription": "Сантиметрлер 0–8 деп белгіленген сызғыш; әр сантиметрде 10 миллиметрлік аралық. A 0 мм белгісінде, B 64 мм белгісінде, араларында кесінді.",
+      "figureSha256": "dd39ccd2df70bbe96b19520048fd968c7f36c1069e122ca31db9e1e0f8a7d0d3",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,64",
+        "checks": {
+          "aMillimetres": 0,
+          "bMillimetres": 64,
+          "segmentMillimetres": 64,
+          "millimetresPerRequestedUnit": 100,
+          "decimal": "0,64",
+          "requestedLengthNotEndpoint": true,
+          "borrowRequired": false
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave56-thirty-whole-six-hundred-two-thousandths",
+      "modelId": "visual-wave56-five-place-chips-spoken-decimal",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "chips",
+        "weights": [
+          10000,
+          1000,
+          100,
+          10,
+          1
+        ],
+        "counts": [
+          3,
+          0,
+          6,
+          0,
+          2
+        ]
+      },
+      "answer": "30 бүтін мыңнан 602",
+      "sourceRefs": [
+        {
+          "sourceId": "bcdac4394175e603",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-1-level2.json#9",
+      "sourceCanonicalSha256": "bbe9fb1053f6dc456d1712d282a3c4e10e1d2747aac35c98b6290c0dd4d694c8",
+      "sourceSkill": "TENS3/units0/tenths6/hundredths0/thousandths2→30,602; requestSPOKENreading, preservebothEMPTYplacesandthreefractiondigits.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.1 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Жүздік торды санау, бүтін мен ондық үлесті біріктіру, ақ ондықтардың санын үлестің мәнінен айыру, бос разряд, бүтінді қоса есептеген мыңдық/жүздік саны, екі разрядтағы тасымал, нөл карточкасының шектеулі орны және нөлден басталмайтын миллиметрлік өлшем сақталды.",
+        "Жаңа деректер:58көк/100;3бүтін6ондық;көк0,4→6ақондық;4/0/7/3фишка→4,073;1бүтін38жүздік→138;A0B64мм→0,64дм;3ондық0бірлік6ондықүлес0жүздік2мыңдық→30,602оқылуы;3/0/4/7→3047;1/12/6/14→2274;20көк9сары→0,71ақ;8/0/2/6карточка→12инвариант;1бүтін4ондықсектор→1,4;A17B73мм→5,6см.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең торлар/жолақтар/секторлар, нақты жеке фишкалар және сантиметрлік/миллиметрлік шкала. Source raster/traced path жоқ. Карточкадағы12тәсіл — сол шектеулердің комбинаторлық инварианты, жаңа мағына деп саналмайды; сыртқы тәуелсіз қол қою қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық үлестерді суреттен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full13saved/new/solutions/everyMCQ plus all343pxsheets; countactual100cellgrids, individualchips includingboth>9columns, same10partwholes, equalpieangles, cmmajor/mmminoractualrulercoordinates and zero-cardcompletepermutations. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave56-thirty-whole-six-hundred-two-thousandths.svg",
+      "verificationModule": "scripts/editorial/visual-wave56-models.mjs",
+      "options": [
+        "30 бүтін мыңнан 602",
+        "3 бүтін он мыңнан 602",
+        "30 бүтін жүзден 62",
+        "36 бүтін мыңнан 2"
+      ],
+      "statement": "Фишканың мәні бағанның жоғарғы жағында берілген. Барлық фишка көрсететін ондық санның дұрыс ОҚЫЛУЫН таңдаңыз. Бос бағандарды ескеріңіз.",
+      "solution": "Бағандардан 3 ондық, 0 бірлік, 6 ондық үлес, 0 жүздік үлес, 2 мыңдық үлес оқимыз. Сан 30,602. Бүтін бөлік 30, үтірден кейін үш разряд бар: бөлшек бөлік (602/1000). Оқылуы: «30 бүтін мыңнан 602». Екі бос бағандағы нөлдерді жоғалтуға болмайды.",
+      "figureDescription": "Бағандардың бір фишкаға шаққандағы мәндері 10,000; 1,000; 0,100; 0,010; 0,001. Сәйкес фишка сандары 3; 0; 6; 0; 2. Бос бағандарда фишка жоқ.",
+      "figureSha256": "d794c9fadda8e02ae0dfffbd690df63801878bfefc7a2f87338c4445f344b10e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "30 бүтін мыңнан 602",
+        "checks": {
+          "thousandthsPerChip": [
+            10000,
+            1000,
+            100,
+            10,
+            1
+          ],
+          "counts": [
+            3,
+            0,
+            6,
+            0,
+            2
+          ],
+          "weightedContributions": [
+            30000,
+            0,
+            600,
+            0,
+            2
+          ],
+          "totalThousandths": 30602,
+          "whole": 30,
+          "fractionalThousandths": 602,
+          "decimal": "30,602"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave56-three-whole-forty-seven-thousandths",
+      "modelId": "visual-wave56-place-chips-total-fixed-thousandths-numerator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "chips",
+        "weights": [
+          1000,
+          100,
+          10,
+          1
+        ],
+        "counts": [
+          3,
+          0,
+          4,
+          7
+        ]
+      },
+      "answer": "3047",
+      "sourceRefs": [
+        {
+          "sourceId": "192cd324fe8e177e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-1-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-1-level2.json#15",
+      "sourceCanonicalSha256": "3bab21b42d734f8f812c48c5c97d727787baeabbbb30cd56f7631d15fda4fa5b",
+      "sourceSkill": "Units3/tenths0/hundredths4/thousandths7→3,047; fixeda/1000numeratorINCLUDESwhole3000+47, notreducednumerator/fractional47.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.1 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Жүздік торды санау, бүтін мен ондық үлесті біріктіру, ақ ондықтардың санын үлестің мәнінен айыру, бос разряд, бүтінді қоса есептеген мыңдық/жүздік саны, екі разрядтағы тасымал, нөл карточкасының шектеулі орны және нөлден басталмайтын миллиметрлік өлшем сақталды.",
+        "Жаңа деректер:58көк/100;3бүтін6ондық;көк0,4→6ақондық;4/0/7/3фишка→4,073;1бүтін38жүздік→138;A0B64мм→0,64дм;3ондық0бірлік6ондықүлес0жүздік2мыңдық→30,602оқылуы;3/0/4/7→3047;1/12/6/14→2274;20көк9сары→0,71ақ;8/0/2/6карточка→12инвариант;1бүтін4ондықсектор→1,4;A17B73мм→5,6см.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең торлар/жолақтар/секторлар, нақты жеке фишкалар және сантиметрлік/миллиметрлік шкала. Source raster/traced path жоқ. Карточкадағы12тәсіл — сол шектеулердің комбинаторлық инварианты, жаңа мағына деп саналмайды; сыртқы тәуелсіз қол қою қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық үлестерді суреттен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full13saved/new/solutions/everyMCQ plus all343pxsheets; countactual100cellgrids, individualchips includingboth>9columns, same10partwholes, equalpieangles, cmmajor/mmminoractualrulercoordinates and zero-cardcompletepermutations. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave56-three-whole-forty-seven-thousandths.svg",
+      "verificationModule": "scripts/editorial/visual-wave56-models.mjs",
+      "statement": "Фишканың мәні өз бағанында жазылған. Кестедегі бүкіл санды қысқартпай (a/1000) түрінде өрнектесек, a алымы неге тең? Жауапқа тек санды жазыңыз.",
+      "solution": "Бағандар 3,047 санын береді. Бірліктерді мыңдық үлеске айналдырамыз: 3 × 1000 = 3000. Жүздік үлестер 4 × 10 = 40 мыңдық үлес, оған 7 мыңдықты қосамыз. Барлығы 3000 + 40 + 7 = 3047. Демек 3,047 = (3047/1000), a = 3047. Бөлім берілгендіктен бөлшекті қысқартпаймыз.",
+      "figureDescription": "Бағандардың бір фишкаға шаққандағы мәндері 1,000; 0,100; 0,010; 0,001. Сәйкес фишка сандары 3; 0; 4; 7. Бос бағандарда фишка жоқ.",
+      "figureSha256": "8e174a26873b9572adcd9b5e0ffe9cd70e1e915ca505a4322bab28d90fde0fba",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "3047",
+        "checks": {
+          "thousandthsPerChip": [
+            1000,
+            100,
+            10,
+            1
+          ],
+          "counts": [
+            3,
+            0,
+            4,
+            7
+          ],
+          "weightedContributions": [
+            3000,
+            0,
+            40,
+            7
+          ],
+          "totalThousandths": 3047,
+          "whole": 3,
+          "fractionalThousandths": 47,
+          "decimal": "3,047"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave56-carry-twelve-tenths-fourteen-thousandths",
+      "modelId": "visual-wave56-overfull-place-chips-total-thousandths",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "chips",
+        "weights": [
+          1000,
+          100,
+          10,
+          1
+        ],
+        "counts": [
+          1,
+          12,
+          6,
+          14
+        ]
+      },
+      "answer": "2274",
+      "sourceRefs": [
+        {
+          "sourceId": "a5d43e04854a9abb",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-1-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-1-level3.json#1",
+      "sourceCanonicalSha256": "487914b7a1ba5628ed28115b3fb87247a0c28586f5ac67cb05661df620c3c38a",
+      "sourceSkill": "Actual>9chipsinTWOcolumns:12tenths and14thousandths; convert1000+1200+60+14=2274, thencheckbothcarries2,274.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.1 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Жүздік торды санау, бүтін мен ондық үлесті біріктіру, ақ ондықтардың санын үлестің мәнінен айыру, бос разряд, бүтінді қоса есептеген мыңдық/жүздік саны, екі разрядтағы тасымал, нөл карточкасының шектеулі орны және нөлден басталмайтын миллиметрлік өлшем сақталды.",
+        "Жаңа деректер:58көк/100;3бүтін6ондық;көк0,4→6ақондық;4/0/7/3фишка→4,073;1бүтін38жүздік→138;A0B64мм→0,64дм;3ондық0бірлік6ондықүлес0жүздік2мыңдық→30,602оқылуы;3/0/4/7→3047;1/12/6/14→2274;20көк9сары→0,71ақ;8/0/2/6карточка→12инвариант;1бүтін4ондықсектор→1,4;A17B73мм→5,6см.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең торлар/жолақтар/секторлар, нақты жеке фишкалар және сантиметрлік/миллиметрлік шкала. Source raster/traced path жоқ. Карточкадағы12тәсіл — сол шектеулердің комбинаторлық инварианты, жаңа мағына деп саналмайды; сыртқы тәуелсіз қол қою қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық үлестерді суреттен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full13saved/new/solutions/everyMCQ plus all343pxsheets; countactual100cellgrids, individualchips includingboth>9columns, same10partwholes, equalpieangles, cmmajor/mmminoractualrulercoordinates and zero-cardcompletepermutations. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave56-carry-twelve-tenths-fourteen-thousandths.svg",
+      "verificationModule": "scripts/editorial/visual-wave56-models.mjs",
+      "statement": "Әр фишканың мәні бағанның үстінде жазылған; кейбір бағанда 9-дан көп фишка бар. Барлық фишкалардың қосындысында НЕШЕ мыңдық үлес бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Фишкалар санын цифрлар сияқты тізіп жазуға болмайды. Барлығын мыңдық үлеске айналдырамыз: 1 × 1000 + 12 × 100 + 6 × 10 + 14 = 1000 + 1200 + 60 + 14 = 2274. Тексеру: 12 ондық үлес = 1 бірлік және 2 ондық үлес; 14 мыңдық үлес = 1 жүздік үлес және 4 мыңдық үлес. Екі тасымалды ескерсек, сан 2,274, яғни (2274/1000).",
+      "figureDescription": "Бағандардың бір фишкаға шаққандағы мәндері 1,000; 0,100; 0,010; 0,001. Сәйкес фишка сандары 1; 12; 6; 14. Бос бағандарда фишка жоқ.",
+      "figureSha256": "0a98982d865a5eaa56b14a4469bb0c3d520b2e05b0be7ccc1585bad9c1d68196",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "2274",
+        "checks": {
+          "thousandthsPerChip": [
+            1000,
+            100,
+            10,
+            1
+          ],
+          "counts": [
+            1,
+            12,
+            6,
+            14
+          ],
+          "weightedContributions": [
+            1000,
+            1200,
+            60,
+            14
+          ],
+          "totalThousandths": 2274,
+          "whole": 2,
+          "fractionalThousandths": 274,
+          "decimal": "2,274",
+          "carries": {
+            "tenthsToUnits": 1,
+            "thousandthsToHundredths": 1
+          }
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave56-two-blue-columns-nine-yellow-cells",
+      "modelId": "visual-wave56-hundred-grid-two-colors-unpainted-decimal",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "two-color-grid",
+        "blueCols": 2,
+        "yellow": 9
+      },
+      "answer": "0,71",
+      "sourceRefs": [
+        {
+          "sourceId": "4c0fd5b3b8a8e3af",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-1-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-1-level3.json#2",
+      "sourceCanonicalSha256": "44937fee2d9ec304e56e84998f3892f83c9c9ca63e25aebcefb9ee7db256e4c4",
+      "sourceSkill": "100grid2fullbluecols20and9yellowlastcol; white71→0,71. Painted0,29/reversedpainteddigits0,92/comma7,1wrong.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.1 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Жүздік торды санау, бүтін мен ондық үлесті біріктіру, ақ ондықтардың санын үлестің мәнінен айыру, бос разряд, бүтінді қоса есептеген мыңдық/жүздік саны, екі разрядтағы тасымал, нөл карточкасының шектеулі орны және нөлден басталмайтын миллиметрлік өлшем сақталды.",
+        "Жаңа деректер:58көк/100;3бүтін6ондық;көк0,4→6ақондық;4/0/7/3фишка→4,073;1бүтін38жүздік→138;A0B64мм→0,64дм;3ондық0бірлік6ондықүлес0жүздік2мыңдық→30,602оқылуы;3/0/4/7→3047;1/12/6/14→2274;20көк9сары→0,71ақ;8/0/2/6карточка→12инвариант;1бүтін4ондықсектор→1,4;A17B73мм→5,6см.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең торлар/жолақтар/секторлар, нақты жеке фишкалар және сантиметрлік/миллиметрлік шкала. Source raster/traced path жоқ. Карточкадағы12тәсіл — сол шектеулердің комбинаторлық инварианты, жаңа мағына деп саналмайды; сыртқы тәуелсіз қол қою қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық үлестерді суреттен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full13saved/new/solutions/everyMCQ plus all343pxsheets; countactual100cellgrids, individualchips includingboth>9columns, same10partwholes, equalpieangles, cmmajor/mmminoractualrulercoordinates and zero-cardcompletepermutations. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave56-two-blue-columns-nine-yellow-cells.svg",
+      "verificationModule": "scripts/editorial/visual-wave56-models.mjs",
+      "options": [
+        "0,71",
+        "0,29",
+        "0,92",
+        "7,1"
+      ],
+      "statement": "100 тең ұяшықты квадрат — бір бүтін. Көк пен сары ұяшықтар боялған, ақ ұяшықтар боялмаған. БОЯЛМАҒАН бөлікті ондық бөлшекпен таңдаңыз.",
+      "solution": "Көк 2 толық бағанда 20 ұяшық бар. Соңғы бағандағы сары ұяшықтар 9. Боялғаны 20 + 9 = 29, ақ ұяшықтар 100 − 29 = 71. Ақ бөлік (71/100) = 0,71. 0,29 — боялған бөлік, оның цифрларын ауыстыру да ақ бөлікті бермейді.",
+      "figureDescription": "10×10 ұяшықты квадрат: сол жақ 2 баған түгел көк, ең оң жақ бағанның төменгі 9 ұяшығы сары, қалған ұяшықтар ақ.",
+      "figureSha256": "b3e5580e6d1383aae463782adb0bb50372b0d8028f3cee70923726871a343f96",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "0,71",
+        "checks": {
+          "equalCells": 100,
+          "blueColumns": 2,
+          "blueCells": 20,
+          "yellowCells": 9,
+          "paintedCells": 29,
+          "unpaintedCells": 71,
+          "decimal": "0,71"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave56-eight-zero-two-six-digit-cards",
+      "modelId": "visual-wave56-digit-card-zero-position-decimal-count",
+      "grade": 5,
+      "topic": "comb",
+      "difficulty": "hard",
+      "params": {
+        "scene": "cards",
+        "digits": [
+          8,
+          0,
+          2,
+          6
+        ]
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "bb3b017b17ca0554",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-1-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-1-level3.json#3",
+      "sourceCanonicalSha256": "083fbd664cae58e174d1540a83b349600b56180517510f197b1a65239c5f2707",
+      "sourceSkill": "FourNEWdistinctdigits8/0/2/6; allonceformatab,cd,firstandlastnonzero. Full24permutations; zeroonlyb/c→6+6=12 invariant, honestnotnewsemanticcount.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.1 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Жүздік торды санау, бүтін мен ондық үлесті біріктіру, ақ ондықтардың санын үлестің мәнінен айыру, бос разряд, бүтінді қоса есептеген мыңдық/жүздік саны, екі разрядтағы тасымал, нөл карточкасының шектеулі орны және нөлден басталмайтын миллиметрлік өлшем сақталды.",
+        "Жаңа деректер:58көк/100;3бүтін6ондық;көк0,4→6ақондық;4/0/7/3фишка→4,073;1бүтін38жүздік→138;A0B64мм→0,64дм;3ондық0бірлік6ондықүлес0жүздік2мыңдық→30,602оқылуы;3/0/4/7→3047;1/12/6/14→2274;20көк9сары→0,71ақ;8/0/2/6карточка→12инвариант;1бүтін4ондықсектор→1,4;A17B73мм→5,6см.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең торлар/жолақтар/секторлар, нақты жеке фишкалар және сантиметрлік/миллиметрлік шкала. Source raster/traced path жоқ. Карточкадағы12тәсіл — сол шектеулердің комбинаторлық инварианты, жаңа мағына деп саналмайды; сыртқы тәуелсіз қол қою қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық үлестерді суреттен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full13saved/new/solutions/everyMCQ plus all343pxsheets; countactual100cellgrids, individualchips includingboth>9columns, same10partwholes, equalpieangles, cmmajor/mmminoractualrulercoordinates and zero-cardcompletepermutations. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave56-eight-zero-two-six-digit-cards.svg",
+      "verificationModule": "scripts/editorial/visual-wave56-models.mjs",
+      "statement": "Төрт цифр карточкасының әрқайсысын бір реттен қолданып, ab,cd түріндегі сандар құрастырамыз: үтірдің екі жағында екі цифрдан бар. Бүтін бөлік 0-ден басталмасын, бөлшек бөлік 0-мен аяқталмасын. Неше түрлі ондық сан алынады? Жауапқа тек санды жазыңыз.",
+      "solution": "0 бірінші де, соңғы да орында тұра алмайды. Ол тек b немесе c орнында болады. 0-ді b орнына қойсақ, қалған үш түрлі цифр a, c, d орындарына 3 × 2 × 1 = 6 тәсілмен орналасады. 0-ді c орнына қойсақ, тағы 6 тәсіл. Екі жағдай қиылыспайды: 6 + 6 = 12. Әр санның екі бөлшек цифры бар әрі соңғысы нөл емес, сондықтан әртүрлі орналасулар бірдей санға айналмайды.",
+      "figureDescription": "Төрт бөлек карточкада 8, 0, 2, 6 цифрлары жазылған.",
+      "figureSha256": "1e359bada9854d6123ecbfb662f4183d2a04a603fbfcac1e80a8e8c8413d1730",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "digits": [
+            8,
+            0,
+            2,
+            6
+          ],
+          "completePermutations": 24,
+          "accepted": [
+            [
+              8,
+              0,
+              2,
+              6
+            ],
+            [
+              8,
+              0,
+              6,
+              2
+            ],
+            [
+              8,
+              2,
+              0,
+              6
+            ],
+            [
+              8,
+              6,
+              0,
+              2
+            ],
+            [
+              2,
+              8,
+              0,
+              6
+            ],
+            [
+              2,
+              0,
+              8,
+              6
+            ],
+            [
+              2,
+              0,
+              6,
+              8
+            ],
+            [
+              2,
+              6,
+              0,
+              8
+            ],
+            [
+              6,
+              8,
+              0,
+              2
+            ],
+            [
+              6,
+              0,
+              8,
+              2
+            ],
+            [
+              6,
+              0,
+              2,
+              8
+            ],
+            [
+              6,
+              2,
+              0,
+              8
+            ]
+          ],
+          "zeroUnitsCount": 6,
+          "zeroTenthsCount": 6,
+          "count": 12,
+          "unchangedCombinatorialInvariant": true
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave56-one-whole-four-tenths-circles",
+      "modelId": "visual-wave56-whole-pies-plus-tenths-decimal",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "pies",
+        "whole": 1,
+        "blue": 4
+      },
+      "answer": "1,4",
+      "sourceRefs": [
+        {
+          "sourceId": "c277d85de1a1e7dd",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-1-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-1-leveltest.json#0",
+      "sourceCanonicalSha256": "7bbb2cb693379c8dbf7a0ec2871c5dc32b321412fbbc3cd3641768dfc8728ca7",
+      "sourceSkill": "OneFULL10sectorcircleplus4/10; equalradii/equalangles, retainwhole and0,14/1,04/4,1diagnostics.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.1 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Жүздік торды санау, бүтін мен ондық үлесті біріктіру, ақ ондықтардың санын үлестің мәнінен айыру, бос разряд, бүтінді қоса есептеген мыңдық/жүздік саны, екі разрядтағы тасымал, нөл карточкасының шектеулі орны және нөлден басталмайтын миллиметрлік өлшем сақталды.",
+        "Жаңа деректер:58көк/100;3бүтін6ондық;көк0,4→6ақондық;4/0/7/3фишка→4,073;1бүтін38жүздік→138;A0B64мм→0,64дм;3ондық0бірлік6ондықүлес0жүздік2мыңдық→30,602оқылуы;3/0/4/7→3047;1/12/6/14→2274;20көк9сары→0,71ақ;8/0/2/6карточка→12инвариант;1бүтін4ондықсектор→1,4;A17B73мм→5,6см.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең торлар/жолақтар/секторлар, нақты жеке фишкалар және сантиметрлік/миллиметрлік шкала. Source raster/traced path жоқ. Карточкадағы12тәсіл — сол шектеулердің комбинаторлық инварианты, жаңа мағына деп саналмайды; сыртқы тәуелсіз қол қою қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық үлестерді суреттен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full13saved/new/solutions/everyMCQ plus all343pxsheets; countactual100cellgrids, individualchips includingboth>9columns, same10partwholes, equalpieangles, cmmajor/mmminoractualrulercoordinates and zero-cardcompletepermutations. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave56-one-whole-four-tenths-circles.svg",
+      "verificationModule": "scripts/editorial/visual-wave56-models.mjs",
+      "options": [
+        "0,14",
+        "1,04",
+        "1,4",
+        "4,1"
+      ],
+      "statement": "Әр дөңгелек — бір бүтін және 10 тең сектордан тұрады. БАРЛЫҚ көк секторлардың қосындысын бір ондық санмен таңдаңыз.",
+      "solution": "Толық көк дөңгелек саны 1. Қалған фигурада 10 тең бөліктің 4 бөлігі көк: (4/10). Барлығы (1 + (4/10)) = 1,4. Бүтін мен бөлшекті ауыстыруға немесе ондық үлестің алдына артық нөл қосуға болмайды.",
+      "figureDescription": "Бірдей екі дөңгелек 10 тең секторға бөлінген. Біріншісі түгел көк, екіншісінің алғашқы 4 секторы көк, қалғандары ақ.",
+      "figureSha256": "4cf65a323207102d1761d6cb501593efd82e1abba2afbac23e5af5b485dd4f78",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "1,4",
+        "checks": {
+          "equalPartsPerWhole": 10,
+          "fullWholes": 1,
+          "partialTenths": 4,
+          "totalTenths": 14,
+          "decimal": "1,4"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave56-ruler-seventeen-seventy-three-millimetres",
+      "modelId": "visual-wave56-ruler-nonzero-difference-decimal-centimetres",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "ruler",
+        "a": 17,
+        "b": 73,
+        "unit": "cm"
+      },
+      "answer": "5,6",
+      "sourceRefs": [
+        {
+          "sourceId": "041da8453676319e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-4-1-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-4-1-leveltest.json#5",
+      "sourceCanonicalSha256": "7412e4266bc6e088e455b26eb10cdd714fe701f6f564ddfbbfd7ddbd45e77c6e",
+      "sourceSkill": "A1cm7mmB7cm3mm, borrowrequired:73−17=56mm→5,6cm; Bcoordinate7,3/order0,56/independentabsdigitdifference6,4wrong.",
+      "adaptationChanges": [
+        "Барлық 13 сақталған 4.1 визуалды шарт, толық шешім және барлық MCQ жеке оқылып, үш бастапқы сурет парағы қаралды. Жүздік торды санау, бүтін мен ондық үлесті біріктіру, ақ ондықтардың санын үлестің мәнінен айыру, бос разряд, бүтінді қоса есептеген мыңдық/жүздік саны, екі разрядтағы тасымал, нөл карточкасының шектеулі орны және нөлден басталмайтын миллиметрлік өлшем сақталды.",
+        "Жаңа деректер:58көк/100;3бүтін6ондық;көк0,4→6ақондық;4/0/7/3фишка→4,073;1бүтін38жүздік→138;A0B64мм→0,64дм;3ондық0бірлік6ондықүлес0жүздік2мыңдық→30,602оқылуы;3/0/4/7→3047;1/12/6/14→2274;20көк9сары→0,71ақ;8/0/2/6карточка→12инвариант;1бүтін4ондықсектор→1,4;A17B73мм→5,6см.",
+        "Барлық SVG жаңа параметрден нативті салынған: тең торлар/жолақтар/секторлар, нақты жеке фишкалар және сантиметрлік/миллиметрлік шкала. Source raster/traced path жоқ. Карточкадағы12тәсіл — сол шектеулердің комбинаторлық инварианты, жаңа мағына деп саналмайды; сыртқы тәуелсіз қол қою қажет."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Ондық үлестерді суреттен оқу",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full13saved/new/solutions/everyMCQ plus all343pxsheets; countactual100cellgrids, individualchips includingboth>9columns, same10partwholes, equalpieangles, cmmajor/mmminoractualrulercoordinates and zero-cardcompletepermutations. No self signature."
+      },
+      "image": "/figures/synaq-editions/visual-wave56-ruler-seventeen-seventy-three-millimetres.svg",
+      "verificationModule": "scripts/editorial/visual-wave56-models.mjs",
+      "options": [
+        "7,3",
+        "0,56",
+        "6,4",
+        "5,6"
+      ],
+      "statement": "Сызғыштың сандары — сантиметр, ең кіші бөлігі — миллиметр. AB кесіндісі 0-ден басталмайды. Оның ҰЗЫНДЫҒЫН сантиметрмен ондық сан түрінде таңдаңыз.",
+      "solution": "A орны 1 см 7 мм = 17 мм, B орны 7 см 3 мм = 73 мм. Ұзындық екі координатаның айырмасы: 73 − 17 = 56 мм = 5,6 см. 7,3 — B нүктесінің орны ғана. 0,56 — миллиметрді жүздік үлес деп алған қате. 6,4 — сантиметрлер үшін 7 − 1 = 6 деп, ал миллиметрлер үшін қарыз алудың орнына |3 − 7| = 4 модулін қате алу. Миллиметр цифрларын үлкенінен кішісін азайтып қоя салуға болмайды.",
+      "figureDescription": "Сантиметрлер 0–8 деп белгіленген сызғыш; әр сантиметрде 10 миллиметрлік аралық. A 17 мм белгісінде, B 73 мм белгісінде, араларында кесінді.",
+      "figureSha256": "c75aad47f93070f7015daac0a537afa421a8bd8cefe02cc1525c1372bf16f27b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5,6",
+        "checks": {
+          "aMillimetres": 17,
+          "bMillimetres": 73,
+          "segmentMillimetres": 56,
+          "millimetresPerRequestedUnit": 10,
+          "decimal": "5,6",
+          "requestedLengthNotEndpoint": true,
+          "borrowRequired": true
+        }
+      }
+    }
+  ]
+}

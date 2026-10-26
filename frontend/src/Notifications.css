@@ -1,0 +1,8 @@
+.notification-trigger{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:40px;min-height:40px;color:#53657e}
+.notification-trigger svg{display:block;flex:none}
+.notification-badge{display:grid;place-items:center;min-width:17px;height:17px;padding:0 4px;box-sizing:border-box;background:#b63646;border-radius:10px;color:white;font:700 10px/1 Manrope,system-ui,sans-serif}
+.notifications-panel .notification-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:0 0 8px;font:750 16px Manrope,'Golos Text',sans-serif}
+.notification-heading>button{display:grid;place-items:center;min-width:44px;min-height:44px;border:0;border-radius:10px;background:#f0f3fa;color:#61758d;font-size:24px;cursor:pointer}
+.notifications-panel .notification-entry{display:block;width:100%;text-align:left;background:#edf2ff;border:1px solid #e0e7f1;border-radius:12px;padding:14px;min-height:48px;margin:0 0 8px;cursor:pointer;font:400 14px/1.7 'Golos Text',system-ui,sans-serif;color:#304962}
+.notifications-panel .notification-entry.is-read{background:#f8fafc}
+.notifications-panel button:focus-visible{outline:3px solid #526de0;outline-offset:2px}

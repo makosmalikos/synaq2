@@ -1,0 +1,562 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All7 saved visual sources grade6topic7.1 only; no capture/download or traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual sources grade6topic7.1",
+    "sourceVisualOccurrences": 7,
+    "addressedNewDrafts": 7,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "23815137a8d5a242",
+      "34018334c7cae1f2",
+      "419584bdb9b62bea",
+      "5270613fbf1a7488",
+      "7e657cbc4b484979",
+      "a04ea94a09e425df",
+      "d3455054c640c985"
+    ],
+    "distinctModels": 7,
+    "semantics": "7 individually addressed spatial visual targets; closed-solid visibility is derived, not hand-marked from source artwork."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave13-cuboid-hidden-vertical-edge",
+      "modelId": "visual-wave13-cuboid-hidden-edge",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cuboid",
+        "dimensions": [
+          7,
+          3,
+          4
+        ],
+        "candidates": [
+          [
+            "H",
+            "H₁"
+          ],
+          [
+            "F",
+            "F₁"
+          ],
+          [
+            "E₁",
+            "H₁"
+          ],
+          [
+            "G",
+            "G₁"
+          ]
+        ]
+      },
+      "answer": "HH₁",
+      "sourceRefs": [
+        {
+          "sourceId": "5270613fbf1a7488",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-1-level1.json#0",
+      "sourceCanonicalSha256": "fe5ceb1be6e30e9b8b696d28b987f48827a6e36aa29a073259a713f57b95113f",
+      "sourceSkill": "Identifying the only candidate hidden edge using dashed back-lower edges in a consistent3D projection",
+      "adaptationChanges": [
+        "Әр бастапқы кеңістіктік дағды сақталды: көрінбейтін қыр, жасырын кубтар, радиус/диаметр/биіктік, барлық қыр ұзындығы немесе пирамиданың қыр саны.",
+        "Өлшемдер, төбе атаулары, куб блогының өлшемдері және пирамиданың табаны жаңадан таңдалды. Қыр санының геометриялық инварианттары бұзылмайды.",
+        "Барлық дене жаңа параметрлерден native SVG түрінде салынды. Көпжақтың үзік қырлары3Dжақ нормальдары мен бірдей камера бағыты бойынша есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кеңістіктегі фигура",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, closed3Dface/edge incidence, camera visibility, unit cube layers, cylinder/cone center-radius definitions and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave13-cuboid-hidden-vertical-edge.svg",
+      "verificationModule": "scripts/editorial/visual-wave13-models.mjs",
+      "options": [
+        "HH₁",
+        "FF₁",
+        "E₁H₁",
+        "GG₁"
+      ],
+      "statement": "EFGHE₁F₁G₁H₁ тікбұрышты параллелепипеді кескінделген. Үзік сызықпен көрсетілген, көрінбейтін қырды таңдаңыз.",
+      "solution": "Артқы төменгі H төбесіне келетін EH, GH және HH₁ қырлары көрінбейді, сондықтан үзік көрсетілген. Нұсқалардағы FF₁, E₁H₁ және GG₁ тұтас сызылған. Дұрыс қыр HH₁.",
+      "figureDescription": "Тікбұрышты EFGHE₁F₁G₁H₁ денесі. Үзік қырлар EH, HG, HH₁. Басқалары тұтас.",
+      "figureSha256": "bcfb234bff67198d3baaa51fd9964983063a1435a4f3448bf2e93654aab81220",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "HH₁",
+        "checks": {
+          "hiddenEdges": [
+            "E:H",
+            "G:H",
+            "H:H₁"
+          ],
+          "totalEdges": 12
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave13-solid-cube-block-count",
+      "modelId": "visual-wave13-packed-unit-cubes",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cubes",
+        "dimensions": [
+          3,
+          2,
+          2
+        ]
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "7e657cbc4b484979",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-1-level1.json#1",
+      "sourceCanonicalSha256": "b3ac15565c93f730bb77d6a8c8434a84d443d172ca2c032f39302c9ed39b7d21",
+      "sourceSkill": "Counting all equal unit cubes layer-by-layer in a full block, including fully occluded rear-bottom cubes",
+      "adaptationChanges": [
+        "Әр бастапқы кеңістіктік дағды сақталды: көрінбейтін қыр, жасырын кубтар, радиус/диаметр/биіктік, барлық қыр ұзындығы немесе пирамиданың қыр саны.",
+        "Өлшемдер, төбе атаулары, куб блогының өлшемдері және пирамиданың табаны жаңадан таңдалды. Қыр санының геометриялық инварианттары бұзылмайды.",
+        "Барлық дене жаңа параметрлерден native SVG түрінде салынды. Көпжақтың үзік қырлары3Dжақ нормальдары мен бірдей камера бағыты бойынша есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кеңістіктегі фигура",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, closed3Dface/edge incidence, camera visibility, unit cube layers, cylinder/cone center-radius definitions and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave13-solid-cube-block-count.svg",
+      "verificationModule": "scripts/editorial/visual-wave13-models.mjs",
+      "statement": "Тұтас дене бірдей кубтардан жиналған, ішінде бос орын жоқ. Кейбір кубтар артқы және төменгі қабаттарда жасырын тұр. Денеде барлығы неше куб бар? Жауапқа тек санды жазыңыз.",
+      "solution": "Төменгі қабатта 3 × 2 = 6 куб. Осындай 2 қабат бар. Барлығы 6 × 2 = 12 куб. Тек сыртынан көрінген кубтармен шектелмейміз.",
+      "figureDescription": "Бос орны жоқ куб блогы: алдыңғы беті 3 баған мен 2 қатар, оң бетінің тереңдігі 2 куб. Әр бетте кубтардың шекаралары көрсетілген.",
+      "figureSha256": "180658f1d34dcd6eef8ff311fc35a3460382ba96e69f196b1db18fd821d36e7d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "layers": 2,
+          "cellsPerLayer": 6
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave13-cylinder-diameter-to-radius",
+      "modelId": "visual-wave13-cylinder-radius",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cylinder",
+        "diameter": 14,
+        "height": 11
+      },
+      "answer": "7",
+      "sourceRefs": [
+        {
+          "sourceId": "419584bdb9b62bea",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-1-level1.json#2",
+      "sourceCanonicalSha256": "f2adc506a5fa9017911167d472e4efea22fc5d6744b422c89f083ee42247a0bd",
+      "sourceSkill": "Distinguishing the base diameter through its center from the cylinder height and halving only the diameter",
+      "adaptationChanges": [
+        "Әр бастапқы кеңістіктік дағды сақталды: көрінбейтін қыр, жасырын кубтар, радиус/диаметр/биіктік, барлық қыр ұзындығы немесе пирамиданың қыр саны.",
+        "Өлшемдер, төбе атаулары, куб блогының өлшемдері және пирамиданың табаны жаңадан таңдалды. Қыр санының геометриялық инварианттары бұзылмайды.",
+        "Барлық дене жаңа параметрлерден native SVG түрінде салынды. Көпжақтың үзік қырлары3Dжақ нормальдары мен бірдей камера бағыты бойынша есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кеңістіктегі фигура",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, closed3Dface/edge incidence, camera visibility, unit cube layers, cylinder/cone center-radius definitions and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave13-cylinder-diameter-to-radius.svg",
+      "verificationModule": "scripts/editorial/visual-wave13-models.mjs",
+      "statement": "Цилиндрдің биіктігі мен табанының диаметрі суретте сантиметрмен берілген. Табан радиусы неше сантиметр? Жауапқа тек санды жазыңыз.",
+      "solution": "Табан центрі арқылы өткен толық кесінді 14 см — диаметр. Радиус оның жартысы: 14 : 2 = 7 см. 11 см — цилиндрдің биіктігі, ол табан радиусы емес.",
+      "figureDescription": "Цилиндр табанының диаметрі 14 см; ол табан центрі арқылы өтеді. Тік биіктігі 11 см. Табанның артқы жартысы үзік сызықпен берілген.",
+      "figureSha256": "ac9be0171a3522ae2ca88349b9da56cd8226a312bf3778d6c8daa3a10aa22b66",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "7",
+        "checks": {
+          "diameter": 14,
+          "irrelevantHeight": 11
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave13-cone-center-radius-segment",
+      "modelId": "visual-wave13-cone-radius-name",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cone",
+        "center": "C",
+        "rim": [
+          "M",
+          "N"
+        ],
+        "apex": "T"
+      },
+      "answer": "CM",
+      "sourceRefs": [
+        {
+          "sourceId": "34018334c7cae1f2",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-1-level1.json#4",
+      "sourceCanonicalSha256": "4e1f9bb5274474c9d9817a6b14b05b4f2ad6450761679610fb5935abdfb4f52d",
+      "sourceSkill": "Identifying center-to-rim radius versus full diameter, vertical height and lateral generator",
+      "adaptationChanges": [
+        "Әр бастапқы кеңістіктік дағды сақталды: көрінбейтін қыр, жасырын кубтар, радиус/диаметр/биіктік, барлық қыр ұзындығы немесе пирамиданың қыр саны.",
+        "Өлшемдер, төбе атаулары, куб блогының өлшемдері және пирамиданың табаны жаңадан таңдалды. Қыр санының геометриялық инварианттары бұзылмайды.",
+        "Барлық дене жаңа параметрлерден native SVG түрінде салынды. Көпжақтың үзік қырлары3Dжақ нормальдары мен бірдей камера бағыты бойынша есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кеңістіктегі фигура",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, closed3Dface/edge incidence, camera visibility, unit cube layers, cylinder/cone center-radius definitions and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave13-cone-center-radius-segment.svg",
+      "verificationModule": "scripts/editorial/visual-wave13-models.mjs",
+      "options": [
+        "TC",
+        "TM",
+        "MN",
+        "CM"
+      ],
+      "statement": "Конуста T — төбе, C — табан шеңберінің центрі, M мен N шеңбердің бойында жатыр. Табан радиусын білдіретін кесіндіні таңдаңыз.",
+      "solution": "Радиус шеңбер центрінен шеңбердің бойына барады. C — центр, M — шеңбер нүктесі, сондықтан CM — радиус. MN — диаметр, TC — биіктік, TM — жасаушы.",
+      "figureDescription": "T төбесі, C табан центрі, M мен N табанның сол және оң шетінде. TC тік биіктігі мен MN центр арқылы өтетін кесіндісі үзік берілген. TM мен TN бүйір шеттері тұтас.",
+      "figureSha256": "e0c185b369b2e8edfb5fdda215a934c8a5e95ac91fbdf1faed12e1647ab008b4",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "CM",
+        "checks": {
+          "center": "C",
+          "rim": [
+            "M",
+            "N"
+          ],
+          "diameter": "MN",
+          "height": "TC"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave13-all-twelve-cuboid-edges",
+      "modelId": "visual-wave13-cuboid-total-edges",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "cuboid",
+        "dimensions": [
+          8,
+          5,
+          4
+        ]
+      },
+      "answer": "68",
+      "sourceRefs": [
+        {
+          "sourceId": "d3455054c640c985",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-1-level1.json#8",
+      "sourceCanonicalSha256": "7ab54983ffe2f0bf90e1ca47e00efbcdfe246f14f3252f3034eb47541ea0cdf9",
+      "sourceSkill": "Summing all12 edges as four copies of each of three lengths, including hidden edges",
+      "adaptationChanges": [
+        "Әр бастапқы кеңістіктік дағды сақталды: көрінбейтін қыр, жасырын кубтар, радиус/диаметр/биіктік, барлық қыр ұзындығы немесе пирамиданың қыр саны.",
+        "Өлшемдер, төбе атаулары, куб блогының өлшемдері және пирамиданың табаны жаңадан таңдалды. Қыр санының геометриялық инварианттары бұзылмайды.",
+        "Барлық дене жаңа параметрлерден native SVG түрінде салынды. Көпжақтың үзік қырлары3Dжақ нормальдары мен бірдей камера бағыты бойынша есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кеңістіктегі фигура",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, closed3Dface/edge incidence, camera visibility, unit cube layers, cylinder/cone center-radius definitions and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave13-all-twelve-cuboid-edges.svg",
+      "verificationModule": "scripts/editorial/visual-wave13-models.mjs",
+      "statement": "Тікбұрышты параллелепипедтің үш өлшемі суретте дециметрмен берілген. Оның барлық 12 қырының ұзындықтарының қосындысы неше дециметр? Көрінбейтін қырлар да есепке алынады. Жауапқа тек санды жазыңыз.",
+      "solution": "Әр өлшемге тең төрт қыр бар: 8, 5, 4. Барлық қырлар қосындысы 4 × (8 + 5 + 4) = 4 × 17 = 68 дм.",
+      "figureDescription": "Тікбұрышты EFGHE₁F₁G₁H₁ денесі. Үш өлшемі 8, 5, 4 дм. Үзік қырлар EH, HG, HH₁. Басқалары тұтас.",
+      "figureSha256": "eaa0b60a3c6922688fb3aee4c0b2d1f62a386bf6536dae44f6307fc3685e514d",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "68",
+        "checks": {
+          "edgeLengths": [
+            5,
+            8,
+            5,
+            8,
+            8,
+            5,
+            8,
+            5,
+            4,
+            4,
+            4,
+            4
+          ],
+          "totalEdges": 12
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave13-six-sided-pyramid-edges",
+      "modelId": "visual-wave13-pyramid-edge-count",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "pyramid",
+        "labels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "base": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            -2,
+            3
+          ]
+        ],
+        "apexLabel": "S",
+        "apex": [
+          2,
+          3,
+          7
+        ],
+        "renderScale": 29,
+        "renderOffset": [
+          148,
+          300
+        ],
+        "labelOffsets": {
+          "A": [
+            -15,
+            15
+          ],
+          "B": [
+            12,
+            17
+          ],
+          "C": [
+            20,
+            5
+          ],
+          "D": [
+            13,
+            -6
+          ],
+          "E": [
+            -9,
+            -9
+          ],
+          "F": [
+            -20,
+            2
+          ],
+          "S": [
+            0,
+            -17
+          ]
+        }
+      },
+      "answer": "12",
+      "sourceRefs": [
+        {
+          "sourceId": "23815137a8d5a242",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-1-level1.json#9",
+      "sourceCanonicalSha256": "b41efcfeedff5752236dc42211e916d3e415a34e8cb1868e222ac089e88afd37",
+      "sourceSkill": "Counting each base edge and one lateral edge per base vertex, with a changed convex hexagonal base and correctly hidden edges",
+      "adaptationChanges": [
+        "Әр бастапқы кеңістіктік дағды сақталды: көрінбейтін қыр, жасырын кубтар, радиус/диаметр/биіктік, барлық қыр ұзындығы немесе пирамиданың қыр саны.",
+        "Өлшемдер, төбе атаулары, куб блогының өлшемдері және пирамиданың табаны жаңадан таңдалды. Қыр санының геометриялық инварианттары бұзылмайды.",
+        "Барлық дене жаңа параметрлерден native SVG түрінде салынды. Көпжақтың үзік қырлары3Dжақ нормальдары мен бірдей камера бағыты бойынша есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кеңістіктегі фигура",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, closed3Dface/edge incidence, camera visibility, unit cube layers, cylinder/cone center-radius definitions and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave13-six-sided-pyramid-edges.svg",
+      "verificationModule": "scripts/editorial/visual-wave13-models.mjs",
+      "statement": "Кескіндегі пирамиданың барлық қырларын санаңыз. Үзік сызықпен көрсетілген қырлар да осы денеге жатады. Қыр саны нешеу? Жауапқа тек санды жазыңыз.",
+      "solution": "Табанда A, B, C, D, E, F — 6 төбе, демек 6 табан қыры бар. Төбе S осы алты төбенің әрқайсысымен жалғасады: тағы 6 бүйір қыр. Барлығы 6 + 6 = 12. Үзік сызықтар да саналады.",
+      "figureDescription": "A, B, C, D, E, F — табан төбелері; S — жоғарғы төбе. Әр табан төбесі жоғарғы төбемен жалғасқан. Үзік қырлар FE, ED, ES.",
+      "figureSha256": "38a62cff050516e53631fe6a24d8d1279cbf3b6622fd42eddf2e192aaff85c44",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "12",
+        "checks": {
+          "baseEdges": 6,
+          "lateralEdges": 6,
+          "hiddenEdges": [
+            "E:F",
+            "D:E",
+            "E:S"
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave13-triangular-pyramid-hidden-base",
+      "modelId": "visual-wave13-tetrahedron-hidden-edge",
+      "grade": 6,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "pyramid",
+        "labels": [
+          "P",
+          "Q",
+          "R"
+        ],
+        "base": [
+          [
+            -3,
+            0
+          ],
+          [
+            0,
+            -4
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "apexLabel": "T",
+        "apex": [
+          0,
+          -1,
+          5
+        ],
+        "renderScale": 40,
+        "renderOffset": [
+          240,
+          215
+        ],
+        "labelOffsets": {
+          "P": [
+            -14,
+            9
+          ],
+          "Q": [
+            -10,
+            21
+          ],
+          "R": [
+            16,
+            9
+          ],
+          "T": [
+            0,
+            -17
+          ]
+        }
+      },
+      "answer": "PR",
+      "sourceRefs": [
+        {
+          "sourceId": "a04ea94a09e425df",
+          "sourceFile": "problems/sources/zerek/courses/6-math-7-1-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:6-math-7-1-level1.json#12",
+      "sourceCanonicalSha256": "d638adf9c927b8c03e3bc2d90d0f6c02d206b450f0953d61fb6e5ba049a4e1e7",
+      "sourceSkill": "Recognizing the unique hidden rear base edge of a tetrahedron rather than treating all base edges as hidden",
+      "adaptationChanges": [
+        "Әр бастапқы кеңістіктік дағды сақталды: көрінбейтін қыр, жасырын кубтар, радиус/диаметр/биіктік, барлық қыр ұзындығы немесе пирамиданың қыр саны.",
+        "Өлшемдер, төбе атаулары, куб блогының өлшемдері және пирамиданың табаны жаңадан таңдалды. Қыр санының геометриялық инварианттары бұзылмайды.",
+        "Барлық дене жаңа параметрлерден native SVG түрінде салынды. Көпжақтың үзік қырлары3Dжақ нормальдары мен бірдей камера бағыты бойынша есептеледі; source raster/traced path көшірілмейді."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Кеңістіктегі фигура",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent full source-target, closed3Dface/edge incidence, camera visibility, unit cube layers, cylinder/cone center-radius definitions and343px review"
+      },
+      "image": "/figures/synaq-editions/visual-wave13-triangular-pyramid-hidden-base.svg",
+      "verificationModule": "scripts/editorial/visual-wave13-models.mjs",
+      "options": [
+        "TQ",
+        "PR",
+        "PQ",
+        "TR"
+      ],
+      "statement": "TPQR үшбұрышты пирамидасы кескінделген. Қай қыр басқа жақтарының артында қалып, үзік сызықпен көрсетілген?",
+      "solution": "Пирамиданың TQ, PQ, TR және басқа алдыңғы қырлары тұтас көрсетілген. P мен R төбелерін жалғаған табанның артқы PR қыры ғана үзік сызылған. Сондықтан жауап PR.",
+      "figureDescription": "P, Q, R — табан төбелері; T — жоғарғы төбе. Әр табан төбесі жоғарғы төбемен жалғасқан. Үзік қырлар PR.",
+      "figureSha256": "69845c8bd8b47afc9c9dca675e484322ed97f5046c2a9340bb45aafbdb7add19",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "PR",
+        "checks": {
+          "hiddenEdge": "P:R",
+          "totalEdges": 6
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,553 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All12 individually read saved nonvisual grade6topic4.1 level1 sources. Closed author draft until independent full-content hash review.",
+  "summary": {
+    "editions": 12,
+    "sourceOccurrencesReferenced": 12,
+    "distinctModels": 12,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade6-numeric-equalities-23ea4d18c12aa297",
+      "modelId": "grade6-numeric-equalities-numeric-equality-transitivity",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "first": 7,
+        "second": 12,
+        "divisor": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json",
+          "sourceId": "23ea4d18c12aa297"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic4.1 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Екі жақтың дәл мәні, мүшелеп қосу/көбейту және бірдей амалды екі жаққа қолдану сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Таңбалар, ондықтар, нөлден өзге бөлгіш және сұралған оң жақ/сан/қасиет бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "7 × 12 = 84 және 84 = 252 ÷ 3 — тура теңдіктер. Теңдіктің ауысу қасиетін дұрыс қолданған нәтижені таңдаңыз.",
+      "options": [
+        "7 × 12 = 84 ÷ 3",
+        "7 × 12 = 252 ÷ 3",
+        "7 × 12 + 84 = 252 ÷ 3",
+        "7 × 12 = 252 × 3"
+      ],
+      "answer": "7 × 12 = 252 ÷ 3",
+      "solution": "a = b және b = c болса, a = c. Ортақ мән 84, сондықтан 7 × 12 = 252 ÷ 3. Екі жағы да 84. Бірінші нұсқаның оң жағы 28, үшіншісінің сол жағы 168, соңғысының оң жағы 756: олар берілген теңдікке сәйкес емес.",
+      "calculationVerification": {
+        "answer": "7 × 12 = 252 ÷ 3",
+        "checks": [
+          "All12saved nonvisual4.1 fullconditions/solutions/everyMCQ individually read",
+          "Both sides exact, memberwise sum versus product, transitivity, adding signed same number and nonzero division/multiplication preserved",
+          "Requested RHS/value/property and unequal operation counterexample distinguished; scaled decimal arithmetic exact",
+          "Native fractions/powers/no scans; closed author draft pending separate independent fullcontent hash review; variants not new meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-numeric-equalities-b57d1807fd5155f4",
+      "modelId": "grade6-numeric-equalities-memberwise-product-right-value",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "tenths": 15,
+        "multiplier": 8,
+        "dividend": 28,
+        "divisor": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json",
+          "sourceId": "b57d1807fd5155f4"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic4.1 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Екі жақтың дәл мәні, мүшелеп қосу/көбейту және бірдей амалды екі жаққа қолдану сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Таңбалар, ондықтар, нөлден өзге бөлгіш және сұралған оң жақ/сан/қасиет бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "1,5 × 8 = 12 және 28 ÷ 7 = 4 тура теңдіктерін МҮШЕЛЕП КӨБЕЙТІҢІЗ. Нәтиженің оң жағы қандай сан? Жауапқа тек санды жазыңыз.",
+      "answer": "48",
+      "solution": "Сол жақтарды өзара, оң жақтарды өзара көбейтеміз. Сол жақ (1,5 × 8) × (28 ÷ 7), оң жақ 12 × 4 = 48. Бастапқы екі жақша да тиісінше 12 және 4, сондықтан шыққан теңдік тура. Қосу емес, көбейту сұралған.",
+      "calculationVerification": {
+        "answer": "48",
+        "checks": [
+          "All12saved nonvisual4.1 fullconditions/solutions/everyMCQ individually read",
+          "Both sides exact, memberwise sum versus product, transitivity, adding signed same number and nonzero division/multiplication preserved",
+          "Requested RHS/value/property and unequal operation counterexample distinguished; scaled decimal arithmetic exact",
+          "Native fractions/powers/no scans; closed author draft pending separate independent fullcontent hash review; variants not new meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-numeric-equalities-8b8d2ad886c71365",
+      "modelId": "grade6-numeric-equalities-count-five-true-equalities",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "a": 9,
+        "b": 7,
+        "subtract": 8,
+        "negative": 6,
+        "addend": 15,
+        "negativeFactor": 3,
+        "negativeOther": 3,
+        "quarterMultiplier": 20,
+        "rightDividend": 35,
+        "rightDivisor": 7,
+        "fractionA": 5,
+        "fractionB": 6,
+        "fractionMultiplier": 18,
+        "rightA": 19,
+        "rightB": 4,
+        "signedDividend": 144,
+        "signedDivisor": 6,
+        "falseRight": -20
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json",
+          "sourceId": "8b8d2ad886c71365"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic4.1 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Екі жақтың дәл мәні, мүшелеп қосу/көбейту және бірдей амалды екі жаққа қолдану сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Таңбалар, ондықтар, нөлден өзге бөлгіш және сұралған оң жақ/сан/қасиет бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Төмендегі БЕС теңдіктің нешеуі тура?\n1) 9 × 7 - 8 = 55;\n2) -6 + 15 = 3 × (-3);\n3) 0,25 × 20 = 35 ÷ 7;\n4) (5/6) × 18 = 19 - 4;\n5) 144 ÷ (-6) = -20. Жауапқа тек санды жазыңыз.",
+      "answer": "3",
+      "solution": "Екі жақты бөлек салыстырамыз. 1) 63 - 8 = 55: тура. 2) Сол жақ 9, оң жақ -9: жалған. 3) Сол жақ (20/4) = 5, оң жақ та 5: тура. 4) Сол жақ 15, оң жақ 19 - 4 = 15: тура. 5) Сол жақ -24, бірақ оң жақ -20: жалған. Дұрыстары 1, 3, 4 — барлығы 3 теңдік.",
+      "calculationVerification": {
+        "answer": "3",
+        "checks": [
+          "All12saved nonvisual4.1 fullconditions/solutions/everyMCQ individually read",
+          "Both sides exact, memberwise sum versus product, transitivity, adding signed same number and nonzero division/multiplication preserved",
+          "Requested RHS/value/property and unequal operation counterexample distinguished; scaled decimal arithmetic exact",
+          "Native fractions/powers/no scans; closed author draft pending separate independent fullcontent hash review; variants not new meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-numeric-equalities-39ad849005b28b2e",
+      "modelId": "grade6-numeric-equalities-add-same-negative-to-both-sides",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "leftTenths": 73,
+        "addTenths": 47
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json",
+          "sourceId": "39ad849005b28b2e"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic4.1 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Екі жақтың дәл мәні, мүшелеп қосу/көбейту және бірдей амалды екі жаққа қолдану сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Таңбалар, ондықтар, нөлден өзге бөлгіш және сұралған оң жақ/сан/қасиет бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "7,3 + 4,7 = 12 теңдігінің ЕКІ жағына да -4,7 қосты. Шыққан теңдікті таңдаңыз.",
+      "options": [
+        "7,3 = 12 + 4,7",
+        "7,3 = 4,7 - 12",
+        "7,3 = 12 - 4,7",
+        "7,3 + 4,7 = 12 - 4,7"
+      ],
+      "answer": "7,3 = 12 - 4,7",
+      "solution": "Сол жаққа да -4,7 қосылады: 7,3 + 4,7 - 4,7 = 7,3. Оң жақ 12 - 4,7 болады. Сондықтан 7,3 = 12 - 4,7. Соңғы нұсқада тек оң жақ өзгертілген — ол теңдікті сақтамайды. Теріс санды қосу оң санды азайтумен бірдей.",
+      "calculationVerification": {
+        "answer": "7,3 = 12 - 4,7",
+        "checks": [
+          "All12saved nonvisual4.1 fullconditions/solutions/everyMCQ individually read",
+          "Both sides exact, memberwise sum versus product, transitivity, adding signed same number and nonzero division/multiplication preserved",
+          "Requested RHS/value/property and unequal operation counterexample distinguished; scaled decimal arithmetic exact",
+          "Native fractions/powers/no scans; closed author draft pending separate independent fullcontent hash review; variants not new meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-numeric-equalities-3c21b142ca9bfa9a",
+      "modelId": "grade6-numeric-equalities-transpose-right-positive-addend",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "first": 18,
+        "second": 13
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json",
+          "sourceId": "3c21b142ca9bfa9a"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic4.1 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Екі жақтың дәл мәні, мүшелеп қосу/көбейту және бірдей амалды екі жаққа қолдану сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Таңбалар, ондықтар, нөлден өзге бөлгіш және сұралған оң жақ/сан/қасиет бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "31 = 18 + 13 теңдігінде оң жақтағы +18 сол жаққа көшірілді. Қай жазу дұрыс?",
+      "options": [
+        "31 - 18 = 13",
+        "31 + 18 = 13",
+        "31 = 13 - 18",
+        "-31 - 18 = 13"
+      ],
+      "answer": "31 - 18 = 13",
+      "solution": "Екі жақтан да 18 азайтамыз: 31 - 18 = 18 + 13 - 18 = 13. Оң жақтағы +18 сол жақта -18 болып жазылады. Жай ғана бір жақтағы таңбаны өзгерту немесе 31 таңбасын ауыстыру бұл амалға жатпайды.",
+      "calculationVerification": {
+        "answer": "31 - 18 = 13",
+        "checks": [
+          "All12saved nonvisual4.1 fullconditions/solutions/everyMCQ individually read",
+          "Both sides exact, memberwise sum versus product, transitivity, adding signed same number and nonzero division/multiplication preserved",
+          "Requested RHS/value/property and unequal operation counterexample distinguished; scaled decimal arithmetic exact",
+          "Native fractions/powers/no scans; closed author draft pending separate independent fullcontent hash review; variants not new meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-numeric-equalities-642965251bc0b045",
+      "modelId": "grade6-numeric-equalities-divide-both-sides-right-value",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "dividend": 120,
+        "firstDivisor": 8,
+        "secondDivisor": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json",
+          "sourceId": "642965251bc0b045"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic4.1 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Екі жақтың дәл мәні, мүшелеп қосу/көбейту және бірдей амалды екі жаққа қолдану сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Таңбалар, ондықтар, нөлден өзге бөлгіш және сұралған оң жақ/сан/қасиет бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "120 ÷ 8 = 15 тура теңдігінің ЕКІ жағын да 5 санына бөлді. Нәтиженің оң жағындағы сан қандай? Жауапқа тек санды жазыңыз.",
+      "answer": "3",
+      "solution": "Оң жақ 15 ÷ 5 = 3. Сол жақ та (120 ÷ 8) ÷ 5 = 3 болады. Бөлгіш 5 нөл емес, сондықтан екі жағын бірдей санға бөлу теңдікті сақтайды. Бір жағын ғана бөлуге болмайды.",
+      "calculationVerification": {
+        "answer": "3",
+        "checks": [
+          "All12saved nonvisual4.1 fullconditions/solutions/everyMCQ individually read",
+          "Both sides exact, memberwise sum versus product, transitivity, adding signed same number and nonzero division/multiplication preserved",
+          "Requested RHS/value/property and unequal operation counterexample distinguished; scaled decimal arithmetic exact",
+          "Native fractions/powers/no scans; closed author draft pending separate independent fullcontent hash review; variants not new meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-numeric-equalities-25aee5079242ae20",
+      "modelId": "grade6-numeric-equalities-missing-negative-addend",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "left": 17,
+        "first": 3,
+        "second": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json",
+          "sourceId": "25aee5079242ae20"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic4.1 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Екі жақтың дәл мәні, мүшелеп қосу/көбейту және бірдей амалды екі жаққа қолдану сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Таңбалар, ондықтар, нөлден өзге бөлгіш және сұралған оң жақ/сан/қасиет бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "17 + □ = 3 × 4 теңдігі тура болсын. □ орнына қандай сан қойылады?",
+      "options": [
+        "5",
+        "-5",
+        "29",
+        "-29"
+      ],
+      "answer": "-5",
+      "solution": "Оң жақ 3 × 4 = 12. Сондықтан □ = 12 - 17 = -5. Тексеру: 17 + (-5) = 12. 29 деп алу белгілі қосылғышты қарсы жаққа таңбасын өзгертпей көшіруден шығады.",
+      "calculationVerification": {
+        "answer": "-5",
+        "checks": [
+          "All12saved nonvisual4.1 fullconditions/solutions/everyMCQ individually read",
+          "Both sides exact, memberwise sum versus product, transitivity, adding signed same number and nonzero division/multiplication preserved",
+          "Requested RHS/value/property and unequal operation counterexample distinguished; scaled decimal arithmetic exact",
+          "Native fractions/powers/no scans; closed author draft pending separate independent fullcontent hash review; variants not new meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-numeric-equalities-846f33271386f8e7",
+      "modelId": "grade6-numeric-equalities-select-true-signed-numeric-equality",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "negativeFactor": 4,
+        "negative": 5,
+        "addend": 29,
+        "bracketA": 18,
+        "bracketB": 9,
+        "bracketFactor": 4,
+        "falseBracket": 32,
+        "dividend": 50,
+        "divisor": 5,
+        "subtract": 2,
+        "falseSigned": -8,
+        "a": 3,
+        "b": 8,
+        "c": 5,
+        "d": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json",
+          "sourceId": "846f33271386f8e7"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic4.1 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Екі жақтың дәл мәні, мүшелеп қосу/көбейту және бірдей амалды екі жаққа қолдану сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Таңбалар, ондықтар, нөлден өзге бөлгіш және сұралған оң жақ/сан/қасиет бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Амалдардың ретін және таңбаларды сақтап, ТУРА санды теңдікті таңдаңыз.",
+      "options": [
+        "4 × (-5) + 29 = 9",
+        "(18 - 9) × 4 = 32",
+        "50 ÷ (-5) - 2 = -8",
+        "3 × 8 - 5 × 2 = 38"
+      ],
+      "answer": "4 × (-5) + 29 = 9",
+      "solution": "Бірінші сол жақ -20 + 29 = 9: тура. Екінші сол жақ 9 × 4 = 36, 32 емес. Үшіншісі -10 - 2 = -12, -8 емес. Соңғысы 24 - 10 = 14, 38 емес: екі көбейту де азайтудан бұрын орындалады.",
+      "calculationVerification": {
+        "answer": "4 × (-5) + 29 = 9",
+        "checks": [
+          "All12saved nonvisual4.1 fullconditions/solutions/everyMCQ individually read",
+          "Both sides exact, memberwise sum versus product, transitivity, adding signed same number and nonzero division/multiplication preserved",
+          "Requested RHS/value/property and unequal operation counterexample distinguished; scaled decimal arithmetic exact",
+          "Native fractions/powers/no scans; closed author draft pending separate independent fullcontent hash review; variants not new meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-numeric-equalities-fe68e8cec17e70ab",
+      "modelId": "grade6-numeric-equalities-unequal-operations-break-equality",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "addend": 8,
+        "factor": 4,
+        "offset": 9,
+        "witness": 2
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json",
+          "sourceId": "fe68e8cec17e70ab"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic4.1 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Екі жақтың дәл мәні, мүшелеп қосу/көбейту және бірдей амалды екі жаққа қолдану сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Таңбалар, ондықтар, нөлден өзге бөлгіш және сұралған оң жақ/сан/қасиет бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "a = b — тура теңдік, c ≠ 0. Қай түрлендіру a = b шартына қарамастан, тура теңдікті сақтамайды?",
+      "options": [
+        "a + 8 = b + 8",
+        "a × (-4) = b × (-4)",
+        "a ÷ c = b ÷ c",
+        "a - 9 = b + 9"
+      ],
+      "answer": "a - 9 = b + 9",
+      "solution": "Екі жаққа бірдей сан қосу, бірдей көбейткішке көбейту және нөлден өзге бірдей c-ға бөлу теңдікті сақтайды. Соңғы нұсқада сол жақтан 9 азайтып, оң жаққа 9 қосылған. a = b = 2 болса, сол жақ -7, оң жақ 11; олар тең емес. Оң және сол жаққа жасалған амалдар бірдей болуы керек.",
+      "calculationVerification": {
+        "answer": "a - 9 = b + 9",
+        "checks": [
+          "All12saved nonvisual4.1 fullconditions/solutions/everyMCQ individually read",
+          "Both sides exact, memberwise sum versus product, transitivity, adding signed same number and nonzero division/multiplication preserved",
+          "Requested RHS/value/property and unequal operation counterexample distinguished; scaled decimal arithmetic exact",
+          "Native fractions/powers/no scans; closed author draft pending separate independent fullcontent hash review; variants not new meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-numeric-equalities-bff0c85343660c7e",
+      "modelId": "grade6-numeric-equalities-missing-addend-between-products-and-sum",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "factor": 6,
+        "multiplier": 9,
+        "first": 38,
+        "second": 27
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json",
+          "sourceId": "bff0c85343660c7e"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic4.1 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Екі жақтың дәл мәні, мүшелеп қосу/көбейту және бірдей амалды екі жаққа қолдану сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Таңбалар, ондықтар, нөлден өзге бөлгіш және сұралған оң жақ/сан/қасиет бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "6 × 9 + □ = 38 + 27 теңдігіндегі □ мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "11",
+      "solution": "Белгілі көбейтінді 6 × 9 = 54, оң жақ 38 + 27 = 65. Белгісіз қосылғыш □ = 65 - 54 = 11. Тексеру: 54 + 11 = 65. □ — екі жақтың белгілі мәндерінің айырмасы.",
+      "calculationVerification": {
+        "answer": "11",
+        "checks": [
+          "All12saved nonvisual4.1 fullconditions/solutions/everyMCQ individually read",
+          "Both sides exact, memberwise sum versus product, transitivity, adding signed same number and nonzero division/multiplication preserved",
+          "Requested RHS/value/property and unequal operation counterexample distinguished; scaled decimal arithmetic exact",
+          "Native fractions/powers/no scans; closed author draft pending separate independent fullcontent hash review; variants not new meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-numeric-equalities-cc85bbb90e08a071",
+      "modelId": "grade6-numeric-equalities-identify-same-nonzero-multiplication",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "leftTenths": 48,
+        "rightTenths": 12,
+        "innerFactor": 4,
+        "factor": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json",
+          "sourceId": "cc85bbb90e08a071"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic4.1 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Екі жақтың дәл мәні, мүшелеп қосу/көбейту және бірдей амалды екі жаққа қолдану сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Таңбалар, ондықтар, нөлден өзге бөлгіш және сұралған оң жақ/сан/қасиет бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "4,8 = 1,2 × 4 теңдігінен 4,8 × 7 = 1,2 × 4 × 7 алынды. Нақты қандай қасиет қолданылды?",
+      "options": [
+        "Екі жағына бірдей сан қосу",
+        "Екі теңдікті мүшелеп қосу",
+        "a = b, b = c болса, a = c",
+        "Екі жағын нөлден өзге бірдей санға көбейту"
+      ],
+      "answer": "Екі жағын нөлден өзге бірдей санға көбейту",
+      "solution": "Бастапқы сол жақ та, бастапқы оң жақ та 7 санына көбейтілді. 7 ≠ 0. Тексеру: екі жағы да 33,6. Қосу жасалған жоқ, екінші бөлек теңдік те берілмеген; сондықтан мүшелеп қосу немесе ауысу қасиеті бұл қадамды сипаттамайды.",
+      "calculationVerification": {
+        "answer": "Екі жағын нөлден өзге бірдей санға көбейту",
+        "checks": [
+          "All12saved nonvisual4.1 fullconditions/solutions/everyMCQ individually read",
+          "Both sides exact, memberwise sum versus product, transitivity, adding signed same number and nonzero division/multiplication preserved",
+          "Requested RHS/value/property and unequal operation counterexample distinguished; scaled decimal arithmetic exact",
+          "Native fractions/powers/no scans; closed author draft pending separate independent fullcontent hash review; variants not new meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-numeric-equalities-9846e225ee470cac",
+      "modelId": "grade6-numeric-equalities-memberwise-sum-right-value",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "dividend": 72,
+        "divisor": 6,
+        "first": 8,
+        "second": 9
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-4-1-level1.json",
+          "sourceId": "9846e225ee470cac"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic4.1 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық12сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Екі жақтың дәл мәні, мүшелеп қосу/көбейту және бірдей амалды екі жаққа қолдану сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Таңбалар, ондықтар, нөлден өзге бөлгіш және сұралған оң жақ/сан/қасиет бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "72 ÷ 6 = 12 және 8 × 9 = 72 теңдіктерін МҮШЕЛЕП ҚОСЫҢЫЗ. Шыққан теңдіктің оң жағы қандай сан? Жауапқа тек санды жазыңыз.",
+      "answer": "84",
+      "solution": "Сол жақтарды қосамыз: (72 ÷ 6) + (8 × 9). Оң жақтарды да қосамыз: 12 + 72 = 84. Бастапқы екі теңдік тура болғандықтан, олардың мүшелеп қосындысы да тура. Бұл жерде оң жақтарды көбейту емес, қосу қажет.",
+      "calculationVerification": {
+        "answer": "84",
+        "checks": [
+          "All12saved nonvisual4.1 fullconditions/solutions/everyMCQ individually read",
+          "Both sides exact, memberwise sum versus product, transitivity, adding signed same number and nonzero division/multiplication preserved",
+          "Requested RHS/value/property and unequal operation counterexample distinguished; scaled decimal arithmetic exact",
+          "Native fractions/powers/no scans; closed author draft pending separate independent fullcontent hash review; variants not new meanings"
+        ]
+      }
+    }
+  ]
+}

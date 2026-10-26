@@ -1,0 +1,30 @@
+// Full25 canonical nonvisual saved conditions, officialsolutions and everyMCQ read.
+// Source19/23/27 contain SVG and remain outside this author batch.
+export const collection='ab3d9a6b-355d-4369-b925-cefb4b35f7b0';
+export const arithmetic2Specs=[
+ [1,'decimal-like-terms-root',{equation:'4x + 6,8x - 4,2 - 2,1x = 106,29'},'12,7'],
+ [2,'square-negative-fraction-before-negative-division',{expression:'((−1/4)² − 0,3 : (−1/8)) : (−0,01)'},'-246,25'],
+ [3,'fractional-coefficient-brackets-root',{equation:'(7/18) × (c - 4) - (1/9) × (3c - 8) = 3'},'66'],
+ [4,'variable-denominator-decimal-proportion',{subtractTenths:45,coefficient:3,addHundredths:225,rightNumeratorTenths:12,rightDenominatorTenths:48},'20,25'],
+ [5,'mixed-product-minus-mixed-quotient-over-decimal-sum',{expression:'(((1 + (29/35)) × (7/10) − (2 + (2/5)) : (9 + (3/5)))/(0,48 : 1,6 + 0,84 : 4))'},'(103/51)'],
+ [6,'fraction-equation-decimal-term-on-left',{equation:'((3x + 2)/3) - ((2 + 5x)/8) + 0,75 = x'},'(28/15)'],
+ [7,'three-negative-numerator-two-negative-denominator',{expression:'((−(3 + (3/5)) × 4,8 × (−0,35) × (−15/13) × 0,75)/((5/13) × (−0,63) × (−(4 + (1/5)))))'},'(-36/7)'],
+ [8,'difference-of-two-variable-numerators',{equation:'((x + 11)/4) - ((x - 2)/7) = 1'},'-19'],
+ [9,'quotient-of-two-negative-mixed-subexpressions',{expression:'((((5 + (2/3)) − (1 + (3/8))) : (−(4 + (7/24))))/((16,25 − (1 + (1/4))) : (−(3 + (3/4)))))'},'0,25'],
+ [10,'all-three-denominators-negative-root',{equation:'((7 - 11x)/12) - ((5 + 7x)/6) = ((6 - 5x)/3)'},'-5,4'],
+ [11,'mixed-unknown-subtrahend-dividend-factor-chain',{equation:'(10 + (1/5)) - ((6x - (5 + (2/5)))/(12 + (3/5))) = (9 + (13/15))'},'1,6'],
+ [12,'variable-both-outside-fraction-two-sides',{equation:'((9x + 4)/8) - x = ((7x + 5)/4) - 5x'},'(2/9)'],
+ [13,'mixed-double-ratio-subtraction-over-product-quotient',{expression:'(((−(4 + (1/2)) × (−(2 + (2/3)))) : (−7,2/0,6) − (2 + (1/4)) × (−0,8) : (−1/5))/((−(9 + (3/8))) × 19,2 : (−30)))'},'(-5/3)'],
+ [14,'numerator-products-three-denominator-root',{equation:'((3 × (x + 2))/4) - ((5x + 21)/16) = ((7 × (2x + 3))/12) - 2'},'0,6'],
+ [15,'decimal-multiplier-negative-root',{equation:'(6x - 2) × 1,4 = 2,8x - 6,3'},'-0,625'],
+ [16,'mixed-negative-difference-negative-reciprocal',{expression:'(−(6 + (3/4)) − (−(8 + (5/6)))) : (−25/48) − 4,2 × (−1/3)'},'-2,6'],
+ [17,'decimal-divide-minus-mixed-sum-product',{expression:'14,875 : 2,5 − ((1 + (1/4)) + (1 + (1/2))) × 1,6'},'1,55'],
+ [18,'tenths-brackets-small-positive-coefficient',{equation:'0,4 × (x - 3) = 0,8 + 0,3 × (x + 5)'},'35'],
+ [20,'subtract-division-by-negative-three-fraction-sum',{expression:'−16,8 − 0,6 : ((53/70) + (−9/56) − (31/40))'},'-13,44'],
+ [21,'mixed-divide-five-hundredths-minus-product-and-four-digit-tail',{expression:'(6 + (1/4)) : 0,05 − (18 + (1/2)) × (3,5 + (2 + (3/8))) + 9,6875'},'26'],
+ [22,'decimal-y-negative-bracket-two-sides',{equation:'0,8 × (7y - 6) = 0,5 × (-y - 4) - 0,97'},'0,3'],
+ [24,'two-parentheses-negative-subtraction-mixed-fractions',{expression:'((−1,45) − (1/32) − (−2,1)) − ((−23/40) − (−(1 + (15/32))))'},'-0,275'],
+ [25,'crosscancel-mixed-product-inside-main-fraction',{expression:'((3,36 + (4 + (4/11)) × (1 + (3/8)))/(7,4 − 4,8))'},'3,6'],
+ [26,'near-equal-decimal-coefficients-negative-y',{equation:'8 × (1,6y + 2,1) - 33,6 = 13,2y'},'-42'],
+ [28,'decimal-sum-plus-negative-fraction-subtraction',{expression:'(−0,57 + 0,22) + (0,45 − (−7/48) − (17/60))'},'-0,0375'],
+].map(([number,kind,params,handExpected])=>({number,kind,params,handExpected}));

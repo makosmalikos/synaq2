@@ -1,0 +1,2098 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All40 remaining saved grade-4 nonvisual topic1.11 currency and coin-reasoning sources; no new source collection.",
+  "summary": {
+    "editions": 40,
+    "models": 26,
+    "skillFamilies": 26,
+    "sourceOccurrencesReferenced": 40,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade4-currency-7ec82ce47f0817e4",
+      "modelId": "grade4-currency-missing-denomination",
+      "skillFamily": "missing-denomination",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "allowed": [
+          1,
+          5,
+          10,
+          25,
+          50,
+          100
+        ],
+        "choices": [
+          25,
+          40,
+          10,
+          50
+        ],
+        "unit": "цент",
+        "collection": "доллар монеталары"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level1.json",
+          "sourceId": "7ec82ce47f0817e4"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Оқу тізіміндегі «доллар монеталары» үлгілерінің мәндері: 1, 5, 10, 25, 50, 100 цент. Қай нұсқа осы берілген тізімде жоқ?",
+      "answer": "40 цент",
+      "solution": "Әр нұсқаны тек берілген жиынмен салыстырамыз. 25, 10, 50 мәндері тізімде бар, ал 40 цент жоқ. Берілген оқу жиынындағы номиналдарды ғана ескереміз.",
+      "options": [
+        "25 цент",
+        "40 цент",
+        "10 цент",
+        "50 цент"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "40 цент",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-3fbdbd0673f30e7d",
+      "modelId": "grade4-currency-uniform-coin-change",
+      "skillFamily": "uniform-coin-change",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "major": 7,
+        "cent": 0,
+        "coin": 25,
+        "currency": "доллар"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level1.json",
+          "sourceId": "3fbdbd0673f30e7d"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "7 доллар ақшаны тек 25 центтік монеталарға ұсақтады. Неше монета шықты? Бір доллар 100 центке тең. Жауапқа тек санды жазыңыз.",
+      "answer": "28",
+      "solution": "Барлық ақша 7 × 100 + 0 = 700 цент. Бір монета 25 цент болғандықтан, саны 700 : 25 = 28. Тексеру: 28 × 25 = 700 цент.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "28",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-24bfea36adccc8f9",
+      "modelId": "grade4-currency-dollar-fraction-cents",
+      "skillFamily": "dollar-fraction-cents",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "denominator": 5,
+        "choices": [
+          5,
+          50,
+          20,
+          10
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level1.json",
+          "sourceId": "24bfea36adccc8f9"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір доллар 100 цент. Доллардың 1/5 бөлігін центпен таңдаңыз.",
+      "answer": "20 цент",
+      "solution": "Бүтін долларды 5 тең бөлікке бөлеміз: 100 : 5 = 20 цент. Тексеру: 20 × 5 = 100 цент. Бөлшектің бөлімін цент саны деп алуға болмайды.",
+      "options": [
+        "5 цент",
+        "50 цент",
+        "20 цент",
+        "10 цент"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "20 цент",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-bd68fafb9809460d",
+      "modelId": "grade4-currency-exact-denomination-sum",
+      "skillFamily": "exact-denomination-sum",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 10000,
+        "unit": "теңге",
+        "choices": [
+          [
+            5000,
+            2000,
+            2000
+          ],
+          [
+            5000,
+            2000,
+            2000,
+            1000
+          ],
+          [
+            2000,
+            2000,
+            2000,
+            2000
+          ],
+          [
+            5000,
+            2000,
+            1000
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level1.json",
+          "sourceId": "bd68fafb9809460d"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "10 000 теңге сомасын дәл беретін жиынды таңдаңыз. Әр нұсқада көрсетілген ақшалардың бәрі алынады.",
+      "answer": "5 000 + 2 000 + 2 000 + 1 000 теңге",
+      "solution": "Нұсқалардың қосындылары: 5 000 + 2 000 + 2 000 теңге = 9 000 теңге; 5 000 + 2 000 + 2 000 + 1 000 теңге = 10 000 теңге; 2 000 + 2 000 + 2 000 + 2 000 теңге = 8 000 теңге; 5 000 + 2 000 + 1 000 теңге = 8 000 теңге. Тек бір жиын берілген соманы сақтайды.",
+      "options": [
+        "5 000 + 2 000 + 2 000 теңге",
+        "5 000 + 2 000 + 2 000 + 1 000 теңге",
+        "2 000 + 2 000 + 2 000 + 2 000 теңге",
+        "5 000 + 2 000 + 1 000 теңге"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "5 000 + 2 000 + 2 000 + 1 000 теңге",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-074b8271dc00f600",
+      "modelId": "grade4-currency-minimum-money-count",
+      "skillFamily": "minimum-money-count",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "amount": 78,
+        "allowed": [
+          1,
+          2,
+          5,
+          10,
+          20,
+          50
+        ],
+        "unit": "еуро",
+        "type": "қағаз ақша мен монета"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level1.json",
+          "sourceId": "074b8271dc00f600"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бұл есепте 1, 2, 5, 10, 20, 50 еуро номиналдары ғана рұқсат етілген; әр түрінен жеткілікті ақша бар. 78 еуро сомасын қайтарымсыз жинау үшін ең аз дегенде неше қағаз ақша мен монета қажет? Жауапқа тек санды жазыңыз.",
+      "answer": "5",
+      "solution": "Дәл сома 50 + 20 + 5 + 2 + 1 еуро = 78 еуро. Барлығы 5 дана. Берілген 1, 2, 5 сандарының ондық еселіктерінен тұратын номиналдарда ірі ақшаны ұсақтарға ауыстыру ақшалар санын азайтпайды. Ірі номиналдарды алып, қалдықты дәл толтыру осы ең аз санды береді.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "5",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-0e11f5024836bd1c",
+      "modelId": "grade4-currency-greatest-mixed-amount",
+      "skillFamily": "greatest-mixed-amount",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "choices": [
+          [
+            4,
+            7
+          ],
+          [
+            0,
+            399
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            3,
+            95
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level1.json",
+          "sourceId": "0e11f5024836bd1c"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Барлық сома еуромен және еуроцентпен берілген. Ең көп соманы таңдаңыз. Бір еуро 100 центке тең.",
+      "answer": "4 еуро 7 цент",
+      "solution": "Центпен салыстырамыз: 4 еуро 7 цент = 407 цент; 399 цент = 399 цент; 4 еуро = 400 цент; 3 еуро 95 цент = 395 цент. Ең үлкені 407 цент. Мысалы, бір таңбалы қалған центті он есе көбейтуге болмайды.",
+      "options": [
+        "4 еуро 7 цент",
+        "399 цент",
+        "4 еуро",
+        "3 еуро 95 цент"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "4 еуро 7 цент",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-24dcb64513b73171",
+      "modelId": "grade4-currency-exact-denomination-sum",
+      "skillFamily": "exact-denomination-sum",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 200,
+        "unit": "цент",
+        "choices": [
+          [
+            100,
+            50,
+            20,
+            20,
+            10
+          ],
+          [
+            50,
+            50,
+            50,
+            20
+          ],
+          [
+            100,
+            50,
+            20,
+            20,
+            5
+          ],
+          [
+            100,
+            50,
+            50,
+            10
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level1.json",
+          "sourceId": "24dcb64513b73171"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "200 цент сомасын дәл беретін жиынды таңдаңыз. Әр нұсқада көрсетілген ақшалардың бәрі алынады.",
+      "answer": "100 + 50 + 20 + 20 + 10 цент",
+      "solution": "Нұсқалардың қосындылары: 100 + 50 + 20 + 20 + 10 цент = 200 цент; 50 + 50 + 50 + 20 цент = 170 цент; 100 + 50 + 20 + 20 + 5 цент = 195 цент; 100 + 50 + 50 + 10 цент = 210 цент. Тек бір жиын берілген соманы сақтайды.",
+      "options": [
+        "100 + 50 + 20 + 20 + 10 цент",
+        "50 + 50 + 50 + 20 цент",
+        "100 + 50 + 20 + 20 + 5 цент",
+        "100 + 50 + 50 + 10 цент"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "100 + 50 + 20 + 20 + 10 цент",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-eff5d0bb5c799598",
+      "modelId": "grade4-currency-missing-denomination",
+      "skillFamily": "missing-denomination",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "allowed": [
+          5,
+          10,
+          20,
+          50,
+          100,
+          200,
+          500
+        ],
+        "choices": [
+          15,
+          10,
+          100,
+          50
+        ],
+        "unit": "еуро",
+        "collection": "еуро қағаз ақшалары"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level1.json",
+          "sourceId": "eff5d0bb5c799598"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Оқу тізіміндегі «еуро қағаз ақшалары» үлгілерінің мәндері: 5, 10, 20, 50, 100, 200, 500 еуро. Қай нұсқа осы берілген тізімде жоқ?",
+      "answer": "15 еуро",
+      "solution": "Әр нұсқаны тек берілген жиынмен салыстырамыз. 10, 100, 50 мәндері тізімде бар, ал 15 еуро жоқ. Берілген оқу жиынындағы номиналдарды ғана ескереміз.",
+      "options": [
+        "15 еуро",
+        "10 еуро",
+        "100 еуро",
+        "50 еуро"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "15 еуро",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-c31f40b32da24ca5",
+      "modelId": "grade4-currency-mixed-money-cents",
+      "skillFamily": "mixed-money-cents",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "major": 6,
+        "cent": 9,
+        "currency": "еуро",
+        "choices": [
+          69,
+          609,
+          6009,
+          690
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level1.json",
+          "sourceId": "c31f40b32da24ca5"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "6 еуро 9 цент неше центке тең? Бір еуро 100 центке тең.",
+      "answer": "609 цент",
+      "solution": "6 еуро = 6 × 100 = 600 цент. Қалған 9 центті қосамыз: 600 + 9 = 609 цент. Нөлдер мен центтердің разрядтарын сақтаймыз.",
+      "options": [
+        "69 цент",
+        "609 цент",
+        "6 009 цент",
+        "690 цент"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "609 цент",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-ef13cc2d0fb82498",
+      "modelId": "grade4-currency-cents-to-euros",
+      "skillFamily": "cents-to-euros",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "cents": 1400
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level1.json",
+          "sourceId": "ef13cc2d0fb82498"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Жинақта 1 400 еуроцент бар. Бір еуро 100 центке тең болса, бұл неше еуро? Жауапқа тек санды жазыңыз.",
+      "answer": "14",
+      "solution": "Еуро санын табу үшін цент санын 100-ге бөлеміз: 1 400 : 100 = 14. Тексеру: 14 × 100 = 1 400 цент.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "14",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-519ebbb2915de06a",
+      "modelId": "grade4-currency-whole-dollar-cents",
+      "skillFamily": "whole-dollar-cents",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "basic",
+      "minimumPlan": "pro",
+      "params": {
+        "dollars": 13
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level1.json",
+          "sourceId": "519ebbb2915de06a"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Әмиянда 13 доллар бар. Бір доллар 100 центке тең. Барлық ақшаны центпен жазыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "1300",
+      "solution": "13 доллардың әрқайсысында 100 цент бар: 13 × 100 = 1 300 цент.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "1300",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-72ef5c2ec8c3f180",
+      "modelId": "grade4-currency-nonmatching-denomination-sum",
+      "skillFamily": "nonmatching-denomination-sum",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 175,
+        "unit": "доллар",
+        "choices": [
+          [
+            100,
+            50,
+            20,
+            5
+          ],
+          [
+            50,
+            50,
+            50,
+            20,
+            5
+          ],
+          [
+            100,
+            20,
+            20,
+            20,
+            10,
+            5
+          ],
+          [
+            100,
+            50,
+            20,
+            2,
+            2
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level2.json",
+          "sourceId": "72ef5c2ec8c3f180"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "175 доллар сомасын бере АЛМАЙТЫН жиынды таңдаңыз. Әр нұсқада көрсетілген ақшалардың бәрі алынады.",
+      "answer": "100 + 50 + 20 + 2 + 2 доллар",
+      "solution": "Нұсқалардың қосындылары: 100 + 50 + 20 + 5 доллар = 175 доллар; 50 + 50 + 50 + 20 + 5 доллар = 175 доллар; 100 + 20 + 20 + 20 + 10 + 5 доллар = 175 доллар; 100 + 50 + 20 + 2 + 2 доллар = 174 доллар. Үш жиын берілген сомаға тең, біреуі тең емес.",
+      "options": [
+        "100 + 50 + 20 + 5 доллар",
+        "50 + 50 + 50 + 20 + 5 доллар",
+        "100 + 20 + 20 + 20 + 10 + 5 доллар",
+        "100 + 50 + 20 + 2 + 2 доллар"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "100 + 50 + 20 + 2 + 2 доллар",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-e1b7b23ee301096e",
+      "modelId": "grade4-currency-uniform-banknote-change",
+      "skillFamily": "uniform-banknote-change",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 30000,
+        "note": 500
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level2.json",
+          "sourceId": "e1b7b23ee301096e"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "30 000 теңгені түгелдей 500 теңгелік қағаз ақшаларға ұсақтады. Неше қағаз ақша алынды? Жауапқа тек санды жазыңыз.",
+      "answer": "60",
+      "solution": "Бір ақшаның мәніне бөлеміз: 30 000 : 500 = 60. Тексеру: 60 × 500 = 30 000 теңге.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "60",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-053c31364f83641f",
+      "modelId": "grade4-currency-minimum-money-count",
+      "skillFamily": "minimum-money-count",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "amount": 947,
+        "allowed": [
+          1,
+          2,
+          5,
+          10,
+          20,
+          50,
+          100
+        ],
+        "unit": "доллар",
+        "type": "қағаз ақша",
+        "choices": [
+          12,
+          13,
+          14,
+          11
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level2.json",
+          "sourceId": "053c31364f83641f"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бұл есепте 1, 2, 5, 10, 20, 50, 100 доллар номиналдары ғана рұқсат етілген; әр түрінен жеткілікті ақша бар. 947 доллар сомасын қайтарымсыз жинау үшін ең аз дегенде неше қағаз ақша қажет?",
+      "answer": "13",
+      "solution": "Дәл сома 100 + 100 + 100 + 100 + 100 + 100 + 100 + 100 + 100 + 20 + 20 + 5 + 2 доллар = 947 доллар. Барлығы 13 дана. Берілген 1, 2, 5 сандарының ондық еселіктерінен тұратын номиналдарда ірі ақшаны ұсақтарға ауыстыру ақшалар санын азайтпайды. Ірі номиналдарды алып, қалдықты дәл толтыру осы ең аз санды береді.",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "11"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "13",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-65358c315f9aa38e",
+      "modelId": "grade4-currency-equal-banknote-counts",
+      "skillFamily": "equal-banknote-counts",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 42000,
+        "first": 2000,
+        "second": 5000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level2.json",
+          "sourceId": "65358c315f9aa38e"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Динара 42 000 теңгені 2 000 және 5 000 теңгелік қағаз ақшалармен алды. Екі түрінің саны бірдей. Барлығы неше қағаз ақша бар? Жауапқа тек санды жазыңыз.",
+      "answer": "12",
+      "solution": "Бірінші және екінші түрден бір-бір ақша алып жұптаймыз. Бір жұп 2 000 + 5 000 = 7 000 теңге. Жұп саны 42 000 : 7 000 = 6. Әр жұпта екі ақша, барлығы 6 × 2 = 12.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "12",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-632c88103293a0fd",
+      "modelId": "grade4-currency-mixed-cent-comparison",
+      "skillFamily": "mixed-cent-comparison",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "major": 9,
+        "cent": 6,
+        "otherCents": 960
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level2.json",
+          "sourceId": "632c88103293a0fd"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "9 еуро 6 цент □ 960 цент. Бір еуро 100 центке тең. Тиісті белгіні таңдаңыз.",
+      "answer": "<",
+      "solution": "Сол жақ 9 × 100 + 6 = 906 цент. Екі жақты бір бірлікпен салыстырсақ, 906 < 960. 6 центті 60 цент деп алуға болмайды.",
+      "options": [
+        "<",
+        "=",
+        ">",
+        "Салыстыруға болмайды"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "<",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-b4eab6ac62a2dcb8",
+      "modelId": "grade4-currency-minimum-money-count",
+      "skillFamily": "minimum-money-count",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "amount": 96,
+        "allowed": [
+          1,
+          2,
+          5,
+          10,
+          20,
+          50,
+          100
+        ],
+        "unit": "доллар",
+        "type": "қағаз ақша",
+        "choices": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level2.json",
+          "sourceId": "b4eab6ac62a2dcb8"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бұл есепте 1, 2, 5, 10, 20, 50, 100 доллар номиналдары ғана рұқсат етілген; әр түрінен жеткілікті ақша бар. 96 доллар сомасын қайтарымсыз жинау үшін ең аз дегенде неше қағаз ақша қажет?",
+      "answer": "5",
+      "solution": "Дәл сома 50 + 20 + 20 + 5 + 1 доллар = 96 доллар. Барлығы 5 дана. Берілген 1, 2, 5 сандарының ондық еселіктерінен тұратын номиналдарда ірі ақшаны ұсақтарға ауыстыру ақшалар санын азайтпайды. Ірі номиналдарды алып, қалдықты дәл толтыру осы ең аз санды береді.",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "5",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-edd961249b833a22",
+      "modelId": "grade4-currency-minimum-money-count",
+      "skillFamily": "minimum-money-count",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "amount": 1376,
+        "allowed": [
+          1,
+          2,
+          5,
+          10,
+          20,
+          50,
+          100,
+          200,
+          500
+        ],
+        "unit": "еуро",
+        "type": "қағаз ақша мен монета"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level2.json",
+          "sourceId": "edd961249b833a22"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бұл есепте 1, 2, 5, 10, 20, 50, 100, 200, 500 еуро номиналдары ғана рұқсат етілген; әр түрінен жеткілікті ақша бар. 1 376 еуро сомасын қайтарымсыз жинау үшін ең аз дегенде неше қағаз ақша мен монета қажет? Жауапқа тек санды жазыңыз.",
+      "answer": "8",
+      "solution": "Дәл сома 500 + 500 + 200 + 100 + 50 + 20 + 5 + 1 еуро = 1 376 еуро. Барлығы 8 дана. Берілген 1, 2, 5 сандарының ондық еселіктерінен тұратын номиналдарда ірі ақшаны ұсақтарға ауыстыру ақшалар санын азайтпайды. Ірі номиналдарды алып, қалдықты дәл толтыру осы ең аз санды береді.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "8",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-7c8905d9bd9c9af8",
+      "modelId": "grade4-currency-two-euro-coin-counts",
+      "skillFamily": "two-euro-coin-counts",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "count": 13,
+        "total": 21,
+        "high": 2,
+        "low": 1
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level2.json",
+          "sourceId": "7c8905d9bd9c9af8"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қорапта тек 2 және 1 еуролық монеталар бар. Барлығы 13 монета, жалпы сома 21 еуро. 2 еуролық монеталар саны қанша? Жауапқа тек санды жазыңыз.",
+      "answer": "8",
+      "solution": "Егер бәрі 1 еуролық болса, 13 еуро шығар еді. Артық сома 21 − 13 = 8. Бір монетаны 2 еуролыққа ауыстыру 1 еуро қосады. Сондықтан 8 үлкен, 5 кіші монета бар. Тексеру: 8 × 2 + 5 × 1 = 21, 8 + 5 = 13.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "8",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-961240573deff1ee",
+      "modelId": "grade4-currency-multiple-banknote-change",
+      "skillFamily": "multiple-banknote-change",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "count": 6,
+        "large": 50,
+        "small": 5
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level2.json",
+          "sourceId": "961240573deff1ee"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "50 долларлық 6 қағаз ақшаны түгел 5 долларлық қағаз ақшаларға ауыстырды. Неше қағаз ақша шықты? Жауапқа тек санды жазыңыз.",
+      "answer": "60",
+      "solution": "Жалпы сома 50 × 6 = 300 доллар. Жаңа ақша саны 300 : 5 = 60. Жеке бір ірі ақшадан 10 ұсақ ақша шығады, осы санды 6 санына көбейту де сол нәтиже береді.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "60",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-ae4bd1e8b296f247",
+      "modelId": "grade4-currency-minimum-money-count",
+      "skillFamily": "minimum-money-count",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "amount": 418,
+        "allowed": [
+          1,
+          2,
+          5,
+          10,
+          20,
+          50,
+          100,
+          200,
+          500
+        ],
+        "unit": "еуро",
+        "type": "қағаз ақша мен монета"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level2.json",
+          "sourceId": "ae4bd1e8b296f247"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бұл есепте 1, 2, 5, 10, 20, 50, 100, 200, 500 еуро номиналдары ғана рұқсат етілген; әр түрінен жеткілікті ақша бар. 418 еуро сомасын қайтарымсыз жинау үшін ең аз дегенде неше қағаз ақша мен монета қажет? Жауапқа тек санды жазыңыз.",
+      "answer": "6",
+      "solution": "Дәл сома 200 + 200 + 10 + 5 + 2 + 1 еуро = 418 еуро. Барлығы 6 дана. Берілген 1, 2, 5 сандарының ондық еселіктерінен тұратын номиналдарда ірі ақшаны ұсақтарға ауыстыру ақшалар санын азайтпайды. Ірі номиналдарды алып, қалдықты дәл толтыру осы ең аз санды береді.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "6",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-032a83e357f9211f",
+      "modelId": "grade4-currency-minimum-money-count",
+      "skillFamily": "minimum-money-count",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "amount": 268,
+        "allowed": [
+          1,
+          2,
+          5,
+          10,
+          20,
+          50,
+          100
+        ],
+        "unit": "доллар",
+        "type": "қағаз ақша"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level2.json",
+          "sourceId": "032a83e357f9211f"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бұл есепте 1, 2, 5, 10, 20, 50, 100 доллар номиналдары ғана рұқсат етілген; әр түрінен жеткілікті ақша бар. 268 доллар сомасын қайтарымсыз жинау үшін ең аз дегенде неше қағаз ақша қажет? Жауапқа тек санды жазыңыз.",
+      "answer": "7",
+      "solution": "Дәл сома 100 + 100 + 50 + 10 + 5 + 2 + 1 доллар = 268 доллар. Барлығы 7 дана. Берілген 1, 2, 5 сандарының ондық еселіктерінен тұратын номиналдарда ірі ақшаны ұсақтарға ауыстыру ақшалар санын азайтпайды. Ірі номиналдарды алып, қалдықты дәл толтыру осы ең аз санды береді.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "7",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-c751c007dd26ba4b",
+      "modelId": "grade4-currency-mixed-euro-change",
+      "skillFamily": "mixed-euro-change",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "price": [
+          8,
+          45
+        ],
+        "paid": 20,
+        "choices": [
+          [
+            11,
+            55
+          ],
+          [
+            12,
+            45
+          ],
+          [
+            11,
+            65
+          ],
+          [
+            12,
+            55
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level2.json",
+          "sourceId": "c751c007dd26ba4b"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Қаламдар жиынтығының бағасы 8 еуро 45 цент. Оған 20 еуро берілді. Қайтарым сомасын таңдаңыз. Бір еуро 100 центке тең.",
+      "answer": "11 еуро 55 цент",
+      "solution": "Төлем 2000 цент, баға 845 цент. Қайтарым 2000 − 845 = 1155 цент = 11 еуро 55 цент. Тексеру: 845 + 1155 = 2000 цент. Бір еуроны 100 центке айырбастап азайтуға болады.",
+      "options": [
+        "11 еуро 55 цент",
+        "12 еуро 45 цент",
+        "11 еуро 65 цент",
+        "12 еуро 55 цент"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "11 еуро 55 цент",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-a83cf114cc3429e1",
+      "modelId": "grade4-currency-valid-coin-triple",
+      "skillFamily": "valid-coin-triple",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 150,
+        "allowed": [
+          1,
+          2,
+          5,
+          10,
+          20,
+          50,
+          100,
+          200
+        ],
+        "choices": [
+          [
+            50,
+            50,
+            50
+          ],
+          [
+            100,
+            25,
+            25
+          ],
+          [
+            100,
+            40,
+            10
+          ],
+          [
+            100,
+            20,
+            20
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level3.json",
+          "sourceId": "a83cf114cc3429e1"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Оқу жиынында 1, 2, 5, 10, 20, 50, 100, 200 центтік монеталар ғана бар. Үш монетаның сомасы 150 цент болды. Қай үштік барлық шартқа сай?",
+      "answer": "50, 50, 50 цент",
+      "solution": "Үш монета болуы, олардың әрқайсысы рұқсат етілуі және қосындысы 150 болуы керек. 50, 50, 50 цент: қосынды 150, номиналдары бар; 100, 25, 25 цент: қосынды 150, тыйым салынған номинал кездеседі; 100, 40, 10 цент: қосынды 150, тыйым салынған номинал кездеседі; 100, 20, 20 цент: қосынды 140, номиналдары бар. Тек 50, 50, 50 цент сәйкес.",
+      "options": [
+        "50, 50, 50 цент",
+        "100, 25, 25 цент",
+        "100, 40, 10 цент",
+        "100, 20, 20 цент"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "50, 50, 50 цент",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-fd038c7084f3fcd4",
+      "modelId": "grade4-currency-purchase-remainder",
+      "skillFamily": "purchase-remainder",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "budget": 180,
+        "fixed": 27,
+        "each": 11
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level3.json",
+          "sourceId": "fd038c7084f3fcd4"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Аружанда 180 доллар бар. Ол 27 долларлық бір кітап алды. Қалған ақшасына әрқайсысы 11 доллар тұратын кәдесыйлардан мүмкіндігінше көп сатып алды. Соңында неше доллар қалды? Жауапқа тек санды жазыңыз.",
+      "answer": "10",
+      "solution": "Кітаптан кейін 180 − 27 = 153 доллар. 153 = 13 × 11 + 10, ал 10 < 11. Сондықтан 13 кәдесый алынады, 10 доллар қалады. Тағы біреуін алуға ақша жетпейді.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "10",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-bd0abc1558ffe015",
+      "modelId": "grade4-currency-two-cent-coin-counts",
+      "skillFamily": "two-cent-coin-counts",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "major": 3,
+        "cent": 20,
+        "count": 10,
+        "high": 50,
+        "low": 20
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level3.json",
+          "sourceId": "bd0abc1558ffe015"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "3 еуро 20 цент ақшаны тек 50 және 20 центтік монеталарға айырбастады. Барлығы 10 монета шықты. 20 центтік монеталар нешеу? Бір еуро 100 центке тең. Жауапқа тек санды жазыңыз.",
+      "answer": "6",
+      "solution": "Сома 320 цент. Бәрі 20 центтік болса, 200 цент болар еді. Қосымша 120 цент керек; әр ауыстыру 30 цент қосады. Үлкен монета 120 : 30 = 4. Кіші монета 10 − 4 = 6. Тексеру: 4 × 50 + 6 × 20 = 320.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "6",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-0f915e63edfc6df2",
+      "modelId": "grade4-currency-fixed-rate-price-comparison",
+      "skillFamily": "fixed-rate-price-comparison",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "dollars": 28,
+        "euro": 24,
+        "dollarRate": 470,
+        "euroRate": 530
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level3.json",
+          "sourceId": "0f915e63edfc6df2"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бір кәдесый 28 доллар немесе 24 еуро тұрады. Осы есеп үшін шартты бағам: 1 доллар = 470 теңге, 1 еуро = 530 теңге. Комиссия жоқ. Қай валютамен төлеу тиімді және қанша теңгеге?",
+      "answer": "Еуромен 440 теңгеге арзан",
+      "solution": "Доллар бағасы 28 × 470 = 13 160 теңге. Еуро бағасы 24 × 530 = 12 720 теңге. Айырма 13 160 − 12 720 = 440 теңге, еуромен арзан. Әртүрлі валюталардың сандық айырмасын теңге айырмасы деп алуға болмайды.",
+      "options": [
+        "Еуромен 4 теңгеге арзан",
+        "Доллармен 440 теңгеге арзан",
+        "Еуромен 440 теңгеге арзан",
+        "Бағалары бірдей"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "Еуромен 440 теңгеге арзан",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-d64e8822595cb0b3",
+      "modelId": "grade4-currency-unordered-denomination-ways",
+      "skillFamily": "unordered-denomination-ways",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 30000,
+        "allowed": [
+          10000,
+          5000,
+          2000
+        ],
+        "unit": "теңге"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level3.json",
+          "sourceId": "d64e8822595cb0b3"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "30 000 теңге сомасын тек 10 000, 5 000, 2 000 теңге номиналдарымен неше түрлі тәсілмен жинауға болады? Реті маңызды емес; кей номиналдан нөл дана алуға болады. Жауапқа тек санды жазыңыз.",
+      "answer": "10",
+      "solution": "Бірінші номиналдың саны бойынша топтаймыз. 10 000 номиналдан 0 дана болса — 4 тәсіл; 10 000 номиналдан 1 дана болса — 3 тәсіл; 10 000 номиналдан 2 дана болса — 2 тәсіл; 10 000 номиналдан 3 дана болса — 1 тәсіл. Қалған соманы екінші номиналдың әр мүмкін санына қарап, үшіншісімен дәл толтырамыз. Барлығы 10 түрлі сан үштігі. Ақшалардың орын алмастыруы жаңа тәсіл болып саналмайды.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "10",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-20da71d46f5e54c4",
+      "modelId": "grade4-currency-equal-cent-coin-counts",
+      "skillFamily": "equal-cent-coin-counts",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "dollars": 14,
+        "first": 25,
+        "second": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level3.json",
+          "sourceId": "20da71d46f5e54c4"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "25 және 10 центтік монеталардың саны бірдей. Жалпы сомасы 14 доллар. Қорапта барлығы неше монета бар? Бір доллар 100 центке тең. Жауапқа тек санды жазыңыз.",
+      "answer": "80",
+      "solution": "Бір жұп 25 + 10 = 35 цент. Жалпы сома 14 × 100 = 1 400 цент, сондықтан 1 400 : 35 = 40 жұп бар. Әр жұпта екі монета, барлығы 40 × 2 = 80.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "80",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-8438ab5071553314",
+      "modelId": "grade4-currency-unordered-denomination-ways",
+      "skillFamily": "unordered-denomination-ways",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 200,
+        "allowed": [
+          50,
+          20,
+          10
+        ],
+        "unit": "цент"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level3.json",
+          "sourceId": "8438ab5071553314"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "200 цент сомасын тек 50, 20, 10 цент номиналдарымен неше түрлі тәсілмен жинауға болады? Реті маңызды емес; кей номиналдан нөл дана алуға болады. Жауапқа тек санды жазыңыз.",
+      "answer": "29",
+      "solution": "Бірінші номиналдың саны бойынша топтаймыз. 50 номиналдан 0 дана болса — 11 тәсіл; 50 номиналдан 1 дана болса — 8 тәсіл; 50 номиналдан 2 дана болса — 6 тәсіл; 50 номиналдан 3 дана болса — 3 тәсіл; 50 номиналдан 4 дана болса — 1 тәсіл. Қалған соманы екінші номиналдың әр мүмкін санына қарап, үшіншісімен дәл толтырамыз. Барлығы 29 түрлі сан үштігі. Ақшалардың орын алмастыруы жаңа тәсіл болып саналмайды.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "29",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-6f4902d10d57660e",
+      "modelId": "grade4-currency-minimum-money-count",
+      "skillFamily": "minimum-money-count",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "amount": 278,
+        "allowed": [
+          1,
+          2,
+          5,
+          10,
+          20,
+          50,
+          100,
+          200
+        ],
+        "unit": "цент",
+        "type": "еуро монетасы",
+        "choices": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level3.json",
+          "sourceId": "6f4902d10d57660e"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бұл есепте 1, 2, 5, 10, 20, 50, 100, 200 цент номиналдары ғана рұқсат етілген; әр түрінен жеткілікті ақша бар. 278 цент сомасын қайтарымсыз жинау үшін ең аз дегенде неше еуро монетасы қажет?",
+      "answer": "6",
+      "solution": "Дәл сома 200 + 50 + 20 + 5 + 2 + 1 цент = 278 цент. Барлығы 6 дана. Берілген 1, 2, 5 сандарының ондық еселіктерінен тұратын номиналдарда ірі ақшаны ұсақтарға ауыстыру ақшалар санын азайтпайды. Ірі номиналдарды алып, қалдықты дәл толтыру осы ең аз санды береді.",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "6",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-27c0c813e5b42833",
+      "modelId": "grade4-currency-two-note-configuration",
+      "skillFamily": "two-note-configuration",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 100,
+        "count": 8,
+        "high": 20,
+        "low": 5,
+        "choices": [
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            2,
+            6
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level3.json",
+          "sourceId": "27c0c813e5b42833"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "100 еуроны тек 20 және 5 еуролық қағаз ақшалармен төледі. Барлығы 8 қағаз ақша берілді. Қай құрам дұрыс?",
+      "answer": "20 еуролық 4 және 5 еуролық 4",
+      "solution": "Бәрі 5 еуролық болса, 40 еуро шығар еді. Қосымша 60 еуро керек. Әр ауыстыру 15 еуро қосады: 60 : 15 = 4 үлкен ақша. Кішісі 8 − 4 = 4. 4 × 20 + 4 × 5 = 100.",
+      "options": [
+        "20 еуролық 3 және 5 еуролық 5",
+        "20 еуролық 4 және 5 еуролық 4",
+        "20 еуролық 5 және 5 еуролық 3",
+        "20 еуролық 2 және 5 еуролық 6"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "20 еуролық 4 және 5 еуролық 4",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-f5885d695dc71e2e",
+      "modelId": "grade4-currency-spending-equalization",
+      "skillFamily": "spending-equalization",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "hard",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 18,
+        "firstSpent": 3,
+        "secondSpent": 5,
+        "choices": [
+          [
+            6,
+            12
+          ],
+          [
+            10,
+            8
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            8,
+            10
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-level3.json",
+          "sourceId": "f5885d695dc71e2e"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Әмір мен Айшада барлығы 18 монета болды. Әмір 3, Айша 5 монетаны жұмсаған соң, қалған монеталарының саны тең болды. Бастапқыда әрқайсысында неше монета бар еді?",
+      "answer": "Әмірде 8, Айшада 10",
+      "solution": "Жұмсалғаны 3 + 5 = 8, қалғаны 18 − 8 = 10. Тең қалғандықтан әрқайсысында 10 : 2 = 5. Бастапқыда Әмірде 5 + 3 = 8, Айшада 5 + 5 = 10. Қосындысы 18.",
+      "options": [
+        "Әмірде 6, Айшада 12",
+        "Әмірде 10, Айшада 8",
+        "Әмірде 9, Айшада 9",
+        "Әмірде 8, Айшада 10"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "Әмірде 8, Айшада 10",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-bad95347d40d8d89",
+      "modelId": "grade4-currency-uniform-coin-change",
+      "skillFamily": "uniform-coin-change",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "major": 9,
+        "cent": 0,
+        "coin": 50,
+        "currency": "еуро"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-leveltest.json",
+          "sourceId": "bad95347d40d8d89"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "9 еуро ақшаны тек 50 центтік монеталарға ұсақтады. Неше монета шықты? Бір еуро 100 центке тең. Жауапқа тек санды жазыңыз.",
+      "answer": "18",
+      "solution": "Барлық ақша 9 × 100 + 0 = 900 цент. Бір монета 50 цент болғандықтан, саны 900 : 50 = 18. Тексеру: 18 × 50 = 900 цент.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "18",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-88b6734b8441a7f1",
+      "modelId": "grade4-currency-mixed-money-cents",
+      "skillFamily": "mixed-money-cents",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "major": 12,
+        "cent": 35,
+        "currency": "доллар",
+        "choices": [
+          125,
+          1235,
+          12035,
+          12350
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-leveltest.json",
+          "sourceId": "88b6734b8441a7f1"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "12 доллар 35 цент неше центке тең? Бір доллар 100 центке тең.",
+      "answer": "1 235 цент",
+      "solution": "12 доллар = 12 × 100 = 1 200 цент. Қалған 35 центті қосамыз: 1 200 + 35 = 1 235 цент. Нөлдер мен центтердің разрядтарын сақтаймыз.",
+      "options": [
+        "125 цент",
+        "1 235 цент",
+        "12 035 цент",
+        "12 350 цент"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "1 235 цент",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-52dd2a921965c8cb",
+      "modelId": "grade4-currency-missing-denomination",
+      "skillFamily": "missing-denomination",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "allowed": [
+          1,
+          2,
+          5,
+          10,
+          20,
+          50,
+          100,
+          200
+        ],
+        "choices": [
+          50,
+          30,
+          20,
+          5
+        ],
+        "unit": "цент",
+        "collection": "еуро монеталары"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-leveltest.json",
+          "sourceId": "52dd2a921965c8cb"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Оқу тізіміндегі «еуро монеталары» үлгілерінің мәндері: 1, 2, 5, 10, 20, 50, 100, 200 цент. Қай нұсқа осы берілген тізімде жоқ?",
+      "answer": "30 цент",
+      "solution": "Әр нұсқаны тек берілген жиынмен салыстырамыз. 50, 20, 5 мәндері тізімде бар, ал 30 цент жоқ. Берілген оқу жиынындағы номиналдарды ғана ескереміз.",
+      "options": [
+        "50 цент",
+        "30 цент",
+        "20 цент",
+        "5 цент"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "30 цент",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-a25840cae9416a7f",
+      "modelId": "grade4-currency-minimum-money-count",
+      "skillFamily": "minimum-money-count",
+      "grade": 4,
+      "topic": "word",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "amount": 965,
+        "allowed": [
+          1,
+          2,
+          5,
+          10,
+          20,
+          50,
+          100,
+          200,
+          500
+        ],
+        "unit": "еуро",
+        "type": "қағаз ақша мен монета"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-leveltest.json",
+          "sourceId": "a25840cae9416a7f"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Бұл есепте 1, 2, 5, 10, 20, 50, 100, 200, 500 еуро номиналдары ғана рұқсат етілген; әр түрінен жеткілікті ақша бар. 965 еуро сомасын қайтарымсыз жинау үшін ең аз дегенде неше қағаз ақша мен монета қажет? Жауапқа тек санды жазыңыз.",
+      "answer": "6",
+      "solution": "Дәл сома 500 + 200 + 200 + 50 + 10 + 5 еуро = 965 еуро. Барлығы 6 дана. Берілген 1, 2, 5 сандарының ондық еселіктерінен тұратын номиналдарда ірі ақшаны ұсақтарға ауыстыру ақшалар санын азайтпайды. Ірі номиналдарды алып, қалдықты дәл толтыру осы ең аз санды береді.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "6",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-930f54f29572315b",
+      "modelId": "grade4-currency-two-tenge-note-counts",
+      "skillFamily": "two-tenge-note-counts",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 32000,
+        "count": 12,
+        "high": 5000,
+        "low": 1000
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-leveltest.json",
+          "sourceId": "930f54f29572315b"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "32 000 теңге тек 5 000 және 1 000 теңгелік қағаз ақшалардан тұрады. Барлығы 12 қағаз ақша. 1 000 теңгелік қағаз ақшалар саны қанша? Жауапқа тек санды жазыңыз.",
+      "answer": "7",
+      "solution": "Бәрі 1 000 теңгелік болса, 12 000 теңге шығар еді. Қосымша 20 000 теңге керек. Әр 5 000 теңгелікке ауыстыру 4 000 теңге қосады, сондықтан үлкені 5, кішісі 12 − 5 = 7. Тексеру: 5 × 5 000 + 7 × 1 000 = 32 000.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "7",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-0043e0c7574f9d80",
+      "modelId": "grade4-currency-two-cent-coin-counts",
+      "skillFamily": "two-cent-coin-counts",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "major": 3,
+        "cent": 0,
+        "count": 14,
+        "high": 50,
+        "low": 10
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-leveltest.json",
+          "sourceId": "0043e0c7574f9d80"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "3 еуро ақшаны тек 50 және 10 центтік монеталарға айырбастады. Барлығы 14 монета шықты. 10 центтік монеталар нешеу? Бір еуро 100 центке тең. Жауапқа тек санды жазыңыз.",
+      "answer": "10",
+      "solution": "Сома 300 цент. Бәрі 10 центтік болса, 140 цент болар еді. Қосымша 160 цент керек; әр ауыстыру 40 цент қосады. Үлкен монета 160 : 40 = 4. Кіші монета 14 − 4 = 10. Тексеру: 4 × 50 + 10 × 10 = 300.",
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "10",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    },
+    {
+      "editionId": "grade4-currency-a25faa8d7ec05123",
+      "modelId": "grade4-currency-transfer-equalization",
+      "skillFamily": "transfer-equalization",
+      "grade": 4,
+      "topic": "logic",
+      "difficulty": "medium",
+      "minimumPlan": "pro",
+      "params": {
+        "total": 20,
+        "transfer": 3,
+        "choices": [
+          [
+            14,
+            6
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            13,
+            7
+          ],
+          [
+            10,
+            10
+          ]
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/4-math-1-11-leveltest.json",
+          "sourceId": "a25faa8d7ec05123"
+        }
+      ],
+      "adaptationChanges": [
+        "Әр сақталған шарт, кілт, толық ресми шешім және жауап нұсқалары жеке оқылды. Бірліктердің аралас жазылуы, ең аз сан мен барлық тәсіл санының айырмасы сақталды.",
+        "Жаңа сандармен дербес қазақша мәтіндер мен толық шешімдер жасалды. Монета/банкнота туралы мүшелік және минимум тапсырмаларында рұқсат етілген оқу номиналдары шартта ашық берілген; тарихи не қазіргі ақша айналымы туралы абсолют тұжырым жасалмайды.",
+        "Айырбастау бағамы есептің шартты дерегі ретінде берілген, комиссия жоқтығы айқын. Минимум динамикалық есеппен, тәсіл саны ретсіз толық санақпен, екі номиналдық құрамдар бүтін сандардың толық облысымен тексерілді. Сандық нұсқалар бөлек жаңа мағына деп саналмайды."
+      ],
+      "relationToSource": "One source-specific saved grade-4 nonvisual topic1.11 currency/coin-count edition. Source variants are coverage, not semantic uniqueness.",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "statement": "Нұр мен Мәдинада барлығы 20 монета бар. Нұр Мәдинаға 3 монета берсе, екеуінің монета саны теңеседі. Бастапқы сандарды таңдаңыз.",
+      "answer": "Нұрда 13, Мәдинада 7",
+      "solution": "Беру жалпы санды өзгертпейді, сондықтан соңында әрқайсысында 20 : 2 = 10. Нұр бергендіктен, бұрын 10 + 3 = 13; Мәдина алғандықтан, бұрын 10 − 3 = 7. Бастапқы айырма 3 × 2 = 6, тек берілген сан емес.",
+      "options": [
+        "Нұрда 14, Мәдинада 6",
+        "Нұрда 12, Мәдинада 8",
+        "Нұрда 13, Мәдинада 7",
+        "Нұрда 10, Мәдинада 10"
+      ],
+      "calculationVerification": {
+        "method": "exact_cent_normalization_minimal_money_DP_complete_integer_counts",
+        "answer": "Нұрда 13, Мәдинада 7",
+        "checks": [
+          "native statement/full solution/options bind to exact source-specific parameters",
+          "exact cent normalization, minimal money DP or complete bounded integer/count domains",
+          "explicit allowed denomination sets and hypothetical exchange rates; no claim of current rates or exhaustive historical currency types"
+        ]
+      }
+    }
+  ]
+}

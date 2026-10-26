@@ -1,0 +1,489 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All7 saved visual grade5topic2.7; sourcearchiveonly, no capture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5topic2.7sources",
+    "sourceVisualOccurrences": 7,
+    "addressedNewDrafts": 7,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "107ff282d07c0a8e",
+      "558e0a8b3e22f4b5",
+      "7036c591205d2c06",
+      "a6ddd05af50cc9af",
+      "b46a25dc07575ae5",
+      "d2612279b7eb66aa",
+      "f748bb67f4eaf1e7"
+    ],
+    "distinctModels": 7,
+    "semantics": "Allsevensource targets individuallyrewritten; variant/modelcounts are not claims ofnew semanticmeanings."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave37-ninety-six-incomplete-tree",
+      "modelId": "visual-wave37-complete-tree-prime-multiplicity",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "unfinished-tree",
+        "values": [
+          96,
+          6,
+          16,
+          2,
+          3,
+          2,
+          8
+        ],
+        "prime": 2
+      },
+      "answer": "5",
+      "sourceRefs": [
+        {
+          "sourceId": "558e0a8b3e22f4b5",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-7-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-7-level1.json#0",
+      "sourceCanonicalSha256": "ecf48e34b74fbded1f633d0446930432ddb7e47580bf67ffd30c554288e37633",
+      "sourceSkill": "Completing composite leaves before counting multiplicity of a specified prime",
+      "adaptationChanges": [
+        "Барлық 7 бастапқы визуалды дағды жеке сақталды: аяқталмаған жапырақты жіктеп қайталануын санау, үш жай жапырақтан түбірді табу, жай қабырғалар, қайталанған көбейткіштердің қосындысы, үш жай өлшем және барлық қыр, ортақ жақтардан биіктік, бос жай жапырақ.",
+        "Ағаштар 96/165/1386/220 сандарына, аудан 221 м², көлем 231 см³, көршілес жақтар 91 және 143 см² болып жаңарды. Native ағаштарда белгісіз аралық пен бос жапырақ ажыратылған; ең төмендегі 8 құрама түйіні әлі аяқталмаған.",
+        "Барлық native тармақ/түйін және екі бояулы ортақ қырлы жақ өз параметрінен салынды; source traced paths/raster қолданылған жоқ. Барлық мүмкін жай жұп/үштік және ортақ биіктік толық шектелген облыста тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай көбейткіштер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview; verify every tree node/edge and unfinished8,prime leafroles,221m²,231cm³/all12edges,adjacent91/143cm²commonverticaledge,actual343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave37-ninety-six-incomplete-tree.svg",
+      "verificationModule": "scripts/editorial/visual-wave37-models.mjs",
+      "statement": "Көбейткіштер ағашында төменгі ақ түйіннің жіктелуі әлі аяқталмаған. Барлық ұшында тек жай сандар қалғанша жалғастырыңыз. Толық жіктеуде 2 көбейткіші неше рет кездеседі? Жауапқа тек санды жазыңыз.",
+      "solution": "Суретте 96 = 6 × 16, 6 = 2 × 3, 16 = 2 × 8. Төменгі 8 — құрама сан, оны да жіктеу керек: 8 = 2 × 2 × 2. Толық жіктеу 96 = 2 × 2 × 2 × 2 × 2 × 3. 2 көбейткіші 5 рет бар. Тек дайын ағашта көрінген 2 сандарын санау аяқталмаған тармақты жоғалтады.",
+      "figureDescription": "Жоғарғы 96 саны 6 және 16 түйініне тарайды. 6 астында 2, 3; 16 астында 2, 8 бар. Жай жапырақтар көк, соңғы құрама 8 ақ түсті.",
+      "figureSha256": "93da3083796b50aa07a996207e3ad0585160d3d42a36ed778e4faf84cfb41559",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "5",
+        "checks": {
+          "root": 96,
+          "unfinishedComposite": 8,
+          "fullPrimeFactors": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            3
+          ],
+          "countPrime": 2
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave37-three-five-eleven-root",
+      "modelId": "visual-wave37-tree-root-from-prime-leaves",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "easy",
+      "params": {
+        "scene": "root-tree",
+        "leaves": [
+          3,
+          5,
+          11
+        ]
+      },
+      "answer": "165",
+      "sourceRefs": [
+        {
+          "sourceId": "a6ddd05af50cc9af",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-7-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-7-level1.json#8",
+      "sourceCanonicalSha256": "52efc76de6fcb11a81a73ba1359970fbbc8c7519db5c3099b90838c82b992d8d",
+      "sourceSkill": "Recovering the root from three prime leaf values and a missing intermediate node",
+      "adaptationChanges": [
+        "Барлық 7 бастапқы визуалды дағды жеке сақталды: аяқталмаған жапырақты жіктеп қайталануын санау, үш жай жапырақтан түбірді табу, жай қабырғалар, қайталанған көбейткіштердің қосындысы, үш жай өлшем және барлық қыр, ортақ жақтардан биіктік, бос жай жапырақ.",
+        "Ағаштар 96/165/1386/220 сандарына, аудан 221 м², көлем 231 см³, көршілес жақтар 91 және 143 см² болып жаңарды. Native ағаштарда белгісіз аралық пен бос жапырақ ажыратылған; ең төмендегі 8 құрама түйіні әлі аяқталмаған.",
+        "Барлық native тармақ/түйін және екі бояулы ортақ қырлы жақ өз параметрінен салынды; source traced paths/raster қолданылған жоқ. Барлық мүмкін жай жұп/үштік және ортақ биіктік толық шектелген облыста тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай көбейткіштер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview; verify every tree node/edge and unfinished8,prime leafroles,221m²,231cm³/all12edges,adjacent91/143cm²commonverticaledge,actual343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave37-three-five-eleven-root.svg",
+      "verificationModule": "scripts/editorial/visual-wave37-models.mjs",
+      "statement": "Көбейткіштер ағашының әр жоғарғы түйіні төмендегі екі түйіннің көбейтіндісіне тең. Берілген үш жай сан арқылы ең ЖОҒАРҒЫ сұрақ белгісінің мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Төменгі оң тармақ 5 × 11 = 55. Ең жоғарғы сан 3 × 55 = 165. Үш жай жапырақты тікелей көбейтсек те 3 × 5 × 11 = 165 шығады. Аралық 55 санын жауап деп тоқтамаймыз.",
+      "figureDescription": "Жоғарғы ?, оның сол баласы 3, оң баласы ?. Оң аралық ? астында 5 және 11 жапырағы. Жасырын сандар жазылмаған.",
+      "figureSha256": "deefaf09b068f497d0e3e413c3cac270950fcb2f3206c7788aa26444cc12ce69",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "165",
+        "checks": {
+          "middle": 55,
+          "root": 165,
+          "primeLeaves": [
+            3,
+            5,
+            11
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave37-two-prime-field-dimensions",
+      "modelId": "visual-wave37-prime-rectangle-dimensions",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "easy",
+      "params": {
+        "scene": "rectangle",
+        "area": 221
+      },
+      "answer": "13 м және 17 м",
+      "sourceRefs": [
+        {
+          "sourceId": "7036c591205d2c06",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-7-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-7-level1.json#15",
+      "sourceCanonicalSha256": "96b3aa6884a68364ce31a69f0cb2688a28b2c738401b7aeadcdf57f7d277049c",
+      "sourceSkill": "Factoring a printed rectangular area under explicit primality of both dimensions",
+      "adaptationChanges": [
+        "Барлық 7 бастапқы визуалды дағды жеке сақталды: аяқталмаған жапырақты жіктеп қайталануын санау, үш жай жапырақтан түбірді табу, жай қабырғалар, қайталанған көбейткіштердің қосындысы, үш жай өлшем және барлық қыр, ортақ жақтардан биіктік, бос жай жапырақ.",
+        "Ағаштар 96/165/1386/220 сандарына, аудан 221 м², көлем 231 см³, көршілес жақтар 91 және 143 см² болып жаңарды. Native ағаштарда белгісіз аралық пен бос жапырақ ажыратылған; ең төмендегі 8 құрама түйіні әлі аяқталмаған.",
+        "Барлық native тармақ/түйін және екі бояулы ортақ қырлы жақ өз параметрінен салынды; source traced paths/raster қолданылған жоқ. Барлық мүмкін жай жұп/үштік және ортақ биіктік толық шектелген облыста тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай көбейткіштер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview; verify every tree node/edge and unfinished8,prime leafroles,221m²,231cm³/all12edges,adjacent91/143cm²commonverticaledge,actual343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave37-two-prime-field-dimensions.svg",
+      "verificationModule": "scripts/editorial/visual-wave37-models.mjs",
+      "options": [
+        "1 м және 221 м",
+        "13 м және 17 м",
+        "13 м және 13 м",
+        "11 м және 19 м"
+      ],
+      "statement": "Тіктөртбұрышты алаңның ауданы суретте көрсетілген. Оның a және b қабырғаларының метрмен алынған ұзындықтары — жай сандар. Қай жұп алаңның өлшемдері бола алады?",
+      "solution": "Аудан — екі қабырғаның көбейтіндісі. 221 = 13 × 17, 13 және 17 сандары жай. Сондықтан 13 м және 17 м жұбы жарайды. Барлық нұсқаларды тексеру: 1 м және 221 м → аудан 221, кемінде бірі жай емес; 13 м және 17 м → аудан 221, екеуі де жай; 13 м және 13 м → аудан 169, екеуі де жай; 11 м және 19 м → аудан 209, екеуі де жай. 1 саны жай сан емес.",
+      "figureDescription": "Тіктөртбұрыш ішінде S = 221 м². Көлденең белгі a, тік белгі b; өлшемдердің мәндері жазылмаған.",
+      "figureSha256": "e470fd3cd9420773be9843a630a841e9aeef688e27aa87fa1691defc662009a1",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "13 м және 17 м",
+        "checks": {
+          "allPrimePairs": [
+            [
+              13,
+              17
+            ]
+          ],
+          "allOptions": [
+            {
+              "dimensions": [
+                1,
+                221
+              ],
+              "area": 221,
+              "primes": [
+                false,
+                false
+              ]
+            },
+            {
+              "dimensions": [
+                13,
+                17
+              ],
+              "area": 221,
+              "primes": [
+                true,
+                true
+              ]
+            },
+            {
+              "dimensions": [
+                13,
+                13
+              ],
+              "area": 169,
+              "primes": [
+                true,
+                true
+              ]
+            },
+            {
+              "dimensions": [
+                11,
+                19
+              ],
+              "area": 209,
+              "primes": [
+                true,
+                true
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave37-thirteen-eighty-six-factor-sum",
+      "modelId": "visual-wave37-unfinished-tree-prime-factor-sum",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "medium",
+      "params": {
+        "scene": "first-split",
+        "root": 1386,
+        "first": 18
+      },
+      "answer": "26",
+      "sourceRefs": [
+        {
+          "sourceId": "107ff282d07c0a8e",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-7-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-7-level2.json#6",
+      "sourceCanonicalSha256": "896f346fc602b7133e15a75af7c0d02fa2a60e5cd9eab5e5be88fe5a6b2f5ce4",
+      "sourceSkill": "Finishing an incomplete first factor split and summing prime factors with multiplicity",
+      "adaptationChanges": [
+        "Барлық 7 бастапқы визуалды дағды жеке сақталды: аяқталмаған жапырақты жіктеп қайталануын санау, үш жай жапырақтан түбірді табу, жай қабырғалар, қайталанған көбейткіштердің қосындысы, үш жай өлшем және барлық қыр, ортақ жақтардан биіктік, бос жай жапырақ.",
+        "Ағаштар 96/165/1386/220 сандарына, аудан 221 м², көлем 231 см³, көршілес жақтар 91 және 143 см² болып жаңарды. Native ағаштарда белгісіз аралық пен бос жапырақ ажыратылған; ең төмендегі 8 құрама түйіні әлі аяқталмаған.",
+        "Барлық native тармақ/түйін және екі бояулы ортақ қырлы жақ өз параметрінен салынды; source traced paths/raster қолданылған жоқ. Барлық мүмкін жай жұп/үштік және ортақ биіктік толық шектелген облыста тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай көбейткіштер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview; verify every tree node/edge and unfinished8,prime leafroles,221m²,231cm³/all12edges,adjacent91/143cm²commonverticaledge,actual343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave37-thirteen-eighty-six-factor-sum.svg",
+      "verificationModule": "scripts/editorial/visual-wave37-models.mjs",
+      "statement": "Суретте санның көбейткіштер ағашының алғашқы бөлінуі ғана берілген. Оны жай сандарға дейін жалғастырыңыз. Барлық жай көбейткіштің ҚОСЫНДЫСЫ неше? Қайталанған көбейткіш әр кездескен сайын қайта қосылады. Жауапқа тек санды жазыңыз.",
+      "solution": "Алғашқы белгісіз тармақ 1386 : 18 = 77. Екі тармақты толық жіктегенде 1386 = 2 × 3 × 3 × 7 × 11. Жай көбейткіштердің қосындысы 2 + 3 + 3 + 7 + 11 = 26. 3 саны қайталанғандықтан, әр данасын қосамыз. Тексеру үшін олардың көбейтіндісі 1386 болып, бастапқы санмен сәйкес келеді.",
+      "figureDescription": "Жоғарғы 1386 саны екі тармаққа бөлінген: солда 18, оңда ?. Әрі қарайғы жіктеу көрсетілмеген.",
+      "figureSha256": "f62683c0b2e07dcddff1bf61e29749d0cacb7478ada7ae3a9be16d28c7d55e18",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "26",
+        "checks": {
+          "first": 18,
+          "missingBranch": 77,
+          "fullPrimeFactors": [
+            2,
+            3,
+            3,
+            7,
+            11
+          ],
+          "product": 1386
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave37-two-thirty-one-prime-cuboid",
+      "modelId": "visual-wave37-prime-cuboid-edge-sum",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "medium",
+      "params": {
+        "scene": "volume-cuboid",
+        "volume": 231
+      },
+      "answer": "84",
+      "sourceRefs": [
+        {
+          "sourceId": "d2612279b7eb66aa",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-7-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-7-level2.json#9",
+      "sourceCanonicalSha256": "85a0844727f795204e385d7887f9eb286c88e7990430a7b02423ea17d45ae3db",
+      "sourceSkill": "Recovering three prime dimensions from volume and counting all twelve cuboid edges",
+      "adaptationChanges": [
+        "Барлық 7 бастапқы визуалды дағды жеке сақталды: аяқталмаған жапырақты жіктеп қайталануын санау, үш жай жапырақтан түбірді табу, жай қабырғалар, қайталанған көбейткіштердің қосындысы, үш жай өлшем және барлық қыр, ортақ жақтардан биіктік, бос жай жапырақ.",
+        "Ағаштар 96/165/1386/220 сандарына, аудан 221 м², көлем 231 см³, көршілес жақтар 91 және 143 см² болып жаңарды. Native ағаштарда белгісіз аралық пен бос жапырақ ажыратылған; ең төмендегі 8 құрама түйіні әлі аяқталмаған.",
+        "Барлық native тармақ/түйін және екі бояулы ортақ қырлы жақ өз параметрінен салынды; source traced paths/raster қолданылған жоқ. Барлық мүмкін жай жұп/үштік және ортақ биіктік толық шектелген облыста тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай көбейткіштер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview; verify every tree node/edge and unfinished8,prime leafroles,221m²,231cm³/all12edges,adjacent91/143cm²commonverticaledge,actual343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave37-two-thirty-one-prime-cuboid.svg",
+      "verificationModule": "scripts/editorial/visual-wave37-models.mjs",
+      "statement": "Қорап тікбұрышты параллелепипед пішінді. Оның үш өлшемі сантиметрмен алынғанда жай сандар, ал көлемі суретте берілген. Барлық 12 қырының ұзындықтарын қоссақ, неше сантиметр болады? Жауапқа тек санды жазыңыз.",
+      "solution": "Қорап көлемі 231 = 3 × 7 × 11 см³. Үш өлшем де жай сан болуы тиіс, сондықтан өлшемдері 3, 7, 11 см. Әр өлшемге параллель 4 қырдан бар. Барлық 12 қырдың қосындысы 4 × (3 + 7 + 11) = 84 см. Үш өлшемді бір рет қана қосу барлық қырды санамайды.",
+      "figureDescription": "Тікбұрышты параллелепипедтің төменгі қыры a, биіктігі b, тереңдігі c. Жоғарғы бөлек жазу V = 231 см³.",
+      "figureSha256": "d5f6dd151aaec8ff64948580e856bd3e73b7415a6fa7db8ae06f4942e4848f90",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "84",
+        "checks": {
+          "dimensions": [
+            3,
+            7,
+            11
+          ],
+          "edgeMultiplicities": [
+            4,
+            4,
+            4
+          ],
+          "all12Edges": 84
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave37-ninety-one-one-forty-three-faces",
+      "modelId": "visual-wave37-adjacent-prime-face-volume",
+      "grade": 5,
+      "topic": "geo",
+      "difficulty": "hard",
+      "params": {
+        "scene": "adjacent-faces",
+        "frontArea": 91,
+        "rightArea": 143
+      },
+      "answer": "1001",
+      "sourceRefs": [
+        {
+          "sourceId": "b46a25dc07575ae5",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-7-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-7-level3.json#6",
+      "sourceCanonicalSha256": "4820de0db31c304fef9cdc78348e3cfa2dd796606c536f9dfbea7258c5dd9bf2",
+      "sourceSkill": "Finding the common prime dimension from two adjacent face areas then exact cuboid volume",
+      "adaptationChanges": [
+        "Барлық 7 бастапқы визуалды дағды жеке сақталды: аяқталмаған жапырақты жіктеп қайталануын санау, үш жай жапырақтан түбірді табу, жай қабырғалар, қайталанған көбейткіштердің қосындысы, үш жай өлшем және барлық қыр, ортақ жақтардан биіктік, бос жай жапырақ.",
+        "Ағаштар 96/165/1386/220 сандарына, аудан 221 м², көлем 231 см³, көршілес жақтар 91 және 143 см² болып жаңарды. Native ағаштарда белгісіз аралық пен бос жапырақ ажыратылған; ең төмендегі 8 құрама түйіні әлі аяқталмаған.",
+        "Барлық native тармақ/түйін және екі бояулы ортақ қырлы жақ өз параметрінен салынды; source traced paths/raster қолданылған жоқ. Барлық мүмкін жай жұп/үштік және ортақ биіктік толық шектелген облыста тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай көбейткіштер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview; verify every tree node/edge and unfinished8,prime leafroles,221m²,231cm³/all12edges,adjacent91/143cm²commonverticaledge,actual343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave37-ninety-one-one-forty-three-faces.svg",
+      "verificationModule": "scripts/editorial/visual-wave37-models.mjs",
+      "statement": "Тікбұрышты параллелепипедтің үш өлшемі сантиметрмен алынғанда жай сандар. Көк және күлгін жақтың аудандары суретте берілген; олардың ортақ қыры — биіктік. Параллелепипедтің көлемі неше см³? Жауапқа тек санды жазыңыз.",
+      "solution": "Көк жақ 91 = 13 × 7 см²; күлгін жақ 143 = 13 × 11 см². Ортақ қырдың ұзындығы екі ауданды да бөлетін жай сан болуы керек. Барлық жай мүмкіндік тексерілгенде ортақ биіктік 13 см, басқа өлшемдер 7 және 11 см шығады. Көлем 13 × 7 × 11 = 1001 см³. Тексеру: 13 × 7 = 91 және 13 × 11 = 143. Аудандарды жай көбейтсек, ортақ биіктік екі рет саналар еді.",
+      "figureDescription": "Көк алдыңғы жақта 91 см², күлгін оң жақта 143 см² жазылған. Бұл жақтардың ортақ шекарасы бір тік қыр. Жоғарғы жақтың ауданы белгісіз.",
+      "figureSha256": "394cb6b31059b9644e25fe11c0120dfc07a34db47b5ef498addb2b8ca9caed56",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "1001",
+        "checks": {
+          "allPrimeDimensions": [
+            {
+              "height": 13,
+              "frontWidth": 7,
+              "depth": 11
+            }
+          ],
+          "faceProducts": [
+            91,
+            143
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave37-two-twenty-missing-prime",
+      "modelId": "visual-wave37-missing-prime-leaf",
+      "grade": 5,
+      "topic": "num",
+      "difficulty": "hard",
+      "params": {
+        "scene": "missing-tree",
+        "root": 220,
+        "knownLeaves": [
+          2,
+          2,
+          5
+        ]
+      },
+      "answer": "11",
+      "sourceRefs": [
+        {
+          "sourceId": "f748bb67f4eaf1e7",
+          "sourceFile": "problems/sources/zerek/courses/5-math-2-7-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-2-7-leveltest.json#0",
+      "sourceCanonicalSha256": "89bb6eebe55d5db03ce437f8298731e00664e9ef9bb0822154ee02fa7877d652",
+      "sourceSkill": "Distinguishing the missing intermediate composite from the requested missing prime leaf",
+      "adaptationChanges": [
+        "Барлық 7 бастапқы визуалды дағды жеке сақталды: аяқталмаған жапырақты жіктеп қайталануын санау, үш жай жапырақтан түбірді табу, жай қабырғалар, қайталанған көбейткіштердің қосындысы, үш жай өлшем және барлық қыр, ортақ жақтардан биіктік, бос жай жапырақ.",
+        "Ағаштар 96/165/1386/220 сандарына, аудан 221 м², көлем 231 см³, көршілес жақтар 91 және 143 см² болып жаңарды. Native ағаштарда белгісіз аралық пен бос жапырақ ажыратылған; ең төмендегі 8 құрама түйіні әлі аяқталмаған.",
+        "Барлық native тармақ/түйін және екі бояулы ортақ қырлы жақ өз параметрінен салынды; source traced paths/raster қолданылған жоқ. Барлық мүмкін жай жұп/үштік және ортақ биіктік толық шектелген облыста тексеріледі."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Жай көбейткіштер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview; verify every tree node/edge and unfinished8,prime leafroles,221m²,231cm³/all12edges,adjacent91/143cm²commonverticaledge,actual343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave37-two-twenty-missing-prime.svg",
+      "verificationModule": "scripts/editorial/visual-wave37-models.mjs",
+      "options": [
+        "55",
+        "11",
+        "110",
+        "5"
+      ],
+      "statement": "Көбейткіштер ағашында жоғарғы және бір аралық сан берілген. «?» аралық түйінін толықтырып, төмендегі БОС шаршыға жазылатын жай санды таңдаңыз.",
+      "solution": "Берілген жай жапырақтардың көбейтіндісі 2 × 2 × 5 = 20. Толық сан 220 болғандықтан, бос жапырақ 220 : 20 = 11. Бұл сан жай. Аралық «?» 55 санына тең, бірақ сұралғаны оның ішіндегі бос жапырақ. Тексеру: 2 × 2 × 5 × 11 = 220.",
+      "figureDescription": "Жоғарғы 220 астында 4 және ?. Осы көбейткіштің астында 2 және 2; оң ? астында 5 және бос шаршы бар. Бос шаршыда жауап көрінбейді.",
+      "figureSha256": "348d9908a20c63ab6bc805bd63c9cbdf4ce0514ecc1b11364b78ca3bddb5122e",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "11",
+        "checks": {
+          "knownProduct": 20,
+          "missingPrime": 11,
+          "allPrimeFactors": [
+            2,
+            2,
+            5,
+            11
+          ],
+          "middle": 55
+        }
+      }
+    }
+  ]
+}

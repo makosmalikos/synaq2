@@ -1,0 +1,52 @@
+/** Author checks from printed givens and complete speed/time/distance domains.
+ * NOT an external editorial review or a publication signature. */
+import fs from 'node:fs';import assert from 'node:assert/strict';
+import {renderEdition,verifyEdition} from './grade4-motion-models.mjs';
+const rows=JSON.parse(fs.readFileSync(new URL('../../problems/editorial/batches/grade4-motion-wave25.json',import.meta.url))).editions;
+const keys=['Дәурен','126','м/с','56 км/сағ','6 м/мин','95','5','Мотоцикл','24','v = S : t','750 км/сағ','5 сағатта 375 км','20 км/сағ','6','10 м/мин','5','5 мин','600','60','3 есе','6','6 сағ','Дина, 10 м/мин','36','1 800 м','5','144 км','13:00','80','11','12 с','195','8 м/с','5','28 км/сағ','465','13 мин','1680','Мерей'];
+const num=s=>Number(s.replaceAll(' ','')),take=(re,s)=>{const m=re.exec(s);assert(m,[re,s]);return m;},numberOption=s=>num(take(/^(\d[\d ]*) (?:км\/сағ|м\/мин|м\/с|сағ|мин|с|км|м|есе)$/,s)[1]);
+let domains=0,fullIntegerCases=0,formulaGridCases=0;
+function matchNumeric(r,value){assert(Number.isInteger(value)&&value>=0);if(r.options)assert.deepEqual(r.options.filter(o=>numberOption(o)===value),[r.answer]);else assert.equal(+r.answer,value);}
+for(let i=0;i<rows.length;i++){
+ const r=rows[i],s=r.statement,k=r.modelId.replace('grade4-motion-','');verifyEdition(r);assert.equal(r.answer,keys[i]);
+ switch(k){
+ case 'compare-runners':case 'runner-speed-gap':case 'runner-who-and-gap':{const m=take(/^(\S+) (\d+) минутта (\d+) м, (\S+) (\d+) минутта (\d+) м жүрді\./,s),[first,t1,d1,second,t2,d2]=m.slice(1),a=+d1/+t1,b=+d2/+t2,winner=a>b?first:second;assert.equal(a>b,+d1* +t2>+d2* +t1);if(k==='compare-runners')assert.equal(r.answer,winner);else if(k==='runner-speed-gap')matchNumeric(r,a-b);else assert.equal(r.answer,`${winner}, ${Math.abs(a-b)} м/мин`);assert(+d1!==+d2);break;}
+ case 'drone-distance':{const [v,t]=take(/(\d+) м\/с[\s\S]*?\. (\d+) секундта/,s).slice(1).map(Number);matchNumeric(r,v*t);break;}
+ case 'crawler-distance':{const [v,t]=take(/(\d+) м\/мин[\s\S]*?\. (\d+) минутта/,s).slice(1).map(Number);matchNumeric(r,v*t);break;}
+ case 'truck-distance':{const [v,t]=take(/(\d+) км\/сағ[\s\S]*? (\d+) сағат жүрді/,s).slice(1).map(Number);matchNumeric(r,v*t);break;}
+ case 'speed-unit':{assert.equal(r.answer,'м/с');assert.deepEqual(r.options,['м/с','с','м²','м']);assert(s.includes('Бір секундта'));break;}
+ case 'violating-cap':case 'nonviolating-cap':{const cap=+take(/жылдамдықты (\d+) км\/сағ/,s)[1];assert.deepEqual(r.options.filter(o=>k==='violating-cap'?numberOption(o)>cap:numberOption(o)<=cap),[r.answer]);if(k==='violating-cap')assert(r.options.some(o=>numberOption(o)===cap&&o!==r.answer));assert(s.includes('Жаттығу алаңындағы'));break;}
+ case 'small-crawler-speed':case 'cat-speed':{const [t,d]=take(/ (\d+) (?:минутта|секундта) (\d+) м жүрді/,s).slice(1).map(Number);matchNumeric(r,d/t);break;}
+ case 'train-speed':case 'plane-speed':{const [t,d]=take(/ (\d+) сағатта (\d[\d ]*) км жол өтті/,s).slice(1).map(num);matchNumeric(r,d/t);break;}
+ case 'boat-time':case 'horse-time':{const [v,d]=take(/ (\d+) км\/сағ[\s\S]*? (\d+) км жүрді/,s).slice(1).map(Number);matchNumeric(r,d/v);break;}
+ case 'longest-fixed-time':{const vals=[...s.matchAll(/(Автобус|Трактор|Мотоцикл|Велосипедші) — (\d+) км\/сағ/g)].map(m=>({name:m[1],speed:+m[2]})),t=+take(/ (\d+) сағат қозғалады/,s)[1];assert.equal(vals.length,4);const distances=vals.map(v=>v.speed*t),max=Math.max(...distances);assert.deepEqual(vals.filter((_,j)=>distances[j]===max).map(v=>v.name),[r.answer]);break;}
+ case 'speed-formula':{for(let d=2;d<=20;d++)for(let t=2;t<=10;t++){formulaGridCases++;const actual=d/t;const [diff,quotient,inverse,product]=[d-t,d/t,t/d,d*t];assert.equal(quotient,actual);if(d===12&&t===3)assert(diff!==actual&&inverse!==actual&&product!==actual);}assert.equal(r.answer,'v = S : t');assert(s.includes('оң уақыт'));break;}
+ case 'fastest-journey':{const vals=r.options.map(o=>take(/^(\d+) сағатта (\d+) км$/,o).slice(1).map(Number)),speeds=vals.map(([t,d])=>d/t),max=Math.max(...speeds);assert.deepEqual(r.options.filter((_,j)=>speeds[j]===max),[r.answer]);assert.notEqual(vals[speeds.indexOf(max)][1],Math.max(...vals.map(v=>v[1])));break;}
+ case 'same-road-speed-gap':{const [d,t1,t2]=take(/Пойыз (\d+) км жолды (\d+) сағатта, автобус сол жолды (\d+)/,s).slice(1).map(Number);matchNumeric(r,d/t1-d/t2);break;}
+ case 'faster-on-same-road':{const [d,t,increase]=take(/Көлік (\d+) км жолды (\d+) сағатта[\s\S]*?жылдамдығын (\d+) км\/сағ/,s).slice(1).map(Number);const v=d/t+increase;const good=[];for(let tt=1;tt<=t;tt++){fullIntegerCases++;if(v*tt===d)good.push(tt);}assert.deepEqual(good,[+r.answer]);break;}
+ case 'walk-then-bike-alternative':{const [v,t,bike]=take(/ (\d+) м\/мин тұрақты жылдамдықпен (\d+) минут[\s\S]*?сол жолды (\d+) м\/мин/,s).slice(1).map(Number);matchNumeric(r,v*t/bike);break;}
+ case 'arrival-time-gap':{const [d,a,b]=take(/ (\d+) м жердегі[\s\S]*?Дәурен (\d+) м\/мин, Мерей (\d+) м\/мин/,s).slice(1).map(Number);const diff=d/b-d/a;assert.deepEqual(r.options.filter(o=>o.endsWith(' мин')&&numberOption(o)===diff),[r.answer]);assert(r.options.some(o=>o.endsWith(' м/мин')));break;}
+ case 'same-speed-new-time':{const [t,d,next]=take(/Пойыз (\d+) сағатта (\d+) км[\s\S]*?өзгермесе, (\d+) сағатта/,s).slice(1).map(Number);matchNumeric(r,d*next/t);break;}
+ case 'same-time-distance-gap':{const [a,b,t]=take(/ (\d+) км\/сағ, [\s\S]*? (\d+) км\/сағ[\s\S]*?\. (\d+) сағатта/,s).slice(1).map(Number);matchNumeric(r,a*t-b*t);break;}
+ case 'speed-ratio':{const [t1,d1,t2,d2]=take(/көлік (\d+) секундта (\d+) м, екіншісі (\d+) секундта (\d+) м/,s).slice(1).map(Number);matchNumeric(r,d1*t2/(t1*d2));break;}
+ case 'same-speed-new-distance':{const [t,d,next]=take(/қайық (\d+) сағатта (\d+) км[\s\S]*?жылдамдықпен (\d+) км/,s).slice(1).map(Number);matchNumeric(r,next*t/d);break;}
+ case 'minimum-cap-time':{const [cap,d]=take(/жылдамдық (\d+) км\/сағ[\s\S]*?Тоқтаусыз (\d+) км/,s).slice(1).map(Number);const times=[];for(let v=1;v<=cap;v++){fullIntegerCases++;times.push(d/v);}matchNumeric(r,Math.min(...times));assert.equal(Math.min(...times)*cap,d);break;}
+ case 'plane-road-by-train':{const [plane,t,train]=take(/Ұшақ (\d+) км\/сағ жылдамдықпен (\d+) сағатта[\s\S]*?пойыз (\d+) км\/сағ/,s).slice(1).map(Number);matchNumeric(r,plane*t/train);break;}
+ case 'late-early-distance':{const [slow,late,fast,early]=take(/ (\d+) м\/мин жылдамдықпен жүрсе сабаққа (\d+) минут кешігеді, (\d+) м\/мин жылдамдықпен жүрсе (\d+) минут ерте/,s).slice(1).map(Number),good=[];for(let d=1;d<=20000;d++){fullIntegerCases++;if(d*fast-d*slow===(late+early)*slow*fast)good.push(d);}assert.deepEqual(good,[num(r.answer.replace(' м',''))]);const d=good[0];assert.equal(d/slow-late,d/fast+early);assert(s.includes('бір мезгілде үйінен'));break;}
+ case 'same-direction-gap-time':{const [fast,slow,gap]=take(/тұрақты: (\d+) және (\d+) км\/сағ[\s\S]*?аралары (\d+) км/,s).slice(1).map(Number);matchNumeric(r,gap/(fast-slow));assert(s.includes('бір нүктеден бір бағытта'));break;}
+ case 'meeting-distance-gap':{const [road,bus,car]=take(/Аралары (\d+) км[\s\S]*?автобус (\d+) км\/сағ, жеңіл көлік (\d+) км\/сағ/,s).slice(1).map(Number),t=road/(bus+car);assert.equal(bus*t+car*t,road);matchNumeric(r,car*t-bus*t);assert(s.includes('бір-біріне қарсы'));break;}
+ case 'delayed-catch-clock':{const [h1,v1,h2,v2]=take(/(\d+):00 кезінде жүк көлігі (\d+) км\/сағ[\s\S]*?(\d+):00 кезінде[\s\S]*? (\d+) км\/сағ/,s).slice(1).map(Number),good=[];for(let minute=h2*60;minute<24*60;minute++){fullIntegerCases++;if(v1*(minute-h1*60)===v2*(minute-h2*60))good.push(minute);}assert.equal(good.length,1);assert.equal(String(Math.floor(good[0]/60)).padStart(2,'0')+':'+String(good[0]%60).padStart(2,'0'),r.answer);assert.equal(good[0]-h2*60,240);break;}
+ case 'second-stage-speed':{const [t,v,tt,total]=take(/алғашқы (\d+) сағатта (\d+) км\/сағ[\s\S]*?тағы (\d+) сағат[\s\S]*?жол (\d+) км/,s).slice(1).map(Number);const good=[];for(let w=1;w<v;w++){fullIntegerCases++;if(v*t+w*tt===total)good.push(w);}assert.deepEqual(good,[+r.answer]);break;}
+ case 'opposite-unknown-speed':{const [v,t,d]=take(/Біріншісі (\d+) км\/сағ[\s\S]*?жылдамдықпен (\d+) сағаттан кейін аралары (\d+) км/,s).slice(1).map(Number);matchNumeric(r,d/t-v);assert(s.includes('қарама-қарсы бағытта'));break;}
+ case 'dog-catches-rabbit':{const [gap,dog,rabbit]=take(/Қоян иттен (\d+) м[\s\S]*?ит (\d+) м\/с, қоян (\d+) м\/с/,s).slice(1).map(Number),good=[];for(let t=1;t<=gap;t++){fullIntegerCases++;if(dog*t===gap+rabbit*t)good.push(t);}assert.deepEqual(good,[numberOption(r.answer)]);break;}
+ case 'two-stage-distance':{const [t,v,tt,w]=take(/алдымен (\d+) сағат (\d+) км\/сағ, кейін (\d+) сағат (\d+) км\/сағ/,s).slice(1).map(Number);matchNumeric(r,t*v+tt*w);break;}
+ case 'remaining-walk-time':{const [d,v,t]=take(/дейін (\d[\d ]*) м\. Ол (\d+) м\/мин[\s\S]*? (\d+) минут жүріп/,s).slice(1).map(num);matchNumeric(r,(d-v*t)/v);assert.notEqual(numberOption(r.answer),d/v);break;}
+ default:assert.fail(k);
+ }domains++;
+ const ref=r.sourceRefs[0],q=JSON.parse(fs.readFileSync(ref.sourceFile)).questions.find(q=>q.id===ref.sourceId),clean=s=>s.normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim();assert.notEqual(clean(r.statement),clean(q.statement));
+}
+let rejected=0,invalid=0;
+function find(v,path=[]){if(typeof v==='number')return path;if(Array.isArray(v)){for(let i=0;i<v.length;i++){const p=find(v[i],[...path,i]);if(p)return p;}}else if(v&&typeof v==='object'){for(const k of Object.keys(v)){const p=find(v[k],[...path,k]);if(p)return p;}}return null;}
+function mutate(r,path,value){const row=structuredClone(r);let p=row.params;for(let i=0;i<path.length-1;i++)p=p[path[i]];p[path.at(-1)]=value;return row;}
+for(const r of rows){for(const key of ['answer','statement','solution','options']){if(key==='options'&&!r.options)continue;const bad=structuredClone(r);bad[key]=key==='options'?[...r.options].reverse():r[key]+' altered';assert.throws(()=>verifyEdition(bad));rejected++;}const path=find(r.params);if(path){let n=r.params;for(const k of path)n=n[k];assert.throws(()=>verifyEdition(mutate(r,path,n+1)));rejected++;const inv=mutate(r,path,-1);assert.throws(()=>{Object.assign(inv,renderEdition(inv));verifyEdition(inv);});invalid++;}}
+console.log(JSON.stringify({fixtures:39,printedGivenDomains:domains,fullIntegerCases,formulaGridCases,sourceStatementMatches:0,tamperRejected:rejected,invalidParametersRejected:invalid,status:'passed'}));

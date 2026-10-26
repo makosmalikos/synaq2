@@ -1,0 +1,57 @@
+// Author checks only: exact rational printed-givens oracle, literal fixtures, finite domains and native fraction nodes.
+import fs from'node:fs';import assert from'node:assert/strict';import{renderEdition,verifyEdition}from'./collection-percent3-models.mjs';import{mathFragments}from'../../frontend/src/mathPresentation.js';
+const read=f=>JSON.parse(fs.readFileSync(f,'utf8')),rows=read('problems/editorial/batches/collection-percent3-wave7.json').editions;
+const abs=x=>x<0n?-x:x,gcd=(a,b)=>b?gcd(b,a%b):abs(a),Q=(n,d=1n)=>{n=BigInt(n);d=BigInt(d);assert(d!==0n);if(d<0n){n=-n;d=-d;}const g=gcd(n,d);return[n/g,d/g];},add=(a,b)=>Q(a[0]*b[1]+b[0]*a[1],a[1]*b[1]),sub=(a,b)=>Q(a[0]*b[1]-b[0]*a[1],a[1]*b[1]),mul=(a,b)=>Q(a[0]*b[0],a[1]*b[1]),div=(a,b)=>Q(a[0]*b[1],a[1]*b[0]);
+const decimal=s=>{const [w,f='']=String(s).replace(',','.').split('.');return Q(w+f,10n**BigInt(f.length));},ns=s=>(s.match(/\d+(?:,\d+)?/g)||[]).map(decimal),one=xs=>{assert.equal(xs.length,1);return xs[0];},N=q=>{assert.equal(q[1],1n);return Number(q[0]);},eq=(a,b)=>assert.deepEqual(a,b),R=(a,b)=>{const r=div(a,b);return`${r[0]} : ${r[1]}`;};
+function expression(s){s=s.replace(/[−]/g,'-').replace(/³/g,'^3').replace(/²/g,'^2').replace(/×/g,'*').replace(/:/g,'/');const ts=s.match(/\d+(?:,\d+)?|[()+*/^-]/g)||[];assert.equal(ts.join(''),s.replace(/\s+/g,''));let i=0;function atom(){let t=ts[i++];if(t==='-')return mul(Q(-1),atom());if(t==='('){const v=sum();assert.equal(ts[i++],')');return v;}let v=decimal(t);if(ts[i]==='^'){i++;const power=Number(ts[i++]);assert(Number.isInteger(power)&&power>=0&&power<=6);let r=Q(1);for(let k=0;k<power;k++)r=mul(r,v);v=r;}return v;}function product(){let a=atom();while(['*','/'].includes(ts[i])){const op=ts[i++],b=atom();a=op==='*'?mul(a,b):div(a,b);}return a;}function sum(){let a=product();while(['+','-'].includes(ts[i])){const op=ts[i++],b=product();a=op==='+'?add(a,b):sub(a,b);}return a;}const a=sum();assert.equal(i,ts.length);return a;}
+const value=s=>expression(String(s).replace(/\s*(?:м³|дм²|мм²|см²|сағ|см|мм|мин|км|кг|тг|га|м|г|л|т|°|%)\s*$/,''));
+const keys=['125 га','170 км','322,5 га','1200 кг','600 га','150','24','200 м','0','200 шар; 87,5%','5% кеміді','1800000 тг','25%','117','1,6','105','65','1512 тг','6 мм','40','4 мм','1170','630','40%','48600','44','75%','30°','60 санының 35%-ы = 35 санының 60%-ы'];
+const same=(a,b)=>a[0]===b[0]&&a[1]===b[1],pc=n=>div(n,Q(100)),square=n=>mul(n,n),quantity=s=>{const m=s.match(/(см|мм)\s*$/);let v=value(s);if(m?.[1]==='см')v=mul(v,Q(10));return v;};
+assert.equal(rows.length,29);assert.equal(new Set(rows.map(r=>r.modelId)).size,26);let nativeFractions=0;
+for(let i=0;i<rows.length;i++){
+ const r=rows[i],n=ns(r.statement);verifyEdition(r);assert.equal(r.answer,keys[i]);let answer,pair,chosen;
+ switch(i){
+ case 0:case 4:answer=div(n[2],sub(sub(Q(1),n[0]),pc(n[1])));assert.equal((r.statement.match(/БАРЛЫҚ/g)||[]).length,2);break;
+ case 1:answer=div(n[2],sub(sub(Q(1),pc(n[0])),n[1]));assert(r.statement.includes('толық жол'));break;
+ case 2:answer=mul(n[0],sub(sub(Q(1),pc(n[1])),n[2]));assert(r.statement.includes('ҮШІНШІ'));break;
+ case 3:answer=mul(mul(n[0],Q(1000)),sub(sub(Q(1),n[1]),pc(n[2])));assert(r.statement.includes('КИЛОГРАММЕН'));break;
+ case 5:case 6:case 7:answer=div(n[2],mul(sub(Q(1),pc(n[0])),sub(Q(1),pc(n[1]))));assert(r.statement.includes('ҚАЛҒАН'));break;
+ case 8:answer=sub(mul(n[2],pc(n[3])),mul(n[0],pc(n[1])));eq(n[0],n[3]);eq(n[1],n[2]);break;
+ case 9:{const red=n[0],green=mul(red,n[1]),yellow=div(green,div(n[2],n[3])),total=add(add(red,green),yellow),burst=add(add(mul(red,div(n[4],n[5])),mul(green,div(n[6],n[7]))),mul(yellow,div(n[8],n[9]))),alive=sub(total,burst);pair=[total,mul(div(alive,total),Q(100))];for(const x of[red,green,yellow,burst,alive])N(x);assert(r.statement.includes('ПАЙЫЗЫН'));eq(total,Q(200));eq(alive,Q(175));break;}
+ case 10:{const factor=mul(add(Q(1),pc(n[0])),sub(Q(1),pc(n[1]))),change=mul(sub(Q(1),factor),Q(100));assert(change[0]>0n);chosen=`${N(change)}% кеміді`;break;}
+ case 11:answer=div(mul(n[0],Q(1000)),pc(n[1]));assert(r.statement.includes('АЛДЫНДА')&&r.statement.includes('МЫҢ'));break;
+ case 12:answer=mul(div(n[0],n[1]),Q(100));break;
+ case 13:answer=mul(mul(n[0],pc(n[1])),sub(Q(1),pc(n[2])));assert(r.statement.includes('СОДАН ШЫҚҚАН'));break;
+ case 14:answer=mul(div(add(n[1],n[2]),n[3]),pc(n[4]));assert(r.statement.includes('a ≠ 0'));eq(n[4],Q(200));break;
+ case 15:answer=mul(mul(n[0],sub(Q(1),pc(n[1]))),sub(Q(1),pc(n[2])));assert(r.statement.includes('ҚАЛҒАН'));break;
+ case 16:answer=mul(div(sub(n[0],n[1]),n[0]),Q(100));assert(r.statement.includes('тек бидай мен тары')&&r.statement.includes('БИДАЙ'));break;
+ case 17:{const original=div(n[1],sub(Q(1),pc(n[0]))),final=mul(n[1],sub(Q(1),pc(n[2])));answer=sub(original,final);assert(r.statement.includes('ТЕҢГЕГЕ'));break;}
+ case 18:answer=mul(mul(n[2],div(n[1],n[0])),Q(10));assert(r.statement.includes('НАҚТЫ'));break;
+ case 19:answer=mul(sub(mul(add(Q(1),pc(n[0])),add(Q(1),pc(n[1]))),Q(1)),Q(100));assert(r.statement.includes('жаңа баға'));break;
+ case 20:{const area=mul(square(n[0]),pc(n[1]));let root=0n;while(root*root<area[0]/area[1])root++;answer=Q(root);eq(square(answer),area);eq(n[1],Q(25));assert(r.statement.includes('ҚАБЫРҒАСЫ'));break;}
+ case 21:answer=mul(n[0],sub(Q(1),pc(n[1])));assert(r.statement.includes('ТАМЫЗДА'));break;
+ case 22:answer=mul(n[0],pc(n[1]));assert(r.statement.includes('АРТЫҚ'));break;
+ case 23:answer=mul(div(n[0],n[1]),Q(100));break;
+ case 24:{const width=mul(n[0],pc(n[1])),height=mul(width,pc(n[2]));answer=mul(mul(n[0],width),height);assert(r.statement.includes('ҰЗЫНДЫҒЫНЫҢ')&&r.statement.includes('ЕНІНІҢ')&&r.statement.includes('КӨЛЕМІН'));break;}
+ case 25:answer=mul(div(sub(n[1],n[0]),n[0]),Q(100));assert(r.statement.includes('БАСТАПҚЫ'));break;
+ case 26:answer=mul(div(sub(square(n[0]),n[1]),square(n[0])),Q(100));assert(r.statement.includes('БОЯЛМАҒАН'));break;
+ case 27:{const first=div(n[0],add(add(Q(1),pc(n[1])),pc(n[2]))),angles=[first,mul(first,pc(n[1])),mul(first,pc(n[2]))];answer=angles.reduce((a,b)=>a[0]*b[1]<b[0]*a[1]?a:b);eq(angles.reduce(add),n[0]);assert(r.statement.includes('ЕҢ КІШІ'));break;}
+ case 28:{const truths=r.options.map(o=>{const nums=ns(o),left=mul(nums[0],pc(nums[1])),right=mul(nums[2],pc(nums[3]));return o.includes(' > ')?left[0]*right[1]>right[0]*left[1]:o.includes(' < ')?left[0]*right[1]<right[0]*left[1]:same(left,right);});assert.deepEqual(truths,[false,false,false,true]);chosen=one(r.options.filter((o,j)=>truths[j]));break;}
+ default:throw Error(i);
+ }
+ assert.equal(r.options.length,4);assert.equal(r.options.filter(o=>o===r.answer).length,1);
+ if(pair){assert.deepEqual(ns(r.answer),pair);assert.equal(r.options.filter(o=>{const xs=ns(o);return xs.length===2&&xs.every((x,j)=>same(x,pair[j]));}).length,1);}else if(chosen)assert.equal(r.answer,chosen);else{eq(value(r.answer),answer);assert.equal(new Set(r.options.map(quantity).map(x=>x.join('/'))).size,4,'Equivalent numeric or mm/cm options');}
+ const ref=r.sourceRefs[0],cap=read(ref.sourceFile),source=one(cap.questions.filter(q=>String(q.number)===ref.sourceId));assert(cap.sourceReviewCaptured&&source.statement&&source.solution&&source.sourceAnswer);assert.equal(Number(ref.sourceId),i+1);assert(!source.images?.length&&!source.svg?.length);
+ const walk=nodes=>nodes.flatMap(n=>[n,...walk(n.numerator||[]),...walk(n.denominator||[]),...walk(n.fraction?[n.fraction]:[])]);for(const text of[r.statement,r.solution,r.answer,...r.options]){const nodes=walk(mathFragments(text));nativeFractions+=nodes.filter(n=>n.type==='fraction').length;assert(!nodes.some(n=>n.type==='text'&&/\d\s*\/\s*\d/.test(n.value)),'Bare numeric fraction escaped native renderer');}if(i===14)assert(mathFragments(r.statement).some(n=>n.type==='fraction'));
+}
+let inverseRemaining=0,commuted=0,areaFactors=0,priceInverses=0,cuboids=0,angles=0;
+for(let first=1;first<100;first++)for(let second=1;second<100;second++){const f=Q(first,100),s=Q(second,100),last=Q(7),total=div(last,mul(sub(Q(1),f),sub(Q(1),s)));eq(mul(mul(total,sub(Q(1),f)),sub(Q(1),s)),last);inverseRemaining++;}
+for(let a=1;a<=100;a++)for(let b=1;b<=100;b++){eq(mul(Q(a),Q(b,100)),mul(Q(b),Q(a,100)));commuted++;}
+for(let up=1;up<=80;up++)for(let down=1;down<=80;down++){const factor=mul(add(Q(1),Q(up,100)),sub(Q(1),Q(down,100))),scaled=mul(mul(Q(7),add(Q(1),Q(up,100))),mul(Q(11),sub(Q(1),Q(down,100))));eq(div(scaled,Q(77)),factor);areaFactors++;}
+for(let first=1;first<=90;first++)for(let second=1;second<=90;second++){const original=Q(700),after=mul(original,sub(Q(1),Q(first,100))),final=mul(after,sub(Q(1),Q(second,100))),recovered=div(after,sub(Q(1),Q(first,100)));eq(recovered,original);eq(sub(recovered,final),add(sub(original,after),sub(after,final)));priceInverses++;}
+for(let length=1;length<=40;length++)for(let widthP=1;widthP<100;widthP++)for(const heightP of[20,25,40,50,75,80]){const l=Q(length),w=mul(l,Q(widthP,100)),h=mul(w,Q(heightP,100));eq(mul(mul(l,w),h),mul(mul(mul(l,l),l),mul(square(Q(widthP,100)),Q(heightP,100))));cuboids++;}
+for(let second=5;second<100;second+=5)for(let third=105;third<=200;third+=5)for(let sum=30;sum<=180;sum+=30){const x=div(Q(sum),add(add(Q(1),Q(second,100)),Q(third,100))),y=mul(x,Q(second,100)),z=mul(x,Q(third,100));eq(add(add(x,y),z),Q(sum));assert(y[0]*x[1]<x[0]*y[1]&&x[0]*z[1]<z[0]*x[1]);angles++;}
+let tamper=0,missing=0,invalid=0;for(const r of rows){for(const field of['statement','answer','solution','options']){const changed=structuredClone(r);if(field==='options')changed.options=changed.options.slice().reverse();else changed[field]+=' өзгерген';assert.throws(()=>verifyEdition(changed));tamper++;}for(const key of Object.keys(r.params)){const changed=structuredClone(r);delete changed.params[key];assert.throws(()=>renderEdition(changed));missing++;}const changed=structuredClone(r);changed.params[Object.keys(changed.params)[0]]=0;assert.throws(()=>renderEdition(changed));invalid++;}
+const guards=[[0,'firstHundredths',58],[1,'secondHundredths',70],[2,'firstPercentTenths',700],[3,'firstHundredths',58],[4,'lastTenths',3301],[5,'scenario',4],[6,'firstPercent',100],[7,'last',53],[8,'firstBase',24],[9,'red',81],[10,'upPercent',50],[11,'percent',13],[12,'part',73],[13,'reducePercent',100],[14,'percent',250],[15,'initial',601],[16,'other',241],[17,'interim',5101],[18,'scaleDenominator',12],[19,'secondPercent',25],[20,'firstSide',9],[21,'firstCount',1801],[22,'firstCount',1401],[23,'numerator',7],[24,'heightPercent',41],[25,'newPrice',181],[26,'painted',8100],[27,'secondPercent',100],[28,'thirdBase',26]];for(const[i,k,v]of guards){const changed=structuredClone(rows[i]);changed.params[k]=v;assert.throws(()=>renderEdition(changed),`${i}/${k}`);invalid++;}
+const norm=s=>String(s).normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim(),sources=new Set(read(rows[0].sourceRefs[0].sourceFile).questions.map(q=>norm(q.statement)));for(const r of rows)assert(!sources.has(norm(r.statement)));
+console.log(JSON.stringify({printedFixtures:29,models:26,inverseSequentialDomains:inverseRemaining,commutedPercentProducts:commuted,rectangleUpDownFactors:areaFactors,interimPriceInverseLedgers:priceInverses,sequentialCuboidDimensions:cuboids,minimumAngleDomains:angles,nativeFractionNodes:nativeFractions,contentTamperRejected:tamper,missingParametersRejected:missing,invalidDomainCanariesRejected:invalid,sourceStatementMatches:0,status:'author_checks_passed_requires_external_review'}));

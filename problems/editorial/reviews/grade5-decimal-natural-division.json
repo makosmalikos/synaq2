@@ -1,0 +1,714 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/batches/grade5-decimal-natural-division.json",
+  "reviewedAt": "2026-10-24",
+  "manualFindings": [],
+  "resolvedFindings": [],
+  "scope": "All41 source-addressed grade5topic4.7 nonvisual decimal-natural division; independent printed exact and full Euclidean/complete-cycle review",
+  "divisionAudit": {
+    "traceBlocks": 38,
+    "perPlaceSteps": 64,
+    "requiredZeroSlots": 7,
+    "appendedZeroSteps": 20,
+    "repeatedStateCycles": 1
+  },
+  "entries": [
+    {
+      "editionId": "grade5-decimal-natural-division-eb2ebdc5c7a1f987",
+      "sha256": "c82d6e30200af8015784f52a3edda18ee42753ee7bc048393ef921f2c15dfd7e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ActualWHOLE42/5m/7equalparts=6/5; exactdivisionandallcomma/internalzeroMCQschecked. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "2c6ec7a9fea7481a9ca8e032b7c274c369879d478cf292bc80faa7da9d79ef5f",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-017e78fb87b12a19",
+      "sha256": "2a4ff63cd3e87baae929e5455a39b5f2662e55e4f5c2858db6d7f8003f26fa46",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ALLactualdivisionexpressions→[Fraction(27, 10), Fraction(7, 10), Fraction(12, 5), Fraction(16, 5)]; uniquepositivequotient<1hasWHOLE0, targetEXPRESSION4,2 ÷ 6notdecimalvalue. Independently checked 0 full trace blocks/0 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "56b322fb486f423d2873fe224e3520e84db393d27abb0839b31f6d1022490701",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-f21ab8ce178d800b",
+      "sha256": "2d482eb1a639f4cefa53e031e0d2435affb6e07104a44cf297f0cc46308165e7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actual36,4/7correct26/5, erased-comma rawquotient52; requestedFACTOR10, notdifference; exactpositiveratio10^rawplaces. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "b34db90414d2fd3814085c100e5a29c337f390c74aa5cfef1310138efe16d493",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-44b428f07a54ae38",
+      "sha256": "763fa12961de5e8b3e86e21ea98654877ca53c4abe8b1f2959b33fc603ac6b23",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actual0,48/8→exact3/50=0,06, requiredfractionalzero/place slots preserved by independentEuclideanledger; EVERYactualMCQevaluated. Independently checked 1 full trace blocks/2 per-place divisions/1 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "6fb7bbf5046d93219803e78832abc8280c99530294ee216c34e559e8afa0d33b",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-e037169168effc39",
+      "sha256": "2939a02e92816fe514647325ef20ae0cd41d9baeba0de026755ac4aa8b29671d",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ActualDIVIDEND25,2,DIVISOR7,QUOTIENT3,6; ALLfourfullMCQidentitieschecked, onlyrequestedMULTIPLICATIVEinverseq×d=aworks; falseequationskeptfalse. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "30d5dbb3d73d64ff261c3ef0dbbb024c3274097dbea89f7ea1a848fca8a83468",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-27990b489540f91a",
+      "sha256": "69c98f418d06863f4479e7d732c8ce24a1c3e17d7fc9504d86124c3572d9bb26",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Printed6,3/9→full0,7; requestedROLErequested-number-of-tenthsgives7, notrawquotient; ALLdigitsincludeWHOLEandinternalzeros, commanevercounted. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "f94b34c9216130686ed1b9ebfe4664151e1fd50ef4e63619d5ad82652ccf4157",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-0dbad9d7f822acc1",
+      "sha256": "53cffc4bbe3ed74289637642bf22fc0ef707e8f6350c7355d51227d6e6941e61",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Printed67,2/6→full11,2; requestedROLErequested-whole-part-of-quotientgives11, notrawquotient; ALLdigitsincludeWHOLEandinternalzeros, commanevercounted. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "cdb01bdee4e0c9ffc246b4d7c926cac5a6004aa450beac794ccf1f8162bc7289",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-3fc1c21de1d0c432",
+      "sha256": "29ae56f83d4c5c16d193bb005f436718199f4028eaa4e11f36e07a361514ce33",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actual13,5/5→exact27/10=2,7, requiredfractionalzero/place slots preserved by independentEuclideanledger; EVERYactualMCQevaluated. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "7fb355c57eb8354a2eb7a044be819f3739a39e1615a824afa8d75bd9b9e8e1a2",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-df679e908406dfca",
+      "sha256": "ede109e917db154ddb75131156add7573c06737d64481aeb07fd55a65c6b3870",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actualnative11/25, independentFULLremainderstates[11, 10]toZERO→0,44; exactterminalplaceCOUNT2notlength-of-numerator. Independently checked 1 full trace blocks/2 per-place divisions/0 necessaryzero slots/2 appendedzero steps.",
+      "sourceCanonicalSha256": "68ab37de6531181c1f8627c2f047533c60d6087d76342affcf493a2c05a45d48",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-14b489094ae32470",
+      "sha256": "5dabbb68248386d680d430136a71d4548162bdad94109ee5fa54318c8c41ab01",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actual8,24/4→exact103/50=2,06, requiredfractionalzero/place slots preserved by independentEuclideanledger; EVERYactualMCQevaluated. Independently checked 1 full trace blocks/2 per-place divisions/1 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "312b961e22670f4dda2fdf1956809adbd532e007bc5cc5dcdbb4020ac2f8a396",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-711f678a2b717221",
+      "sha256": "5f2cb46dd5e96b36ffc4e648fed30e2bb35e5c1749dbafa9aa0117ec83813af3",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ActualWHOLE32/5kg/4equalpackets=8/5kg→GRAMS×1000=1600; massconservationv×n checked. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "c26073aaa8cfe3953aa89b3bdd25a5a61bfd827867f6b6d55ddecce54d411650",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-992b3035536e33a4",
+      "sha256": "e24b464590179ac43c3fd1a03c46e2afb786a5160200f32f486aacb56e423042",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actualnative7/16, independentFULLremainderstates[7, 6, 12, 8]toZERO→0,4375; exactterminalplaceCOUNT4notlength-of-numerator. Independently checked 1 full trace blocks/4 per-place divisions/0 necessaryzero slots/4 appendedzero steps.",
+      "sourceCanonicalSha256": "e4625c761c2d4da51e1d24db3ced60bd9370f100b6a9fc15d4cc0a89ec0f78f7",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-58588c2d9b8ec75c",
+      "sha256": "4981962bbaf98b46ddc6f86a7d9a11bd3cb21714b7af009317677a0bd5e26a10",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ENTIREactualAST(5,7 + 4,8) ÷ 7→3/2; parenthesesSUMthenDIVIDE7, no ignoredintegerterms or prematuredivision. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "8c82687f0ff78b1dfe2950aee2d3a9397cbe52b0c1328683062a61d1e60fb6ba",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-485020e7e76f7271",
+      "sha256": "3d31745759cf1e866204cffd00bb48e9d1d141fef6073b4cbf0412d55331e59d",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actual8equalbooksWHOLE27/5kg→UNIT27/40, includesappendedzeroextensions; requested4books×SI1000=2700, notfirst truncateddigit. Independently checked 1 full trace blocks/3 per-place divisions/0 necessaryzero slots/2 appendedzero steps.",
+      "sourceCanonicalSha256": "fcd5bc32f268566c7397ed575be16078efc76b288cf340773df613ebd71cc652",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-d011fc3986fa33a0",
+      "sha256": "4273fac298f62a4331a4ff490f8e04b1cfb6aee02fec6b981c2fdb0dabc09151",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "FULLactualAST8,64 ÷ 8 + 2,92→4; divisionFIRSTwithinternalzero27/25thenalignedaddend, noinventedparenthesisarounddivisor+addend. Independently checked 1 full trace blocks/2 per-place divisions/1 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "fd8710fe990a7a86d6f4244d5fd658b67925b87774ddd99b71fc7ec2143366a0",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-96b2724181a2851d",
+      "sha256": "c1e154d94d3abfee6a5090381c5d09c07603f27350c27fd3b9d3738ff23fc191",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ActualTYPEDpercup18/5/9=2/5,24/5/6=4/5; requestedSECONDminusFIRST2/5, notwholejugvolume/sumpercup/shift. Independently checked 2 full trace blocks/2 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "fa35703a9c4b9a168080f60431b2b7d72b89defb059e13122cf921733220a7a3",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-1d9f4d85240af6c5",
+      "sha256": "d6d7dc84cc3c701cff14cfa8e3418581dfa4763817c2f87a57f4dc32410c7416",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actualn8x+17/10=129/10; knownaddendremovedTHENunknownfactorinverse→x7/5; exactsubstitution andn×x-only/multiplyinsteadofdivideMCQsfalse. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "7f09c7935874fcbfb3e762d362a71239b493977f03950f649f7cbbef57d6f4fa",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-0028eb71337a3fc1",
+      "sha256": "6530a20d15b8ecdb07dd86e4100b0800c34e194dc720db56e963b4ce60350385",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ALLTHREEactualrouteaddends['11,4', '12,8', '14,2']summed192/5km, equal3daydivision64/5km→METRES12800; no laststage-onlyshortcut. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "c7e83060f230cc8e21bfcfc6027f8b245c2378b22767929063a634bd1f860c80",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-0c9e91c96ba2af3e",
+      "sha256": "cd14dbb2fff6d732a7afc7b8e4ab21ea937c04cc0069d7e7ed03782f3ba2920a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ACTUALnamedanswers[('Аружан', '2,4'), ('Мәди', '2,04'), ('Дина', '20,4'), ('Аян', '0,204')], independently16,32/8=51/25, onlyOWNERМәди; internalzero/shiftwrongvaluesfalse, numericvaluealoneisnottarget. Independently checked 1 full trace blocks/2 per-place divisions/1 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "51ed5ab2bb2440135806502ed86f48ef9314261ffdcc250a08046dd7304f177e",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-93642bac12143a8d",
+      "sha256": "e2f267e0a2ac93f901edab7626f690e39c7a31db3bac1ce5363921f01d6f18a3",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actualdown/up104/5,78/5; SUM/2still91/5, current13/5andfullbackequationspositive; allcurrent/difference/sumtarget-roleMCQsfalse. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "467ac5fce837dd349129c211878e8f574330695d662db0764d3c9bcc16d35951",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-cf670e63089017ee",
+      "sha256": "d75dfd18d55bc4e644462ed81e1fa72dae2541d5041fa1842a73ea12a3765c0f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actualconstant37/20km/5minutes→37/100kmPERONEminute, ×SI1000=370metres; unit-time rolechecked. Independently checked 1 full trace blocks/2 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "ceb3d0c57c7c82c617861a666696aac10c4ae411c6e93c6ae7001655f971f6cc",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-c93b2a1eb1a41d01",
+      "sha256": "25193c6acd857f92190c564a15b38c82c8054bb83880c19ab33fae79d6713ac7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ActualUNKNOWNNATURALDIVISOR in42/5/x=7/10; exactunique x12, quotient×x=dividend, ALLofferednaturalcandidatescheckedwhenpresent. Independently checked 0 full trace blocks/0 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "b6534d625c90e861f1644c88d589ae73be1553e7365ef19599ba00bb9ebf7351",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-38d41d79ec6bb4fe",
+      "sha256": "5924a3a600951f0f3f436050fec4eaff8ee6c7fd718b0822d2cd92ca0170e6f7",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ActualSUM64/5,GAP12/5, SHORTER=(sum−gap)/2=26/5, longer38/5; both equations andalllong/half/extra-gapMCQroleschecked. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "31edb23d08aa97e0fcd2d4a0e75676f77772861bd0ae4a246c975c2de176443d",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-6454484b7ef32894",
+      "sha256": "80de8281f2f680fc90ddbb68555e2e2014c0cc0488d4ea4f50ea596896992f11",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ALLactualnativefractionsanddecimals[('0,45', '9/20'), ('(7/16)', '7/16'), ('0,44', '11/25'), ('(9/25)', '9/25')] exactcrossproductcompared; uniqueMAX0,45, no longer-spellingheuristic. Independently checked 0 full trace blocks/0 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "0e988bd00b401090f21799e30e110dfd40346a2c279a1c06cb489a33938258cb",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-f53ef302b21909c4",
+      "sha256": "071bd0563ac4d56036eabc0bbbe743047263bd93233a656da73235c0fc7caa67",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actual5small/3big,total144/25, EACHbigextra2/5; subtractALL3extrasbeforedivide8, small57/100, requestedLARGE97/100kg→970g; fullmassconservation. Independently checked 1 full trace blocks/2 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "5eb3775b64342ea4dbd367c5592999fd9bd5fc8d133aba29d9ccc2c55a998a52",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-aa46af7ad5f23cdb",
+      "sha256": "8c77349d9a698e663732da09cc2de42aa4fe83bf7d4d0347947c8b126476fba3",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ACTUALpositiveseed/d5: fullterms[Fraction(625, 2), Fraction(125, 2), Fraction(25, 2), Fraction(5, 2), Fraction(1, 2)]; FIRSTstrict<1 occursat1-basedINDEX5, notlastvalue1/2; equality1wouldnotqualify. Independently checked 0 full trace blocks/0 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "6e5ff3bd562ce5de937c8474ad6f26994e7764034a5966b62eb9caf4cdc05643",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-34b5bc312d2b2b6b",
+      "sha256": "f0e4ac281924445302e325fa8b49ed34036bb07b43ed830b4bfc7fd60d1ea305",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ActualDECREASE133/20is7units, quotient1unit19/20, ORIGINAL8units38/5; fullsubstitutionandquotient/gain×d/gain×(d−1)MCQfalse. Independently checked 1 full trace blocks/2 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "8ad57d2e8cb4b3ef22fd18950f8d5f90a9d61877457f6928e8d3ac440a03c6ff",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-b34fb31a38fde317",
+      "sha256": "4787d7707ec247f0b11211c244848ea1b7eecac98669de5a9dde65565beeacbd",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "COMPLETEINCLUSIVE3…40domain38denominators; ownFULLremainderstatecycles(untilZEROorREPEAT) givegood[4, 5, 8, 10, 16, 20, 25, 32, 40]; no guessedfinite-placecutoff or unreduceddencriterion. Independently checked 0 full trace blocks/0 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "bf2a259c552965194b54abb90d9bd16a5aee1847915f4e514b74ee10cf8de9af",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-f28399416eaab4e0",
+      "sha256": "4b4b1ffaa91d9a150104c945500dce6a0a922f7dd2846bae1166701dfba0d5f4",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ActualAB/BC/AC47/5/53/5/44/5, everymassdoublecounted; total72/5, requestedTHIRD5, other19/5,28/5; allpairconstraints/positiveconservationchecked. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "e93abe0f92180b403ec8329411e394393dbe5f009d56de30f4abca06e528c6dd",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-56dd637c7338fd06",
+      "sha256": "2ec08cc130821137419909f0da3901a75eb2e2b1222340872a2aceaac49a7f36",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actualratio7:3:1, FIRSTminusSUMotherTWO gives3units=21/25; exactunit7/25, whole11units77/25kg→3080g, both masssumandgapchecked. Independently checked 1 full trace blocks/2 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "135c54c49210b6b027720975faa2bc56da82e739a406ab0e135996ae8b2920c6",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-f32086435c7acc2e",
+      "sha256": "c86dda521ffd8679b95793818bd7ae0ad2319b1b7fb48bef7c54be4123bf204e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ALLactualdivisionoptions expandedbyexactremainderstates toZEROorFIRSTREPEAT; flags[False, True, True, True], uniqueperiodic0,7 ÷ 3; nofinite-digitguess. Independently checked 4 full trace blocks/9 per-place divisions/0 necessaryzero slots/5 appendedzero steps.",
+      "sourceCanonicalSha256": "165838135ff528c71fb26a94411aae0e31c6c285aedb144b8932c82fe56497f6",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-b99c80ee43cf3383",
+      "sha256": "394c579d8ac821e990116d009ea31f6d728101559d2adf2acebe791d20a28e2a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ALLactualfractions reducedexactlythenFULLdecimalremaindercycles, terminateflags[True, False, False, False]; only(7/80)ends, itsinitialzeroand4placesretained. Independently checked 1 full trace blocks/4 per-place divisions/1 necessaryzero slots/4 appendedzero steps.",
+      "sourceCanonicalSha256": "1604fddd064b0da3d304f83458752335e554620964fe1b7a4667f6b55b7809d2",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-0f807248135a2972",
+      "sha256": "c40048f9ed1474a0fcfb3d15d37388189d9de34816c4f9c17a543e37fbab8d88",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actuala/7=14/25,b/8=11/20; recoverDIVIDENDS98/25,22/5thenSUM/8=26/25, internalzero retained. Directquotients-sumactualtrapandshiftfalse. Independently checked 1 full trace blocks/2 per-place divisions/1 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "b89e2d670031f4b4a82ad947f23780a3e6d198d9bd2fbc50afa1ecfb669da0c9",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-12c4296e75a9f678",
+      "sha256": "15762be56c8e812ed5197c7a46b35c0b8341ae5aa4abde8330ea3b6bbb337e55",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actual0,56/8→exact7/100=0,07, requiredfractionalzero/place slots preserved by independentEuclideanledger; EVERYactualMCQevaluated. Independently checked 1 full trace blocks/2 per-place divisions/1 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "829cf7e7254c7275582376ce0907e697285ca196a8f04abd29e8d07471e18cde",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-927a9fd15aacad29",
+      "sha256": "4d472e7d9c0332e304456266d1c76143990668b23f9931cf2fbad80482400f22",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Printed11/8→full1,375; requestedROLEnatural-quotient-digit-sumgives16, notrawquotient; ALLdigitsincludeWHOLEandinternalzeros, commanevercounted. Independently checked 1 full trace blocks/3 per-place divisions/0 necessaryzero slots/3 appendedzero steps.",
+      "sourceCanonicalSha256": "51166f7ab746ee23aef07d3cee408b9d2ee8c76f2df321baa51137ab8039a31e",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-6e95cbdef97564b8",
+      "sha256": "72729983600ece8069424f53f94189f1eab28c63466a7ec156f774d3445b5e09",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ActualUNKNOWNNATURALDIVISOR in63/10/x=7/10; exactunique x9, quotient×x=dividend, ALLofferednaturalcandidatescheckedwhenpresent. Independently checked 0 full trace blocks/0 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "4d47a8d2c7f3dab51d8f2f83bcf5a62bee140d30fbb69e4d1b9091668ddbfa4c",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-0e1779d5ca7e0272",
+      "sha256": "563fea6affc5e8f5d3f06a172c5ab24d1999d103e2903b3f26a4d822c455b3d5",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ActualAREA92/5cm²/width4cm→length23/5, PERIMETER86/5cm×SI10=172mm; areanotlinearlength, noarea×10shortcut. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "a2ba0ef4032a9f1982ef6d7f70eb5d5dca9ee8a3e1ba0cce91c8df49f0389ab6",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-44dcf5385d16af4d",
+      "sha256": "44d53f2936248855c3c8d43d46cf27a284a8a769199bf81b4b6b039898d3493e",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ActualDIFFERENTtimepaths16,2/3=27/5,28,6/2=143/10km/h; requestedONEhourrateDIFFERENCE×SI1000=8900m, notwholepathdifference. Independently checked 2 full trace blocks/2 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "c79eb2d4deffb3697aa6066ad9d2129a9c07c862cbd44dbe3887c3a2219307cc",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-63d211c866b3d497",
+      "sha256": "f56cb8001596811f3c06475c7024ec024f70ea3c812d074e777cafab22c1c700",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actual(x+21/10)/7=9/10; recoverDIVIDEND63/10thenUNKNOWNADDENDx21/5; exactnestedsubstitution, add/omit/shifttrapschecked. Independently checked 0 full trace blocks/0 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "4ed0ff42fc2e6a05ef74d64c262be9239cc59ba4ef2df6f190feff770207a02d",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-9f3c21f8543580df",
+      "sha256": "a65b64f0418d1eda3438cde3086365d723f94c28d62909a95fb11446ee40e6e4",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "ActualSECOND=4×FIRST, THIRD=SECOND+9/10, total153/10; removeextraTHENdivide9; first8/5,second32/5, requestedTHIRD73/10, allnamedroles/conservationchecked. Independently checked 1 full trace blocks/1 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "9fd8f338062831770038542c2838790442ecf4de790c3cd2b5326784fcc27cce",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-natural-division-d6933019f6d73e14",
+      "sha256": "dbed3b44261603e119b9ff487ca11f468905ff7f20908df998499629b1651f39",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All41 saved/new full conditions/official solutions/everyMCQ read; own exact DISPLAYED Fraction AST and full Euclidean trace/remainder-cycle/unit/role oracle; no author solver/spec/params",
+      "notes": "Actualpositivea12/5, EXACT2-placeNONZEROlastdigit meansvalue=m/10^2,m≥1; henceALLn≤240. Boundaryn240gives1/100, andEVERYn>240failsbystrictorder. COMPLETE1…240feasiblelist[5, 10, 15, 16, 20, 30, 40, 48, 60, 80, 120, 240]independentlyconfirmsbutdoesnotreplaceuniversalbound. Independently checked 0 full trace blocks/0 per-place divisions/0 necessaryzero slots/0 appendedzero steps.",
+      "sourceCanonicalSha256": "1084027489fdd8b7b78c4cea2bcca2e45b3dde1047654c6e693532a09477919e",
+      "checks": [
+        "All41 source/new full solutions/everyMCQ manually read",
+        "Every written whole/remainder×10+nextdigit/divisor×quotient+remainder identity and place label checked",
+        "Every written digit bound0…9/remainder bound0…d−1 and requiredzero slot checked",
+        "Input-digit vs appendedzero roles, terminationZERO vs complete repeated-state cycle distinguished",
+        "Requested value/count/index/whole/digit sum/owner/expression and SI units independently bound",
+        "Inclusive denominator domain and universal maximum240 proof verified without finite cutoffassumptions"
+      ]
+    }
+  ]
+}

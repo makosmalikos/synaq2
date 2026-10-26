@@ -1,0 +1,720 @@
+{
+  "schemaVersion": 1,
+  "pack": "problems/editorial/batches/grade5-decimal-conversion.json",
+  "reviewedAt": "2026-10-24",
+  "manualFindings": [],
+  "resolvedFindings": [
+    {
+      "sourceId": "17af6aad247a6d05",
+      "finding": "17,2 option encodes denominator-only 2 after comma, but explanation incorrectly called it numerator-only",
+      "resolution": "Author changed exactly this solution to «тек бөлімді үтірден кейін жазу»; full final row reread, snapshot confirms other43 and all math/options/params unchanged."
+    }
+  ],
+  "scope": "All44 source-addressed grade5topic4.2 nonvisual decimal conversion adaptations; complete independent printed exact review",
+  "entries": [
+    {
+      "editionId": "grade5-decimal-conversion-ee14bbab030aa99d",
+      "sha256": "ff6d1eb5432227643710a9166acb5ba232ce77e013fc2d174cd0ff2c9e089464",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual 12,47: keep whole 12, fractional numerator 47, required UNREDUCED denominator 10^2=100; no cancellation.",
+      "sourceCanonicalSha256": "def2a3410b0ad6c81ae4d1fcfa786d4053d524979bfd77c3909685cad81626fd",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-8a5ebb26981bf352",
+      "sha256": "a98b239f53fa412f8cc7477dec97b618e3f8d1a12c827a052cc288889382715b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Printed 4/5 preserved at FIXED denominator 10; new NUMERATOR=8, not multiplier 2; substitution exact.",
+      "sourceCanonicalSha256": "d406ec8c6c60be601df3d97b8157a119bab730f4dba3d2c525a6b042459e329b",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-05dadfdc1290e555",
+      "sha256": "ab8f4e6d3fd1ca30e21d5df59ce7e70a36901803bde9359c77768859e7ebe5d0",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual 0,45 parsed as exact integer/100, reduced to 9/20; all actual MCQs compared; leading zeros determine denominator, requested reduced fraction verified.",
+      "sourceCanonicalSha256": "5f1684e80b0bdef02ea931f56543233b6b07a6286b0f81d384d9a7e41676d6f1",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-b02fff39c4e61e9c",
+      "sha256": "095b48b39da119cddc14abe6d47f30fccf7b8a29d0718d80f7b93136d30f81c5",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual 6/1000 REDUCED to 3/500, independent remainder long division terminates at 3 digits; EVERY power 10^0…10^2 fails integrality, so count is MINIMAL even after cancellation.",
+      "sourceCanonicalSha256": "1c3f67684b9fb9364be95602b3ae052a32448d43b9d37a4f60854292011635db",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-f219b00bf9fb5256",
+      "sha256": "5002e982fb085d59c43f361c663e741dbe9ceb7e9e4e36924ebcf51a1418f845",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual 0,047 parsed as exact integer/1000, reduced to 47/1000; all actual MCQs compared; leading zeros determine denominator, requested reduced fraction verified.",
+      "sourceCanonicalSha256": "4e6692a2ae6ea10fe3dd485b8cd584e5c6d354baebfd8e09e57f8ad0ab4e5026",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-968f13c29a8869a7",
+      "sha256": "f133b845c0543c4139296322cd6273e74dafe20d1a6ab93f76ea6ce42ee60c42",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual denominator 40×25=1000; SAME multiplier applies to numerator 7; requested multiplier, not new numerator 175.",
+      "sourceCanonicalSha256": "3c0158c4a71cb951a38a065761d8074e80dd53a688d260bafe9d231b5e172db1",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-e1530e9c1aaea992",
+      "sha256": "582504087fb1dfd669db32d6f449b89add6283e48e222548feda514a266b1fbd",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Printed 9/25 preserved at FIXED denominator 100; new NUMERATOR=36, not multiplier 4; substitution exact.",
+      "sourceCanonicalSha256": "d2021b61591804eeff902bd57c89eb74004583641a59835d9f51220f52d8c56d",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-efaaf88b71954fa6",
+      "sha256": "a27cc56f4c504a4aae59adaefb850cbc3892a6d1bb365099b31bee79d29ee17f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual 8,03 parsed as exact integer/100, reduced to 803/100; all actual MCQs compared; whole part and proper reduced mixed fraction preserved.",
+      "sourceCanonicalSha256": "9e229f267343d295a854baea1addbcbea8409906d05b3bfb62bc6f2be081989b",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-041ebd06fa556e31",
+      "sha256": "c1338895ae7345cee5856207bfcfb50ae088021b336d5a2309cbdc2477a96386",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Full printed (1/4), including whole part and Unicode powers if any, exact AST=1/4; all decimal MCQs compared, minimal digits 2.",
+      "sourceCanonicalSha256": "932f3d5bb7c4afd781dabc79599e02fac942822b19def063342ff0973e1bbd78",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-185b44e63536fe89",
+      "sha256": "dc6d4972893756265a937d5aa12bd30a4f7a3bec31ad64722ac1ae1c674077f6",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Displayed 0,6→exact reduced 3/5; asked FINAL denominator 5, not unreduced 10^1.",
+      "sourceCanonicalSha256": "be8a156eac99e7cfe2835db7c04d25c5fc3b2e676666f0550ad43b52789b45fd",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-11ccce16d8f06d0b",
+      "sha256": "d2b9e0b3246a9a8280bbc525ebb03a45e616377ab061f9acb8025bc62fb0514d",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "All printed fractions are irreducible; remainder-cycle/termination flags [False, True, False, False]; exactly (11/80) terminates, independent of author prime-factor rule.",
+      "sourceCanonicalSha256": "dac210bd2ff0bca7d166ead3a4d35b914533b6bae962ffbb16d3f417f3bafb4f",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-17af6aad247a6d05",
+      "sha256": "0b6bbdb969f7639fa949c3c9dfa8ba731f252741fc8178f7946a100fd73492b9",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Full printed (17 + (1/2)), including whole part and Unicode powers if any, exact AST=35/2; all decimal MCQs compared, minimal digits 1. Final denominator-only 17,2 diagnostic wording reread; concatenation and comma shift remain distinct.",
+      "sourceCanonicalSha256": "8e938590a714cec932672975257f9fcbc5ff78bd1b46e0f77b9aec31d6be0564",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-ccca8f0296dc74db",
+      "sha256": "e7d1726740df0e620eb2c6ed46bcf9e8fc2206357474b8857236e20dd10c75fd",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual 0,9 parsed as exact integer/10, reduced to 9/10; all actual MCQs compared; leading zeros determine denominator, requested reduced fraction verified.",
+      "sourceCanonicalSha256": "b874d5f39c0815896980f4cace82d1f222ab34c938b15457e9f614809c03786d",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-d653265b7b822c4d",
+      "sha256": "11ec130aa6a368b3e1f3e0670a2e6dee1100aca3e48c7d3dbda43e763ed37131",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Conservation 40L=17 sold+23 unsold; requested UNSOLD/ORIGINAL=23/40=0,575, sold share and litres/100 traps false.",
+      "sourceCanonicalSha256": "c7dc8dfcdce14246384a91bb804b1a29bf9fda6a377a98d15152950db3b5f846",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-0dc85026f09fcce8",
+      "sha256": "674c229c9c3b3645c661a485b7e73c15a601a34016e731dd61608585822ed485",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual 24 minutes ÷60=2/5 hours; all MCQs exact, decimal digits are not minute notation.",
+      "sourceCanonicalSha256": "b5b23e651a264e53f88d9a2fbf78858e20ac5461fbd2d7bc9a4c92bd05b621d8",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-52b3488c4291ba89",
+      "sha256": "f112ae556c692ebe37b2d2f59039b97a8a227e11c445c7bf80e0ad1a2849c757",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "FULL printed 3,7 hours×60=222 minutes; whole 3 hours retained, fractional hours separately converted.",
+      "sourceCanonicalSha256": "5a50587f19e1d0323118d206f001d768c8d42128518bc542e6d27b74db664a4d",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-a23648a66c67340c",
+      "sha256": "19f01d54bc3a3375e0039dcc9349ba3b3966e288fbd78cfce7d217a17bad1db9",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Printed decimal 0,088 and fixed denominator 125 imply numerator 11; substitution verifies, raw decimal digits are not numerator here.",
+      "sourceCanonicalSha256": "252b2aa4f43f2f8519b69db36bc334405f515b25769e0be3143c10f1818b78a1",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-cad02b4b8043c1f6",
+      "sha256": "9b2c46f6fee6a16b0bae79773433998474752c672784d2836c0f3abd8e668704",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Displayed 0,175→exact reduced 7/40; asked FINAL denominator 40, not unreduced 10^3.",
+      "sourceCanonicalSha256": "9b210d97ae6bc2f029673d485ef55b4f531708dc98e2099d1e39ff1326c38236",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-7a59fbcb6b6cd11e",
+      "sha256": "32d6694390d3850f19f77ae022d6e821d9710a9562937d22aa98503da413277a",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual total 21/25 metres divided into 4 EQUAL pieces, THEN ×100 to centimetres→21; conservation recomposed.",
+      "sourceCanonicalSha256": "baa87c8f329bcb4f7734fa272de594ac1227e711c2618b0f8c5f2801d24e120a",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-ca3c7069d89fcf31",
+      "sha256": "605f0e50a6f1031900230ccb2242bb1c9c85879a533fb04987193453e91e8510",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual 0,28 with FIXED numerator 7 gives denominator 25; no assumed power-of-ten denominator, exact substitution.",
+      "sourceCanonicalSha256": "63e932b18db45bbca15432a84748ab996d566ecfdf3a12b95e315e26329d651a",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-7fffb23536f5576b",
+      "sha256": "e7692eccd153cb8a47739b58f3fe02a524f423e774a7f4dac8d17e47ef4499ee",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Every raw denominator reduced FIRST: ['4/5', '3/4', '3/5', '5/7']; nontermination flags [False, False, False, True], only (30/42) repeats. Raw factors 7/11/3 cancel in finite options.",
+      "sourceCanonicalSha256": "d1fe939146a0d26912cb83904e3957cced7a9408e55b6a08fbb18ae236b495ef",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-dfdb0dd2102c83cf",
+      "sha256": "e87909c0a5be016ffde613dde747e26be2233fd49ceb62cbca499207d4db566f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual 4,375 parsed as exact integer/1000, reduced to 35/8; all actual MCQs compared; whole part and proper reduced mixed fraction preserved.",
+      "sourceCanonicalSha256": "c49899cf55ef65f7b9282ff95b4b24964d8fbc371b988dcb6855fa58b8796ea7",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-dfc187cf720e60b0",
+      "sha256": "efb00cb95f6b1f84d392dcbf11127150ac990d65695db53d99fdc6e3a62c1794",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "ALL displayed fractions reduced to ['5/16', '7/18', '1/2', '3/10', '1/4', '1/5', '8/21'], complete long-division flags [True, False, True, True, True, True, False], count 5; raw other-prime factors are not sufficient to reject.",
+      "sourceCanonicalSha256": "9e29cfb66ff28ef283d7fe1d0a52ff90f32d1b6473ac3d6afa80f5ff09f79059",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-0434a890f2a334e5",
+      "sha256": "78ec0dff24831f9cc9d3dcf98c2a0b5438196b459635afc730476d82f5e89abf",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "All FOUR actual equalities exact checked: [True, True, True, False]; target asks FALSE, so deliberately false option (1/25) = 0,4 is retained as the key, not corrected away.",
+      "sourceCanonicalSha256": "b12d63c0c13d717f7b24de77c3a6dbb98dd6dcfdb2c945c73d50de1217b5af39",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-cb35377407f9d00a",
+      "sha256": "9b9f8575df886c8655121d7bf9d7da52044d6e67fa1163793fed1b4871cb81b6",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Full printed (9 + (13/25)), including whole part and Unicode powers if any, exact AST=238/25; all decimal MCQs compared, minimal digits 2. Numerator-only trap checked separately, not confused with half denominator-only trap.",
+      "sourceCanonicalSha256": "c10f61119f97a14b138a72e25a67c2f895ba3f930b6851b6d66f835fa363d134",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-cbfa83a2dce117bb",
+      "sha256": "6d5d4494b38f9d088196e8c0580959977665df7ffe4a580fa204314753aa1801",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Every printed hours/minutes pair parsed, exact hours ['11/5', '53/10', '9/5', '47/10']; equality flags [False, False, False, True]; minute digits cannot simply be appended after comma.",
+      "sourceCanonicalSha256": "1b66f475ce85a5a20bcac957d1d71804ecd0831946299e5a5b77a9c72c191111",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-5341b074b4e5270f",
+      "sha256": "419ea31f7c765d2cab50b4b35374b063a3c48590e84400dc0352ced0741fbcc8",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "ALL 74 natural numerators 1…74 inclusive checked by REDUCED remainder cycles at denominator 75; valid [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72], count 24; endpoints neither skipped nor extended.",
+      "sourceCanonicalSha256": "2dd81d0ffbe3856ec485b1e6534b82aca33be931e283140c91c74e6dd127e5ba",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-fb53bdc45c498084",
+      "sha256": "0e1c520f64448e9c9f64374d57d8f56420f922721943ee79b320749b677da353",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual 9/64 REDUCED to 9/64, independent remainder long division terminates at 6 digits; EVERY power 10^0…10^5 fails integrality, so count is MINIMAL even after cancellation.",
+      "sourceCanonicalSha256": "4e9a998e1df32fe3ab3fe0bd51bd5eb14d6d77f4cf5f5d7847def0fd6d296dfa",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-d0c821b922e54f9b",
+      "sha256": "e6dde9c0872afbc1252ac7b5d6779f23c2e5e816f364bb70baec885cb0fcd50b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Full printed (11/16), including whole part and Unicode powers if any, exact AST=11/16; all decimal MCQs compared, minimal digits 4.",
+      "sourceCanonicalSha256": "3e53a6067230f97b3776fc0b5d6b0e2bc950f4b28072644bade102c6c59860b7",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-6eb1ad9c8b180b2e",
+      "sha256": "e9d838d37b3b9cc2f022cb615c512d8ab4a73929ab5eb81fcf019dbd07029350",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Full printed (7/(2⁵ × 5²)), including whole part and Unicode powers if any, exact AST=7/800; all decimal MCQs compared, minimal digits 5.",
+      "sourceCanonicalSha256": "4d9b0cec990a89a21214905ffd0afe2042104ca82912ee7ff826ee8c2872aa19",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-4361f27e7fe485c3",
+      "sha256": "2b9f3ffc8ae878b0e76e8397cd3c53f69f722a4d8edb00ee449c7debb8f69b68",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Complete naturals 1…11 prove LEAST x=11; BOTH roles in every actual ordered pair checked, exact decimal 1/8. Finite x22 excluded because not minimum; correct x with wrong decimal also false.",
+      "sourceCanonicalSha256": "97524e84812079de203484683e11a04059c3dcc335be5c0438cd06ceedad2968",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-6c0329279b050c76",
+      "sha256": "723adb4da38fc09d27602cffe17b171405ad5882acd26402ebfb12e1e8f6e300",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Displayed 0,0024→exact reduced 3/1250; asked FINAL denominator 1250, not unreduced 10^4.",
+      "sourceCanonicalSha256": "fe926bbff5b8200e3459ffdd3473086ea6947b30b88a10e647af6aa6bd8cb584",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-da8dbe1c1d305c5e",
+      "sha256": "a391704816fbd7aba21eb070989236e96a1c5672699eb555061ca8a0ce214c71",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Entire printed subtraction (3 + (4/5)) − 1,45 exact AST=47/20; proper reduced mixed answer (2 + (7/20)), all wrong conversion/addition/lost-whole MCQs evaluated.",
+      "sourceCanonicalSha256": "196d310716ec8c810336ef8fbeb60c0d09a25c4d21ea36d5aea16ab29c1d034d",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-c6b3d9bbd6bdeef1",
+      "sha256": "77c3ee0bd3203a0b79c3bec34de07a64a09ead4b62bd38bc086cc70cc5fa5b0b",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Full displayed expression 4,2 ÷ (7/10) + 0,125 × 16 parsed by exact precedence AST, no author params; division by fraction and multiplication before addition produce 8.",
+      "sourceCanonicalSha256": "dbb289231e322d8b9fc1a1fc2eff64515b4d1fef524c1a66a966b6e08f2e85e0",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-bd7e927d634a8163",
+      "sha256": "f33a97c869ed53e08858eb2d6727e30907563016cf46c61d54b4e139a5e9275f",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual decimal 0,375=3/8; EVERY n1…8 tested for positive INTEGRAL product, first 8; no smaller natural succeeds.",
+      "sourceCanonicalSha256": "6f03f3a84f409b603e2dd6e793a1f8546494ce87fdfe8f10e3871957adf74c34",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-ab4fd4044244b5c9",
+      "sha256": "327b453ce428441c86c27534002058f5a2439f25b0f6ee2a7b44ab359e7b5e13",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "ALL denominators 15…50 inclusive checked AFTER reducing numerator 7; valid [16, 20, 25, 28, 32, 35, 40, 50], count 8. Cancellation may make non-2/5 raw denominator finite, so raw factor shortcut rejected.",
+      "sourceCanonicalSha256": "4554aa8f497044210523f55601c9a98727bc47ad5812e18fe73b371f574989e7",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-be8eb0baa8f89add",
+      "sha256": "29e3223687b4c848b1b7984cd45fd67e28946887209ce98561db6f1382dd8487",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Exact target denominator 10 divided by EACH RAW denominator; natural expansion flags [False, True, False, False]. Terminating alone is insufficient; no reduction or fractional multiplier allowed.",
+      "sourceCanonicalSha256": "807b7f2b446b6fc01c58cec8950201061b9dabfc93e60027a0aee148d780c1d1",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-6f084681b84bca63",
+      "sha256": "27a3988a20af86c1f44b6bcbae1cbf99592cecee60dd65b183d52c66b9dde224",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual 35 students×displayed share 3/5=21 girls; positive whole-count domain and complement conservation checked.",
+      "sourceCanonicalSha256": "e114e7a0d6df16959e106c6e329538448986cfbc13525c342e4c483dac7d0a8f",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-83e89d8823c9778a",
+      "sha256": "695183765702768c09fd5c5129f07145dfb4b65895e2d1a2122a5a75096ffce6",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual ORIGINAL length 21/5m×CUT share 3/7×100=180cm; cut and remainder sum to original, requested CUT not remainder.",
+      "sourceCanonicalSha256": "72f697dbdcabc3d5c59a89646e8108bac05c315911cbdd9d7bb3f282ce451edc",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-8e58dd64d33b8c4f",
+      "sha256": "b86f15bde1421c64b15949fbd60d302a1fa68b3df85489fc42ab94553aa844fe",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "ALL actual fractions reduced then long-divided; MINIMAL decimal digits [2, 4, 2, 3]; unique (7/8) has exactly 3, appending zeros to other finite numbers is excluded.",
+      "sourceCanonicalSha256": "4c69fd169bc4c9c2dbb01be89acfd2ff03e40e33afb3a3e3ec9ab837ac57c9af",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-fc48e64582003fda",
+      "sha256": "b16120e2b485b1936b9b625406101e977eb3fc7db302836fc9cf1e9e710f0f59",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Actual 0,024 reduced to 3/125; asked ORDERED denominator−numerator=125−3=122, neither denominator alone nor unreduced digits.",
+      "sourceCanonicalSha256": "33288aac15ebe01ab60539c71deb27ca0fa9e681ac54f48d983a9834099c33cb",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-e60019947aa7a27a",
+      "sha256": "a243ca03dea8622a315086dc95a3c58ff092781afc9ed7b827986571f0eda328",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "Complete STRICT-BOUNDED domain 10≤d<76, all valid [10, 16, 20, 25, 32, 40, 50, 64]; greatest 64, EVERY larger d through 75 independently repeats. Upper endpoint excluded.",
+      "sourceCanonicalSha256": "3c8f827e8a2ad1ffe1534320594d8b39f93d74050b73d58a1f320c93fb187cc3",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-ed28705951f1009b",
+      "sha256": "691c848b8b550636891a573d4d993bc529d7cf7de7e14ce1bceee6a9881d11db",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "FULL printed power-product fraction (33/(2³ × 3 × 5²)) exact reduced 11/200; remainder terminates AFTER cancellation of common3. All value/nontermination conclusions checked, flags [True, False, False, False]; raw3 alone does not prohibit termination.",
+      "sourceCanonicalSha256": "6a22b3b41ec6869ccae9a2e4c56632a13327a7cab1bdb3fa741ebc728b8a6570",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    },
+    {
+      "editionId": "grade5-decimal-conversion-18593cb39e69d436",
+      "sha256": "081c44a81b7f56c3b2b573d32f40ddca7933df643445928470c9ef9a408fb347",
+      "verdict": "verified",
+      "reviewer": "independent_rendering_review_agent",
+      "method": "All saved/new conditions, full solutions and every MCQ manually read; independent exact DISPLAYED integer AST with comma literals/Unicode powers, complete remainder-cycle decimal criterion and full finite domains; no author solver/spec/params",
+      "notes": "ALL positive natural pairs with a+b=65 enumerated, only (25, 40) has actual decimal ratio 5/8; requested UNREDUCED numerator a=25, not reduced numerator or denominator.",
+      "sourceCanonicalSha256": "652174ad9284395ddf572fd4ce5949250ec1495c0d6e252760c84d54a22b0901",
+      "checks": [
+        "All44 full saved/new conditions/solutions/everyMCQ read",
+        "Reduce BEFORE termination; complete long-division remainder cycle and minimal digits",
+        "Requested raw/reduced numerator/denominator/multiplier and ordered pair roles kept distinct",
+        "All natural bounds, least/greatest, strict endpoint and SI60/100 conservation checked",
+        "Half denominator-only diagnostic fix reread; other43 unchanged"
+      ]
+    }
+  ]
+}

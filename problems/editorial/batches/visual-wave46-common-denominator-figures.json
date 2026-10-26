@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All6savedvisualgrade5topic3.6;archivedsourcesonly,nocapture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "Allcapturedvisualgrade5topic3.6sources",
+    "sourceVisualOccurrences": 6,
+    "addressedNewDrafts": 6,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "13136ef9abebe90d",
+      "4793a15431b0d263",
+      "641f1ab231af12c5",
+      "7b820c3c783557a2",
+      "b16fd1dd4f64a17a",
+      "f2da422fe95510ae"
+    ],
+    "distinctModels": 6,
+    "semantics": "Sixsource-specifictargetsindividuallyrewritten;edition/modelcountsarenotnewsemanticmeaningclaims."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave46-five-wholes-at-sixths",
+      "modelId": "visual-wave46-painted-wholes-at-specified-denominator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "discs",
+        "wholes": 5,
+        "parts": 6
+      },
+      "answer": "(30/6)",
+      "sourceRefs": [
+        {
+          "sourceId": "4793a15431b0d263",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-6-level1.json#0",
+      "sourceCanonicalSha256": "dfebdf8bbf5905b04fdb97af6a349d7cf9ff4768d66c37462b718e197f29cef0",
+      "sourceSkill": "Naturalwholevalue at EXACTrequesteddenominator, all30equalpaintedsectors counted",
+      "adaptationChanges": [
+        "Барлық6сақталғанвизуалды3.6шарт,толықшешімменнұсқаларжекеоқылды.Берілгенбөлімдегінатуралсан,торкөзбоялуынантеңбөлшек,өзаражай/ортақбөлгішібарекіортақбөлім,қатынаспенайырмаданбастапқыалым,керіқысқартубойыншаекібөлшекдағдыларысақталды.",
+        "Жаңадеректер:5бүтін/6сектор→30/6;11/16→44/64;1/4пен1/7→7/28,4/28;5/12пен7/18→15/36,14/36;4/7қатынасыжәнеайырма33→44/77;12/30пен25/30→2/5,5/6.Жұптардыңреті,нақтықысқарту/кеңейтужәнееңкішібөлімталаптарыбөлектексерілді.",
+        "NativeSVGтолықбоялған5дөңгелектің30теңсекторын,4×4тордың11көкұяшығын,бірдей396pxжолақтарды,масштабсызартық33бөлікті,әржолақтың30теңұяшығынпараметрденжасайды.Sourceraster/tracedpathжоқ."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тең бөлшектер және ортақ бөлім",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview;5discs×6equalrays,actual11of16painted,396pxequalwhole4/7and12/18strips,ratio4/7difference33NO44/77leak,BOTH30cellstrips12/25paintedwithreal6/5reductionGCDs;minimaldenominators/order/formatsand343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave46-five-wholes-at-sixths.svg",
+      "verificationModule": "scripts/editorial/visual-wave46-models.mjs",
+      "options": [
+        "(5/6)",
+        "(11/6)",
+        "(6/30)",
+        "(30/6)"
+      ],
+      "statement": "Әр дөңгелек бір бүтінге тең және түгел боялған. Суреттегі 5 бүтінді бөлімі ДӘЛ 6 болатын бөлшекпен көрсетіңіз.",
+      "solution": "Әр бүтін 6 тең секторға бөлінген. 5 дөңгелекте 5 × 6 = 30 сектор бар. Бір сектор (1/6), сондықтан 5 = (30/6). Бөлім 6 болып қалуы тиіс; алымға тек 5 жазу бүтіндер санын бір бүтіннің үлесімен шатастырады.",
+      "figureDescription": "5 бірдей дөңгелек түгел көк. Әрқайсысы 6 тең секторға бөлінген.",
+      "figureSha256": "01bb5596ba88eb475cfd9fc97c8bbf95087eb327ef79f0b319eff16b539d8832",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(30/6)",
+        "checks": {
+          "wholeDiscs": 5,
+          "partsInEach": 6,
+          "allPaintedParts": 30,
+          "requiredDenominator": 6,
+          "unreducedFraction": "(30/6)"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave46-eleven-of-sixteen-to-sixty-fourths",
+      "modelId": "visual-wave46-painted-square-expand-fraction",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "grid",
+        "side": 4,
+        "shaded": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          7,
+          8,
+          9,
+          10,
+          13,
+          15
+        ],
+        "targetDenominator": 64
+      },
+      "answer": "(44/64)",
+      "sourceRefs": [
+        {
+          "sourceId": "7b820c3c783557a2",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-6-level1.json#5",
+      "sourceCanonicalSha256": "294d8a737d1957c12963e503e76488c973e02948d7680be588de75fd5d59cc6d",
+      "sourceSkill": "Count actual11of16equalcells then multiplyBOTHterms by4 to required64denominator",
+      "adaptationChanges": [
+        "Барлық6сақталғанвизуалды3.6шарт,толықшешімменнұсқаларжекеоқылды.Берілгенбөлімдегінатуралсан,торкөзбоялуынантеңбөлшек,өзаражай/ортақбөлгішібарекіортақбөлім,қатынаспенайырмаданбастапқыалым,керіқысқартубойыншаекібөлшекдағдыларысақталды.",
+        "Жаңадеректер:5бүтін/6сектор→30/6;11/16→44/64;1/4пен1/7→7/28,4/28;5/12пен7/18→15/36,14/36;4/7қатынасыжәнеайырма33→44/77;12/30пен25/30→2/5,5/6.Жұптардыңреті,нақтықысқарту/кеңейтужәнееңкішібөлімталаптарыбөлектексерілді.",
+        "NativeSVGтолықбоялған5дөңгелектің30теңсекторын,4×4тордың11көкұяшығын,бірдей396pxжолақтарды,масштабсызартық33бөлікті,әржолақтың30теңұяшығынпараметрденжасайды.Sourceraster/tracedpathжоқ."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тең бөлшектер және ортақ бөлім",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview;5discs×6equalrays,actual11of16painted,396pxequalwhole4/7and12/18strips,ratio4/7difference33NO44/77leak,BOTH30cellstrips12/25paintedwithreal6/5reductionGCDs;minimaldenominators/order/formatsand343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave46-eleven-of-sixteen-to-sixty-fourths.svg",
+      "verificationModule": "scripts/editorial/visual-wave46-models.mjs",
+      "options": [
+        "(33/64)",
+        "(16/21)",
+        "(44/64)",
+        "(11/64)"
+      ],
+      "statement": "Үлкен шаршы бірдей ұяшықтарға бөлінген. Оның көк бөлігін бөлімі ДӘЛ 64 болатын тең бөлшекпен көрсетіңіз.",
+      "solution": "Торда 4 × 4 = 16 тең ұяшық бар, оның 11 ұяшығы көк. Бастапқы үлес (11/16). Берілген бөлімге толықтауыш көбейткіш 64 : 16 = 4. Алымды да 4 санына көбейтеміз: 11 × 4 = 44. Демек тең бөлшек (44/64). Алым мен бөлім бір көбейткішпен өзгеруі керек; оларға бірдей сан қосу мәнді сақтамайды.",
+      "figureDescription": "Бір үлкен шаршы 4 қатар мен 4 бағандағы 16 тең ұяшыққа бөлінген. Қатарлар жоғарыдан төмен саналады. Әр қатардағы көк ұяшықтардың солдан оңға орындары: 1-қатар 1, 2, 3; 2-қатар 1, 2, 4; 3-қатар 1, 2, 3; 4-қатар 2, 4.",
+      "figureSha256": "7de65d27981c86abea8dc030d6d4b3fef5785175ea76113b699d74c3b3e397b6",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(44/64)",
+        "checks": {
+          "equalCells": 16,
+          "paintedCells": 11,
+          "rawFraction": "11/16",
+          "requiredDenominator": 64,
+          "expansionFactor": 4,
+          "newNumerator": 44,
+          "expanded": "(44/64)"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave46-quarter-and-seventh-common-twenty-eight",
+      "modelId": "visual-wave46-two-unit-strips-minimum-common-denominator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "strips",
+        "labels": [
+          "A",
+          "B"
+        ],
+        "parts": [
+          4,
+          7
+        ],
+        "painted": [
+          1,
+          1
+        ]
+      },
+      "answer": "(7/28) және (4/28)",
+      "sourceRefs": [
+        {
+          "sourceId": "13136ef9abebe90d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-6-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-6-level1.json#11",
+      "sourceCanonicalSha256": "7ce3e54137b823b38058fe20967ae6369a7b8aefb8aaf36b13b28ebf61d64c23",
+      "sourceSkill": "Read samewholeUNITfractions withCOPRIMEdenominators, minimumcommon28 and originalA/Border",
+      "adaptationChanges": [
+        "Барлық6сақталғанвизуалды3.6шарт,толықшешімменнұсқаларжекеоқылды.Берілгенбөлімдегінатуралсан,торкөзбоялуынантеңбөлшек,өзаражай/ортақбөлгішібарекіортақбөлім,қатынаспенайырмаданбастапқыалым,керіқысқартубойыншаекібөлшекдағдыларысақталды.",
+        "Жаңадеректер:5бүтін/6сектор→30/6;11/16→44/64;1/4пен1/7→7/28,4/28;5/12пен7/18→15/36,14/36;4/7қатынасыжәнеайырма33→44/77;12/30пен25/30→2/5,5/6.Жұптардыңреті,нақтықысқарту/кеңейтужәнееңкішібөлімталаптарыбөлектексерілді.",
+        "NativeSVGтолықбоялған5дөңгелектің30теңсекторын,4×4тордың11көкұяшығын,бірдей396pxжолақтарды,масштабсызартық33бөлікті,әржолақтың30теңұяшығынпараметрденжасайды.Sourceraster/tracedpathжоқ."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тең бөлшектер және ортақ бөлім",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview;5discs×6equalrays,actual11of16painted,396pxequalwhole4/7and12/18strips,ratio4/7difference33NO44/77leak,BOTH30cellstrips12/25paintedwithreal6/5reductionGCDs;minimaldenominators/order/formatsand343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave46-quarter-and-seventh-common-twenty-eight.svg",
+      "verificationModule": "scripts/editorial/visual-wave46-models.mjs",
+      "options": [
+        "(7/28) және (4/28)",
+        "(1/28) және (1/28)",
+        "(4/28) және (7/28)",
+        "(7/11) және (4/11)"
+      ],
+      "statement": "A және B жолақтарының толық ұзындықтары бірдей. Әр жолақтағы көк бөлік бір бөлшекті білдіреді. Екеуін ЕҢ КІШІ ортақ бөлімге келтіріп, алдымен A жолағының бөлшегі жазылған жұпты таңдаңыз.",
+      "solution": "Суреттен A үлесі (1/4), B үлесі (1/7). Бөлімдердің ЕҮОБ мәні 1. Сондықтан ең кіші ортақ бөлім 4 × 7 : 1 = 28. Толықтауыш көбейткіштер 28 : 4 = 7 және 28 : 7 = 4. Алымдар да сәйкес көбейеді: 1 × 7 = 7, 1 × 4 = 4. Жауап (7/28) және (4/28). Бірінші жолақтың бөлшегі бірінші қалуы керек; бөлімдерді қоспаймыз.",
+      "figureDescription": "Ұзындығы бірдей A және B жолақтары. A жолағында 4 тең бөлік, алғашқы 1 бөлігі көк; B жолағында 7 тең бөлік, алғашқы 1 бөлігі көк.",
+      "figureSha256": "15c37dba2924238f08573af624802c1b9cf852335f5ee8c5cd5dd7b82a7ba1df",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(7/28) және (4/28)",
+        "checks": {
+          "rawFractions": [
+            "1/4",
+            "1/7"
+          ],
+          "rawDenominators": [
+            4,
+            7
+          ],
+          "minimumCommonDenominator": 28,
+          "expansionFactors": [
+            7,
+            4
+          ],
+          "orderedExpandedPairs": [
+            [
+              7,
+              28
+            ],
+            [
+              4,
+              28
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave46-five-twelfths-seven-eighteenths-readers",
+      "modelId": "visual-wave46-two-readers-strips-minimum-common-denominator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "strips",
+        "labels": [
+          "D",
+          "M"
+        ],
+        "parts": [
+          12,
+          18
+        ],
+        "painted": [
+          5,
+          7
+        ]
+      },
+      "answer": "(15/36) және (14/36)",
+      "sourceRefs": [
+        {
+          "sourceId": "f2da422fe95510ae",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-6-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-6-level2.json#14",
+      "sourceCanonicalSha256": "97880d8316e5e0fe3634810046bba1106e0a9cd8d441a0bdfd46878384984e5d",
+      "sourceSkill": "Read twoNONUNITirreducible fractions withSHAREDdenominatorfactor, minimumcommon36 and firstreaderorder",
+      "adaptationChanges": [
+        "Барлық6сақталғанвизуалды3.6шарт,толықшешімменнұсқаларжекеоқылды.Берілгенбөлімдегінатуралсан,торкөзбоялуынантеңбөлшек,өзаражай/ортақбөлгішібарекіортақбөлім,қатынаспенайырмаданбастапқыалым,керіқысқартубойыншаекібөлшекдағдыларысақталды.",
+        "Жаңадеректер:5бүтін/6сектор→30/6;11/16→44/64;1/4пен1/7→7/28,4/28;5/12пен7/18→15/36,14/36;4/7қатынасыжәнеайырма33→44/77;12/30пен25/30→2/5,5/6.Жұптардыңреті,нақтықысқарту/кеңейтужәнееңкішібөлімталаптарыбөлектексерілді.",
+        "NativeSVGтолықбоялған5дөңгелектің30теңсекторын,4×4тордың11көкұяшығын,бірдей396pxжолақтарды,масштабсызартық33бөлікті,әржолақтың30теңұяшығынпараметрденжасайды.Sourceraster/tracedpathжоқ."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тең бөлшектер және ортақ бөлім",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview;5discs×6equalrays,actual11of16painted,396pxequalwhole4/7and12/18strips,ratio4/7difference33NO44/77leak,BOTH30cellstrips12/25paintedwithreal6/5reductionGCDs;minimaldenominators/order/formatsand343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave46-five-twelfths-seven-eighteenths-readers.svg",
+      "verificationModule": "scripts/editorial/visual-wave46-models.mjs",
+      "options": [
+        "(5/36) және (7/36)",
+        "(14/36) және (15/36)",
+        "(15/30) және (14/30)",
+        "(15/36) және (14/36)"
+      ],
+      "statement": "Екі жолақтың әрқайсысы бір кітаптың БАРЛЫҚ бетін білдіреді. D — Дина, M — Мерей оқыған бөлік. Көк бөліктердің бөлшектерін ЕҢ КІШІ ортақ бөлімге келтіріңіз. Динаның жауабы бірінші жазылсын.",
+      "solution": "Суреттен D үлесі (5/12), M үлесі (7/18). Бөлімдердің ЕҮОБ мәні 6. Сондықтан ең кіші ортақ бөлім 12 × 18 : 6 = 36. Толықтауыш көбейткіштер 36 : 12 = 3 және 36 : 18 = 2. Алымдар да сәйкес көбейеді: 5 × 3 = 15, 7 × 2 = 14. Жауап (15/36) және (14/36). Бірінші жолақтың бөлшегі бірінші қалуы керек; бөлімдерді қоспаймыз.",
+      "figureDescription": "Ұзындығы бірдей D және M жолақтары. D жолағында 12 тең бөлік, алғашқы 5 бөлігі көк; M жолағында 18 тең бөлік, алғашқы 7 бөлігі көк.",
+      "figureSha256": "dfbf697e436c6fdbdd96e0ffffe162de22d407c67d38bc0c98c4f934bda76d2c",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(15/36) және (14/36)",
+        "checks": {
+          "rawFractions": [
+            "5/12",
+            "7/18"
+          ],
+          "rawDenominators": [
+            12,
+            18
+          ],
+          "minimumCommonDenominator": 36,
+          "expansionFactors": [
+            3,
+            2
+          ],
+          "orderedExpandedPairs": [
+            [
+              15,
+              36
+            ],
+            [
+              14,
+              36
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave46-four-sevenths-difference-thirty-three",
+      "modelId": "visual-wave46-recover-numerator-from-ratio-difference",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "difference",
+        "ratio": [
+          4,
+          7
+        ],
+        "difference": 33
+      },
+      "answer": "44",
+      "sourceRefs": [
+        {
+          "sourceId": "b16fd1dd4f64a17a",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-6-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-6-level3.json#2",
+      "sourceCanonicalSha256": "52f1931a31c8b6c400d991163b587b83bf8ebc5737383ed96f45c085bf5a23e6",
+      "sourceSkill": "Recover RAWnumerator fromequivalentfraction and shown denominator-minus-numeratordifference, nontrivialfactor11",
+      "adaptationChanges": [
+        "Барлық6сақталғанвизуалды3.6шарт,толықшешімменнұсқаларжекеоқылды.Берілгенбөлімдегінатуралсан,торкөзбоялуынантеңбөлшек,өзаражай/ортақбөлгішібарекіортақбөлім,қатынаспенайырмаданбастапқыалым,керіқысқартубойыншаекібөлшекдағдыларысақталды.",
+        "Жаңадеректер:5бүтін/6сектор→30/6;11/16→44/64;1/4пен1/7→7/28,4/28;5/12пен7/18→15/36,14/36;4/7қатынасыжәнеайырма33→44/77;12/30пен25/30→2/5,5/6.Жұптардыңреті,нақтықысқарту/кеңейтужәнееңкішібөлімталаптарыбөлектексерілді.",
+        "NativeSVGтолықбоялған5дөңгелектің30теңсекторын,4×4тордың11көкұяшығын,бірдей396pxжолақтарды,масштабсызартық33бөлікті,әржолақтың30теңұяшығынпараметрденжасайды.Sourceraster/tracedpathжоқ."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тең бөлшектер және ортақ бөлім",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview;5discs×6equalrays,actual11of16painted,396pxequalwhole4/7and12/18strips,ratio4/7difference33NO44/77leak,BOTH30cellstrips12/25paintedwithreal6/5reductionGCDs;minimaldenominators/order/formatsand343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave46-four-sevenths-difference-thirty-three.svg",
+      "verificationModule": "scripts/editorial/visual-wave46-models.mjs",
+      "statement": "(a/b) бөлшегі (4/7) санына тең. Суретте b бөлімі мен a алымы жолақпен берілген; b санының a санынан артық бөлігі жақшада көрсетілген. Сызба масштабсыз. Бастапқы a алымын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Берілген қысқарған қатынаста бөлім мен алымның айырмасы 7 − 4 = 3 үлес. Суретте осы айырма 33 санына тең, сондықтан бір үлес 33 : 3 = 11. Алым a = 4 × 11 = 44, бөлім b = 7 × 11 = 77. Тексеру: 77 − 44 = 33 және (44/77) = (4/7). Бастапқы алым қысқарған алыммен бірдей емес; масштабсыз жолақты өлшемейміз.",
+      "figureDescription": "a қысқа жолағы мен b ұзын жолағы сол жақтан бірдей басталады. b жолағындағы артық бөлік астындағы жақша 33 деп белгіленген. Алым мен бөлімнің нақты мәндері көрсетілмеген. Сызба масштабсыз.",
+      "figureSha256": "311c1bc25b9baeda8d981f98bf9d1f64b8f209d94c23f04b2a9562aceedb4adb",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "44",
+        "checks": {
+          "reducedRatio": [
+            4,
+            7
+          ],
+          "reducedDifference": 3,
+          "rawDifference": 33,
+          "scale": 11,
+          "rawNumerator": 44,
+          "rawDenominator": 77,
+          "gcd": 11
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave46-twelve-and-twenty-five-thirtieths-originals",
+      "modelId": "visual-wave46-recover-originals-from-common-strips",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "common",
+        "commonParts": 30,
+        "painted": [
+          12,
+          25
+        ]
+      },
+      "answer": "(2/5) және (5/6)",
+      "sourceRefs": [
+        {
+          "sourceId": "641f1ab231af12c5",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-6-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-6-leveltest.json#3",
+      "sourceCanonicalSha256": "9e2ef0ab60e805847d5f0523fa02f49ce878a0571b73826f862d5a63de1b5695",
+      "sourceSkill": "Reverse common-denominator presentation, genuinelyreduce BOTHfractions withgcd6/gcd5, recheckminimality30/order",
+      "adaptationChanges": [
+        "Барлық6сақталғанвизуалды3.6шарт,толықшешімменнұсқаларжекеоқылды.Берілгенбөлімдегінатуралсан,торкөзбоялуынантеңбөлшек,өзаражай/ортақбөлгішібарекіортақбөлім,қатынаспенайырмаданбастапқыалым,керіқысқартубойыншаекібөлшекдағдыларысақталды.",
+        "Жаңадеректер:5бүтін/6сектор→30/6;11/16→44/64;1/4пен1/7→7/28,4/28;5/12пен7/18→15/36,14/36;4/7қатынасыжәнеайырма33→44/77;12/30пен25/30→2/5,5/6.Жұптардыңреті,нақтықысқарту/кеңейтужәнееңкішібөлімталаптарыбөлектексерілді.",
+        "NativeSVGтолықбоялған5дөңгелектің30теңсекторын,4×4тордың11көкұяшығын,бірдей396pxжолақтарды,масштабсызартық33бөлікті,әржолақтың30теңұяшығынпараметрденжасайды.Sourceraster/tracedpathжоқ."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тең бөлшектер және ортақ бөлім",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all6saved/new/fullsolutions/MCQreview;5discs×6equalrays,actual11of16painted,396pxequalwhole4/7and12/18strips,ratio4/7difference33NO44/77leak,BOTH30cellstrips12/25paintedwithreal6/5reductionGCDs;minimaldenominators/order/formatsand343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave46-twelve-and-twenty-five-thirtieths-originals.svg",
+      "verificationModule": "scripts/editorial/visual-wave46-models.mjs",
+      "options": [
+        "(2/5) және (5/12)",
+        "(2/5) және (5/6)",
+        "(12/5) және (5/6)",
+        "(1/5) және (5/6)"
+      ],
+      "statement": "Екі ҚЫСҚАРТЫЛМАЙТЫН бөлшекті ЕҢ КІШІ ортақ бөлімге келтіргеннен кейін суреттегі жолақтар шықты. Әр жолақтың толық ұзындығы бір бүтінге тең. Бастапқы бөлшектерді таңдаңыз: алдымен A, содан кейін B.",
+      "solution": "Әр жолақ 30 тең ұяшықтан тұрады. A-да 12, B-де 25 ұяшық көк, сондықтан берілгендері (12/30) және (25/30). A бөлшегінің алымы мен бөлімін 6 санына қысқартсақ (2/5), B бөлшегін 5 санына қысқартсақ (5/6) шығады. Ретімен жауап (2/5) және (5/6). Тексеру: ЕКОЕ(5, 6) = 30, яғни суреттегі ортақ бөлім шынымен ең кішісі. Бөлімді ғана қысқартып не екі жауаптың ретін ауыстырып жібермейміз.",
+      "figureDescription": "Ұзындығы бірдей A және B жолақтарының әрқайсысында 30 тең ұяшық. A-ның алғашқы 12, B-нің алғашқы 25 ұяшығы көк, өзгелері ақ.",
+      "figureSha256": "cc334f2a5d6b4c4c333d652074acc5a43b61456cf63c12265bb695cdc2a4e0c0",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(2/5) және (5/6)",
+        "checks": {
+          "shownCommonDenominator": 30,
+          "shownNumerators": [
+            12,
+            25
+          ],
+          "reductionGCDs": [
+            6,
+            5
+          ],
+          "orderedOriginalPairs": [
+            [
+              2,
+              5
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "recheckedMinimumCommonDenominator": 30
+        }
+      }
+    }
+  ]
+}

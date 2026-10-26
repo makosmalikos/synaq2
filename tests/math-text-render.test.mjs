@@ -19,6 +19,25 @@ const code = transformed.code.replace(/^import "\.\/MathText\.css";\s*/m, '').re
 const { default: MathText } = await import('data:text/javascript;base64,' + Buffer.from(code).toString('base64'));
 const render = text => renderToStaticMarkup(React.createElement(MathText, { text }));
 
+test('fraction examples render a blank numerator and zero denominator literally without evaluating them', () => {
+  const html = render('8 = (□/7); (7/0)');
+  assert.match(html, /<mfrac><mrow><mtext>□<\/mtext><\/mrow><mrow><mtext>7<\/mtext><\/mrow><\/mfrac>/);
+  assert.match(html, /<mfrac><mrow><mtext>7<\/mtext><\/mrow><mrow><mtext>0<\/mtext><\/mrow><\/mfrac>/);
+  assert.doesNotMatch(html, /Infinity|NaN|undefined/);
+});
+
+test('modulus stays inside the complete native numerator without changing answer text or allowing HTML', () => {
+  const html = render('((|x + 3|)/(−2,4)) = (−6,3/2,1)');
+  assert.equal((html.match(/<mfrac>/g) || []).length, 2);
+  assert.match(html, /<mfrac><mrow><mtext>\|x \+ 3\|<\/mtext><\/mrow><mrow><mtext>−2,4<\/mtext><\/mrow><\/mfrac>/);
+  assert.match(html, /aria-label="\(\|x \+ 3\|\)\/\(−2,4\)"/);
+  assert.doesNotMatch(html, /Infinity|NaN|undefined/);
+  const nested = render('((|(x/2) - 3|)/(4))');
+  assert.equal((nested.match(/<mfrac>/g) || []).length, 2);
+  for (const value of ['((|x + 3)/(2))', '(|x/2|)', '((|x| + |y|)/2)']) assert.doesNotMatch(render(value), /<mfrac>/);
+  assert.doesNotMatch(render('((|<img src=x onerror=alert(1)>|)/2)'), /<img|<script/);
+});
+
 test('native overlines span the complete grouped digit expression and expose its meaning', () => {
   const html = render('((overline(ab+cd))/(3))');
   assert.match(html, /<mfrac><mrow><mover accent="true"><mrow><mtext>ab\+cd<\/mtext>/);
@@ -43,4 +62,13 @@ test('table and overline contents remain text and cannot inject HTML', () => {
   assert.doesNotMatch(html, /<img|<script/);
   assert.match(html, /&lt;img/);
   assert.match(html, /<mover /);
+});
+
+test('native vector arrow spans both ordered endpoints in answers and solutions', () => {
+  const html = render('vector(PQ) және vector(c)');
+  assert.match(html, /aria-label="vector\(PQ\)"/);
+  assert.match(html, /<mover accent="true"><mrow><mtext>PQ<\/mtext><\/mrow><mo stretchy="true">→<\/mo><\/mover>/);
+  assert.match(html, /aria-label="vector\(c\)"/);
+  assert.doesNotMatch(html, /\\overrightarrow|\$/);
+  assert.doesNotMatch(render('vector(<img src=x>)'), /<img/);
 });

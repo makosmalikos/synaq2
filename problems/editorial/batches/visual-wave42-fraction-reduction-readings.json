@@ -1,0 +1,452 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "status": "draft_awaiting_independent_review",
+  "sourcePolicy": "All7 saved visual grade5topic3.2; sourcearchiveonly, no capture/download/traces.",
+  "publication": {
+    "allowed": false,
+    "minimumInternalPlanAfterVerification": "pro",
+    "publicPlanName": "Standard"
+  },
+  "coverage": {
+    "scope": "All captured visual grade5topic3.2sources",
+    "sourceVisualOccurrences": 7,
+    "addressedNewDrafts": 7,
+    "previousEditionsRetained": [],
+    "missingSourceIds": [],
+    "exactNewSourceIds": [
+      "04130c4d9b49f443",
+      "1145f2323eafc3be",
+      "276300964bfbf056",
+      "3ba650cfb5ee34a0",
+      "3d01c88f757bd29d",
+      "4f06c97ada6043b4",
+      "b172cabbdcd8f550"
+    ],
+    "distinctModels": 7,
+    "semantics": "Allsevensource targets individuallyrewritten; variant/modelcounts are not claims ofnew semanticmeanings."
+  },
+  "editions": [
+    {
+      "editionId": "visual-wave42-five-eighths-twenty-fourths",
+      "modelId": "visual-wave42-same-whole-refined-partition-numerator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "refinement",
+        "topParts": 8,
+        "topShaded": 5,
+        "bottomParts": 24
+      },
+      "answer": "15",
+      "sourceRefs": [
+        {
+          "sourceId": "1145f2323eafc3be",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-2-level1.json#6",
+      "sourceCanonicalSha256": "dd629686e27594b98bf07011a88d6c08f709f4d3d8dd3a7cf15ceb0b02dff124",
+      "sourceSkill": "Same whole under equal refined subdivisions; multiplying BOTHfractionterms",
+      "adaptationChanges": [
+        "Барлық7бастапқы визуалды дағды жеке сақталды:бірдей бүтіннің ұсақ бөлінуі,беттерді санау/қысқарту,диаграммадағы жетіспейтін санның қысқарған бөлімі,аналогсағаттан ұзақтық,тәуліктің толықтауышы,мүшелер қосындысынан бастапқыалым,күнтізбедегі үлес.",
+        "Жолақ5/8→x/24,дәптер12/30,қарындаш80жалпы20/30бағана,сағат16:00→16:40,тәулік9/7сағат,қысқарғанқатынас5/8жәнеқосынды169,күнтізбе28күн/12жаңбыр болып жаңарды.",
+        "Native SVG 60сағатбелгісі мен дұрыс қозғалатын қысқатілді,5қадамды нақтыбағанашкаласын,24сағат/24бөлікжолақты,барлық28күнді жәнебірдейұзындықтағы8/24бөлінуін параметрден жасайды. Қысқартылмайтынформатты текмәнмен шатастырмайды. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тең бөлшектер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview;8/24samestandardlength,30page/12painted,bar20/30with5unitaxis,clock16:40minute240°hour140°,24hour9/7partcolors,169sumbracket,all28dates/12rainy; rawreductionformats and343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave42-five-eighths-twenty-fourths.svg",
+      "verificationModule": "scripts/editorial/visual-wave42-models.mjs",
+      "statement": "Екі жолақтың ұзындығы бірдей. Төменгі жолақ жоғарғыдан ұсақ тең бөліктерге бөлінген. Жоғарғы боялған ұзындықты төменгі бөліктермен жазса, (5/8) = (x/24) болады. x неше? Жауапқа тек санды жазыңыз.",
+      "solution": "Бірдей бүтінде 8 ірі бөлікке 24 ұсақ бөлік сәйкес. Әр ірі бөліктің астында 24 : 8 = 3 ұсақ бөлік бар. 5 боялған ірі бөлік 5 × 3 = 15 ұсақ бөлікке тең. Сондықтан (5/8) = (15/24). Алым мен бөлім бірдей 3 көбейткішпен өзгерді.",
+      "figureDescription": "Ұзындығы бірдей екі жолақ: жоғарғысы 8 тең бөлік, алғашқы 5 бөлігі көк. Төменгісі 24 тең ақ бөлік. Ірі бөліктердің шекаралары үзік сызықпен төменге түсірілген.",
+      "figureSha256": "81362d81afdb2f9b7889292f0fcd2ea31f52fd7eed33afbbcdad8e666fdaeff7",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "15",
+        "checks": {
+          "topFraction": "(5/8)",
+          "finePerCoarse": 3,
+          "newNumerator": 15,
+          "newDenominator": 24
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave42-twelve-of-thirty-written-pages",
+      "modelId": "visual-wave42-pages-reduced-read-fraction",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "easy",
+      "params": {
+        "scene": "pages",
+        "rows": 5,
+        "columns": 6,
+        "read": 12
+      },
+      "answer": "(2/5)",
+      "sourceRefs": [
+        {
+          "sourceId": "04130c4d9b49f443",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-2-level1.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-2-level1.json#12",
+      "sourceCanonicalSha256": "c1100987d28243706f0b3a35e388934c61049c6d78873ca2db64fd34b442028b",
+      "sourceSkill": "Counting read/total pages and enforcing irreduciblefraction not merely equalvalue",
+      "adaptationChanges": [
+        "Барлық7бастапқы визуалды дағды жеке сақталды:бірдей бүтіннің ұсақ бөлінуі,беттерді санау/қысқарту,диаграммадағы жетіспейтін санның қысқарған бөлімі,аналогсағаттан ұзақтық,тәуліктің толықтауышы,мүшелер қосындысынан бастапқыалым,күнтізбедегі үлес.",
+        "Жолақ5/8→x/24,дәптер12/30,қарындаш80жалпы20/30бағана,сағат16:00→16:40,тәулік9/7сағат,қысқарғанқатынас5/8жәнеқосынды169,күнтізбе28күн/12жаңбыр болып жаңарды.",
+        "Native SVG 60сағатбелгісі мен дұрыс қозғалатын қысқатілді,5қадамды нақтыбағанашкаласын,24сағат/24бөлікжолақты,барлық28күнді жәнебірдейұзындықтағы8/24бөлінуін параметрден жасайды. Қысқартылмайтынформатты текмәнмен шатастырмайды. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тең бөлшектер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview;8/24samestandardlength,30page/12painted,bar20/30with5unitaxis,clock16:40minute240°hour140°,24hour9/7partcolors,169sumbracket,all28dates/12rainy; rawreductionformats and343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave42-twelve-of-thirty-written-pages.svg",
+      "verificationModule": "scripts/editorial/visual-wave42-models.mjs",
+      "options": [
+        "(2/5)",
+        "(3/5)",
+        "(12/30)",
+        "(1/5)"
+      ],
+      "statement": "Әр ұяшық дәптердің бір бетіне сәйкес келеді. Дина көк ұяшықпен белгіленген беттерді толтырды. Толтырылған беттер барлық дәптердің қандай бөлігі? Тек ҚЫСҚАРТЫЛМАЙТЫН жазуды таңдаңыз.",
+      "solution": "Дәптерде 5 × 6 = 30 бет. Көк беттер 12 дана, бастапқы үлес (12/30). Алым мен бөлімнің ең үлкен ортақ бөлгіші 6. Екеуін де 6 санына қысқартсақ (2/5) шығады. Тең мәнді, бірақ әлі қысқаратын жазу сұралған форматты орындамайды.",
+      "figureDescription": "5 қатар мен 6 бағаннан тұратын бет торы. Алғашқы 12 ұяшық көк, басқалары ақ.",
+      "figureSha256": "62736de862f5fcfeb03dae0001dc8ce84d43ccd198e83049acc68a58a307d01b",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(2/5)",
+        "checks": {
+          "totalPages": 30,
+          "readPages": 12,
+          "commonDivisor": 6,
+          "reduced": "(2/5)"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave42-eighty-pencils-missing-green",
+      "modelId": "visual-wave42-missing-bar-reduced-denominator",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "bars",
+        "total": 80,
+        "red": 20,
+        "blue": 30,
+        "tick": 5
+      },
+      "answer": "8",
+      "sourceRefs": [
+        {
+          "sourceId": "276300964bfbf056",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-2-level2.json#1",
+      "sourceCanonicalSha256": "3168893359b15cac6e3bdd26e78b476fb296a34bf992900596c997907b001901",
+      "sourceSkill": "Read exact bar heights, recover missing category, reduce its share, request denominator",
+      "adaptationChanges": [
+        "Барлық7бастапқы визуалды дағды жеке сақталды:бірдей бүтіннің ұсақ бөлінуі,беттерді санау/қысқарту,диаграммадағы жетіспейтін санның қысқарған бөлімі,аналогсағаттан ұзақтық,тәуліктің толықтауышы,мүшелер қосындысынан бастапқыалым,күнтізбедегі үлес.",
+        "Жолақ5/8→x/24,дәптер12/30,қарындаш80жалпы20/30бағана,сағат16:00→16:40,тәулік9/7сағат,қысқарғанқатынас5/8жәнеқосынды169,күнтізбе28күн/12жаңбыр болып жаңарды.",
+        "Native SVG 60сағатбелгісі мен дұрыс қозғалатын қысқатілді,5қадамды нақтыбағанашкаласын,24сағат/24бөлікжолақты,барлық28күнді жәнебірдейұзындықтағы8/24бөлінуін параметрден жасайды. Қысқартылмайтынформатты текмәнмен шатастырмайды. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тең бөлшектер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview;8/24samestandardlength,30page/12painted,bar20/30with5unitaxis,clock16:40minute240°hour140°,24hour9/7partcolors,169sumbracket,all28dates/12rainy; rawreductionformats and343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave42-eighty-pencils-missing-green.svg",
+      "verificationModule": "scripts/editorial/visual-wave42-models.mjs",
+      "statement": "Қорапта барлығы 80 түрлі түсті қарындаш бар. Диаграммада қызыл және көк қарындаштар саны көрсетілген; жасыл бағана әзірге сызылмаған. Жасыл қарындаштар үлесін толық қысқартқаннан кейін оның БӨЛІМІ неше болады? Жауапқа тек санды жазыңыз.",
+      "solution": "Тік шкаладан қызыл бағана 20, көк бағана 30 қарындаш береді. Жасыл саны 80 − 20 − 30 = 30. Үлесі (30/80), ЕҮОБ 10 болғандықтан толық қысқартылғаны (3/8). Осы бөлшектің бөлімі 8. Жасыл қарындаштың өзін не қысқартылған алымын жауапқа жазбаймыз.",
+      "figureDescription": "Тік шкалада әр белгі 5 қарындаш. Қызыл бағана 20, көк бағана 30 деңгейіне жетеді. Жасыл орында сұрақ белгісі бар, бағана биіктігі көрсетілмеген.",
+      "figureSha256": "c1a99b30589bebfa5bcf0786c147d6b805116610f4f3f180aed8d9eff5127b35",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "8",
+        "checks": {
+          "red": 20,
+          "blue": 30,
+          "missingGreen": 30,
+          "total": 80,
+          "gcd": 10,
+          "reduced": "(3/8)",
+          "requestedDenominator": 8
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave42-four-forty-clock-duration",
+      "modelId": "visual-wave42-clock-duration-reduced-hour-share",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "clock",
+        "startHour": 16,
+        "startMinute": 0,
+        "endHour": 16,
+        "endMinute": 40
+      },
+      "answer": "(2/3)",
+      "sourceRefs": [
+        {
+          "sourceId": "3ba650cfb5ee34a0",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-2-level2.json#4",
+      "sourceCanonicalSha256": "53345f6733646b3c8c7123f4efe12fa2172af12d70ff3771553a1dc7c60ffd9f",
+      "sourceSkill": "Read analogue hour/minute hands then convert elapsed minutes to reduced one-hour fraction",
+      "adaptationChanges": [
+        "Барлық7бастапқы визуалды дағды жеке сақталды:бірдей бүтіннің ұсақ бөлінуі,беттерді санау/қысқарту,диаграммадағы жетіспейтін санның қысқарған бөлімі,аналогсағаттан ұзақтық,тәуліктің толықтауышы,мүшелер қосындысынан бастапқыалым,күнтізбедегі үлес.",
+        "Жолақ5/8→x/24,дәптер12/30,қарындаш80жалпы20/30бағана,сағат16:00→16:40,тәулік9/7сағат,қысқарғанқатынас5/8жәнеқосынды169,күнтізбе28күн/12жаңбыр болып жаңарды.",
+        "Native SVG 60сағатбелгісі мен дұрыс қозғалатын қысқатілді,5қадамды нақтыбағанашкаласын,24сағат/24бөлікжолақты,барлық28күнді жәнебірдейұзындықтағы8/24бөлінуін параметрден жасайды. Қысқартылмайтынформатты текмәнмен шатастырмайды. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тең бөлшектер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview;8/24samestandardlength,30page/12painted,bar20/30with5unitaxis,clock16:40minute240°hour140°,24hour9/7partcolors,169sumbracket,all28dates/12rainy; rawreductionformats and343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave42-four-forty-clock-duration.svg",
+      "verificationModule": "scripts/editorial/visual-wave42-models.mjs",
+      "options": [
+        "(1/3)",
+        "(2/3)",
+        "(4/6)",
+        "(4/5)"
+      ],
+      "statement": "Мерей сағат 16:00-де конструктор жинай бастады. Сол сағаттың ішінде, сағат суреттегі уақытты көрсеткенде тоқтады. Бұл ұзақтық бір сағаттың қандай бөлігі? ҚЫСҚАРТЫЛМАЙТЫН бөлшекті таңдаңыз.",
+      "solution": "Минут тілі 8 санын көрсетеді, яғни 40 минут. Сағат тілі 4 пен 5 арасында. Сол сағат ішінде аяқталғандықтан, аяқталу уақыты 16:40. 16:00-ден 40 минут өтті. Бір сағат 60 минут, үлес (40/60). Екі мүшені 20 санына қысқартсақ (2/3) шығады. Сағатты 100 минут деп қабылдамаймыз.",
+      "figureDescription": "Аналог сағатта минут тілі 8 санында, қысқа сағат тілі 4 пен 5 арасында. 12 сан жоғарыда.",
+      "figureSha256": "47ddfc2f1e5f136abc864cd3a3e1426a909d522d892f1b1bd418566d83e9c635",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(2/3)",
+        "checks": {
+          "start": "16:00",
+          "end": "16:40",
+          "elapsedMinutes": 40,
+          "gcd": 20,
+          "hourShare": "(2/3)"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave42-nine-seven-day-plan",
+      "modelId": "visual-wave42-day-other-time-reduced-share",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "medium",
+      "params": {
+        "scene": "day",
+        "parts": 24,
+        "sleep": 9,
+        "school": 7
+      },
+      "answer": "(1/3)",
+      "sourceRefs": [
+        {
+          "sourceId": "b172cabbdcd8f550",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-2-level2.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-2-level2.json#6",
+      "sourceCanonicalSha256": "4ea1e457931240e3ba04cf6b8210bfe5f56db196d65ba6adf33d358c69406c08",
+      "sourceSkill": "Complement of two disjoint dailytimeparts, reducing actual remaining8/24",
+      "adaptationChanges": [
+        "Барлық7бастапқы визуалды дағды жеке сақталды:бірдей бүтіннің ұсақ бөлінуі,беттерді санау/қысқарту,диаграммадағы жетіспейтін санның қысқарған бөлімі,аналогсағаттан ұзақтық,тәуліктің толықтауышы,мүшелер қосындысынан бастапқыалым,күнтізбедегі үлес.",
+        "Жолақ5/8→x/24,дәптер12/30,қарындаш80жалпы20/30бағана,сағат16:00→16:40,тәулік9/7сағат,қысқарғанқатынас5/8жәнеқосынды169,күнтізбе28күн/12жаңбыр болып жаңарды.",
+        "Native SVG 60сағатбелгісі мен дұрыс қозғалатын қысқатілді,5қадамды нақтыбағанашкаласын,24сағат/24бөлікжолақты,барлық28күнді жәнебірдейұзындықтағы8/24бөлінуін параметрден жасайды. Қысқартылмайтынформатты текмәнмен шатастырмайды. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тең бөлшектер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview;8/24samestandardlength,30page/12painted,bar20/30with5unitaxis,clock16:40minute240°hour140°,24hour9/7partcolors,169sumbracket,all28dates/12rainy; rawreductionformats and343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave42-nine-seven-day-plan.svg",
+      "verificationModule": "scripts/editorial/visual-wave42-models.mjs",
+      "options": [
+        "(1/3)",
+        "(2/3)",
+        "(3/8)",
+        "(7/24)"
+      ],
+      "statement": "Жолақ бір тәуліктің 24 сағатын тең бөліктермен көрсетеді. Көк сағаттар — ұйқы, күлгін сағаттар — мектептегі уақыт. Боялмаған басқа істер тәуліктің қандай бөлігі? ҚЫСҚАРТЫЛМАЙТЫН бөлшекпен көрсетіңіз.",
+      "solution": "Көк бөліктер 9, күлгін бөліктер 7 сағат, барлығы 16 сағат. Басқа істерге 24 − 9 − 7 = 8 сағат қалады. Үлес (8/24), екі мүшесін 8 санына қысқартқанда (1/3). Ұйқы мен мектептің қосындысы емес, олардың сыртында қалған уақыт сұралды.",
+      "figureDescription": "24 тең бөлік: алғашқы 9 көк, келесі 7 күлгін, қалғаны ақ. Жолақ толық бір тәулік.",
+      "figureSha256": "ca78c95b7e58ad0c5bd87dbe02629f6c1f91bdbd6bdf41c3b87e3ee4b9855dc5",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(1/3)",
+        "checks": {
+          "sleepHours": 9,
+          "schoolHours": 7,
+          "otherHours": 8,
+          "gcd": 8,
+          "reduced": "(1/3)"
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave42-five-eighths-term-sum-one-sixty-nine",
+      "modelId": "visual-wave42-recover-original-numerator-from-sum",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "sum",
+        "ratio": [
+          5,
+          8
+        ],
+        "sum": 169
+      },
+      "answer": "65",
+      "sourceRefs": [
+        {
+          "sourceId": "3d01c88f757bd29d",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-2-level3.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-2-level3.json#0",
+      "sourceCanonicalSha256": "b8909bdb317a9e9bb8421110b666d0ab77b1f54d8934e775eeabce570981bb6f",
+      "sourceSkill": "Recover rawnumerator from a reduced ratio and a fixed term sum, schematic non-scale bars",
+      "adaptationChanges": [
+        "Барлық7бастапқы визуалды дағды жеке сақталды:бірдей бүтіннің ұсақ бөлінуі,беттерді санау/қысқарту,диаграммадағы жетіспейтін санның қысқарған бөлімі,аналогсағаттан ұзақтық,тәуліктің толықтауышы,мүшелер қосындысынан бастапқыалым,күнтізбедегі үлес.",
+        "Жолақ5/8→x/24,дәптер12/30,қарындаш80жалпы20/30бағана,сағат16:00→16:40,тәулік9/7сағат,қысқарғанқатынас5/8жәнеқосынды169,күнтізбе28күн/12жаңбыр болып жаңарды.",
+        "Native SVG 60сағатбелгісі мен дұрыс қозғалатын қысқатілді,5қадамды нақтыбағанашкаласын,24сағат/24бөлікжолақты,барлық28күнді жәнебірдейұзындықтағы8/24бөлінуін параметрден жасайды. Қысқартылмайтынформатты текмәнмен шатастырмайды. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тең бөлшектер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview;8/24samestandardlength,30page/12painted,bar20/30with5unitaxis,clock16:40minute240°hour140°,24hour9/7partcolors,169sumbracket,all28dates/12rainy; rawreductionformats and343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave42-five-eighths-term-sum-one-sixty-nine.svg",
+      "verificationModule": "scripts/editorial/visual-wave42-models.mjs",
+      "statement": "(a/b) оң бөлшегін толық қысқартқанда (5/8) шықты. Жақша алым a мен бөлім b-нің қосындысын береді. Сызба масштабсыз. Бастапқы a алымын табыңыз. Жауапқа тек санды жазыңыз.",
+      "solution": "Толық қысқарған алым мен бөлім 5 және 8. Бастапқы алым 5 тең үлес, бөлім 8 үлес болады. Берілген 169 қосынды 13 тең үлестен тұрады, бір үлес 169 : 13 = 13. Алым 5 × 13 = 65, бөлім 8 × 13 = 104. Тексеру: 65 + 104 = 169; ЕҮОБ 13 санына қысқартқанда (5/8) шығады. Масштабсыз жолақтарды өлшемейміз.",
+      "figureDescription": "Екі жолақ a және b деп аталған. Оң жақтағы ортақ жақша 169 қосындысын білдіреді. Жолақтар масштабсыз, ұзындықтарын өлшеуге болмайды.",
+      "figureSha256": "cf96cc2239e6620b8ad2e62e2bd46c7702f064877468f103d50a1cfbe8b15c67",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "65",
+        "checks": {
+          "reducedRatio": [
+            5,
+            8
+          ],
+          "totalEqualUnits": 13,
+          "unit": 13,
+          "rawNumerator": 65,
+          "rawDenominator": 104,
+          "rawGCD": 13
+        }
+      }
+    },
+    {
+      "editionId": "visual-wave42-twelve-rainy-of-twenty-eight-days",
+      "modelId": "visual-wave42-calendar-reduced-rainy-day-share",
+      "grade": 5,
+      "topic": "frac",
+      "difficulty": "hard",
+      "params": {
+        "scene": "calendar",
+        "days": 28,
+        "rainy": [
+          2,
+          3,
+          6,
+          9,
+          11,
+          14,
+          15,
+          18,
+          20,
+          22,
+          25,
+          27
+        ]
+      },
+      "answer": "(3/7)",
+      "sourceRefs": [
+        {
+          "sourceId": "4f06c97ada6043b4",
+          "sourceFile": "problems/sources/zerek/courses/5-math-3-2-leveltest.json"
+        }
+      ],
+      "sourceOccurrenceId": "course:5-math-3-2-leveltest.json#2",
+      "sourceCanonicalSha256": "78202c10904a21fa690634c1ba9bcb0f70c2a6946b4ba942104bc0991405b382",
+      "sourceSkill": "Count colored dates over ALLshown days then reduce, not oneweek or sum of dates",
+      "adaptationChanges": [
+        "Барлық7бастапқы визуалды дағды жеке сақталды:бірдей бүтіннің ұсақ бөлінуі,беттерді санау/қысқарту,диаграммадағы жетіспейтін санның қысқарған бөлімі,аналогсағаттан ұзақтық,тәуліктің толықтауышы,мүшелер қосындысынан бастапқыалым,күнтізбедегі үлес.",
+        "Жолақ5/8→x/24,дәптер12/30,қарындаш80жалпы20/30бағана,сағат16:00→16:40,тәулік9/7сағат,қысқарғанқатынас5/8жәнеқосынды169,күнтізбе28күн/12жаңбыр болып жаңарды.",
+        "Native SVG 60сағатбелгісі мен дұрыс қозғалатын қысқатілді,5қадамды нақтыбағанашкаласын,24сағат/24бөлікжолақты,барлық28күнді жәнебірдейұзындықтағы8/24бөлінуін параметрден жасайды. Қысқартылмайтынформатты текмәнмен шатастырмайды. Source raster/traced path қолданылмайды."
+      ],
+      "editorialStatus": "draft",
+      "minimumPlan": "pro",
+      "figureTitle": "Тең бөлшектер",
+      "figureReview": {
+        "status": "draft",
+        "required": "Independent all7saved/new/fullsolutions/MCQreview;8/24samestandardlength,30page/12painted,bar20/30with5unitaxis,clock16:40minute240°hour140°,24hour9/7partcolors,169sumbracket,all28dates/12rainy; rawreductionformats and343pxlegibility"
+      },
+      "image": "/figures/synaq-editions/visual-wave42-twelve-rainy-of-twenty-eight-days.svg",
+      "verificationModule": "scripts/editorial/visual-wave42-models.mjs",
+      "options": [
+        "(3/7)",
+        "(4/7)",
+        "(12/28)",
+        "(3/4)"
+      ],
+      "statement": "Саяхат күнтізбесінде қонақта болған БАРЛЫҚ күндер көрсетілген. Күлгін күндерде жаңбыр жауды. Жаңбырлы күндер барлық көрсетілген күндердің қандай бөлігі? ҚЫСҚАРТЫЛМАЙТЫН бөлшекті таңдаңыз.",
+      "solution": "Күнтізбеде 4 қатар, әрқайсысында 7 күн: барлығы 28 күн. Жаңбырлы күндер 2, 3, 6, 9, 11, 14, 15, 18, 20, 22, 25, 27, саны 12. Бастапқы үлес (12/28). Екі мүшені 4 санына қысқартқанда (3/7) шығады. Бір аптаны ғана бөлімге алу немесе күн нөмірлерін қосу дұрыс емес.",
+      "figureDescription": "Күнтізбеде 1-ден 28-ге дейінгі күндер, әр қатарда 7 күн. Күлгін күндер 2, 3, 6, 9, 11, 14, 15, 18, 20, 22, 25, 27.",
+      "figureSha256": "271129c142163057f4497f8122949c408f638ce3d3216adbcbe9e1055a393302",
+      "independentVerification": {
+        "status": "computed_awaiting_external_review",
+        "answer": "(3/7)",
+        "checks": {
+          "allDays": 28,
+          "rainyDays": 12,
+          "rainyList": [
+            2,
+            3,
+            6,
+            9,
+            11,
+            14,
+            15,
+            18,
+            20,
+            22,
+            25,
+            27
+          ],
+          "gcd": 4,
+          "reduced": "(3/7)"
+        }
+      }
+    }
+  ]
+}

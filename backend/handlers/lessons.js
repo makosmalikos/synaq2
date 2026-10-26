@@ -52,10 +52,19 @@ async function activeMentors(db) {
   return snap.docs.map((doc) => ({ id: doc.id, data: doc.data() }));
 }
 
-async function takenStarts(db, mentorId) {
-  const snap = await db.collection('lessonSlots').where('mentorId', '==', mentorId).limit(1000).get();
+async function takenStarts(db, mentorId, now, periodEnd) {
+  // Old slot locks remain for history. Restrict the query before applying its
+  // cap, otherwise a busy mentor's past lessons can hide current reservations.
+  const snap = await db.collection('lessonSlots').where('mentorId', '==', mentorId)
+    .where('startAt', '>=', now + L.MIN_AHEAD_MS)
+    .where('startAt', '<', Math.min(periodEnd, now + L.MAX_AHEAD_MS + 1))
+    .orderBy('startAt').limit(1000).get();
   return new Set(snap.docs.map((d) => d.data().startAt));
 }
+
+const recentLessons = (db, ctx) => db.collection('lessons')
+  .where(ctx.role === 'child' ? 'childUid' : 'parentUid', '==', ctx.role === 'child' ? ctx.childUid : ctx.parentUid)
+  .orderBy('startAt', 'desc').limit(60).get();
 
 async function ownLesson(db, ctx, id) {
   if (!safeId(id)) throw fail('bad_request');
@@ -68,8 +77,7 @@ async function ownLesson(db, ctx, id) {
 const ACTIONS = {
   async overview(db, ctx, _body, now) {
     const info = planInfo(ctx.family, now);
-    const field = ctx.role === 'child' ? 'childUid' : 'parentUid';
-    const snap = await db.collection('lessons').where(field, '==', ctx.role === 'child' ? ctx.childUid : ctx.parentUid).limit(300).get();
+    const snap = await recentLessons(db, ctx);
     const all = snap.docs.map((d) => ({ id: d.id, l: d.data() })).sort((a, b) => b.l.startAt - a.l.startAt);
     const used = info.active ? (await creditRef(db, ctx.parentUid, info.periodEnd).get()).data()?.used || 0 : 0;
     // Список наставников нужен только семьям с активным тарифом: остальным не тратим чтения.
@@ -92,8 +100,7 @@ const ACTIONS = {
       items.push({ key: `plan_ending:${expiresAt}`, kind: 'plan_ending', days: Math.max(1, Math.ceil((expiresAt - now) / 86400000)), at: now });
     }
     if (!info.active) return { items };
-    const field = ctx.role === 'child' ? 'childUid' : 'parentUid';
-    const snap = await db.collection('lessons').where(field, '==', ctx.role === 'child' ? ctx.childUid : ctx.parentUid).limit(300).get();
+    const snap = await recentLessons(db, ctx);
     const lessons = snap.docs.map((d) => ({ id: d.id, l: d.data() }));
     const used = (await creditRef(db, ctx.parentUid, info.periodEnd).get()).data()?.used || 0;
     const left = Math.max(0, info.quota - used);
@@ -121,7 +128,7 @@ const ACTIONS = {
     if (!info.active || !safeId(body.mentorId)) throw fail('mentor_plan_required', 403);
     const m = (await db.collection('mentors').doc(body.mentorId).get());
     if (!m.exists || m.data().active === false) throw fail('not_found', 404);
-    const taken = await takenStarts(db, body.mentorId);
+    const taken = await takenStarts(db, body.mentorId, now, info.periodEnd);
     return { slots: L.slotStarts(m.data().slots, now, info.periodEnd).filter((s) => !taken.has(s)) };
   },
 

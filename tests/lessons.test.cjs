@@ -154,3 +154,31 @@ test('unclear list returns only this child’s previews, without answers or priv
   assert.equal(response.statusCode, 200);
   assert.deepEqual(response.body.tasks, [{ key: 'own', qid: 'mentor-preview', topic: 'Уравнения', preview: 'Найди x: x + 2 = 4.' }]);
 });
+
+test('large lesson histories retain the newest booking in both cabinets and notifications', async () => {
+  const w = world();
+  for (let i = 0; i < 350; i++) w.db.records.set(`lessons/old_${i}`, {
+    parentUid: 'p1', childUid: 'kid1', mentorId: 'm1', startAt: NOW - (i + 1) * 86400000,
+    endAt: NOW - i * 86400000, status: 'completed', rating: 5,
+  });
+  const booking = await w.call('kid', {action: 'book', mentorId: 'm1', startAt: WED, topic: 'Дроби'});
+  assert.equal(booking.statusCode, 200);
+  for (const token of ['kid', 'parent']) {
+    const view = (await w.call(token, {action:'overview'})).body;
+    assert.equal(view.lessons[0].id, booking.body.lesson.id);
+    assert.equal(view.lessons.length, 60);
+  }
+  w.setNow(WED - 5 * 60000);
+  for (const token of ['kid', 'parent']) {
+    const view = (await w.call(token, {action:'notifications'})).body;
+    assert.ok(view.items.some(item => item.kind === 'lesson_now'));
+  }
+});
+
+test('old slot locks cannot consume the cap before current occupied times', async () => {
+  const w = world();
+  for (let i = 0; i < 1005; i++) w.db.records.set(`lessonSlots/old_${i}`, {mentorId:'m1',startAt:NOW - (i+1)*3600000});
+  assert.equal((await w.call('kid', {action:'book',mentorId:'m1',startAt:WED,topic:'Дроби'})).statusCode,200);
+  const view = (await w.call('kid', {action:'slots',mentorId:'m1'})).body;
+  assert.ok(!view.slots.includes(WED)); assert.ok(view.slots.includes(WED2));
+});

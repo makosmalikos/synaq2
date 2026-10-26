@@ -1,0 +1,596 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_awaiting_independent_review",
+  "scope": "All14 individually read saved nonvisual grade6topic3.4 level1 sources. Closed author draft until independent full-content hash review.",
+  "summary": {
+    "editions": 14,
+    "sourceOccurrencesReferenced": 14,
+    "distinctModels": 14,
+    "independentlyReviewed": 0
+  },
+  "editions": [
+    {
+      "editionId": "grade6-identities-17a0bd5461f96acc",
+      "modelId": "grade6-identities-select-identical-expression-pair",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "offset": 8,
+        "factor": 3,
+        "inner": 4,
+        "repeats": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "17a0bd5461f96acc"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Қай жұптағы екі өрнек x-тің БАРЛЫҚ нақты мәндерінде тең?",
+      "options": [
+        "x - 8 және 8 - x",
+        "3(x - 4) және 3x - 12",
+        "x × x және 2x",
+        "x + x + x + x және x⁴"
+      ],
+      "answer": "3(x - 4) және 3x - 12",
+      "solution": "Үлестірімділік бойынша 3(x - 4) = 3x - 12, сондықтан бұл жұп барлық x үшін тең. Қалған жұптарға қарсы мысал жеткілікті: x = 0 болса, -8 және 8 тең емес. x = 3 болса, x × x = 9, ал 2x = 6. x = 2 болса, x + x + x + x = 8, ал x⁴ = 16. Бірнеше x-та тең келуі өрнектердің теңбе-теңдігін дәлелдемейді.",
+      "calculationVerification": {
+        "answer": "3(x - 4) және 3x - 12",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-identities-7cbf28198500ebdb",
+      "modelId": "grade6-identities-regroup-universal-missing-coefficient",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "first": 7,
+        "second": 9
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "7cbf28198500ebdb"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "(a × 7) × 9 = □ × a теңдігі кез келген a үшін орындалуы керек. □ неге тең? Жауапқа тек санды жазыңыз.",
+      "answer": "63",
+      "solution": "Терімділік қасиетімен (a × 7) × 9 = a × (7 × 9). Сандық көбейткіштер 7 × 9 = 63. Ауыстырымдылықпен a × 63 = 63 × a. Сондықтан □ = 63. Бұл a-ның бір мәніне тәуелді есеп емес, барлық a үшін түрлендіру.",
+      "calculationVerification": {
+        "answer": "63",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-identities-f12cad78f548a148",
+      "modelId": "grade6-identities-factor-common-numeric-multiplier",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "factor": 18,
+        "first": 36,
+        "second": 64
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "f12cad78f548a148"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Ортақ көбейткішті жақша сыртына шығарып есептеңіз: 18 × 36 + 18 × 64. Жауапқа тек санды жазыңыз.",
+      "answer": "1800",
+      "solution": "Екі қосылғышта да 18 көбейткіші бар: 18 × (36 + 64) = 18 × 100 = 1800. Жеке есептеп тексеру: 648 + 1152 = 1800. Бұл ab + ac = a(b + c) теңбе-теңдігінің кері бағыты.",
+      "calculationVerification": {
+        "answer": "1800",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-identities-c0ffa8efcebfbc8f",
+      "modelId": "grade6-identities-distributive-identity-missing-constant",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "factor": 8,
+        "constant": 6
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "c0ffa8efcebfbc8f"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "8(m + 6) = 8m + □ теңдігі барлық m үшін дұрыс. □ орнына қандай сан қажет? Жауапқа тек санды жазыңыз.",
+      "answer": "48",
+      "solution": "Көбейткіш жақшадағы екі мүшеге де әсер етеді: 8(m + 6) = 8m + 8 × 6 = 8m + 48. Демек, бос тұрақты мүше 48. 6 деп қалдыру екінші мүшені көбейтпеу болар еді.",
+      "calculationVerification": {
+        "answer": "48",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-identities-2ac71b4f1de24666",
+      "modelId": "grade6-identities-identical-difference-keeps-variable",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "first": 11,
+        "second": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "2ac71b4f1de24666"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "11a - 4a өрнегіне теңбе-тең өрнекті таңдаңыз.",
+      "options": [
+        "7",
+        "7a",
+        "15a",
+        "-7a"
+      ],
+      "answer": "7a",
+      "solution": "a ортақ көбейткішін шығарамыз: 11a - 4a = (11 - 4)a = 7a. Әріпті жоғалтқан 7 саны барлық a үшін тең болмайды; 15a — азайтудың орнына қосу, -7a — таңбаны ауыстыру қатесі.",
+      "calculationVerification": {
+        "answer": "7a",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-identities-5ec4d4bc457c44ac",
+      "modelId": "grade6-identities-zero-identity-counterexample",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "variable": "t",
+        "witness": 7
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "5ec4d4bc457c44ac"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Қай теңдік айнымалының барлық нақты мәндерінде орындалатын теңбе-теңдік ЕМЕС?",
+      "options": [
+        "t + 0 = t",
+        "t × 1 = t",
+        "t × 0 = t",
+        "t - t = 0"
+      ],
+      "answer": "t × 0 = t",
+      "solution": "Нөлді қосу, 1-ге көбейту және санды өзінен азайту — барлық мәндерде дұрыс. Ал t × 0 әрқашан 0 болады. t = 7 деген қарсы мысалда сол жақ 0, оң жақ 7, олар тең емес. t × 0 = t теңдігі тек t = 0 болғанда дұрыс; бұл оны теңбе-теңдік етпейді.",
+      "calculationVerification": {
+        "answer": "t × 0 = t",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-identities-0edd762839497236",
+      "modelId": "grade6-identities-one-root-is-not-identity",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "coefficient": 3,
+        "leftConstant": 2,
+        "rightConstant": 8,
+        "root": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "0edd762839497236"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "3x + 2 = x + 8 теңдігі x = 3 үшін дұрыс. Оны теңбе-теңдік деуге бола ма?",
+      "options": [
+        "Иә: x = 3 кезінде дұрыс",
+        "Иә: екі жақта да x бар",
+        "Жоқ: x = 0 кезінде 2 ≠ 8",
+        "Жоқ: x = 3 кезінде теңдік жалған"
+      ],
+      "answer": "Жоқ: x = 0 кезінде 2 ≠ 8",
+      "solution": "x = 3 қойсақ, екі жақ та 11: берілген мәнде теңдік дұрыс. Бірақ теңбе-теңдік барлық x үшін дұрыс болуы керек. x = 0 кезінде сол жақ 2, оң жақ 8; олар тең емес. Сондықтан теңбе-теңдік емес. Соңғы нұсқаның қорытындысы «жоқ» болғанымен, x = 3 туралы себебі жалған.",
+      "calculationVerification": {
+        "answer": "Жоқ: x = 0 кезінде 2 ≠ 8",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-identities-8a86ab0d18a6501a",
+      "modelId": "grade6-identities-name-addition-commutation",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "constant": 9,
+        "variable": "t"
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "8a86ab0d18a6501a"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "t + 9 = 9 + t теңбе-теңдігінде қандай қасиет көрсетілген?",
+      "options": [
+        "Қосудың ауыстырымдылық қасиеті",
+        "Қосудың терімділік қасиеті",
+        "Көбейтудің үлестірімділік қасиеті",
+        "Көбейтудің ауыстырымдылық қасиеті"
+      ],
+      "answer": "Қосудың ауыстырымдылық қасиеті",
+      "solution": "Тек қосу амалы қолданылған. Қосылғыштар өзгермеген, олардың орындары ғана ауысқан: t және 9. Бұл — қосудың ауыстырымдылық қасиеті, a + b = b + a. Терімділік үш қосылғышты топтауды сипаттайды: (a + b) + c = a + (b + c). Мұнда көбейту немесе үш мүшені қайта топтау жоқ.",
+      "calculationVerification": {
+        "answer": "Қосудың ауыстырымдылық қасиеті",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-identities-6df7844fcd58f9b1",
+      "modelId": "grade6-identities-cancel-variable-to-universal-value",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "first": 11,
+        "second": 17
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "6df7844fcd58f9b1"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "(x + 11) + (17 - x) өрнегі барлық нақты x үшін бірдей санға тең. Сол сан қандай? Жауапқа тек санды жазыңыз.",
+      "answer": "28",
+      "solution": "Плюс алдындағы жақшаларды ашамыз: x + 11 + 17 - x. x - x = 0, тұрақты сандар 11 + 17 = 28. Сондықтан бүкіл өрнек 28, оның мәні x-ке тәуелсіз. Бұл қорытынды бір x-та тексеруден емес, x коэффициентінің 1 - 1 = 0 болуынан шығады.",
+      "calculationVerification": {
+        "answer": "28",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-identities-7642c86a19dbd839",
+      "modelId": "grade6-identities-distributive-equivalent-expression",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "factor": 5,
+        "coefficient": 3,
+        "constant": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "7642c86a19dbd839"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "5(3b - 4) өрнегіне теңбе-тең түрлендіруді таңдаңыз.",
+      "options": [
+        "15b - 4",
+        "15b + 20",
+        "8b - 20",
+        "15b - 20"
+      ],
+      "answer": "15b - 20",
+      "solution": "Екі мүшені де 5 санына көбейтеміз: 5 × 3b = 15b; 5 × (-4) = -20. Нәтиже 15b - 20. 4 саны көбейтілмей қалмауы керек, ал ішкі минус плюсқа айналмайды. 8b нұсқасы коэффициенттерді көбейтудің орнына қосудан шығады.",
+      "calculationVerification": {
+        "answer": "15b - 20",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-identities-83adc992fd750c96",
+      "modelId": "grade6-identities-two-negative-factors-universal-coefficient",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "first": 6,
+        "second": 3
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "83adc992fd750c96"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "(-6) × y × (-3) = □ × y теңбе-теңдігіндегі □ мәнін табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "18",
+      "solution": "Көбейткіштерді қайта топтаймыз: ((-6) × (-3)) × y. Екі теріс санның көбейтіндісі +18. Сондықтан нәтиже 18y, бос сан 18. y-тің таңбасы қандай болса да, оның алдындағы коэффициент өзгермейді.",
+      "calculationVerification": {
+        "answer": "18",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-identities-e4f0d02663b7210a",
+      "modelId": "grade6-identities-select-universal-distributive-equation",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "factor": 7,
+        "constant": 3,
+        "otherCoefficient": 4
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "e4f0d02663b7210a"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "Айнымалының барлық нақты мәндеріне жарайтын теңбе-теңдікті таңдаңыз.",
+      "options": [
+        "7(y + 3) = 7y + 21",
+        "7(y + 3) = 7y + 3",
+        "4y - y = 4",
+        "y + y = y²"
+      ],
+      "answer": "7(y + 3) = 7y + 21",
+      "solution": "Бірінші нұсқада үлестірімділік дұрыс қолданылған: 7(y + 3) = 7y + 21. Екіншісіне y = 0 қойсақ, 21 ≠ 3. Үшіншісіне y = 1 қойсақ, 3 ≠ 4. Соңғысына y = 1 қойсақ, 2 ≠ 1. Осы қарсы мысалдар қалғандарының теңбе-теңдік еместігін көрсетеді.",
+      "calculationVerification": {
+        "answer": "7(y + 3) = 7y + 21",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-identities-c5a716c5ac8b1282",
+      "modelId": "grade6-identities-simplify-difference-before-evaluation",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "first": 12,
+        "second": 5,
+        "value": 16
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "c5a716c5ac8b1282"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "x = 16 болғанда 12x - 5x мәнін тиімді табыңыз: алдымен өрнекті ықшамдаңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "112",
+      "solution": "12x - 5x = (12 - 5)x = 7x. Енді 7 × 16 = 112. Жеке көбейтіп тексеру: 192 - 80 = 112. Алдын ала ықшамдау мәнді екі көбейтіндіге жеке қоймай, бір рет қоюға мүмкіндік береді.",
+      "calculationVerification": {
+        "answer": "112",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    },
+    {
+      "editionId": "grade6-identities-79904129ebf23ea7",
+      "modelId": "grade6-identities-efficient-reorder-to-power-of-ten",
+      "grade": 6,
+      "topic": "eq",
+      "difficulty": "basic",
+      "params": {
+        "first": 125,
+        "second": 8,
+        "value": 23
+      },
+      "sourceRefs": [
+        {
+          "sourceFile": "problems/sources/zerek/courses/6-math-3-4-level1.json",
+          "sourceId": "79904129ebf23ea7"
+        }
+      ],
+      "minimumPlan": "pro",
+      "editorialStatus": "draft",
+      "reviewStatus": "awaiting_independent_review",
+      "relationToSource": "Individual saved grade6topic3.4 nonvisual adaptation; fixed mathematical facts and numeric/context variants are not additional distinct meanings.",
+      "adaptationChanges": [
+        "Барлық14сақталған визуалсыз шарт, толық шешім және MCQ жеке оқылды. Барлық мәнге теңдік, бір мәндегі дұрыстық, қарсы мысал және нақты сұралған коэффициент/тұрақты/қасиет/мән сақталды.",
+        "Сандар мен қазақша мәтін өзгертілді. Толық коэффициенттер, үлестірімділік, тұрақты нәтиже және тиімді қайта топтау бөлек тексерілді.",
+        "Native бөлшектер; скан/TeX/жаңа жинау жоқ. Нұсқалар жаңа мағына саналмайды; сыртқы толық hash review дейін draft жабық."
+      ],
+      "statement": "m = 23 кезінде 125 × m × 8 мәнін көбейткіштерді тиімді топтап табыңыз. Жауапқа тек санды жазыңыз.",
+      "answer": "23000",
+      "solution": "Ауыстырымдылық пен терімділікті қолданамыз: 125 × m × 8 = (125 × 8) × m = 1000m. Енді 1000 × 23 = 23000. Жеке тексеру: 125 × 23 = 2875, оны 8 санына көбейтсек, 23000 шығады.",
+      "calculationVerification": {
+        "answer": "23000",
+        "checks": [
+          "All14saved nonvisual3.4 fullconditions/solutions/everyMCQ individually read",
+          "Universal identities proven by full coefficient transformation; counterexample disproves false options and one-root truth is not confused with identity",
+          "Requested constant/coefficient/property/value and efficient common-factor grouping preserved; actual wrong alternatives recomputed",
+          "Native powers and expressions, no scans; draft until separate independent fullcontent hash review; variants not additional distinct meanings"
+        ]
+      }
+    }
+  ]
+}
