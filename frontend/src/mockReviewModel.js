@@ -1,5 +1,6 @@
 import { mockDisplayScore } from './analytics.js';
 import { isGradable } from './grading.js';
+import { rfmshReviewScore, rfmshPoints } from './rfmshScoring.js';
 
 const SUBJECTS = {
   math: ['Математика', 'Математика'], logic: ['Логика', 'Логика'],
@@ -24,6 +25,11 @@ export function groupMockQuestions(questions) {
   return [...groups.values()];
 }
 
+export function mockNavigationGroups(questions) {
+  if (!questions.length || questions.some(question=>rfmshPoints(question)===null)) return groupMockQuestions(questions);
+  return ['A','B','C'].map(examLevel=>({subject:'math',examLevel,questions:questions.map((question,index)=>({question,index})).filter(item=>item.question.examLevel===examLevel)})).filter(group=>group.questions.length);
+}
+
 export const mockMistakes = review => review.filter(question => !question.unavailable
   && question.correct !== true && question.statement && isGradable(question));
 
@@ -33,7 +39,7 @@ export function mockReviewSummary(review, school) {
   const unanswered = review.filter(question => mockReviewStatus(question) === 'unanswered').length;
   const unavailable = review.filter(question => question.unavailable).length;
   return { correct, wrong, unanswered, unavailable, total: review.length,
-    ...mockDisplayScore({ school, score: correct, wrong, gradable: review.length }) };
+    ...(school === 'РФМШ' && rfmshReviewScore(review) || mockDisplayScore({ school, score: correct, wrong, gradable: review.length })) };
 }
 
 // Review snapshots, not the active exam, supply answer keys after submission.

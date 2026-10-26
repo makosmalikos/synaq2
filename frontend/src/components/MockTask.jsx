@@ -5,6 +5,7 @@ import MathText from './MathText.jsx';
 import QuestionFigure from './QuestionFigure.jsx';
 import FigureOption, { hasFigureOptions, mainFigureSrc } from './FigureOption.jsx';
 import Explain from './Explain.jsx';
+import { rfmshPoints } from '../rfmshScoring.js';
 import { Kolhar } from './Training.jsx';
 
 export default function MockTask({ question, lang, value = '', onPick, disabled = false, reveal = false, correct = false }) {
@@ -34,7 +35,7 @@ export default function MockTask({ question, lang, value = '', onPick, disabled 
           return reveal ? <div key={index} className={`opt${isAnswer ? ' ok' : chosen ? ' bad' : ''}`}>{content}</div>
             : <button type="button" key={index} disabled={disabled} aria-pressed={chosen} className={`opt${chosen ? ' sel' : ''}`} onClick={() => onPick(option)}>{content}</button>;
         })}
-      </div> : !reveal && <input aria-label={ru ? 'Твой ответ' : 'Сенің жауабың'} maxLength={2000} disabled={disabled} value={value} onChange={event => onPick(event.target.value)} placeholder={ru ? 'Введи ответ' : 'Жауабыңды енгіз'} />}
+      </div> : !reveal && <input inputMode={rfmshPoints(q) !== null ? 'numeric' : undefined} aria-label={rfmshPoints(q) !== null ? (ru ? 'Ответ — целое число' : 'Жауап — бүтін сан') : (ru ? 'Твой ответ' : 'Сенің жауабың')} maxLength={2000} disabled={disabled} value={value} onChange={event => onPick(event.target.value)} placeholder={rfmshPoints(q) !== null ? (ru ? 'Введите целое число' : 'Бүтін санды енгіз') : (ru ? 'Введи ответ' : 'Жауабыңды енгіз')} />}
     </>}
     {reveal && <>
       {(!q.options || q.subject === 'kolzar') && <div className="mock-answer-comparison"><div><span>{ru ? 'Твой ответ' : 'Сенің жауабың'}</span><strong><MathText text={String(value).trim() || '—'} /></strong></div><div className="is-correct"><span>{ru ? 'Правильный ответ' : 'Дұрыс жауап'}</span><strong><FigureOption question={q} value={q.answer} /></strong></div></div>}

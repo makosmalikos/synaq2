@@ -1,4 +1,5 @@
 const { planRank, validPlan } = require('./plans');
+const { isFreePreview } = require('./free-preview');
 
 const ids = (question) => [question?.id, question?.qid, question?.originalId].filter((id) => typeof id === 'string');
 const originalZerek = (question) => ids(question).some((id) => id.startsWith('zerek_'));
@@ -13,7 +14,7 @@ function isVerifiedAdaptation(question) {
 // stay closed on every plan until separately rewritten and reviewed.
 function questionMinimumPlan(question) {
   if (!question || typeof question !== 'object' || originalZerek(question)) return null;
-  if (adaptedNamespace(question)) return isVerifiedAdaptation(question) ? question.minimumPlan : null;
+  if (adaptedNamespace(question)) return isVerifiedAdaptation(question) ? (isFreePreview(question) ? 'free' : question.minimumPlan) : null;
   if (question.sourceProvider === 'zerek') return null;
   if (question.minimumPlan == null) return 'free';
   return validPlan(question.minimumPlan);

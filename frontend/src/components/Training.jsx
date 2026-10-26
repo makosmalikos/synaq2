@@ -483,7 +483,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
 
   // ── список тем ──
   if (!topic) return <TrainingCatalog topics={topics} solvedIn={solvedIn} pro={pro} freeTopicId={b0}
-    lang={lang} onOpen={openTopic} onMixed={openMixed} onUpgrade={onUpgrade} notice={saveNotice} />;
+    lang={lang} onPreview={() => openTopic({ id: 'free-preview', name: 'Тегін есептер жинағы', nameRu: 'Попробуй новые задачи' })} onOpen={openTopic} onMixed={openMixed} onUpgrade={onUpgrade} notice={saveNotice} />;
 
   // ── тегін тариф лимиті ──
   if (topic && (sessionState === 'limited' || sessionState === 'locked' || showTrainingLimit(pro, done, checked, FREE_DAY))) return (

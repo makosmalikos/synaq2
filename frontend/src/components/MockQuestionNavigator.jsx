@@ -1,6 +1,7 @@
 import React from 'react';
-import { groupMockQuestions, mockSubjectLabel } from '../mockReviewModel.js';
+import { mockNavigationGroups, mockSubjectLabel } from '../mockReviewModel.js';
 import './MockExperience.css';
+import { rfmshLevelLabel } from '../rfmshScoring.js';
 
 export default function MockQuestionNavigator({ questions, selectedIndex, onSelect, statusFor, lang, review = false, disabled = false, flags = {} }) {
   const ru = lang === 'ru';
@@ -16,8 +17,8 @@ export default function MockQuestionNavigator({ questions, selectedIndex, onSele
       {(review ? ['correct', 'wrong', 'unanswered'] : ['answered', 'unanswered']).map(status => <span key={status}><i className={`is-${status}`} />{labels[status]}</span>)}
     </div>
     <div className="mock-navigator-groups">
-      {groupMockQuestions(questions).map(group => <section key={group.subject}>
-        <div className="mock-group-heading"><h3>{mockSubjectLabel(group.subject, lang)}</h3><span>{group.questions.filter(({ question }) => ['answered', 'correct'].includes(statusFor(question))).length}/{group.questions.length}</span></div>
+      {mockNavigationGroups(questions).map(group => <section key={group.examLevel || group.subject}>
+        <div className="mock-group-heading"><h3>{group.examLevel ? rfmshLevelLabel(group.questions[0].question,lang) : mockSubjectLabel(group.subject, lang)}</h3><span>{group.questions.filter(({ question }) => ['answered', 'correct'].includes(statusFor(question))).length}/{group.questions.length}</span></div>
         <div className="mock-number-grid">{group.questions.map(({ question, index }) => {
           const status = statusFor(question);
           const mark = { answered: '✓', correct: '✓', wrong: '×', unanswered: '−', unavailable: '?' }[status];

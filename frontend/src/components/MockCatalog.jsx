@@ -14,19 +14,27 @@ function CatalogIcon({ kind = 'arrow' }) {
   return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">{kind === 'clock' && <circle cx="12" cy="12" r="9" />}<path d={paths[kind]} /></svg>;
 }
 
-export default function MockCatalog({ schools, weekly, lang, starting, paying, onStart, onBuy, onRefresh, notice }) {
+export default function MockCatalog({ schools, previews = [], onPreview, weekly, lang, starting, paying, onStart, onBuy, onRefresh, notice }) {
   const ru = lang === 'ru';
   const date = /^\d{4}-\d{2}-\d{2}$/.test(weekly.weekKey || '') ? new Date(`${weekly.weekKey}T12:00:00`) : null;
   const week = date && !Number.isNaN(date.getTime()) ? (ru
     ? new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long' }).format(date)
     : `${date.getDate()} ${kazakhMonths[date.getMonth()]}`) : '';
   const scoring = {
-    'РФМШ': ru ? 'Результат — число верных ответов. Официальный балл зависит от уровней A/B/C.' : 'Нәтиже — дұрыс жауап саны. Ресми ұпай A/B/C деңгейлеріне тәуелді.',
-    'НИШ': ru ? 'Результат — число верных ответов. Официальный результат НИШ рассчитывается отдельно.' : 'Нәтиже — дұрыс жауап саны. НЗМ ресми нәтижесі бөлек есептеледі.',
+    'РФМШ': ru ? 'Поступление в 7 класс. По 10 заданий A/B/C: 3, 5 и 7 баллов. Максимум — 150. Ответы — целые числа.' : '7-сыныпқа түсу. A/B/C деңгейлерінен 10 тапсырмадан: 3, 5 және 7 ұпай. Ең көбі — 150. Жауаптар — бүтін сандар.',
+    'НИШ': ru ? 'День 1: математика — 60 мин, количественные характеристики — 30, естествознание — 30. День 2: языки — 120 мин. Адаптированный тренировочный вариант; шкала Cito не имитируется.' : '1-күн: математика — 60 мин, сандық сипаттамалар — 30, жаратылыстану — 30. 2-күн: тілдер — 120 мин. Бейімделген жаттығу нұсқасы; Cito шкаласы қайталанбайды.',
     'БИЛ': ru ? '+4 за верный ответ, −1 за неверный. За пропуск — 0 баллов.' : 'Дұрыс жауапқа +4, қате жауапқа −1. Жауапсыз сұраққа — 0 ұпай.',
   };
   return <main className="mock-experience mock-catalog">
     <div className="mock-catalog-notices">{notice}</div>
+    {previews.length > 0 && <section className="mock-free-previews" aria-labelledby="mock-free-title">
+      <header><span>{ru ? 'БЕСПЛАТНО' : 'ТЕГІН'}</span><h2 id="mock-free-title">{ru ? 'Начни с ознакомительного пробника' : 'Танысу сынағынан баста'}</h2><p>{ru ? 'Два постоянных варианта с результатом и разбором ошибок. Подписка и оплата не нужны.' : 'Нәтижесі мен қателерді талдауы бар екі тұрақты нұсқа. Жазылым мен төлем қажет емес.'}</p></header>
+      <div className="mock-free-grid">{previews.map(s => <article key={s.code}>
+        <img src={`/schools/${schoolImages[s.code]}.png`} width="64" height="64" alt="" decoding="async" />
+        <div><h3>{s.code}</h3>{s.code === 'РФМШ' && <small>{ru ? '7 класс' : '7-сынып'} · A/B/C · 150 {ru ? 'баллов' : 'ұпай'}</small>}<p>{s.count} {ru ? 'заданий' : 'тапсырма'} · {s.timeLimitMin} мин{s.shortened ? (ru ? ' · сокращённый' : ' · қысқартылған') : ''}</p></div>
+        <button type="button" className="mock-catalog-primary" disabled={!s.ready || starting} onClick={() => onPreview(s.code)}>{starting ? (ru ? 'Подготавливаем…' : 'Дайындалуда…') : (ru ? 'Пройти бесплатно' : 'Тегін өту')}<CatalogIcon /></button>
+      </article>)}</div>
+    </section>}
     <section className="mock-catalog-hero" aria-labelledby="mock-catalog-title">
       <div className="mock-catalog-hero-copy">
         <span className="mock-catalog-tag">{ru ? 'ПРОБНИК НЕДЕЛИ' : 'АПТАЛЫҚ СЫНАҚ'}{week && ` · ${week}`}</span>
@@ -37,7 +45,7 @@ export default function MockCatalog({ schools, weekly, lang, starting, paying, o
       <img src="/mascot/synaq-owl-study.webp" width="640" height="640" alt="" decoding="async" />
     </section>
     {!weekly.access && <div className="mock-catalog-payment"><p>{ru ? 'Одна оплата — три варианта на текущую неделю. В Standard и Pro доступ уже включён.' : 'Бір төлем — осы аптадағы үш нұсқа. Standard және Pro жазылымында қолжетімділік бар.'}</p><button type="button" onClick={onRefresh}>{ru ? 'Уже оплатили? Проверить доступ' : 'Төледіңіз бе? Қолжетімділікті тексеру'}</button></div>}
-    <header className="mock-catalog-heading"><div><h2>{ru ? 'Выбери свою школу' : 'Өз мектебіңді таңда'}</h2><p>{ru ? 'Новые вопросы — каждый понедельник.' : 'Жаңа сұрақтар — әр дүйсенбіде.'}</p></div><span>БИЛ · НИШ · РФМШ</span></header>
+    <header className="mock-catalog-heading"><div><h2>{ru ? 'Выбери свою школу' : 'Өз мектебіңді таңда'}</h2><p>{ru ? 'Недельные варианты для подготовки к выбранной школе.' : 'Таңдаған мектебіңе дайындалуға арналған апталық нұсқалар.'}</p></div><span>БИЛ · НИШ · РФМШ</span></header>
     <div className="mock-catalog-grid">
       {schools.map(s => <article className="mock-catalog-school" key={s.code}>
         <div className="mock-catalog-school-top"><span className="mock-catalog-school-logo">{schoolImages[s.code] && <img src={`/schools/${schoolImages[s.code]}.png`} width="80" height="80" alt="" />}</span><span className="mock-catalog-school-kind">{ru ? 'Пробный тест' : 'Сынақ тесті'}</span></div>

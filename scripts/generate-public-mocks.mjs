@@ -3,6 +3,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 import { POOL } from '../frontend/src/bank.js';
+const { examChoice, examEligible, NIS_FORMAT, BIL_FORMAT } = createRequire(import.meta.url)('../backend/lib/school-exam-format');
+const { examQuestion } = createRequire(import.meta.url)('../backend/lib/rfmsh-format');
+const previewIds = createRequire(import.meta.url)('../backend/data/freePreviewMocks.json');
 const { publicQuestionAllowed } = createRequire(import.meta.url)('../backend/lib/question-access');
 
 const root = fileURLToPath(new URL('../frontend/public/', import.meta.url));
@@ -17,11 +20,7 @@ const archive = (numbers) => numbers.map((number) => `bil_archive_m_${String(num
 const specs = {
   'РФМШ': {
     minutes: 120,
-    subjects: [[null, 1, [
-      ...sequence('synaq_fit_rf_', 1, 8),
-      ...sequence('synaq_fit2_rf_', 1, 12),
-      ...[2, 3, 4, 6, 7, 9, 10, 12, 14, 17].map((number) => `v1_${number}`),
-    ]]],
+    subjects: [[null, 1, previewIds['РФМШ']]],
   },
   'НИШ': {
     minutes: 240,
@@ -41,29 +40,17 @@ const specs = {
         ...[1, 2, 4, 5, 6, 7, 8, 9, 13, 16, 19, 20, 21, 22, 23, 24].map((number) => `kzx${number}`),
       ]],
       ['science', 1, null, 20],
-      ['rus', 2, null, 20],
+      ['rus', 2, Array.from({ length: 20 }, (_, index) => `nis_official_language_2024_rus_${String(index + 1).padStart(2, '0')}`)],
       ['kaz', 2, Array.from({ length: 20 }, (_, index) => `nis_official_language_2024_kaz_${index + 21}`)],
-      ['eng', 2, null, 20],
+      ['eng', 2, Array.from({ length: 20 }, (_, index) => `nis_official_language_2024_eng_${index + 41}`)],
     ],
   },
   'БИЛ': {
     minutes: 110,
-    subjects: [
-      ['math', 1, [
-        ...sequence('synaq_fit_bil_', 1, 4),
-        ...sequence('synaq_fit2_bil_', 1, 4),
-        ...archive([1, 2, 96, 99, 100]),
-        ...sequence('bil_t1_', 1, 23).filter((id) => !['bil_t1_09', 'bil_t1_22'].includes(id)),
-        ...[1, 3, 6, 11, 14, 19].map((number) => `bil_t2_${String(number).padStart(2, '0')}`),
-      ]],
-      ['logic', 1, [
-        ...sequence('synaq_fit_bil_', 5, 8),
-        ...sequence('synaq_fit2_bil_', 5, 8),
-        'bil_logic_synaq_10',
-        'bil_logic_synaq_18',
-      ]],
-      ['reading', 1, null, 10],
-    ],
+    // The authenticated preview and anonymous player share one reviewed list.
+    subjects: ['math', 'logic', 'reading'].map(subject => [
+      subject, 1, previewIds['БИЛ'].filter(id => byId.get(id)?.subject === subject),
+    ]),
   },
 };
 
@@ -80,6 +67,11 @@ const comparisonOptions = [
 ];
 
 function normalize(question, school, subject, section) {
+  if (school !== 'РФМШ') {
+    const normalized = examChoice(question);
+    if (!normalized) throw new Error(`Invalid exam choices: ${question.id}`);
+    question = normalized;
+  }
   let options = null;
   let answer = String(question.answer);
   if (school === 'РФМШ') {
@@ -121,6 +113,7 @@ function normalize(question, school, subject, section) {
     options,
     answer,
     image: question.image || null,
+    ...(school === 'РФМШ' ? (({examLevel,examPoints,examFormat})=>({examLevel,examPoints,examFormat}))(examQuestion(question)) : {}),
   };
 }
 
@@ -130,7 +123,7 @@ for (const [school, spec] of Object.entries(specs)) {
   const seen = new Set();
   for (const [subject, section, selectedIds, fallbackCount] of spec.subjects) {
     const ids = selectedIds || POOL.filter((question) => valid(question)
-      && question.school === school && question.subject === subject
+      && question.school === school && question.subject === subject && examEligible(question,school,subject)
       && Array.isArray(question.options) && question.options.length >= 4)
       .slice(0, fallbackCount).map((question) => question.id);
     if (ids.length !== (fallbackCount || (subject === 'math' ? 40 : subject === 'kolzar' ? 60 : subject === 'logic' || subject === 'reading' ? 10 : school === 'РФМШ' ? 30 : 20))) {
@@ -146,7 +139,7 @@ for (const [school, spec] of Object.entries(specs)) {
       questions.push(normalize(question, school, subject, section));
     }
   }
-  output[school] = { minutes: spec.minutes, questions };
+  output[school] = { minutes: spec.minutes, ...(school !== 'РФМШ' ? {examFormat:school === 'НИШ' ? NIS_FORMAT : BIL_FORMAT} : {}), questions };
 }
 
 const destination = new URL('../frontend/src/publicMockData.generated.js', import.meta.url);

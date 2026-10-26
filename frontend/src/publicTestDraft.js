@@ -1,3 +1,4 @@
+import { validNisState } from '../../shared/nis-exam.mjs';
 const VERSION = 1;
 const MAX_AGE = 7 * 86400000;
 const key = (kind) => `synaq_public_${kind}_draft`;
@@ -18,6 +19,7 @@ export function readPublicTestDraft(kind, getQuestions, storage, now = Date.now(
       || !Number.isInteger(value.grade) || value.grade < 3 || value.grade > 6
       || !['РФМШ', 'НИШ', 'БИЛ', ...(kind === 'quick' ? ['general'] : [])].includes(value.target)
       || (kind === 'mock' && (value.grade !== 6 || !Number.isFinite(value.deadline) || value.deadline <= 0))) return null;
+    if (value.target === 'НИШ' && value.nis != null && (!validNisState(value.nis.nis) || !value.nis.answers || typeof value.nis.answers !== 'object' || Array.isArray(value.nis.answers) || !Number.isInteger(value.nis.index) || value.nis.index < 0 || value.nis.index > 179 || !Number.isSafeInteger(value.nis.revision))) return null;
     const questions = getQuestions(value);
     if (!questions?.length || value.revision !== questionRevision(questions)
       || !Number.isInteger(value.index) || value.index < 0 || value.index >= questions.length

@@ -1,3 +1,4 @@
+const { isFreePreview } = require('../backend/lib/free-preview');
 const { randomSample } = require('../backend/lib/random-sample');
 const { getAdmin } = require('../backend/lib/firebase-admin');
 const { findTrainingQuestion } = require('../backend/lib/training-question');
@@ -24,8 +25,11 @@ function content(db) {
       const [{ POOL, EXTRA_TOPICS }, { topics }, { addQuestionsToTopics }] = await Promise.all([
         bankContent(), import('../frontend/src/data.js'), import('../frontend/src/topicSummary.js'),
       ]);
-      return addQuestionsToTopics([...topics, ...EXTRA_TOPICS], POOL.filter((question) => trainingGradeAllowed(question, gradeCeiling) && questionAccessAllowed(question, plan)))
-        .filter((topic) => topic.count > 0);
+      const eligible = POOL.filter(question => trainingGradeAllowed(question, gradeCeiling) && questionAccessAllowed(question, plan));
+      const catalog = addQuestionsToTopics([...topics, ...EXTRA_TOPICS], eligible).filter(topic => topic.count > 0);
+      const previewCount = eligible.filter(isFreePreview).length;
+      if (previewCount) catalog.push({ id: 'free-preview', name: 'Тегін есептер жинағы', nameRu: 'Попробуй новые задачи', block: 'math', count: previewCount, gradableCount: previewCount });
+      return catalog;
     },
     async getTrainingQuestions({ topicId, mixed, excludeIds, limit, gradeCeiling, plan = 'free' }) {
       const { POOL } = await bankContent();
@@ -34,7 +38,7 @@ function content(db) {
         && !['', '-', '—'].includes(String(question.answer).trim()) && !exclude.has(question.id)
         && trainingGradeAllowed(question, gradeCeiling)
         && questionAccessAllowed(question, plan)
-        && (mixed ? ['eq', 'num', 'work', 'ratio', 'geo', 'frac', 'pct', 'sys'].includes(question.topic)
+        && (topicId === 'free-preview' && !mixed ? isFreePreview(question) : mixed ? ['eq', 'num', 'work', 'ratio', 'geo', 'frac', 'pct', 'sys'].includes(question.topic)
           : question.topic === topicId));
       const shuffled = randomSample(candidates, limit);
       return shuffled.map(({ answer, solution, note, ...question }) => question);

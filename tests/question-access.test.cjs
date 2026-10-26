@@ -55,15 +55,21 @@ test('active server lists and topic counts apply verified access before limit, w
 });
 
 test('public mock selection, weekly selection and restoration reject restricted content independently of practiceOnly', async () => {
-  const pool = [legacy, ...originals, adapted], filename = path.resolve(__dirname, '../backend/lib/mock-bank.js');
+  const {bilReadingQuestions} = await import('../frontend/src/bilReadingQuestions.js');
+  const available = [
+    ...Array.from({length:40},(_,i)=>({...legacy,id:`exam-math-${i}`,subject:'math',options:['4','5','6','7']})),
+    ...Array.from({length:10},(_,i)=>({...legacy,id:`exam-logic-${i}`,subject:'logic',options:['4','5','6','7']})),
+    ...bilReadingQuestions,
+  ];
+  const pool = [...available, ...originals, adapted], filename = path.resolve(__dirname, '../backend/lib/mock-bank.js');
   const realRequire = createRequire(filename);
   const context = { module: { exports: {} }, require: id => id === './published-bank' ? { loadPublishedBank: async () => pool } : realRequire(id) };
   vm.runInNewContext(fs.readFileSync(filename, 'utf8'), context, { filename });
   const bank = context.module.exports;
   const catalog = await bank.mockCatalog({});
-  assert.equal(catalog.find(s => s.code === 'БИЛ').count, 1);
+  assert.equal(catalog.find(s => s.code === 'БИЛ').count, 60);
   for (const variant of [await bank.createMock({}, 'БИЛ'), await bank.createWeeklyMock({}, 'БИЛ', '2026-10-19')]) {
-    assert.deepEqual(Array.from(variant.questions, q => q.id), [legacy.id]);
+    assert.deepEqual(new Set(Array.from(variant.questions, q => q.id)), new Set(available.map(q=>q.id)));
     assert.equal(bank.publicMock(variant).questions[0].answer, undefined);
   }
   for (const q of [...originals, adapted]) {

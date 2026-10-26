@@ -109,7 +109,7 @@ test('actual submit and resume handlers preserve a completed review through refr
     mockResume: async () => ({ completed: true, result }), useEffect: effect => effect(),
   };
   for (const name of ['School', 'Test', 'Meta', 'Answers', 'Flags', 'I', 'Pause', 'Left', 'HideTimer', 'IsDiagnosticRun', 'Result',
-    'RecoveryAvailable', 'SaveState', 'SessionReady', 'RecoveryError', 'StartError', 'Starting']) context[`set${name}`] = value => { state[name] = value; };
+    'RecoveryAvailable', 'SaveState', 'ConfirmFinish', 'SessionReady', 'RecoveryError', 'StartError', 'Starting']) context[`set${name}`] = value => { state[name] = value; };
   vm.createContext(context);
   const handlers = mockSource.slice(mockSource.indexOf('  function applyRun('), mockSource.indexOf('  useEffect(() => {\n    let alive = true;'))
     + mockSource.slice(mockSource.indexOf('  async function submit()'), mockSource.indexOf('  function resumeExam()'));

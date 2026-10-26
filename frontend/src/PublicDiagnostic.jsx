@@ -1,14 +1,18 @@
+import { startNis } from '../../shared/nis-exam.mjs';
 import usePublicTestDraft from './usePublicTestDraft.js';
 import './platform-fonts.css';
 import QuestionFigure from './components/QuestionFigure.jsx';
 import FigureOption, { hasFigureOptions, mainFigureSrc } from './components/FigureOption.jsx';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState, lazy, Suspense } from 'react';
 import Brand from './Brand.jsx';
 import { LangSwitch, useLang } from './i18n.jsx';
 import { topicName } from './diagnosticData.js';
 import { PUBLIC_MOCKS } from './publicMockData.generated.js';
 import { createPublicDiagnosticResult, savePublicDiagnosticResult } from './diagnosticPlan.js';
+import { rfmshLevelLabel } from './rfmshScoring.js';
 import { scorePublicMock } from './publicMockScoring.js';
+
+const PublicNisExam = lazy(() => import('./components/PublicNisExam.jsx'));
 
 const copy = {
   ru: {
@@ -59,6 +63,7 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
   const { lang } = useLang();
   const c = copy[lang] || copy.kk;
   const [screen, setScreen] = useState('setup');
+  const [nis, setNis] = useState(null);
   const [target, setTarget] = useState('РФМШ');
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -68,20 +73,20 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
   const mock = PUBLIC_MOCKS[target];
   const questions = mock.questions;
   const current = questions[index];
-  const { resumeDraft, durable } = usePublicTestDraft('mock', ({ target }) => PUBLIC_MOCKS[target]?.questions, screen, { grade, target, index, answers, deadline }, questions);
+  const { resumeDraft, durable } = usePublicTestDraft('mock', ({ target }) => PUBLIC_MOCKS[target]?.questions, screen, { grade, target, index, answers, deadline, nis }, questions);
   const resume = () => {
     if (!resumeDraft) return;
     setDeadline(resumeDraft.deadline); setClock(Date.now()); setTarget(resumeDraft.target); setIndex(resumeDraft.index);
-    setAnswers(resumeDraft.answers); setScreen('test'); window.scrollTo(0, 0);
+    setAnswers(resumeDraft.answers); setNis(resumeDraft.nis || null); setScreen('test'); window.scrollTo(0, 0);
   };
 
 
   const report = useMemo(() => scorePublicMock(questions, answers, target), [answers, questions, target]);
 
-  const begin = () => { setAnswers({}); setIndex(0); setDeadline(Date.now() + mock.minutes * 60000); setClock(Date.now()); setScreen('test'); window.scrollTo(0, 0); };
+  const begin = () => { setNis(target === 'НИШ' ? {nis:startNis(Date.now()),answers:{},index:0,revision:0} : null); setAnswers({}); setIndex(0); setDeadline(Date.now() + mock.minutes * 60000); setClock(Date.now()); setScreen('test'); window.scrollTo(0, 0); };
   const persistResult = () => savePublicDiagnosticResult(createPublicDiagnosticResult({ grade, target, report }));
   useEffect(() => {
-    if (screen !== 'test' || !deadline) return undefined;
+    if (screen !== 'test' || !deadline || target === 'НИШ') return undefined;
     if (Date.now() >= deadline) { persistResult(); setScreen('result'); window.scrollTo(0, 0); return; }
     const timer = setInterval(() => {
       const now = Date.now();
@@ -122,7 +127,7 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
           <span className="public-diag-kicker">✓ {c.free}</span>
           <h1>{c.title}</h1>
           <p>{c.sub}</p>
-          <div className="public-diag-facts"><span>{questions.length} {lang === 'ru' ? 'заданий' : 'тапсырма'}</span><span>{target === 'НИШ' ? (lang === 'ru' ? '240 минут онлайн · очно 2 дня' : '240 минут онлайн · емтихан 2 күн') : target === 'БИЛ' ? (lang === 'ru' ? '110 минут на тренировку' : 'Жаттығуға 110 минут') : `${mock.minutes} ${lang === 'ru' ? 'минут' : 'минут'}`}</span><span>{lang === 'ru' ? 'Тренировочный вариант' : 'Жаттығу нұсқасы'}</span></div>
+          <div className="public-diag-facts"><span>{questions.length} {lang === 'ru' ? 'заданий' : 'тапсырма'}</span><span>{target === 'НИШ' ? (lang === 'ru' ? '2 дня · отдельные таймеры' : '2 күн · бөлек таймерлер') : target === 'БИЛ' ? (lang === 'ru' ? '110 минут на тренировку' : 'Жаттығуға 110 минут') : `${mock.minutes} ${lang === 'ru' ? 'минут' : 'минут'}`}</span><span>{lang === 'ru' ? 'Тренировочный вариант' : 'Жаттығу нұсқасы'}</span></div>
         </section>
         <section className="public-diag-config">
           <label>{c.target}</label>
@@ -132,30 +137,33 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
           <small>{target === 'БИЛ'
             ? (lang === 'ru' ? 'БИЛ: правильный +4, неправильный −1, без ответа 0' : 'БИЛ: дұрыс +4, қате −1, жауапсыз 0')
             : target === 'РФМШ'
-              ? (lang === 'ru' ? 'Здесь показана доля верных; официальный балл РФМШ учитывает уровни A/B/C.' : 'Мұнда дұрыс жауап үлесі көрсетіледі; РФММ ресми ұпайы A/B/C деңгейлерін ескереді.')
-              : (lang === 'ru' ? 'Процент верных — тренировочный, официальный результат НИШ рассчитывается отдельно.' : 'Дұрыс жауап пайызы — жаттығу нәтижесі, НЗМ ресми баллы бөлек есептеледі.')}</small>
+              ? (lang === 'ru' ? 'РФМШ, 7 класс: по 10 заданий A/B/C, по 3/5/7 баллов. Максимум — 150. Ответ — целое число.' : 'РФММ, 7-сынып: A/B/C деңгейлерінен 10 тапсырмадан, 3/5/7 ұпай. Ең көбі — 150. Жауап — бүтін сан.')
+              : (lang === 'ru' ? 'День 1: 60/30/30 минут. День 2: языки — 120 минут. Это адаптированный тренировочный вариант. Процент верных не переводится в официальные 1500 баллов Cito.' : '1-күн: 60/30/30 минут. 2-күн: тілдер — 120 минут. Бұл бейімделген жаттығу нұсқасы. Дұрыс жауап пайызы Cito ресми 1500 ұпайына айналдырылмайды.')}</small>
         </section>
       </main>}
 
-      {screen === 'test' && <main className="public-diag-test">
+      {screen === 'test' && target === 'НИШ' && <Suspense fallback={<main><p role="status">{lang === 'ru' ? 'Открываем раздел…' : 'Бөлім ашылуда…'}</p></main>}><PublicNisExam durable={durable} mock={mock} saved={nis} lang={lang} onProgress={(state, end) => {setNis(state);setDeadline(end);setIndex(state.index);setAnswers(Object.fromEntries(questions.map((q,i)=>[q.id,state.answers[i+1]||''])));}} onComplete={finalAnswers=>{setAnswers(finalAnswers);savePublicDiagnosticResult(createPublicDiagnosticResult({grade,target,report:scorePublicMock(questions,finalAnswers,target)}));setScreen('result');window.scrollTo(0,0);}}/></Suspense>}
+
+      {screen === 'test' && target !== 'НИШ' && <main className="public-diag-test">
         {!durable && <p role="alert">{lang === 'ru' ? 'Браузер не смог сохранить ответы. Не закрывайте страницу до завершения теста.' : 'Браузер жауаптарды сақтай алмады. Тест аяқталғанша бетті жаппаңыз.'}</p>}
         <div className="public-diag-progress"><i style={{ width: `${(index + 1) / questions.length * 100}%` }} /></div>
         <div className="public-diag-testmeta"><span>{c.question} {index + 1} {c.of} {questions.length}</span><b>{targetLabel} · {formatTime(remainingSec)}</b></div>
         <section className="public-diag-question">
-          <span className="public-diag-topic">{subjectNames[current.topic]?.[lang] || topicName(current.topic, lang)}</span>
+          <span className="public-diag-topic">{rfmshLevelLabel(current,lang) || subjectNames[current.topic]?.[lang] || topicName(current.topic, lang)}</span>
           <h1>{current.statement}</h1>
           {mainFigureSrc(current) && <QuestionFigure src={mainFigureSrc(current)} questionId={current.id} />}
           {current.options ? <div className={`public-diag-options${hasFigureOptions(current) ? ' figure-options' : ''}`}>{current.options.map((option, optionIndex) => <button type="button" key={`${optionIndex}-${option}`} className={answers[current.id] === option ? 'on' : ''} onClick={() => setAnswers((value) => ({ ...value, [current.id]: option }))}><i>{String.fromCharCode(65 + optionIndex)}</i><FigureOption question={current} value={option} /></button>)}</div>
-            : <input aria-label={lang === 'ru' ? 'Ваш ответ' : 'Жауабыңыз'} className="public-diag-answer-input" value={answers[current.id] || ''} onChange={(event) => setAnswers((value) => ({ ...value, [current.id]: event.target.value }))} placeholder={lang === 'ru' ? 'Введите ответ' : 'Жауапты енгізіңіз'} />}
+            : <input inputMode={target === 'РФМШ' ? 'numeric' : undefined} aria-label={target === 'РФМШ' ? (lang === 'ru' ? 'Ответ — целое число' : 'Жауап — бүтін сан') : (lang === 'ru' ? 'Ваш ответ' : 'Жауабыңыз')} className="public-diag-answer-input" value={answers[current.id] || ''} onChange={(event) => setAnswers((value) => ({ ...value, [current.id]: event.target.value }))} placeholder={target === 'РФМШ' ? (lang === 'ru' ? 'Введите целое число' : 'Бүтін санды енгіз') : (lang === 'ru' ? 'Введите ответ' : 'Жауапты енгізіңіз')} />}
           <div className="public-diag-question-foot"><button type="button" className="public-diag-secondary" disabled={index === 0} onClick={() => setIndex((value) => value - 1)}>← {lang === 'ru' ? 'Назад' : 'Артқа'}</button><span>{answers[current.id] == null || answers[current.id] === '' ? c.pick : '✓'}</span><button type="button" className="public-diag-primary" onClick={next}>{index === questions.length - 1 ? c.finish : c.next} →</button></div>
         </section>
       </main>}
 
       {screen === 'result' && <main className="public-diag-result">
+        {target === 'НИШ' && <p className="mock-empty-note">{lang === 'ru' ? 'Тренировочная точность, не официальный балл НИШ. Шкала Cito учитывает психометрическое выравнивание; процент нельзя умножить на 1500 для получения официального результата.' : 'Бұл — жаттығу дәлдігі, НЗМ ресми ұпайы емес. Cito шкаласы психометриялық теңестіруді ескереді; пайызды 1500-ге көбейтіп, ресми ұпай алу мүмкін емес.'}</p>}
         <section className="public-diag-score">
           <div><span className="public-diag-kicker">{c.result}</span><h1>{label}</h1><p>{grade} {lang === 'ru' ? 'класс' : 'сынып'} · {targetLabel}</p></div>
           <div className="public-diag-ring" style={{ '--score': `${report.pct * 3.6}deg` }}><strong>{report.pct}%</strong><span>{c.ready}</span></div>
-          <div className="public-diag-scorecount"><strong>{target === 'БИЛ' ? `${report.points}/${report.maxPoints}` : `${report.correct}/${questions.length}`}</strong><span>{target === 'БИЛ' ? (lang === 'ru' ? `баллов · ${report.correct} верно, ${report.wrong} ошибок, ${report.unanswered} без ответа` : `ұпай · ${report.correct} дұрыс, ${report.wrong} қате, ${report.unanswered} жауапсыз`) : c.correct}</span></div>
+          <div className="public-diag-scorecount"><strong>{target === 'БИЛ' || target === 'РФМШ' ? `${report.points}/${report.maxPoints}` : `${report.correct}/${questions.length}`}</strong><span>{target === 'БИЛ' || target === 'РФМШ' ? (lang === 'ru' ? `баллов · ${report.correct} верно, ${report.wrong} ошибок, ${report.unanswered} без ответа` : `ұпай · ${report.correct} дұрыс, ${report.wrong} қате, ${report.unanswered} жауапсыз`) : c.correct}</span></div>
         </section>
         <section className="public-diag-report">
           <div className="public-diag-topiclist"><h2>{c.all}</h2>{report.topics.map((item) => <div className="public-diag-topicrow" key={item.id}><div><b>{topicName(item.id, lang)}</b><span>{item.correct}/{item.total}</span></div><div><i style={{ width: `${item.pct}%` }} /></div><strong className={item.pct < 60 ? 'weak' : item.pct >= 75 ? 'strong' : ''}>{item.pct}%</strong></div>)}</div>
@@ -166,7 +174,7 @@ export default function PublicDiagnostic({ onBack, onRegister }) {
           </div>
         </section>
         <section className="public-diag-review">
-          <div className="public-diag-review-head"><div><span>{target === 'БИЛ' ? (lang === 'ru' ? 'Разбор заданий' : 'Тапсырмаларды талдау') : c.review}</span><h2>{report.mistakes.length ? mistakeCountLabel : c.allCorrect}</h2></div><strong>{report.correct}/{questions.length}</strong></div>
+          <div className="public-diag-review-head"><div><span>{target === 'БИЛ' || target === 'РФМШ' ? (lang === 'ru' ? 'Разбор заданий' : 'Тапсырмаларды талдау') : c.review}</span><h2>{report.mistakes.length ? mistakeCountLabel : c.allCorrect}</h2></div><strong>{report.correct}/{questions.length}</strong></div>
           {!!report.mistakes.length && <div className="public-diag-review-list">{report.mistakes.map((item, mistakeIndex) => <article key={item.id}>
             <div className="public-diag-review-num">{String(mistakeIndex + 1).padStart(2, '0')}</div>
             <div className="public-diag-review-copy"><span>{subjectNames[item.topic]?.[lang] || topicName(item.topic, lang)}</span><h3>{item.statement}</h3><div className="public-diag-answer-pair"><p><small>{c.your}</small><b>{answers[item.id] || '—'}</b></p><i>→</i><p className="is-right"><small>{c.right}</small><b>{item.answer}</b></p></div></div>

@@ -15,7 +15,7 @@ function fixture(){
  writeMockSession:r=>writeMockSession(r,store),readMockSession:uid=>readMockSession(uid,store),readMockStart:()=>null,clearMockStart(){},useEffect:effect=>effect(),
  mockSubmit:(...args)=>{const call={args,...deferred()};calls.push(call);return call.promise;},
  };
- for(const name of ['School','Test','Meta','Answers','Flags','I','Pause','Left','HideTimer','IsDiagnosticRun','Result','RecoveryAvailable','SaveState','SessionReady','RecoveryError','StartError','Starting']) context[`set${name}`]=value=>{state[name]=value;};
+ for(const name of ['School','Test','Meta','Answers','Flags','I','Pause','Left','HideTimer','IsDiagnosticRun','Result','RecoveryAvailable','SaveState','ConfirmFinish','SessionReady','RecoveryError','StartError','Starting']) context[`set${name}`]=value=>{state[name]=value;};
  vm.createContext(context);
  vm.runInContext(source.slice(source.indexOf('  function applyRun('),source.indexOf('  useEffect(() => {\n    let alive = true;'))+source.slice(source.indexOf('  async function submit()'),source.indexOf('  function resumeExam()')),context);
  return{context,state,store,calls,record:value,submit:()=>context.submit()};
@@ -68,4 +68,17 @@ test('an interrupted mock start cannot silently switch schools and lose its reco
   readMockStart:()=>({uid:'kid',id:'mock_reserved_a',school:'БИЛ'}),mockStart:async()=>{calls.push('start');},setStarting:value=>{state.starting=value;},setStartError(){},setRecoveryRetry:update=>{state.recovery=update(0);}};
  vm.createContext(context);vm.runInContext(source.slice(source.indexOf('  async function startExam('),source.indexOf('  async function submit()')),context);
  await context.startExam('НИШ');assert.equal(calls.length,0);assert.equal(state.recovery,1);assert.equal(state.starting,false);
+});
+
+test('starting a NIS exam retains server phase state in the active player and reload journal',async()=>{
+ const {startNis,NIS_FORMAT}=await import('../shared/nis-exam.mjs');
+ const f=fixture(),started={test:{...record().test,school:'НИШ',examFormat:NIS_FORMAT},startedAt:1000,deadline:3601000,serverNow:1000,nis:startNis(1000)};
+ Object.assign(f.context,{sessionReady:true,recoveryError:'',pro:true,weekly:{access:true,weekKey:'week'},crypto:{randomUUID:()=> 'mock_attempt_a'},writeMockStart:()=>true,mockStart:async()=>started});
+ f.context.runRef.current=null;
+ vm.runInContext(source.slice(source.indexOf('  async function startExam('),source.indexOf('  async function submit()')),f.context);
+ await f.context.startExam('НИШ');
+ assert.deepEqual(clone(f.context.runRef.current.nis),clone(started.nis));
+ assert.equal(f.context.runRef.current.revision,0);
+ const restored=readMockSession('kid',f.store);
+ assert.equal(restored.error,null);assert.equal(restored.record.nis.phase,0);
 });

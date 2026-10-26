@@ -10,6 +10,7 @@ const { loadPublishedBank } = require('../backend/lib/published-bank');
 const { fakeFirestore } = require('./helpers/fake-firestore.cjs');
 const root = path.resolve(__dirname, '..');
 const editions = getStandardBank();
+const { isFreePreview } = require('../backend/lib/free-preview');
 
 test('every reviewed edition is server-only and resolves through the server registry', async () => {
   const { POOL } = await import('../frontend/src/bank.js');
@@ -42,7 +43,7 @@ test('real private topics and questions require public Standard or higher withou
     for (const topicId of topics) {
       const rows = await content.getTrainingQuestions({ plan, gradeCeiling: 6, topicId, mixed: false, excludeIds: [], limit: 100000 });
       const privateRows = rows.filter(q => ids.has(q.id));
-      const expected = ['pro','mentor'].includes(plan) ? editions.filter(q => q.topic === topicId) : [];
+      const expected = editions.filter(q => q.topic === topicId && (['pro','mentor'].includes(plan) || isFreePreview(q)));
       assert.deepEqual(new Set(privateRows.map(q => q.id)), new Set(expected.map(q => q.id)), `${plan}:${topicId}`);
       for (const q of rows) {
         assert.equal(Object.hasOwn(q,'answer'), false); assert.equal(Object.hasOwn(q,'solution'), false);
@@ -54,7 +55,7 @@ test('real private topics and questions require public Standard or higher withou
     const count = plan => catalogs.get(plan).find(t => t.id === topicId)?.count || 0;
     assert.equal(count('free'), count('standard'), topicId);
     assert.equal(count('pro'), count('mentor'), topicId);
-    assert.equal(count('pro') - count('free'), editions.filter(q => q.topic === topicId).length, topicId);
+    assert.equal(count('pro') - count('free'), editions.filter(q => q.topic === topicId && !isFreePreview(q)).length, topicId);
   }
 });
 

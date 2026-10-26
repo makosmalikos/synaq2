@@ -54,7 +54,7 @@ export default function ParentReport({ child, summary, mocks = [], diagnostics =
       <section className="pd-panel"><div className="pd-panel-head"><div><span className="pd-eyebrow">{text('Путь к результату', 'Нәтижеге жету жолы')}</span><h3>{text('История пробных тестов', 'Сынақтар тарихы')}</h3></div><span className="pd-icon" aria-hidden="true">✓</span></div>
         {mocks.length ? <div className="pdr-test-list">{mocks.map((mock, index) => {
           const points = mockDisplayScore(mock);
-          const weighted = (mock.school === 'БИЛ' || mock.scoring === 'bil') && Number.isFinite(mock.wrong);
+          const weighted = (mock.school === 'БИЛ' || mock.scoring === 'bil' || mock.scoring === 'rfmsh') && Number.isFinite(mock.wrong);
           return <article key={mock.id || index}><span className="pdr-test-number">{String(index + 1).padStart(2, '0')}</span><div><strong>{mock.school || text('Пробный тест', 'Сынақ')}</strong><small>{dateLabel(mock)}</small>{weighted && <small>{mock.score}/{mock.gradable} {text('верных ответов', 'дұрыс жауап')}</small>}</div><span className="pdr-test-score">{points.score}/{points.max || '—'}<small>{weighted ? text('баллов', 'ұпай') : text('верных ответов', 'дұрыс жауап')}</small></span></article>;
         })}</div> : <div className="pdr-empty pdr-empty-compact"><span aria-hidden="true">✓</span><h3>{text('Первый пробник ещё впереди', 'Алғашқы сынақ әлі алда')}</h3><p>{text('Когда ребёнок пройдёт тест, здесь появятся дата, школа и набранные баллы.', 'Балаңыз сынақтан өткен соң, күні, мектебі және жинаған ұпайы көрсетіледі.')}</p></div>}
       </section>

@@ -5,15 +5,15 @@ export default function usePublicTestDraft(kind, getQuestions, screen, value, qu
   const [resumeDraft, setResumeDraft] = useState(() => readPublicTestDraft(kind, getQuestions));
   const [durable, setDurable] = useState(true);
   const revision = useMemo(() => questionRevision(questions), [questions]);
-  const { grade, target, index, answers, deadline } = value;
+  const { grade, target, index, answers, deadline, nis } = value;
   useLayoutEffect(() => {
     if (screen === 'test') {
-      setDurable(savePublicTestDraft(kind, { grade, target, index, answers, deadline }, revision));
+      setDurable(savePublicTestDraft(kind, { grade, target, index, answers, deadline, ...(nis ? {nis} : {}) }, revision));
     } else if (screen === 'result') {
       clearPublicTestDraft(kind);
       setResumeDraft(null);
     }
-  }, [kind, screen, grade, target, index, answers, deadline, revision]);
+  }, [kind, screen, grade, target, index, answers, deadline, nis, revision]);
   useEffect(() => {
     if (durable || screen !== 'test') return;
     const warn = e => { e.preventDefault(); e.returnValue = ''; };

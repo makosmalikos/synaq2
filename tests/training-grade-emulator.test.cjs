@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const { randomUUID } = require('node:crypto');
 const { once } = require('node:events');
 const { isSchoolCourse } = require('../backend/lib/training-grade');
+const { isFreePreview } = require('../backend/lib/free-preview');
 
 const enabled = !!process.env.FIREBASE_AUTH_EMULATOR_HOST && !!process.env.FIRESTORE_EMULATOR_HOST;
 before(() => {
@@ -27,8 +28,10 @@ test('authenticated learning endpoint enforces reviewed paid publication, live p
   const { loadEmulatorClient, sdk } = require('./helpers/emulator-browser-client.cjs');
   const { auth, db } = getAdmin();
   const realBank = require('../backend/lib/standard-bank').getStandardBank();
-  assert.equal(realBank.length, 51);
-  const realPrivate = realBank.find(q => q.topic === 'stats' && q.grade === 6);
+  const review = require('../problems/reviews/synaq-standard-editions.json');
+  assert.equal(realBank.length, review.summary.verifiedEditions);
+  assert.ok(realBank.length >= 51, 'The original reviewed bank must remain available');
+  const realPrivate = realBank.find(q => q.topic === 'stats' && q.grade === 6 && !isFreePreview(q));
   assert.ok(realPrivate);
   const suffix = randomUUID().replaceAll('-', '').slice(0, 12);
   const uid = `grade_child_${suffix}`, parentUid = `grade_parent_${suffix}`, code = `grade${suffix}`;
@@ -111,7 +114,11 @@ test('authenticated learning endpoint enforces reviewed paid publication, live p
       assert.equal(denied.status, 403); assert.deepEqual(denied.body, { error: 'pro-required' });
     }
     const free = await post({ ...list, ...spoof });
-    assert.equal(free.status, 200); assert.equal(free.body.questions.some(q => q.id.startsWith('zerek_') || q.id.startsWith('synaq_adapted_')), false);
+    assert.equal(free.status, 200);
+    assert.equal(free.body.questions.some(q => q.id.startsWith('zerek_')), false);
+    for (const q of free.body.questions.filter(q => q.id.startsWith('synaq_adapted_'))) {
+      assert.ok(isFreePreview(realBank.find(item => item.id === q.id)), 'Only unchanged reviewed Free sampler editions may be public');
+    }
     const freeStats=await post({...list,topicId:'stats',...spoof});assert.equal(freeStats.status,200);assert.deepEqual(freeStats.body.questions,[]);
     assert.deepEqual((await post({ action: 'count', ...spoof })).body, { count: 1, day: new Date(Date.now()+5*3600000).toISOString().slice(0,10), limit: 5 });
     for (const plan of ['standard','pro','mentor']) {

@@ -49,3 +49,11 @@ test('figure API accepts only canonical qid, never client paths or unreviewed/pu
  assert.equal((await f.invoke({action:'figure',qid:'synaq_adapted_fake'})).statusCode,404,'Admin tasks cannot alias a canonical paid figure or bypass its grade');
  for(const candidate of ['/etc/passwd','/figures/synaq-editions/../x.svg','/figures/synaq-editions/%2e%2e.svg','/figures/zerek/source.svg','/figures/synaq-editions/absent.svg'])await assert.rejects(readPrivateFigure(candidate),e=>e.status===404&&e.message==='figure-unavailable');
 });
+
+test('Free sampler includes its own native drawing with the same auth and grade checks', async () => {
+ const {isFreePreview}=require('../backend/lib/free-preview');
+ const q=getStandardBank().find(q=>q.image&&isFreePreview(q));assert.ok(q);
+ const free=await fixture({plan:'free',klass:4}).invoke({action:'figure',qid:q.id});
+ assert.equal(free.statusCode,200);assert.match(free.body.toString(),/<svg\b/);
+ assert.equal((await fixture({plan:'free',klass:3}).invoke({action:'figure',qid:q.id})).statusCode,404);
+});

@@ -1,3 +1,5 @@
+import { rfmshPoints, rfmshIntegerAnswer } from './rfmshScoring.js';
+
 // Нормализация ответа: пробелы, запятая/точка, %. Единицы измерения здесь
 // НЕ срезаются — см. splitUnit ниже, их нужно сверять, а не просто выбрасывать.
 export const norm = (v) => (v ?? '').toString().trim().toLowerCase()
@@ -29,6 +31,7 @@ export const isGradable = (q) => q?.answer != null
 // Проверка ответа. Для теста с вариантами — точное совпадение опции.
 export function isCorrect(given, q) {
   if (!isGradable(q)) return false;
+  if (rfmshPoints(q) !== null) return rfmshIntegerAnswer(given,q.answer);
   const ans = String(q.answer).trim();
   if (q.options) return String(given).trim() === ans;
   const a0 = norm(given);

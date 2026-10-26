@@ -1,3 +1,4 @@
+import { NIS_FORMAT, validNisState } from '../../shared/nis-exam.mjs';
 const VERSION = 1;
 const keyFor = (uid) => `synaq_mock_pending_v${VERSION}_${uid}`;
 const startKeyFor = (uid) => `synaq_mock_start_v${VERSION}_${uid}`;
@@ -19,6 +20,7 @@ export function readMockSession(uid, storage) {
     const raw = emergency || (storage || globalThis.sessionStorage).getItem(keyFor(uid));
     if (!raw) return { record: null, error: null };
     const value = JSON.parse(raw);
+    if (value?.test?.examFormat === NIS_FORMAT && !validNisState(value.nis)) return {record:null,error:'invalid'};
     if (!value || value.version !== VERSION || value.uid !== uid
       || typeof value.id !== 'string' || !value.id || value.id.length > 128
       || !value.test || typeof value.test.id !== 'string'

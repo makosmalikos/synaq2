@@ -1,3 +1,6 @@
+import NisExam from './NisExam.jsx';
+import { NIS_FORMAT } from '../../../shared/nis-exam.mjs';
+import { mockPhase } from '../mockApi.js';
 import useScreenStart from '../useScreenStart.js';
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useLang } from '../i18n.jsx';
@@ -9,8 +12,10 @@ import BrandLoader from './BrandLoader.jsx';
 import DiagnosisReport from './DiagnosisReport.jsx';
 import MockQuestionNavigator from './MockQuestionNavigator.jsx';
 import MockTask from './MockTask.jsx';
+import { rfmshLevelLabel } from '../rfmshScoring.js';
 import MockResults from './MockResults.jsx';
 import MockCatalog from './MockCatalog.jsx';
+import MockFinishDialog from './MockFinishDialog.jsx';
 import { hasMockAnswer, mockSubjectLabel } from '../mockReviewModel.js';
 import './MockExperience.css';
 import { readMockSession, writeMockSession, clearMockSession, discardMockSession, mockRemaining,
@@ -34,6 +39,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   const ru = lang === 'ru';
   const uid = auth.currentUser?.uid || null;
   const [schools, setSchools] = useState([]);
+  const [previews, setPreviews] = useState([]);
   const [school, setSchool] = useState(null);
   const [pause, setPause] = useState(false);
   const [pro, setPro] = useState(null);
@@ -52,6 +58,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   const [startError, setStartError] = useState('');
   const [starting, setStarting] = useState(false);
   const [saveState, setSaveState] = useState('idle');
+  const [confirmFinish, setConfirmFinish] = useState(false);
   const [loadError, setLoadError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [loadRetry, setLoadRetry] = useState(0);
@@ -124,7 +131,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     deadlineRef.current = null; pausedAtRef.current = null;
     setSessionReady(false); setRecoveryError(''); setRecoveryAvailable(true);
     setTest(null); setResult(null); setMeta(null); setSchool(null); setPause(false);
-    setSaveState('idle'); setStartError(''); setStarting(false);
+    setSaveState('idle'); setConfirmFinish(false); setStartError(''); setStarting(false);
     if (!uid) { setSessionReady(true); return; }
     const stored = readMockSession(uid);
     let { record } = stored;
@@ -140,7 +147,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
         if (!record && !resumed.completed) {
           record = { uid, id: interruptedStart.id, school: interruptedStart.school,
             test: resumed.test, meta: { school: interruptedStart.school,
-              sections: resumed.test.sections, diagnostic: resumed.diagnostic },
+              sections: resumed.test.sections, diagnostic: resumed.diagnostic, preview: resumed.preview === true },
             isDiagnosticRun: resumed.diagnostic, answers: {}, flags: {}, index: 0,
             startedAt: resumed.startedAt, deadline: resumed.deadline, pausedAt: null, pausedMs: 0,
             clockOffsetMs: mockClockOffset(resumed),
@@ -152,7 +159,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
           if (!record) throw new Error('completed_start_without_journal');
           record = { ...record, result: resumed.result, pausedAt: null, pending: null };
         } else {
-          record = { ...record, test: resumed.test,
+          record = { ...record, test: resumed.test, ...(resumed.nis ? {nis:resumed.nis,answers:{...resumed.answers,...Object.fromEntries(Object.entries(record.answers).filter(([n]) => Number(n)>=(resumed.nis.phase===0?1:resumed.nis.phase===1?41:resumed.nis.phase===2?101:121)))},revision:Math.max(record.revision||0,resumed.nis.revision)} : {}),
             isDiagnosticRun: resumed.diagnostic, startedAt: resumed.startedAt,
             deadline: resumed.deadline, clockOffsetMs: mockClockOffset(resumed), pausedAt: null, pausedMs: 0, pending: null };
         }
@@ -179,7 +186,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     });
     Promise.all([mockCatalog(), loadTopicCatalog()]).then(([catalog, topics]) => {
       if (alive && isCurrent()) {
-        setSchools(catalog.schools || []); setWeekly(catalog.weekly || null); setTopics(topics);
+        setSchools(catalog.schools || []); setPreviews(catalog.previews || []); setWeekly(catalog.weekly || null); setTopics(topics);
       }
     }).catch(() => { if (alive && isCurrent()) setLoadError(true); })
       .finally(() => { if (alive && isCurrent()) setLoading(false); });
@@ -200,7 +207,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   });
 
   useEffect(() => {
-    if (!sessionReady || !test || result || pause || runRef.current?.submission || deadlineRef.current == null) return;
+    if (!sessionReady || !test || test.examFormat === NIS_FORMAT || result || pause || runRef.current?.submission || deadlineRef.current == null) return;
     const tickFn = () => {
       if (!isCurrent()) return;
       const remain = mockRemaining(runRef.current);
@@ -220,9 +227,9 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     return buildDiagnosis(result.review, topics, lang);
   }, [result, topics, lang]);
 
-  async function startExam(code) {
+  async function startExam(code, preview = false) {
     if (!isCurrent() || startingRef.current || !sessionReady || recoveryError || runRef.current
-      || pro === null || !weekly?.access) return;
+      || pro === null || (preview ? !previews.some(s => s.code === code && s.ready) : !weekly?.access)) return;
     startingRef.current = true; setStarting(true); setStartError('');
     const generation = generationRef.current;
     const active = () => isCurrent() && generationRef.current === generation;
@@ -234,15 +241,18 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     }
     const requestId = reserved?.school === code ? reserved.id : crypto.randomUUID();
     if (!reserved && !writeMockStart({ uid, id: requestId, school: code })) setRecoveryAvailable(false);
-    const started = await mockStart({ id: requestId, school: code, weekKey: weekly.weekKey, excludeQuestionIds: [] });
+    const started = preview
+      ? await mockStart({ id: requestId, school: code, preview: true, excludeQuestionIds: [] })
+      : await mockStart({ id: requestId, school: code, weekKey: weekly.weekKey, excludeQuestionIds: [] });
     const v = started.test;
     if (!v) throw new Error('empty_exam');
     if (!active()) return;
     const startedNow = started.startedAt;
     const record = {
       uid, id: requestId, school: code, test: v,
-      meta: { school: code, sections: v.sections, diagnostic: false, weekKey: started.weekKey }, isDiagnosticRun: false,
+      meta: { school: code, sections: v.sections, diagnostic: false, preview: started.preview === true, weekKey: started.weekKey }, isDiagnosticRun: false,
       answers: {}, flags: {}, index: 0, startedAt: startedNow,
+      ...(started.nis ? { nis: started.nis, answers: { ...started.nis.answers }, revision: started.nis.revision } : {}),
       deadline: started.deadline, pausedAt: null, pausedMs: 0,
       clockOffsetMs: mockClockOffset(started),
       hideTimer: false, navOpen: false, result: null, pending: null,
@@ -265,11 +275,20 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     finally { if (active()) { startingRef.current = false; setStarting(false); } }
   }
 
+  function requestFinish() {
+    const run = runRef.current;
+    if (!isCurrent() || !run || run.result || submittingRef.current) return;
+    // A retry must reuse the already frozen submission; the timer also finishes directly.
+    if (run.submission || mockRemaining(run) <= 0) return submit();
+    setConfirmFinish(true);
+  }
+
   async function submit() {
     // Может позвать и кнопка «Завершить», и таймер по истечении времени —
     // защита от двойной отправки (и задвоенной записи в истории результатов).
     const run = runRef.current;
     if (!isCurrent() || !run || run.uid !== uid || run.result || submittingRef.current) return;
+    setConfirmFinish(false);
     if (!run.submission) {
       const frozen = changeRun({ submission: { answers: { ...run.answers } } });
       if (!frozen) return;
@@ -350,7 +369,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     <button className="btn" onClick={() => setLoadRetry((value) => value + 1)}>{ru ? 'Повторить' : 'Қайталау'}</button></main>;
   if (!school && (loading || pro === null || weekly === null)) return <main><BrandLoader /></main>;
 
-  if (!school) return <MockCatalog schools={schools} weekly={weekly} lang={lang} starting={starting} paying={paying}
+  if (!school) return <MockCatalog schools={schools} previews={previews} onPreview={code => startExam(code, true)} weekly={weekly} lang={lang} starting={starting} paying={paying}
     onStart={startExam} onBuy={buyWeeklyAccess} onRefresh={() => setLoadRetry((value) => value + 1)} notice={startNotice} />;
 
   if (test && pause) return (
@@ -369,6 +388,12 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     {diagnosis && <DiagnosisReport diagnosis={diagnosis} pro onUnlock={proUnlockHint} onTrainTopic={onTrainTopic} />}
   </MockResults>;
 
+  if (test.examFormat === NIS_FORMAT && runRef.current.nis) return <NisExam key={runRef.current.id} initial={runRef.current} lang={lang} notice={recoveryNotice}
+    transport={change => change.op === 'submit' ? mockSubmit(runRef.current.id,{}) : mockPhase(runRef.current.id,change)}
+    onChange={record => { if (isCurrent()) changeRun(record); }}
+    onComplete={value => { if (isCurrent()) { changeRun({result:value});setSaveState('saved');} }}
+    renderQuestion={(question,value,onPick,disabled)=><MockTask question={question} lang={lang} value={value} onPick={onPick} disabled={disabled}/>}/>;
+
   const q = test.questions[i];
   const toggleFlag = () => changeRun({ flags: { ...runRef.current.flags, [q.num]: !runRef.current.flags[q.num] } });
   const pick = value => {
@@ -381,7 +406,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   return <main className="mock-experience mock-exam-page">
     {startNotice}
     <div className="mock-page-heading"><div><span className="mock-eyebrow">SYNAQ · {ru ? 'ПРОБНЫЙ ТЕСТ' : 'СЫНАҚ ТЕСТІ'}</span><h1>{meta.school}</h1><p>{ru ? 'Решай в удобном порядке. Ответы сохраняются в этой вкладке.' : 'Өзіңе ыңғайлы ретпен шеш. Жауаптар осы қойындыда сақталады.'}</p></div>
-      <div className="mock-exam-title-actions"><button type="button" className="clock" aria-label={ru ? 'Показать или скрыть таймер' : 'Таймерді көрсету немесе жасыру'} onClick={() => changeRun({ hideTimer: !hideTimer })}>{hideTimer ? (ru ? 'Показать время' : 'Уақытты көрсету') : formatExamTimer(left, lang)}</button><button type="button" className="btn" disabled={saveState === 'saving'} onClick={submit}>{saveState === 'saving' ? (ru ? 'Сохраняем…' : 'Сақталуда…') : (ru ? 'Завершить тест' : 'Сынақты аяқтау')}</button></div>
+      <div className="mock-exam-title-actions"><button type="button" className="clock" aria-label={ru ? 'Показать или скрыть таймер' : 'Таймерді көрсету немесе жасыру'} onClick={() => changeRun({ hideTimer: !hideTimer })}>{hideTimer ? (ru ? 'Показать время' : 'Уақытты көрсету') : formatExamTimer(left, lang)}</button><button type="button" className="btn" disabled={saveState === 'saving'} onClick={requestFinish}>{saveState === 'saving' ? (ru ? 'Сохраняем…' : 'Сақталуда…') : (ru ? 'Завершить тест' : 'Сынақты аяқтау')}</button></div>
     </div>
     {test.shortened && <p className="mock-empty-note">{shortenedLabel} · {formatLabel(test)}</p>}
     {left <= 0 && <p className="mock-empty-note" role="status">{ru ? 'Время закончилось. Заверши тест, чтобы сохранить и разобрать ответы.' : 'Уақыт аяқталды. Жауаптарды сақтап, талдау үшін сынақты аяқта.'}</p>}
@@ -390,10 +415,11 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     <div className="mock-workspace">
       <MockQuestionNavigator questions={test.questions} selectedIndex={i} onSelect={goToQuestion} lang={lang} disabled={unavailable} flags={flags} statusFor={question => hasMockAnswer(answers[question.num]) ? 'answered' : 'unanswered'} />
       <section className="mock-question-panel">
-        <div className="mock-question-heading"><div><span>{mockSubjectLabel(q.subject || 'math', lang)}</span><h2>{ru ? 'Задание' : 'Тапсырма'} {q.num}</h2></div><button type="button" disabled={unavailable} className={'flagbtn' + (flags[q.num] ? ' on' : '')} onClick={toggleFlag}><span aria-hidden="true">⚑</span> {ru ? 'Отметить' : 'Белгілеу'}</button></div>
+        <div className="mock-question-heading"><div><span>{rfmshLevelLabel(q,lang) || mockSubjectLabel(q.subject || 'math', lang)}</span><h2>{ru ? 'Задание' : 'Тапсырма'} {q.num}</h2></div><button type="button" disabled={unavailable} className={'flagbtn' + (flags[q.num] ? ' on' : '')} onClick={toggleFlag}><span aria-hidden="true">⚑</span> {ru ? 'Отметить' : 'Белгілеу'}</button></div>
         <MockTask question={q} lang={lang} value={answers[q.num] || ''} onPick={pick} disabled={unavailable} />
-        <div className="mock-question-footer"><button type="button" className="btn ghost" disabled={i === 0 || unavailable} onClick={() => goToQuestion(i - 1)}>← {ru ? 'Назад' : 'Артқа'}</button><span>{i + 1} / {test.questions.length}</span>{i + 1 < test.questions.length ? <button type="button" className="btn" disabled={unavailable} onClick={() => goToQuestion(i + 1)}>{ru ? 'Далее' : 'Келесі'} →</button> : <button type="button" className="btn" disabled={saveState === 'saving'} onClick={submit}>{ru ? 'Завершить' : 'Аяқтау'}</button>}</div>
+        <div className="mock-question-footer"><button type="button" className="btn ghost" disabled={i === 0 || unavailable} onClick={() => goToQuestion(i - 1)}>← {ru ? 'Назад' : 'Артқа'}</button><span>{i + 1} / {test.questions.length}</span>{i + 1 < test.questions.length ? <button type="button" className="btn" disabled={unavailable} onClick={() => goToQuestion(i + 1)}>{ru ? 'Далее' : 'Келесі'} →</button> : <button type="button" className="btn" disabled={saveState === 'saving'} onClick={requestFinish}>{ru ? 'Завершить' : 'Аяқтау'}</button>}</div>
       </section>
     </div>
+    {confirmFinish && <MockFinishDialog lang={lang} answered={answeredCount} total={test.questions.length} onCancel={() => setConfirmFinish(false)} onConfirm={submit} />}
   </main>;
 }

@@ -3,8 +3,8 @@ import { trainingCatalog, trainingTopicCount, trainingTopicName } from '../train
 import './TrainingCatalog.css';
 
 const words = {
-  ru: { eyebrow: 'ТВОЯ ТРЕНИРОВКА', title: 'Какой навык прокачаем?', intro: 'Выбери тему или решай математику из разных разделов.', mixed: 'Смешанная практика', mixedNote: 'Математика для подготовки к БИЛ, НИШ и РФМШ.', start: 'Начать тренировку', all: 'Все темы', search: 'Найти тему или школу', clear: 'Сбросить поиск', found: 'Тем найдено', topics: 'Темы', done: 'Выполнено', available: 'Доступно', locked: 'Открыть со Standard', empty: 'Такой темы пока не нашли', emptyNote: 'Попробуй другое название или выбери все темы.', note: 'Счётчик показывает выполненные задания. Точность ответов — в разделе «Прогресс».', free: 'На бесплатном тарифе доступна первая тема и смешанная практика. Для остальных тем нужен Standard.' },
-  kk: { eyebrow: 'СЕНІҢ ЖАТТЫҒУЫҢ', title: 'Қай дағдыны дамытамыз?', intro: 'Тақырыпты таңда немесе әр бөлімнен математикалық есептер шығар.', mixed: 'Аралас жаттығу', mixedNote: 'БИЛ, НИШ және РФМШ-ға дайындық математикасы.', start: 'Жаттығуды бастау', all: 'Барлық тақырып', search: 'Тақырып не мектеп іздеу', clear: 'Іздеуді тазарту', found: 'Табылған тақырып', topics: 'Тақырып', done: 'Орындалды', available: 'Қолжетімді', locked: 'Standard арқылы ашу', empty: 'Мұндай тақырып табылмады', emptyNote: 'Басқа атауды жаз немесе барлық тақырыпты таңда.', note: 'Санауыш орындалған есептерді көрсетеді. Жауап дәлдігі «Прогресс» бөлімінде.', free: 'Тегін тарифте алғашқы тақырып пен аралас жаттығу ашық. Қалған тақырыптарға Standard қажет.' },
+  ru: { eyebrow: 'ТВОЯ ТРЕНИРОВКА', title: 'Какой навык прокачаем?', intro: 'Выбери тему или решай математику из разных разделов.', mixed: 'Смешанная практика', mixedNote: 'Математика для подготовки к БИЛ, НИШ и РФМШ.', start: 'Начать тренировку', all: 'Все темы', search: 'Найти тему или школу', clear: 'Сбросить поиск', found: 'Тем найдено', topics: 'Темы', done: 'Выполнено', available: 'Доступно', locked: 'Открыть со Standard', empty: 'Такой темы пока не нашли', emptyNote: 'Попробуй другое название или выбери все темы.', note: 'Счётчик показывает выполненные задания. Точность ответов — в разделе «Прогресс».', free: 'На бесплатном тарифе доступны подборка новых задач, первая тема и смешанная практика. Для остальных тем нужен Standard.' },
+  kk: { eyebrow: 'СЕНІҢ ЖАТТЫҒУЫҢ', title: 'Қай дағдыны дамытамыз?', intro: 'Тақырыпты таңда немесе әр бөлімнен математикалық есептер шығар.', mixed: 'Аралас жаттығу', mixedNote: 'БИЛ, НИШ және РФМШ-ға дайындық математикасы.', start: 'Жаттығуды бастау', all: 'Барлық тақырып', search: 'Тақырып не мектеп іздеу', clear: 'Іздеуді тазарту', found: 'Табылған тақырып', topics: 'Тақырып', done: 'Орындалды', available: 'Қолжетімді', locked: 'Standard арқылы ашу', empty: 'Мұндай тақырып табылмады', emptyNote: 'Басқа атауды жаз немесе барлық тақырыпты таңда.', note: 'Санауыш орындалған есептерді көрсетеді. Жауап дәлдігі «Прогресс» бөлімінде.', free: 'Тегін тарифте жаңа есептер жинағы, алғашқы тақырып пен аралас жаттығу ашық. Қалған тақырыптарға Standard қажет.' },
 };
 
 function PracticeIcon({ kind = 'arrow' }) {
@@ -17,16 +17,22 @@ function SubjectArt({ subject }) {
   return <span className={`practice-tiles is-${subject}`} aria-hidden="true"><i>{subject === 'math' ? '÷' : 'Ә'}</i><b>{subject === 'math' ? '+' : 'A'}</b></span>;
 }
 
-export default function TrainingCatalog({ topics, solvedIn = {}, pro, freeTopicId, lang, onOpen, onMixed, onUpgrade, notice }) {
+export default function TrainingCatalog({ topics, solvedIn = {}, pro, freeTopicId, lang, onPreview, onOpen, onMixed, onUpgrade, notice }) {
   const locale = lang === 'ru' ? 'ru' : 'kk', c = words[locale];
   const [subject, setSubject] = useState('all'), [query, setQuery] = useState('');
-  const groups = trainingCatalog(topics, { subject, query });
-  const choices = trainingCatalog(topics);
+  const preview = topics.find(topic => topic.id === 'free-preview');
+  const regularTopics = topics.filter(topic => topic.id !== 'free-preview');
+  const groups = trainingCatalog(regularTopics, { subject, query });
+  const choices = trainingCatalog(regularTopics);
   const count = groups.reduce((sum, group) => sum + group.topics.length, 0);
   const reset = () => { setQuery(''); setSubject('all'); };
   return <main className="practice-catalog">
     {notice}
     <header className="practice-heading"><span>{c.eyebrow}</span><h1>{c.title}</h1><p>{c.intro}</p></header>
+    {preview && <section className="practice-preview" aria-labelledby="practice-preview-title">
+      <div><span>{locale === 'ru' ? 'БЕСПЛАТНАЯ ПОДБОРКА' : 'ТЕГІН ЕСЕПТЕР ЖИНАҒЫ'}</span><h2 id="practice-preview-title">{locale === 'ru' ? 'Попробуй новые задачи' : 'Жаңа есептерді шығарып көр'}</h2><p>{locale === 'ru' ? 'Геометрия, дроби и текстовые задачи. Свои схемы и подробный разбор после ответа. До 5 задач в день бесплатно.' : 'Геометрия, бөлшектер және мәтіндік есептер. Өз сызбаларымыз бен жауаптан кейінгі толық талдау. Күніне 5 есепке дейін тегін.'}</p></div>
+      <button type="button" onClick={onPreview}>{locale === 'ru' ? 'Решать бесплатно' : 'Тегін шығару'}<PracticeIcon /></button>
+    </section>}
     <section className="practice-mixed" aria-labelledby="practice-mixed-title">
       <div><span className="practice-mixed-tag">БИЛ · НИШ · РФМШ</span><h2 id="practice-mixed-title">{c.mixed}</h2><p>{c.mixedNote}</p><button type="button" onClick={onMixed}>{c.start}<PracticeIcon /></button></div>
       <img src="/mascot/synaq-owl-study.webp" width="640" height="640" alt="" decoding="async" />

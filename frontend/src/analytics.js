@@ -1,3 +1,5 @@
+import { rfmshReviewScore } from './rfmshScoring.js';
+
 // ── Статистика по ребёнку ──
 // Считается из реальных данных: attempts (тема, верно/неверно, секунды) и mocks.
 
@@ -63,6 +65,11 @@ export function formatStudyTime(seconds, lang = 'kk') {
 
 // Баллы мок-тестов по неделям (для графика роста).
 export function mockDisplayScore(mock) {
+  if (mock.school === 'РФМШ' && mock.scoring === 'rfmsh') {
+    const reviewed = rfmshReviewScore(mock.review || []);
+    if (reviewed) return reviewed;
+    if (Number.isFinite(mock.points) && Number.isFinite(mock.maxPoints)) return {score:mock.points,max:mock.maxPoints};
+  }
   if ((mock.school === 'БИЛ' || mock.scoring === 'bil')
     && Number.isFinite(mock.score) && Number.isFinite(mock.wrong) && Number.isFinite(mock.gradable)) {
     return { score: 4 * mock.score - mock.wrong, max: 4 * mock.gradable };
