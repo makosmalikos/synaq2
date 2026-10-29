@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLang } from './i18n.jsx';
 import { auth, logout } from './firebase.js';
 import Brand from './Brand.jsx';
+import AdminCenters from './AdminCenters.jsx';
 import AdminWorkspace from './AdminWorkspace.jsx';
 import RewardQueue from './RewardQueue.jsx';
 import AdminMentors from './AdminMentors.jsx';
@@ -43,11 +44,13 @@ export default function Admin({ onExit }) {
         <button className={section === 'mentors' ? 'active' : ''} onClick={() => setSection('mentors')}>{lang === 'ru' ? 'Наставники' : 'Тәлімгерлер'}</button>
         <button className={section === 'lessons' ? 'active' : ''} onClick={() => setSection('lessons')}>{lang === 'ru' ? 'Уроки' : 'Сабақтар'}</button>
         <button className={section === 'rewards' ? 'active' : ''} onClick={() => setSection('rewards')}>{lang === 'ru' ? 'Награды' : 'Сыйлықтар'}</button>
+        <button className={section === 'centers' ? 'active' : ''} onClick={() => setSection('centers')}>{lang === 'ru' ? 'Центры' : 'Орталықтар'}</button>
       </nav>
       <div hidden={section !== 'tasks'}><AdminWorkspace request={request} lang={lang} storageKey={`synaq-admin-draft:${auth.currentUser?.uid || 'local'}`} /></div>
       {section === 'leads' && <LeadInbox t={t} lang={lang} onChanged={refreshCount} />}
       {section === 'mentors' && <AdminMentors lang={lang} />}
       {section === 'lessons' && <AdminLessons lang={lang} />}
+      {section === 'centers' && <AdminCenters lang={lang} />}
       {section === 'rewards' && <RewardQueue />}
     </main>
   </div>;

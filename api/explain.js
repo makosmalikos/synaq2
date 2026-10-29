@@ -7,6 +7,7 @@
 
 const { createHash } = require('node:crypto');
 const { getAdmin } = require('../backend/lib/firebase-admin');
+const { learningFamily } = require('../backend/lib/center-access');
 const { PLAN_CATALOG, familyPlan, hasFullAccess } = require('../backend/lib/plans');
 // Respect explicit deployment configuration, including provider errors. Never
 // silently switch to another model with different cost or output behavior.
@@ -84,7 +85,7 @@ async function getLearningAccount(user) {
   // the actual Auth email must agree. Synthetic child emails are not verified.
   return family.exists && child.exists && typeof code === 'string'
     && /^[a-z0-9]+$/.test(code) && `${code}@synaq.kids` === email
-    ? { family: family.data(), parentUid } : null;
+    ? { family: await learningFamily(db, user.uid, family.data()), parentUid } : null;
 }
 
 function explainBudget(family) {

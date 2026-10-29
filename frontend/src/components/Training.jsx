@@ -105,7 +105,7 @@ export function Kolhar({ q, answer, onPick, disabled, correct }) {
   );
 }
 
-export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade }) {
+export default function Training({ onXp, startTopicId, startPractice = null, onTopicOpened, onUpgrade }) {
   const { t, lang } = useLang();
   const ru = lang === 'ru';
   const topicName = (value) => trainingTopicName(value, lang);
@@ -253,10 +253,11 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
       // кіргенде), тұйықталған solved әрқашан бос жиын болып қалатын еді —
       // сол кезде бұрын шығарылған есептер қайта көрсетілер еді.
       const list = await getTrainingQuestions(uid, {
-        topicId: tp.id, excludeIds: solvedRef.current, limit: 60,
+        topicId: tp.id, excludeIds: startPractice?.excludeIds || solvedRef.current,
+        limit: startPractice ? Math.max(1, Math.min(50, startPractice.limit)) : 60,
       });
       if (!alive || !mounted.current || request !== topicRequest.current || pendingAttempt.current || auth.currentUser?.uid !== uid) return;
-      start(tp, list);
+      start(tp, list, !!startPractice);
       onTopicOpened?.();
     })().catch((error) => { if (alive && request === topicRequest.current) {
       setLoadErrorCode(error?.code || 'tasks-load-failed'); setLoadError(true);
@@ -266,7 +267,7 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
       alive = false;
       if (request === topicRequest.current) { topicRequest.current++; setOpening(false); }
     };
-  }, [startTopicId, topics, lang, onTopicOpened, loading, loadError, pro, topic, uid]);
+  }, [startTopicId, startPractice, topics, lang, onTopicOpened, loading, loadError, pro, topic, uid]);
 
   useEffect(() => {
     if (!questionKey || checked || loading || opening || pro === null || locked || pendingAttempt.current) return;
@@ -309,12 +310,12 @@ export default function Training({ onXp, startTopicId, onTopicOpened, onUpgrade 
   // тегін тарифте ашық болатын жалғыз тақырып — тізімдегі біріншісі
   const b0 = topics.length ? topics[0].id : null;
 
-  const start = (tp, list) => {
+  const start = (tp, list, includeSolved = false) => {
     if (pendingAttempt.current) return;
     checkingRef.current = false;
     currentQuestion.current = null; questionSession.current = null;
     setSessionState('idle'); setSessionNotice(''); setServerResult(null);
-    setTopic(tp); setItems(list.filter((item) => !solvedRef.current.has(item.id)).map(trainingQuestion));
+    setTopic(tp); setItems(list.filter((item) => includeSolved || !solvedRef.current.has(item.id)).map(trainingQuestion));
     setI(0); setAnswer(''); setChecked(false); setSecs(0); setSaveState('idle');
   };
   async function openQuestions(tp, getQuestions) {

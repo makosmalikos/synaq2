@@ -1,0 +1,43 @@
+.free-plan-banner {
+  flex: none;
+  width: 100%;
+  background: #c92a35;
+  color: #fff;
+}
+.free-plan-banner-inner {
+  box-sizing: border-box;
+  max-width: 1180px;
+  min-height: 46px;
+  margin: 0 auto;
+  padding: 8px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  font: 500 13px/1.5 Manrope, 'Golos Text', system-ui, sans-serif;
+}
+.free-plan-banner p { margin: 0; }
+.free-plan-banner strong { font-weight: 800; }
+.free-plan-banner button {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 34px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, .65);
+  border-radius: 8px;
+  background: #fff;
+  color: #b41c29;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+.free-plan-banner button:hover { background: #fff0f1; }
+.free-plan-banner button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.student-shell:has(> .free-plan-banner) > .sidebar::after { display: none; }
+@media (max-width: 640px) {
+  .free-plan-banner-inner { padding: 10px 16px; flex-wrap: wrap; gap: 7px; font-size: 12px; }
+  .free-plan-banner button { min-height: 44px; width: 100%; }
+}

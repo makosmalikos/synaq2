@@ -1,3 +1,4 @@
+import { isCheckoutDestination } from '../checkoutMessages.js';
 import NisExam from './NisExam.jsx';
 import { NIS_FORMAT } from '../../../shared/nis-exam.mjs';
 import { mockPhase } from '../mockApi.js';
@@ -350,7 +351,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
     try {
       const value = await weeklyMockCheckout();
       if (value.access) { setLoadRetry((revision) => revision + 1); return; }
-      if (typeof value.url !== 'string' || !/^https:\/\//.test(value.url)) throw new Error('unsafe_checkout');
+      if (!isCheckoutDestination(value.url)) throw new Error('unsafe_checkout');
       window.location.assign(value.url);
     } catch {
       setStartError(ru ? 'Не удалось открыть оплату. Попробуйте ещё раз или обратитесь в поддержку.' : 'Төлемді ашу мүмкін болмады. Қайта көріңіз немесе қолдау қызметіне жазыңыз.');

@@ -7,23 +7,73 @@
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Content-Security-Policy", "value": "base-uri 'self'; object-src 'none'; frame-ancestors 'none'" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Service-Worker-Allowed", "value": "/" }
+      ]
+    },
+    {
+      "source": "/manifest.webmanifest",
+      "headers": [
+        { "key": "Content-Type", "value": "application/manifest+json" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/offline.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/((?!api/|assets/|figures/).*)", "destination": "/index.html" }
+    {
+      "source": "/((?!api/|assets/|figures/|pwa/|sw\\.js$|offline\\.html$|manifest\\.webmanifest$).*)",
+      "destination": "/index.html"
+    }
   ],
   "functions": {
-    "api/explain.js": { "maxDuration": 30 },
-    "api/checkout.js": { "maxDuration": 15 },
-    "api/weekly-mock-checkout.js": { "maxDuration": 15 },
-    "api/subscription-portal.js": { "maxDuration": 15 },
-    "api/mock-session.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,bilLogicQuestions,bilReadingQuestions,nishScienceQuestions,nishOfficialLanguageQuestions,expandedQuestionBank,questionMetadata,adminTasks,grading}.js" },
-    "api/diagnostic-session.js": { "maxDuration": 30, "includeFiles": "frontend/src/curriculumData.js" },
-    "api/webhook.js": { "maxDuration": 30 },
-    "api/duel.js": { "maxDuration": 30, "includeFiles": "frontend/src/{bank,data,bilLogicQuestions,bilReadingQuestions,nishScienceQuestions,nishOfficialLanguageQuestions,expandedQuestionBank,questionMetadata,adminTasks}.js" },
-    "api/learning.js": { "maxDuration": 30, "includeFiles": "frontend/{src/{bank,data,bilLogicQuestions,bilReadingQuestions,nish{Science,OfficialLanguage}Questions,expandedQuestionBank,questionMetadata,topicSummary,adminTasks,grading,curriculumData,platformDiagnostic}.js,public/figures/synaq-editions/*.svg}" }
+    "api/[...path].js": {
+      "maxDuration": 30,
+      "includeFiles": "frontend/src/topicCatalog.generated.js"
+    },
+    "api/explain.js": {
+      "maxDuration": 30
+    },
+    "api/checkout.js": {
+      "maxDuration": 15
+    },
+    "api/weekly-mock-checkout.js": {
+      "maxDuration": 15
+    },
+    "api/subscription-portal.js": {
+      "maxDuration": 15
+    },
+    "api/mock-session.js": {
+      "maxDuration": 30,
+      "includeFiles": "frontend/src/{bank,data,bilLogicQuestions,bilReadingQuestions,nishScienceQuestions,nishOfficialLanguageQuestions,expandedQuestionBank,questionMetadata,adminTasks,grading}.js"
+    },
+    "api/diagnostic-session.js": {
+      "maxDuration": 30,
+      "includeFiles": "frontend/src/curriculumData.js"
+    },
+    "api/webhook.js": {
+      "maxDuration": 30
+    },
+    "api/duel.js": {
+      "maxDuration": 30,
+      "includeFiles": "frontend/src/{bank,data,bilLogicQuestions,bilReadingQuestions,nishScienceQuestions,nishOfficialLanguageQuestions,expandedQuestionBank,questionMetadata,adminTasks}.js"
+    },
+    "api/learning.js": {
+      "maxDuration": 30,
+      "includeFiles": "frontend/{src/{bank,data,bilLogicQuestions,bilReadingQuestions,nish{Science,OfficialLanguage}Questions,expandedQuestionBank,questionMetadata,topicSummary,adminTasks,grading,curriculumData,platformDiagnostic}.js,public/figures/synaq-editions/*.svg}"
+    }
   }
 }

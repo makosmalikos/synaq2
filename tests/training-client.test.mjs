@@ -11,6 +11,7 @@ const loadEffect = source.slice(source.indexOf('  useEffect(() => {\n    let ali
 const translationEffect = source.slice(source.indexOf('  useEffect(() => {\n    if (!questionKey || !translationReady)'), source.indexOf('  }, [activeQuestion, lang, questionKey, translationReady, uid]);') + '  }, [activeQuestion, lang, questionKey, translationReady, uid]);'.length);
 const translatedDisplay = source.slice(source.indexOf('  const visibleQuestion ='), source.indexOf('  const q = visibleQuestion'));
 const tick = () => new Promise((resolve) => setImmediate(resolve));
+const topicLinkEffect = source.slice(source.indexOf('  useEffect(() => {\n    if (!startTopicId'), source.indexOf('  }, [startTopicId,') + source.slice(source.indexOf('  }, [startTopicId,')).indexOf('\n'));
 const deferred = () => { let resolve, reject; const promise = new Promise((yes, no) => { resolve = yes; reject = no; }); return { promise, resolve, reject }; };
 function memoryStorage() {
   const data = new Map();
@@ -72,6 +73,23 @@ function fixture({ storage = memoryStorage(), pro = false, count = 4, save, star
     visible: () => vm.runInContext(`(() => { ${translatedDisplay} return visibleQuestion; })()`, context),
   };
 }
+
+test('center homework requests only remaining questions and permits work solved before assignment', async () => {
+  const f = fixture({ pro: true });
+  f.context.startTopicId = 'eq';
+  f.context.startPractice = { limit: 3, excludeIds: ['already-in-homework'] };
+  f.context.topics = [f.topic]; f.context.topic = null; f.context.loadError = false;
+  f.context.solvedRef.current.add('q1');
+  let requested, consumed = false;
+  f.context.getTrainingQuestions = async (_uid, options) => { requested = options; return [f.question]; };
+  f.context.onTopicOpened = () => { consumed = true; };
+  vm.runInContext(topicLinkEffect, f.context);
+  await tick();
+  assert.equal(requested.limit, 3);
+  assert.deepEqual(requested.excludeIds, ['already-in-homework']);
+  assert.equal(f.state.Items[0].id, 'q1');
+  assert.equal(consumed, true);
+});
 
 test('same-render duplicate check is journaled once; confirmed XP uses the actual hourly bonus', async () => {
   const pending = deferred();

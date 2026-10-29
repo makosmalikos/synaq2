@@ -47,6 +47,7 @@ module.exports = async function handler(req, res) {
     const awardRef = db.collection('results').doc(user.uid).collection('awards').doc(`duel_${code}`);
 
     const result = await db.runTransaction(async (tx) => {
+      await require('../lib/linked-child').requireLinkedChild(db, user, tx);
       const [duelSnap, awardSnap, statsSnap] = await Promise.all([
         tx.get(duelRef), tx.get(awardRef), tx.get(statsRef),
       ]);

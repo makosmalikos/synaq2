@@ -72,6 +72,7 @@ function fixture(filename, envOverrides = {}) {
   const context = { module: { exports: {} }, Date, Buffer, AbortSignal, AbortController, Headers,
     console: { error() {}, warn() {}, log() {} }, process: { env },
     require(name) {
+      if (name.endsWith('/center-access')) return require('../backend/lib/center-access');
       if (name === 'node:crypto' || name === 'crypto') return crypto;
       if (name === '../backend/lib/plans' || name === '../lib/plans') return plans;
       if (name === 'firebase-admin/app') return { getApps: () => apps, cert: (value) => value,

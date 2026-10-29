@@ -1,4 +1,5 @@
 const { NIS_FORMAT, startNis, updateNis, reconcileNis, isNis } = require('../shared/nis-exam.mjs');
+const { learningFamily } = require('../backend/lib/center-access');
 const { getAdmin } = require('../backend/lib/firebase-admin');
 const { familyPlan, hasFullAccess } = require('../backend/lib/plans');
 const { mockCatalog, createWeeklyMock, createPreviewMock, restoreMock, gradeMock, publicMock } = require('../backend/lib/mock-bank');
@@ -20,7 +21,7 @@ async function childContext(db, user, tx = null) {
   const familyRef = db.collection('families').doc(parentUid);
   const [family, child] = await Promise.all([read(familyRef), read(familyRef.collection('children').doc(user.uid))]);
   if (!family.exists || !child.exists || `${child.data().code}@synaq.kids` !== user.email) throw error('child-required', 403);
-  return { family: family.data(), parentUid };
+  return { family: await learningFamily(db, user.uid, family.data(), tx), parentUid };
 }
 
 const sessionRef = (db, uid, id) => db.collection('mockSessions').doc(`${uid}_${id}`);

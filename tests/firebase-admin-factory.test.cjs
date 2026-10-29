@@ -148,7 +148,7 @@ for (const mode of ['demo', 'certificate']) {
         const accessors = {
           'child-create': 'getAdmin()', 'child-password': 'getAdmin()',
           'duel': 'getAdmin()', 'duel-award': 'getAdmin()', 'entitlement': 'getAdmin()',
-          'checkout': '({ auth: getAdminAuth(), db: getAdminStore() })',
+          'checkout': 'getAdmin()',
           'explain': '({ auth: getAdminAuth(), db: getAdminDb() })',
           'admin-task': '({ auth: getAdminAuth(), db: getAdminDb() })',
           'admin-login': '({ auth: getAdminAuth() })', 'webhook': '({ db: store() })',

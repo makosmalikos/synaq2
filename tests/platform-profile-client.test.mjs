@@ -181,6 +181,7 @@ function authHarness() {
     authUidRef: { current: undefined },
     setAdminUser: (role) => { state.role = role; },
     setCurriculumTopic: (topic) => { state.curriculumTopic = topic; },
+    setAssignmentPractice: (assignment) => { state.assignmentPractice = assignment; },
     setUser: (user) => { state.user = user; },
     setAuthRevision: (update) => { state.revision = update(state.revision); },
   });

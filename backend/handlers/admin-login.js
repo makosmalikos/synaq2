@@ -31,6 +31,7 @@ function isAllowedEmail(email) {
 }
 
 module.exports = async function handler(req, res) {
+  res.setHeader('Cache-Control', 'private, no-store');
   if (req.method !== 'POST') return res.status(405).json({ error: 'method_not_allowed' });
 
   try {

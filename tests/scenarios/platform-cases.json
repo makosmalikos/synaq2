@@ -1,0 +1,2657 @@
+{
+  "version": 1,
+  "scope": "Основные пользовательские сценарии SYNAQ. Client — обработчики с управляемыми сбоями; integration — настоящий локальный API/Auth/Firestore; browser — отдельный ручной UI-прогон. Реальные платежи, видео и внешняя AI-модель не вызываются.",
+  "cases": [
+    {
+      "id": "AUTH-01",
+      "area": "Вход и семья",
+      "title": "Двойной вход",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Нажать вход дважды до обновления экрана.",
+        "Завершить первый запрос."
+      ],
+      "expected": "Отправляется один запрос; после ответа блокировка снимается.",
+      "evidence": [
+        {
+          "file": "tests/auth-client.test.mjs",
+          "name": "auth blocks same-render double submit across different actions and unlocks after success"
+        }
+      ]
+    },
+    {
+      "id": "AUTH-02",
+      "area": "Вход и семья",
+      "title": "Ошибка входа и повтор",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Вернуть ошибку входа.",
+        "Повторить с корректным ответом сервера."
+      ],
+      "expected": "Понятное сообщение; повтор доступен.",
+      "evidence": [
+        {
+          "file": "tests/auth-client.test.mjs",
+          "name": "auth formats failures and permits retry, including synchronous failures"
+        }
+      ]
+    },
+    {
+      "id": "AUTH-03",
+      "area": "Вход и семья",
+      "title": "Выход во время запроса",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Начать вход.",
+        "Уйти с экрана до ошибки сервера."
+      ],
+      "expected": "Поздний ответ не меняет закрытый экран.",
+      "evidence": [
+        {
+          "file": "tests/auth-client.test.mjs",
+          "name": "auth ignores late errors and cannot start another request after unmount"
+        }
+      ]
+    },
+    {
+      "id": "AUTH-04",
+      "area": "Вход и семья",
+      "title": "Создание ребёнка двойным нажатием",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Дважды отправить создание ребёнка до перерисовки."
+      ],
+      "expected": "Один запрос; данные входа сохранены до ответа.",
+      "evidence": [
+        {
+          "file": "tests/parent-create-client.test.mjs",
+          "name": "same-render create clicks produce only one request with credentials available before response"
+        }
+      ]
+    },
+    {
+      "id": "AUTH-05",
+      "area": "Вход и семья",
+      "title": "Потеря подтверждения создания",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Создать ребёнка, потерять ответ.",
+        "Повторить создание."
+      ],
+      "expected": "Используются исходные request ID, логин и PIN; второго ребёнка нет.",
+      "evidence": [
+        {
+          "file": "tests/parent-create-client.test.mjs",
+          "name": "ambiguous response refreshes children and reuses exact request/PIN even when child already exists"
+        }
+      ]
+    },
+    {
+      "id": "AUTH-06",
+      "area": "Вход и семья",
+      "title": "Регистрация → ребёнок → неверный PIN → вход",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Изолированная семья в локальных Auth/Firestore-эмуляторах.",
+      "steps": [
+        "Зарегистрировать родителя и создать ребёнка через API.",
+        "Проверить неверный PIN, затем корректный.",
+        "Открыть профиль и результаты."
+      ],
+      "expected": "Ошибочный PIN отклонён; правильный входит в тот же аккаунт; чужие данные закрыты.",
+      "evidence": [
+        {
+          "file": "tests/journey-emulator.test.cjs",
+          "name": "real parent signup → child API → child login → retry-safe practice → parent progress"
+        }
+      ]
+    },
+    {
+      "id": "AUTH-07",
+      "area": "Вход и семья",
+      "title": "Прерванная регистрация семьи",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Изолированная семья в локальных Auth/Firestore-эмуляторах.",
+      "steps": [
+        "Создать Auth без семейного профиля.",
+        "Войти повторно.",
+        "Повторить восстановление платной семьи."
+      ],
+      "expected": "Профиль восстанавливается, оплаченный доступ и имя не затираются.",
+      "evidence": [
+        {
+          "file": "tests/journey-emulator.test.cjs",
+          "name": "sign-in repairs a missing family after an interrupted signup without replacing paid data"
+        }
+      ]
+    },
+    {
+      "id": "TRN-01",
+      "area": "Практика",
+      "title": "Смена RU ↔ KZ на текущем вопросе",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Открыть задачу и ввести ответ.",
+        "Поменять язык туда и обратно."
+      ],
+      "expected": "Сессия, ответ и время сохраняются; обновляется текущий вопрос.",
+      "evidence": [
+        {
+          "file": "tests/training-client.test.mjs",
+          "name": "switching the current question in both directions preserves its answer, clock and session"
+        }
+      ]
+    },
+    {
+      "id": "TRN-02",
+      "area": "Практика",
+      "title": "Быстрое переключение языка",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Запустить два перевода.",
+        "Вернуть ответы в обратном порядке."
+      ],
+      "expected": "Остаётся последний выбранный язык, включая уже проверенную задачу.",
+      "evidence": [
+        {
+          "file": "tests/training-client.test.mjs",
+          "name": "an older language request cannot overwrite the latest selection, including after checking"
+        }
+      ]
+    },
+    {
+      "id": "TRN-03",
+      "area": "Практика",
+      "title": "Смена языка во время открытия",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Начать открытие вопроса.",
+        "Поменять язык до ответа сервера."
+      ],
+      "expected": "Новая задача использует последний выбранный язык.",
+      "evidence": [
+        {
+          "file": "tests/training-client.test.mjs",
+          "name": "a language switch while the server opens the task uses the latest language"
+        }
+      ]
+    },
+    {
+      "id": "TRN-04",
+      "area": "Практика",
+      "title": "Двойная проверка ответа",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Дважды проверить один ответ."
+      ],
+      "expected": "Одна запись и одно начисление подтверждённых XP.",
+      "evidence": [
+        {
+          "file": "tests/training-client.test.mjs",
+          "name": "same-render duplicate check is journaled once; confirmed XP uses the actual hourly bonus"
+        }
+      ]
+    },
+    {
+      "id": "TRN-05",
+      "area": "Практика",
+      "title": "Потерянное подтверждение ответа",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Прервать сохранение до или после коммита.",
+        "Повторить запрос."
+      ],
+      "expected": "Тот же ID; XP и дневной счётчик не удваиваются.",
+      "evidence": [
+        {
+          "file": "tests/training-client.test.mjs",
+          "name": "failed save retries the stable ID; an ambiguous previous commit reconciles XP and free count once"
+        }
+      ]
+    },
+    {
+      "id": "TRN-06",
+      "area": "Практика",
+      "title": "Перезагрузка до сохранения",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Перезагрузить с незавершённым сохранением.",
+        "Восстановить попытку."
+      ],
+      "expected": "Сохраняются обратная связь и исходная попытка.",
+      "evidence": [
+        {
+          "file": "tests/training-client.test.mjs",
+          "name": "refresh restores checked feedback and resumes the same unsaved attempt"
+        }
+      ]
+    },
+    {
+      "id": "TRN-07",
+      "area": "Практика",
+      "title": "Перезагрузка после сохранения",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Сохранить ответ.",
+        "Восстановить после перезагрузки."
+      ],
+      "expected": "Ответ не записывается и не награждается повторно.",
+      "evidence": [
+        {
+          "file": "tests/training-client.test.mjs",
+          "name": "refresh after a committed write does not count or credit the attempt twice"
+        }
+      ]
+    },
+    {
+      "id": "TRN-08",
+      "area": "Практика",
+      "title": "Недоступное хранилище",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Заблокировать хранилище и подставить чужой черновик."
+      ],
+      "expected": "Показано ограничение сохранения; чужая или повреждённая попытка игнорируется.",
+      "evidence": [
+        {
+          "file": "tests/training-client.test.mjs",
+          "name": "storage failure is nonfatal but surfaced; invalid or foreign journals are ignored"
+        }
+      ]
+    },
+    {
+      "id": "TRN-09",
+      "area": "Практика",
+      "title": "Лимит бесплатного тарифа",
+      "priority": "P1",
+      "level": "integration",
+      "preconditions": "Изолированная семья в локальных Auth/Firestore-эмуляторах.",
+      "steps": [
+        "Оставить три доступных ответа.",
+        "Параллельно отправить четыре разных ответа."
+      ],
+      "expected": "Принимаются три; четвёртый получает daily-limit; всего пять за день.",
+      "evidence": [
+        {
+          "file": "tests/journey-emulator.test.cjs",
+          "name": "real parent signup → child API → child login → retry-safe practice → parent progress"
+        }
+      ]
+    },
+    {
+      "id": "TRN-10",
+      "area": "Практика",
+      "title": "Наступление нового дня",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Задержать загрузку счётчика до полуночи Алматы."
+      ],
+      "expected": "Счётчик перечитывается; вчерашний лимит не блокирует новый день.",
+      "evidence": [
+        {
+          "file": "tests/training-client.test.mjs",
+          "name": "slow bootstrap across midnight reloads the daily count instead of keeping yesterday locked"
+        }
+      ]
+    },
+    {
+      "id": "TRN-11",
+      "area": "Практика",
+      "title": "Секундомер в фоновой вкладке",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Задержать callback таймера на несколько минут.",
+        "Вернуть вкладку."
+      ],
+      "expected": "Время учитывает реальный интервал; старый вопрос не меняет секундомер нового.",
+      "evidence": [
+        {
+          "file": "tests/training-clock.test.mjs",
+          "name": "training clock catches up after tab throttling and ignores a previous question callback"
+        }
+      ]
+    },
+    {
+      "id": "DIAG-01",
+      "area": "Диагностика",
+      "title": "Двойной старт и продолжение",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Дважды начать или продолжить до перерисовки."
+      ],
+      "expected": "Выполняется один запрос.",
+      "evidence": [
+        {
+          "file": "tests/diagnostic-resilience.test.mjs",
+          "name": "diagnostic start and resume are single flight even before a rerender"
+        }
+      ]
+    },
+    {
+      "id": "DIAG-02",
+      "area": "Диагностика",
+      "title": "Две независимые вкладки",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Открыть разные попытки в двух вкладках.",
+        "Записать разные ответы.",
+        "Восстановить обе."
+      ],
+      "expected": "Каждая вкладка сохраняет собственную попытку; резервная копия доступна новому открытию.",
+      "evidence": [
+        {
+          "file": "tests/diagnostic-resilience.test.mjs",
+          "name": "two diagnostic tabs keep their own answers while retaining a backup for reopening"
+        }
+      ]
+    },
+    {
+      "id": "DIAG-03",
+      "area": "Диагностика",
+      "title": "Неоднозначное сохранение",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Потерять подтверждение ответа.",
+        "Попробовать изменить ответ.",
+        "Повторить сохранение."
+      ],
+      "expected": "До сверки ввод блокирован; повторяются прежние ID, индекс и ответ.",
+      "evidence": [
+        {
+          "file": "tests/diagnostic-resilience.test.mjs",
+          "name": "ambiguous diagnostic answer is reconciled and replayed exactly before accepting new input"
+        }
+      ]
+    },
+    {
+      "id": "DIAG-04",
+      "area": "Диагностика",
+      "title": "Истекла старая попытка",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Вернуть ошибку истечения старой сессии при наличии новой."
+      ],
+      "expected": "Удаляется только старый черновик.",
+      "evidence": [
+        {
+          "file": "tests/diagnostic-resilience.test.mjs",
+          "name": "expired old diagnostic clears only its own draft"
+        }
+      ]
+    },
+    {
+      "id": "DIAG-05",
+      "area": "Диагностика",
+      "title": "Поздняя история",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Завершить диагностику до ответа первоначальной истории."
+      ],
+      "expected": "Старый запрос не затирает новый результат.",
+      "evidence": [
+        {
+          "file": "tests/diagnostic-resilience.test.mjs",
+          "name": "late initial history cannot overwrite a freshly completed diagnostic or its backup"
+        }
+      ]
+    },
+    {
+      "id": "DIAG-06",
+      "area": "Диагностика",
+      "title": "Две полные диагностики с повтором",
+      "priority": "P1",
+      "level": "integration",
+      "preconditions": "Изолированная семья в локальных Auth/Firestore-эмуляторах.",
+      "steps": [
+        "Пройти по 20 вопросов для 3 и 6 классов.",
+        "Повторить первый ответ.",
+        "Восстановить результаты."
+      ],
+      "expected": "Два разных результата с корректным классом; повтор не создаёт дубликат.",
+      "evidence": [
+        {
+          "file": "tests/resilience-emulator.test.cjs",
+          "name": "real mock lost acknowledgement and two diagnostic sessions recover without duplicate results"
+        }
+      ]
+    },
+    {
+      "id": "MOCK-01",
+      "area": "Пробники",
+      "title": "Полный пробник БИЛ: 60 вопросов",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Изолированная семья в локальных Auth/Firestore-эмуляторах.",
+      "steps": [
+        "Открыть полный вариант и восстановить его.",
+        "Ответить верно на первый, неверно на второй, остальные пропустить.",
+        "Завершить; повторить отправку с другими данными; восстановить."
+      ],
+      "expected": "Верные размер и нумерация; ключи скрыты до завершения; корректные ошибки/пропуски; один неизменный результат.",
+      "evidence": [
+        {
+          "file": "tests/mock-schools-emulator.test.cjs",
+          "name": "full БИЛ mock keeps all 60 questions, grades answers and skips, and replays one result"
+        }
+      ]
+    },
+    {
+      "id": "MOCK-02",
+      "area": "Пробники",
+      "title": "Полный пробник НИШ: 180 вопросов",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Изолированная семья в локальных Auth/Firestore-эмуляторах.",
+      "steps": [
+        "Открыть полный вариант и восстановить его.",
+        "Ответить верно на первый, неверно на второй, остальные пропустить.",
+        "Завершить; повторить отправку с другими данными; восстановить."
+      ],
+      "expected": "Верные размер и нумерация; ключи скрыты до завершения; корректные ошибки/пропуски; один неизменный результат.",
+      "evidence": [
+        {
+          "file": "tests/mock-schools-emulator.test.cjs",
+          "name": "full НИШ mock keeps all 180 questions, grades answers and skips, and replays one result"
+        }
+      ]
+    },
+    {
+      "id": "MOCK-03",
+      "area": "Пробники",
+      "title": "Полный пробник РФМШ: 30 вопросов",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Изолированная семья в локальных Auth/Firestore-эмуляторах.",
+      "steps": [
+        "Открыть полный вариант и восстановить его.",
+        "Ответить верно на первый, неверно на второй, остальные пропустить.",
+        "Завершить; повторить отправку с другими данными; восстановить."
+      ],
+      "expected": "Верные размер и нумерация; ключи скрыты до завершения; корректные ошибки/пропуски; один неизменный результат.",
+      "evidence": [
+        {
+          "file": "tests/mock-schools-emulator.test.cjs",
+          "name": "full РФМШ mock keeps all 30 questions, grades answers and skips, and replays one result"
+        }
+      ]
+    },
+    {
+      "id": "MOCK-04",
+      "area": "Пробники",
+      "title": "Переход 2 → 30 → 5",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Ответить на вопрос 2.",
+        "Перейти 30 → 5 и между предметами."
+      ],
+      "expected": "Ответы и дедлайн сохраняются; открывается выбранный номер.",
+      "evidence": [
+        {
+          "file": "tests/mock-experience.test.mjs",
+          "name": "actual navigation supports 2 → 30 → 5 and section jumps without losing answers or moving the deadline"
+        }
+      ]
+    },
+    {
+      "id": "MOCK-05",
+      "area": "Пробники",
+      "title": "Навигация НИШ по 180 вопросам",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Сгруппировать 180 вопросов по предметам.",
+        "Открыть номера на границах разделов."
+      ],
+      "expected": "Глобальные номера и индексы не сбиваются.",
+      "evidence": [
+        {
+          "file": "tests/mock-experience.test.mjs",
+          "name": "all 180 NIS tasks keep their global numbers and direct navigation indices across subjects"
+        }
+      ]
+    },
+    {
+      "id": "MOCK-06",
+      "area": "Пробники",
+      "title": "Ноль, пробелы и цвета статусов",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Ввести 0, пробелы, верный и неверный ответ.",
+        "Открыть разбор."
+      ],
+      "expected": "0 считается ответом, пробелы — пропуском; статусы отличаются корректно.",
+      "evidence": [
+        {
+          "file": "tests/mock-experience.test.mjs",
+          "name": "answer colours distinguish whitespace, a real zero, skipped tasks, errors and redacted snapshots"
+        }
+      ]
+    },
+    {
+      "id": "MOCK-07",
+      "area": "Пробники",
+      "title": "БИЛ: отрицательный балл",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Передать ошибки и пропуски без достаточного числа верных."
+      ],
+      "expected": "Формула +4/−1/0 соблюдается, отрицательный балл не обрезается.",
+      "evidence": [
+        {
+          "file": "tests/mock-experience.test.mjs",
+          "name": "subject summaries retain BIL +4/-1/0 scoring including negative marks"
+        }
+      ]
+    },
+    {
+      "id": "MOCK-08",
+      "area": "Пробники",
+      "title": "Отмена ручного завершения",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Нажать завершение до конца теста."
+      ],
+      "expected": "До подтверждения ответы не фиксируются и запрос не отправляется.",
+      "evidence": [
+        {
+          "file": "tests/mock-finish-confirmation.test.mjs",
+          "name": "manual finish asks first without freezing answers or sending the attempt"
+        }
+      ]
+    },
+    {
+      "id": "MOCK-09",
+      "area": "Пробники",
+      "title": "Потеря ответа при завершении",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Потерять ответ после отправки результата.",
+        "Изменить локальные данные и повторить."
+      ],
+      "expected": "Повторяется исходный зафиксированный снимок; результат сохраняется один раз.",
+      "evidence": [
+        {
+          "file": "tests/mock-resilience.test.mjs",
+          "name": "mock retries keep the exact frozen answers through a lost response and duplicate finish clicks"
+        }
+      ]
+    },
+    {
+      "id": "MOCK-10",
+      "area": "Пробники",
+      "title": "Перезагрузка во время завершения",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Перезагрузить с уже зафиксированными ответами."
+      ],
+      "expected": "Редактирование не открывается; повтор отправляется явно.",
+      "evidence": [
+        {
+          "file": "tests/mock-resilience.test.mjs",
+          "name": "refresh restores a frozen submission without reopening answer editing or silently submitting"
+        }
+      ]
+    },
+    {
+      "id": "MOCK-11",
+      "area": "Пробники",
+      "title": "Ошибочные часы устройства",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Проверить часы впереди и позади сервера."
+      ],
+      "expected": "Оставшееся время совпадает по серверной поправке.",
+      "evidence": [
+        {
+          "file": "tests/mock-resilience.test.mjs",
+          "name": "server clock offset keeps the same remaining time on devices ahead or behind"
+        }
+      ]
+    },
+    {
+      "id": "MOCK-12",
+      "area": "Пробники",
+      "title": "Повтор ошибок без изменения балла",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Открыть работу над ошибками.",
+        "Исправить одну и оставить другую."
+      ],
+      "expected": "Повторные ответы независимы; исходный результат остаётся прежним.",
+      "evidence": [
+        {
+          "file": "tests/mock-experience.test.mjs",
+          "name": "retry handlers check independently, preserve other answers and never change the original result"
+        }
+      ]
+    },
+    {
+      "id": "MOCK-13",
+      "area": "Пробники",
+      "title": "Таймер и повтор сохранения",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Исчерпать время или повторить зафиксированную отправку."
+      ],
+      "expected": "Дополнительное подтверждение не мешает завершению.",
+      "evidence": [
+        {
+          "file": "tests/mock-finish-confirmation.test.mjs",
+          "name": "expired and already frozen attempts can finish without a second confirmation"
+        }
+      ]
+    },
+    {
+      "id": "PAR-01",
+      "area": "Кабинет родителя",
+      "title": "Подсветка раздела внизу страницы",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Нажать Ребёнок, Награды и Настройки у конца страницы."
+      ],
+      "expected": "Остаётся выбранный раздел до ручной прокрутки.",
+      "evidence": [
+        {
+          "file": "tests/parent-section-navigation.test.mjs",
+          "name": "a clicked parent section stays selected when clamped scrolling also exposes the next section"
+        }
+      ]
+    },
+    {
+      "id": "PAR-02",
+      "area": "Кабинет родителя",
+      "title": "Ручная прокрутка разделов",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "После явного перехода прокрутить колесом, касанием, клавишей или полосой."
+      ],
+      "expected": "Автоматическая подсветка снова отслеживает положение.",
+      "evidence": [
+        {
+          "file": "tests/parent-section-navigation.test.mjs",
+          "name": "manual wheel, touch, keyboard and scrollbar scrolling resume section tracking"
+        }
+      ]
+    },
+    {
+      "id": "PAR-03",
+      "area": "Кабинет родителя",
+      "title": "Зависшая подписка",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Не вернуть первый snapshot подписки.",
+        "Затем вернуть корректный ответ."
+      ],
+      "expected": "Через 15 секунд доступна повторная загрузка; корректный ответ восстанавливает состояние.",
+      "evidence": [
+        {
+          "file": "tests/parent-loading-deadline.test.mjs",
+          "name": "parent subscription shows a retryable error when its first snapshot never arrives, then recovers"
+        }
+      ]
+    },
+    {
+      "id": "PAR-04",
+      "area": "Кабинет родителя",
+      "title": "Зависший список детей",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Задержать чтение детей.",
+        "Повторить загрузку; позже вернуть старый ответ."
+      ],
+      "expected": "Нет ложного сообщения об отсутствии ребёнка; старый ответ игнорируется.",
+      "evidence": [
+        {
+          "file": "tests/parent-loading-deadline.test.mjs",
+          "name": "a stalled child list fails visibly and can retry without claiming the family has no child"
+        }
+      ]
+    },
+    {
+      "id": "PAR-05",
+      "area": "Кабинет родителя",
+      "title": "Частичная ошибка диагностики",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Загрузить практику, но вернуть ошибку истории диагностики."
+      ],
+      "expected": "Практика показана; диагностика обозначена недоступной с повтором, а не пустой.",
+      "evidence": [
+        {
+          "file": "tests/parent-report-states.test.mjs",
+          "name": "failed diagnostic history has an explicit retry state instead of claiming no diagnostic exists"
+        }
+      ]
+    },
+    {
+      "id": "PAR-06",
+      "area": "Кабинет родителя",
+      "title": "Новая семья без результатов",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Вернуть подтверждённую пустую историю."
+      ],
+      "expected": "Показан корректный первый шаг без ложной ошибки.",
+      "evidence": [
+        {
+          "file": "tests/parent-report-states.test.mjs",
+          "name": "a confirmed empty diagnostic history keeps its normal first-step message"
+        }
+      ]
+    },
+    {
+      "id": "PAR-07",
+      "area": "Кабинет родителя",
+      "title": "Смена ребёнка и поздние данные",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Начать чтение прогресса первого ребёнка.",
+        "Сменить аккаунт до завершения запроса."
+      ],
+      "expected": "Старые история, XP и подписка не подставляются новому ребёнку.",
+      "evidence": [
+        {
+          "file": "tests/progress-client.test.mjs",
+          "name": "auth switching blocks old history, XP and Pro writes even before effect cleanup"
+        }
+      ]
+    },
+    {
+      "id": "PAR-08",
+      "area": "Кабинет родителя",
+      "title": "Ошибка прогресса и повтор",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Вернуть ошибку чтения после существующих результатов."
+      ],
+      "expected": "Подтверждённые XP и прогресс не заменяются фиктивными нулями.",
+      "evidence": [
+        {
+          "file": "tests/progress-client.test.mjs",
+          "name": "failed progress reads never replace existing XP or progress with fake zeros"
+        }
+      ]
+    },
+    {
+      "id": "LESS-01",
+      "area": "Наставник",
+      "title": "Двойная запись на урок",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Дважды записаться до перерисовки.",
+        "Выйти до ответа сервера."
+      ],
+      "expected": "Одна запись; поздний ответ не открывает экран после выхода.",
+      "evidence": [
+        {
+          "file": "tests/lesson-client.test.mjs",
+          "name": "same-render mentor booking clicks dispatch once and never navigate after logout"
+        }
+      ]
+    },
+    {
+      "id": "LESS-02",
+      "area": "Наставник",
+      "title": "Время занято другим учеником",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Вернуть slot-occupied.",
+        "Загрузить обновлённое расписание."
+      ],
+      "expected": "Выбор сбрасывается; повтор разрешается после обновления свободного времени.",
+      "evidence": [
+        {
+          "file": "tests/lesson-client.test.mjs",
+          "name": "occupied mentor slot clears selection and waits for refreshed slots before releasing busy"
+        }
+      ]
+    },
+    {
+      "id": "DUEL-01",
+      "area": "Дуэли",
+      "title": "Двойной ответ",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Дважды отправить ответ текущего раунда."
+      ],
+      "expected": "Одна отправка и корректная обратная связь.",
+      "evidence": [
+        {
+          "file": "tests/duel-client.test.mjs",
+          "name": "same-render answer clicks send once and current response updates feedback"
+        }
+      ]
+    },
+    {
+      "id": "DUEL-02",
+      "area": "Дуэли",
+      "title": "Поздний ответ предыдущего раунда",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Перейти в новый раунд до подтверждения старого."
+      ],
+      "expected": "Новый ввод и запрос не очищаются старым подтверждением.",
+      "evidence": [
+        {
+          "file": "tests/duel-client.test.mjs",
+          "name": "late previous-round success cannot clear next-round input or its pending request"
+        }
+      ]
+    },
+    {
+      "id": "DUEL-03",
+      "area": "Дуэли",
+      "title": "15 раундов с параллельными ответами",
+      "priority": "P1",
+      "level": "integration",
+      "preconditions": "Изолированная семья в локальных Auth/Firestore-эмуляторах.",
+      "steps": [
+        "Сыграть 15 раундов: оба участника отвечают одновременно."
+      ],
+      "expected": "Дуэль завершена, баллы 15:0, ключи не раскрыты в публичной комнате.",
+      "evidence": [
+        {
+          "file": "tests/duel-emulator.test.cjs",
+          "name": "real Admin SDK serializes concurrent duel answers and persists private proof"
+        }
+      ]
+    },
+    {
+      "id": "PAY-01",
+      "area": "Оплата",
+      "title": "Платёж в обработке",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Вернуть неопределённый статус платежа."
+      ],
+      "expected": "Кнопка удерживается; автоматического повторного списания нет.",
+      "evidence": [
+        {
+          "file": "tests/checkout-client.test.mjs",
+          "name": "ambiguous and processing payments hold the purchase button without any automatic POST retry"
+        }
+      ]
+    },
+    {
+      "id": "PAY-02",
+      "area": "Оплата",
+      "title": "Тайм-аут оплаты",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Не вернуть заголовки или тело checkout."
+      ],
+      "expected": "Показана необходимость сверки статуса; POST не повторяется автоматически.",
+      "evidence": [
+        {
+          "file": "tests/checkout-client.test.mjs",
+          "name": "stalled checkout headers or response body leave a verification hold and never replay"
+        }
+      ]
+    },
+    {
+      "id": "PAY-03",
+      "area": "Оплата",
+      "title": "Небезопасный адрес оплаты",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Вернуть некорректный URL вместо HTTPS-платёжной страницы."
+      ],
+      "expected": "Переход блокируется; требуется сверка, адрес не подменяется.",
+      "evidence": [
+        {
+          "file": "tests/checkout-client.test.mjs",
+          "name": "unsafe or malformed successful redirect responses require verification, not a substituted URL"
+        }
+      ]
+    },
+    {
+      "id": "PAY-04",
+      "area": "Оплата",
+      "title": "Двойной клик и смена аккаунта",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Настоящие обработчики клиента; ответы сервера, часы и хранилище задаются тестовым стендом.",
+      "steps": [
+        "Нажать покупку дважды.",
+        "Сменить аккаунт до ответа."
+      ],
+      "expected": "Одна отправка; старый ответ не перенаправляет другого пользователя.",
+      "evidence": [
+        {
+          "file": "tests/checkout-client.test.mjs",
+          "name": "same-render duplicate purchase and late response after account change cannot redirect another user"
+        }
+      ]
+    },
+    {
+      "id": "SEC-01",
+      "area": "Доступ",
+      "title": "Чужой пробник и анонимный запрос",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Изолированная семья в локальных Auth/Firestore-эмуляторах.",
+      "steps": [
+        "Открыть пробник первого ребёнка.",
+        "Второму ребёнку и без авторизации попытаться восстановить/отправить."
+      ],
+      "expected": "401 для анонимного, 404 для чужого; ни вопросы, ни результат не раскрываются.",
+      "evidence": [
+        {
+          "file": "tests/mock-schools-emulator.test.cjs",
+          "name": "mock sessions deny anonymous access and another linked child cannot resume or submit an attempt"
+        }
+      ]
+    },
+    {
+      "id": "SEC-02",
+      "area": "Доступ",
+      "title": "Чужая семья и приватные коллекции",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Изолированная семья в локальных Auth/Firestore-эмуляторах.",
+      "steps": [
+        "Прочитать чужие результаты.",
+        "Попробовать записать приватные сессии и подписку с клиента."
+      ],
+      "expected": "Правила Firestore запрещают доступ и повышение прав.",
+      "evidence": [
+        {
+          "file": "tests/rules.test.mjs",
+          "name": "Firestore ownership, private state and create-only records"
+        }
+      ]
+    },
+    {
+      "id": "SEC-03",
+      "area": "Доступ",
+      "title": "Подделка XP и верного ответа",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Изолированная семья в локальных Auth/Firestore-эмуляторах.",
+      "steps": [
+        "Записать с клиента верный ответ, solved и даже +5 XP."
+      ],
+      "expected": "Все поддельные записи отклоняются.",
+      "evidence": [
+        {
+          "file": "tests/rules.test.mjs",
+          "name": "practice results and even small XP increments cannot be forged from the browser"
+        }
+      ]
+    },
+    {
+      "id": "SEC-04",
+      "area": "Доступ",
+      "title": "Класс, платный доступ и истечение",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Изолированная семья в локальных Auth/Firestore-эмуляторах.",
+      "steps": [
+        "Проверить 4 и 6 класс.",
+        "Подставить в запрос другой класс и тариф.",
+        "Отозвать/просрочить подписку."
+      ],
+      "expected": "Решает серверный профиль; класс и тариф из запроса не дают доступа; ключи до проверки скрыты.",
+      "evidence": [
+        {
+          "file": "tests/training-grade-emulator.test.cjs",
+          "name": "authenticated learning endpoint enforces reviewed paid publication, live plans and school-grade ceilings"
+        }
+      ]
+    },
+    {
+      "id": "SEC-05",
+      "area": "Доступ",
+      "title": "Программа и второе устройство",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Изолированная семья в локальных Auth/Firestore-эмуляторах.",
+      "steps": [
+        "Пройти урок и подтверждённую практику.",
+        "Войти со второго устройства; открыть отчёт родителя."
+      ],
+      "expected": "Прогресс синхронизируется; изучение теории не подменяет подтверждённую практику.",
+      "evidence": [
+        {
+          "file": "tests/journey-emulator.test.cjs",
+          "name": "curriculum lesson → verified practice → second-device progress → parent summary"
+        }
+      ]
+    },
+    {
+      "id": "UI-01",
+      "area": "Браузер",
+      "title": "Родитель: шесть разделов, два языка и узкий экран",
+      "priority": "P1",
+      "level": "browser",
+      "preconditions": "Локальная платформа с тестовым аккаунтом; действия через пользовательский интерфейс.",
+      "steps": [
+        "Войти тестовым родителем с наставником.",
+        "Открыть все шесть разделов при ширине 320 и 390 px.",
+        "Повторить на RU и KZ."
+      ],
+      "expected": "Подсветка соответствует разделу; нет горизонтального переполнения и ошибок.",
+      "evidence": []
+    },
+    {
+      "id": "UI-02",
+      "area": "Браузер",
+      "title": "Пробник: отмена и подтверждение завершения",
+      "priority": "P1",
+      "level": "browser",
+      "preconditions": "Локальная платформа с тестовым аккаунтом; действия через пользовательский интерфейс.",
+      "steps": [
+        "Открыть тест и ввести ответ.",
+        "Нажать завершение и отменить.",
+        "Завершить с подтверждением."
+      ],
+      "expected": "Отмена сохраняет ответ и фокус; подтверждение показывает результат.",
+      "evidence": []
+    },
+    {
+      "id": "UI-03",
+      "area": "Браузер",
+      "title": "НИШ: произвольный порядок и перезагрузка",
+      "priority": "P1",
+      "level": "browser",
+      "preconditions": "Локальная платформа с тестовым аккаунтом; действия через пользовательский интерфейс.",
+      "steps": [
+        "Открыть 180 вопросов НИШ.",
+        "Перейти 2 → 30 → 5, ввести ответы.",
+        "Перезагрузить и восстановить."
+      ],
+      "expected": "Номера и ответы сохранены; отвеченные номера зелёные, пропуски серые.",
+      "evidence": []
+    },
+    {
+      "id": "UI-04",
+      "area": "Браузер",
+      "title": "Диагностика: язык и черновик на телефоне",
+      "priority": "P1",
+      "level": "browser",
+      "preconditions": "Локальная платформа с тестовым аккаунтом; действия через пользовательский интерфейс.",
+      "steps": [
+        "Открыть диагностику, ввести ответ.",
+        "Сменить RU ↔ KZ.",
+        "Перезагрузить и продолжить."
+      ],
+      "expected": "Текущий вопрос меняет язык, ответ и номер сохраняются.",
+      "evidence": []
+    },
+    {
+      "id": "NET-01",
+      "area": "Сеть",
+      "title": "Стабильный ID и отсутствие скрытого повторения",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Отправить изменение с токеном.",
+        "Проверить тело и число HTTP-вызовов."
+      ],
+      "expected": "ID и авторизация сохранены; автоматического повтора нет.",
+      "evidence": [
+        {
+          "file": "tests/authenticated-request.test.mjs",
+          "name": "authenticated mutations preserve stable IDs and bearer token without automatic replay"
+        }
+      ]
+    },
+    {
+      "id": "NET-02",
+      "area": "Сеть",
+      "title": "Выход и смена владельца до токена",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Начать получение токена.",
+        "Выйти или сменить ребёнка."
+      ],
+      "expected": "Запрос изменения не отправляется.",
+      "evidence": [
+        {
+          "file": "tests/authenticated-request.test.mjs",
+          "name": "signed-out, wrong-owner and mid-token account switches never send a request"
+        }
+      ]
+    },
+    {
+      "id": "NET-03",
+      "area": "Сеть",
+      "title": "Смена аккаунта во время чтения тела ответа",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Задержать JSON ответа.",
+        "Сменить пользователя до его завершения."
+      ],
+      "expected": "Старый ответ отклоняется.",
+      "evidence": [
+        {
+          "file": "tests/authenticated-request.test.mjs",
+          "name": "late response bodies from a previous account are rejected"
+        }
+      ]
+    },
+    {
+      "id": "NET-04",
+      "area": "Сеть",
+      "title": "Токен завис и пришёл после тайм-аута",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Не завершать получение токена до дедлайна.",
+        "Вернуть его позднее."
+      ],
+      "expected": "Тайм-аут виден; поздний токен не запускает изменение.",
+      "evidence": [
+        {
+          "file": "tests/authenticated-request.test.mjs",
+          "name": "deadline also bounds stalled token refresh; a late token cannot send a mutation"
+        }
+      ]
+    },
+    {
+      "id": "NET-05",
+      "area": "Сеть",
+      "title": "Зависшие заголовки и JSON",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "По очереди задержать fetch и чтение тела."
+      ],
+      "expected": "Оба ожидания ограничены; запрос отменяется, не повторяется.",
+      "evidence": [
+        {
+          "file": "tests/authenticated-request.test.mjs",
+          "name": "deadline aborts hanging fetch and hanging JSON bodies without replaying either"
+        }
+      ]
+    },
+    {
+      "id": "NET-06",
+      "area": "Сеть",
+      "title": "HTTP 200 с некорректным телом",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Вернуть null, массив, строку, число и ошибку 429."
+      ],
+      "expected": "Ложного успеха нет; код лимита сохранён.",
+      "evidence": [
+        {
+          "file": "tests/authenticated-request.test.mjs",
+          "name": "invalid successful payloads do not masquerade as saved results; HTTP errors preserve status and codes"
+        }
+      ]
+    },
+    {
+      "id": "NET-07",
+      "area": "Сеть",
+      "title": "Авторизованное чтение GET",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Прочитать историю наград через GET."
+      ],
+      "expected": "Токен передан без лишнего тела запроса.",
+      "evidence": [
+        {
+          "file": "tests/authenticated-request.test.mjs",
+          "name": "GET requests carry authentication without adding a request body"
+        }
+      ]
+    },
+    {
+      "id": "RW-01",
+      "area": "Награды",
+      "title": "Резерв коинов и отклонение администратором",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Запросить награду.",
+        "Подтвердить родителем и отклонить администратором."
+      ],
+      "expected": "Чужой родитель не подтверждает; коины возвращаются, XP остаётся.",
+      "evidence": [
+        {
+          "file": "tests/rewards.test.cjs",
+          "name": "child request needs parent approval, admin can decline and coins return"
+        }
+      ]
+    },
+    {
+      "id": "RW-02",
+      "area": "Награды",
+      "title": "Выдача и месячный лимит",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Выдать подтверждённую награду.",
+        "Снова запросить в пределах 30 дней."
+      ],
+      "expected": "Списание сохранено; повторная выдача ограничена.",
+      "evidence": [
+        {
+          "file": "tests/rewards.test.cjs",
+          "name": "fulfilled reward keeps spend and enforces thirty-day cooldown"
+        }
+      ]
+    },
+    {
+      "id": "RW-03",
+      "area": "Награды",
+      "title": "Отмена и отказ родителя",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Отменить свой запрос.",
+        "Создать следующий и отклонить родителем."
+      ],
+      "expected": "Возврат корректный; отклонённое нельзя выдать.",
+      "evidence": [
+        {
+          "file": "tests/rewards.test.cjs",
+          "name": "unapproved request can be cancelled and parent rejection restores coins"
+        }
+      ]
+    },
+    {
+      "id": "RW-04",
+      "area": "Награды",
+      "title": "Каталог и независимость опыта от коинов",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Сравнить цены и баланс после списания."
+      ],
+      "expected": "Коины уменьшаются, уровень XP сохраняется.",
+      "evidence": [
+        {
+          "file": "tests/rewards.test.cjs",
+          "name": "catalog prices are ordered by reward value and coins do not reduce XP"
+        }
+      ]
+    },
+    {
+      "id": "LIFE-01",
+      "area": "Жизненный цикл урока",
+      "title": "Границы расписания и занятые слоты",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Запросить недельное расписание.",
+        "Проверить 12-часовую границу и занятые времена."
+      ],
+      "expected": "Недоступные слоты не выдаются.",
+      "evidence": [
+        {
+          "file": "tests/lessons.test.cjs",
+          "name": "slots follow the mentor week, 12-hour rule and hide taken ones"
+        }
+      ]
+    },
+    {
+      "id": "LIFE-02",
+      "area": "Жизненный цикл урока",
+      "title": "Тариф, квота и бесплатная отмена",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Записаться с тарифами разного уровня.",
+        "Исчерпать квоту и отменить заранее."
+      ],
+      "expected": "Правила тарифа и квоты соблюдены; кредит возвращён один раз.",
+      "evidence": [
+        {
+          "file": "tests/lessons.test.cjs",
+          "name": "only the mentor plan books, quota is enforced and free cancel returns the lesson"
+        }
+      ]
+    },
+    {
+      "id": "LIFE-03",
+      "area": "Жизненный цикл урока",
+      "title": "Поздняя отмена и время входа",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Отменить поздно.",
+        "Проверить ссылку Meet до и в разрешённом окне."
+      ],
+      "expected": "Поздняя отмена тратит урок; ранний вход закрыт.",
+      "evidence": [
+        {
+          "file": "tests/lessons.test.cjs",
+          "name": "late cancel burns the lesson; Meet link opens only 10 minutes before"
+        }
+      ]
+    },
+    {
+      "id": "LIFE-04",
+      "area": "Жизненный цикл урока",
+      "title": "Повторная оценка наставника",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Оценить завершённый урок.",
+        "Повторить оценку."
+      ],
+      "expected": "Среднее меняется один раз; приватные контакты не раскрываются.",
+      "evidence": [
+        {
+          "file": "tests/lessons.test.cjs",
+          "name": "rating after the lesson updates the mentor average once; mentor contacts stay hidden"
+        }
+      ]
+    },
+    {
+      "id": "LIFE-05",
+      "area": "Жизненный цикл урока",
+      "title": "Жалоба и непонятная задача",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Добавить непонятную задачу и жалобу."
+      ],
+      "expected": "Данные относятся к правильному уроку и ребёнку.",
+      "evidence": [
+        {
+          "file": "tests/lessons.test.cjs",
+          "name": "unclear tasks and complaints"
+        }
+      ]
+    },
+    {
+      "id": "LIFE-06",
+      "area": "Жизненный цикл урока",
+      "title": "Напоминания на границах времени",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Проверить запись, ближайший урок, оценку и возврат."
+      ],
+      "expected": "Уведомления соответствуют текущему состоянию.",
+      "evidence": [
+        {
+          "file": "tests/lessons.test.cjs",
+          "name": "notifications: reminders for booking, today lesson, rating and returned lessons"
+        }
+      ]
+    },
+    {
+      "id": "LIFE-07",
+      "area": "Жизненный цикл урока",
+      "title": "Приватность превью задач наставника",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Открыть список непонятных задач."
+      ],
+      "expected": "Только свои превью; нет ключей и приватных полей.",
+      "evidence": [
+        {
+          "file": "tests/lessons.test.cjs",
+          "name": "unclear list returns only this child’s previews, without answers or private saved fields"
+        }
+      ]
+    },
+    {
+      "id": "LIFE-08",
+      "area": "Жизненный цикл урока",
+      "title": "Большая история уроков",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Создать большую старую историю и свежую запись.",
+        "Открыть оба кабинета."
+      ],
+      "expected": "Новейшая запись не теряется из-за лимита выборки.",
+      "evidence": [
+        {
+          "file": "tests/lessons.test.cjs",
+          "name": "large lesson histories retain the newest booking in both cabinets and notifications"
+        }
+      ]
+    },
+    {
+      "id": "LIFE-09",
+      "area": "Жизненный цикл урока",
+      "title": "Исторические блокировки слотов",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Добавить много старых блокировок до текущих."
+      ],
+      "expected": "Старые записи не скрывают занятые будущие слоты.",
+      "evidence": [
+        {
+          "file": "tests/lessons.test.cjs",
+          "name": "old slot locks cannot consume the cap before current occupied times"
+        }
+      ]
+    },
+    {
+      "id": "WH-01",
+      "area": "Подписка и webhook",
+      "title": "Поддельная подпись",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Отправить неверную подпись и нечисловое время."
+      ],
+      "expected": "Платный доступ не активируется.",
+      "evidence": [
+        {
+          "file": "tests/payments.test.cjs",
+          "name": "webhook rejects forged signatures and nonnumeric signing timestamps"
+        }
+      ]
+    },
+    {
+      "id": "WH-02",
+      "area": "Подписка и webhook",
+      "title": "Сбой провайдера и повтор события",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Вернуть сбой провайдера.",
+        "Повторить тот же webhook."
+      ],
+      "expected": "Ошибка остаётся повторяемой; успешный повтор завершает событие.",
+      "evidence": [
+        {
+          "file": "tests/payments.test.cjs",
+          "name": "metadata/provider outage returns retryable status, then same event succeeds"
+        }
+      ]
+    },
+    {
+      "id": "WH-03",
+      "area": "Подписка и webhook",
+      "title": "Повтор подтверждённого события",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Повторить обработанное событие."
+      ],
+      "expected": "Повтор не вызывает провайдера и не дублирует доступ.",
+      "evidence": [
+        {
+          "file": "tests/payments.test.cjs",
+          "name": "completed events are idempotent without calling provider again"
+        }
+      ]
+    },
+    {
+      "id": "WH-04",
+      "area": "Подписка и webhook",
+      "title": "Истечение старой подписки",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Обработать истечение старой при другой активной подписке."
+      ],
+      "expected": "Действующий доступ сохраняется.",
+      "evidence": [
+        {
+          "file": "tests/payments.test.cjs",
+          "name": "late expiry of one subscription preserves another active subscription"
+        }
+      ]
+    },
+    {
+      "id": "WH-05",
+      "area": "Подписка и webhook",
+      "title": "Активация пришла после отмены",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Сначала новая отмена, затем старая активация."
+      ],
+      "expected": "Отмена не откатывается.",
+      "evidence": [
+        {
+          "file": "tests/payments.test.cjs",
+          "name": "late activation cannot undo a newer cancellation on the same subscription"
+        }
+      ]
+    },
+    {
+      "id": "WH-06",
+      "area": "Подписка и webhook",
+      "title": "Отмена автопродления и окончательная отмена",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Назначить отмену в конце периода.",
+        "Затем отменить окончательно."
+      ],
+      "expected": "Оплаченный период сохранён до реального прекращения.",
+      "evidence": [
+        {
+          "file": "tests/payments.test.cjs",
+          "name": "scheduled cancellation retains the paid period, actual cancellation revokes"
+        }
+      ]
+    },
+    {
+      "id": "WH-07",
+      "area": "Подписка и webhook",
+      "title": "Истёкший период и on_hold",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Передать истёкший период или приостановку."
+      ],
+      "expected": "Бессрочного доступа не возникает.",
+      "evidence": [
+        {
+          "file": "tests/payments.test.cjs",
+          "name": "expired paid period and on_hold never create indefinite Pro"
+        }
+      ]
+    },
+    {
+      "id": "WH-08",
+      "area": "Подписка и webhook",
+      "title": "Возврат старого платежа",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Обработать refund при другом актуальном цикле."
+      ],
+      "expected": "Новый платный цикл не отзывается вслепую.",
+      "evidence": [
+        {
+          "file": "tests/payments.test.cjs",
+          "name": "refund reconciles current subscription instead of blindly revoking another paid cycle"
+        }
+      ]
+    },
+    {
+      "id": "WH-09",
+      "area": "Подписка и webhook",
+      "title": "Чужой товар и разовый платёж",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Передать другой product ID или разовую покупку."
+      ],
+      "expected": "Подписка Pro не активируется.",
+      "evidence": [
+        {
+          "file": "tests/payments.test.cjs",
+          "name": "other products and one-time payments cannot activate Pro"
+        }
+      ]
+    },
+    {
+      "id": "WH-10",
+      "area": "Подписка и webhook",
+      "title": "Частично обновлённый платёжный профиль",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Сломать синхронизацию зеркала.",
+        "Повторить после более новой отмены."
+      ],
+      "expected": "Синхронизация завершается без отката отмены.",
+      "evidence": [
+        {
+          "file": "tests/payments.test.cjs",
+          "name": "partial mirror failure retries synchronization without reverting newer cancellation"
+        }
+      ]
+    },
+    {
+      "id": "DIAG-API-01",
+      "area": "Диагностика API",
+      "title": "Публичная задача без ключа",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Начать и восстановить одну диагностику."
+      ],
+      "expected": "Одна сессия; ответа и решения в задаче нет.",
+      "evidence": [
+        {
+          "file": "tests/diagnostic-session-api.test.cjs",
+          "name": "diagnostic starts with a public server question and resumes the same session"
+        }
+      ]
+    },
+    {
+      "id": "DIAG-API-02",
+      "area": "Диагностика API",
+      "title": "Адаптация трёх волн",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Пройти три волны с разными ответами."
+      ],
+      "expected": "Сложность адаптирована; один проверенный результат.",
+      "evidence": [
+        {
+          "file": "tests/diagnostic-session-api.test.cjs",
+          "name": "server grades all waves, adapts them and persists one verified result"
+        }
+      ]
+    },
+    {
+      "id": "DIAG-API-03",
+      "area": "Диагностика API",
+      "title": "Неверная личность и тело запроса",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Повторить ответ и передать неправильные ID/индексы/аккаунт."
+      ],
+      "expected": "Повтор идемпотентен; неверные данные отклонены.",
+      "evidence": [
+        {
+          "file": "tests/diagnostic-session-api.test.cjs",
+          "name": "answer retries are idempotent and invalid identities or payloads fail closed"
+        }
+      ]
+    },
+    {
+      "id": "DIAG-API-04",
+      "area": "Диагностика API",
+      "title": "Секреты реального адаптивного банка",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Собрать отчёт из 20 заданий реального банка."
+      ],
+      "expected": "Ключи остаются на сервере, отчёт содержит 20 заданий.",
+      "evidence": [
+        {
+          "file": "tests/diagnostic-session-api.test.cjs",
+          "name": "real adaptive diagnostic bank keeps secrets server-side and builds twenty-question reports"
+        }
+      ]
+    },
+    {
+      "id": "FIG-01",
+      "area": "Схемы",
+      "title": "Закрытая схема через Bearer",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Получить платную схему."
+      ],
+      "expected": "Нет токена в URL, публичного fetch и общего кеша.",
+      "evidence": [
+        {
+          "file": "tests/private-figure-client.test.mjs",
+          "name": "protected figures use POST Bearer and binary blobs, without URL tokens, public fetch or shared cache"
+        }
+      ]
+    },
+    {
+      "id": "FIG-02",
+      "area": "Схемы",
+      "title": "Неверный тип или слишком большой SVG",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Вернуть отказ, не-SVG и слишком большой ответ.",
+        "Сменить аккаунт."
+      ],
+      "expected": "Ответы отклонены, чужая схема не отображается.",
+      "evidence": [
+        {
+          "file": "tests/private-figure-client.test.mjs",
+          "name": "figure client rejects denied/non-SVG/oversized responses and switched or aborted identities"
+        }
+      ]
+    },
+    {
+      "id": "FIG-03",
+      "area": "Схемы",
+      "title": "Закрытие схемы и освобождение Blob URL",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Открыть, закрыть и сменить схему."
+      ],
+      "expected": "Отмена, повтор и освобождение URL принадлежат текущему компоненту.",
+      "evidence": [
+        {
+          "file": "tests/private-figure-client.test.mjs",
+          "name": "render component never renders a protected public src and owns cancellation, retry and URL disposal"
+        }
+      ]
+    },
+    {
+      "id": "FIG-04",
+      "area": "Схемы",
+      "title": "Первый кадр защищённой схемы",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Отрисовать компонент до загрузки."
+      ],
+      "expected": "Закрытый публичный src не появляется даже на первом кадре.",
+      "evidence": [
+        {
+          "file": "tests/private-figure-client.test.mjs",
+          "name": "real React first paint hides protected sources while public diagrams keep their existing URLs"
+        }
+      ]
+    },
+    {
+      "id": "FIG-05",
+      "area": "Схемы",
+      "title": "Текущий тариф для платной схемы",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Запросить схему с разными ролями и тарифами."
+      ],
+      "expected": "Нужны корректный ребёнок и действующий доступ.",
+      "evidence": [
+        {
+          "file": "tests/private-figure-api.test.cjs",
+          "name": "paid native figures require valid child auth and current Standard-or-higher entitlement"
+        }
+      ]
+    },
+    {
+      "id": "FIG-06",
+      "area": "Схемы",
+      "title": "Подмена класса и тарифа в теле",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Передать чужой класс/тариф.",
+        "Отозвать подписку."
+      ],
+      "expected": "Решает текущий серверный профиль.",
+      "evidence": [
+        {
+          "file": "tests/private-figure-api.test.cjs",
+          "name": "figure access repeats expiry, child ownership and grade checks and cannot be upgraded by body fields"
+        }
+      ]
+    },
+    {
+      "id": "FIG-07",
+      "area": "Схемы",
+      "title": "Подмена пути схемы",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Передать файл вместо canonical qid."
+      ],
+      "expected": "Произвольный путь и непроверенная задача отклонены.",
+      "evidence": [
+        {
+          "file": "tests/private-figure-api.test.cjs",
+          "name": "figure API accepts only canonical qid, never client paths or unreviewed/public source IDs"
+        }
+      ]
+    },
+    {
+      "id": "FIG-08",
+      "area": "Схемы",
+      "title": "Бесплатная схема sampler",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Запросить схему разрешённого бесплатного образца."
+      ],
+      "expected": "Образец доступен с теми же проверками личности и класса.",
+      "evidence": [
+        {
+          "file": "tests/private-figure-api.test.cjs",
+          "name": "Free sampler includes its own native drawing with the same auth and grade checks"
+        }
+      ]
+    },
+    {
+      "id": "LANG-01",
+      "area": "Перевод и длинные сессии",
+      "title": "Перевод не меняет ключи",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Получить перевод с подставленными options/answer."
+      ],
+      "expected": "Меняется текст; исходные значения ответов сохраняются.",
+      "evidence": [
+        {
+          "file": "tests/translate-questions.test.mjs",
+          "name": "translation changes prose only; options and grading keys stay original"
+        }
+      ]
+    },
+    {
+      "id": "LANG-02",
+      "area": "Перевод и длинные сессии",
+      "title": "Языковые предметы без перевода",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Открыть русские, казахские и английские языковые задания."
+      ],
+      "expected": "Лишних запросов перевода нет.",
+      "evidence": [
+        {
+          "file": "tests/translate-questions.test.mjs",
+          "name": "language subjects and already matching content make no translation calls"
+        }
+      ]
+    },
+    {
+      "id": "LANG-03",
+      "area": "Перевод и длинные сессии",
+      "title": "Редактирование исходного текста",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Повторить тот же текст, затем изменить условие."
+      ],
+      "expected": "Повтор использует кеш; изменённый текст переводится снова.",
+      "evidence": [
+        {
+          "file": "tests/translate-questions.test.mjs",
+          "name": "unchanged text uses cached translation, edited source is translated again"
+        }
+      ]
+    },
+    {
+      "id": "LANG-04",
+      "area": "Перевод и длинные сессии",
+      "title": "Зависший перевод",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Не вернуть перевод.",
+        "Повторить после восстановления."
+      ],
+      "expected": "Показан исходный текст; повтор может успешно перевести.",
+      "evidence": [
+        {
+          "file": "tests/translate-questions.test.mjs",
+          "name": "stalled translation falls back to original and a later retry can succeed"
+        }
+      ]
+    },
+    {
+      "id": "LANG-05",
+      "area": "Перевод и длинные сессии",
+      "title": "Сотни задач без роста кеша до всего банка",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Перевести более 256 разных условий.",
+        "Снова открыть самое старое."
+      ],
+      "expected": "Старые записи вытесняются; кеш ограничен.",
+      "evidence": [
+        {
+          "file": "tests/translate-questions.test.mjs",
+          "name": "long sessions evict oldest prose rather than accumulating the complete bank in memory"
+        }
+      ]
+    },
+    {
+      "id": "REFRESH-01",
+      "area": "Долгая сессия",
+      "title": "Новый день и возврат во вкладку",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Перейти через полночь Алматы.",
+        "Вернуться из другой вкладки."
+      ],
+      "expected": "Один refresh; поминутного скачивания истории нет.",
+      "evidence": [
+        {
+          "file": "tests/report-refresh.test.mjs",
+          "name": "reports refresh once on a new Kazakhstan day and after returning, without minute network polling"
+        }
+      ]
+    },
+    {
+      "id": "REFRESH-02",
+      "area": "Долгая сессия",
+      "title": "Скрытая вкладка и разбор пробника",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Скрыть отчёт, затем вернуть.",
+        "Открыть разбор пробника."
+      ],
+      "expected": "Фоновая вкладка не делает лишнее чтение; разбор не сбрасывается.",
+      "evidence": [
+        {
+          "file": "tests/report-refresh.test.mjs",
+          "name": "hidden reports wait for visibility and an open mock review disables refresh"
+        }
+      ]
+    },
+    {
+      "id": "HOME-01",
+      "area": "Главная и аналитика",
+      "title": "Чужой публичный диагностический результат",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Открыть переданный результат на общем устройстве разными детьми."
+      ],
+      "expected": "Результат привязан к первому владельцу.",
+      "evidence": [
+        {
+          "file": "tests/home-overview.test.mjs",
+          "name": "a public diagnostic handoff stays bound to its first student on shared devices"
+        }
+      ]
+    },
+    {
+      "id": "HOME-02",
+      "area": "Главная и аналитика",
+      "title": "Продолжение удалённой темы",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Сохранить старую тему, затем удалить/опустошить её."
+      ],
+      "expected": "Возобновление не ведёт в отсутствующую тему.",
+      "evidence": [
+        {
+          "file": "tests/home-overview.test.mjs",
+          "name": "resume uses the most recent valid practice topic and never a removed/empty topic"
+        }
+      ]
+    },
+    {
+      "id": "HOME-03",
+      "area": "Главная и аналитика",
+      "title": "Рекомендация не затирает текущую попытку",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Иметь незавершённый ответ и получить новую рекомендацию."
+      ],
+      "expected": "Текущая попытка сохраняется.",
+      "evidence": [
+        {
+          "file": "tests/home-overview.test.mjs",
+          "name": "pending answer or diagnostic is not overwritten by a new topic or exhausted limit"
+        }
+      ]
+    },
+    {
+      "id": "HOME-04",
+      "area": "Главная и аналитика",
+      "title": "Медленный кошелёк",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Загрузить учебные данные; задержать кошелёк."
+      ],
+      "expected": "Учебные данные не блокируются; ошибка не выглядит нулевым балансом.",
+      "evidence": [
+        {
+          "file": "tests/home-overview.test.mjs",
+          "name": "a slow wallet cannot block successful study data and failed data is not reported as zero"
+        }
+      ]
+    },
+    {
+      "id": "HOME-05",
+      "area": "Главная и аналитика",
+      "title": "Повтор после тайм-аута",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Прервать загрузку, повторить и вернуть старый ответ."
+      ],
+      "expected": "Старый ответ не перезаписывает новый.",
+      "evidence": [
+        {
+          "file": "tests/home-overview.test.mjs",
+          "name": "timed out data can be retried and late results do not overwrite the retry"
+        }
+      ]
+    },
+    {
+      "id": "HOME-06",
+      "area": "Главная и аналитика",
+      "title": "Поддельная и будущая активность",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Передать непроверенные и будущие ответы."
+      ],
+      "expected": "Точность и рекомендации их не учитывают.",
+      "evidence": [
+        {
+          "file": "tests/home-overview.test.mjs",
+          "name": "home accuracy and recommendations ignore unverified, malformed and future practice"
+        }
+      ]
+    },
+    {
+      "id": "ANA-01",
+      "area": "Главная и аналитика",
+      "title": "Календарные семь дней",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Сравнить две календарные недели и будущую активность."
+      ],
+      "expected": "Периоды корректны; будущие записи исключены.",
+      "evidence": [
+        {
+          "file": "tests/parent-analytics.test.mjs",
+          "name": "compares seven calendar days with the preceding week and rejects future activity"
+        }
+      ]
+    },
+    {
+      "id": "ANA-02",
+      "area": "Главная и аналитика",
+      "title": "Мало данных",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Открыть пустую или редкую историю."
+      ],
+      "expected": "Нет выдуманного роста или освоения.",
+      "evidence": [
+        {
+          "file": "tests/parent-analytics.test.mjs",
+          "name": "empty or sparse history produces no invented trend or mastery"
+        }
+      ]
+    },
+    {
+      "id": "ANA-03",
+      "area": "Главная и аналитика",
+      "title": "Только пробники в истории",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Проверить дни с одним пробником."
+      ],
+      "expected": "Дни учитываются; точность нормирована по числу проверяемых заданий.",
+      "evidence": [
+        {
+          "file": "tests/parent-analytics.test.mjs",
+          "name": "counts test-only days and normalizes results by the gradable denominator"
+        }
+      ]
+    },
+    {
+      "id": "ANA-04",
+      "area": "Главная и аналитика",
+      "title": "История обрезана лимитом",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Вернуть только последние 500 ответов."
+      ],
+      "expected": "Неполная история не объявляется точным недельным ростом.",
+      "evidence": [
+        {
+          "file": "tests/parent-analytics.test.mjs",
+          "name": "truncated history cannot claim weekly growth"
+        }
+      ]
+    },
+    {
+      "id": "DATA-child-1",
+      "area": "Повреждённая история наград",
+      "title": "child: отсутствующая дата",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Добавить старую запись с повреждённой датой и две корректные.",
+        "Открыть историю."
+      ],
+      "expected": "HTTP 200; корректные записи сохранены и отсортированы, нет падения всего списка.",
+      "evidence": [
+        {
+          "file": "tests/reward-history-resilience.test.cjs",
+          "name": "reward history for child survives a missing date and retains valid requests"
+        }
+      ]
+    },
+    {
+      "id": "DATA-child-2",
+      "area": "Повреждённая история наград",
+      "title": "child: null дата",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Добавить старую запись с повреждённой датой и две корректные.",
+        "Открыть историю."
+      ],
+      "expected": "HTTP 200; корректные записи сохранены и отсортированы, нет падения всего списка.",
+      "evidence": [
+        {
+          "file": "tests/reward-history-resilience.test.cjs",
+          "name": "reward history for child survives a null date and retains valid requests"
+        }
+      ]
+    },
+    {
+      "id": "DATA-child-3",
+      "area": "Повреждённая история наград",
+      "title": "child: некорректная дата",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Добавить старую запись с повреждённой датой и две корректные.",
+        "Открыть историю."
+      ],
+      "expected": "HTTP 200; корректные записи сохранены и отсортированы, нет падения всего списка.",
+      "evidence": [
+        {
+          "file": "tests/reward-history-resilience.test.cjs",
+          "name": "reward history for child survives a invalid date and retains valid requests"
+        }
+      ]
+    },
+    {
+      "id": "DATA-child-4",
+      "area": "Повреждённая история наград",
+      "title": "child: старая строковая дата",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Добавить старую запись с повреждённой датой и две корректные.",
+        "Открыть историю."
+      ],
+      "expected": "HTTP 200; корректные записи сохранены и отсортированы, нет падения всего списка.",
+      "evidence": [
+        {
+          "file": "tests/reward-history-resilience.test.cjs",
+          "name": "reward history for child survives a legacy ISO date and retains valid requests"
+        }
+      ]
+    },
+    {
+      "id": "DATA-parent-1",
+      "area": "Повреждённая история наград",
+      "title": "parent: отсутствующая дата",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Добавить старую запись с повреждённой датой и две корректные.",
+        "Открыть историю."
+      ],
+      "expected": "HTTP 200; корректные записи сохранены и отсортированы, нет падения всего списка.",
+      "evidence": [
+        {
+          "file": "tests/reward-history-resilience.test.cjs",
+          "name": "reward history for parent survives a missing date and retains valid requests"
+        }
+      ]
+    },
+    {
+      "id": "DATA-parent-2",
+      "area": "Повреждённая история наград",
+      "title": "parent: null дата",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Добавить старую запись с повреждённой датой и две корректные.",
+        "Открыть историю."
+      ],
+      "expected": "HTTP 200; корректные записи сохранены и отсортированы, нет падения всего списка.",
+      "evidence": [
+        {
+          "file": "tests/reward-history-resilience.test.cjs",
+          "name": "reward history for parent survives a null date and retains valid requests"
+        }
+      ]
+    },
+    {
+      "id": "DATA-parent-3",
+      "area": "Повреждённая история наград",
+      "title": "parent: некорректная дата",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Добавить старую запись с повреждённой датой и две корректные.",
+        "Открыть историю."
+      ],
+      "expected": "HTTP 200; корректные записи сохранены и отсортированы, нет падения всего списка.",
+      "evidence": [
+        {
+          "file": "tests/reward-history-resilience.test.cjs",
+          "name": "reward history for parent survives a invalid date and retains valid requests"
+        }
+      ]
+    },
+    {
+      "id": "DATA-parent-4",
+      "area": "Повреждённая история наград",
+      "title": "parent: старая строковая дата",
+      "priority": "P1",
+      "level": "client",
+      "preconditions": "Реальные обработчики с управляемыми ответами, часами и данными.",
+      "steps": [
+        "Добавить старую запись с повреждённой датой и две корректные.",
+        "Открыть историю."
+      ],
+      "expected": "HTTP 200; корректные записи сохранены и отсортированы, нет падения всего списка.",
+      "evidence": [
+        {
+          "file": "tests/reward-history-resilience.test.cjs",
+          "name": "reward history for parent survives a legacy ISO date and retains valid requests"
+        }
+      ]
+    },
+    {
+      "id": "RACE-01",
+      "area": "Конкуренция",
+      "title": "12 повторов одного ответа",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Локальные API/Auth/Firestore; новая изолированная семья для каждого сценария.",
+      "steps": [
+        "Одновременно отправить один ответ 12 раз."
+      ],
+      "expected": "Одна попытка, одно использование лимита и +5 XP.",
+      "evidence": [
+        {
+          "file": "tests/deep-concurrency-emulator.test.cjs",
+          "name": "12 simultaneous retries of one practice answer create one attempt, one daily use and one XP award"
+        }
+      ]
+    },
+    {
+      "id": "RACE-02",
+      "area": "Конкуренция",
+      "title": "Два конфликтующих ответа",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Локальные API/Auth/Firestore; новая изолированная семья для каждого сценария.",
+      "steps": [
+        "Отправить верный и неверный ответ с одним ID одновременно."
+      ],
+      "expected": "Один принят, второй 409; сохранённый ответ не изменён.",
+      "evidence": [
+        {
+          "file": "tests/deep-concurrency-emulator.test.cjs",
+          "name": "two conflicting answers to one practice ID cannot replace the committed answer"
+        }
+      ]
+    },
+    {
+      "id": "RACE-03",
+      "area": "Конкуренция",
+      "title": "12 ответов на Free",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Локальные API/Auth/Firestore; новая изолированная семья для каждого сценария.",
+      "steps": [
+        "Открыть 12 попыток, затем одновременно ответить."
+      ],
+      "expected": "Пять приняты; остальные 429; одна задача даёт XP один раз.",
+      "evidence": [
+        {
+          "file": "tests/deep-concurrency-emulator.test.cjs",
+          "name": "12 parallel free answers cannot exceed the daily allowance or double credit one question"
+        }
+      ]
+    },
+    {
+      "id": "RACE-04",
+      "area": "Конкуренция",
+      "title": "8 завершений НИШ",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Локальные API/Auth/Firestore; новая изолированная семья для каждого сценария.",
+      "steps": [
+        "Одновременно завершить один пробник восемь раз."
+      ],
+      "expected": "Один одинаковый результат со всеми 180 заданиями.",
+      "evidence": [
+        {
+          "file": "tests/deep-concurrency-emulator.test.cjs",
+          "name": "8 parallel NIS submissions freeze one identical result with all 180 review rows"
+        }
+      ]
+    },
+    {
+      "id": "RACE-05",
+      "area": "Конкуренция",
+      "title": "8 наград и 8 возвратов",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Локальные API/Auth/Firestore; новая изолированная семья для каждого сценария.",
+      "steps": [
+        "Одновременно запросить награду, затем повторить отказ родителя."
+      ],
+      "expected": "Коины резервируются и возвращаются один раз; XP не тратится.",
+      "evidence": [
+        {
+          "file": "tests/deep-concurrency-emulator.test.cjs",
+          "name": "8 parallel reward claims reserve coins once and 8 rejections refund once"
+        }
+      ]
+    },
+    {
+      "id": "RACE-06",
+      "area": "Конкуренция",
+      "title": "8 записей на один слот",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Локальные API/Auth/Firestore; новая изолированная семья для каждого сценария.",
+      "steps": [
+        "Одновременно записаться восемь раз.",
+        "Параллельно отменить запись."
+      ],
+      "expected": "Один урок и один кредит; отмена возвращает один кредит.",
+      "evidence": [
+        {
+          "file": "tests/deep-concurrency-emulator.test.cjs",
+          "name": "8 bookings for one mentor slot consume one lesson and parallel cancellation restores one credit"
+        }
+      ]
+    },
+    {
+      "id": "RACE-07",
+      "area": "Конкуренция",
+      "title": "40 чтений каталога",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Локальные API/Auth/Firestore; новая изолированная семья для каждого сценария.",
+      "steps": [
+        "Сделать пять волн по восемь запросов каталога и задач."
+      ],
+      "expected": "Нет 5xx, списки до 60, без ключей, не сериализуется весь банк; локальный ответ менее 5 с.",
+      "evidence": [
+        {
+          "file": "tests/deep-concurrency-emulator.test.cjs",
+          "name": "catalog and question reads stay bounded under 40 requests at concurrency 8"
+        }
+      ]
+    },
+    {
+      "id": "RACE-08",
+      "area": "Конкуренция",
+      "title": "40 чтений дневного лимита",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Локальные API/Auth/Firestore; новая изолированная семья для каждого сценария.",
+      "steps": [
+        "Прочитать известный счётчик 40 раз в восемь потоков."
+      ],
+      "expected": "Нет лишних записей счётчика и конкуренции с сохранением ответа.",
+      "evidence": [
+        {
+          "file": "tests/deep-concurrency-emulator.test.cjs",
+          "name": "40 daily-count reads do not rewrite an existing counter or contend with answer writes"
+        }
+      ]
+    },
+    {
+      "id": "RACE-09",
+      "area": "Конкуренция",
+      "title": "Некорректные тела API",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Локальные API/Auth/Firestore; новая изолированная семья для каждого сценария.",
+      "steps": [
+        "Передать 21 некорректный запрос в practice/mock/diagnostic."
+      ],
+      "expected": "Нет 5xx и новых сессий; данные и ключи не раскрыты.",
+      "evidence": [
+        {
+          "file": "tests/deep-concurrency-emulator.test.cjs",
+          "name": "malformed learning, mock and diagnostic payloads fail closed without creating sessions"
+        }
+      ]
+    },
+    {
+      "id": "UI-05",
+      "area": "Браузер",
+      "title": "Поворот телефона и узкий экран",
+      "priority": "P1",
+      "level": "browser",
+      "preconditions": "Изолированная локальная тестовая семья; UI-проверка.",
+      "steps": [
+        "Открыть ученическую и родительскую навигацию на 320×740, 844×390 и 1280×900.",
+        "Перейти между разделами."
+      ],
+      "expected": "Нет горизонтального переполнения, наложений на основные действия и закрытых меню.",
+      "evidence": []
+    },
+    {
+      "id": "UI-06",
+      "area": "Браузер",
+      "title": "Кабинеты при старой награде без даты",
+      "priority": "P1",
+      "level": "browser",
+      "preconditions": "Изолированная локальная тестовая семья; UI-проверка.",
+      "steps": [
+        "Добавить одну запись без даты только тестовой семье.",
+        "Открыть награды ребёнка и родителя.",
+        "Удалить только созданную тестовую запись."
+      ],
+      "expected": "Кабинеты открываются без 500; корректная история доступна.",
+      "evidence": []
+    },
+    {
+      "id": "NIS-API-01",
+      "area": "Пробники",
+      "title": "Серверное управление блоками НИШ",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Изолированные локальные API/Auth/Firestore.",
+      "steps": [
+        "Попытаться завершить до блоков и открыть будущий раздел.",
+        "Сохранить новый ответ, отправить устаревший и повторный переход.",
+        "Завершить четыре блока и подменить ответы в финальном запросе."
+      ],
+      "expected": "Будущие разделы закрыты, старый запрос не меняет ответ, оцениваются сохранённые ответы.",
+      "evidence": [
+        {
+          "file": "tests/nis-phases-emulator.test.cjs",
+          "name": "NIS API enforces phases, preserves newest answers and grades saved answers rather than a forged submit"
+        }
+      ]
+    },
+    {
+      "id": "NIS-API-02",
+      "area": "Пробники",
+      "title": "Возврат в НИШ после истечения времени",
+      "priority": "P0",
+      "level": "integration",
+      "preconditions": "Изолированные локальные API/Auth/Firestore.",
+      "steps": [
+        "Сохранить ответ и смоделировать истечение двух блоков в изолированной сессии.",
+        "Восстановить попытку и отправить запоздавший ответ."
+      ],
+      "expected": "Дедлайн не продлён, закрытые ответы сохранены и не перезаписываются.",
+      "evidence": [
+        {
+          "file": "tests/nis-phases-emulator.test.cjs",
+          "name": "NIS API reconciles expired blocks without reopening answers or extending deadlines"
+        }
+      ]
+    },
+    {
+      "id": "NIS-CLIENT-01",
+      "area": "Пробники",
+      "title": "Старт НИШ сохраняет серверные блоки",
+      "priority": "P0",
+      "level": "client",
+      "preconditions": "Ответ API start содержит состояние nis.",
+      "steps": [
+        "Начать новый НИШ.",
+        "Прочитать активное состояние и сохранённый журнал."
+      ],
+      "expected": "Игрок и журнал содержат блок, ответы и revision сервера; после перезагрузки данные валидны.",
+      "evidence": [
+        {
+          "file": "tests/mock-resilience.test.mjs",
+          "name": "starting a NIS exam retains server phase state in the active player and reload journal"
+        }
+      ]
+    }
+  ]
+}

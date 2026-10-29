@@ -11,7 +11,11 @@ const proof = (result = {}) => ({ version: 2, status: 'finished', result: {
 
 // Exercise the actual handler; all identity and storage operations stay local.
 function fixture() {
-  const docs = new Map();
+  const docs = new Map(['host', 'guest', 'stranger'].flatMap(uid => [
+    [`childIndex/${uid}`, { parentUid: 'parent' }],
+    [`families/parent/children/${uid}`, { code: uid }],
+  ]));
+  docs.set('families/parent', { parentName: 'Local fixture' });
   const commits = [];
   let rejectCommit = false;
   const snapshot = (path) => ({ exists: docs.has(path), data: () => docs.get(path) });
@@ -45,6 +49,7 @@ function fixture() {
     console: { error() {} },
     require(name) {
       if (name === '../lib/firebase-admin') return { getAdmin: () => ({ auth, db }) };
+      if (name === '../lib/linked-child') return require('../backend/lib/linked-child');
       throw Error('unexpected module ' + name);
     },
   };

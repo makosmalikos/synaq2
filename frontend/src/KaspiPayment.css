@@ -1,0 +1,12 @@
+.kaspi-payment-info { font-size: 14px; line-height: 1.6; }
+.kaspi-payment-info p { margin: 10px 0; }
+.kaspi-payment-info ul { margin: 10px 0; padding-left: 22px; }
+.kaspi-payment-dialog { width: min(520px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); box-sizing: border-box; padding: 28px; border: 0; border-radius: 20px; color: #172c42; background: #fff; overflow-y: auto; }
+.kaspi-payment-dialog::backdrop { background: rgba(15, 30, 45, .5); }
+.kaspi-payment-dialog h2 { margin: 0 32px 14px 0; font: 700 22px 'Geologica', 'Golos Text', sans-serif; }
+.kaspi-payment-dialog > p:last-child { color: #526274; font-size: 13px; line-height: 1.5; }
+.kaspi-payment-close { position: absolute; right: 14px; top: 12px; width: 36px; height: 36px; border: 0; background: transparent; font-size: 28px; cursor: pointer; }
+.kaspi-payment-amount { font-weight: 700; }
+.kaspi-payment-dialog > a { display: flex; justify-content: center; margin-top: 20px; text-decoration: none; }
+.subscription-lesson-choice { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 16px 0; }
+.subscription-lesson-choice select { padding: 10px; border: 1px solid #cbd5e1; border-radius: 10px; background: white; color: #172c42; }

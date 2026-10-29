@@ -21,7 +21,7 @@ function fixture(file = 'webhook.js', { weekly = false } = {}) {
   const docs = new Map([['families/parent', { parentName: 'Parent' }]]);
   const provider = new Map([['subscriptions/sub-1', active('sub-1')]]);
   const calls = [];
-  let mirrorFailures = 0, familyWrites = 0;
+  let mirrorFailures = 0, familyWrites = 0, bodiesRead = 0;
   const snap = (path) => ({ id: path.split('/').at(-1), exists: docs.has(path), data: () => docs.get(path) });
   const write = (path, data, options) => {
     if (path === 'families/parent') familyWrites++;
@@ -62,6 +62,8 @@ function fixture(file = 'webhook.js', { weekly = false } = {}) {
       FIREBASE_PRIVATE_KEY: 'test-private-key', APP_URL: 'https://example.test',
       ...(weekly ? { DODO_WEEKLY_MOCK_PRODUCT_ID: 'weekly-product' } : {}) } },
     require(name) {
+      if (name === '../shared/payments.json') return require('../shared/payments.json');
+      if (name.endsWith('/center-access')) return require('../backend/lib/center-access');
       if (name === 'crypto' || name === 'node:crypto') return crypto;
       if (name === '../backend/lib/plans' || name === '../lib/plans') return plans;
       if (name === '../backend/lib/weekly-mock') return require('../backend/lib/weekly-mock');
@@ -81,7 +83,7 @@ function fixture(file = 'webhook.js', { weekly = false } = {}) {
   async function invoke(payload, { id = crypto.randomUUID(), timestamp = String(Math.floor(Date.now() / 1000)),
     signature, method = file === 'entitlement.js' ? 'GET' : 'POST', token = 'test-token' } = {}) {
     const raw = JSON.stringify(payload);
-    const req = file === 'webhook.js' ? Readable.from([Buffer.from(raw)]) : { body: payload };
+    const req = file === 'webhook.js' ? Readable.from((async function* () { bodiesRead++; yield Buffer.from(raw); })()) : { body: payload };
     req.method = method;
     req.headers = { 'webhook-id': id, 'webhook-timestamp': timestamp,
       'webhook-signature': signature ?? 'v1,' + crypto.createHmac('sha256', SECRET).update(`${id}.${timestamp}.${raw}`).digest('base64'),
@@ -92,7 +94,7 @@ function fixture(file = 'webhook.js', { weekly = false } = {}) {
     await context.module.exports(req, res);
     return { status: res.statusCode, body: res.body };
   }
-  return { docs, provider, calls, invoke, auth, failMirrors: (n) => { mirrorFailures = n; },
+  return { docs, provider, calls, invoke, auth, bodiesRead: () => bodiesRead, failMirrors: (n) => { mirrorFailures = n; },
     familyWrites: () => familyWrites, ledger: (id) => docs.get('paymentEvents/' + crypto.createHash('sha256').update(id).digest('hex')) };
 }
 
@@ -101,6 +103,15 @@ test('webhook rejects forged signatures and nonnumeric signing timestamps', asyn
   assert.equal((await f.invoke(event('subscription.active'), { signature: 'v1,bad' })).status, 403);
   assert.equal((await f.invoke(event('subscription.active'), { timestamp: 'NaN' })).status, 403);
   assert.equal(f.familyWrites(), 0);
+});
+
+test('webhook spam with absent, stale or oversized signing metadata is rejected before reading a body', async () => {
+  const f = fixture();
+  for (const headers of [{ id: '' }, { id: 'x'.repeat(201) }, { signature: '' }, { signature: 'x'.repeat(2049) },
+    { timestamp: 'NaN' }, { timestamp: String(Math.floor(Date.now() / 1000) - 301) }]) {
+    assert.equal((await f.invoke(event('subscription.active'), headers)).status, 403);
+  }
+  assert.equal(f.bodiesRead(), 0); assert.equal(f.familyWrites(), 0); assert.equal(f.calls.length, 0);
 });
 
 test('metadata/provider outage returns retryable status, then same event succeeds', async () => {
@@ -272,10 +283,9 @@ test('temporary legacy API failure remains retryable instead of losing old entit
 
 test('checkout uses authenticated parent identity and refuses active duplicate subscription', async () => {
   const f = fixture('checkout.js');
-  f.provider.set('checkouts', { session_id: 'cks_local', checkout_url: 'https://checkout.dodopayments.com/session/cks_local' });
-  f.provider.set('checkouts/cks_local', { id: 'cks_local', created_at: new Date(NOW).toISOString(), payment_id: null, payment_status: null });
   assert.equal((await f.invoke({ uid: 'someone-else' })).status, 200);
-  assert.equal(JSON.parse(f.calls[0].options.body).metadata.parentUid, 'parent');
+  assert.equal(f.calls.length, 0);
+  assert.equal(f.familyWrites(), 0);
   f.docs.set('families/parent', { pro: true, proExpiresAt: new Date(future) });
   assert.equal((await f.invoke({})).body.error, 'already_pro');
   f.docs.set('families/parent', { pro: true, proExpiresAt: 'invalid-expiry' });
@@ -299,30 +309,41 @@ test('child entitlement checks source family and expires even without expiry web
 });
 
 
-test('weekly checkout requires authentication and reuses a verified unpaid session', async () => {
-  const f = fixture('weekly-mock-checkout.js', { weekly: true });
+test('weekly checkout requires authentication and returns Kaspi without provider calls or grants', async () => {
+  const f = fixture('weekly-mock-checkout.js');
   assert.equal((await f.invoke({}, { token: '' })).status, 401);
-  f.provider.set('checkouts', { session_id: 'cks_weekly', checkout_url: 'https://checkout.dodopayments.com/session/cks_weekly' });
-  const first = await f.invoke({});
+  const before = structuredClone([...f.docs]);
+  const first = await f.invoke({ url: 'https://attacker.test', priceKzt: 1 });
   assert.equal(first.status, 200);
   assert.equal(first.body.priceKzt, 2500);
-  f.provider.set('checkouts/cks_weekly', { id: 'cks_weekly', payment_status: null });
-  const replay = await f.invoke({});
-  assert.equal(replay.status, 200);
-  assert.equal(replay.body.url, first.body.url);
-  assert.equal(f.calls.filter((call) => call.options.method === 'POST').length, 1);
+  assert.equal(first.body.url, require('../shared/payments.json').kaspiUrl);
+  assert.equal(first.body.manualActivation, true);
+  assert.equal((await f.invoke({})).body.url, first.body.url);
+  assert.equal(f.calls.length, 0);
+  assert.deepEqual([...f.docs], before);
 });
 
-test('weekly checkout bypasses charging Pro and rejects unsafe provider redirects', async () => {
-  const pro = fixture('weekly-mock-checkout.js', { weekly: true });
-  pro.docs.set('families/parent', { plan: 'pro' });
-  assert.equal((await pro.invoke({})).body.access, true);
-  assert.equal(pro.calls.length, 0);
-  const free = fixture('weekly-mock-checkout.js', { weekly: true });
-  free.provider.set('checkouts', { session_id: 'cks_weekly', checkout_url: 'https://example.test/session/cks_weekly' });
-  assert.equal((await free.invoke({})).status, 503);
-  assert.equal((await free.invoke({})).status, 503);
-  assert.equal(free.calls.length, 1);
+test('weekly checkout bypasses charging an active plan or an existing weekly pass', async () => {
+  const f = fixture('weekly-mock-checkout.js');
+  f.docs.set('families/parent', { plan: 'pro' });
+  assert.equal((await f.invoke({})).body.access, true);
+  f.docs.set('families/parent', { plan: 'free' });
+  const { passId, weeklyWindow } = require('../backend/lib/weekly-mock');
+  f.docs.set(`weeklyMockPasses/${passId('parent', weeklyWindow().weekKey)}`, { paid: true });
+  const result = await f.invoke({});
+  assert.equal(result.body.access, true);
+  assert.equal(result.body.url, undefined);
+  assert.equal(f.calls.length, 0);
+});
+
+test('weekly checkout verifies child membership before returning a payment link', async () => {
+  const f = fixture('weekly-mock-checkout.js');
+  f.auth.verifyIdToken = async () => ({ uid: 'child', email: 'student@synaq.kids' });
+  f.docs.set('childIndex/child', { parentUid: 'parent' });
+  assert.equal((await f.invoke({})).status, 403);
+  f.docs.set('families/parent/children/child', { code: 'student' });
+  assert.equal((await f.invoke({})).body.url, require('../shared/payments.json').kaspiUrl);
+  assert.equal(f.familyWrites(), 0);
 });
 
 test('enabling weekly payments preserves subscription payment handling', async () => {

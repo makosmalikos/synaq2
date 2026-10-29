@@ -67,6 +67,7 @@ function fixture({ pro = false, paid = false, realBank = false } = {}) {
   const context = { module: { exports: {} }, Date, console: { error() {} }, process,
     require(name) {
       if (name === '../shared/nis-exam.mjs') return require('../shared/nis-exam.mjs');
+      if (name.endsWith('/center-access')) return require('../backend/lib/center-access');
       if (name === '../backend/lib/firebase-admin') return { getAdmin: () => ({ db, auth }) };
       if (name === '../backend/lib/plans') return plans;
       if (name === '../backend/lib/question-access') return require('../backend/lib/question-access');

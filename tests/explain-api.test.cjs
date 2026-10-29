@@ -52,6 +52,7 @@ function fixture(envOverrides = {}) {
   const context = { module: { exports: {} }, Date, Buffer, AbortSignal, process: { env },
     console: { warn() {}, error() {} },
     require(name) {
+      if (name === '../backend/lib/center-access') return require('../backend/lib/center-access');
       if (name === 'node:crypto') return crypto;
       if (name === '../backend/lib/plans') return plans;
       if (name === '../backend/lib/firebase-admin') return { getAdmin: () => ({ db, auth }) };

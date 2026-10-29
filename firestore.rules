@@ -151,7 +151,14 @@ service cloud.firestore {
     }
 
     match /results/{childUid}/flags/{qid} {
-      allow create, delete: if isSignedIn() && request.auth.uid == childUid;
+      allow create: if isSignedIn() && request.auth.uid == childUid
+        && exists(/databases/$(database)/documents/childIndex/$(childUid))
+        && qid.matches('^[A-Za-z0-9_-]{1,200}$')
+        && request.resource.data.keys().hasAll(['qid', 'at'])
+        && request.resource.data.keys().hasOnly(['qid', 'at'])
+        && request.resource.data.qid == qid
+        && request.resource.data.at == request.time;
+      allow delete: if isSignedIn() && request.auth.uid == childUid;
       allow update: if false;
     }
 
@@ -188,6 +195,24 @@ service cloud.firestore {
     }
 
     // Content-addressed AI cache, billing ledger and duel proofs are server-only.
+    // Center workspaces are accessed through the role-scoped API. Students
+    // may only observe their own server-owned seat and its public license.
+    match /centers/{document=**} { allow read, write: if false; }
+    match /centerStaff/{uid} { allow read, write: if false; }
+    match /centerInvites/{id} { allow read, write: if false; }
+    match /centerInviteRates/{id} { allow read, write: if false; }
+    match /centerSeats/{uid} {
+      allow read: if isSignedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+    match /centerLicenses/{centerId} {
+      allow read: if isSignedIn()
+        && exists(/databases/$(database)/documents/centerSeats/$(request.auth.uid))
+        && get(/databases/$(database)/documents/centerSeats/$(request.auth.uid)).data.active == true
+        && get(/databases/$(database)/documents/centerSeats/$(request.auth.uid)).data.centerId == centerId;
+      allow write: if false;
+    }
+
     match /bankTaskKeys/{id} { allow read, write: if false; }
     match /aiCache/{id} { allow read, write: if false; }
     match /paymentEvents/{id} { allow read, write: if false; }

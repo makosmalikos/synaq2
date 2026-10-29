@@ -8,7 +8,12 @@ const isChild = (user) => /^[a-z0-9]+@synaq\.kids$/.test(user?.email || '');
 const isAdmin = (user) => user?.admin === true && user?.adminAuthVersion === 2
   && [process.env.ADMIN_EMAIL_1 || ADMIN_EMAILS[0], process.env.ADMIN_EMAIL_2 || ADMIN_EMAILS[1]]
     .some((email) => email?.toLowerCase() === String(user.email || '').toLowerCase());
-const iso = (date) => date?.toDate?.()?.toISOString() || (date instanceof Date ? date.toISOString() : null);
+const iso = value => {
+  const date = value?.toDate?.() || (value instanceof Date ? value
+    : typeof value === 'string' || typeof value === 'number' ? new Date(value) : null);
+  return date && Number.isFinite(date.getTime()) ? date.toISOString() : null;
+};
+const newestFirst = (a, b) => (b.createdAt || '').localeCompare(a.createdAt || '');
 const output = (doc) => {
   const d = doc.data();
   return { id: doc.id, rewardId: d.rewardId, price: d.price, status: d.status,
@@ -39,7 +44,7 @@ function createHandler({ admin = getAdmin, now = () => new Date() } = {}) {
         }
         if (role === 'parent') {
           const snap = await requests.where('parentUid', '==', user.uid).get();
-          return res.status(200).json({ requests: snap.docs.map(output).sort((a, b) => b.createdAt.localeCompare(a.createdAt)) });
+          return res.status(200).json({ requests: snap.docs.map(output).sort(newestFirst) });
         }
         const index = await db.collection('childIndex').doc(user.uid).get();
         if (!index.exists || !index.data()?.parentUid) fail('child_required', 403);
@@ -50,7 +55,7 @@ function createHandler({ admin = getAdmin, now = () => new Date() } = {}) {
         ]);
         const xp = coinsEarned(stats.data()?.xp);
         return res.status(200).json({ xp, balance: coinBalance(xp, wallet.data()?.spentCoins),
-          rewards: REWARDS, requests: snap.docs.map(output).sort((a, b) => b.createdAt.localeCompare(a.createdAt)) });
+          rewards: REWARDS, requests: snap.docs.map(output).sort(newestFirst) });
       }
 
       const { action, id, rewardId } = req.body || {};

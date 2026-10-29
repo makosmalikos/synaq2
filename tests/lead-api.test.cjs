@@ -41,7 +41,7 @@ test('lead endpoint stores validated data without retaining a raw IP address', a
 
   assert.equal(res.statusCode, 201);
   assert.deepEqual(res.body, { ok: true });
-  assert.equal(writes.length, 2);
+  assert.equal(writes.length, 4);
   const stored = writes.find(({ ref }) => ref.collection === 'leads').value;
   assert.equal(stored.name, 'Алия');
   assert.equal(stored.lang, 'kk');

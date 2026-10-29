@@ -6,6 +6,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const DICT = {
   kk: {
+    'nav.assignments': 'Орталық тапсырмалары',
     'founders.label': 'Негізін қалаушылар',
     'founders.title': 'SYNAQ-ты кімдер құрды',
     'founders.intro': 'Біз РФММ мен БИЛ-де оқыдық. Түсу жолын өзіміз өткердік, енді балаларға осы қадамға дайындалуға көмектесеміз.',
@@ -58,11 +59,11 @@ const DICT = {
     'subscription.tariff': 'Тариф',
     'subscription.period': '1 ай',
     'subscription.payment': 'Рәсімдеу тәсілі',
-    'subscription.paymentTitle': 'WhatsApp арқылы рәсімдеу',
-    'subscription.paymentSub': 'Менеджер төлемді түсіндіріп, таңдалған тарифті отбасы аккаунтына қосуға көмектеседі.',
-    'subscription.secure': 'Қауіпсіз қолдау',
+    'subscription.paymentTitle': 'Kaspi арқылы төлеу',
+    'subscription.paymentSub': 'Таңдалған соманы Kaspi арқылы төлеңіз. Төлем кезінде міндетті түрде көрсетіңіз:',
+    'subscription.secure': 'Kaspi.kz',
     'subscription.order': 'Қосылатын тариф',
-    'subscription.cta': 'WhatsApp-та рәсімдеу',
+    'subscription.cta': 'Kaspi арқылы төлеу',
     'subscription.activeTitle': 'Тарифіңіз белсенді',
     'subscription.status': 'Жазылым мәртебесі',
     'subscription.continue': 'Дайындықты жалғастыру',
@@ -524,6 +525,7 @@ const DICT = {
   },
 
   ru: {
+    'nav.assignments': 'Задания центра',
     'founders.label': 'Основатели',
     'founders.title': 'Кто стоит за SYNAQ',
     'founders.intro': 'Мы сами учились в РФМШ и БИЛ. Знаем, что стоит за поступлением, и помогаем детям подготовиться к этому шагу.',
@@ -575,11 +577,11 @@ const DICT = {
     'subscription.tariff': 'Тариф',
     'subscription.period': '1 месяц',
     'subscription.payment': 'Способ оформления',
-    'subscription.paymentTitle': 'Оформление через WhatsApp',
-    'subscription.paymentSub': 'Менеджер объяснит оплату и поможет подключить выбранный тариф к семейному аккаунту.',
-    'subscription.secure': 'Безопасная поддержка',
+    'subscription.paymentTitle': 'Оплата через Kaspi',
+    'subscription.paymentSub': 'Оплатите выбранную сумму в Kaspi. При оплате обязательно укажите:',
+    'subscription.secure': 'Kaspi.kz',
     'subscription.order': 'К подключению',
-    'subscription.cta': 'Оформить в WhatsApp',
+    'subscription.cta': 'Оплатить через Kaspi',
     'subscription.activeTitle': 'Ваш тариф активен',
     'subscription.status': 'Статус подписки',
     'subscription.continue': 'Продолжить подготовку',

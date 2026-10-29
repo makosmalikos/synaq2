@@ -7,6 +7,8 @@
     "dev:api": "node --env-file-if-exists=.env backend/server.js",
     "dev:frontend": "npm run dev --prefix frontend",
     "test": "node --test tests/*.test.*",
+    "test:scenarios": "node scripts/run-platform-scenarios.mjs",
+    "test:scenarios:emulators": "firebase emulators:exec --only auth,firestore --project demo-synaq-tests 'node scripts/run-platform-scenarios.mjs --emulators'",
     "test:rules": "firebase emulators:exec --only firestore --project demo-synaq-tests 'node --test tests/rules.test.mjs tests/curriculum-reading-rules.test.mjs tests/duel-emulator.test.cjs'",
     "test:journey": "firebase emulators:exec --only auth,firestore --project demo-synaq-tests 'node --test tests/journey-emulator.test.cjs'",
     "dev:emulators": "firebase emulators:exec --only auth,firestore --project demo-synaq-tests 'node scripts/dev-emulators.mjs'",
@@ -18,7 +20,8 @@
     "verify:release": "node scripts/check-release.mjs",
     "generate:public-mocks": "node scripts/generate-public-mocks.mjs",
     "editorial:check": "node scripts/editorial/publish-standard-editions.mjs --check",
-    "editorial:publish": "node scripts/editorial/publish-standard-editions.mjs --write"
+    "editorial:publish": "node scripts/editorial/publish-standard-editions.mjs --write",
+    "test:security": "node --test tests/security-api.test.cjs tests/security-http.test.cjs tests/lead-api.test.cjs tests/lead-abuse.test.cjs tests/duel-award.test.cjs tests/payments.test.cjs tests/explain-api.test.cjs tests/center-service.test.cjs"
   },
   "engines": {
     "node": ">=22.12"
@@ -36,7 +39,8 @@
     "firebase-tools": {
       "csv-parse": "^7.0.2"
     },
-    "@opentelemetry/core": "^2.8.0"
+    "@opentelemetry/core": "^2.8.0",
+    "@grpc/grpc-js": "^1.14.6"
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "^5.0.2",

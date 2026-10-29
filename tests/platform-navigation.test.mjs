@@ -6,10 +6,10 @@ const app = fs.readFileSync(new URL('../frontend/src/PlatformApp.jsx', import.me
 const styles = fs.readFileSync(new URL('../frontend/src/styles.css', import.meta.url), 'utf8');
 
 test('student navigation keeps six primary choices and groups secondary screens', () => {
-  const definition = app.slice(app.indexOf('const NAV = ['), app.indexOf('const NAV_ICONS'));
+  const definition = app.slice(app.indexOf('const NAV = ['), app.indexOf('const CENTER_NAV'));
   assert.deepEqual([...definition.matchAll(/\{ id: '([^']+)'/g)].map((match) => match[1]),
     ['home', 'learning', 'diagnosis', 'mock', 'progress', 'more']);
-  assert.match(definition, /children: \['curriculum', 'training', 'mentor'\]/);
+  assert.match(definition, /children: \['curriculum', 'training', 'assignments', 'mentor'\]/);
   assert.match(definition, /children: \['duel', 'league', 'rewards'\]/);
 });
 
@@ -30,4 +30,11 @@ test('mobile navigation overlays content and closes via backdrop or Escape', () 
   assert.match(app, /id="student-navigation"/);
   assert.match(app, /event\.key === 'Escape'[\s\S]*setMenuOpen\(false\)/);
   assert.match(app, /className="mobile-nav-backdrop"[\s\S]*setMenuOpen\(false\)/);
+});
+
+ test('center students have assignments and schedule as primary navigation', () => {
+  const definition = app.slice(app.indexOf('const CENTER_NAV = ['), app.indexOf('const NAV_ICONS'));
+  assert.deepEqual([...definition.matchAll(/\{ id: '([^']+)'/g)].map(match => match[1]), ['home', 'assignments', 'schedule', 'centerProgress', 'learning', 'more']);
+  assert.match(app, /const enrolled = !!profile.centerEnrollment/);
+  assert.match(app, /tab === 'home' && !enrolled && <Home/);
 });

@@ -4,6 +4,7 @@ vertex/edge coincidence, die assignments and an independent bitmask exact-cover
 solver recompute every candidate. Same author computational review, not another
 human reviewer. Standard+ local only; no browser QA.
 """
+import tempfile
 import copy,hashlib,importlib.util,itertools,json,re,subprocess,sys,xml.etree.ElementTree as ET
 from fractions import Fraction as F
 from pathlib import Path
@@ -202,13 +203,20 @@ def mutations(d):
 
 def main():
  rows=json.loads((ROOT/BATCH).read_text())['editions'];assert len(rows)==22;entries=[];evidence=[];choices=0
- changed=[mutations(read(r)[2])for r in rows];Path('/private/tmp/course5-topology-mutations.json').write_text(json.dumps(changed));js="import fs from'node:fs';import{GEOMETRY,draw}from'./scripts/editorial/course5-topology-models.mjs';const a=JSON.parse(fs.readFileSync('/private/tmp/course5-topology-mutations.json'));for(let i=0;i<a.length;i++){GEOMETRY[i]=a[i];fs.writeFileSync('/private/tmp/course5-topology-mutated-'+i+'.svg',draw(i));}";subprocess.check_call(['node','--input-type=module','-e',js],cwd=ROOT)
+ changed=[mutations(read(r)[2])for r in rows]
+ # Keep generated mutations isolated and portable across macOS/Linux runners.
+ with tempfile.TemporaryDirectory(prefix='synaq-topology-') as temporary:
+  directory=Path(temporary)
+  (directory/'mutations.json').write_text(json.dumps(changed))
+  js="import fs from'node:fs';import path from'node:path';import{GEOMETRY,draw}from'./scripts/editorial/course5-topology-models.mjs';const directory=process.argv[1],a=JSON.parse(fs.readFileSync(path.join(directory,'mutations.json')));for(let i=0;i<a.length;i++){GEOMETRY[i]=a[i];fs.writeFileSync(path.join(directory,'mutated-'+i+'.svg'),draw(i));}"
+  subprocess.check_call(['node','--input-type=module','-e',js,temporary],cwd=ROOT)
+  changed_drawings=[(directory/('mutated-'+str(i)+'.svg')).read_bytes()for i in range(len(rows))]
  for i,r in enumerate(rows):
   g=INDICES[i];ref=one(r['sourceRefs']);q=one(q for q in json.loads((ROOT/ref['sourceFile']).read_text())['questions']if q['id']==ref['sourceId']);opts=q.get('options',[]);key=one(x['text']for x in opts if x['correct'])if opts else q['sourceAnswer'];assert q['solution']and len(opts)==len(r.get('options',[]));choices+=len(opts)
   try:src=solve({**q,'answer':key},i,True);proof=solve(r,i)
   except Exception as e:raise AssertionError(('source/new',g))from e
   raw=(ROOT/'frontend/public'/r['image'].lstrip('/')).read_bytes()
-  changedRaw=Path('/private/tmp/course5-topology-mutated-'+str(i)+'.svg').read_bytes();cr=copy.deepcopy(r);cr.pop('options',None);cr['figureSha256']=hashlib.sha256(changedRaw).hexdigest();new=compute(changed[i])[0];cr['answer']=new;solve(cr,i,raw=changedRaw);assert representation(new,g)!=representation(r['answer'],g)
+  changedRaw=changed_drawings[i];cr=copy.deepcopy(r);cr.pop('options',None);cr['figureSha256']=hashlib.sha256(changedRaw).hexdigest();new=compute(changed[i])[0];cr['answer']=new;solve(cr,i,raw=changedRaw);assert representation(new,g)!=representation(r['answer'],g)
   try:solve({**cr,'answer':r['answer']},i,raw=changedRaw)
   except(AssertionError,ValueError):pass
   else:raise AssertionError(('StaleActualDiagramAnswer',g))

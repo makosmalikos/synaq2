@@ -1,3 +1,7 @@
+import payments from '../../shared/payments.json' with { type: 'json' };
+
+export const KASPI_PAYMENT_URL = payments.kaspiUrl;
+
 // Show our own translated copy for machine codes, never raw provider messages.
 const messages = {
   checkout_pending: [
@@ -70,13 +74,7 @@ export const checkoutNeedsVerification = (code) => [
 ].includes(code);
 
 export function isCheckoutDestination(value) {
-  if (typeof value !== 'string' || value.length > 2048) return false;
-  try {
-    const url = new URL(value);
-    return url.protocol === 'https:' && !url.username && !url.password && !url.port
-      && ['checkout.dodopayments.com', 'test.checkout.dodopayments.com'].includes(url.hostname)
-      && /^\/session\/cks_[a-zA-Z0-9_-]{1,160}$/.test(url.pathname);
-  } catch { return false; }
+  return typeof value === 'string' && value === KASPI_PAYMENT_URL;
 }
 
 export function isDodoPortalDestination(value) {

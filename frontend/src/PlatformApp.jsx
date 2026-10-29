@@ -1,3 +1,4 @@
+import PwaInstall from './PwaInstall.jsx';
 import './platform-fonts.css';
 import './styles.css';
 import './PlatformFoundation.css';
@@ -10,9 +11,13 @@ import BrandLoader from './components/BrandLoader.jsx';
 import PetAvatar from './PetAvatar.jsx';
 import Notifications from './Notifications.jsx';
 import StudentMobileNav from './StudentMobileNav.jsx';
+const FreePlanBanner = lazy(() => import('./FreePlanBanner.jsx'));
 import { bindInitialDiagnostic } from './homeModel.js';
 
 // Банк задач большой: загружаем его только вместе с экраном, которому он нужен.
+const CenterWorkspace = lazy(() => import('./CenterWorkspace.jsx'));
+const CenterStudentHome = lazy(() => import('./CenterStudentHome.jsx'));
+const CenterAssignments = lazy(() => import('./CenterAssignments.jsx'));
 const Home = lazy(() => import('./Home.jsx'));
 const League = lazy(() => import('./League.jsx'));
 const Parent = lazy(() => import('./Parent.jsx'));
@@ -29,17 +34,29 @@ const PlatformDiagnostic = lazy(() => import('./components/PlatformDiagnostic.js
 
 const NAV = [
   { id: 'home', icon: 'home' },
-  { id: 'learning', icon: 'book', children: ['curriculum', 'training', 'mentor'] },
+  { id: 'learning', icon: 'book', children: ['curriculum', 'training', 'assignments', 'mentor'] },
   { id: 'diagnosis', icon: 'diagnosis' },
   { id: 'mock', icon: 'test' },
   { id: 'progress', icon: 'progress' },
   { id: 'more', icon: 'more', children: ['duel', 'league', 'rewards'] },
 ];
 
+const CENTER_NAV = [
+  { id: 'home', icon: 'home' },
+  { id: 'assignments', icon: 'assignments' },
+  { id: 'schedule', icon: 'schedule' },
+  { id: 'centerProgress', icon: 'progress' },
+  { id: 'learning', icon: 'book', children: ['curriculum', 'training', 'diagnosis', 'mock', 'mentor', 'progress'] },
+  { id: 'more', icon: 'more', children: ['duel', 'league', 'rewards'] },
+];
+
 const NAV_ICONS = {
+  schedule: <><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M8 3v4M16 3v4M4 10h16M8 14h2M14 14h2" /></>,
+  centerProgress: <><path d="M4 19V13h4v6M10 19V9h4v10M16 19V4h4v15" /></>,
   home: <><path d="M3.5 10.5 12 3.8l8.5 6.7" /><path d="M5.5 9.5v10h13v-10M9.5 19.5v-6h5v6" /></>,
   book: <><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5Z" /><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5Z" /></>,
   diagnosis: <><circle cx="12" cy="12" r="7.5" /><circle cx="12" cy="12" r="2.5" /><path d="M12 2v3M22 12h-3M12 22v-3M2 12h3" /></>,
+  assignments: <><path d="M7 3.5h10v17H7z" /><path d="m9 11 2 2 4-5" /></>,
   test: <><path d="M7 3.5h10v17H7z" /><path d="M9.5 8h5M9.5 12h5M9.5 16h3" /></>,
   progress: <><path d="M4 19.5V14h4v5.5M10 19.5V9h4v10.5M16 19.5V4h4v15.5" /><path d="M3 19.5h18" /></>,
   more: <><circle cx="5" cy="12" r="1.5" /><circle cx="12" cy="12" r="1.5" /><circle cx="19" cy="12" r="1.5" /></>,
@@ -52,7 +69,7 @@ const NAV_ICONS = {
 };
 
 const NavIcon = ({ name }) => (
-  <svg className="nav-icon" viewBox="0 0 24 24" aria-hidden="true">{NAV_ICONS[name]}</svg>
+  <svg className="nav-icon" viewBox="0 0 24 24" aria-hidden="true">{NAV_ICONS[name === 'mock' ? 'test' : name]}</svg>
 );
 
 const ScreenFallback = () => <BrandLoader />;
@@ -67,7 +84,7 @@ const ProfileIcon = ({ name }) => {
 };
 
 // Firebase и личные данные загружаются только после перехода в кабинет.
-export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, navigation }) {
+export default function PlatformApp({ centerMode = false, onHome, initialDiagnosticPlan, duelCode, navigation }) {
   const { t, lang } = useLang();
   const { tab, setTab, trainTopic, setTrainTopic, tabBeforeSubscription, setTabBeforeSubscription } = navigation;
   const [user, setUser] = useState(undefined);
@@ -86,6 +103,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
   const [xp, setXp] = useState(0);
   const [diagnosticSeed, setDiagnosticSeed] = useState(null);
   const [curriculumTopic, setCurriculumTopic] = useState(null);
+  const [assignmentPractice, setAssignmentPractice] = useState(null);
   const mergeXp = useCallback((loadedXp) => {
     const total = Number(loadedXp);
     setXp((current) => Number.isFinite(total) ? Math.max(current, total) : current);
@@ -104,6 +122,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
       authUidRef.current = nextUid;
       setAdminUser(undefined);
       setCurriculumTopic(null);
+      setAssignmentPractice(null);
     }
     setUser(nextUser);
     setAuthRevision((value) => value + 1);
@@ -225,7 +244,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
 
   // 2. Авторизация — пока не вошли, дашборда нет
   if (user === undefined) return <BrandLoader fullScreen />;
-  if (!user) return <Auth duelCode={duelCode} />;
+  if (!user) return <Auth duelCode={duelCode} centerMode={centerMode} />;
 
   // 3. Дашборд (родитель / ребёнок)
   const exit = async () => {
@@ -249,6 +268,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
         <button className="btn" type="button" onClick={exit}>{t('common.exit')}</button>
       </section>
     );
+    if (centerMode) return <Suspense fallback={<BrandLoader fullScreen />}><CenterWorkspace key={user.uid} onExit={logout} /></Suspense>;
     return (
       <Suspense fallback={<BrandLoader fullScreen />}>
         <Parent key={user.uid} onExit={exit} />
@@ -266,9 +286,20 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
     </section>
   ) : <BrandLoader fullScreen />;
 
+  if (profile.centerLoading) return <BrandLoader fullScreen />;
+  const enrolled = !!profile.centerEnrollment;
+  const studentNav = enrolled ? CENTER_NAV : NAV;
+  const navLabel = id => {
+    if (id === 'schedule') return lang === 'ru' ? 'Расписание' : 'Кесте';
+    if (id === 'centerProgress') return lang === 'ru' ? 'Прогресс' : 'Нәтиже';
+    if (enrolled && id === 'home') return lang === 'ru' ? 'Мой центр' : 'Менің орталығым';
+    if (enrolled && id === 'learning') return lang === 'ru' ? 'Самостоятельно' : 'Өз бетімше';
+    if (enrolled && id === 'progress') return lang === 'ru' ? 'Общий прогресс' : 'Жалпы нәтиже';
+    return t(`nav.${id}`);
+  };
   const school = profile.school;
   const pick = (id) => { setTab(id); setMenuOpen(false); setNavMenu(null); setProfileOpen(false); window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); };
-  const goTrainTopic = (topicId) => { setTrainTopic(topicId); pick('training'); };
+  const goTrainTopic = (topicId, assignment = null) => { setAssignmentPractice(assignment); setTrainTopic(topicId); pick('training'); };
   const openSubscription = () => {
     setTabBeforeSubscription(tab === 'subscription' ? 'home' : tab);
     setProfileOpen(false);
@@ -311,12 +342,12 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
 
         {/* Навигация. На телефоне показывается только когда menuOpen. */}
         <nav id="student-navigation" ref={navRef} className={'nav-v' + (menuOpen ? ' open' : '')} aria-label={t('nav.main')}>
-          {NAV.map((item) => {
+          {studentNav.map((item) => {
             const active = item.id === tab || item.children?.includes(tab);
             if (!item.children) return (
               <button key={item.id} className={`nav-item nav-${item.id}${active ? ' on' : ''}`} onClick={() => pick(item.id)} aria-current={active ? 'page' : undefined}>
                 <NavIcon name={item.icon} />
-                <span className="nav-label">{t(`nav.${item.id}`)}</span>
+                <span className="nav-label">{navLabel(item.id)}</span>
               </button>
             );
             const expanded = navMenu === item.id;
@@ -324,7 +355,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
               <div key={item.id} className={`nav-group${active ? ' active' : ''}`}>
                 <button className={`nav-group-trigger nav-${item.id}${active ? ' on' : ''}`} type="button" aria-haspopup="menu" aria-expanded={expanded} onClick={() => setNavMenu(expanded ? null : item.id)}>
                   <NavIcon name={item.icon} />
-                  <span className="nav-label">{t(`nav.${item.id}`)}</span>
+                  <span className="nav-label">{navLabel(item.id)}</span>
                   <svg className="nav-caret" viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1.5 5 5 5-5" /></svg>
                 </button>
                 {expanded && (
@@ -332,7 +363,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
                     {item.children.map((child) => (
                       <button key={child} type="button" role="menuitem" className={tab === child ? 'on' : ''} onClick={() => pick(child)}>
                         <NavIcon name={child} />
-                        <span>{t(`nav.${child}`)}</span>
+                        <span>{navLabel(child)}</span>
                       </button>
                     ))}
                   </div>
@@ -341,6 +372,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
             );
           })}
           <div className="nav-account-actions">
+            <PwaInstall />
             <button type="button" onClick={openSubscription}><ProfileIcon name="plan" /><span>{t('profile.plan')}</span></button>
             <a href="https://wa.me/message/HAJDNIM2MPOCM1" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}><ProfileIcon name="support" /><span>{t('profile.support')}</span></a>
           </div>
@@ -387,6 +419,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
                 <span>{t('profile.support')}</span>
               </a>
 
+              <PwaInstall className="profile-action" role="menuitem" />
               <button className="profile-action profile-exit" type="button" role="menuitem" onClick={exit}>
                 <ProfileIcon name="exit" />
                 <span>{t('common.exit')}</span>
@@ -396,14 +429,19 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
         </div>
       </aside>
 
+      {profile.plan === 'free' && !profile.proLoading && (
+        <Suspense fallback={null}><FreePlanBanner lang={lang} onUpgrade={openSubscription} /></Suspense>
+      )}
+
       {menuOpen && <div className="mobile-nav-backdrop" aria-hidden="true" onClick={() => { setMenuOpen(false); setNavMenu(null); (menuReturnRef.current || burgerRef.current)?.focus(); }} />}
 
       <div className={`content content-${tab}`}>
+        {tab === 'home' && <PwaInstall card />}
         {profileError && <p className="card" role="alert" style={{ margin: 20 }}>
           {lang === 'ru' ? 'Не удалось загрузить профиль или прогресс. Проверьте соединение и обновите страницу.' : 'Профильді немесе прогресті жүктеу мүмкін болмады. Байланысты тексеріп, бетті жаңартыңыз.'}
         </p>}
         <Suspense fallback={<ScreenFallback />}>
-          {tab === 'home' && <Home key={user.uid} uid={user.uid} go={pick} name={profile.name} avatar={profile.avatar} xp={xp} onTrainTopic={goTrainTopic}
+          {tab === 'home' && !enrolled && <Home key={user.uid} uid={user.uid} go={pick} name={profile.name} avatar={profile.avatar} xp={xp} onTrainTopic={goTrainTopic}
             grade={profile.klass} plan={profile.plan || (profile.pro ? 'pro' : 'free')}
             onOpenCurriculum={(topicKey) => { setCurriculumTopic(topicKey); pick('curriculum'); }}
             initialDiagnostic={diagnosticSeed?.uid === user.uid ? diagnosticSeed.result : null} />}
@@ -412,6 +450,9 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
             initialGrade={profile.klass} plan={profile.plan || (profile.pro ? 'pro' : 'free')} onUpgrade={openSubscription}
             onXp={(gain, totalXp) => setXp((current) => Number.isFinite(totalXp) ? Math.max(current, totalXp) : current + gain)}
           />}
+          {enrolled && ['home', 'schedule', 'centerProgress', 'assignments'].includes(tab) && <CenterStudentHome key={`${user.uid}:${tab}:${profile.centerEnrollment.centerId}:${profile.centerEnrollment.groupId}`} view={tab} membershipKey={`${profile.centerEnrollment.centerId}:${profile.centerEnrollment.groupId}`} name={profile.name} onTrainTopic={goTrainTopic} onNavigate={pick} />}
+          {!enrolled && ['schedule', 'centerProgress'].includes(tab) && <CenterAssignments key={user.uid} onTrainTopic={goTrainTopic} />}
+          {tab === 'assignments' && !enrolled && <CenterAssignments key={user.uid} onTrainTopic={goTrainTopic} />}
           {tab === 'mentor' && <Mentor onUpgrade={openSubscription} />}
           {tab === 'diagnosis' && <PlatformDiagnostic initialGrade={profile.klass} onGoPractice={goTrainTopic} />}
           {tab === 'training' && (
@@ -419,8 +460,8 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
               school={school}
               onUpgrade={openSubscription}
               onXp={(gain, totalXp) => setXp((current) => Number.isFinite(totalXp) ? Math.max(current, totalXp) : current + gain)}
-              startTopicId={trainTopic}
-              onTopicOpened={() => setTrainTopic(null)}
+              startTopicId={trainTopic} startPractice={assignmentPractice}
+              onTopicOpened={() => { setTrainTopic(null); setAssignmentPractice(null); }}
             />
           )}
           {tab === 'mock' && (
@@ -435,7 +476,7 @@ export default function PlatformApp({ onHome, initialDiagnosticPlan, duelCode, n
           {tab === 'rewards' && <Rewards key={user.uid} onGoTraining={() => pick('training')} />}
         </Suspense>
       </div>
-      <StudentMobileNav tab={tab} lang={lang} menuOpen={menuOpen} onPick={pick} Icon={NavIcon}
+      <StudentMobileNav center={enrolled} tab={tab} lang={lang} menuOpen={menuOpen} onPick={pick} Icon={NavIcon}
         onMenu={() => { setMenuOpen((value) => !value); setNavMenu(null); setProfileOpen(false); }} />
     </div>
   );

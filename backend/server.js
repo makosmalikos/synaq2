@@ -4,12 +4,13 @@ const cors = require('cors');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const ENDPOINTS = ['explain', 'checkout', 'weekly-mock-checkout', 'subscription-portal', 'entitlement', 'child-create', 'child-password', 'admin-login', 'admin-task', 'admin-leads', 'admin-mentors', 'admin-lessons', 'lessons', 'rewards', 'duel', 'duel-award', 'learning', 'mock-session', 'diagnostic-session', 'lead'];
+const ENDPOINTS = ['center', 'explain', 'checkout', 'weekly-mock-checkout', 'subscription-portal', 'entitlement', 'child-create', 'child-password', 'admin-login', 'admin-task', 'admin-leads', 'admin-mentors', 'admin-lessons', 'lessons', 'rewards', 'duel', 'duel-award', 'learning', 'mock-session', 'diagnostic-session', 'lead'];
 
 // These lighter endpoints share the catch-all Vercel function so the project
 // stays within the Hobby plan's 12-function limit. Explicit loaders also make
 // their dependencies visible to Vercel's static file tracer.
 const SHARED_ENDPOINTS = {
+  center: () => require('./handlers/center'),
   'admin-login': () => require('./handlers/admin-login'),
   entitlement: () => require('./handlers/entitlement'),
   'child-password': () => require('./handlers/child-password'),
@@ -24,6 +25,7 @@ const SHARED_ENDPOINTS = {
 
 function createApp({ handlers = {} } = {}) {
   const app = express();
+  app.disable('x-powered-by');
   const allowedOrigins = new Set(['https://synaq.app', 'https://www.synaq.app',
     process.env.APP_URL && String(process.env.APP_URL).replace(/\/+$/, '')].filter(Boolean));
   app.use(cors({
@@ -46,7 +48,7 @@ function createApp({ handlers = {} } = {}) {
   // Signature verification reads exact stream bytes. Mount before JSON parsing;
   // express.raw would consume that stream too, so let the webhook read it once.
   app.all('/api/webhook', invoke('webhook'));
-  app.use(express.json({ limit: '1mb' }));
+  app.use(express.json({ limit: '1mb', inflate: false }));
   for (const name of ENDPOINTS) app.all(`/api/${name}`, invoke(name));
   app.get('/', (_req, res) => res.json({ service: 'synaq-backend', ok: true }));
   // Legacy /api/training/* and /api/mock/* were unauthenticated and returned
@@ -58,6 +60,7 @@ function createApp({ handlers = {} } = {}) {
     if (res.headersSent) return _next(error);
     if (error.type === 'entity.too.large') return res.status(413).json({ error: 'payload_too_large' });
     if (error.type === 'entity.parse.failed') return res.status(400).json({ error: 'invalid_json' });
+    if (error.type === 'encoding.unsupported') return res.status(415).json({ error: 'unsupported_encoding' });
     console.error('API handler failed:', error.code || error.name || 'Error');
     return res.status(500).json({ error: 'internal_error' });
   });

@@ -50,6 +50,13 @@ async function rawBody(req) {
   return Buffer.concat(chunks);
 }
 
+function signingHeadersValid(headers) {
+  return typeof headers?.['webhook-id'] === 'string' && headers['webhook-id'].length > 0 && headers['webhook-id'].length <= 200
+    && typeof headers['webhook-timestamp'] === 'string' && /^\d{10,12}$/.test(headers['webhook-timestamp'])
+    && Math.abs(Date.now() / 1000 - Number(headers['webhook-timestamp'])) <= 300
+    && typeof headers['webhook-signature'] === 'string' && headers['webhook-signature'].length > 0 && headers['webhook-signature'].length <= 2048;
+}
+
 function verify(raw, headers, secret) {
   const id = headers['webhook-id'];
   const ts = headers['webhook-timestamp'];
@@ -228,6 +235,9 @@ async function handler(req, res) {
     return res.status(503).send('server_not_configured');
   }
   try {
+    // Reject absent/expired metadata before reading an untrusted body. This
+    // is an early filter only; HMAC verification still authenticates every event.
+    if (!signingHeadersValid(req.headers)) return res.status(403).send('bad_signature');
     const raw = await rawBody(req);
     if (!verify(raw, req.headers, process.env.DODO_WEBHOOK_SECRET)) return res.status(403).send('bad_signature');
     let event;

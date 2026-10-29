@@ -9,6 +9,32 @@ before(async () => {
   if (enabled) env = await initializeTestEnvironment({ projectId: 'demo-synaq-tests', firestore: { rules: readFileSync(new URL('../firestore.rules', import.meta.url), 'utf8') } });
 });
 after(async () => { if (env) await env.cleanup(); });
+test('center data is API-only; children read only their own seat and its license', { skip: !enabled }, async () => {
+  await env.withSecurityRulesDisabled(async context => {
+    const db = context.firestore();
+    await setDoc(doc(db, 'centerSeats/rules-center-child'), { centerId: 'rules-center', active: true });
+    await setDoc(doc(db, 'centerLicenses/rules-center'), { active: true, expiresAt: Date.now() + 86400000 });
+    await setDoc(doc(db, 'centers/rules-center'), { name: 'Center' });
+    await setDoc(doc(db, 'centerStaff/rules-teacher'), { centerId: 'rules-center', active: true, role: 'owner' });
+  });
+  const child = env.authenticatedContext('rules-center-child').firestore();
+  const stranger = env.authenticatedContext('rules-stranger').firestore();
+  const staff = env.authenticatedContext('rules-teacher').firestore();
+  await assertSucceeds(getDoc(doc(child, 'centerSeats/rules-center-child')));
+  await assertSucceeds(getDoc(doc(child, 'centerLicenses/rules-center')));
+  await assertFails(getDoc(doc(stranger, 'centerSeats/rules-center-child')));
+  await assertFails(getDoc(doc(stranger, 'centerLicenses/rules-center')));
+  for (const db of [child, stranger, staff]) {
+    for (const path of ['centers/rules-center', 'centerStaff/rules-teacher', 'centerInvites/secret', 'centers/rules-center/groups/group']) {
+      await assertFails(getDoc(doc(db, path)));
+      await assertFails(setDoc(doc(db, path), { active: true }));
+    }
+    await assertFails(setDoc(doc(db, 'centerSeats/rules-center-child'), { centerId: 'rules-center', active: true }));
+    await assertFails(setDoc(doc(db, 'centerLicenses/rules-center'), { active: true, expiresAt: Date.now() + 86400000 }));
+  }
+  await env.withSecurityRulesDisabled(context => updateDoc(doc(context.firestore(), 'centerSeats/rules-center-child'), { active: false }));
+  await assertFails(getDoc(doc(child, 'centerLicenses/rules-center')));
+});
 test('Firestore ownership, private state and create-only records', { skip: !enabled }, async () => {
   await env.withSecurityRulesDisabled(async (context) => {
     const db = context.firestore();

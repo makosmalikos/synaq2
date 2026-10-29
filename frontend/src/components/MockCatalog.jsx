@@ -1,3 +1,4 @@
+import { KaspiPaymentInfo } from '../KaspiPayment.jsx';
 import React from 'react';
 import './MockCatalog.css';
 
@@ -40,11 +41,11 @@ export default function MockCatalog({ schools, previews = [], onPreview, weekly,
         <span className="mock-catalog-tag">{ru ? 'ПРОБНИК НЕДЕЛИ' : 'АПТАЛЫҚ СЫНАҚ'}{week && ` · ${week}`}</span>
         <h1 id="mock-catalog-title">{ru ? 'Проверь готовность к поступлению' : 'Оқуға түсуге дайындығыңды тексер'}</h1>
         <p>{ru ? 'Пройди тест в своём темпе, узнай результат и разбери ошибки.' : 'Сынақтан өз қарқыныңмен өт, нәтижеңді біліп, қателеріңді талда.'}</p>
-        {weekly.access ? <span className="mock-catalog-access"><CatalogIcon kind="check" />{weekly.pro ? (ru ? 'Включено в Standard и Pro' : 'Standard және Pro құрамында') : (ru ? 'Доступ на эту неделю открыт' : 'Осы аптаға қолжетімділік ашық')}</span> : <button className="mock-catalog-primary" type="button" disabled={paying} onClick={onBuy}>{paying ? (ru ? 'Открываем оплату…' : 'Төлем ашылуда…') : `${ru ? 'Открыть все пробники' : 'Барлық сынақты ашу'} · ${weekly.priceKzt?.toLocaleString('ru-RU')} ₸`}<CatalogIcon /></button>}
+        {weekly.access ? <span className="mock-catalog-access"><CatalogIcon kind="check" />{weekly.pro ? (ru ? 'Включено в Standard и Pro' : 'Standard және Pro құрамында') : (ru ? 'Доступ на эту неделю открыт' : 'Осы аптаға қолжетімділік ашық')}</span> : <button className="mock-catalog-primary" type="button" disabled={paying} onClick={onBuy}>{paying ? (ru ? 'Открываем оплату…' : 'Төлем ашылуда…') : `${ru ? 'Оплатить через Kaspi' : 'Kaspi арқылы төлеу'} · ${weekly.priceKzt?.toLocaleString('ru-RU')} ₸`}<CatalogIcon /></button>}
       </div>
       <img src="/mascot/synaq-owl-study.webp" width="640" height="640" alt="" decoding="async" />
     </section>
-    {!weekly.access && <div className="mock-catalog-payment"><p>{ru ? 'Одна оплата — три варианта на текущую неделю. В Standard и Pro доступ уже включён.' : 'Бір төлем — осы аптадағы үш нұсқа. Standard және Pro жазылымында қолжетімділік бар.'}</p><button type="button" onClick={onRefresh}>{ru ? 'Уже оплатили? Проверить доступ' : 'Төледіңіз бе? Қолжетімділікті тексеру'}</button></div>}
+    {!weekly.access && <div className="mock-catalog-payment"><KaspiPaymentInfo /><p>{ru ? 'Одна оплата — три варианта на текущую неделю. В Standard и Pro доступ уже включён.' : 'Бір төлем — осы аптадағы үш нұсқа. Standard және Pro жазылымында қолжетімділік бар.'}</p><button type="button" onClick={onRefresh}>{ru ? 'Уже оплатили? Проверить доступ' : 'Төледіңіз бе? Қолжетімділікті тексеру'}</button></div>}
     <header className="mock-catalog-heading"><div><h2>{ru ? 'Выбери свою школу' : 'Өз мектебіңді таңда'}</h2><p>{ru ? 'Недельные варианты для подготовки к выбранной школе.' : 'Таңдаған мектебіңе дайындалуға арналған апталық нұсқалар.'}</p></div><span>БИЛ · НИШ · РФМШ</span></header>
     <div className="mock-catalog-grid">
       {schools.map(s => <article className="mock-catalog-school" key={s.code}>
@@ -53,7 +54,7 @@ export default function MockCatalog({ schools, previews = [], onPreview, weekly,
         <div className="mock-catalog-stats"><span><CatalogIcon kind="tasks" />{s.count} {ru ? 'заданий' : 'тапсырма'}</span><span><CatalogIcon kind="clock" />{s.timeLimitMin} {ru ? 'мин' : 'мин'}</span></div>
         <p className="mock-catalog-scoring">{scoring[s.code]}</p>
         {s.shortened && <p className="mock-catalog-shortened">{ru ? 'Сокращённый вариант' : 'Қысқартылған нұсқа'} · {s.count}/{s.targetCount}</p>}
-        {weekly.access ? <button type="button" className="mock-catalog-primary" disabled={!s.ready || starting} onClick={() => s.ready && !starting && onStart(s.code)} aria-label={`${ru ? 'Начать пробник' : 'Сынақты бастау'} ${s.code}`}>{!s.ready ? (ru ? 'Скоро появится' : 'Жақында') : starting ? (ru ? 'Подготавливаем тест…' : 'Сынақ дайындалуда…') : (ru ? 'Начать пробник' : 'Сынақты бастау')}<CatalogIcon /></button> : <span className="mock-catalog-locked">{ru ? 'Откроется после оплаты' : 'Төлемнен кейін ашылады'}</span>}
+        {weekly.access ? <button type="button" className="mock-catalog-primary" disabled={!s.ready || starting} onClick={() => s.ready && !starting && onStart(s.code)} aria-label={`${ru ? 'Начать пробник' : 'Сынақты бастау'} ${s.code}`}>{!s.ready ? (ru ? 'Скоро появится' : 'Жақында') : starting ? (ru ? 'Подготавливаем тест…' : 'Сынақ дайындалуда…') : (ru ? 'Начать пробник' : 'Сынақты бастау')}<CatalogIcon /></button> : <span className="mock-catalog-locked">{ru ? 'Откроется после проверки оплаты' : 'Төлем тексерілгеннен кейін ашылады'}</span>}
       </article>)}
     </div>
     <p className="mock-catalog-note">{ru ? 'После теста: результат по предметам, разбор каждого ответа и работа над ошибками.' : 'Сынақтан кейін: пәндер бойынша нәтиже, әр жауапты талдау және қателермен жұмыс.'}</p>

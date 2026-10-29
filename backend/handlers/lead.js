@@ -1,6 +1,7 @@
 // Public landing-page lead capture. This handler intentionally shares the
 // catch-all Vercel function so it does not consume another Hobby function slot.
 const { createHash } = require('node:crypto');
+const { isIP } = require('node:net');
 const { getAdmin } = require('../lib/firebase-admin');
 
 const MAX_PER_HOUR = 5;
@@ -11,9 +12,12 @@ function clean(value, max) {
   return value.trim().replace(/\s+/g, ' ').slice(0, max);
 }
 
-function clientAddress(req) {
-  const forwarded = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
-  return forwarded || req.socket?.remoteAddress || 'unknown';
+function clientAddress(req, trustVercel) {
+  // Vercel overwrites X-Forwarded-For. A direct Node server must never trust
+  // a caller-supplied proxy header (nor an arbitrary CF-Connecting-IP).
+  const forwarded = trustVercel && typeof req.headers['x-forwarded-for'] === 'string'
+    ? req.headers['x-forwarded-for'].split(',')[0].trim() : '';
+  return (isIP(forwarded) ? forwarded : req.socket?.remoteAddress || 'unknown').toLowerCase();
 }
 
 function validate(body) {
@@ -28,7 +32,9 @@ function validate(body) {
   return { name, phone, role, comment };
 }
 
-function createHandler({ admin = getAdmin, now = () => new Date() } = {}) {
+function createHandler({ admin = getAdmin, now = () => new Date(), trustVercel = process.env.VERCEL === '1',
+  globalLimit = Number(process.env.LEAD_GLOBAL_HOURLY_LIMIT ?? 100) } = {}) {
+  if (!Number.isSafeInteger(globalLimit) || globalLimit < 1 || globalLimit > 10000) throw new Error('Invalid lead global limit');
   return async function leadHandler(req, res) {
     res.setHeader('Cache-Control', 'no-store');
     if (req.method !== 'POST') return res.status(405).json({ error: 'method_not_allowed' });
@@ -37,21 +43,31 @@ function createHandler({ admin = getAdmin, now = () => new Date() } = {}) {
     if (lead?.bot) return res.status(201).json({ ok: true });
     if (!lead) return res.status(400).json({ error: 'invalid_lead' });
 
+    let retryAfter = 3600;
     try {
       const { db } = admin();
       const createdAt = now();
       const hour = createdAt.toISOString().slice(0, 13);
+      retryAfter = Math.max(1, Math.ceil((3600000 - createdAt.getTime() % 3600000) / 1000));
       const salt = process.env.LEAD_RATE_SALT || process.env.FIREBASE_PROJECT_ID || 'synaq';
-      const addressHash = createHash('sha256').update(`${salt}:${clientAddress(req)}`).digest('hex');
+      const addressHash = createHash('sha256').update(`${salt}:${clientAddress(req, trustVercel)}`).digest('hex');
       const rateRef = db.collection('leadRateLimits').doc(addressHash);
+      const phoneHash = createHash('sha256').update(`${salt}:phone:${lead.phone.replace(/\D/g, '')}`).digest('hex');
+      const phoneRef = db.collection('leadRateLimits').doc('phone_' + phoneHash);
+      const globalRef = db.collection('platformRateLimits').doc('leads');
       const leadRef = db.collection('leads').doc();
 
       await db.runTransaction(async (tx) => {
-        const snapshot = await tx.get(rateRef);
-        const previous = snapshot.exists ? snapshot.data() : {};
-        const count = previous.hour === hour && Number.isSafeInteger(previous.count) ? previous.count : 0;
-        if (count >= MAX_PER_HOUR) throw Object.assign(new Error('rate_limit'), { code: 'rate_limit' });
-        tx.set(rateRef, { hour, count: count + 1, updatedAt: createdAt });
+        const refs = [rateRef, phoneRef, globalRef], limits = [MAX_PER_HOUR, 3, globalLimit];
+        const snapshots = await Promise.all(refs.map(ref => tx.get(ref)));
+        const counts = snapshots.map(snapshot => {
+          const value = snapshot.data() || {};
+          if (value.hour !== hour) return 0;
+          if (!Number.isSafeInteger(value.count) || value.count < 0) throw Object.assign(new Error('rate_limit'), { code: 'rate_limit' });
+          return value.count;
+        });
+        if (counts.some((count, i) => count >= limits[i])) throw Object.assign(new Error('rate_limit'), { code: 'rate_limit' });
+        refs.forEach((ref, i) => tx.set(ref, { hour, count: counts[i] + 1, updatedAt: createdAt }));
         tx.set(leadRef, { ...lead, status: 'new', source: 'landing', lang: req.body?.lang === 'ru' ? 'ru' : 'kk', createdAt });
       });
 
@@ -74,7 +90,10 @@ function createHandler({ admin = getAdmin, now = () => new Date() } = {}) {
 
       return res.status(201).json({ ok: true });
     } catch (error) {
-      if (error?.code === 'rate_limit') return res.status(429).json({ error: 'rate_limit' });
+      if (error?.code === 'rate_limit') {
+        res.setHeader('Retry-After', String(retryAfter));
+        return res.status(429).json({ error: 'rate_limit' });
+      }
       if (error?.code === 'synaq/admin-config') return res.status(503).json({ error: 'server_not_configured' });
       console.error('lead', error?.code || error?.message || error);
       return res.status(500).json({ error: 'failed' });

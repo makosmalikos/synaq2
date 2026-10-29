@@ -295,12 +295,14 @@ export async function getMyProfile() {
   const d = s.data() || {};
   const family = d.parentUid ? await getDoc(doc(db, 'families', d.parentUid)) : null;
   const plan = familyPlan(family?.data());
-  return { name: d.name || u.displayName || '', klass: d.klass || '', school: d.school || 'РФМШ', avatar: d.avatar || 'owl',
+  const seat = (await getDoc(doc(db, 'centerSeats', u.uid))).data();
+  const license = seat?.active ? (await getDoc(doc(db, 'centerLicenses', seat.centerId))).data() : null;
+  return applyCenterProfile({ name: d.name || u.displayName || '', klass: d.klass || '', school: d.school || 'РФМШ', avatar: d.avatar || 'owl',
     plan, pro: ['pro', 'mentor'].includes(plan), lessonsPerWeek: plan === 'mentor' ? family?.data()?.lessonsPerWeek || null : null, planExpiresAt: family?.data()?.planExpiresAt || family?.data()?.proExpiresAt || null,
-    proExpiresAt: family?.data()?.proExpiresAt || null };
+    proExpiresAt: family?.data()?.proExpiresAt || null }, license, seat);
 }
 
-function watchChildProfile(uid, fallbackName, callback, onError = () => {}) {
+function watchFamilyProfile(uid, fallbackName, callback, onError = () => {}) {
   let stopFamily = () => {}, expiryTimer, closed = false;
   const fail = (error) => { if (!closed) onError(error); };
   const stopIndex = onSnapshot(doc(db, 'childIndex', uid), (snapshot) => {
@@ -324,6 +326,47 @@ function watchChildProfile(uid, fallbackName, callback, onError = () => {}) {
     }, fail);
   }, fail);
   return () => { closed = true; stopIndex(); stopFamily(); clearTimeout(expiryTimer); };
+}
+
+// Merge the paid family plan with a server-owned center seat. Licenses are
+// observed live, so expiry, revocation and leaving a group update the UI.
+function applyCenterProfile(profile, license, seat) {
+  if (seat?.active) profile = { ...profile, centerEnrollment: { centerId: seat.centerId, groupId: seat.groupId } };
+  const valid = license?.active === true && expiryMillis(license.expiresAt) > Date.now();
+  if (!valid) return profile;
+  const center = { centerName: license.name, centerAccess: true };
+  return profile.pro ? { ...profile, ...center } : { ...profile, ...center, plan: 'pro', pro: true,
+    planExpiresAt: license.expiresAt, proLoading: false };
+}
+
+function watchChildProfile(uid, fallbackName, callback, onError = () => {}) {
+  let family, seat = null, license = null, ready = false, closed = false, revision = 0, expiryTimer;
+  let stopLicense = () => {};
+  const emit = () => {
+    clearTimeout(expiryTimer);
+    if (closed || !family) return;
+    const profile = applyCenterProfile(family, license, seat);
+    callback({ ...profile, proLoading: family.proLoading || !ready, centerLoading: !ready });
+    const remaining = expiryMillis(license?.expiresAt) - Date.now();
+    if (remaining > 0) expiryTimer = setTimeout(emit, Math.min(remaining + 25, 2147483647));
+  };
+  const stopFamily = watchFamilyProfile(uid, fallbackName, value => { family = value; emit(); }, onError);
+  const stopSeat = onSnapshot(doc(db, 'centerSeats', uid), snapshot => {
+    const rev = ++revision;
+    stopLicense(); license = null;
+    seat = snapshot.data();
+    ready = !seat?.active;
+    emit();
+    if (!seat?.active) return;
+    stopLicense = onSnapshot(doc(db, 'centerLicenses', seat.centerId), next => {
+      if (closed || rev !== revision) return;
+      license = next.data(); ready = true; emit();
+    }, error => {
+      if (closed || rev !== revision) return;
+      license = null; ready = true; emit(); onError(error);
+    });
+  }, error => { if (!closed) { seat = null; license = null; ready = true; emit(); onError(error); } });
+  return () => { closed = true; stopFamily(); stopSeat(); stopLicense(); clearTimeout(expiryTimer); };
 }
 
 export function watchMyProfile(callback, onError) {
@@ -502,7 +545,11 @@ export async function isPro(childUid) {
   const parentUid = idx.data()?.parentUid;
   if (!parentUid) return false;
   const family = await getDoc(doc(db, 'families', parentUid));
-  return familyHasPro(family.data());
+  if (familyHasPro(family.data())) return true;
+  const seat = (await getDoc(doc(db, 'centerSeats', childUid))).data();
+  if (!seat?.active) return false;
+  const license = (await getDoc(doc(db, 'centerLicenses', seat.centerId))).data();
+  return license?.active === true && expiryMillis(license.expiresAt) > Date.now();
 }
 
 // Бүгін неше есеп шығарды (тегін тарифте күніне 5)

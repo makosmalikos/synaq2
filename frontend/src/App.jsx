@@ -43,7 +43,7 @@ export default function App() {
         {route === 'landing' && <Landing onStart={() => go('app')} onDiagnostic={() => go('diagnostic')} onFreeDiagnostic={() => go('free-diagnostic')} />}
         {route === 'free-diagnostic' && <FreeDiagnostic onBack={() => go('landing')} onRegister={(result) => { setDiagnosticResult(result); go('app'); }} />}
         {route === 'diagnostic' && <PublicDiagnostic onBack={() => go('landing')} onRegister={(result) => { setDiagnosticResult(result); go('app'); }} />}
-        {route === 'app' && <PlatformApp
+        {(route === 'app' || route === 'centers') && <PlatformApp centerMode={route === 'centers'}
           initialDiagnosticPlan={diagnosticResult} onHome={() => go('landing')} duelCode={duelCode}
           navigation={{ tab, setTab, trainTopic, setTrainTopic, tabBeforeSubscription, setTabBeforeSubscription }}
         />}

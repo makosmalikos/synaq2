@@ -1,3 +1,4 @@
+import PwaInstall from './PwaInstall.jsx';
 import { validateLeadForm, sendLead } from './leadForm.js';
 import React from 'react';
 import { LangSwitch, useLang } from './i18n.jsx';
@@ -99,6 +100,7 @@ export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
       <a href="#parents">{t('lp.4')}</a>
       <a href="#free-diagnostic">{lang === 'ru' ? 'Бесплатная диагностика' : 'Тегін диагностика'}</a>
       <a href="#diagnostic">{lang === 'ru' ? 'Бесплатный пробник' : 'Тегін сынақ'}</a>
+      <a href="/centers">{lang === 'ru' ? 'Для центров' : 'Орталықтарға'}</a>
       <a href="#pricing">{t('lp.5')}</a>
     </div>
     <div className="lp-header-actions">
@@ -115,10 +117,12 @@ export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
       <a href="#free-diagnostic" onClick={(e) => handleMobileNav(e, '#free-diagnostic')}>{lang === 'ru' ? 'Бесплатная диагностика' : 'Тегін диагностика'}</a>
       <a href="#diagnostic" onClick={(e) => handleMobileNav(e, '#diagnostic')}>{lang === 'ru' ? 'Бесплатный пробник' : 'Тегін сынақ'}</a>
       <a href="#pricing" onClick={(e) => handleMobileNav(e, '#pricing')}>{t('lp.5')}</a>
+      <a href="/centers">{lang === 'ru' ? 'Для образовательных центров' : 'Білім беру орталықтарына'}</a>
       <div className="lp-mobile-language"><span>Тіл / Язык</span><LangSwitch /></div>
     </div>
   </div>
 </header>
+<div className="lp-pwa"><PwaInstall card /></div>
 
   
   <LandingHero onFreeDiagnostic={onFreeDiagnostic} />
@@ -324,7 +328,7 @@ export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
       <div className="lp-footer-grid">
         <div className="lp-footer-about">
           <a href="#" aria-label={lang === 'ru' ? 'SYNAQ — главная' : 'SYNAQ — басты бет'}><Brand className="lp-footer-brand" /></a>
-          <p>{t('lp.footerAbout')}</p>
+          <p>{t('lp.footerAbout')}</p><PwaInstall />
         </div>
         <div>
           <h3 className="lp-footer-title">{t('lp.footerPlatform')}</h3>

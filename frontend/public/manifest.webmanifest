@@ -1,18 +1,22 @@
 {
-  "name": "SYNAQ",
-  "short_name": "SYNAQ",
-  "description": "РФМШ, НИШ және БИЛ емтихандарына онлайн дайындық",
+  "id": "/",
+  "name": "Synaq — оқу платформасы",
+  "short_name": "Synaq",
+  "description": "РФМШ, НИШ және БИЛ емтихандарына дайындық. Тапсырмалар, сабақ кестесі және оқу нәтижелері.",
   "lang": "kk",
   "start_url": "/app",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#F4F9FF",
-  "theme_color": "#2F80ED",
+  "theme_color": "#F4F9FF",
+  "prefer_related_applications": false,
   "icons": [
-    {
-      "src": "/brands/synaq-favicon.svg?v=2",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    }
+    { "src": "/pwa/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/pwa/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/pwa/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Кабинет", "url": "/app", "icons": [{ "src": "/pwa/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Орталық / Центр", "url": "/centers", "icons": [{ "src": "/pwa/icon-192.png", "sizes": "192x192" }] }
   ]
 }

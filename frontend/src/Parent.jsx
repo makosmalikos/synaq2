@@ -1,3 +1,5 @@
+import KaspiPayment from './KaspiPayment.jsx';
+import PwaInstall from './PwaInstall.jsx';
 import React, { useEffect, useRef, useState } from 'react';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { useLang } from './i18n.jsx';
@@ -6,6 +8,8 @@ import {
   genPassword, suggestUsername, cleanUsername, errText,
   hasPasswordLogin, linkParentPassword, changeParentPassword, resetChildPassword,
 } from './firebase.js';
+import CenterEnrollment from './CenterEnrollment.jsx';
+import ParentCenterHome from './ParentCenterHome.jsx';
 import Brand from './Brand.jsx';
 import ParentDashboard from './ParentDashboard.jsx';
 import ParentSectionNav, { openParentSection } from './ParentSectionNav.jsx';
@@ -19,6 +23,7 @@ import Notifications from './Notifications.jsx';
 import './ParentWorkspace.css';
 import { lessonsCall } from './lessonsApi.js';
 import { authenticatedRequest } from './authenticatedRequest.js';
+import { readWithDeadline } from './readDeadline.js';
 
 const Logo = () => <div className="logo"><Brand compact /></div>;
 
@@ -37,6 +42,7 @@ export default function Parent({ onExit }) {
   const [me, setMe] = useState('');          // ата-ананың аты
   const [paying, setPaying] = useState(false);
   const payingRef = useRef(false);
+  const [kaspiPayment, setKaspiPayment] = useState(null);
   const [openingPortal, setOpeningPortal] = useState(false);
   const portalRef = useRef(false);
   const [portalError, setPortalError] = useState('');
@@ -65,6 +71,7 @@ export default function Parent({ onExit }) {
   };
   const [children, setChildren] = useState([]);
   const [childrenLoaded, setChildrenLoaded] = useState(false);
+  const [hasCenters, setHasCenters] = useState(false);
   const [adding, setAdding] = useState(false);
   const [firstLoad, setFirstLoad] = useState(true);
 
@@ -72,10 +79,19 @@ export default function Parent({ onExit }) {
   useEffect(() => {
     const u = auth.currentUser;
     if (!u) return;
+    let alive = true;
+    const current = () => alive && auth.currentUser?.uid === u.uid;
     setMe(u.displayName || '');
     let expiryTimer;
     setFamilyError('');
+    const initialTimer = setTimeout(() => {
+      if (!current()) return;
+      setPlan(null);
+      setFamilyError(text('Подписка загружается слишком долго. Проверьте соединение и повторите.', 'Жазылым тым ұзақ жүктелуде. Байланысты тексеріп, қайталаңыз.'));
+    }, 15000);
     const unsubscribe = onSnapshot(doc(db, 'families', u.uid), (snapshot) => {
+      if (!current()) return;
+      clearTimeout(initialTimer);
       const f = snapshot.data();
       if (!snapshot.exists()) {
         setPlan(null);
@@ -87,7 +103,7 @@ export default function Parent({ onExit }) {
       setPlan(currentPlan);
       setFamilyError('');
       const expiresMs = (f.planExpiresAt || f.proExpiresAt)?.toMillis?.() || 0;
-      setBillingStatus({ cancelAtPeriodEnd: f.cancelAtPeriodEnd === true, expiresAt: expiresMs });
+      setBillingStatus({ cancelAtPeriodEnd: f.cancelAtPeriodEnd === true, expiresAt: expiresMs, legacyProvider: !!f.dodoSubId });
       if (currentPlan !== 'free' && expiresMs) {
         const updateExpiry = () => {
           setPlan(familyPlan(f));
@@ -129,14 +145,16 @@ export default function Parent({ onExit }) {
       } catch {}
       if (wantedPlan && planRank(currentPlan) < planRank(wantedPlan) && !paymentPending) buyPlan(wantedPlan, wantedLessons);
     }, (error) => {
+      if (!current()) return;
+      clearTimeout(initialTimer);
       console.error('family subscription failed', error);
       setPlan(null);
       setFamilyError(text('Не удалось обновить подписку. Проверьте соединение и повторите.', 'Жазылымды жаңарту мүмкін болмады. Байланысты тексеріп, қайталаңыз.'));
     });
-    return () => { unsubscribe(); clearTimeout(expiryTimer); };
+    return () => { alive = false; unsubscribe(); clearTimeout(initialTimer); clearTimeout(expiryTimer); };
   }, [lang, familyRetry]);
 
-  // Dodo төлем бетіне window.location.href арқылы кеткенде компонент
+  // Kaspi төлем бетіне window.location.href арқылы кеткенде компонент
   // әдетте қайта жүктеледі, бірақ кейбір браузерлер (әсіресе мобильді
   // Safari) артқа қайту үшін бетті жадта сақтап қояды (bfcache) — сол
   // кезде mount-эффектер қайта жегілмейді және paying=true күйінде
@@ -151,7 +169,7 @@ export default function Parent({ onExit }) {
     return () => window.removeEventListener('pageshow', onShow);
   }, []);
 
-  // «Про таңдау» → Dodo төлем бетіне жібереміз
+  // «Про таңдау» → Kaspi төлем бетіне жібереміз
   async function buyPlan(targetPlan, lessons = null) {
     if (!['pro', 'mentor'].includes(targetPlan)) return;
     const u = auth.currentUser;
@@ -160,7 +178,7 @@ export default function Parent({ onExit }) {
     payingRef.current = true;
     setPaying(true);
     setPaymentIssue(null);
-    let requestSent = false, redirected = false;
+    let requestSent = false;
     try {
       const data = await authenticatedRequest(auth, '/api/checkout', {
         uid: u.uid, authError: 'login_required', fallback: 'checkout_unavailable',
@@ -168,9 +186,8 @@ export default function Parent({ onExit }) {
         onDispatch: () => { if (!current()) throw new Error('checkout_unavailable'); requestSent = true; },
       });
       if (!current()) return;
-      if (isCheckoutDestination(data?.url)) {
-        redirected = true;
-        window.location.href = data.url;
+      if (isCheckoutDestination(data?.url) && Number.isSafeInteger(data.priceKzt) && data.priceKzt > 0) {
+        setKaspiPayment({ ...data, plan: targetPlan, lessons });
         return;
       }
       setPaymentIssue({ code: 'checkout_verification_required', status: 200 });
@@ -184,10 +201,8 @@ export default function Parent({ onExit }) {
         if (status === 409 && ['already_pro', 'already_plan'].includes(code)) setFamilyRetry((n) => n + 1);
       }
     } finally {
-      if (!redirected) {
-        payingRef.current = false;
-        if (current()) setPaying(false);
-      }
+      payingRef.current = false;
+      if (current()) setPaying(false);
     }
   }
 
@@ -224,6 +239,7 @@ export default function Parent({ onExit }) {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
   const [childrenError, setChildrenError] = useState(false);
+  const childrenAbort = useRef(null);
   const [resetChild, setResetChild] = useState(null);
   const mounted = useRef(true);
   const childrenRequest = useRef(0);
@@ -234,24 +250,28 @@ export default function Parent({ onExit }) {
   const load = async () => {
     const uid = auth.currentUser?.uid;
     const request = ++childrenRequest.current;
+    childrenAbort.current?.abort();
+    const controller = new AbortController();
+    childrenAbort.current = controller;
     const current = () => mounted.current && request === childrenRequest.current && auth.currentUser?.uid === uid;
     setChildrenError(false);
     try {
       if (!uid) throw new Error('login_required');
-      const items = await getChildren(uid);
+      const items = await readWithDeadline(() => getChildren(uid), { signal: controller.signal });
       if (!current()) return;
       setChildren(items);
       setChildrenLoaded(true);
       return items;
     } catch (error) {
+      if (!current()) return;
       console.error('children load failed', error);
-      if (current()) setChildrenError(true);
+      setChildrenError(true);
     }
   };
   useEffect(() => {
     mounted.current = true;
     load();
-    return () => { mounted.current = false; childrenRequest.current++; };
+    return () => { mounted.current = false; childrenRequest.current++; childrenAbort.current?.abort(); };
   }, []);
 
   async function add() {
@@ -307,16 +327,18 @@ export default function Parent({ onExit }) {
 
   return (
     <div className="app parent-app">
+      {kaspiPayment && <KaspiPayment payment={kaspiPayment} onClose={() => { setKaspiPayment(null); setFamilyRetry((n) => n + 1); }} />}
       <header className="parent-header">
         <div className="parent-brand"><Logo /><span>{text('Кабинет родителя', 'Ата-ана кабинеті')}</span></div>
         <div className="parent-header-actions"><Notifications role="parent" onOpenLessons={() => openParentSection(plan === 'mentor' ? 'parent-lessons' : 'parent-settings')} onOpenPlan={() => openParentSection('parent-settings')} /><button className="parent-language" type="button" onClick={() => setLang(lang === 'ru' ? 'kk' : 'ru')} aria-label={text('Қазақ тіліне ауысу', 'Переключить на русский')}>{lang === 'ru' ? 'ҚАЗ' : 'РУС'}</button><button className="logout" onClick={exit}>{t('ui.26')}</button></div>
       </header>
 
+
       {familyError && <div className="card" role="alert" style={{ marginTop: 16 }}>
         <p>{familyError}</p><button className="btn" onClick={() => setFamilyRetry((n) => n + 1)}>{text('Повторить', 'Қайталау')}</button>
       </div>}
       {paymentPending && <div className="card" role="status" style={{ marginTop: 16 }}>
-        {text('Ожидаем подтверждение оплаты. Доступ обновится автоматически — повторно оплачивать не нужно.', 'Төлем расталуын күтіп жатырмыз. Қолжетімділік автоматты жаңарады — қайта төлеудің қажеті жоқ.')}
+        {text('После проверки оплаты мы подключим доступ вручную. Повторно оплачивать не нужно.', 'Төлемді тексергеннен кейін қолжетімділікті қолмен қосамыз. Қайта төлеудің қажеті жоқ.')}
         <p><button className="link" onClick={() => {
           setPaymentPending(false);
           const url = new URL(window.location.href); url.searchParams.delete('paid');
@@ -362,8 +384,11 @@ export default function Parent({ onExit }) {
             <h1>{me ? text(`Привет, ${me}!`, `Сәлем, ${me}!`) : text('Ваш семейный кабинет', 'Сіздің отбасы кабинетіңіз')}</h1>
             <p>{children.length ? text('Подготовка, успехи и следующие шаги ребёнка — рядом.', 'Баланың дайындығы, жетістігі мен келесі қадамдары — осында.') : text('Создайте профиль ребёнка — и начните подготовку вместе.', 'Балаңызға профиль ашып, дайындықты бірге бастаңыз.')}</p>
           </div>
-          <ParentSectionNav lang={lang} hasChildren={children.length > 0} hasLessons={plan === 'mentor'} />
-          <ParentDashboard children={children} lang={lang} />
+          <PwaInstall card />
+          <ParentSectionNav hasCenters={hasCenters} lang={lang} hasChildren={children.length > 0} hasLessons={plan === 'mentor'} />
+          <ParentCenterHome childrenList={children} lang={lang} onAvailability={setHasCenters}><ParentDashboard children={children} lang={lang} /></ParentCenterHome>
+
+          {childrenLoaded && children.map(child => <CenterEnrollment key={child.uid} childUid={child.uid} childName={child.name} />)}
 
           <div className="parent-children-head" id="parent-profile">
             <div><span className="parent-eyebrow">{text('Личный профиль', 'Жеке профиль')}</span><h2>{text('Аккаунт ребёнка', 'Бала аккаунты')}</h2></div>
@@ -452,18 +477,19 @@ export default function Parent({ onExit }) {
 
           <details id="parent-settings" className="pd-settings parent-account-settings" open={paymentPending || !!paymentIssue || !!portalError || undefined}>
             <summary><span className="parent-settings-icon" aria-hidden="true">☷</span><strong>{text('Тариф и настройки аккаунта', 'Тариф және аккаунт баптаулары')}</strong> <span className="parent-plan-chip">{plan === 'standard' ? text('Standard · архивный', 'Standard · архивтік') : plan === 'pro' ? 'Standard' : plan === 'mentor' ? 'Pro' : plan === 'free' ? text('Бесплатный', 'Тегін') : '…'}</span></summary>
+          <div><PwaInstall /></div>
           {plan !== null && <ParentPlans upgrading={upgrading} plan={plan} paying={paying} paymentPending={paymentPending} checkoutHold={checkoutHold}
             upgradeSent={upgradeSent} onBuy={buyPlan} onUpgrade={requestUpgrade} />}
 
-          {plan && plan !== 'free' && (
+          {plan && plan !== 'free' && billingStatus.legacyProvider && (
             <div className="card" style={{ marginTop: 16 }}>
               <div className="row">
                 <div>
-                  <p className="kicker" style={{ margin: 0 }}>{text('Управление подпиской', 'Жазылымды басқару')}</p>
+                  <p className="kicker" style={{ margin: 0 }}>{text('Прежняя подписка', 'Бұрынғы жазылым')}</p>
                   <p style={{ margin: '6px 0 0', color: 'var(--muted)', fontSize: 13 }}>
                     {billingStatus.cancelAtPeriodEnd
                       ? text(`Автопродление отключено. Доступ сохранится до ${billingStatus.expiresAt ? new Date(billingStatus.expiresAt).toLocaleDateString('ru-RU') : 'конца периода'}.`, `Автожаңарту өшірілді. Қолжетімділік ${billingStatus.expiresAt ? new Date(billingStatus.expiresAt).toLocaleDateString('kk-KZ') : 'кезең соңына'} дейін сақталады.`)
-                      : text('Смена тарифа, автопродление, отмена и история платежей открываются в защищённом кабинете Dodo.', 'Тарифті ауыстыру, автожаңарту, бас тарту және төлем тарихы қорғалған Dodo кабинетінде ашылады.')}
+                      : text('Здесь можно отключить автопродление прежней подписки и посмотреть историю платежей.', 'Мұнда бұрынғы жазылымның автожаңартуын өшіріп, төлем тарихын көруге болады.')}
                   </p>
                 </div>
                 <button className="btn" disabled={openingPortal} onClick={openSubscriptionPortal}>

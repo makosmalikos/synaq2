@@ -1,3 +1,4 @@
+const { learningFamily } = require('./center-access');
 const { createHash } = require('node:crypto');
 const { millis, familyPlan, hasFullAccess, dailyTaskLimit } = require('./plans');
 const { schoolGrade, trainingGradeAllowed } = require('./training-grade');
@@ -29,17 +30,17 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
     // Keep legitimate pre-server legacy children while rejecting orphaned or
     // reassigned Auth accounts. A supplied parentUid is never trusted.
     if (!family.exists || !child.exists || `${child.data().code}@synaq.kids` !== user.email) throw error('child-required', 403);
-    return { family: family.data(), gradeCeiling: schoolGrade(child.data().klass) };
+    return { family: await learningFamily(db, user.uid, family.data(), tx, now()), gradeCeiling: schoolGrade(child.data().klass) };
   }
 
   async function dailyCount(tx, uid, dayInfo) {
     const ref = resultRef(uid, 'daily', dayInfo.day);
     const snap = await tx.get(ref);
-    if (snap.exists) return { ref, count: integer(snap.data()?.count) };
+    if (snap.exists) return { ref, count: integer(snap.data()?.count), exists: true };
     // Seed only a new day's counter from legacy results. No full-history scan.
     const legacy = await tx.get(db.collection('results').doc(uid).collection('attempts')
       .where('at', '>=', new Date(dayInfo.start)).where('at', '<', new Date(dayInfo.start + 86400000)));
-    return { ref, count: legacy.size };
+    return { ref, count: legacy.size, exists: false };
   }
 
   return async function act(user, body) {
@@ -77,7 +78,9 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
     if (body.action === 'count') return db.runTransaction(async (tx) => {
       const { family } = await childContext(tx, user);
       const daily = await dailyCount(tx, user.uid, dayInfo);
-      tx.set(daily.ref, { count: daily.count, updatedAt: new Date(at) }, { merge: true });
+      // Status reads must not repeatedly lock the same counter as answer writes.
+      // Only the first read initializes a missing legacy/day counter.
+      if (!daily.exists) tx.set(daily.ref, { count: daily.count, updatedAt: new Date(at) }, { merge: true });
       return { count: daily.count, day: dayInfo.day, limit: dailyTaskLimit(familyPlan(family, at)) };
     });
     if (!['start', 'answer'].includes(body.action) || !validId(body.id)) throw error('bad-request');

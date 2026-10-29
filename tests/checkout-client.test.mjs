@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import { authenticatedRequest } from '../frontend/src/authenticatedRequest.js';
-import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination } from '../frontend/src/checkoutMessages.js';
+import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination, KASPI_PAYMENT_URL } from '../frontend/src/checkoutMessages.js';
 
 const source = fs.readFileSync(new URL('../frontend/src/Parent.jsx', import.meta.url), 'utf8');
 const buy = source.slice(source.indexOf('  async function buyPlan(targetPlan, lessons = null)'), source.indexOf("  const [name, setName]"));
@@ -16,6 +16,7 @@ function fixture({ status = 409, body = { error: 'checkout_pending' }, respond, 
   const context = {
     auth: { currentUser: { uid: 'parent', email: 'parent@example.test', getIdToken: token || (async () => 'stub-token') } },
     mounted: { current: true }, payingRef: { current: false }, checkoutHold: false, paymentPending: false,
+    setKaspiPayment: (value) => { state.payment = value; },
     setPaying: (value) => { state.paying = value; },
     setPaymentIssue: (value) => { state.issue = value; context.checkoutHold = checkoutNeedsVerification(value?.code); },
     setFamilyRetry: (update) => { state.refresh = update(state.refresh); },
@@ -102,12 +103,15 @@ test('active Pro refreshes its subscription instead of redirecting or starting a
   assert.deepEqual(f.redirects, []);
 });
 
-test('success uses the exact server URL, including renewed sessions, without adding payment flags', async () => {
-  const url = 'https://test.checkout.dodopayments.com/session/cks_renewed_2?locale=kk';
-  const f = fixture({ status: 200, body: { url } });
+test('Kaspi opens instructions with the server price without granting access or navigating automatically', async () => {
+  const url = KASPI_PAYMENT_URL;
+  const f = fixture({ status: 200, body: { url, priceKzt: 5999 } });
   await f.run();
-  assert.deepEqual(f.redirects, [url]);
-  assert.equal(f.context.payingRef.current, true, 'stay guarded until navigation/pageshow');
+  assert.deepEqual(f.redirects, []);
+  assert.equal(f.state.payment.url, KASPI_PAYMENT_URL);
+  assert.equal(f.state.payment.priceKzt, 5999);
+  assert.equal(f.state.payment.plan, 'pro');
+  assert.equal(f.context.payingRef.current, false);
   assert.equal(f.calls.length, 1);
   assert.equal(f.calls[0][0], '/api/checkout');
   assert.equal(f.calls[0][1].method, 'POST');
@@ -124,7 +128,10 @@ test('unsafe or malformed successful redirect responses require verification, no
     assert.equal(f.state.issue.code, 'checkout_verification_required');
     assert.deepEqual(f.redirects, []);
   }
-  assert.equal(isCheckoutDestination('https://checkout.dodopayments.com/session/cks_a'), true);
+  assert.equal(isCheckoutDestination('https://checkout.dodopayments.com/session/cks_a'), false);
+  assert.equal(isCheckoutDestination(KASPI_PAYMENT_URL), true);
+  assert.equal(isCheckoutDestination(KASPI_PAYMENT_URL.replace('26546', '26547')), false);
+  assert.equal(isCheckoutDestination(KASPI_PAYMENT_URL + '&email=private'), false);
 });
 
 test('same-render duplicate purchase and late response after account change cannot redirect another user', async () => {
@@ -134,10 +141,11 @@ test('same-render duplicate purchase and late response after account change cann
   await f.run();
   assert.equal(f.calls.length, 1);
   f.context.auth.currentUser = { uid: 'other-parent' };
-  pending.resolve({ ok: true, status: 200, json: async () => ({ url: 'https://checkout.dodopayments.com/session/cks_a' }) });
+  pending.resolve({ ok: true, status: 200, json: async () => ({ url: KASPI_PAYMENT_URL, priceKzt: 5999 }) });
   await first;
   assert.deepEqual(f.redirects, []);
   assert.equal(f.state.issue, null);
+  assert.equal(f.state.payment, undefined);
 });
 
 test('stalled checkout headers or response body leave a verification hold and never replay', async () => {

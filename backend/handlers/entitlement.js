@@ -2,6 +2,7 @@
 // Returns only the current child's entitlement. Family and payment metadata
 // remain server-side and are never exposed to the child client.
 
+const { learningFamily, centerAccess } = require('../lib/center-access');
 const { getAdmin } = require('../lib/firebase-admin');
 const { familyPlan, hasFullAccess, millis } = require('../lib/plans');
 
@@ -28,9 +29,11 @@ module.exports = async function handler(req, res) {
     if (!parentUid) return res.status(200).json({ plan: 'free', standard: false, pro: false, expiresAt: null });
 
     const family = await db.collection('families').doc(parentUid).get();
-    const plan = family.exists ? familyPlan(family.data()) : 'free';
-    const expiresMs = millis(family.data()?.planExpiresAt ?? family.data()?.proExpiresAt);
-    return res.status(200).json({ plan, standard: plan === 'standard', pro: hasFullAccess(plan),
+    const effectiveFamily = family.exists ? await learningFamily(db, child.uid, family.data()) : {};
+    const center = await centerAccess(db, child.uid);
+    const plan = familyPlan(effectiveFamily);
+    const expiresMs = millis(effectiveFamily.planExpiresAt ?? effectiveFamily.proExpiresAt);
+    return res.status(200).json({ ...(center ? { center } : {}), plan, standard: plan === 'standard', pro: hasFullAccess(plan),
       ...(plan === 'mentor' ? { mentor: true, lessonsPerWeek: Number(family.data()?.lessonsPerWeek) || null } : {}),
       expiresAt: plan !== 'free' && expiresMs ? new Date(expiresMs).toISOString() : null });
   } catch (e) {

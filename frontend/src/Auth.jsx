@@ -5,8 +5,10 @@ import Brand from './Brand.jsx';
 
 // Вход оформлен как карточка поверх затемнённого фона (попап), а не пустая страница.
 // На первом экране сразу объясняем, как устроен семейный аккаунт.
-export default function Auth({ onClose, duelCode = '' }) {
+export default function Auth({ onClose, duelCode = '', centerMode = false }) {
   const { t, lang } = useLang();
+  const text = (ru, kk) => lang === 'ru' ? ru : kk;
+  const centerSteps = [text('Войдите или создайте аккаунт.', 'Кіріңіз немесе аккаунт құрыңыз.'), text('Руководитель создаёт центр и группы.', 'Басшы орталық пен топтарды құрады.'), text('Преподаватель подключается по приглашению.', 'Мұғалім шақыру бойынша қосылады.'), text('Назначайте задания и следите за результатами.', 'Тапсырма беріп, нәтижелерді бақылаңыз.')];
   const [pname, setPname] = useState('');
   // ?admin=1 в адресе — единственный путь к входу администратора: обычный
   // посетитель его не видит. По этой ссылке сразу открывается вход администратора.
@@ -133,8 +135,8 @@ export default function Auth({ onClose, duelCode = '' }) {
         {stage === 'start' && (
           <div className="auth-start-grid">
             <div className="auth-start-copy">
-              <h1 style={{ ...S.h1, fontSize: 34 }}>{t('auth.title')}</h1>
-              <p style={S.sub}>{t('auth.sub')}</p>
+              <h1 style={{ ...S.h1, fontSize: 34 }}>{centerMode ? text('SYNAQ для центров', 'Орталықтарға арналған SYNAQ') : t('auth.title')}</h1>
+              <p style={S.sub}>{centerMode ? text('Группы, задания и учебный прогресс в одном кабинете.', 'Топтар, тапсырмалар және оқу нәтижелері бір кабинетте.') : t('auth.sub')}</p>
 
               {/* Понятное объяснение потока: кто регистрируется и как входит ребёнок */}
               <div style={S.steps}>
@@ -142,7 +144,7 @@ export default function Auth({ onClose, duelCode = '' }) {
                 {['auth.step1', 'auth.step2', 'auth.step3', 'auth.step4'].map((k, i) => (
                   <div key={k} style={S.step}>
                     <span style={S.num}>{i + 1}</span>
-                    <span style={S.stepTxt}>{t(k)}</span>
+                    <span style={S.stepTxt}>{centerMode ? centerSteps[i] : t(k)}</span>
                   </div>
                 ))}
               </div>
@@ -177,9 +179,9 @@ export default function Auth({ onClose, duelCode = '' }) {
 
         {stage === 'register' && (
           <div style={{ animation: 'rise .3s ease both' }}>
-            <p style={S.kicker}>{t('auth.parentAccount')}</p>
+            <p style={S.kicker}>{centerMode ? text('Аккаунт сотрудника центра', 'Орталық қызметкерінің аккаунты') : t('auth.parentAccount')}</p>
             <h1 style={S.h1}>{t('auth.create')}</h1>
-            <p style={S.hint}>{t('auth.step2')}</p>
+            <p style={S.hint}>{centerMode ? text('Используйте рабочую почту для доступа к центру.', 'Орталыққа кіру үшін жұмыс поштаңызды қолданыңыз.') : t('auth.step2')}</p>
             <input style={S.input} aria-label={t('auth.yourName')} autoComplete="name"
               placeholder={t('auth.yourName')} value={pname} onChange={(e) => setPname(e.target.value)} />
             <input style={S.input} type="email" aria-label={t('auth.email')} autoComplete="email"
@@ -211,7 +213,7 @@ export default function Auth({ onClose, duelCode = '' }) {
         {stage === 'login' && (
           <form style={{ animation: 'rise .3s ease both' }} onSubmit={submitLogin}>
             <h1 style={S.h1}>{t('auth.loginTitle')}</h1>
-            <p style={S.hint}>{t('auth.loginHint')}</p>
+            <p style={S.hint}>{centerMode ? text('Войдите по почте и паролю или через Google.', 'Пошта және құпиясөзбен немесе Google арқылы кіріңіз.') : t('auth.loginHint')}</p>
             <input style={S.input} aria-label={t('auth.loginId')} placeholder={t('auth.loginId')} value={email}
               autoCapitalize="none" autoCorrect="off" spellCheck={false} autoComplete="username"
               onChange={(e) => setEmail(e.target.value)} />
