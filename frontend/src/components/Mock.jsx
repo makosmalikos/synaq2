@@ -8,7 +8,7 @@ import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useLang } from '../i18n.jsx';
 import { mockCatalog, mockResume, mockStart, mockSubmit, weeklyMockCheckout } from '../mockApi.js';
 import { loadTopicCatalog } from '../topicCatalog.js';
-import { auth, watchPro } from '../firebase.js';
+import { auth } from '../firebase.js';
 import { buildDiagnosis } from '../diagnosis.js';
 import BrandLoader from './BrandLoader.jsx';
 import DiagnosisReport from './DiagnosisReport.jsx';
@@ -44,7 +44,6 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
   const [previews, setPreviews] = useState([]);
   const [school, setSchool] = useState(null);
   const [pause, setPause] = useState(false);
-  const [pro, setPro] = useState(null);
   const [weekly, setWeekly] = useState(null);
   const [paying, setPaying] = useState(false);
   const [topics, setTopics] = useState([]);
@@ -181,18 +180,15 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
 
   useEffect(() => {
     let alive = true;
-    setLoading(true); setLoadError(false); setPro(null); setWeekly(null);
+    setLoading(true); setLoadError(false); setWeekly(null);
     if (!uid) { setLoadError(true); setLoading(false); return; }
-    const stop = watchPro(uid, (value) => { if (alive && isCurrent()) setPro(value); }, () => {
-      if (alive && isCurrent()) { setLoadError(true); setPro(null); }
-    });
     Promise.all([mockCatalog(), loadTopicCatalog()]).then(([catalog, topics]) => {
       if (alive && isCurrent()) {
         setSchools(catalog.schools || []); setPreviews(catalog.previews || []); setWeekly(catalog.weekly || null); setTopics(topics);
       }
     }).catch(() => { if (alive && isCurrent()) setLoadError(true); })
       .finally(() => { if (alive && isCurrent()) setLoading(false); });
-    return () => { alive = false; stop(); };
+    return () => { alive = false; };
   }, [uid, loadRetry]);
 
   useEffect(() => {
@@ -231,7 +227,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
 
   async function startExam(code, preview = false) {
     if (!isCurrent() || startingRef.current || !sessionReady || recoveryError || runRef.current
-      || pro === null || (preview ? !previews.some(s => s.code === code && s.ready) : !weekly?.access)) return;
+      || (preview ? !previews.some(s => s.code === code && s.ready) : !weekly?.access)) return;
     startingRef.current = true; setStarting(true); setStartError('');
     const generation = generationRef.current;
     const active = () => isCurrent() && generationRef.current === generation;
@@ -369,7 +365,7 @@ export default function Mock({ onTrainTopic, onGoProgress }) {
 
   if (!school && loadError) return <main><p role="alert">{ru ? 'Не удалось загрузить тесты, подписку или прогресс. Проверь соединение.' : 'Сынақтар, жазылым немесе прогресс жүктелмеді. Байланысты тексер.'}</p>
     <button className="btn" onClick={() => setLoadRetry((value) => value + 1)}>{ru ? 'Повторить' : 'Қайталау'}</button></main>;
-  if (!school && (loading || pro === null || weekly === null)) return <main><BrandLoader /></main>;
+  if (!school && (loading || weekly === null)) return <main><BrandLoader /></main>;
 
   if (!school) return <MockCatalog schools={schools} previews={previews} onPreview={code => startExam(code, true)} weekly={weekly} lang={lang} starting={starting} paying={paying}
     onStart={startExam} onBuy={buyWeeklyAccess} onRefresh={() => setLoadRetry((value) => value + 1)} notice={startNotice} />;
