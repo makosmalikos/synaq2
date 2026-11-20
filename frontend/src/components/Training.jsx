@@ -4,7 +4,7 @@ import FigureOption, { hasFigureOptions, mainFigureSrc } from './FigureOption.js
 import React, { useEffect, useState, useRef } from 'react';
 import { useLang } from '../i18n.jsx';
 import { translateQuestions } from '../translateQuestions.js';
-import { auth, startLearningSession, saveAttempt, getSolved, setFlag, getFlags, watchPro, todayCount,
+import { auth, startLearningSession, saveAttempt, getSolved, setFlag, getFlags, getDailyLearningState, todayCount,
   getTrainingTopics, getTrainingQuestions } from '../firebase.js';
 import { readPendingTraining, writePendingTraining, clearPendingTraining, trainingDayKey, trainingQuestion, trainingElapsed } from '../trainingPersistence.js';
 import Explain from './Explain.jsx';
@@ -208,16 +208,16 @@ export default function Training({ onXp, startTopicId, startPractice = null, onT
       setSessionState('idle'); setSessionNotice(''); setServerResult(null);
       setTopic(null); setItems([]); setChecked(false); setSaveState('idle');
     }
-    const stop = watchPro(uid, (value) => { if (alive) setPro(value); }, (error) => {
-      if (alive) { setLoadErrorCode(error?.code || 'profile-load-failed'); setLoadError(true); setPro(null); }
-    });
     const requestedDay = trainingDayKey();
-    Promise.all([getTrainingTopics(uid), todayCount(uid), getSolved(uid), getFlags(uid)]).then(async ([list, count, completed, flagged]) => {
+    Promise.all([getTrainingTopics(uid), getDailyLearningState(uid), getSolved(uid), getFlags(uid)]).then(async ([list, daily, completed, flagged]) => {
       if (!alive) return;
       // The count can finish before midnight while the question bank is still
       // loading. Never label yesterday's exhausted quota as today's count.
-      if (requestedDay !== trainingDayKey()) count = await todayCount(uid);
+      if (requestedDay !== trainingDayKey()) daily = await getDailyLearningState(uid);
       if (!alive) return;
+      if (typeof daily.pro !== 'boolean') throw new Error('invalid-learning-state');
+      setPro(daily.pro);
+      const count = daily.count;
       dayRef.current = trainingDayKey();
       const completedIds = new Set(completed.map((item) => item.qid));
       const completedByTopic = {};
@@ -235,7 +235,7 @@ export default function Training({ onXp, startTopicId, startPractice = null, onT
       }
     }).catch((error) => { if (alive) { setLoadErrorCode(error?.code || 'load-failed'); setLoadError(true); } })
       .finally(() => { if (alive) setLoading(false); });
-    return () => { alive = false; stop(); };
+    return () => { alive = false; };
   }, [uid, loadRetry]);
 
   useEffect(() => {

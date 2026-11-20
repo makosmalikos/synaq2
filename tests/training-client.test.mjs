@@ -43,6 +43,7 @@ function fixture({ storage = memoryStorage(), pro = false, count = 4, save, star
     saveAttempt: async (...args) => { writes.push(args); return { correct: true, answer: '4', solution: '2 + 2 = 4', count: 5, secs: 60, ...await saveImpl(...args) }; },
     startLearningSession: async (...args) => { starts.push(args); return startImpl(...args); },
     todayCount: async () => countImpl(),
+    getDailyLearningState: async () => ({ count: await countImpl(), pro }),
     getTrainingTopics: async () => [topic], getTrainingQuestions: async () => [trainingQuestion(question)],
     getSolved: async () => [], getFlags: async () => [],
     watchPro: (_owner, callback) => { callback(pro); return () => {}; },
@@ -479,4 +480,16 @@ test('a language switch while the server opens the task uses the latest language
   assert.deepEqual(calls, ['ru']);
   assert.equal(f.visible().statement, 'Russian condition');
   assert.equal(f.starts.length, 1);
+});
+
+test('training loads server entitlement without the optional Firestore profile listener', async () => {
+  for (const pro of [true, false]) {
+    const f = fixture({ pro });
+    f.context.watchPro = () => { throw new Error('permission-denied'); };
+    f.load();
+    await new Promise(resolve => setImmediate(resolve));
+    assert.equal(f.state.Pro, pro);
+    assert.equal(f.state.LoadError, false);
+    assert.equal(f.state.Loading, false);
+  }
 });

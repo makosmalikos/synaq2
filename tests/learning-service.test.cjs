@@ -306,3 +306,16 @@ test('training clock response includes time spent preparing the condition', asyn
  const value=await act({uid:'k',email:'clock@synaq.kids'},{action:'start',mode:'training',id:'clock_session_1',qid:'q1'});
  assert.equal(value.serverNow-value.startedAt,2300);assert.equal(value.question.answer,undefined);
 });
+
+test('daily learning state returns server access for family plans and expiring center seats', async () => {
+  for (const [plan, expected] of [['free', false], ['standard', false], ['pro', true], ['mentor', true]]) {
+    const f = fixture({ plan });
+    assert.equal((await f.act(f.user, { action: 'count', pro: !expected })).pro, expected);
+  }
+  const f = fixture();
+  f.db.records.set('centerSeats/kid', { active: true, centerId: 'school' });
+  f.db.records.set('centerLicenses/school', { active: true, expiresAt: new Date(f.now() + 1000) });
+  assert.equal((await f.act(f.user, { action: 'count' })).pro, true);
+  f.advance(2000);
+  assert.equal((await f.act(f.user, { action: 'count' })).pro, false);
+});

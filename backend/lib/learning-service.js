@@ -81,7 +81,7 @@ function createLearningService({ db, getTrainingQuestion, getTrainingTopics, get
       // Status reads must not repeatedly lock the same counter as answer writes.
       // Only the first read initializes a missing legacy/day counter.
       if (!daily.exists) tx.set(daily.ref, { count: daily.count, updatedAt: new Date(at) }, { merge: true });
-      return { count: daily.count, day: dayInfo.day, limit: dailyTaskLimit(familyPlan(family, at)) };
+      return { count: daily.count, day: dayInfo.day, pro: hasFullAccess(familyPlan(family, at)), limit: dailyTaskLimit(familyPlan(family, at)) };
     });
     if (!['start', 'answer'].includes(body.action) || !validId(body.id)) throw error('bad-request');
     const sessionRef = db.collection('learningSessions').doc(`${user.uid}_${body.id}`);
