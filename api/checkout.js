@@ -1,7 +1,7 @@
-// Kaspi is a fixed payment link. Access is granted manually after payment review.
+// WhatsApp starts a manual transfer request. Access is granted after payment review.
 const { getAdmin } = require('../backend/lib/firebase-admin');
 const { familyPlan, planRank, PLAN_CATALOG } = require('../backend/lib/plans');
-const { kaspiUrl } = require('../shared/payments.json');
+const { whatsappUrl } = require('../shared/payments.json');
 
 module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'private, no-store');
@@ -25,7 +25,7 @@ module.exports = async function handler(req, res) {
     if (currentPlan !== 'free') return res.status(409).json({ error: 'plan_change_required' });
     const priceKzt = plan === 'mentor' ? PLAN_CATALOG.mentor.lessonPricesKzt[lessons] : PLAN_CATALOG.pro.priceKzt;
     // Never record a successful payment or change entitlements from a link request.
-    return res.status(200).json({ url: kaspiUrl, provider: 'kaspi', manualActivation: true, plan, lessons, priceKzt });
+    return res.status(200).json({ url: whatsappUrl, provider: 'whatsapp', manualActivation: true, plan, lessons, priceKzt });
   } catch (error) {
     if (error?.code?.startsWith('auth/')) return res.status(401).json({ error: 'login_required' });
     if (error?.code === 'synaq/admin-config') return res.status(503).json({ error: 'server_not_configured' });

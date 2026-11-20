@@ -1,9 +1,31 @@
+import { paymentWhatsAppUrl } from '../frontend/src/whatsappPayment.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import { authenticatedRequest } from '../frontend/src/authenticatedRequest.js';
-import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination, KASPI_PAYMENT_URL } from '../frontend/src/checkoutMessages.js';
+import { checkoutErrorMessage, checkoutNeedsVerification, isCheckoutDestination, WHATSAPP_PAYMENT_URL } from '../frontend/src/checkoutMessages.js';
+
+test('WhatsApp drafts preserve the selected purchase in both languages without including account data', () => {
+  for (const lang of ['ru', 'kk']) {
+    for (const [options, expected] of [
+      [{ plan: 'pro' }, /Standard/],
+      [{ plan: 'mentor', lessons: 2 }, /Pro \(2 /],
+      [{ plan: 'mentor', lessons: 3 }, /Pro \(3 /],
+      [{ weekly: true }, /пробники|сынақтары/],
+      [{ plan: 'mentor', lessons: 3, changingPlan: true }, /сумму доплаты|қосымша төлем/],
+    ]) {
+      const url = new URL(paymentWhatsAppUrl({ ...options, lang, email: 'private@example.test', uid: 'private-uid' }));
+      assert.equal(url.origin + url.pathname, WHATSAPP_PAYMENT_URL);
+      assert.deepEqual([...url.searchParams.keys()], ['text']);
+      const text = url.searchParams.get('text');
+      assert.match(text, expected);
+      assert.match(text, /обязательно|міндетті/);
+      assert.doesNotMatch(text, /private@example|private-uid/);
+    }
+  }
+  assert.equal(isCheckoutDestination('https://kaspi.kz/pay/CoursesUniversal?region_id=18&subservice_id=26546&started_from=QR'), false);
+});
 
 const source = fs.readFileSync(new URL('../frontend/src/Parent.jsx', import.meta.url), 'utf8');
 const buy = source.slice(source.indexOf('  async function buyPlan(targetPlan, lessons = null)'), source.indexOf("  const [name, setName]"));
@@ -16,7 +38,7 @@ function fixture({ status = 409, body = { error: 'checkout_pending' }, respond, 
   const context = {
     auth: { currentUser: { uid: 'parent', email: 'parent@example.test', getIdToken: token || (async () => 'stub-token') } },
     mounted: { current: true }, payingRef: { current: false }, checkoutHold: false, paymentPending: false,
-    setKaspiPayment: (value) => { state.payment = value; },
+    setWhatsAppPayment: (value) => { state.payment = value; },
     setPaying: (value) => { state.paying = value; },
     setPaymentIssue: (value) => { state.issue = value; context.checkoutHold = checkoutNeedsVerification(value?.code); },
     setFamilyRetry: (update) => { state.refresh = update(state.refresh); },
@@ -103,12 +125,12 @@ test('active Pro refreshes its subscription instead of redirecting or starting a
   assert.deepEqual(f.redirects, []);
 });
 
-test('Kaspi opens instructions with the server price without granting access or navigating automatically', async () => {
-  const url = KASPI_PAYMENT_URL;
+test('WhatsApp opens instructions with the server price without granting access or navigating automatically', async () => {
+  const url = WHATSAPP_PAYMENT_URL;
   const f = fixture({ status: 200, body: { url, priceKzt: 5999 } });
   await f.run();
   assert.deepEqual(f.redirects, []);
-  assert.equal(f.state.payment.url, KASPI_PAYMENT_URL);
+  assert.equal(f.state.payment.url, WHATSAPP_PAYMENT_URL);
   assert.equal(f.state.payment.priceKzt, 5999);
   assert.equal(f.state.payment.plan, 'pro');
   assert.equal(f.context.payingRef.current, false);
@@ -129,9 +151,9 @@ test('unsafe or malformed successful redirect responses require verification, no
     assert.deepEqual(f.redirects, []);
   }
   assert.equal(isCheckoutDestination('https://checkout.dodopayments.com/session/cks_a'), false);
-  assert.equal(isCheckoutDestination(KASPI_PAYMENT_URL), true);
-  assert.equal(isCheckoutDestination(KASPI_PAYMENT_URL.replace('26546', '26547')), false);
-  assert.equal(isCheckoutDestination(KASPI_PAYMENT_URL + '&email=private'), false);
+  assert.equal(isCheckoutDestination(WHATSAPP_PAYMENT_URL), true);
+  assert.equal(isCheckoutDestination(WHATSAPP_PAYMENT_URL.replace('77773424043', '77773424044')), false);
+  assert.equal(isCheckoutDestination(WHATSAPP_PAYMENT_URL + '&email=private'), false);
 });
 
 test('same-render duplicate purchase and late response after account change cannot redirect another user', async () => {
@@ -141,7 +163,7 @@ test('same-render duplicate purchase and late response after account change cann
   await f.run();
   assert.equal(f.calls.length, 1);
   f.context.auth.currentUser = { uid: 'other-parent' };
-  pending.resolve({ ok: true, status: 200, json: async () => ({ url: KASPI_PAYMENT_URL, priceKzt: 5999 }) });
+  pending.resolve({ ok: true, status: 200, json: async () => ({ url: WHATSAPP_PAYMENT_URL, priceKzt: 5999 }) });
   await first;
   assert.deepEqual(f.redirects, []);
   assert.equal(f.state.issue, null);

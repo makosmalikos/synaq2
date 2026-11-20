@@ -1,6 +1,6 @@
 import payments from '../../shared/payments.json' with { type: 'json' };
 
-export const KASPI_PAYMENT_URL = payments.kaspiUrl;
+export const WHATSAPP_PAYMENT_URL = payments.whatsappUrl;
 
 // Show our own translated copy for machine codes, never raw provider messages.
 const messages = {
@@ -74,7 +74,7 @@ export const checkoutNeedsVerification = (code) => [
 ].includes(code);
 
 export function isCheckoutDestination(value) {
-  return typeof value === 'string' && value === KASPI_PAYMENT_URL;
+  return typeof value === 'string' && value === WHATSAPP_PAYMENT_URL;
 }
 
 export function isDodoPortalDestination(value) {

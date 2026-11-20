@@ -18,7 +18,7 @@ function fixture() {
     return { exists: docs.has(key), data: () => docs.get(key) };
   } }) }) };
   const context = { module: { exports: {} }, console,
-    fetch() { throw Error('Kaspi link lookup must never call a payment provider'); },
+    fetch() { throw Error('WhatsApp link lookup must never call a payment provider'); },
     require(name) {
       if (name === '../backend/lib/firebase-admin') return { getAdmin: () => ({ auth, db }) };
       if (name === '../backend/lib/plans') return plans;
@@ -36,19 +36,19 @@ function fixture() {
   return { docs, reads, invoke };
 }
 
-test('Kaspi lookup validates method, revoked token, parent identity and family', async () => {
+test('WhatsApp lookup validates method, revoked token, parent identity and family', async () => {
   const f = fixture();
   for (const [request, status] of [[{ method: 'GET' }, 405], [{ uid: '' }, 401], [{ uid: 'invalid' }, 401], [{ uid: 'child' }, 403], [{ uid: 'missing' }, 403]]) {
     assert.equal((await f.invoke(request)).statusCode, status);
   }
 });
 
-test('all paid plans return the fixed Kaspi link and server prices, without writing access', async () => {
+test('all paid plans return the fixed WhatsApp link and server prices, without writing access', async () => {
   const f = fixture(), before = structuredClone([...f.docs]);
   for (const [body, price] of [[{ plan: 'pro' }, 5999], [{ plan: 'mentor', lessons: 2 }, 44999], [{ plan: 'mentor', lessons: 3 }, 59999]]) {
     const result = await f.invoke({ body: { ...body, priceKzt: 1, uid: 'other', url: 'https://attacker.test' } });
     assert.equal(result.statusCode, 200);
-    assert.equal(result.body.url, payments.kaspiUrl);
+    assert.equal(result.body.url, payments.whatsappUrl);
     assert.equal(result.body.priceKzt, price);
     assert.equal(result.body.manualActivation, true);
     assert.equal(result.headers['Cache-Control'], 'private, no-store');

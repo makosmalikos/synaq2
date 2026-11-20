@@ -309,14 +309,14 @@ test('child entitlement checks source family and expires even without expiry web
 });
 
 
-test('weekly checkout requires authentication and returns Kaspi without provider calls or grants', async () => {
+test('weekly checkout requires authentication and returns WhatsApp without provider calls or grants', async () => {
   const f = fixture('weekly-mock-checkout.js');
   assert.equal((await f.invoke({}, { token: '' })).status, 401);
   const before = structuredClone([...f.docs]);
   const first = await f.invoke({ url: 'https://attacker.test', priceKzt: 1 });
   assert.equal(first.status, 200);
   assert.equal(first.body.priceKzt, 2500);
-  assert.equal(first.body.url, require('../shared/payments.json').kaspiUrl);
+  assert.equal(first.body.url, require('../shared/payments.json').whatsappUrl);
   assert.equal(first.body.manualActivation, true);
   assert.equal((await f.invoke({})).body.url, first.body.url);
   assert.equal(f.calls.length, 0);
@@ -342,7 +342,7 @@ test('weekly checkout verifies child membership before returning a payment link'
   f.docs.set('childIndex/child', { parentUid: 'parent' });
   assert.equal((await f.invoke({})).status, 403);
   f.docs.set('families/parent/children/child', { code: 'student' });
-  assert.equal((await f.invoke({})).body.url, require('../shared/payments.json').kaspiUrl);
+  assert.equal((await f.invoke({})).body.url, require('../shared/payments.json').whatsappUrl);
   assert.equal(f.familyWrites(), 0);
 });
 

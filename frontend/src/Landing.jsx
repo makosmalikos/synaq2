@@ -57,14 +57,10 @@ export default function Landing({ onStart, onDiagnostic, onFreeDiagnostic }) {
   // must not refocus the sticky header and pull the page back to the top.
   const handleMobileNav = () => setMenuOpen(false);
 
-  // Платный тариф привязывается к аккаунту родителя. Сохраняем выбранный
-  // вариант и время, чтобы после входа открыть правильную оплату.
-  const handleBuyPlan = (targetPlan, lessons = null) => (e) => {
-    e.preventDefault();
-    try {
-      localStorage.setItem('synaq_want_plan', JSON.stringify({ plan: targetPlan, lessons, at: Date.now() }));
-    } catch {}
-    onStart();
+  const handleBuyPlan = (targetPlan, lessons = null) => async (event) => {
+    event.preventDefault();
+    const { paymentWhatsAppUrl } = await import('./whatsappPayment.js');
+    window.location.assign(paymentWhatsAppUrl({ plan: targetPlan, lessons, lang }));
   };
   const handleLeadSubmit = async (e) => {
     e.preventDefault();

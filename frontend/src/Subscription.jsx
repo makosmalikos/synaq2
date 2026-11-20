@@ -1,5 +1,5 @@
-import { KASPI_PAYMENT_URL } from './checkoutMessages.js';
-import { KaspiPaymentInfo } from './KaspiPayment.jsx';
+import { paymentWhatsAppUrl } from './whatsappPayment.js';
+import { WhatsAppPaymentInfo } from './WhatsAppPayment.jsx';
 import React, { useState } from 'react';
 import Brand from './Brand.jsx';
 import { LangToggle, useLang } from './i18n.jsx';
@@ -57,15 +57,15 @@ export default function Subscription({ currentPlan = 'free', onBack }) {
         </label>}
         <section className="subscription-payment">
           <span className="subscription-section-label">{t('subscription.payment')}</span>
-          <div className="subscription-payment-card"><div className="subscription-payment-mark">K</div><div>
+          <div className="subscription-payment-card"><div className="subscription-payment-mark">WA</div><div>
             <strong>{active ? t('subscription.activeTitle') : changingPlan ? (ru ? 'Смена тарифа' : 'Тарифті ауыстыру') : t('subscription.paymentTitle')}</strong>
-            {active ? <p>{t('plan.activeNote')}</p> : changingPlan ? <p>{ru ? 'Напишите нам, чтобы согласовать смену действующего тарифа и сумму доплаты.' : 'Қолданыстағы тарифті ауыстыру мен қосымша төлем сомасын келісу үшін бізге жазыңыз.'}</p> : <KaspiPaymentInfo />}
+            {active ? <p>{t('plan.activeNote')}</p> : changingPlan ? <p>{ru ? 'Напишите нам, чтобы согласовать смену действующего тарифа и сумму доплаты.' : 'Қолданыстағы тарифті ауыстыру мен қосымша төлем сомасын келісу үшін бізге жазыңыз.'}</p> : <WhatsAppPaymentInfo />}
           </div>{!active && <span className="subscription-secure">✓ {t('subscription.secure')}</span>}</div>
         </section>
 
         <div className="subscription-checkout"><div><span>{active ? t('subscription.status') : t('subscription.order')}</span><strong>{chosen.name}</strong></div>
           <b>{chosen.price}</b>{active ? <button type="button" className="subscription-done" onClick={onBack}>{t('subscription.continue')}</button>
-            : <a href={changingPlan ? "https://wa.me/message/HAJDNIM2MPOCM1" : KASPI_PAYMENT_URL} target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◉</span>{changingPlan ? (ru ? 'Обсудить смену тарифа' : 'Тарифті ауыстыруды талқылау') : t('subscription.cta')}</a>}</div>
+            : <a href={paymentWhatsAppUrl({ plan: selected === 'pro' ? 'mentor' : 'pro', lessons, lang, changingPlan })} target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◉</span>{changingPlan ? (ru ? 'Обсудить смену тарифа' : 'Тарифті ауыстыруды талқылау') : t('subscription.cta')}</a>}</div>
       </div>
     </main>
   );

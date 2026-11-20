@@ -1,8 +1,8 @@
-// Weekly access uses the same Kaspi link and manual payment review.
+// Weekly access is arranged through WhatsApp and manual payment review.
 const { getAdmin } = require('../backend/lib/firebase-admin');
 const { familyPlan, hasFullAccess } = require('../backend/lib/plans');
 const { weeklyWindow, passId, PRICE_KZT } = require('../backend/lib/weekly-mock');
-const { kaspiUrl } = require('../shared/payments.json');
+const { whatsappUrl } = require('../shared/payments.json');
 const failure = (code, status) => Object.assign(new Error(code), { status });
 
 async function identity(db, user) {
@@ -34,7 +34,7 @@ module.exports = async function handler(req, res) {
     if (hasFullAccess(familyPlan(owner.family))) return res.status(200).json({ access: true, included: true, ...window });
     const pass = await db.collection('weeklyMockPasses').doc(passId(owner.parentUid, window.weekKey)).get();
     if (pass.data()?.paid === true) return res.status(200).json({ access: true, paid: true, ...window });
-    return res.status(200).json({ url: kaspiUrl, provider: 'kaspi', manualActivation: true, priceKzt: PRICE_KZT, ...window });
+    return res.status(200).json({ url: whatsappUrl, provider: 'whatsapp', manualActivation: true, priceKzt: PRICE_KZT, ...window });
   } catch (error) {
     if (error?.code?.startsWith('auth/')) return res.status(401).json({ error: 'auth-required' });
     return res.status(error?.status || 503).json({ error: error?.status ? error.message : 'weekly-payment-unavailable' });

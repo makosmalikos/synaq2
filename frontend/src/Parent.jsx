@@ -1,4 +1,5 @@
-import KaspiPayment from './KaspiPayment.jsx';
+import { paymentWhatsAppUrl } from './whatsappPayment.js';
+import WhatsAppPayment from './WhatsAppPayment.jsx';
 import PwaInstall from './PwaInstall.jsx';
 import React, { useEffect, useRef, useState } from 'react';
 import { doc, onSnapshot } from 'firebase/firestore';
@@ -21,7 +22,6 @@ import ParentPlans from './ParentPlans.jsx';
 import ParentLessons from './ParentLessons.jsx';
 import Notifications from './Notifications.jsx';
 import './ParentWorkspace.css';
-import { lessonsCall } from './lessonsApi.js';
 import { authenticatedRequest } from './authenticatedRequest.js';
 import { readWithDeadline } from './readDeadline.js';
 
@@ -42,7 +42,7 @@ export default function Parent({ onExit }) {
   const [me, setMe] = useState('');          // ата-ананың аты
   const [paying, setPaying] = useState(false);
   const payingRef = useRef(false);
-  const [kaspiPayment, setKaspiPayment] = useState(null);
+  const [whatsAppPayment, setWhatsAppPayment] = useState(null);
   const [openingPortal, setOpeningPortal] = useState(false);
   const portalRef = useRef(false);
   const [portalError, setPortalError] = useState('');
@@ -57,17 +57,8 @@ export default function Parent({ onExit }) {
     const paid = new URLSearchParams(window.location.search).get('paid');
     return ['1', 'standard', 'pro', 'mentor'].includes(paid);
   });
-  const [upgradeSent, setUpgradeSent] = useState(false);
-  const [upgrading, setUpgrading] = useState(false);
-  const upgradeRef = useRef(false);
-  const requestUpgrade = async (lessons) => {
-    if (upgradeRef.current || upgradeSent) return;
-    const uid = auth.currentUser?.uid;
-    const current = () => mounted.current && auth.currentUser?.uid === uid;
-    upgradeRef.current = true; setUpgrading(true); setPaymentIssue(null);
-    try { await lessonsCall({ action: 'upgrade_request', lessons }); if (current()) setUpgradeSent(true); }
-    catch { if (current()) setPaymentIssue({ code: 'checkout_unavailable', status: 503 }); }
-    finally { upgradeRef.current = false; if (current()) setUpgrading(false); }
+  const requestUpgrade = (lessons) => {
+    window.location.assign(paymentWhatsAppUrl({ plan: 'mentor', lessons, lang, changingPlan: true }));
   };
   const [children, setChildren] = useState([]);
   const [childrenLoaded, setChildrenLoaded] = useState(false);
@@ -154,7 +145,7 @@ export default function Parent({ onExit }) {
     return () => { alive = false; unsubscribe(); clearTimeout(initialTimer); clearTimeout(expiryTimer); };
   }, [lang, familyRetry]);
 
-  // Kaspi төлем бетіне window.location.href арқылы кеткенде компонент
+  // WhatsApp бетіне window.location.href арқылы кеткенде компонент
   // әдетте қайта жүктеледі, бірақ кейбір браузерлер (әсіресе мобильді
   // Safari) артқа қайту үшін бетті жадта сақтап қояды (bfcache) — сол
   // кезде mount-эффектер қайта жегілмейді және paying=true күйінде
@@ -169,7 +160,7 @@ export default function Parent({ onExit }) {
     return () => window.removeEventListener('pageshow', onShow);
   }, []);
 
-  // «Про таңдау» → Kaspi төлем бетіне жібереміз
+  // Show the selected plan before opening WhatsApp.
   async function buyPlan(targetPlan, lessons = null) {
     if (!['pro', 'mentor'].includes(targetPlan)) return;
     const u = auth.currentUser;
@@ -187,7 +178,7 @@ export default function Parent({ onExit }) {
       });
       if (!current()) return;
       if (isCheckoutDestination(data?.url) && Number.isSafeInteger(data.priceKzt) && data.priceKzt > 0) {
-        setKaspiPayment({ ...data, plan: targetPlan, lessons });
+        setWhatsAppPayment({ ...data, plan: targetPlan, lessons });
         return;
       }
       setPaymentIssue({ code: 'checkout_verification_required', status: 200 });
@@ -327,7 +318,7 @@ export default function Parent({ onExit }) {
 
   return (
     <div className="app parent-app">
-      {kaspiPayment && <KaspiPayment payment={kaspiPayment} onClose={() => { setKaspiPayment(null); setFamilyRetry((n) => n + 1); }} />}
+      {whatsAppPayment && <WhatsAppPayment payment={whatsAppPayment} onClose={() => { setWhatsAppPayment(null); setFamilyRetry((n) => n + 1); }} />}
       <header className="parent-header">
         <div className="parent-brand"><Logo /><span>{text('Кабинет родителя', 'Ата-ана кабинеті')}</span></div>
         <div className="parent-header-actions"><Notifications role="parent" onOpenLessons={() => openParentSection(plan === 'mentor' ? 'parent-lessons' : 'parent-settings')} onOpenPlan={() => openParentSection('parent-settings')} /><button className="parent-language" type="button" onClick={() => setLang(lang === 'ru' ? 'kk' : 'ru')} aria-label={text('Қазақ тіліне ауысу', 'Переключить на русский')}>{lang === 'ru' ? 'ҚАЗ' : 'РУС'}</button><button className="logout" onClick={exit}>{t('ui.26')}</button></div>
@@ -478,8 +469,8 @@ export default function Parent({ onExit }) {
           <details id="parent-settings" className="pd-settings parent-account-settings" open={paymentPending || !!paymentIssue || !!portalError || undefined}>
             <summary><span className="parent-settings-icon" aria-hidden="true">☷</span><strong>{text('Тариф и настройки аккаунта', 'Тариф және аккаунт баптаулары')}</strong> <span className="parent-plan-chip">{plan === 'standard' ? text('Standard · архивный', 'Standard · архивтік') : plan === 'pro' ? 'Standard' : plan === 'mentor' ? 'Pro' : plan === 'free' ? text('Бесплатный', 'Тегін') : '…'}</span></summary>
           <div><PwaInstall /></div>
-          {plan !== null && <ParentPlans upgrading={upgrading} plan={plan} paying={paying} paymentPending={paymentPending} checkoutHold={checkoutHold}
-            upgradeSent={upgradeSent} onBuy={buyPlan} onUpgrade={requestUpgrade} />}
+          {plan !== null && <ParentPlans plan={plan} paying={paying} paymentPending={paymentPending} checkoutHold={checkoutHold}
+            onBuy={buyPlan} onUpgrade={requestUpgrade} />}
 
           {plan && plan !== 'free' && billingStatus.legacyProvider && (
             <div className="card" style={{ marginTop: 16 }}>
